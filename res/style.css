@@ -31,28 +31,6 @@ body {
     font-weight: 400; /* regular */
 }
 
-#raspberry-hosted {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 250px;
-    overflow: hidden;
-    display: none;
-    text-align: center;
-}
-
-#raspberry-hosted div {
-    transform: rotate(45deg);
-    border: 1px solid black;
-    background-color: white;
-    padding: 3px 60px;
-    position: relative;
-    top: 38px;
-    right: -63px;
-    box-shadow: 0 0 10px 5px #888888;
-    display: inline-block;
-}
-
 #wrapper {
     background: rgb(255,255,255);
     margin: auto;
@@ -243,11 +221,5 @@ footer {
     
     #work a:hover {
         background-color: rgb(200,200,200);
-    }
-}
-
-@media screen and (min-width: 900px) {
-    #raspberry-hosted {
-        display: block;
     }
 }
