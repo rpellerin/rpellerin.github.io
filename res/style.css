@@ -1,0 +1,253 @@
+/* Feuille CSS créee le 05/05/2013 par Romain Pellerin pour le site romainpellerin.eu */
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot');
+    src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.woff') format('woff'),
+        url('fonts/icomoon.ttf') format('truetype'),
+        url('fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    color: inherit;
+}
+
+body, h1, p {
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%; /* 1 (r)em = 10 px */
+}
+
+body {
+    background-attachment: fixed;
+    background-color: #ABABAB;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400; /* regular */
+}
+
+#raspberry-hosted {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 250px;
+    overflow: hidden;
+    display: none;
+    text-align: center;
+}
+
+#raspberry-hosted div {
+    transform: rotate(45deg);
+    border: 1px solid black;
+    background-color: white;
+    padding: 3px 60px;
+    position: relative;
+    top: 38px;
+    right: -63px;
+    box-shadow: 0 0 10px 5px #888888;
+    display: inline-block;
+}
+
+#wrapper {
+    background: rgb(255,255,255);
+    margin: auto;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 7.5rem;
+    line-height: 1; /* = font-size */
+    font-weight: 700; /* bold */
+}
+
+h1 span {
+    color: white;
+    font-size: 9.5rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0 0 30px black;
+    transition: text-shadow .3s;
+}
+
+header, section {
+    margin-bottom: 40px;
+}
+
+@-webkit-keyframes change_bg {
+    0% {
+        background-color: rgba(127,127,127,0.1);
+    }
+    50% {
+        background-color: rgba(255,127,127,0.3);
+    }
+    100% {
+        background-color: rgba(127,127,127,0.1);
+    }
+}
+
+@keyframes change_bg {
+    0% {
+        background-color: rgba(127,127,127,0.1);
+    }
+    50% {
+        background-color: rgba(255,127,127,0.3);
+    }
+    100% {
+        background-color: rgba(127,127,127,0.1);
+    }
+}
+
+p[itemprop="description"] {
+    text-align: justify;
+}
+
+#important {
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px 0;
+    text-align: center;
+    -webkit-animation: change_bg 2s infinite;
+    animation: change_bg 2s infinite;
+}
+
+h2 {
+    border-bottom: 2px solid black;
+    margin: 0 0 30px 0;
+    text-align: right;
+}
+
+ul {
+    list-style: none;
+    padding: 0; /* reset */
+    width: 100%;
+}
+
+li {
+    margin: 10px 0;
+}
+
+ul li a {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    transition: color .2s;
+    width: 60%;
+}
+
+[data-icon]:before {
+    font-family: 'icomoon';
+    vertical-align: middle;
+    margin-right: 20px;
+    font-size: 4rem;
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+#work a {
+    background-color: rgb(220,220,220);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    display: block;
+    min-height: 100px;
+    padding: 10px 10px 10px 120px; /* bg fait 100px de largeur */
+    text-decoration: none;
+}
+
+#work div + div {
+    margin-top: 20px;
+}
+
+h3 {
+    margin: 0 0 20px 0;
+}
+
+#work div p:before {
+  content: "›› ";
+}
+
+#email {
+    text-align: center;
+}
+
+#email a {
+    background-color: rgba(200,200,200,0.2);
+    border: 1px dotted gray;
+    border-radius: 0px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+    transition: all .3s;
+}
+
+#email a:hover {
+    background-color: rgba(200,200,200,0.5);
+    border-radius: 10px;
+    text-shadow: 0 0 10px black;
+}
+
+footer {
+    border-top: 1px solid gray;
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media screen and (min-width: 540px) {
+    header {
+        background: url(img/bugdroid.png) no-repeat 90% bottom;
+    }
+    
+    li {
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 790px) {
+    body {
+        background-image: url(img/tux.png), url(img/bg.png);
+        background-position: left bottom, left top;
+        background-repeat: no-repeat, repeat;
+    }
+    
+    #wrapper {
+        background: -moz-linear-gradient(left,  rgba(255,255,255,1) 97%, rgba(255,255,255,0.9) 97%, rgba(255,255,255,0) 100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(97%,rgba(255,255,255,1)), color-stop(97%,rgba(255,255,255,0.9)), color-stop(100%,rgba(255,255,255,0)));
+        background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 97%,rgba(255,255,255,0.9) 97%,rgba(255,255,255,0) 100%);
+        background: -o-linear-gradient(left,  rgba(255,255,255,1) 97%,rgba(255,255,255,0.9) 97%,rgba(255,255,255,0) 100%);
+        background: -ms-linear-gradient(left,  rgba(255,255,255,1) 97%,rgba(255,255,255,0.9) 97%,rgba(255,255,255,0) 100%);
+        background: linear-gradient(to right,  rgba(255,255,255,1) 97%,rgba(255,255,255,0.9) 97%,rgba(255,255,255,0) 100%);
+        border-left: 5px solid black;
+        padding: 0 30px;
+        width: 700px;
+    }
+    
+    h1 span:hover {
+        text-shadow: 0 0 20px black;
+    }
+    
+    ul li a:hover {
+        color: gray;
+    }
+    
+    #work a:hover {
+        background-color: rgb(200,200,200);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #raspberry-hosted {
+        display: block;
+    }
+}

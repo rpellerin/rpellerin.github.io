@@ -1,0 +1,41 @@
+body {
+  background-color: #ffae00;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  margin: 0 0 50px 0;
+}
+
+table {
+  background: white;
+  border-collapse: collapse;
+  border: 7px outset gray;
+  display: inline-block;
+}
+
+div {
+  display: inline-block;
+  margin: 0 20px;
+  min-width: 290px;
+  vertical-align: top;	
+}
+
+table td {
+  border: 1px solid black;
+  margin: 0; /* reset */
+  padding: 0; /* reset */
+}
+
+table img {
+  width: 100px;
+  height: 100px;
+  border: none; /* reset pour quand entouré de <a> */
+}
+
+a {
+  text-decoration: : none; /* reset */
+}
