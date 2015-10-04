@@ -30,8 +30,9 @@
 	        var markers = locations.map(function(x){
 				var circle = L.circle([x.x, x.y], 10, {
                             color: color,
+                            opacity: 1.0,
                             fillColor: color,
-                            fillOpacity: 0.5,
+                            fillOpacity: 1.0,
                             className: fbid
                         }).bindPopup(username+"<br /><img src=\"https://graph.facebook.com/"+fbid+"/picture\" /><br /><img src=\""+x.picture_src+"\" /><br /><a target=\"_blank\" href=\""+x.picture_link+"\" >Link</a>");
                 return circle;
