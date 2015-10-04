@@ -5,11 +5,13 @@
 <title>Facebook friends all around the world</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <style>
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
+  img { max-width: 200px; height: auto; }
+  .leaflet-popup-content { width: 220px; text-align: center; }
 </style>
 </head>
 <body>
@@ -21,15 +23,18 @@
     		.setView([47, -2], 2);
 
 		for (i = 0;i < user.length; i++) {
+            var color = "rgb("+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+","+Math.floor(Math.random() * 256)+")";
 	        var fbid = user[i].fbid;
 	        var username = user[i].username;
 	        var locations = user[i].locations;
 	        var markers = locations.map(function(x){
-				return L.circle([x.x, x.y], 10, {
-						    color: 'red',
-						    fillColor: '#f03',
-						    fillOpacity: 0.5
-						}).bindPopup(username+"<br /><img src=\"https://graph.facebook.com/"+fbid+"/picture\" />");
+				var circle = L.circle([x.x, x.y], 10, {
+                            color: color,
+                            fillColor: color,
+                            fillOpacity: 0.5,
+                            className: fbid
+                        }).bindPopup(username+"<br /><img src=\"https://graph.facebook.com/"+fbid+"/picture\" /><br /><img src=\""+x.picture_src+"\" /><br /><a target=\"_blank\" href=\""+x.picture_link+"\" >Link</a>");
+                return circle;
 			});
 			layer = L.featureGroup(markers);
 			layer.addTo(map);
