@@ -3,12 +3,12 @@ a {
     transition: all .2s;
 }
 
-.center {
-    text-align: center;
+a:hover {
+    color: gray;
 }
 
-.crossed {
-    text-decoration: line-through;
+.center {
+    text-align: center;
 }
 
 body, h1, h2, p {
@@ -28,10 +28,6 @@ body {
     padding: 0 10px;
 }
 
-header a {
-    text-decoration: none;
-}
-
 h1 {
     font-size: 55px;
     font-weight: normal;
@@ -47,27 +43,12 @@ header, section {
     margin-bottom: 40px;
 }
 
-@keyframes change_bg {
-    0% {
-        background-color: rgba(127,127,127,0.1);
-    }
-    50% {
-        background-color: rgba(127,127,127,0.3);
-    }
-    100% {
-        background-color: rgba(127,127,127,0.1);
-    }
+p:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 p[itemprop="description"] {
     text-align: justify;
-}
-
-#important {
-    border-radius: 10px;
-    margin: 5px;
-    padding: 10px 0;
-    animation: change_bg 2s infinite;
 }
 
 h2 {
@@ -85,30 +66,18 @@ li {
     margin: 10px 0;
 }
 
-ul li a:hover, #important a:hover {
-    color: gray;
-}
-
-#project_ideas {
-    color: gray;
-    font-size: 14px;
-    font-style: italic;
-    margin: 0;
-}
-
 #email a {
     background-color: rgba(200,200,200,0.2);
     border: 1px dotted gray;
     border-radius: 0px;
     display: inline-block;
-    margin-top: 20px;
     padding: 20px;
 }
 
 #email a:hover {
-    background-color: rgba(200,200,200,0.5);
-    border-radius: 10px;
-    text-shadow: 0 0 10px black;
+    background-color: rgba(200,200,200,0.6);
+    border-radius: 20px;
+    color: black;
 }
 
 footer {
