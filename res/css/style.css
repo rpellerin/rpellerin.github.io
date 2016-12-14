@@ -1,3 +1,7 @@
+.clear {
+    clear: both;
+}
+
 a {
     color: inherit;
     transition: all .2s;
@@ -43,6 +47,17 @@ header, section {
     margin-bottom: 40px;
 }
 
+.me {
+    width: 200px;
+    max-width: 100%;
+}
+
+.me img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
 p:not(:last-child) {
     margin-bottom: 5px;
 }
@@ -85,6 +100,13 @@ footer {
     padding: 20px 0;
     font-size: 14px;
     color: gray;
+}
+
+@media screen and (min-width: 220px) {
+    .me {
+        margin: 0 10px 0 0;
+        float: left;
+    }
 }
 
 @media screen and (min-width: 820px) {
