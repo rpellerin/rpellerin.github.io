@@ -14,6 +14,11 @@ So my advice is to go with `gs`.
 
 Other commands exist such as `pdfseparate` and `pdfunite`. They are very good but the output files are quite heavy, compared to those obtained using `gs`.
 
+# Add a password to a PDF file
+
+    :::bash
+    pdftk input.pdf output output.pdf userpw <password here>
+
 # Extracting pages
 
     :::bash
