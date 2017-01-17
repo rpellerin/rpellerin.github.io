@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+    <h1>{% block h1 %}<a href="{{ SITEURL }}/">{{ SITENAME }}</a>{% endblock h1 %}</h1>
+    <a href="{{ SITEURL }}/index.html" title="Homepage">Go to homepage</a>
+</header>
+{% if articles %}
+    <h2>{% block subtitle %}All posts{% endblock %}</h2>
+    {% block list %}
+    <section id="article-list">
+        <ol>
+            {% for article in articles %}
+                    <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}</li>
+            {% endfor %}
+        </ol>
+    </section><!-- #article-list -->
+    {% endblock list %}
+{% else %}
+    No posts found.
+{% endif %}
+{% endblock content %}

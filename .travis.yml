@@ -1,0 +1,24 @@
+language: python
+python: '2.7'
+
+branches:
+    only:
+        - master
+
+env:
+    global:
+        secure: uNkT/f8ETynm8k831vj4QDttmEoKTbwY1gYMAvN8orTaEzjsTwtWBJxVvTeRVuGXA5cE6gYCNVKVps9WQt/W9RYWIGGyTm0Sb5HMK/oywL8TfE/LB1lgXIGGdojszYA9mBQiHN00BESIN8LUfKSVnkWMdkqcXLKpJ4dghZRRvHuTbTYV7NPB81Zkq972vGSZ/Xb8mfcDrHHK9xj+IZJtfqOrYwvd75P+81YYD4PmK/IJB3YqTYngI8x/b5bjVfJHQKiQRYh/v3/mbIs2OQHowBTmpI5JrzRmZN/avNIwS/XFUwH6lFEO5DXTk3jszOx9sdPxNJiS/8mGU91NstfId1sWg5pLKpm3aprA5h+f90UKnEnaJCpobHcBCrAsdJqJmnfmKvIYu/kye8eDN4GElqY+UvVjktu0XkSi3yZyXa4JupIcRkYfUv/MP0hFjmw7vz3fr4Faq9SyWtetEBSnM1zj/YPitVz4KNbWFRVnI5KVD6XWX5s4kSmA2EPEYEANntlfEVrTC+YRfcIF5Tghg46Vd8bAhcQLBQFQjQJS+nPqQ5ZF5t9AQTVhA5DdkHtWzfffhFgKYYfLNDl0jDl2Nyk5st5LxLCj5KpopQnJaMwrAva0beW4OTCEnD/jYjwQy7m+SMooGQtwcNvSsPs0xRLHhiHm8gBQhOp1g1zAycQ=
+
+install:
+    - pip install -r requirements.txt
+
+script:
+    - make publish
+
+notifications:
+  email:
+    on_failure: always
+
+after_success:
+    - ghp-import -m "$(git log -1 --oneline | cut -d ' ' -f2-)" output
+    - git push -fq https://${GH_TOKEN}@github.com/rpellerin/blog.git gh-pages:gh-pages >/dev/null 2>&1

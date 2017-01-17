@@ -1,0 +1,194 @@
+/* General rules for common tags */
+a {
+    color: inherit;
+    transition: all .1s;
+}
+
+a:hover {
+    color: gray;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+body, h1, h2, h3, p { /* reset */
+    margin: 0;
+}
+
+h1 a, .h1 a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 20px 0;
+}
+
+html {
+    font-size: 18px;
+}
+
+/* Index-specific rules*/
+body {
+    background-color: white;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1rem;
+}
+
+#wrapper {
+    margin: auto;
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+h1, .h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 1; /* = font-size */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+header, section, article {
+    margin-bottom: 40px;
+}
+
+.me { /* div containing my photo */
+    width: 200px;
+    max-width: 100%;
+}
+
+.me img {
+    width: 200px;
+    height: 200px;
+}
+
+p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+p[itemprop="description"] { /* short text next to my photo */
+    text-align: justify;
+}
+
+h2.index {
+    border-bottom: 2px solid black;
+    text-align: right;
+}
+
+ul {
+    padding: 0; /* reset */
+    padding-left: 50px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+#blog-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#blog-links a {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid gray;
+    padding: 20px 0;
+    font-size: 14px;
+    color: gray;
+}
+
+@media screen and (min-width: 220px) {
+    .me {
+        margin: 0 10px 0 0;
+        float: left;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    #wrapper {
+        width: 800px;
+    }
+
+    h1 {
+        margin: 40px 0;
+    }
+}
+
+/* Blog-specific rules */
+header.article {
+    text-align: center;
+}
+
+header.article h1 {
+    text-align: left;
+}
+
+header.article h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+header.article a {
+    text-decoration: none;
+}
+
+header.article p {
+    font-style: italic;
+    color: grey;
+}
+
+time, .time {
+  color: grey;
+  font-size: .7rem;
+}
+
+blockquote {
+  border-left: 1px solid #A5ABAB;
+  margin: 0px;
+  padding: 0 12px 0 12px;
+}
+
+pre {
+  background-color: #fafafa;
+  font-family: Inconsolata, Monaco, monospace;
+  line-height: 1.2em;
+  font-size: 0.8rem;
+  overflow: auto;
+  padding: 10px;
+}
+
+#article-list ol li {
+  line-height: 1.2em;
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 730px) {
+  iframe:not([src*="youtube"]) {
+    display: none;
+  }
+  #article-list ol {
+    padding: .5em 0em 1em 0em;
+  }
+}
+
+@import url("pygment.css");

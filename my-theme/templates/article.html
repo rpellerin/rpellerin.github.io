@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - {{ super() }}{% endblock %}
+{% block title_social %}{{ article.title }} - {{ super() }}{% endblock %}
+{% block description %}{{ article.summary|striptags }}{% endblock %}
+{% block description_social %}{{ article.summary|striptags }}{% endblock %}
+
+{% block content %}
+<header class="article">
+    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+    <h2><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h2>
+    {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %}<span class="time"> - Last Update: </span><time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
+    <p>{{ article.summary }}</p>
+</header>
+<article>
+    {{ article.content }}
+</article>
+<footer>
+    {% if not HIDE_DATE %}
+    Last update: <span class="time">{% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}</span>
+    {% endif %}
+</footer>
+{% endblock %}
