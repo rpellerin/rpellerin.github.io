@@ -180,6 +180,7 @@ pre {
 
 iframe {
   max-width: 100%;
+  box-sizing: border-box; /* so that borders are inside */
 }
 
 @media screen and (max-width: 730px) {
