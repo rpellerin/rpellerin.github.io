@@ -20,5 +20,5 @@ notifications:
     on_failure: always
 
 after_success:
-    - ghp-import -m "$(git log -1 --oneline | cut -d ' ' -f2-)" master output
+    - ghp-import -m "$(git log -1 --oneline | cut -d ' ' -f2-)" -b master output
     - git push -fq https://${GH_TOKEN}@github.com/rpellerin/rpellerin.github.io.git master:master >/dev/null 2>&1
