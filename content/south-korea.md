@@ -2,7 +2,7 @@ Title: South Korea
 Date: 2016-09-14 00:35
 Modified: 2017-01-12 14:00
 Category: Travels
-Tags: travel, Korea
+Tags: travel, korea
 Slug: south-korea
 Authors: Romain Pellerin
 Summary: My exchange program in South Korea 

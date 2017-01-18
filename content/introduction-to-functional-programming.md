@@ -1,7 +1,7 @@
 Title: Introduction To Functional Programming
 Date: 2015-10-21 23:30
 Category: Code
-Tags: javascript, code, development, programming, web, computer, functional, fp
+Tags: javascript, code, functional programming, fp
 Slug: introduction-to-functional-programming
 Authors: Romain Pellerin
 Summary: What is functional programming, some resources and how to start painlessly

@@ -1,7 +1,7 @@
 Title: The Art Of Writing
 Date: 2016-01-27 18:15
-Category: general
-Tags: writing, english, latex, cv, resume, cover lover, report
+Category: Miscellaneous
+Tags: writing, english, latex, cv, resume, cover letter, report
 Slug: the-art-of-writing
 Authors: Romain Pellerin
 Summary: How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX.

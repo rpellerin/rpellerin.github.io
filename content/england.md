@@ -1,7 +1,7 @@
 Title: England
 Date: 2017-01-10 01:01
 Category: Travels
-Tags: travel, england, UK
+Tags: travel, england, uk
 Slug: england
 Authors: Romain Pellerin
 Summary: My advice about England

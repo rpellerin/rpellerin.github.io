@@ -1,7 +1,7 @@
 Title: Yes, Privacy Matters
 Date: 2016-02-04 01:40
 Modified: 2016-07-03 02:55
-Category: Privacy
+Category: Linux
 Tags: privacy, security, linux, gnu, ssh, free software, open source, ubuntu, exerbo, xubuntu
 Slug: yes-privacy-matters
 Authors: Romain Pellerin

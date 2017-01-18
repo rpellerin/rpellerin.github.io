@@ -1,6 +1,6 @@
 Title: Fonts, Typefaces And The History Of UTF-8
 Date: 2016-02-04 19:00
-Category: General
+Category: Computers
 Tags: font, typeface, utf8, unicode
 Slug: fonts-typefaces-and-the-history-of-utf-8
 Authors: Romain Pellerin

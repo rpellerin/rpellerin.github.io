@@ -7,17 +7,21 @@
 
 {% block content %}
 <header class="article">
-    <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+    <h1><a href="{{ SITEURL }}/">Romain <span class="bold">Pellerin</span>'s Blog</a></h1>
     <h2><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h2>
-    {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %}<span class="time"> - Last Update: </span><time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
     <p>{{ article.summary }}</p>
+    <div class="article-details">
+        {% if not HIDE_DATE %}<p><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}</p>{% endif %}
+        {% if article.category %}<p>Category: <a title="Go to the category" href="{{ SITEURL }}/{{article.category.url}}">{{ article.category }}</a></p>{% endif %}
+        {% if article.tags %}<p>Tags: {% for tag in article.tags %}<a title="Go to the tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+    </div>
 </header>
 <article>
     {{ article.content }}
 </article>
-<footer>
+<footer class="article-details">
     {% if not HIDE_DATE %}
-    Last update: <span class="time">{% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}</span>
+    Last update: {% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}
     {% endif %}
 </footer>
 {% endblock %}

@@ -1,7 +1,7 @@
 Title: Using Vim with SSH
 Date: 2016-10-19 03:35
 Category: Linux
-Tags: code, ssh, vim, terminal, vi
+Tags: ssh, vim, terminal, vi
 Slug: using-vim-with-ssh 
 Authors: Romain Pellerin
 Summary: How to edit and compile files on a remote server

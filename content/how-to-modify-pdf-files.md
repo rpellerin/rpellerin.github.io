@@ -1,7 +1,7 @@
 Title: How To Modify PDF Files
 Date: 2016-12-10 00:30
-Category: General
-Tags: PDF
+Category: Linux
+Tags: pdf, linux
 Slug: how-to-modify-pdf-files
 Authors: Romain Pellerin
 Summary: On to extract/edit/merge pages from one or several PDF files

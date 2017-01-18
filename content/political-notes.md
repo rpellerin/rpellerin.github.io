@@ -1,6 +1,6 @@
 Title: Political Notes 
 Date: 2017-01-10 00:50
-Category: General
+Category: Miscellaneous
 Tags: politics
 Slug: political-notes
 Authors: Romain Pellerin

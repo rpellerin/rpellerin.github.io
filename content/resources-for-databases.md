@@ -1,7 +1,7 @@
 Title: Resources For Databases
 Date: 2015-10-29 11:30
 Category: Databases
-Tags: database, sql, postgresql, mysql, pgsql, posgres, sqlite
+Tags: database, sql, postgresql, mysql, sqlite
 Slug: resources-for-databases
 Authors: Romain Pellerin
 Summary: Useful links when working with databases

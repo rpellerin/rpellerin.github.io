@@ -1,7 +1,7 @@
 Title: Hacking
 Date: 2016-01-18 23:00
-Category: Hacking
-Tags: hacking, kali, security, android, mitm
+Category: Linux
+Tags: hacking, kali, security, android, mitm, linux
 Slug: hacking
 Authors: Romain Pellerin
 Summary: A handful of useful commands about hacking

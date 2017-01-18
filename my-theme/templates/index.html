@@ -62,7 +62,7 @@
         <div id="article-list">
             <ul>
                 {% for category, articles in categories %}
-                    {%- if (category == 'What\'s bad about') or (category == 'Travels')%}
+                    {% if (category == 'What\'s bad about') or (category == 'Travels')%}
                         <li><strong><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></strong>:
                         {% for art in articles %}
                             <a href="{{ SITEURL }}/{{ art.url}}">{{ art.title }}</a>{% if not loop.last %},{% endif %}

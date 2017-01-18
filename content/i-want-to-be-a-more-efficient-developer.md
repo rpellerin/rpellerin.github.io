@@ -1,8 +1,8 @@
 Title: I Want To Be A More Efficient Developer
 Date: 2015-05-25 17:17
 Modified: 2016-01-09 19:45
-Category: General
-Tags: code, programming, startup, workflow, general, tools, learning, succeed
+Category: Miscellaneous
+Tags: code, workflow, learning, succeed
 Slug: i-want-to-be-a-more-efficient-developer
 Authors: Romain Pellerin
 Summary: A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam

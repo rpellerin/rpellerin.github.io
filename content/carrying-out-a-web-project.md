@@ -1,7 +1,7 @@
 Title: Carrying Out A Web Project
 Date: 2015-12-03 00:40
 Category: Code
-Tags: web, development, code, html, css, javascript
+Tags: web, code, html, css, javascript
 Slug: carrying-out-a-web-project
 Authors: Romain Pellerin
 Summary: Resources for web projects

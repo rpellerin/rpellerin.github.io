@@ -2,7 +2,7 @@ Title: Documentation
 Date: 2015-09-25 12:00
 Modified: 2015-10-21 23:43
 Category: Code
-Tags: code, documentation, development
+Tags: code, documentation
 Slug: documentation
 Authors: Romain Pellerin
 Summary: Resources related to documentation

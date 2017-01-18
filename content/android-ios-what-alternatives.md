@@ -1,6 +1,6 @@
 Title: Android, iOS: What Alternatives?
 Date: 2015-11-26 15:00
-Category: General
+Category: Miscellaneous
 Tags: mobile, android, ios, ubuntu, firefox
 Slug: android-ios-what-alternatives
 Authors: Romain Pellerin

@@ -2,7 +2,7 @@ Title: Continuous Integration
 Date: 2015-09-18 11:29
 Modified: 2016-01-09 18:30
 Category: Code
-Tags: code, development, tools, workflow, programming, git
+Tags: code, workflow, git
 Slug: continuous-integration
 Authors: Romain Pellerin
 Summary: Why you should embrace continuous integration and how

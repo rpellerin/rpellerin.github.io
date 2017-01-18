@@ -1,7 +1,7 @@
 Title: Machine Learning And AI
 Date: 2015-11-28 13:14
-Category: General
-Tags: ai, machine, learning, artificial, intelligence
+Category: Miscellaneous
+Tags: ai, machine learning, learning, artificial intelligence
 Slug: machine-learning-and-ai
 Authors: Romain Pellerin
 Summary: Resources about machine learning and AI

@@ -1,6 +1,6 @@
 Title: How To Give A Good Presentation
 Date: 2015-06-16 01:49
-Category: Presentations
+Category: Miscellaneous
 Tags: presentation, talk
 Slug: how-to-give-a-good-presentation
 Authors: Romain Pellerin

@@ -1,8 +1,8 @@
 Title: Tips For FFMPEG
 Date: 2016-02-21 21:30
 Modified: 2016-12-01 21:10
-Category: Software
-Tags: ffmpeg, software, linux, video
+Category: Linux
+Tags: ffmpeg, linux, video
 Slug: tips-for-ffmpeg
 Authors: Romain Pellerin
 Summary: A few tips with FFMPEG

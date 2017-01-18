@@ -1,7 +1,7 @@
 Title: Javascript
 Date: 2015-10-21 23:00
 Category: Code
-Tags: javascript, code, development, programming, web, computer
+Tags: javascript, code, web
 Slug: javascript
 Authors: Romain Pellerin
 Summary: Why Javascript is the new hotness

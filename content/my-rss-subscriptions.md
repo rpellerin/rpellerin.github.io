@@ -1,7 +1,7 @@
 Title: My RSS Subscriptions
 Date: 2016-12-18 23:00
 Category: About me
-Tags: news, RSS, feed, information 
+Tags: news, rss, feed 
 Slug: my-rss-subscriptions
 Authors: Romain Pellerin
 Summary: The RSS feeds I subscribed to.

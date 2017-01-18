@@ -9,9 +9,9 @@ a:hover {
 }
 
 img {
-  border: none;
-  max-width: 100%;
-  height: auto;
+    border: none;
+    max-width: 100%;
+    height: auto;
 }
 
 .center {
@@ -22,7 +22,7 @@ body, h1, h2, h3, p { /* reset */
     margin: 0;
 }
 
-h1 a, .h1 a {
+h1 a  {
     text-decoration: none;
 }
 
@@ -48,7 +48,7 @@ body {
     padding: 0 10px;
 }
 
-h1, .h1 {
+h1 {
     font-size: 2rem;
     font-weight: normal;
     line-height: 1; /* = font-size */
@@ -152,7 +152,7 @@ header.article p {
     color: grey;
 }
 
-time, .time {
+.article-details {
   color: grey;
   font-size: .7rem;
 }

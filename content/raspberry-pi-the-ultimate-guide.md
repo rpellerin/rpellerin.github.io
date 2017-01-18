@@ -2,7 +2,7 @@ Title: Raspberry Pi: The Ultimate Guide
 Date: 2016-07-10 05:11
 Modified: 2016-12-02 02:28
 Category: Linux
-Tags: raspberry pi, raspberry, linux, adminsys
+Tags: raspberry pi, linux, talk
 Slug: raspberry-pi-the-ultimate-guide
 Authors: Romain Pellerin
 Summary: A complete tutorial about how to create a home server using a Raspberry Pi

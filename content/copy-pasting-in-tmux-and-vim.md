@@ -1,7 +1,7 @@
 Title: Copy Pasting In Tmux And Vim
 Date: 2016-04-06 16:30
-Category: Software
-Tags: tmux, vi, vim, shell, linux, bash, zsh, terminal
+Category: Linux
+Tags: tmux, vi, vim, linux, terminal
 Slug: copy-pasting-in-tmux-and-vim
 Authors: Romain Pellerin
 Summary: How to copy and paste with Tmux and Vim

@@ -1,8 +1,8 @@
 Title: Git
 Date: 2015-06-03 00:01
 Modified: 2016-09-28 23:01
-Category: Software
-Tags: presentation, talk, slides, git
+Category: Linux
+Tags: presentation, talk, git
 Slug: git
 Authors: Romain Pellerin
 Summary: All about Git

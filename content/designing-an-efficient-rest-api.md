@@ -2,7 +2,7 @@ Title: Designing An Efficient REST API
 Date: 2015-09-24 18:00
 Modified: 2016-01-09 19:13
 Category: Code
-Tags: javascript, code, development, tools, api, http, programming, web, computer, rest, express, json, web
+Tags: javascript, code, api, http, rest, express, json, web
 Slug: designing-an-efficient-rest-api
 Authors: Romain Pellerin
 Summary: How to write beautiful and efficient REST APIs

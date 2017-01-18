@@ -1,7 +1,7 @@
 Title: Mastering GNU/Linux
 Date: 2016-02-02 00:50
 Category: Linux
-Tags: linux, ubuntu, xubuntu, posix, unix, gnu
+Tags: linux, ubuntu, xubuntu, debian, unix, gnu
 Slug: mastering-gnu-linux
 Authors: Romain Pellerin
 Summary: Everything you have ever wanted to know about GNU/Linux

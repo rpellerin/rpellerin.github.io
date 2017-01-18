@@ -2,7 +2,7 @@ Title: The TV series I watch
 Date: 2015-06-02 01:00
 Modified: 2016-11-14 14:18
 Category: About me
-Tags: TV, TV series
+Tags: televion, tv series
 Slug: the-tv-series-i-watch
 Authors: Romain Pellerin
 Summary: Some of the best TV series in the last decade

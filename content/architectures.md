@@ -1,6 +1,6 @@
 Title: Architectures
 Date: 2017-01-05 11:00
-Category: Software
+Category: Code
 Tags: networks, systems, infrastructure, architecture
 Slug: architectures
 Authors: Romain Pellerin

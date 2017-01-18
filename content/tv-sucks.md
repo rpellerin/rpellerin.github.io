@@ -1,7 +1,7 @@
 Title: TV Sucks
 Date: 2017-01-16 02:50
 Category: What's bad about
-Tags: tv, television
+Tags: television
 Slug: tv-sucks
 Authors: Romain Pellerin
 Summary: What I think of television
