@@ -22,6 +22,7 @@ img {
     height: auto;
 }
 
+abbr { border-bottom: 2px dotted #777; }
 figure { margin: 1rem 0; }
 figcaption { font-style: italic; }
 
