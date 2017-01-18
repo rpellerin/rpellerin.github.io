@@ -7,14 +7,8 @@ a {
     color: inherit;
     transition: all .1s;
 }
-
-a:hover {
-    color: gray;
-}
-
-a.no-underline {
-    text-decoration: none;
-}
+a:hover { color: gray; }
+a.no-underline { text-decoration: none; }
 
 img {
     border: none;
@@ -25,10 +19,7 @@ img {
 abbr { border-bottom: 2px dotted #777; }
 figure { margin: 1rem 0; }
 figcaption { font-style: italic; }
-
-html {
-    font-size: 18px;
-}
+html { font-size: 18px; }
 
 body {
     background-color: white;
@@ -37,40 +28,24 @@ body {
     font-size: 1rem;
 }
 
-body, h1, h2, h3, p { /* reset */
-    margin: 0;
-}
+body, h1, h2, h3, p { margin: 0; /* reset */ }
 
 h1, h2, h3 {
     margin: 20px 0;
     line-height: 1; /* = font-size */
 }
 
-h1 {
-    font-size: 2rem;
-}
+h1 { font-size: 2rem; }
 
 @media screen and (min-width: 700px) {
-    h1 {
-        margin: 40px 0;
-    }
+    h1 { margin: 40px 0; }
 }
 
-h2 {
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.2rem;
-}
-
-header, section, article {
-    margin-bottom: 40px;
-}
-
-p:not(:last-child) {
-    margin-bottom: 5px;
-}
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+header, section, article { margin-bottom: 40px; }
+nav { margin: 5px 0; } /* nav-blog.html */
+p:not(:last-child) { margin-bottom: 5px; }
 
 ul, ol {
     padding: 0; /* reset */
@@ -110,8 +85,6 @@ iframe {
   box-sizing: border-box; /* so that borders are inside */
 }
 
-nav { margin: 5px 0; } /* nav-blog.html */
-
 @media screen and (max-width: 819px) {
     iframe:not([src*="youtube"]) {
         display: none;
@@ -125,28 +98,28 @@ nav { margin: 5px 0; } /* nav-blog.html */
 /* Classes */
 /***********/
 .center { text-align: center; }
+.justify { text-align: justify; }
 .small { font-size: .75rem; }
+.weight-normal { font-weight: normal; }
 .indent { text-indent: 30px; }
 
-.right-underlined {
+.right-underlined { /* h2 titles in index */
     border-bottom: 2px solid black;
     text-align: right;
 }
 
-.flexbox-row {
+.flexbox-row { /* blog nav bar and blog menu in index */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.flexbox-row > * {
-    flex: 1 1 auto;
-}
+.flexbox-row > * { flex: 1 1 auto; } /* won't touch the left and right borders */
 
-/*******************/
-/* IDs or specific */
-/*******************/
+/***************************/
+/* IDs or specific or mess */
+/***************************/
 #wrapper {
     margin: auto;
     max-width: 100%;
@@ -186,6 +159,10 @@ header.article-header h1 {
 header.article-header p, .article-details {
     font-style: italic;
     color: grey;
+}
+
+@media screen and (min-width: 580px) {
+    nav.flexbox-row > * { flex: 0 1 auto; } /* will touch the borders */
 }
 
 @import url("pygment.css");
