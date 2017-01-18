@@ -5,6 +5,7 @@
 </header>
 {% if articles %}
     <h1>{% block h1 %}All posts{% endblock %}</h1>
+    {% block feeds %}{% endblock %}
     {% block list %}
     <section>
         <ol>
