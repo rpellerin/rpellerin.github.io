@@ -22,6 +22,8 @@ img {
     height: auto;
 }
 
+figcaption { font-style: italic; }
+
 html {
     font-size: 18px;
 }
