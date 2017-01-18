@@ -9,7 +9,7 @@
     {% for category, articles in categories %}
     <li>
         <strong><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></strong> ({{ articles|count }}):
-        {% for art in articles %}<a href="{{ art.url }}">{{ art.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        {% for art in articles|sort(attribute='title') %}<a href="{{ art.url }}">{{ art.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
     </li>
     {% endfor %}
     </ul>
