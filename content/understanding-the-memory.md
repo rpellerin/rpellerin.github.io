@@ -47,7 +47,9 @@ Here are some examples, to make things clear:
 
 To delete what is on the heap, you need to use the ```delete``` keyword.
 
-![Pointers and addresses]({filename}/images/memory_cpp_example.png)
+<figure class="center">
+<img alt="Pointers and addresses" src="{filename}/images/memory_cpp_example.png" />
+</figure>
 
 ## Java
 
