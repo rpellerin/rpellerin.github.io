@@ -6,14 +6,14 @@
 {% block description_social %}{{ article.summary|striptags }}{% endblock %}
 
 {% block content %}
-<header class="article">
-    <h1><a href="{{ SITEURL }}/">Romain <span class="bold">Pellerin</span>'s Blog</a></h1>
-    <h2><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h2>
+<header class="article-header center">
+    {% include 'nav-blog.html' %}
+    <h1>{{ article.title }}</h1>
     <p>{{ article.summary }}</p>
     <div class="article-details">
-        {% if not HIDE_DATE %}<p><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}</p>{% endif %}
-        {% if article.category %}<p>Category: <a title="Go to the category" href="{{ SITEURL }}/{{article.category.url}}">{{ article.category }}</a></p>{% endif %}
-        {% if article.tags %}<p>Tags: {% for tag in article.tags %}<a title="Go to the tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
+        {% if not HIDE_DATE %}<p class="small"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}</p>{% endif %}
+        {% if article.category %}<p class="small">Category: <a title="Go to the category" href="{{ SITEURL }}/{{article.category.url}}">{{ article.category }}</a></p>{% endif %}
+        {% if article.tags %}<p class="small">Tags: {% for tag in article.tags %}<a title="Go to the tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
     </div>
 </header>
 <article>

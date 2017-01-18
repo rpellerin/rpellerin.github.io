@@ -1,4 +1,8 @@
+/* THERE ARE A FEW TAGS WHICH HAVE A STYLE ATTRIBUTE DECLARED IN THIS TEMPLATE */
+
+/*********************************/
 /* General rules for common tags */
+/*********************************/
 a {
     color: inherit;
     transition: all .1s;
@@ -8,7 +12,7 @@ a:hover {
     color: gray;
 }
 
-h1 a, header.article a {
+a.no-underline {
     text-decoration: none;
 }
 
@@ -16,22 +20,6 @@ img {
     border: none;
     max-width: 100%;
     height: auto;
-}
-
-.center {
-    text-align: center;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-body, h1, h2, h3, p { /* reset */
-    margin: 0;
-}
-
-h1, h2, h3 {
-    margin: 20px 0;
 }
 
 html {
@@ -45,63 +33,65 @@ body {
     font-size: 1rem;
 }
 
-#wrapper {
-    margin: auto;
-    max-width: 100%;
-    padding: 0 10px;
+body, h1, h2, h3, p { /* reset */
+    margin: 0;
 }
 
-header h1 {
-    font-size: 2rem;
-    font-weight: normal;
+h1, h2, h3 {
+    margin: 20px 0;
     line-height: 1; /* = font-size */
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+    h1 {
+        margin: 40px 0;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
 }
 
 header, section, article {
     margin-bottom: 40px;
 }
 
-.me { /* div containing my photo */
-    width: 200px;
-    max-width: 100%;
-}
-
-.me img {
-    width: 200px;
-    height: 200px;
-}
-
 p:not(:last-child) {
     margin-bottom: 5px;
 }
 
-p[itemprop="description"] { /* short text next to my photo */
-    text-align: justify;
-}
-
-h2.index {
-    border-bottom: 2px solid black;
-    text-align: right;
-}
-
-ul {
+ul, ol {
     padding: 0; /* reset */
     padding-left: 50px;
-}
-
-li {
     margin: 10px 0;
 }
 
-#blog-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+li { margin: 7px 0; }
+li.no-bullet-point { list-style-type: none; }
+
+blockquote { /* quotes */
+    border-left: 1px solid #A5ABAB;
+    color: grey;
+    margin: 20px;
+    padding: 0 20px;
 }
 
-#blog-links a {
-    flex: 1 1 auto;
-    text-align: center;
+pre { /* code */
+    background-color: #f0f0f0;
+    font-family: Inconsolata, Monaco, monospace;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 footer {
@@ -111,80 +101,87 @@ footer {
     color: gray;
 }
 
-@media screen and (min-width: 220px) {
-    .me {
-        margin: 0 10px 0 0;
-        float: left;
+iframe {
+  max-width: 100%;
+  box-sizing: border-box; /* so that borders are inside */
+}
+
+nav { margin: 5px 0; } /* nav-blog.html */
+
+@media screen and (max-width: 819px) {
+    iframe:not([src*="youtube"]) {
+        display: none;
     }
+    iframe[src*="youtube"] {
+        height: 300px;
+    }
+}
+
+/***********/
+/* Classes */
+/***********/
+.center { text-align: center; }
+.small { font-size: .75rem; }
+.indent { text-indent: 30px; }
+
+.right-underlined {
+    border-bottom: 2px solid black;
+    text-align: right;
+}
+
+.flexbox-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flexbox-row > * {
+    flex: 1 1 auto;
+}
+
+/*******************/
+/* IDs or specific */
+/*******************/
+#wrapper {
+    margin: auto;
+    max-width: 100%;
+    padding: 0 10px;
 }
 
 @media screen and (min-width: 820px) {
     #wrapper {
         width: 800px;
     }
+}
 
-    h1 {
-        margin: 40px 0;
+img#index-photo {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 320px) {
+    img#index-photo {
+        margin: 0 10px 0 0;
+        float: left;
     }
 }
 
-/* Blog-specific rules */
-header.article {
-    text-align: center;
-}
-
-header.article h1 {
-    text-align: left;
-}
-
-header.article h2 {
-    font-size: 3.5rem;
+header.article-header h1 {
     text-transform: uppercase;
 }
 
-header.article p {
+@media screen and (min-width: 820px) {
+    header.article-header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+header.article-header p, .article-details {
     font-style: italic;
     color: grey;
-}
-
-.article-details {
-  color: grey;
-  font-size: .7rem;
-}
-
-blockquote {
-  border-left: 1px solid #A5ABAB;
-  margin: 0px;
-  padding: 0 12px 0 12px;
-}
-
-pre {
-  background-color: #fafafa;
-  font-family: Inconsolata, Monaco, monospace;
-  line-height: 1.2em;
-  font-size: 0.8rem;
-  overflow: auto;
-  padding: 10px;
-}
-
-#article-list ol li {
-  line-height: 1.2em;
-  list-style-type: none;
-  padding-bottom: 10px;
-}
-
-iframe {
-  max-width: 100%;
-  box-sizing: border-box; /* so that borders are inside */
-}
-
-@media screen and (max-width: 730px) {
-  iframe:not([src*="youtube"]) {
-    display: none;
-  }
-  #article-list ol {
-    padding: .5em 0em 1em 0em;
-  }
 }
 
 @import url("pygment.css");

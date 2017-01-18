@@ -4,17 +4,17 @@
 {% block content %}
 <div itemscope itemtype="http://schema.org/Person">
     <header>
-        <h1 itemprop="name">Romain <span class="bold">Pellerin</span></h1>
+        <h1 itemprop="name"><span style="font-weight: normal">Romain</span> Pellerin</h1>
     </header>
 
     <section>
-        <div class="me">
-            <img src="{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg"
-                 srcset="{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg 1x, {{ THEME_STATIC_DIR }}/img/romain_pellerin-2x.jpg 2x,
-                         {{ THEME_STATIC_DIR }}/img/romain_pellerin-3x.jpg 3x, {{ THEME_STATIC_DIR }}/img/romain_pellerin-4x.jpg 4x"
-                 alt="Photo of Romain" />
-        </div>
-        <p itemprop="description" >I am a Software Engineering student at the <a href="https://www.utc.fr/en.html" target="_blank" title="Also known as UTC">University of Technology of Compiègne (France)</a>. I usually spend my time programming or having fun in a terminal. In love with GNU/Linux and FOSS (Free Open Source Software). I also play the <a href="guitar/" title="My tabs" >guitar</a>. Here is a <a href="https://stallman.org/" target="_blank">gold mine</a> everyone claiming to be doing computer science should read.</p>
+        <img id="index-photo"
+             src="{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg"
+             alt="Photo of Romain"
+             srcset="{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg 1x, {{ THEME_STATIC_DIR }}/img/romain_pellerin-2x.jpg 2x,
+                    {{ THEME_STATIC_DIR }}/img/romain_pellerin-3x.jpg 3x, {{ THEME_STATIC_DIR }}/img/romain_pellerin-4x.jpg 4x"
+        />
+        <p itemprop="description" style="text-align: justify">I am a Software Engineering student at the <a href="https://www.utc.fr/en.html" target="_blank" title="Also known as UTC">University of Technology of Compiègne (France)</a>. I usually spend my time programming or having fun in a terminal. In love with GNU/Linux and FOSS (Free Open Source Software). I also play the <a href="guitar/" title="My tabs" >guitar</a>. Here is a <a href="https://stallman.org/" target="_blank">gold mine</a> everyone claiming to be doing computer science should read.</p>
 
         <p>Apart from computers, I am also interested in space exploration, AI and self-driving electric cars. I look forward to a future with a lot less pollution.</p>
 
@@ -26,7 +26,7 @@
     </section>
 
     <section>
-        <h2 class="index">I'M ONLINE</h2>
+        <h2 class="right-underlined">I'M ONLINE</h2>
         <h3>Code-related</h3>
         <ul>
             <li><strong><a href="https://github.com/rpellerin" title="My repositories" target="_blank" aria-hidden="true">GitHub</a></strong></li>
@@ -41,21 +41,21 @@
     </section>
 
     <section>
-    <h2 class="index">BLOG</h2>
+    <h2 class="right-underlined">BLOG</h2>
 
-    <div id="blog-links">
-        <a href="archives.html">Archives (all posts)</a>
-        <a href="categories.html">Categories</a>
-        <a href="tags.html">Tags</a>
-        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS feed</a>
-        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed</a>
+    <div class="flexbox-row">
+        <a class="center" href="{{ SITEURL }}/archives.html">Archives (all posts)</a>
+        <a class="center" href="{{ SITEURL }}/categories.html">Categories</a>
+        <a class="center" href="{{ SITEURL }}/tags.html">Tags</a>
+        <a class="center" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS feed</a>
+        <a class="center" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed</a>
     </div>
 
     {% if articles %}
         <h3>Latest articles</h3>
         <ol>
             {% for article in articles[:3] %}
-            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}<br /><em style="color: gray">{{ article.content|striptags|truncate(350) }}</em></li>
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time class="small article-details" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}<br /><p class="article-details indent">{{ article.content|striptags|truncate(350) }}</p></li>
             {% endfor %}
         </ol>
         <h3>Highlighted articles</h3>
@@ -78,7 +78,7 @@
     </section>
 
     <section >
-        <h2 class="index">CONTACT</h2>
+        <h2 class="right-underlined">CONTACT</h2>
         <p>I operate by <a target="_blank" href="http://sl4.org/crocker.html" title="Crocker's Rules">Crocker's Rules</a>. You can contact me on any of the above-mentioned websites, or using the following email address:</p>
         <div class="center" id="email">
             <script type="text/javascript" language="javascript">

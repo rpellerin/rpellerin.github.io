@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <header>
-    <h1>{% block h1 %}<a href="{{ SITEURL }}/">Romain <span class="bold">Pellerin</span>'s Blog</a>{% endblock h1 %}</h1>
-    <a href="{{ SITEURL }}/index.html" title="Homepage">Go to homepage</a>
+    {% include 'nav-blog.html' %}
 </header>
 {% if articles %}
-    <h2>{% block subtitle %}All posts{% endblock %}</h2>
+    <h1>{% block h1 %}All posts{% endblock %}</h1>
     {% block list %}
-    <section id="article-list">
+    <section>
         <ol>
             {% for article in articles %}
-                    <li>
-                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
+                    <li class="no-bullet-point">
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                        {% if not HIDE_DATE %}<time class="article-details small" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
+                        <p class="article-details indent">{{ article.summary|striptags }}</p>
                     </li>
             {% endfor %}
         </ol>
