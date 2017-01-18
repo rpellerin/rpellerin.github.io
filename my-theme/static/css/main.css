@@ -8,6 +8,10 @@ a:hover {
     color: gray;
 }
 
+h1 a, header.article a {
+    text-decoration: none;
+}
+
 img {
     border: none;
     max-width: 100%;
@@ -18,12 +22,12 @@ img {
     text-align: center;
 }
 
-body, h1, h2, h3, p { /* reset */
-    margin: 0;
+.bold {
+    font-weight: bold;
 }
 
-h1 a  {
-    text-decoration: none;
+body, h1, h2, h3, p { /* reset */
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -34,7 +38,6 @@ html {
     font-size: 18px;
 }
 
-/* Index-specific rules*/
 body {
     background-color: white;
     color: black;
@@ -48,14 +51,10 @@ body {
     padding: 0 10px;
 }
 
-h1 {
+header h1 {
     font-size: 2rem;
     font-weight: normal;
     line-height: 1; /* = font-size */
-}
-
-.bold {
-    font-weight: bold;
 }
 
 header, section, article {
@@ -141,10 +140,6 @@ header.article h1 {
 header.article h2 {
     font-size: 3.5rem;
     text-transform: uppercase;
-}
-
-header.article a {
-    text-decoration: none;
 }
 
 header.article p {
