@@ -2,6 +2,8 @@
 {% set description = article.summary|striptags %}
 {% extends "base.html" %}
 
+{% block additional_tags %}{% for tag in article.tags %}, {{ tag.name }}{% endfor %}{% endblock %}
+
 {% block content %}
 <header class="article-header center">
     {% include 'nav-blog.html' %}
