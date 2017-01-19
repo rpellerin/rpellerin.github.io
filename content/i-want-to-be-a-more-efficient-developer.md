@@ -128,3 +128,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Deep work in practice: reimagining my workflow for radically less distraction](https://alexdenning.com/deep-work-in-practice/)
 - [La revue de code bienveillante](http://gb-prod.fr/2016/12/01/la-revue-de-code-bienveillante.html)
 - [How I Write Tests](https://blog.nelhage.com/2016/12/how-i-test/)
+- [Why open offices are bad for us](http://www.bbc.com/capital/story/20170105-open-offices-are-damaging-our-memories)
