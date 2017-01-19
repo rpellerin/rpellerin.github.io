@@ -1,6 +1,7 @@
+{% if not title %}{% set title = AUTHOR %}{% endif %}
+{# Keep default description #}
 {% extends "base.html" %}
-{% block title %}{{ AUTHOR }}{% endblock %}
-{% block title_social %}{{ AUTHOR }}{% endblock %}
+
 {% block content %}
 <div itemscope itemtype="http://schema.org/Person">
     <header>

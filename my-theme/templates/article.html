@@ -1,9 +1,6 @@
+{% set title = article.title + ' - ' + SITENAME %}
+{% set description = article.summary|striptags %}
 {% extends "base.html" %}
-
-{% block title %}{{ article.title }} - {{ super() }}{% endblock %}
-{% block title_social %}{{ article.title }} - {{ super() }}{% endblock %}
-{% block description %}{{ article.summary|striptags }}{% endblock %}
-{% block description_social %}{{ article.summary|striptags }}{% endblock %}
 
 {% block content %}
 <header class="article-header center">

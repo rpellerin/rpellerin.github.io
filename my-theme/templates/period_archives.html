@@ -1,13 +1,13 @@
-{% extends "base.html" %}
-{% block content %}
-<section id="content" class="body">
-<h1>Archives for {{ period | reverse | join(' ') }}</h1>
+{% set articles = dates %}
+{% set h1 = "Archives for "+(period | reverse | join(' ')) %}
+{% set description = SITENAME + ': archives for '+(period | reverse | join(' ')) %}
+{% extends "archives.html" %}
 
-<dl>
-{% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-{% endfor %}
-</dl>
-</section>
-{% endblock %}
+{% block period %}
+    {% if (period|length) == 1 %}{# if we are displaying a year #}
+        <p>
+            Browse articles by month: {% for month, list in dates|groupby('date.month') %}<a href="{{ SITEURL }}/posts/{{ period[0] }}/{{ month }}/index.html">{{ list[0].date.strftime("%B") }}</a>{% if not loop.last %}, {% endif %}{% endfor %}<br />
+        </p>
+        <br />
+    {% endif %}
+{% endblock period %}

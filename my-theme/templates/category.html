@@ -1,8 +1,7 @@
+{% set h1 = 'Posts in the category \''+ category.name +'\'' %}
+{% set description = SITENAME + ': posts in the category \'' + category.name + '\'' %}
 {% extends "archives.html" %}
 
-{% block title %}{{ category }} - {{ SITENAME }}{% endblock %}
-{% block title_social %}{{ category }} - {{ SITENAME }}{% endblock %}
-{% block h1 %}All posts in the category '{{ category }}'{% endblock %}
 {% block feeds %}
     <p>Feeds for this category:
         <a class="center" href="{{ FEED_DOMAIN }}/feeds/categories/{{ category.slug }}/rss.xml">RSS</a> and

@@ -1,16 +1,14 @@
+{% set h1 = 'Cagories' %}
+{% set description = SITENAME + ': all the categories' %}
 {% extends "archives.html" %}
-
-{% block h1 %}Categories{% endblock %}
-{% block title %}Categories - {{ SITENAME }}{% endblock %}
-{% block title_social %}Categories - {{ SITENAME }}{% endblock %}
 
 {% block list %}
     <ul>
-    {% for category, articles in categories %}
-    <li>
-        <strong><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></strong> ({{ articles|count }}):
-        {% for art in articles|sort(attribute='title') %}<a href="{{ art.url }}">{{ art.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
-    </li>
+    {%- for category, articles in categories %}
+        <li>
+            <strong><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></strong> ({{ articles|count }}):
+            {% for art in articles|sort(attribute='title') %}<a href="{{ art.url }}">{{ art.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        </li>
     {% endfor %}
     </ul>
 {% endblock list %}

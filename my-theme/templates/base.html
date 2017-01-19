@@ -13,12 +13,12 @@
         <!-- Social media -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@romainpellerin" />
-        <meta name="description" content="{% block description %}{{ DESCRIPTION }}{% endblock %}" />
+        <meta name="description" content="{% if not description %}{% set description = DESCRIPTION %}{% endif %}{{ description }}" />
         <meta property="og:image" name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="{% block title_social %}{{ SITENAME }}{% endblock %}" />
-        <meta property="og:description" name="twitter:description" content="{% block description_social %}{{ DESCRIPTION }}{% endblock %}" />
+        <meta property="og:title" name="twitter:title" content="{% if not title %}{% set title = SITENAME %}{% endif %}{{ title }}" />
+        <meta property="og:description" name="twitter:description" content="{{ description }}" />
 
-        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <title>{{ title }}</title>
 
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />

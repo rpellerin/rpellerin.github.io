@@ -14,6 +14,9 @@ TIMEZONE = 'Europe/Paris'
 DEFAULT_LANG = u'en'
 LOCALE = "en_US.utf8"
 
+YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%-m}/index.html'
+
 # Feeds
 FEED_DOMAIN = '//romainpellerin.eu'
 
@@ -43,7 +46,7 @@ SOCIAL = (#('You can add links in your config file', '#'),
           #('Another social link', '#'),
          )
 
-DEFAULT_PAGINATION = 500
+DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

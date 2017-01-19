@@ -1,11 +1,24 @@
+{% if not h1 %}{% set h1 = 'All posts' %}{% endif %}
+{% if not title %}{% set title = h1 + ' - ' + SITENAME%}{% endif %}
+{% if not description %}{% set description = SITENAME + ': computer science, travels, etc.' %}{% endif %}
 {% extends "base.html" %}
 {% block content %}
 <header>
     {% include 'nav-blog.html' %}
 </header>
+<h1>{{ h1 }}</h1>
 {% if articles %}
-    <h1>{% block h1 %}All posts{% endblock %}</h1>
+    {% block period %}
+        {% if output_file == 'archives.html' %}
+            <p>
+                Browse articles by year: {% for year, list in articles|groupby('date.year') %}<a href="{{ SITEURL }}/posts/{{ year }}/index.html">{{ year }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+            </p>
+            <br />
+        {% endif %}
+    {% endblock period %}
+
     {% block feeds %}{% endblock %}
+
     {% block list %}
     <section>
         <ol>
@@ -17,7 +30,7 @@
                     </li>
             {% endfor %}
         </ol>
-    </section><!-- #article-list -->
+    </section>
     {% endblock list %}
 {% else %}
     No posts found.
