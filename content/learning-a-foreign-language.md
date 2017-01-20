@@ -158,3 +158,4 @@ I decided to gather here all the little things to know in English, which are not
 - [What is the difference between assessment and evaluation?](https://arc.duke.edu/documents/The%20difference%20between%20assessment%20and%20evaluation.pdf)
 - [Compelling versus appealing](http://forum.wordreference.com/threads/compelling-versus-appealing.3045836/)
 - [Grammar Girl : I.e. Versus E.g. :: Quick and Dirty Tips](http://www.quickanddirtytips.com/education/grammar/ie-versus-eg)
+- [When to use inadvertently instead of accidentally or unintentionally?](https://www.reddit.com/r/EnglishLearning/comments/4m44zl/when_to_use_inadvertently_instead_of_accidentally/)
