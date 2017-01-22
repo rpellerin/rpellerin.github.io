@@ -9,7 +9,7 @@ Summary: My exchange program in South Korea
 
 # *Update January 12, 2017*
 
-*During my stay in South Korea, we also went to Busan (we slept at [Kimchee Guesthouse](http://www.kimcheeguesthouse.com/busan) which I highly recommend). There, we went hiking in the moutain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world.*
+*During my stay in South Korea, we also went to Busan (we slept at [Kimchee Guesthouse](http://www.kimcheeguesthouse.com/busan) which I highly recommend). There, we went hiking in the mountain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world.*
 
 <figure class="center">
 <img src="{filename}/images/south-korea/changgyeonggung.jpg" alt="Changgyeonggung" />

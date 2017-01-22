@@ -61,6 +61,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Shell script analyzer](http://www.shellcheck.net/)
 - [Advancing in the Bash Shell](http://samrowe.com/wordpress/advancing-in-the-bash-shell/)
 - [Moving the terminal cursor](https://ddfreyne.github.io/til/2016/12-03-terminal-cursor-movement/)
+- [rm -rf remains](https://lambdaops.com/rm-rf-remains/)
 
 # Software
 
