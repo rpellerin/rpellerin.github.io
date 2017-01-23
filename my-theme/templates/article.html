@@ -8,8 +8,8 @@
 <header class="article-header center">
     {% include 'nav-blog.html' %}
     <h1>{{ article.title }}</h1>
-    <p class="italic grey">{{ article.summary|striptags }}</p>
     <div class="grey">
+        <p class="italic">{{ article.summary|striptags }}</p>
         <p class="small">
         {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
         </p>
