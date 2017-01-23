@@ -34,7 +34,7 @@
 <article>
     {{ article.content }}
 </article>
-<footer class="grey italic">
+<footer class="grey italic small">
     {% if not HIDE_DATE %}
     Last update: {% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}
     {% endif %}

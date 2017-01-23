@@ -7,6 +7,9 @@ a {
     color: inherit;
     transition: all .1s;
 }
+a[rel="bookmark"]:visited {
+    color: #551A8B;
+}
 a:hover { color: gray; }
 a.no-underline { text-decoration: none; }
 
@@ -44,6 +47,7 @@ h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.2rem; }
 header, section, article { margin-bottom: 40px; }
+article { line-height: 1.6rem; }
 nav { margin: 5px 0; } /* nav-blog.html */
 p:not(:last-child) { margin-bottom: 5px; }
 
@@ -76,7 +80,6 @@ pre { /* code */
 footer {
     border-top: 1px solid gray;
     padding: 20px 0;
-    font-size: 14px;
     color: gray;
 }
 
