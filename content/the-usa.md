@@ -5,6 +5,9 @@ Tags: travel, usa
 Slug: the-usa
 Authors: Romain Pellerin
 Summary: My advice about the USA
+Image: usa.jpg
+
+In 2016, I went to the US for the first time of my life. Here is a list of things I did and tips I gathered.
 
 # To know before getting there
 

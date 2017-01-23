@@ -5,6 +5,7 @@ Tags: travel, hong-kong, china
 Slug: hong-kong
 Authors: Romain Pellerin
 Summary: My advice about travelling to Hong-Kong
+Image: hk.jpg
 
 <iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/PEsLx0AJC2c?rel=0" frameborder="0" allowfullscreen></iframe>
 

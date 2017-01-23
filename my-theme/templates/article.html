@@ -8,7 +8,7 @@
 {% include 'nav-blog.html' %}
 <header class="article-header center">
     {% if article.image %}
-        <img src="{{ article.image }}" alt="Header picture" id="header-picture" />
+    <img src="images/{{ article.image }}" alt="Header picture" id="header-picture" />
     {% endif %}
     <p id="back-line" class="small grey"><span>
         {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}

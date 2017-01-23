@@ -1,14 +1,20 @@
 Title: Japan
 Date: 2017-01-04 01:00
+Modified: 2017-01-23 04:00
 Category: Travels
 Tags: travel, japan
 Slug: japan
 Authors: Romain Pellerin
 Summary: My trip to Japan
+Image: japan.jpg
 
 <iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/PxHEtFqoWr0?rel=0" frameborder="0" allowfullscreen></iframe>
 
-*The above is a video from my trip there, in late 2016.*
+*The above is a video from my trip there. If you can't play the video, <a href="https://www.youtube.com/watch?v=PxHEtFqoWr0" target="_blank">click here</a>.*
+
+<br />
+
+In late 2016/early 2017, three friends of mine and I went for the first time of our lifes to Japan. In this article, I explain a few things about this fabulous country and I tell our trip.
 
 # A few words that you will need
 
@@ -42,23 +48,23 @@ We had booked a comfortable [Airbnb](https://www.airbnb.com/rooms/9868312), very
 - Sanjūsangen-dō: an astonishing discovery
 - Kyoto Imperial Palace
 
-**Pro tip**: during one day, we rented bikes which allowed us to go around more easily for only a few euros (around 10€ per person if my memory serves me well).
+**Pro tip**: during one day, we rented bikes which allowed us to go around more easily for only a few euros (roughly 10€ per person if my memory serves me well).
 
-One evening, we went to a very nice bar, BAR ZAZAVIE (ザザビー). Great atmosphere, a bit expensive though. The one time we went there we were lucky enougth to witness a jazz music concert. Address: 67−3 Kitanoshimohakubaichō, 603-8326 Kyōto-fu, Kyōto-shi, Kita-ku. Another evening, we went to a great restaurant called Kushihachi. It has delicious sushis and the staff is friendly. Address: 33-1 Kitanokamihakubaichō, 603-8325 Kyōto-fu, Kyōto-shi, Kita-ku.
+One evening, we went to a very nice bar, BAR ZAZAVIE (ザザビー). Great atmosphere, a bit expensive though. The one time we went there we were lucky enough to witness a jazz music concert. Address: 67−3 Kitanoshimohakubaichō, 603-8326 Kyōto-fu, Kyōto-shi, Kita-ku. Another evening, we went to a great restaurant called Kushihachi. It has delicious sushis and the staff is friendly. Address: 33-1 Kitanokamihakubaichō, 603-8325 Kyōto-fu, Kyōto-shi, Kita-ku.
 
 Then, we left Kyoto and took a train for Nara. There we did the city in a day: Tōdai-ji, Nara Park, famous for its deer and Kasuga-taisha. At the end of the day, once again we took a night bus, for Tokyo this time.
 
 We spent some of the remaining days in a cosy [Airbnb](https://www.airbnb.fr/rooms/16377379), not too far from the Tokyo Skytree that we did a few days later. Here is a list of some of the places we visited:
 
-- Shibuya and its world–renowned crossing, which can be observed from the first floor of the Starbucks. Furthermore, Shibuya has a restaurant we enjoyed many times: Sushi-Nova: sushis served on conveyor belts, automatically; quite cheap (or at least very affordable). GPS coordinates of Sushi-Nova: 35.660140, 139.698121.
+- Shibuya and its world–renowned crossing, which can be observed from the first floor of the Starbucks. Furthermore, Shibuya has a restaurant we enjoyed many times, Sushi-Nova: sushis served on conveyor belts, automatically; quite cheap (or at least very affordable). GPS coordinates of Sushi-Nova: 35.660140, 139.698121.
 - Asakusa and the Sensō-ji temple: great area! If you get a chance to find a hotel or a Airbnb room there, go for it! It is very relaxing and quiet.
 - Ueno Park and its zoo (the zoo was closed though)
 - Yoyogi Park and Meiji Shrine
 - Two towers: as I wrote above, the Tokyo Skytree plus the Tokyo Tower (the one that almost looks like the Eiffel Tower)
 - Tsukiji Fish Market
 - Shinjuku
-- Roppongi: Maman (a giant spider sculpture). There's an observation deck at the top of the building next to the sculpture.
-- Akihabara
+- Roppongi: Maman (a giant spider sculpture). There's an observation deck at the top of the building next to the sculpture, if you're willing to pay (we weren't).
+- Akihabara: the video games/manga neighborhood
 
 Eventually, the last day we left Tokyo from Narita airport. The cheapest and most convenient way to reach that airport from downtown is by riding one of [THE ACCESS NARITA](http://accessnarita.jp/en/home/)'s buses.
 
@@ -67,5 +73,5 @@ Eventually, the last day we left Tokyo from Narita airport. The cheapest and mos
 - [Go kart in Tokyo](http://maricar.com/). Note that it requires a driving licence translated in Japanese (it costs a few euros).
 - The Shinkansen high-speed train
 - Hiroshima
-- Go closer to the Mount Fuji
+- Get a better view of the Mount Fuji (go closer?)
 - Witness sumo wrestling
