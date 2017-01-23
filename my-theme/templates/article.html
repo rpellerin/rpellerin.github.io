@@ -5,14 +5,17 @@
 {% block additional_tags %}{% for tag in article.tags %}, {{ tag.name }}{% endfor %}{% endblock %}
 
 {% block content %}
+{% include 'nav-blog.html' %}
 <header class="article-header center">
-    {% include 'nav-blog.html' %}
+    {% if article.image %}
+        <img src="{{ article.image }}" alt="Header picture" id="header-picture" />
+    {% endif %}
+    <p id="back-line" class="small grey"><span>
+        {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
+        </p>
     <h1>{{ article.title }}</h1>
     <div class="grey">
         <p class="italic">{{ article.summary|striptags }}</p>
-        <p class="small">
-        {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
-        </p>
         <p class="small">
         {# READING TIME #}
         {% set tmp1 = article.content|striptags %}
@@ -21,7 +24,7 @@
         {% for a in tmp2|reject('equalto', '') %}
             {% set count = count + 1 %}
             {% if loop.last %}
- &#128338; <span title="Based on 200 words per minute reading speed">{% if 1 > (count/200)|round|int %}Less than 1{% else %}{{ (count/200)|round|int }}{% endif %} min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of {{ count }} words.">{% if 1 > (count/200)|round|int %}Less than 1{% else %}{{ (count/200)|round|int }}{% endif %} min read</span>
             {% endif %}
         {% endfor %}
         {# article.content|striptags|wordcount #}

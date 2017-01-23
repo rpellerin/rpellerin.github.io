@@ -48,7 +48,7 @@ h2 { font-size: 1.5rem; }
 h3 { font-size: 1.2rem; }
 header, section, article { margin-bottom: 40px; }
 article { line-height: 1.6rem; }
-nav { margin: 5px 0; } /* nav-blog.html */
+nav { margin: 5px 0 40px 0; } /* nav-blog.html */
 p:not(:last-child) { margin-bottom: 5px; }
 
 ul, ol {
@@ -133,7 +133,7 @@ iframe {
 
 @media screen and (min-width: 820px) {
     #wrapper {
-        width: 800px;
+        width: 700px;
     }
 }
 
@@ -151,6 +151,12 @@ img#index-photo {
     }
 }
 
+img#header-picture {
+    width: 100%;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+}
+
 header.article-header h1 {
     text-transform: uppercase;
 }
@@ -163,6 +169,29 @@ header.article-header h1 {
 
 @media screen and (min-width: 580px) {
     nav.flexbox-row > * { flex: 0 1 auto; } /* will touch the borders */
+}
+
+#back-line {
+    position: relative;
+    z-index: 1;
+}
+
+#back-line:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+#back-line span {
+    background-color: white;
+    padding: 0 15px;
 }
 
 @import url("pygment.css");
