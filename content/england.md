@@ -5,6 +5,7 @@ Tags: travel, england, uk
 Slug: england
 Authors: Romain Pellerin
 Summary: My advice about England
+Image: england.jpg
 
 # Things to do in London
 
