@@ -10,7 +10,21 @@
     <h1>{{ article.title }}</h1>
     <p>{{ article.summary }}</p>
     <div class="article-details">
-        {% if not HIDE_DATE %}<p class="small"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}</p>{% endif %}
+        <p class="small">
+        {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
+        {# READING TIME #}
+        {% set tmp1 = article.content|striptags %}
+        {% set tmp2 =  tmp1.strip().split(' ') %}
+        {% set count = 0 %}
+        {% for a in tmp2|reject('equalto', '') %}
+            {% set count = count + 1 %}
+            {% if loop.last %}
+ &#xB7; <dfn title="Based on 200 words per minute reading speed">{{ (count/200)|round|int }} min read</dfn>
+            {% endif %}
+        {% endfor %}
+        {# article.content|striptags|wordcount #}
+        {# END READING TIME #}
+        </p>
         {% if article.category %}<p class="small">Category: <a title="Go to the category" href="{{ SITEURL }}/{{article.category.url}}">{{ article.category }}</a></p>{% endif %}
         {% if article.tags %}<p class="small">Tags: {% for tag in article.tags %}<a title="Go to the tag" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</p>{% endif %}
     </div>
@@ -23,21 +37,4 @@
     Last update: {% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}
     {% endif %}
 </footer>
-<script type="text/javascript">
-    {% set tmp1 = article.content|striptags %}
-    {% set tmp2 =  tmp1.strip().split(' ') %}
-    {% set count = 0 %}
-    {% for a in tmp2|reject('equalto', '') %}
-        {% set count = count + 1 %}
-        {% if loop.last %}
-            const listWordsLength = {{ count }};
-        {% endif %}
-    {% endfor %}
-    {# article.content|striptags|wordcount #}
-    {# const listWordsLength = "{{ article.content|striptags|e }}".trim().split(/\s+/).length; #}
-    const timeToRead = listWordsLength / 200;
-    const timeInt = Math.round(timeToRead);
-    const times = document.getElementsByTagName("time");
-    times[times.length - 1].innerHTML += " · <dfn title=\"Based on 200 words per minute reading speed\">" + timeInt + " min read</dfn>";
-</script>
 {% endblock %}
