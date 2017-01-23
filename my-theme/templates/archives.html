@@ -25,8 +25,8 @@
             {% for article in articles %}
                     <li class="no-bullet-point">
                         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-                        {% if not HIDE_DATE %}<time class="article-details small" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
-                        <p class="article-details indent">{{ article.summary|striptags }}</p>
+                        {% if not HIDE_DATE %}<time class="grey italic small" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}
+                        <p class="grey italic indent">{{ article.summary|striptags }}</p>
                     </li>
             {% endfor %}
         </ol>

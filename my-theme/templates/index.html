@@ -58,7 +58,7 @@
         <h3>Latest articles</h3>
         <ol>
             {% for article in articles[:3] %}
-            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time class="small article-details" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}<br /><p class="article-details indent">{{ article.content|striptags|truncate(350) }}</p></li>
+            <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time class="small grey italic" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}<br /><p class="grey italic indent">{{ article.content|striptags|truncate(350) }}</p></li>
             {% endfor %}
         </ol>
         <h3>Highlighted articles</h3>

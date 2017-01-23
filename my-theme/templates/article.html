@@ -8,10 +8,12 @@
 <header class="article-header center">
     {% include 'nav-blog.html' %}
     <h1>{{ article.title }}</h1>
-    <p>{{ article.summary }}</p>
-    <div class="article-details">
+    <p class="italic grey">{{ article.summary|striptags }}</p>
+    <div class="grey">
         <p class="small">
         {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
+        </p>
+        <p class="small">
         {# READING TIME #}
         {% set tmp1 = article.content|striptags %}
         {% set tmp2 =  tmp1.strip().split(' ') %}
@@ -19,7 +21,7 @@
         {% for a in tmp2|reject('equalto', '') %}
             {% set count = count + 1 %}
             {% if loop.last %}
- &#xB7; <dfn title="Based on 200 words per minute reading speed">{{ (count/200)|round|int }} min read</dfn>
+ &#128338; <span title="Based on 200 words per minute reading speed">{% if 1 > (count/200)|round|int %}Less than 1{% else %}{{ (count/200)|round|int }}{% endif %} min read</span>
             {% endif %}
         {% endfor %}
         {# article.content|striptags|wordcount #}
@@ -32,7 +34,7 @@
 <article>
     {{ article.content }}
 </article>
-<footer class="article-details">
+<footer class="grey italic">
     {% if not HIDE_DATE %}
     Last update: {% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}
     {% endif %}
