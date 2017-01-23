@@ -6,7 +6,7 @@ Slug: android-ios-what-alternatives
 Authors: Romain Pellerin
 Summary: What alternatives do we have to Android and iOS? How to install Firefox OS and Ubuntu for devices.
 
-As 2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.
+As      2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.
 
 ![Market share]({filename}/images/chart-ww-smartphone-os-market-share.png)
 

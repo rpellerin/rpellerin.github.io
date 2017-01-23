@@ -23,4 +23,21 @@
     Last update: {% if article.modified %}{{ article.locale_modified }}{% else %}{{ article.locale_date }}{% endif %}
     {% endif %}
 </footer>
+<script type="text/javascript">
+    {% set tmp1 = article.content|striptags %}
+    {% set tmp2 =  tmp1.strip().split(' ') %}
+    {% set count = 0 %}
+    {% for a in tmp2|reject('equalto', '') %}
+        {% set count = count + 1 %}
+        {% if loop.last %}
+            const listWordsLength = {{ count }};
+        {% endif %}
+    {% endfor %}
+    {# article.content|striptags|wordcount #}
+    {# const listWordsLength = "{{ article.content|striptags|e }}".trim().split(/\s+/).length; #}
+    const timeToRead = listWordsLength / 200;
+    const timeInt = Math.round(timeToRead);
+    const times = document.getElementsByTagName("time");
+    times[times.length - 1].innerHTML += " · <dfn title=\"Based on 200 words per minute reading speed\">" + timeInt + " min read</dfn>";
+</script>
 {% endblock %}
