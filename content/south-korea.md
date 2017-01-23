@@ -64,7 +64,7 @@ In August 2016, I landed in Seoul. With other people from my French school we sp
 - Some toilets are... confusing.
 
 <figure class="center">
-<img alt="A magic toilet" src={filename}/images/south-korea/toilet.jpg" />
+<img alt="A magic toilet" src="{filename}/images/south-korea/toilet.jpg" />
 </figure>
 
 # KAIST (Daejeon)
