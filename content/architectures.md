@@ -14,3 +14,4 @@ Summary: A bunch of resources about architectures
 
 - [How Twitter Handles 3,000 Images Per Second](http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html)
 - [An introduction to distributed systems](https://github.com/aphyr/distsys-class/blob/master/README.markdown)
+- [The Infrastructure Behind Twitter: Scale](https://blog.twitter.com/2017/the-infrastructure-behind-twitter-scale)
