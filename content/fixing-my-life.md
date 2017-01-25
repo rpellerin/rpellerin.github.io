@@ -59,3 +59,4 @@ Last but not least, here are my **New Year's Resolutions for 2017**:
 
 - [In 2017, learn every language](https://blog.bradfieldcs.com/in-2017-learn-every-language-59b11f68eee)
 - [How to Become a ‘Superager’](http://mobile.nytimes.com/2016/12/31/opinion/sunday/how-to-become-a-superager.html)
+- [How I quit my smartphone addiction and really started living](https://www.theguardian.com/technology/2016/feb/11/smartphone-technology-addiction-facebook-twitter)

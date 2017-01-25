@@ -68,6 +68,7 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 
 - The Hollywood sign and Hollywood boulevard
 - The Perch (a rooftop bar)
+- Homer Laughlin Building
 
 # Places to see in the Grand Canyon
 
