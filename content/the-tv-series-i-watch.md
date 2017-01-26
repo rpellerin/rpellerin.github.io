@@ -70,6 +70,3 @@ One of the best TV shows! About hacking, cyber security, democracy, and so on.
 # [Stranger Things](https://en.wikipedia.org/wiki/Stranger_Things_(TV_series))
 
 A great TV series produced by Netflix!
-
-
-What are yours?
