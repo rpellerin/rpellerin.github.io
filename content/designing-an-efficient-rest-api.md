@@ -559,3 +559,4 @@ Here is a little recap of everything above:
 - [[DevFest Nantes 2015] REST from zero to hero in 45 minutes](https://www.youtube.com/watch?v=_k60dxlMjZ4)
 - [JSON Web Tokens (JWT) vs Sessions](https://float-middle.com/json-web-tokens-jwt-vs-sessions/)
 - [JSON Web Tokens vs. Session Cookies: In Practice](https://ponyfoo.com/articles/json-web-tokens-vs-session-cookies)
+- [Everything you need to know about HTTP security headers](https://blog.appcanary.com/2017/http-security-headers.html)
