@@ -22,13 +22,18 @@ img {
 abbr { border-bottom: 2px dotted #777; }
 figure { margin: 1rem 0; }
 figcaption { font-style: italic; }
-html { font-size: 18px; }
+
+html {
+    /* 18px, https://blog.goetter.fr/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/ */
+    font-size: 1.125em; /* fallback IE8+ */
+    font-size: calc(1em * 1.125); /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+}
 
 body {
     background-color: white;
     color: black;
     font-family: "Times New Roman", Times, serif;
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 body, h1, h2, h3, p { margin: 0; /* reset */ }

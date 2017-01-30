@@ -18,6 +18,7 @@ Here are some resources.
 - [Pour une CSS simple et réutilisable](https://github.com/dhoko/Guidelines/blob/master/CSS-guidelines.md)
 - [CSS Values](http://cssvalues.com/): a good documentation about CSS properties
 - [Feuilles de styles CSS - Conseils et bonnes pratiques](http://guidecss.fr/)
+- [Mini Convention CSS](http://www.alsacreations.com/article/lire/1707-mini-convention-css.html)
 
 ## Centering
 
