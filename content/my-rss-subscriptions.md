@@ -36,7 +36,6 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [AdminRezo](http://blog.adminrezo.fr/feed/)
 - [Armin Ronacher's Thoughts and Writings](http://www.devtacular.com/utilities/atomtorss/?url=http%3a%2f%2flucumr.pocoo.org%2ffeed.atom)
 - [Blog - Susan J. Fowler](http://www.susanjfowler.com/blog?format=RSS)
-- [Clever Cloud Blog](https://www.clever-cloud.com/blog/feed.xml)
 - [Clément Delafargue - RSS feed](http://blog.clement.delafargue.name/atom.xml)
 - [De geek à directeur technique](http://www.geek-directeur-technique.com/feed)
 - [GBProd](http://gb-prod.fr/feed.xml)

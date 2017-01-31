@@ -27,6 +27,45 @@ So, what's the purpose of my trip there? Well, I will be interning at a French c
 
 In this article, I will explain and describes my daily life there. Hence, this article will be updated on a regular basis.
 
+# Places I want to visit/Things I want to do while I'm there
+
+## In San Francisco
+
+- Go see whales
+- A jazz club (likely to be [Madrone Art Bar](http://www.madroneartbar.com/))
+- Explore the golden gate park (especially the Japanese stuff)
+- Walk on the Golden Gate Bridge
+- Attend a baseball game
+- Go to a concert venue
+- Attend an ice hockey match
+- Chinatown
+- Japantown (although I already had a glance at it)
+- Union Square
+- Grand Hyatt (Love sign)
+- Twin Peaks
+- Mission Dolores Park
+- Baker Beack
+- Bernal Heights Park
+
+## Los Angeles
+
+- The pier which appeared in La La Land
+- The jazz clubs from La La Land
+- Long Beach
+- SpaceX (Hawthorne)
+- Malibu
+
+## Other
+
+- Yosemite National Park
+- Brice Canyon
+- Zion National Park
+- Sequoia National Forest
+
+# Cell phone plans
+
+Expensive!!! I think I'll go with MetroPCS since they have a $30 plan. So far the cheapeast I found with a decent amount of Internet data.
+
 # Housing
 
 - Best of all: [www.craigslist.com](http://www.craigslist.com/)
