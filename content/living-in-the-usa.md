@@ -57,6 +57,7 @@ In this article, I will explain and describes my daily life there. Hence, this a
 
 ## Other
 
+- Stanford University
 - Yosemite National Park
 - Brice Canyon
 - Zion National Park

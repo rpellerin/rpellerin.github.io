@@ -17,3 +17,4 @@ Summary: Resources about machine learning and AI
 - [Fizz Buzz in Tensorflow](http://joelgrus.com/2016/05/23/fizz-buzz-in-tensorflow/)
 - [The Non-Technical Guide to Machine Learning & Artificial Intelligence](https://medium.com/machine-learnings/a-humans-guide-to-machine-learning-e179f43b67a0)
 - [A complete daily plan for studying to become a machine learning engineer](https://github.com/ZuzooVn/machine-learning-for-software-engineers)
+- [Deep Learning Enables You to Hide Screen when Your Boss is Approaching](http://ahogrammer.com/2016/11/15/deep-learning-enables-you-to-hide-screen-when-your-boss-is-approaching/)
