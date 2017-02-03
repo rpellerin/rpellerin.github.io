@@ -112,3 +112,4 @@ On Linux, if you have `imagemagick` installed, do:
 - [OpenSearch](http://www.opensearch.org/Home)
 - [De la gestion de projet à la gestion de workflow](http://www.geek-directeur-technique.com/2016/08/24/de-la-gestion-de-projet-a-la-gestion-de-workflow)
 - [WebSocketd – Faites communiquer vos pages web avec vos outils en ligne de commande](http://korben.info/websocketd-communiquer-vos-pages-web-vos-outils-ligne-de-commande.html)
+- [Front-End Developer Handbook 2017](https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details)
