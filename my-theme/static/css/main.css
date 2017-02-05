@@ -52,9 +52,13 @@ h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.2rem; }
 header, section, article { margin-bottom: 40px; }
-article { line-height: 1.6rem; }
 nav { margin: 5px 0 40px 0; } /* nav-blog.html */
 p:not(:last-child) { margin-bottom: 5px; }
+
+article {
+    line-height: 1.6rem;
+    overflow-wrap: break-word;
+}
 
 ul, ol {
     padding: 0; /* reset */
