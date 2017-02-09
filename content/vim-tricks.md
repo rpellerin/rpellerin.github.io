@@ -55,3 +55,4 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 
 - [Vim Cheat Sheet](https://vim.rtorr.com/)
 - [Vimgifs](https://vimgifs.com/)
+- [Vim Navigation Commands: sequences you have no excuse not to know](http://danielallendeutsch.com/blog/2-vim-navigation-commands.html)
