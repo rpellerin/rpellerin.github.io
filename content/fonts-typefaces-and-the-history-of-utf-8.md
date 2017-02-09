@@ -101,3 +101,4 @@ That's it about Unicode and UTF-8! Hope it was useful.
 # Further reading
 
 - [UTF-8 Everywhere](http://utf8everywhere.org/)
+- [La maison des horreurs de l’encoding](http://sametmax.com/la-maison-des-horreurs-de-lencoding/)

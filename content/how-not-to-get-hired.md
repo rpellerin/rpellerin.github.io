@@ -83,3 +83,6 @@ Good luck!
 - [Google's "Director of Engineering" Hiring Test](http://www.gwan.com/blog/20160405.html)
 - [So you think you know C?](https://hackernoon.com/so-you-think-you-know-c-8d4e2cd6f6a6)
 - [You Are Not Paid to Write Code](http://bravenewgeek.com/you-are-not-paid-to-write-code/)
+- [Always Get/Give Interview Feedback, It Matters](http://cultureofdevelopment.com/blog/always-give-interview-feedback/)
+- [Interviews: what I'm thinking while I'm interviewing you](http://cultureofdevelopment.com/blog/interviews-what-im-thinking-while-im-interviewing-you/)
+- [The Guerrilla Guide to Interviewing (version 3.0)](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)

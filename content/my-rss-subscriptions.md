@@ -42,6 +42,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Git Attitude](http://www.git-attitude.fr/feed/)
 - [GuiGui's show](http://www.guiguishow.info/feed/)
 - [Informatique – David Mercereau](http://www.mercereau.info/categorie/informatique/feed/)
+- [Joel on Software](https://www.joelonsoftware.com/feed/)
 - [K33G_ORG's blog](http://feeds.feedburner.com/K33g_orgsBlog?format=xml)
 - [Korben](http://korben.info/feed)
 - [L'ingénu-ingénieur](http://ingenuingenieur.blog.lemonde.fr/feed/)
