@@ -55,6 +55,7 @@ Another article listing some resources, about Javascript this time.
 - [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/)
 - [Start your own JavaScript library using webpack and ES6](http://krasimirtsonev.com/blog/article/javascript-library-starter-using-webpack-es6)
 - [Livedown](https://github.com/shime/livedown)
+- [Sequelize: a promise-based ORM for Node.js (PostgreSQL, MySQL, MariaDB, SQLite and MSSQL)](http://docs.sequelizejs.com/en/v3/) + [Epilogue: create flexible REST endpoints and controllers from Sequelize models in your Express app](https://github.com/dchester/epilogue)
 
 # Closures
 
@@ -64,8 +65,3 @@ In loops, they are a common issue. Here is how to solve it:
 
 - [Before ECMAScript 6 (double closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [After ECMAScript 6 (the let keyword)](http://www.sitepoint.com/preparing-ecmascript-6-let-const/)
-
-# Web assembly / ASM.js
-
-- [Execute millions of SQL statements in milliseconds in the browser with WebAssembly and Web Workers.](https://hackernoon.com/execute-millions-of-sql-statements-in-milliseconds-in-the-browser-with-webassembly-and-web-workers-3e0b25c3f1a6)
-- [asm.js](http://asmjs.org/)
