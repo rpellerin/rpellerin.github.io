@@ -210,7 +210,6 @@ Filename encryption might require another last command to be run, if your conten
 - [What every Browser knows about you](https://twitter.com/HTeuMeuLeu/status/719489886265454592)
 - [Panopticlick - Is your browser safe against tracking?](https://panopticlick.eff.org/)
 - [Am I Unique?](https://amiunique.org/)
-- [Why you shouldn’t share links on Facebook](https://medium.com/@intideceukelaire/why-you-shouldnt-share-links-on-facebook-f317ba4aa58b)
 - [Should you encrypt or compress first?](http://blog.appcanary.com/2016/encrypt-or-compress.html)
 - [Protect your Documents with GPG](http://www.linux-magazine.com/Online/Features/Protect-your-Documents-with-GPG)
 - [Yes, You Have Something to Fear](https://stallman.org/articles/why-fear-surveillance.html)
@@ -222,3 +221,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Shared lists of problem domains people may want to block with hosts files](https://github.com/jmdugan/blocklists)
 - [Tout ce que votre navigateur peut balancer sur vous](http://korben.info/tout-ce-que-votre-navigateur-peut-balancer-sur-vous.html)
 - [Paramétrage de Firefox](http://sebsauvage.net/wiki/doku.php?id=firefox)
+- [“I have nothing to hide. Why should I care about my privacy?”](https://medium.com/@FabioAEsteves/i-have-nothing-to-hide-why-should-i-care-about-my-privacy-f488281b8f1d)

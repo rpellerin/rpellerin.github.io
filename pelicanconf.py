@@ -57,6 +57,7 @@ THEME = "./my-theme"
 STATIC_PATHS = ['extra', 'images', 'videos', 'guitar']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/privacy-policy.html': {'path': 'privacy-policy.html'},
     'extra/CNAME': {'path': 'CNAME'}
 }
 
