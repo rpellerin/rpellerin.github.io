@@ -7,8 +7,6 @@ Authors: Romain Pellerin
 Summary: My life in the USA since I moved there in January 2017.
 Image: living-usa.jpg
 
-*This is a draft article.*
-
 **Friday, January 27, 2017**: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!
 
 <figure class="center">
@@ -28,6 +26,8 @@ So, what's the purpose of my trip there? Well, I will be interning at a French c
 In this article, I will explain and describes my daily life there. Hence, this article will be updated on a regular basis.
 
 # Places I want to visit/Things I want to do while I'm there
+
+First, I want to take advantage of being in California to travel a bit and expand my knowledge of the American culture. So, I'd like to do and see:
 
 ## In San Francisco
 
@@ -63,19 +63,37 @@ In this article, I will explain and describes my daily life there. Hence, this a
 - Zion National Park
 - Sequoia National Forest
 
+<br />
+
+Let us now talk about my first few days on the American soil.
+
 # Cell phone plans
 
-Expensive!!! I think I'll go with MetroPCS since they have a $30 plan. So far the cheapeast I found with a decent amount of Internet data.
+When I started looking for cell phone plans, I quickly realized how expensive they are here in the US. There are basically four big companies driving the market (known as the Big Four), namely T-Mobile, Verizon, AT&T and Sprint. Appart from them, there are dozens of MVNOs operating on the Big Four's networks. Note that in America, there are different kind of technlogies in use. The two most common ones are CDMA and GSM. In Europe, the huge majority of people rely on GSM. However, phones are nowadays compatible with both technologies (at least the newest phones).
+
+At first, I wanted to go with MetroPCS, an MVNO which uses T-Mobile as a host network. I wasn't entirely sure my phone would work with CDMA, and since MetroPCS (and T-Mobile) are based on GSM, it sounded like a good plan. Plus they have a $30 plan with everything unlimited (including data at 3G speed) and 3GB of 4G. Decent. Turned out that, for some reason, my phone did not detect their SIM card so I ended up with T-Mobile and a $40 plan which offers pretty much the same features.
+
+Compared to my 20€ all unlimited plan with 50GB of 4G, back in France, well that's damn expensive.
 
 # Housing
 
-- Best of all: [www.craigslist.com](http://www.craigslist.com/)
-- [www.easyroommate.com](http://www.easyroommate.com/)
+Not as bad as it is in Amsterdam (in 2015 I had to find a place there, a total disaster) but yet quite complicated. I found my room on [www.craigslist.com](http://www.craigslist.com/), which I would definitely recommend. I read somewhere that [www.easyroommate.com](http://www.easyroommate.com/) is not bad either.
+
+Luckily, my appointment to see the room was on the day following my arrival, so I was able to move in that very same day.
 
 # Bedding
 
-A hassle. To be continued... Will talk about sizes (King, Queen, Full, etc.), vocabulary, differences with France.
+However, my "landlord" could not provide me with bed sheets. He however suggested that I go to ROSS to get some, since they are fairly cheap there. I had a hard time figuring out how bed sheet sizes work in the US. I learned the hard way that they go by weird names: King, Queen, Full to name a few.
+
+![Bed sizes](https://www.mattresscloseouts.com/media/catalog/category/mattress-size_1.png)
+
+Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance *drap housse* translates to *fitted sheet*, that's good to know!
 
 # Grocery shopping
 
-To be written. Will talk about: too many choices. Target, pharmacies (confusing btw), Trader Joe's, taxes, California Refund Value.
+Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have acutal supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
+
+<br />
+<br />
+
+That's it for now. Stay tuned!
