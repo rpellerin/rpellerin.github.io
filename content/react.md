@@ -68,7 +68,13 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Building a cross-platform desktop app with NW.js, React & Flux](https://meetfinch.com/blog/cross-platform-app-nwjs-react-flux)
 - [Universal React](https://24ways.org/2015/universal-react)
 - [React.js Best Practices for 2016](https://blog.risingstack.com/react-js-best-practices-for-2016/)
+- [React Lessons - Screencast Video Tutorials @eggheadio](https://egghead.io/technologies/react)
+- [React Cheat Sheet](http://reactcheatsheet.com/)
 
 ## About Babel
 
 - [Babel Handbook](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md)
+
+## About Redux
+
+- [A cartoon intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6)

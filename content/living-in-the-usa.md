@@ -89,6 +89,12 @@ However, my "landlord" could not provide me with bed sheets. He however suggeste
 
 Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance *drap housse* translates to *fitted sheet*, that's good to know!
 
+# Banking
+
+In the US, they have not only banks but also credit unions. Confusing at first, I googled the difference. I think I'll choose a credit union to get an account.
+
+Essentially, a credit union is non-profit, so it has lower fees.
+
 # Grocery shopping
 
 Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have acutal supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.

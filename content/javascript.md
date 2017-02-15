@@ -35,7 +35,7 @@ Another article listing some resources, about Javascript this time.
 - [JavaScript: an acceptable use of double-equals? Just.](http://blog.boyet.com/blog/javascriptlessons/javascript-an-acceptable-use-of-double-equals-just/)
 - [Un gros Troll de plus sur Javascript](http://sametmax.com/un-gros-troll-de-plus-sur-javacscript/)
 - [Some really good best practices from Airbnb](https://github.com/airbnb/javascript)
-- [[DevFest Nantes 2015] Découvrir ES6 par le code](https://www.youtube.com/watch?v=7XZWqF2aHuI)
+- [DevFest Nantes 2015 - Découvrir ES6 par le code](https://www.youtube.com/watch?v=7XZWqF2aHuI)
 - [Top 10 ES6 Features Every Busy JavaScript Developer Must Know](http://webapplog.com/es6/)
 - [ES6/ES2015 en 24 jours](http://putaindecode.io/fr/evenements/2015/calendrier-avent/)
 - [Must See JavaScript Dev Tools That Put Other Dev Tools to Shame](https://medium.com/javascript-scene/must-see-javascript-dev-tools-that-put-other-dev-tools-to-shame-aca6d3e3d925)
@@ -44,6 +44,7 @@ Another article listing some resources, about Javascript this time.
 - [INTRODUCING QUEUES IN NODE.JS](http://blog.yld.io/2016/05/10/introducing-queues/)
 - [https://github.com/k33g/files/tree/master/javascript](https://github.com/k33g/files/tree/master/javascript)
 - [ES6 const is not about immutability](https://mathiasbynens.be/notes/es6-const)
+- [ECMAScript 2017: the final feature set](http://www.2ality.com/2016/02/ecmascript-2017.html)
 
 # Some cool node/npm stuff/packages/tools
 

@@ -51,6 +51,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [TechMeUp » TechMeUp](http://techmeup.co/rss)
 - [Yegor Bugayenko](http://www.yegor256.com/rss)
 - [niKopiK](http://feeds.feedburner.com/Nikopik)
+- [②ality – JavaScript and more](http://feeds.feedburner.com/2ality?format=xml)
 
 # Security
 
