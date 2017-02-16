@@ -8,7 +8,7 @@ Authors: Romain Pellerin
 Summary: My trip to Japan
 Image: japan.jpg
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/PxHEtFqoWr0?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/PxHEtFqoWr0?rel=0" frameborder="0" allowfullscreen></iframe>
 
 *The above is a video from my trip there. If you can't play the video, <a href="https://www.youtube.com/watch?v=PxHEtFqoWr0" target="_blank">click here</a>.*
 

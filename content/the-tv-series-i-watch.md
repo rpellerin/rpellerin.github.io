@@ -29,7 +29,7 @@ An interesting analyze of our modern society.
 
 A hilarious sitcom about a group of geeks founding a startup company. Extremely funny!
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # [Westworld](https://en.wikipedia.org/wiki/Westworld_(TV_series))
 
@@ -55,7 +55,7 @@ An Irish-Canadian historical drama television series. Everything goes fast, whic
 
 A spin-off of Breaking Bad: same ambiance, a must-see!
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/9q4qzYrHVmI?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9q4qzYrHVmI?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # [Revolution](http://en.wikipedia.org/wiki/Revolution_%28TV_series%29)
 
@@ -65,7 +65,7 @@ Another post-apocalyptic science fiction TV series where there is no electricity
 
 One of the best TV shows! About hacking, cyber security, democracy, and so on.
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # [Stranger Things](https://en.wikipedia.org/wiki/Stranger_Things_(TV_series))
 

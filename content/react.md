@@ -57,7 +57,7 @@ That's all for now. This article is likely to be updated in a near future, stay 
 
 PS: a friend of mine also gave a talk last year, at our school, about React. He was an avant-gardist ;-)
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # Futher reading
 

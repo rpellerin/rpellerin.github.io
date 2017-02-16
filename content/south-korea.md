@@ -12,7 +12,7 @@ Image: korea.jpg
 
 *During my stay in South Korea, we also went to Busan (we slept at [Kimchee Guesthouse](http://www.kimcheeguesthouse.com/busan) which I highly recommend). There, we went hiking in the mountain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world.*
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/lR4kRSw062Q?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/lR4kRSw062Q?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <figure class="center">
 <img src="{filename}/images/south-korea/changgyeonggung.jpg" alt="Changgyeonggung" />

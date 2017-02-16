@@ -1010,9 +1010,9 @@ Consider buying an [uninterruptible power supply (UPS) for your Raspberry to pre
 
 A year ago, I gave a talk at [HumanTalks Compiègne](http://humantalks.com/cities/compiegne) about my Raspberry Pi. Here are the video and the slides.
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="800" height="640" src="http://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
+<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
 
 [Slides are available in HTML](http://romainpellerin.eu/slides/self-hosting/slides.html).
 

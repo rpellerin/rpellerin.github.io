@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: My advice about travelling to Hong-Kong
 Image: hk.jpg
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/PEsLx0AJC2c?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/PEsLx0AJC2c?rel=0" frameborder="0" allowfullscreen></iframe>
 
 The above is a video from my trip in Hong-Kong, in 2016. We stayed at [Oi Suen Guesthouse](https://www.tripadvisor.com/Hotel_Review-g294217-d1648655-Reviews-Oi_Suen_Guesthouse-Hong_Kong.html), located at 83 Argyle Street (8th Floor).
 

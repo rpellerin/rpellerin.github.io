@@ -96,7 +96,7 @@ There's no frontier to knowledge, embrace a foreign language right now :-)
 
 [Here is a really good blog to go even further with foreign languages.](http://rawlangs.com/blog/) And the guy who owns the blog also gives talks sometimes, here is one from him, about reading comprehension:
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/xgQZfS_BMVo?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/xgQZfS_BMVo?rel=0" frameborder="0" allowfullscreen></iframe>
 
 To conclude, try to [read this](http://www.thepoke.co.uk/2011/12/23/english-pronunciation/). Good luck!
 
