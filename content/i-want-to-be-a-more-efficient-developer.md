@@ -131,3 +131,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Why open offices are bad for us](http://www.bbc.com/capital/story/20170105-open-offices-are-damaging-our-memories)
 - [Introduction aux structures algébriques](https://derniercri.io/tech-blog/structure-algebriques-introduction)
 - [Normes utiles](http://www.geek-directeur-technique.com/2017/02/08/normes-utiles)
+- [General Coding Guidelines: Clean Code From Day 1](https://medium.com/trisfera/general-coding-guidelines-clean-code-from-day-1-9ab0804e5d91)
