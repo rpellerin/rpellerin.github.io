@@ -51,6 +51,8 @@ To delete what is on the heap, you need to use the ```delete``` keyword.
 <img alt="Pointers and addresses" src="{filename}/images/memory_cpp_example.png" />
 </figure>
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen></iframe>
+
 ## Java
 
 The main difference is that objects on the heap are automatically destroyed by the garbage collector, once they are no longer referenced. Moreover, only primitives are on the stack. All the objects are allocated on the heap. However, references (which are addresses) are passed as arguments to functions on the stack.
