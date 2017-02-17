@@ -1,5 +1,6 @@
 Title: Understanding The Memory
 Date: 2015-06-26 01:11
+Modified: 2017-02-16 23:44
 Category: Computers
 Tags: code, computer, memory
 Slug: understanding-the-memory
@@ -19,6 +20,61 @@ Basically, when a program is launched, the operating system grants it a certain 
 - **Heap**: contains all dynamically allocated primitive data types or objects (with ```malloc``` in C or ```new``` in C++, for instance). The developer is in charge of the lifetime of these variables, he has to explicitly deallocate memory (with ```free``` in C or ```delete``` in C++).
 - **Stack**: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. **Stack values only exist within the scope of the function they are created in.**
 
+<figure class="center">
+<img src="{filename}/images/memory-stack.jpg" alt="The stack" />
+<figcaption>Image taken from <a href="http://www.linuxjournal.com/article/6391">http://www.linuxjournal.com/article/6391</a></figcaption>
+</figure>
+
+    :::c
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int main() {
+        int c = add(1,2);
+        return 0;
+    }
+
+Let's see how this code gets compiled in x86 assembly.
+
+    :::bash
+    gcc -S -masm=intel main.c -fno-asynchronous-unwind-tables -o output.asm
+
+Now, we'll see the instructions using the stack.
+
+    :::assembly
+        .file	"main.c"
+        .intel_syntax noprefix
+        .text
+        .globl	add
+        .type	add, @function
+    add:
+        push	rbp
+        mov	rbp, rsp
+        mov	DWORD PTR [rbp-4], edi
+        mov	DWORD PTR [rbp-8], esi
+        mov	edx, DWORD PTR [rbp-4]
+        mov	eax, DWORD PTR [rbp-8]
+        add	eax, edx
+        pop	rbp
+        ret
+        .size	add, .-add
+        .globl	main
+        .type	main, @function
+    main:
+        push	rbp
+        mov	rbp, rsp
+        sub	rsp, 16
+        mov	esi, 2
+        mov	edi, 1
+        call	add
+        mov	DWORD PTR [rbp-4], eax
+        mov	eax, 0
+        leave
+        ret
+        .size	main, .-main
+        .ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609"
+        .section    .note.GNU-stack,"",@progbits
 
 Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.
 
