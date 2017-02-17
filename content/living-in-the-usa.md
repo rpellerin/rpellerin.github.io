@@ -85,7 +85,10 @@ Luckily, my appointment to see the room was on the day following my arrival, so 
 
 However, my "landlord" could not provide me with bed sheets. He however suggested that I go to ROSS to get some, since they are fairly cheap there. I had a hard time figuring out how bed sheet sizes work in the US. I learned the hard way that they go by weird names: King, Queen, Full to name a few.
 
-![Bed sizes](https://www.mattresscloseouts.com/media/catalog/category/mattress-size_1.png)
+<figure class="center">
+    <img src="{filename}/images/living-usa/mattress-size.png" alt="Mattress sizes" />
+    <figcaption>Taken from <a href="https://www.mattresscloseouts.com/mattresses/mattresses-by-size/queen.html">this website</a></figcaption>
+</figure>
 
 Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance *drap housse* translates to *fitted sheet*, that's good to know!
 
