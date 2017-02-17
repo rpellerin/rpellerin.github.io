@@ -71,6 +71,6 @@ Use my [conf file](https://github.com/rpellerin/dotfiles/blob/master/.tmux.conf)
 
 Hope this was helpful.
 
-# Going further with Vim
+# Going further 
 
-- [Vim anti-patterns](https://sanctum.geek.nz/arabesque/vim-anti-patterns/)
+- [vim + tmux - OMG!Code](https://www.youtube.com/watch?v=5r6yzFEXajQ)
