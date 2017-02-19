@@ -54,6 +54,7 @@ h3 { font-size: 1.2rem; }
 header, section, article { margin-bottom: 40px; }
 nav { margin: 5px 0 40px 0; } /* nav-blog.html */
 p:not(:last-child) { margin-bottom: 5px; }
+article p:not(:last-child) { margin-bottom: 15px; }
 
 article {
     line-height: 1.6rem;

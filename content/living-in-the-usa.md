@@ -100,9 +100,8 @@ Essentially, a credit union is non-profit, so it has lower fees.
 
 # Grocery shopping
 
-Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have acutal supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
+Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have actual supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
 
-<br />
 <br />
 
 That's it for now. Stay tuned!

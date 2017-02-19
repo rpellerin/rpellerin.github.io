@@ -15,7 +15,7 @@ Below is a video of these two days.
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Qpw-btGnWt4?rel=0" frameborder="0" allowfullscreen></iframe>
 
-This resort is extremely pricey. If my memory serves me, it was $120 for ski rental (for 2 days). Plus $135 per day to get a lift ticket (so $270 for 2 days). But the view from the top is breathtaking.
+This resort is extremely pricey. It was $144.72 (tax incl.) for ski rental (for 2 days). Plus $135 per day to get a lift ticket (so $270 for 2 days). But the view from the top is breathtaking.
 
 One noticeable difference with the French Alps is that ski runs are quite short, at most 15 minutes. At the end of the day, you've spent 1/3 of your time on a chairlift.
 
