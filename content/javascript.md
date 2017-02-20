@@ -66,3 +66,7 @@ In loops, they are a common issue. Here is how to solve it:
 
 - [Before ECMAScript 6 (double closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [After ECMAScript 6 (the let keyword)](http://www.sitepoint.com/preparing-ecmascript-6-let-const/)
+
+# Testing
+
+- [Karma](https://karma-runner.github.io/1.0/index.html) with [Jasmine](https://jasmine.github.io/)

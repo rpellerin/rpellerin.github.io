@@ -4,7 +4,7 @@ Category: Travels
 Tags: travel, hong-kong, china
 Slug: hong-kong
 Authors: Romain Pellerin
-Summary: My advice about travelling to Hong-Kong
+Summary: My advice about traveling to Hong-Kong
 Image: hk.jpg
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/PEsLx0AJC2c?rel=0" frameborder="0" allowfullscreen></iframe>
