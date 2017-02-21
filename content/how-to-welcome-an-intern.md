@@ -8,7 +8,7 @@ Summary: Internships are great opportunities to learn. Let's make both parties -
 
 Sould I ever hire an intern, this is a note to my future self.
 
-I started a new internship two weeks ago and I felt very welcomed. Just like home. My boss made my few first days much more enjoyable by making my life easier. To sum it up, I was provided with:
+I started a new internship two weeks ago and I felt very welcomed. Just like home. My boss made my first few days much more enjoyable by making my life easier. To sum it up, I was provided with:
 
 - A place to sleep on the first day
 - Food
