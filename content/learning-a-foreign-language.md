@@ -160,3 +160,4 @@ I decided to gather here all the little things to know in English, which are not
 - [Grammar Girl : I.e. Versus E.g. :: Quick and Dirty Tips](http://www.quickanddirtytips.com/education/grammar/ie-versus-eg)
 - [When to use inadvertently instead of accidentally or unintentionally?](https://www.reddit.com/r/EnglishLearning/comments/4m44zl/when_to_use_inadvertently_instead_of_accidentally/)
 - [fill in, fill out, and fill up](https://forum.wordreference.com/threads/fill-in-fill-out-and-fill-up.1453182/)
+- [aim at / aim to](https://forum.wordreference.com/threads/aim-at-aim-to.77502/)
