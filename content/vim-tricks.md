@@ -64,3 +64,4 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 - [SnipMate](https://github.com/garbas/vim-snipmate)
 - [Auto closing an HTML tag](http://vim.wikia.com/wiki/Auto_closing_an_HTML_tag)
 - [What is the best JavaScript (programming language) setup with Vim (text editor)?](https://www.quora.com/What-is-the-best-JavaScript-programming-language-setup-with-Vim-text-editor)
+- [Vimcasts](http://vimcasts.org/)

@@ -53,7 +53,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Linux file system hierarchy v2.0](https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/)
 - [Understanding /proc](https://fredrb.github.io/2016/10/01/Understanding-proc/)
 
-# Shell
+# Shells & Terminals
 
 - [What are the special dollar sign shell variables?](http://stackoverflow.com/questions/5163144/what-are-the-special-dollar-sign-shell-variables/5163260#5163260)
 - [How to use double or single bracket, parentheses, curly braces](http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces)
@@ -62,6 +62,9 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Advancing in the Bash Shell](http://samrowe.com/wordpress/advancing-in-the-bash-shell/)
 - [Moving the terminal cursor](https://ddfreyne.github.io/til/2016/12-03-terminal-cursor-movement/)
 - [rm -rf remains](https://lambdaops.com/rm-rf-remains/)
+- [The annoying alternate screen in vte-based terminal applications](http://blog.guntram.de/?p=164)
+- [st - a simple terminal implementation for X](http://st.suckless.org/)
+- [Write your own terminal emulator](https://vincent.bernat.im/en/blog/2017-write-own-terminal)
 
 # Software
 
