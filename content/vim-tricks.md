@@ -65,3 +65,7 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 - [Auto closing an HTML tag](http://vim.wikia.com/wiki/Auto_closing_an_HTML_tag)
 - [What is the best JavaScript (programming language) setup with Vim (text editor)?](https://www.quora.com/What-is-the-best-JavaScript-programming-language-setup-with-Vim-text-editor)
 - [Vimcasts](http://vimcasts.org/)
+- [Here is why vim uses the hjkl keys as arrow keys](http://www.catonmat.net/blog/why-vim-uses-hjkl-as-arrow-keys/)
+- [Your First Vim Plugin](https://www.youtube.com/watch?v=lwD8G1P52Sk)
+- [vim + tmux - OMG!Code](https://www.youtube.com/watch?v=5r6yzFEXajQ)
+- [What is your most productive shortcut with Vim?](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim)

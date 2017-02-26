@@ -70,7 +70,3 @@ Use my [conf file](https://github.com/rpellerin/dotfiles/blob/master/.tmux.conf)
 * You can also use the shortcuts shown above in *Pasting in Tmux* (first bullet point).
 
 Hope this was helpful.
-
-# Going further 
-
-- [vim + tmux - OMG!Code](https://www.youtube.com/watch?v=5r6yzFEXajQ)
