@@ -69,3 +69,4 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 - [Your First Vim Plugin](https://www.youtube.com/watch?v=lwD8G1P52Sk)
 - [vim + tmux - OMG!Code](https://www.youtube.com/watch?v=5r6yzFEXajQ)
 - [What is your most productive shortcut with Vim?](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim)
+- [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles)
