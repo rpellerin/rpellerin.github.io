@@ -1,5 +1,6 @@
 Title: Living In The USA
 Date: 2017-01-30 16:55
+Modified: 2017-02-27 22:55
 Category: Miscellaneous
 Tags: housing, usa, living
 Slug: living-in-the-usa
@@ -98,9 +99,13 @@ In the US, they have not only banks but also credit unions. Confusing at first, 
 
 Essentially, a credit union is non-profit, so it has lower fees.
 
+*Edit:* yay I just got my first american debit card! Out of all the credit unions available in San Francisco, I picked Redwood Credit Union. They don't charge any fees as long as I maintain a balance of $75 on my savings account, and I can withdraw money from "other" ATMS three times a month for free. That's perfect for me! They also offer online banking for free... but their website is like 10 years old. Not user-friendly whatsoever. But I don't mind :)
+
 # Grocery shopping
 
 Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have actual supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
+
+*Edit:* I went to Trader Joe's a couple of times. [I really like it](http://gaelleinlosangeles.com/passion-trader-joes/). I think I'll stick with it.
 
 <br />
 

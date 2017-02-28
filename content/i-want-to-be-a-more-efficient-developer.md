@@ -134,3 +134,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [General Coding Guidelines: Clean Code From Day 1](https://medium.com/trisfera/general-coding-guidelines-clean-code-from-day-1-9ab0804e5d91)
 - [GUIDE D’HYGIÈNE INFORMATIQUE](https://www.ssi.gouv.fr/uploads/2017/01/guide_hygiene_informatique_anssi.pdf)
 - [My recent journey with 2FA](https://chown.me/blog/my-recent-journey-with-2FA.html)
+- [What Can I Do For Mozilla?](https://whatcanidoformozilla.org)
