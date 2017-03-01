@@ -52,6 +52,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Yegor Bugayenko](http://www.yegor256.com/rss)
 - [niKopiK](http://feeds.feedburner.com/Nikopik)
 - [②ality – JavaScript and more](http://feeds.feedburner.com/2ality?format=xml)
+- [Mozilla Hacks – the Web developer blog](https://hacks.mozilla.org/feed/)
 
 # Security
 

@@ -33,6 +33,8 @@ First, I want to take advantage of being in California to travel a bit and expan
 ## In San Francisco
 
 - Go see whales
+- Alcatraz
+- Coit Tower
 - A jazz club (likely to be [Madrone Art Bar](http://www.madroneartbar.com/))
 - Explore the golden gate park (especially the Japanese stuff)
 - Walk on the Golden Gate Bridge
@@ -55,6 +57,13 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Long Beach
 - SpaceX (Hawthorne)
 - Malibu
+- Griffith Observatory
+- Santa Monica (go to the pier)
+
+## Las Vegas
+
+- High Roller
+- The Roller Coaster (New York-New York Hotel)
 
 ## Other
 
@@ -101,6 +110,14 @@ Essentially, a credit union is non-profit, so it has lower fees.
 
 *Edit:* yay I just got my first american debit card! Out of all the credit unions available in San Francisco, I picked Redwood Credit Union. They don't charge any fees as long as I maintain a balance of $75 on my savings account, and I can withdraw money from "other" ATMS three times a month for free. That's perfect for me! They also offer online banking for free... but their website is like 10 years old. Not user-friendly whatsoever. But I don't mind :)
 
+# Taxes in the US
+
+It is still a total mystery to me. Apparently, most people pay too much taxes and they can get back a part of it, at the beginning of each year. Below are a few links giving more details about that:
+
+- [Bien remplir son W-4](http://gaelleinlosangeles.com/bien-remplir-w-4/)
+- [Préparer son tax return](http://gaelleinlosangeles.com/preparer-son-tax-return/)
+- [Faire son tax return](http://gaelleinlosangeles.com/faire-son-tax-return/)
+
 # Grocery shopping
 
 Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have actual supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
@@ -110,3 +127,10 @@ Finally, one needs to know that shopping is insane here in America. They have dr
 <br />
 
 That's it for now. Stay tuned!
+
+# Complementary information
+
+- [Transfert d’argent](http://gaelleinlosangeles.com/transfert-dargent/)
+- [Différences insolites France / Etats Unis](http://gaelleinlosangeles.com/differences-insolites-france-etats-unis/)
+- [Les différences France / Etats-Unis, Part II](http://gaelleinlosangeles.com/les-differences-france-etats-unis-part-ii/)
+- [To-Do List](http://gaelleinlosangeles.com/to-do-list/)

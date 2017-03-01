@@ -10,7 +10,7 @@ In this article, I explain and sum up everything one needs to know to apply for 
 
 # Visa
 
-Getting a J-1 visa for the US is a quite long process. First and foremost, a sponsor is required. The most popular sponsor of J-1 visa programs is undoubtedly [CIEE](https://www.ciee.org/), a non-profit organization.
+Getting a J-1 visa for the US is a quite [long process](http://gaelleinlosangeles.com/demarches-visa-j1/). First and foremost, a sponsor is required. The most popular sponsor of J-1 visa programs is undoubtedly [CIEE](https://www.ciee.org/), a non-profit organization. But there are [others](http://gaelleinlosangeles.com/visa-j1-choix-sponsor/).
 
 CIEE has many partners throughout the world. A good one in France is [Parenthèse](http://www.parenthese-paris.com/). It is the one I decided to go with, since my internship company is used to working with them.
 
