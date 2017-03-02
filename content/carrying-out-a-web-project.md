@@ -36,6 +36,10 @@ Here are some resources.
 
 - [Can I Use](http://caniuse.com/)
 
+# Testing
+
+- [Doubling Down on Cross-Browser Testing](https://hacks.mozilla.org/2017/03/doubling-down-on-cross-browser-testing/)
+
 # Finalizing
 
 - [Web Developer Checklist](http://webdevchecklist.com/)
