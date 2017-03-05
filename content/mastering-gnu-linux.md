@@ -106,3 +106,4 @@ Everything you have ever wanted to know about GNU/Linux.
 # Other
 
 - [Operating System: From 0 to 1](https://tuhdo.github.io/os01/)
+- [xmonad + vimperator](https://mobile.twitter.com/clementd/status/837600575483179009)
