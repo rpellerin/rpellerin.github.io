@@ -134,6 +134,11 @@ Finally, here are two photos taken in Daejeon.
 
 - Buy a T-money card, it works in almost every city for buses, subway and trains. Most convenience stores are open 24/7 (7-eleven stores are almost everywhere).
 
+# Things I wish I had visited
+
+- Nami Island
+- Petite France
+
 # Useful links
 
 - [cycling and traffic in Korea: Laws?](https://www.reddit.com/r/korea/comments/2l7pqm/cycling_and_traffic_in_korea_laws/)
