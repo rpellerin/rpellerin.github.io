@@ -1,6 +1,6 @@
 Title: The TV series I watch
 Date: 2015-06-02 01:00
-Modified: 2016-11-14 14:18
+Modified: 2017-03-06 23:45
 Category: About me
 Tags: televion, tv series
 Slug: the-tv-series-i-watch
@@ -70,3 +70,11 @@ One of the best TV shows! About hacking, cyber security, democracy, and so on.
 # [Stranger Things](https://en.wikipedia.org/wiki/Stranger_Things_(TV_series))
 
 A great TV series produced by Netflix!
+
+# [Legion](https://en.wikipedia.org/wiki/Legion_(TV_series))
+
+A Marvel super hero.
+
+# [Sun Records](https://en.wikipedia.org/wiki/Sun_Records_(TV_series))
+
+# Music!
