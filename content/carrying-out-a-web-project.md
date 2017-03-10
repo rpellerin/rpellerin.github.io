@@ -54,6 +54,7 @@ Here are some resources.
 - [Why isn't HTTPS everywhere yet?](http://webappsec-test.info/~bhill2/DifferentTakeOnOE.html)
 - [Cipherli.st - Strong Ciphers for Apache, nginx and Lighttpd](https://cipherli.st/)
 - [Rouler en classe A avec Apache](https://blog.adminrezo.fr/2016/12/securiser-serveur-apache-https-headers/)
+- [Installer et activer HTTP2 sur Apache2](https://korben.info/installter-activer-http2-apache2.html)
 
 ## Formatting / minimizing / indentation / compressing
 
