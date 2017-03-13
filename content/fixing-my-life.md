@@ -15,7 +15,7 @@ I have spent the last few months trying to "fix my life". To put it differently,
 - **Exercice at least 30mins per day**: not always doable. At KAIST, I am fortunate enough to have a gym right next to my dorm.
 - **Eat healthy food in moderate quantities (not too much, not too little)**: not easily doable at KAIST. Ultimately, I'd like to become **[a vegetarian](https://www.youtube.com/watch?v=KriTQ0aTrtw)**.
 - **Stop using electronic devices at least 1 hour before going to sleep**: this is important in order to sleep well. Screens are known to prevent you from falling asleep.
-- **Every hour of sitting, stand up for a few minutes**: [more info](http://drcrystaldraper.com/wp-content/uploads/2014/01/The-Health-Hazards-of-Sitting-Washington-Post.jpg).
+- **Every hour of sitting, stand up for a few minutes**: [more info](http://www.everythingsouthcity.com/wp-content/uploads/2014/01/Sitting-page-001.jpg).
 
 # Culture
 
