@@ -35,7 +35,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Go see whales
 - Alcatraz
 - Coit Tower
-- A jazz club (likely to be [Madrone Art Bar](http://www.madroneartbar.com/))
+- <s>A jazz club (I went to Mr. Tipple's Recording Studio)</s>
 - Explore the golden gate park (especially the Japanese stuff)
 - Walk on the Golden Gate Bridge
 - Attend a baseball game

@@ -52,8 +52,7 @@ Last but not least, here are my **New Year's Resolutions for 2017**:
 - Read more
 - Play another musical instrument
 - Learn Dutch and Spanish
-- Learn how to dance Rock and Roll.
-- Go to a comedy club and jazz bars in New York City and San Francisco
+- Learn how to dance Rock and Roll or salsa or swing.
 
 # Further reading
 
