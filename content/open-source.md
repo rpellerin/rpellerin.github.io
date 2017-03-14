@@ -14,6 +14,8 @@ Here are a bunch of links for open source project maintainers/creators:
 - [Coveralls](https://coveralls.io/)
 - [Sauce Labs](https://saucelabs.com/open-source)
 - [Travis CI](https://travis-ci.org/)
+- [CircleCI](https://circleci.com/)
+- [Codeship](https://codeship.com/)
 
 # Miscellaneous
 

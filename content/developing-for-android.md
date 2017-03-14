@@ -8,6 +8,10 @@ Summary: Resources for Android development
 
 Here are some useful resources for Android development.
 
+# Internationalization
+
+- [Internationalizing an Android app](http://jeremie-martinez.com/2017/03/13/i18n-good-practices/)
+
 # Design
 
 - [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/)
@@ -41,6 +45,16 @@ Here are some useful resources for Android development.
 - [Free iPhone Mockup Generator & App Demo Videos by Placeit](https://placeit.net/)
 - [Device Art Generator](http://developer.android.com/distribute/tools/promote/device-art.html)
 - [Android App Publishing Checklist](https://www.opoloo.com/blog/articles/android-app-publishing-checklist--2)
+
+# Testing
+
+- [No more excuses, Android testing is possible](http://jeremie-martinez.com/2015/04/17/tests-android/)
+- [3 unit tests to avoid bad surprises on Android](http://jeremie-martinez.com/2016/02/16/unit-tests/)
+
+# Continuous Integration
+
+- [Use GoCD for Android and get rid of Jenkins](http://jeremie-martinez.com/2016/04/19/gocd-android/)
+- [DevOps on Android: From one Git push to production](http://jeremie-martinez.com/2016/01/14/devops-on-android/)
 
 # Further reading
 
