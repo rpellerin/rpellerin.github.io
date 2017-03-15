@@ -1,23 +1,88 @@
-Title: Javascript
+Title: JavaScript
 Date: 2015-10-21 23:00
+Modified: 2017-03-14 22:00
 Category: Code
-Tags: javascript, code, web
+Tags: javascript, code, web, node
 Slug: javascript
 Authors: Romain Pellerin
 Summary: Why Javascript is the new hotness
 
-Another article listing some resources, about Javascript this time.
+# A word on ESlint
 
-# Set-up your environment
+ESlint is probably the most popular linter for JavaScript. It is also very convenient and benefits from a large community. That is why I use it.
+
+When I started using, I got confused by two different things: [shareable configs](http://eslint.org/docs/developer-guide/shareable-configs) and [plugins](http://eslint.org/docs/developer-guide/working-with-plugins). This [thread](https://groups.google.com/forum/#!topic/eslint/ttZUG3v7vn0) explains the difference between the two quite well. Here is my version:
+
+> Plugins are like function definitions (a set of custom rules). Configs are like actual calls to thoses functions (pre-defined configuration of rules - like whether they're enabled or not, and how they are configured).
+
+# How to start a new JavaScript project ?
+
+If it is a simple project or a NPM package, I recommend having two distinct folders: `src` for sources and `dist` for builds.
+
+1. Now, do:
+
+        :::bash
+        git init
+        git add remote origin ... # If need be
+        npm init
+        yarn add --dev babel-cli babel-preset-es2015
+        yarn add --dev eslint
+        yarn add --dev eslint-config-standard \
+                       eslint-plugin-standard \
+                       eslint-plugin-promise \
+                       eslint-plugin-import \
+                       eslint-plugin-node
+
+    We use `babel` to transpile our code, to better support old versions of NodeJS.
+    
+    Regarding the last line, the config [eslint-config-standard](https://github.com/feross/eslint-config-standard) sets the configuration of these four plugins: `standard`, `promise`, `import` and `node`. That is why we need to install them alongside the shareable config. Of course it is a config for `eslint`, that is why we installed it on the previous line.
+
+2. Do:
+
+        :::bash
+        yarn add prettier-eslint-cli
+
+    Normally, [`prettier-eslint`](https://github.com/prettier/prettier-eslint) only operates on strings, not on files. `prettier-eslint-cli` will provide you with a command to apply `prettier-eslint` on files.
+
+    **What is `prettier-eslint` meant for?** Well, under the hood it calls [`prettier`](https://github.com/prettier) (probably the best JavaScript formatter to date) and then `eslint --fix` to format your code. Twice. But there's [a reason for that](https://github.com/prettier/prettier-eslint#the-problem).
+
+    Now we need to configure `eslint` to tell it to use standard as its style.
+
+3. To use the standard style with ESlint, create `.eslint` in the root directory of your project and write:
+
+        :::text
+        {
+            "extends": "standard"
+        }
+
+4. Add a badge to your `README.md`: [badge.fury.io/for/js](https://badge.fury.io/for/js)
+5. Configure `package.json`:
+
+        :::json
+        ...,
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+            "format": "prettier-eslint \"src/*.js\"",
+            "lint": "eslint src",
+            "check": "npm run lint && npm run test"
+        },
+        ...
+
+All set!
+
+# Resources
+
+## Set-up your environment
 
 - [Getting Started with ESLint](http://eslint.org/docs/user-guide/getting-started)
 
-# Documentation
+## Documentation
 
 - [JSDoc](http://usejsdoc.org/index.html)
 - [JSDuck](https://github.com/senchalabs/jsduck)
 
-# General
+## General
 
 - [Clean Code concepts adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
 - [The Linux Foundation Unites JavaScript Community for Open Web Development](https://js.foundation/announcements/2016/10/17/Linux-Foundation-Unites-JavaScript-Community-Open-Web-Development/)
@@ -46,7 +111,7 @@ Another article listing some resources, about Javascript this time.
 - [ES6 const is not about immutability](https://mathiasbynens.be/notes/es6-const)
 - [ECMAScript 2017: the final feature set](http://www.2ality.com/2016/02/ecmascript-2017.html)
 
-# Some cool node/npm stuff/packages/tools
+## Some cool node/npm stuff/packages/tools
 
 - [How to Become a Better Node.js Developer in 2016](https://blog.risingstack.com/how-to-become-a-better-node-js-developer-in-2016/)
 - [10 Habits of a Happy Node Hacker (2016)](http://blog.heroku.com/archives/2015/11/10/node-habits-2016)
@@ -58,7 +123,7 @@ Another article listing some resources, about Javascript this time.
 - [Livedown](https://github.com/shime/livedown)
 - [Sequelize: a promise-based ORM for Node.js (PostgreSQL, MySQL, MariaDB, SQLite and MSSQL)](http://docs.sequelizejs.com/en/v3/) + [Epilogue: create flexible REST endpoints and controllers from Sequelize models in your Express app](https://github.com/dchester/epilogue)
 
-# Closures
+## Closures
 
 - [Closures are not magic](http://renderedtext.com/blog/2015/11/18/closures-are-not-magic/)
 
@@ -67,6 +132,6 @@ In loops, they are a common issue. Here is how to solve it:
 - [Before ECMAScript 6 (double closures)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [After ECMAScript 6 (the let keyword)](http://www.sitepoint.com/preparing-ecmascript-6-let-const/)
 
-# Testing
+## Testing
 
-- [Karma](https://karma-runner.github.io/1.0/index.html) with [Jasmine](https://jasmine.github.io/)
+- [Karma](https://karma-runner.github.io/1.0/index.html) with [Jasmine](https://jasmine.github.io/) (**edit March 14, 2017: I'd rather recommend going with Jest instead of Jasmine. Karma is different from Jest or Jasmine, it runs tests within web browsers, whereas plain Jasmine/Jest use Nodejs**)

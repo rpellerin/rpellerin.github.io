@@ -16,6 +16,8 @@ Here are a bunch of links for open source project maintainers/creators:
 - [Travis CI](https://travis-ci.org/)
 - [CircleCI](https://circleci.com/)
 - [Codeship](https://codeship.com/)
+- [bitHound: Node.js code and npm analysis for your team](https://www.bithound.io/)
+- [Gemnasium](https://gemnasium.com/)
 
 # Miscellaneous
 
