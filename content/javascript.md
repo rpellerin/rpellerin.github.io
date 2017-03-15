@@ -15,7 +15,7 @@ When I started using, I got confused by two different things: [shareable configs
 
 > Plugins are like function definitions (a set of custom rules). Configs are like actual calls to thoses functions (pre-defined configuration of rules - like whether they're enabled or not, and how they are configured).
 
-# How to start a new JavaScript project ?
+# How to start a new JavaScript project?
 
 If it is a simple project or a NPM package, I recommend having two distinct folders: `src` for sources and `dist` for builds.
 
