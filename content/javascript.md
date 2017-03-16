@@ -110,6 +110,7 @@ All set!
 - [https://github.com/k33g/files/tree/master/javascript](https://github.com/k33g/files/tree/master/javascript)
 - [ES6 const is not about immutability](https://mathiasbynens.be/notes/es6-const)
 - [ECMAScript 2017: the final feature set](http://www.2ality.com/2016/02/ecmascript-2017.html)
+- [Emojis in Javascript](https://medium.com/@thekevinscott/emojis-in-javascript-f693d0eb79fb)
 
 ## Some cool node/npm stuff/packages/tools
 
