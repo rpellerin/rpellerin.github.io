@@ -136,3 +136,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [My recent journey with 2FA](https://chown.me/blog/my-recent-journey-with-2FA.html)
 - [What Can I Do For Mozilla?](https://whatcanidoformozilla.org)
 - [Top mentioned books on stackoverflow.com](http://www.dev-books.com/)
+- [Principles for C programming](https://drewdevault.com/2017/03/15/How-I-learned-to-stop-worrying-and-love-C.html)

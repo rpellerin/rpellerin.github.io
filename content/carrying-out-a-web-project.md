@@ -39,6 +39,7 @@ Here are some resources.
 # Testing
 
 - [Doubling Down on Cross-Browser Testing](https://hacks.mozilla.org/2017/03/doubling-down-on-cross-browser-testing/)
+- [Web Testing: A Complete guide about testing web applications](http://www.softwaretestinghelp.com/web-application-testing/)
 
 # Finalizing
 
