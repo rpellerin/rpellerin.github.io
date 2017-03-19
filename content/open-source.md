@@ -18,6 +18,7 @@ Here are a bunch of links for open source project maintainers/creators:
 - [Codeship](https://codeship.com/)
 - [bitHound: Node.js code and npm analysis for your team](https://www.bithound.io/)
 - [Gemnasium](https://gemnasium.com/)
+- [Codecov](https://codecov.io/)
 
 # Miscellaneous
 
