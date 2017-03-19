@@ -70,6 +70,7 @@ Everything you have ever wanted to know about GNU/Linux.
 
 - [Laissez-vous pousser la barbe, apprenez à écrire des Makefiles](http://putaindecode.fr/posts/shell/apprendre-les-makefiles/)
 - [Hints for writing Unix tools](http://monkey.org/~marius/unix-tools-hints.html)
+- [TLP: battery optimizer](http://linrunner.de/en/tlp/tlp.html)
 
 # Commands / tips
 
