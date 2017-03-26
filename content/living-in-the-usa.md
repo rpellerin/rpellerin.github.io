@@ -36,6 +36,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Alcatraz
 - Coit Tower
 - <s>A jazz club (I went to Mr. Tipple's Recording Studio)</s>
+- San Francisco National Cemetery
 - Explore the golden gate park (especially the Japanese stuff)
 - Walk on the Golden Gate Bridge
 - Attend a baseball game
@@ -47,7 +48,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Grand Hyatt (Love sign)
 - Twin Peaks
 - Mission Dolores Park
-- Baker Beack
+- Baker Beach
 - Bernal Heights Park
 
 ## Los Angeles
