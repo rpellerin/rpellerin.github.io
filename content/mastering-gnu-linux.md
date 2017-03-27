@@ -65,6 +65,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [The annoying alternate screen in vte-based terminal applications](http://blog.guntram.de/?p=164)
 - [st - a simple terminal implementation for X](http://st.suckless.org/)
 - [Write your own terminal emulator](https://vincent.bernat.im/en/blog/2017-write-own-terminal)
+- [Bash scripting quirks & safety tips](http://jvns.ca/blog/2017/03/26/bash-quirks/)
 
 # Software
 
