@@ -28,6 +28,7 @@ Here are some resources to go deeper with Git.
 ## General
 
 - [Tech Talk: Linus Torvalds on git](https://www.youtube.com/watch?v=4XpnKHJAok8)
+- [Git Version Control Tutorial](http://www.cirosantilli.com/git-tutorial/)
 - [Git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
 - [gitignore.io: auto generate .gitignore files](https://www.gitignore.io/)
 - [gitignore: A collection of useful .gitignore templates](https://github.com/github/gitignore)

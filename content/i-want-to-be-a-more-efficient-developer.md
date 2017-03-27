@@ -137,3 +137,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [What Can I Do For Mozilla?](https://whatcanidoformozilla.org)
 - [Top mentioned books on stackoverflow.com](http://www.dev-books.com/)
 - [Principles for C programming](https://drewdevault.com/2017/03/15/How-I-learned-to-stop-worrying-and-love-C.html)
+- [Articles about x86 assembly, C, C++, Nodejs, Git, etc](http://www.cirosantilli.com/articles/)
