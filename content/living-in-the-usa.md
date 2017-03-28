@@ -73,6 +73,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Brice Canyon
 - Zion National Park
 - Sequoia National Forest
+- Sonoran desert
 
 <br />
 
