@@ -38,3 +38,4 @@ Here are two great Android apps that you can use for free to find routes and poi
 # Useful link for travelers
 
 - [SecretFlying](http://www.secretflying.com/)
+- [Digital Privacy at the U.S. Border: Protecting the Data On Your Devices and In the Cloud](https://www.eff.org/wp/digital-privacy-us-border-2017)
