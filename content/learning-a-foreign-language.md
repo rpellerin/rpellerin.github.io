@@ -162,3 +162,4 @@ I decided to gather here all the little things to know in English, which are not
 - [fill in, fill out, and fill up](https://forum.wordreference.com/threads/fill-in-fill-out-and-fill-up.1453182/)
 - [aim at / aim to](https://forum.wordreference.com/threads/aim-at-aim-to.77502/)
 - [not...anymore ; no longer ; not...any longer](https://forum.wordreference.com/threads/not-anymore-no-longer-not-any-longer.374150/)
+- [HAIR TERMINOLOGY: HOW TO TELL YOUR BARBER EXACTLY WHAT YOU WANT](http://www.ties.com/blog/hair-terminology-tell-barber-exactly-want)
