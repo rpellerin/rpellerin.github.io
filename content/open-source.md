@@ -24,6 +24,7 @@ Here are a bunch of links for open source project maintainers/creators:
 
 # Miscellaneous
 
+- [Keep A Changelog](http://keepachangelog.com/en/0.3.0/)
 - [Issue and Pull Request templates](https://github.com/blog/2111-issue-and-pull-request-templates)
 - [How to attract new contributors to your open source project](https://medium.freecodecamp.com/how-to-attract-new-contributors-to-your-open-source-project-46f8b791d787)
 - [No Maintenance Intended](http://unmaintained.tech/)
