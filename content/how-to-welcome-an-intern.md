@@ -8,7 +8,7 @@ Summary: Internships are great opportunities to learn. Let's make both parties -
 
 Sould I ever hire an intern, this is a note to my future self.
 
-I started a new internship two weeks ago and I felt very welcomed. Just like home. My boss made my first few days much more enjoyable by making my life easier. To sum it up, I was provided with:
+I started a new internship two weeks ago and I felt very welcomed. Just like home. My boss made my first few days much more enjoyable than I would have expected, by making my life easy. In a nutshell, I was provided with:
 
 - A place to sleep on the first day
 - Food
@@ -18,6 +18,6 @@ I started a new internship two weeks ago and I felt very welcomed. Just like hom
 
 I was introduced to key people soon enough (co-workers mostly) so that on the first day of my internship I already felt comfortable. Likewise, I got to see my workplace before the beginning of my internship.
 
-Finally, I reiceved help and support regarding paperwork and all the stuff I had to do (getting a Social Security Number for instance).
+Finally, I received help and support regarding paperwork and all the stuff I had to do (getting a Social Security Number for instance).
 
 That's it. Of course I am grateful to my boss and would like to thank him. Hopefully, I'll do as well as he did, should I get the chance some day.
