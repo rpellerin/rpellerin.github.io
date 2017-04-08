@@ -147,3 +147,4 @@ This part has been inspired from [this article](https://medium.com/@rotxed/how-t
 - [Learn from your attackers – SSH HoneyPot](https://www.robertputt.co.uk/2016/11/28/learn-from-your-attackers-ssh-honeypot/)
 - [Alexsey’s TTPs](https://medium.com/@chrismcnab/alexseys-ttps-1204d9050551)
 - [KON-BOOT](http://www.piotrbania.com/all/kon-boot/)
+- [Rickroller Spotify !](https://korben.info/rickroller-spotify.html)

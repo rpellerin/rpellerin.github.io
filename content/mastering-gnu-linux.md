@@ -66,6 +66,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [st - a simple terminal implementation for X](http://st.suckless.org/)
 - [Write your own terminal emulator](https://vincent.bernat.im/en/blog/2017-write-own-terminal)
 - [Bash scripting quirks & safety tips](http://jvns.ca/blog/2017/03/26/bash-quirks/)
+- [Fun at the UNIX Terminal Part 1](http://blog.regehr.org/archives/1483)
 
 # Software
 
