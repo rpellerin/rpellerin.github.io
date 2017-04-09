@@ -148,3 +148,4 @@ This part has been inspired from [this article](https://medium.com/@rotxed/how-t
 - [Alexsey’s TTPs](https://medium.com/@chrismcnab/alexseys-ttps-1204d9050551)
 - [KON-BOOT](http://www.piotrbania.com/all/kon-boot/)
 - [Rickroller Spotify !](https://korben.info/rickroller-spotify.html)
+- [Null Byte](https://null-byte.wonderhowto.com/)
