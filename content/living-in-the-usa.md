@@ -43,11 +43,11 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Go to a concert venue
 - Attend an ice hockey match
 - Chinatown
-- Japantown (although I already had a glance at it)
-- Union Square
-- Grand Hyatt (Love sign)
+- <s>Japantown</s>
+- <s>Union Square</s>
+- <s>Grand Hyatt (Love sign)</s>
 - Twin Peaks
-- Mission Dolores Park
+- <s>Mission Dolores Park</s>
 - Baker Beach
 - Bernal Heights Park
 
