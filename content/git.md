@@ -70,3 +70,7 @@ Here are some resources to go deeper with Git.
 - [Subtree Merging (official documentation)](https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging)
 - [Mastering Git subtrees](https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec): `git read-tree` and `git subtree` are two different commands.
 - [The power of Git subtree](https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/)
+
+## Tricks
+
+- [Git diff to HTML](https://pypi.python.org/pypi/ansi2html/1.0.7)
