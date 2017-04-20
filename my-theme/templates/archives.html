@@ -11,7 +11,7 @@
     {% block period %}
         {% if output_file == 'archives.html' %}
             <p>
-                Browse articles by year: {% for year, list in articles|groupby('date.year') %}<a href="{{ SITEURL }}/posts/{{ year }}/index.html">{{ year }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+            Browse articles by year: {% for year, list in articles|groupby('date.year') %}<a href="{{ SITEURL }}/posts/{{ year }}/index.html">{{ year }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}
             </p>
             <br />
         {% endif %}

@@ -1,12 +1,12 @@
 {% set articles = dates %}
-{% set h1 = "Archives for "+(period | reverse | join(' ')) %}
+{% set h1 = "Posts for "+(period | reverse | join(' ')) %}
 {% set description = SITENAME + ': archives for '+(period | reverse | join(' ')) %}
 {% extends "archives.html" %}
 
 {% block period %}
     {% if (period|length) == 1 %}{# if we are displaying a year #}
         <p>
-            Browse articles by month: {% for month, list in dates|groupby('date.month') %}<a href="{{ SITEURL }}/posts/{{ period[0] }}/{{ month }}/index.html">{{ list[0].date.strftime("%B") }}</a>{% if not loop.last %}, {% endif %}{% endfor %}<br />
+            Browse articles by month: {% for month, list in dates|groupby('date.month') %}<a href="{{ SITEURL }}/posts/{{ period[0] }}/{{ month }}/index.html">{{ list[0].date.strftime("%B") }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}<br />
         </p>
         <br />
     {% endif %}
