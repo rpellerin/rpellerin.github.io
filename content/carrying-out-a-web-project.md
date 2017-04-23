@@ -57,6 +57,7 @@ Here are some resources.
 - [Rouler en classe A avec Apache](https://blog.adminrezo.fr/2016/12/securiser-serveur-apache-https-headers/)
 - [Installer et activer HTTP2 sur Apache2](https://korben.info/installter-activer-http2-apache2.html)
 - [Installer et activer HTTP2 sur Nginx](https://korben.info/installer-activer-http2-nginx.html)
+- [Security/Guidelines/Web Security](https://wiki.mozilla.org/Security/Guidelines/Web_Security)
 
 ## Formatting / minimizing / indentation / compressing
 
