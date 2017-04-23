@@ -366,7 +366,9 @@ Should you need to upgrade your firmware, make sure to update the right initramf
 
 Instead of unlocking your hard disk drive over SSH, if you prefer to use a keyfile, [check out this website](http://longsteve.com/wiki/index.php?title=USB_Hard_Drive_Encryption_on_a_Raspberry_Pi).
 
-If you are brave, have a look at the section below called *Hardening security*. You might want to improve Dropbear settings.
+If you are brave enough, have a look at the section below called *Hardening security*. You might want to improve Dropbear settings.
+
+You might also want to read about [Mozilla's recommandation in terms of SSH security](https://wiki.mozilla.org/Security/Guidelines/OpenSSH).
 
 # Tips
 
