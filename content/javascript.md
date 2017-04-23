@@ -111,6 +111,7 @@ All set!
 - [ES6 const is not about immutability](https://mathiasbynens.be/notes/es6-const)
 - [ECMAScript 2017: the final feature set](http://www.2ality.com/2016/02/ecmascript-2017.html)
 - [Emojis in Javascript](https://medium.com/@thekevinscott/emojis-in-javascript-f693d0eb79fb)
+- [Transpiling dependencies with Babel](http://2ality.com/2017/04/transpiling-dependencies-babel.html)
 
 ## Some cool node/npm stuff/packages/tools
 
