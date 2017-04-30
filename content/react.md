@@ -69,6 +69,8 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Universal React](https://24ways.org/2015/universal-react)
 - [React.js Best Practices for 2016](https://blog.risingstack.com/react-js-best-practices-for-2016/)
 - [React Lessons - Screencast Video Tutorials @eggheadio](https://egghead.io/technologies/react)
+- [Redux Lessons #1 - Screencast Video Tutorials @eggheadio](https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree)
+- [Redux Lessons #2 - Screencast Video Tutorials @eggheadio](https://egghead.io/lessons/javascript-redux-simplifying-the-arrow-functions)
 - [React Cheat Sheet](http://reactcheatsheet.com/)
 
 ## About Babel

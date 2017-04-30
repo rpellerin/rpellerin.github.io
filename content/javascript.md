@@ -7,6 +7,10 @@ Slug: javascript
 Authors: Romain Pellerin
 Summary: Why Javascript is the new hotness
 
+# Dates
+
+Use [date-fns](https://github.com/date-fns/date-fns). It is [lighter](https://github.com/date-fns/date-fns/issues/275) than Moment.js. And it is [immutable](https://twitter.com/dan_abramov/status/805030922785525760).
+
 # A word on ESlint
 
 ESlint is probably the most popular linter for JavaScript. It is also very convenient and benefits from a large community. That is why I use it.
@@ -73,6 +77,10 @@ All set!
 
 # Resources
 
+## NodeJS
+
+- [Node.js ES2015/ES6, ES2016 and ES2017 support](http://node.green/)
+
 ## Set-up your environment
 
 - [Getting Started with ESLint](http://eslint.org/docs/user-guide/getting-started)
@@ -112,6 +120,7 @@ All set!
 - [ECMAScript 2017: the final feature set](http://www.2ality.com/2016/02/ecmascript-2017.html)
 - [Emojis in Javascript](https://medium.com/@thekevinscott/emojis-in-javascript-f693d0eb79fb)
 - [Transpiling dependencies with Babel](http://2ality.com/2017/04/transpiling-dependencies-babel.html)
+- [Running a Node.js process on Debian as a Systemd Service](https://thomashunter.name/blog/running-a-node-js-process-on-debian-as-a-systemd-service/)
 
 ## Some cool node/npm stuff/packages/tools
 

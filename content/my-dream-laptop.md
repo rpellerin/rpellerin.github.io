@@ -10,8 +10,8 @@ I am writing this here for posterity. All suggestions are welcome.
 
 # Must have
 
-- **Screen**: 13 to 14"
-- **CPU**: Intel i7 (6th or 7th generation)
+- **Screen**: 14 to 15"
+- **CPU**: Intel i5 or i7 (6th or 7th generation)
 - **RAM**: 8GB or more
 - **Ports**:
     - **USB-C port**: 1 at least
@@ -36,6 +36,12 @@ I am writing this here for posterity. All suggestions are welcome.
 
 - A numeric keypad
 - A MacBook
+
+# Laptops I am considering
+
+- Dell 7480
+- Dell XPS 15 (although the screen is 15.6")
+- Lenovo ThinkPad T470
 
 # Links
 
