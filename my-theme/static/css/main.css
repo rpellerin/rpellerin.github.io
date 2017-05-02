@@ -1,3 +1,5 @@
+@import url("pygment.css");
+
 /* THERE ARE A FEW TAGS WHICH HAVE A STYLE ATTRIBUTE DECLARED IN THIS TEMPLATE */
 
 /*********************************/
@@ -203,5 +205,3 @@ header.article-header h1 {
     background-color: white;
     padding: 0 15px;
 }
-
-@import url("pygment.css");
