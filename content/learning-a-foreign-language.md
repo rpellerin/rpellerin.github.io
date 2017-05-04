@@ -31,13 +31,13 @@ It has been demonstrated that each individual has two categories of vocabulary f
 According to [this website](http://www.lingholic.com/how-many-words-do-i-need-to-know-the-955-rule-in-language-learning-part-2/), native English speakers have an average of 20.000 words in their active vocabulary whereas they have around 40.000 in their passive. This is a gigantic difference.
 
 <div style="text-align: center">
-<img src="images/learn-language-vocabulary.png" alt="Active and passive vocabulary" />
+<img src="{filename}/images/learn-language-vocabulary.png" alt="Active and passive vocabulary" />
 </div>
 
 My guess is that all along your course to learn a foreign language, your two types of vocabulary evolve like this:
 
 <div style="text-align: center">
-<img src="images/learn-language-curve.png" alt="Learning curve" />
+<img src="{filename}/images/learn-language-curve.png" alt="Learning curve" />
 </div>
 
 When you take up classes during childhood, your two kinds of vocabulary are mixed up. A some point they slightly fork, like after elementary school. Then, when you have your first experience abroad, your amount of passive and active vocabulary will usually soar. But still, the gap between the two of them increases, making an even bigger difference.
@@ -59,7 +59,7 @@ With such an app, I would get exposed to my vocabulary list frequently, many tim
 Today, I'm proud to announce that the project is officially [available on Github](https://github.com/rpellerin/learn-a-foreign-language). It's open source, so feel free to contribute. Moreover, the app has been [published on the Android Play Store](https://play.google.com/store/apps/details?id=learnaforeignlanguage.eu.romainpellerin). Finally, [here is the website](http://learnenglishbackend-romainpellerin.rhcloud.com/) to create an account and add words or expressions to lists.
 
 <div style="text-align: center">
-<img src="images/learn-language-app.gif" alt="My Android app" />
+<img src="{filename}/images/learn-language-app.gif" alt="My Android app" />
 </div>
 
 Let's now move on to other ways to reduce that gap between active and passive vocabulary.

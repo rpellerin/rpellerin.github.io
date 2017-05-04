@@ -11,12 +11,12 @@ Image: living-usa.jpg
 **Friday, January 27, 2017**: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!
 
 <figure class="center">
-<img src="images/living-usa/greenland.jpg" alt="Greenland" />
+<img src="{filename}/images/living-usa/greenland.jpg" alt="Greenland" />
 <figcaption>Greenland</figcaption>
 </figure>
 
 <figure class="center">
-<img src="images/living-usa/nothern_canada.jpg" alt="Northern Canada" />
+<img src="{filename}/images/living-usa/nothern_canada.jpg" alt="Northern Canada" />
 <figcaption>Northern Canada</figcaption>
 </figure>
 
