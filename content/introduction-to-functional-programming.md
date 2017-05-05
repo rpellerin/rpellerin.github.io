@@ -40,6 +40,7 @@ Functional programming, or **FP** to its friends, is a quite old paradigm, but s
 
 - [Learn Haskell in 10 minutes](https://wiki.haskell.org/Learn_Haskell_in_10_minutes)
 - [Learn You a Haskell For Great Good!](http://learnyouahaskell.com/chapters) ([French version](http://lyah.haskell.fr/))
+- [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
 
 ## Erlang
 
