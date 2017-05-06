@@ -139,3 +139,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Principles for C programming](https://drewdevault.com/2017/03/15/How-I-learned-to-stop-worrying-and-love-C.html)
 - [Articles about x86 assembly, C, C++, Nodejs, Git, etc](http://www.cirosantilli.com/articles/)
 - [Visualizing Garbage Collection Algorithms](https://spin.atomicobject.com/2014/09/03/visualizing-garbage-collection-algorithms/)
+- [Getting Started with Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)
