@@ -20,6 +20,7 @@ Summary: Useful links when working with databases
 - [Impress Your Coworkers by Using SQL UNPIVOT!](http://blog.jooq.org/2016/01/18/impress-your-coworkers-by-using-sql-unpivot/)
 - [10 SQL Tricks That You Didn’t Think Were Possible](https://blog.jooq.org/2016/04/25/10-sql-tricks-that-you-didnt-think-were-possible/)
 - [Gestion des dates et heures dans les bases de données](http://www.geek-directeur-technique.com/2017/05/05/gestion-des-dates-et-heures-dans-les-bases-de-donnees)
+- [Mysqldumpslow – Pour repérer rapidement vos requêtes SQL à optimiser](https://korben.info/mysqldumpslow-reperer-rapidement-vos-requetes-sql-a-optimiser.html)
 
 # PostgreSQL
 
