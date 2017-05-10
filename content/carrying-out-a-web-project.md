@@ -116,6 +116,7 @@ On Linux, if you have `imagemagick` installed, do:
 - [10 things I learned making the fastest site in the world](https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7)
 - [Free Web Analytics Software (Piwik)](http://piwik.org/)
 - [The perfect PHP clean url generator](http://cubiq.org/the-perfect-php-clean-url-generator)
+- [PHP - The Right Way](http://www.phptherightway.com/)
 - [What Web Can Do Today](https://whatwebcando.today/)
 - [OpenSearch](http://www.opensearch.org/Home)
 - [De la gestion de projet à la gestion de workflow](http://www.geek-directeur-technique.com/2016/08/24/de-la-gestion-de-projet-a-la-gestion-de-workflow)

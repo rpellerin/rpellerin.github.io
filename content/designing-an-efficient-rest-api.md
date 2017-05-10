@@ -560,3 +560,4 @@ Here is a little recap of everything above:
 - [JSON Web Tokens (JWT) vs Sessions](https://float-middle.com/json-web-tokens-jwt-vs-sessions/)
 - [JSON Web Tokens vs. Session Cookies: In Practice](https://ponyfoo.com/articles/json-web-tokens-vs-session-cookies)
 - [Everything you need to know about HTTP security headers](https://blog.appcanary.com/2017/http-security-headers.html)
+- [Things to Use Instead of JWT](https://kev.inburke.com/kevin/things-to-use-instead-of-jwt/)
