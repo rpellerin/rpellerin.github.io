@@ -19,6 +19,7 @@ This killer project must include the following things:
         - `await`/`async`
         - `import`
         - Etc.
+    - Web worker
     - Node
     - React (Fiber?) + Redux
         - Webpack: `create-react-app`
@@ -35,6 +36,8 @@ This killer project must include the following things:
     - `storybook`?
     - Server-side rendering with Next.js? `create-next-app`
     - `memoizee` for external API calls made by the server
+- Progressive Web App
+    - Service worker (makes app available offline)
 - CSS
     - Variables
     - Flexbox
@@ -51,6 +54,12 @@ This killer project must include the following things:
     - `pm2`
     - Prettier for code formatting
     - [Flow](https://flow.org/): `flow-bin`
+    - Chrome extensions
+        - React Developer Tools
+        - Redux DevTools
+        - Apollo Client Developer Tools
+        - Lighthouse
+    - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - Other
     - PostgreSQL or SQLite
     - asm.js or WebAssembly (preferably the latter)
