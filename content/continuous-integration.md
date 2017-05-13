@@ -250,6 +250,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 - [Déploiement continu avec Travis-CI (et GitHub Pages)](http://putaindecode.io/fr/articles/ci/travis-ci/)
 - [Scrutinizer](https://scrutinizer-ci.com/)
 - [GitHub Flow](http://k33g.github.io/2016/11/27/GH-FLOW.html)
+- [Intégration et déploiement en continu @ Github (Alain Hélaïli)](https://www.youtube.com/watch?v=jCwzf9adAtE)
 
 ## Android
 

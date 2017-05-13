@@ -46,6 +46,7 @@ Here are some resources to go deeper with Git.
 - [Gitminer – Pour fouiller Github en profondeur](http://korben.info/gitminer-fouiller-github-profondeur.html)
 - [Git reset : rien ne se perd, tout se transforme](http://www.git-attitude.fr/2016/05/11/git-reset/)
 - [Flight rules for git](https://github.com/k88hudson/git-flight-rules)
+- [Entrer dans les entrailles de Git, ou comment faire un commit sans faire du Git (Alexandre Garnier)](https://www.youtube.com/watch?v=Hd_UpJPDlik)
 
 ## Auto deployment
 

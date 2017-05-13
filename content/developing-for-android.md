@@ -54,7 +54,7 @@ Here are some useful resources for Android development.
 # Continuous Integration
 
 - [Use GoCD for Android and get rid of Jenkins](http://jeremie-martinez.com/2016/04/19/gocd-android/)
-- [DevOps on Android: From one Git push to production](http://jeremie-martinez.com/2016/01/14/devops-on-android/)
+- [DevOps on Android: From one Git push to production](http://jeremie-martinez.com/2016/01/14/devops-on-android/) and [the talk given by the author](https://www.youtube.com/watch?v=3Ises8TgAp4)
 - [Continuous Integration on Android](https://engineeringblog.yelp.com/2017/04/continuous-integration-on-android.html)
 
 # Further reading

@@ -19,6 +19,8 @@ Here are some resources.
 - [CSS Values](http://cssvalues.com/): a good documentation about CSS properties
 - [Feuilles de styles CSS - Conseils et bonnes pratiques](http://guidecss.fr/)
 - [Mini Convention CSS](http://www.alsacreations.com/article/lire/1707-mini-convention-css.html)
+- [Flexbox, et le CSS redevient fun ! (Hubert SABLONNIÈRE)](https://www.youtube.com/watch?v=5F_ngjHDcJQ)
+- [CSS is Awesome Igor Laborie](https://www.youtube.com/watch?v=H8lICKucWL4)
 
 ## Centering
 
@@ -122,3 +124,5 @@ On Linux, if you have `imagemagick` installed, do:
 - [De la gestion de projet à la gestion de workflow](http://www.geek-directeur-technique.com/2016/08/24/de-la-gestion-de-projet-a-la-gestion-de-workflow)
 - [WebSocketd – Faites communiquer vos pages web avec vos outils en ligne de commande](http://korben.info/websocketd-communiquer-vos-pages-web-vos-outils-ligne-de-commande.html)
 - [Front-End Developer Handbook 2017](https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details)
+- [Les Web DevTools en 2017 (Jean-Francois Garreau)](https://www.youtube.com/watch?v=par742RHhVM)
+- [Optimiser les performances d'une webapp (Guillaume EHRET)](https://www.youtube.com/watch?v=9PRPPJFaF_o)

@@ -832,7 +832,12 @@ There's a [known bug](http://serverfault.com/questions/355520/after-reboot-debia
     :::text
     sysctl -p /etc/sysctl.conf
 
-Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194.
+Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:
+
+    :::bash
+    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+    iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
+    iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 Finally, do the following on your server:
 

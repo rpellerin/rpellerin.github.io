@@ -21,6 +21,7 @@ Summary: Useful links when working with databases
 - [10 SQL Tricks That You Didn’t Think Were Possible](https://blog.jooq.org/2016/04/25/10-sql-tricks-that-you-didnt-think-were-possible/)
 - [Gestion des dates et heures dans les bases de données](http://www.geek-directeur-technique.com/2017/05/05/gestion-des-dates-et-heures-dans-les-bases-de-donnees)
 - [Mysqldumpslow – Pour repérer rapidement vos requêtes SQL à optimiser](https://korben.info/mysqldumpslow-reperer-rapidement-vos-requetes-sql-a-optimiser.html)
+- [Stockage des données Quel système pour quel usage (Zouheir Cadi)](https://www.youtube.com/watch?v=KCdOcdjxdn4)
 
 # PostgreSQL
 

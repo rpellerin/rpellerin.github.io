@@ -38,6 +38,7 @@ This killer project must include the following things:
     - `memoizee` for external API calls made by the server
 - Progressive Web App
     - Service worker (makes app available offline)
+    - [Progressive Web Apps (Cyril Balit - Florian Orpelière)](https://www.youtube.com/watch?v=kqi4Xa1ViOQ)
 - CSS
     - Variables
     - Flexbox
@@ -66,3 +67,5 @@ This killer project must include the following things:
     - [Physical Web](https://google.github.io/physical-web/)
 
 Bonus point if the project uses as many Github badges (meaning CI services) as I referenced on [this article]({filename}/open-source.md).
+
+**Reminder for myself**: check out [this article]({filename}/carrying-out-a-web-project.md)

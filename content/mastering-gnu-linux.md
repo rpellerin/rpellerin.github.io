@@ -23,6 +23,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)
 - [A few drawings about Linux](http://jvns.ca/blog/2016/11/10/a-few-drawings-about-linux/)
 - [Pourquoi la mascotte de Linux est un manchot?](https://mavielinux.com/2016/12/18/pourquoi-la-mascotte-de-linux-est-un-manchot/)
+- [Linux est ton meilleur ami (Pierre Antoine Grégoire - Olivier Robert - Nicolas Helleringer)](https://www.youtube.com/watch?v=xqdWi6SblV8)
 
 ## Free Software Foundation / Open source
 
@@ -39,6 +40,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Quelques greffons pour Xfce](http://g.eckenschwiller.free.fr/Tutoriels/Installation/greffons_Xfce.php)
 - [Add items to Xfce Applications Menu](http://xubuntugeek.blogspot.fr/2011/12/add-items-to-xfce-applications-menu.html)
 - [firefox-tweaks: attempt to make Firefox suck less](https://github.com/dfkt/firefox-tweaks)
+- [Build yourself a Linux](https://github.com/MichielDerhaeg/build-linux/blob/master/README.md)
 
 ## Alongside Windows
 

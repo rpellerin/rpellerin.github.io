@@ -140,3 +140,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Articles about x86 assembly, C, C++, Nodejs, Git, etc](http://www.cirosantilli.com/articles/)
 - [Visualizing Garbage Collection Algorithms](https://spin.atomicobject.com/2014/09/03/visualizing-garbage-collection-algorithms/)
 - [Getting Started with Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)
+- [Ratez vos revues de code en 5 leçons ! (Michel Domenjoud)](https://www.youtube.com/watch?v=V4J-m3o5JWg)
+- [10 méthodes pour rendre heureux les développeurs (Cyril Lakech - Romain Linsolas)](https://www.youtube.com/watch?v=KH40vSYLENA)

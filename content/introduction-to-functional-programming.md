@@ -17,6 +17,7 @@ Functional programming, or **FP** to its friends, is a quite old paradigm, but s
 - [Functional Programming should be your #1 priority for 2015](https://medium.com/@jugoncalves/functional-programming-should-be-your-1-priority-for-2015-47dd4641d6b9)
 - [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)
 - [https://github.com/k33g/files/tree/master/functional](https://github.com/k33g/files/tree/master/functional)
+- [Apéro fonctionnel (P. Charrière - N. Leroux - E. Issartial - Q. Adam - T. Guenoux)](https://www.youtube.com/watch?v=d-h0rsLKc9c)
 
 ## FP with Javascript
 

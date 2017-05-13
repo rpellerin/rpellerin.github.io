@@ -80,6 +80,7 @@ All set!
 ## NodeJS
 
 - [Node.js ES2015/ES6, ES2016 and ES2017 support](http://node.green/)
+- [Node js comme les grands (Romain Maton)](https://www.youtube.com/watch?v=RIRB2AFrPV8)
 
 ## Set-up your environment
 
