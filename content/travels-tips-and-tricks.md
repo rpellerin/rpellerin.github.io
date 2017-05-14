@@ -39,3 +39,7 @@ Here are two great Android apps that you can use for free to find routes and poi
 
 - [SecretFlying](http://www.secretflying.com/)
 - [Digital Privacy at the U.S. Border: Protecting the Data On Your Devices and In the Cloud](https://www.eff.org/wp/digital-privacy-us-border-2017)
+- [TUTO - Comment chercher un billet d'avion](https://www.youtube.com/watch?v=_CHaUhwrafM)
+- [TUTO - Comment dépenser moins cher en voyage](https://www.youtube.com/watch?v=uZaEAo7NCes)
+- [TUTO - Mon Top 10 des astuces en VOYAGE](https://www.youtube.com/watch?v=nTbzx4-lAAI)
+- [TUTO - Faire son SAC A DOS pour un TOUR DU MONDE](https://www.youtube.com/watch?v=2PZNLlprlwc)
