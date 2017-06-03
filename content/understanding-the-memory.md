@@ -120,3 +120,4 @@ That's all folks!
 - [7. Memory : Stack vs Heap](http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html)
 - [The difference between pointers and arrays](http://www.cplusplus.com/forum/articles/9/)
 - [The memory models that underlie programming languages](http://canonical.org/~kragen/memory-models/)
+- [Hack the Virtual Memory: malloc, the heap & the program break](https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/)

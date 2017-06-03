@@ -75,3 +75,4 @@ Here are some resources to go deeper with Git.
 ## Tricks
 
 - [Git diff to HTML](https://pypi.python.org/pypi/ansi2html/1.0.7)
+- [Little Things I Like to Do with Git](https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/)

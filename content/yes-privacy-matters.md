@@ -222,3 +222,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Tout ce que votre navigateur peut balancer sur vous](http://korben.info/tout-ce-que-votre-navigateur-peut-balancer-sur-vous.html)
 - [Paramétrage de Firefox](http://sebsauvage.net/wiki/doku.php?id=firefox)
 - [“I have nothing to hide. Why should I care about my privacy?”](https://medium.com/@FabioAEsteves/i-have-nothing-to-hide-why-should-i-care-about-my-privacy-f488281b8f1d)
+- [Extensions Firefox pour protéger sa vie privée](https://blog.imirhil.fr/2015/12/08/extensions-vie-privee.html)

@@ -107,6 +107,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Shellcode Injection](https://dhavalkapil.com/blogs/Shellcode-Injection/)
 - [Security Guide: How to Protect Your Infrastructure Against the Basic Attacker](http://blog.mailgun.com/security-guide-basic-infrastructure-security/)
 - [/dev/random vs /dev/urandom](http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/) & [Myths about /dev/urandom](http://www.2uo.de/myths-about-urandom/)
+- [Hygiène numérique pour l’administrateur système](https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1)
 
 # Other
 
