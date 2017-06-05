@@ -121,7 +121,7 @@ On Android, it has the advantage of allowing you to monitor your outcoming traff
     1. Open the current Wifi settings (long-press on the connected network).
         * If you decided to do transparent proxying (see above), set proxy to your computer's IP and port 8080, like: `192.168.1.2:8080`
         * If you decided not to do transparent proxying (see above), don't set the proxy and instead set the IP to be static rather than using DHCP. Then write your computer's IP as the gateway.
-    2. Go to the website [mitm.it](mitm.it) and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):
+    2. Go to the website [mitm.it](http://mitm.it) and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):
 
             ::bash
             adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/Download

@@ -33,7 +33,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 ## In San Francisco
 
 - Go see whales
-- Alcatraz
+- <s>Alcatraz</s>
 - Coit Tower
 - <s>A jazz club (I went to Mr. Tipple's Recording Studio)</s>
 - San Francisco National Cemetery

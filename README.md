@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install python # This line or the next one
 sudo apt-get install python3
 ```
-2. Install pip if not installed yet ("Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip by default [1], so you may have pip already.").
+2. Install pip **or pip3** if not installed yet ("Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip by default, so you may have pip already.").
 ```bash
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
@@ -19,20 +19,21 @@ sudo python get-pip.py
 Alternatively, you can use your OS package manager, but pip may be outdated:
 ```bash
 sudo apt-get install python-pip
+sudo apt-get install python3-pip
 ```
 
 Then:
 ```bash
-sudo pip install -U pip # Upgrade
+sudo pip3 install -U pip # Upgrade
 sudo pip install -U setuptools # Upgrade
-pip install virtualenv
+sudo pip install virtualenv
 ```
 
 ## Creating the virtual env
 
 Go inside the cloned repository, then:
 ```bash
-virtualenv -p /usr/bin/python2.7 .env
+virtualenv -p /usr/bin/python3.5 .env
 source .env/bin/activate
 ```
 

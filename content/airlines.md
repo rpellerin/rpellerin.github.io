@@ -31,7 +31,7 @@ Great company although I don't remember much about the one time I flew with them
 
 # easyJet
 
-Small aircrafts, do not expect anything crazy, it is a low cost company. No meals, no Wi-Fi, no tablets. No meal included.
+Small aircrafts, do not expect anything crazy, it is a low cost company. No meals, no Wi-Fi, no tablets.
 
 # Ryanair
 
@@ -43,7 +43,7 @@ Paid Wi-Fi (can be bypassed using a VPN, though). Drinks are free.
 
 # WOW air
 
-Supposedly a low cost company. They charge everything else though, even my normal sized carry-on bagage. What you get for free is a tiny bag, not bigger than a backpack. No meal included (on a 9 hour flight). No Wi-Fi. No tablets on seats.
+Supposedly a low cost company. They charge everything else though, even my normal sized carry-on bagage. What you get for free is a tiny bag, not bigger than a backpack. No meal included (on a 9 hour flight). No Wi-Fi. No tablets on seats. Even water is paid ($2.99).
 
 # Norwegian
 
