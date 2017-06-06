@@ -22,8 +22,6 @@ Worse, TV channels speed up TV shows and movies. What for? Ads again. The French
 
 Still unconvinced? Most companies operating radio and television are biased. By "most" I mean 99% of them. They are not objective at all, often influenced by political parties.
 
-## France
-
 - [Les Nouveaux Chiens de Garde](https://vimeo.com/141362885)
 - [Médias français : qui possède quoi](http://www.monde-diplomatique.fr/cartes/ppa)
 
