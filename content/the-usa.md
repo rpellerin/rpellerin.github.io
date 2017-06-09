@@ -1,5 +1,6 @@
 Title: The USA
 Date: 2017-01-10 01:00
+Modified: 2017-06-08 22:11
 Category: Travels
 Tags: travel, usa
 Slug: the-usa
@@ -8,6 +9,18 @@ Summary: My advice about the USA
 Image: usa.jpg
 
 In 2016, I went to the US for the first time of my life. Here is a list of things I did and tips I gathered.
+
+In short, I went to NYC for a week. Then I flew to Los Angeles, where I joined my friends. The following days we went to:
+
+- Baker, CA, Kelso, CA and finally Kingman (slept in a motel).
+- The next day we discovered Kingman and then went to Williams (slept at [The Historic Hat Ranch](https://historichatranch.com/)).
+- The next day we did a trail (Bright Angels) next to Tusayan, in the Grand Canyon. We went sleeping at a campground in Monument Valley (Goulding's Campground, if my memory serves well)
+- The next morning we rode horses in the Monument Valley Navajo Tribal Park (exact GPS coordinates: 36.934405, -110.070929). The afternoon was spent at Antelope Canyon. We slept near Page.
+- The next day we did the Horse Shoe Bend and swam in the Lake Powell. At night we slept in a hostel at Kanab.
+- The next day some of us went to Bryce Canyon. I went to Las Vegas.
+- The rest of the trip was spent in: Death Valley, Yosemite (for some of us) and San Francisco.
+
+Now let's move on to my advice.
 
 # To know before getting there
 
