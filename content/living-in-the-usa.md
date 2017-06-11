@@ -46,7 +46,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - <s>Japantown</s>
 - <s>Union Square</s>
 - <s>Grand Hyatt (Love sign)</s>
-- Twin Peaks
+- <s>Twin Peaks</s>
 - <s>Mission Dolores Park</s>
 - Baker Beach
 - Bernal Heights Park
