@@ -30,6 +30,7 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - I Am Legend
 - The Rocky movies
 - The Wolf of Wall Street
+- Ex Machina
 - Catch Me If You Can
 - Django Unchained
 - Cast Away
