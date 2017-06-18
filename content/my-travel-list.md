@@ -9,6 +9,7 @@ Summary: Places I want to visit.
 # USA
 
 - Dallas
+- Redwood State Park
 - Huston
 - Miami
 - Texas
@@ -38,6 +39,7 @@ Summary: Places I want to visit.
 - Iceland (I want to see Northern lights so bad!)
 - Greenland or Northern Canada
 - Machu Picchu
+- Chichen Itza (Mexico)
 - Mexico City
 - Marrakech
 - Rio de janeiro
