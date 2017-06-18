@@ -43,3 +43,4 @@ Here are two great Android apps that you can use for free to find routes and poi
 - [TUTO - Comment dépenser moins cher en voyage](https://www.youtube.com/watch?v=uZaEAo7NCes)
 - [TUTO - Mon Top 10 des astuces en VOYAGE](https://www.youtube.com/watch?v=nTbzx4-lAAI)
 - [TUTO - Faire son SAC A DOS pour un TOUR DU MONDE](https://www.youtube.com/watch?v=2PZNLlprlwc)
+- [Travel (Linux) laptop setup](https://mricon.com/i/travel-laptop-setup.html)

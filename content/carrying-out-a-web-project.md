@@ -126,3 +126,5 @@ On Linux, if you have `imagemagick` installed, do:
 - [Front-End Developer Handbook 2017](https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details)
 - [Les Web DevTools en 2017 (Jean-Francois Garreau)](https://www.youtube.com/watch?v=par742RHhVM)
 - [Optimiser les performances d'une webapp (Guillaume EHRET)](https://www.youtube.com/watch?v=9PRPPJFaF_o)
+- [The Illusion of Speed](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/)
+- [Firefox 54: E10S-Multi, WebExtension APIs, CSS clip-path](https://hacks.mozilla.org/2017/06/firefox-54-e10s-webextension-apis-css-clip-path/)
