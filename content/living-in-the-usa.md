@@ -48,7 +48,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - <s>Grand Hyatt (Love sign)</s>
 - <s>Twin Peaks</s>
 - <s>Mission Dolores Park</s>
-- Baker Beach
+- <s>Baker Beach</s>
 - Bernal Heights Park
 
 ## Los Angeles
