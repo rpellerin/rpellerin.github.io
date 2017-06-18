@@ -112,6 +112,11 @@ On Linux, if you have `imagemagick` installed, do:
 - [A CRITICISM OF SCRUM](https://www.aaron-gray.com/a-criticism-of-scrum/)
 - [WAYS TO PROTECT FLOW](https://www.aaron-gray.com/ways-to-protect-flow/)
 
+## Web Assembly
+
+- [Awesome wasm](https://github.com/mbasso/awesome-wasm)
+- [WebAssembly 101: a developer's first steps](http://blog.openbloc.fr/webassembly-first-steps/)
+
 ## Misc
 
 - [6 Rules of thumb to build blazing fast web server applications](http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/)

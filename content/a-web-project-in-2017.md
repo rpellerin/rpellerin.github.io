@@ -39,6 +39,7 @@ This killer project must include the following things:
 - Progressive Web App
     - Service worker (makes app available offline)
     - [Progressive Web Apps (Cyril Balit - Florian Orpelière)](https://www.youtube.com/watch?v=kqi4Xa1ViOQ)
+    - Notifications
 - CSS
     - Variables
     - Flexbox
