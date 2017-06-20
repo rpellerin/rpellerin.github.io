@@ -30,6 +30,8 @@ Here are the steps to get a bare installation of Debian 8:
         ls /dev/sd* # Detect which is yours
         sudo umount /dev/sdX1
         sudo dd if=debian-8.4.0-amd64-netinst.iso of=/dev/sdX bs=1M
+        sudo sync; sync
+        sudo umount /dev/sdX1
 
 3. On the target PC, disable any HDD password or BIOS password. It might prevent you from encrypting the disk. I experienced it.
 4. Boot on the USB flash drive. Select "*Install*" (first choice).
