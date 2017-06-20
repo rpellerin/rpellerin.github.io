@@ -34,7 +34,7 @@ Here are the steps to get a bare installation of Debian 8:
         sudo umount /dev/sdX1
 
 3. On the target PC, disable any HDD password or BIOS password. It might prevent you from encrypting the disk. I experienced it.
-4. Boot on the USB flash drive. Select "*Install*" (first choice).
+4. Boot on the USB flash drive. Select "*Install*", unless you prefer a graphical install. They both do the same thing.
 5. Follow the instructions. You can leave the domain name blank. If you get a message "No common CD-ROM drive was detected", press ALT+F2 and do the following:
 
         :::bash
