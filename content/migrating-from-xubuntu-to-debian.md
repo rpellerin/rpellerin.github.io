@@ -49,12 +49,12 @@ Here are the steps to get a bare installation of Debian 8:
     [![Picture]({filename}/images/debian_firmware.jpg)]({filename}/images/debian_firmware.jpg)
 
     Note: this is doable with only one USB stick. But it is much harder.
-    1. Download the mentioned file(s) from the [Debian repository](https://packages.debian.org/jessie/).
-    2. Put the `.deb` file(s) on the USB stick. If you decided to re-use the same USB stick, first delete existing partitions with `fdisk` and create a new one of type `W95 FAT32`. Format it using `sudo mkfs.vfat /dev/sdc1`. Then put the files on the USB stick.
-    3. Unplug both USB sticks: the one containing Debian on the target computer, and the one containing the firmware file(s).
-    4. Plug the one containing firmwares files on your target computer, in the same USB port as the previous USB stick. You might need to hit ALT+F2, then check what is currently mounted (`cat /etc/mtab`), unmount the old USB stick and mount the one you just plugged in: `mount -t vfat /dev/sdb1 /cdrom`. ALT+F1 to go back to the install screen.
-    5. Answer "*Yes*" to "*Load missing firmware from removable media?*".
-    6. Once completed, unplug the USB stick and plug the one containing Debian in the same port. You might need to re-write Debian if you re-used the same USB flash drive. Then press ALT+F1 and do:
+
+    1. Download the mentioned file(s) from the [Debian repository](https://packages.debian.org/jessie/). In my case, I needed these ones: [https://packages.debian.org/stretch/all/firmware-misc-nonfree/download](https://packages.debian.org/stretch/all/firmware-misc-nonfree/download) and [https://packages.debian.org/stretch/all/firmware-realtek/download](https://packages.debian.org/stretch/all/firmware-realtek/download).
+    2. Put the `.deb` file(s) on the other USB stick. If you decided to re-use the same USB stick, first umount it: ALT+F2 then `umount /dev/sdb1`. Plug it in the other computer and delete existing partitions with `fdisk` and create a new one of type `W95 FAT32`. Format it using `sudo mkfs.vfat /dev/sdc1`. Then put the files on the USB stick.
+    3. Plug the one containing firmwares files on your target computer, in the same USB port as the previous USB stick. You might need to hit ALT+F2, then check what is currently mounted (`cat /etc/mtab`) (make sure nothing on `/cdrom`) and mount the one you just plugged in: `mount -t vfat /dev/sdb1 /cdrom`. ALT+F1 to go back to the install screen.
+    4. Answer "*Yes*" to "*Load missing firmware from removable media?*".
+    5. Once completed, unplug the USB stick and plug the one containing Debian in the same port. You might need to re-write Debian if you re-used the same USB flash drive. Then press ALT+F1 and do:
     
             :::bash
             blkid # Identify a device with a partition of type iso9660
@@ -62,7 +62,7 @@ Here are the steps to get a bare installation of Debian 8:
             mount -t iso9660 /dev/sdc1 /cdrom
             mount -t iso9660 /dev/sdc1 /mnt/iso # Might not be required
 
-    7. Press ALT+F2 to return to the installation dialog. 
+    6. Press ALT+F2 to return to the installation dialog. 
 
 7. When reaching the partitioning step, choose "*Guided using LVM encrypted*". You should eventually obtain something like this:
     
