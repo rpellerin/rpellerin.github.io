@@ -81,10 +81,10 @@ If you need to be up-to-date, that's the right thing to do!
     :::bash
     su
     cp /etc/apt/sources.list{,.bak}
-    sed -i -e 's/ \(stable\|jessie\)/ testing/ig' /etc/apt/sources.list
-    apt-get update
-    apt-get --download-only dist-upgrade
-    apt-get dist-upgrade
+    sed -i -e 's/ \(stable\|stretch\)/ testing/ig' /etc/apt/sources.list
+    apt update
+    apt --download-only dist-upgrade
+    apt dist-upgrade
 
 [More information](http://unix.stackexchange.com/questions/90389/how-to-upgrade-debian-stable-wheezy-to-testing-jessie).
 
