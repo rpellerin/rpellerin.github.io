@@ -142,3 +142,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Getting Started with Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome)
 - [Ratez vos revues de code en 5 leçons ! (Michel Domenjoud)](https://www.youtube.com/watch?v=V4J-m3o5JWg)
 - [10 méthodes pour rendre heureux les développeurs (Cyril Lakech - Romain Linsolas)](https://www.youtube.com/watch?v=KH40vSYLENA)
+- [Gérer sa carrière](http://www.geek-directeur-technique.com/2017/06/29/gerer-sa-carriere)
