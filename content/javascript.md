@@ -94,6 +94,7 @@ All set!
 ## General
 
 - [Clean Code concepts adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 - [The Linux Foundation Unites JavaScript Community for Open Web Development](https://js.foundation/announcements/2016/10/17/Linux-Foundation-Unites-JavaScript-Community-Open-Web-Development/)
 - [How it feels to learn JavaScript in 2016](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f)
 - [ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)

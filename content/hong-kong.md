@@ -25,3 +25,7 @@ The above is a video from my trip in Hong-Kong, in 2016. We stayed at [Oi Suen G
 - A market, like Ladies Market.
 - Tian Tan Buddha (aka the Big Buddha). Get there by taking the Ngong Ping 360 (an aerial tramway).
 - Star Ferry Pier at Tsim Sha Tsui (view over Hong Kong's bay). If you can afford it, go for [a harbour cruise and attend the Symphony of Lights show at 8pm](http://www.discoverhongkong.com/eng/see-do/tours-walks/guided-tours/victoria-harbour/SOL-harbour-cruise.jsp) (price: 200 HKD).
+
+# Links
+
+- [Once a Model City, Hong Kong Is in Trouble](https://www.nytimes.com/2017/06/29/world/asia/hong-kong-china-handover.html)
