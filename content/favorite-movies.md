@@ -34,6 +34,8 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Leon The Professional
 - Inside Lewyin Davis
 - Juno
+- Get Out
+- Limitless
 - Catch Me If You Can
 - Django Unchained
 - Cast Away
