@@ -21,6 +21,7 @@ Functional programming, or **FP** to its friends, is a quite old paradigm, but s
 
 ## FP with Javascript
 
+- [The Rise and Fall and Rise of Functional Programming (Composing Software)](https://medium.com/javascript-scene/the-rise-and-fall-and-rise-of-functional-programming-composable-software-c2d91b424c8c)
 - [Mostly Adequate Guide To FP](https://github.com/MostlyAdequate/mostly-adequate-guide)
 - [Master the JavaScript Interview: What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 - [A GENTLE INTRODUCTION TO FUNCTIONAL JAVASCRIPT](http://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/)
