@@ -87,3 +87,4 @@ Good luck!
 - [Interviews: what I'm thinking while I'm interviewing you](http://cultureofdevelopment.com/blog/interviews-what-im-thinking-while-im-interviewing-you/)
 - [The Guerrilla Guide to Interviewing (version 3.0)](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)
 - [Questions I'm asking in interviews](https://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)
+- [The Tech Recruitment Process At Drivy](https://drivy.engineering/tech-recruitment-process/)
