@@ -37,10 +37,10 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Coit Tower
 - <s>A jazz club (I went to Mr. Tipple's Recording Studio)</s>
 - San Francisco National Cemetery
-- Explore the golden gate park (especially the Japanese stuff)
+- <s>Explore the golden gate park (especially the Japanese stuff)</s>
 - <s>Walk on the Golden Gate Bridge</s>
 - Attend a baseball game
-- Go to a concert venue
+- <s>Go to a concert venue</s> (I went to a stand up comedy show)
 - Attend an ice hockey match
 - Chinatown
 - <s>Japantown</s>
