@@ -42,7 +42,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 - Attend a baseball game
 - <s>Go to a concert venue</s> (I went to a stand up comedy show)
 - Attend an ice hockey match
-- Chinatown
+- <s>Chinatown</s>
 - <s>Japantown</s>
 - <s>Union Square</s>
 - <s>Grand Hyatt (Love sign)</s>
@@ -53,13 +53,13 @@ First, I want to take advantage of being in California to travel a bit and expan
 
 ## Los Angeles
 
-- The pier which appeared in La La Land
+- <s>The pier which appeared in La La Land</s>
 - The jazz clubs from La La Land
 - Long Beach
-- SpaceX (Hawthorne)
-- Malibu
-- Griffith Observatory
-- Santa Monica (go to the pier)
+- <s>SpaceX (Hawthorne)</s>
+- <s>Malibu</s>
+- <s>Griffith Observatory</s>
+- <s>Santa Monica (go to the pier)</s>
 
 ## Las Vegas
 
