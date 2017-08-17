@@ -129,6 +129,14 @@ Finally, one needs to know that shopping is insane here in America. They have dr
 
 That's it for now. Stay tuned!
 
+# Fun stuff to do in San Francisco
+
+- [Where to Watch Movies Outside This Summer](http://www.7x7.com/where-to-watch-movies-outside-this-summer-1787120123.html)
+- [NightLife at the California Academia of Sciences](http://www.calacademy.org/nightlife)
+- [Lindy in the Park’s FREE beginner’s lesson every Sunday 12 to 12:30 p.m.](http://www.lindyinthepark.com/about/free-lesson/)
+- [San Francisco Events & Things to Do](http://sf.funcheap.com/events/)
+- [San Francisco / Nightlife](http://www.notfortourists.com/Overview.aspx/SanFrancisco/Nightlife)
+
 # Complementary information
 
 - [Transfert d’argent](http://gaelleinlosangeles.com/transfert-dargent/)
