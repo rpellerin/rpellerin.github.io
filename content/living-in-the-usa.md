@@ -54,7 +54,7 @@ First, I want to take advantage of being in California to travel a bit and expan
 ## Los Angeles
 
 - <s>The pier which appeared in La La Land</s>
-- The jazz clubs from La La Land
+- The jazz clubs from La La Land (I got to see the Light House cafe from the outside)
 - Long Beach
 - <s>SpaceX (Hawthorne)</s>
 - <s>Malibu</s>
@@ -63,16 +63,15 @@ First, I want to take advantage of being in California to travel a bit and expan
 
 ## Las Vegas
 
-- High Roller
-- The Roller Coaster (New York-New York Hotel)
+- <s>The Roller Coaster (New York-New York Hotel)</s>
 
 ## Other
 
 - Stanford University
-- Yosemite National Park
-- Brice Canyon
-- Zion National Park
-- Sequoia National Forest
+- <s>Yosemite National Park</s>
+- <s>Brice Canyon</s>
+- <s>Zion National Park</s>
+- <s>Sequoia National Park</s>
 - Sonoran desert
 
 <br />
