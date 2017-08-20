@@ -143,3 +143,4 @@ Finally, here are two photos taken in Daejeon.
 
 - [cycling and traffic in Korea: Laws?](https://www.reddit.com/r/korea/comments/2l7pqm/cycling_and_traffic_in_korea_laws/)
 - [THE 27 BEST THINGS TO DO IN KOREA OUTSIDE OF SEOUL](http://www.travelog.me/seoul/27-best-things-korea-outside-seoul/)
+- [Comment la Corée du Nord est devenue une menace ?](https://www.youtube.com/watch?v=FaANpurG3yE)
