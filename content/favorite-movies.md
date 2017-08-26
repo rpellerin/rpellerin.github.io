@@ -37,6 +37,9 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Get Out
 - Limitless
 - Your name (Japanese anime)
+- Grave of the Fireflies (Japanese anime)
+- Whisper of the heart (Japanese anime)
+- My neighbor Totoro (Japanese anime)
 - Catch Me If You Can
 - Django Unchained
 - Cast Away
