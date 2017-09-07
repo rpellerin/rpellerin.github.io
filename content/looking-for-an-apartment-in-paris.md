@@ -1,5 +1,6 @@
 Title: Looking For An Apartment In Paris
 Date: 2017-09-02 22:50
+Modified: 2017-09-07 18:50
 Category: Miscellaneous
 Tags: apartement, paris, housing
 Slug: looking-for-an-apartment-in-paris
@@ -18,7 +19,18 @@ My three favorite ones:
 
 **Pro tip**: enable the alert emails so that you get an email as soon as one ad is posted, or digest emails.
 
-Once you arranged a viewing, you should prepare the documents you are going to have to hand in.
+Here is the message I used to send to landlords:
+
+*Bonjour,*
+
+*Je suis tout juste diplômé de l'école d'ingénieur de Compiègne, l'UTC. Pour mon premier emploi à Paris (qui commence le XX septembre), je recherche un appartement et je suis très intéressé par votre offre sur leboncoin. Quand serait-il possible de venir le visiter ? Vous faut-il des papiers particuliers ?*
+
+*Je paierai moi-même le loyer, ayant un salaire de XXXX euros brut. Mes parents seront garants. Vous pouvez me joindre de préférence par email à me@domain ou par téléphone au 06 XX XX XX XX.*
+
+*Merci beaucoup,*  
+*Cordialement*
+
+Once you've arranged a viewing, you should prepare the documents you are going to have to hand in along with the questions you want to ask.
 
 # The documents
 
@@ -53,6 +65,19 @@ Here is the kind of document I hand in alongside all the other documents.
 
 <hr />
 
+# Questions to ask during the viewing
+
+Here are a few questions I used to ask:
+
+- Are there connections for a washing machine?
+- Are windows double glazed?
+- Is the neighborhood quiet and safe?
+- How much is the brokerage fee? (if not renting directly from the landlord)
+- How much is the deposit, if any?
+- What is included in the utilities? Water, electricity, gas, heat, trash removal, Internet access, ...?
+- When is the apartment available?
+- Is the apartment eligible for APL (*Aide personnalisée au logement*)?
+
 # Keeping track of the apartments you've found and the viewings you've done
 
 I recommend that you create an Excel file to do that. Here is an extract of mine:
@@ -62,14 +87,15 @@ I recommend that you create an Excel file to do that. Here is an extract of mine
 - Price per month
 - Arrondissement
 - Address (if known)
-- Floor
+- Floor (lift?)
 - Square meters
 - Washing machine or connections?
 - Double bed?
 - Availability (date)
 - Last email sent date (and replies and outcome)
 - Last phone call date (and outcome)
-- Additional information
+- Phone number of the broker/landlord
 - Viewing date
+- Additional information
 
 That's it! Hope this helps.
