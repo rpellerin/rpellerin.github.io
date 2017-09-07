@@ -97,6 +97,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Rendre Linux écologique (green-it)](https://www.security-helpzone.com/rendre-linux-ecologique-gren-it-news-335.html)
 - [HOW BREAKPOINTS ARE SET](http://majantali.net/2016/10/how-breakpoints-are-set/)
 - [Réaliser l’image d’un disque dur avec Testdisk](http://korben.info/realiser-limage-dun-disque-dur-testdisk.html)
+- [The right way to check the weather http://wttr.in](https://github.com/chubin/wttr.in)
 
 # Other distros
 
