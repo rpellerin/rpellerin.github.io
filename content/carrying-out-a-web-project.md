@@ -47,7 +47,7 @@ Here are some resources.
 
 - [Web Developer Checklist](http://webdevchecklist.com/)
 
-## HTTPS
+## HTTPS and security
 
 - [Check liste pour passer un site de HTTP à HTTPS](https://wooster.checkmy.ws/2014/10/upgrade-http-vers-https/)
 - [SSL Server Test](https://www.ssllabs.com/ssltest/)
@@ -60,6 +60,7 @@ Here are some resources.
 - [Installer et activer HTTP2 sur Apache2](https://korben.info/installter-activer-http2-apache2.html)
 - [Installer et activer HTTP2 sur Nginx](https://korben.info/installer-activer-http2-nginx.html)
 - [Security/Guidelines/Web Security](https://wiki.mozilla.org/Security/Guidelines/Web_Security)
+- [Web Application Exploits and Defenses](https://google-gruyere.appspot.com/#0__hackers)
 
 ## Formatting / minimizing / indentation / compressing
 

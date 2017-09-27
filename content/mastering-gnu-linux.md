@@ -98,6 +98,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [HOW BREAKPOINTS ARE SET](http://majantali.net/2016/10/how-breakpoints-are-set/)
 - [Réaliser l’image d’un disque dur avec Testdisk](http://korben.info/realiser-limage-dun-disque-dur-testdisk.html)
 - [The right way to check the weather http://wttr.in](https://github.com/chubin/wttr.in)
+- [30 interesting commands for the Linux shell](https://www.lopezferrando.com/30-interesting-shell-commands/)
 
 # Other distros
 
@@ -109,6 +110,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Security Guide: How to Protect Your Infrastructure Against the Basic Attacker](http://blog.mailgun.com/security-guide-basic-infrastructure-security/)
 - [/dev/random vs /dev/urandom](http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/) & [Myths about /dev/urandom](http://www.2uo.de/myths-about-urandom/)
 - [Hygiène numérique pour l’administrateur système](https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1)
+- [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
 
 # Other
 
