@@ -20,6 +20,30 @@ Consequently, I started googling about evergreen houseplants that clean the air.
 
 Some time later I'll post here how to take care of these houseplants.
 
+# Aglaonema
+
+## Temperature
+
+Between 15°C and 25°C. Cannot tolerate below 13.
+
+## Light
+
+300 lux, half shadow, must get sun light a few hours per day (no direct sunlignt though).
+
+## Watering
+
+Soil should be kept moist at all times. Don't allow it to dry otherwise it can cause leaves to drop. In summer, water twice a week. In winter, once. Don't leave standing water in the saucer.
+
+## Repotting
+
+Repotting is from March to May, every 2 to 3 years. For an old Aglaonema, just replace the upper layer of the soil, do not repot.
+
+## Complementary information
+
+Leaves and fruits are toxic for humans and pets.
+
+<br />
+
 Hope this helps, folks!
 
 # Resources
