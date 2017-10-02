@@ -42,6 +42,27 @@ Repotting is from March to May, every 2 to 3 years. For an old Aglaonema, just r
 
 Leaves and fruits are toxic for humans and pets.
 
+# Dracaena Marginata
+
+## Temperature
+
+Between 15°C and 25°C. Avoid below 15 (won't grow otherwise).
+
+## Light
+
+500 lux, quite a log of light. Avoid too much direct sun light. Do not like absence of light.
+
+## Watering
+
+Soil must remain moist. Mist the leaves twice a week.
+
+## Repotting
+
+Repotting is from March to May, every 2 to 3 years. Every other year, replace the upper layer of the soil, do not repot.
+
+## Complementary information
+
+
 <br />
 
 Hope this helps, folks!
