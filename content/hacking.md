@@ -149,3 +149,5 @@ This part has been inspired from [this article](https://medium.com/@rotxed/how-t
 - [KON-BOOT](http://www.piotrbania.com/all/kon-boot/)
 - [Rickroller Spotify !](https://korben.info/rickroller-spotify.html)
 - [Null Byte](https://null-byte.wonderhowto.com/)
+- [Tabnabbing: A New Type of Phishing Attack](http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/)
+- [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
