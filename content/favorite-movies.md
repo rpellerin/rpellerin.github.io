@@ -41,6 +41,8 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Whisper of the heart (Japanese anime)
 - My neighbor Totoro (Japanese anime)
 - Catch Me If You Can
+- Creed
+- Blade Runner and Blade Runner 2049
 - Django Unchained
 - Cast Away
 - The Notebook
