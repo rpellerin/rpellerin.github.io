@@ -46,22 +46,43 @@ Leaves and fruits are toxic for humans and pets.
 
 ## Temperature
 
-Between 15°C and 25°C. Avoid below 15 (won't grow otherwise).
+Between 15°C and 22°C. Avoid below 15 (won't grow otherwise). Below 10 could damage it.
 
 ## Light
 
-500 lux, quite a log of light. Avoid too much direct sun light. Do not like absence of light.
+500 lux, quite a log of light. Avoid too much direct sun light. It does not like absence of light.
 
 ## Watering
 
-Soil must remain moist. Mist the leaves twice a week.
+Soil must remain hardly moist. Once or twice a week. Mist the leaves twice a week also, if possible.
 
 ## Repotting
 
 Repotting is from March to May, every 2 to 3 years. Every other year, replace the upper layer of the soil, do not repot.
 
+# Spathiphyllum
+
+## Temperature
+
+Between 15°C and 25°C. Below 10 could damage it seriously.
+
+## Light
+
+A significant amount but no direct sun though. Dim light is OK.
+
+## Watering
+
+Once a week, a lot. Don't leave standing water!
+
+## Repotting
+
+In March, every two to three years.
+
 ## Complementary information
 
+Avoid dry air as well as fresh air flows.
+
+To foster blossoming, deprive the plant of water for a few days.
 
 <br />
 
