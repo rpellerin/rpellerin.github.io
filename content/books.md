@@ -8,7 +8,7 @@ Summary: My reading list
 
 # Since 2010s and counting
 
-- **The Walking Dead** (comic books), *by Robert Kirkman*
+- **The Walking Dead** (comic books), *by Robert Kirkman* and *Charlie Adlard*
 
 # 2016
 
@@ -17,8 +17,11 @@ Summary: My reading list
 - **1984**, *by George Orwell*
 - **Universal War One** (all volumes), by *Denis Bajram*
 - **Universal War Two** (volumes 1 & 2), by *Denis Bajram*
+- **Zombies** and **Zombies Néchronologies**, by *Sophian Cholet*, *Simon Champelovier* and *Olivier Peru*
 
 # 2017
 
 - **Animal Farm**, *by George Orwell*
 - **Universal War Two** (volumes 3), by *Denis Bajram*
+- **One Day**, by *David Nicholls*
+- **Here's Negan**, *by Robert Kirkman* and *Charlie Adlard*
