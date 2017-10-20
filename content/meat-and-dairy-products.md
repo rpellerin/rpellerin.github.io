@@ -9,6 +9,8 @@ Summary: A bunch of links in favor of lesser comsumption of meat and dairy produ
 - [UN urges global move to meat and dairy-free diet](https://www.theguardian.com/environment/2010/jun/02/un-report-meat-free-diet)
 - [COwSPIRACY: the film that environmental organizations don't want you to see!](http://www.cowspiracy.com/)
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Qcd4VIkCI3k?rel=0" frameborder="0" allowfullscreen></iframe>
+
 # Related topics
 
 - [Phil Libin Hasn’t Eaten Since Sunday](https://backchannel.com/inside-one-founders-personal-fast-club-dea3a3592123)
