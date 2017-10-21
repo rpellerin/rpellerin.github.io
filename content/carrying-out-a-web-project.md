@@ -21,6 +21,7 @@ Here are some resources.
 - [Mini Convention CSS](http://www.alsacreations.com/article/lire/1707-mini-convention-css.html)
 - [Flexbox, et le CSS redevient fun ! (Hubert SABLONNIÈRE)](https://www.youtube.com/watch?v=5F_ngjHDcJQ)
 - [CSS is Awesome Igor Laborie](https://www.youtube.com/watch?v=H8lICKucWL4)
+- [Grid by Example](https://gridbyexample.com/)
 
 ## Centering
 
@@ -134,3 +135,4 @@ On Linux, if you have `imagemagick` installed, do:
 - [Optimiser les performances d'une webapp (Guillaume EHRET)](https://www.youtube.com/watch?v=9PRPPJFaF_o)
 - [The Illusion of Speed](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/)
 - [Firefox 54: E10S-Multi, WebExtension APIs, CSS clip-path](https://hacks.mozilla.org/2017/06/firefox-54-e10s-webextension-apis-css-clip-path/)
+- [How we rebuilt the viewsourceconf.org website](https://hacks.mozilla.org/2017/10/how-we-rebuilt-the-viewsourceconf-org-website/)

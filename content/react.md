@@ -73,6 +73,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Redux Lessons #2 - Screencast Video Tutorials @eggheadio](https://egghead.io/lessons/javascript-redux-simplifying-the-arrow-functions)
 - [React Cheat Sheet](http://reactcheatsheet.com/)
 - [Inspect, Modify, and Debug React and Redux in Firefox with Add-ons](https://hacks.mozilla.org/2017/07/debug-react-redux-firefox-add-ons/)
+- [7 architectural attributes of a reliable React component](https://dmitripavlutin.com/7-architectural-attributes-of-a-reliable-react-component/)
 
 ## About Babel
 
