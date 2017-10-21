@@ -145,3 +145,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Gérer sa carrière](http://www.geek-directeur-technique.com/2017/06/29/gerer-sa-carriere)
 - [H.264 is Magic](https://sidbala.com/h-264-is-magic/)
 - [Learn regex the easy way ](https://github.com/zeeshanu/learn-regex)
+- [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
