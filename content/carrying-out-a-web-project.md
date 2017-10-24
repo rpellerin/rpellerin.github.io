@@ -47,6 +47,7 @@ Here are some resources.
 # Finalizing
 
 - [Web Developer Checklist](http://webdevchecklist.com/)
+- [Front-End-Checklist](http://frontendchecklist.com/)
 
 ## HTTPS and security
 
