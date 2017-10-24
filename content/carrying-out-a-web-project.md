@@ -34,6 +34,7 @@ Here are some resources.
 ## Responsive design
 
 - [Ultra simple Responsive navigation snippets](http://goetter.fr/nav/)
+- [Responsive web design](https://developer.mozilla.org/en-US/docs/Glossary/Responsive_web_design)
 
 # Compatibility
 

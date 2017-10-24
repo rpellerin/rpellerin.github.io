@@ -39,7 +39,7 @@ This killer project must include the following things:
 - Progressive Web App
     - Service worker (makes app available offline)
     - [Progressive Web Apps (Cyril Balit - Florian Orpelière)](https://www.youtube.com/watch?v=kqi4Xa1ViOQ)
-    - Notifications
+    - [Notifications](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
 - CSS
     - Variables
     - Flexbox
