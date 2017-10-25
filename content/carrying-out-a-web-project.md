@@ -138,3 +138,4 @@ On Linux, if you have `imagemagick` installed, do:
 - [The Illusion of Speed](https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/)
 - [Firefox 54: E10S-Multi, WebExtension APIs, CSS clip-path](https://hacks.mozilla.org/2017/06/firefox-54-e10s-webextension-apis-css-clip-path/)
 - [How we rebuilt the viewsourceconf.org website](https://hacks.mozilla.org/2017/10/how-we-rebuilt-the-viewsourceconf-org-website/)
+- [What Web Can Do Today](https://whatwebcando.today/)
