@@ -40,6 +40,7 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Grave of the Fireflies (Japanese anime)
 - Whisper of the heart (Japanese anime)
 - My neighbor Totoro (Japanese anime)
+- The Wind Rises (Japanese anime)
 - Catch Me If You Can
 - Creed
 - Blade Runner and Blade Runner 2049
