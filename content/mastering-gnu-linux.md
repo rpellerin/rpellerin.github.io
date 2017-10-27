@@ -84,6 +84,7 @@ Everything you have ever wanted to know about GNU/Linux.
 - [Usefulness of the Linux Framebuffer on the Virtual Console](http://hacklab.cz/2012/04/22/usefulness-linux-framebuffer-virtual-console)
 - [Print PDF on many pages](http://pythonhosted.org/pdftools.pdfposter/Examples.html)
 - [SSH Kung Fu](http://blog.tjll.net/ssh-kung-fu/)
+- [SSH Escape Sequences (aka Kill Dead SSH Sessions)](https://lonesysadmin.net/2011/11/08/ssh-escape-sequences-aka-kill-dead-ssh-sessions/)
 - [NANO : Quelques raccourcis à retenir](http://korben.info/utiliser-nano.html)
 - [Les commandes fondamentales de Linux](http://wiki.linux-france.org/wiki/Les_commandes_fondamentales_de_Linux)
 - [Créer un serveur mail](http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-mail-postfix-courier-imap-ubuntu.pdf)
