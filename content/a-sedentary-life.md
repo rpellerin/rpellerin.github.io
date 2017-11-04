@@ -11,3 +11,4 @@ I might talk about it some day... meanwhile here are a few links.
 - [Don't just sit there](http://sydneycorporateyoga.com/wp-content/uploads/2014/02/Sitting.jpg)
 - [How Your Sedentary Lifestyle is Killing You](https://elth.co/sedentary-lifestyle-killing/)
 - [Forget Calories](https://www.theatlantic.com/health/archive/2014/06/calories-are-out/372690/)
+- [If You Don’t Want To Regret Your Life 30 Years Later, Make This One Choice Right Now](https://medium.com/the-mission/if-you-dont-want-to-regret-your-life-30-years-later-make-this-one-choice-right-now-1cc137516df0)

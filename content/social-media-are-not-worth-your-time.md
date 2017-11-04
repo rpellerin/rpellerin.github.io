@@ -11,3 +11,4 @@ Summary: What I think about most social media
 - [Get your loved ones off Facebook.](http://www.salimvirani.com/facebook/)
 - [Why you shouldn’t share links on Facebook](https://medium.com/@intideceukelaire/why-you-shouldnt-share-links-on-facebook-f317ba4aa58b)
 - [How To / Why Leave Facebook](http://nickbriz.com/facebook/)
+- [Time Well Spent](http://www.timewellspent.io/)

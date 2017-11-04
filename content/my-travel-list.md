@@ -50,6 +50,6 @@ Summary: Places I want to visit.
 - Vietnam
 - Malaysia
 - Philippines
-- Taiwan (Taipei)
+- Taiwan (Taipei and Kaohsiung)
 - Senegal
 - Australia

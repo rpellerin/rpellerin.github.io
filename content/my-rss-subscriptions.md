@@ -20,6 +20,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Eric Gourlaouen](http://blog.ericgourlaouen.com/feed)
 - [KtorZ's Blog](http://ktorz.github.io/feed.xml)
 - [Trip and Tech blog](http://blog.thomasmorel.io/feed.xml)
+- [Kyâne Pichou](https://www.kyane.fr/index.xml)
 
 # HTML/CSS
 
