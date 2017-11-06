@@ -81,6 +81,7 @@ All set!
 
 - [Node.js ES2015/ES6, ES2016 and ES2017 support](http://node.green/)
 - [Node js comme les grands (Romain Maton)](https://www.youtube.com/watch?v=RIRB2AFrPV8)
+- [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 
 ## Set-up your environment
 
