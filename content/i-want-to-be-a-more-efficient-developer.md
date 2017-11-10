@@ -146,4 +146,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [H.264 is Magic](https://sidbala.com/h-264-is-magic/)
 - [Learn regex the easy way ](https://github.com/zeeshanu/learn-regex)
 - [How to Do Code Reviews Like a Human (Part One)](https://mtlynch.io/human-code-reviews-1/)
+- [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
 - [Why Focus Is Your Greatest Competitive Advantage at Work (Plus 19 Ways To Actually Do It)](https://blog.todoist.com/2015/09/01/how-to-focus-better-at-work/)

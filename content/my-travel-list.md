@@ -48,6 +48,11 @@ Summary: Places I want to visit.
 - Saint Petersburg
 - Thailand
 - Vietnam
+- Turkey:
+
+    - Pamukkale
+    - Anıtkabir
+
 - Malaysia
 - Philippines
 - Taiwan (Taipei and Kaohsiung)
