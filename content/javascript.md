@@ -125,6 +125,7 @@ All set!
 - [Emojis in Javascript](https://medium.com/@thekevinscott/emojis-in-javascript-f693d0eb79fb)
 - [Transpiling dependencies with Babel](http://2ality.com/2017/04/transpiling-dependencies-babel.html)
 - [Running a Node.js process on Debian as a Systemd Service](https://thomashunter.name/blog/running-a-node-js-process-on-debian-as-a-systemd-service/)
+- [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
 
 ## Some cool node/npm stuff/packages/tools
 
