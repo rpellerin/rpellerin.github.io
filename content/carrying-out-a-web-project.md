@@ -49,6 +49,7 @@ Here are some resources.
 
 - [Web Developer Checklist](http://webdevchecklist.com/)
 - [Front-End-Checklist](http://frontendchecklist.com/)
+- [Donner du sens à vos pages web avec Schema.org](https://www.youtube.com/watch?v=SVrgarg3KNs)
 
 ## HTTPS and security
 
