@@ -59,6 +59,8 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen></iframe>
 
+[Tips for Webpack here](https://medium.com/netscape/webpack-3-react-production-build-tips-d20507dba99a).
+
 # Futher reading
 
 - [Reduce Your bundle.js File Size By Doing This One Thing](https://lacke.mn/reduce-your-bundle-js-file-size/)
