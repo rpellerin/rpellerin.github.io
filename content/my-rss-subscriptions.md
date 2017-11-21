@@ -56,6 +56,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Mozilla Hacks – the Web developer blog](https://hacks.mozilla.org/feed/)
 - [Martin Fowler](https://martinfowler.com/feed.atom)
 - [Increment](https://increment.com/feed.xml)
+- [Infrequently Noted](https://infrequently.org/feed/)
 
 # Security
 
