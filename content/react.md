@@ -76,6 +76,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [React Cheat Sheet](http://reactcheatsheet.com/)
 - [Inspect, Modify, and Debug React and Redux in Firefox with Add-ons](https://hacks.mozilla.org/2017/07/debug-react-redux-firefox-add-ons/)
 - [7 architectural attributes of a reliable React component](https://dmitripavlutin.com/7-architectural-attributes-of-a-reliable-react-component/)
+- [Improving a React app performance](https://www.youtube.com/watch?v=6WvSXoYrM5o)
 
 ## About Babel
 

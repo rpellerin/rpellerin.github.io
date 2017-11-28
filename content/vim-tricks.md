@@ -71,3 +71,4 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 - [What is your most productive shortcut with Vim?](http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim)
 - [nicknisi/dotfiles](https://github.com/nicknisi/dotfiles)
 - [shawncplus/dotfiles](https://github.com/shawncplus/dotfiles)
+- [Why I love Vim: It’s the lesser-known features that make it so amazing](https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85)

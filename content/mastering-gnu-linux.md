@@ -117,3 +117,4 @@ Everything you have ever wanted to know about GNU/Linux.
 
 - [Operating System: From 0 to 1](https://tuhdo.github.io/os01/)
 - [xmonad + vimperator](https://mobile.twitter.com/clementd/status/837600575483179009)
+- [Linux Performance Analysis in 60,000 Milliseconds](https://medium.com/netflix-techblog/linux-performance-analysis-in-60-000-milliseconds-accc10403c55)
