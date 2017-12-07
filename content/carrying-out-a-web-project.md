@@ -12,6 +12,7 @@ Here are some resources.
 
 - [Ma méthodologie d’intégration web](http://darklg.me/2012/04/methodologie-integration-web-front-end/)
 - [Some pieces of advice](https://old.etherpad-mozilla.org/RAI9OV5U2k)
+- [Maintenabilité du code HTML / CSS : entre automatisation et guide de style](https://www.24joursdeweb.fr/2017/maintenabilite-du-code-html-css-entre-automatisation-et-guide-de-style/)
 
 # CSS
 
@@ -121,6 +122,19 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [Awesome wasm](https://github.com/mbasso/awesome-wasm)
 - [WebAssembly 101: a developer's first steps](http://blog.openbloc.fr/webassembly-first-steps/)
+
+## PWAs
+
+- [A Pinterest Progressive Web App Performance Case Study](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
+
+## Linters
+
+- [CSS](https://github.com/stylelint/stylelint)
+- [JavaScript](https://github.com/eslint/eslint)
+
+## Testing
+
+- [Using Headless Mode in Firefox](https://hacks.mozilla.org/2017/12/using-headless-mode-in-firefox/)
 
 ## Misc
 
