@@ -122,6 +122,7 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [Awesome wasm](https://github.com/mbasso/awesome-wasm)
 - [WebAssembly 101: a developer's first steps](http://blog.openbloc.fr/webassembly-first-steps/)
+- [WebAssembly, an executable format for the web ](https://blog.octo.com/en/webassembly-an-executable-format-for-the-web/)
 
 ## PWAs
 
