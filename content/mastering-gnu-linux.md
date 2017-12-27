@@ -79,6 +79,7 @@ Everything you have ever wanted to know about GNU/Linux.
 # Commands / tips
 
 - [Linux Performance Analysis in 60,000 Milliseconds](http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html)
+- [Pour avoir un peu d’intimité avec l’historique Bash](https://korben.info/dintimite-lhistorique-bash.html)
 - [18 commands to monitor network bandwidth on Linux server](http://www.binarytides.com/linux-commands-monitor-network/)
 - [Recovering hard drive disk problems](http://arthurdejong.org/recovery.html)
 - [Usefulness of the Linux Framebuffer on the Virtual Console](http://hacklab.cz/2012/04/22/usefulness-linux-framebuffer-virtual-console)
