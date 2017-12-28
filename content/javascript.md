@@ -95,6 +95,7 @@ All set!
 ## General
 
 - [Clean Code concepts adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
+- [A different way of understanding this in JavaScript](http://2ality.com/2017/12/alternate-this.html)
 - [JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)
 - [How JavaScript Works](https://blog.sessionstack.com/tagged/tutorial)
 - [The Linux Foundation Unites JavaScript Community for Open Web Development](https://js.foundation/announcements/2016/10/17/Linux-Foundation-Unites-JavaScript-Community-Open-Web-Development/)

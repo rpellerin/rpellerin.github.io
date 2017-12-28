@@ -57,6 +57,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Martin Fowler](https://martinfowler.com/feed.atom)
 - [Increment](https://increment.com/feed.xml)
 - [Infrequently Noted](https://infrequently.org/feed/)
+- [Les sorties de la semaine](http://rss.allocine.fr/ac/cine/cettesemaine)
 
 # Security
 
