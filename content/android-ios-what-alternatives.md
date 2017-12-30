@@ -1,5 +1,6 @@
 Title: Android, iOS: What Alternatives?
 Date: 2015-11-26 15:00
+Modified: 2017-12-30 19:00
 Category: Miscellaneous
 Tags: mobile, android, ios, ubuntu, firefox
 Slug: android-ios-what-alternatives
@@ -39,6 +40,38 @@ Plug in your phone, enable the developer mode and USB debugging.
     ubuntu-device-flash touch --channel=stable --bootstrap
 
 [More information](https://developer.ubuntu.com/en/start/ubuntu-for-devices/installing-ubuntu-for-devices/).
+
+## For Nexus 5
+
+There are 3 methods (updated in December 2017). First, plug in your phone. Then:
+
+### 1
+
+[Official tutorial](https://devices.ubports.com/#/hammerhead).
+
+    :::bash
+    git clone https://github.com/MariusQuabeck/magic-device-tool.git
+    cd magic-device-tool
+    sudo ./launcher.sh
+
+### 2
+
+[Official tutorial](https://devices.ubports.com/#/hammerhead).
+
+    :::bash
+    sudo apt-get install ubuntu-device-flash phablet-tools
+    adb reboot bootloader
+    sudo fastboot oem unlock
+    sudo ubuntu-device-flash --server=http://system-image.ubports.com touch --device=hammerhead --channel=15.04/stable --bootstrap
+
+### 3
+
+[Official tutorial](https://ubports.com/page/ubuntu-nexus-5).
+
+    :::bash
+    wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
+    sudo dpkg -i /tmp/ubports.deb
+    ubports-installer
 
 # Building and installing Firefox OS
 
