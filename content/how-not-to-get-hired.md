@@ -86,7 +86,6 @@ Good luck!
 - [Always Get/Give Interview Feedback, It Matters](http://cultureofdevelopment.com/blog/always-give-interview-feedback/)
 - [Interviews: what I'm thinking while I'm interviewing you](http://cultureofdevelopment.com/blog/interviews-what-im-thinking-while-im-interviewing-you/)
 - [The Guerrilla Guide to Interviewing (version 3.0)](https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/)
-- [Questions I'm asking in interviews](https://jvns.ca/blog/2013/12/30/questions-im-asking-in-interviews/)
 - [The Tech Recruitment Process At Drivy](https://drivy.engineering/tech-recruitment-process/)
 - [You fired your top talent. I hope you’re happy.](https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd)
 - [What you should know as a founder of a software company](https://qotoqot.com/blog/founder-skills/)

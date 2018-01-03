@@ -6,7 +6,7 @@ Slug: disabling-voicemail
 Authors: Romain Pellerin
 Summary: How to disable your voicemail
 
-In many scenarios, calls are forwared to your voicemail. You may want to disable it, or re-enable it.
+In many scenarios, calls are forwarded to your voicemail. You may want to disable it, or re-enable it.
 
 # 1. You are not picking up the phone (no reply)
 
