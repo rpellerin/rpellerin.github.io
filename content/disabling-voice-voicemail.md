@@ -6,35 +6,6 @@ Slug: disabling-voicemail
 Authors: Romain Pellerin
 Summary: How to disable your voicemail
 
-1) Vous ne répondez pas. (renvoi messagerie si non réponse)
-Configuration et activation : **61*(N° long REPONDEUR)**(Nombre/Secondes)# [Bouton vert (Envoi, Appel)]
-Désactivation : ##61# [Appel] (Sonne sans arrêt)
-Vérification de l'état : *#61# [Appel]
- 
-2) Vous êtes inaccessible, en dehors d'une couverture réseau cellulaire, ou votre portable est éteint. (renvoi répondeur si non accessible)
-Configuration et activation : **62*(N° long REPONDEUR)# [Appel]
-Désactivation : ##62# [Appel] (messagerie vocale inaccessible)
-Vérification de l'état : *#62# [Appel]
- 
-3) Vous êtes déjà en ligne. (renvoi répondeur si occupé)
-Configuration et activation : **67*(N° long REPONDEUR)# [Appel]
-Désactivation : ##67# [Appel] (le numéro sonne occupé)
-Vérification de l'état : *#67# [Appel]
- 
-4) Pour un renvoi systématique vers le répondeur (Voix et Visiophonie) :
-Configuration et activation : **21*(N° de REPONDEUR)# [Appel]
-Désactivation :  ##21# [Appel]
-Vérification de l'état : *#21# [Appel]
- 
-5) Pour activer le double appel (gérer simultanément une communication en cours et un appel entrant), désactive le renvoi d'appel sur occupé et le remplace par le renvoi d'appel sur non-réponse :
-Activation : *43# [Appel]
-Désactivation : #43# [Appel]
-Vérification : *#43# [Appel]
- 
-6) Activer tous les renvois conditionnels : *004*(Numéro)#
-Vérification de l'état : *#004#
-Désactiver tous les renvois conditionnels : #004#
-
 In many scenarios, calls are forwared to your voicemail. You may want to disable it, or re-enable it.
 
 # 1. You are not picking up the phone (no reply)
