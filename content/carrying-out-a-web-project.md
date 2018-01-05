@@ -95,6 +95,11 @@ On Linux, if you have `imagemagick` installed, do:
 
 # Useful resources
 
+## Fonts
+
+- [How we use web fonts responsibly, or, avoiding a @font-face-palm](https://www.filamentgroup.com/lab/font-loading.html)
+- [Font-display ](https://font-display.glitch.me/)
+
 ## Icons
 
 - [Icones web Unicode](http://goetter.fr/unicode/)

@@ -49,6 +49,7 @@ Here are some resources to go deeper with Git.
 - [Entrer dans les entrailles de Git, ou comment faire un commit sans faire du Git (Alexandre Garnier)](https://www.youtube.com/watch?v=Hd_UpJPDlik)
 - [Bien utiliser Git merge et rebase](https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/)
 - [Auto-squashing Git Commits](https://robots.thoughtbot.com/autosquashing-git-commits)
+- [git worktree](https://git-scm.com/docs/git-worktree#_examples)
 
 ## Auto deployment
 
