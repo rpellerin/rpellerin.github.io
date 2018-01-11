@@ -78,6 +78,9 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [7 architectural attributes of a reliable React component](https://dmitripavlutin.com/7-architectural-attributes-of-a-reliable-react-component/)
 - [Improving a React app performance](https://www.youtube.com/watch?v=6WvSXoYrM5o)
 - [React 🎄](https://react.holiday/)
+- [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- [Redux DevTools](https://addons.mozilla.org/en-US/firefox/addon/remotedev/)
+- [react-perf-devtool](https://github.com/nitin42/react-perf-devtool)
 
 ## About Babel
 
