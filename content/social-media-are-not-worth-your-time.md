@@ -13,3 +13,4 @@ Summary: What I think about most social media
 - [How To / Why Leave Facebook](http://nickbriz.com/facebook/)
 - [Time Well Spent](http://www.timewellspent.io/)
 - [How to Fix Facebook—Before It Fixes Us](https://washingtonmonthly.com/magazine/january-february-march-2018/how-to-fix-facebook-before-it-fixes-us/)
+- [Birdcage liners](https://www.joelonsoftware.com/2018/01/12/birdcage-liners/)
