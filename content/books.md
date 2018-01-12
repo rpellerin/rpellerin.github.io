@@ -22,6 +22,10 @@ Summary: My reading list
 # 2017
 
 - **Animal Farm**, *by George Orwell*
-- **Universal War Two** (volumes 3), by *Denis Bajram*
+- **Universal War Two** (volume 3), by *Denis Bajram*
 - **One Day**, by *David Nicholls*
 - **Here's Negan**, *by Robert Kirkman* and *Charlie Adlard*
+- **Love Is Love**, comic *published DW Publishing, in collaboration with DC Entertainment*
+# 2018
+
+- **Shangri-la**, *by Mathieu Bablet*
