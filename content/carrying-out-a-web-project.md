@@ -75,6 +75,7 @@ Here are some resources.
 - [Optimise your pngs from the terminal in OSX](http://www.clock.co.uk/blog/optimise-your-pngs-from-the-terminal-in-osx)
 - [Cache et compression des pages web avec Gzip ou Deflate en HTTP](http://www.alsacreations.com/article/lire/914-compression-pages-html-css-gzip-deflate.html)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Monitoring unused CSS by unleashing the raw power of the DevTools Protocol](http://blog.cowchimp.com/monitoring-unused-css-by-unleashing-the-devtools-protocol/)
 
 ## Apache setup
 
