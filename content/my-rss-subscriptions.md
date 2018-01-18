@@ -42,6 +42,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [De geek à directeur technique](http://www.geek-directeur-technique.com/feed)
 - [GBProd](http://gb-prod.fr/feed.xml)
 - [Git Attitude](http://www.git-attitude.fr/feed/)
+- [Communauté Mozilla francophone](https://blog.mozfr.org/feed/atom)
 - [GuiGui's show](http://www.guiguishow.info/feed/)
 - [Informatique – David Mercereau](http://www.mercereau.info/categorie/informatique/feed/)
 - [Joel on Software](https://www.joelonsoftware.com/feed/)
