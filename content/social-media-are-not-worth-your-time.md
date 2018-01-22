@@ -14,3 +14,4 @@ Summary: What I think about most social media
 - [Time Well Spent](http://www.timewellspent.io/)
 - [How to Fix Facebook—Before It Fixes Us](https://washingtonmonthly.com/magazine/january-february-march-2018/how-to-fix-facebook-before-it-fixes-us/)
 - [Birdcage liners](https://www.joelonsoftware.com/2018/01/12/birdcage-liners/)
+- [Revealed: the more time that children chat on social media, the less happy they feel](https://www.theguardian.com/society/2017/apr/09/social-networks--children-chat-feel-less-happy-facebook-instagram-whatsapp)
