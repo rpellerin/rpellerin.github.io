@@ -8,7 +8,7 @@ Summary: What to ask during a hiring interview
 
 Every once in a while, people quit companies and start looking for others. They have to go through hiring processes all over again. This is usually time-consuming and not necessarily easy or pleasant. 
 
-One of the things that I personally fear the most is forgetting to ask important questions during an interview. So of then can be game changers. So here is a list of all the useful ones one might want to ask:
+One of the things that I personally fear the most is forgetting to ask important questions during an interview. Some of them can even be game changers. So here is a list of all the useful ones one might want to ask:
 
 # General questions
 
