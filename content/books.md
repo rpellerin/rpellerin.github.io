@@ -29,3 +29,4 @@ Summary: My reading list
 # 2018
 
 - **Shangri-la**, *by Mathieu Bablet*
+- **La Belle Mort**, *by Mathieu Bablet*
