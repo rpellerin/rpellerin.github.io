@@ -25,6 +25,7 @@ Summary: Places I want to visit.
 # Europe
 
 - Vienna
+- Hallstatt, Austria 
 - Prague
 - Greece
 - Cyprus
