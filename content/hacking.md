@@ -151,3 +151,4 @@ This part has been inspired from [this article](https://medium.com/@rotxed/how-t
 - [Null Byte](https://null-byte.wonderhowto.com/)
 - [Tabnabbing: A New Type of Phishing Attack](http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/)
 - [About rel=noopener](https://mathiasbynens.github.io/rel-noopener/)
+- [social-engineer-toolkit](https://github.com/trustedsec/social-engineer-toolkit)
