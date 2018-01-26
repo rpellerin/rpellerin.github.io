@@ -64,3 +64,4 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 # Security
 
 - [A Few Thoughts on Cryptographic Engineering](http://blog.cryptographyengineering.com/feeds/posts/default)
+- [hackndo](http://beta.hackndo.com/feed.xml)
