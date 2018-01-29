@@ -149,3 +149,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [How to Do Code Reviews Like a Human (Part Two)](https://mtlynch.io/human-code-reviews-2/)
 - [Why Focus Is Your Greatest Competitive Advantage at Work (Plus 19 Ways To Actually Do It)](https://blog.todoist.com/2015/09/01/how-to-focus-better-at-work/)
 - [Effective Engineer - Notes](https://gist.github.com/rondy/af1dee1d28c02e9a225ae55da2674a6f)
+- [If You Multitask During Meetings, Your Team Will, Too](https://davepaola.com/2018/01/25/if-you-multitask-during-meetings-your-team-will-too/)
+- [The Feynman Technique: The Best Way to Learn Anything](https://www.fs.blog/2012/04/learn-anything-faster-with-the-feynman-technique/)
