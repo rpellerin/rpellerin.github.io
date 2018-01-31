@@ -50,6 +50,7 @@ Here are some resources to go deeper with Git.
 - [Bien utiliser Git merge et rebase](https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/)
 - [Auto-squashing Git Commits](https://robots.thoughtbot.com/autosquashing-git-commits)
 - [git worktree](https://git-scm.com/docs/git-worktree#_examples)
+- [Git stuff](http://sethrobertson.github.io/)
 
 ## Auto deployment
 
