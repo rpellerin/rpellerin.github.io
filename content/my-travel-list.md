@@ -15,6 +15,11 @@ Summary: Places I want to visit.
 - Texas
 - Mount Rushmore National Memorial
 - Philadelphia (especially the Rocky Statue and the Rocky Steps)
+- Forrest Gump Point in Utah (GPS coordinates: 37.1015063,-109.9908129)
+
+# Japan
+
+- Chureito Pagoda, Kyoto (I've been there, but never climbed [the stairs to get the wonderful view of Mount Fuji](Chureito Pagoda))
 
 # China
 
@@ -59,3 +64,4 @@ Summary: Places I want to visit.
 - Taiwan (Taipei and Kaohsiung)
 - Senegal
 - Australia
+- Pura Ulun Danu Bratan, Indonesia
