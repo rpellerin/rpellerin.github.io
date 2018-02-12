@@ -521,6 +521,8 @@ Then:
 
 # Installing ownCloud
 
+**UPDATE**: install NextCloud instead of ownCloud. It is a fork (based on ownCloud) and apparently better.
+
 This section will try to sum up what can be found on the official documentation.
 
 **Consider using PHP7.** It might require you to install ownCloud manually.
