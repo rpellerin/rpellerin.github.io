@@ -60,6 +60,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Increment](https://increment.com/feed.xml)
 - [Infrequently Noted](https://infrequently.org/feed/)
 - [Les sorties de la semaine](http://rss.allocine.fr/ac/cine/cettesemaine)
+- [Je suis un dev](http://www.jesuisundev.fr/feed/)
 
 # Security
 
