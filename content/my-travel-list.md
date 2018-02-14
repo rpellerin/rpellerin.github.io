@@ -35,14 +35,15 @@ Summary: Places I want to visit.
 - Greece
 - Cyprus
 - Berlin
-- Scandinavia: Denmark, Finland, Sweden
+- Scandinavia: Denmark, Sweden, Norway
+- Finland
 - Italy (Rome & Venice)
 - Madrid
 
 # Other countries
 
-- Norway
 - Iceland (I want to see Northern lights so bad!)
+- Eldhraun, Iceland
 - Greenland or Northern Canada
 - Machu Picchu
 - Chichen Itza (Mexico)
