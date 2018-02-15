@@ -34,10 +34,10 @@ Summary: Places I want to visit.
 - Prague
 - Greece
 - Cyprus
-- Berlin
+- Berlin, Hamburg and Munich, Germany
 - Scandinavia: Denmark, Sweden, Norway
 - Finland
-- Italy (Rome & Venice)
+- Rome and Venice, Italy
 - Madrid
 
 # Other countries
@@ -53,7 +53,7 @@ Summary: Places I want to visit.
 - New Zealand
 - Moscow
 - Saint Petersburg
-- Thailand
+- Phuket and Patong, Thailand
 - Vietnam
 - Turkey:
 
