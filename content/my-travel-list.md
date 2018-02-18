@@ -20,6 +20,8 @@ Summary: Places I want to visit.
 # Japan
 
 - Chureito Pagoda, Kyoto (I've been there, but never climbed [the stairs to get the wonderful view of Mount Fuji](Chureito Pagoda))
+- Miyajima (Itsukushima)
+- Kanazawa
 
 # China
 
