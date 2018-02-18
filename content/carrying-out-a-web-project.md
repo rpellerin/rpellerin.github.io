@@ -133,6 +133,9 @@ On Linux, if you have `imagemagick` installed, do:
 ## PWAs
 
 - [A Pinterest Progressive Web App Performance Case Study](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
+- [Lab: Migrating to Workbox from sw-precache and sw-toolbox](https://developers.google.com/web/ilt/pwa/lab-migrating-to-workbox-from-sw-precache-and-sw-toolbox)
+- [Modifications to your existing configuration](https://developers.google.com/web/tools/workbox/guides/migrate)
+- [Workbox](https://developers.google.com/web/tools/workbox/)
 
 ## Linters
 
