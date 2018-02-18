@@ -26,6 +26,7 @@ Summary: Places I want to visit.
 - Great Wall of China
 - Beijing
 - Shanghai
+- Lijiang
 
 # Europe
 
