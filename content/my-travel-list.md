@@ -69,3 +69,4 @@ Summary: Places I want to visit.
 - Senegal
 - Australia
 - Pura Ulun Danu Bratan, Indonesia
+- Rijeka Crnojevica, Montenegro
