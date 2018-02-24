@@ -23,6 +23,7 @@ Here are some resources.
 - [Flexbox, et le CSS redevient fun ! (Hubert SABLONNIÈRE)](https://www.youtube.com/watch?v=5F_ngjHDcJQ)
 - [CSS is Awesome Igor Laborie](https://www.youtube.com/watch?v=H8lICKucWL4)
 - [Grid by Example](https://gridbyexample.com/)
+- [Understanding Web Fonts and Getting the Most Out of Them](https://css-tricks.com/understanding-web-fonts-getting/)
 
 ## Centering
 
