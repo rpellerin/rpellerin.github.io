@@ -1,6 +1,6 @@
 Title: The TV series I watch
 Date: 2015-06-02 01:00
-Modified: 2017-03-06 23:45
+Modified: 2018-02-28 19:45
 Category: About me
 Tags: televion, tv series
 Slug: the-tv-series-i-watch
@@ -15,11 +15,15 @@ Quite obvious, right?
 
 # [Halt and Catch Fire](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(TV_series))
 
-About the personal computer revolution in the 80's.
+About the personal computer revolution in the 80's. The show ended in 2017.
+
+# [Altered Carbon](https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series))
+
+New stuff from Netflix, looks rad!
 
 # [Narcos](https://en.wikipedia.org/wiki/Narcos)
 
-It tells the story of Pablo Escobar. Produced by Netflix, only 2 seasons so far.
+It tells the story of Pablo Escobar. Produced by Netflix, 3 seasons, show ended in 2017.
 
 # [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror)
 
