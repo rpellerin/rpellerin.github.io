@@ -26,6 +26,17 @@ Here are some resources.
 - [Understanding Web Fonts and Getting the Most Out of Them](https://css-tricks.com/understanding-web-fonts-getting/)
 - [Everything you need to know about CSS Variables](https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855)
 
+## Support and compatibility
+
+- [caniuse.com](https://caniuse.com): check out the tab 'Relative'
+- [gs.statcounter.com](https://gs.statcounter.com)
+- [developer.mozilla.org](https://developer.mozilla.org) aka MDN
+- [www.chromestatus.com/features](https://www.chromestatus.com/features)
+- [developer.microsoft.com/en-us/microsoft-edge/platform/status/](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/)
+- [webkit.org/status/](https://webkit.org/status/)
+- [platform-status.mozilla.org](https://platform-status.mozilla.org)
+- [bugzilla.mozilla.com](https://bugzilla.mozilla.com)
+
 ## Centering
 
 - [How to Center in CSS](http://howtocenterincss.com/)
