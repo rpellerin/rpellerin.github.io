@@ -1,6 +1,6 @@
 Title: Looking For An Apartment In Paris
 Date: 2017-09-02 22:50
-Modified: 2017-09-07 18:50
+Modified: 2018-03-02 15:50
 Category: Miscellaneous
 Tags: apartement, paris, housing
 Slug: looking-for-an-apartment-in-paris
@@ -11,7 +11,7 @@ Looking for an apartment in Paris... is a hassle. A lot of demand, too little su
 
 # First of all, where to look for apartments?
 
-My three favorite ones:
+My three favorite ones, that gather ads from many agencies:
 
 - [Leboncoin.fr](https://www.leboncoin.fr/locations/offres/ile_de_france/?th=1&ret=2&furn=1)
 - [Seloger.com](http://www.seloger.com/list.htm?idtt=1&naturebien=1&idtypebien=1&ci=750110,750109,750111,750118,750119,750105,750120,750117,750112,750113,750114,750106,750104&tri=a_px&surfacemin=15&si_meuble=1)
@@ -19,16 +19,23 @@ My three favorite ones:
 
 **Pro tip**: enable the alert emails so that you get an email as soon as one ad is posted, or digest emails.
 
-Here is the message I used to send to landlords:
+Also, don't forget about agencies' websites. To mention a few:
 
-*Bonjour,*
+- [Virginia](http://www.virginia-immobilier.fr/)
+- [Guy Hoquet](https://www.guy-hoquet.com/)
+- [Laforêt](http://www.laforet.com/)
+- [FNAIM](https://www.fnaim.fr/)
 
-*Je suis tout juste diplômé de l'école d'ingénieur de Compiègne, l'UTC. Pour mon premier emploi à Paris (qui commence le XX septembre), je recherche un appartement et je suis très intéressé par votre offre sur leboncoin. Quand serait-il possible de venir le visiter ? Vous faut-il des papiers particuliers ?*
+# Arranging a viewing
 
-*Je paierai moi-même le loyer, ayant un salaire de XXXX euros brut. Mes parents seront garants. Vous pouvez me joindre de préférence par email à me@domain ou par téléphone au 06 XX XX XX XX.*
+My tip is to always try to phone them. If no one picks up, them text the person who posted the ad if they wrote their phone number. As a last resort, email them.
 
-*Merci beaucoup,*  
-*Cordialement*
+In short, the email should look like this:
+
+- State who is looking for an apartment (yourself and your gf/bf?)
+- Is the apartment still on the market? If so, when can you see it?
+- Your job(s) (CDD, CDI, trial period?), your position(s) (software engineer for instance) and your salaries. Indicate whether you have guarantors or not.
+- Leave your phone number just in case
 
 Once you've arranged a viewing, you should prepare the documents you are going to have to hand in along with the questions you want to ask.
 
@@ -41,40 +48,37 @@ In Paris, landlords usually expect people to know what documents are required. H
 - Copies of your ID and your rent guarantors' IDs
 - You last three payslips (and those or your guarantors) 
 - Last tax notice (*avis d'impôts*)
-- Your contract of employment (or student certificate if still a student)
+- Your work contract (or student certificate if still a student) and your guarantors' work contracts or some proof from their employer
 
 **Optional but often required**
 
+- Three last rent receipts (*quittances de loyer*)
 - Guarantors' land tax (*taxe foncière*). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/)
 - Guarantors' residence tax (*taxe d'habitation*). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/).
 - Sworn statement from your guarantors stating they are your guarantors (*attestation sur l'honneur*)
 
 **Rarely required**
 
-- Your guarantors' work contracts or some proof from their employer
+- Last EDF bill or sworn statement that you'be being hosted by someone (meaning you live at someone's place)
+- Proof of insurance for houses (assurance habitation)
 - Proof of residency for your guarantors
 
 **However, never hand in your bank details before officially signing the apartment lease.**
-<br />
-
-Here is the kind of document I hand in alongside all the other documents.
-
-<hr />
-
-![{filename}/images/apartment-paris.png]({filename}/images/apartment-paris.png)
-
-<hr />
+Some agencies or landlords ask you to hand in these documents during the viewing. But most of the time, sending them over email is fine. Ask beforehand just in case.
 
 # Questions to ask during the viewing
 
 Here are a few questions I used to ask:
 
-- Are there connections for a washing machine?
+- Does it come with a refrigerator? Oven/stove, stovetop or range? Washing machine or connections for one? Dishwasher?
 - Are windows double glazed?
 - Is the neighborhood quiet and safe?
 - How much is the brokerage fee? (if not renting directly from the landlord)
 - How much is the deposit, if any?
 - What is included in the utilities? Water, electricity, gas, heat, trash removal, Internet access, ...?
+- If there fiber optic Internet?
+- Are there window roller shutters?
+- How much is the electricity consumption per month? How bad is the insulation? (ask for the [building energy performance metrics](https://ec.europa.eu/energy/en/topics/energy-efficiency/buildings))
 - When is the apartment available?
 - Is the apartment eligible for APL (*Aide personnalisée au logement*)?
 
@@ -85,17 +89,21 @@ I recommend that you create an Excel file to do that. Here is an extract of mine
 - Title of the ad
 - URL
 - Price per month
+- Number of rooms
 - Arrondissement
 - Address (if known)
 - Floor (lift?)
 - Square meters
-- Washing machine or connections?
+- Furnished or empty?
 - Double bed?
+- Washing machine or connections?
+- Energy perfomance
 - Availability (date)
-- Last email sent date (and replies and outcome)
-- Last phone call date (and outcome)
+- Last email sent date + time (and replies and outcome)
+- Last phone call date + time (and outcome)
+- Date of arranged viewing + time
 - Phone number of the broker/landlord
-- Viewing date
+- Viewing date and time
 - Additional information
 
 That's it! Hope this helps.
