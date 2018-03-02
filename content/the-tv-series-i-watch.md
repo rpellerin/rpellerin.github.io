@@ -23,7 +23,7 @@ New stuff from Netflix, looks rad!
 
 # [Narcos](https://en.wikipedia.org/wiki/Narcos)
 
-It tells the story of Pablo Escobar. Produced by Netflix, 3 seasons, show ended in 2017.
+It tells the story of Pablo Escobar. Produced by Netflix, 4 seasons.
 
 # [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror)
 
