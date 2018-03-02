@@ -100,3 +100,19 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 - A Six flags park: there are such parks in most states
 - Mount Rushmore
 - Go to a drive-in theater, it's definitely worth it
+
+## Zion
+
+If you go to Zion Park and happen to be in good shape and fearless, do the crazy Angels Langing trail! Book a full day for it though.
+
+<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/QXsbspHMcm4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+You will find here a more thorough description: [https://www.alltrails.com/trail/us/utah/angels-landing-trail](https://www.alltrails.com/trail/us/utah/angels-landing-trail)
+
+Don't have the time? Too scared? [This one](https://www.citrusmilo.com/zionguide/obspoint.cfm) looks awesome too!
+
+You might also want to check out [other trails](http://www.roadtrippin.fr/utah/zion/zion.php).
+
+## Yosemite
+
+Do the round-trip trail to Glacier Point: awesome view!!!
