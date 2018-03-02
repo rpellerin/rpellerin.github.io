@@ -70,6 +70,14 @@ If you intend to go out of the USA temporarily, call CIEE at least 3 weeks prior
 
 I haven't got to do it yet. I'll update this article once done. In the meantime, this [article from Parenthèse](http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/) could be useful.
 
+Also, here are some resources as to how to file your tax return (form 1040NR-EZ for J1 visas) if you want to do it by yourself instead of using a third party online service such as [TaxBack](https://www.taxback.com/en/) or [TurboTax](https://www.turbotax.com/) (TurboTax is not compatible with J1 visa holders):
+
+- [Comment remplir le formulaire W-4 ?](http://www.visa-j1.fr/comment-remplir-le-formulaire-w-4/)
+- [About Form 1040-NR-EZ, U.S. Income Tax Return for Certain Nonresident Aliens With No Dependents](https://www.irs.gov/forms-pubs/about-form-1040nr-ez-us-income-tax-return-for-certain-nonresident-aliens-with-no-dependents)
+- [1040NR-EZ line by line instructions](https://cms.montgomerycollege.edu/edu/department2.aspx?id=38693)
+
+Third party online services charge about $100 but that's what I recommend though, since they take care of everything.
+
 <br />
 
 That's it for now! Hope it was helpful.
