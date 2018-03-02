@@ -38,7 +38,7 @@ Summary: Places I want to visit.
 - Greece
 - Cyprus
 - Berlin, Hamburg and Munich, Germany
-- Scandinavia: Denmark, Sweden, Norway
+- Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)
 - Finland
 - Rome and Venice, Italy
 - Madrid
