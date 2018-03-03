@@ -52,3 +52,8 @@ Use Gimp (import with 300-dpi setting).
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=output.pdf input1.pdf input2.pdf input3.pdf
     pdftk input1.pdf input2.pdf input3.pdf cat output output.pdf
     pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
+
+# Convert one or several JPG files into a single pdf
+
+    :::bash
+    convert image1.jpg image2.jpg output.pdf
