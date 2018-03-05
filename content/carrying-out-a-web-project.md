@@ -113,6 +113,7 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [How we use web fonts responsibly, or, avoiding a @font-face-palm](https://www.filamentgroup.com/lab/font-loading.html)
 - [Font-display ](https://font-display.glitch.me/)
+- [Three Techniques for Performant Custom Font Usage](https://css-tricks.com/three-techniques-performant-custom-font-usage/)
 
 ## Icons
 
