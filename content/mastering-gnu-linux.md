@@ -6,7 +6,16 @@ Slug: mastering-gnu-linux
 Authors: Romain Pellerin
 Summary: Everything you have ever wanted to know about GNU/Linux
 
-Everything you have ever wanted to know about GNU/Linux.
+Everything you have ever wanted to know about GNU/Linux plus some troubleshooting tips I learned the hard way.
+
+# Installing Linux on a Dell preinstalled with Windows
+
+- In Windows, disable Fast startup in Panel Control > Power > Action when button pressed.
+- In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers
+- You might want to enable 'SD card boot' in the BIOS under Boot > Miscellaneous devices if you use a SD card to install Linux
+- In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: [https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3](https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3) and [https://bbs.archlinux.org/viewtopic.php?id=204629](https://bbs.archlinux.org/viewtopic.php?id=204629).
+
+That's it. You should be able to install Linux on the entire disk now.
 
 # Upgrading your distribution of *Ubuntu
 
