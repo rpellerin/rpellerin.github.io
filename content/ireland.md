@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: My advice about Ireland
 Image: ireland.jpg
 
-In 2015, I landed in Dublin! Yay! With a friend, we were en route to Galway to visit a friend who was doing a sort of internship there. Roughly, we spent a week in Ireland: from Dublin to Galway and back, we also went to some exotic places such as the Cliffs of Moher or Connemara.
+In 2015, I landed in Dublin! Yay! With a friend, we were en route to Galway to visit another friend who was doing a sort of internship there. Roughly, we spent a week in Ireland: from Dublin to Galway and back, we also went to some exotic places such as the Cliffs of Moher or Connemara.
 
 In this article, I'll walk you through the most iconic places I've been to so that you get the most out of YOUR trip.
 
