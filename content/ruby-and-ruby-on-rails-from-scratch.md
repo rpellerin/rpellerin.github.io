@@ -6,6 +6,8 @@ Slug: ruby-and-ruby-on-rails-from-scratch
 Authors: Romain Pellerin
 Summary: How to learn Ruby and Rails
 
+Today I started learning a new language: Ruby! Coming from a JavaScript world, [this article](http://frontendgods.com/getting-started-with-ruby-for/) helped me a lot ([backed-up here, should it ever vanish from the Internet]({filename}/extra/javascript-to-ruby.html)). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.
+
 # Learning resources
 
 ## Ruby
@@ -36,6 +38,20 @@ Summary: How to learn Ruby and Rails
 
     # Check everything is installed and correctly set up
     curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+Then, add must-have stuff:
+
+    :::bash
+    gem install bundler
+
+    # In a fresh new Ruby project folder, create a Gemfile
+    rbenv local 2.5.0 # Set version 2.5.0 for this project, same as .nvmrc for Node projects
+    bundle init
+    bundle install --path vendor --binstubs bin # Set up .bundle config to install packages to the local folder
+    # Add vendor and .bundle to your .gitignore file
+
+    # In a Ruby project folder, install all dependencies
+    bundle install # or simply `bundle`
 
 
 # Stuff to know
