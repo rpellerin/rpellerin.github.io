@@ -228,3 +228,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Extensions Firefox pour protéger sa vie privée](https://blog.imirhil.fr/2015/12/08/extensions-vie-privee.html)
 - [L’authentification double facteur (2FA), oui mais pas n’importe comment !](https://korben.info/authentification-double-facteur-2fa.html)
 - [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
+- [Pi-hole](https://pi-hole.net/)
