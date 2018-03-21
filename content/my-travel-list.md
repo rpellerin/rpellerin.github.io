@@ -70,3 +70,4 @@ Summary: Places I want to visit.
 - Australia
 - Pura Ulun Danu Bratan, Indonesia
 - Rijeka Crnojevica, Montenegro
+- Petra, Jordan
