@@ -17,3 +17,4 @@ Summary: Slack is evil
 - [Slack, I’m Breaking Up with You](https://ux.useronboard.com/slack-i-m-breaking-up-with-you-54600ace03ea)
 - [Curing Our Slack Addiction ](https://blog.agilebits.com/2016/04/19/curing-our-slack-addiction/)
 - [Why “deep work” is becoming a competitive advantage for companies](https://blog.doist.com/focused-teamwork-8ed325d34e62)
+- [es nouveaux outils de Slack : un espion au service des patrons ?](https://www.numerama.com/tech/337732-les-nouveaux-outils-de-slack-un-espion-au-service-des-patrons.html)
