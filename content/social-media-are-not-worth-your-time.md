@@ -15,3 +15,11 @@ Summary: What I think about most social media
 - [How to Fix Facebook—Before It Fixes Us](https://washingtonmonthly.com/magazine/january-february-march-2018/how-to-fix-facebook-before-it-fixes-us/)
 - [Birdcage liners](https://www.joelonsoftware.com/2018/01/12/birdcage-liners/)
 - [Revealed: the more time that children chat on social media, the less happy they feel](https://www.theguardian.com/society/2017/apr/09/social-networks--children-chat-feel-less-happy-facebook-instagram-whatsapp)
+- [Downloaded my facebook data as a ZIP file - Somehow it has my entire call history with my partner's mum](https://twitter.com/dylanmckaynz/status/976368845635035138)
+
+
+# 2018 Facebook Cambridge Analytica data scandal
+
+- [Mark Zuckerberg Addresses 'Breach Of Trust' In Facebook User Data Crisis](https://www.forbes.com/sites/kathleenchaykowski/2018/03/21/mark-zuckerberg-addresses-breach-of-trust-in-facebook-user-data-crisis/#265ae103e367)
+- [Facebook and Cambridge Analytica: What just happened?](https://www.recode.net/2018/3/23/17153368/facebook-cambridge-analytica-mark-zuckerberg-lauren-goode-kara-swisher-kurt-wagner-recode-podcast)
+- [Elon Musk deletes Facebook following Cambridge Analytica scandal](https://www.telegraph.co.uk/technology/2018/03/23/elon-musk-deletes-facebook-following-cambridge-analytica-scandal/)
