@@ -1,6 +1,6 @@
 Title: The USA
 Date: 2017-01-10 01:00
-Modified: 2017-06-08 22:11
+Modified: 2018-03-23 22:11
 Category: Travels
 Tags: travel, usa
 Slug: the-usa
@@ -93,6 +93,27 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 
 - Hat Ranch: a Airbnb ranch in Williams
 - Travelodge in Kingman
+
+# San Francisco
+
+- Need some last minute gear? [There you go](https://www.lastmingear.com/)!
+- Best bar **EVER**: [Madrone Art Bar](http://www.madroneartbar.com/)
+- Alcatraz
+- Mr Tipple: nice jazz bar, drinks are a bit expensive though
+- Golden Gate Park: do the Japanese garden and botanical garden, both are awesome
+- Golden Gate Bridge, of course
+- Chinatown
+- Japantown
+- Union square: check out the Love Sign at Grand Hyatt
+- Twin Peaks
+- Mission Dolores Park
+- Baker Beach
+- Martuni's: amazing piano bar
+- Isotope, on Fell Street: best comic shop of San Francisco. James, the owner, is a great guy, very friendly and helpful
+- Painted Ladies
+- Patricia's Green
+- Pier 39
+- Musée Mécanique: great stuff in there, prepare a lots of coins to spend
 
 # Other places to see
 
