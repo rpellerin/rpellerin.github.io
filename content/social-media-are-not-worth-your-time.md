@@ -16,6 +16,7 @@ Summary: What I think about most social media
 - [Birdcage liners](https://www.joelonsoftware.com/2018/01/12/birdcage-liners/)
 - [Revealed: the more time that children chat on social media, the less happy they feel](https://www.theguardian.com/society/2017/apr/09/social-networks--children-chat-feel-less-happy-facebook-instagram-whatsapp)
 - [Downloaded my facebook data as a ZIP file - Somehow it has my entire call history with my partner's mum](https://twitter.com/dylanmckaynz/status/976368845635035138)
+- [Facebook scraped call, text message data for years from Android phones](https://arstechnica.com/information-technology/2018/03/facebook-scraped-call-text-message-data-for-years-from-android-phones/)
 
 
 # 2018 Facebook Cambridge Analytica data scandal
