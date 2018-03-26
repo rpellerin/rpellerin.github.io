@@ -100,7 +100,7 @@ Probably the city with the most students of the entire country. I've been there 
 
 # Haarlem
 
-Another small town, very close to Amsterdan. Not much to do there except a few old fashion bars and shops, and a nice Mexican restaurant.
+Another small town, very close to Amsterdam. Not much to do there except a few old fashion bars and shops, and a nice Mexican restaurant.
 
 <br />
 <br />
