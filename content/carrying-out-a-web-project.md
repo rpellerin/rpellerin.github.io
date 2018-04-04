@@ -24,6 +24,7 @@ Here are some resources.
 - [CSS is Awesome Igor Laborie](https://www.youtube.com/watch?v=H8lICKucWL4)
 - [Grid by Example](https://gridbyexample.com/)
 - [Everything you need to know about CSS Variables](https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855)
+- [w descriptors and sizes: Under the hood](https://beta.observablehq.com/@eeeps/w-descriptors-and-sizes-under-the-hood)
 
 ## Support and compatibility
 
