@@ -20,6 +20,7 @@ Summary: What I think about most social media
 - [Want to freak yourself out? I'm gonna show just how much of your information the likes of Facebook and Google store about you without you even realising it](https://twitter.com/iamdylancurran/status/977559925680467968)
 - [Are you ready? Here is all the data Facebook and Google have on you](https://www.theguardian.com/commentisfree/2018/mar/28/all-the-data-facebook-google-has-on-you-privacy)
 - [Facebook sent a doctor on a secret mission to ask hospitals to share patient data](https://www.cnbc.com/2018/04/05/facebook-building-8-explored-data-sharing-agreement-with-hospitals.html)
+- [Facebook Scans the Photos and Links You Send on Messenger](https://www.bloomberg.com/news/articles/2018-04-04/facebook-scans-what-you-send-to-other-people-on-messenger-app)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
