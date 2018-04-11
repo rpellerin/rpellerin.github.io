@@ -53,6 +53,16 @@ Then, add must-have stuff:
     # In a Ruby project folder, install all dependencies
     bundle install # or simply `bundle`
 
+# Upgrade Ruby version
+
+Update the version in `Gemfile` and `.ruby-version`. Then run:
+
+```bash
+cd $HOME/.rbenv/plugins/ruby-build && git pull && cd -
+rbenv install
+gem install bundler
+bundle
+```
 
 # Stuff to know
 
@@ -80,6 +90,7 @@ Then, add must-have stuff:
 - Replace first occurrence in string: `string['word'] = 'new word'`
 - `ratings = Hash.new(0)`: all new hashes will default to 0 as their value
 - `do..end` vs curly braces for blocks in Ruby: [https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby](https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby)
+- `whereami` == `@` (in binding.pry / pry) 
 
 ## Ranges
 
@@ -89,3 +100,10 @@ Then, add must-have stuff:
 
 - `assert_equal x,y`
 - `assert_match(/regex/, x)`
+
+## Resources
+
+- [Ruby ampersand colon shortcut](https://stackoverflow.com/questions/1961030/ruby-ampersand-colon-shortcut)
+- [What does to_proc method mean?](https://stackoverflow.com/questions/14881125/what-does-to-proc-method-mean)
+- [Closures in Ruby](https://www.sitepoint.com/closures-ruby/)
+- [What does &. (ampersand dot) mean in Ruby?](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby)
