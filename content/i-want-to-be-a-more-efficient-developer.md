@@ -151,3 +151,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Effective Engineer - Notes](https://gist.github.com/rondy/af1dee1d28c02e9a225ae55da2674a6f)
 - [If You Multitask During Meetings, Your Team Will, Too](https://davepaola.com/2018/01/25/if-you-multitask-during-meetings-your-team-will-too/)
 - [The Feynman Technique: The Best Way to Learn Anything](https://www.fs.blog/2012/04/learn-anything-faster-with-the-feynman-technique/)
+- [Egoless Programming](https://blog.octo.com/egoless-programming/)
+- [Revue de code : quel format choisir ?](https://blog.octo.com/revue-de-code-quel-format-choisir/)
