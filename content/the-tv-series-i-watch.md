@@ -75,10 +75,10 @@ One of the best TV shows! About hacking, cyber security, democracy, and so on.
 
 A great TV series produced by Netflix!
 
-# [Legion](https://en.wikipedia.org/wiki/Legion_(TV_series))
-
-A Marvel super hero.
-
 # [Sun Records](https://en.wikipedia.org/wiki/Sun_Records_(TV_series))
 
 Music!
+
+# TV shows I dropped
+
+- The 100 (after season 2 or 3)
