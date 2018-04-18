@@ -48,3 +48,5 @@ Supposedly a low cost company. They charge everything else though, even my norma
 # Norwegian
 
 Pretty much the same as WoW air, although they have tablets. As far as I remember, you don't get any food or drinks for free. I was lucky enough to get on their first flight to New York City. Nice lighting in the cabin right after landing.
+
+Oh, and they offer free WiFi.
