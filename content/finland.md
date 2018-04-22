@@ -29,6 +29,14 @@ I was told that the sea shore and all lakes are completely frozen from December 
 <figcaption>Not swimming, but walking on a frozen lake</figcaption>
 </figure>
 
+There is a showerhead connected to sinks in every bathroom, apparently used to... better wash one's ass, after wiping it.
+
+<figure class="center">
+<img src="{filename}/images/finland/bathroom.jpg" alt="Bahtroom showerhead" />
+<figcaption>A bathroom in a restaurant</figcaption>
+</figure>
+
+
 # Nice places to check out
 
 ## Helsinki
@@ -43,6 +51,9 @@ I was told that the sea shore and all lakes are completely frozen from December 
 - SkyWheel
 - Temppeliaukio Church
 - Kamppi Chapel
+- St John's Church (though I did not get to go inside)
+- Mikael Agricola Church (did not go inside either)
+- Museum of Contemporary Art Kiasma (did not either)
 
 For sushi lovers, check out "Fuku", close to the train station: amazing buffet!
 
