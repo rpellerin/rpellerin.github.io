@@ -22,6 +22,8 @@ You may want an Internet access. Most airlines will offer Wifi for a few dollars
 
 Last but not least, take outlet adapters (practically all planes are US outlets compatible). In addition, a USB to AC converter would come very handy, as there are more often USB outlets than AC power plugs. This way you can use a laptop.
 
+Before ending this ending, very few people know that but French citizens can get the taxes they paid back if they miss their flight or if it gets cancelled. Source: [Peut-on se faire rembourser les taxes si on rate ou annule son voyage en avion ?](https://www.service-public.fr/particuliers/vosdroits/F32396)
+
 # General advice for travelers
 
 - Plan two activities per day TOPS, if you want to enjoy them as much as possible and avoid being in a rush all the time

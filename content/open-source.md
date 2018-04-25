@@ -33,3 +33,4 @@ Here are a bunch of links for open source project maintainers/creators:
 - [How to attract new contributors to your open source project](https://medium.freecodecamp.com/how-to-attract-new-contributors-to-your-open-source-project-46f8b791d787)
 - [No Maintenance Intended](http://unmaintained.tech/)
 - [nikku/works-on-my-machine](https://github.com/nikku/works-on-my-machine)
+- [Fixing the Support Problem](https://davidreagan.net/tech/fixing-the-support-problem/)

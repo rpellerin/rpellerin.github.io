@@ -82,6 +82,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Redux DevTools](https://addons.mozilla.org/en-US/firefox/addon/remotedev/)
 - [react-perf-devtool](https://github.com/nitin42/react-perf-devtool)
 - [Best practices with React and Redux web application development](https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/)
+- [Testing Strategies for React and Redux](https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/)
 
 ## About Babel
 

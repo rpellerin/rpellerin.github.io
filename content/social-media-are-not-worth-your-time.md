@@ -21,6 +21,8 @@ Summary: What I think about most social media
 - [Are you ready? Here is all the data Facebook and Google have on you](https://www.theguardian.com/commentisfree/2018/mar/28/all-the-data-facebook-google-has-on-you-privacy)
 - [Facebook sent a doctor on a secret mission to ask hospitals to share patient data](https://www.cnbc.com/2018/04/05/facebook-building-8-explored-data-sharing-agreement-with-hospitals.html)
 - [Facebook Scans the Photos and Links You Send on Messenger](https://www.bloomberg.com/news/articles/2018-04-04/facebook-scans-what-you-send-to-other-people-on-messenger-app)
+- [What's Not Included in Facebook's 'Download Your Data'](https://www.wired.com/story/whats-not-included-in-facebooks-download-your-data/)
+- [Yes, You Should Delete Facebook](https://medium.com/s/story/yes-you-should-delete-facebook-heres-why-bc623a3b4625)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

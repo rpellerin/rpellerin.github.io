@@ -153,3 +153,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [The Feynman Technique: The Best Way to Learn Anything](https://www.fs.blog/2012/04/learn-anything-faster-with-the-feynman-technique/)
 - [Egoless Programming](https://blog.octo.com/egoless-programming/)
 - [Revue de code : quel format choisir ?](https://blog.octo.com/revue-de-code-quel-format-choisir/)
+- [Elon Musk reveals his productivity rules in a letter he sent to Tesla employees](http://www.themindsetapp.com/musk-letter/)
+- [Productivity](http://blog.samaltman.com/productivity)
