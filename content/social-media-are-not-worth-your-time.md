@@ -23,6 +23,7 @@ Summary: What I think about most social media
 - [Facebook Scans the Photos and Links You Send on Messenger](https://www.bloomberg.com/news/articles/2018-04-04/facebook-scans-what-you-send-to-other-people-on-messenger-app)
 - [What's Not Included in Facebook's 'Download Your Data'](https://www.wired.com/story/whats-not-included-in-facebooks-download-your-data/)
 - [Yes, You Should Delete Facebook](https://medium.com/s/story/yes-you-should-delete-facebook-heres-why-bc623a3b4625)
+- [I tried leaving Facebook. I couldn’t](https://www.theverge.com/2018/4/28/17293056/facebook-deletefacebook-social-network-monopoly)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

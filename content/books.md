@@ -6,7 +6,7 @@ Slug: books
 Authors: Romain Pellerin
 Summary: My reading list
 
-# Since 2010s and counting
+# Since June 2012 and counting
 
 - **The Walking Dead** (comic books), *by Robert Kirkman* and *Charlie Adlard*
 
