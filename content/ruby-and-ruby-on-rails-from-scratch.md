@@ -90,7 +90,11 @@ bundle
 - Replace first occurrence in string: `string['word'] = 'new word'`
 - `ratings = Hash.new(0)`: all new hashes will default to 0 as their value
 - `do..end` vs curly braces for blocks in Ruby: [https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby](https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby)
+- `pry`: pauses execution but does not give access to local variables
+- `binding.pry`: pauses execution, gives access to local variables but also pauses all threads (server and tests for instance)
 - `whereami` == `@` (in binding.pry / pry) 
+- `help` (get help in binding.pry /pry)
+- `PRY_RESCUE_RAIL=1 rails test`: runs a test and pauses on falsy assertions
 
 ## Ranges
 
