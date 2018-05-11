@@ -1,5 +1,6 @@
 Title: Living In The USA: Visa, Insurance, SSN, and Taxes
 Date: 2017-02-19 01:50
+Modified: 2018-05-12 00:03
 Category: Miscellaneous
 Tags: usa, visa, insurance
 Slug: living-in-the-usa-visa-insurance-ssn-and-taxes
@@ -22,7 +23,7 @@ If my memory serves, the procedure is as follows:
 
 - First Parenthèse emailed me a bunch of files to read and fill out ([a very long one addressed to CIEE](https://www.ciee.org/internship-usa/downloads/2017/CIEE_2017_Standard_INT-PCT_Application.pdf), and a short one for Parenthèse). They also ask for a copy of your passport. Fortunately, you can send them back over email.
 - Next you pay (roughly 1500€ in total).
-- By now, Parenthèse must have sent your dossier to CIEE. You'll be contacted by them, [asking you to provide them with your supervisor's details (on a website).](https://www.ciee.org/internship-usa/downloads/2016/CIEE_Electronic_DS-7002_Instructions_for_Participants.pdf). Once done, your supervisor at your company will have to complete a form referred to as DS-7002. Then, you and your supervisor will both have to sign this form electronically, on the same website.
+- By the time they get the money, Parenthèse must have sent your dossier to CIEE. You'll be contacted by them, [asking you to provide them with your supervisor's details (on a website)](https://www.ciee.org/internship-usa/downloads/2016/CIEE_Electronic_DS-7002_Instructions_for_Participants.pdf). Once done, your supervisor at your company will have to complete a form referred to as DS-7002. Then, you and your supervisor will both have to sign this form electronically, on the same website.
 - After a few days, Parenthèse will receive a mail with your entire dossier (DS-2019, DS-7002, SEVIS fee payment receipt, proof of insurance, and a letter for the social security). They will forward everything to you.
 - From now on, it is your responsibility to make an appointment at the US embassy. However you will need to complete an online form (the Online Nonimmigrant Visa Application, aka DS-160) beforehand. Upon completion of this form, you will have to pay a fee (152€ as of December 2016) by making a transfer. Once they receive the money, they will enable you to make an appointment. More information about that on [this website](https://fr.usembassy.gov/fr/visas-fr/visas-de-sejour-temporaire/). [Here is the French website to make an appointment.](https://ais.usvisa-info.com/fr-fr/niv)
 - Finally, you will get to go to the embassy. Bring your passport, DS-2019, DS-7002, DS-160, SEVIS receipt, a 5"x5" photo of you (although a regular passport photo worked for me), and a proof of ties to your home country. Do not expect anything crazy, you'll get asked a couple of questions (like what the purpose of your trip is), fingerprints scanned, and within minutes you're out! Damn stressing though. Make sure you arrive at least 15 minutes early. Here are two links to articles (written in French), about how to prepare for this interview: [Visa J1 – L’ambassade](http://gaelleinlosangeles.com/visa-j1-l-ambassade/) and [USA: ENTRETIEN À L'AMBASSADE DES ÉTATS-UNIS D'AMÉRIQUE](http://blog.eexit.net/usa-entretien-a-lambassade-des-etats-unis-damerique/) (the latter is outdated).
@@ -68,7 +69,7 @@ If you intend to go out of the USA temporarily, call CIEE at least 3 weeks prior
 
 # Taxes
 
-I haven't got to do it yet. I'll update this article once done. In the meantime, this [article from Parenthèse](http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/) could be useful.
+First of all, this [article from Parenthèse](http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/) is quite useful for French expats.
 
 Also, here are some resources as to how to file your tax return (form 1040NR-EZ for J1 visas) if you want to do it by yourself instead of using a third party online service such as [TaxBack](https://www.taxback.com/en/) or [TurboTax](https://www.turbotax.com/) (TurboTax is not compatible with J1 visa holders):
 
@@ -76,8 +77,32 @@ Also, here are some resources as to how to file your tax return (form 1040NR-EZ 
 - [About Form 1040-NR-EZ, U.S. Income Tax Return for Certain Nonresident Aliens With No Dependents](https://www.irs.gov/forms-pubs/about-form-1040nr-ez-us-income-tax-return-for-certain-nonresident-aliens-with-no-dependents)
 - [1040NR-EZ line by line instructions](https://cms.montgomerycollege.edu/edu/department2.aspx?id=38693)
 
-Third party online services charge about $100 but that's what I recommend though, since they take care of everything.
+As to me, well I used TaxBack.com. How did it go? Would I recommend their service? Everything you need to know right below.
+
+## TaxBack.com for J1 visa holders
+
+### Pros
+
+- It's the only online service (that I found) that also handles J1 visas.
+- They take care of everything, which means you save yourself approximatively a day of hassle.
+- They customer support is very good. They usually respond to emails within a day.
+- Their website, although a bit old, is convenient. They offer separate pages for each of your tax refund applications, with a step by step timeline showing you where your file is, in regard to the entire process (from submitting the required files and your W2 form to "you got your money on your bank account"). They handle FICA and US tax applications individually, on distinct pages.
+- An online chat, very responsive.
+- They take care of sending all the papers to IRS in the US, in your place.
+- They can transfer your money back to any bank account in the world, in any currency. I believe the IRS is much more restrictive (only a cheque or transfer in USD on a US bank account?).
+
+### Cons
+
+**EXPENSIVE**: oh boy don't you expect them to be cheap. From the amount I was supposed to get back, they subtracted:
+
+- Processing fees
+- Handling fees
+- Bank transfer fees ($35 per transfer)
+
+  Also they applied a very disadventageous exchange rate (USD to EUR): between May 1 and May 11 (today), the official exchange rate fluctuated between 0.83 and 0.84. They used 0.79052 for my transfer, which occured some day between these two dates. You read it well.
+
+Before using their service, you'd better read [this page](https://www.taxback.com/en/tax-service-fees/) very carefully. As an example, I was supposed to get $1156.91 back from FICA. The processing fee was $231.38 and the handling fee was $46.28. **They kept 24% of my refund.** Plus a $35 bank transfer fee. Geez! Not sure my time is worth that much money, after all. Maybe I should have taken the time to fill the documents by myself...
 
 <br />
 
-That's it for now! Hope it was helpful.
+That's it! Hope it was helpful.
