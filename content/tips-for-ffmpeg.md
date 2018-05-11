@@ -94,4 +94,6 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i input.mp4 -vf scale=1280:-1 -acodec copy output.mp4
 
+# Resources
 
+- [FFmpeg tips](https://ehret.me/ffmpeg-tips/)

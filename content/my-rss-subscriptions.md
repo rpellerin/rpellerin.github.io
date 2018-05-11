@@ -27,6 +27,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [HTML5Rocks](http://feeds.feedburner.com/html5rocks)
 - [La Tête dans le Flux](https://blog.goetter.fr/feed/)
 - [CSS-Tricks](https://css-tricks.com/feed/)
+- [I'm Siegfried. A developer. Yep.](https://ehret.me/index.xml)
 
 # Humor
 
