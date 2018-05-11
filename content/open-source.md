@@ -34,3 +34,4 @@ Here are a bunch of links for open source project maintainers/creators:
 - [No Maintenance Intended](http://unmaintained.tech/)
 - [nikku/works-on-my-machine](https://github.com/nikku/works-on-my-machine)
 - [Fixing the Support Problem](https://davidreagan.net/tech/fixing-the-support-problem/)
+- Checklist for a good open source project on Github: [An Open Code Base Is Not Yet an Open Source Project](https://www.yegor256.com/2018/05/08/open-source-attributes.html)
