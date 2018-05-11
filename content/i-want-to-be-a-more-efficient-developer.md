@@ -155,3 +155,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Revue de code : quel format choisir ?](https://blog.octo.com/revue-de-code-quel-format-choisir/)
 - [Elon Musk reveals his productivity rules in a letter he sent to Tesla employees](http://www.themindsetapp.com/musk-letter/)
 - [Productivity](http://blog.samaltman.com/productivity)
+- [Simon Sinek: How great leaders inspire action | TED Talk](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
