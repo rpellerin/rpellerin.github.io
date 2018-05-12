@@ -124,6 +124,8 @@ That's it. You should be able to install Linux on the entire disk now.
 - [/dev/random vs /dev/urandom](http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/) & [Myths about /dev/urandom](http://www.2uo.de/myths-about-urandom/)
 - [Hygiène numérique pour l’administrateur système](https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1)
 - [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
+- [Hands-on Guide on GPG Keys](http://thegeekyway.com/hands-on-guide-on-gpg-keys/)
+- [Creating a new GPG key with subkeys](https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/)
 
 # Other
 
