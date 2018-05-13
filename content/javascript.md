@@ -73,6 +73,8 @@ If it is a simple project or a NPM package, I recommend having two distinct fold
         },
         ...
 
+6. [Set up environment variables if need be via `.npmrc`](https://ehret.me/node-env-vars/).
+
 All set!
 
 # Resources
