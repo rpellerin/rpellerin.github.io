@@ -24,6 +24,7 @@ Summary: What I think about most social media
 - [What's Not Included in Facebook's 'Download Your Data'](https://www.wired.com/story/whats-not-included-in-facebooks-download-your-data/)
 - [Yes, You Should Delete Facebook](https://medium.com/s/story/yes-you-should-delete-facebook-heres-why-bc623a3b4625)
 - [I tried leaving Facebook. I couldn’t](https://www.theverge.com/2018/4/28/17293056/facebook-deletefacebook-social-network-monopoly)
+- [Huge new Facebook data leak exposed intimate details of 3m users](https://www.newscientist.com/article/2168713-huge-new-facebook-data-leak-exposed-intimate-details-of-3m-users/)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

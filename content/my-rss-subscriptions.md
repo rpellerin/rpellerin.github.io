@@ -33,6 +33,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 
 - [CommitStrip](http://www.commitstrip.com/fr/feed/) ([English feed](http://www.commitstrip.com/en/feed/))
 - [HOP](http://feeds.feedburner.com/lucdamas/humeurs?format=xml)
+- [MonkeyUser](http://www.monkeyuser.com/feed.xml)
 
 # Other
 
