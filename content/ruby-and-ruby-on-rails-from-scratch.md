@@ -111,3 +111,4 @@ bundle
 - [What does to_proc method mean?](https://stackoverflow.com/questions/14881125/what-does-to-proc-method-mean)
 - [Closures in Ruby](https://www.sitepoint.com/closures-ruby/)
 - [What does &. (ampersand dot) mean in Ruby?](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby)
+- [Ruby & (Ampersand) Parameter Demystified](https://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
