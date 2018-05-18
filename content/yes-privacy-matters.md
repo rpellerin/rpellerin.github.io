@@ -219,6 +219,7 @@ Filename encryption might require another last command to be run, if your conten
 - [how to make the internet not suck (as much)](http://someonewhocares.org/hosts/)
 - [Simple DNS Ad Blocker](https://github.com/tbds/FreeContributor)
 - [Shared lists of problem domains people may want to block with hosts files](https://github.com/jmdugan/blocklists)
+- [hosts: Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category](https://github.com/StevenBlack/hosts)
 - [Tout ce que votre navigateur peut balancer sur vous](http://korben.info/tout-ce-que-votre-navigateur-peut-balancer-sur-vous.html)
 - [Paramétrage de Firefox](http://sebsauvage.net/wiki/doku.php?id=firefox)
 - [“I have nothing to hide. Why should I care about my privacy?”](https://medium.com/@FabioAEsteves/i-have-nothing-to-hide-why-should-i-care-about-my-privacy-f488281b8f1d)
