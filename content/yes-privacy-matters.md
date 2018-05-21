@@ -230,3 +230,4 @@ Filename encryption might require another last command to be run, if your conten
 - [L’authentification double facteur (2FA), oui mais pas n’importe comment !](https://korben.info/authentification-double-facteur-2fa.html)
 - [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
 - [Pi-hole](https://pi-hole.net/)
+- [Derrière les assistants vocaux, des humains vous entendent](https://www.laquadrature.net/fr/temoin_cortana)
