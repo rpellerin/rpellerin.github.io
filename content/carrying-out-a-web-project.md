@@ -26,6 +26,7 @@ Here are some resources.
 - [Everything you need to know about CSS Variables](https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855)
 - [w descriptors and sizes: Under the hood](https://beta.observablehq.com/@eeeps/w-descriptors-and-sizes-under-the-hood)
 - [Decorating lines of text with box-decoration-break](https://css-tricks.com/decorating-lines-of-text-with-box-decoration-break/)
+- [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 
 ## Support and compatibility
 
