@@ -231,3 +231,4 @@ Filename encryption might require another last command to be run, if your conten
 - [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
 - [Pi-hole](https://pi-hole.net/)
 - [Derrière les assistants vocaux, des humains vous entendent](https://www.laquadrature.net/fr/temoin_cortana)
+- [My Data Request](https://mydatarequest.com/)
