@@ -87,3 +87,4 @@ Music!
 
 - The 100 (after season 2 or 3)
 - Sense 8 (after the very sexual episode, a Christmas special)
+- Legion (after season 2, episode 7)
