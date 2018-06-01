@@ -42,6 +42,7 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - My neighbor Totoro (Japanese anime)
 - The Wind Rises (Japanese anime)
 - Wolf Children (Japanese anime)
+- The Girl Who Leapt Through Time (Japanese anime)
 - Catch Me If You Can
 - Creed
 - Blade Runner and Blade Runner 2049
