@@ -12,6 +12,7 @@ In 2016, I went to the US for the first time of my life. Here is a list of thing
 
 In short, I went to NYC for a week. Then I flew to Los Angeles, where I joined my friends. The following days we went to:
 
+- Santa Barbara (State Street is amazing).
 - Baker, CA, Kelso, CA and finally Kingman (slept in a motel).
 - The next day we discovered Kingman and then went to Williams (slept at [The Historic Hat Ranch](https://historichatranch.com/)).
 - The next day we did a trail (Bright Angels) next to Tusayan, in the Grand Canyon. We went sleeping at a campground in Monument Valley (Goulding's Campground, if my memory serves well)
