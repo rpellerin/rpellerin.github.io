@@ -66,6 +66,8 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 
 # Tips for Las Vegas
 
+- Old city center
+- The Strip, of course
 - You can drink any kind of beverage in casinos as long as you are playing (even if gambling only $1). Of course tipping is highly recommended.
 - Watch [Las Vegas in 24 hours](https://www.youtube.com/watch?v=mfve-4wuUz8)
 - Really funny slot machines:
@@ -83,12 +85,14 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 - The Hollywood sign and Hollywood boulevard
 - The Perch (a rooftop bar)
 - Homer Laughlin Building
+- Santa Monica Pier
+- The Observatory (so much to see inside the building, plus the view of course)
 
 # Places to see in the Grand Canyon
 
 - Havasupai
 - Horseshoe bend
-- Antelope canyon ([the Lower tour is supposedly better than the Upper](https://www.tripadvisor.com/ShowUserReviews-g60834-d4426581-r350723998-Upper_Antelope_Canyon-Page_Arizona.html)): try to go around noon for optimal lighting
+- Antelope canyon ([the Lower tour is supposedly better than the Upper](https://www.tripadvisor.com/ShowUserReviews-g60834-d4426581-r350723998-Upper_Antelope_Canyon-Page_Arizona.html)): try to go around noon for optimal lighting.
 
 # Nice places to stay in Arizona
 
@@ -103,10 +107,14 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 - Mr Tipple: nice jazz bar, drinks are a bit expensive though
 - Golden Gate Park: do the Japanese garden and botanical garden, both are awesome
 - Golden Gate Bridge, of course
+- Castro
 - Chinatown
 - Japantown
+- Ride a cable car and visit for free the Cable Car Museum
 - Union square: check out the Love Sign at Grand Hyatt
 - Twin Peaks
+- Haight street
+- Lombard Street
 - Mission Dolores Park
 - Baker Beach
 - Martuni's: amazing piano bar
@@ -119,6 +127,8 @@ Those places offer a great view at any time of the day. If you want to enjoy the
 # Other places to see
 
 - Death Valley: do the 3-hour horse ride
+- Sequoia National Park
+- Muir Woods National Monument
 - A Six flags park: there are such parks in most states
 - Mount Rushmore
 - Go to a drive-in theater, it's definitely worth it
