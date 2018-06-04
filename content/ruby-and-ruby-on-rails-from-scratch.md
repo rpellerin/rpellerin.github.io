@@ -112,3 +112,5 @@ bundle
 - [Closures in Ruby](https://www.sitepoint.com/closures-ruby/)
 - [What does &. (ampersand dot) mean in Ruby?](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby)
 - [Ruby & (Ampersand) Parameter Demystified](https://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
+- [Ruby 2 Keyword Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments)
+- [What does a double * (splat) operator do](https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do)
