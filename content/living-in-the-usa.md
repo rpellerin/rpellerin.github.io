@@ -143,3 +143,4 @@ That's it for now. Stay tuned!
 - [Différences insolites France / Etats Unis](http://gaelleinlosangeles.com/differences-insolites-france-etats-unis/)
 - [Les différences France / Etats-Unis, Part II](http://gaelleinlosangeles.com/les-differences-france-etats-unis-part-ii/)
 - [To-Do List](http://gaelleinlosangeles.com/to-do-list/)
+- [USA: Préparer son stage pour les États-Unis](https://blog.eexit.net/usa-preparer-son-stage-pour-les-etats-unis/)
