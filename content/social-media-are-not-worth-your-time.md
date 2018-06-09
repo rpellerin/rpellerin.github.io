@@ -25,6 +25,7 @@ Summary: What I think about most social media
 - [Yes, You Should Delete Facebook](https://medium.com/s/story/yes-you-should-delete-facebook-heres-why-bc623a3b4625)
 - [I tried leaving Facebook. I couldn’t](https://www.theverge.com/2018/4/28/17293056/facebook-deletefacebook-social-network-monopoly)
 - [Huge new Facebook data leak exposed intimate details of 3m users](https://www.newscientist.com/article/2168713-huge-new-facebook-data-leak-exposed-intimate-details-of-3m-users/)
+- [Facebook confirms data sharing with Chinese companies](https://www.reuters.com/article/us-facebook-privacy-congress/facebook-confirms-data-sharing-with-chinese-companies-idUSKCN1J11TY)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
