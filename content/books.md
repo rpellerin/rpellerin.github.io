@@ -30,3 +30,5 @@ Summary: My reading list
 
 - **Shangri-la**, *by Mathieu Bablet*
 - **La Belle Mort**, *by Mathieu Bablet*
+- **Descender** (comic books), by *Jeff Lemire* and *Dustin Nguyen*
+- **Paper Girls** (comic books), by *Brian K. Vaughan* and *Cliff Chiang*
