@@ -29,6 +29,7 @@ Summary: Places I want to visit.
 - Beijing
 - Shanghai
 - Lijiang
+- Yu Garden, Shanghai
 
 # Europe
 

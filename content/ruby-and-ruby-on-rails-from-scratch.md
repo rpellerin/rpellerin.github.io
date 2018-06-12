@@ -114,3 +114,5 @@ bundle
 - [Ruby & (Ampersand) Parameter Demystified](https://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
 - [Ruby 2 Keyword Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments)
 - [What does a double * (splat) operator do](https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do)
+- [What do =~ and /\ mean in Ruby?](https://stackoverflow.com/questions/26938262/what-do-and-mean-in-ruby?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
+- [%Q, %q, %W, %w, %x, %r, %s](https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/)
