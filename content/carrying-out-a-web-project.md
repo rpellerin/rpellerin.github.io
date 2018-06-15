@@ -27,6 +27,7 @@ Here are some resources.
 - [w descriptors and sizes: Under the hood](https://beta.observablehq.com/@eeeps/w-descriptors-and-sizes-under-the-hood)
 - [Decorating lines of text with box-decoration-break](https://css-tricks.com/decorating-lines-of-text-with-box-decoration-break/)
 - [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+- [CSS doodle](https://css-doodle.com/)
 
 ## Support and compatibility
 
