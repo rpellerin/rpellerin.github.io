@@ -66,6 +66,7 @@ Here are some resources to go deeper with Git.
 - [Commit messages are not titles](http://antirez.com/news/90)
 - [Git your act together](http://jeffkreeftmeijer.com/2010/git-your-act-together/)
 - [The Art of the Commit](http://alistapart.com/article/the-art-of-the-commit)
+- [Conventional Commits](https://conventionalcommits.org/)
 
 ## Sub-projects management: submobules and subtrees
 
