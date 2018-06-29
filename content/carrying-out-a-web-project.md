@@ -112,6 +112,11 @@ On Linux, if you have `imagemagick` installed, do:
 
 # Useful resources
 
+## UI
+
+- [Refactoring UI](https://refactoringui.com/)
+- [User Interface UI design Inspiration](https://uidb.io/)
+
 ## Fonts
 
 - [How we use web fonts responsibly, or, avoiding a @font-face-palm](https://www.filamentgroup.com/lab/font-loading.html)
@@ -119,6 +124,7 @@ On Linux, if you have `imagemagick` installed, do:
 - [Three Techniques for Performant Custom Font Usage](https://css-tricks.com/three-techniques-performant-custom-font-usage/)
 - [Variable Fonts](https://v-fonts.com/)
 - [Understanding Web Fonts and Getting the Most Out of Them](https://css-tricks.com/understanding-web-fonts-getting/)
+- [Fitting Text to a Container](https://css-tricks.com/fitting-text-to-a-container/)
 
 ## Icons
 
