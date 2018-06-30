@@ -32,3 +32,4 @@ Summary: What I think about most social media
 - [Mark Zuckerberg Addresses 'Breach Of Trust' In Facebook User Data Crisis](https://www.forbes.com/sites/kathleenchaykowski/2018/03/21/mark-zuckerberg-addresses-breach-of-trust-in-facebook-user-data-crisis/#265ae103e367)
 - [Facebook and Cambridge Analytica: What just happened?](https://www.recode.net/2018/3/23/17153368/facebook-cambridge-analytica-mark-zuckerberg-lauren-goode-kara-swisher-kurt-wagner-recode-podcast)
 - [Elon Musk deletes Facebook following Cambridge Analytica scandal](https://www.telegraph.co.uk/technology/2018/03/23/elon-musk-deletes-facebook-following-cambridge-analytica-scandal/)
+- [Envoyé spécial. Facebook, l'envers du réseau - 12 avril 2018 (France 2)](https://www.youtube.com/watch?v=9kpKDaF3IFw)
