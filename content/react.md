@@ -84,6 +84,12 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Best practices with React and Redux web application development](https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/)
 - [Testing Strategies for React and Redux](https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/)
 
+## Functional components
+
+- [45% Faster React Functional Components, Now](https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f)
+- [Declare a functional component as “pure”](https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure)
+- [Stateless Component vs Pure Component](https://medium.com/groww-engineering/stateless-component-vs-pure-component-d2af88a1200b)
+
 ## About Babel
 
 - [Babel Handbook](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md)
