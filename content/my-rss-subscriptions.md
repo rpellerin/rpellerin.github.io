@@ -76,7 +76,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [French Fried TV](https://www.youtube.com/feeds/videos.xml?channel_id=UCOhfLu1DXGjncY5QBdMFRhw)
 - [GDG France](https://www.youtube.com/feeds/videos.xml?channel_id=UCx83f-KzDd3o1QK2AdJIftg)
 - [Layout Land](https://www.youtube.com/feeds/videos.xml?channel_id=UC7TizprGknbDalbHplROtag)
-- [Micode(https://www.youtube.com/feeds/videos.xml?channel_id=UCYnvxJ-PKiGXo_tYXpWAC-w)
+- [Micode](https://www.youtube.com/feeds/videos.xml?channel_id=UCYnvxJ-PKiGXo_tYXpWAC-w)
 - [Mozilla Hacks](https://www.youtube.com/feeds/videos.xml?channel_id=UCijjo5gfAscWgNCKFHWm1EA)
 - [NORMAN FAIT DES VIDÉOS](https://www.youtube.com/feeds/videos.xml?channel_id=UCww2zZWg4Cf5xcRKG-ThmXQ)
 - [Paul Taylor](https://www.youtube.com/feeds/videos.xml?channel_id=UCd56yga015uI5hfOfnXdzCQ)
