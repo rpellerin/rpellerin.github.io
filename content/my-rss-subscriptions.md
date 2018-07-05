@@ -10,9 +10,6 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 
 # Android
 
-- [Android Developer Backstage](http://feeds.feedburner.com/blogspot/AndroidDevelopersBackstage)
-- [Android Developers Blog](http://android-developers.blogspot.com/atom.xml)
-- [Cyril Mottier](http://cyrilmottier.com/atom.xml)
 - [Official Android Blog](http://feeds.feedburner.com/OfficialAndroidBlog)
 
 # Some friends of mine
@@ -54,7 +51,6 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [La Lanterne Rouge](http://lanterne-rouge.over-blog.org/rss)
 - [putaindecode.io](http://putaindecode.fr/feed.xml)
 - [TechMeUp » TechMeUp](http://techmeup.co/rss)
-- [Yegor Bugayenko](http://www.yegor256.com/rss)
 - [niKopiK](http://feeds.feedburner.com/Nikopik)
 - [②ality – JavaScript and more](http://feeds.feedburner.com/2ality?format=xml)
 - [Mozilla Hacks – the Web developer blog](https://hacks.mozilla.org/feed/)
@@ -68,3 +64,27 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 
 - [A Few Thoughts on Cryptographic Engineering](http://blog.cryptographyengineering.com/feeds/posts/default)
 - [hackndo](http://beta.hackndo.com/feed.xml)
+
+# Youtube
+
+- ACMusic7
+- Cyprien
+- Dan Rock
+- Data Gueule
+- Devoxx FR
+- Et tout le monde s'en fout
+- French Fried TV
+- GDG France
+- Layout Land
+- Micode
+- Mozilla Hacks
+- NORMAN FAIT DES VIDÉOS
+- Paul Taylor
+- Pierre-Emmanuel Barré
+- Samy Kamkar
+- SpaceX
+- Tesla
+- Web2day
+- Webosaures
+- What's up France ?
+- wherethehellisutc
