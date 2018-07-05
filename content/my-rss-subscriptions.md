@@ -67,24 +67,24 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 
 # Youtube
 
-- ACMusic7
-- Cyprien
-- Dan Rock
-- Data Gueule
-- Devoxx FR
-- Et tout le monde s'en fout
-- French Fried TV
-- GDG France
-- Layout Land
-- Micode
-- Mozilla Hacks
-- NORMAN FAIT DES VIDÉOS
-- Paul Taylor
-- Pierre-Emmanuel Barré
-- Samy Kamkar
-- SpaceX
-- Tesla
-- Web2day
-- Webosaures
-- What's up France ?
-- wherethehellisutc
+- [ACMusic7](https://www.youtube.com/feeds/videos.xml?channel_id=UCz-MZYX2qrhFBKK8B71ukQQ)
+- [Cyprien](https://www.youtube.com/feeds/videos.xml?channel_id=UCyWqModMQlbIo8274Wh_ZsQ)
+- [Dan Rock](https://www.youtube.com/feeds/videos.xml?channel_id=UCGZ8z1V-Z3eUKbzBt8cHqjg)
+- [Data Gueule](https://www.youtube.com/feeds/videos.xml?channel_id=UCm5wThREh298TkK8hCT9HuA)
+- [Devoxx FR](https://www.youtube.com/feeds/videos.xml?channel_id=UCsVPQfo5RZErDL41LoWvk0A)
+- [Et tout le monde s'en fout](https://www.youtube.com/feeds/videos.xml?channel_id=UC-2EkisRV8h9KsHpslQ1gXA)
+- [French Fried TV](https://www.youtube.com/feeds/videos.xml?channel_id=UCOhfLu1DXGjncY5QBdMFRhw)
+- [GDG France](https://www.youtube.com/feeds/videos.xml?channel_id=UCx83f-KzDd3o1QK2AdJIftg)
+- [Layout Land](https://www.youtube.com/feeds/videos.xml?channel_id=UC7TizprGknbDalbHplROtag)
+- [Micode(https://www.youtube.com/feeds/videos.xml?channel_id=UCYnvxJ-PKiGXo_tYXpWAC-w)
+- [Mozilla Hacks](https://www.youtube.com/feeds/videos.xml?channel_id=UCijjo5gfAscWgNCKFHWm1EA)
+- [NORMAN FAIT DES VIDÉOS](https://www.youtube.com/feeds/videos.xml?channel_id=UCww2zZWg4Cf5xcRKG-ThmXQ)
+- [Paul Taylor](https://www.youtube.com/feeds/videos.xml?channel_id=UCd56yga015uI5hfOfnXdzCQ)
+- [Pierre-Emmanuel Barré](https://www.youtube.com/feeds/videos.xml?channel_id=UCTgIyiuI7S_VZ4E3FinKs0w)
+- [Samy Kamkar](https://www.youtube.com/feeds/videos.xml?channel_id=UC4m2G6T18_JcjwxwtwKJijw)
+- [SpaceX](https://www.youtube.com/feeds/videos.xml?channel_id=UCtI0Hodo5o5dUb67FeUjDeA)
+- [Tesla](https://www.youtube.com/feeds/videos.xml?channel_id=UC5WjFrtBdufl6CZojX3D8dQ)
+- [Web2day](https://www.youtube.com/feeds/videos.xml?channel_id=UCCzfEV7NDD5OvkE3Ua7pcxQ)
+- [Webosaures](https://www.youtube.com/feeds/videos.xml?channel_id=UCu34Tq5qMR-FiTYwLyy9U6w)
+- [What's up France ?](https://www.youtube.com/feeds/videos.xml?channel_id=UC9pVaOtZ8vdLBrlHu5xaaOA)
+- [wherethehellisutc](https://www.youtube.com/feeds/videos.xml?channel_id=UCeLfTu_89Qb1RPQ5gK9i_3Q)
