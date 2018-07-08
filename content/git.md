@@ -51,6 +51,19 @@ Here are some resources to go deeper with Git.
 - [Auto-squashing Git Commits](https://robots.thoughtbot.com/autosquashing-git-commits)
 - [git worktree](https://git-scm.com/docs/git-worktree#_examples)
 - [Git stuff](http://sethrobertson.github.io/)
+- [Git Tip of the Week: Merging Revisited](http://alblue.bandlem.com/2011/10/git-tip-of-week-merging-revisited.html)
+
+## Rebasing and cherry-picking
+
+Rebases mostly use `git am`, which given diffs apply them sequentially. Diffs are computed between a given commit and its parent.
+
+On the other hand, cherry-picks uses a three-way merge to notice file renames.
+
+More on the topic below:
+
+- [What algorithm is used during Git rebase?](https://stackoverflow.com/questions/39279901/what-algorithm-is-used-during-git-rebase)
+- [Issue with cherry pick: changes from previous commits are also applied](https://stackoverflow.com/questions/42530381/issue-with-cherry-pick-changes-from-previous-commits-are-also-applied)
+- [In a Git cherry-pick or rebase merge conflict, how are BASE (aka “the ancestor”), LOCAL, and REMOTE determined?](https://stackoverflow.com/questions/10058068/in-a-git-cherry-pick-or-rebase-merge-conflict-how-are-base-aka-the-ancestor)
 
 ## Auto deployment
 
