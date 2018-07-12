@@ -135,6 +135,7 @@ On Linux, if you have `imagemagick` installed, do:
 - [PaymentFont: A sleek webfont containing 95 icons of all main payment operators and methods](http://paymentfont.io/)
 - [Seriously, Don’t Use Icon Fonts](http://blog.cloudfour.com/seriously-dont-use-icon-fonts/)
 - [Seriously, use icon fonts](http://benfrain.com/seriously-use-icon-fonts/)
+- [How to Use Emojis as Icon](https://preethisam.com/2018/06/25/how-to-use-emojis-as-icons/)
 
 # Bonus: HTML Emails
 

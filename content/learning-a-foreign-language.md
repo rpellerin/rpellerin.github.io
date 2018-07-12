@@ -164,3 +164,4 @@ I decided to gather here all the little things to know in English, which are not
 - [not...anymore ; no longer ; not...any longer](https://forum.wordreference.com/threads/not-anymore-no-longer-not-any-longer.374150/)
 - [HAIR TERMINOLOGY: HOW TO TELL YOUR BARBER EXACTLY WHAT YOU WANT](http://www.ties.com/blog/hair-terminology-tell-barber-exactly-want)
 - [Funny Pronunciation Lesson: Bitch vs Beach, Shit vs Sheet](https://www.youtube.com/watch?v=yWiS5gQHHtI)
+- [‘Several thousands of’ vs. ‘several thousand’ in English](https://jakubmarian.com/several-thousands-of-vs-several-thousand-in-english/)
