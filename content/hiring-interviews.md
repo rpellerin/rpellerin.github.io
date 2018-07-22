@@ -23,6 +23,7 @@ One of the things that I personally fear the most is forgetting to ask important
 - Do they track their time? Ticket-based tracking? Jenkis? Jira? Redmine?
 - Visual regression testing? Browserstack.com? Unit/functional/integration testing? What tools?
 - Languages? Frameworks? Libraries?
+- Can we dress as we please? (shorts in Summer?)
 
 # Specific questions for French companies
 
