@@ -13,6 +13,7 @@ Here are some resources.
 - [Ma méthodologie d’intégration web](http://darklg.me/2012/04/methodologie-integration-web-front-end/)
 - [Some pieces of advice](https://old.etherpad-mozilla.org/RAI9OV5U2k)
 - [Maintenabilité du code HTML / CSS : entre automatisation et guide de style](https://www.24joursdeweb.fr/2017/maintenabilite-du-code-html-css-entre-automatisation-et-guide-de-style/)
+- [Developer Roadmaps](https://css-tricks.com/developer-roadmaps/)
 
 # CSS
 
@@ -28,6 +29,7 @@ Here are some resources.
 - [Decorating lines of text with box-decoration-break](https://css-tricks.com/decorating-lines-of-text-with-box-decoration-break/)
 - [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 - [CSS doodle](https://css-doodle.com/)
+- [Did you know that style and script tags can be set to display: block?](https://css-tricks.com/did-you-know-that-style-and-script-tags-can-be-set-to-display-block/)
 
 ## Support and compatibility
 

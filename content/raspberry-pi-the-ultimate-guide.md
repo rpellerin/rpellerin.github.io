@@ -64,6 +64,7 @@ To sum up, few requirements, but big advantages. Let's get started!
         sudo su
         dpkg-reconfigure locales # Select with space bar, at least en_US.UTF-8 plus any other you need
         dpkg-reconfigure keyboard-configuration
+        dpkg-reconfigure tzdata
 
     There are [other alternatives](http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103). Then reboot (`sudo reboot`).
 
@@ -224,7 +225,9 @@ Then:
     sync
     e2fsck -f /dev/sda1 # You might need to umount it first
     reboot
+    update-rc.d -f dphys-swapfile remove
     apt-get remove dphys-swapfile
+    swapoff /var/swap
     sudo rm -f /var/swap
     reboot
     su
@@ -407,12 +410,13 @@ Use the tool `rasp-config` or edit both */etc/hostname* and */etc/hosts*.
 
 ## Disable SWAP permanently
 
-Swapping is bad for your SD card lifespan. You should disable it permanently.
+Swapping is bad for your SD card lifespan. You should disable it permanently. You might however want to keep swap on a partition on a hard disk drive (see above). To disable permatently on SD card and disk, run:
 
     :::bash
     sudo swapoff --all # Temporary
     sudo update-rc.d dphys-swapfile remove
     sudo apt-get remove dphys-swapfile # Permanently
+    sudo rm /var/swap
 
 # DynHost
 
