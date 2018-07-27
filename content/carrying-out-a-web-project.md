@@ -139,6 +139,10 @@ On Linux, if you have `imagemagick` installed, do:
 - [Seriously, use icon fonts](http://benfrain.com/seriously-use-icon-fonts/)
 - [How to Use Emojis as Icon](https://preethisam.com/2018/06/25/how-to-use-emojis-as-icons/)
 
+## Images
+
+- [Sometimes `sizes` is quite important.](https://css-tricks.com/sometimes-sizes-is-quite-important/)
+
 # Bonus: HTML Emails
 
 - [My Current HTML Email Development Workflow](http://www.sitepoint.com/my-current-html-email-development-workflow/)
