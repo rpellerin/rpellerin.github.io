@@ -1,10 +1,11 @@
 Title: Books 
 Date: 2017-01-26 16:50
+Modified: 2018-07-28 19:40
 Category: About me
-Tags: books
+Tags: books, comics
 Slug: books
 Authors: Romain Pellerin
-Summary: My reading list
+Summary: Books I have read
 
 # Since June 2012 and counting
 
@@ -26,9 +27,15 @@ Summary: My reading list
 - **One Day**, by *David Nicholls*
 - **Here's Negan**, *by Robert Kirkman* and *Charlie Adlard*
 - **Love Is Love**, comic *published DW Publishing, in collaboration with DC Entertainment*
+
 # 2018
 
 - **Shangri-la**, *by Mathieu Bablet*
 - **La Belle Mort**, *by Mathieu Bablet*
 - **Descender** (comic books), by *Jeff Lemire* and *Dustin Nguyen*
 - **Paper Girls** (comic books), by *Brian K. Vaughan* and *Cliff Chiang*
+- **Low** (comic books), *by Rick Remender and Greg Tocchini*
+- **Delivering Happiness: A Path to Profits, Passion, and Purpose**, *by Tony Hsieh*
+- **Orcs et Gobelins 1 & 2** (comic books), *by Jean-Luc Istin, Diogo Saïto, Sylvain Cordurié & Giovanni Lorusso*
+- **La Horde du Contrevent 1** (comic book), *by Éric Henninot*
+- And a few "first issue" comic books, including Outcast, Riverdale, The Wicked + The Divine
