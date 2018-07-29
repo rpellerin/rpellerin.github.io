@@ -473,6 +473,10 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 
 # Configure a local SMTP email server
 
+Before doing this. make sure you did set the hostname of your Raspberry Pi through `raspi-config`. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with **an existing domain**.
+
+Make sur to disable `/var/log` from being in RAM since Exim4 needs `/var/log/exim4/mainlog` to exist, even after a reboot. 
+
 This is pretty convient as some programs still prefer to send emails, such as `cron`.  
 Normally, Exim4 comes pre-installed with Debian. If not, do `aptitude install exim4`. Then:
 
@@ -480,12 +484,12 @@ Normally, Exim4 comes pre-installed with Debian. If not, do `aptitude install ex
     su
     dpkg-reconfigure exim4-config
     # Second choice, "mail sent by smarthost; received via SMTP or fetchmail"
-    # System mail name: keep default; must be a valid FQDN though (ending with .eu for instance)
+    # System mail name: keep default; must be a valid FQDN though (ending with .eu for instance). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.
     # IP-addresses to listen on: keep default, we don't want to receive external emails
     # Other destinations: leave blank
     # Machines to relay mail for: leave blank
     # IP address or host name of the outgoing smarthost: your SMTP server with port, like ssl0.ovh.net::465
-    # Hide local mail name: no
+    # Hide local mail name: no, or yes if you let 'System mail name' blank. If you set a domain, it MUST EXIST otherwise some server will reject your emails.
     # Keep number of DNS-queries minimal: no
     # Delivery method for local mail: mbox
     # Split configuration into small files: no
@@ -518,7 +522,8 @@ Then:
     :::bash
     newaliases # To apply changes brought to aliases
     update-exim4.conf
-    /etc/init.d/exim4 restart
+    # /etc/init.d/exim4 restart
+    systemctl restart exim4
     echo "This is a test." | mail -v -s "test message" anotherme@somewhere.com # Try sending an email
 
 [More information](http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux).
