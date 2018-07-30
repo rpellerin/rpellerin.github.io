@@ -144,3 +144,8 @@ Plug in your phone, enable the developer mode and USB debugging.
     make clean && make production LOCALES_FILE=locales/languages_dev.json
 
 [More information](https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS).
+
+# Other alternatives
+
+- [LineageOS](https://lineageos.org/)
+- [Purism's Librem 5](https://puri.sm/shop/librem-5/)
