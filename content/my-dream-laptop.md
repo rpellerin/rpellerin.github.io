@@ -49,3 +49,9 @@ Turned out I bought the Dell 7480.
 
 - [My search for a MacBook Pro alternative](https://medium.com/broken-window/my-search-for-a-macbook-pro-alternative-e549ea2b2dee)
 - [Reasons not to use Intel](https://stallman.org/intel.html)
+
+## A word on Lenovo
+
+- [2013: Intelligence sources disclosed that...](https://mobile.twitter.com/todayininfosec/status/1023059171220979715)
+- [Lenovo reportedly banned by MI6, CIA, and other spy agencies over fear of Chinese hacking (update)](https://www.theverge.com/2013/7/30/4570780/lenovo-reportedly-banned-by-mi6-cia-over-chinese-hacking-fears)
+- [Spy agencies shun Lenovo, finding backdoors built into the hardware (Updated)](https://www.geek.com/chips/spy-agencies-shun-lenovo-finding-backdoors-built-into-the-hardware-1563801/)

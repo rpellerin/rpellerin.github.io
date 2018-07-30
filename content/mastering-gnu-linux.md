@@ -102,6 +102,7 @@ That's it. You should be able to install Linux on the entire disk now.
 - [Créer un serveur mail](http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-mail-postfix-courier-imap-ubuntu.pdf)
 - [Un DNS avec Bind](http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-dns-bind.pdf)
 - [Unbound, un autre résolveur DNS](http://www.bortzmeyer.org/unbound.html)
+- [Anatomy of a Linux DNS Lookup – Part I](https://zwischenzugs.com/2018/06/08/anatomy-of-a-linux-dns-lookup-part-i/)
 - [Too long; didn’t read pour vos man pages](http://korben.info/long-didnt-read-pour-vos-man-pages.html)
 - [Add a new command available in shell](http://askubuntu.com/questions/427818/how-can-i-run-this-sh-script-without-typing-the-full-path/527008#527008)
 - [How to format a USB flash drive?](http://askubuntu.com/questions/22381/how-to-format-a-usb-flash-drive/571340#571340)
