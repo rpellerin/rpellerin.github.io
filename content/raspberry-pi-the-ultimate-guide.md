@@ -925,7 +925,7 @@ The last three lines are taken from [this very helpful website](https://stribika
 
 ## Sending an email on every SSH connection
 
-Took from [this thread](http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602). As root, create `/etc/ssh/login-notify.sh`:
+Taken from [this thread](http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602). As root, create `/etc/ssh/login-notify.sh`:
 
     :::text
     #!/bin/sh 
@@ -1030,9 +1030,9 @@ A year ago, I gave a talk at [HumanTalks Compiègne](http://humantalks.com/citie
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
+<iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
 
-[Slides are available in HTML](http://romainpellerin.eu/slides/self-hosting/slides.html).
+[Slides are available in HTML](https://romainpellerin.eu/slides/self-hosting/slides.html).
 
 ## Interesting external links
 

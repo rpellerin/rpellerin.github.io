@@ -6,8 +6,6 @@ Slug: on-storing-passwords-in-a-safe-way
 Authors: Romain Pellerin
 Summary: My journey towards a better security
 
-**DRAFT ARTICLE**
-
 It's been a while since I last wrote here... Let's fix this with a new article on an important topic.
 
 # Storing passwords
