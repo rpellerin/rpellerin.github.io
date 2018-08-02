@@ -43,7 +43,7 @@ Setting it up was fairly straightforward, I simply followed [a tutorial I had al
 - Enable the camera
 - Give the GPU at least 128MB (more is recommended, apparently)
 
-You can stop reading the tutorial at the end of the section "Configuration".
+You can stop reading the tutorial at the end of the section "Configuration". Make sure to install `ntpdate` otherwise you'll get wrong dates in some emails.
 
 ## Fine tuning
 
