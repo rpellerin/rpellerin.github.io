@@ -17,15 +17,16 @@ Let's start off with listing the requirements for this project.
 - Must send good resolution pictures (and videos if need be) on motion detection
 - Must be easily concealable (no LEDs visible, even at night)
 - Must be easily turned on
-- Must live stream to the Internet
+- Must be able to live stream to the Internet if I want to
 
 ## Advanced features (from most important to least)
 
 - Must no fail because of the SD card
 - Not easily hackable (penetrable) through my LAN
-- Must free up space when it runs out of disk space (periodic cronjob for instance)
+- Must send daily signs of life as a proof no one took it down on purpose or my apartment did not burn down
+- Must free up space when it runs out of disk space
 - Must notify me when being turned on and tell me how long it had been off
-- Must be resiliant to power outage, and auto-restart. Must also handle cases when connectivity is not immediately there
+- Must be resiliant to power outage, and auto-restart. Must also handle cases when network is not available
 - Must notify me when being purposedly shut down
 - Must detect when no connectivity and be resiliant to it
 - Must notify me when someone logs in to the Raspberry Pi, either remotely or physically with a keyboard connected to it
@@ -118,6 +119,10 @@ Here is the configuration file I personally use (`motion -c motion-dist.conf`):
         border-radius: 0; /* reset global style */
     }
 
+    .body_background pre {
+        padding: 0; /* reset also */
+    }
+
     .body_foreground>.bold,
     .bold>.body_foreground,
     body.body_foreground>pre>.bold {
@@ -170,7 +175,7 @@ Here is the configuration file I personally use (`motion -c motion-dist.conf`):
  
  # Since our resolution is quite big, we must avoid false alarms and thus have a big number here
 <span class="ansi31">-threshold 1500</span>
-<span class="ansi32">+</span><span class="ansi32">threshold 7500</span>
+<span class="ansi32">+</span><span class="ansi32">threshold 15000</span>
  
 <span class="ansi31">-event_gap 60</span>
 <span class="ansi32">+</span><span class="ansi32">event_gap 10</span>
@@ -240,7 +245,7 @@ Now that we just installed Motion, let's address the above-mentioned requirement
 
 - *Must be easily concealable (no LEDs visible, even at night)*
 
-    > Do your best to do this with duck tape or something else.
+    > Do your best to do this with duck tape, Blu Tack or something else.
     
 - *Must be easily turned on and started*
 
@@ -257,13 +262,16 @@ Add these two lines below `[Service]`:
     :::text
     Restart=always
     RestartSec=3
+    ExecStart=/usr/local/bin/motion -n -c /home/pi/motion-dist.conf
+
+Replace the existing line `ExecStart` with the one above. `-n` is to force non-daemon mode.
 
 Then run:
 
     :::bash
     sudo systemctl daemon-reload
 
-- *Must live stream to the Internet*
+- *Must be able to live stream to the Internet if I want to*
 
     > Addressed in the configuration file above. Make sure to open ports to the Internet in your router configuration.
 
@@ -275,19 +283,111 @@ Then run:
 
 - *Not easily hackable (penetrable) through my LAN or the Internet*
 
-    > Quite simple. Disable Wifi went the security camera is on. Also, don't expose it to the Internet (don't allow ports to be reached through your router).
+    > Quite simple. Disable Wifi when the security camera is on. Also, don't expose it to the Internet (don't allow ports to be reached through your router). This disables live streaming but enforce security.
 
-- *Must free up space when it runs out of disk space (periodic cronjob for instance)*
+- *Must send daily signs of life as a proof no one took it down on purpose or my apartment did not burn down*
 
-    > TODO: I think a good solution would be to create a script that runs daily thanks to cron, zips all the pictures and videos just in case you did not get them, email it to you and then delete the zip and the original files.
+    > For this one, we are going to create a cron that runs daily and send an email. See bullet point below.
+
+- *Must free up space when it runs out of disk space*
+
+    > A good solution would be to create a script that runs every 30mins thanks to cron, check for space left. If too little, it zips all the pictures and videos just in case you did not get them, email it to you and then delete the zip and the original files.
+
+Create `/home/pi/alive-script.sh`:
+
+    :::bash
+    #!/bin/bash
+
+    set -u
+
+    DATE="$(date)"
+
+    args=("$@")
+
+    if [ $# -gt 0 ] && [ "${args[0]}" = "--daily" ]; then 
+        echo 'Daily alive script running...'
+        echo -e "I am alive. - $DATE\n\n$(df -H /)\n\n$(systemctl status motion | cat)" | mail -s "Raspberry Pi is alive" me@domain
+        # Gives it time to finish sending emails, just in case
+        sleep 5
+        echo 'Daily report sent'
+        exit 0
+    fi
+
+    FILENAME="$(date +%s).tar.gz"
+    PICS_AND_VIDS="/home/pi/pics_and_vids"
+    PICS_AND_VIDS_BASENAME="pics_and_vids"
+    PICS_AND_VIDS_PARENT_DIR="/home/pi"
+
+    delete_pics_vids () {
+        rm $PICS_AND_VIDS/*.jpg -f
+        rm $PICS_AND_VIDS/*.mkv -f
+    }
+
+    # Deletes previous backups, if any
+    rm $PICS_AND_VIDS_PARENT_DIR/*.tar.gz -f
+    # sync for df to return the correct values
+    sync
+
+    DISK_SPACE_THRESHOLD=6
+    #DISK_SPACE_THRESHOLD=35
+    DISK_SPACE_THRESHOLD_CANT_BACKUP=$((DISK_SPACE_THRESHOLD + 10))
+
+    PERCENT_DISK_USAGE=$(df -H / | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 }' | cut -d'%' -f1)
+
+    if [ $PERCENT_DISK_USAGE -le $DISK_SPACE_THRESHOLD ]; then
+        echo "Less than $DISK_SPACE_THRESHOLD% of disk space used, doing nothing..."
+        exit 0
+    fi
+
+    if [ $PERCENT_DISK_USAGE -ge $DISK_SPACE_THRESHOLD_CANT_BACKUP ]; then
+        echo "More than $DISK_SPACE_THRESHOLD_CANT_BACKUP% of disk space used, deleting pics and vids and notifying via email..."
+        echo "Little disk space left ($PERCENT_DISK_USAGE% used). CANT BACKUP. - $DATE" | mail -s "Raspberry Pi - DISK USAGE ALERT" me@domain
+        # Give time to finish sending email
+        sleep 5
+        delete_pics_vids
+        exit 0
+    fi
+
+    # 2>/dev/null to suppress the output error "No such file or directory"
+    if [ -n "$(ls -A $PICS_AND_VIDS 2>/dev/null)" ]; then
+        # Contains files (or is a file)"
+        cd $PICS_AND_VIDS_PARENT_DIR
+        tar -cvzf $PICS_AND_VIDS_PARENT_DIR/$FILENAME $PICS_AND_VIDS_BASENAME
+        echo "Pics and vids were deleted. Here is a backup of them. - $DATE" | mail -A $FILENAME -s "Raspberry Pi - Backup" me@domain
+        delete_pics_vids
+        # Give time to finish sending email
+        sleep 30
+        # Delete backup we just created
+        rm $PICS_AND_VIDS_PARENT_DIR/$FILENAME -f
+    else
+        # Empty (or does not exist)
+        echo "Little disk space left ($PERCENT_DISK_USAGE% used). No pics or vids found though. - $DATE" | mail -s "Raspberry Pi - DISK USAGE ALERT" me@domain
+        # Give time to finish sending email
+        sleep 5
+    fi
+
+Then run `crontab -e` as `pi` and:
+
+    :::bash
+    0    12 * * * /home/pi/alive-script.sh --daily
+    */30 *  * * * /home/pi/alive-script.sh
 
 - *Must notify me when being turned on and tell me how long it had been off*
 
-    > TODO
+    > Shoud be easy.
+    
+Add the following in /etc/rc.local, right above `exit 0`:
 
-- *Must be resiliant to power outage, and auto-restart. Must also handle cases when connectivity is not immediately there.*
+    :::bash
+    echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain &
+    sleep 2
+    echo -e "So you know... ($(date))\n\n$(tail -n 500 /var/log/syslog)" | mail -s "Rpi turned on (with syslog)" me@domain &
+    sleep 5
+    exit 0
 
-    > Auto start was addressed a few lines above. However, how to wait for network to be up? TODO
+- *Must be resiliant to power outage, and auto-restart. Must also handle cases when network is not available*
+
+    > Auto start was addressed a few lines above. However, how to wait for network to be up? [TODO](https://www.raspberrypi.org/forums/viewtopic.php?t=187225)
 
 - *Must notify me when being purposedly shut down*
 

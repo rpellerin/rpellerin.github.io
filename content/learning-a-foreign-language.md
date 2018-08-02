@@ -166,3 +166,4 @@ I decided to gather here all the little things to know in English, which are not
 - [Funny Pronunciation Lesson: Bitch vs Beach, Shit vs Sheet](https://www.youtube.com/watch?v=yWiS5gQHHtI)
 - [‘Several thousands of’ vs. ‘several thousand’ in English](https://jakubmarian.com/several-thousands-of-vs-several-thousand-in-english/)
 - [“I work {on/with/in} a team”?](https://ell.stackexchange.com/questions/70562/i-work-on-with-in-a-team)
+- [Do we say "of interest TO you" or "of interest FOR you" ?](https://forum.wordreference.com/threads/do-we-say-of-interest-to-you-or-of-interest-for-you.2797738/)
