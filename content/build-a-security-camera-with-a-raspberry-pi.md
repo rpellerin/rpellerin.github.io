@@ -45,6 +45,13 @@ Setting it up was fairly straightforward, I simply followed [a tutorial I had al
 
 You can stop reading the tutorial at the end of the section "Configuration". Make sure to install `ntpdate` otherwise you'll get wrong dates in some emails.
 
+I also recommend setting it so that it reboots automatically, periodically:
+
+    :::bash
+    sudo su
+    crontab -e
+    15 */48 * * * /sbin/shutdown -r
+
 ## Fine tuning
 
     :::bash
