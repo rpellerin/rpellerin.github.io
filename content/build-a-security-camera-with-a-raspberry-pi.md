@@ -184,8 +184,9 @@ Here is the configuration file I personally use (`motion -c motion-dist.conf`):
 <span class="ansi31">-threshold 1500</span>
 <span class="ansi32">+</span><span class="ansi32">threshold 15000</span>
  
+ # Avoid unnecessary emails and CPU usage 
 <span class="ansi31">-event_gap 60</span>
-<span class="ansi32">+</span><span class="ansi32">event_gap 10</span>
+<span class="ansi32">+</span><span class="ansi32">event_gap 2</span>
  
 <span class="ansi31">-max_movie_time 0</span>
 <span class="ansi32">+</span><span class="ansi32">max_movie_time 300</span>
