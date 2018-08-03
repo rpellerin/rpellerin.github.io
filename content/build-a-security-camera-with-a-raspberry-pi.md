@@ -305,11 +305,11 @@ Create `/home/pi/alive-script.sh`:
     args=("$@")
 
     if [ $# -gt 0 ] && [ "${args[0]}" = "--daily" ]; then 
-        echo 'Daily alive script running...'
+        # echo 'Daily alive script running...'
         echo -e "I am alive. - $DATE\n\n$(df -H /)\n\n$(systemctl status motion | cat)" | mail -s "Raspberry Pi is alive" me@domain
         # Gives it time to finish sending emails, just in case
         sleep 5
-        echo 'Daily report sent'
+        # echo 'Daily report sent'
         exit 0
     fi
 
@@ -335,7 +335,7 @@ Create `/home/pi/alive-script.sh`:
     PERCENT_DISK_USAGE=$(df -H / | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 }' | cut -d'%' -f1)
 
     if [ $PERCENT_DISK_USAGE -le $DISK_SPACE_THRESHOLD ]; then
-        echo "Less than $DISK_SPACE_THRESHOLD% of disk space used, doing nothing..."
+        # Less than $DISK_SPACE_THRESHOLD% of disk space used, doing nothing...
         exit 0
     fi
 
