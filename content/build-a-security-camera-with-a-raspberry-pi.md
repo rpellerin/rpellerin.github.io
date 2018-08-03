@@ -393,6 +393,23 @@ Add the following in /etc/rc.local, right above `exit 0`:
     sleep 5
     exit 0
 
+Another alternative is to add a cronjob that runs at every reboot, sleeps for two minutes (in case network is not immediately available) and send an email:
+
+    :::bash
+    vim boot-email.sh
+
+    #!/bin/bash
+
+    /bin/sleep 120
+    /bin/echo -e "So you know... ($(/bin/date))\n\n$(/usr/bin/tail -n 500 /var/log/syslog)" | /usr/bin/mail -s "Rpi turned on (with syslog) - after 120s" me@domain &
+    /bin/sleep 5
+
+    chmod +x boot-email.sh
+    sudo su
+    crontab -e
+    @reboot /home/pi/boot-email.sh
+    
+
 - *Must be resiliant to power outage, and auto-restart. Must also handle cases when network is not available*
 
     > Auto start was addressed a few lines above. However, how to wait for network to be up? [TODO](https://www.raspberrypi.org/forums/viewtopic.php?t=187225)
@@ -419,3 +436,4 @@ Hope this helps.
 # Further reading
 
 - [Smarten up your Pi Zero Web Camera with Image Analysis and Amazon Web Services (Part 1)](https://www.bouvet.no/bouvet-deler/utbrudd/smarten-up-your-pi-zero-web-camera-with-image-analysis-and-amazon-web-services-part-1)
+- [Limit the runtime of a cronjob or script](https://ma.ttias.be/limit-runtime-cronjob-script/)
