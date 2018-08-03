@@ -316,7 +316,7 @@ Create `/home/pi/alive-script.sh`:
         # echo 'Daily alive script running...'
         echo -e "I am alive. - $DATE\n\n$(df -H /)\n\n$(systemctl status motion | cat)" | mail -s "Raspberry Pi is alive" me@domain
         # Gives it time to finish sending emails, just in case
-        sleep 5
+        sleep 15
         # echo 'Daily report sent'
         exit 0
     fi
@@ -351,7 +351,7 @@ Create `/home/pi/alive-script.sh`:
         echo "More than $DISK_SPACE_THRESHOLD_CANT_BACKUP% of disk space used, deleting pics and vids and notifying via email..."
         echo "Little disk space left ($PERCENT_DISK_USAGE% used). CANT BACKUP. - $DATE" | mail -s "Raspberry Pi - DISK USAGE ALERT" me@domain
         # Give time to finish sending email
-        sleep 5
+        sleep 15
         delete_pics_vids
         exit 0
     fi
@@ -371,7 +371,7 @@ Create `/home/pi/alive-script.sh`:
         # Empty (or does not exist)
         echo "Little disk space left ($PERCENT_DISK_USAGE% used). No pics or vids found though. - $DATE" | mail -s "Raspberry Pi - DISK USAGE ALERT" me@domain
         # Give time to finish sending email
-        sleep 5
+        sleep 15
     fi
 
 Then run `crontab -e` as `pi` and:
@@ -390,10 +390,10 @@ Add the following in /etc/rc.local, right above `exit 0`:
     echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain &
     sleep 2
     echo -e "So you know... ($(date))\n\n$(tail -n 500 /var/log/syslog)" | mail -s "Rpi turned on (with syslog)" me@domain &
-    sleep 5
+    sleep 15
     exit 0
 
-Another alternative is to add a cronjob that runs at every reboot, sleeps for two minutes (in case network is not immediately available) and send an email:
+Another alternative is to add a cronjob that runs at every reboot, sleeps for two minutes (in case network is not immediately available) and sends an email:
 
     :::bash
     vim boot-email.sh
@@ -401,8 +401,10 @@ Another alternative is to add a cronjob that runs at every reboot, sleeps for tw
     #!/bin/bash
 
     /bin/sleep 120
+    # Takes a picture and send it over email
+    /usr/bin/curl -s -o /dev/null http://127.0.0.1:8080/0/action/snapshot
     /bin/echo -e "So you know... ($(/bin/date))\n\n$(/usr/bin/tail -n 500 /var/log/syslog)" | /usr/bin/mail -s "Rpi turned on (with syslog) - after 120s" me@domain &
-    /bin/sleep 5
+    /bin/sleep 25
 
     chmod +x boot-email.sh
     sudo su
@@ -412,7 +414,7 @@ Another alternative is to add a cronjob that runs at every reboot, sleeps for tw
 
 - *Must be resiliant to power outage, and auto-restart. Must also handle cases when network is not available*
 
-    > Auto start was addressed a few lines above. However, how to wait for network to be up? [TODO](https://www.raspberrypi.org/forums/viewtopic.php?t=187225)
+    > Auto start was addressed a few lines above. However, how to wait for network to be up? [TODO](https://www.raspberrypi.org/forums/viewtopic.php?t=187225) and [TODO](https://www.raspberrypi.org/forums/viewtopic.php?p=1054207#p1054207).
 
 - *Must notify me when being purposedly shut down*
 
