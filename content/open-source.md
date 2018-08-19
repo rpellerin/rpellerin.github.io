@@ -31,6 +31,7 @@ Here are a bunch of links for open source project maintainers/creators:
 - [Keep A Changelog](http://keepachangelog.com/en/0.3.0/)
 - [Issue and Pull Request templates](https://github.com/blog/2111-issue-and-pull-request-templates)
 - [How to attract new contributors to your open source project](https://medium.freecodecamp.com/how-to-attract-new-contributors-to-your-open-source-project-46f8b791d787)
+- [Badgen – Pour générer vos badges SVG](https://korben.info/badgen-pour-generer-vos-badges-svg.html)
 - [No Maintenance Intended](http://unmaintained.tech/)
 - [nikku/works-on-my-machine](https://github.com/nikku/works-on-my-machine)
 - [Fixing the Support Problem](https://davidreagan.net/tech/fixing-the-support-problem/)
