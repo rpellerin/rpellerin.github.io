@@ -118,6 +118,7 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [Refactoring UI](https://refactoringui.com/)
 - [User Interface UI design Inspiration](https://uidb.io/)
+- [Common webpage design mistakes](http://blog-en.tilda.cc/articles-website-design-mistakes)
 
 ## Fonts
 

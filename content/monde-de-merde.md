@@ -28,3 +28,7 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 - Les gens qui attendent dans leur voiture, le moteur allumé
 - Les bus non électriques
 - [L'eau (non potable)](https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/) [pour nettoyer les rues de Paris](http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php)
+
+# Général
+
+- [La Terre transformée en « étuve » : après ce seuil, nos efforts seront vains](https://www.numerama.com/sciences/405296-la-terre-transformee-en-etuve-apres-ce-seuil-nos-efforts-seront-vains.html/amp)

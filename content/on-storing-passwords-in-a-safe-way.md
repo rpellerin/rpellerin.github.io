@@ -102,3 +102,9 @@ How does it work? Well, it is a web app that stores in one's browser (in the `Lo
 <br />
 
 Hope this helps. Cheers!
+
+# Online resources
+
+- [2FA, SMS, and you](https://www.juliaferraioli.com/blog/2018/08/2fa-sms-you/)
+- [L’authentification double facteur (2FA), oui mais pas n’importe comment !](https://korben.info/authentification-double-facteur-2fa.html)
+- [My recent journey with 2FA](https://chown.me/blog/my-recent-journey-with-2FA.html)
