@@ -50,3 +50,7 @@ Supposedly a low cost company. They charge everything else though, even my norma
 Pretty much the same as WoW air, although they have tablets. As far as I remember, you don't get any food or drinks for free. I was lucky enough to get on their first flight to New York City. Nice lighting in the cabin right after landing.
 
 Oh, and they offer free WiFi.
+
+# Tui Fly
+
+Nice one. On a 9 hour fly from Miami to Paris we got dinner and breakfast, plus sodas for free. Alcoholic drinks were paid. Seats are equipped with tablets and fairly recent movies are available. No free or paid Wi-Fi on board. Quite big aircrafts, mine was a Boeing 787, Dreamliner.
