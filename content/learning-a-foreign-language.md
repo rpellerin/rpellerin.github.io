@@ -167,3 +167,4 @@ I decided to gather here all the little things to know in English, which are not
 - [‘Several thousands of’ vs. ‘several thousand’ in English](https://jakubmarian.com/several-thousands-of-vs-several-thousand-in-english/)
 - [“I work {on/with/in} a team”?](https://ell.stackexchange.com/questions/70562/i-work-on-with-in-a-team)
 - [Do we say "of interest TO you" or "of interest FOR you" ?](https://forum.wordreference.com/threads/do-we-say-of-interest-to-you-or-of-interest-for-you.2797738/)
+- [So, thus, therefore, and hence in English](https://jakubmarian.com/so-thus-therefore-and-hence-in-english/)
