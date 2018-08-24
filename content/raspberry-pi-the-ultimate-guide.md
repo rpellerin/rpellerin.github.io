@@ -1049,6 +1049,7 @@ A year ago, I gave a talk at [HumanTalks Compiègne](http://humantalks.com/citie
 - [The R.Pi IoT Shield adds IoT connectivity to your DIY project](https://techcrunch.com/2016/11/16/the-r-pi-iot-shield-adds-iot-connectivity-to-your-diy-project/)
 - [Raspberry Pi 3 based home automation with NodeJS and React Native.](https://github.com/deepsyx/home-automation)
 - [Using your Raspberry Pi as a DLNA/UPnP media server](https://bbrks.me/rpi-minidlna-media-server/)
+- [raspberry-pi-security-camera](https://github.com/rpellerin/raspberry-pi-security-camera)
 
 ### Read-only Raspberry Pi
 
