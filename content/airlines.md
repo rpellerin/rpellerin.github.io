@@ -45,6 +45,8 @@ Paid Wi-Fi (can be bypassed using a VPN, though). Drinks are free.
 
 Supposedly a low cost company. They charge everything else though, even my normal sized carry-on bagage. What you get for free is a tiny bag, not bigger than a backpack. No meal included (on a 9 hour flight). No Wi-Fi. No tablets on seats. Even water is paid ($2.99).
 
+One time, we showed up at the airport and the service agent could not find one of our paid hold luggage on our booking: she believed we hadn't paid for one piece, although we had. She had us pay at the desk in order to check in. Several weeks later, it took many emails to and from them to convince them it was an error from her to make us pay. I eventually got refunded.
+
 # Norwegian
 
 Pretty much the same as WoW air, although they have tablets. As far as I remember, you don't get any food or drinks for free. I was lucky enough to get on their first flight to New York City. Nice lighting in the cabin right after landing.
