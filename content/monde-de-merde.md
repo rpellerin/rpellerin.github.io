@@ -1,15 +1,12 @@
 Title: Monde De Merde
 Date: 2018-08-01 23:20
-Category: Misc
+Category: What's bad about
 Tags: écologie, gaspillage, environnement, planète
 Slug: monde-de-merde
 Authors: Romain Pellerin
 Summary: Abérations de notre monde
 
-Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3 ans. Et pas sur un sujet léger... En vrac :
-
-- [Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc](https://twitter.com/FlorencePorcel/status/1024608339513298944)
-- [OperationLingeBlanc](https://lite1.infini.fr/p/OperationLingeBlanc)
+Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3 ans. Et pas sur un sujet léger...
 
 # En entreprise
 
@@ -24,11 +21,24 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 
 # Dans la rue
 
-- Les gents qui jetent leurs mégots par terre
+- Les gents qui jetent [leurs mégots](https://www.nbcnews.com/news/us-news/plastic-straw-ban-cigarette-butts-are-single-greatest-source-ocean-n903661) par terre
 - Les gens qui attendent dans leur voiture, le moteur allumé
 - Les bus non électriques
 - [L'eau (non potable)](https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/) [pour nettoyer les rues de Paris](http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php)
+- Les voitures essence mais surtout diesel
+
+    - [The Economics of the Office: Why Do We Still Commute?](https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb)
+    - [5 Reasons Why Amsterdam Works So Well for Bikes](https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/)
+    - [Air pollution causes ‘huge’ reduction in intelligence, study reveals](https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals)
+
+# Au supermarché
+
+- Le [sur-emballage](https://images-cdn.9gag.com/photo/argyp26_700b.jpg)
+- Les sacs plastiques (à Walmart surtout...)
 
 # Général
 
 - [La Terre transformée en « étuve » : après ce seuil, nos efforts seront vains](https://www.numerama.com/sciences/405296-la-terre-transformee-en-etuve-apres-ce-seuil-nos-efforts-seront-vains.html/amp)
+- Les couverts en plastique
+- [Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc](https://twitter.com/FlorencePorcel/status/1024608339513298944)
+- [OperationLingeBlanc](https://lite1.infini.fr/p/OperationLingeBlanc)
