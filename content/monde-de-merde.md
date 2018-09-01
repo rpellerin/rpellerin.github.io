@@ -35,6 +35,7 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 
 - Le [sur-emballage](https://images-cdn.9gag.com/photo/argyp26_700b.jpg)
 - Les sacs plastiques (à Walmart surtout...)
+- [La nourriture encore bonne](http://robgreenfield.tv/foodwaste/), [jetée](https://www.youtube.com/watch?v=yXu7ui7KMSM)
 
 # Général
 
@@ -42,3 +43,4 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 - Les couverts en plastique
 - [Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc](https://twitter.com/FlorencePorcel/status/1024608339513298944)
 - [OperationLingeBlanc](https://lite1.infini.fr/p/OperationLingeBlanc)
+- [Le capitalisme](https://freegan.info/)
