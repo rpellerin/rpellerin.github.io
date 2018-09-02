@@ -13,4 +13,6 @@ This is a reminder for myself. I thought it could be useful to other people too,
 3. Using VLC, `Tools` > `Codec information`, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.
 4. When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in `Project` > `Project Settings` but **it is not advised as it will shift clips randomly** (I experienced it). There, also enable `Proxy clips` for videos larger than 1000 pixels.
 
+**Do not forget that Kdenlive does use milliseconds but instead 1/60 of seconds.** That should be helpful when resizing clips.
+
 That's about it!
