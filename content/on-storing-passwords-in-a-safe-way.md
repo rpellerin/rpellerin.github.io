@@ -65,7 +65,7 @@ Apparently a great tool, I've read a lof of good reviews. Advocated by the famou
 
 ### Pass (Linux CLI)
 
-[A tool](https://www.passwordstore.org/) [for Linux](https://wiki.archlinux.org/index.php/Pass) (CLI). Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass, which implies many platforms and binaries. One of the reaons I guess is that it's on the official Linux distributions repos.
+[A tool](https://www.passwordstore.org/) [for Linux](https://wiki.archlinux.org/index.php/Pass) (CLI). Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass, which implies many platforms and binaries. One of the reasons I guess is that it's on the official Linux distributions repos.
 
 #### Pros
 
@@ -108,3 +108,4 @@ Hope this helps. Cheers!
 - [2FA, SMS, and you](https://www.juliaferraioli.com/blog/2018/08/2fa-sms-you/)
 - [L’authentification double facteur (2FA), oui mais pas n’importe comment !](https://korben.info/authentification-double-facteur-2fa.html)
 - [My recent journey with 2FA](https://chown.me/blog/my-recent-journey-with-2FA.html)
+- [The Definitive Guide to password-store](https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1)
