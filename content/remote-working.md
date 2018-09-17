@@ -11,3 +11,4 @@ I truly believe remote working has numerous advantages on the long term, but als
 - [The Stress of Remote Working](https://hackernoon.com/the-stress-of-remote-working-38be5bdcf4da)
 - [How We Manage Projects on a Fully Remote Team](https://blog.doist.com/how-we-manage-projects-on-a-fully-remote-team-7cabed2b03d9)
 - [Quand je serai grand je monterai une équipe full remote ! (Y. Brissaud)](https://www.youtube.com/watch?v=gSPVP0Bi7qA)
+- [What Most Remote Companies Don’t Tell You About Remote Work](https://blog.doist.com/mental-health-and-remote-work-1b77616f6945)

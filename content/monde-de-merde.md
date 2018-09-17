@@ -35,7 +35,12 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 
 - Le [sur-emballage](https://images-cdn.9gag.com/photo/argyp26_700b.jpg)
 - Les sacs plastiques (à Walmart surtout...)
+- [Rob Greenfield : l’homme qui défie les supermarchés - Tout Compte Fait](https://www.youtube.com/watch?v=yXu7ui7KMSM)
 - [La nourriture encore bonne](http://robgreenfield.tv/foodwaste/), [jetée](https://www.youtube.com/watch?v=yXu7ui7KMSM)
+- [Cash investigation - Plastique : la grande intox (Intégrale)](https://www.youtube.com/watch?v=wZT3drAYIzo)
+- [30 JOURS ZÉRO DÉCHET : MON EXPÉRIENCE](https://www.youtube.com/watch?v=x8GdFBp_pWs)
+- [Vivre sans plastique ni déchet, c’est possible. C’est ce que fait Aline. Voilà comment.](https://twitter.com/brutofficiel/status/1005351036477992966)
+- [Ça Commence Par Moi](https://www.cacommenceparmoi.org/)
 
 # Général
 
