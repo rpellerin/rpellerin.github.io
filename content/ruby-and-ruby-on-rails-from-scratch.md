@@ -19,6 +19,9 @@ Today I started learning a new language: Ruby! Coming from a JavaScript world, [
 ## Rails
 
 - [http://rubyonrails.org/doctrine/](http://rubyonrails.org/doctrine/)
+- [Code School: Rails for Zombies](https://www.pluralsight.com/courses/code-school-rails-for-zombies)
+- [Initiez-vous à Ruby on Rails](https://openclassrooms.com/en/courses/3149156-initiez-vous-a-ruby-on-rails)
+- [Continuez avec Ruby on Rails](https://openclassrooms.com/en/courses/3432066-continuez-avec-ruby-on-rails)
 
 # Install
 
@@ -116,3 +119,5 @@ bundle
 - [What does a double * (splat) operator do](https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do)
 - [What do =~ and /\ mean in Ruby?](https://stackoverflow.com/questions/26938262/what-do-and-mean-in-ruby?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [%Q, %q, %W, %w, %x, %r, %s](https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/)
+- [Rails Routing from the Outside In](https://romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html)
+- [Multiline strings in Ruby 2.3 - the squiggly heredoc](https://infinum.co/the-capsized-eight/multiline-strings-ruby-2-3-0-the-squiggly-heredoc)
