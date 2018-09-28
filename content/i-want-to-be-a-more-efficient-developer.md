@@ -156,3 +156,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Productivity](http://blog.samaltman.com/productivity)
 - [Simon Sinek: How great leaders inspire action | TED Talk](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
 - [Comment négocier son salaire](https://www.youtube.com/watch?v=Vx9prTKpzCc)
+- [Linux - The beginning of the end](https://www.dedoimedo.com/computers/linux-beginning-of-the-end.html)
