@@ -41,6 +41,8 @@ Ouaiii ! Premier article sur mon blog en français depuis son lancement il y a 3
 - [30 JOURS ZÉRO DÉCHET : MON EXPÉRIENCE](https://www.youtube.com/watch?v=x8GdFBp_pWs)
 - [Vivre sans plastique ni déchet, c’est possible. C’est ce que fait Aline. Voilà comment.](https://twitter.com/brutofficiel/status/1005351036477992966)
 - [Ça Commence Par Moi](https://www.cacommenceparmoi.org/)
+- [Supermarchés : et si on en finissait avec le plastique ? - Tout compte fait](https://www.youtube.com/watch?v=2SCmmn3GpTM)
+- [Des particules de plastique dans l'eau en bouteille ? - Tout compte fait](https://www.youtube.com/watch?v=BoXPwoIPDX4)
 
 # Général
 
