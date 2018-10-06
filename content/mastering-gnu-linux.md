@@ -127,6 +127,8 @@ That's it. You should be able to install Linux on the entire disk now.
 - [How To Protect Your Privacy On Linux](https://spreadprivacy.com/linux-privacy-tips/)
 - [Hands-on Guide on GPG Keys](http://thegeekyway.com/hands-on-guide-on-gpg-keys/)
 - [Creating a new GPG key with subkeys](https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/)
+- [GNU Privacy Guard](http://www.beaupeyrat.com/wp-content/uploads/2015/07/gpg.pdf)
+- [Using an offline GnuPG master key](https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html)
 
 # Other
 
