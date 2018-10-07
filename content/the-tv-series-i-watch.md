@@ -83,6 +83,10 @@ About the personal computer revolution in the 80's. The show ended in 2017.
 
 Music!
 
+## [La Casa de Papel](https://en.wikipedia.org/wiki/Money_Heist)
+
+New TV series from Netflix. Pretty cool!
+
 # TV shows I dropped
 
 - The 100 (after season 2 or 3)
