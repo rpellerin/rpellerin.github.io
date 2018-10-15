@@ -33,9 +33,15 @@ Summary: Books I have read
 - **Shangri-la**, *by Mathieu Bablet*
 - **La Belle Mort**, *by Mathieu Bablet*
 - **Descender** (comic books), by *Jeff Lemire* and *Dustin Nguyen*
-- **Paper Girls** (comic books), by *Brian K. Vaughan* and *Cliff Chiang*
-- **Low** (comic books), *by Rick Remender and Greg Tocchini*
 - **Delivering Happiness: A Path to Profits, Passion, and Purpose**, *by Tony Hsieh*
 - **Orcs et Gobelins 1 & 2** (comic books), *by Jean-Luc Istin, Diogo Saïto, Sylvain Cordurié & Giovanni Lorusso*
 - **La Horde du Contrevent 1** (comic book), *by Éric Henninot*
-- And a few "first issue" comic books, including Outcast, Riverdale, The Wicked + The Divine
+- And a few "first issue" comic books, including Outcast, Riverdale, The Wicked + The Divine, Infinite Dark, Blackbird
+
+## Comics I started reading that year
+
+- **Paper Girls**, by *Brian K. Vaughan* and *Cliff Chiang*
+- **Low**, *by Rick Remender and Greg Tocchini*
+- **Die!Die!Die!**, by *Robert Kirkman* and *Scott M. Gimple*
+- **Saga**, by *Brian K. Vaughan* and *Fiona Staples*
+
