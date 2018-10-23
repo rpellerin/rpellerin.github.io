@@ -30,6 +30,7 @@ Here are some resources.
 - [Mastering margin collapsing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 - [CSS doodle](https://css-doodle.com/)
 - [Did you know that style and script tags can be set to display: block?](https://css-tricks.com/did-you-know-that-style-and-script-tags-can-be-set-to-display-block/)
+- [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
 
 ## Support and compatibility
 
