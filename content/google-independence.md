@@ -14,3 +14,6 @@ Summary: Resources to be Google-independent
 - [CardDAV](https://en.wikipedia.org/wiki/CardDAV)
 - [Moving contacts and calendar entries from Google to OwnCloud](https://workaround.org/article/moving-contacts-and-calendar-entries-from-google-to-owncloud/)
 - [DAVdroid – CalDAV/CardDAV Sync (open source)](https://play.google.com/store/apps/details?id=at.bitfire.davdroid&hl=en)
+- [No More Google](https://nomoregoogle.com/)
+- [De-Googling Archives - Kev Quirk](https://kevq.uk/category/de-googling/)
+- [/e/ - your data is YOUR data](https://e.foundation/)

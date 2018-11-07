@@ -94,3 +94,4 @@ More on the topic below:
 
 - [Git diff to HTML](https://pypi.python.org/pypi/ansi2html/1.0.7)
 - [Little Things I Like to Do with Git](https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/)
+- [DevFest Nantes 2018 - Git Dammit !](https://www.youtube.com/watch?v=Rnh5QK__pLA)

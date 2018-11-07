@@ -144,6 +144,7 @@ On Linux, if you have `imagemagick` installed, do:
 ## Images
 
 - [Sometimes `sizes` is quite important.](https://css-tricks.com/sometimes-sizes-is-quite-important/)
+- [DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)
 
 # Bonus: HTML Emails
 
