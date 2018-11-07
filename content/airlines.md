@@ -56,3 +56,11 @@ Oh, and they offer free WiFi.
 # Tui Fly
 
 Nice one. On a 9 hour fly from Miami to Paris we got dinner and breakfast, plus sodas for free. Alcoholic drinks were paid. Seats are equipped with tablets and fairly recent movies are available. No free or paid Wi-Fi on board. Quite big aircrafts, mine was a Boeing 787, Dreamliner.
+
+# Vueling
+
+Low-cost spanish company. No free drinks or meals. When I flew with them, the had shortages of food, not everything on the menu was available. No tablets. No wifi. Not much room for the legs. A classic low-cost airline, to sum it up.
+
+# TAP Air Portugal
+
+The official portuguese airline? Even on short flights (~2 hours), we had a free meal and a beverage. No tablets on the seats. Not much space for legs.
