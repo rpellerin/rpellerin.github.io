@@ -1,7 +1,7 @@
 Title: Portugal
 Date: 2018-11-07 23:50
 Category: Travels
-Tags: travel
+Tags: travel, portugal, libson
 Slug: portugal
 Authors: Romain Pellerin
 Summary: My advice about Portugal
