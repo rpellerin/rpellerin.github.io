@@ -10,20 +10,19 @@ Summary: Everything wrong with this world
 
 - Monitors and TV screens left idle (on sleep mode, not turned off) all night
 - Computers still on, either on sleep mode or simply with the current user session locked, sometimes with the screen on, all night
-- Chargeur laissés branchés toute la nuit
 - Power supplies plugged all night
-- Agents d'entretiens nettoient les WC et vident les poubelles trois fois par jour, tôt le matin, milieu d'après-midi et fin d'après midi, alors qu'une fois le soir ou le matin suffirait
-- [Utilisation de désodorisants toxiques dans les WC](https://www.quechoisir.org/dossier-desodorisant-d-interieur-t287/)
+- Cleaners who clean the bathrooms and empty the trash bins 3 times a day, early in the morning, right after lunch and in the early evening, while once would have been enough (early morning or evening would do).
+- [Use of toxic deodorizers in the bathrooms](https://www.quechoisir.org/dossier-desodorisant-d-interieur-t287/)
 - Lighting at night
-- Gobelets en plastiques sur chaque machine à café et distributeur à eau
-- Sucre par défaut sur les machines à café, obligé de choisir manuellement "sans sucre"
+- Plastics cups dispensed by coffee machines and water dispensers
+- Setting to sugar by default on coffee machines; forced to manually select "no sugar"
 
 # On the streets
 
-- Les gents qui jetent [leurs mégots](https://www.nbcnews.com/news/us-news/plastic-straw-ban-cigarette-butts-are-single-greatest-source-ocean-n903661) par terre
-- Les gens qui attendent dans leur voiture, le moteur allumé
+- People who throw [their cigarette butts](https://www.nbcnews.com/news/us-news/plastic-straw-ban-cigarette-butts-are-single-greatest-source-ocean-n903661) on the ground
+- People waiting in their car, engine on
 - Gas buses
-- [L'eau (non potable)](https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/) [pour nettoyer les rues de Paris](http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php)
+- [Non-potable wat](https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/) [used to clean Paris streets](http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php). I'm pretty sure it all eventually ends up in the ocean, trash included.
 - Gas cars (diesel is the worst)
 
     - [The Economics of the Office: Why Do We Still Commute?](https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb)
@@ -32,10 +31,10 @@ Summary: Everything wrong with this world
 
 # At the supermarket
 
-- Le [sur-emballage](https://images-cdn.9gag.com/photo/argyp26_700b.jpg)
+- [Excessive packaging](https://images-cdn.9gag.com/photo/argyp26_700b.jpg)
 - Plastic bags (at Walmart mostly...)
 - [Rob Greenfield : l’homme qui défie les supermarchés - Tout Compte Fait](https://www.youtube.com/watch?v=yXu7ui7KMSM)
-- [La nourriture encore bonne](http://robgreenfield.tv/foodwaste/), [jetée](https://www.youtube.com/watch?v=yXu7ui7KMSM)
+- [Food waste](http://robgreenfield.tv/foodwaste/) - [even when still eatable](https://www.youtube.com/watch?v=yXu7ui7KMSM)
 - [Cash investigation - Plastique : la grande intox (Intégrale)](https://www.youtube.com/watch?v=wZT3drAYIzo)
 - [30 JOURS ZÉRO DÉCHET : MON EXPÉRIENCE](https://www.youtube.com/watch?v=x8GdFBp_pWs)
 - [Vivre sans plastique ni déchet, c’est possible. C’est ce que fait Aline. Voilà comment.](https://twitter.com/brutofficiel/status/1005351036477992966)
@@ -49,4 +48,4 @@ Summary: Everything wrong with this world
 - Plastic cutlery
 - [Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc](https://twitter.com/FlorencePorcel/status/1024608339513298944)
 - [OperationLingeBlanc](https://lite1.infini.fr/p/OperationLingeBlanc)
-- [Le capitalisme](https://freegan.info/)
+- [Capitalism](https://freegan.info/)
