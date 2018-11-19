@@ -236,3 +236,4 @@ Filename encryption might require another last command to be run, if your conten
 - [My Data Request](https://mydatarequest.com/)
 - [Yesterday, I finished to switch to @ProtonMail by...](https://twitter.com/sdeleuze/status/1021655647442616322)
 - [YOU ONLY LIVE ONLINE - Dries DEPOORTER - Web2day 2018](https://www.youtube.com/watch?v=AOzkW2W6gfA)
+- [Surveillance Kills Freedom By Killing Experimentation](https://www.wired.com/story/mcsweeneys-excerpt-the-right-to-experiment/)
