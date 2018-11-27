@@ -49,3 +49,8 @@ Summary: Everything wrong with this world
 - [Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc](https://twitter.com/FlorencePorcel/status/1024608339513298944)
 - [OperationLingeBlanc](https://lite1.infini.fr/p/OperationLingeBlanc)
 - [Capitalism](https://freegan.info/)
+
+# Other
+
+- [Goldfish](https://twitter.com/LeRasbo/status/930523617863053312)
+- [Goldfish bis](https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal)
