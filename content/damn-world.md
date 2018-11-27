@@ -57,3 +57,4 @@ Summary: Everything wrong with this world
 - [Goldfish bis](https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal)
 - [EEA report confirms: electric cars are better for climate and air quality](https://www.eea.europa.eu/highlights/eea-report-confirms-electric-cars)
 - [Le niveau de CO2 dans l’atmosphère n’a jamais été aussi élevé depuis trois millions d’années](https://reporterre.org/Le-niveau-de-CO2-dans-l-atmosphere-n-a-jamais-ete-aussi-eleve-depuis-trois)
+- [Rien de Neuf](http://riendeneuf.org/)
