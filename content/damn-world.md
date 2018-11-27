@@ -39,6 +39,7 @@ Summary: Everything wrong with this world
 - [30 JOURS ZÉRO DÉCHET : MON EXPÉRIENCE](https://www.youtube.com/watch?v=x8GdFBp_pWs)
 - [Vivre sans plastique ni déchet, c’est possible. C’est ce que fait Aline. Voilà comment.](https://twitter.com/brutofficiel/status/1005351036477992966)
 - [Ça Commence Par Moi](https://www.cacommenceparmoi.org/)
+- [Sortez Tout Vert](http://www.sorteztoutvert.fr/)
 - [Supermarchés : et si on en finissait avec le plastique ? - Tout compte fait](https://www.youtube.com/watch?v=2SCmmn3GpTM)
 - [Des particules de plastique dans l'eau en bouteille ? - Tout compte fait](https://www.youtube.com/watch?v=BoXPwoIPDX4)
 
@@ -54,3 +55,5 @@ Summary: Everything wrong with this world
 
 - [Goldfish](https://twitter.com/LeRasbo/status/930523617863053312)
 - [Goldfish bis](https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal)
+- [EEA report confirms: electric cars are better for climate and air quality](https://www.eea.europa.eu/highlights/eea-report-confirms-electric-cars)
+- [Le niveau de CO2 dans l’atmosphère n’a jamais été aussi élevé depuis trois millions d’années](https://reporterre.org/Le-niveau-de-CO2-dans-l-atmosphere-n-a-jamais-ete-aussi-eleve-depuis-trois)
