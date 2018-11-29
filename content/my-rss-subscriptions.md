@@ -74,6 +74,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Et tout le monde s'en fout](https://www.youtube.com/feeds/videos.xml?channel_id=UC-2EkisRV8h9KsHpslQ1gXA)
 - [French Fried TV](https://www.youtube.com/feeds/videos.xml?channel_id=UCOhfLu1DXGjncY5QBdMFRhw)
 - [GDG France](https://www.youtube.com/feeds/videos.xml?channel_id=UCx83f-KzDd3o1QK2AdJIftg)
+- [Le JTerre](https://www.youtube.com/feeds/videos.xml?channel_id=UCDoKG5pBrK3XYntCEGal2-w)
 - [Layout Land](https://www.youtube.com/feeds/videos.xml?channel_id=UC7TizprGknbDalbHplROtag)
 - [Micode](https://www.youtube.com/feeds/videos.xml?channel_id=UCYnvxJ-PKiGXo_tYXpWAC-w)
 - [Mozilla Hacks](https://www.youtube.com/feeds/videos.xml?channel_id=UCijjo5gfAscWgNCKFHWm1EA)
