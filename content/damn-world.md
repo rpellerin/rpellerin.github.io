@@ -43,6 +43,10 @@ Summary: Everything wrong with this world
 - [Supermarchés : et si on en finissait avec le plastique ? - Tout compte fait](https://www.youtube.com/watch?v=2SCmmn3GpTM)
 - [Des particules de plastique dans l'eau en bouteille ? - Tout compte fait](https://www.youtube.com/watch?v=BoXPwoIPDX4)
 
+# Hunting
+
+- [Le terrible élevage des animaux «sauvages» destinés à la chasse](http://www.leparisien.fr/societe/le-terrible-elevage-des-animaux-sauvages-28-11-2018-7955652.php)
+
 # In general
 
 - [La Terre transformée en « étuve » : après ce seuil, nos efforts seront vains](https://www.numerama.com/sciences/405296-la-terre-transformee-en-etuve-apres-ce-seuil-nos-efforts-seront-vains.html/amp)
