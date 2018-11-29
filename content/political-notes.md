@@ -25,3 +25,7 @@ Summary: Thoughts about politics
     - [Will a robot take your job?](http://www.bbc.com/news/technology-34066941)
     - [Will your job be replaced by a robot?](https://www.replacedbyrobot.info/)
 - Marijuana (cannabis) consumption should be legal. Both medical and recreational use should be allowed and regulated by heavy taxation. [As seen in the Netherlands](http://www.reuters.com/article/idUSL5730185), [consumption in countries where it is legal tends to be lower than countries where it is not](http://news.berkeley.edu/2011/09/13/lessons-from-dutch-cannabis-system/). Instead of wasting millions in the fight against it (which has proven to be ineffective), a smaller amount of money should be invested in prevention through media campaigns and events.
+
+# Interesting resources
+
+- [Parti écologiste antispéciste et non-violent, pour la justice économique globale et les droits des humains, des non humains et des écosystèmes.](https://rev-parti.fr/base-programmatique/)
