@@ -237,3 +237,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Yesterday, I finished to switch to @ProtonMail by...](https://twitter.com/sdeleuze/status/1021655647442616322)
 - [YOU ONLY LIVE ONLINE - Dries DEPOORTER - Web2day 2018](https://www.youtube.com/watch?v=AOzkW2W6gfA)
 - [Surveillance Kills Freedom By Killing Experimentation](https://www.wired.com/story/mcsweeneys-excerpt-the-right-to-experiment/)
+- [People Who Buy Smart Speakers Have Given Up on Privacy, Researchers Find](https://motherboard.vice.com/amp/en_us/article/vba7xj/people-who-buy-smart-speakers-have-given-up-on-privacy-researchers-find)
