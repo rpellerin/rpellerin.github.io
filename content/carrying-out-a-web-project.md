@@ -149,6 +149,7 @@ On Linux, if you have `imagemagick` installed, do:
 ## Debugging
 
 - [How to stop using console.log() and start using your browser’s debugger](https://medium.com/datadriveninvestor/stopping-using-console-log-and-start-using-your-browsers-debugger-62bc893d93ff)
+- [La console JavaScript avancée](https://www.24joursdeweb.fr/2018/la-console-javascript-avancee/)
 
 # Bonus: HTML Emails
 
