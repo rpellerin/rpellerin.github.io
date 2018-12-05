@@ -146,6 +146,10 @@ On Linux, if you have `imagemagick` installed, do:
 - [Sometimes `sizes` is quite important.](https://css-tricks.com/sometimes-sizes-is-quite-important/)
 - [DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)
 
+## Debugging
+
+- [How to stop using console.log() and start using your browser’s debugger](https://medium.com/datadriveninvestor/stopping-using-console-log-and-start-using-your-browsers-debugger-62bc893d93ff)
+
 # Bonus: HTML Emails
 
 - [My Current HTML Email Development Workflow](http://www.sitepoint.com/my-current-html-email-development-workflow/)
