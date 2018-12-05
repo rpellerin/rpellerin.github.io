@@ -25,3 +25,4 @@ Summary: Cheatsheet for RxJS
 - [RxJS Les clefs pour comprendre les observables (T. Chatel)](https://www.youtube.com/watch?v=TrDqaABq-UY)
 - [RxViz - Animated playground for Rx Observables](https://rxviz.com/)
 - [RxMarbles: Interactive diagrams of Rx Observables](rxmarbles.com)
+- [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
