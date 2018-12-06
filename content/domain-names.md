@@ -11,3 +11,4 @@ Short article, kind of a bookmark for myself. I usually buy my domain names from
 - [porkbun.com](https://porkbun.com/)
 - [www.namecheap.com](https://www.namecheap.com/)
 - [www.internetbs.net](https://www.internetbs.net/)
+- [domainr.com](https://domainr.com/)
