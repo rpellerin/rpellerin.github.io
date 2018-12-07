@@ -28,6 +28,7 @@ Summary: What I think about most social media
 - [Facebook confirms data sharing with Chinese companies](https://www.reuters.com/article/us-facebook-privacy-congress/facebook-confirms-data-sharing-with-chinese-companies-idUSKCN1J11TY)
 - [Votre téléphone vous écoute, ce n’est pas de la paranoïa](https://www.vice.com/amp/fr/article/wjbzzy/votre-telephone-vous-ecoute-ce-nest-pas-de-la-paranoia)
 - [Exclusive: U.S. government seeks Facebook help to wiretap Messenger - sources](https://www.reuters.com/article/us-facebook-encryption-exclusive/u-s-government-seeks-facebook-help-to-wiretap-messenger-sources-idUSKBN1L226D)
+- [New Documents Show That Facebook Has Never Deserved Your Trust](https://www.eff.org/deeplinks/2018/12/httpstwittercommontereya)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
