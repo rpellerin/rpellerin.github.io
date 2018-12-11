@@ -240,3 +240,4 @@ Filename encryption might require another last command to be run, if your conten
 - [People Who Buy Smart Speakers Have Given Up on Privacy, Researchers Find](https://motherboard.vice.com/amp/en_us/article/vba7xj/people-who-buy-smart-speakers-have-given-up-on-privacy-researchers-find)
 - [En Chine, le gouvernement peut géolocaliser chaque voiture électrique en temps réel](https://www.numerama.com/vroom/444440-en-chine-le-gouvernement-peut-geolocaliser-chaque-voiture-electrique-en-temps-reel.html)
 - [Delete All Your Apps](https://motherboard.vice.com/en_us/article/j5zap3/delete-all-your-apps)
+- [Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret](https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html)
