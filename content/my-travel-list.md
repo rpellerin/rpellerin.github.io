@@ -16,6 +16,9 @@ Summary: Places I want to visit.
 - Mount Rushmore National Memorial
 - Philadelphia (especially the Rocky Statue and the Rocky Steps)
 - Forrest Gump Point in Utah (GPS coordinates: 37.1015063,-109.9908129)
+- Boston:
+
+    - Museum of Fine Arts
 
 # Japan
 
