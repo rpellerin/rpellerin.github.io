@@ -131,6 +131,7 @@ All set!
 - [Running a Node.js process on Debian as a Systemd Service](https://thomashunter.name/blog/running-a-node-js-process-on-debian-as-a-systemd-service/)
 - [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
 - [JavaScript hacks for ES6 hipsters](https://hackernoon.com/javascript-hacks-for-es6-hipsters-67d633ce8ace)
+- [The Vanilla JavaScript Toolkit](https://vanillajstoolkit.com/)
 
 ## Some cool node/npm stuff/packages/tools
 

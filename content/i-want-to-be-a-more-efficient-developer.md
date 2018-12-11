@@ -159,3 +159,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Linux - The beginning of the end](https://www.dedoimedo.com/computers/linux-beginning-of-the-end.html)
 - [Software disenchantment](http://tonsky.me/blog/disenchantment/)
 - [This Is How Successful People Manage Their Time](https://www.youtube.com/watch?v=-Qy2vist-XQ)
+- [What makes someone a good front-end developer?](https://gomakethings.com/what-makes-someone-a-good-front-end-developer/)
