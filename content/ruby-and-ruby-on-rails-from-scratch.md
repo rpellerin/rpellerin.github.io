@@ -121,3 +121,5 @@ bundle
 - [%Q, %q, %W, %w, %x, %r, %s](https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/)
 - [Rails Routing from the Outside In](https://romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html)
 - [Multiline strings in Ruby 2.3 - the squiggly heredoc](https://infinum.co/the-capsized-eight/multiline-strings-ruby-2-3-0-the-squiggly-heredoc)
+- [Making sense of ActiveRecord joins, includes, preload, and eager_load](http://blog.scoutapp.com/articles/2017/01/24/activerecord-includes-vs-joins-vs-preload-vs-eager_load-when-and-where)
+- [What's the difference between colon “:” and fat arrow “=>”](https://stackoverflow.com/questions/8198811/whats-the-difference-between-colon-and-fat-arrow)
