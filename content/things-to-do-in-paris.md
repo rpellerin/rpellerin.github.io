@@ -26,7 +26,7 @@ Summary: The list of things to do in Paris I usually share with friends
 - Catacombes de Paris - underground ossuaries with actual skulls and bones
 - Hanging out on the banks of the Seine
 - Les jardins du Luxembourg - park
-- Musée Grévin - wax museums with celebrities - [https://www.grevin-paris.com/en](https://www.grevin-paris.com/en)
+- Musée Grévin - wax museum with celebrities - [https://www.grevin-paris.com/en](https://www.grevin-paris.com/en)
 - Le Marais - What Castro is to SF; gay neighborhood, very eccentric
 - Palace of Versailles
 - Street Art in Belleville - [http://streetartparis.fr/visite-street-art-belleville/](http://streetartparis.fr/visite-street-art-belleville/)
