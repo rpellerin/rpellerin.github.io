@@ -44,7 +44,12 @@ Summary: Places I want to visit.
 - Berlin, Hamburg and Munich, Germany
 - Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)
 - Finland
-- Rome and Venice, Italy
+- Italy:
+
+    - Rome and Venice
+    - Colosseum in Verona
+    - Tower of Pisa
+
 - Madrid
 
 # Other countries
