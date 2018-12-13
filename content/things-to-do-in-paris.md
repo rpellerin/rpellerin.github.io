@@ -9,7 +9,7 @@ Summary: The list of things to do in Paris I usually share with friends
 - Le Louvres
 - Tour Eiffel - go to the third floor
 - Champs Elysees
-- Notre Dame Cathedral
+- Notre Dame Cathedral + towers
 - Arc de Triomphe - go to the top!
 - Montmartre - artistic elevated neighborhood
 - Restaurant Indianafé Café Maine - nice restaurant, great decoration, with English speaking clients and staff - [http://www.indianacafe.fr/restaurants-clubs/46/maine.html](http://www.indianacafe.fr/restaurants-clubs/46/maine.html)
@@ -35,3 +35,8 @@ Summary: The list of things to do in Paris I usually share with friends
 - Sainte Chapelle
 - Château de Fontainebleau
 - Château de Versailles
+- Pantheon
+- Musée Rodin
+- Musée de l’Orangerie
+
+[Here are some additional places of interest](https://culturezvous.com/tarifs-abonnements-annuels-musees-paris/).
