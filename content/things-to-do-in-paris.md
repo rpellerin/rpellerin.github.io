@@ -38,5 +38,6 @@ Summary: The list of things to do in Paris I usually share with friends
 - Pantheon
 - Musée Rodin
 - Musée de l’Orangerie
+- Musée national d'Histoire Naturelle
 
 [Here are some additional places of interest](https://culturezvous.com/tarifs-abonnements-annuels-musees-paris/).
