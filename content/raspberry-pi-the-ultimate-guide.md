@@ -166,6 +166,8 @@ To sum up, few requirements, but big advantages. Let's get started!
 
 ## Moving `/root` onto an external hard disk drive, not encrypted, with additional encrypted DATA partition
 
+**NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED**: [tutorial here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md).
+
 *Right after this section you will find another one about how to do a similar operation using an encrypted hard disk.*
 
 As root,
@@ -494,7 +496,7 @@ Now, read the section right below.
 
 Before doing this. make sure you did set the hostname of your Raspberry Pi through `raspi-config`. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with **an existing domain**.
 
-Make sur to disable `/var/log` from being in RAM since Exim4 needs `/var/log/exim4/mainlog` to exist, even after a reboot. 
+Make sure to disable `/var/log` from being in RAM since Exim4 needs `/var/log/exim4/mainlog` to exist, even after a reboot. 
 
 This is pretty convient as some programs still prefer to send emails, such as `cron`.  
 Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`. Then:
@@ -503,7 +505,7 @@ Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`.
     su
     dpkg-reconfigure exim4-config
     # Second choice, "mail sent by smarthost; received via SMTP or fetchmail"
-    # System mail name: keep default; must be a valid FQDN though (ending with .eu for instance). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.
+    # System mail name: keep default; must be a valid FQDN though (ending with .com for example). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.
     # IP-addresses to listen on: keep default, we don't want to receive external emails
     # Other destinations: leave blank
     # Machines to relay mail for: leave blank
@@ -514,6 +516,10 @@ Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`.
     # Split configuration into small files: no
     # Root and postmaster mail recipient: write one of your email addresses or leave blank
 
+Now `update-exim4.conf`.
+
+Then, `cat /etc/mailname` and make sure the system mail name you just specified is correctly reported here.
+
 In */etc/exim4/passwd.client*, add you credentials, like:
 
     :::text
@@ -522,7 +528,7 @@ In */etc/exim4/passwd.client*, add you credentials, like:
 If your SMTP server uses port 465 with SSL, you'll need to edit */etc/exim4/exim4.conf.template*. Add the following line, after `driver = smtp`, under `remote_smtp_smarthost`:
 
     :::text
-    protocol=smtps
+    protocol = smtps
 
 [More information](http://www.gossamer-threads.com/lists/exim/users/96817).
 
@@ -543,13 +549,48 @@ Then:
     update-exim4.conf
     # /etc/init.d/exim4 restart
     systemctl restart exim4
-    echo "This is a test." | mail -v -s "test message" anotherme@somewhere.com # Try sending an email
+    echo "This is a test." | mail -s "test message" anotherme@somewhere.com # Try sending an email
+    echo "This is a test." | mail -s "test message for root" root # Try sending an email
+    runq; exim -qff # Flush all email queues
 
 [More information](http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux).
 
-# Installing ownCloud
+# Send emails automatically on shell login
 
-**UPDATE**: install NextCloud instead of ownCloud. It is a fork (based on ownCloud) and apparently better.
+Edit your user and root's `.bashrc` and add at the end of the file:
+
+    :::bash
+    echo "So you know... ($(date))" | mail -s "Root shell login" me@domain
+
+# Installing Nextcloud
+
+Useful tutorial: [https://pimylifeup.com/raspberry-pi-nextcloud-server/](https://pimylifeup.com/raspberry-pi-nextcloud-server/). Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html).
+
+    :::bash
+    su
+    apt install apache2
+    apt install mariadb-server
+    apt install libapache2-mod-php7.0 php7.0
+    apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+    apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+    systemctl restart apache2
+
+    cd /var/www
+    mkdir owncloud
+    wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+    sha256sum -c <(wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -) < nextcloud-15.0.0.zip
+    unzip nextcloud-15.0.0.zip
+
+    mysql -u root -p
+    CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY 'Password';
+    create database nextcloud;
+    GRANT ALL ON nextcloud.* TO 'nextclouduser'@'localhost';
+    flush privileges;
+    exit;
+
+    sudo mysql_secure_installation
+
+# Installing ownCloud [DEPRECATED]
 
 This section will try to sum up what can be found on the official documentation.
 
