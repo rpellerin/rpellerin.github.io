@@ -606,6 +606,7 @@ Useful tutorial: [https://pimylifeup.com/raspberry-pi-nextcloud-server/](https:/
     systemctl disable apache2 # No auto start on boot
 
 Now edit `/etc/apache2/sites-enabled/000-default.conf`. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):
+
     :::text
     Alias /nextcloud "/var/www/nextcloud/"
     <Directory "/var/www/nextcloud">
@@ -714,127 +715,6 @@ Then:
 
 Now you can start setting up Nextcloud at https://raspberry-pi-IP/.
 
-# Installing ownCloud [DEPRECATED]
-
-This section will try to sum up what can be found on the official documentation.
-
-**Consider using PHP7.** It might require you to install ownCloud manually.
-
-I advise you to always choose the latest stable version and to read carefully the entire [documentation](https://doc.owncloud.org/server/9.1/admin_manual/contents.html). The recommended way to install ownCloud is using your package manager:
-
-    :::bash
-    su
-    wget -nv https://download.owncloud.org/download/repositories/stable/Debian_8.0/Release.key -O Release.key
-    apt-key add - < Release.key
-    sh -c "echo 'deb http://download.owncloud.org/download/repositories/stable/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list"
-    apt update
-    apt install owncloud
-
-Read the documentation for more details.
-
-However, I recommend adding ownCloud to holded packages, as you probably do not want to upgrade it unintentionnally.
-
-    :::bash
-    su
-    apt-mark hold owncloud
-
-Continue reading [the tutorial](https://doc.owncloud.org/server/9.1/admin_manual/installation/installation_wizard.html). Right below are some other instructions regarding MySQL, although most of them are already given in the tutorial.
-
-Go to [http://raspberry-pi-IP/owncloud](http://raspberry-pi-IP/owncloud). Before doing anything, do as a normal user:
-
-    :::bash
-    mysql -u root -p
-    CREATE USER 'ownclouduser'@'localhost' IDENTIFIED BY 'Password';
-    create database owncloud;
-    GRANT ALL ON owncloud.* TO 'ownclouduser'@'localhost';
-    flush privileges;
-    exit;
-
-    sudo mysql_secure_installation
-
-Now you can resume installation wizard. In the tutorial, dont't forget do carefully read the section *Trusted Domains* and *Setting Strong Directory Permissions*.
-
-## Set up Apache and enable HTTPS
-
-1. [Moving from /owncloud to /](https://doc.owncloud.org/server/9.1/admin_manual/installation/changing_the_web_route.html)
-2. Do:
-
-        :::bash
-        su
-        a2enmod ssl
-        a2ensite default-ssl
-
-        apachectl -M # Check modules enabled
-        # Enable the following if not already done
-        a2enmod rewrite
-        a2enmod headers
-        a2enmod env
-        a2enmod dir
-        a2enmod mime
-
-3. */etc/apache2/sites-enabled/000-default.conf* must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see bullet point 5):
-
-        :::text
-        <VirtualHost *:80>
-                ServerName cloud.romainpellerin.eu
-                ServerAdmin romain@romainpellerin.eu
-                DocumentRoot /var/www/owncloud
-                
-                RewriteEngine on
-                RewriteCond %{SERVER_NAME} =cloud.romainpellerin.eu
-                RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
-        
-                ErrorLog ${APACHE_LOG_DIR}/error.log
-                CustomLog ${APACHE_LOG_DIR}/access.log combined
-        </VirtualHost>
-
-4. Bring the same changes to */etc/apache2/sites-enables/default-ssl.conf*, except for the instruction `Redirect`. Additionally, add instructions taken from [Mozilla SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.10&openssl=1.0.1t&hsts=yes&profile=modern). Also, add `SSLCompression off` and check out */etc/apache2/conf-enabled/security.conf*.
-5. Get a browser-trusted certificate from [Let's Encrypt](https://letsencrypt.org/):
-
-        :::bash
-        su
-        echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
-        apt update
-        apt install python-certbot-apache -t jessie-backports
-        # Make sure your website is accessible from the Internet.
-        # Set up NAT/PAT rules in your router. Then:
-        certbot --apache
-        certbot renew --dry-run # Try renewal
-        # If successful, create a cronjob to be run twice a day
-        32 4/12 * * * certbot renew --quiet
-
-
-6. Ultimately, verify everything is all right using [SSL LABS's SSL server test](https://www.ssllabs.com/ssltest/).
-7. Let us now improve a bit Apache's security. Edit */etc/apache2/conf-enabled/security.conf* like this:
-
-        :::text
-        ServerSignature Off
-        Header set X-Frame-Options: "sameorigin" # Require mod_headers
-        ServerTokens Prod
-    
-    You may now restart Apache2.
-
-## Improve ownCloud's settings
-
-Add the following in */var/www/owncloud/config/config/php*:
-
-    :::text
-    'session_keepalive' => true,
-    'htaccess.RewriteBase' => '/',
-    'logtimezone' => 'Europe/Paris',
-
-In ownCloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
-
-Edit */var/www/owncloud/.htaccess* and change the max size limits for uploads to 2G (on a 32-bit system) or more. Also, do:
-
-    :::bash
-    su
-    chown www-data:www-data /var/www/owncloud/.htaccess
-    cd /var/www/owncloud
-    sudo -u www-data php occ maintenance:update:htaccess
-
-It will allow ownCloud to change these settings directly from the Admin webpage. It will also update some settings.
-
 ## Improve PHP's performance
 
     :::bash
@@ -865,8 +745,6 @@ It will allow ownCloud to change these settings directly from the Admin webpage.
         -i /etc/php/7.0/cli/php.ini
     sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" \
         -i /etc/php/7.0/cli/php.ini
-    sed "s/memory_limit = 128M/memory_limit = 512M/" \
-        -i /etc/php/7.0/cli/php.ini
     sed "s/output_buffering = 4096/output_buffering = 0/" \
         -i /etc/php/7.0/cli/php.ini
     sed "s/max_input_time = 60/max_input_time = 3600/" \
@@ -874,14 +752,12 @@ It will allow ownCloud to change these settings directly from the Admin webpage.
     sed "s/max_execution_time = 30/max_execution_time = 3600/" \
         -i /etc/php/7.0/cli/php.ini
 
-    
-
-opcache (bundled with PHP 5.5+) takes care of code caching. To significantly improve performance overall, you'll also need data caching: **APCu**.
+To significantly improve performance overall, you'll also need data caching: **APCu**.
 
     :::bash
     su
-    apt install php5-apcu
-    php5enmod apcu
+    apt install php7.0-apcu
+    phpenmod apcu
     #echo "apc.enabled=1" >> /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it's useless, check owncloud error logs in the admin page to make sure it's working
     service apache2 restart
 
@@ -891,6 +767,25 @@ Now, add the following in */var/www/owncloud/config/config.php*:
     'memcache.local' => '\OC\Memcache\APCu',
 
 Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Disabled*. That's normal as we didn't enable opcaching for CLI, (*/etc/php/7.0/cli/php.ini*), only for Apache2. However, if you create a webpage containing `<?php phpinfo();`, when accessing this page you'll see that's it's *Up and Running*. Make sure as well that APCu is enabled.
+
+## Improve ownCloud's settings
+
+Add the following in */var/www/owncloud/config/config/php*:
+
+    :::text
+    'session_keepalive' => true,
+    'logtimezone' => 'Europe/Paris',
+
+In ownCloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
+
+Edit */var/www/owncloud/.htaccess* and change the max size limits for uploads to 2G (on a 32-bit system) or more. Also, do:
+
+    :::bash
+    su
+    cd /var/www/owncloud
+    sudo -u www-data php occ maintenance:update:htaccess
+
+It will allow ownCloud to change these settings directly from the Admin webpage. It will also update some settings.
 
 # OpenVPN
 
