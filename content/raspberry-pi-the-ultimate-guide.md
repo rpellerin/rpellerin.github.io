@@ -840,39 +840,39 @@ It will allow ownCloud to change these settings directly from the Admin webpage.
     :::bash
     su
     sed "s/;opcache.enable=0/opcache.enable=1/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/memory_limit = 128M/memory_limit = 512M/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/upload_max_filesize = 2M/upload_max_filesize = 16G/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/post_max_size = 8M/post_max_size = 16G/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/output_buffering = 4096/output_buffering = 0/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/max_input_time = 60/max_input_time = 3600/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
     sed "s/max_execution_time = 30/max_execution_time = 3600/" \
-        -i /etc/php5/apache2/php.ini
+        -i /etc/php/7.0/apache2/php.ini
 
-    # /etc/php5/cli/php.ini is used by ownCloud's CRON jobs
+    # /etc/php/7.0/cli/php.ini is used by ownCloud's CRON jobs
     sed "s/;opcache.enable=0/opcache.enable=1/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/memory_limit = 128M/memory_limit = 512M/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/output_buffering = 4096/output_buffering = 0/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/max_input_time = 60/max_input_time = 3600/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
     sed "s/max_execution_time = 30/max_execution_time = 3600/" \
-        -i /etc/php5/cli/php.ini
+        -i /etc/php/7.0/cli/php.ini
 
     
 
@@ -882,7 +882,7 @@ opcache (bundled with PHP 5.5+) takes care of code caching. To significantly imp
     su
     apt install php5-apcu
     php5enmod apcu
-    #echo "apc.enabled=1" >> /etc/php5/cli/conf.d/20-apcu.ini # Normally it's useless, check owncloud error logs in the admin page to make sure it's working
+    #echo "apc.enabled=1" >> /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it's useless, check owncloud error logs in the admin page to make sure it's working
     service apache2 restart
 
 Now, add the following in */var/www/owncloud/config/config.php*:
@@ -890,7 +890,7 @@ Now, add the following in */var/www/owncloud/config/config.php*:
     :::text
     'memcache.local' => '\OC\Memcache\APCu',
 
-Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Disabled*. That's normal as we didn't enable opcaching for CLI, (*/etc/php5/cli/php.ini*), only for Apache2. However, if you create a webpage containing `<?php phpinfo();`, when accessing this page you'll see that's it's *Up and Running*. Make sure as well that APCu is enabled.
+Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Disabled*. That's normal as we didn't enable opcaching for CLI, (*/etc/php/7.0/cli/php.ini*), only for Apache2. However, if you create a webpage containing `<?php phpinfo();`, when accessing this page you'll see that's it's *Up and Running*. Make sure as well that APCu is enabled.
 
 # OpenVPN
 
