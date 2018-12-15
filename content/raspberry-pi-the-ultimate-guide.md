@@ -564,7 +564,7 @@ Edit your user and root's `.bashrc` and add at the end of the file:
 
 # Installing Nextcloud
 
-Useful tutorial: [https://pimylifeup.com/raspberry-pi-nextcloud-server/](https://pimylifeup.com/raspberry-pi-nextcloud-server/). Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html).
+Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html).
 
     :::bash
     su
@@ -773,7 +773,6 @@ Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Cac
 Add the following in */var/www/nextcloud/config/config/php*:
 
     :::text
-    'session_keepalive' => true,
     'logtimezone' => 'Europe/Paris',
 
 In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
