@@ -580,15 +580,139 @@ Useful tutorial: [https://pimylifeup.com/raspberry-pi-nextcloud-server/](https:/
     wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
     sha256sum -c <(wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -) < nextcloud-15.0.0.zip
     unzip nextcloud-15.0.0.zip
+    chown -R www-data:www-data /var/www/nextcloud/
 
-    mysql -u root -p
+    mysql -u root -p # No password is required, just hit enter
     CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY 'Password';
     create database nextcloud;
     GRANT ALL ON nextcloud.* TO 'nextclouduser'@'localhost';
     flush privileges;
     exit;
 
-    sudo mysql_secure_installation
+    mysql -u nextclouduser -p # Make sure it worked
+    mysql_secure_installation
+
+    a2enmod ssl
+    a2ensite default-ssl # Enable HTTPS website
+
+    apachectl -M # Check modules enabled
+    # Enable the following if not already done
+    a2enmod rewrite
+    a2enmod headers
+    a2enmod env
+    a2enmod dir
+    a2enmod mime
+    systemctl restart apache2
+    systemctl disable apache2 # No auto start on boot
+
+Now edit `/etc/apache2/sites-enabled/000-default.conf`. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):
+    :::text
+    Alias /nextcloud "/var/www/nextcloud/"
+    <Directory "/var/www/nextcloud">
+    Options +FollowSymLinks
+    AllowOverride All
+
+    <IfModule mod_dav.c>
+            Dav off
+    </IfModule>
+
+    SetEnv HOME /var/www/nextcloud
+    SetEnv HTTP_HOME /var/www/nextcloud
+    </Directory>
+
+    <Directory "/mnt/data_partition/">
+    # just in case if .htaccess gets disabled
+        Require all denied
+    </Directory>
+    
+    <VirtualHost *:80>
+            ServerName cloud.romainpellerin.eu
+            ServerAdmin romain@romainpellerin.eu
+            DocumentRoot /var/www/owncloud
+            
+            RewriteEngine on
+            RewriteCond %{SERVER_NAME} =cloud.romainpellerin.eu
+            RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+    
+            ErrorLog ${APACHE_LOG_DIR}/error.log
+            CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+Bring the changes between `<VirtualHost>` tags to */etc/apache2/sites-enables/default-ssl.conf*, except for the instruction `Redirect`. Additionally, add instructions taken from [Mozilla SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.25&openssl=1.1.0j&hsts=yes&profile=modern):
+
+    :::text
+    <VirtualHost *:443>
+        ...
+        SSLEngine on
+
+        # HSTS (mod_headers is required) (15768000 seconds = 6 months)
+        Header always set Strict-Transport-Security "max-age=15768000"
+        ...
+    </VirtualHost>
+
+    # modern configuration, tweak to your needs
+    SSLProtocol             all -SSLv3 -TLSv1 -TLSv1.1
+    SSLCipherSuite          ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+    SSLHonorCipherOrder     on
+    SSLCompression          off
+    SSLSessionTickets       off
+
+    # OCSP Stapling, only in httpd 2.3.3 and later
+    SSLUseStapling          on
+    SSLStaplingResponderTimeout 5
+    SSLStaplingReturnResponderErrors off
+    SSLStaplingCache        shmcb:/var/run/ocsp(128000)
+
+Let us now improve a bit Apache's security. Edit */etc/apache2/conf-enabled/security.conf* like this:
+
+    :::text
+    ServerSignature Off
+    Header set X-Frame-Options: "sameorigin" # Require mod_headers
+    ServerTokens Prod
+    
+Now, visit http://raspberry-pi-IP/nextcloud once. This will create `/var/www/nextcloud/config/config.php`. Edit this file like this:
+
+    :::bash
+    'overwrite.cli.url' => 'https://example.org/',
+    'htaccess.RewriteBase' => '/',
+
+Now edit `/etc/apache2/sites-enable/000-default.conf` like this:
+
+    :::bash
+    Alias / "/var/www/nextcloud/"
+
+And restart `systemctl restart apache2`. You should now be able to visit http://raspberry-pi-IP/.
+
+Now get a browser-trusted certificate from [Let's Encrypt](https://letsencrypt.org/):
+
+    :::bash
+    su
+    apt install dirmngr
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
+    echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list
+    apt update
+    apt install python-certbot-apache -t stretch-backports
+    # Make sure your website is accessible from the Internet.
+    # Set up NAT/PAT rules in your router. Then:
+    certbot --apache
+    certbot renew --dry-run # Try renewal
+    # If successful, create a cronjob to be run twice a day
+    32 4/12 * * * certbot renew --quiet
+
+
+Ultimately, verify everything is all right using [SSL LABS's SSL server test](https://www.ssllabs.com/ssltest/).
+
+You may now restart Apache2.
+
+Then:
+
+    :::bash
+    mkdir /mnt/data_partition/nextcloud_data
+    chown -R www-data:www-data /mnt/data_partition/nextcloud_data/
+    chmod 750 /mnt/data_partition/nextcloud_data
+
+Now you can start setting up Nextcloud at https://raspberry-pi-IP/.
 
 # Installing ownCloud [DEPRECATED]
 
