@@ -217,14 +217,13 @@ Then:
     # Add 'bootwait' at the end of the line, in the same file
     # The 'rootwait' option forces the kernel to wait until the root device becomes ready
 
-Edit `/etc/fstab` that way (`/dev/sda3` exists as a data partition, do not add it here if you do not want it to be mounted automatically):
+Edit `/etc/fstab` that way:
 
     :::text
     proc            /proc           proc    defaults          0       0
     /dev/mmcblk0p1  /boot           vfat    defaults          0       2
     /dev/sda1       /               ext4    defaults,noatime  0       1
     /dev/sda2       none            swap    sw                0       0
-    /dev/sda3       /mnt            ext4    defaults          0       0
 
 Then:
 
@@ -443,9 +442,7 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 
     All good!
 
-# Send email automatically on startup
-
-**Note: this might be done using `sendmail`. Please refer to section *Configure a local SMTP email server* below.**
+# Send email automatically on startup with a Python script (DEPRECATED: not recommended, instead use `sendmail`)
 
 1. Download [https://github.com/rpellerin/python-mailer](https://github.com/rpellerin/python-mailer). The instructions given right below are the same as those you'll find at this URL.
 2. Install Python 3 (see instructions in [https://github.com/rpellerin/dotfiles/blob/master/README.md](https://github.com/rpellerin/dotfiles/blob/master/README.md) for the latest version or simply do `apt install python3` as root).
@@ -476,12 +473,22 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 8. If OK, add the following in */etc/rc.local*, right above `exit 0`:
 
         :::text
-        sleep 2
         su - pi -c /home/pi/sendEmailOnStartup.sh &
-        echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain &
+        sleep 5
         exit 0
 
-    Don't forget to change the path if need be. You user might not be *pi*. Reboot to make sure it worked. That way, every time your Raspberry Pi gets turned on, you will receive two emails using two different methods. Normally, the one sent using `mail` will have a different date (more accurate).
+    Don't forget to change the path if need be. You user might not be *pi*. Reboot to make sure it worked.
+
+# Send email automatically on startup with `sendmail`
+
+Add the following in */etc/rc.local*, right above `exit 0`:
+
+        :::text
+        echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain &
+        sleep 5
+        exit 0
+
+Now, read the section right below.
 
 # Configure a local SMTP email server
 
