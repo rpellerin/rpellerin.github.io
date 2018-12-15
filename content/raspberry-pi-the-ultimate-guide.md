@@ -13,7 +13,7 @@ I'll keep this article as short as possible (no explanation where things are sel
 
 # Goal
 
-I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a ownCloud, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, an SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.
+I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, an SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.
 
 To sum up, few requirements, but big advantages. Let's get started!
 
@@ -576,7 +576,7 @@ Useful tutorial: [https://pimylifeup.com/raspberry-pi-nextcloud-server/](https:/
     systemctl restart apache2
 
     cd /var/www
-    mkdir owncloud
+    mkdir nextcloud
     wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
     sha256sum -c <(wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -) < nextcloud-15.0.0.zip
     unzip nextcloud-15.0.0.zip
@@ -629,7 +629,7 @@ Now edit `/etc/apache2/sites-enabled/000-default.conf`. It must contain the foll
     <VirtualHost *:80>
             ServerName cloud.romainpellerin.eu
             ServerAdmin romain@romainpellerin.eu
-            DocumentRoot /var/www/owncloud
+            DocumentRoot /var/www/nextcloud
             
             RewriteEngine on
             RewriteCond %{SERVER_NAME} =cloud.romainpellerin.eu
@@ -738,7 +738,7 @@ Now you can start setting up Nextcloud at https://raspberry-pi-IP/.
     sed "s/max_execution_time = 30/max_execution_time = 3600/" \
         -i /etc/php/7.0/apache2/php.ini
 
-    # /etc/php/7.0/cli/php.ini is used by ownCloud's CRON jobs
+    # /etc/php/7.0/cli/php.ini is used by Nextcloud's CRON jobs
     sed "s/;opcache.enable=0/opcache.enable=1/" \
         -i /etc/php/7.0/cli/php.ini
     sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" \
@@ -758,34 +758,34 @@ To significantly improve performance overall, you'll also need data caching: **A
     su
     apt install php7.0-apcu
     phpenmod apcu
-    #echo "apc.enabled=1" >> /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it's useless, check owncloud error logs in the admin page to make sure it's working
+    #echo "apc.enabled=1" >> /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it's useless, check Nextcloud error logs in the admin page to make sure it's working
     service apache2 restart
 
-Now, add the following in */var/www/owncloud/config/config.php*:
+Now, add the following in */var/www/nextcloud/config/config.php*:
 
     :::text
     'memcache.local' => '\OC\Memcache\APCu',
 
 Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Disabled*. That's normal as we didn't enable opcaching for CLI, (*/etc/php/7.0/cli/php.ini*), only for Apache2. However, if you create a webpage containing `<?php phpinfo();`, when accessing this page you'll see that's it's *Up and Running*. Make sure as well that APCu is enabled.
 
-## Improve ownCloud's settings
+## Improve Nextcloud's settings
 
-Add the following in */var/www/owncloud/config/config/php*:
+Add the following in */var/www/nextcloud/config/config/php*:
 
     :::text
     'session_keepalive' => true,
     'logtimezone' => 'Europe/Paris',
 
-In ownCloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
+In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
 
-Edit */var/www/owncloud/.htaccess* and change the max size limits for uploads to 2G (on a 32-bit system) or more. Also, do:
+Edit */var/www/nextcloud/.htaccess* and change the max size limits for uploads to 2G (on a 32-bit system) or more. Also, do:
 
     :::bash
     su
-    cd /var/www/owncloud
+    cd /var/www/nextcould
     sudo -u www-data php occ maintenance:update:htaccess
 
-It will allow ownCloud to change these settings directly from the Admin webpage. It will also update some settings.
+It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.
 
 # OpenVPN
 
