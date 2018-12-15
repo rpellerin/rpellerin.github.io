@@ -1,6 +1,6 @@
 Title: Raspberry Pi: The Ultimate Guide
 Date: 2016-07-10 05:11
-Modified: 2016-12-02 02:28
+Modified: 2018-12-15 16:00
 Category: Linux
 Tags: raspberry pi, linux, talk
 Slug: raspberry-pi-the-ultimate-guide
@@ -48,7 +48,7 @@ To sum up, few requirements, but big advantages. Let's get started!
 
         :::bash
         umount /dev/mmcblk0p1
-        sudo dd bs=4M if=2014-09-09-wheezy-raspbian.img of=/dev/mmcblk0
+        sudo dd bs=4M if=2014-09-09-wheezy-raspbian.img of=/dev/mmcblk0 status=progress conv=fsync
         sudo sync && sync
 
     `bs=1M` can be used in case of error, it's slower but safer. There won't be any feedback during `dd` so wait till it finishes (might be long).
@@ -63,10 +63,10 @@ To sum up, few requirements, but big advantages. Let's get started!
         :::bash
         sudo su
         dpkg-reconfigure locales # Select with space bar, at least en_US.UTF-8 plus any other you need
-        dpkg-reconfigure keyboard-configuration
+        dpkg-reconfigure keyboard-configuration # A keyboard must be plugged in
         dpkg-reconfigure tzdata
 
-    There are [other alternatives](http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103). Then reboot (`sudo reboot`).
+    Regarding the keyboard layout, there are [other alternatives](http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103). Then reboot (`sudo reboot`).
 
 ## Configuration
 
@@ -107,14 +107,15 @@ To sum up, few requirements, but big advantages. Let's get started!
 3. Update you Pi:
 
         :::bash
-        sudo aptitude update
-        sudo aptitude upgrade
-        sudo aptitude install rpi-update # if this packet is missing
-        sudo reboot
-        sudo rpi-update
-        sudo reboot
-        sudo aptitude update
-        sudo aptitude upgrade
+        sudo apt update
+        sudo apt upgrade
+        # sudo apt install rpi-update # if this packet is missing
+        # sudo reboot
+        # sudo rpi-update # gets the latest firmware, normal users should not have to do it
+        # More info, read: https://github.com/Hexxeh/rpi-update#notes
+        # sudo reboot
+        # sudo apt update
+        # sudo apt upgrade
 
 4. For security concerns, let's create a new user. The *pi* user will be deleted later.
 
@@ -149,21 +150,21 @@ To sum up, few requirements, but big advantages. Let's get started!
 7. Get back to your Pi, still logged in as *pi* and do:
 
         :::bash
-        sudo apt-get install busybox cryptsetup ntpdate rsync
-        # busybox is to get a minimal shell, cryptsetup to unlock
-        # crypted devices and ntpdate to set the clock correctly.
+        su
+        apt install ntpdate rsync
+        # ntpdate to set the clock correctly.
         # rsync is just better than cp
-        sudo ntpdate -u fr.pool.ntp.org
-        sudo reboot
+        ntpdate -u fr.pool.ntp.org
+        reboot
 
 8. Now, it's time to delete the *pi* user. Log in as your new user (in my case it's *pipi*) and then:
 
         :::bash
         su # Type the root password here
         deluser --remove-home pi 
-        visudo # Delete the last line in the file here
+        visudo # Make sure there's no reference to pi user
 
-## Moving `/root` onto an external hard disk drive, not encrypted
+## Moving `/root` onto an external hard disk drive, not encrypted, with additional encrypted DATA partition
 
 *Right after this section you will find another one about how to do a similar operation using an encrypted hard disk.*
 
@@ -203,7 +204,16 @@ Then:
     mkfs.ext4 /dev/sda1 -L ROOT -m 5
     mkswap /dev/sda2
     mkfs.ext4 /dev/sda3 -L DATA -m 5
+    apt install cryptsetup
+    cryptsetup --verify-passphrase -c aes-xts-plain64 -s 512 -h sha256 luksFormat /dev/sda3
+    cryptsetup -v luksOpen /dev/sda3 hddcrypt
+    mkfs.ext4 /dev/mapper/hddcrypt -L DATA -m 1
+    mkdir /mnt/data_partition
+    mount /dev/mapper/hddcrypt /mnt/data_partition/
+
+    cat /boot/cmdline.txt # See if you can find root=/dev/mmcblk0p2. If yes then...
     sed -e "s|root=/dev/mmcblk0p2|root=/dev/sda1|" -i /boot/cmdline.txt
+    # Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`
     # Add 'bootwait' at the end of the line, in the same file
     # The 'rootwait' option forces the kernel to wait until the root device becomes ready
 
@@ -226,8 +236,9 @@ Then:
     e2fsck -f /dev/sda1 # You might need to umount it first
     reboot
     update-rc.d -f dphys-swapfile remove
-    apt-get remove dphys-swapfile
-    swapoff /var/swap
+    apt remove dphys-swapfile
+    cat /proc/swaps
+    swapoff /var/swap # Might fail if it was not listed in the previous command
     sudo rm -f /var/swap
     reboot
     su
@@ -260,6 +271,7 @@ Stay logged in as *root*.
 
     lsblk # Identify the hard disk drive connected to the Pi
     fdisk /dev/sda # Delete any existing partition, create new one with default choices
+    apt install cryptsetup
     cryptsetup --verify-passphrase -c aes-xts-plain64 -s 512 -h sha256 luksFormat /dev/sda1
     # 512-bit AES encryption with 256-bit SHA hashing algorithm
     cryptsetup -v luksOpen /dev/sda1 hddcrypt
@@ -277,7 +289,7 @@ Stay logged in as *root*.
 
     # Delete old /root
     su 
-    dd if=/dev/urandom of=/dev/mmcblk0p2 bs=10M
+    dd if=/dev/urandom of=/dev/mmcblk0p2 bs=10M status=progress conv=fsync
     fdisk /dev/mmcblk0 # Delete second partition
 
 ### Enable remote unlocking
@@ -291,7 +303,7 @@ Let's get started! On your Pi:
 
     :::bash
     su
-    aptitude install dropbear
+    apt install dropbear
     mkinitramfs -o /boot/initramfs.gz $(uname -r) # Triggers SSH key generation
     
     # Next command is really important, it gives the Pi enough time to get an IP address
@@ -413,14 +425,14 @@ Use the tool `rasp-config` or edit both */etc/hostname* and */etc/hosts*.
 Swapping is bad for your SD card lifespan. You should disable it permanently. You might however want to keep swap on a partition on a hard disk drive (see above). To disable permatently on SD card and disk, run:
 
     :::bash
-    sudo swapoff --all # Temporary
+    sudo swapoff --all # Temporary, disables also dedicated partitions (like /dev/sda2)
     sudo update-rc.d dphys-swapfile remove
-    sudo apt-get remove dphys-swapfile # Permanently
+    sudo apt remove dphys-swapfile # Permanently
     sudo rm /var/swap
 
 # DynHost
 
-1. `aptitude install lynx` (as root)
+1. `apt install lynx` (as root)
 2. Download [https://github.com/rpellerin/dotfiles](https://github.com/rpellerin/dotfiles).
 3. Copy in your user's home folder the directory *scripts/DynHost*.
 4. Edit the lines `HOST`, `LOGIN`, `PASSWORD` and `PATH_APP` in the file *dynhost*.
@@ -436,7 +448,7 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 **Note: this might be done using `sendmail`. Please refer to section *Configure a local SMTP email server* below.**
 
 1. Download [https://github.com/rpellerin/python-mailer](https://github.com/rpellerin/python-mailer). The instructions given right below are the same as those you'll find at this URL.
-2. Install Python 3 (see instructions in [https://github.com/rpellerin/dotfiles/blob/master/README.md](https://github.com/rpellerin/dotfiles/blob/master/README.md) for the latest version or simply do `aptitude install python3` as root).
+2. Install Python 3 (see instructions in [https://github.com/rpellerin/dotfiles/blob/master/README.md](https://github.com/rpellerin/dotfiles/blob/master/README.md) for the latest version or simply do `apt install python3` as root).
 3. Do, as a normal user (not root!):
 
         :::bash
@@ -478,7 +490,7 @@ Before doing this. make sure you did set the hostname of your Raspberry Pi throu
 Make sur to disable `/var/log` from being in RAM since Exim4 needs `/var/log/exim4/mainlog` to exist, even after a reboot. 
 
 This is pretty convient as some programs still prefer to send emails, such as `cron`.  
-Normally, Exim4 comes pre-installed with Debian. If not, do `aptitude install exim4`. Then:
+Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`. Then:
 
     :::bash
     su
@@ -543,8 +555,8 @@ I advise you to always choose the latest stable version and to read carefully th
     wget -nv https://download.owncloud.org/download/repositories/stable/Debian_8.0/Release.key -O Release.key
     apt-key add - < Release.key
     sh -c "echo 'deb http://download.owncloud.org/download/repositories/stable/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list"
-    apt-get update
-    apt-get install owncloud
+    apt update
+    apt install owncloud
 
 Read the documentation for more details.
 
@@ -610,8 +622,8 @@ Now you can resume installation wizard. In the tutorial, dont't forget do carefu
         :::bash
         su
         echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list
-        apt-get update
-        apt-get install python-certbot-apache -t jessie-backports
+        apt update
+        apt install python-certbot-apache -t jessie-backports
         # Make sure your website is accessible from the Internet.
         # Set up NAT/PAT rules in your router. Then:
         certbot --apache
@@ -696,7 +708,7 @@ opcache (bundled with PHP 5.5+) takes care of code caching. To significantly imp
 
     :::bash
     su
-    aptitude install php5-apcu
+    apt install php5-apcu
     php5enmod apcu
     #echo "apc.enabled=1" >> /etc/php5/cli/conf.d/20-apcu.ini # Normally it's useless, check owncloud error logs in the admin page to make sure it's working
     service apache2 restart
@@ -712,7 +724,7 @@ Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Cac
 
     :::bash
     su
-    aptitude update && aptitude install openvpn
+    apt update && apt install openvpn
 
 Read the [official documentation](https://openvpn.net/index.php/open-source/documentation/howto.html). Download [easy-rsa](https://github.com/OpenVPN/easy-rsa) and checkout latest release.
 
@@ -865,7 +877,7 @@ At next boot, the server will run automatically. We need to rename the *client.o
 Now your client:
 
     :::bash
-    sudo aptitude update && sudo aptitude install resolvconf
+    sudo apt update && sudo apt install resolvconf
     sudo openvpn --config client.ovpn
 
 You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:
@@ -961,7 +973,7 @@ Now restart sshd by doing `service sshd restart`.
 
     :::bash
     su
-    aptitude install fail2ban
+    apt install fail2ban
     fail2ban-client -x start # To force the server to startup. However, a reboot is preferable.
 
 Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.local* (make a copy of */etc/fail2ban/jail.conf*):
