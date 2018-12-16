@@ -632,8 +632,8 @@ Now edit `/etc/apache2/sites-enabled/000-default.conf`. It must contain the foll
             DocumentRoot /var/www/nextcloud
             
             RewriteEngine on
-            RewriteCond %{SERVER_NAME} =cloud.romainpellerin.eu
-            RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
+            RewriteCond %{HTTPS} off
+            RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
     
             ErrorLog ${APACHE_LOG_DIR}/error.log
             CustomLog ${APACHE_LOG_DIR}/access.log combined
@@ -777,7 +777,7 @@ Add the following in */var/www/nextcloud/config/config/php*:
 
 In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
 
-Edit */var/www/nextcloud/.htaccess* and change the max size limits for uploads to 2G (on a 32-bit system) or more. Also, do:
+Also, do:
 
     :::bash
     su
@@ -785,6 +785,10 @@ Edit */var/www/nextcloud/.htaccess* and change the max size limits for uploads t
     sudo -u www-data php occ maintenance:update:htaccess
 
 It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.
+
+In the admin page (`URL/settings/admin`), increase the maximum upload size to 1.9 GB (it's a limitatiom from 32-bit PHP - Rasbian is a 32 bit OS).
+
+In `URL/settings/admin/overview` you might get some warnings about PHP not being properly configured. Edit `/etc/php/7.0/apache2/php.ini` as it asks.
 
 # OpenVPN
 
