@@ -562,7 +562,7 @@ Edit your user and root's `.bashrc` and add at the end of the file:
     :::bash
     echo "So you know... ($(date))" | mail -s "Root shell login" me@domain
 
-# Installing Nextcloud
+# Installing Nextcloud 15.0.0
 
 Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html).
 
@@ -790,22 +790,24 @@ In the admin page (`URL/settings/admin`), increase the maximum upload size to 1.
 
 In `URL/settings/admin/overview` you might get some warnings about PHP not being properly configured. Edit `/etc/php/7.0/apache2/php.ini` as it asks.
 
-# OpenVPN
+# OpenVPN 2.4.0
 
     :::bash
     su
     apt update && apt install openvpn
 
-Read the [official documentation](https://openvpn.net/index.php/open-source/documentation/howto.html). Download [easy-rsa](https://github.com/OpenVPN/easy-rsa) and checkout latest release.
+Read the [official documentation](https://openvpn.net/community-resources/how-to/) ([here, short tutorial for easy-rsa3](https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto)). Download [easy-rsa](https://github.com/OpenVPN/easy-rsa) and checkout latest release.
 
     :::bash
     su
     cd /etc/openvpn/
     git clone https://github.com/OpenVPN/easy-rsa.git
     cd easy-rsa
-    git checkout 3.0.1
+    git checkout v3.0.5
     cd easyrsa3
-    echo "set_var EASYRSA_KEY_SIZE       4096" > vars # No need to source this file
+    cp vars.example vars
+    echo "set_var EASYRSA_KEY_SIZE       4096" >> vars # No need to source this file
+    # Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL
 
 From now on, I highly recommend you read */etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md* and [https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md) in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).
 
