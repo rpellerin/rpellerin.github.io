@@ -986,10 +986,10 @@ Edit */etc/ssh/sshd_config*:
     Port <something you like>
     #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
     #HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
-    UsePrivilegeSeparation yes
+    UsePrivilegeSeparation sandbox
+    LoginGraceTime 10s
     PermitRootLogin no
     StrictModes yes
-    LoginGraceTime 10
     PubkeyAuthentication yes
     IgnoreRhosts yes
     PermitEmptyPasswords no
@@ -1017,8 +1017,7 @@ Taken from [this thread](http://askubuntu.com/questions/179889/how-do-i-set-up-a
     if [ "$PAM_TYPE" != "close_session" ]; then 
         host="`hostname`" 
         subject="SSH Login: $PAM_USER from $PAM_RHOST on $host" 
-        # Message to send, e.g. the current environment variables.
-        message="`date` - `env`"
+        message="`date`"
         echo "$message" | mail -s "$subject" root@mydomain
     fi
 
@@ -1059,9 +1058,9 @@ Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.l
     ntime  = 8700
     action = %(action_mwl)s
 
-    # Enable ssh and ssh-dos, change 'port' and the 'maxretry' value if need be
-    # Enable apache, apache-noscript
-
+    # Enable sshd (enabled = true) and sshd-dos, change 'port' and the 'maxretry' value if need be
+    # Enable apache, apache-*
+    # Add the following new entry
     [http-dos]
     enabled = true
     port = http,https
@@ -1095,7 +1094,7 @@ Now, reload the service maually to make sure there is no error:
 
     :::bash
     su
-    service fail2ban stop
+    systemctl stop fail2ban
     fail2ban-client -x start
 
 # Troubleshooting
