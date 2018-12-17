@@ -806,7 +806,7 @@ Read the [official documentation](https://openvpn.net/community-resources/how-to
     git checkout v3.0.5
     cd easyrsa3
     cp vars.example vars
-    echo "set_var EASYRSA_KEY_SIZE       4096" >> vars # No need to source this file
+    echo "set_var EASYRSA_KEY_SIZE       2048" >> vars # No need to source this file
     # Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL
 
 From now on, I highly recommend you read */etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md* and [https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md) in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).
@@ -861,8 +861,10 @@ Keep the rest as-is. Now create `/etc/openvpn/notifyconnect.sh`:
 
     :::bash
     #!/bin/sh
-    echo "On `date`" | mail -v -s "OpenVPN client connection" root@localhost 2>/dev/null
-    sleep 4
+    echo "On `date`" | mail -s "OpenVPN client connection" root@localhost 2>/dev/null
+    sleep 1
+    runq
+    exim -qff
     return 0
 
 Then:
@@ -922,7 +924,7 @@ Apply changes:
     su
     sysctl -p
 
-There's a [known bug](http://serverfault.com/questions/355520/after-reboot-debian-box-ignore-sysctl-conf-values) which may prevent these values to be read on boot. Add the following above `exit 0` in */etc/rc.local*:
+There's a [known bug](http://serverfault.com/questions/355520/after-reboot-debian-box-ignore-sysctl-conf-values) which may prevent these values to be read on boot (check that it worked about rebooting with `sysctl -a | grep ip_forward`). Add the following above `exit 0` in */etc/rc.local*:
 
     :::text
     sysctl -p /etc/sysctl.conf
@@ -940,11 +942,16 @@ Finally, do the following on your server:
     cd /etc/openvpn
     su
     mv client.conf client.conf.old
-    rm client.ovpn
+    shred -u client.ovpn
     openvpn --config server.conf &
     tail -f openvpn.log
 
-At next boot, the server will run automatically. We need to rename the *client.ovpn* because the initscript will scan this directory for *.conf* files and start up a separate OpenVPN deamon for each file found.
+At next boot, the server will run automatically. We needed to rename the *client.ovpn* because the initscript will scan this directory for *.conf* files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:
+
+    :::bash
+    shred -u client.conf.old
+    shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
+    shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
 
 Now your client:
 
