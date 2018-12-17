@@ -483,12 +483,10 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 
 # Send email automatically on startup with `sendmail`
 
-Add the following in */etc/rc.local*, right above `exit 0`:
+Add the following in `crontab -e` as root:
 
-        :::text
-        echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain &
-        sleep 5
-        exit 0
+    :::bash
+    @reboot echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
 
 Now, read the section right below.
 
@@ -848,6 +846,7 @@ You should edit *server.conf* like this:
     push "dhcp-option DNS 208.67.220.220"
     tls-auth /etc/openvpn/ta.key 0
     cipher AES-256-CBC
+    max-clients 2
     comp-lzo
     user nobody
     group nogroup
@@ -860,17 +859,16 @@ You should edit *server.conf* like this:
 Keep the rest as-is. Now create `/etc/openvpn/notifyconnect.sh`:
 
     :::bash
-    #!/bin/sh
+    #!/bin/bash
     echo "On `date`" | mail -s "OpenVPN client connection" root@localhost 2>/dev/null
     sleep 1
-    runq
-    exim -qff
-    return 0
 
 Then:
 
     :::bash
     chmod +x /etc/openvpn/notifyconnect.sh
+
+Then add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`. Check OpenVPN logs, there might be a permission issue on `/var/log/exim4`.
 
 Now, edit *client.conf*:
 
