@@ -124,6 +124,8 @@ To sum up, few requirements, but big advantages. Let's get started!
         passwd # Add a password to the root account
         adduser pipi
         usermod -a -G video pipi # Otherwise omxplayer won't work with this user
+        echo 'export HISTSIZE=100000' >> /root/.bashrc
+        echo 'export HISTFILESIZE=100000' >> /root/.bashrc
         exit
         # Stay connected as 'pi' for now
 
@@ -486,7 +488,7 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 Add the following in `crontab -e` as root:
 
     :::bash
-    @reboot echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
+    @reboot /bin/sleep 20; /usr/sbin/exim -qff; echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
 
 Now, read the section right below.
 
