@@ -664,6 +664,18 @@ Bring the changes between `<VirtualHost>` tags to */etc/apache2/sites-enables/de
     SSLStaplingReturnResponderErrors off
     SSLStaplingCache        shmcb:/var/run/ocsp(128000)
 
+To enable HTTP2, do `a2enmod http2` and edit `default-ssl.conf` again:
+    
+    :::text
+    <VirtualHost *:443>
+        ...
+        ProtocolsHonorOrder On
+        Protocols h2 h2c http/1.1
+        H2Direct on
+        ...
+
+[Note that Apache prefork is not compatible with HTTP2](https://http2.pro/doc/Apache). You'll have to [use fpm](https://blog.feutl.com/nextcloud-http2/). See [Nextcloud's instructions also](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
+
 Let us now improve a bit Apache's security. Edit */etc/apache2/conf-enabled/security.conf* like this:
 
     :::text
