@@ -29,6 +29,10 @@ Summary: What I think about most social media
 - [Votre téléphone vous écoute, ce n’est pas de la paranoïa](https://www.vice.com/amp/fr/article/wjbzzy/votre-telephone-vous-ecoute-ce-nest-pas-de-la-paranoia)
 - [Exclusive: U.S. government seeks Facebook help to wiretap Messenger - sources](https://www.reuters.com/article/us-facebook-encryption-exclusive/u-s-government-seeks-facebook-help-to-wiretap-messenger-sources-idUSKBN1L226D)
 - [New Documents Show That Facebook Has Never Deserved Your Trust](https://www.eff.org/deeplinks/2018/12/httpstwittercommontereya)
+- [Become A Facebook-Free Business](https://m.signalvnoise.com/become-a-facebook-free-business-5bfefc20c09d)
+- [Turning Off Facebook Location Tracking Doesn't Stop It From Tracking Your Location](https://gizmodo.com/turning-off-facebook-location-tracking-doesnt-stop-it-f-1831149148)
+- [Facebook’s Latest Scandal Shows We Need Stronger Privacy Laws](https://www.eff.org/deeplinks/2018/12/facebooks-latest-scandal-shows-we-need-stronger-privacy-laws)
+- [Why Should Anyone Believe Facebook Anymore?](https://www.wired.com/story/facebook-data-sharing-privacy-investigation/)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
