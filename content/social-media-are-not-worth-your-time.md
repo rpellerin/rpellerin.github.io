@@ -33,6 +33,7 @@ Summary: What I think about most social media
 - [Turning Off Facebook Location Tracking Doesn't Stop It From Tracking Your Location](https://gizmodo.com/turning-off-facebook-location-tracking-doesnt-stop-it-f-1831149148)
 - [Facebook’s Latest Scandal Shows We Need Stronger Privacy Laws](https://www.eff.org/deeplinks/2018/12/facebooks-latest-scandal-shows-we-need-stronger-privacy-laws)
 - [Why Should Anyone Believe Facebook Anymore?](https://www.wired.com/story/facebook-data-sharing-privacy-investigation/)
+- [Facebook gave Spotify and Netflix access to users’ private messages](https://www.theverge.com/platform/amp/2018/12/18/18147616/facebook-user-data-giveaway-nyt-apple-amazon-spotify-netflix)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
