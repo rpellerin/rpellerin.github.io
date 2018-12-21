@@ -34,6 +34,7 @@ Summary: What I think about most social media
 - [Facebook’s Latest Scandal Shows We Need Stronger Privacy Laws](https://www.eff.org/deeplinks/2018/12/facebooks-latest-scandal-shows-we-need-stronger-privacy-laws)
 - [Why Should Anyone Believe Facebook Anymore?](https://www.wired.com/story/facebook-data-sharing-privacy-investigation/)
 - [Facebook gave Spotify and Netflix access to users’ private messages](https://www.theverge.com/platform/amp/2018/12/18/18147616/facebook-user-data-giveaway-nyt-apple-amazon-spotify-netflix)
+- [Literally Just A Big List Of Facebook’s 2018 Scandals](https://www.buzzfeednews.com/article/ryanmac/literally-just-a-big-list-of-facebooks-2018-scandals)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
