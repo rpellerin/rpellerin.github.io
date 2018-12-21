@@ -488,7 +488,7 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 Add the following in `crontab -e` as root:
 
     :::bash
-    @reboot /bin/sleep 20; /usr/sbin/exim -qff; echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
+    @reboot /bin/sleep 30; /usr/sbin/exim -qff; echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
 
 Now, read the section right below.
 
