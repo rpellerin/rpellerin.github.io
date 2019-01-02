@@ -30,6 +30,10 @@ Unfortunately, I did not get to spend much time there. However, I can still reco
 
 Going to Cologne from Düsseldorf is cheap, only 11.5 euros by train. I heard one could get even lower prices, depending on the type of train.
 
+# Munich
+
+Pro tip: most museums cost 1 euro on Sundays!
+
 <br />
 
 That's it for now! Until next time...
