@@ -23,4 +23,34 @@ To find the BPM of a song, use any of the following links:
 - [MP3 to BPM (Song Analyser)](https://getsongbpm.com/tools/audio)
 - [Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm](https://songbpm.com/)
 
+## Beats calculator
+
+<input type="text" placeholder="Beats per minute here"/>
+<pre id="results"></pre>
+<script>
+    let BEATS = [1,2,3,4,6,8]
+    function inputChange(event) {
+        const value = event.target.value
+        if (!value || isNaN(value)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).map(function(beat) {
+            let tempResult = (beat\*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)\*60)/100
+                tempResult = (parseInt(integer, 10) + floating).toString()
+            }
+            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+        })
+    }
+    const input = document.querySelector('input')
+    input.oninput=inputChange
+    if (input.value) {
+        inputChange({target:{value:input.value}})
+    }
+</script>
+
 That's about it!
