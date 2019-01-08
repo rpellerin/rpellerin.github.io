@@ -9,7 +9,7 @@ Image: the-netherlands/amsterdam.jpg
 
 Dear Amsterdam, it's been a long time. Too long, actually. I miss you from the bottom of my heart... ok maybe not that much, but still!
 
-Joke aside, I lived in Amsterdam for 6 months, from 2015 to 2016. Oh boy did I enjoy the city. I was living the good life doing an interpaid internship but who cares, right?! Since then, I went back to the Netherlands a couple of times. This articles sums up what's so cool about this country and the Dutch people, and why it's a must see for every European out there! However, gouda, tulips, clogs, windmills, etc, all of this is meant for tourists (although their windmills are quite awesome and Gouda is one of my favorite cheeses), so I won't talk about these. This article is mostly about my experience in the Netherlands.
+Joke aside, I lived in Amsterdam for 6 months, from 2015 to 2016. Oh boy did I enjoy the city. I was living the good life doing an underpaid internship but who cares, right?! Since then, I went back to the Netherlands a couple of times. This articles sums up what's so cool about this country and the Dutch people, and why it's a must see for every European out there! However, gouda, tulips, clogs, windmills, etc, all of this is meant for tourists (although their windmills are quite awesome and Gouda is one of my favorite cheeses), so I won't talk about these. This article is mostly about my experience in the Netherlands.
 
 # Amsterdam
 
