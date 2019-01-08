@@ -32,7 +32,31 @@ Going to Cologne from Düsseldorf is cheap, only 11.5 euros by train. I heard on
 
 # Munich
 
-Pro tip: most museums cost 1 euro on Sundays!
+Such a beautiful city! It is the third-largest city of Germany, and yet it does not feel so big. The must-see places include:
+
+- Isartor
+- Marienplatz, the main square of the city, and the New Town Hall, which you can climb to get a view of the whole city
+- Ratskeller München, a restaurant right in the city hall courtyard
+- Nearby are a bunch of churches: Peterskirche (you can go to the top), Heiliggeistkirche
+- The world famous cathedral with its Devil's footprint: Frauenkirche
+- Theatinerkirche, next to the Residenz (a 3-hour long museum)
+- Feldherrnhalle, a monument between Theatinerkirche and the Residenz
+- Deutsches Museum: again, dedicate at least 3 hours, and don't forget about the mine in the basement, a fun experience!
+- Siegestor: a triumphal arc
+- In the Englischen Garten: Monopteros, Chinese Tower and its beer garden
+- Schloss Nymphenburg
+- In Olympiapark: Olympiaturm (a tower, 7 euros to get to the top, with a rock museum at the top), BMW Welt (free) and BMW Museum (paid)
+- Pinakothek der Moderne, a modern art museum - I did not really like that one, as opposed to others like Centre Pompidou in Paris or the Tate Modern Museum in London
+- Maximilianstraße, a beautiful street
+- Asamkirche, a tiny and surprising church
+- Müller'sches Volksbad - pro tip: at night after 8pm, for 13 euros you get both spa and swimming pool
+- And of course, the iconic Hofbräuhaus München
+
+I also highly recommend the Tollwood Winter Festival. That's where we spent 2018-2019 New Year's Eve, and it was F-A-B-U-L-O-U-S. They even had lockers for us to store our fireworks. Anyone could freely walk in and out, as long as they showed a stamp of their wrist to get back inside. Plus the bands and the music were great!
+
+Pro tip: most museums cost 1 euro on Sundays! The Deutsches Museum does, at least.
+
+Transporation tip: buy a weekly IsarCard. Also, I hear the CityTourCard is a good deal, with 80+ attraction discounts included. We did not try it though.
 
 <br />
 
