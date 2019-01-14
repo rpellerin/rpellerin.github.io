@@ -205,3 +205,4 @@ On Linux, if you have `imagemagick` installed, do:
 - [How we rebuilt the viewsourceconf.org website](https://hacks.mozilla.org/2017/10/how-we-rebuilt-the-viewsourceconf-org-website/)
 - [What Web Can Do Today](https://whatwebcando.today/)
 - [History of the browser user-agent string](https://webaim.org/blog/user-agent-string-history/)
+- [Roadmap to becoming a web developer in 2019](https://github.com/kamranahmedse/developer-roadmap)
