@@ -60,6 +60,7 @@ Summary: Everything wrong with this world
 - [Goldfish](https://twitter.com/LeRasbo/status/930523617863053312)
 - [Goldfish bis](https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal)
 - [EEA report confirms: electric cars are better for climate and air quality](https://www.eea.europa.eu/highlights/eea-report-confirms-electric-cars)
+- [Electric Cars Are Cleaner Even When Powered by Coal](https://www.bloomberg.com/news/articles/2019-01-15/electric-cars-seen-getting-cleaner-even-where-grids-rely-on-coal)
 - [Le niveau de CO2 dans l’atmosphère n’a jamais été aussi élevé depuis trois millions d’années](https://reporterre.org/Le-niveau-de-CO2-dans-l-atmosphere-n-a-jamais-ete-aussi-eleve-depuis-trois)
 - [Rien de Neuf](http://riendeneuf.org/)
 - [Le JTerre #3 L’info des Vivants qui Veulent le Rester](https://www.youtube.com/watch?v=LXjcLLmVAvU)
