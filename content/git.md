@@ -52,6 +52,7 @@ Here are some resources to go deeper with Git.
 - [git worktree](https://git-scm.com/docs/git-worktree#_examples)
 - [Git stuff](http://sethrobertson.github.io/)
 - [Git Tip of the Week: Merging Revisited](http://alblue.bandlem.com/2011/10/git-tip-of-week-merging-revisited.html)
+- [Git caret and tilde](http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde)
 
 ## Rebasing and cherry-picking
 
