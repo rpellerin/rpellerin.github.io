@@ -10,11 +10,13 @@ Several options exist when it comes to casting media content from Linux to a Chr
 
 # Casting the full desktop
 
-You need to use Chrome. Audio is not supported.
+You can use Google Chrome (audio is not supported).
 
 <figure class="center">
 <img alt="Casting from Chrome" src="{filename}/images/chromecast-chrome.png" />
 </figure>
+
+Alternatively, you can use Firefox with [fx_cast](https://hensm.github.io/fx_cast/).
 
 # Casting a browser tab
 

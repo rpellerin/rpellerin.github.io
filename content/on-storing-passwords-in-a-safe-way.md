@@ -1,10 +1,11 @@
 Title: On Storing Passwords In A Safe Way
 Date: 2018-07-31 00:20
+Modified: 2019-01-25 00:06
 Category: Computers
 Tags: password, security
 Slug: on-storing-passwords-in-a-safe-way
 Authors: Romain Pellerin
-Summary: My journey towards a better security
+Summary: My journey towards increased security
 
 It's been a while since I last wrote here... Let's fix this with a new article on an important topic.
 
@@ -33,7 +34,7 @@ With this all in mind, I needed to find a solution that could fulfill the follow
 - Backed up offline or in a different location AND easily recoverable in case of loss of my trusted devices
 - Based on a non proprietary solution - both free and open source ideally - and free of charge
 - Auto form-filling on a web is a plus (through a web extension for instance)
-- Two factor auth management is a plus: it could be nice to safe 2FA secrets as well
+- Two factor auth management is a plus: it could be nice to save 2FA secrets as well
 - Password generation is optional, I'm fine with random typing on my keyboard every once in a while
 
 ## Market analysis
@@ -65,7 +66,7 @@ Apparently a great tool, I've read a lof of good reviews. Advocated by the famou
 
 ### Pass (Linux CLI)
 
-[A tool](https://www.passwordstore.org/) [for Linux](https://wiki.archlinux.org/index.php/Pass) (CLI). Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass, which implies many platforms and binaries. One of the reasons I guess is that it's on the official Linux distributions repos.
+[A tool](https://www.passwordstore.org/) [for Linux](https://wiki.archlinux.org/index.php/Pass) (CLI) based on GPG. Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass. One of the reasons I guess is that it's on the official Linux distributions repos.
 
 #### Pros
 
@@ -73,13 +74,13 @@ Apparently a great tool, I've read a lof of good reviews. Advocated by the famou
 - Automatic generation of passwords
 - [Cross platform](https://www.passwordstore.org/#other): Linux, Android and Firefox plugin at least
 - I can easily save a backup file with all my passwords on my personal cloud
-- 2FA management (actually Pass can save any arbitraty data, it's essentially made up of encrypted flat text files)
+- 2FA management (actually Pass can save any arbitraty data, it's essentially made up of encrypted plain text files)
 - Super easily backupable (zip the directory, that's all) on my personal cloud
 
 #### Cons
 
 - Not very user friendly
-- I must trust binaries, specifically the Android app and Firefox binary; the Linux binary has all my trust though
+- I must trust binaries, specifically the Android app and Firefox binary; the Linux script has all my trust though (yes, `pass` is a script)
 
 ### Dashlane and Lastpass
 
@@ -91,13 +92,15 @@ One cool feature Dashlane offers that is worth mentioning though: setting an eme
 
 Seems like I'll either go with either Keepass or Pass. I'll update this article as I become familiar with either of them.
 
+**Update January 2019**: I've been using `pass` for a few months now and am very satisfied so far.
+
 # Another topic: two-factor authentication
 
 For this one, I felt that storing my secrets on my phone (Google Authenticatgor to name it) only sounded a little too much like a Single Point of Failure. Should I ever lose access to my phone for any reason, I'd be locked out of services with two factor authentication enabled. Time had come to find a way to save a backup of these secrets.
 
 To do so, I developed my own solution: [gauth2](https://github.com/rpellerin/gauth2/). It is forked from another project ([gauth](https://github.com/gbraad/gauth)). I improved it and redesigned it a bit. I also added some features.
 
-How does it work? Well, it is a web app that stores in one's browser (in the `LocalStorage`, to be precise) one's secrets and generate One Time Passwords based on these secrets. The secrets can even be encrypted with a password, to prevent someone with access to the browser from stealing the secrets. It also allows secrets to be exported and imported for more convenience. I am very satisfied with it so far. This, coupled with Google Authenticator, is a pretty solid combination.
+How does it work? Well, it is a web app that stores in one's browser (in the `LocalStorage`, to be precise) one's secrets and generate One Time Passwords based on these secrets. The secrets can even be encrypted with a password, to prevent someone with access to the browser from stealing the secrets. It also allows secrets to be exported and imported for more convenience. I am very satisfied with it so far. This, on an encrypted laptop, coupled with Google Authenticator, is a pretty solid combination.
 
 <br />
 

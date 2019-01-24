@@ -138,3 +138,4 @@ That's it. You should be able to install Linux on the entire disk now.
 - [System Programming](https://github.com/angrave/SystemProgramming/wiki)
 - [How To Tell If Your Linux Server Has Been Compromised](https://bash-prompt.net/guides/server-hacked/)
 - [SystemD pro level linux des temps modernes Process management, containers (P.A. Grégoire, Q. Adam)](https://www.youtube.com/watch?v=v-jdlc5YdDc)
+- [the-practical-linux-hardening-guide](https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3)
