@@ -66,3 +66,4 @@ Summary: Everything wrong with this world
 - [Le JTerre #3 L’info des Vivants qui Veulent le Rester](https://www.youtube.com/watch?v=LXjcLLmVAvU)
 - [Climate Impact by Area](https://www.electricitymap.org/)
 - [Stop Releasing Balloons Into the Sky](https://lifehacker.com/stop-releasing-balloons-into-the-sky-1831873033)
+- [What happened when Oslo decided to make its downtown basically car-free?](https://www.fastcompany.com/90294948/what-happened-when-oslo-decided-to-make-its-downtown-basically-car-free)
