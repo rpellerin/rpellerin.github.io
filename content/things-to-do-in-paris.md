@@ -40,4 +40,10 @@ Summary: The list of things to do in Paris I usually share with friends
 - Musée de l’Orangerie
 - Musée national d'Histoire Naturelle
 
+# At night
+
+- Lido
+- The Crazy Horse
+- Le Moulin Rouge
+
 [Here are some additional places of interest](https://culturezvous.com/tarifs-abonnements-annuels-musees-paris/).
