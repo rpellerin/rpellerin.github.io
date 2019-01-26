@@ -45,5 +45,6 @@ Summary: The list of things to do in Paris I usually share with friends
 - Lido
 - The Crazy Horse
 - Le Moulin Rouge
+- [La Nocture du samedi - Le Louvre](https://www.louvre.fr/la-nocturne-du-samedi)
 
 [Here are some additional places of interest](https://culturezvous.com/tarifs-abonnements-annuels-musees-paris/).
