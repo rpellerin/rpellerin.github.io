@@ -36,6 +36,8 @@ Summary: What I think about most social media
 - [Facebook gave Spotify and Netflix access to users’ private messages](https://www.theverge.com/platform/amp/2018/12/18/18147616/facebook-user-data-giveaway-nyt-apple-amazon-spotify-netflix)
 - [Literally Just A Big List Of Facebook’s 2018 Scandals](https://www.buzzfeednews.com/article/ryanmac/literally-just-a-big-list-of-facebooks-2018-scandals)
 - [The facts about Facebook](https://techcrunch.com/2019/01/26/the-facts-about-facebook/)
+- [Google will stop peddling a data collector through Apple’s back door](https://techcrunch.com/2019/01/30/googles-also-peddling-a-data-collector-through-apples-back-door/)
+- [Facebook pays teens to install VPN that spies on them](https://techcrunch.com/2019/01/29/facebook-project-atlas/)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

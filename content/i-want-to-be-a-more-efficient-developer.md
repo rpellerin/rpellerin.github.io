@@ -161,3 +161,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [This Is How Successful People Manage Their Time](https://www.youtube.com/watch?v=-Qy2vist-XQ)
 - [What makes someone a good front-end developer?](https://gomakethings.com/what-makes-someone-a-good-front-end-developer/)
 - [Google Search Operators: The Complete List (42 Advanced Operators)](https://ahrefs.com/blog/google-advanced-search-operators/)
+- [The Importance of One-on-Ones](https://css-tricks.com/the-importance-of-one-on-ones/)
