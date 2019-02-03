@@ -23,6 +23,7 @@ At the present time, I'm still getting acquinted with it, but here are a few pie
 7. [Project structure](https://gist.github.com/jnhuynh/86693d8b485f4d335300)
 8. [React and Redux Single Page Applications Resources](https://medium.com/@sapegin/react-and-redux-single-page-applications-resources-22cd859b0c1d)
 9. [Overreacted](https://overreacted.io/)
+10. [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/)
 
 # How to
 
@@ -87,6 +88,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 
 ## Functional components
 
+- [Did you know that React classes are actually than function components and that React is optimized for function components?](https://twitter.com/mjackson/status/1091475757530963968)
 - [45% Faster React Functional Components, Now](https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f)
 - [Declare a functional component as “pure”](https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure)
 - [Stateless Component vs Pure Component](https://medium.com/groww-engineering/stateless-component-vs-pure-component-d2af88a1200b)
