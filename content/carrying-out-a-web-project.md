@@ -176,6 +176,7 @@ On Linux, if you have `imagemagick` installed, do:
 - [Lab: Migrating to Workbox from sw-precache and sw-toolbox](https://developers.google.com/web/ilt/pwa/lab-migrating-to-workbox-from-sw-precache-and-sw-toolbox)
 - [Modifications to your existing configuration](https://developers.google.com/web/tools/workbox/guides/migrate)
 - [Workbox](https://developers.google.com/web/tools/workbox/)
+- [Google Play Store now open for Progressive Web Apps](https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc)
 
 ## Linters
 
