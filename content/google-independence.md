@@ -9,6 +9,7 @@ Summary: Resources to be Google-independent
 - [Liberate Your Device!](https://fsfe.org/campaigns/android/liberate.en.html)
 - [Replicant: a fully free Android distribution running on several devices](http://www.replicant.us/)
 - [ownCloud: files, calendar and contacts](https://owncloud.org/)
+- [Nextcloud](https://nextcloud.com/)
 - [WebDAV](https://en.wikipedia.org/wiki/WebDAV)
 - [CalDAV](https://en.wikipedia.org/wiki/CalDAV)
 - [CardDAV](https://en.wikipedia.org/wiki/CardDAV)
@@ -17,3 +18,5 @@ Summary: Resources to be Google-independent
 - [No More Google](https://nomoregoogle.com/)
 - [De-Googling Archives - Kev Quirk](https://kevq.uk/category/de-googling/)
 - [/e/ - your data is YOUR data](https://e.foundation/)
+- [peertube.social](https://peertube.social/)
+- [Bye, Bye, Google](https://defn.io/2019/02/04/bye-bye-google/)

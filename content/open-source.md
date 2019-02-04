@@ -8,6 +8,10 @@ Summary: Resources for open source projects
 
 Here are a bunch of links for open source project maintainers/creators:
 
+# Documentation
+
+- [Sphinx](http://www.sphinx-doc.org/en/master/)
+
 # Tools/Continuous integration/Continuous testing
 
 - [GreenKeeper](https://greenkeeper.io/)
@@ -38,3 +42,7 @@ Here are a bunch of links for open source project maintainers/creators:
 - Checklist for a good open source project on Github: [An Open Code Base Is Not Yet an Open Source Project](https://www.yegor256.com/2018/05/08/open-source-attributes.html)
 - [Github Apps - Welcome](https://github.com/apps/welcome)
 - [Packager.io](https://packager.io/)
+
+# Getting paid
+
+- [CodeFund](https://codefund.app/)
