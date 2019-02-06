@@ -1152,6 +1152,7 @@ A year ago, I gave a talk at [HumanTalks Compiègne](http://humantalks.com/citie
 - [Raspberry Pi 3 based home automation with NodeJS and React Native.](https://github.com/deepsyx/home-automation)
 - [Using your Raspberry Pi as a DLNA/UPnP media server](https://bbrks.me/rpi-minidlna-media-server/)
 - [raspberry-pi-security-camera](https://github.com/rpellerin/raspberry-pi-security-camera)
+- [Protéger son VPS](https://mon-blog.jbriault.fr/index.php/blog/2019/02/06/s%C3%A9curiser-l-administration-de-son-vps)
 
 ### Read-only Raspberry Pi
 
