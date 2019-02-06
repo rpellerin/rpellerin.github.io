@@ -67,3 +67,9 @@ Summary: Everything wrong with this world
 - [Climate Impact by Area](https://www.electricitymap.org/)
 - [Stop Releasing Balloons Into the Sky](https://lifehacker.com/stop-releasing-balloons-into-the-sky-1831873033)
 - [What happened when Oslo decided to make its downtown basically car-free?](https://www.fastcompany.com/90294948/what-happened-when-oslo-decided-to-make-its-downtown-basically-car-free)
+- [Infographie - Interdiction des long-courriers, couvre-feu thermique, quotas sur le café… les mesures extrêmes pour rester sous 1,5°C](https://www.novethic.fr/actualite/environnement/climat/isr-rse/infographie-interdiction-d-acheter-une-voiture-neuve-ou-de-prendre-un-long-courrier-couvre-feu-thermique-quotas-sur-les-produits-importes-les-mesures-chocs-pour-rester-sous-1-5-c-146877.html)
+
+<figure class="center">
+<img src="{filename}/images/climate.png" alt="A picture showing how to fight climate change" />
+<figcaption>How to fight climate change.</figcaption>
+</figure>
