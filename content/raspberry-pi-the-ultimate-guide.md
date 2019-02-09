@@ -802,6 +802,8 @@ In the admin page (`URL/settings/admin`), increase the maximum upload size to 1.
 
 In `URL/settings/admin/overview` you might get some warnings about PHP not being properly configured. Edit `/etc/php/7.0/apache2/php.ini` as it asks.
 
+Install and enable the app "Two Factor TOTP Provider" in `URL/settings/apps`. Then, go to `URL/settings/user/security` and enable TOTP.
+
 # OpenVPN 2.4.0
 
     :::bash
