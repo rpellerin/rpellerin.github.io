@@ -129,6 +129,7 @@ That's it. You should be able to install Linux on the entire disk now.
 - [Creating a new GPG key with subkeys](https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/)
 - [GNU Privacy Guard](http://www.beaupeyrat.com/wp-content/uploads/2015/07/gpg.pdf)
 - [Using an offline GnuPG master key](https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html)
+- [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys)
 
 # Other
 
