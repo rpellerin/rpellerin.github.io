@@ -130,6 +130,7 @@ That's it. You should be able to install Linux on the entire disk now.
 - [GNU Privacy Guard](http://www.beaupeyrat.com/wp-content/uploads/2015/07/gpg.pdf)
 - [Using an offline GnuPG master key](https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html)
 - [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys)
+- [Securing Debian Manual](https://www.debian.org/doc/manuals/securing-debian-howto/index.fr.html)
 
 # Other
 
