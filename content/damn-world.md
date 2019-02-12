@@ -73,3 +73,5 @@ Summary: Everything wrong with this world
 <img src="{filename}/images/climate.png" alt="A picture showing how to fight climate change" />
 <figcaption>How to fight climate change.</figcaption>
 </figure>
+
+- [Insects could be extinct within a century, scientists say](https://www.engadget.com/2019/02/11/global-insect-decline-scientific-review/)
