@@ -242,3 +242,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Delete All Your Apps](https://motherboard.vice.com/en_us/article/j5zap3/delete-all-your-apps)
 - [Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret](https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html)
 - [A Camera is Watching You in Your AirBnB: And, you consented to it.](http://jeffreybigham.com/blog/2019/who-is-watching-you-in-your-airbnb.html)
+- [Operational PGP](https://gist.github.com/grugq/03167bed45e774551155)
