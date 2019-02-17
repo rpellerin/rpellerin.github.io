@@ -168,3 +168,4 @@ I decided to gather here all the little things to know in English, which are not
 - [“I work {on/with/in} a team”?](https://ell.stackexchange.com/questions/70562/i-work-on-with-in-a-team)
 - [Do we say "of interest TO you" or "of interest FOR you" ?](https://forum.wordreference.com/threads/do-we-say-of-interest-to-you-or-of-interest-for-you.2797738/)
 - [So, thus, therefore, and hence in English](https://jakubmarian.com/so-thus-therefore-and-hence-in-english/)
+- [“Split in half” vs. “split in two” — which one is correct?](https://english.stackexchange.com/questions/108335/split-in-half-vs-split-in-two-which-one-is-correct)

@@ -131,6 +131,8 @@ That's it. You should be able to install Linux on the entire disk now.
 - [Using an offline GnuPG master key](https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html)
 - [Using OpenPGP subkeys in Debian development](https://wiki.debian.org/Subkeys)
 - [Securing Debian Manual](https://www.debian.org/doc/manuals/securing-debian-howto/index.fr.html)
+- [How To Secure A Linux Server](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)
+- [the-practical-linux-hardening-guide](https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3)
 
 # Other
 
@@ -140,5 +142,5 @@ That's it. You should be able to install Linux on the entire disk now.
 - [System Programming](https://github.com/angrave/SystemProgramming/wiki)
 - [How To Tell If Your Linux Server Has Been Compromised](https://bash-prompt.net/guides/server-hacked/)
 - [SystemD pro level linux des temps modernes Process management, containers (P.A. Grégoire, Q. Adam)](https://www.youtube.com/watch?v=v-jdlc5YdDc)
-- [the-practical-linux-hardening-guide](https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3)
 - [Dotfile madness](https://0x46.net/thoughts/2019/02/01/dotfile-madness/)
+- [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge#cli-tools-toc)
