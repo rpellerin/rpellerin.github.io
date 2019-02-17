@@ -112,3 +112,4 @@ Hope this helps. Cheers!
 - [L’authentification double facteur (2FA), oui mais pas n’importe comment !](https://korben.info/authentification-double-facteur-2fa.html)
 - [My recent journey with 2FA](https://chown.me/blog/my-recent-journey-with-2FA.html)
 - [The Definitive Guide to password-store](https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1)
+- [Using pass in a team](https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592)
