@@ -4,9 +4,9 @@ Category: About me
 Tags: work
 Slug: the-way-i-work
 Authors: Romain Pellerin
-Summary: My daily routine to remain productive and focus
+Summary: My daily routine to focus and remain productive
 
-A few months ago I stumbled upon [this article on productivity](http://blog.samaltman.com/productivity). I found it very inspiring. It somehow convinced to rethink the way I work. Since then, I've been actively working on perfecting my daily workflow to be more productive and also more organized. Reducing my stress level was also one of my goals.
+A few months ago I stumbled upon [this article on productivity](http://blog.samaltman.com/productivity). I found it very inspiring. It somehow convinced me to rethink the way I work. Since then, I've been actively working on perfecting my daily workflow to be more productive and also more organized. Reducing my stress level was also one of my goals.
 
 I think having a clearly defined and established workflow is more important than most people think. I find habits to be comforting. They help me concentrate and focus on what matters.
 
@@ -16,13 +16,29 @@ The advice given in this article doesn't apply to everybody. Being a software en
 
 I think the most important task one has to do daily is defining a list of priorities for the day to come. It is very important to know what to work on and when.
 
-I tried for a long time to keep a TODO list on a piece of paper (or in a booknote). It was working, but not as well as I wished. The main problem was that I needed to be physically present at my desk to access my list or edit it. That's why I eventually switched to a digital TODO list. Many people resort to apps for that, Evernote being one of the most popular I believe.  I however use a simple text file. I find these note taking apps too much distracting, with countless features I would never use. What I like about my text file is the simplicity of it. Plus I can access it at any time, as long as I am carrying my work laptop. Plus I am not tempted to access it outside of office hours.
+I tried for a long time to keep a TODO list on a piece of paper (or in a booknote). It was working, but not as well as I wished. The main problem was that I needed to be physically present at my desk to access my list or edit it. That's why I eventually switched to a digital TODO list. Many people resort to apps for that, Evernote being one of the most popular I believe.  I however use a simple text file. I find these note taking apps too distracting, with countless features I would never use. What I like about my text file is the simplicity of it. Plus I can access it at any time, as long as I am carrying my work laptop. Plus I am not tempted to access it outside of office hours.
 
 Reading and editing my TODO list is something I do many times throughout the day, as I need to re-arrange my priorities and when I get work done. Moreover, at the end of each day, I make sure to prepare my TODO list for the following day.
 
 My TODO list is a simple plain text file yet it has its own sections, separated by empty lines. The topmost lines of the file are the tasks I need to get done by the end of the day, sorted from the most urgent one to the least. Then, the second section contains tasks that must be worked on in the short term, preferably in the month to come. Finally comes the third section which is a backlog of tasks I want to work on some day.
 
 I've been putting all this into practice for a few months now and I must admit it's working well for me. No distractions, simplicity, I can add/edit/remove entries with a few keystrokes, I can also make backups or send it over emails in seconds. In short, I love it. A stress-free TODO list, always up-to-date.
+
+Below is an extract of my list, in its current state:
+
+    :::text
+    - Finish feature 1691
+    - Book plane tickets and hotel for Berlin trip
+
+    - Delete 2 `const workshopVisitMotivesCountScenario = workshopVisitMotivesScenario(motives)` in `onChange`?
+    - Schedule meeting front guild early April
+    - Move Jenkins loc() to Heroku
+
+    - Articles ideas
+      - eslint
+      - code/bundle splitting
+      - download/parse/exec time
+      - debugging with devtools (CSS, ...) in ffox and chrome (breaking point with mouse clicks, ...)
 
 # Bookmarks
 
@@ -36,7 +52,7 @@ Professionally, I use bookmarks for websites I rarely visit, so rarely that neit
 - *1-ON-1*: contains stuff related to my quaterly objectives, the list of engineering roles and associated levels in my company, etc
 - *TO PRESENT*: things I want to present at the next All Hands meetings
 
-I never bookmark website I visit daily, or frequently. Why? Because I can at least remember some part of the URL, or the title, and my browser is smart enough to autocomplete it and suggest it automatically. For websites I visit many times a day, like the Pull Requests page on Github, or my Twitter feed, I create keyboard shortcuts to access them instantly. For instance, Github Pull Requests is `<Super>+G` (G as in Github).
+I never bookmark websites I visit daily, or frequently. Why? Because I can at least remember some part of the URL, or the title, and my browser is smart enough to autocomplete it and suggest it automatically. For websites I visit many times a day, like the Pull Requests page on Github, or my Twitter feed, I create keyboard shortcuts to access them instantly. For instance, Github Pull Requests is `<Super>+G` (G as in Github).
 
 In the past, I used to have bookmarks for every website. It wasn't until recently when I switched to very few bookmarks that I noticed how stressful it was for me to have all these bookmarks being constantly displayed before my eyes.
 
@@ -64,17 +80,17 @@ Nobody would open a mailbox, see what's inside, and leave it there. Therefore, i
 - I process emails one by one:
 
     - If it's an "action required" email and the action takes less than 5 minutes, I do it immediately then delete the email.
-    - If it'a an "action required" email and the action takes more than 5 minutes, I keep the email in my inbox and add a new entry in my TODO list "*reply to email from X*" or "*do what X asked for*". I will then delete the email when the action is done.
+    - If it's an "action required" email and the action takes more than 5 minutes, I keep the email in my inbox and add a new entry in my TODO list such as "*reply to email from X*" or "*do what X asked for*". I will then delete the email when the action is done.
     - If it's a temporal information, I take note of it if needed and delete the email immediately. A temporal information could be a Google Calendar invite, a JIRA edit from my colleagues, an incident reported by New Relic, etc.
     - If it's an important information, I move the email into the appropriate subfolder (they're called labels in Gmail). An important information could be a contract (PDF document), an organizational change, a POST-MORTEM document that I believe will be useful in the future, a train ticket that will eventually be deleted when the trip is done, etc.
 
-As I just said, I use Gmail labels quite a lot, in the sense that many emails end up in labels. However, I only have a handful of labels. Here are a few:
+As I just said, I use Gmail labels quite a lot, in the sense that many emails end up in labels. However, I only have a handful of them. Here are a few:
 
 - Trips: business trips (train tickets, hotels, etc)
 - Front stack: any important email regarding frontend
 - Archives: anything that does not belong to another category
 
-I also rely on Gmail filters extensively. I get a lot of emails I don't need to see at all, that I want deleted automatically. For instance, I often check the notifications on Github, therefore I don't need to also see the emails they send me. Also, our staging environment is deployed with every new commit (every 10 minutes or so), so I don't need to know every time a new commit is deployed.
+I also rely on Gmail filters extensively. I get a lot of emails I don't need to see at all, that I want deleted automatically. For instance, I often check the notifications on Github, therefore I don't need to also see the emails they send me. Also, our staging environment is deployed with every new commit (every 10 minutes or so), therefore I don't need to know every time a new commit is deployed.
 
 Finally, I must confess I use Thundebird, and not the Gmail website. And I'm proud of it. The reasons I use Thunderbird are listed below:
 
