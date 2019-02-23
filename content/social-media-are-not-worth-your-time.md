@@ -39,6 +39,7 @@ Summary: What I think about most social media
 - [Google will stop peddling a data collector through Apple’s back door](https://techcrunch.com/2019/01/30/googles-also-peddling-a-data-collector-through-apples-back-door/)
 - [Facebook pays teens to install VPN that spies on them](https://techcrunch.com/2019/01/29/facebook-project-atlas/)
 - [Facebook uses its apps to track users it thinks could threaten employees and offices](https://www.cnbc.com/2019/02/14/facebooks-security-team-tracks-posts-location-for-bolo-threat-list.html)
+- [You Give Apps Sensitive Personal Information. Then They Tell Facebook.](https://www.wsj.com/articles/you-give-apps-sensitive-personal-information-then-they-tell-facebook-11550851636)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
