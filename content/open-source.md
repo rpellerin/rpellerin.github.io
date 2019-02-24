@@ -46,3 +46,7 @@ Here are a bunch of links for open source project maintainers/creators:
 # Getting paid
 
 - [CodeFund](https://codefund.app/)
+
+# Free software
+
+- [Internet ou la révolution du partage](https://video.tedomum.net/videos/watch/22382fb9-ad79-4ac1-8df3-c7c027749425)

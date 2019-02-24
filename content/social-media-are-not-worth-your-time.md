@@ -40,6 +40,7 @@ Summary: What I think about most social media
 - [Facebook pays teens to install VPN that spies on them](https://techcrunch.com/2019/01/29/facebook-project-atlas/)
 - [Facebook uses its apps to track users it thinks could threaten employees and offices](https://www.cnbc.com/2019/02/14/facebooks-security-team-tracks-posts-location-for-bolo-threat-list.html)
 - [You Give Apps Sensitive Personal Information. Then They Tell Facebook.](https://www.wsj.com/articles/you-give-apps-sensitive-personal-information-then-they-tell-facebook-11550851636)
+- [Facebook planned to spy on Android phone users, internal emails reveal](https://www.computerweekly.com/news/252458208/Facebook-planned-to-spy-on-Android-phone-users-internal-emails-reveal)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

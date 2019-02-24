@@ -163,3 +163,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Google Search Operators: The Complete List (42 Advanced Operators)](https://ahrefs.com/blog/google-advanced-search-operators/)
 - [The Importance of One-on-Ones](https://css-tricks.com/the-importance-of-one-on-ones/)
 - [It’s probably never going to work in German](https://increment.com/internationalization/its-probably-never-going-to-work-in-german/)
+- [How to Make Other Developers Hate to Work with You](https://anaxi.com/blog/2019/02/20/how-to-make-other-developers-hate-to-work-with-you/)
