@@ -10,3 +10,4 @@ I might talk about it some day... meanwhile here are a few links.
 
 - [The Open-Office Trap](https://www.newyorker.com/business/currency/the-open-office-trap)
 - [Why “deep work” is becoming a competitive advantage for companies](https://blog.doist.com/focused-teamwork-8ed325d34e62)
+- [Journée de travail, ou journée au travail ?](http://dev.howtommy.net/index.php?d=2019/02/25/09/53/57-journee-de-travail-ou-journee-au-travail)
