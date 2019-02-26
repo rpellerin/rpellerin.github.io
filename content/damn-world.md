@@ -75,3 +75,4 @@ Summary: Everything wrong with this world
 </figure>
 
 - [Insects could be extinct within a century, scientists say](https://www.engadget.com/2019/02/11/global-insect-decline-scientific-review/)
+- [L'air du métro ? Pollué, lui aussi...](https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html)
