@@ -207,3 +207,4 @@ On Linux, if you have `imagemagick` installed, do:
 - [What Web Can Do Today](https://whatwebcando.today/)
 - [History of the browser user-agent string](https://webaim.org/blog/user-agent-string-history/)
 - [Roadmap to becoming a web developer in 2019](https://github.com/kamranahmedse/developer-roadmap)
+- [Frontend Bootcamp / Days in the Web](https://github.com/Microsoft/frontend-bootcamp)
