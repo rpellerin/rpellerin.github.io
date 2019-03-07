@@ -16,9 +16,9 @@ Consequently, I started googling about evergreen houseplants that clean the air.
 - **Dieffenbachia**
 - **[Chlorophytum](http://www.plantes-depolluantes.com/_plantes/chlorophytum.php)** (comosum? no sure about its species)
 
-Some time later I'll post here how to take care of these houseplants.
-
 # Aglaonema
+
+<figure class="center"><img src="{filename}/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /><figcaption>Aglaonema Silver Bay, the big one on the left.</figcaption></figure>
 
 ## Temperature
 
@@ -60,6 +60,8 @@ Repotting is from March to May, every 2 to 3 years. Every other year, replace th
 
 # Spathiphyllum
 
+<figure class="center"><img src="{filename}/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /><figcaption>From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium</figcaption></figure>
+
 ## Temperature
 
 Between 15°C and 25°C. Below 10 could damage it seriously. Best between 20 and 22.
@@ -83,6 +85,8 @@ Avoid dry air as well as fresh air flows. Keep it away from heaters.
 To foster blossoming, deprive the plant of water for a few days.
 
 # Chlorophytum
+
+<figure class="center"><img src="{filename}/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /><figcaption>Chlorophytum</figcaption></figure>
 
 ## Temperature
 
