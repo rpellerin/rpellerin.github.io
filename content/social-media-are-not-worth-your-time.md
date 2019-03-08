@@ -42,6 +42,7 @@ Summary: What I think about most social media
 - [You Give Apps Sensitive Personal Information. Then They Tell Facebook.](https://www.wsj.com/articles/you-give-apps-sensitive-personal-information-then-they-tell-facebook-11550851636)
 - [Facebook planned to spy on Android phone users, internal emails reveal](https://www.computerweekly.com/news/252458208/Facebook-planned-to-spy-on-Android-phone-users-internal-emails-reveal)
 - [Why Facebook Still Seems to Spy on You](https://www.wsj.com/articles/facebook-ads-will-follow-you-even-when-your-privacy-settings-are-dialed-up-11551362400)
+- [Un lycéen s'administre des vaccins contre l'avis de sa mère qui s'appuyait sur une source : Facebook](https://www.developpez.com/actu/250098/Un-lyceen-s-administre-des-vaccins-contre-l-avis-de-sa-mere-qui-s-appuyait-sur-une-source-Facebook-un-cas-qui-n-est-probablement-pas-isole/)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
