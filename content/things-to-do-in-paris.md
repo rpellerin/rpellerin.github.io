@@ -5,6 +5,7 @@ Tags: paris
 Slug: things-to-do-in-paris
 Authors: Romain Pellerin
 Summary: The list of things to do in Paris I usually share with friends
+Image: paris.jpg
 
 - Le Louvres
 - Tour Eiffel - go to the third floor
