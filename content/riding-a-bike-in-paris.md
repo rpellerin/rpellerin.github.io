@@ -23,7 +23,7 @@ Anyway, the last time I owned a bike was in 2016 when I was living in South Kore
 - [Anti-pollution mask](https://www.wair.fr/en/)
 - Suitable clothes to reduce perspiration
 
-A very important thing to do is to get one's bike engraved as soon as possible. In case of theft, it increases the likelihood of finding it back. In Paris, [BYCODE](https://www.bicycode.org/) takes care of it.
+A very important thing to do is to get one's bike engraved as soon as possible. In case of theft, it increases the likelihood of finding it back. In Paris, [BICYCODE](https://www.bicycode.org/) takes care of it.
 <br />
 
 That's it for now.
