@@ -1,8 +1,8 @@
-Title: Pollution
+Title: Pollution Urbaine
 Date: 2019-03-12 23:17
 Category: What's bad about
 Tags: air, pollution, paris
-Slug: pollution
+Slug: pollution-urbaine
 Authors: Romain Pellerin
 Summary: Divers éléments de vérité sur l'état de l'air que nous respirons, notamment à Paris
 
