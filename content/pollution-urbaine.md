@@ -6,11 +6,21 @@ Slug: pollution-urbaine
 Authors: Romain Pellerin
 Summary: Divers éléments de vérité sur l'état de l'air que nous respirons, notamment à Paris
 
+Dans cet article, j'essaie de démêler le vrai du faux concernant la pollution urbaine et comment les différents moyens de transport à notre disposition sont affectés.
+
 # Les polluants
+
+Commençons tout d'abord par savoir de quoi l'on parle : les polluants. Quels sont les principaux polluants qui nous affectent chaque jour en ville et surtout quels sont leurs effets sur notre santé ?
+
+[Airparif](https://www.airparif.asso.fr/), qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans [un PDF extrêment bien fait ici](https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf). Voici un aperçu de ce PDF :
+
+<figure class="center">
+    <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{filename}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
+    <figcaption>Principaux polluants répertorieś par Airparis.</figcaption>
+</figure>
 
 - [https://www.consoglobe.com/etudes-particules-cerveau-cg](https://www.consoglobe.com/etudes-particules-cerveau-cg)
 - [http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair](http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair)
-- [http://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf](http://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf)
 
 
 # Ce que dit la loi
