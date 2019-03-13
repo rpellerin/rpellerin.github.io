@@ -165,3 +165,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [It’s probably never going to work in German](https://increment.com/internationalization/its-probably-never-going-to-work-in-german/)
 - [How to Make Other Developers Hate to Work with You](https://anaxi.com/blog/2019/02/20/how-to-make-other-developers-hate-to-work-with-you/)
 - [Famous laws of Software development](https://www.timsommer.be/famous-laws-of-software-development/)
+- [Carbon: Create and share beautiful images of your source code](https://carbon.now.sh)

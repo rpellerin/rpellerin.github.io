@@ -144,3 +144,4 @@ That's it. You should be able to install Linux on the entire disk now.
 - [SystemD pro level linux des temps modernes Process management, containers (P.A. Grégoire, Q. Adam)](https://www.youtube.com/watch?v=v-jdlc5YdDc)
 - [Dotfile madness](https://0x46.net/thoughts/2019/02/01/dotfile-madness/)
 - [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge#cli-tools-toc)
+- [asciinema: Record and share your terminal sessions, the right way](https://asciinema.org/)
