@@ -74,3 +74,4 @@ I know these pieces of advice can sometimes be hard to follow, I also made and s
 - [How to write a great talk proposal for a tech conference](http://2014.cssconf.eu/news/how-to-write-a-great-talk-proposal-for-a-tech)
 - [10 ways for a conference to upset their speakers](https://www.troyhunt.com/10-ways-for-a-conference-to-upset-their-speakers/)
 - [GEEK'S GUIDE TO MAKING DECENT SLIDES](http://frantic.im/keynote)
+- [Tips For First Time Speakers](https://dev.to/emmawedekind/tips-for-first-time-speakers-3fcb)
