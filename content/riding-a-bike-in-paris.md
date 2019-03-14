@@ -5,7 +5,7 @@ Tags: bike, paris
 Slug: riding-a-bike-in-paris
 Authors: Romain Pellerin
 Summary: I just bought a bike. Here's to a whole new life!
-Image: bike-paris.jpg
+Image: bike-paris1.jpg
 
 *This is a draft article that I will update as I become a more experienced urban cyclist.*
 
@@ -27,6 +27,8 @@ A very important thing to do is to get one's bike engraved as soon as possible. 
 <br />
 
 That's it for now.
+
+![My bike]({filename}/images/bike-paris2.jpg)
 
 # Useful links for Parisian cyclists
 
