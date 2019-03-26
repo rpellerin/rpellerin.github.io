@@ -75,3 +75,7 @@ Eventually, the last day we left Tokyo from Narita airport. The cheapest and mos
 - Hiroshima
 - Get a better view of the Mount Fuji (go closer?)
 - Witness sumo wrestling
+
+# Interesting online resources
+
+- [Why do Japanese people wear surgical masks? It’s not always for health reasons](https://japantoday.com/category/features/lifestyle/why-do-japanese-people-wear-surgical-masks-its-not-always-for-health-reasons)
