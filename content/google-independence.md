@@ -20,3 +20,4 @@ Summary: Resources to be Google-independent
 - [/e/ - your data is YOUR data](https://e.foundation/)
 - [peertube.social](https://peertube.social/)
 - [Bye, Bye, Google](https://defn.io/2019/02/04/bye-bye-google/)
+- [Allergie au Google Home](https://grisebouille.net/allergie-au-google-home/)
