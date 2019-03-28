@@ -166,3 +166,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [How to Make Other Developers Hate to Work with You](https://anaxi.com/blog/2019/02/20/how-to-make-other-developers-hate-to-work-with-you/)
 - [Famous laws of Software development](https://www.timsommer.be/famous-laws-of-software-development/)
 - [Carbon: Create and share beautiful images of your source code](https://carbon.now.sh)
+- [Storing UTC is not a silver bullet](https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/)
