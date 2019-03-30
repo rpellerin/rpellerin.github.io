@@ -14,7 +14,7 @@ Commençons tout d'abord par savoir de quoi l'on parle : les polluants. Quels so
 
 [Distinguons aussi les polluants primaires, émis directement par une source donnée, des polluants secondaires, résultant de l'interaction des polluants primaires dans l'atmosphère.](https://www.greenfacts.org/fr/glossaire/pqrs/polluants-primaires-et-secondaires.htm)
 
-[Airparif](https://www.airparif.asso.fr/), qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans [un PDF extrêment bien fait ici](https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf). Voici un aperçu de ce PDF :
+[Airparif](https://www.airparif.asso.fr/), qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans [un PDF plutôt bien fait ici](https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf). Voici un aperçu de ce PDF :
 
 <figure class="center">
     <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{filename}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
@@ -30,7 +30,7 @@ Citons en quelques un, majoritairement trouvés en ville :
       <figcaption>Comparaison avec un cheveu.</figcaption>
     </figure>
 
-    Les PM2.5 et 1 sont émises principalement par le chauffage et le transport routier (essentiellement le disel). Elles sont associées à une hausse de la mortalité et sont de surcroît cancérigènes. *[Elles sont considérées comme le «polluant atmosphérique le plus nocif pour la santé humaine en Europe», par l'Agence européenne de l'environnement (AEE) qui a récemment indiqué que 90% des urbains y étaient exposés au-delà des seuils recommandés par l'Organisation mondiale de la Santé (OMS).](http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair)*
+    Les PM sont émises principalement par les combutions industrielles et domestiques (chauffage par exemple) et le transport routier ([essentiellement le disel mais de plus en plus l'essence](https://theconversation.com/pollution-de-lair-diesel-essence-ou-electrique-tous-les-vehicules-emettent-des-particules-fines-95336), surtout ceux à [injection directe](http://www.lefigaro.fr/vox/politique/2018/12/07/31001-20181207ARTFIG00299--un-vehicule-essence-emet-autant-de-particules-fines-que-dix-vilains-diesel.php)). Elles sont associées à une hausse de la mortalité et sont de surcroît cancérigènes. *[Elles sont considérées comme le «polluant atmosphérique le plus nocif pour la santé humaine en Europe», par l'Agence européenne de l'environnement (AEE) qui a récemment indiqué que 90% des urbains y étaient exposés au-delà des seuils recommandés par l'Organisation mondiale de la Santé (OMS).](http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair)*
 
 2. **Les oxydes d'azote : le monoxyde d'azote NO (polluant primaire) et dioxyde d'azote NO2 (polluant secondaire)**, eux aussi émis par les combustions, dont le transport routier. Le NO est relativement peu dangereux. Le N02 est irritant et aggrave les crises d'asthmes.
 
@@ -46,7 +46,7 @@ Par ailleurs, [la pollution urbaine serait liée à une forte détérioration de
 
 # Ce que dit la loi
 
-[En mars 2019, la législation européenne recommande de ne pas dépasser les niveaux suivants](https://airparif.asso.fr/reglementation/normes-europeennes) :
+[À la date de rédaction de cet article (mars 2019), la législation européenne recommande de ne pas dépasser les niveaux suivants](https://airparif.asso.fr/reglementation/normes-europeennes) :
 
 <table width="100%" cellspacing="0" cellpadding="0" border="1">
 <tbody><tr>
@@ -89,6 +89,14 @@ Par ailleurs, [la pollution urbaine serait liée à une forte détérioration de
 <td></td>
 <td></td>
 </tr>
+<!-- PM25-->
+<tr class="norme-pm10">
+<th>Particules fines de diamètre inférieur ou égal à 2,5 micromètres<br>(PM2,5)</th>
+<td width="20%"><strong>Pour la protection de la santé :</strong><br>En moyenne annuelle :<br> 
+<u>Phase 1</u> : 25&nbsp;µg/m³ depuis 01/01/15.<br><u>Phase 2</u> : 20&nbsp;µg/m³ en 2020.</td>
+<td></td>
+<td></td>
+</tr>
 <!-- CO-->
 <tr>
 <th>Monoxyde<br>de carbone<br>(CO)</th>
@@ -104,18 +112,33 @@ Par ailleurs, [la pollution urbaine serait liée à une forte détérioration de
 <td></td>
 <td></td>
 </tr>
+<tr class="norme-o3">
+<th>Ozone<br>(O3)</th>
+<td width="20%"><strong>Pour la protection de la santé :&nbsp;</strong><br>En moyenne sur 8&nbsp;heures : 120&nbsp;µg/m³, à ne pas dépasser plus de 25&nbsp;jours par an (moyenne calculée sur 3&nbsp;ans).<br><br><strong>Pour la protection de la végétation : </strong>AOT 40 de mai à juillet de 8h à 20h : 18&nbsp;000&nbsp;µg/m³.h (moyenne calculée sur 5&nbsp;ans).</td>
+<td width="20%"><strong>Seuil d'information en moyenne horaire :</strong> 180&nbsp;µg/m³.<br><br><strong>Seuil d'alerte : </strong>240&nbsp;µg/m³ en moyenne horaire.<br><br><strong>Actions à court terme obligatoires&nbsp;: </strong>240&nbsp;µg/m³ pendant 3&nbsp;heures consécutives.</td>
+<td></td>
+</tr>
 </tbody></table>
 
 <br />
 
-[La France a adopté ces seuils européens pour sa propre réglementation](https://airparif.asso.fr/reglementation/normes-francaises). Le seuil d'information pour les particules fines est fixé à 50 µg/m³ en moyenne journalière. Cela signifie qu'à partir de 50 µg/m³, il y a un risque avéré pour la santé humaine. À partir de 80 µg/m³, le seuil d'alerte est franchi. Il s'agit là d'un seuil ayant de fortes conséquences sur la santé et/ou l'environnement.
+[La France a adopté ces seuils européens pour sa propre réglementation](https://airparif.asso.fr/reglementation/normes-francaises). Le seuil d'information pour les particules fines est fixé à 50 µg/m³ en moyenne journalière. Cela signifie qu'à partir de 50 µg/m³, il y a un risque avéré pour la santé humaine. À partir de 80 µg/m³, le seuil d'alerte français est franchi. Il s'agit là d'un seuil ayant de fortes conséquences sur la santé et/ou l'environnement.
 
 La France et l'Europe fixent la valeur limite concernant les PM2.5 et inférieur à 25 µg/m³ en moyenne annuelle. Cette valeur limite vise à prévenir ou réduire les effets nocifs sur la santé humaine.
 
-- [https://apps.who.int/iris/bitstream/handle/10665/69477/WHO_SDE_PHE_OEH_06.02_eng.pdf;jsessionid=4901648722D8771E0F501AE6B9A32412?sequence=1](https://apps.who.int/iris/bitstream/handle/10665/69477/WHO_SDE_PHE_OEH_06.02_eng.pdf;jsessionid=4901648722D8771E0F501AE6B9A32412?sequence=1)
-- [http://airparif.asso.fr/reglementation/recommandations-oms](http://airparif.asso.fr/reglementation/recommandations-oms)
-- [https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html](https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html)
+Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas dépasser, avec toutefois des seuils plus strictes](http://airparif.asso.fr/reglementation/recommandations-oms) :
 
+- PM10 : 50 µg/m³ à ne pas dépasser plus de 3 jours par an, 20 à ne pas dépasser en moyenne annuelle
+- PM2.5 : 25 µg/m³ à ne pas dépasser plus de 3 jours par an, 10 à ne pas dépasser en moyenne annuelle
+- Ozone (O3) : 100 µg/m³ à ne pas dépasser sur une durée de 8 heures
+
+[Plus d'informations sur les recommendations de l'OMS ici](https://apps.who.int/iris/bitstream/handle/10665/69477/WHO_SDE_PHE_OEH_06.02_eng.pdf;jsessionid=4901648722D8771E0F501AE6B9A32412?sequence=1).
+
+# Cartes de l'état de l'air
+
+- [À Paris : Airparif](https://www.airparif.asso.fr/)
+- [En France : Prev'air](http://www2.prevair.org/)
+- [Mondial](https://aqicn.org)
 
 # Comparaison avec les autres moyens de transport
 
@@ -123,7 +146,7 @@ La France et l'Europe fixent la valeur limite concernant les PM2.5 et inférieur
 - [http://www.airparif.asso.fr/_pdf/publications/NUMERO32.pdf](http://www.airparif.asso.fr/_pdf/publications/NUMERO32.pdf)
 - [https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html](https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html)
 - [https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html)
-
+- [https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html](https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html)
 
 # Pollution du métro
 
