@@ -890,8 +890,8 @@ Keep the rest as-is. Now create `/etc/openvpn/notifyconnect.sh`:
     #!/bin/bash
     echo "On `date`" | mail -s "OpenVPN client connection" root@localhost 2>/dev/null
     sleep 1
-    runq
-    exim -qff
+    # We can't run `runq`  or `exim -qff` since this script is called by user `nobody`.
+    # Also make sure this script returns 0 otherwise the VPN connection will fail.
 
 Then:
 
