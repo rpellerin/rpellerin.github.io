@@ -1,5 +1,6 @@
 Title: Pollution Urbaine
 Date: 2019-03-12 23:17
+Modified: 2019-03-31 19:03
 Category: What's bad about
 Tags: air, pollution, paris
 Slug: pollution-urbaine
@@ -153,7 +154,11 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 
 [Cet article de Terraeco](https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html), basé sur l'étude à Toulouse, offre la même conclusion que l'étude d'Airparif.
 
-[Cet article du Monde](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html) résume les 2 études ci-dessus.
+[Cet article du Monde](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html) et [celui-ci de Libération](https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312) résument les 2 études ci-dessus. Libération insiste sur les effets bénéfiques d'une activtié sportive, bien supérieurs aux effets négatifs de la pollution, tout comme le fait [l'Express dans cet autre article](https://www.lexpress.fr/actualite/societe/environnement/faire-du-velo-en-periode-de-pollution-il-faut-moderer-son-allure_1858072.html). Sur le même sujet "bénéfices vs risques", on peut citer ces trois autres pages :
+
+- [http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/](http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/): "*À Paris, il vous faudra 8 heures de vélo dans la journée pour y* [rouler assez longtemps à vélo avant que les effets bénéfiques soient « compensés » par la pollution] *parvenir dans une journée normale, mais seulement 45 minutes les jours de pic de pollution à 75 μg/m3 de PM 2,5.*"
+- [http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/](http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/)
+- [https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf](https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf)
 
 Enfin, [cet article du monde qui décrit les principaux polluants et leur effets](https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html) conseille à nouveau de privilégier le vélo ou la marche à pied aux autres moyens de transport.
 
@@ -204,10 +209,6 @@ Concernant les masques réutilisables, en France, il y en a trois principaux :
 
 En conclusion, je dirais qu'il reste difficile d'évaluer la réelle efficacité de ces masques. Une chose est sûr : tant qu'ils ne gênent pas la respiration et ne forcent pas à hyperventiler, il n'y a aucune raison de ne pas les porter.
 
-# Divers
+<br />
 
-- [http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/](http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/)
-- [http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/](http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/)
-- [https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf](https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf)
-- [https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312](https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312)
-- [https://www.lexpress.fr/actualite/societe/environnement/faire-du-velo-en-periode-de-pollution-il-faut-moderer-son-allure_1858072.html](https://www.lexpress.fr/actualite/societe/environnement/faire-du-velo-en-periode-de-pollution-il-faut-moderer-son-allure_1858072.html)
+Voilà qui clôt cet article sur la pollution urbaine.
