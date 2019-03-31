@@ -139,7 +139,7 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 
 - [À Paris : Airparif](https://www.airparif.asso.fr/)
 - [En France : Prev'air](http://www2.prevair.org/)
-- [Mondial](https://aqicn.org)
+- [Mondial : AQICN](https://aqicn.org)
 
 # Comparaison avec les autres moyens de transport
 
