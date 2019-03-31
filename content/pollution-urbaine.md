@@ -142,30 +142,71 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 
 # Comparaison avec les autres moyens de transport
 
-- [https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf](https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf)
-- [http://www.airparif.asso.fr/_pdf/publications/NUMERO32.pdf](http://www.airparif.asso.fr/_pdf/publications/NUMERO32.pdf)
-- [https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html](https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html)
-- [https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html)
-- [https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html](https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html)
+[Une enquête menée à Toulouse entre 2008 et 2009](https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf) affirme que la voiture est de loin le pire moyen de transport puisque l'habitacle crée un espace fermé où l'air est très peu renouvelé, air qui est d'ailleur très pollué puisque venant directement de l'extérieur, où la pollution est la plus forte, sur la chaussée. En deuxième vient le bus pour les mêmes raisons. Ensuite, viennent en troisième et quatrième positions le vélo et le bus, respectivement, en considérant 5 polluants. **En revanche, l'étude souligne que les mesures du nombre de particules fines (PM10) montrent que l'air du métro est bien plus pollué que celui respiré par un cycliste : au moins 2 à 3 fois plus de particules fines dans le métro.** [Un autre document PDF](http://www.oramip.org/pdf/expo/Plaquette-Oramip-transport.pdf) donne le détail des mesures effectuées.
 
-# Pollution du métro
+<figure class="center">
+    <img src="{filename}/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /></a>
+    <figcaption>Résultats de l'étude</figcaption>
+</figure>
+
+[Une étude similaire d'Airparif en 2008](http://www.airparif.asso.fr/_pdf/publications/NUMERO32.pdf) confirme les résultats de l'étude ci-dessus. Cette étude se focalisait sur les cyclistes. Ceux-ci sont le plus exposés lorsqu'ils circulent dans le flux de circulation, parmi les voitures. Dès lors que le cycliste circule sur une piste cyclable, il est bien moins exposé que l'automobiliste. Le cycliste est aussi soumis à des "bouffées" de pollutions (des pics soudains) mais qui ne durent pas, selon les véhicules suivis souvent. À l'inverse, les pics sont moins soudains pour les automobilistes mais ont tendance à durer, du fait du faible renouvellement de l'air dans l'habitacle. Les pistes cyclables sont à privilégier aux voies de bus, elles-mêmes à privilégier à la route partagée avec tous les véhicules. L'étude finit par un conseil général aux cyclistes : il faut éviter l'hyperventilation (pour ne pas inhaler trop de pollants) et se maintenir le plus éloigné possible de la circulation. Les bénéfices de l'activité sportive que représente le vélo restent bien supérieurs aux effets néfastes de la pollution Il est aussi conseillé d'inspirer par le nez (qui fait office de filtre) et d'expirer par la bouche.
+
+[Cet article de Terraeco](https://www.terraeco.net/Velib-gratuits-a-Paris-pollution,54222.html), basé sur l'étude à Toulouse, offre la même conclusion que l'étude d'Airparif.
+
+[Cet article du Monde](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html) résume les 2 études ci-dessus.
+
+Enfin, [cet article du monde qui décrit les principaux polluants et leur effets](https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html) conseille à nouveau de privilégier le vélo ou la marche à pied aux autres moyens de transport.
+
+## Pollution du métro
+
+En quelques mots, l'air du métro est différent pollué de l'air extérieur mais contient **bien plus** de particules fines (PM10), dûes aux frottement des rames sur les rails et au système de freinage. Or, ces particules fines constituent probablement l'un des polluants les plus néfastes pour notre santé.
+
+[Cet article de Terraeco](https://www.terraeco.net/Faut-il-arreter-de-respirer-quand,51829.html), qui se base à nouveau sur l'étude de Toulouse, nous dit :
+
+*Le meilleur, c’est le vélo. C’est en selle que vous êtes le moins exposé aux particules fines. Et l’exposition au dioxyde d’azote – qui est facteur de troubles respiratoires – est anecdotique. « L’exposition à la pollution peut être ponctuellement importante mais sans phénomène d’accumulation », note l’Oramip. En clair, avoir le nez dans un tuyau d’échappement au feu rouge n’est pas bon mais reste peu dangereux puisque l’exposition reste brève, ouf.*
+
+*En métro, vous êtes fortement exposé aux particules fines, on l’a vu plus haut. Mais vous êtes plutôt épargné pour le dioxyde d’azote (c’est à peine moins bien qu’à vélo). De même pour les – très toxiques – benzène et monoxyde de carbone.*
+
+[La RATP met à disposition les derniers relevés de pollution dans certaines stations de métro sur ce site](https://data.ratp.fr/explore/?sort=modified&refine.keyword=Qualit%C3%A9+de+l%27air) et [ce site](http://www.iseo.fr/ratp/RATP.php).
+
+Voici pour conclure deux articles complémentaires sur le sujet de la pollution du métro :
 
 - [http://www.airparif.asso.fr/pollution/air-interieur-metro](http://www.airparif.asso.fr/pollution/air-interieur-metro)
 - [https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html](https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html)
-- [https://data.ratp.fr/explore/?sort=modified&refine.keyword=Qualit%C3%A9+de+l%27air](https://data.ratp.fr/explore/?sort=modified&refine.keyword=Qualit%C3%A9+de+l%27air)
-- [http://www.iseo.fr/ratp/RATP.php](http://www.iseo.fr/ratp/RATP.php)
-
 
 # Masques anti-pollution : mythes et vérités
 
-- [http://masquepollution.com/masque-contre-les-particules-fines/](http://masquepollution.com/masque-contre-les-particules-fines/)
-- [http://masquepollution.com/meilleur-masque-anti-pollution-comparatif/](http://masquepollution.com/meilleur-masque-anti-pollution-comparatif/)
-- [https://www.lecyclo.com/outils/se-proteger-de-la-pollution-a-velo](https://www.lecyclo.com/outils/se-proteger-de-la-pollution-a-velo)
+Les masques ne sont pas magiques. Ils visent à réduire l'exposition à la pollution, ils ne peuvent pas la supprimer à 100%. Il faut aussi prendre en compte que les taux de filtrations promis sont bien souvent mesurés en laboratoire, avec une étanchéité des masques qui est optimale. Dans des conditions réelles, l'étanchéite est bien souvent plus faible. La barbe par exemple contribue grandement aux fuites d'étanchéité.
+
+Par ailleurs, bon nombre de masques sont destinés aux deux roues motorisées. La ventilation peut donc devenir difficile avec l'effort à vélo.
+
+Enfin, tous les masques ne filtrent pas la même chose. Certaines filtrent les particules fines, d'autres les gaz.
+
+## Masques jetables
+
+Concernant les masques non-réutilisables, [ce site](http://masquepollution.com/masque-contre-les-particules-fines/) semble affirmer qu'ils offrent une meilleure protection contre les particules fines, en citant notamment le [masque 3M 9332](https://www.amazon.fr/3M-9332-respiratoire-filtrant-particules/dp/B00EJIMZZ2?tag=masquepolluti-21) comme étant le meilleur. Le site dit aussi "*les certifications de type FFP (Europe), et KN (Chine) ou N (USA) permettent d’éliminer les plus mauvais masques.*". En effet, en Europe la certification FFP3 (la meilleure) est à favoriser.
+
+Pour ce qui est des masques jetables contre les gaz, [cette page](http://masquepollution.com/masque-anti-pollution/) nous dit :
+
+- *ozone (O3) et au dioxyde de soufre (SO2): il vous faut un masque ayant une couche de charbon actif. Les odeurs et les composés organiques volatils (COV) seront aussi captées par le filtre.*
+- *oxydes d’azote (NOx): ces gaz peuvent être capté par des filtres spécifiques, mais généralement ces filtres n’existent pas en combinaison avec les filtres à particule pour l’ozone et le dioxyde de soufre.*
+- *enfin, le monoxyde de carbone (CO) ne peut pas être filtré par des protections respiratoires conventionnelles.*
+
+## Masques réutilisables
+
+Concernant les masques réutilisables, en France, il y en a trois principaux :
+
+- [Wair](https://www.wair.fr/), celui que j'ai personnellement choisi. Il est nécessaire de changer le filtre tous les mois pour une filtration optimale. [Ils promettent aussi une filtration contre les gaz](https://www.wair.fr/fr/content/16-filtration), en plus des particules fines.
+- [R-PUR](https://www.r-pur.com/)
+- [Mask Generation](https://maskgeneration.com/)
+
+[Cet article](http://masquepollution.com/meilleur-masque-anti-pollution-comparatif/) donne d'autres références de masques, non français, notamment le [Vogmask N99 CV](https://www.amazon.fr/gp/product/B007Q35I1U/ref=as_li_tl?ie=UTF8&camp=2522&creative=9474&creativeASIN=B007Q35I1U&link_code=as3&tag=masquepolluti-21). [Cet autre site](https://www.lecyclo.com/outils/se-proteger-de-la-pollution-a-velo) donne d'autres références également.
+
+En conclusion, je dirais qu'il reste difficile d'évaluer la réelle efficacité de ces masques. Une chose est sûr : tant qu'ils ne gênent pas la respiration et ne forcent pas à hyperventiler, il n'y a aucune raison de ne pas les porter.
 
 # Divers
 
 - [http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/](http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/)
-- [http://airparif.asso.fr/](http://airparif.asso.fr/)
 - [http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/](http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/)
 - [https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf](https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf)
 - [https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312](https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312)
