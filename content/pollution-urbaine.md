@@ -185,7 +185,7 @@ Les masques ne sont pas magiques. Ils visent à réduire l'exposition à la poll
 
 Par ailleurs, bon nombre de masques sont destinés aux deux roues motorisées. La ventilation peut donc devenir difficile avec l'effort à vélo.
 
-Enfin, tous les masques ne filtrent pas la même chose. Certaines filtrent les particules fines, d'autres les gaz.
+Enfin, tous les masques ne filtrent pas la même chose. Certaines filtrent les particules fines, d'autres les gaz, d'autres encore filtrent les deux à la fois.
 
 ## Masques jetables
 
