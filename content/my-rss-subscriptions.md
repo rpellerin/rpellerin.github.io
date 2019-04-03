@@ -58,6 +58,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Infrequently Noted](https://infrequently.org/feed/)
 - [Les sorties de la semaine](http://rss.allocine.fr/ac/cine/cettesemaine)
 - [Je suis un dev](http://www.jesuisundev.fr/feed/)
+- [Overreacted](https://overreacted.io/rss.xml)
 
 # Security
 
