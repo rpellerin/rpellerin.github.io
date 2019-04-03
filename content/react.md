@@ -78,13 +78,17 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [React Cheat Sheet](http://reactcheatsheet.com/)
 - [Inspect, Modify, and Debug React and Redux in Firefox with Add-ons](https://hacks.mozilla.org/2017/07/debug-react-redux-firefox-add-ons/)
 - [7 architectural attributes of a reliable React component](https://dmitripavlutin.com/7-architectural-attributes-of-a-reliable-react-component/)
-- [Improving a React app performance](https://www.youtube.com/watch?v=6WvSXoYrM5o)
 - [React 🎄](https://react.holiday/)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 - [Redux DevTools](https://addons.mozilla.org/en-US/firefox/addon/remotedev/)
-- [react-perf-devtool](https://github.com/nitin42/react-perf-devtool)
 - [Best practices with React and Redux web application development](https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/)
 - [Testing Strategies for React and Redux](https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/)
+
+## Performance
+
+- [Progressive React](https://houssein.me/progressive-react)
+- [Improving a React app performance](https://www.youtube.com/watch?v=6WvSXoYrM5o)
+- [react-perf-devtool](https://github.com/nitin42/react-perf-devtool)
 
 ## Functional components
 
