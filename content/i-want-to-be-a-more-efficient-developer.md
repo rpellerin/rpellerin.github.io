@@ -167,3 +167,5 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Famous laws of Software development](https://www.timsommer.be/famous-laws-of-software-development/)
 - [Carbon: Create and share beautiful images of your source code](https://carbon.now.sh)
 - [Storing UTC is not a silver bullet](https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/)
+- [Éteignez vos appareils](https://lehollandaisvolant.net/?d=2019/04/02/12/19/05-teignez-vos-appareils)
+- [Awesome Uses](https://github.com/wesbos/awesome-uses)
