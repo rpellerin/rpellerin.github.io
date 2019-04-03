@@ -78,3 +78,4 @@ Summary: Everything wrong with this world
 - [Insects could be extinct within a century, scientists say](https://www.engadget.com/2019/02/11/global-insect-decline-scientific-review/)
 - [L'air du métro ? Pollué, lui aussi...](https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html)
 - [Est-ce que le plastique se recycle vraiment ?](https://www.franceinter.fr/environnement/est-ce-que-le-plastique-se-recycle-vraiment)
+- [La fin du monde justifie-t-elle les moyens ?](https://www.liberation.fr/planete/2019/04/02/la-fin-du-monde-justifie-t-elle-les-moyens_1719002)
