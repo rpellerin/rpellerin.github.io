@@ -169,3 +169,4 @@ I decided to gather here all the little things to know in English, which are not
 - [Do we say "of interest TO you" or "of interest FOR you" ?](https://forum.wordreference.com/threads/do-we-say-of-interest-to-you-or-of-interest-for-you.2797738/)
 - [So, thus, therefore, and hence in English](https://jakubmarian.com/so-thus-therefore-and-hence-in-english/)
 - [“Split in half” vs. “split in two” — which one is correct?](https://english.stackexchange.com/questions/108335/split-in-half-vs-split-in-two-which-one-is-correct)
+- [Do we say - “in the meeting” or “at the meeting”](https://ell.stackexchange.com/questions/52949/do-we-say-in-the-meeting-or-at-the-meeting)
