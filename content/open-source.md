@@ -42,6 +42,7 @@ Here are a bunch of links for open source project maintainers/creators:
 - Checklist for a good open source project on Github: [An Open Code Base Is Not Yet an Open Source Project](https://www.yegor256.com/2018/05/08/open-source-attributes.html)
 - [Github Apps - Welcome](https://github.com/apps/welcome)
 - [Packager.io](https://packager.io/)
+- [What comes after “open source”](https://words.steveklabnik.com/what-comes-after-open-source)
 
 # Getting paid
 
