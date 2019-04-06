@@ -64,3 +64,7 @@ Low-cost spanish company. No free drinks or meals. When I flew with them, the ha
 # TAP Air Portugal
 
 The official portuguese airline? Even on short flights (~2 hours), we had a free meal and a beverage. No tablets on the seats. Not much space for legs.
+
+# Joon
+
+Owned by Air France, doomed to merge with Air France some time in 2019. I only flied with them to go to Berlin from Paris and back. Each time, I was served a snack or a sandwich with a drink (no alcohol) for free. No tablets on seats. One time, I was denied boarding because you know, all airlines do overbooking, and that time I was one of the two lucky guy who checked in at the very last minute. Unfortunately, every expected passenger showed up, so no seat for me. They offered a 175 euro voucher + a night at a nearby Ibis hotel + taxi to and from hotel. I took the next morning flight for free of course but still, a pain in the ass...A
