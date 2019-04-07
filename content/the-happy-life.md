@@ -10,3 +10,4 @@ Summary: How to live a happy life
 - [The Genderbreak Person](https://www.genderbread.org/)
 - [Des experts font la promotion de la semaine de travail de quatre jours au lieu de cinq](https://www.developpez.com/actu/244511/Des-experts-font-la-promotion-de-la-semaine-de-travail-de-quatre-jours-au-lieu-de-cinq-pour-eux-cela-rendrait-les-travailleurs-plus-productifs/)
 - [« Le cyberminimalisme libère du temps, réhabilite les rencontres, préserve la biosphère »](https://usbeketrica.com/article/cyberminimalisme-temps-rencontres-biosphere)
+- [Hindsight 2070: We asked 15 experts, “What do we do now that will be considered unthinkable in 50 years?” Here’s what they told us.](https://www.vox.com/2019/3/27/18226563/50-years-wrong-side-of-history-future-prediction)
