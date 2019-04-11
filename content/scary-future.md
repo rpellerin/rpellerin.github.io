@@ -13,3 +13,4 @@ Resources warning us about what to expect from the future.
 - [Chrome is a Google Service that happens to include a Browser Engine](https://ha.x0r.be/posts/chrome-is-a-google-service/)
 - [Inside China’s Dystopian Dreams: A.I., Shame and Lots of Cameras](https://www.nytimes.com/2018/07/08/business/china-surveillance-technology.html)
 - [Grâce à votre téléphone, Collomb sait enfin combien de visiteurs ont participé à la Fête des Lumières](https://www.lyonmag.com/article/98529/grace-a-votre-telephone-collomb-sait-enfin-combien-de-visiteurs-ont-participe-a-la-fete-des-lumieres)
+- [Amazon Workers Are Listening to What You Tell Alexa](https://www.bloomberg.com/news/articles/2019-04-10/is-anyone-listening-to-you-on-alexa-a-global-team-reviews-audio)
