@@ -244,3 +244,4 @@ Filename encryption might require another last command to be run, if your conten
 - [A Camera is Watching You in Your AirBnB: And, you consented to it.](http://jeffreybigham.com/blog/2019/who-is-watching-you-in-your-airbnb.html)
 - [Operational PGP](https://gist.github.com/grugq/03167bed45e774551155)
 - [Corporate Surveillance in Everyday Life](https://crackedlabs.org/en/corporate-surveillance/#1)
+- [It's Time to Panic About Privacy](https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html)
