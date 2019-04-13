@@ -245,3 +245,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Operational PGP](https://gist.github.com/grugq/03167bed45e774551155)
 - [Corporate Surveillance in Everyday Life](https://crackedlabs.org/en/corporate-surveillance/#1)
 - [It's Time to Panic About Privacy](https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html)
+- [Online Privacy Isn’t Dead—If We Fight for It](https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7)
