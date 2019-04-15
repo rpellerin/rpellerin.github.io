@@ -170,3 +170,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Éteignez vos appareils](https://lehollandaisvolant.net/?d=2019/04/02/12/19/05-teignez-vos-appareils)
 - [Awesome Uses](https://github.com/wesbos/awesome-uses)
 - [How to Deliver Constructive Feedback in Difficult Situations](https://medium.dave-bailey.com/the-essential-guide-to-difficult-conversations-41f736e63ccf)
+- [Great developers are raised, not hired](https://sizovs.net/2019/04/10/the-best-developers-are-raised-not-hired/)
