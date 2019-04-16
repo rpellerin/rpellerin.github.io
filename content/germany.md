@@ -87,3 +87,7 @@ Compared to Munich, it's a lot less pretty. Nonetheless, it's a city with so muc
 <br />
 
 That's it for now! Until next time...
+
+# Interesting links on Germany
+
+- [Cost of Living Comparison Between Paris and Berlin](https://www.numbeo.com/cost-of-living/compare_cities.jsp?country1=France&country2=Germany&city1=Paris&city2=Berlin)
