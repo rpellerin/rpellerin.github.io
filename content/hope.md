@@ -7,3 +7,5 @@ Authors: Romain Pellerin
 Summary: Sparkles of hope
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/3LvTgiWSAAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/wTTMMMaTaf0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
