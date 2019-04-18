@@ -1105,6 +1105,18 @@ Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.l
     findtime = 120
     bantime = 600
 
+    [ban-countries]
+    enabled = true
+    port = http,https
+    filter = http-dos
+    logpath = /var/log/apache*/*access.log
+    maxretry = 1
+    findtime = 120
+    bantime = 6000
+    banaction = ban-countries
+    action = %(action_)s
+    # action_ won't send email when banning someone (cause would send a message for every new request) nor when starting/stopping
+
 Now create */etc/fail2ban/filter.d/http-dos.conf*:
 
     :::text
@@ -1125,12 +1137,43 @@ Now create */etc/fail2ban/filter.d/http-dos.conf*:
     
     ignoreregex =    
 
-Now, reload the service maually to make sure there is no error:
+Now create */etc/fail2ban/action.d/ban-countries.conf*:
+
+    :::text
+    # Copied from iptables-allports.conf
+    [Definition]
+
+    actionstart = <iptables> -N f2b-<name>
+                  <iptables> -A f2b-<name> -j <returntype>
+                  <iptables> -I <chain> -p <protocol> -j f2b-<name>
+
+    actionstop = <iptables> -D <chain> -p <protocol> -j f2b-<name>
+                 <iptables> -F f2b-<name>
+                 <iptables> -X f2b-<name>
+
+    actioncheck = <iptables> -n -L <chain> | grep -q 'f2b-<name>[ \t]'
+
+    actionban = IP=<ip> &&
+                COUNTRY=$(geoiplookup $IP | egrep "<country_list>") && [ "$COUNTRY" ] &&
+                <iptables> -I f2b-<name> 1 -s <ip> -j <blocktype> || true
+
+    actionunban = true 
+     
+    [Init] 
+     
+    country_list = CN|China
+
+Now install missing packages, reload the service maually to make sure there is no error:
 
     :::bash
     su
+    apt install geoip-bin geoip-database
     systemctl stop fail2ban
     fail2ban-client -x start
+    cat /var/log/fail2ban.log
+    # Check for errors
+    fail2ban-client -x stop
+    systemctl start fail2ban
 
 # Troubleshooting
 
