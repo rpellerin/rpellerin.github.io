@@ -14,3 +14,4 @@ Summary: Sparkles of hope
 
 - [Ecological Footprint Calculator](https://www.footprintcalculator.org/)
 - [Deep Green Resistance France](https://www.deepgreenresistance.fr/)
+- [JIEC : Journalistes d'investigation sur l'écologie et le climat](https://jiec.fr/)
