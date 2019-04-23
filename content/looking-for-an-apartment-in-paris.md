@@ -107,3 +107,7 @@ I recommend that you create an Excel file to do that. Here is an extract of mine
 - Additional information
 
 That's it! Hope this helps.
+
+# Resources
+
+- [Beware of scammers](https://twitter.com/paldama/status/1109017746883387392)
