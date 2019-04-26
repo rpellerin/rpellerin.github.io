@@ -1,6 +1,6 @@
 Title: Living In The USA: Visa, Insurance, SSN, and Taxes
 Date: 2017-02-19 01:50
-Modified: 2018-05-12 00:03
+Modified: 2019-04-27 00:03
 Category: Miscellaneous
 Tags: usa, visa, insurance
 Slug: living-in-the-usa-visa-insurance-ssn-and-taxes
@@ -67,6 +67,10 @@ During your internship, you'll get two online evaluations to complete, one at mi
 
 If you intend to go out of the USA temporarily, call CIEE at least 3 weeks prior to your departure. You will have to do some paperwork and CIEE will need to countersign your DS-2019. Each trip cannot exceed 30 days.
 
+# Things to do upon departing
+
+[Nothing ("_Aliens Not Required To Obtain Sailing or Departure Permits_")](https://www.irs.gov/individuals/international-taxpayers/departing-alien-clearance-sailing-permit), as far as I remember. Maybe change your personal details on your bank account, such as your home address.
+
 # Taxes
 
 First of all, this [article from Parenthèse](http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/) is quite useful for French expats.
@@ -102,6 +106,30 @@ As to me, well I used TaxBack.com. How did it go? Would I recommend their servic
   Also they applied a very disadventageous exchange rate (USD to EUR): between May 1 and May 11 (today), the official exchange rate fluctuated between 0.83 and 0.84. They used 0.79052 for my transfer, which occured some day between these two dates. You read it well.
 
 Before using their service, you'd better read [this page](https://www.taxback.com/en/tax-service-fees/) very carefully. As an example, I was supposed to get $1156.91 back from FICA. The processing fee was $231.38 and the handling fee was $46.28. **They kept 24% of my refund.** Plus a $35 bank transfer fee. Geez! Not sure my time is worth that much money, after all. Maybe I should have taken the time to fill the documents by myself...
+
+## Taxes on bank interest for nonresident aliens
+
+This topic is still quite unclear to me, but apparently it's "nontaxable and nonreportable", as per [Federal Income Tax Withholding and Reporting on Other Kinds of U.S. Source Income Paid to Nonresident Aliens](https://www.irs.gov/individuals/international-taxpayers/federal-income-tax-withholding-and-reporting-on-other-kinds-of-us-source-income-paid-to-nonresident-aliens). Even when you're no longer living in the US.
+
+[This other document](https://busfin.osu.edu/sites/default/files/nrafaqs.pdf) says:
+
+"_My only income was some bank interest. Do I have to file a tax return?_"
+
+"_A: If you are a nonresident alien, bank interest is excluded from your U.S. income under a special tax rule intended to encourage foreign investment in the United States. _"
+
+**Good to know**: banks and credit unions send every year in January a document (FORM 1099) that lists earned interest only if above $10.
+
+Also bear in mind that some credit unions refer to interest as dividends:
+
+- [How to Report Dividends from a Credit Union Account](https://budgeting.thenest.com/report-dividends-credit-union-account-24324.html)
+- [Difference between dividend and interest](https://money.stackexchange.com/questions/14460/difference-between-dividend-and-interest)
+- [1099-DIV Dividend Income](https://www.irs.gov/faqs/interest-dividends-other-types-of-income/1099-div-dividend-income): "_Certain distributions commonly referred to as dividends actually should be reported as interest_"
+
+Finally, a few additional links related to the topic:
+
+- [Taxation of Nonresident Aliens](https://www.irs.gov/individuals/international-taxpayers/taxation-of-nonresident-aliens)
+- [The Ins and Out of US Taxation for German Citizens](https://scheller-international.com/blog-beitraege/the-ins-and-out-of-us-taxation-for-german-citizens.html)
+- [Publication 519: U.S. Tax Guidefor Aliens](https://www.irs.gov/pub/irs-pdf/p519.pdf)
 
 <br />
 
