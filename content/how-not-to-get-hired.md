@@ -90,3 +90,4 @@ Good luck!
 - [You fired your top talent. I hope you’re happy.](https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd)
 - [What you should know as a founder of a software company](https://qotoqot.com/blog/founder-skills/)
 - [F\*\*\* You, I Quit — Hiring Is Broken](https://medium.com/@evnowandforever/f-you-i-quit-hiring-is-broken-bb8f3a48d324)
+- [Interviewing for a Technical Position Doesn’t Have to Be Scary](https://css-tricks.com/interviewing-for-a-technical-position-doesnt-have-to-be-scary/)
