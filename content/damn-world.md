@@ -82,3 +82,4 @@ Summary: Everything wrong with this world
 - [No one should have to travel in fear](https://medium.com/@andreasgal/no-one-should-have-to-travel-in-fear-b2bff4c460e5)
 - [Combien de CO2 pourrez-vous émettre dans votre vie si le réchauffement est contenu à 1,5 °C ?](https://www.lemonde.fr/planete/article/2019/04/11/combien-de-co2-pourrez-vous-emettre-dans-votre-vie-si-le-rechauffement-est-contenu-a-1-5-degre_5448606_3244.html)
 - [Putting Down Your Phone May Help You Live Longer](https://www.nytimes.com/2019/04/24/well/mind/putting-down-your-phone-may-help-you-live-longer.html)
+- [Shoppers are buying clothes just for the Instagram pic, and then returning them](https://qz.com/quartzy/1354651/shoppers-are-buying-clothes-just-for-the-instagram-pic-and-then-return-them/)
