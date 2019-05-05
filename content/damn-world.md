@@ -84,3 +84,5 @@ Summary: Everything wrong with this world
 - [Putting Down Your Phone May Help You Live Longer](https://www.nytimes.com/2019/04/24/well/mind/putting-down-your-phone-may-help-you-live-longer.html)
 - [Shoppers are buying clothes just for the Instagram pic, and then returning them](https://qz.com/quartzy/1354651/shoppers-are-buying-clothes-just-for-the-instagram-pic-and-then-return-them/)
 - [VIDEO. "Comme des sacs normaux" : ces sacs biodégradables qui ne le sont pas vraiment...](https://www.francetvinfo.fr/monde/environnement/video-comme-des-sacs-normaux-ces-sacs-biodegradables-qui-ne-le-sont-pas-vraiment_3422531.html)
+- [The Bill - short film - Germanwatch](https://www.youtube.com/watch?v=rWfb0VMCQHE)
+- [The Story of a Spoon](https://www.youtube.com/watch?v=eg-E1FtjaxY)
