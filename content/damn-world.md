@@ -87,3 +87,4 @@ Summary: Everything wrong with this world
 - [The Bill - short film - Germanwatch](https://www.youtube.com/watch?v=rWfb0VMCQHE)
 - [The Story of a Spoon](https://www.youtube.com/watch?v=eg-E1FtjaxY)
 - [The True Cost](https://truecostmovie.com/)
+- [L'Homme, destructeur de la Terre | ARTE](https://www.youtube.com/watch?v=4LToxHsxJso)
