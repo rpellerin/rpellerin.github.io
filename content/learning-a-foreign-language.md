@@ -104,6 +104,13 @@ To conclude, try to [read this](http://www.thepoke.co.uk/2011/12/23/english-pron
 
 I decided to gather here all the little things to know in English, which are not obvious.
 
+### Common pair words
+
+- [Online OXFORD Collocation Dictionary](http://www.freecollocation.com/)
+- [ozdic - the English Collocations Dictionary online](http://www.ozdic.com/collocation-dictionary/)
+
+### Other things to know in English
+
 - [Idiom](https://en.wikipedia.org/wiki/Idiom)
 - [What is the difference between trash, garbage, litter, rubbish, waste?](http://english.stackexchange.com/questions/272361/what-is-the-difference-between-trash-garbage-litter-rubbish-waste)
 - [Pretty, fairly, really, very, and quite](http://www.learnersdictionary.com/qa/pretty-fairly-really-very-and-quite)
