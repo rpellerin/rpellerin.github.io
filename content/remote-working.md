@@ -1,7 +1,7 @@
 Title: Remote Working
 Date: 2018-01-22 22:20
 Category: What's bad about
-Tags: remote working, jobs
+Tags: remote working, job
 Slug: remote-working
 Authors: Romain Pellerin
 Summary: Resources on remote working
