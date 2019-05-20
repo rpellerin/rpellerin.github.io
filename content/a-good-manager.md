@@ -12,4 +12,4 @@ Summary: Who I think a good manager should be
 - Doesn't complain (unless justifiably) and set an example at all times
 - Cares about 1 on 1 meetings and avoid postponing them or hijacking them for other purposes
 - Helps their team members grow and set ambitious personal goals within the company
-
+- [The Bad Boss Guide: How to Scar Your Employees](https://hackernoon.com/the-idiots-guide-to-being-a-bad-manager-e6e382b79064)
