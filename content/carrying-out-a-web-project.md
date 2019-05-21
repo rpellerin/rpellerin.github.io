@@ -187,6 +187,10 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [Using Headless Mode in Firefox](https://hacks.mozilla.org/2017/12/using-headless-mode-in-firefox/)
 
+## Performance
+
+- [Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)](https://www.youtube.com/watch?v=YJGCZCaIZkQ)
+
 ## Misc
 
 - [6 Rules of thumb to build blazing fast web server applications](http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/)
