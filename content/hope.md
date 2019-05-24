@@ -18,3 +18,4 @@ Summary: Sparkles of hope
 - [Deep Green Resistance France](https://www.deepgreenresistance.fr/)
 - [JIEC : Journalistes d'investigation sur l'écologie et le climat](https://jiec.fr/)
 - [Youth For Climate](http://youthforclimate.fr/)
+- [Pays-Bas.À Amsterdam, la mairie devient végétarienne](https://www.courrierinternational.com/article/pays-bas-amsterdam-la-mairie-devient-vegetarienne)
