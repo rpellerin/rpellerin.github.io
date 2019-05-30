@@ -13,6 +13,7 @@ Summary: Who I think a good manager should be
 - Cares about 1 on 1 meetings and avoid postponing them or hijacking them for other purposes
 - Helps their team members grow and set ambitious personal goals within the company
 - [The Bad Boss Guide: How to Scar Your Employees](https://hackernoon.com/the-idiots-guide-to-being-a-bad-manager-e6e382b79064)
+- [How to Get Every Email Returned](https://www.nytimes.com/2019/05/25/opinion/sunday/writing-advice.html)
 
 ![E-mail like a boos]({filename}/images/emails.jpeg)
 
