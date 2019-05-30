@@ -172,3 +172,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [How to Deliver Constructive Feedback in Difficult Situations](https://medium.dave-bailey.com/the-essential-guide-to-difficult-conversations-41f736e63ccf)
 - [Great developers are raised, not hired](https://sizovs.net/2019/04/10/the-best-developers-are-raised-not-hired/)
 - [When we rush development, skip tests and refactoring, we get “Escalating Risk.” Please give up the “technical debt” description; it gives businesspeople a very wrong impression of the tradeoffs.](https://mobile.twitter.com/jessitron/status/1123310331957145601)
+- [Too DRY - The Grep Test](http://jamie-wong.com/2013/07/12/grep-test/)
