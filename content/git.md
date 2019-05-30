@@ -38,6 +38,7 @@ Here are some resources to go deeper with Git.
 - [What does "git pull --rebase" do?](http://gitolite.com/git-pull--rebase.html)
 - [The magical (and not harmful) rebase](http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/)
 - [The mighty reflog and the amazing bisect](http://jeffkreeftmeijer.com/2010/the-mighty-reflog-and-the-amazing-bisect/)
+- [More productive Git](https://increment.com/open-source/more-productive-git/)
 - [Notre cours vidéo GitHub est sorti !](http://www.git-attitude.fr/2015/12/18/learning-github/)
 - [Learn Enough Git to Be Dangerous](http://www.learnenough.com/git-tutorial)
 - [A Git Horror Story: Repository Integrity With Signed Commits](https://mikegerwitz.com/papers/git-horror-story)
