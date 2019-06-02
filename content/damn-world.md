@@ -88,3 +88,4 @@ Summary: Everything wrong with this world
 - [The Story of a Spoon](https://www.youtube.com/watch?v=eg-E1FtjaxY)
 - [The True Cost](https://truecostmovie.com/)
 - [L'Homme, destructeur de la Terre | ARTE](https://www.youtube.com/watch?v=4LToxHsxJso)
+- [US demands social media details from visa applicants](https://www.bbc.com/news/world-us-canada-48486672)
