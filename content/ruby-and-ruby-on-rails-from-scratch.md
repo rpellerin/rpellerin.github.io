@@ -19,6 +19,7 @@ Today I started learning a new language: Ruby! Coming from a JavaScript world, [
 ## Rails
 
 - [http://rubyonrails.org/doctrine/](http://rubyonrails.org/doctrine/)
+- [CHOOSING RUBY ON RAILS FOR YOUR NEXT WEB DEVELOPMENT PROJECT](https://ideamotive.co/ruby-on-rails-development-guide/?in-2019)
 - [Code School: Rails for Zombies](https://www.pluralsight.com/courses/code-school-rails-for-zombies)
 - [Initiez-vous à Ruby on Rails](https://openclassrooms.com/en/courses/3149156-initiez-vous-a-ruby-on-rails)
 - [Continuez avec Ruby on Rails](https://openclassrooms.com/en/courses/3432066-continuez-avec-ruby-on-rails)
