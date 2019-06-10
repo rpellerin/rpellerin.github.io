@@ -94,6 +94,11 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i input.mp4 -vf scale=1280:-1 -acodec copy output.mp4
 
+# Concat MTS files to MP4
+
+    :::bash
+    ffmpeg -i "concat:$(ls *.MTS | tr '\n' '|' | head -c -1)" -vcodec copy -acodec aac -ab 512k -cutoff 22050 -sn output.mp4
+
 # Resources
 
 - [FFmpeg tips](https://ehret.me/ffmpeg-tips/)
