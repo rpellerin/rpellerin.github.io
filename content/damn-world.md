@@ -89,3 +89,4 @@ Summary: Everything wrong with this world
 - [The True Cost](https://truecostmovie.com/)
 - [L'Homme, destructeur de la Terre | ARTE](https://www.youtube.com/watch?v=4LToxHsxJso)
 - [US demands social media details from visa applicants](https://www.bbc.com/news/world-us-canada-48486672)
+- [Quel devrait être le taux de remplissage des trains pour avoir les mêmes émissions de CO2 que l’avion ?](https://twitter.com/laydgeur/status/1142767487420903424)
