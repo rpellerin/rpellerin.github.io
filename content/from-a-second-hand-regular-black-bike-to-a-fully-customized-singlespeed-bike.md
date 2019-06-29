@@ -1,5 +1,6 @@
 Title: From a second hand regular black bike to a fully customized singlespeed bike
 Date: 2019-06-24 23:50
+Modified: 2019-06-29 19:00
 Category: Miscellaneous
 Tags: bike
 Slug: from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike
@@ -24,8 +25,8 @@ So here we go, here's what I need:
 
 - [x] **A rear white wheel**
 - [x] **A pink tire**
-- [ ] A front green wheel
-- [ ] A white tire
+- [x] A front green wheel
+- [x] A white tire
 - [ ] A green chain
 - [ ] A single speed freewheel
 - [ ] A white frame
@@ -49,7 +50,7 @@ Eventually, I decided to go with this [15-622 white freewheel rear wheel](https:
 
 ## Front wheel and tire
 
-My front frame spacing is 100mm so I needed to find an adequate green wheel which I still have not found so far. Here's what I've found up until now:
+My front frame spacing is 100mm so I needed to find an adequate green wheel which I still have not found so far (**UPDATE: see below**). Here's what I've found up until now:
 
 - [Roue avant et arrière fixie single-speed 28 pouces Vertes](https://www.lecyclo.com/velo/roue-pneu/roue-velo/paire-de-roues/roue-avant-et-arriere-fixie-single-speed-28-pouces-vertes.html): I could buy just one but the rim internal width is 30mm and not 40mm as I need.
 - [Roue route - fixie 43mm vert avant](https://www.velo-zone.fr/pieces-roues-route_fixie/8894-roue-route-fixie-43mm-vert-avant-selection.html#detail): 43mm internal width... not 40
@@ -62,14 +63,20 @@ Regarding the tire, I'll go with [that one](https://www.lecyclo.com/velo/roue-pn
 
 ## Yet to buy
 
-- A front green wheel
-- A white tire
+- <s>A front green wheel</s> (**updated**)
+- <s>A white tire</s> (**updated**)
 - [A green chain](https://www.lecyclo.com/velo/pieces-detachees/transmission/chaine/chaine-velo-bmx-fixie-single-speed-verte.html): I need to be careful not to buy the wrong kind. There are two major kinds of chains: 1/2" 3/32" for most multiplespeed bikes and 1/2" 1/8" for BMX, fixies and singlespeed bikes. I currently have a 1/2" 3/32". A change of the type of chain requires a change of clogset and crankset.
 - [A single speed freewheel](https://www.lecyclo.com/velo/pieces-detachees/transmission/cassette-roue-libre/roue-libre-mono-vitesse-pour-velo.html)
 - A white frame
 - [A green saddle](https://www.lecyclo.com/velo/confort/selle-tige-et-housse/selle/selle-velo-vintage-verte-imitation-cuir-avec-rivets.html)
 - [Pink grips](https://www.lecyclo.com/velo/confort/potence-guidon/poignee-corne/grips-roses-pour-guidon-de-velo-get-shorty-blb.html)
 - A pink shifter cable housing
+
+### \*\*UPDATE JUNE 29, 2019\*\*
+
+<figure class="center"><img alt="My bike with its pink rear wheel" src="{filename}/images/bike-pink-green.jpg" /></figure>
+
+I just received a new parcel in my mailbox: [a front green wheel](https://www.beastybike.com/roues-a-rayons/336-1531-paire-de-roues-a-rayons-fixie-pure-fix-700c-40mm.html#/6-couleur-vert) and [a white tire](https://www.lecyclo.com/velo/roue-pneu/pneu-velo/pneu-kenda/pneu-velo-blanc-pour-fixie-et-single-speed-700-x-26-c-kenda.html)!!! YAY!
 
 # Turning it into a singlespeed bike: not so easy
 
