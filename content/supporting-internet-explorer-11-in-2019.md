@@ -5,6 +5,7 @@ Tags: internet explorer, browsers
 Slug: supporting-internet-explorer-11-in-2019
 Authors: Romain Pellerin
 Summary: Following the recent publication of A Conspiracy To Kill IE6, we at Doctolib thought we’d in turn unveil our plan to stop supporting not only Internet Explorer 11 but also other outdated desktop…
+Image: supporting-internet-explorer-11-in-2019/header.png
 
 *Originally published on [Medium](https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c).*
 
