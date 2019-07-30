@@ -49,3 +49,6 @@ Summary: Books I have read
 - **Die!Die!Die!**, by *Robert Kirkman* and *Scott M. Gimple*
 - **Saga**, by *Brian K. Vaughan* and *Fiona Staples*
 
+# To read
+
+- [7 romans de science-fiction déprimants et géniaux à lire avant la fin du monde](https://www.numerama.com/pop-culture/531136-7-romans-de-science-fiction-deprimants-et-geniaux-a-lire-avant-la-fin-du-monde.html)
