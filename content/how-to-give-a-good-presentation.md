@@ -75,3 +75,4 @@ I know these pieces of advice can sometimes be hard to follow, I also made and s
 - [10 ways for a conference to upset their speakers](https://www.troyhunt.com/10-ways-for-a-conference-to-upset-their-speakers/)
 - [GEEK'S GUIDE TO MAKING DECENT SLIDES](http://frantic.im/keynote)
 - [Tips For First Time Speakers](https://dev.to/emmawedekind/tips-for-first-time-speakers-3fcb)
+- [Speaker Rider](https://gist.github.com/tatianamac/493ca668ee7f7c07a5b282f6d9132552)
