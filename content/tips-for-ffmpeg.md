@@ -80,9 +80,8 @@ In case you have a few seconds of blank video at the beginning, it is due to key
 # [Concatenate several MP4 files](https://trac.ffmpeg.org/wiki/Concatenate)
 
     :::bash
-    ffmpeg -i input1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
-    ffmpeg -i input2.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate2.ts
-    ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy -bsf:a aac_adtstoasc output.mp4
+    find . -type f -iname "*.MP4" -exec ffmpeg -i '{}' -c copy -bsf:v h264_mp4toannexb -f mpegts '{}.ts' \;
+    ffmpeg -i "concat:$(ls *.ts | tr '\n' '|' | head -c -1)" -c copy -bsf:a aac_adtstoasc output.mp4
 
 # Replace the audio track with another
 
