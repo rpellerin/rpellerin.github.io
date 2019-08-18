@@ -19,6 +19,8 @@ A long time ago, long before I was born, people used to cut down trees (mostly f
 
 A long time ago, long before I was born, people used to worship plastic. Plastic was everywhere, all the time. Single-use plastic was a thing for sure. Plastic bottles, plastic spoons, plastic cups, plastic toys. A shit ton of plastic ended its course in oceans. It played a major role in the decline of sea animals.
 
+A long time ago, long before I was born, people used to care more about jobs than they cared about the environment. Transitioning the car industry from oil to electricity? Too many people said "*it's gonna destroy jobs cause electric engines require much less parts and workforce*". It's exactly like keeping your job and then the day you retire your house gets burned down versus giving up your job and starting looking for another one but knowning that the day you retire your house will still be there. [Jobs vs the Environment](https://www.thenation.com/article/jobs-vs-environment-how-counter-divisive-big-lie/).
+
 <br />
 
 But all of that is gone now, people don't do that no more. Everyone's fucking dead. Humans. Animals. Forests. Everything is gone. The planet is barely fit to live. Our unstustainable way of life killed us all. Those who remain live harsh lifes. Every day is a fight for survival, for food, for clean water, for power. Most lands people inhabited are underwater now, as the sea level is much higher than in the early 2000's.
