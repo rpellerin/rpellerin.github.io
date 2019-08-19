@@ -134,6 +134,10 @@ That's it. You should be able to install Linux on the entire disk now.
 - [How To Secure A Linux Server](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)
 - [the-practical-linux-hardening-guide](https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3)
 
+# NGINX
+
+- [trimstray/nginx-admins-handbook](https://github.com/trimstray/nginx-admins-handbook)
+
 # Other
 
 - [Operating System: From 0 to 1](https://tuhdo.github.io/os01/)
