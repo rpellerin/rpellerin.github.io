@@ -91,3 +91,4 @@ Summary: Everything wrong with this world
 - [US demands social media details from visa applicants](https://www.bbc.com/news/world-us-canada-48486672)
 - [Quel devrait être le taux de remplissage des trains pour avoir les mêmes émissions de CO2 que l’avion ?](https://twitter.com/laydgeur/status/1142767487420903424)
 - [Un cadre d’HSBC démissionne publiquement avec une lettre ouverte à l’humanité](https://mrmondialisation.org/un-cadre-dhsbc-demissionne-publiquement-avec-une-lettre-ouverte-a-lhumanite/)
+- [Thread #Amazonie - Ces petits points rouges, le long de la route BR 163 dans l'Etat du Para au Brésil, sont autant de feux allumés par les "fazendeiros" (gros propriétaires terriens), qui promettaient ce 10 août un "dia de fogo", un jour de feu.](https://twitter.com/IvanduRoy/status/1164177859830845444)
