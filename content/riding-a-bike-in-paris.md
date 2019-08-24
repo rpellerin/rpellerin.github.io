@@ -44,3 +44,7 @@ That's it for now.
 - [www.lecyclo.com/](https://www.lecyclo.com/): cheaps parts, they have a shop in Marseille
 - [www.probikeshop.fr/](https://www.probikeshop.fr/): quality and relatively cheap parts
 - Good ol' Decathlon
+
+# Other
+
+- [A cyclist's guide to biking the city – a cartoon](https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon)
