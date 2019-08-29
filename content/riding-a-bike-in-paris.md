@@ -48,3 +48,4 @@ That's it for now.
 # Other
 
 - [A cyclist's guide to biking the city – a cartoon](https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon)
+- [Des conseils pour débuter en vélotaf](http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/)
