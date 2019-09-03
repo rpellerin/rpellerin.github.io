@@ -1,7 +1,7 @@
 Title: From a second hand regular black bike to a fully customized singlespeed bike
 Date: 2019-06-24 23:50
 Modified: 2019-06-29 19:00
-Category: Miscellaneous
+Category: About me
 Tags: bike
 Slug: from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike
 Authors: Romain Pellerin
@@ -32,7 +32,7 @@ So here we go, here's what I need:
 - [ ] A white frame
 - [ ] A green saddle
 - [ ] Pink grips
-- [ ] A pink shifter cable housing
+- [ ] A pink shifter cable housing and a white one
 
 # Finding the parts
 
@@ -65,12 +65,12 @@ Regarding the tire, I'll go with [that one](https://www.lecyclo.com/velo/roue-pn
 
 - <s>A front green wheel</s> (**updated**)
 - <s>A white tire</s> (**updated**)
-- [A green chain](https://www.lecyclo.com/velo/pieces-detachees/transmission/chaine/chaine-velo-bmx-fixie-single-speed-verte.html): I need to be careful not to buy the wrong kind. There are two major kinds of chains: 1/2" 3/32" for most multiplespeed bikes and 1/2" 1/8" for BMX, fixies and singlespeed bikes. I currently have a 1/2" 3/32". A change of the type of chain requires a change of clogset and crankset.
+- [A green chain](https://www.lecyclo.com/velo/pieces-detachees/transmission/chaine/chaine-velo-bmx-fixie-single-speed-verte.html): I need to be careful not to buy the wrong kind. There are two major kinds of chains: 1/2" 3/32" for most multiplespeed bikes and 1/2" 1/8" for BMX, fixies and singlespeed bikes. I currently have a 1/2" 3/32". A change of the type of chain requires a change of cogset and crankset.
 - [A single speed freewheel](https://www.lecyclo.com/velo/pieces-detachees/transmission/cassette-roue-libre/roue-libre-mono-vitesse-pour-velo.html)
 - A white frame
 - [A green saddle](https://www.lecyclo.com/velo/confort/selle-tige-et-housse/selle/selle-velo-vintage-verte-imitation-cuir-avec-rivets.html)
 - [Pink grips](https://www.lecyclo.com/velo/confort/potence-guidon/poignee-corne/grips-roses-pour-guidon-de-velo-get-shorty-blb.html)
-- A pink shifter cable housing
+- A pink shifter cable housing and a white one
 
 ### \*\*UPDATE JUNE 29, 2019\*\*
 
@@ -80,6 +80,8 @@ I just received a new parcel in my mailbox: [a front green wheel](https://www.be
 
 # Turning it into a singlespeed bike: not so easy
 
-First, as I wrote above, I'd need to change the type of chain and use a 1/2" 1/8". Why? Because it's pretty much the standard for fixes and singlespeed bikes. Plus the choices in terms of colors are much wider. And there are more singlespeed freewheels that work with this kind of chain. Then, as a consequence, I'd need to change the clogset and crankset, and remove the derailleur. I could just do it myself with [the](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/demonte-roue-libre-super-b-tb-1045.html) [right](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/derive-chaine-de-velo.html) [tools](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/pince-a-maillon-chaine-velo-2-en-1-montage-et-demontage.html) but for now, it's too much work. I'll just wait until my chain or clogset get too old and damaged and only then will I switch to singlespeed.
+First, as I wrote above, I'd need to change the type of chain and use a 1/2" 1/8". Why? Because it's pretty much the standard for fixes and singlespeed bikes. Plus the choices in terms of colors are much wider. And there are more singlespeed freewheels that work with this kind of chain. Then, as a consequence, I'd need to change the cogset and crankset, and remove the derailleur. I could just do it myself with [the](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/demonte-roue-libre-super-b-tb-1045.html) [right](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/derive-chaine-de-velo.html) [tools](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/pince-a-maillon-chaine-velo-2-en-1-montage-et-demontage.html) but for now, it's too much work. I'll just wait until my chain or cogset get too old and damaged and only then will I switch to singlespeed.
+
+Also, and that's good to know, the ratio between speed and ease of pedaling must be taken into account. For instance, say you have a 14 teeth freewheel and a 42 teeth chainring, the ratio would be 42/14=3. The bigger the ratio the easier the pedaling.
 
 That's it for now. This article will likely be updated in the coming months...

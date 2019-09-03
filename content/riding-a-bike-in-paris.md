@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: I just bought a bike. Here's to a whole new life!
 Image: bike-paris1.jpg
 
-*This is a draft article that I will update as I become a more experienced urban cyclist.*
+*This article is continued [here]({filename}/la-bible-du-velotafeur.md).*
 
 I recently purchased a second-hand bike from one of my colleagues. By doing so, I intend to commute with it as often as possible and thus reduce metro-induced stress. It's also a good opportunity to save time: exercice while commuting, how great of a combination is that?!
 
@@ -29,23 +29,3 @@ A very important thing to do is to get one's bike engraved as soon as possible. 
 That's it for now.
 
 ![My bike]({filename}/images/bike-paris2.jpg)
-
-# Useful links for Parisian cyclists
-
-- [Fédération française des usagers de la bicyclette](https://www.fub.fr/)
-- [Vélotaf](http://www.velotaf.com/)
-- [Filmer ses déplacements à vélo – quelles raisons, quel matériel ?](https://frerelaroute.wordpress.com/2017/09/27/filmer-ses-deplacements-a-velo-quelles-raisons-quel-materiel/)
-- [Vélo en ville : ces infractions méconnues qui peuvent vous coûter cher](http://www.leparisien.fr/info-paris-ile-de-france-oise/transports/velo-en-ville-ces-infractions-punies-de-135-euros-d-amende-25-03-2019-8039439.php)
-- [EuroVelo routes](http://www.eurovelo.com/en/eurovelos)
-
-# Shops
-
-- [www.beastybike.com/](https://www.beastybike.com/): they have shops in Paris
-- [www.lecyclo.com/](https://www.lecyclo.com/): cheaps parts, they have a shop in Marseille
-- [www.probikeshop.fr/](https://www.probikeshop.fr/): quality and relatively cheap parts
-- Good ol' Decathlon
-
-# Other
-
-- [A cyclist's guide to biking the city – a cartoon](https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon)
-- [Des conseils pour débuter en vélotaf](http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/)
