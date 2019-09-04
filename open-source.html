@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, open source" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Resources for open source projects" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Open Source - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Resources for open source projects" />
+
+        <title>Open Source - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-03-07T21:50:00+01:00">Tue 07 March 2017</time>        </p>
+    <h1>Open Source</h1>
+    <div class="grey">
+        <p class="italic">Resources for open source projects</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 121 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/open-source.html">open source</a></p>    </div>
+</header>
+<article>
+    <p>Here are a bunch of links for open source project maintainers/creators:</p>
+<h1>Documentation</h1>
+<ul>
+<li><a href="http://www.sphinx-doc.org/en/master/">Sphinx</a></li>
+</ul>
+<h1>Tools/Continuous integration/Continuous testing</h1>
+<ul>
+<li><a href="https://greenkeeper.io/">GreenKeeper</a></li>
+<li><a href="https://coveralls.io/">Coveralls</a></li>
+<li><a href="https://saucelabs.com/open-source">Sauce Labs</a></li>
+<li><a href="https://travis-ci.org/">Travis CI</a></li>
+<li><a href="https://circleci.com/">CircleCI</a></li>
+<li><a href="https://codeship.com/">Codeship</a></li>
+<li><a href="https://www.bithound.io/">bitHound: Node.js code and npm analysis for your team</a></li>
+<li><a href="https://gemnasium.com/">Gemnasium</a></li>
+<li><a href="https://codecov.io/">Codecov</a></li>
+<li><a href="https://scrutinizer-ci.com/">Scrutinize</a></li>
+<li><a href="https://www.zenhub.com/">ZenHub</a></li>
+<li><a href="https://codeclimate.com/">Code Climate</a></li>
+<li><a href="https://www.npmjs.com/package/standard-version">standard-version</a></li>
+<li><a href="https://github.com/conventional-changelog">Conventional Changelog</a></li>
+</ul>
+<h1>Miscellaneous</h1>
+<ul>
+<li><a href="http://makeapullrequest.com/">Make a Pull Request</a></li>
+<li><a href="http://keepachangelog.com/en/0.3.0/">Keep A Changelog</a></li>
+<li><a href="https://github.com/blog/2111-issue-and-pull-request-templates">Issue and Pull Request templates</a></li>
+<li><a href="https://medium.freecodecamp.com/how-to-attract-new-contributors-to-your-open-source-project-46f8b791d787">How to attract new contributors to your open source project</a></li>
+<li><a href="https://korben.info/badgen-pour-generer-vos-badges-svg.html">Badgen – Pour générer vos badges SVG</a></li>
+<li><a href="http://unmaintained.tech/">No Maintenance Intended</a></li>
+<li><a href="https://github.com/nikku/works-on-my-machine">nikku/works-on-my-machine</a></li>
+<li><a href="https://davidreagan.net/tech/fixing-the-support-problem/">Fixing the Support Problem</a></li>
+<li>Checklist for a good open source project on Github: <a href="https://www.yegor256.com/2018/05/08/open-source-attributes.html">An Open Code Base Is Not Yet an Open Source Project</a></li>
+<li><a href="https://github.com/apps/welcome">Github Apps - Welcome</a></li>
+<li><a href="https://packager.io/">Packager.io</a></li>
+<li><a href="https://words.steveklabnik.com/what-comes-after-open-source">What comes after “open source”</a></li>
+</ul>
+<h1>Getting paid</h1>
+<ul>
+<li><a href="https://codefund.app/">CodeFund</a></li>
+</ul>
+<h1>Free software</h1>
+<ul>
+<li><a href="https://video.tedomum.net/videos/watch/22382fb9-ad79-4ac1-8df3-c7c027749425">Internet ou la révolution du partage</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 07 March 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

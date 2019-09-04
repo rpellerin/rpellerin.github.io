@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, plants, air" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to purify air using houseplants... or how to pretend you breath purified air." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Air Purifying Houseplants - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to purify air using houseplants... or how to pretend you breath purified air." />
+
+        <title>Air Purifying Houseplants - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-09-28T12:50:00+02:00">Thu 28 September 2017</time>        </p>
+    <h1>Air Purifying Houseplants</h1>
+    <div class="grey">
+        <p class="italic">How to purify air using houseplants... or how to pretend you breath purified air.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 575 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/plants.html">plants</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/air.html">air</a></p>    </div>
+</header>
+<article>
+    <p>Recently, I moved into my new apartment, in one of the most polluted cities on Earth, Paris. Therefore I decided I needed houseplants to clean the air. What an idea! Is it bullshit? Does it actually work? Who cares?! As long as it makes my apartment look cool!</p>
+<p>Consequently, I started googling about evergreen houseplants that clean the air. I ended up buying the following plants:</p>
+<ul>
+<li><strong><a href="http://www.plantes-depolluantes.com/_plantes/spathiphyllum.php">Spathiphyllum</a></strong>: the best at improving indoor air quality!</li>
+<li><strong><a href="http://www.plantes-depolluantes.com/_plantes/aglaonema.php">Aglaonema Silver Bay</a></strong>: the plant from the movie <em>Leon: The Professional</em>.</li>
+<li><strong><a href="http://www.plantes-depolluantes.com/_plantes/dracaena_marginata.php">Dracaena Marginata</a></strong></li>
+<li><strong>Dieffenbachia</strong></li>
+<li><strong><a href="http://www.plantes-depolluantes.com/_plantes/chlorophytum.php">Chlorophytum</a></strong> (comosum? no sure about its species)</li>
+</ul>
+<h1>Aglaonema</h1>
+<figure class="center"><img src="//romainpellerin.eu/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /><figcaption>Aglaonema Silver Bay, the big one on the left.</figcaption></figure>
+
+<h2>Temperature</h2>
+<p>Between 15°C and 25°C. Cannot tolerate below 13.</p>
+<h2>Light</h2>
+<p>300 lux, half shadow, must get sun light a few hours per day (no direct sunlignt though).</p>
+<h2>Watering</h2>
+<p>Soil should be kept moist at all times. Don't allow it to dry otherwise it can cause leaves to drop. In summer, water twice a week. In winter, once. Don't leave standing water in the saucer.</p>
+<h2>Repotting</h2>
+<p>Repotting is from March to May, every 2 to 3 years. For an old Aglaonema, just replace the upper layer of the soil, do not repot.</p>
+<h2>Complementary information</h2>
+<p>Leaves and fruits are toxic for humans and pets.</p>
+<h1>Dracaena Marginata</h1>
+<h2>Temperature</h2>
+<p>Between 15°C and 22°C. Avoid below 15 (won't grow otherwise). Below 10 could damage it. Best between 20 and 22.</p>
+<h2>Light</h2>
+<p>500 lux, quite a log of light. Avoid too much direct sun light. It does not like absence of light.</p>
+<h2>Watering</h2>
+<p>Soil must remain hardly moist. Once a week in Summer, twice a month in Winter. Mist the leaves twice a week also, if possible.</p>
+<h2>Repotting</h2>
+<p>Repotting is from March to May, every 2 to 3 years. Every other year, replace the upper layer of the soil, do not repot.</p>
+<h1>Spathiphyllum</h1>
+<figure class="center"><img src="//romainpellerin.eu/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /><figcaption>From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium</figcaption></figure>
+
+<h2>Temperature</h2>
+<p>Between 15°C and 25°C. Below 10 could damage it seriously. Best between 20 and 22.</p>
+<h2>Light</h2>
+<p>A significant amount (300 lux at least) but no direct sun though. Dim light is OK.</p>
+<h2>Watering</h2>
+<p>Once a week, a lot. Don't leave standing water! Reduce the amount of water in winter.</p>
+<h2>Repotting</h2>
+<p>In March, every two to three years. When not repotting, replace the upper layer of the soil.</p>
+<h2>Complementary information</h2>
+<p>Avoid dry air as well as fresh air flows. Keep it away from heaters.</p>
+<p>To foster blossoming, deprive the plant of water for a few days.</p>
+<h1>Chlorophytum</h1>
+<figure class="center"><img src="//romainpellerin.eu/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /><figcaption>Chlorophytum</figcaption></figure>
+
+<h2>Temperature</h2>
+<p>10 to 20°C. Don't go below 5.</p>
+<h2>Light</h2>
+<p>A lot! 600 lux at least. No direct sun light.</p>
+<h2>Watering</h2>
+<p>Once a week, twice if the environment is quite hot or luminous. Don't leave standing water. The plant likes moisture. Reduce watering in winter.</p>
+<h2>Repotting</h2>
+<p>Every year in March or April, in a slightly bigger pot.</p>
+<h2>Complementary information</h2>
+<p>If possible, use good quality soil.</p>
+<p>Also, cut off dead parts of leaves (not the whole leaf).</p>
+<h1>Dieffenbachia</h1>
+<h2>Temperature</h2>
+<p>18°C to 24°C in Summer and 15 to 18 in Winter. Keep away from heaters, the plant likes moisture. Keep away from air flows.</p>
+<h2>Light</h2>
+<p>A significant amount but no direct light.</p>
+<h2>Watering</h2>
+<p>Once a week. Don't leave standing water. Reduce watering in Winter.</p>
+<h2>Repotting</h2>
+<p>Every other year in March or April, in a bigger pot.</p>
+<h2>Complementary information</h2>
+<p>Leaves are poisonous.</p>
+<p><br /></p>
+<p>Hope this helps, folks!</p>
+<h1>Resources</h1>
+<ul>
+<li>Good source of information, in French: <a href="http://www.jardiner-malin.fr/">http://www.jardiner-malin.fr/</a></li>
+<li>Great article in French, very helpful to me: <a href="https://www.rustica.fr/articles-jardin/24-plantes-depolluantes-qui-ameliorent-votre-maison,2136.html">24 plantes dépolluantes qui améliorent votre maison</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 28 September 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

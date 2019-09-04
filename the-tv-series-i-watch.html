@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, televion, tv series" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Some of the best TV series in the last decade" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The TV series I watch - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Some of the best TV series in the last decade" />
+
+        <title>The TV series I watch - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-06-02T01:00:00+02:00">Tue 02 June 2015</time> - Last Update: <time datetime="2018-05-08T22:45:00+02:00">Tue 08 May 2018</time>        </p>
+    <h1>The TV series I watch</h1>
+    <div class="grey">
+        <p class="italic">Some of the best TV series in the last decade</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 301 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/televion.html">televion</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/tv-series.html">tv series</a></p>    </div>
+</header>
+<article>
+    <p>The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).</p>
+<h1>Shows still running</h1>
+<h2><a href="http://en.wikipedia.org/wiki/Game_of_Thrones">Game of Thrones</a></h2>
+<p>Quite obvious, right?</p>
+<h2><a href="https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series)">Altered Carbon</a></h2>
+<p>New stuff from Netflix, looks rad!</p>
+<h2><a href="https://en.wikipedia.org/wiki/Narcos">Narcos</a></h2>
+<p>It tells the story of Pablo Escobar. Produced by Netflix, 4 seasons.</p>
+<h2><a href="https://en.wikipedia.org/wiki/Black_Mirror">Black Mirror</a></h2>
+<p>An interesting analyze of our modern society.</p>
+<h2><a href="http://en.wikipedia.org/wiki/Silicon_Valley_%28TV_series%29">Silicon Valley</a></h2>
+<p>A hilarious sitcom about a group of geeks founding a startup company. Extremely funny!</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h2><a href="https://en.wikipedia.org/wiki/Westworld_(TV_series)">Westworld</a></h2>
+<p>A very promising new TV series about AI.</p>
+<h2><a href="http://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29">The Walking Dead</a></h2>
+<p>A post-apocalyptic TV show, featuring... zombies! The scenario, based on the comic book series of the same name, is pretty good. By the way, if you have the opportunity, read them all!</p>
+<h2><a href="https://en.wikipedia.org/wiki/Fear_the_Walking_Dead">Fear The Walking Dead</a></h2>
+<p>Prequel to The Walking Dead! Seems really interesting so far...</p>
+<h2><a href="http://en.wikipedia.org/wiki/Vikings_%28TV_series%29">Vikings</a></h2>
+<p>An Irish-Canadian historical drama television series. Everything goes fast, which is quite appreciable, compared to Game of Thrones, where some episodes are less interesting than others.</p>
+<h2><a href="http://en.wikipedia.org/wiki/Better_Call_Saul">Better Call Saul</a></h2>
+<p>A spin-off of Breaking Bad: same ambiance, a must-see!</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9q4qzYrHVmI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h2><a href="https://en.wikipedia.org/wiki/Mr._Robot_%28TV_series%29">Mr. Robot</a></h2>
+<p>One of the best TV shows! About hacking, cyber security, democracy, and so on.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h2><a href="https://en.wikipedia.org/wiki/Stranger_Things_(TV_series)">Stranger Things</a></h2>
+<p>A great TV series produced by Netflix!</p>
+<h1>Ended or Canceled TV series</h1>
+<h2><a href="http://en.wikipedia.org/wiki/Breaking_Bad">Breaking Bad</a></h2>
+<p><strong>BEST TV SHOW EVER!</strong> They have won so many awards... According to Wikipedia, "the show has won 110 industry awards and been nominated for 262".</p>
+<h2><a href="http://en.wikipedia.org/wiki/Revolution_%28TV_series%29">Revolution</a></h2>
+<p>Another post-apocalyptic science fiction TV series where there is no electricity, after a worldwide blackout.</p>
+<h2><a href="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(TV_series)">Halt and Catch Fire</a></h2>
+<p>About the personal computer revolution in the 80's. The show ended in 2017.</p>
+<h2><a href="https://en.wikipedia.org/wiki/Sun_Records_(TV_series)">Sun Records</a></h2>
+<p>Music!</p>
+<h2><a href="https://en.wikipedia.org/wiki/Money_Heist">La Casa de Papel</a></h2>
+<p>New TV series from Netflix. Pretty cool!</p>
+<h1>TV shows I dropped</h1>
+<ul>
+<li>The 100 (after season 2 or 3)</li>
+<li>Sense 8 (after the very sexual episode, a Christmas special)</li>
+<li>Legion (after season 2, episode 7)</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 08 May 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

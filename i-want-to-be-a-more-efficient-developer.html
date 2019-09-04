@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, workflow, learning, succeed" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="I Want To Be A More Efficient Developer - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam" />
+
+        <title>I Want To Be A More Efficient Developer - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-05-25T17:17:00+02:00">Mon 25 May 2015</time> - Last Update: <time datetime="2016-01-09T19:45:00+01:00">Sat 09 January 2016</time>        </p>
+    <h1>I Want To Be A More Efficient Developer</h1>
+    <div class="grey">
+        <p class="italic">A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2142 words.">11 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/workflow.html">workflow</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/learning.html">learning</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/succeed.html">succeed</a></p>    </div>
+</header>
+<article>
+    <p>This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.</p>
+<p>As a Software Engineering Student, I meet every day a lot of people learning programming languages, trying to build databases, creating websites. We, at the <a href="http://www.utc.fr/">UTC</a>, have a lot of projects, each semester. I feel so sad each time they fail at using best practices. Among them, the worst, in my opinion, is being stuck in Windows, the operating system. They simply miss a lot of things. They are ignorant, they have no idea how their computers work. But that's my opinion. Now, let's begin with a list of best practices I've learnt from great people.</p>
+<h1>Use the right tools</h1>
+<h2>GNU/Linux</h2>
+<p>Or at least a Unix-like system. The terminal should be your best friend, be familiar with it. It's a lot more powerful than user interfaces. Unless you want to be a web designer, you must know how GNU/Linux works. Why? Because almost ALL servers rely on Unix systems. Another argument would be privacy, but that's another topic.</p>
+<p>There are plenty of user-friendly distributions, like Ubuntu or Xubuntu (my favorite one). As Windows users, you will hardly notice any difference, except for software compatibility. But hey, there are alternatives. And yes, you can keep Winodws on a separate partition for video games. I also <a href="//romainpellerin.eu/mastering-gnu-linux.html">wrote an article about GNU/Linux</a>.</p>
+<h2>Git</h2>
+<p>I've seen sooo many people sending each other source code via emails, or worse, Google Drive! What a pain in the ass! A lot of tools exist, such as Subversion, Mercurial, or Git. Obviously, Git is my favorite one (one of the reason is because it's Linus Torvalds himself who wrote it). And it's also more powerful than any other tool. For more information, checkout <a href="//romainpellerin.eu/git.html">my talk about Git</a>.</p>
+<h1>Show the world what you've done</h1>
+<p>Every programmers should have public Git repositories. Github is a good platform for exposing your source code publicly, for free. I've heard a lot of recruiters asking for source code to browse, in order to see what you do, how good your code is (or is not), what kind of personal projects you have. They want to make sure you'll write good code if they hire you. Having many projects available on the Internet is also a proof that you're passionate about Computer Science. That's a huuuuge plus!</p>
+<p>Github. Recruiters love it. Literally.</p>
+<p>A blog is another good way to express your feelings, write down your thoughts, your discoveries. <a href="https://github.com/getpelican/pelican">Setting up a blog doesn't take more than 5 minutes!</a>. <a href="http://blog.penso.info/2015/03/21/improve-blog-visibility/">Further reading about blogs here</a>.</p>
+<h1>Great inspiration from... inspirational people</h1>
+<p>Learn from them. They're all around us, just find them. Go to conferences, follow them on Twitter, read blog posts. During my last internship, I met a lot of talented people. I learnt a lot from them at that time. They're full of good advice. They have experience (and you don't, as a student).</p>
+<h1>Never stop learning</h1>
+<p>What's more, <a href="https://github.com/alex/what-happens-when">be curious</a>! And, <a href="https://github.com/sindresorhus/awesome">read</a>, <a href="https://github.com/bayandin/awesome-awesomeness">read a lot</a>.</p>
+<p>RSS is not dead and is still a really good ally to be kept up-to-date with the latest news in Computer Science. RIP Google Reader, long live <a href="https://github.com/FreshRSS/freshrss.org">FreshRSS</a>!</p>
+<h1>Be a super-programmer</h1>
+<p>Some basics I used to neglect... but now I regret. Every programmer should know those basic things. Once again, it helps a lot when it comes to interviews (for either an internship or a job). And this will be useful all your life. <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">The Joel Test</a> is also a good indicator about how good your are with code.</p>
+<p><a href="https://github.com/pusher/atom-pair">Pair programming</a> is an incredible way to learn from your friends (or teach them) as well.</p>
+<h2>Data structures and Memory management</h2>
+<p>Know the basic data structures, such a hash tables, primitives, etc. Those are the very basics of every programming language. You can't avoid them.</p>
+<p>You use Java everyday? Then you should know everything about Java memory management. Where are stored primitive types and objects? Stack? Heap? Doing C++? Where are stored lvalues, rvalues? And so on... A brief explanation about memory is in <a href="//romainpellerin.eu/understanding-the-memory.html">one of my articles</a></p>
+<p>This kind of advice applies to every language you claim to know.</p>
+<h2>Sorting algorithms</h2>
+<p>Know them. At least bubble, merge, quick sort, etc. Here is <a href="http://www.sorting-algorithms.com/">a great website</a>. Half the time, recruiters will ask you something about array sorting or things like that. And most of all, know their complexities!</p>
+<h1>Backup every little thing that is on your computer/servers</h1>
+<p>Consider everyday as the day your PC is gonna die. Projects should go to Github (or alternatives) if they are not confidential, personnal files to external hard drives (backed-up as well, so use at least two hard drives) or to the Cloud (I personally installed ownCloud on one of my servers). Once again, backup everything. Losing a whole hard drive disk is such a terrible thing, you can't predict nor prevent it. Be prepared. And for sure, you're gonna experience it, sooner or later.</p>
+<h1>English, English everywhere</h1>
+<p>Programming languages use English words, manuals are mostly written in English, almost everything in the Computer Science World is in English. So you'll have to get used to it. Be fluent. Set-up your devices to be in English. Same thing for your computer(s). Watch talks given in English. You will have to write English documentation, even though your company is not English. I wish every software engineer was bilingual, it would make things way easier. And guess what, <a href="//romainpellerin.eu/learning-a-foreign-language.html">learning a foreign language is not that hard!</a></p>
+<h1>Know how to use search engines</h1>
+<p>People whom repeatedly ask you simple things are such a pain! We have the entire world at our fingertips, thanks to the Internet. And we have Google. So please, Google everything! Google is smarter than us (or at least, he knows much more things). But first, learn (by yourself) how to use it. For instance, don't type whole sentences, use keywords.</p>
+<h1>Teach</h1>
+<p>Teaching people around you is a great way to stay "up-to-date". Sharing your knowledge, your passion, allows you to first organize ideas, sort them out, remove what's unnecessary. You then reach an even greater understanding of what you believed to know. Giving talks on a regular basis is a good way to practice.</p>
+<h1>Bonus</h1>
+<p>A while ago, I came upon <a href="http://www.infoq.com/fr/presentations/be-a-efficient-developer">this talk</a>, given by Quentin Adam (CEO of <a href="http://clever-cloud.com/">Clever Cloud</a>) at Mix It 2014. Last year, I had been given the opportunity to do an internship at WhoWanna, a French startup. Back then, we were working in the same open space as Clever Cloud. Consequently, I was working very close to Clever Cloud, thus Quentin Adam. And I can tell you, he is a very good developer, and above all, a very good CEO, full of good advice. But let's move on to his talk.</p>
+<p>The full talk (video), with its slides, is accessible <a href="http://www.infoq.com/fr/presentations/be-a-efficient-developer">here</a>. For those of you that don't have the time to watch it, I summed up the content right below. But the video is worth it, you should watch it (although it's in French, <a href="http://www.slideshare.net/quentinadam/mixit-efficient">the slides</a> are in English).</p>
+<p>For your information, the article's title is shamelessly copied/inspired from his talk :-)</p>
+<h2>Sum up (in order of appearance)</h2>
+<ol>
+<li><strong>Be happy</strong>: always try to work on projects you love. Work processes matter. Why people are happy? Cause they know that, as developers, they solve problems. They're not useless <strong>at all</strong>. Get inspiration from Open Source.</li>
+<li><strong>Get the right environment</strong>: work wherever you feel good. As developers, we only need a laptop and an Internet connection.</li>
+<li><strong>Be able to deploy seamlessly</strong>: <em>release early, deploy often</em>. This step should be easy. without any human interaction. Be focus when you code, on your code, not on deployment. You should be context-free: your application should not depend on the production environment. What's more, <strong>everyone</strong> should be able to deploy, not only one person. The team should not rely on a single person.</li>
+<li><strong>Deploy as often as possible</strong>: ideally, many times a day.</li>
+<li><strong>Split your apps into small modules:</strong> then you'll get a smaller codebase for each app. Each module is a service for other modules: use HTTP or AMQP between them.</li>
+<li><strong>Use the relevant technology, not the one you prefer</strong>: the language (or any other related tool) should be chosen according to your needs.</li>
+<li><strong>The two previous points refer to the <a href="http://en.wikipedia.org/wiki/Unix_philosophy#Eric_Raymond.E2.80.99s_17_Unix_Rules">KISS philosophy</a></strong></li>
+<li><strong>Use online databases</strong>: then you'll be ready to test in a few minutes. Your sys admins will love you: they won't have to edit any conf file.</li>
+<li><strong>Make all deployments asynchronous, module by module</strong></li>
+<li><strong>Avoid host-specific things</strong>: refers to point 3.</li>
+<li><strong>Do not use file system to store something</strong>: not its purpose. It doesn't scale. Use databases, or external services such as <a href="http://aws.amazon.com/s3/">Amazon S3</a>.</li>
+<li><strong>Modularize your team</strong>: avoid meetings, they're painful and almost useless. If anyone in your team has trouble, there's a problem. You have to maintain an internal documentation, clear, accessible to everyone, that gives you a good overview of your infrastructure.</li>
+<li><strong>Know your code and trash it if needed</strong>: it's sometimes an excellent idea to rewrite a whole module.</li>
+<li><strong>Use the right tools</strong>: no one should be forced to use a specific IDE.</li>
+<li><strong>Use a version control system for code and APIs, log EVERYTHING</strong>: you'll then know if an old API is still used. Ideally, use Git.</li>
+<li><strong>Use HTTP the right way</strong>: wanna throw an error? Use 40x or 50x codes. The body of a request is just complementary information.</li>
+<li><strong>Use a build manager and a configuration library</strong>: anyone should be able to build your application, no matter what IDE or platform you use (also refers to point 14). Don't hardcode your variables or settings.</li>
+<li><strong>Learn Git</strong>: ideally, use the command line interface. It's far more powerful than graphical tools, and more clear.</li>
+<li><strong>Avoid early performance optimization</strong>: compilers often optimize your code. Promote code readability. You will measure your code performance later.</li>
+<li><strong>Always think like it's your first day on the project</strong>: is the project easy to compile and run? Is the documentation clear? Make things easier for other developers.</li>
+<li><strong>Documentation matters, a lot</strong>: write everything. Oral communication is not as efficient as a good documentation. Refers to point 12.</li>
+</ol>
+<p>Hope you'll find it useful.</p>
+<p><br />
+Well, that's all for this article. Some very simple tips to follow, and then you'll become a real software engineer (in my opinion, at least).</p>
+<h1>Further reading</h1>
+<ul>
+<li><a href="http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/">Why tabs are clearly superior</a></li>
+<li><a href="https://www.uslide.io/presentations/Aw6sX5ug-Tfzw5rNXAmdJg">"Development Principles and Philosophy" par F.G. Ribreau</a></li>
+<li><a href="http://getawesomeness.com/">getAwesomeness: to retrieve all amazing awesomeness from Github</a></li>
+<li><a href="http://www.geek-directeur-technique.com/2013/12/16/les-9-regles-de-tim-minchin">Les 9 règles de Tim Minchin</a></li>
+<li><a href="http://coreight.com/content/etapes-succes">Les étapes vers le succès</a></li>
+<li><a href="https://medium.com/life-learning/why-knowing-stuff-doesn-t-really-matter-f06a5536ab59">Why Knowing Stuff Doesn’t Really Matter</a></li>
+<li><a href="https://medium.freecodecamp.com/being-a-developer-after-40-3c5dd112210c">Being A Developer After 40</a></li>
+<li><a href="http://www.hanselman.com/blog/AmIReallyADeveloperOrJustAGoodGoogler.aspx">Am I really a developer or just a good googler?</a></li>
+<li><a href="http://norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
+<li><a href="https://www.youtube.com/watch?v=CeaoTAXkIZE">How does Clever Cloud work? (Clément Delafargue - Quentin Adam)</a></li>
+<li><a href="https://medium.com/@romainserman/silicon-valley-etiquette-6934cf6f8f73">Silicon Valley Etiquette</a></li>
+<li><a href="https://alexdenning.com/deep-work-in-practice/">Deep work in practice: reimagining my workflow for radically less distraction</a></li>
+<li><a href="http://gb-prod.fr/2016/12/01/la-revue-de-code-bienveillante.html">La revue de code bienveillante</a></li>
+<li><a href="https://blog.nelhage.com/2016/12/how-i-test/">How I Write Tests</a></li>
+<li><a href="http://www.bbc.com/capital/story/20170105-open-offices-are-damaging-our-memories">Why open offices are bad for us</a></li>
+<li><a href="https://derniercri.io/tech-blog/structure-algebriques-introduction">Introduction aux structures algébriques</a></li>
+<li><a href="http://www.geek-directeur-technique.com/2017/02/08/normes-utiles">Normes utiles</a></li>
+<li><a href="https://medium.com/trisfera/general-coding-guidelines-clean-code-from-day-1-9ab0804e5d91">General Coding Guidelines: Clean Code From Day 1</a></li>
+<li><a href="https://www.ssi.gouv.fr/uploads/2017/01/guide_hygiene_informatique_anssi.pdf">GUIDE D’HYGIÈNE INFORMATIQUE</a></li>
+<li><a href="https://whatcanidoformozilla.org">What Can I Do For Mozilla?</a></li>
+<li><a href="http://www.dev-books.com/">Top mentioned books on stackoverflow.com</a></li>
+<li><a href="https://drewdevault.com/2017/03/15/How-I-learned-to-stop-worrying-and-love-C.html">Principles for C programming</a></li>
+<li><a href="http://www.cirosantilli.com/articles/">Articles about x86 assembly, C, C++, Nodejs, Git, etc</a></li>
+<li><a href="https://spin.atomicobject.com/2014/09/03/visualizing-garbage-collection-algorithms/">Visualizing Garbage Collection Algorithms</a></li>
+<li><a href="https://developers.google.com/web/updates/2017/04/headless-chrome">Getting Started with Headless Chrome</a></li>
+<li><a href="https://www.youtube.com/watch?v=V4J-m3o5JWg">Ratez vos revues de code en 5 leçons ! (Michel Domenjoud)</a></li>
+<li><a href="https://www.youtube.com/watch?v=KH40vSYLENA">10 méthodes pour rendre heureux les développeurs (Cyril Lakech - Romain Linsolas)</a></li>
+<li><a href="http://www.geek-directeur-technique.com/2017/06/29/gerer-sa-carriere">Gérer sa carrière</a></li>
+<li><a href="https://sidbala.com/h-264-is-magic/">H.264 is Magic</a></li>
+<li><a href="https://github.com/zeeshanu/learn-regex">Learn regex the easy way </a></li>
+<li><a href="https://mtlynch.io/human-code-reviews-1/">How to Do Code Reviews Like a Human (Part One)</a></li>
+<li><a href="https://mtlynch.io/human-code-reviews-2/">How to Do Code Reviews Like a Human (Part Two)</a></li>
+<li><a href="https://blog.todoist.com/2015/09/01/how-to-focus-better-at-work/">Why Focus Is Your Greatest Competitive Advantage at Work (Plus 19 Ways To Actually Do It)</a></li>
+<li><a href="https://gist.github.com/rondy/af1dee1d28c02e9a225ae55da2674a6f">Effective Engineer - Notes</a></li>
+<li><a href="https://davepaola.com/2018/01/25/if-you-multitask-during-meetings-your-team-will-too/">If You Multitask During Meetings, Your Team Will, Too</a></li>
+<li><a href="https://www.fs.blog/2012/04/learn-anything-faster-with-the-feynman-technique/">The Feynman Technique: The Best Way to Learn Anything</a></li>
+<li><a href="https://blog.octo.com/egoless-programming/">Egoless Programming</a></li>
+<li><a href="https://blog.octo.com/revue-de-code-quel-format-choisir/">Revue de code : quel format choisir ?</a></li>
+<li><a href="http://www.themindsetapp.com/musk-letter/">Elon Musk reveals his productivity rules in a letter he sent to Tesla employees</a></li>
+<li><a href="http://blog.samaltman.com/productivity">Productivity</a></li>
+<li><a href="https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action">Simon Sinek: How great leaders inspire action | TED Talk</a></li>
+<li><a href="https://www.youtube.com/watch?v=Vx9prTKpzCc">Comment négocier son salaire</a></li>
+<li><a href="https://www.dedoimedo.com/computers/linux-beginning-of-the-end.html">Linux - The beginning of the end</a></li>
+<li><a href="http://tonsky.me/blog/disenchantment/">Software disenchantment</a></li>
+<li><a href="https://www.youtube.com/watch?v=-Qy2vist-XQ">This Is How Successful People Manage Their Time</a></li>
+<li><a href="https://gomakethings.com/what-makes-someone-a-good-front-end-developer/">What makes someone a good front-end developer?</a></li>
+<li><a href="https://ahrefs.com/blog/google-advanced-search-operators/">Google Search Operators: The Complete List (42 Advanced Operators)</a></li>
+<li><a href="https://css-tricks.com/the-importance-of-one-on-ones/">The Importance of One-on-Ones</a></li>
+<li><a href="https://increment.com/internationalization/its-probably-never-going-to-work-in-german/">It’s probably never going to work in German</a></li>
+<li><a href="https://anaxi.com/blog/2019/02/20/how-to-make-other-developers-hate-to-work-with-you/">How to Make Other Developers Hate to Work with You</a></li>
+<li><a href="https://www.timsommer.be/famous-laws-of-software-development/">Famous laws of Software development</a></li>
+<li><a href="https://carbon.now.sh">Carbon: Create and share beautiful images of your source code</a></li>
+<li><a href="https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/">Storing UTC is not a silver bullet</a></li>
+<li><a href="https://lehollandaisvolant.net/?d=2019/04/02/12/19/05-teignez-vos-appareils">Éteignez vos appareils</a></li>
+<li><a href="https://github.com/wesbos/awesome-uses">Awesome Uses</a></li>
+<li><a href="https://medium.dave-bailey.com/the-essential-guide-to-difficult-conversations-41f736e63ccf">How to Deliver Constructive Feedback in Difficult Situations</a></li>
+<li><a href="https://sizovs.net/2019/04/10/the-best-developers-are-raised-not-hired/">Great developers are raised, not hired</a></li>
+<li><a href="https://mobile.twitter.com/jessitron/status/1123310331957145601">When we rush development, skip tests and refactoring, we get “Escalating Risk.” Please give up the “technical debt” description; it gives businesspeople a very wrong impression of the tradeoffs.</a></li>
+<li><a href="http://jamie-wong.com/2013/07/12/grep-test/">Too DRY - The Grep Test</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 09 January 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

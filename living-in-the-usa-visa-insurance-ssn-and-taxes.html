@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, usa, visa, insurance" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Everything one needs to know before applying for a visa in the US" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Living In The USA: Visa, Insurance, SSN, and Taxes - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Everything one needs to know before applying for a visa in the US" />
+
+        <title>Living In The USA: Visa, Insurance, SSN, and Taxes - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-02-19T01:50:00+01:00">Sun 19 February 2017</time> - Last Update: <time datetime="2019-04-27T00:03:00+02:00">Sat 27 April 2019</time>        </p>
+    <h1>Living In The USA: Visa, Insurance, SSN, and Taxes</h1>
+    <div class="grey">
+        <p class="italic">Everything one needs to know before applying for a visa in the US</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1724 words.">9 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/usa.html">usa</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/visa.html">visa</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/insurance.html">insurance</a></p>    </div>
+</header>
+<article>
+    <p>In this article, I explain and sum up everything one needs to know to apply for a J-1 visa in the US, in order to do an internship. Everything below is based on my experience and on the instructions I received.</p>
+<h1>Visa</h1>
+<p>Getting a J-1 visa for the US is a quite <a href="http://gaelleinlosangeles.com/demarches-visa-j1/">long process</a>. First and foremost, a sponsor is required. The most popular sponsor of J-1 visa programs is undoubtedly <a href="https://www.ciee.org/">CIEE</a>, a non-profit organization. But there are <a href="http://gaelleinlosangeles.com/visa-j1-choix-sponsor/">others</a>.</p>
+<p>CIEE has many partners throughout the world. A good one in France is <a href="http://www.parenthese-paris.com/">Parenthèse</a>. It is the one I decided to go with, since my internship company is used to working with them.</p>
+<p>Parenthèse's staff is very professional and helpful. They guided me all along the entire process.</p>
+<p>However, should you decide to deal with CIEE directly, with no intermediary, you will find everything you need at <a href="https://www.ciee.org/internship-usa/">www.ciee.org/internship-usa</a>.</p>
+<p>If my memory serves, the procedure is as follows:</p>
+<ul>
+<li>First Parenthèse emailed me a bunch of files to read and fill out (<a href="https://www.ciee.org/internship-usa/downloads/2017/CIEE_2017_Standard_INT-PCT_Application.pdf">a very long one addressed to CIEE</a>, and a short one for Parenthèse). They also ask for a copy of your passport. Fortunately, you can send them back over email.</li>
+<li>Next you pay (roughly 1500€ in total).</li>
+<li>By the time they get the money, Parenthèse must have sent your dossier to CIEE. You'll be contacted by them, <a href="https://www.ciee.org/internship-usa/downloads/2016/CIEE_Electronic_DS-7002_Instructions_for_Participants.pdf">asking you to provide them with your supervisor's details (on a website)</a>. Once done, your supervisor at your company will have to complete a form referred to as DS-7002. Then, you and your supervisor will both have to sign this form electronically, on the same website.</li>
+<li>After a few days, Parenthèse will receive a mail with your entire dossier (DS-2019, DS-7002, SEVIS fee payment receipt, proof of insurance, and a letter for the social security). They will forward everything to you.</li>
+<li>From now on, it is your responsibility to make an appointment at the US embassy. However you will need to complete an online form (the Online Nonimmigrant Visa Application, aka DS-160) beforehand. Upon completion of this form, you will have to pay a fee (152€ as of December 2016) by making a transfer. Once they receive the money, they will enable you to make an appointment. More information about that on <a href="https://fr.usembassy.gov/fr/visas-fr/visas-de-sejour-temporaire/">this website</a>. <a href="https://ais.usvisa-info.com/fr-fr/niv">Here is the French website to make an appointment.</a></li>
+<li>Finally, you will get to go to the embassy. Bring your passport, DS-2019, DS-7002, DS-160, SEVIS receipt, a 5"x5" photo of you (although a regular passport photo worked for me), and a proof of ties to your home country. Do not expect anything crazy, you'll get asked a couple of questions (like what the purpose of your trip is), fingerprints scanned, and within minutes you're out! Damn stressing though. Make sure you arrive at least 15 minutes early. Here are two links to articles (written in French), about how to prepare for this interview: <a href="http://gaelleinlosangeles.com/visa-j1-l-ambassade/">Visa J1 – L’ambassade</a> and <a href="http://blog.eexit.net/usa-entretien-a-lambassade-des-etats-unis-damerique/">USA: ENTRETIEN À L'AMBASSADE DES ÉTATS-UNIS D'AMÉRIQUE</a> (the latter is outdated).</li>
+<li>Roughly a week later, you will receive your passport with your visa. The last step before leaving is to complete the CIEE online orientation, which is basically an introduction to the US and what it's like to live there. You should normally have received an email with a link to that orientation.</li>
+</ul>
+<h1>Insurance</h1>
+<p>Getting a visa with CIEE as a sponsor is quite expensive, but there's a reason for that: they provide you with an insurance plan. Not the best for sure - not every expense is refunded and oftentimes you'll pay copays - but it's sufficient for most people. More information on <a href="https://www.ciee.org/insurance/index.html">their website</a>.</p>
+<h1>Things to do upon arrival: SEVIS and Social Security Number</h1>
+<p>First, make sure to carry your insurance card and passport with visa with you at all times.</p>
+<p>At the airport, you will be required to show the following documents:</p>
+<ul>
+<li>Passport with visa</li>
+<li>DS-2019</li>
+<li>SEVIS fee payment receipt </li>
+</ul>
+<p>Then, there are a few <a href="http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/des-votre-arrivee-aux-usa/">things to do in the next few days</a>. In the correct order, these things include:</p>
+<ul>
+<li>Registering for SEVIS by calling CIEE at 1-888-268-6245. Make sure you have your DS2019 form with you when calling since they are going to ask for your number, which begins with "N00". <strong>Do not register before the DS-2019 program start date.</strong> Provide them with your home address, email address, and American phone number at the same time.</li>
+<li>If you don't have a Social Security card, print a copy of your i94 number at <a href="https://www.cbp.gov/i94">www.cbp.gov/i94</a>.</li>
+<li>If you don't have a Social Security card, register for a Social Security number <strong>at least 2 days after registering for SEVIS and 10 days after entering the US</strong>: visit your local social security office (find one on <a href="https://www.ssa.gov/locator/">www.ssa.gov/locator</a>). You can visit them without any appointment. There, bring:<ul>
+<li>Your DS2019 form</li>
+<li>The letter "Dear social security officer", provided by CIEE</li>
+<li>Your passport with your visa</li>
+<li>Your i94 number (make sure to print the page from the official website, they do not accept any other paper).</li>
+</ul>
+</li>
+</ul>
+<p>After you have applied, the Social Security office will provide you with a "Proof of Application" document. This receipt may enable you to receive paychecks and open a bank account. You should check the status of your application within seven to ten days of submission by visiting a social security office. In case of problem, call CIEE. Then the card will arrive by mail within a few weeks (3 tops, otherwise contact CIEE). This card will be valid for your entire life.</p>
+<p>It is also advised to get a state ID card to avoid carrying your passport everywhere.</p>
+<p>Likewise, opening a bank account could be useful and sometimes necessary to get paid.</p>
+<p>You should notify CIEE of any change in US home address, phone number or email address within 10 days of the change.</p>
+<p>During your internship, you'll get two online evaluations to complete, one at mid-point and one at the end of the program. Your supervisor will get online evaluations to complete too. Should there be a problem (you or your supervisor didn't get the emails about the evaluation, for example), email CIEE at <a href="mailto:evals@ciee.org">evals@ciee.org</a>.</p>
+<h1>Trips outside of the USA</h1>
+<p>If you intend to go out of the USA temporarily, call CIEE at least 3 weeks prior to your departure. You will have to do some paperwork and CIEE will need to countersign your DS-2019. Each trip cannot exceed 30 days.</p>
+<h1>Things to do upon departing</h1>
+<p><a href="https://www.irs.gov/individuals/international-taxpayers/departing-alien-clearance-sailing-permit">Nothing ("<em>Aliens Not Required To Obtain Sailing or Departure Permits</em>")</a>, as far as I remember. Maybe change your personal details on your bank account, such as your home address.</p>
+<h1>Taxes</h1>
+<p>First of all, this <a href="http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/">article from Parenthèse</a> is quite useful for French expats.</p>
+<p>Also, here are some resources as to how to file your tax return (form 1040NR-EZ for J1 visas) if you want to do it by yourself instead of using a third party online service such as <a href="https://www.taxback.com/en/">TaxBack</a> or <a href="https://www.turbotax.com/">TurboTax</a> (TurboTax is not compatible with J1 visa holders):</p>
+<ul>
+<li><a href="http://www.visa-j1.fr/comment-remplir-le-formulaire-w-4/">Comment remplir le formulaire W-4 ?</a></li>
+<li><a href="https://www.irs.gov/forms-pubs/about-form-1040nr-ez-us-income-tax-return-for-certain-nonresident-aliens-with-no-dependents">About Form 1040-NR-EZ, U.S. Income Tax Return for Certain Nonresident Aliens With No Dependents</a></li>
+<li><a href="https://cms.montgomerycollege.edu/edu/department2.aspx?id=38693">1040NR-EZ line by line instructions</a></li>
+</ul>
+<p>As to me, well I used TaxBack.com. How did it go? Would I recommend their service? Everything you need to know right below.</p>
+<h2>TaxBack.com for J1 visa holders</h2>
+<h3>Pros</h3>
+<ul>
+<li>It's the only online service (that I found) that also handles J1 visas.</li>
+<li>They take care of everything, which means you save yourself approximatively a day of hassle.</li>
+<li>They customer support is very good. They usually respond to emails within a day.</li>
+<li>Their website, although a bit old, is convenient. They offer separate pages for each of your tax refund applications, with a step by step timeline showing you where your file is, in regard to the entire process (from submitting the required files and your W2 form to "you got your money on your bank account"). They handle FICA and US tax applications individually, on distinct pages.</li>
+<li>An online chat, very responsive.</li>
+<li>They take care of sending all the papers to IRS in the US, in your place.</li>
+<li>They can transfer your money back to any bank account in the world, in any currency. I believe the IRS is much more restrictive (only a cheque or transfer in USD on a US bank account?).</li>
+</ul>
+<h3>Cons</h3>
+<p><strong>EXPENSIVE</strong>: oh boy don't you expect them to be cheap. From the amount I was supposed to get back, they subtracted:</p>
+<ul>
+<li>Processing fees</li>
+<li>Handling fees</li>
+<li>Bank transfer fees ($35 per transfer)</li>
+</ul>
+<p>Also they applied a very disadventageous exchange rate (USD to EUR): between May 1 and May 11 (today), the official exchange rate fluctuated between 0.83 and 0.84. They used 0.79052 for my transfer, which occured some day between these two dates. You read it well.</p>
+<p>Before using their service, you'd better read <a href="https://www.taxback.com/en/tax-service-fees/">this page</a> very carefully. As an example, I was supposed to get $1156.91 back from FICA. The processing fee was $231.38 and the handling fee was $46.28. <strong>They kept 24% of my refund.</strong> Plus a $35 bank transfer fee. Geez! Not sure my time is worth that much money, after all. Maybe I should have taken the time to fill the documents by myself...</p>
+<h2>Taxes on bank interest for nonresident aliens</h2>
+<p>This topic is still quite unclear to me, but apparently it's "nontaxable and nonreportable", as per <a href="https://www.irs.gov/individuals/international-taxpayers/federal-income-tax-withholding-and-reporting-on-other-kinds-of-us-source-income-paid-to-nonresident-aliens">Federal Income Tax Withholding and Reporting on Other Kinds of U.S. Source Income Paid to Nonresident Aliens</a>. Even when you're no longer living in the US.</p>
+<p><a href="https://busfin.osu.edu/sites/default/files/nrafaqs.pdf">This other document</a> says:</p>
+<p>"<em>My only income was some bank interest. Do I have to file a tax return?</em>"</p>
+<p>"<em>A: If you are a nonresident alien, bank interest is excluded from your U.S. income under a special tax rule intended to encourage foreign investment in the United States. </em>"</p>
+<p><strong>Good to know</strong>: banks and credit unions send every year in January a document (FORM 1099) that lists earned interest only if above $10.</p>
+<p>Also bear in mind that some credit unions refer to interest as dividends:</p>
+<ul>
+<li><a href="https://budgeting.thenest.com/report-dividends-credit-union-account-24324.html">How to Report Dividends from a Credit Union Account</a></li>
+<li><a href="https://money.stackexchange.com/questions/14460/difference-between-dividend-and-interest">Difference between dividend and interest</a></li>
+<li><a href="https://www.irs.gov/faqs/interest-dividends-other-types-of-income/1099-div-dividend-income">1099-DIV Dividend Income</a>: "<em>Certain distributions commonly referred to as dividends actually should be reported as interest</em>"</li>
+</ul>
+<p>Finally, a few additional links related to the topic:</p>
+<ul>
+<li><a href="https://www.irs.gov/individuals/international-taxpayers/taxation-of-nonresident-aliens">Taxation of Nonresident Aliens</a></li>
+<li><a href="https://scheller-international.com/blog-beitraege/the-ins-and-out-of-us-taxation-for-german-citizens.html">The Ins and Out of US Taxation for German Citizens</a></li>
+<li><a href="https://www.irs.gov/pub/irs-pdf/p519.pdf">Publication 519: U.S. Tax Guidefor Aliens</a></li>
+</ul>
+<p><br /></p>
+<p>That's it! Hope it was helpful.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 27 April 2019</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

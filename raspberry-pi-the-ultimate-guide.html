@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, raspberry pi, linux, talk" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A complete tutorial about how to create a home server using a Raspberry Pi" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Raspberry Pi: The Ultimate Guide - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A complete tutorial about how to create a home server using a Raspberry Pi" />
+
+        <title>Raspberry Pi: The Ultimate Guide - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last Update: <time datetime="2018-12-15T16:00:00+01:00">Sat 15 December 2018</time>        </p>
+    <h1>Raspberry Pi: The Ultimate Guide</h1>
+    <div class="grey">
+        <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5669 words.">28 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
+</header>
+<article>
+    <p><em><a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip">Here is an old document I created a while ago. I keep it here for legacy purposes.</a></em></p>
+<p>I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.</p>
+<h1>Goal</h1>
+<p>I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.</p>
+<p>To sum up, few requirements, but big advantages. Let's get started!</p>
+<h1>What I used for this tutorial</h1>
+<ul>
+<li><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">A Raspberry Pi v3 model B</a></li>
+<li>A hard disk drive (<a href="http://wdlabs.wd.com/products/wd-pidrive-314gb/">WD's PiDrive</a>)</li>
+<li>Cables (<a href="http://wdlabs.wd.com/products/raspberry-pi-accessories/">WD's PiDrive Cable Kit</a> and an Ethernet cable)</li>
+<li>A micro SD card (<a href="http://www.samsung.com/us/computer/memory-storage/MB-MP16DA/AM">Samsung's microSDHC 16GB EVO Memory Card with Adapter</a>)</li>
+<li>A TV with a HDMI cable</li>
+<li>A laptop  with a card reader running GNU/Linux (Xubuntu to be precise)</li>
+<li>A wired keyboard</li>
+<li>A regular DSL Internet connection</li>
+</ul>
+<h1>Setting up the Raspberry Pi</h1>
+<h2>The OS</h2>
+<ol>
+<li>Download Raspbian Lite from <a href="https://www.raspberrypi.org/downloads/raspbian/">the official website</a>. It might be a good idea to verify the hash (SHA1).</li>
+<li>Extract the file .img from the zip.</li>
+<li>
+<p>Run one of the following commands:</p>
+<div class="highlight"><pre><span></span>df
+lsblk
+blkid
+fdisk -l
+</pre></div>
+
+
+</li>
+<li>
+<p>Plug in the SD card (on a regular computer, not the Raspberry Pi)</p>
+</li>
+<li>Redo step 3. in order to identify the SD card. <code>/dev/mmcblk0</code> or <code>/dev/sdb</code> for instance.  <code>/dev/mmcblk0pX</code> or <code>/dev/sdbX</code> would be a partition on the device, with X an integer.</li>
+<li>
+<p>Unmount <strong>all</strong> the partitions and copy Raspbian on the whole SD card:</p>
+<div class="highlight"><pre><span></span>umount /dev/mmcblk0p1
+sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span><span class="m">2014</span>-09-09-wheezy-raspbian.img <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+sudo sync <span class="o">&amp;&amp;</span> sync
+</pre></div>
+
+
+<p><code>bs=1M</code> can be used in case of error, it's slower but safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
+</li>
+<li>
+<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it. </p>
+</li>
+</ol>
+<h2>First boot</h2>
+<ol>
+<li>Insert the micro SD card in the Raspberry Pi. Plug in an Ethernet wire or make sure you have a Wifi access point available on which you can connect, Plug in the HDMI cable (connected to a screen), a keyboard and eventually the power cable.</li>
+<li>
+<p>Log in (user name is <em>pi</em> and password is <em>raspberry</em>). You can do it using a keyboard or over SSH if you Raspberry is connected. Then set the locales and the right keyboard layout:</p>
+<div class="highlight"><pre><span></span>sudo su
+dpkg-reconfigure locales <span class="c1"># Select with space bar, at least en_US.UTF-8 plus any other you need</span>
+dpkg-reconfigure keyboard-configuration <span class="c1"># A keyboard must be plugged in</span>
+dpkg-reconfigure tzdata
+</pre></div>
+
+
+<p>Regarding the keyboard layout, there are <a href="http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103">other alternatives</a>. Then reboot (<code>sudo reboot</code>).</p>
+</li>
+</ol>
+<h2>Configuration</h2>
+<ol>
+<li>
+<p>Should you need to connect over Wifi, here's how to do it:</p>
+<div class="highlight"><pre><span></span>sudo iwlist wlan0 scan
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+</pre></div>
+
+
+<p>Go to the bottom of the file and add the following:</p>
+<div class="highlight"><pre><span></span>network={
+    ssid=&quot;The_ESSID_from_earlier&quot;
+    psk=&quot;Your_wifi_password&quot;
+}
+</pre></div>
+
+
+<p>Otherwise, disable Wifi (and Bluetooth) as it draws power. Create <code>/etc/modprobe.d/disable_rpi3_wifi_bt.conf</code> and add the following:</p>
+<div class="highlight"><pre><span></span>##wifi
+blacklist brcmfmac
+blacklist brcmutil
+##bt
+blacklist btbcm
+blacklist hci_uart
+</pre></div>
+
+
+<p>Save and reboot. <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">More information</a>. At next reboot, make sure you're either connected or that Wifi is disabled by typing <code>ip a</code>.</p>
+</li>
+<li>
+<p>Double the current limit if your intend to plug USB devices. In <code>/boot/config.txt</code>, add the following:</p>
+<div class="highlight"><pre><span></span>max_usb_current=1
+</pre></div>
+
+
+<p><a href="https://www.raspberrypi.org/forums/viewtopic.php?p=930695#p930695">Some people say this has no effect on Raspberry Pi 3</a>.<br>
+You may finish editing this file by fine-tuning its parameters.</p>
+</li>
+<li>
+<p>Update you Pi:</p>
+<div class="highlight"><pre><span></span>sudo apt update
+sudo apt upgrade
+<span class="c1"># sudo apt install rpi-update # if this packet is missing</span>
+<span class="c1"># sudo reboot</span>
+<span class="c1"># sudo rpi-update # gets the latest firmware, normal users should not have to do it</span>
+<span class="c1"># More info, read: https://github.com/Hexxeh/rpi-update#notes</span>
+<span class="c1"># sudo reboot</span>
+<span class="c1"># sudo apt update</span>
+<span class="c1"># sudo apt upgrade</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>For security concerns, let's create a new user. The <em>pi</em> user will be deleted later.</p>
+<div class="highlight"><pre><span></span>sudo su
+passwd <span class="c1"># Add a password to the root account</span>
+adduser pipi
+usermod -a -G video pipi <span class="c1"># Otherwise omxplayer won&#39;t work with this user</span>
+<span class="nb">echo</span> <span class="s1">&#39;export HISTSIZE=100000&#39;</span> &gt;&gt; /root/.bashrc
+<span class="nb">echo</span> <span class="s1">&#39;export HISTFILESIZE=100000&#39;</span> &gt;&gt; /root/.bashrc
+<span class="nb">exit</span>
+<span class="c1"># Stay connected as &#39;pi&#39; for now</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Config the Pi:</p>
+<div class="highlight"><pre><span></span>sudo raspi-config
+</pre></div>
+
+
+<p>You should not expand the filesystem, neither change the user password cause we'll delete the <em>pi</em> user anyway. However, you should change the boot options (select choice B2) and the internationalisation options to English (UTF-8) (same for the environment locale, do not use C.UTF-8). If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the <em>pi</em> user.</p>
+</li>
+<li>
+<p>You should probably remove the ability to run "root" commands without typing pi’s password.</p>
+<div class="highlight"><pre><span></span>sudo visudo <span class="c1"># it will safely edit /etc/sudoers</span>
+</pre></div>
+
+
+<p>Here, remove "NOPASSWD: ". If there is no such a line, check out the file <code>/etc/sudoers.d/010_pi-nopasswd</code> and delete it.</p>
+</li>
+<li>
+<p>From another computer (not your Pi), do this:</p>
+<div class="highlight"><pre><span></span>ssh-keygen <span class="c1"># Use default choices</span>
+ssh-copy-id -i <span class="nv">$HOME</span>/.ssh/id_rsa.pub pipi@&lt;raspberry-pi-IP&gt;
+</pre></div>
+
+
+</li>
+<li>
+<p>Get back to your Pi, still logged in as <em>pi</em> and do:</p>
+<div class="highlight"><pre><span></span>su
+apt install ntpdate rsync
+<span class="c1"># ntpdate to set the clock correctly.</span>
+<span class="c1"># rsync is just better than cp</span>
+ntpdate -u fr.pool.ntp.org
+reboot
+</pre></div>
+
+
+</li>
+<li>
+<p>Now, it's time to delete the <em>pi</em> user. Log in as your new user (in my case it's <em>pipi</em>) and then:</p>
+<div class="highlight"><pre><span></span>su <span class="c1"># Type the root password here</span>
+deluser --remove-home pi 
+visudo <span class="c1"># Make sure there&#39;s no reference to pi user</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Finally, make sure to copy these three lines in both your <code>&lt;new home&gt;/.bashrc</code> and <code>/root/.bashrc</code>:</p>
+<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+<span class="nb">export</span> <span class="nv">LANGUAGE</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
+</pre></div>
+
+
+<p>And then run the following commands, as super-user:</p>
+<div class="highlight"><pre><span></span><span class="nb">source</span> .bashrc <span class="o">&amp;&amp;</span> locale-gen <span class="s2">&quot;en_US.UTF-8&quot;</span> <span class="o">&amp;&amp;</span> dpkg-reconfigure locales
+</pre></div>
+
+
+</li>
+</ol>
+<h2>Moving <code>/root</code> onto an external hard disk drive, not encrypted, with additional encrypted DATA partition</h2>
+<p><strong>NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED</strong>: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md">tutorial here</a>.</p>
+<p><em>Right after this section you will find another one about how to do a similar operation using an encrypted hard disk.</em></p>
+<p>As root,</p>
+<div class="highlight"><pre><span></span>lsblk <span class="c1"># Identify the hard disk drive connected to the Pi</span>
+fdisk /dev/sda
+</pre></div>
+
+
+<p>Do the following sequence of keystrokes:</p>
+<div class="highlight"><pre><span></span>d # Delete all the existing partitions if many
+n # Create a new one
+p # Primary
+1
+&lt;Enter&gt; # Hit enter key
++100G # 100GB, or something else
+n # Create a second partition, swap
+p
+2
+&lt;Enter&gt;
++2G
+t # Change the type...
+2 # Of the second partion
+82 # Make it a swap partition
+n # Create the data partition
+p
+3
+&lt;Enter&gt;
+&lt;Enter&gt;
+p # Make sure everything is OK
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>mkfs.ext4 /dev/sda1 -L ROOT -m <span class="m">5</span>
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3 -L DATA -m <span class="m">5</span>
+apt install cryptsetup
+cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> -h sha256 luksFormat /dev/sda3
+cryptsetup -v luksOpen /dev/sda3 hddcrypt
+mkfs.ext4 /dev/mapper/hddcrypt -L DATA -m <span class="m">1</span>
+mkdir /mnt/data_partition
+mount /dev/mapper/hddcrypt /mnt/data_partition/
+
+cat /boot/cmdline.txt <span class="c1"># See if you can find root=/dev/mmcblk0p2. If yes then...</span>
+sed -e <span class="s2">&quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&quot;</span> -i /boot/cmdline.txt
+<span class="c1"># Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`</span>
+<span class="c1"># Add &#39;bootwait&#39; at the end of the line, in the same file</span>
+<span class="c1"># The &#39;rootwait&#39; option forces the kernel to wait until the root device becomes ready</span>
+</pre></div>
+
+
+<p>Edit <code>/etc/fstab</code> that way:</p>
+<div class="highlight"><pre><span></span>proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/sda1       /               ext4    defaults,noatime  0       1
+/dev/sda2       none            swap    sw                0       0
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>mkdir /tmp/rootsd <span class="o">&amp;&amp;</span> mount /dev/mmcblk0p2 /tmp/rootsd
+mkdir /tmp/roothdd <span class="o">&amp;&amp;</span> mount /dev/sda1 /tmp/roothdd
+rsync -a /tmp/rootsd/ /tmp/roothdd/
+sync
+e2fsck -f /dev/sda1 <span class="c1"># You might need to umount it first</span>
+reboot
+update-rc.d -f dphys-swapfile remove
+apt remove dphys-swapfile
+cat /proc/swaps
+swapoff /var/swap <span class="c1"># Might fail if it was not listed in the previous command</span>
+sudo rm -f /var/swap
+reboot
+su
+/sbin/swapon -s <span class="c1"># Make sure only your swap partition is in use</span>
+dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2 <span class="nv">bs</span><span class="o">=</span>10M <span class="c1"># Delete unused old root partition</span>
+fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
+</pre></div>
+
+
+<h2>Moving <code>/root</code> onto an external hard disk drive, encrypted</h2>
+<p>I would like to thank a few websites which helped me a lot to write this article:</p>
+<ul>
+<li><a href="http://paxswill.com/blog/2013/11/04/encrypted-raspberry-pi/">Using an Encrypted Root Partition with Raspbian</a></li>
+<li><a href="http://chezmanu.eu/RPI-Chiffrement.php">Chiffrement d'un Raspberry Pi avec Raspbian et Luks/Cryptsetup</a></li>
+<li><a href="http://docs.kali.org/kali-dojo/04-raspberry-pi-with-luks-disk-encryption">Raspberry Pi Disk Encryption</a></li>
+</ul>
+<p>Stay logged in as <em>root</em>.</p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;initramfs initramfs.gz 0x00f00000&quot;</span> &gt;&gt; /boot/config.txt
+cat /boot/config.txt
+
+cat /boot/cmdline.txt
+sed -e <span class="s2">&quot;s|root=/dev/mmcblk0p2|root=/dev/mapper/hddcrypt cryptdevice=/dev/sda1:hddcrypt|&quot;</span> -i /boot/cmdline.txt
+cat /boot/cmdline.txt <span class="c1"># Check it has been effectively changed</span>
+
+sed -e <span class="s2">&quot;s|/dev/mmcblk0p2|/dev/mapper/hddcrypt|&quot;</span> -i /etc/fstab
+cat /etc/fstab <span class="c1"># Make sure it&#39;s all right</span>
+<span class="nb">echo</span> -e <span class="s2">&quot;hddcrypt\t/dev/sda1\tnone\tluks&quot;</span> &gt;&gt; /etc/crypttab
+cat /etc/crypttab
+
+lsblk <span class="c1"># Identify the hard disk drive connected to the Pi</span>
+fdisk /dev/sda <span class="c1"># Delete any existing partition, create new one with default choices</span>
+apt install cryptsetup
+cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> -h sha256 luksFormat /dev/sda1
+<span class="c1"># 512-bit AES encryption with 256-bit SHA hashing algorithm</span>
+cryptsetup -v luksOpen /dev/sda1 hddcrypt
+mkfs.ext4 /dev/mapper/hddcrypt -L ROOT_HDD -m <span class="m">1</span>
+
+<span class="c1"># Let&#39;s mount in two directories the unencrypted root partition from the SD card</span>
+<span class="c1"># and the new encrypted root partition from the HDD</span>
+mkdir /tmp/rootplain <span class="o">&amp;&amp;</span> mount /dev/mmcblk0p2 /tmp/rootplain/
+mkdir /tmp/rootcrypt <span class="o">&amp;&amp;</span> mount /dev/mapper/hddcrypt /tmp/rootcrypt/
+rsync -a /tmp/rootplain/ /tmp/rootcrypt/ <span class="c1"># Copy from plain to encrypted</span>
+sync
+
+mkinitramfs -o /boot/initramfs.gz <span class="k">$(</span>uname -r<span class="k">)</span>
+reboot
+
+<span class="c1"># Delete old /root</span>
+su 
+dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2 <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
+</pre></div>
+
+
+<h3>Enable remote unlocking</h3>
+<p>References:</p>
+<ul>
+<li><a href="https://stinkyparkia.wordpress.com/2014/10/14/remote-unlocking-luks-encrypted-lvm-using-dropbear-ssh-in-ubuntu-server-14-04-1-with-static-ipst/">Remote unlocking LUKS encrypted LVM using Dropbear SSH in Ubuntu Server 14.04.1 (with Static IP)</a></li>
+<li><a href="https://chicagolug.org/news/2015-10-09-remotely-unlock-encrypted-server-with-dropbear.html">Remotely Unlocking Encrypted Servers with Dropbear (on Ubuntu)</a></li>
+</ul>
+<p>Let's get started! On your Pi:</p>
+<div class="highlight"><pre><span></span>su
+apt install dropbear
+mkinitramfs -o /boot/initramfs.gz <span class="k">$(</span>uname -r<span class="k">)</span> <span class="c1"># Triggers SSH key generation</span>
+
+<span class="c1"># Next command is really important, it gives the Pi enough time to get an IP address</span>
+sed <span class="s2">&quot;s/configure_networking\ \&amp;/echo \&quot;Waiting 5secs...\&quot;\nsleep\ 5\nconfigure_networking\/&quot;</span> -i /usr/share/initramfs-tools/scripts/init-premount/dropbear
+cat /usr/share/initramfs-tools/scripts/init-premount/dropbear
+
+<span class="nb">cd</span> /etc/dropbear/
+rm /etc/initramfs-tools/etc/dropbear/dropbear_dss_host_key
+rm /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+<span class="c1"># Next command improves security. Default length is 1024</span>
+dropbearkey -t rsa -s <span class="m">4096</span> -f /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+</pre></div>
+
+
+<p>Now, add the following at the beginning of the first line of the file <code>/etc/initramfs-tools/root/.ssh/authorized_keys</code>:</p>
+<div class="highlight"><pre><span></span>command=&quot;/scripts/local-top/cryptroot &amp;&amp; kill -9 `ps | grep -m 1 &#39;cryptroot&#39; | cut -d &#39; &#39; -f 3`&quot;
+</pre></div>
+
+
+<p>To forbid authentication using passwords and to change the listening port used by Dropbear, create the file <code>/etc/initramfs-tools/conf.d/dropbear</code> and add:</p>
+<div class="highlight"><pre><span></span>export PKGOPTION_dropbear_OPTION=&quot;-s -p 1234&quot;
+</pre></div>
+
+
+<p>And do:</p>
+<div class="highlight"><pre><span></span>mkinitramfs -o /boot/initramfs.gz <span class="k">$(</span>uname -r<span class="k">)</span> <span class="c1"># Might be useless</span>
+update-initramfs -u
+</pre></div>
+
+
+<p>From now, you have 3 possibilities to access your Raspberry Pi remotely:</p>
+<ol>
+<li>Using a public key</li>
+<li>Using the Raspberry's private key</li>
+<li>Using an account's password</li>
+</ol>
+<p>The two first possibilities are quite safe, compared to the third one. It's well known that authentication using passwords over SSH is not that safe.<br>
+Using your PC's SSH public key is a good solution but not reliable in the long term. Imagine you were to lose access to your personal computer, you would end up locked out of your Raspberry with no means to access it. On the other hand, using your Raspberry Pi's SSH private as an identity is far more convenient in that you can store that file on many devices. Should you lose you computer, you could still access your Raspberry from another computer, given that you still have access to that private key. I know it's not the safest solution but that's the one I chose to go with.</p>
+<p>So here are how to do it with those two first choices, but I recommend you to go with the second one.</p>
+<h4>Choice 1</h4>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="k">$(</span>cat /home/pipi/.ssh/authorized_keys<span class="k">)</span> &gt;&gt; /etc/initramfs-tools/root/.ssh/authorized_keys <span class="c1"># Will grant us direct SSH access</span>
+cat /etc/initramfs-tools/root/.ssh/authorized_keys <span class="c1"># Make sure it&#39;s all right</span>
+</pre></div>
+
+
+<h4>Choice 2</h4>
+<p>Save the content of <code>/etc/initramfs-tools/root/.ssh/id_rsa</code> on your computer. <strong>Make sure to copy the entire file, including first and last lines.</strong> And do that on the newly created file, on your computer:</p>
+<div class="highlight"><pre><span></span>chmod <span class="m">0600</span> id_rsa_rpi
+</pre></div>
+
+
+<p>Now, you can connect to your Pi like this:</p>
+<div class="highlight"><pre><span></span>ssh -i id_rsa_rpi root@192.168.1.XX -v -p <span class="m">1234</span>
+</pre></div>
+
+
+<p><br /></p>
+<p>Finally, last step:</p>
+<div class="highlight"><pre><span></span>update-rc.d dropbear disable <span class="c1"># Only openssh will be used after partition is decrypted</span>
+mkinitramfs -o /boot/initramfs.gz <span class="k">$(</span>uname -r<span class="k">)</span> <span class="c1"># Might be useless</span>
+update-initramfs -u
+reboot
+</pre></div>
+
+
+<p>For more information in this whole thing, read the official documentation provided by cryptsetup:</p>
+<div class="highlight"><pre><span></span>zcat /usr/share/doc/cryptsetup/README.remote.gz
+</pre></div>
+
+
+<p>Should you need to upgrade your firmware, make sure to update the right initramfs before rebooting. Read the end of <a href="http://chezmanu.eu/RPI-Chiffrement.php">this article</a> to find out how to do it.</p>
+<p>Instead of unlocking your hard disk drive over SSH, if you prefer to use a keyfile, <a href="http://longsteve.com/wiki/index.php?title=USB_Hard_Drive_Encryption_on_a_Raspberry_Pi">check out this website</a>.</p>
+<p>If you are brave enough, have a look at the section below called <em>Hardening security</em>. You might want to improve Dropbear settings.</p>
+<p>You might also want to read about <a href="https://wiki.mozilla.org/Security/Guidelines/OpenSSH">Mozilla's recommandation in terms of SSH security</a>.</p>
+<h1>Tips</h1>
+<h2>Screen blank time</h2>
+<p>To avoid screen blanking after a while in the console (tty), change <code>BLANK_TIME</code> to 0 in /etc/kbd/config.</p>
+<h2>Auto login</h2>
+<p>As previously seen, the tool <code>rasp-config</code> allows you to configure auto login. But you can also do this with the command line. In <em>/etc/inittab</em>, replace</p>
+<div class="highlight"><pre><span></span>1:2345:respawn:/sbin/getty 115200 tty1
+</pre></div>
+
+
+<p>with</p>
+<div class="highlight"><pre><span></span>1:2345:respawn:/bin/login -f pi tty1 &lt;/dev/tty1 &gt;/dev/tty1 2&gt;&amp;1
+</pre></div>
+
+
+<h2>Stopping Raspberry-Pi from auto changing source on TV</h2>
+<div class="highlight"><pre><span></span>sudo <span class="nb">echo</span> <span class="s2">&quot;hdmi_ignore_cec_init=1&quot;</span> &gt;&gt; /boot/config.txt
+</pre></div>
+
+
+<h2>Auto-mount an external hard disk drive</h2>
+<div class="highlight"><pre><span></span>mkdir /home/pi/my_wonderful_hdd <span class="c1"># Where the HDD will be mounted</span>
+sudo fdisk -l <span class="c1"># Note the location of the HDD (something like /dev/sda1)</span>
+sudo mount -t auto /dev/sda1 /home/pi/my_wonderful_hdd <span class="c1"># Mount it now</span>
+sudo <span class="nb">echo</span> <span class="s2">&quot;/dev/sda1 /home/pi/my_wonderful_hdd auto noatime 0 0&quot;</span> &gt;&gt; /etc/fstab <span class="c1"># Auto mount at boot</span>
+</pre></div>
+
+
+<h2>Change hostname</h2>
+<p>Use the tool <code>rasp-config</code> or edit both <em>/etc/hostname</em> and <em>/etc/hosts</em>.</p>
+<h2>Disable SWAP permanently</h2>
+<p>Swapping is bad for your SD card lifespan. You should disable it permanently. You might however want to keep swap on a partition on a hard disk drive (see above). To disable permatently on SD card and disk, run:</p>
+<div class="highlight"><pre><span></span>sudo swapoff --all <span class="c1"># Temporary, disables also dedicated partitions (like /dev/sda2)</span>
+sudo update-rc.d dphys-swapfile remove
+sudo apt remove dphys-swapfile <span class="c1"># Permanently</span>
+sudo rm /var/swap
+</pre></div>
+
+
+<h1>DynHost</h1>
+<ol>
+<li><code>apt install lynx</code> (as root)</li>
+<li>Download <a href="https://github.com/rpellerin/dotfiles">https://github.com/rpellerin/dotfiles</a>.</li>
+<li>Copy in your user's home folder the directory <em>scripts/DynHost</em>.</li>
+<li>Edit the lines <code>HOST</code>, <code>LOGIN</code>, <code>PASSWORD</code> and <code>PATH_APP</code> in the file <em>dynhost</em>.</li>
+<li>
+<p>Add a cronjob (<code>crontab -e</code>), on your Pi, with the same user (not root!):</p>
+<div class="highlight"><pre><span></span>*/1 * * * * /home/pi/DynHost/dynhost
+</pre></div>
+
+
+<p>All good!</p>
+</li>
+</ol>
+<h1>Send email automatically on startup with a Python script (DEPRECATED: not recommended, instead use <code>sendmail</code>)</h1>
+<ol>
+<li>Download <a href="https://github.com/rpellerin/python-mailer">https://github.com/rpellerin/python-mailer</a>. The instructions given right below are the same as those you'll find at this URL.</li>
+<li>Install Python 3 (see instructions in <a href="https://github.com/rpellerin/dotfiles/blob/master/README.md">https://github.com/rpellerin/dotfiles/blob/master/README.md</a> for the latest version or simply do <code>apt install python3</code> as root).</li>
+<li>
+<p>Do, as a normal user (not root!):</p>
+<div class="highlight"><pre><span></span>mv /path-to-python-mailer/scripts/script-pc-turned-on.py /path-to-python-mailer/script-pc-turned-on.py
+<span class="nb">echo</span> <span class="s1">&#39;#!/bin/sh&#39;</span> &gt; <span class="nv">$HOME</span>/sendEmailOnStartup.sh
+<span class="nb">echo</span> <span class="s2">&quot;python3 /path-to-python-mailer/script-pc-turned-on.py&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/sendEmailOnStartup.sh
+</pre></div>
+
+
+</li>
+<li>
+<p>Edit, in <em>script-pc-turned-on.py</em>, the path to the file containing recipients.</p>
+</li>
+<li>
+<p>Create that file and add email addresses in the following format:</p>
+<div class="highlight"><pre><span></span>John Doe,john@doe.com
+</pre></div>
+
+
+</li>
+<li>
+<p>Edit the file <em>config.py</em>.</p>
+</li>
+<li>
+<p>Do:</p>
+<div class="highlight"><pre><span></span>chmod +x <span class="nv">$HOME</span>/sendEmailOnStartup.sh
+</pre></div>
+
+
+</li>
+<li>
+<p>Try to execute that file, as a normal user (not root!), to make sure everything is all right:</p>
+<div class="highlight"><pre><span></span>./sendEmailOnStartup.sh
+</pre></div>
+
+
+</li>
+<li>
+<p>If OK, add the following in <em>/etc/rc.local</em>, right above <code>exit 0</code>:</p>
+<div class="highlight"><pre><span></span>su - pi -c /home/pi/sendEmailOnStartup.sh &amp;
+sleep 5
+exit 0
+</pre></div>
+
+
+<p>Don't forget to change the path if need be. You user might not be <em>pi</em>. Reboot to make sure it worked.</p>
+</li>
+</ol>
+<h1>Send email automatically on startup with <code>sendmail</code></h1>
+<p>Add the following in <code>crontab -e</code> as root:</p>
+<div class="highlight"><pre><span></span>@reboot /bin/sleep <span class="m">30</span><span class="p">;</span> /usr/sbin/exim -qff<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Rpi turned on&quot;</span> me@domain
+</pre></div>
+
+
+<p>Now, read the section right below.</p>
+<h1>Configure a local SMTP email server</h1>
+<p>Before doing this. make sure you did set the hostname of your Raspberry Pi through <code>raspi-config</code>. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with <strong>an existing domain</strong>.</p>
+<p>Make sure to disable <code>/var/log</code> from being in RAM since Exim4 needs <code>/var/log/exim4/mainlog</code> to exist, even after a reboot. </p>
+<p>This is pretty convient as some programs still prefer to send emails, such as <code>cron</code>.<br>
+Normally, Exim4 comes pre-installed with Debian. If not, do <code>apt install exim4</code>. Then:</p>
+<div class="highlight"><pre><span></span>su
+dpkg-reconfigure exim4-config
+<span class="c1"># Second choice, &quot;mail sent by smarthost; received via SMTP or fetchmail&quot;</span>
+<span class="c1"># System mail name: keep default; must be a valid FQDN though (ending with .com for example). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.</span>
+<span class="c1"># IP-addresses to listen on: keep default, we don&#39;t want to receive external emails</span>
+<span class="c1"># Other destinations: leave blank</span>
+<span class="c1"># Machines to relay mail for: leave blank</span>
+<span class="c1"># IP address or host name of the outgoing smarthost: your SMTP server with port, like ssl0.ovh.net::465</span>
+<span class="c1"># Hide local mail name: no, or yes if you let &#39;System mail name&#39; blank. If you set a domain, it MUST EXIST otherwise some server will reject your emails.</span>
+<span class="c1"># Keep number of DNS-queries minimal: no</span>
+<span class="c1"># Delivery method for local mail: mbox</span>
+<span class="c1"># Split configuration into small files: no</span>
+<span class="c1"># Root and postmaster mail recipient: write one of your email addresses or leave blank</span>
+</pre></div>
+
+
+<p>Now <code>update-exim4.conf</code>.</p>
+<p>Then, <code>cat /etc/mailname</code> and make sure the system mail name you just specified is correctly reported here.</p>
+<p>In <em>/etc/exim4/passwd.client</em>, add you credentials, like:</p>
+<div class="highlight"><pre><span></span>ssl0.ovh.net:me@mydomain.com:password
+</pre></div>
+
+
+<p>If your SMTP server uses port 465 with SSL, you'll need to edit <em>/etc/exim4/exim4.conf.template</em>. Add the following line, after <code>driver = smtp</code>, under <code>remote_smtp_smarthost</code>:</p>
+<div class="highlight"><pre><span></span>protocol = smtps
+</pre></div>
+
+
+<p><a href="http://www.gossamer-threads.com/lists/exim/users/96817">More information</a>.</p>
+<p>Now add these lines in <em>/etc/aliases</em> (changes the lines according to your needs):</p>
+<div class="highlight"><pre><span></span>root: user1
+user1: address1@domain
+user2: address2@domain
+</pre></div>
+
+
+<p>Any email intended for user1 will be sent to the corresponding email address. <strong>Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.</strong><br>
+You can also edit <em>/etc/email-addresses</em>: this file contains addresses used for <em>from</em>, <em>reply-to</em> and <em>sender addresses</em> fields.</p>
+<p>Then:</p>
+<div class="highlight"><pre><span></span>newaliases <span class="c1"># To apply changes brought to aliases</span>
+update-exim4.conf
+<span class="c1"># /etc/init.d/exim4 restart</span>
+systemctl restart exim4
+<span class="nb">echo</span> <span class="s2">&quot;This is a test.&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;test message&quot;</span> anotherme@somewhere.com <span class="c1"># Try sending an email</span>
+<span class="nb">echo</span> <span class="s2">&quot;This is a test.&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;test message for root&quot;</span> root <span class="c1"># Try sending an email</span>
+runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues</span>
+</pre></div>
+
+
+<p><a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux">More information</a>.</p>
+<h1>Send emails automatically on shell login</h1>
+<p>Edit your user and root's <code>.bashrc</code> and add at the end of the file:</p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Root shell login&quot;</span> me@domain
+</pre></div>
+
+
+<h1>Installing Nextcloud 15.0.0</h1>
+<p>Official tutorial: <a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html">https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html</a>.</p>
+<div class="highlight"><pre><span></span>su
+apt install apache2
+apt install mariadb-server
+apt install libapache2-mod-php7.0 php7.0
+apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+systemctl restart apache2
+
+<span class="nb">cd</span> /var/www
+mkdir nextcloud
+wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+sha256sum -c &lt;<span class="o">(</span>wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -<span class="o">)</span> &lt; nextcloud-15.0.0.zip
+unzip nextcloud-15.0.0.zip
+chown -R www-data:www-data /var/www/nextcloud/
+
+mysql -u root -p <span class="c1"># No password is required, just hit enter</span>
+CREATE USER <span class="s1">&#39;nextclouduser&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;Password&#39;</span><span class="p">;</span>
+create database nextcloud<span class="p">;</span>
+GRANT ALL ON nextcloud.* TO <span class="s1">&#39;nextclouduser&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+flush privileges<span class="p">;</span>
+exit<span class="p">;</span>
+
+mysql -u nextclouduser -p <span class="c1"># Make sure it worked</span>
+mysql_secure_installation
+
+a2enmod ssl
+a2ensite default-ssl <span class="c1"># Enable HTTPS website</span>
+
+apachectl -M <span class="c1"># Check modules enabled</span>
+<span class="c1"># Enable the following if not already done</span>
+a2enmod rewrite
+a2enmod headers
+a2enmod env
+a2enmod dir
+a2enmod mime
+systemctl restart apache2
+systemctl disable apache2 <span class="c1"># No auto start on boot</span>
+</pre></div>
+
+
+<p>Now edit <code>/etc/apache2/sites-enabled/000-default.conf</code>. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):</p>
+<div class="highlight"><pre><span></span>Alias /nextcloud &quot;/var/www/nextcloud/&quot;
+&lt;Directory &quot;/var/www/nextcloud&quot;&gt;
+Options +FollowSymLinks
+AllowOverride All
+
+&lt;IfModule mod_dav.c&gt;
+        Dav off
+&lt;/IfModule&gt;
+
+SetEnv HOME /var/www/nextcloud
+SetEnv HTTP_HOME /var/www/nextcloud
+&lt;/Directory&gt;
+
+&lt;Directory &quot;/mnt/data_partition/&quot;&gt;
+# just in case if .htaccess gets disabled
+    Require all denied
+&lt;/Directory&gt;
+
+&lt;VirtualHost *:80&gt;
+        ServerName cloud.romainpellerin.eu
+        ServerAdmin romain@romainpellerin.eu
+        DocumentRoot /var/www/nextcloud
+
+        RewriteEngine on
+        RewriteCond %{HTTPS} off
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;
+</pre></div>
+
+
+<p>Bring the changes between <code>&lt;VirtualHost&gt;</code> tags to <em>/etc/apache2/sites-enables/default-ssl.conf</em>, except for the instruction <code>Redirect</code>. Additionally, add instructions taken from <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.25&amp;openssl=1.1.0j&amp;hsts=yes&amp;profile=modern">Mozilla SSL Configuration Generator</a>:</p>
+<div class="highlight"><pre><span></span>&lt;VirtualHost *:443&gt;
+    ...
+    SSLEngine on
+
+    # HSTS (mod_headers is required) (15768000 seconds = 6 months)
+    Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
+    ...
+&lt;/VirtualHost&gt;
+
+# modern configuration, tweak to your needs
+SSLProtocol             all -SSLv3 -TLSv1 -TLSv1.1
+SSLCipherSuite          ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+SSLHonorCipherOrder     on
+SSLCompression          off
+SSLSessionTickets       off
+
+# OCSP Stapling, only in httpd 2.3.3 and later
+SSLUseStapling          on
+SSLStaplingResponderTimeout 5
+SSLStaplingReturnResponderErrors off
+SSLStaplingCache        shmcb:/var/run/ocsp(128000)
+</pre></div>
+
+
+<p>To enable HTTP2, do <code>a2enmod http2</code> and edit <code>default-ssl.conf</code> again:</p>
+<div class="highlight"><pre><span></span>&lt;VirtualHost *:443&gt;
+    ...
+    ProtocolsHonorOrder On
+    Protocols h2 h2c http/1.1
+    H2Direct on
+    ...
+</pre></div>
+
+
+<p><a href="https://http2.pro/doc/Apache">Note that Apache prefork is not compatible with HTTP2</a>. You'll have to <a href="https://blog.feutl.com/nextcloud-http2/">use fpm</a>. See <a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html#php-ini-configuration-notes">Nextcloud's instructions also</a>.</p>
+<p>Let us now improve a bit Apache's security. Edit <em>/etc/apache2/conf-enabled/security.conf</em> like this:</p>
+<div class="highlight"><pre><span></span>ServerSignature Off
+Header set X-Frame-Options: &quot;sameorigin&quot; # Require mod_headers
+ServerTokens Prod
+</pre></div>
+
+
+<p>Now, visit http://raspberry-pi-IP/nextcloud once. This will create <code>/var/www/nextcloud/config/config.php</code>. Edit this file like this:</p>
+<div class="highlight"><pre><span></span><span class="s1">&#39;overwrite.cli.url&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;https://example.org/&#39;</span>,
+<span class="s1">&#39;htaccess.RewriteBase&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;/&#39;</span>,
+</pre></div>
+
+
+<p>Now edit <code>/etc/apache2/sites-enable/000-default.conf</code> like this:</p>
+<div class="highlight"><pre><span></span>Alias / <span class="s2">&quot;/var/www/nextcloud/&quot;</span>
+</pre></div>
+
+
+<p>And restart <code>systemctl restart apache2</code>. You should now be able to visit http://raspberry-pi-IP/.</p>
+<p>Now get a browser-trusted certificate from <a href="https://letsencrypt.org/">Let's Encrypt</a>:</p>
+<div class="highlight"><pre><span></span>su
+apt install dirmngr
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
+<span class="nb">echo</span> <span class="s2">&quot;deb http://ftp.debian.org/debian stretch-backports main&quot;</span> &gt; /etc/apt/sources.list.d/backports.list
+apt update
+apt install python-certbot-apache -t stretch-backports
+<span class="c1"># Make sure your website is accessible from the Internet.</span>
+<span class="c1"># Set up NAT/PAT rules in your router. Then:</span>
+certbot --apache
+certbot renew --dry-run <span class="c1"># Try renewal</span>
+<span class="c1"># If successful, create a cronjob to be run twice a day</span>
+<span class="m">32</span> <span class="m">4</span>/12 * * * certbot renew --quiet
+</pre></div>
+
+
+<p>Ultimately, verify everything is all right using <a href="https://www.ssllabs.com/ssltest/">SSL LABS's SSL server test</a>.</p>
+<p>You may now restart Apache2.</p>
+<p>Then:</p>
+<div class="highlight"><pre><span></span>mkdir /mnt/data_partition/nextcloud_data
+chown -R www-data:www-data /mnt/data_partition/nextcloud_data/
+chmod <span class="m">750</span> /mnt/data_partition/nextcloud_data
+</pre></div>
+
+
+<p>Now you can start setting up Nextcloud at https://raspberry-pi-IP/.</p>
+<h2>Improve PHP's performance</h2>
+<div class="highlight"><pre><span></span>su
+sed <span class="s2">&quot;s/;opcache.enable=0/opcache.enable=1/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/memory_limit = 128M/memory_limit = 512M/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/upload_max_filesize = 2M/upload_max_filesize = 16G/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/post_max_size = 8M/post_max_size = 16G/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/output_buffering = 4096/output_buffering = 0/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/max_input_time = 60/max_input_time = 3600/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/apache2/php.ini
+
+<span class="c1"># /etc/php/7.0/cli/php.ini is used by Nextcloud&#39;s CRON jobs</span>
+sed <span class="s2">&quot;s/;opcache.enable=0/opcache.enable=1/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+sed <span class="s2">&quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+sed <span class="s2">&quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+sed <span class="s2">&quot;s/output_buffering = 4096/output_buffering = 0/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+sed <span class="s2">&quot;s/max_input_time = 60/max_input_time = 3600/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&quot;</span> <span class="se">\</span>
+    -i /etc/php/7.0/cli/php.ini
+</pre></div>
+
+
+<p>To significantly improve performance overall, you'll also need data caching: <strong>APCu</strong>.</p>
+<div class="highlight"><pre><span></span>su
+apt install php7.0-apcu
+phpenmod apcu
+<span class="c1">#echo &quot;apc.enabled=1&quot; &gt;&gt; /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it&#39;s useless, check Nextcloud error logs in the admin page to make sure it&#39;s working</span>
+service apache2 restart
+</pre></div>
+
+
+<p>Now, add the following in <em>/var/www/nextcloud/config/config.php</em>:</p>
+<div class="highlight"><pre><span></span>&#39;memcache.local&#39; =&gt; &#39;\OC\Memcache\APCu&#39;,
+</pre></div>
+
+
+<p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Disabled</em>. That's normal as we didn't enable opcaching for CLI, (<em>/etc/php/7.0/cli/php.ini</em>), only for Apache2. However, if you create a webpage containing <code>&lt;?php phpinfo();</code>, when accessing this page you'll see that's it's <em>Up and Running</em>. Make sure as well that APCu is enabled.</p>
+<h2>Improve Nextcloud's settings</h2>
+<p>Add the following in <em>/var/www/nextcloud/config/config/php</em>:</p>
+<div class="highlight"><pre><span></span>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
+</pre></div>
+
+
+<p>In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called <em>Encryption</em> in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.</p>
+<p>Also, do:</p>
+<div class="highlight"><pre><span></span>su
+<span class="nb">cd</span> /var/www/nextcould
+sudo -u www-data php occ maintenance:update:htaccess
+</pre></div>
+
+
+<p>It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.</p>
+<p>In the admin page (<code>URL/settings/admin</code>), increase the maximum upload size to 1.9 GB (it's a limitatiom from 32-bit PHP - Rasbian is a 32 bit OS).</p>
+<p>In <code>URL/settings/admin/overview</code> you might get some warnings about PHP not being properly configured. Edit <code>/etc/php/7.0/apache2/php.ini</code> as it asks.</p>
+<p>Install and enable the app "Two Factor TOTP Provider" in <code>URL/settings/apps</code>. Then, go to <code>URL/settings/user/security</code> and enable TOTP.</p>
+<h1>OpenVPN 2.4.0</h1>
+<div class="highlight"><pre><span></span>su
+apt update <span class="o">&amp;&amp;</span> apt install openvpn
+</pre></div>
+
+
+<p>Read the <a href="https://openvpn.net/community-resources/how-to/">official documentation</a> (<a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto">here, short tutorial for easy-rsa3</a>). Download <a href="https://github.com/OpenVPN/easy-rsa">easy-rsa</a> and checkout latest release.</p>
+<div class="highlight"><pre><span></span>su
+<span class="nb">cd</span> /etc/openvpn/
+git clone https://github.com/OpenVPN/easy-rsa.git
+<span class="nb">cd</span> easy-rsa
+git checkout v3.0.5
+<span class="nb">cd</span> easyrsa3
+cp vars.example vars
+<span class="nb">echo</span> <span class="s2">&quot;set_var EASYRSA_KEY_SIZE       2048&quot;</span> &gt;&gt; vars <span class="c1"># No need to source this file</span>
+<span class="c1"># Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL</span>
+</pre></div>
+
+
+<p>From now on, I highly recommend you read <em>/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md</em> and <a href="https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md">https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md</a> in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).</p>
+<p>Then:</p>
+<div class="highlight"><pre><span></span>./easyrsa init-pki
+./easyrsa build-ca <span class="c1"># Add a strong password which will be used to sign other certificates</span>
+./easyrsa gen-req server nopass <span class="c1"># Do not add a password for the server; use &#39;server&#39; as CN</span>
+./easyrsa sign-req server server
+./easyrsa gen-req client <span class="c1"># Use &#39;client&#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server</span>
+./easyrsa sign-req client client
+</pre></div>
+
+
+<p>Once the certificates and private keys are generated for the server and a client at least, do the following on your Pi and then go back to reading OpenVPN's documentation:</p>
+<div class="highlight"><pre><span></span>./easyrsa gen-dh
+cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
+cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
+<span class="nb">cd</span> /etc/openvpn
+openvpn --genkey --secret ta.key
+gunzip server.conf.gz
+vim server.conf
+</pre></div>
+
+
+<p>You should edit <em>server.conf</em> like this:</p>
+<div class="highlight"><pre><span></span>port 1194
+proto udp
+dev tun
+ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
+cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
+key /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
+dh /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
+push &quot;route 192.168.1.0 255.255.255.0&quot;
+push &quot;redirect-gateway def1 bypass-dhcp&quot;
+push &quot;dhcp-option DNS 208.67.222.222&quot;
+push &quot;dhcp-option DNS 208.67.220.220&quot;
+tls-auth /etc/openvpn/ta.key 0
+cipher AES-256-CBC
+max-clients 2
+comp-lzo
+user nobody
+group nogroup
+log-append  openvpn.log
+verb 6
+mute 20
+script-security 3
+client-connect &quot;/etc/openvpn/notifyconnect.sh&quot;
+</pre></div>
+
+
+<p>Keep the rest as-is. Now create <code>/etc/openvpn/notifyconnect.sh</code>:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;On `date`&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;OpenVPN client connection&quot;</span> root@localhost <span class="m">2</span>&gt;/dev/null
+sleep <span class="m">1</span>
+<span class="c1"># We can&#39;t run `runq`  or `exim -qff` since this script is called by user `nobody`.</span>
+<span class="c1"># Also make sure this script returns 0 otherwise the VPN connection will fail.</span>
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>chmod +x /etc/openvpn/notifyconnect.sh
+</pre></div>
+
+
+<p>Then add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. Check OpenVPN logs, there might be a permission issue on <code>/var/log/exim4</code>.</p>
+<p>Now, edit <em>client.conf</em>:</p>
+<div class="highlight"><pre><span></span>remote &lt;your DynHost domain&gt; 1194
+user nobody
+group nogroup
+mute-replay-warnings
+# Normally next lines are uncommented but we won&#39;t need them
+#ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
+#cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+#key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
+#tls-auth /etc/openvpn/ta.key 1
+#ns-cert-type server # OpenVPN 2.0 and below
+remote-cert-tls server # OpenVPN 2.1 and above
+cipher AES-256-CBC
+comp-lzo
+mute 20
+</pre></div>
+
+
+<p>Ultimately do:</p>
+<div class="highlight"><pre><span></span>cat /etc/openvpn/client.conf &gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;key-direction 1&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;script-security 2&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;up /etc/openvpn/update-resolv-conf&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;down /etc/openvpn/update-resolv-conf&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;ca&gt;&quot;</span> &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;/ca&gt;&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;cert&gt;&quot;</span> &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt <span class="p">|</span> sed -ne <span class="s1">&#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;/cert&gt;&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;key&gt;&quot;</span> &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;/key&gt;&quot;</span> &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;tls-auth&gt;&quot;</span> &gt;&gt; client.ovpn
+cat /etc/openvpn/ta.key &gt;&gt; client.ovpn
+<span class="nb">echo</span> <span class="s2">&quot;&lt;/tls-auth&gt;&quot;</span> &gt;&gt; client.ovpn
+</pre></div>
+
+
+<p>Copy that <em>client.ovpn</em> file on your client.</p>
+<p>On your Pi, uncomment the following line in <em>/etc/sysctl.conf</em>:</p>
+<div class="highlight"><pre><span></span>net.ipv4.ip_forward=1
+</pre></div>
+
+
+<p>Apply changes:</p>
+<div class="highlight"><pre><span></span>su
+sysctl -p
+</pre></div>
+
+
+<p>There's a <a href="http://serverfault.com/questions/355520/after-reboot-debian-box-ignore-sysctl-conf-values">known bug</a> which may prevent these values to be read on boot (check that it worked about rebooting with <code>sysctl -a | grep ip_forward</code>). Add the following above <code>exit 0</code> in <em>/etc/rc.local</em>:</p>
+<div class="highlight"><pre><span></span>sysctl -p /etc/sysctl.conf
+</pre></div>
+
+
+<p>Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:</p>
+<div class="highlight"><pre><span></span>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -A FORWARD -s <span class="m">10</span>.8.0.0/24 -j ACCEPT
+iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+</pre></div>
+
+
+<p>Finally, do the following on your server:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /etc/openvpn
+su
+mv client.conf client.conf.old
+shred -u client.ovpn
+openvpn --config server.conf <span class="p">&amp;</span>
+tail -f openvpn.log
+</pre></div>
+
+
+<p>At next boot, the server will run automatically. We needed to rename the <em>client.ovpn</em> because the initscript will scan this directory for <em>.conf</em> files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:</p>
+<div class="highlight"><pre><span></span>shred -u client.conf.old
+shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
+shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+</pre></div>
+
+
+<p>Now your client:</p>
+<div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install resolvconf
+sudo openvpn --config client.ovpn
+</pre></div>
+
+
+<p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:</p>
+<div class="highlight"><pre><span></span>iptables -t nat -A PREROUTING -i eth0 -p udp --dport <span class="m">53</span> -j REDIRECT --to-port <span class="m">1194</span>
+</pre></div>
+
+
+<h1>Hardening security</h1>
+<div class="highlight"><pre><span></span>su
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
+chmod <span class="m">700</span> firewall.sh
+chown root:root firewall.sh
+mv firewall.sh /etc/init.d
+update-rc.d firewall.sh defaults
+</pre></div>
+
+
+<p>In the firewall, you might want to comment the line <code>NETWORK_MGMT=</code> in order to be able to log in using SSH from any LAN, including your VPN.</p>
+<p><a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3">Another helpful website about how to prevent SSH bruteforce attacks</a>. However, we'll use fail2ban, see below.</p>
+<p>Consider allowing SSH connections using public keys only. On a client do:</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
+ssh-keygen -t rsa -b 4096 -o -a 100 
+ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
+</pre></div>
+
+
+<h2>Hardening SSH configuration</h2>
+<p>Edit <em>/etc/ssh/sshd_config</em>:</p>
+<div class="highlight"><pre><span></span>Port &lt;something you like&gt;
+#HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
+#HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
+UsePrivilegeSeparation sandbox
+LoginGraceTime 10s
+PermitRootLogin no
+StrictModes yes
+PubkeyAuthentication yes
+IgnoreRhosts yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PasswordAuthentication no # Or yes, depending on your needs
+Banner /etc/issue.net # Message displayed at login
+UsePAM no
+
+# Custom settings
+AllowUsers pi # ONLY pi will be allowed to log in
+
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+</pre></div>
+
+
+<p>The last three lines are taken from <a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html">this very helpful website</a>. You should also read <a href="http://kacper.blog.redpill-linpro.com/archives/702">this one</a> after having read the first one (the order is important).</p>
+<h2>Sending an email on every SSH connection</h2>
+<p>Taken from <a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602">this thread</a>. As root, create <code>/etc/ssh/login-notify.sh</code>:</p>
+<div class="highlight"><pre><span></span>#!/bin/sh
+
+if [ &quot;$PAM_TYPE&quot; != &quot;close_session&quot; ]; then 
+    host=&quot;`hostname`&quot; 
+    subject=&quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&quot; 
+    message=&quot;`date`&quot;
+    echo &quot;$message&quot; | mail -s &quot;$subject&quot; root@mydomain
+fi
+</pre></div>
+
+
+<p>Note though that you will need to change this line in <code>/etc/ssh/sshd_config</code>:</p>
+<div class="highlight"><pre><span></span>UsePAM yes
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>chmod +x /etc/ssh/login-notify.sh
+</pre></div>
+
+
+<p>And add the following line at the end of the file <code>/etc/pam.d/sshd</code>:</p>
+<div class="highlight"><pre><span></span>session optional pam_exec.so seteuid /etc/ssh/login-notify.sh
+</pre></div>
+
+
+<p>Now restart sshd by doing <code>service sshd restart</code>.</p>
+<h2>Fail2Ban</h2>
+<p><a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8">Official documentation</a>.</p>
+<div class="highlight"><pre><span></span>su
+apt install fail2ban
+fail2ban-client -x start <span class="c1"># To force the server to startup. However, a reboot is preferable.</span>
+</pre></div>
+
+
+<p>Make sure the file <em>/etc/init.d/fail2ban</em> exists. Now edit <em>/etc/fail2ban/jail.local</em> (make a copy of <em>/etc/fail2ban/jail.conf</em>):</p>
+<div class="highlight"><pre><span></span>[DEFAULT]
+# Whatever fits you
+bantime = 86400
+findtime = 3600
+maxretry = 3
+ntime  = 8700
+action = %(action_mwl)s
+
+# Enable sshd (enabled = true) and sshd-dos, change &#39;port&#39; and the &#39;maxretry&#39; value if need be
+# Enable apache, apache-*
+# Add the following new entry
+[http-dos]
+enabled = true
+port = http,https
+filter = http-dos
+logpath = /var/log/apache*/*access.log
+maxretry = 360
+findtime = 120
+bantime = 600
+
+[ban-countries]
+enabled = true
+port = http,https
+filter = http-dos
+logpath = /var/log/apache*/*access.log
+maxretry = 1
+findtime = 120
+bantime = 6000
+banaction = ban-countries
+action = %(action_)s
+# action_ won&#39;t send email when banning someone (cause would send a message for every new request) nor when starting/stopping
+</pre></div>
+
+
+<p>Now create <em>/etc/fail2ban/filter.d/http-dos.conf</em>:</p>
+<div class="highlight"><pre><span></span>[Definition]
+
+# Option: failregex
+# Note: This regex will match any GET or POST entry in your logs, so basically
+# all valid and not valid entries are a match.
+# You should set up in the jail.conf file, the maxretry and findtime carefully
+# in order to avoid false positives.
+
+failregex = ^&lt;HOST&gt; -.*\&quot;(GET|POST).*
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+
+ignoreregex =
+</pre></div>
+
+
+<p>Now create <em>/etc/fail2ban/action.d/ban-countries.conf</em>:</p>
+<div class="highlight"><pre><span></span># Copied from iptables-allports.conf
+[Definition]
+
+actionstart = &lt;iptables&gt; -N f2b-&lt;name&gt;
+              &lt;iptables&gt; -A f2b-&lt;name&gt; -j &lt;returntype&gt;
+              &lt;iptables&gt; -I &lt;chain&gt; -p &lt;protocol&gt; -j f2b-&lt;name&gt;
+
+actionstop = &lt;iptables&gt; -D &lt;chain&gt; -p &lt;protocol&gt; -j f2b-&lt;name&gt;
+             &lt;iptables&gt; -F f2b-&lt;name&gt;
+             &lt;iptables&gt; -X f2b-&lt;name&gt;
+
+actioncheck = &lt;iptables&gt; -n -L &lt;chain&gt; | grep -q &#39;f2b-&lt;name&gt;[ \t]&#39;
+
+actionban = IP=&lt;ip&gt; &amp;&amp;
+            COUNTRY=$(geoiplookup $IP | egrep &quot;&lt;country_list&gt;&quot;) &amp;&amp; [ &quot;$COUNTRY&quot; ] &amp;&amp;
+            &lt;iptables&gt; -I f2b-&lt;name&gt; 1 -s &lt;ip&gt; -j &lt;blocktype&gt; || true
+
+actionunban = true
+
+[Init]
+
+country_list = CN|China
+</pre></div>
+
+
+<p>Now install missing packages, reload the service maually to make sure there is no error:</p>
+<div class="highlight"><pre><span></span>su
+apt install geoip-bin geoip-database
+systemctl stop fail2ban
+fail2ban-client -x start
+cat /var/log/fail2ban.log
+<span class="c1"># Check for errors</span>
+fail2ban-client -x stop
+systemctl start fail2ban
+</pre></div>
+
+
+<h1>Troubleshooting</h1>
+<p>Should you have a <a href="https://www.youtube.com/watch?v=IGtzaIlMgWA">beeping hard disk drive</a>, the reason might be power consumption. It usually beeps when it needs more electricity. <a href="http://www.htpcguides.com/spin-down-and-manage-hard-drive-power-on-raspberry-pi/">Disabling Advanced Power Management</a> will solve this problem in most cases (<code>sudo hdparm -B 255 /dev/sda</code>).</p>
+<h1>Going further</h1>
+<h2>Pro tips</h2>
+<p>Consider buying an <a href="https://www.modmypi.com/raspberry-pi/breakout-boards/pi-modules/ups-pico">uninterruptible power supply (UPS) for your Raspberry to prevent damage caused by power outage</a>.</p>
+<h2>Talk</h2>
+<p>A year ago, I gave a talk at <a href="http://humantalks.com/cities/compiegne">HumanTalks Compiègne</a> about my Raspberry Pi. Here are the video and the slides.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
+
+<p><a href="https://romainpellerin.eu/slides/self-hosting/slides.html">Slides are available in HTML</a>.</p>
+<h2>Interesting external links</h2>
+<ul>
+<li><a href="http://www.minimachines.net/actu/piwall-creer-un-mur-decrans-low-cost-avec-des-raspberry-pi-28656">Piwall : Créer un mur d’écrans low cost avec des Raspberry Pi</a></li>
+<li><a href="http://korben.info/raspberry-pi-allonger-la-duree-de-vie-de-vos-cartes-sd.html">Raspberry Pi – Allonger la durée de vie de vos cartes SD</a></li>
+<li><a href="http://linuxfr.org/news/se-passer-de-dropbox-en-montant-son-coffre-fort-numerique-a-la-maison">Se passer de Dropbox en montant son coffre-fort numérique à la maison</a></li>
+<li><a href="http://korben.info/idees-raspberry-pi.html">Plus de 50 idées pour votre Raspberry Pi</a></li>
+<li><a href="http://www.24joursdeweb.fr/2014/piloter-sa-maison-grace-au-web/">Piloter sa maison grâce au web</a></li>
+<li><a href="https://github.com/Banrai/PiScan">PiScan: A personal shopping and inventory-tracking device based on the Raspberry Pi</a></li>
+<li><a href="https://www.raspberrypi.org/magpi-issues/Projects_Book_v1.pdf">THE Official RASPBERRY PI PROJECTS BOOK</a></li>
+<li><a href="http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/">Raspberry Pi Zero Headless Setup</a></li>
+<li><a href="http://hackaday.com/2016/06/28/raspberry-pi-gets-turned-on/">RASPBERRY PI GETS TURNED ON</a></li>
+<li><a href="http://www.geek-directeur-technique.com/2016/07/19/installation-serveur-https-rapide">Installation serveur HTTP(S) rapide</a></li>
+<li><a href="https://techcrunch.com/2016/11/16/the-r-pi-iot-shield-adds-iot-connectivity-to-your-diy-project/">The R.Pi IoT Shield adds IoT connectivity to your DIY project</a></li>
+<li><a href="https://github.com/deepsyx/home-automation">Raspberry Pi 3 based home automation with NodeJS and React Native.</a></li>
+<li><a href="https://bbrks.me/rpi-minidlna-media-server/">Using your Raspberry Pi as a DLNA/UPnP media server</a></li>
+<li><a href="https://github.com/rpellerin/raspberry-pi-security-camera">raspberry-pi-security-camera</a></li>
+<li><a href="https://mon-blog.jbriault.fr/index.php/blog/2019/02/06/s%C3%A9curiser-l-administration-de-son-vps">Protéger son VPS</a></li>
+</ul>
+<h3>Read-only Raspberry Pi</h3>
+<ul>
+<li><a href="http://david.mercereau.info/raspberrypi-raspbian-en-lecture-seul-readonly-pour-preserver-la-carte-sd/">RaspberryPi &amp; Raspbian en lecture seul (ReadOnly) pour préserver la carte SD</a></li>
+<li><a href="http://tinycorelinux.net/ports.html">Tiny Core Linux</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 15 December 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

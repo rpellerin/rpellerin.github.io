@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, amsterdam, rotterdam, the hague, delft, haarlem, netherlands, dutch" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="What's so great about the Netherlands" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The Netherlands - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="What's so great about the Netherlands" />
+
+        <title>The Netherlands - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/the-netherlands/amsterdam.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-03-21T23:20:00+01:00">Wed 21 March 2018</time>        </p>
+    <h1>The Netherlands</h1>
+    <div class="grey">
+        <p class="italic">What's so great about the Netherlands</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 992 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/amsterdam.html">amsterdam</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/rotterdam.html">rotterdam</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/the-hague.html">the hague</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/delft.html">delft</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/haarlem.html">haarlem</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/netherlands.html">netherlands</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/dutch.html">dutch</a></p>    </div>
+</header>
+<article>
+    <p>Dear Amsterdam, it's been a long time. Too long, actually. I miss you from the bottom of my heart... ok maybe not that much, but still!</p>
+<p>Joke aside, I lived in Amsterdam for 6 months, from 2015 to 2016. Oh boy did I enjoy the city. I was living the good life doing an underpaid internship but who cares, right?! Since then, I went back to the Netherlands a couple of times. This articles sums up what's so cool about this country and the Dutch people, and why it's a must see for every European out there! However, gouda, tulips, clogs, windmills, etc, all of this is meant for tourists (although their windmills are quite awesome and Gouda is one of my favorite cheeses), so I won't talk about these. This article is mostly about my experience in the Netherlands.</p>
+<h1>Amsterdam</h1>
+<p>The best city of Europe of course! Well, not to everyone but to me at least. Great music venues, great people, shitty weather but awesome canals, boats, and bridges. Also, they've got good beer and probably the coolest bikes on Earth.</p>
+<p>Not everything is great though. Finding an appartment in Amsterdam was a pain in the ass. I ended up renting the creepiest of all kinds when I first got there, a tiny 10 square meter apartment on the last floor, with a broken sink, no stores and a direct access to the roof with no railings whatsover, even though it was a damn 4-story building. Plus the bathroom was on the landing. Fucking <strong>GREAT</strong>. As you guessed, I did not stay there for long. Shortly after, I found a nice shared house just outside of Amsterdam but easily reachable by metro. Speaking of which, their metro system is really good!</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/the-netherlands/room1.jpg" alt="My first room in Amsterdam" />
+<figcaption>My wonderful first room in Amsterdam.</figcaption>
+</figure>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/the-netherlands/room2.jpg" alt="Another view of my room" />
+<figcaption>So big. Great sink.</figcaption>
+</figure>
+
+<p>Alright, what about the people, you may wonder. Well, too many times I've heard that Dutch people no longer lived in Amsterdam and that the streets were filled with stupid tourists and that one could barely hear Dutch in Amsterdam... I've got to say, it's partly true... which means it's partly false. Yeah I agree, too many French tourists only there to smoke weed, too many Brits there on weekends only to get shit-faced. But again, who cares? I like tourists. I like people who travel, no matter their purpose. And I met a shit ton of Dutch people, proud residents of Amsterdam, fully embracing the 21st century and globalization. And it was fucking great!</p>
+<p>The Dutch are overall super friendly and their English is probably the best among non native English speakers in the world. SO FUCKING <strong>CONVENIENT</strong>.</p>
+<p>Alright, with no further ado, let's see what places are the best in Amsterdam:</p>
+<ul>
+<li><strong>Paradiso</strong>: the best nightclub on Earth. Seriously! The place is an actual abandoned church that was turned into a nightclub. Unique experience inside!</li>
+<li><strong>Melkweg</strong>: another great nightclub.</li>
+<li><strong>Dam Square</strong>: the central square of Amsterdam</li>
+<li><strong>Bier Fabriek</strong></li>
+<li><strong><a href="https://www.meetup.com/Amsterdam-Language-Cafe/?_cookie-check=UBG5G_Y5sCIZoRTT">Amsterdam Language Cafe</a></strong>: such a great place to meet people, both locals and expats. I met most of my friends there! The guy behind this concept, Koen, is amazing. Go talk to him!</li>
+<li><strong>Red Light District</strong> at night</li>
+<li>Ride the <strong>ferry</strong>! It's fun and free and takes you to the upper Amsterdam in no time.</li>
+<li><strong>Thee Sisters bar</strong>: my favorite bar in the whole city</li>
+<li><strong>Hannekes Boom</strong>: nice place to chill when the sun is out</li>
+<li><strong>Amsterdam Roest</strong>: same as above</li>
+<li><strong>Coco's Outback</strong></li>
+<li><strong>Vondelpark</strong></li>
+<li><strong>Rembrandtplein</strong></li>
+<li><strong>I Amsterdam sign</strong></li>
+<li><strong>Foodhallen</strong></li>
+<li><strong>Bloemenmarkt</strong></li>
+<li>Check out one of the numerous <strong>Wok to Walk restaurants</strong>, it's so good!</li>
+<li>Don't forget to go on a <strong>boat ride</strong>. It's definitely worth it! You can also rent one privately, it's not that expensive. I remember using <a href="https://sloepdelen.nl/en/">this service</a>.</li>
+<li>Also, consider <strong>renting a bike</strong> or going on a <strong>free walking tour</strong> (aka "pay a you wish by tip").</li>
+</ul>
+<p>That's is basically for Amsterdam. Now, let's see some other cities in Holland.</p>
+<h1>The Hague</h1>
+<p>Pretty nice city, on the North Sea coast of the Netherlands. Very pleasant, especially in Summer.</p>
+<ul>
+<li>Go check the beach out!</li>
+<li><strong>Westduinpark</strong>: there's Highland cattle</li>
+<li><strong>China Town</strong></li>
+</ul>
+<h1>Rotterdam</h1>
+<p>A city which was bombed almost entirely during WW2, then rebuilt. Its architecture is rather surprising and ultra modern, thus worth seeing.</p>
+<ul>
+<li><strong>Kijk Kubus</strong> (The Cube Houses)</li>
+<li><strong>The Markthal</strong> (Market Hall): an indoor market with a wide variety of food</li>
+<li><strong>Erasmusbrug</strong> (Erasmus Bridge)</li>
+<li><strong>Willemsbrug</strong></li>
+<li>Go for a walk between the Willemsbrug and Kijk Kubus, by the water</li>
+<li><strong>Boompjes Promenade</strong> (Boompjeskade) up to <strong>De Boeg</strong></li>
+<li><strong>Euromast</strong>: go to the top! Also, the park nearby is quite nice.</li>
+<li>Go for a walk on <strong>Holland Amerikakade</strong></li>
+<li><strong>Fenix Food Factory</strong></li>
+<li>Check out the big statue called <strong>Santa Claus</strong>, alias Kabouter: big surprise there!</li>
+<li>Take one of the numerous <strong>watertaxis</strong>, it's a unique experience! What's more, not too pricey!</li>
+<li>They also have <strong>boat tours</strong>, that take you throughout the gigantic port. Lasts about an hour, maybe two, can't remember. Not to expensive and fun to do. For the one I did, the boarding was right by Erasmus Bridge.</li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/the-netherlands/rotterdam.jpg" alt="Cube Houses" />
+<figcaption>Cube Houses</figcaption>
+</figure>
+
+<h1>Delft</h1>
+<p>Small town yet very nice. My only recommendation is to check out the <strong>Nieuwe Kerk</strong>, a church, for it is a place of history and the climb to the top is definitely worth the effort. Then, wander around randomly in the streets.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/the-netherlands/delft.jpg" alt="View the top of Delft's church" />
+<figcaption>View from the top of Delft's church</figcaption>
+</figure>
+
+<h1>Utrecht</h1>
+<p>Probably the city with the most students of the entire country. I've been there once, as far as I remember. Only thing I remember is the Dom Tower, a very impressive tower with a pathway underneath.</p>
+<h1>Haarlem</h1>
+<p>Another small town, very close to Amsterdam. Not much to do there except a few old fashion bars and shops, and a nice Mexican restaurant.</p>
+<p><br />
+<br /></p>
+<p>That's it!!! Go to the Netherlands, you won't regret it!</p>
+<p>Let's end this article on a Dutch saying that I like a lot: "<em>Op een oude fiets moet je het leren</em>" (I ain't gonna translate it, Google it :-) )</p>
+<p>Doei!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 21 March 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

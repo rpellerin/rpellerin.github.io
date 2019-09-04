@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, job, interview, internship" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Some tips for interviews... You're applying for internships or jobs but you really don't want to get hired? Here are some do's." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="How Not To Get Hired - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Some tips for interviews... You're applying for internships or jobs but you really don't want to get hired? Here are some do's." />
+
+        <title>How Not To Get Hired - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-05-22T13:33:00+02:00">Fri 22 May 2015</time>        </p>
+    <h1>How Not To Get Hired</h1>
+    <div class="grey">
+        <p class="italic">Some tips for interviews... You're applying for internships or jobs but you really don't want to get hired? Here are some do's.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 719 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/jobs.html">Jobs</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/job.html">job</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/interview.html">interview</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/internship.html">internship</a></p>    </div>
+</header>
+<article>
+    <p>Recently, since I was looking for a 6-month internship in software development, I applied to many US companies. As I really wanted not to get hired, I stricly followed some basic mistakes in order to succeed... Of course I'm joking! The following are some things I did... that you should avoid.</p>
+<h1>Put your photo on your resume</h1>
+<p>Everyone knows, adding your photo on your resume is a really good thing. The recruiter will be pleased to see your lovely face.</p>
+<blockquote>
+<p><em>(phone rings)</em><br>
+- Hello?<br>
+- Hi! I'm the recruiter. WHY DID YOU SEND ME A RESUME WITH YOUR PHOTO?!<br>
+- ...</p>
+</blockquote>
+<p>The phone interview looked like something like that. Avoid it.</p>
+<h1>Ask to be reached on a different phone number than the one on your resume</h1>
+<p>Adding your mobile phone number on your resume might be a good idea since it enables you to be reached wherever you are. But for international calls, the audio quality gets a bit worse than with a landline phone. That's why I gently asked, by email, to be reached on my landline phone. The recruiter totally ignored it, called me on my cell phone and got very angry with me when I said that I would prefer my landline phone. However, he called back a minute later the correct number.</p>
+<h1>Don't know the algorithms you wrote</h1>
+<p>Sometimes, recruites merely send you a text file with lots of technical questions, such as algorithms to write, code to fix, etc. Then, when it comes to face to face interview, the recruiter is very likely to ask you to prove your algorithms. It can be about:</p>
+<ul>
+<li>Complexity: give the complexity of your algorithms and explain how you calculate it</li>
+<li>Prove that it works for every case (basically it's: loop invariant, pre-conditions, inductive step, post-conditions)</li>
+<li>Provide alternative algorithms (or alternative implementation when dealing with <a href="http://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a>)</li>
+</ul>
+<h1>Don't sleep enough the previous night</h1>
+<p>So that you'll seem so tired that you won't impress anyone. And worse, you won't be able to think, your brain will be so slow that you'll get confused at every sentence you'll hear.</p>
+<h1><em>“ We won't move forward with your candidacy ”</em></h1>
+<p>Congratulations! If you ever received this, that means that you carefully followed every point in this article.</p>
+<p>Good luck!</p>
+<h1>Tips for resumes</h1>
+<ul>
+<li><a href="http://jobsearch.about.com/cs/curriculumvitae/f/cvresume.htm">The Difference Between a Resume and a Curriculum Vitae (CV)</a></li>
+<li><a href="http://theundercoverrecruiter.com/cv-vs-resume-difference-and-when-use-which/">CV vs. Resume: The Difference and When to Use Which</a></li>
+<li><a href="http://europass.cedefop.europa.eu/en/documents/curriculum-vitae/templates-instructions">Official European CV templates</a></li>
+<li><a href="http://uk.businessinsider.com/elons-musk-resume-all-on-one-page-2016-4">This résumé for Elon Musk proves you never, ever need to use more than one page</a></li>
+<li><a href="https://www.linkedin.com/pulse/20140917045901-24454816-the-5-biggest-mistakes-i-see-on-resumes-and-how-to-correct-them">The Biggest Mistakes I See on Resumes, and How to Correct Them</a></li>
+<li><a href="https://www.linkedin.com/pulse/biggest-mistakes-i-see-resumes-part-2-your-top-8-questions-bock">The Biggest Mistakes I See on Resumes, Part 2: Your top 8 questions</a></li>
+</ul>
+<h1>Useful books</h1>
+<ul>
+<li><a href="http://www.amazon.fr/dp/0984782850">Cracking the Coding Interview, 6th Edition: 189 Programming Questions and Solutions (really good, in Java)</a></li>
+<li><a href="http://www.amazon.fr/dp/1118261364">Programming Interviews Exposed: Secrets to Landing Your Next Job (quite elementary and obsolete)</a></li>
+<li><a href="http://www.amazon.fr/dp/1479274836">Elements of Programming Interviews: The Insiders' Guide (for really hard interviews, in C++)</a></li>
+</ul>
+<h1>Salary</h1>
+<ul>
+<li><a href="https://fearlesssalarynegotiation.com/software-developers-how-to-get-a-raise/">Software Developers: Here’s how to get a raise without changing jobs</a></li>
+<li><a href="https://simpleprogrammer.com/2016/10/10/salary-negotiation-software-developers/">The Ultimate Guide To Salary Negotiation For Software Developers</a></li>
+</ul>
+<h1>Further reading</h1>
+<ul>
+<li><a href="https://www.linkedin.com/pulse/20140929001534-24454816-my-personal-formula-for-a-better-resume">My Personal Formula for a Winning Resume</a></li>
+<li><a href="http://motto.time.com/4245429/win-every-interview-6-steps/">Google Executive: 6 Ways to Win Your Next Interview</a></li>
+<li><a href="http://www.growingpie.com/blog/2015/03/11/stage-chez-google/">Un stage chez Google : le parcours d’un ingénieur de Google, d’Aix-en-Provence à Mountain view</a></li>
+<li><a href="https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/multiprogramming-multiprocessing-multitasking-multithreading/">Multiprogramming, Multiprocessing, Multitasking, and Multithreading</a></li>
+<li><a href="http://nt.github.io/2013/10/20/resources-for-becoming-a-hacker-and-interviews.html">Resources for becoming a hacker (and for interviews)</a></li>
+<li><a href="http://www.huffingtonpost.fr/stephane-langonnet/langage-corporel-entretien-dembauche_b_4376837.html">Entretien d'embauche: maîtrisez le langage corporel!</a></li>
+<li><a href="https://medium.com/@davidbyttow/abc-always-be-coding-d5f8051afce2">ABC: Always Be Coding</a></li>
+<li><a href="http://techmeup.co/trouver-un-job-tech-a-san-francisco-ou-dans-la/">Trouver un job tech à San Francisco ou dans la Silicon Valley</a></li>
+<li><a href="http://www.nytimes.com/2014/02/23/opinion/sunday/friedman-how-to-get-a-job-at-google.html">How to Get a Job at Google</a></li>
+<li><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md">Free Programming Books</a></li>
+<li><a href="http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/">What Is Code?</a></li>
+<li><a href="https://www.reddit.com/r/javascript/comments/3rb88w/ten_questions_ive_been_asked_most_more_than_once">Ten questions I’ve been asked, most more than once, over six technical JavaScript / Front-end Engineer job interviews</a></li>
+<li><a href="http://jvns.ca/blog/2015/11/21/why-you-should-understand-a-little-about-tcp/">Why you should understand (a little) about TCP</a></li>
+<li><a href="https://github.com/MaximAbramchuck/awesome-interviews">Awesome Interviews</a></li>
+<li><a href="http://sametmax.com/retour-sur-la-penurie-de-devs/">Retour sur la pénurie de devs</a></li>
+<li><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions">Front-end Job Interview Questions</a></li>
+<li><a href="https://www.linkedin.com/pulse/why-do-employers-rarely-offer-explanations-rejected-ambra-benjamin">Why Do Employers Rarely Offer Explanations to Rejected Candidates?</a></li>
+<li><a href="http://www.gwan.com/blog/20160405.html">Google's "Director of Engineering" Hiring Test</a></li>
+<li><a href="https://hackernoon.com/so-you-think-you-know-c-8d4e2cd6f6a6">So you think you know C?</a></li>
+<li><a href="http://bravenewgeek.com/you-are-not-paid-to-write-code/">You Are Not Paid to Write Code</a></li>
+<li><a href="http://cultureofdevelopment.com/blog/always-give-interview-feedback/">Always Get/Give Interview Feedback, It Matters</a></li>
+<li><a href="http://cultureofdevelopment.com/blog/interviews-what-im-thinking-while-im-interviewing-you/">Interviews: what I'm thinking while I'm interviewing you</a></li>
+<li><a href="https://www.joelonsoftware.com/2006/10/25/the-guerrilla-guide-to-interviewing-version-30/">The Guerrilla Guide to Interviewing (version 3.0)</a></li>
+<li><a href="https://drivy.engineering/tech-recruitment-process/">The Tech Recruitment Process At Drivy</a></li>
+<li><a href="https://medium.com/@deusexmachina667/you-fired-your-top-talent-i-hope-youre-happy-cf57c41183dd">You fired your top talent. I hope you’re happy.</a></li>
+<li><a href="https://qotoqot.com/blog/founder-skills/">What you should know as a founder of a software company</a></li>
+<li><a href="https://medium.com/@evnowandforever/f-you-i-quit-hiring-is-broken-bb8f3a48d324">F*** You, I Quit — Hiring Is Broken</a></li>
+<li><a href="https://css-tricks.com/interviewing-for-a-technical-position-doesnt-have-to-be-scary/">Interviewing for a Technical Position Doesn’t Have to Be Scary</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 22 May 2015</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

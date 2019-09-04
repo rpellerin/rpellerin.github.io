@@ -1,0 +1,280 @@
+@import url('pygment.css');
+
+/* THERE ARE A FEW TAGS WHICH HAVE A STYLE ATTRIBUTE DECLARED IN THIS TEMPLATE */
+
+/*********************************/
+/* General rules for common tags */
+/*********************************/
+a {
+  color: inherit;
+  transition: all 0.1s;
+}
+a[rel='bookmark']:visited {
+  color: #551a8b;
+}
+a:hover {
+  color: gray;
+}
+a.no-underline {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+abbr {
+  border-bottom: 2px dotted #777;
+}
+figure {
+  margin: 1rem 0;
+}
+figcaption {
+  font-style: italic;
+}
+
+html {
+  /* 18px, https://blog.goetter.fr/2016/07/05/lastuce-du-font-size-62-5-oui-non-ou-ca-depend/ */
+  font-size: 1.125em; /* fallback IE8+ */
+  font-size: calc(
+    1em * 1.125
+  ); /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0; /* reset */
+}
+
+h1,
+h2,
+h3 {
+  margin: 20px 0;
+  line-height: 1; /* = font-size */
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  h1 {
+    margin: 40px 0;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+header,
+section,
+article {
+  margin-bottom: 40px;
+}
+nav {
+  margin: 5px 0 40px 0;
+} /* nav-blog.html */
+p:not(:last-child) {
+  margin-bottom: 5px;
+}
+article p:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+article {
+  line-height: 1.6rem;
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  padding: 0; /* reset */
+  padding-left: 50px;
+  margin: 10px 0;
+}
+
+li {
+  margin: 7px 0;
+}
+li.no-bullet-point {
+  list-style-type: none;
+}
+
+blockquote {
+  /* quotes */
+  border-left: 1px solid #a5abab;
+  color: grey;
+  margin: 20px;
+  padding: 0 20px;
+}
+
+pre {
+  /* code */
+  background-color: #f0f0f0;
+  font-family: Inconsolata, Monaco, monospace;
+  line-height: 1rem;
+  font-size: 0.8rem;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+footer {
+  border-top: 1px solid gray;
+  padding: 20px 0;
+  color: gray;
+}
+
+iframe {
+  max-width: 100%;
+  box-sizing: border-box; /* so that borders are inside */
+}
+
+@media screen and (max-width: 819px) {
+  iframe:not([src*='youtube']) {
+    display: none;
+  }
+  iframe[src*='youtube'] {
+    height: 300px;
+  }
+}
+
+/***********/
+/* Classes */
+/***********/
+.center {
+  text-align: center;
+}
+.justify {
+  text-align: justify;
+}
+.small {
+  font-size: 0.75rem;
+}
+.grey {
+  color: grey;
+}
+.italic {
+  font-style: italic;
+}
+.weight-normal {
+  font-weight: normal;
+}
+.indent {
+  text-indent: 30px;
+}
+
+.right-underlined {
+  /* h2 titles in index */
+  border-bottom: 2px solid black;
+  text-align: right;
+}
+
+.flexbox-row {
+  /* blog nav bar and blog menu in index */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flexbox-row > * {
+  flex: 1 1 auto;
+} /* won't touch the left and right borders */
+
+/***************************/
+/* IDs or specific or mess */
+/***************************/
+#wrapper {
+  margin: auto;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 820px) {
+  #wrapper {
+    width: 700px;
+  }
+}
+
+#index-photo img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#index-photo:hover img:first-child {
+  display: none;
+}
+
+#index-photo:not(:hover) img:last-child {
+  display: none;
+}
+
+@media screen and (min-width: 320px) {
+  #index-photo {
+    margin: 0 10px 0 0;
+    float: left;
+  }
+}
+
+img#header-picture {
+  width: 100%;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
+}
+
+header.article-header h1 {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 820px) {
+  header.article-header h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  nav.flexbox-row > * {
+    flex: 0 1 auto;
+  } /* will touch the borders */
+}
+
+#back-line {
+  position: relative;
+  z-index: 1;
+}
+
+#back-line:before {
+  border-top: 2px solid #dfdfdf;
+  content: '';
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#back-line span {
+  background-color: white;
+  padding: 0 15px;
+}

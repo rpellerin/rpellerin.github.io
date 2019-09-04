@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, font, typeface, utf8, unicode" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Everything about character encodings, fonts and typefaces" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Fonts, Typefaces And The History Of UTF-8 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Everything about character encodings, fonts and typefaces" />
+
+        <title>Fonts, Typefaces And The History Of UTF-8 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-02-04T19:00:00+01:00">Thu 04 February 2016</time>        </p>
+    <h1>Fonts, Typefaces And The History Of UTF-8</h1>
+    <div class="grey">
+        <p class="italic">Everything about character encodings, fonts and typefaces</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1196 words.">6 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/font.html">font</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/typeface.html">typeface</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/utf8.html">utf8</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/unicode.html">unicode</a></p>    </div>
+</header>
+<article>
+    <p>First, let's start with the basics. <a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"><strong>What's the difference between a font and a typeface?</strong></a></p>
+<p>Briefly, a fond is what we use whereas a typeface is what we see. But still, it's a bit more complex. I'll sum up the original article right below.</p>
+<p>In the past, analog printing was done using metal letters rolled in ink and pressed down onto a piece of paper: that was the page layout. For a given typeface (for example Garamond), there were thousands of physical metal blocks, each with the character it was meant to represent, in relief (the type face), existing in different size (10 point, 12, etc.) and different weights (bold, light, medium). Basically, a font is just a subset of a typeface. For example, bolded Garamond in 12 point was considered a different font than normal Garamond in 8 point. But nowadays, both terms can be used interchangeably. However, just in case you would need to know, a reminder could be:</p>
+<p>"<em>The difference between a font and a typeface is the same as that between songs and an album. The former makes up the latter.</em>"</p>
+<hr />
+
+<p>Truth be told, let's now take a close look at UTF-8... Once again, I'll sum up <a href="https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/">an article</a>. But before, just a quick explanation about specific terms (taken from <a href="https://en.wikipedia.org/wiki/Character_encoding#Code_unit">Wikipedia</a>):</p>
+<ul>
+<li>A <strong>character</strong> is a minimal unit of text that has semantic value.</li>
+<li>A <strong>character set</strong> is a collection of characters that might be used by multiple languages.
+    Example: The Latin character set is used by English and most European languages, though the Greek character set is used only by the Greek language.</li>
+<li>A <strong>coded character set</strong> is a character set, where each character is assigned with a unique number.</li>
+<li>A <strong>code point</strong> is a value that can be used in a coded character set. A code point is a 32-bit integer data type, where the lower 21 bits represent a valid code point value and the upper 11 bits are 0.</li>
+</ul>
+<p>Now, a story about Unicode and UTF-8...</p>
+<p>In the 1960's, the American Standards Association created a 7-bit encoding called <em>American Standard Code for Information Interchange</em> (ASCII). Using 7 bits gives 128 possible characters (that was enough for all lower and upper case Latin letters, numerical digits and most punctuation marks; see an <a href="http://www.asciitable.com/">ASCII table</a>).</p>
+<p>A few years later, new microprocessors were created, able to process 8 bits at a time. So they used 8 bits (a byte) to store each character, giving 256 possible values, and thus leaving values from 128 to 255 spare.</p>
+<p>Then, in the 80's, Microsoft Windows introduced its own <strong>character set</strong> (also known as <em>code page</em>) called <strong>Windows-1251</strong>, whose goal was to fill in those space characters (for example, 224 represents the Cyrillic letter <strong>a</strong>). Furthermore, in the 90's, fifteen other 8 bit character sets were created to cover many different alphabets (called <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859">ISO-8859-1 to ISO-8859-16</a>; ISO-8859-12 was abandoned). Nowadays, in web pages, if you don't provide the charset used, most web browsers will use a default one, depending on your country of residence (ISO-8859-1 will likely be used for English countries).</p>
+<p>Nevertheless, in the meantime, a <strong>new standard</strong> called <strong>Unicode</strong> was proposed. The purpose: to assign a unique number (known as a code point) to every letter in every language, in more than 256 slots. At the moment, we have <a href="http://www.babelstone.co.uk/Unicode/unicode.html">over 120,000 code points</a> and Unicode is also considered a character set itself.</p>
+<h1>Unicode</h1>
+<p>The next few lies were copy-pasted from the original article.</p>
+<p>"<em>The first 128 Unicode code points are the same as ASCII. The range 128-255 contains currency symbols and other common signs and accented characters (aka characters with <a href="https://en.wikipedia.org/wiki/Diacritic">diacritical marks</a>), and much of it is borrowed ISO-8859-1. After 256 there are many more accented characters. After 880 it gets into Greek letters, then Cyrillic, Hebrew, Arabic, Indic scripts, and Thai. Chinese, Japanese and Korean start from 11904 with many others in between. This is great – no more ambiguity – each letter is represented by its own unique number.</em></p>
+<p>[...]</p>
+<p><em>Note that these Unicode code points are officially written in hexadecimal preceded by U+. So the Unicode code point H is usually written as U+0048 rather than 72 (to convert from hexadecimal to decimal: 4*16+8=72).</em>"</p>
+<p>Having more than 256 characters makes Unicode unable to fit into 8 bits. It could however perfectly fit into a 32 bit encoding. But <strong>Unicode is just a standard</strong>, let's now find out which implementation (or character encoding) was designed.</p>
+<p>It's also important to mention that internally, modern web browsers use Unicode. In C or C++ there is a "wide character" (32 bit character called <code>wchar_t</code>, an extension of C's 8 bit <code>char</code>).</p>
+<p>So, now, the remaining problems with Unicode are:</p>
+<ul>
+<li>A lot of existing software and protocols send/receive and read/write 8 bit characters</li>
+<li>Using 32 bits to send/store English text would quadruple the amount of bandwidth/space required</li>
+</ul>
+<p>Several attempts were created to solve this problem such as UCS2 and UTF-16 but the winner is UTF-8 (<em>Universal Character Set Transformation Format 8 bit</em>). <strong>At the moment and since several years, UTF-8 is the preferred character encoding for the Unicode standard.</strong></p>
+<h2>UTF-8</h2>
+<p>"<em>UTF-8 is a clever. It works a bit like the Shift key on your keyboard. Normally when you press the H on your keyboard a lower case “h” appears on the screen. But if you press Shift first, a capital H will appear.</em>" (copy-pasted from the original article)</p>
+<p>UTF-8 treats numbers as follows:</p>
+<ul>
+<li>0-127 as ASCII</li>
+<li>128-191 as the <strong>key to be shifted</strong></li>
+<li>192-247 as <strong>Shift keys</strong><ul>
+<li>192-223 is a simple shift</li>
+<li>224-239 are like a double shift</li>
+<li>240 and over is a triple shift</li>
+</ul>
+</li>
+</ul>
+<p>Consequently, to represent a character, you have four different ways (either on one, two, three or four bytes):</p>
+<ul>
+<li>1 byte: a number from 0 to 127, it will represent an ASCII character</li>
+<li>2 bytes: a sequence of &lt;Shift key from 192 to 223&gt; + &lt;key to be shifted from 128 to 191&gt;</li>
+<li>3 bytes: &lt;224-239&gt; + &lt;128-191&gt; + &lt;128-191&gt;</li>
+<li>4 bytes: &lt;240-&gt; + &lt;128-191&gt; + &lt;128-191&gt; + &lt;128-191&gt;</li>
+</ul>
+<p>For example, the sequence 191 followed by 224 could never occur. Another example, taken from the original article:</p>
+<p>"<em>For instance, characters 208 and 209 shift you into the Cyrillic range. 208 followed by 175 is character 1071, the Cyrillic Я. <a href="https://en.wikipedia.org/wiki/UTF-8#Examples">The exact calculation is (208%32)*64 + (175%64) = 1071</a>.</em>"</p>
+<p>"<em>UTF-8 is therefore a multi-byte variable-width encoding. Multi-byte because a single character like Я takes more than one byte to specify it. Variable-width because some characters like H take only 1 byte and some up to 4.</em>"</p>
+<p>That makes UTF-8 backward compatible with ASCII.</p>
+<h2>Avoid most common problems</h2>
+<ul>
+<li>
+<p>Be sure to use UTF-8 on every single page of your website(s).</p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>(best when written on top of the page, for performance concerns)</p>
+</li>
+<li>
+<p>Choose your font wisely because "<em>Unicode defines over 110,000 characters</em>" and "<em>your browser may not have the correct font to display all of them.</em>"</p>
+</li>
+<li>Be careful when dealing with <a href="http://blog.tremend.ro/2006/09/26/mysql-php-and-utf8/">MySQL to store text</a> (<a href="http://cahnory.tumblr.com/post/17108999879/utf-8-comment-%C3%A7a-marche">another article about it in French, also about PHP</a>)</li>
+</ul>
+<p>That's it about Unicode and UTF-8! Hope it was useful.</p>
+<h1>Further reading</h1>
+<ul>
+<li><a href="http://utf8everywhere.org/">UTF-8 Everywhere</a></li>
+<li><a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/">La maison des horreurs de l’encoding</a></li>
+<li><a href="http://reedbeta.com/blog/programmers-intro-to-unicode/">A Programmer’s Introduction to Unicode</a></li>
+<li><a href="http://slides.com/benoitaverty/unicode-pour-les-nuls#/">Unicode pour les nuls</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 04 February 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Romain Pellerin's Blog: archives for February 2016" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Posts for February 2016 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Romain Pellerin's Blog: archives for February 2016" />
+
+        <title>Posts for February 2016 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<header>
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav></header>
+<h1>Posts for February 2016</h1>
+
+
+    <section>
+        <ol>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/tips-for-ffmpeg.html" rel="bookmark" title="Permalink to Tips For FFMPEG">Tips For FFMPEG</a>
+<time class="grey italic small" datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time>                        <p class="grey italic indent">A few tips with FFMPEG</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html" rel="bookmark" title="Permalink to Fonts, Typefaces And The History Of UTF-8">Fonts, Typefaces And The History Of UTF-8</a>
+<time class="grey italic small" datetime="2016-02-04T19:00:00+01:00">Thu 04 February 2016</time>                        <p class="grey italic indent">Everything about character encodings, fonts and typefaces</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/yes-privacy-matters.html" rel="bookmark" title="Permalink to Yes, Privacy Matters">Yes, Privacy Matters</a>
+<time class="grey italic small" datetime="2016-02-04T01:40:00+01:00">Thu 04 February 2016</time>                        <p class="grey italic indent">Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/mastering-gnu-linux.html" rel="bookmark" title="Permalink to Mastering GNU/Linux">Mastering GNU/Linux</a>
+<time class="grey italic small" datetime="2016-02-02T00:50:00+01:00">Tue 02 February 2016</time>                        <p class="grey italic indent">Everything you have ever wanted to know about GNU/Linux</p>
+                    </li>
+        </ol>
+    </section>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

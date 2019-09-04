@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, usa" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My advice about the USA" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The USA - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My advice about the USA" />
+
+        <title>The USA - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/usa.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-01-10T01:00:00+01:00">Tue 10 January 2017</time> - Last Update: <time datetime="2018-08-28T23:11:00+02:00">Tue 28 August 2018</time>        </p>
+    <h1>The USA</h1>
+    <div class="grey">
+        <p class="italic">My advice about the USA</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1587 words.">8 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/usa.html">usa</a></p>    </div>
+</header>
+<article>
+    <p><em>Update: this article was updated in 2018, following recent trips to the USA</em>.</p>
+<p>In 2016, I went to the US for the first time of my life. Here is a list of things I did and tips I gathered.</p>
+<p>In short, I went to NYC for a week. Then I flew to Los Angeles, where I joined my friends. The following days we went to:</p>
+<ul>
+<li>Santa Barbara (State Street is amazing).</li>
+<li>Baker, CA, Kelso, CA and finally Kingman (slept in a motel).</li>
+<li>The next day we discovered Kingman and then went to Williams (slept at <a href="https://historichatranch.com/">The Historic Hat Ranch</a>).</li>
+<li>The next day we did a trail (Bright Angels) next to Tusayan, in the Grand Canyon. We went sleeping at a campground in Monument Valley (Goulding's Campground, if my memory serves well)</li>
+<li>The next morning we rode horses in the Monument Valley Navajo Tribal Park (exact GPS coordinates: 36.934405, -110.070929). The afternoon was spent at Antelope Canyon. We slept near Page.</li>
+<li>The next day we did the Horse Shoe Bend and swam in the Lake Powell. At night we slept in a hostel at Kanab.</li>
+<li>The next day some of us went to Bryce Canyon. I went to Las Vegas.</li>
+<li>The rest of the trip was spent in: Death Valley, Yosemite (for some of us) and San Francisco.</li>
+</ul>
+<p>Now let's move on to my advice.</p>
+<h1>To know before getting there</h1>
+<ul>
+<li>At a red traffic light, you can legally turn right if no car is coming from the left side, unless there's a sign saying "No right turn on red".</li>
+<li>There are many passes for American national parks which are great deals. If you plan to visit many parks, you definitely want to check them out before buying any individual ticket.</li>
+<li>Same for most cities: <a href="http://www.citypass.com/">CityPASS</a></li>
+<li>In Arizona, it is legal to camp in any national forest, in dedicated areas, for free</li>
+<li>If you rent a car, any additional driver must come and be physically present with their driving licence the day you're getting the car, otherwise the employee won't add them as an authorized driver.</li>
+</ul>
+<h1>Things to do in NYC</h1>
+<p>CityPass is a must for most travellers, it gives access to 6 major places, with incredible value.</p>
+<p>I've been to NYC a couple of times. Here is a list of activities I did there (or did not but I would have loved to do).</p>
+<h2>During daytime</h2>
+<p>The following fews places are doable in a single day, in the following optimized order:</p>
+<ul>
+<li>Little Italy, Chinatown and Soho: <a href="http://www.freetoursbyfoot.com/new-york-tours/walking-tours/soho-little-italy-chinatown/">you can go for a free tour</a> or do it by yourself. These neighborhoods are very close to one another, you can visit them in 2 hours.</li>
+<li>Washington Square Park</li>
+<li>Flat Iron &amp; Madison Square (there are cute squirrels)</li>
+<li>Empire State Building (up to the 86th floor)</li>
+<li>Grand central: the train station</li>
+<li>Rockefeller Center (late afternoon/early evening, to enjoy the sunset)</li>
+</ul>
+<p>The rest is more time-consuming:</p>
+<ul>
+<li>Statue of Liberty and Ellis Island: take the ferry, there are tours which include both places for $18 (if my memory serves well). Dedicate half a day to that. The line to the boat from Battery Park can take up to an hour and a half.</li>
+<li>Charging Bull, in Wall Street: I recommend you do it after coming back from Ellis Island, in the evening. It's less crowded.</li>
+<li>The MoMA (Museum of Modern Art)</li>
+<li>The MET (Metropolitan Museum of Art)</li>
+<li>Central park (don't miss out the Balto statue)</li>
+<li>The American Museum of Natural History</li>
+<li>
+<p>The 9/11 Memorial Museum (it can take up to 3-4 hours, and at the very least 2 hours):</p>
+<ul>
+<li>First, go down to the lowest floor, then make a left and head towards to room under the North Tower: it's the best part of the museum. It easily takes an hour, maybe an hour and a half to go through it.</li>
+<li>Then, do the rest of the museum.</li>
+<li>Don't forget about the 11-min film called "Rebirth", under the South Tower.</li>
+</ul>
+</li>
+<li>
+<p>Coney Island</p>
+</li>
+<li>St. Mark's Place, in East Village</li>
+<li>In Brooklyn: Williamsburg and Dumbo</li>
+</ul>
+<p>The following places offer a great view at any time of the day. If you want to enjoy them as much as you can, my advice is to get there at around 7pm and stay for about 2 hours. This way you'll get the view at night also.</p>
+<ul>
+<li>Times Square: don't forget to say hi to the <a href="https://en.wikipedia.org/wiki/Naked_Cowboy">Naked Cowboy</a></li>
+<li>The Brooklyn Bridge, the Pier 1 and the Brooklyn Heights Promenade.</li>
+<li>One World Trade Center</li>
+</ul>
+<h2>At night</h2>
+<ul>
+<li>Broadway (the district referred to as, not the street): many theaters along Broadway Street and Times Square</li>
+<li>The High Line</li>
+<li>Greenwich Village: it was the center of the folk music scene in the early 1960s. MacDougal Street was the Main Street of Greenwich Village. The most popular folksingers played in clubs on MacDougal.</li>
+</ul>
+<h1>Things to do in Philadelphia</h1>
+<p>Good to know: street parking there is pretty cheap, about $2.5 to $3 per hour.</p>
+<ul>
+<li>Museum of Art</li>
+<li>Rocky steps and Rocky statue</li>
+<li>Washington Square</li>
+<li>Liberty Bell</li>
+<li>Independance Hall</li>
+<li>Chinatown</li>
+<li>Reading Terminal Market</li>
+</ul>
+<h1>Things to do in Washington</h1>
+<ul>
+<li>Arlington National Cemetery: JFK Gravesite and the Tomb of the Unknown Soldier</li>
+</ul>
+<p>Then, drive towards downtown, park somewhere cheap, and rent public bikes (Capital BikeShare)! It's only $8 per day, with unlimited 30-min rides.</p>
+<ul>
+<li>Albert Einstein Memorial</li>
+<li>Vietnam Veterans Memorial</li>
+<li>Lincoln Memorial</li>
+<li>Korean War Veterans Memorial</li>
+<li>Thomas Jefferson Memorial</li>
+<li>Franklin Delano Roosevelt Memorial (quite big!)</li>
+<li>Martin Luther King, Jr. Memorial</li>
+<li>D.C. War Memorial</li>
+<li>Lincoln Memorial Reflecting Pool</li>
+<li>World War II Memorial</li>
+<li>Washington Monument</li>
+<li>The Capitol</li>
+<li>The White House</li>
+<li>Lafayette Square</li>
+</ul>
+<p>If you're staying more than a day, then maybe you could visit the Pentagon.</p>
+<h1>Things to do in Atlanta</h1>
+<ul>
+<li>The Beltine is a must-see!</li>
+<li>Martin Luther King, Jr. National Historical Park</li>
+<li>The King Center</li>
+<li>Dr. Martin Luther King Jr. Tomb</li>
+<li>King Jr Martin Luther- Birth Home</li>
+<li>Jackson Street Bridge (famous scene from The Walking Dead)</li>
+</ul>
+<p>We were told that the CNN studios tours are fun, as well as the Coca Cola factory. Also, Piedmont Park.</p>
+<p>Outside of Atlanta, drive an hour south and go to Senoia, a filming location of The Walking Dead, featuring the Waking Dead Cafe, an official shop and Chris Twellmann's amazing shop! Thistown was used to film Woodburry and Alexandria.</p>
+<h1>Things to do in Orlando or nearby</h1>
+<ul>
+<li>An amusement park. However, be aware that DisneyWorld Magic Kingdom is stricly identical to Disneyland Paris, except for its price. Twice as expensive as its French counterpart.</li>
+<li>3 Sister Springs</li>
+<li>Wekiwa Springs</li>
+<li>Cocoa Beach</li>
+</ul>
+<h1>Things to do in Miami</h1>
+<p>Check the Go Miami Card out, it might be worth buying one. It's more or less like a CityPass.</p>
+<ul>
+<li>The Keys: allocate a full day if you plan to going to the southernmost island.</li>
+<li>A air boat ride in the Everglades. We went with Gator Park. It's very cheap, about $20 per person, but we only got to see one alligator in the wild. Apparently, April to September is the nesting season so very few are out there, visible.</li>
+<li>South Beach</li>
+<li>Downtown, Hard Rock Café</li>
+</ul>
+<h1>Tips for Las Vegas</h1>
+<ul>
+<li>Old city center</li>
+<li>The Strip, of course</li>
+<li>You can drink any kind of beverage in casinos as long as you are playing (even if gambling only $1). Of course tipping is highly recommended.</li>
+<li>Watch <a href="https://www.youtube.com/watch?v=mfve-4wuUz8">Las Vegas in 24 hours</a></li>
+<li>
+<p>Really funny slot machines:</p>
+<ul>
+<li>Bamboo Panda in the Mirage Hotel</li>
+<li>Aladin and the Magic Lamp at Casino Royale</li>
+</ul>
+</li>
+<li>
+<p>Encore Beach Club is a nice place to go to</p>
+</li>
+<li>Omnia, in Caesar's palace, is a great nightclub</li>
+<li>Same for XS Las Vegas</li>
+<li>Looking for a good Airbnb host? Mine was great. Here's the address: 605 S Royal Crest Cir UNIT 20, Las Vegas, NV 89169</li>
+</ul>
+<h1>Places to see in Los Angeles</h1>
+<ul>
+<li>The Hollywood sign and Hollywood boulevard</li>
+<li>The Perch (a rooftop bar)</li>
+<li>Homer Laughlin Building</li>
+<li>Santa Monica Pier</li>
+<li>The Observatory (so much to see inside the building, plus the view of course)</li>
+</ul>
+<h1>Places to see in the Grand Canyon</h1>
+<ul>
+<li>Havasupai</li>
+<li>Horseshoe bend</li>
+<li>Antelope canyon (<a href="https://www.tripadvisor.com/ShowUserReviews-g60834-d4426581-r350723998-Upper_Antelope_Canyon-Page_Arizona.html">the Lower tour is supposedly better than the Upper</a>): try to go around noon for optimal lighting.</li>
+</ul>
+<h1>Nice places to stay in Arizona</h1>
+<ul>
+<li>Hat Ranch: a Airbnb ranch in Williams</li>
+<li>Travelodge in Kingman</li>
+</ul>
+<h1>San Francisco</h1>
+<ul>
+<li>Need some last minute gear? <a href="https://www.lastmingear.com/">There you go</a>!</li>
+<li>Best bar <strong>EVER</strong>: <a href="http://www.madroneartbar.com/">Madrone Art Bar</a></li>
+<li>Alcatraz</li>
+<li>Mr Tipple: nice jazz bar, drinks are a bit expensive though</li>
+<li>Golden Gate Park: do the Japanese garden and botanical garden, both are awesome</li>
+<li>Golden Gate Bridge, of course</li>
+<li>Castro</li>
+<li>Chinatown</li>
+<li>Japantown</li>
+<li>Ride a cable car and visit for free the Cable Car Museum</li>
+<li>Union square: check out the Love Sign at Grand Hyatt</li>
+<li>Twin Peaks</li>
+<li>Haight street</li>
+<li>Lombard Street</li>
+<li>Mission Dolores Park</li>
+<li>Baker Beach</li>
+<li>Martuni's: amazing piano bar</li>
+<li>Isotope, on Fell Street: best comic shop of San Francisco. James, the owner, is a great guy, very friendly and helpful</li>
+<li>Painted Ladies</li>
+<li>Patricia's Green</li>
+<li>Pier 39</li>
+<li>Musée Mécanique: great stuff in there, prepare a lots of coins to spend</li>
+</ul>
+<h1>Other places to see</h1>
+<ul>
+<li>Death Valley: do the 3-hour horse ride</li>
+<li>Sequoia National Park</li>
+<li>Muir Woods National Monument</li>
+<li>A Six flags park: there are such parks in most states</li>
+<li>Mount Rushmore</li>
+<li>Go to a drive-in theater, it's definitely worth it</li>
+</ul>
+<h2>Zion</h2>
+<p>If you go to Zion Park and happen to be in good shape and fearless, do the crazy Angels Langing trail! Book a full day for it though.</p>
+<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/QXsbspHMcm4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>You will find here a more thorough description: <a href="https://www.alltrails.com/trail/us/utah/angels-landing-trail">https://www.alltrails.com/trail/us/utah/angels-landing-trail</a></p>
+<p>Don't have the time? Too scared? <a href="https://www.citrusmilo.com/zionguide/obspoint.cfm">This one</a> looks awesome too!</p>
+<p>You might also want to check out <a href="http://www.roadtrippin.fr/utah/zion/zion.php">other trails</a>.</p>
+<h2>Yosemite</h2>
+<p>Do the round-trip trail to Glacier Point: awesome view!!!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 28 August 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

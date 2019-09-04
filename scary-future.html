@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, future, technology" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Technologies that make the future scary" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Scary Future - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Technologies that make the future scary" />
+
+        <title>Scary Future - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-01-24T20:50:00+01:00">Wed 24 January 2018</time>        </p>
+    <h1>Scary Future</h1>
+    <div class="grey">
+        <p class="italic">Technologies that make the future scary</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 135 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/whats-bad-about.html">What's bad about</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/future.html">future</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/technology.html">technology</a></p>    </div>
+</header>
+<article>
+    <p>Resources warning us about what to expect from the future.</p>
+<ul>
+<li><a href="https://spectrum.ieee.org/tech-talk/consumer-electronics/audiovideo/your-candy-wrappers-are-listening">Your Candy Wrappers are Listening</a></li>
+<li><a href="https://theintercept.com/2018/01/19/voice-recognition-technology-nsa/">Finding Your Voice</a></li>
+<li><a href="https://ha.x0r.be/posts/chrome-is-a-google-service/">Chrome is a Google Service that happens to include a Browser Engine</a></li>
+<li><a href="https://www.nytimes.com/2018/07/08/business/china-surveillance-technology.html">Inside China’s Dystopian Dreams: A.I., Shame and Lots of Cameras</a></li>
+<li><a href="https://www.lyonmag.com/article/98529/grace-a-votre-telephone-collomb-sait-enfin-combien-de-visiteurs-ont-participe-a-la-fete-des-lumieres">Grâce à votre téléphone, Collomb sait enfin combien de visiteurs ont participé à la Fête des Lumières</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2019-04-10/is-anyone-listening-to-you-on-alexa-a-global-team-reviews-audio">Amazon Workers Are Listening to What You Tell Alexa</a></li>
+<li><a href="https://www.phonandroid.com/non-chinois-pas-sonnerie-telephone-humiliante-quand-endettes.html">Non, les chinois n’ont pas de sonnerie de téléphone humiliante quand ils sont endettés</a></li>
+<li><a href="https://www.zdnet.com/article/amazon-confirms-alexa-customer-voice-recordings-are-kept-forever/">Amazon confirms Alexa customer voice recordings are kept forever</a></li>
+</ul>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I can’t believe what I’m seeing! While running a facial recognition pilot, one man (understandably imho) covered himself up. The police forced him to show his face (&amp; then fined him for disorderly conduct). This is dangerous &amp; terrifying. <a href="https://t.co/QdG2VPGyfE">pic.twitter.com/QdG2VPGyfE</a></p>&mdash; Jamie Bartlett (@JamieJBartlett) <a href="https://twitter.com/JamieJBartlett/status/1128657365090361344?ref_src=twsrc%5Etfw">May 15, 2019</a></blockquote>
+
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> </p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 24 January 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

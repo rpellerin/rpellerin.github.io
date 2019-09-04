@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, linux, ubuntu, xubuntu, debian, unix, gnu" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Everything you have ever wanted to know about GNU/Linux" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Mastering GNU/Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Everything you have ever wanted to know about GNU/Linux" />
+
+        <title>Mastering GNU/Linux - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-02-02T00:50:00+01:00">Tue 02 February 2016</time>        </p>
+    <h1>Mastering GNU/Linux</h1>
+    <div class="grey">
+        <p class="italic">Everything you have ever wanted to know about GNU/Linux</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 712 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ubuntu.html">ubuntu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/xubuntu.html">xubuntu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/debian.html">debian</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/unix.html">unix</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gnu.html">gnu</a></p>    </div>
+</header>
+<article>
+    <p>Everything you have ever wanted to know about GNU/Linux plus some troubleshooting tips I learned the hard way.</p>
+<h1>Installing Linux on a Dell preinstalled with Windows</h1>
+<ul>
+<li>In Windows, disable Fast startup in Panel Control &gt; Power &gt; Action when button pressed.</li>
+<li>In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers</li>
+<li>You might want to enable 'SD card boot' in the BIOS under Boot &gt; Miscellaneous devices if you use a SD card to install Linux</li>
+<li>In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: <a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3">https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3</a> and <a href="https://bbs.archlinux.org/viewtopic.php?id=204629">https://bbs.archlinux.org/viewtopic.php?id=204629</a>.</li>
+</ul>
+<p>That's it. You should be able to install Linux on the entire disk now.</p>
+<h1>Upgrading your distribution of *Ubuntu</h1>
+<div class="highlight"><pre><span></span>sudo <span class="k">do</span>-release-upgrade
+<span class="c1"># OR</span>
+sudo update-manager -c
+</pre></div>
+
+
+<p><a href="https://help.ubuntu.com/lts/serverguide/installing-upgrading.html">More information</a>.</p>
+<h1>GNU/Linux</h1>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ANA134vEhEI">Nom de code : Linux</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierarchy Standard</a></li>
+<li><a href="http://jvns.ca/blog/2016/11/10/a-few-drawings-about-linux/">A few drawings about Linux</a></li>
+<li><a href="https://mavielinux.com/2016/12/18/pourquoi-la-mascotte-de-linux-est-un-manchot/">Pourquoi la mascotte de Linux est un manchot?</a></li>
+<li><a href="https://www.youtube.com/watch?v=xqdWi6SblV8">Linux est ton meilleur ami (Pierre Antoine Grégoire - Olivier Robert - Nicolas Helleringer)</a></li>
+</ul>
+<h2>Free Software Foundation / Open source</h2>
+<ul>
+<li><a href="https://www.gnu.org/philosophy/free-software-for-freedom.html">Why “Free Software” is better than “Open Source”</a></li>
+<li><a href="https://remysharp.com/2015/01/09/dont-like-open-source">"Why I don't like open source" – my thoughts</a></li>
+</ul>
+<h1>Installing Linux</h1>
+<ul>
+<li><a href="http://blog.adminrezo.fr/2013/05/que-faire-apres-linstallation-dun-serveur-debian/">Que faire après l’installation d’un serveur Debian ?</a></li>
+<li><a href="http://blog.adminrezo.fr/2014/01/post-installation-ubuntu-kubuntu/">Que faire après l’installation de (U|k|x)buntu</a></li>
+<li><a href="https://sites.google.com/site/easylinuxtipsproject/first-xubuntu">10 things to do first in Xubuntu 14.04 LTS</a></li>
+<li><a href="http://superuser.com/questions/419876/grub-reinstall-after-partition-name-change">grub reinstall after partition name change</a></li>
+<li><a href="http://bookmarks.romainpellerin.eu/?page=1">How do I disable the guest session?</a></li>
+<li><a href="http://g.eckenschwiller.free.fr/Tutoriels/Installation/greffons_Xfce.php">Quelques greffons pour Xfce</a></li>
+<li><a href="http://xubuntugeek.blogspot.fr/2011/12/add-items-to-xfce-applications-menu.html">Add items to Xfce Applications Menu</a></li>
+<li><a href="https://github.com/dfkt/firefox-tweaks">firefox-tweaks: attempt to make Firefox suck less</a></li>
+<li><a href="https://github.com/MichielDerhaeg/build-linux/blob/master/README.md">Build yourself a Linux</a></li>
+</ul>
+<h2>Alongside Windows</h2>
+<ul>
+<li><a href="https://help.ubuntu.com/community/UEFI">Windows 8+ dual boot on UEFI</a></li>
+<li><a href="http://www.mercereau.info/reparer-grub-apres-une-installation-de-windows/">Réparer Grub après une installation de windows</a></li>
+</ul>
+<h1>The whole system</h1>
+<ul>
+<li><a href="https://www.clever-cloud.com/blog/engineering/2012/11/22/knowing-your-system-part-basics-on-unixlike-systems/">Knowing your system - Part 1 - Basis on UNIX-like systems</a></li>
+<li><a href="http://gfx.developpez.com/tutoriel/linux/kernel/">La compilation du noyau</a></li>
+<li><a href="http://www.linuxfromscratch.org/">Linux From Scratcg</a></li>
+<li><a href="https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/">Linux file system hierarchy v2.0</a></li>
+<li><a href="https://fredrb.github.io/2016/10/01/Understanding-proc/">Understanding /proc</a></li>
+</ul>
+<h1>Shells &amp; Terminals</h1>
+<ul>
+<li><a href="http://stackoverflow.com/questions/5163144/what-are-the-special-dollar-sign-shell-variables/5163260#5163260">What are the special dollar sign shell variables?</a></li>
+<li><a href="http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces">How to use double or single bracket, parentheses, curly braces</a></li>
+<li><a href="http://mywiki.wooledge.org/BashFAQ/082">Why is $(...) preferred over <code>...</code> (backticks)?</a></li>
+<li><a href="http://www.shellcheck.net/">Shell script analyzer</a></li>
+<li><a href="http://samrowe.com/wordpress/advancing-in-the-bash-shell/">Advancing in the Bash Shell</a></li>
+<li><a href="https://ddfreyne.github.io/til/2016/12-03-terminal-cursor-movement/">Moving the terminal cursor</a></li>
+<li><a href="https://lambdaops.com/rm-rf-remains/">rm -rf remains</a></li>
+<li><a href="http://blog.guntram.de/?p=164">The annoying alternate screen in vte-based terminal applications</a></li>
+<li><a href="http://st.suckless.org/">st - a simple terminal implementation for X</a></li>
+<li><a href="https://vincent.bernat.im/en/blog/2017-write-own-terminal">Write your own terminal emulator</a></li>
+<li><a href="http://jvns.ca/blog/2017/03/26/bash-quirks/">Bash scripting quirks &amp; safety tips</a></li>
+<li><a href="http://blog.regehr.org/archives/1483">Fun at the UNIX Terminal Part 1</a></li>
+</ul>
+<h1>Software</h1>
+<ul>
+<li><a href="http://putaindecode.fr/posts/shell/apprendre-les-makefiles/">Laissez-vous pousser la barbe, apprenez à écrire des Makefiles</a></li>
+<li><a href="http://monkey.org/~marius/unix-tools-hints.html">Hints for writing Unix tools</a></li>
+<li><a href="http://linrunner.de/en/tlp/tlp.html">TLP: battery optimizer</a></li>
+</ul>
+<h1>Commands / tips</h1>
+<ul>
+<li><a href="http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html">Linux Performance Analysis in 60,000 Milliseconds</a></li>
+<li><a href="https://korben.info/dintimite-lhistorique-bash.html">Pour avoir un peu d’intimité avec l’historique Bash</a></li>
+<li><a href="https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/">Ten Things I Wish I’d Known About bash</a></li>
+<li><a href="https://zwischenzugs.com/2018/01/21/ten-more-things-i-wish-id-known-about-bash/">Ten More Things I Wish I'd Known About bash</a></li>
+<li><a href="http://www.binarytides.com/linux-commands-monitor-network/">18 commands to monitor network bandwidth on Linux server</a></li>
+<li><a href="http://arthurdejong.org/recovery.html">Recovering hard drive disk problems</a></li>
+<li><a href="http://hacklab.cz/2012/04/22/usefulness-linux-framebuffer-virtual-console">Usefulness of the Linux Framebuffer on the Virtual Console</a></li>
+<li><a href="http://pythonhosted.org/pdftools.pdfposter/Examples.html">Print PDF on many pages</a></li>
+<li><a href="http://blog.tjll.net/ssh-kung-fu/">SSH Kung Fu</a></li>
+<li><a href="https://lonesysadmin.net/2011/11/08/ssh-escape-sequences-aka-kill-dead-ssh-sessions/">SSH Escape Sequences (aka Kill Dead SSH Sessions)</a></li>
+<li><a href="http://korben.info/utiliser-nano.html">NANO : Quelques raccourcis à retenir</a></li>
+<li><a href="http://wiki.linux-france.org/wiki/Les_commandes_fondamentales_de_Linux">Les commandes fondamentales de Linux</a></li>
+<li><a href="http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-mail-postfix-courier-imap-ubuntu.pdf">Créer un serveur mail</a></li>
+<li><a href="http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-dns-bind.pdf">Un DNS avec Bind</a></li>
+<li><a href="http://www.bortzmeyer.org/unbound.html">Unbound, un autre résolveur DNS</a></li>
+<li><a href="https://zwischenzugs.com/2018/06/08/anatomy-of-a-linux-dns-lookup-part-i/">Anatomy of a Linux DNS Lookup – Part I</a></li>
+<li><a href="http://korben.info/long-didnt-read-pour-vos-man-pages.html">Too long; didn’t read pour vos man pages</a></li>
+<li><a href="http://askubuntu.com/questions/427818/how-can-i-run-this-sh-script-without-typing-the-full-path/527008#527008">Add a new command available in shell</a></li>
+<li><a href="http://askubuntu.com/questions/22381/how-to-format-a-usb-flash-drive/571340#571340">How to format a USB flash drive?</a></li>
+<li><a href="https://github.com/yudai/gotty">gotty: Share your terminal as a web application</a></li>
+<li><a href="http://crontab.guru/">crontab.guru</a></li>
+<li><a href="https://www.security-helpzone.com/rendre-linux-ecologique-gren-it-news-335.html">Rendre Linux écologique (green-it)</a></li>
+<li><a href="http://majantali.net/2016/10/how-breakpoints-are-set/">HOW BREAKPOINTS ARE SET</a></li>
+<li><a href="http://korben.info/realiser-limage-dun-disque-dur-testdisk.html">Réaliser l’image d’un disque dur avec Testdisk</a></li>
+<li><a href="https://github.com/chubin/wttr.in">The right way to check the weather http://wttr.in</a></li>
+<li><a href="https://www.lopezferrando.com/30-interesting-shell-commands/">30 interesting commands for the Linux shell</a></li>
+</ul>
+<h1>Other distros</h1>
+<ul>
+<li><a href="https://github.com/CBPP/cbpp">#!++, A CrunchBang revival project (very lightweight distro)</a></li>
+</ul>
+<h1>Security</h1>
+<ul>
+<li><a href="https://dhavalkapil.com/blogs/Shellcode-Injection/">Shellcode Injection</a></li>
+<li><a href="http://blog.mailgun.com/security-guide-basic-infrastructure-security/">Security Guide: How to Protect Your Infrastructure Against the Basic Attacker</a></li>
+<li><a href="http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/">/dev/random vs /dev/urandom</a> &amp; <a href="http://www.2uo.de/myths-about-urandom/">Myths about /dev/urandom</a></li>
+<li><a href="https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1">Hygiène numérique pour l’administrateur système</a></li>
+<li><a href="https://spreadprivacy.com/linux-privacy-tips/">How To Protect Your Privacy On Linux</a></li>
+<li><a href="http://thegeekyway.com/hands-on-guide-on-gpg-keys/">Hands-on Guide on GPG Keys</a></li>
+<li><a href="https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/">Creating a new GPG key with subkeys</a></li>
+<li><a href="http://www.beaupeyrat.com/wp-content/uploads/2015/07/gpg.pdf">GNU Privacy Guard</a></li>
+<li><a href="https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html">Using an offline GnuPG master key</a></li>
+<li><a href="https://wiki.debian.org/Subkeys">Using OpenPGP subkeys in Debian development</a></li>
+<li><a href="https://www.debian.org/doc/manuals/securing-debian-howto/index.fr.html">Securing Debian Manual</a></li>
+<li><a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">How To Secure A Linux Server</a></li>
+<li><a href="https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3">the-practical-linux-hardening-guide</a></li>
+</ul>
+<h1>NGINX</h1>
+<ul>
+<li><a href="https://github.com/trimstray/nginx-admins-handbook">trimstray/nginx-admins-handbook</a></li>
+</ul>
+<h1>Other</h1>
+<ul>
+<li><a href="https://tuhdo.github.io/os01/">Operating System: From 0 to 1</a></li>
+<li><a href="https://mobile.twitter.com/clementd/status/837600575483179009">xmonad + vimperator</a></li>
+<li><a href="https://medium.com/netflix-techblog/linux-performance-analysis-in-60-000-milliseconds-accc10403c55">Linux Performance Analysis in 60,000 Milliseconds</a></li>
+<li><a href="https://github.com/angrave/SystemProgramming/wiki">System Programming</a></li>
+<li><a href="https://bash-prompt.net/guides/server-hacked/">How To Tell If Your Linux Server Has Been Compromised</a></li>
+<li><a href="https://www.youtube.com/watch?v=v-jdlc5YdDc">SystemD pro level linux des temps modernes Process management, containers (P.A. Grégoire, Q. Adam)</a></li>
+<li><a href="https://0x46.net/thoughts/2019/02/01/dotfile-madness/">Dotfile madness</a></li>
+<li><a href="https://github.com/trimstray/the-book-of-secret-knowledge#cli-tools-toc">trimstray/the-book-of-secret-knowledge</a></li>
+<li><a href="https://asciinema.org/">asciinema: Record and share your terminal sessions, the right way</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 02 February 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

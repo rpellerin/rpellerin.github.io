@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Recommendations and advice for travelers" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Travels: tips and tricks - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Recommendations and advice for travelers" />
+
+        <title>Travels: tips and tricks - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-12-26T23:35:00+01:00">Mon 26 December 2016</time>        </p>
+    <h1>Travels: tips and tricks</h1>
+    <div class="grey">
+        <p class="italic">Recommendations and advice for travelers</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 580 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a></p>    </div>
+</header>
+<article>
+    <p>During the last 12 months, I've had the chance to travel quite a lot (The Netherlands, Belgium, UK, US, South Korea, Hong-Kong, Japan). Thanks to these experiences, I have gathered quite a few pieces of advice regarding how to prepare, organization, etc. I'll keep updating this article as I travel.</p>
+<h1>Before departing</h1>
+<p><strong>Carry-on</strong>: make sure you have a few clothes in the cabin, don't pack everything into the hold luggage.</p>
+<p>Make sure you have VLC installed on your Android phone to watch movies and/or TV series. VLC in more convient for that it supports a wider variety of formats and allows one to add subtitles. Also, you should have an offline access to what you intend to watch on your mobile phone or laptop, along with subtitles.</p>
+<p>You may want an Internet access. Most airlines will offer Wifi for a few dollars, however if you have a VPN set up somewhere in the world you might be able to access the Internet for free using it. More importantly, even though you decide to pay, <a href="https://theintercept.com/2016/12/07/american-and-british-spy-agencies-targeted-in-flight-mobile-phone-use/">you may want to protect your privacy</a>. How so?</p>
+<ul>
+<li>It is better to know your VPN's IP, it makes things easier.</li>
+<li>OpenVPN is handy, and there's an Android app for that (free!)</li>
+<li>The VPN server should be reachable on ports 80, 443, 53 (DNS) or any other random one. Indeed, those are the ports less likely to be blocked. 53 is the preferred if you want to reach your VPN without paying.</li>
+</ul>
+<p>Last but not least, take outlet adapters (practically all planes are US outlets compatible). In addition, a USB to AC converter would come very handy, as there are more often USB outlets than AC power plugs. This way you can use a laptop.</p>
+<p>Before ending this ending, very few people know that but French citizens can get the taxes they paid back if they miss their flight or if it gets cancelled. Source: <a href="https://www.service-public.fr/particuliers/vosdroits/F32396">Peut-on se faire rembourser les taxes si on rate ou annule son voyage en avion ?</a></p>
+<h1>General advice for travelers</h1>
+<ul>
+<li>Plan two activities per day TOPS, if you want to enjoy them as much as possible and avoid being in a rush all the time</li>
+<li>Bringing little gifts from your home country to your Airbnb hosts is always a good idea and will please them</li>
+<li>Plan you trip in advance and thoroughly, and make that plan available to everyone in your group so that no one has to worry about anything</li>
+</ul>
+<h1>Don't get lost</h1>
+<p>Here are two great Android apps that you can use for free to find routes and points of interests in most cities in the world.</p>
+<ul>
+<li>Google Maps, with the "Offline" feature. It allows you to download maps so that you can use them offline (it does not work in a few countries though, those that do not let Google access their maps, such as South Korea). This app is pre-installed on Android devices.</li>
+<li><a href="http://osmand.net/">OsmAnd</a>, available on the <a href="https://play.google.com/store/apps/details?id=net.osmand">Google Play Store</a>. It uses <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'s data so it is basically available everywhere, thanks to users' contributions. Likewise, it has offline features which provide a great level of details.</li>
+</ul>
+<h1>Useful link for travelers</h1>
+<ul>
+<li><a href="http://www.secretflying.com/">SecretFlying</a></li>
+<li><a href="https://www.eff.org/wp/digital-privacy-us-border-2017">Digital Privacy at the U.S. Border: Protecting the Data On Your Devices and In the Cloud</a></li>
+<li><a href="https://www.youtube.com/watch?v=_CHaUhwrafM">TUTO - Comment chercher un billet d'avion</a></li>
+<li><a href="https://www.youtube.com/watch?v=uZaEAo7NCes">TUTO - Comment dépenser moins cher en voyage</a></li>
+<li><a href="https://www.youtube.com/watch?v=nTbzx4-lAAI">TUTO - Mon Top 10 des astuces en VOYAGE</a></li>
+<li><a href="https://www.youtube.com/watch?v=2PZNLlprlwc">TUTO - Faire son SAC A DOS pour un TOUR DU MONDE</a></li>
+<li><a href="https://mricon.com/i/travel-laptop-setup.html">Travel (Linux) laptop setup</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 26 December 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, apartement, paris, housing" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My advice for apartment seekers in Paris" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Looking For An Apartment In Paris - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My advice for apartment seekers in Paris" />
+
+        <title>Looking For An Apartment In Paris - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-09-02T22:50:00+02:00">Sat 02 September 2017</time> - Last Update: <time datetime="2018-03-02T15:50:00+01:00">Fri 02 March 2018</time>        </p>
+    <h1>Looking For An Apartment In Paris</h1>
+    <div class="grey">
+        <p class="italic">My advice for apartment seekers in Paris</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 645 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/apartement.html">apartement</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/paris.html">paris</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/housing.html">housing</a></p>    </div>
+</header>
+<article>
+    <p>Looking for an apartment in Paris... is a hassle. A lot of demand, too little supply. Not to mention you always - well, almost - need rent guarantors.</p>
+<h1>First of all, where to look for apartments?</h1>
+<p>My three favorite ones, that gather ads from many agencies:</p>
+<ul>
+<li><a href="https://www.leboncoin.fr/locations/offres/ile_de_france/?th=1&amp;ret=2&amp;furn=1">Leboncoin.fr</a></li>
+<li><a href="http://www.seloger.com/list.htm?idtt=1&amp;naturebien=1&amp;idtypebien=1&amp;ci=750110,750109,750111,750118,750119,750105,750120,750117,750112,750113,750114,750106,750104&amp;tri=a_px&amp;surfacemin=15&amp;si_meuble=1">Seloger.com</a></li>
+<li><a href="http://www.pap.fr/annonce/locations-appartement-paris-4e-g37771g37772g37776g37777g37778g37780g37784g37785g37786g37787-a-partir-de-15-m2">Pap.fr</a></li>
+</ul>
+<p><strong>Pro tip</strong>: enable the alert emails so that you get an email as soon as one ad is posted, or digest emails.</p>
+<p>Also, don't forget about agencies' websites. To mention a few:</p>
+<ul>
+<li><a href="http://www.virginia-immobilier.fr/">Virginia</a></li>
+<li><a href="https://www.guy-hoquet.com/">Guy Hoquet</a></li>
+<li><a href="http://www.laforet.com/">Laforêt</a></li>
+<li><a href="https://www.fnaim.fr/">FNAIM</a></li>
+</ul>
+<h1>Arranging a viewing</h1>
+<p>My tip is to always try to phone them. If no one picks up, them text the person who posted the ad if they wrote their phone number. As a last resort, email them.</p>
+<p>In short, the email should look like this:</p>
+<ul>
+<li>State who is looking for an apartment (yourself and your gf/bf?)</li>
+<li>Is the apartment still on the market? If so, when can you see it?</li>
+<li>Your job(s) (CDD, CDI, trial period?), your position(s) (software engineer for instance) and your salaries. Indicate whether you have guarantors or not.</li>
+<li>Leave your phone number just in case</li>
+</ul>
+<p>Once you've arranged a viewing, you should prepare the documents you are going to have to hand in along with the questions you want to ask.</p>
+<h1>The documents</h1>
+<p>In Paris, landlords usually expect people to know what documents are required. However, this might drastically vary from one to another. Here is a list of must and optional ones. If you are extremelly well paid you might not need rent guarantors:</p>
+<p><strong>Must</strong></p>
+<ul>
+<li>Copies of your ID and your rent guarantors' IDs</li>
+<li>You last three payslips (and those or your guarantors) </li>
+<li>Last tax notice (<em>avis d'impôts</em>)</li>
+<li>Your work contract (or student certificate if still a student) and your guarantors' work contracts or some proof from their employer</li>
+</ul>
+<p><strong>Optional but often required</strong></p>
+<ul>
+<li>Three last rent receipts (<em>quittances de loyer</em>)</li>
+<li>Guarantors' land tax (<em>taxe foncière</em>). <a href="https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/">More on this here</a></li>
+<li>Guarantors' residence tax (<em>taxe d'habitation</em>). <a href="https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/">More on this here</a>.</li>
+<li>Sworn statement from your guarantors stating they are your guarantors (<em>attestation sur l'honneur</em>)</li>
+</ul>
+<p><strong>Rarely required</strong></p>
+<ul>
+<li>Last EDF bill or sworn statement that you'be being hosted by someone (meaning you live at someone's place)</li>
+<li>Proof of insurance for houses (assurance habitation)</li>
+<li>Proof of residency for your guarantors</li>
+</ul>
+<p><strong>However, never hand in your bank details before officially signing the apartment lease.</strong>
+Some agencies or landlords ask you to hand in these documents during the viewing. But most of the time, sending them over email is fine. Ask beforehand just in case.</p>
+<h1>Questions to ask during the viewing</h1>
+<p>Here are a few questions I used to ask:</p>
+<ul>
+<li>Does it come with a refrigerator? Oven/stove, stovetop or range? Washing machine or connections for one? Dishwasher?</li>
+<li>Are windows double glazed?</li>
+<li>Is the neighborhood quiet and safe?</li>
+<li>How much is the brokerage fee? (if not renting directly from the landlord)</li>
+<li>How much is the deposit, if any?</li>
+<li>What is included in the utilities? Water, electricity, gas, heat, trash removal, Internet access, ...?</li>
+<li>If there fiber optic Internet?</li>
+<li>Are there window roller shutters?</li>
+<li>How much is the electricity consumption per month? How bad is the insulation? (ask for the <a href="https://ec.europa.eu/energy/en/topics/energy-efficiency/buildings">building energy performance metrics</a>)</li>
+<li>When is the apartment available?</li>
+<li>Is the apartment eligible for APL (<em>Aide personnalisée au logement</em>)?</li>
+</ul>
+<h1>Keeping track of the apartments you've found and the viewings you've done</h1>
+<p>I recommend that you create an Excel file to do that. Here is an extract of mine:</p>
+<ul>
+<li>Title of the ad</li>
+<li>URL</li>
+<li>Price per month</li>
+<li>Number of rooms</li>
+<li>Arrondissement</li>
+<li>Address (if known)</li>
+<li>Floor (lift?)</li>
+<li>Square meters</li>
+<li>Furnished or empty?</li>
+<li>Double bed?</li>
+<li>Washing machine or connections?</li>
+<li>Energy perfomance</li>
+<li>Availability (date)</li>
+<li>Last email sent date + time (and replies and outcome)</li>
+<li>Last phone call date + time (and outcome)</li>
+<li>Date of arranged viewing + time</li>
+<li>Phone number of the broker/landlord</li>
+<li>Viewing date and time</li>
+<li>Additional information</li>
+</ul>
+<p>That's it! Hope this helps.</p>
+<h1>Resources</h1>
+<ul>
+<li><a href="https://twitter.com/paldama/status/1109017746883387392">Beware of scammers</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 02 March 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

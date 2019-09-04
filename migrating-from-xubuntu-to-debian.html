@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, linux, debian, xubuntu" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to install Debian 8" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Migrating From Xubuntu To Debian - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to install Debian 8" />
+
+        <title>Migrating From Xubuntu To Debian - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-05-21T02:00:00+02:00">Sat 21 May 2016</time> - Last Update: <time datetime="2016-07-03T13:13:00+02:00">Sun 03 July 2016</time>        </p>
+    <h1>Migrating From Xubuntu To Debian</h1>
+    <div class="grey">
+        <p class="italic">How to install Debian 8</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 779 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/debian.html">debian</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/xubuntu.html">xubuntu</a></p>    </div>
+</header>
+<article>
+    <p>Today marks a new beginning: <strong>I'm switching to Debian 8</strong>. A very bare installation of Debian actually.</p>
+<p>Until now, I've been using Xubuntu for over 3 years as my main operating system, on both my laptop and desktop computer. However, yesterday, as I was installing Xubuntu 16.04 on a friend's laptop, I noticed a few bugs quite annoying (like the <a href="https://bugs.launchpad.net/ubuntu/+bug/1573454">disappearing mouse</a>). In addition, I had been thinking about migrating to Debian for quite a long time (a friend of mine had already taken that step a couple of months ago). Xubuntu is shipped with a bunch of useless programs that I would never use. So time has come to have a lightweight bare distro, such as Debian 8. Moreover, my aging laptop would hugely benefit from that.</p>
+<h1>Tutorial</h1>
+<p>Let's get straight to the point: <strong>how to install Debian 8 on a whole encrypted disk?</strong></p>
+<p>Why encryption? Although I don't have sensitive data to protect, I take my laptop everywhere I go. Consequently, I am vulnerable to theft. What is on my disk is not valuable but still, I prefer to keep my stuff private.</p>
+<p>Before starting, make sure you have two USB sticks ready nearby, and another computer with a working Internet connection.</p>
+<p>Here are the steps to get a bare installation of Debian 8:</p>
+<ol>
+<li>Download a "<em>small installation image</em>" on <a href="https://www.debian.org/distrib/">the official website</a>.</li>
+<li>
+<p>Flash it on a USB stick:</p>
+<div class="highlight"><pre><span></span>ls /dev/sd*
+<span class="c1"># Plug the USB stick</span>
+ls /dev/sd* <span class="c1"># Detect which is yours</span>
+sudo umount /dev/sdX1
+sudo dd <span class="k">if</span><span class="o">=</span>debian-8.4.0-amd64-netinst.iso <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>1M
+sudo sync<span class="p">;</span> sync
+sudo umount /dev/sdX1
+</pre></div>
+
+
+</li>
+<li>
+<p>On the target PC, disable any HDD password or BIOS password. It might prevent you from encrypting the disk. I experienced it.</p>
+</li>
+<li>Boot on the USB flash drive. Select "<em>Install</em>", unless you prefer a graphical install. They both do the same thing.</li>
+<li>
+<p>Follow the instructions. You can leave the domain name blank. If you get a message "No common CD-ROM drive was detected", press ALT+F2 and do the following:</p>
+<div class="highlight"><pre><span></span>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
+mkdir /mnt/iso
+mount -t iso9660 /dev/sdb1 /mnt/iso
+</pre></div>
+
+
+<p>Press ALT+F1 to return to the installation dialog. Continue the installation.</p>
+</li>
+<li>
+<p>If at some point a message says that proprietary firmware files are needed, it's time to go back to the other computer and USB stick. Otherwise, skip this step.</p>
+<p><a href="//romainpellerin.eu/images/debian_firmware.jpg"><img alt="Picture" src="//romainpellerin.eu/images/debian_firmware.jpg"></a></p>
+<p>Note: this is doable with only one USB stick. But it is much harder.</p>
+<ol>
+<li>Download the mentioned file(s) from the <a href="https://packages.debian.org/jessie/">Debian repository</a>. In my case, I needed these ones: <a href="https://packages.debian.org/stretch/all/firmware-misc-nonfree/download">https://packages.debian.org/stretch/all/firmware-misc-nonfree/download</a> and <a href="https://packages.debian.org/stretch/all/firmware-realtek/download">https://packages.debian.org/stretch/all/firmware-realtek/download</a>.</li>
+<li>Put the <code>.deb</code> file(s) on the other USB stick. If you decided to re-use the same USB stick, first umount it: ALT+F2, <code>cat /etc/mtab</code> then <code>sync &amp;&amp; umount /dev/sdb1 &amp;&amp; sync</code>. Plug it in the other computer and delete existing partitions with <code>fdisk</code> and create a new one of type <code>W95 FAT32</code>. Format it using <code>sudo mkfs.vfat /dev/sdc1</code>. Then put the files on the USB stick.</li>
+<li>Plug the one containing firmwares files on your target computer, in the same USB port as the previous USB stick. You might need to hit ALT+F2, then check what is currently mounted (<code>cat /etc/mtab</code>) (make sure nothing on <code>/cdrom</code>) and mount the one you just plugged in: <code>mount -t vfat /dev/sdb1 /cdrom</code>. ALT+F1 to go back to the install screen.</li>
+<li>Answer "<em>Yes</em>" to "<em>Load missing firmware from removable media?</em>".</li>
+<li>
+<p>Once completed, unplug the USB stick and plug the one containing Debian in the same port. You might need to re-write Debian if you re-used the same USB flash drive. Then press ALT+F1 and do:</p>
+<div class="highlight"><pre><span></span>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
+<span class="c1"># Umount if need be</span>
+mount -t iso9660 /dev/sdc1 /cdrom
+mount -t iso9660 /dev/sdc1 /mnt/iso <span class="c1"># Might not be required</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Press ALT+F2 to return to the installation dialog. </p>
+</li>
+</ol>
+</li>
+<li>
+<p>When reaching the partitioning step, choose "<em>Guided using LVM encrypted</em>". You should eventually obtain something like this:</p>
+<p><a href="//romainpellerin.eu/images/debian_partitions.jpg"><img alt="Picture" src="//romainpellerin.eu/images/debian_partitions.jpg"></a></p>
+</li>
+<li>
+<p>When reaching the "<em>Software Selection</em>", choose <a href="http://forums.debian.net/viewtopic.php?f=17&amp;t=125037#p595087">only XFCE as a desktop manager</a>, in combinaison with the <a href="http://comments.gmane.org/gmane.linux.debian.user/455520">print server</a> and utilities. Do not use the Debian desktop environment. It is shitty as f*ck.</p>
+<p><a href="//romainpellerin.eu/images/debian_selection.jpg"><img alt="Picture" src="//romainpellerin.eu/images/debian_selection.jpg"></a></p>
+</li>
+<li>
+<p>Merely follow instructions until completion of the installation.</p>
+</li>
+</ol>
+<h2>Switching from stable to testing</h2>
+<p>If you need to be up-to-date, that's the right thing to do!</p>
+<div class="highlight"><pre><span></span>su
+cp /etc/apt/sources.list<span class="o">{</span>,.bak<span class="o">}</span>
+sed -i -e <span class="s1">&#39;s/ \(stable\|stretch\)/ testing/ig&#39;</span> /etc/apt/sources.list
+apt update
+apt --download-only dist-upgrade
+apt dist-upgrade
+</pre></div>
+
+
+<p><a href="http://unix.stackexchange.com/questions/90389/how-to-upgrade-debian-stable-wheezy-to-testing-jessie">More information</a>.</p>
+<h1>Improve your privacy by using trustworthy DNS servers</h1>
+<p>I recommend <a href="https://larlet.fr/david/stream/2015/10/12/">French Data Network's DNS servers</a>: 80.67.169.12 and 80.67.169.40. Follow <a href="http://askubuntu.com/questions/627899/nameserver-127-0-1-1-in-resolv-conf-wont-go-away">this link</a> to find out how to configure Ubuntu.</p>
+<h1>Use free software</h1>
+<p>Namely Icecat or Iceweasel and Icedove as alternatives to Firefox and Thunderbird respectively.</p>
+<p>Hope it was helpful.</p>
+<h1>Further reading</h1>
+<ul>
+<li><a href="https://wiki.debian.org/fr/AtiHowTo">Problem with AMD drivers</a>. And don't forget about <code>arandr</code>!</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 03 July 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

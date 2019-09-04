@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Databases</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 29 Oct 2015 11:30:00 +0100</lastBuildDate><item><title>Resources For Databases</title><link>//romainpellerin.eu/resources-for-databases.html</link><description>&lt;h1&gt;General&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stph.scenari-community.org/bdd"&gt;CONCEPTION DE BASES DE DONNÉES&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.vertabelo.com/blog/notes-from-the-lab/why-sql-is-neither-legacy-nor-low-level-but-simply-awesome"&gt;Why SQL is neither legacy, nor low-level, nor difficult, nor the wrong place for (business) data logic, but simply awesome!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.clever-cloud.com/blog/engineering/2015/05/20/Why-Auto-Increment-Is-A-Terrible-Idea/"&gt;Why Auto Increment Is A Terrible Idea&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/38549/difference-between-inner-and-outer-joins/38578#38578"&gt;Difference between INNER and OUTER joins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cubrid.org/wiki_tutorials/entry/how-to-insert-data-into-tables-with-auto_increment-columns"&gt;How to Insert Data Into Tables with AUTO_INCREMENT Column(s)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/487314/primary-key-or-unique-index/487321#487321"&gt;Primary key or Unique index?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.developpez.com/cinephil/p10017/bases-de-donnees/quand_faut_il_une_table_associative"&gt;Quand faut-il une table associative ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.clement.delafargue.name/posts/2014-10-15-clean-db-schemas-talk.html"&gt;Clean DB schemas talk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://modern-sql.com/feature/with"&gt;with — Organize Complex Queries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.jooq.org/2016/01/18/impress-your-coworkers-by-using-sql-unpivot/"&gt;Impress Your Coworkers by Using SQL UNPIVOT!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.jooq.org/2016/04/25/10-sql-tricks-that-you-didnt-think-were-possible/"&gt;10 SQL Tricks That You Didn’t Think Were Possible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.geek-directeur-technique.com/2017/05/05/gestion-des-dates-et-heures-dans-les-bases-de-donnees"&gt;Gestion des dates et heures dans les bases de données&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://korben.info/mysqldumpslow-reperer-rapidement-vos-requetes-sql-a-optimiser.html"&gt;Mysqldumpslow – Pour repérer rapidement vos requêtes SQL à optimiser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=KCdOcdjxdn4"&gt;Stockage des données Quel système pour quel usage (Zouheir Cadi)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cybertec-postgresql.com/en/avoid-or-for-better-performance/"&gt;Avoiding “OR” for better query performance&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;PostgreSQL&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.compose.io/articles/what-postgresql-has-over-other-open-source-sql-databases/"&gt;What PostgreSQL has over other open source SQL databases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://goto.project-a.com/postgresql-magic/"&gt;PostgreSQL Magic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bernardoamc.github.io/sql/2015/07/21/postgres-review-operators/"&gt;Review of operators in Postgres&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.infoq.com/fr/presentations/tips-tricks-clean-relational-db-schemas"&gt;Tips and tricks for clean relational db schemas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://phili.pe/posts/postgresql-on-the-command-line/"&gt;PostgreSQL on the Command Line&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sheeju.github.io/2015/10/postgres-table-partitioning-big-weather-table.html"&gt;Postgresql Table Partitioning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hasura.io/blog/the-unofficial-guide-to-jsonb-operators-in-postgres/"&gt;The unofficial guide to JSONB operators in Postgres - Part 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/pense-bete-sql-a-telecharger.html"&gt;Pense-bête SQL à télécharger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 29 Oct 2015 11:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-10-29:/resources-for-databases.html</guid><category>database</category><category>sql</category><category>postgresql</category><category>mysql</category><category>sqlite</category></item></channel></rss>

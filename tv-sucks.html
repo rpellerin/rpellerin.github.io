@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, television" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="What I think of television" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="TV Sucks - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="What I think of television" />
+
+        <title>TV Sucks - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-01-16T02:50:00+01:00">Mon 16 January 2017</time>        </p>
+    <h1>TV Sucks</h1>
+    <div class="grey">
+        <p class="italic">What I think of television</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 303 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/whats-bad-about.html">What's bad about</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/television.html">television</a></p>    </div>
+</header>
+<article>
+    <p>Ads. I hate ads. And TV broadcasts a shit ton of commercials.</p>
+<p>Worse, TV channels speed up TV shows and movies. What for? Ads again. The French do it, and the Americans as well. As a result, movies are shortened and constantly interrupted by commercials.</p>
+<h2>US</h2>
+<ul>
+<li><a href="https://www.engadget.com/2015/02/19/cable-networks-speeding-up-shows/">How cable networks speed up shows to squeeze in more ads</a></li>
+<li><a href="http://www.wsj.com/articles/cable-tv-shows-are-sped-up-to-squeeze-in-more-ads-1424301320">Cable TV Shows Are Sped Up to Squeeze in More Ads</a></li>
+</ul>
+<h2>France</h2>
+<ul>
+<li><a href="http://tvmag.lefigaro.fr/le-scan-tele/actu-tele/2015/01/29/28001-20150129ARTFIG00350-pourquoi-les-films-ne-durent-pas-le-meme-temps-a-la-television-et-au-cinema.php">Pourquoi les films ne durent pas le même temps à la télévision et au cinéma</a></li>
+<li><a href="http://www.lesaviezvous.net/art/un-film-a-la-television-est-plus-court-qu%E2%80%99en-cinema.html">Un film à la télévision est plus court qu’en cinéma</a></li>
+</ul>
+<p>Still unconvinced? Most companies operating radio and television are biased. By "most" I mean 99% of them. They are not objective at all, often influenced by political parties.</p>
+<ul>
+<li><a href="https://vimeo.com/141362885">Les Nouveaux Chiens de Garde</a></li>
+<li><a href="http://www.monde-diplomatique.fr/cartes/ppa">Médias français : qui possède quoi</a></li>
+</ul>
+<p>I could also add, without going too much into detail, that:</p>
+<ul>
+<li>We are constantly being told lies (commercials for cigarettes, Chernobyl radioactive clouds over Europe, etc.)</li>
+<li>Most shows are incredibly shitty and for dump people: Supernanny, stupid games for uneducated people</li>
+<li>News channels are to be avoided like the plague: only live and breaking news never verified, no sources, Man on the street interviews are useless, irelevant and misleading. Likewise, these channels focus way too much on terrorism, immigrants, financial crises, and so on.</li>
+<li>Dubbed movies. Seriously? Would you listen to foreign music translated in you native language? Sound is 80% of a movie. Not to mention that most dubs sound terrible.</li>
+<li>The same can be said about coverages: why dub a foreigner? Why not just add subtitles?</li>
+</ul>
+<p>Now that you know the truth, help me boycott television. Even though a few shows are worth your time, you can watch them online after their broadcast for free. <a href="http://www.lagrottedubarbu.com/2013/07/25/pourquoi-je-me-suis-resolu-a-boycotter-massivement-les-medias-traditionnaux/">This article</a>, written in French, sums up quite well my thoughts regarding television.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 16 January 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

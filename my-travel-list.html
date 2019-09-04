@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Places I want to visit." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="My Travel List - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Places I want to visit." />
+
+        <title>My Travel List - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-01-31T16:55:00+01:00">Tue 31 January 2017</time>        </p>
+    <h1>My Travel List</h1>
+    <div class="grey">
+        <p class="italic">Places I want to visit.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 156 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a></p>    </div>
+</header>
+<article>
+    <h1>USA</h1>
+<ul>
+<li>Dallas</li>
+<li>Redwood State Park</li>
+<li>Huston</li>
+<li>Miami</li>
+<li>Texas</li>
+<li>Mount Rushmore National Memorial</li>
+<li>Philadelphia (especially the Rocky Statue and the Rocky Steps)</li>
+<li>Forrest Gump Point in Utah (GPS coordinates: 37.1015063,-109.9908129)</li>
+<li>
+<p>Boston:</p>
+<ul>
+<li>Museum of Fine Arts</li>
+</ul>
+</li>
+</ul>
+<h1>Japan</h1>
+<ul>
+<li>Chureito Pagoda, Kyoto (I've been there, but never climbed <a href="Chureito Pagoda">the stairs to get the wonderful view of Mount Fuji</a>)</li>
+<li>Miyajima (Itsukushima)</li>
+<li>Kanazawa</li>
+</ul>
+<h1>China</h1>
+<ul>
+<li>Great Wall of China</li>
+<li>Beijing</li>
+<li>Shanghai</li>
+<li>Lijiang</li>
+<li>Yu Garden, Shanghai</li>
+</ul>
+<h1>Europe</h1>
+<ul>
+<li>Vienna</li>
+<li>Hallstatt, Austria </li>
+<li>Prague</li>
+<li>Greece</li>
+<li>Cyprus</li>
+<li>Berlin, Hamburg and Munich, Germany</li>
+<li>Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)</li>
+<li>Finland</li>
+<li>
+<p>Italy:</p>
+<ul>
+<li>Rome and Venice</li>
+<li>Colosseum in Verona</li>
+<li>Tower of Pisa</li>
+</ul>
+</li>
+<li>
+<p>Madrid</p>
+</li>
+</ul>
+<h1>Other countries</h1>
+<ul>
+<li>Iceland (I want to see Northern lights so bad!)</li>
+<li>Eldhraun, Iceland</li>
+<li>Greenland or Northern Canada</li>
+<li>Machu Picchu</li>
+<li>Chichen Itza (Mexico)</li>
+<li>Mexico City</li>
+<li>Marrakech</li>
+<li>Rio de janeiro</li>
+<li>New Zealand</li>
+<li>Moscow</li>
+<li>Saint Petersburg</li>
+<li>Phuket and Patong, Thailand</li>
+<li>Vietnam</li>
+<li>
+<p>Turkey:</p>
+<ul>
+<li>Pamukkale</li>
+<li>Anıtkabir</li>
+</ul>
+</li>
+<li>
+<p>Malaysia</p>
+</li>
+<li>Philippines</li>
+<li>Taiwan (Taipei and Kaohsiung)</li>
+<li>Senegal</li>
+<li>Australia</li>
+<li>Pura Ulun Danu Bratan, Indonesia</li>
+<li>Rijeka Crnojevica, Montenegro</li>
+<li>Petra, Jordan</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 31 January 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

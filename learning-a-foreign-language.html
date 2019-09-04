@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, language, english, learning" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My process I went through to learn a foreign language, English. And some tips." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Learning A Foreign Language - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My process I went through to learn a foreign language, English. And some tips." />
+
+        <title>Learning A Foreign Language - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-01-21T17:20:00+01:00">Thu 21 January 2016</time>        </p>
+    <h1>Learning A Foreign Language</h1>
+    <div class="grey">
+        <p class="italic">My process I went through to learn a foreign language, English. And some tips.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1908 words.">10 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/language.html">language</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/english.html">english</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/learning.html">learning</a></p>    </div>
+</header>
+<article>
+    <p>Learning a foreign language is not easy whatsoever. In this article, I try to gather all the techniques and tips I used to learn a foreign language, English. I also put into perspective all those years spent learning. For the last couple of months, I made some research about languages. I'm actually really into being as fluent as possible in this language, my ideal goal would be being completely bilingual and sound like a native speaker (although some people might find the French accent "cute").</p>
+<p>I was lucky enough to get taught English early, when I was around 9 or 10 years old. As of that period, I've never stopped having English classes. But as the world knows, French people really suck at English and disregard it completely. I would also add that our educational system regarding foreign languages is not that good. People don't get involved. It might be one of the reasons why our level is not as high as our European neighbors'. However, from a personal point a view, I've always been extremely interested in English, whereas I completely gave up Spanish after high school. English is the Wold language thus I see no point in learning a third language, despite Spanish might be more spread than French. What is more, English is ubiquitous in Computer Science.</p>
+<p>A few years ago, right after graduating from high school, I started being even more interested in English, willing to work harder in order to improve my level. As I was heading towards Computer Science studies, I realized how important this language would be for me, in the long term. That was the starting point of my <strong>English learning journey</strong>. A sheer dive into that language.</p>
+<h1>Stages</h1>
+<p>There are a few stages one has to go through during the process of learning a foreign language. What follows is about how English is taught in France.</p>
+<h2>Education</h2>
+<p>The very first step is learning the basics, simple sentences, etc. That's what school is for. Being able to introduce yourself, talk about your family and interests, ask simple questions or get help from passers-by. That's basically what we learn in France in elementary school. At the end, pupils are supposed to have a A1 level (it's a European level). Then, comes middle school and more complex grammar. You get to know the tenses, and have dozens of irregular verbs to learn by heart. You also learn how to express common feelings or whishes and build conditional clauses. This will leave students with a B1 level. For the next three years of high school, teaching would continue, going a bit further, to finally reach a B2 level (supposedly, in facts most of people don't have such a level).</p>
+<p>Then starts higher education. Students can choose freely to keep studying English or not, mostly depending on their studies. I did continue.</p>
+<p>After that period, unless they were actually studying languages (or English), most people feel like they hadn't made huge progress over their college years. It seems like they've reached the peak and can no long make any significant progress. Of course you improve your vocabulary, you get used to new expressions, your general oral and reading comprehension increase a bit, but not that much. Unless you decide to take the bull by the horns, on your own.</p>
+<h2>Active and passive vocabulary</h2>
+<p>It has been demonstrated that each individual has two categories of vocabulary for each language they know: <strong>the active vocabulary and the passive one</strong>. The latter is basically made of known words but that you wouldn't use normally, out of the blue. You know the definition or the meaning, you just don't use it. If you hear it or read it, you would understand. On the contrary, the active vocabulary includes all the — known — words you would daily — or often — use, either when talking or writing.</p>
+<p>According to <a href="http://www.lingholic.com/how-many-words-do-i-need-to-know-the-955-rule-in-language-learning-part-2/">this website</a>, native English speakers have an average of 20.000 words in their active vocabulary whereas they have around 40.000 in their passive. This is a gigantic difference.</p>
+<div style="text-align: center">
+<img src="//romainpellerin.eu/images/learn-language-vocabulary.png" alt="Active and passive vocabulary" />
+</div>
+
+<p>My guess is that all along your course to learn a foreign language, your two types of vocabulary evolve like this:</p>
+<div style="text-align: center">
+<img src="//romainpellerin.eu/images/learn-language-curve.png" alt="Learning curve" />
+</div>
+
+<p>When you take up classes during childhood, your two kinds of vocabulary are mixed up. A some point they slightly fork, like after elementary school. Then, when you have your first experience abroad, your amount of passive and active vocabulary will usually soar. But still, the gap between the two of them increases, making an even bigger difference.</p>
+<p>I personally reached that stage where I can fluently read an English book written by a journalist without having to look words up too frequently. And yet, my oral expression is not that good.</p>
+<p>Consequently, the following parts of this article will then be dedicated to finding efficient and handy ways to reduce that growing gap.</p>
+<h1>Let's code something</h1>
+<p>From September 2015, I'm having my longest experience abroad, taking place in the Netherlands, a country where <strong>every single person</strong> speaks English (which is really awesome for a French country boy like me).</p>
+<p>In November, I decided to start writting down all the unknown vocabulary or expressions I would come across, in a text file. Then, as the file was growing bigger and bigger, I thought I needed something else. Going back through that long list would have been painful and not convenient. I needed something I could do wherever and whenever I want. Most of all, I wanted to keep a trace of my improvements.</p>
+<p>I spent some time for reflection and I eventually came up with an idea: a mobile app. Indeed, I carry my smartphone everywhere and thus can use it at any time. I also thought that a Tinder-like app might just be perfectly suited for my need. The idea was to swipe left if the word was unknown, swipe right otherwise. The definition would appear on a swipe left.</p>
+<p>With such an app, I would get exposed to my vocabulary list frequently, many times a day. The words swiped left would be more likely to appear often, whereas those swiped right would appear rarely.</p>
+<p>Today, I'm proud to announce that the project is officially <a href="https://github.com/rpellerin/learn-a-foreign-language">available on Github</a>. It's open source, so feel free to contribute. Moreover, the app has been <a href="https://play.google.com/store/apps/details?id=learnaforeignlanguage.eu.romainpellerin">published on the Android Play Store</a>. Finally, <a href="http://learnenglishbackend-romainpellerin.rhcloud.com/">here is the website</a> to create an account and add words or expressions to lists.</p>
+<div style="text-align: center">
+<img src="//romainpellerin.eu/images/learn-language-app.gif" alt="My Android app" />
+</div>
+
+<p>Let's now move on to other ways to reduce that gap between active and passive vocabulary.</p>
+<h1>Reading</h1>
+<p>Reading is key to a drastic increase of your vocabulary. You stumble upon loads of unknown words, complex expressions, strange clauses and so on.</p>
+<p><strong>Online newspaper</strong> are a great solution to get used to expressions commonly written. Specialized newspapers are great as well to meet specific vocabulary.</p>
+<p>Books (novels, journalists's books, comics) are other rich sources of knowledge and vocabulary. It might be of any kind but what's sure is that you will learn. I find comics really useful when it comes to learning some slang.</p>
+<h1>Watching</h1>
+<p>TV series are the equivalent of comics: full of slang vocabulary, hardly enunciated, whereas movies are richer. Nonetheless, they are really efficient and most of the time they will teach you the correct pronounciation of unknown words. It's also easy to get acquinted to British and American accents.</p>
+<p>One can alos watch the news. Journalists normally have a good pronounciation and use fairly simple vocabulary.</p>
+<h1>Listening</h1>
+<p>The Internet is full of <a href="http://www.bbc.co.uk/podcasts">high-quality podcasts</a>, take advantage of them if you don't have much time to spend reading or watching.</p>
+<h1>Writing</h1>
+<p>Finally, I need to mention writing. It's not well known, and that's a pity. But writing is one of the most efficient ways to put into practice what you daily learn and make sure you don't forget it. It's just like rehearsing. Write blog posts, write comments, send out emails, but get out of your comfort zone and do it in a foreign language!</p>
+<p>If you have the opportunity, write reports in English as well, or give presentations in English, and so on. </p>
+<p><br /></p>
+<p>There's no frontier to knowledge, embrace a foreign language right now :-)</p>
+<h1>Resources</h1>
+<p><a href="http://rawlangs.com/blog/">Here is a really good blog to go even further with foreign languages.</a> And the guy who owns the blog also gives talks sometimes, here is one from him, about reading comprehension:</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/xgQZfS_BMVo?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>To conclude, try to <a href="http://www.thepoke.co.uk/2011/12/23/english-pronunciation/">read this</a>. Good luck!</p>
+<h2>Going further with English</h2>
+<p>I decided to gather here all the little things to know in English, which are not obvious.</p>
+<h3>Common pair words</h3>
+<ul>
+<li><a href="http://www.freecollocation.com/">Online OXFORD Collocation Dictionary</a></li>
+<li><a href="http://www.ozdic.com/collocation-dictionary/">ozdic - the English Collocations Dictionary online</a></li>
+</ul>
+<h3>Other things to know in English</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Idiom">Idiom</a></li>
+<li><a href="http://english.stackexchange.com/questions/272361/what-is-the-difference-between-trash-garbage-litter-rubbish-waste">What is the difference between trash, garbage, litter, rubbish, waste?</a></li>
+<li><a href="http://www.learnersdictionary.com/qa/pretty-fairly-really-very-and-quite">Pretty, fairly, really, very, and quite</a></li>
+<li><a href="http://www.editage.com/insights/scientific-writing-difference-between-almost-and-nearly">Difference between "almost" and "nearly"</a></li>
+<li><a href="http://grammarist.com/spelling/cancel/">Canceled vs. cancelled</a></li>
+<li><a href="http://forum.thefreedictionary.com/postst14228_-at-weekends--or--on-weekends-.aspx">'at weekends' or 'on weekends'</a></li>
+<li><a href="http://english.stackexchange.com/questions/32700/difference-between-chance-and-opportunity">Difference between “chance” and “opportunity”</a></li>
+<li><a href="http://english.stackexchange.com/questions/194227/how-do-i-use-as-of-now-correctly">How do I use “as of now” correctly?</a></li>
+<li><a href="https://www.italki.com/question/57702">from today on , as of today , starting today</a></li>
+<li><a href="http://www.oxforddictionaries.com/words/learnt-vs-learned">‘Learnt’ or ‘learned’?</a></li>
+<li><a href="http://forum.wordreference.com/threads/whatsoever-vs-whatever.228376/">Whatsoever Vs. Whatever</a></li>
+<li><a href="http://idioms.thefreedictionary.com/can't+help">can't help</a></li>
+<li><a href="http://english.stackexchange.com/questions/71003/difference-between-think-of-and-think-about">Difference between “think of” and “think about”</a></li>
+<li><a href="http://www.accountingcoach.com/blog/revenue-income-gain">What is the difference between revenue, income, and gain?</a></li>
+<li><a href="https://jakubmarian.com/dot-period-full-stop-and-point-in-english/">‘Dot’, ‘period’, ‘full stop’, and ‘point’ in English</a></li>
+<li><a href="http://english.stackexchange.com/questions/79710/difference-between-slacks-pants-and-trousers">Difference between “slacks”, “pants”, and “trousers”?</a></li>
+<li><a href="http://learnenglish.britishcouncil.org/en/english-grammar/clause-phrase-and-sentence">Clause, phrase and sentence</a></li>
+<li><a href="http://forum.wordreference.com/threads/given-that-provided-that-on-condition-that.167673/">given that , provided that ,on condition that ?</a></li>
+<li><a href="https://studyusa.com/en/a/107/what-is-the-difference-between-a-school-college-and-university-in-the-usa">What is the difference between a school, college and university in the USA?</a></li>
+<li><a href="http://english.stackexchange.com/questions/137151/through-vs-throughout">“Through” vs “throughout.”</a></li>
+<li><a href="http://www.anglaisfacile.com/exercices/exercice-anglais-2/exercice-anglais-61575.php">Had better / would rather</a> &amp; <a href="http://www.myenglishteacher.eu/blog/difference-between-rather-than-would-rather-had-rather-and-had-better/">Difference Between Rather Than, Would Rather, Had Rather and Had Better</a></li>
+<li><a href="http://dictionary.cambridge.org/grammar/british-grammar/no-longer-not-any-longer">No longer, not any longer</a></li>
+<li><a href="http://grammarist.com/spelling/acknowledgment-acknowledgement/">Acknowledgement vs. acknowledgment</a></li>
+<li><a href="http://writingcenter.unc.edu/handouts/qualifiers/">Qualifiers</a></li>
+<li><a href="http://www.bbc.co.uk/worldservice/learningenglish/grammar/learnit/learnitv206.shtml">however / nevertheless / moreover</a></li>
+<li><a href="http://forum.wordreference.com/threads/use-of-the-verb-to-help-verb.895701/">Use of the verb: to help + verb</a></li>
+<li><a href="http://dictionary.reference.com/help/faq/language/g43.html">try and or try to</a></li>
+<li><a href="http://thorstenconsulting.com/serendipity/index.php?/archives/197-Practice-versus-Training-Is-there-a-difference-Business-vs.-Sports.html">Practice versus Training: Is there a difference?</a></li>
+<li><a href="http://www.gingersoftware.com/content/grammar-rules/nouns/gerunds-infinitives/">Gerunds and Infinitives</a></li>
+<li><a href="http://english.stackexchange.com/questions/33443/what-is-the-difference-between-taking-courses-classes-or-lessons">What is the difference between taking courses, classes or lessons?</a></li>
+<li><a href="http://forum.wordreference.com/threads/over-here-there.2692066/">(over) here/there</a></li>
+<li><a href="http://english.stackexchange.com/questions/42259/difference-between-socket-and-outlet">Difference between “socket” and “outlet”</a>
+- <a href="http://ell.stackexchange.com/questions/18223/passing-vs-having-passed">passing vs having passed</a></li>
+<li><a href="http://forum.wordreference.com/threads/satisfying-or-satisfactory.334680/">satisfying or satisfactory?</a></li>
+<li><a href="https://en.wiktionary.org/wiki/in_that">in that</a></li>
+<li><a href="http://english.stackexchange.com/questions/91804/is-this-construct-correct-this-one-something">Is this construct correct? “This one something…”</a></li>
+<li><a href="http://english.stackexchange.com/questions/111217/is-it-common-to-omit-a-preposition-in-on-of-before-the-month-year-week">Is it common to omit a preposition (in / on / of) before “the month (year / week /day) when they are used adjectively and adverbially?</a></li>
+<li><a href="http://english.stackexchange.com/questions/9700/outside-or-outside-of">“Outside” or “outside of”?</a> &amp; <a href="http://grammarist.com/usage/outside-of/">Outside of</a></li>
+<li><a href="http://www.writersdigest.com/online-editor/lay-vs-lie">Lay vs. Lie (vs. Laid)</a></li>
+<li><a href="http://english.stackexchange.com/questions/231026/from-then-on-or-since-then">“From then on” or “since then”?</a></li>
+<li><a href="http://english.stackexchange.com/questions/46451/difference-between-smart-and-clever">Difference between “smart” and “clever”</a> &amp; <a href="https://www.englishforums.com/English/SmartCleverIntelligent/xphvz/post.htm">Smart/clever/intelligent?</a></li>
+<li><a href="http://www.quickanddirtytips.com/education/grammar/each-other-versus-one-another">"Each Other" Versus "One Another"</a></li>
+<li><a href="http://english.stackexchange.com/questions/1031/is-using-the-possessive-s-correct-in-the-cars-antenna">Is using the possessive 's correct in “the car's antenna”?</a></li>
+<li><a href="https://www.quora.com/Birds-Whats-the-difference-between-hawk-falcon-eagle-osprey-and-kite">Birds: What's are the differences between hawks, falcons, eagles, osprey and kites?</a></li>
+<li><a href="http://www.quickanddirtytips.com/education/grammar/like-versus-such-as">"Like" Versus "Such As"</a></li>
+<li><a href="http://english.stackexchange.com/questions/266275/question-about-the-use-of-in-this-spirit-expression">Question about the use of “in this spirit” expression</a></li>
+<li><a href="http://english.stackexchange.com/questions/29409/why-use-need-not-instead-of-do-not-need-to">Why use “need not” instead of “do not need to”?</a></li>
+<li><a href="http://thegrammarexchange.infopop.cc/eve/forums/a/tpc/f/340600179/m/439104541">too much (an) effort</a></li>
+<li><a href="https://www.reddit.com/r/grammar/comments/4ex0c5/arent_i_lucky_is_this_correct/">"Aren't I lucky?" - is this correct?</a></li>
+<li><a href="http://forum.wordreference.com/threads/until-now-up-until-now.112779/">Until now/up until now</a></li>
+<li><a href="http://ell.stackexchange.com/questions/6868/then-at-the-end-of-a-sentence">“Then” at the end of a sentence</a></li>
+<li><a href="https://arc.duke.edu/documents/The%20difference%20between%20assessment%20and%20evaluation.pdf">What is the difference between assessment and evaluation?</a></li>
+<li><a href="http://forum.wordreference.com/threads/compelling-versus-appealing.3045836/">Compelling versus appealing</a></li>
+<li><a href="http://www.quickanddirtytips.com/education/grammar/ie-versus-eg">Grammar Girl : I.e. Versus E.g. :: Quick and Dirty Tips</a></li>
+<li><a href="https://www.reddit.com/r/EnglishLearning/comments/4m44zl/when_to_use_inadvertently_instead_of_accidentally/">When to use inadvertently instead of accidentally or unintentionally?</a></li>
+<li><a href="https://forum.wordreference.com/threads/fill-in-fill-out-and-fill-up.1453182/">fill in, fill out, and fill up</a></li>
+<li><a href="https://forum.wordreference.com/threads/aim-at-aim-to.77502/">aim at / aim to</a></li>
+<li><a href="https://forum.wordreference.com/threads/not-anymore-no-longer-not-any-longer.374150/">not...anymore ; no longer ; not...any longer</a></li>
+<li><a href="http://www.ties.com/blog/hair-terminology-tell-barber-exactly-want">HAIR TERMINOLOGY: HOW TO TELL YOUR BARBER EXACTLY WHAT YOU WANT</a></li>
+<li><a href="https://www.youtube.com/watch?v=yWiS5gQHHtI">Funny Pronunciation Lesson: Bitch vs Beach, Shit vs Sheet</a></li>
+<li><a href="https://jakubmarian.com/several-thousands-of-vs-several-thousand-in-english/">‘Several thousands of’ vs. ‘several thousand’ in English</a></li>
+<li><a href="https://ell.stackexchange.com/questions/70562/i-work-on-with-in-a-team">“I work {on/with/in} a team”?</a></li>
+<li><a href="https://forum.wordreference.com/threads/do-we-say-of-interest-to-you-or-of-interest-for-you.2797738/">Do we say "of interest TO you" or "of interest FOR you" ?</a></li>
+<li><a href="https://jakubmarian.com/so-thus-therefore-and-hence-in-english/">So, thus, therefore, and hence in English</a></li>
+<li><a href="https://english.stackexchange.com/questions/108335/split-in-half-vs-split-in-two-which-one-is-correct">“Split in half” vs. “split in two” — which one is correct?</a></li>
+<li><a href="https://ell.stackexchange.com/questions/52949/do-we-say-in-the-meeting-or-at-the-meeting">Do we say - “in the meeting” or “at the meeting”</a></li>
+<li><a href="https://www.macmillandictionary.com/dictionary/british/then">then (adjective, adverb) definition and synonyms | Macmillan Dictionary</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 21 January 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

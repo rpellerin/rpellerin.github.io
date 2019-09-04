@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, android, java" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Resources for Android development" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Developing For Android - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Resources for Android development" />
+
+        <title>Developing For Android - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-12-02T16:30:00+01:00">Wed 02 December 2015</time>        </p>
+    <h1>Developing For Android</h1>
+    <div class="grey">
+        <p class="italic">Resources for Android development</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 176 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/android.html">android</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/java.html">java</a></p>    </div>
+</header>
+<article>
+    <p>Here are some useful resources for Android development.</p>
+<h1>Internationalization</h1>
+<ul>
+<li><a href="http://jeremie-martinez.com/2017/03/13/i18n-good-practices/">Internationalizing an Android app</a></li>
+</ul>
+<h1>Design</h1>
+<ul>
+<li><a href="http://romannurik.github.io/AndroidAssetStudio/">Android Asset Studio</a></li>
+<li><a href="http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/">Android Cheatsheet for Graphic Designers</a></li>
+<li><a href="https://github.com/opoloo/androidicons">Android Developer Icons</a></li>
+<li><a href="http://www.androidicons.com/">Android Icons</a></li>
+<li><a href="http://google.github.io/material-design-icons/">Material icons guide</a></li>
+<li><a href="https://github.com/lgvalle/Material-Animations">Android Transition animations explanation with examples</a></li>
+</ul>
+<h1>Fragments</h1>
+<ul>
+<li><a href="http://mathias-seguy.developpez.com/cours/android/fragments/">Les Fragments</a></li>
+</ul>
+<h1>Asynchronism</h1>
+<ul>
+<li><a href="http://android-er.blogspot.fr/2014/04/run-multi-asynctask-as-same-time.html">Run multi AsyncTask at the same time</a></li>
+</ul>
+<h1>Security</h1>
+<ul>
+<li><a href="http://android-developers.blogspot.fr/2013/02/using-cryptography-to-store-credentials.html">Using Cryptography to Store Credentials Safely</a></li>
+<li><a href="https://docs.google.com/presentation/d/1TvS_mAvDpuaODAK4RG77x0OZsH4CfmxkYM9u1b6JDPo/mobilepresent">Secure your app: Fight the leaks! - Samsung</a></li>
+</ul>
+<h1>Libraries</h1>
+<ul>
+<li><a href="https://android-arsenal.com/">Android Arsenal</a></li>
+<li><a href="https://play.google.com/store/apps/details?id=com.desarrollodroide.repos">Libraries for developers</a></li>
+<li><a href="https://infinum.co/the-capsized-eight/articles/top-5-android-libraries-every-android-developer-should-know-about">Top 5 Android libraries every Android developer should know about</a></li>
+</ul>
+<h1>Finalizing the app / promoting it</h1>
+<ul>
+<li><a href="https://placeit.net/">Free iPhone Mockup Generator &amp; App Demo Videos by Placeit</a></li>
+<li><a href="http://developer.android.com/distribute/tools/promote/device-art.html">Device Art Generator</a></li>
+<li><a href="https://www.opoloo.com/blog/articles/android-app-publishing-checklist--2">Android App Publishing Checklist</a></li>
+</ul>
+<h1>Testing</h1>
+<ul>
+<li><a href="http://jeremie-martinez.com/2015/04/17/tests-android/">No more excuses, Android testing is possible</a></li>
+<li><a href="http://jeremie-martinez.com/2016/02/16/unit-tests/">3 unit tests to avoid bad surprises on Android</a></li>
+</ul>
+<h1>Continuous Integration</h1>
+<ul>
+<li><a href="http://jeremie-martinez.com/2016/04/19/gocd-android/">Use GoCD for Android and get rid of Jenkins</a></li>
+<li><a href="http://jeremie-martinez.com/2016/01/14/devops-on-android/">DevOps on Android: From one Git push to production</a> and <a href="https://www.youtube.com/watch?v=3Ises8TgAp4">the talk given by the author</a></li>
+<li><a href="https://engineeringblog.yelp.com/2017/04/continuous-integration-on-android.html">Continuous Integration on Android</a></li>
+</ul>
+<h1>Further reading</h1>
+<ul>
+<li><a href="https://medium.com/google-developers/developing-for-android-introduction-5345b451567c">Developing for Android: Introduction</a></li>
+<li><a href="https://www.youtube.com/watch?v=ekN2zvFytZk">Deep Dive Into State Restoration (en) - Cyril Mottier, Capitaine Train - Droidcon Paris 2014</a></li>
+<li><a href="http://cyrilmottier.com/2014/12/09/a-story-of-software-development-methodologies/">A Story of Software Development Methodologies</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 02 December 2015</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, ikigai, happiness" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to live a happy life" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The Happy Life - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to live a happy life" />
+
+        <title>The Happy Life - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-01-26T20:30:00+01:00">Fri 26 January 2018</time>        </p>
+    <h1>The Happy Life</h1>
+    <div class="grey">
+        <p class="italic">How to live a happy life</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 102 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ikigai.html">ikigai</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/happiness.html">happiness</a></p>    </div>
+</header>
+<article>
+    <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/7lECIsRif10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ul>
+<li><a href="https://journal.thriveglobal.com/ikigai-the-japanese-secret-to-a-long-and-happy-life-might-just-help-you-live-a-more-fulfilling-9871d01992b7">Ikigai: The Japanese Secret to a Long and Happy Life Might Just Help You Live a More Fulfilling Life</a></li>
+<li><a href="https://www.genderbread.org/">The Genderbreak Person</a></li>
+<li><a href="https://www.developpez.com/actu/244511/Des-experts-font-la-promotion-de-la-semaine-de-travail-de-quatre-jours-au-lieu-de-cinq-pour-eux-cela-rendrait-les-travailleurs-plus-productifs/">Des experts font la promotion de la semaine de travail de quatre jours au lieu de cinq</a></li>
+<li><a href="https://usbeketrica.com/article/cyberminimalisme-temps-rencontres-biosphere">« Le cyberminimalisme libère du temps, réhabilite les rencontres, préserve la biosphère »</a></li>
+<li><a href="https://www.vox.com/2019/3/27/18226563/50-years-wrong-side-of-history-future-prediction">Hindsight 2070: We asked 15 experts, “What do we do now that will be considered unthinkable in 50 years?” Here’s what they told us.</a></li>
+<li><a href="https://www.demotivateur.fr/article-buzz/11-fruits-et-legumes-que-vous-ne-devriez-acheter-qu-une-seule-fois-dans-votre-vie-si-vous-apprenez-ces-petits-trucs-pour-les-regenerer-chez-vous--2972">Hackez votre supermarché : Voici 11 fruits et légumes que vous ne devriez acheter qu'une seule fois dans votre vie, si vous connaissez ces astuces !</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 26 January 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, korea" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My exchange program in South Korea" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="South Korea - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My exchange program in South Korea" />
+
+        <title>South Korea - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/korea.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-09-14T00:35:00+02:00">Wed 14 September 2016</time> - Last Update: <time datetime="2017-01-12T14:00:00+01:00">Thu 12 January 2017</time>        </p>
+    <h1>South Korea</h1>
+    <div class="grey">
+        <p class="italic">My exchange program in South Korea</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1303 words.">7 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/korea.html">korea</a></p>    </div>
+</header>
+<article>
+    <h1><em>Update January 12, 2017</em></h1>
+<p><em>During my stay in South Korea, we also went to Busan (we slept at <a href="http://www.kimcheeguesthouse.com/busan">Kimchee Guesthouse</a> which I highly recommend). There, we went hiking in the mountain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world.</em></p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/lR4kRSw062Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/south-korea/changgyeonggung.jpg" alt="Changgyeonggung" />
+<figcaption>The Changgyeonggung palace.</figcaption>
+</figure>
+
+<p>I was given the opportunity to go abroad do an exchange program, during the 2016 Fall semester. My destination? South Korea! My school there? Apparently one of the best of the country, <a href="http://www.kaist.ac.kr/html/en/">KAIST</a>, in Daejeon. It had no idea about its ranking back when I applied for this school.</p>
+<h1>Seoul</h1>
+<p>In August 2016, I landed in Seoul. With other people from my French school we spent a week there, mostly visiting and discovering the Korean culture. Our guesthouse was located in a great neighborhood called Hongdae. Very lively area!</p>
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/n-tower1.jpg" alt="View from the N Tower" /><figcaption>Views from the N-tower (pictures above and below).</figcaption></figure>
+
+<figure class="center"><img alt="Another view from the N Tower" src="//romainpellerin.eu/images/south-korea/n-tower2.jpg" /></figure>
+
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/bbq.jpg" alt="A Korean barbecue" /><figcaption>A Korean barbecue.</figcaption></figure>
+
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/market.jpg" alt="Gwangjang market" /><figcaption>The Gwangjang market.</figcaption></figure>
+
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/gyeongbokgung1.jpg" alt="Gyeongbokgung" /><figcaption>The Gyeongbokgung palace (pictures above and below).</figcaption></figure>
+
+<figure class="center"><img alt="Gyeongbokgung" src="//romainpellerin.eu/images/south-korea/gyeongbokgung2.jpg" /></figure>
+
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/rooftops.jpg" alt="Rooftops" /><figcaption>Rooftops.</figcaption></figure>
+
+<h1>Funny facts about South Korea</h1>
+<ul>
+<li>Korean full names (given name + surname) have usually three syllables in total.</li>
+<li>Korean men wear sandals all the time, even in winter, with socks. The same kind of sandals you see at the swimming pool.</li>
+<li>They have loads of convenient stores open 24/7, at almost every corner. Main companies are 7-Eleven and GS25.</li>
+<li>In these shops, you can buy instant coffee and other similar beverages for less than ₩1,000 (roughly €0.80). What's cool about that is you can make your coffee yourself, right after payment by pouring hot (or cold) water in a paper cup. Most of the convenient shops have such kind of machines, and it's free.</li>
+<li>Similarly, box noodles are very popular and pretty cheap (less than ₩1,000). However, always ask a Korean about spiciness. If they say "it's OK, just a little bit spicy", then it means it's hot as hell.</li>
+<li>Windows and MacOS are the main operating systems used. Unfortunately, Linux is rarely encountered.</li>
+<li>Talking about computers, the Koreans have no problem leaving their laptops unlocked in public spaces.</li>
+<li>Spitting seems OK outdoors. However, blowing one's nose is considered rude. It's pretty hard to find tissues in shops.</li>
+<li>Driving there, especially in Seoul, is crazy. Taxi drivers try to go as fast as possible, they don't give a shit about traffic lights and speed limit. They don't use their seat belts.</li>
+<li>Most drivers have dash cams under their windshield. In some taxis there is also a camera filming the interior.</li>
+<li>One would expect pedestrians and cyclists to have priority over motorists. Nah! You'd better watch out before crossing.</li>
+<li>One thing that's pretty cool is the Internet speed. In addition, there are Wi-Fi access points everywhere and most of them are free.</li>
+<li>In general, cost of living is slightly lower than in France. However, some goods can be expensive such as cakes or pastries. Conversely, restaurants are very cheap.</li>
+<li>Everybody is naked in saunas and hammams.</li>
+<li>Smoking is quite common but not as much as in Europe. It's very rude to smoke while walking. In some places, there are smooking booths in the streets. Yet smoking is permitted in night clubs, even on the dance floor.</li>
+<li>Some scooters have funny flashy LED strip lights.</li>
+<li>In the subway, in each car there are seats reserved for the elderly or pregnant women, at far ends. Do not try to seat there even if they are all unoccupied.</li>
+<li><a href="https://www.youtube.com/watch?v=JuajQLuW9Lk">Receiving and giving must be done with both hands. For instance, when giving money to the cashier.</a></li>
+<li>People take off their shoes when entering houses. The reason is likely the Korean lifestyle: people used to eat on very low tables back in the day, and still today in some restaurants.</li>
+<li>Most people are very quiet in the subway or in buses. Making a lot of noise is considered rude.</li>
+<li>It's pretty hard to find trashcans in public spaces.</li>
+<li>Many Koreans dress up in matching outfits, especially young couples.</li>
+<li>Most young Korean girls pose very weirdly for photos: either the "peace" pose or they let their heads float on their hands (or shape their hands in a V around their head).</li>
+<li>Korean cities are colorful and full of neons. But they also have huge apartment blocks, which make them very ugly.</li>
+<li>Young couple use love motels to... well, have sex.</li>
+<li>They use a different age system. Basically, as soon as someone is born, that person is one year old. Then, the next 1th of January, everyone gets one year older. For instance, if someone is born on the 31th of December, he will be 1 year old that day. The next day (January 1), he will be two years old. And a year from that day (so next January 1), he will be three years old. Korean people use the birthday age system (the one most countries in the world use) rarely.</li>
+<li>Some toilets are... confusing.</li>
+</ul>
+<figure class="center">
+<img alt="A magic toilet" src="//romainpellerin.eu/images/south-korea/toilet.jpg" />
+</figure>
+
+<h1>KAIST (Daejeon)</h1>
+<p>One funny thing about KAIST is that, when you mention that you're studying at KAIST, people are very impressed and respectful. They almost immediately assume you're very smart. Weird feeling at first, then you kind of get used to it... ha ha. Let us now talk about what it is like to study there.</p>
+<p>The campus is just gigantic.</p>
+<figure class="center">
+<a href="http://www.kaist.ac.kr/camtour/kr/images/common/campusmap.jpg" target="_blank">
+    <img alt="The campus" src="//romainpellerin.eu/images/south-korea/campusmap.jpg" />
+</a>
+</figure>
+
+<p>With more than 10,000 students, it has any kind of facilities you might expect, and even more:</p>
+<ul>
+<li>1 sports complex</li>
+<li>Dozens of dormitories</li>
+<li>7 fitness centers, open 24/7</li>
+<li>3 cafeterias (you can have lunch and dinner for less than ₩4000 and yet be sated)</li>
+<li>Restaurants (prices vary from ₩4000 to ₩6000, on average)</li>
+<li>Fast food restaurants</li>
+<li>A bike shop</li>
+<li>A barber</li>
+<li>A clinic and a pharmacy</li>
+<li>Cafes and a bar</li>
+<li>A swimming pool</li>
+<li>An auditorium</li>
+<li>Libraries</li>
+<li>A LOT of classrooms</li>
+<li>A stadium</li>
+<li>Tennis courts</li>
+<li>A bank</li>
+</ul>
+<figure class="center"><img alt="A soccer field" src="//romainpellerin.eu/images/south-korea/soccer.jpg" /></figure>
+
+<figure class="center"><img alt="The sports complex" src="//romainpellerin.eu/images/south-korea/sports_complex.jpg" /></figure>
+
+<figure class="center"><img alt="My bike" src="//romainpellerin.eu/images/south-korea/bike.jpg" /></figure>
+
+<figure class="center"><img alt="A fitness center" src="//romainpellerin.eu/images/south-korea/fitness_center.jpg" /></figure>
+
+<p>All dormitories are not mixed and most of them are made of small rooms shared by 2 people of the same sex. My roommate is a French man studying Computer Science as well, called Bastien.</p>
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/room.jpg" alt="My room" /><figcaption>My bed is the one on the left.</figcaption></figure>
+
+<p>I took 4 courses for the whole semester:</p>
+<ul>
+<li>CS453 Automated Software Testing</li>
+<li>CS459 Services Computing</li>
+<li>CS540 Network Architecture</li>
+<li>KSE652 Social Computing Systems Design and Analysis</li>
+</ul>
+<p>For every course, I have two classes per week, each of them last for 1 hour and 15 minutes. So in total, I have 10 hours of class per week, which may seem very little but on the other hand we get so much homework to do. Most of the time, between two classes of the same course, we have a bunch of papers (publications) to read online, that we're supposed to sum up. Sometimes, we even get questions to answer. I'd say we have an average of 6 hours of homework per course per week. By the way, all Fridays are off. Here is my timetable:</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/south-korea/timetable.png" alt="My weekly timetable" />
+</figure>
+
+<p>During our first week at KAIST, we had the chance to attend many performances in the auditorium. It was kind of a welcome ceremony.</p>
+<figure class="center"><img alt="Welcome ceremony" src="//romainpellerin.eu/images/south-korea/ceremony.jpg" /></figure>
+
+<p>Finally, here are two photos taken in Daejeon.</p>
+<figure class="center"><img alt="Daejeon" src="//romainpellerin.eu/images/south-korea/daejeon.jpg" /></figure>
+
+<figure class="center"><img src="//romainpellerin.eu/images/south-korea/restaurant.jpg" alt="Dinning in a restaurant" /><figcaption>This term, there are more than 250 exchange students, mostly coming from Europe.</figcaption></figure>
+
+<h1>Travel tips</h1>
+<ul>
+<li>Buy a T-money card, it works in almost every city for buses, subway and trains. Most convenience stores are open 24/7 (7-eleven stores are almost everywhere).</li>
+</ul>
+<h1>Things I wish I had visited</h1>
+<ul>
+<li>Nami Island</li>
+<li>Petite France</li>
+</ul>
+<h1>Useful links</h1>
+<ul>
+<li><a href="https://www.reddit.com/r/korea/comments/2l7pqm/cycling_and_traffic_in_korea_laws/">cycling and traffic in Korea: Laws?</a></li>
+<li><a href="http://www.travelog.me/seoul/27-best-things-korea-outside-seoul/">THE 27 BEST THINGS TO DO IN KOREA OUTSIDE OF SEOUL</a></li>
+<li><a href="https://www.youtube.com/watch?v=FaANpurG3yE">Comment la Corée du Nord est devenue une menace ?</a></li>
+<li><a href="https://www.youtube.com/watch?v=229q6nHMlaE">Destination Corée du Sud ! - Échappées belles</a></li>
+<li><a href="https://www.youtube.com/watch?v=ew3efxDfBwk">Corée du Sud : Voyage vers le futur - Echappées belles</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 12 January 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

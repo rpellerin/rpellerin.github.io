@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, writing, english, latex, cv, resume, cover letter, report" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The Art Of Writing - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX." />
+
+        <title>The Art Of Writing - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-01-27T18:15:00+01:00">Wed 27 January 2016</time>        </p>
+    <h1>The Art Of Writing</h1>
+    <div class="grey">
+        <p class="italic">How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1442 words.">7 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/writing.html">writing</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/english.html">english</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/latex.html">latex</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/cv.html">cv</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/resume.html">resume</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/cover-letter.html">cover letter</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/report.html">report</a></p>    </div>
+</header>
+<article>
+    <p>Writing any kind of profesionnal document in English is not a straightforward thing, especially if it's not something you do on a regular basis. There are rules to stick to, a formatting to respect, mistakes to avoid. Readers must be able to find information quickly, at the right place. Might it be either in a glossary, a footnote, an appendix, and so on., you must follow a specific order.</p>
+<p>This year, I decided to write my internship report in English and thus stick to what English readers are used to. In general, thoses rules are almost the same as in French, almost. However, there are a few significant differences you'd better know.</p>
+<p>I'm going to first explain how I would write a technical report — it works for an internship report as well, since it's supposed to be technical.</p>
+<h1>Writing a report</h1>
+<p>I decided to base my report on <a href="https://en.wikipedia.org/wiki/Book_design">a book design</a>. However, you can find <a href="https://en.wikibooks.org/wiki/Professional_and_Technical_Writing/Table_of_Contents">here a complete guide about profesionnal and technical writing</a>.</p>
+<p>The report is done in <strong>a two-sided printing style</strong>. Here is the plan I would follow for an internship or a technical report:</p>
+<ul>
+<li>Cover (1 page)</li>
+<li><em>Blank page</em></li>
+<li>Acknowledgments (1 page)</li>
+<li><em>Blank page</em></li>
+<li>Table of contents</li>
+<li>Table of figures and tables</li>
+<li>Foreword (including a technical summary) (<a href="http://www.writersandeditors.com/preface__foreword__or_introduction__57375.htm">what is the difference between a preface, a foreword, and an introduction?</a>)</li>
+<li><strong>Introduction - BODY MATTER - Conclusion</strong></li>
+<li>Glossary and index if needed (on the same page)</li>
+<li>Bibliography</li>
+<li>Appendices (must start on a right-hand (odd-numbered) page, so add a blank page right before if needed): 1 page containing the title "<em>Appendices</em>", and then the actual appendices</li>
+</ul>
+<p>Do you need a <strong>glossary</strong>? I will mostly depends on your audience. Glossaries are meant to define complex or unsual words. Glossaries should also contain the definitions of any acronym used. One rule of thumb is pretty simple: who is your audience? Who will read your report. If the answer is people like you, who have the same knowledge, and who will likely understand the report well, then no need for a glossary. On the contrary, if it's intended to be read by anyone, then you likely need a glossary.</p>
+<p><strong><a href="https://en.wikipedia.org/wiki/Index_(publishing)">An index</a></strong> is mostly encountered within novels but you might add it in the glossary (add the page numbers after the definitions). It's generally not mandatory at all.</p>
+<p><strong>Footnotes</strong> are rather different. There are meant to add short pieces of information not necessarly related to the main content (like anecdotes, complementary information, web links). In regular books, you might encounter notes at the end of them, which purpose is approximatively the same. However, it's a bit annoying, as it interrupts the flow of reading. It's better suited for long footnotes that wouldn't fit at the bottom of a page. Personally, I don't write notes at the end of a document, I would rather write footnotes. And sometimes, when footnotes are extremely short, you might want to use either <a href="http://english.stackexchange.com/questions/250492/what-is-the-difference-between-a-dash-and-a-semicolon/250494#250494">a dash or a semicolon to add complementary information</a>.</p>
+<p><strong>Appendices</strong> are for any other document you haven't produced yourself, or big ones, like charts, graphs or emails. They should not be an important part, the reader must be able to understand your point without seeing the appendix. Otherwise, it must go in the main content.</p>
+<p>Pay attention to <strong>headings</strong>, there are <a href="http://titlecapitalization.com/">different rules regarding capitalization</a>.</p>
+<h1>Writing a formal business letter</h1>
+<ul>
+<li><a href="http://www.dailywritingtips.com/how-to-format-a-us-business-letter/">How to format it (the layout)</a> (<strong>read the comment as well</strong>)</li>
+<li>The Closing: use "Yours sincerely" when you know your recipient's name, otherwise use "Yours faithfully". If you know the person quite well, you can use "Best regards" or "Kind regards".</li>
+</ul>
+<h1>Using modern tools</h1>
+<p>There are great tools out there to write beautiful reports, not to mention Microsoft Word, Pages or LibreOffice Writer. But these ones are too focused on the form instead of the content. People spend way too much time formatting, adding colors, setting the margins, and so forth, instead of... writing the actual content. Moreover, between two given versions of the same program (let's say Word 2003 and Word 2007), there might be huge differences introducing compatibility issues, not easily solvable.</p>
+<p>So, is there some sort of an ultimate solution? The answer is <strong>YES</strong>. Let me introduce LaTeX.</p>
+<h2>LaTeX</h2>
+<p>Basically and quickly, it's an open source tool written a while ago which allows you to write any kind of document and export them as PDF (and some other formats). You can write books, reports, CVs, slides, anything! You write it as plain text surrounded with some sort of code (it's a markup language actually). It's available on Linux, Mac and Windows. As it's plain old text, there's no compatibility issue <strong>at all</strong>. What is more, LaTeX doesn't evolve that much over years so. Should it does some day, they will always ensure backward compatibility. When you're done with it, you just compile it and you're good: a beautiful PDF is procuded. There are plenty of tools available for each platform. For instance, I recommend <code>pdflatex</code> on Linux. And if you're too lazy to install any of them, use <a href="https://www.sharelatex.com/">ShareLaTeX</a>.</p>
+<p><a href="https://github.com/scottkosty/install-tl-ubuntu/blob/master/install-tl-ubuntu">See this tutorial to install the latest version of LaTeX.</a>. Otherwise, you might install it using your system package manager:</p>
+<div class="highlight"><pre><span></span>sudo aptitude install texlive-full biber <span class="c1"># biber is for the bibliography</span>
+</pre></div>
+
+
+<p>Then, make sure LaTeX's package manager is working:</p>
+<div class="highlight"><pre><span></span>sudo aptitude install xzdec
+tlmgr init-usertree
+tlmgr update --list
+</pre></div>
+
+
+<p>In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.</p>
+<p>You can find some examples of CVs, cover letters, reports and slideshows on <a href="https://github.com/rpellerin/LaTeX-templates">my GitHub account</a>. For advice about CVs, <a href="//romainpellerin.eu/how-not-to-get-hired.html">see my article "How Not To Get Hired"</a></p>
+<h3>The commands <code>\input{}</code> and <code>\include{}</code></h3>
+<p><code>\input{}</code> doesn't do <code>\newpage</code>, unlike <code>\include{}</code>. <a href="http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include">More info</a>.</p>
+<h3>Splitting files</h3>
+<p>Is a best practice. I personally try to have "conf" files and "content" files. Then I gather them in the main Tex file (thanks to <code>\input{}</code>), which will be compiled eventually.</p>
+<h3>Bibliography</h3>
+<p>It's a really important part of any report or publication. Basically, there are two engines to compile the ".bib" file: <code>bibtex</code> and <code>biber</code>. As well, there are two LaTeX packages to format citations and bibliographies: <code>natbib</code> and <code>biblatex</code>. I personally recommend using <strong><code>biber</code></strong> and <strong><code>biblatex</code></strong>. <a href="http://tex.stackexchange.com/a/25702/96790">Read here why.</a>.</p>
+<h3>Going further with LaTeX</h3>
+<ul>
+<li><a href="http://framabook.org/docs/latex/framabook-versionenligne_v1_5.pdf">Tout ce que vous avez toujours voulu savoir sur LATEX sans jamais oser le demander</a></li>
+<li><a href="http://xoph.co/20111024/latex-tutorial/">Everything You Wanted To Know About TeX, But Were Too Afraid To Ask</a></li>
+<li><a href="http://doc.ubuntu-fr.org/latex">Documentation Ubuntu FR</a></li>
+<li><a href="http://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu/95502#95502">How to remove everything related to TeX Live for fresh install on Ubuntu?</a></li>
+</ul>
+<h2>Unix tools</h2>
+<p>Now that you started using LaTeX (I'm glad you did!), you might wonder how to check spelling, grammar, conjugation, etc.? Actually, there are dozens of tools for Linux.</p>
+<h3>Grammar and style</h3>
+<p><a href="http://dsl.org/cookbook/cookbook_15.html#SEC220">Here are two old fashionned tools to check grammar and style</a>, installable with</p>
+<div class="highlight"><pre><span></span>sudo apt-get install diction
+</pre></div>
+
+
+<p><code>diction</code> and <code>style</code> are both great tools but don't trust them completely, they tend to be really strict.</p>
+<h3>Spelling</h3>
+<p>There are three main tools really wide spread among the Linux community</p>
+<ul>
+<li><code>aspell</code></li>
+<li><code>ispell</code></li>
+<li><code>hunspell</code></li>
+</ul>
+<p>They mostly do the same job. However, I would rather recommand <code>aspell</code> as it's the preferred tool for programmers (<a href="http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html">source</a>).</p>
+<div class="highlight"><pre><span></span>aspell -l en-US -c -t &lt;file.tex&gt;
+</pre></div>
+
+
+<h3>General tools</h3>
+<h4>TextLint</h4>
+<p>Another awesome tool to check the style, mostly.</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/DamienCassou/textlint
+<span class="nb">cd</span> textlint
+./textlint.bash <span class="se">\</span>
+    &lt;file.tex&gt; <span class="se">\</span>
+    ./Linux32/pharo <span class="se">\</span>
+    ./TextLint.tmbundle/Support/TextLint.image
+</pre></div>
+
+
+<p>They also offer a <a href="http://textlint.lukas-renggli.ch/">web application</a>.</p>
+<h4>LanguageTool</h4>
+<p>Finally, here is a general word/grammer checker (probably one of the best): <a href="https://languagetool.org/">languagetool.org</a>. According to their <a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool">official documentation regarding LaTeX</a>, the best way to check any file is as follows. You will need Java version 8 or higher.</p>
+<div class="highlight"><pre><span></span>sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+java -version <span class="c1"># Make sure it worked</span>
+</pre></div>
+
+
+<p>Now, <a href="https://languagetool.org/#download">download languagetool (stand-alone version for Desktop)</a>. Then:</p>
+<div class="highlight"><pre><span></span>detex &lt;file.tex&gt; <span class="p">|</span>java -jar languagetool-commandline.jar -l en-US -c UTF-8 <span class="p">|</span>less
+</pre></div>
+
+
+<p><code>detex</code> will turn your Tex file into a plain text one (it will remove the LaTeX formatting). You can disable rules. Simply add the argument <code>-d</code> with the rules' IDs (as many as you want), for example:</p>
+<div class="highlight"><pre><span></span>java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d <span class="s1">&#39;EN_QUOTES,UPPERCASE_SENTENCE_START&#39;</span> &lt;file.tex&gt;
+</pre></div>
+
+
+<h1>Books</h1>
+<p>To conclude, here a two famous books to produce high-quality documents in English:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style">The Chicago Manual of Style</a>: the ultimate book to learn how to write documents in English and be the perfect writer. Best suited for journalists.</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>: a short and yet excellent book to know the basic rules and avoid common mistakes and pitfalls.</li>
+</ul>
+<h1>Great articles</h1>
+<ul>
+<li><a href="http://www.uni.edu/~gotera/gradapp/stmtpurpose.htm">How to Write a Great Statement of Purpose</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 27 January 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

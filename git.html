@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, presentation, talk, git" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="All about Git" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Git - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="All about Git" />
+
+        <title>Git - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-06-03T00:01:00+02:00">Wed 03 June 2015</time> - Last Update: <time datetime="2016-09-28T23:01:00+02:00">Wed 28 September 2016</time>        </p>
+    <h1>Git</h1>
+    <div class="grey">
+        <p class="italic">All about Git</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 416 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/presentation.html">presentation</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/git.html">git</a></p>    </div>
+</header>
+<article>
+    <p>Here are two talks about Git I gave in the last two years, at <a href="http://humantalks.com/cities/compiegne">HumanTalks Compiègne</a>. I added the slides as well.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8d04CYP5U9Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen></iframe>
+
+<p><a href="http://romainpellerin.eu/slides/git/slides.html">Slides are available in HTML</a>.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9gdub0OMC8Y?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen></iframe>
+
+<p><a href="http://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html">Slides are available in HTML</a>.</p>
+<h1>Going further</h1>
+<p>Here are some resources to go deeper with Git.</p>
+<h2>General</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4XpnKHJAok8">Tech Talk: Linus Torvalds on git</a></li>
+<li><a href="http://www.cirosantilli.com/git-tutorial/">Git Version Control Tutorial</a></li>
+<li><a href="https://codewords.recurse.com/issues/two/git-from-the-inside-out">Git from the inside out</a></li>
+<li><a href="https://dev.to/unseenwizzard/learn-git-concepts-not-commands-4gjc">Learn git concepts, not commands</a></li>
+<li><a href="https://www.gitignore.io/">gitignore.io: auto generate .gitignore files</a></li>
+<li><a href="https://github.com/github/gitignore">gitignore: A collection of useful .gitignore templates</a></li>
+<li><a href="http://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree">Git - Difference Between 'assume-unchanged' and 'skip-worktree'</a></li>
+<li><a href="https://www.clever-cloud.com/blog/engineering/2015/06/09/git-server-30k-improvement/">How We Cut Latency Down by 30k% on Our Git Server</a></li>
+<li><a href="http://korben.info/gitrob-evitez-la-catastrophe-sur-github.html">Gitrob – Évitez la catastrophe sur Github</a></li>
+<li><a href="http://gitolite.com/git-pull--rebase.html">What does "git pull --rebase" do?</a></li>
+<li><a href="http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/">The magical (and not harmful) rebase</a></li>
+<li><a href="http://jeffkreeftmeijer.com/2010/the-mighty-reflog-and-the-amazing-bisect/">The mighty reflog and the amazing bisect</a></li>
+<li><a href="https://increment.com/open-source/more-productive-git/">More productive Git</a></li>
+<li><a href="http://www.git-attitude.fr/2015/12/18/learning-github/">Notre cours vidéo GitHub est sorti !</a></li>
+<li><a href="http://www.learnenough.com/git-tutorial">Learn Enough Git to Be Dangerous</a></li>
+<li><a href="https://mikegerwitz.com/papers/git-horror-story">A Git Horror Story: Repository Integrity With Signed Commits</a></li>
+<li><a href="http://stevelorek.com/how-to-shrink-a-git-repository.html">How to Shrink a Git Repository</a></li>
+<li><a href="http://stackoverflow.com/questions/1657017/how-to-squash-all-git-commits-into-one">How to squash all git commits into one?</a></li>
+<li><a href="http://korben.info/gitminer-fouiller-github-profondeur.html">Gitminer – Pour fouiller Github en profondeur</a></li>
+<li><a href="http://www.git-attitude.fr/2016/05/11/git-reset/">Git reset : rien ne se perd, tout se transforme</a></li>
+<li><a href="https://github.com/k88hudson/git-flight-rules">Flight rules for git</a></li>
+<li><a href="https://www.youtube.com/watch?v=Hd_UpJPDlik">Entrer dans les entrailles de Git, ou comment faire un commit sans faire du Git (Alexandre Garnier)</a></li>
+<li><a href="https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/">Bien utiliser Git merge et rebase</a></li>
+<li><a href="https://robots.thoughtbot.com/autosquashing-git-commits">Auto-squashing Git Commits</a></li>
+<li><a href="https://git-scm.com/docs/git-worktree#_examples">git worktree</a></li>
+<li><a href="http://sethrobertson.github.io/">Git stuff</a></li>
+<li><a href="http://alblue.bandlem.com/2011/10/git-tip-of-week-merging-revisited.html">Git Tip of the Week: Merging Revisited</a></li>
+<li><a href="http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde">Git caret and tilde</a></li>
+</ul>
+<h2>Rebasing and cherry-picking</h2>
+<p>Rebases mostly use <code>git am</code>, which given diffs apply them sequentially. Diffs are computed between a given commit and its parent.</p>
+<p>On the other hand, cherry-picks uses a three-way merge to notice file renames.</p>
+<p>More on the topic below:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/39279901/what-algorithm-is-used-during-git-rebase">What algorithm is used during Git rebase?</a></li>
+<li><a href="https://stackoverflow.com/questions/42530381/issue-with-cherry-pick-changes-from-previous-commits-are-also-applied">Issue with cherry pick: changes from previous commits are also applied</a></li>
+<li><a href="https://stackoverflow.com/questions/10058068/in-a-git-cherry-pick-or-rebase-merge-conflict-how-are-base-aka-the-ancestor">In a Git cherry-pick or rebase merge conflict, how are BASE (aka “the ancestor”), LOCAL, and REMOTE determined?</a></li>
+</ul>
+<h2>Auto deployment</h2>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps">How To Set Up Automatic Deployment with Git with a VPS</a></li>
+<li><a href="http://krisjordan.com/essays/setting-up-push-to-deploy-with-git">Setting up Push-to-Deploy with git</a></li>
+<li><a href="http://www.sitepoint.com/one-click-app-deployment-server-side-git-hooks/">One-click App Deployment with Server-side Git Hooks</a></li>
+<li><a href="http://williamdurand.fr/2012/02/25/deploying-with-git/">Deploying With Git</a></li>
+<li><a href="https://github.com/olipo186/Git-Auto-Deploy">Git-Auto-Deploy</a></li>
+</ul>
+<h2>Commit messages</h2>
+<ul>
+<li><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></li>
+<li><a href="http://antirez.com/news/90">Commit messages are not titles</a></li>
+<li><a href="http://jeffkreeftmeijer.com/2010/git-your-act-together/">Git your act together</a></li>
+<li><a href="http://alistapart.com/article/the-art-of-the-commit">The Art of the Commit</a></li>
+<li><a href="https://conventionalcommits.org/">Conventional Commits</a></li>
+</ul>
+<h2>Sub-projects management: submobules and subtrees</h2>
+<ul>
+<li><a href="https://makingsoftware.wordpress.com/2013/02/16/using-git-subtrees-for-repository-separation/">Using Git subtrees for repository separation</a></li>
+<li><a href="http://blog.jingleweb.fr/2013/10/submodules-git-pourquoi-comment/">Submodules GIT: pourquoi, comment ?</a></li>
+<li><a href="http://www.git-attitude.fr/2014/12/31/git-submodules/">Comprendre et maîtriser les submodules Git</a></li>
+<li><a href="https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging">Subtree Merging (official documentation)</a></li>
+<li><a href="https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec">Mastering Git subtrees</a>: <code>git read-tree</code> and <code>git subtree</code> are two different commands.</li>
+<li><a href="https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/">The power of Git subtree</a></li>
+</ul>
+<h2>Tricks</h2>
+<ul>
+<li><a href="https://pypi.python.org/pypi/ansi2html/1.0.7">Git diff to HTML</a></li>
+<li><a href="https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/">Little Things I Like to Do with Git</a></li>
+<li><a href="https://www.youtube.com/watch?v=Rnh5QK__pLA">DevFest Nantes 2018 - Git Dammit !</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 28 September 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

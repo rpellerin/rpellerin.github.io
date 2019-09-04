@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, vim, vi, linux" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A few tricks for Vim that I have learned over all my years of using this incredible tool." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Vim Tricks - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A few tricks for Vim that I have learned over all my years of using this incredible tool." />
+
+        <title>Vim Tricks - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-01-18T22:50:00+01:00">Wed 18 January 2017</time>        </p>
+    <h1>Vim Tricks</h1>
+    <div class="grey">
+        <p class="italic">A few tricks for Vim that I have learned over all my years of using this incredible tool.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 247 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/vim.html">vim</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/vi.html">vi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
+</header>
+<article>
+    <h1>Regex</h1>
+<h2>Interactive find and replace</h2>
+<div class="highlight"><pre><span></span>:%s/foo/bar/gc
+</pre></div>
+
+
+<p><code>%</code> means whole document, not just the current line.</p>
+<p><code>/g</code> means every occurence, not just the first one. <code>/c</code> is the interactive option.</p>
+<h2>Capturing groups</h2>
+<div class="highlight"><pre><span></span>:%s/abc<span class="se">\(</span>def<span class="se">\)</span>ghi/ko<span class="se">\1</span>ok/g
+</pre></div>
+
+
+<p>Will print <code>kodefok</code>.</p>
+<h2>Non-greedy search</h2>
+<p>Normally, to search in a non-greedy way, we add a punctuation mark, as in <code>.*?</code> which means <em>any string of characters as short as possible</em>. For instance:</p>
+<div class="highlight"><pre><span></span>/&lt;.&gt;<span class="o">(</span>.*?<span class="o">)</span>&lt;.&gt;/
+</pre></div>
+
+
+<p>Applied to the string <code>abc&lt;p&gt;def&lt;a&gt;ghi&lt;b&gt;jkl</code> would match <code>&lt;p&gt;def&lt;a&gt;</code> and capture <code>def</code>. To make non-greedy searches with Vim, replace <code>*?</code> with <code>\{-}</code>.</p>
+<h1>Misc</h1>
+<h2>Split the screen in half and display two different parts of a given file</h2>
+<div class="highlight"><pre><span></span>:vsp
+:set scrollbind
+</pre></div>
+
+
+<p>Then, on the right pane, scroll down or up, further in the file, and do:</p>
+<div class="highlight"><pre><span></span>:set scrollbind
+</pre></div>
+
+
+<p>From that point on, as you scroll on one pane, the other one will follow. To undo:</p>
+<div class="highlight"><pre><span></span>:set noscrollbind
+</pre></div>
+
+
+<h1>Useful links</h1>
+<ul>
+<li><a href="https://vim.rtorr.com/">Vim Cheat Sheet</a></li>
+<li><a href="https://vimgifs.com/">Vimgifs</a></li>
+<li><a href="http://danielallendeutsch.com/blog/2-vim-navigation-commands.html">Vim Navigation Commands: sequences you have no excuse not to know</a></li>
+<li><a href="http://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a></li>
+<li><a href="https://www.youtube.com/watch?v=XA2WjJbmmoM">How to Do 90% of What Plugins Do (With Just Vim)</a></li>
+<li><a href="https://sanctum.geek.nz/arabesque/vim-anti-patterns/">Vim anti-patterns</a></li>
+<li><a href="https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source">Building Vim from source</a></li>
+<li><a href="https://spacevim.org/2017/02/11/use-vim-as-a-java-ide">Use Vim as a Java IDE</a></li>
+<li><a href="https://github.com/garbas/vim-snipmate">SnipMate</a></li>
+<li><a href="http://vim.wikia.com/wiki/Auto_closing_an_HTML_tag">Auto closing an HTML tag</a></li>
+<li><a href="https://www.quora.com/What-is-the-best-JavaScript-programming-language-setup-with-Vim-text-editor">What is the best JavaScript (programming language) setup with Vim (text editor)?</a></li>
+<li><a href="http://vimcasts.org/">Vimcasts</a></li>
+<li><a href="http://www.catonmat.net/blog/why-vim-uses-hjkl-as-arrow-keys/">Here is why vim uses the hjkl keys as arrow keys</a></li>
+<li><a href="https://www.youtube.com/watch?v=lwD8G1P52Sk">Your First Vim Plugin</a></li>
+<li><a href="https://www.youtube.com/watch?v=5r6yzFEXajQ">vim + tmux - OMG!Code</a></li>
+<li><a href="http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim">What is your most productive shortcut with Vim?</a></li>
+<li><a href="https://github.com/nicknisi/dotfiles">nicknisi/dotfiles</a></li>
+<li><a href="https://github.com/shawncplus/dotfiles">shawncplus/dotfiles</a></li>
+<li><a href="https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85">Why I love Vim: It’s the lesser-known features that make it so amazing</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 18 January 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, web, code, html, css, javascript" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Resources for web projects" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Carrying Out A Web Project - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Resources for web projects" />
+
+        <title>Carrying Out A Web Project - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-12-03T00:40:00+01:00">Thu 03 December 2015</time>        </p>
+    <h1>Carrying Out A Web Project</h1>
+    <div class="grey">
+        <p class="italic">Resources for web projects</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 717 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/web.html">web</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/html.html">html</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/css.html">css</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/javascript.html">javascript</a></p>    </div>
+</header>
+<article>
+    <p>Here are some resources.</p>
+<h1>How to carry out a web project?</h1>
+<ul>
+<li><a href="http://darklg.me/2012/04/methodologie-integration-web-front-end/">Ma méthodologie d’intégration web</a></li>
+<li><a href="https://old.etherpad-mozilla.org/RAI9OV5U2k">Some pieces of advice</a></li>
+<li><a href="https://www.24joursdeweb.fr/2017/maintenabilite-du-code-html-css-entre-automatisation-et-guide-de-style/">Maintenabilité du code HTML / CSS : entre automatisation et guide de style</a></li>
+<li><a href="https://css-tricks.com/developer-roadmaps/">Developer Roadmaps</a></li>
+</ul>
+<h1>CSS</h1>
+<ul>
+<li><a href="https://github.com/dhoko/Guidelines/blob/master/CSS-guidelines.md">Pour une CSS simple et réutilisable</a></li>
+<li><a href="http://cssvalues.com/">CSS Values</a>: a good documentation about CSS properties</li>
+<li><a href="http://guidecss.fr/">Feuilles de styles CSS - Conseils et bonnes pratiques</a></li>
+<li><a href="http://www.alsacreations.com/article/lire/1707-mini-convention-css.html">Mini Convention CSS</a></li>
+<li><a href="https://www.youtube.com/watch?v=5F_ngjHDcJQ">Flexbox, et le CSS redevient fun ! (Hubert SABLONNIÈRE)</a></li>
+<li><a href="https://www.youtube.com/watch?v=H8lICKucWL4">CSS is Awesome Igor Laborie</a></li>
+<li><a href="https://gridbyexample.com/">Grid by Example</a></li>
+<li><a href="https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855">Everything you need to know about CSS Variables</a></li>
+<li><a href="https://beta.observablehq.com/@eeeps/w-descriptors-and-sizes-under-the-hood">w descriptors and sizes: Under the hood</a></li>
+<li><a href="https://css-tricks.com/decorating-lines-of-text-with-box-decoration-break/">Decorating lines of text with box-decoration-break</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">Mastering margin collapsing</a></li>
+<li><a href="https://css-doodle.com/">CSS doodle</a></li>
+<li><a href="https://css-tricks.com/did-you-know-that-style-and-script-tags-can-be-set-to-display-block/">Did you know that style and script tags can be set to display: block?</a></li>
+<li><a href="https://30-seconds.github.io/30-seconds-of-css/">30 Seconds of CSS</a></li>
+</ul>
+<h2>Support and compatibility</h2>
+<ul>
+<li><a href="https://caniuse.com">caniuse.com</a>: check out the tab 'Relative'</li>
+<li><a href="https://gs.statcounter.com">gs.statcounter.com</a></li>
+<li><a href="https://developer.mozilla.org">developer.mozilla.org</a> aka MDN</li>
+<li><a href="https://www.chromestatus.com/features">www.chromestatus.com/features</a></li>
+<li><a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/">developer.microsoft.com/en-us/microsoft-edge/platform/status/</a></li>
+<li><a href="https://webkit.org/status/">webkit.org/status/</a></li>
+<li><a href="https://platform-status.mozilla.org">platform-status.mozilla.org</a></li>
+<li><a href="https://bugzilla.mozilla.com">bugzilla.mozilla.com</a></li>
+</ul>
+<h2>Centering</h2>
+<ul>
+<li><a href="http://howtocenterincss.com/">How to Center in CSS</a></li>
+</ul>
+<h1>Mobile development</h1>
+<ul>
+<li><a href="http://putaindecode.fr/posts/frontend/comment-deboguer-du-web-sur-tablettes-et-telephones/">Comment déboguer facilement du web y compris sur tablettes et téléphones</a></li>
+</ul>
+<h2>Responsive design</h2>
+<ul>
+<li><a href="http://goetter.fr/nav/">Ultra simple Responsive navigation snippets</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Responsive_web_design">Responsive web design</a></li>
+</ul>
+<h1>Compatibility</h1>
+<ul>
+<li><a href="http://caniuse.com/">Can I Use</a></li>
+</ul>
+<h1>Testing</h1>
+<ul>
+<li><a href="https://hacks.mozilla.org/2017/03/doubling-down-on-cross-browser-testing/">Doubling Down on Cross-Browser Testing</a></li>
+<li><a href="http://www.softwaretestinghelp.com/web-application-testing/">Web Testing: A Complete guide about testing web applications</a></li>
+</ul>
+<h1>Finalizing</h1>
+<ul>
+<li><a href="http://webdevchecklist.com/">Web Developer Checklist</a></li>
+<li><a href="http://frontendchecklist.com/">Front-End-Checklist</a></li>
+<li><a href="https://www.youtube.com/watch?v=SVrgarg3KNs">Donner du sens à vos pages web avec Schema.org</a></li>
+</ul>
+<h2>HTTPS and security</h2>
+<ul>
+<li><a href="https://wooster.checkmy.ws/2014/10/upgrade-http-vers-https/">Check liste pour passer un site de HTTP à HTTPS</a></li>
+<li><a href="https://www.ssllabs.com/ssltest/">SSL Server Test</a></li>
+<li><a href="https://observatory.mozilla.org/">Observatory by Mozilla</a></li>
+<li><a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">Mozilla SSL Configuration Generator</a></li>
+<li><a href="http://www.system-linux.eu/index.php?post/2016/01/12/Certificat-SSL-avec-Letsencrypt">Certificat SSL avec Letsencrypt</a></li>
+<li><a href="http://webappsec-test.info/~bhill2/DifferentTakeOnOE.html">Why isn't HTTPS everywhere yet?</a></li>
+<li><a href="https://cipherli.st/">Cipherli.st - Strong Ciphers for Apache, nginx and Lighttpd</a></li>
+<li><a href="https://blog.adminrezo.fr/2016/12/securiser-serveur-apache-https-headers/">Rouler en classe A avec Apache</a></li>
+<li><a href="https://korben.info/installter-activer-http2-apache2.html">Installer et activer HTTP2 sur Apache2</a></li>
+<li><a href="https://korben.info/installer-activer-http2-nginx.html">Installer et activer HTTP2 sur Nginx</a></li>
+<li><a href="https://wiki.mozilla.org/Security/Guidelines/Web_Security">Security/Guidelines/Web Security</a></li>
+<li><a href="https://google-gruyere.appspot.com/#0__hackers">Web Application Exploits and Defenses</a></li>
+</ul>
+<h2>Formatting / minimizing / indentation / compressing</h2>
+<ul>
+<li><a href="http://lab.darklg.me/HTMLLisible/">HTMLLisible</a>: auto-indent HTML</li>
+<li><a href="http://csslisible.com/en/">CSSLisible</a>: order properties and auto-indent CSS</li>
+<li><a href="http://refresh-sf.com/">Online JavaScript/CSS Compressor</a></li>
+<li><a href="http://www.clock.co.uk/blog/optimise-your-pngs-from-the-terminal-in-osx">Optimise your pngs from the terminal in OSX</a></li>
+<li><a href="http://www.alsacreations.com/article/lire/914-compression-pages-html-css-gzip-deflate.html">Cache et compression des pages web avec Gzip ou Deflate en HTTP</a></li>
+<li><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></li>
+<li><a href="http://blog.cowchimp.com/monitoring-unused-css-by-unleashing-the-devtools-protocol/">Monitoring unused CSS by unleashing the raw power of the DevTools Protocol</a></li>
+</ul>
+<h2>Apache setup</h2>
+<ul>
+<li><a href="https://github.com/phanan/htaccess">.htaccess Snippets</a></li>
+<li><a href="http://korben.info/quelques-regles-htaccess-pour-securiser-votre-site.html">Quelques règles htaccess pour sécuriser votre site</a></li>
+</ul>
+<h2>Favicon</h2>
+<ul>
+<li><a href="http://www.jonathantneal.com/blog/understand-the-favicon/">Understand the Favicon</a></li>
+<li><a href="http://putaindecode.io/fr/articles/favicon/">Un favicon vite fait bien fait</a></li>
+</ul>
+<p>On Linux, if you have <code>imagemagick</code> installed, do:</p>
+<div class="highlight"><pre><span></span>convert favicon.png -alpha on -resize 256x256 <span class="se">\</span>
+    -define icon:auto-resize<span class="o">=</span><span class="s2">&quot;256,128,96,64,48,32,16&quot;</span> <span class="se">\</span>
+    favicon.ico
+</pre></div>
+
+
+<h1>Useful resources</h1>
+<h2>UI</h2>
+<ul>
+<li><a href="https://refactoringui.com/">Refactoring UI</a></li>
+<li><a href="https://uidb.io/">User Interface UI design Inspiration</a></li>
+<li><a href="http://blog-en.tilda.cc/articles-website-design-mistakes">Common webpage design mistakes</a></li>
+</ul>
+<h2>Fonts</h2>
+<ul>
+<li><a href="https://www.filamentgroup.com/lab/font-loading.html">How we use web fonts responsibly, or, avoiding a @font-face-palm</a></li>
+<li><a href="https://font-display.glitch.me/">Font-display </a></li>
+<li><a href="https://css-tricks.com/three-techniques-performant-custom-font-usage/">Three Techniques for Performant Custom Font Usage</a></li>
+<li><a href="https://v-fonts.com/">Variable Fonts</a></li>
+<li><a href="https://css-tricks.com/understanding-web-fonts-getting/">Understanding Web Fonts and Getting the Most Out of Them</a></li>
+<li><a href="https://css-tricks.com/fitting-text-to-a-container/">Fitting Text to a Container</a></li>
+</ul>
+<h2>Icons</h2>
+<ul>
+<li><a href="http://goetter.fr/unicode/">Icones web Unicode</a></li>
+<li><a href="https://pictonic.co/free">Pictonic - free</a></li>
+<li><a href="https://icomoon.io/app/">IcoMoon App</a></li>
+<li><a href="http://iconmonstr.com/">iconmonstr</a></li>
+<li><a href="http://paymentfont.io/">PaymentFont: A sleek webfont containing 95 icons of all main payment operators and methods</a></li>
+<li><a href="http://blog.cloudfour.com/seriously-dont-use-icon-fonts/">Seriously, Don’t Use Icon Fonts</a></li>
+<li><a href="http://benfrain.com/seriously-use-icon-fonts/">Seriously, use icon fonts</a></li>
+<li><a href="https://preethisam.com/2018/06/25/how-to-use-emojis-as-icons/">How to Use Emojis as Icon</a></li>
+</ul>
+<h2>Images</h2>
+<ul>
+<li><a href="https://css-tricks.com/sometimes-sizes-is-quite-important/">Sometimes <code>sizes</code> is quite important.</a></li>
+<li>[DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)</li>
+</ul>
+<h2>Debugging</h2>
+<ul>
+<li><a href="https://medium.com/datadriveninvestor/stopping-using-console-log-and-start-using-your-browsers-debugger-62bc893d93ff">How to stop using console.log() and start using your browser’s debugger</a></li>
+<li><a href="https://www.24joursdeweb.fr/2018/la-console-javascript-avancee/">La console JavaScript avancée</a></li>
+</ul>
+<h1>Bonus: HTML Emails</h1>
+<ul>
+<li><a href="http://www.sitepoint.com/my-current-html-email-development-workflow/">My Current HTML Email Development Workflow</a></li>
+<li><a href="https://www.inkbrush.com/">Build Fully Responsive Email In Just Minutes.</a></li>
+<li><a href="http://foundation.zurb.com/emails.html">Foundation for Emails</a></li>
+</ul>
+<h1>Going further</h1>
+<h2>Methodology</h2>
+<ul>
+<li><a href="https://www.aaron-gray.com/a-criticism-of-scrum/">A CRITICISM OF SCRUM</a></li>
+<li><a href="https://www.aaron-gray.com/ways-to-protect-flow/">WAYS TO PROTECT FLOW</a></li>
+</ul>
+<h2>Web Assembly</h2>
+<ul>
+<li><a href="https://github.com/mbasso/awesome-wasm">Awesome wasm</a></li>
+<li><a href="http://blog.openbloc.fr/webassembly-first-steps/">WebAssembly 101: a developer's first steps</a></li>
+<li><a href="https://blog.octo.com/en/webassembly-an-executable-format-for-the-web/">WebAssembly, an executable format for the web </a></li>
+</ul>
+<h2>PWAs</h2>
+<ul>
+<li><a href="https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154">A Pinterest Progressive Web App Performance Case Study</a></li>
+<li><a href="https://developers.google.com/web/ilt/pwa/lab-migrating-to-workbox-from-sw-precache-and-sw-toolbox">Lab: Migrating to Workbox from sw-precache and sw-toolbox</a></li>
+<li><a href="https://developers.google.com/web/tools/workbox/guides/migrate">Modifications to your existing configuration</a></li>
+<li><a href="https://developers.google.com/web/tools/workbox/">Workbox</a></li>
+<li><a href="https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc">Google Play Store now open for Progressive Web Apps</a></li>
+</ul>
+<h2>Linters</h2>
+<ul>
+<li><a href="https://github.com/stylelint/stylelint">CSS</a></li>
+<li><a href="https://github.com/eslint/eslint">JavaScript</a></li>
+</ul>
+<h2>Testing</h2>
+<ul>
+<li><a href="https://hacks.mozilla.org/2017/12/using-headless-mode-in-firefox/">Using Headless Mode in Firefox</a></li>
+</ul>
+<h2>Performance</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=YJGCZCaIZkQ">Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)</a></li>
+</ul>
+<h2>Misc</h2>
+<ul>
+<li><a href="http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/">6 Rules of thumb to build blazing fast web server applications</a></li>
+<li><a href="https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7">10 things I learned making the fastest site in the world</a></li>
+<li><a href="http://piwik.org/">Free Web Analytics Software (Piwik)</a></li>
+<li><a href="http://cubiq.org/the-perfect-php-clean-url-generator">The perfect PHP clean url generator</a></li>
+<li><a href="http://www.phptherightway.com/">PHP - The Right Way</a></li>
+<li><a href="https://whatwebcando.today/">What Web Can Do Today</a></li>
+<li><a href="http://www.opensearch.org/Home">OpenSearch</a></li>
+<li><a href="http://www.geek-directeur-technique.com/2016/08/24/de-la-gestion-de-projet-a-la-gestion-de-workflow">De la gestion de projet à la gestion de workflow</a></li>
+<li><a href="http://korben.info/websocketd-communiquer-vos-pages-web-vos-outils-ligne-de-commande.html">WebSocketd – Faites communiquer vos pages web avec vos outils en ligne de commande</a></li>
+<li><a href="https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details">Front-End Developer Handbook 2017</a></li>
+<li><a href="https://www.youtube.com/watch?v=par742RHhVM">Les Web DevTools en 2017 (Jean-Francois Garreau)</a></li>
+<li><a href="https://www.youtube.com/watch?v=9PRPPJFaF_o">Optimiser les performances d'une webapp (Guillaume EHRET)</a></li>
+<li><a href="https://paulbakaus.com/tutorials/performance/the-illusion-of-speed/">The Illusion of Speed</a></li>
+<li><a href="https://hacks.mozilla.org/2017/06/firefox-54-e10s-webextension-apis-css-clip-path/">Firefox 54: E10S-Multi, WebExtension APIs, CSS clip-path</a></li>
+<li><a href="https://hacks.mozilla.org/2017/10/how-we-rebuilt-the-viewsourceconf-org-website/">How we rebuilt the viewsourceconf.org website</a></li>
+<li><a href="https://whatwebcando.today/">What Web Can Do Today</a></li>
+<li><a href="https://webaim.org/blog/user-agent-string-history/">History of the browser user-agent string</a></li>
+<li><a href="https://github.com/kamranahmedse/developer-roadmap">Roadmap to becoming a web developer in 2019</a></li>
+<li><a href="https://github.com/Microsoft/frontend-bootcamp">Frontend Bootcamp / Days in the Web</a></li>
+<li><a href="https://illustrated.dev/">Illustrated.dev</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 03 December 2015</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

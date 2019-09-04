@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, web, javascript, css, html" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Random stuff about a project I will probably never carry out" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="A Web Project in 2017 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Random stuff about a project I will probably never carry out" />
+
+        <title>A Web Project in 2017 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-05-10T21:50:00+02:00">Wed 10 May 2017</time>        </p>
+    <h1>A Web Project in 2017</h1>
+    <div class="grey">
+        <p class="italic">Random stuff about a project I will probably never carry out</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 205 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/web.html">web</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/javascript.html">javascript</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/css.html">css</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/html.html">html</a></p>    </div>
+</header>
+<article>
+    <p>I am writing this here for posterity, again!</p>
+<p>Since February 2017, I am doing an internship in San Francisco. It is focused on web technologies. I am learning a shit ton of stuff everyday. Thus I'd like to apply all these best practices and use my daily tools on <strong>ONE BIG PROJECT</strong>.</p>
+<p>This killer project must include the following things:</p>
+<ul>
+<li>JavaScript<ul>
+<li>ES7<ul>
+<li><code>fetch</code></li>
+<li>Promises</li>
+<li><code>await</code>/<code>async</code></li>
+<li><code>import</code></li>
+<li>Etc.</li>
+</ul>
+</li>
+<li>Web worker</li>
+<li>Node</li>
+<li>React (Fiber?) + Redux<ul>
+<li>Webpack: <code>create-react-app</code></li>
+<li><code>reselect</code></li>
+<li><code>redux-form</code></li>
+</ul>
+</li>
+<li>React Native as well?<ul>
+<li><code>create-react-native-app</code></li>
+</ul>
+</li>
+<li>Sequelize: <code>sequelize</code> + <code>sequelize-cli</code></li>
+<li>Express.js + GraphQL (with subscriptions): <code>express-graphql</code></li>
+<li>Apollo or Relay</li>
+<li><code>dotenv</code></li>
+<li><code>jsonwebtoken</code>?</li>
+<li><code>date-fns</code></li>
+<li><code>storybook</code>?</li>
+<li>Server-side rendering with Next.js? <code>create-next-app</code></li>
+<li><code>memoizee</code> for external API calls made by the server</li>
+</ul>
+</li>
+<li>Progressive Web App<ul>
+<li>Service worker (makes app available offline)</li>
+<li><a href="https://www.youtube.com/watch?v=kqi4Xa1ViOQ">Progressive Web Apps (Cyril Balit - Florian Orpelière)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Notifications</a></li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>Variables</li>
+<li>Flexbox</li>
+<li>Grid</li>
+<li>CSS masks</li>
+<li><a href="http://tachyons.io/">Tachyons</a></li>
+</ul>
+</li>
+<li>Testing/CI/Production<ul>
+<li><code>jest-cli</code></li>
+<li><code>standard-version</code></li>
+<li>Travis-ci.org</li>
+<li>Now.sh?</li>
+</ul>
+</li>
+<li>Tools<ul>
+<li>yarn</li>
+<li><code>pm2</code></li>
+<li>Prettier for code formatting</li>
+<li><a href="https://flow.org/">Flow</a>: <code>flow-bin</code></li>
+<li>Chrome extensions<ul>
+<li>React Developer Tools</li>
+<li>Redux DevTools</li>
+<li>Apollo Client Developer Tools</li>
+<li>Lighthouse</li>
+</ul>
+</li>
+<li><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></li>
+</ul>
+</li>
+<li>Other<ul>
+<li>PostgreSQL or SQLite</li>
+<li>asm.js or WebAssembly (preferably the latter)</li>
+<li><a href="https://google.github.io/physical-web/">Physical Web</a></li>
+</ul>
+</li>
+</ul>
+<p>Bonus point if the project uses as many Github badges (meaning CI services) as I referenced on <a href="//romainpellerin.eu/open-source.html">this article</a>.</p>
+<p><strong>Reminder for myself</strong>: check out <a href="//romainpellerin.eu/carrying-out-a-web-project.html">this article</a></p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 10 May 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

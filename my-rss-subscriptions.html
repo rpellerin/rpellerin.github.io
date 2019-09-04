@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, news, rss, feed" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="The RSS feeds I subscribed to." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="My RSS Subscriptions - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="The RSS feeds I subscribed to." />
+
+        <title>My RSS Subscriptions - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-12-18T23:00:00+01:00">Sun 18 December 2016</time>        </p>
+    <h1>My RSS Subscriptions</h1>
+    <div class="grey">
+        <p class="italic">The RSS feeds I subscribed to.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 195 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/news.html">news</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/rss.html">rss</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/feed.html">feed</a></p>    </div>
+</header>
+<article>
+    <p>Here is a list of all the websites I subscribed to. Those are very interesting and cover a wide variety of topics. A few of them are in French though.</p>
+<h1>Android</h1>
+<ul>
+<li><a href="http://feeds.feedburner.com/OfficialAndroidBlog">Official Android Blog</a></li>
+</ul>
+<h1>Some friends of mine</h1>
+<ul>
+<li><a href="http://blog.ericgourlaouen.com/feed">Eric Gourlaouen</a></li>
+<li><a href="http://ktorz.github.io/feed.xml">KtorZ's Blog</a></li>
+<li><a href="http://blog.thomasmorel.io/feed.xml">Trip and Tech blog</a></li>
+<li><a href="https://www.kyane.fr/index.xml">Kyâne Pichou</a></li>
+</ul>
+<h1>HTML/CSS</h1>
+<ul>
+<li><a href="http://feeds.feedburner.com/html5rocks">HTML5Rocks</a></li>
+<li><a href="https://blog.goetter.fr/feed/">La Tête dans le Flux</a></li>
+<li><a href="https://css-tricks.com/feed/">CSS-Tricks</a></li>
+<li><a href="https://ehret.me/index.xml">I'm Siegfried. A developer. Yep.</a></li>
+</ul>
+<h1>Humor</h1>
+<ul>
+<li><a href="http://www.commitstrip.com/fr/feed/">CommitStrip</a> (<a href="http://www.commitstrip.com/en/feed/">English feed</a>)</li>
+<li><a href="http://feeds.feedburner.com/lucdamas/humeurs?format=xml">HOP</a></li>
+<li><a href="http://www.monkeyuser.com/feed.xml">MonkeyUser</a></li>
+</ul>
+<h1>Other</h1>
+<ul>
+<li><a href="http://blog.adminrezo.fr/feed/">AdminRezo</a></li>
+<li><a href="http://www.devtacular.com/utilities/atomtorss/?url=http%3a%2f%2flucumr.pocoo.org%2ffeed.atom">Armin Ronacher's Thoughts and Writings</a></li>
+<li><a href="http://www.susanjfowler.com/blog?format=RSS">Blog - Susan J. Fowler</a></li>
+<li><a href="http://blog.clement.delafargue.name/atom.xml">Clément Delafargue - RSS feed</a></li>
+<li><a href="http://www.geek-directeur-technique.com/feed">De geek à directeur technique</a></li>
+<li><a href="http://gb-prod.fr/feed.xml">GBProd</a></li>
+<li><a href="https://blog.mozfr.org/feed/atom">Communauté Mozilla francophone</a></li>
+<li><a href="http://www.guiguishow.info/feed/">GuiGui's show</a></li>
+<li><a href="http://www.mercereau.info/categorie/informatique/feed/">Informatique – David Mercereau</a></li>
+<li><a href="https://www.joelonsoftware.com/feed/">Joel on Software</a></li>
+<li><a href="http://feeds.feedburner.com/K33g_orgsBlog?format=xml">K33G_ORG's blog</a></li>
+<li><a href="http://korben.info/feed">Korben</a></li>
+<li><a href="http://ingenuingenieur.blog.lemonde.fr/feed/">L'ingénu-ingénieur</a></li>
+<li><a href="http://lanterne-rouge.over-blog.org/rss">La Lanterne Rouge</a></li>
+<li><a href="http://putaindecode.fr/feed.xml">putaindecode.io</a></li>
+<li><a href="http://techmeup.co/rss">TechMeUp » TechMeUp</a></li>
+<li><a href="http://feeds.feedburner.com/Nikopik">niKopiK</a></li>
+<li><a href="http://feeds.feedburner.com/2ality?format=xml">②ality – JavaScript and more</a></li>
+<li><a href="https://hacks.mozilla.org/feed/">Mozilla Hacks – the Web developer blog</a></li>
+<li><a href="https://martinfowler.com/feed.atom">Martin Fowler</a></li>
+<li><a href="https://increment.com/feed.xml">Increment</a></li>
+<li><a href="https://infrequently.org/feed/">Infrequently Noted</a></li>
+<li><a href="http://rss.allocine.fr/ac/cine/cettesemaine">Les sorties de la semaine</a></li>
+<li><a href="http://www.jesuisundev.fr/feed/">Je suis un dev</a></li>
+<li><a href="https://overreacted.io/rss.xml">Overreacted</a></li>
+</ul>
+<h1>Security</h1>
+<ul>
+<li><a href="http://blog.cryptographyengineering.com/feeds/posts/default">A Few Thoughts on Cryptographic Engineering</a></li>
+<li><a href="http://beta.hackndo.com/feed.xml">hackndo</a></li>
+</ul>
+<h1>Youtube</h1>
+<ul>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCz-MZYX2qrhFBKK8B71ukQQ">ACMusic7</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCyWqModMQlbIo8274Wh_ZsQ">Cyprien</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZ8z1V-Z3eUKbzBt8cHqjg">Dan Rock</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCm5wThREh298TkK8hCT9HuA">Data Gueule</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCsVPQfo5RZErDL41LoWvk0A">Devoxx FR</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC-2EkisRV8h9KsHpslQ1gXA">Et tout le monde s'en fout</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCOhfLu1DXGjncY5QBdMFRhw">French Fried TV</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCx83f-KzDd3o1QK2AdJIftg">GDG France</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCDoKG5pBrK3XYntCEGal2-w">Le JTerre</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC7TizprGknbDalbHplROtag">Layout Land</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCYnvxJ-PKiGXo_tYXpWAC-w">Micode</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCijjo5gfAscWgNCKFHWm1EA">Mozilla Hacks</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCww2zZWg4Cf5xcRKG-ThmXQ">NORMAN FAIT DES VIDÉOS</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCd56yga015uI5hfOfnXdzCQ">Paul Taylor</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCTgIyiuI7S_VZ4E3FinKs0w">Pierre-Emmanuel Barré</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC4m2G6T18_JcjwxwtwKJijw">Samy Kamkar</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCtI0Hodo5o5dUb67FeUjDeA">SpaceX</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC5WjFrtBdufl6CZojX3D8dQ">Tesla</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCCzfEV7NDD5OvkE3Ua7pcxQ">Web2day</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCu34Tq5qMR-FiTYwLyy9U6w">Webosaures</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pVaOtZ8vdLBrlHu5xaaOA">What's up France ?</a></li>
+<li><a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCeLfTu_89Qb1RPQ5gK9i_3Q">wherethehellisutc</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 18 December 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

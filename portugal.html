@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, portugal, libson" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My advice about Portugal" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Portugal - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My advice about Portugal" />
+
+        <title>Portugal - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/portugal.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-11-07T23:50:00+01:00">Wed 07 November 2018</time>        </p>
+    <h1>Portugal</h1>
+    <div class="grey">
+        <p class="italic">My advice about Portugal</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 609 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/portugal.html">portugal</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/libson.html">libson</a></p>    </div>
+</header>
+<article>
+    <p>I recently went for the first time of my life to Lisbon, Portugal. We stayed in a <a href="https://www.airbnb.com/rooms/23113630">Airbnb</a> perfectly located in the heart of Lisbon, very close to Avenida Da Liberdade.</p>
+<p>It was a great trip. The weather was decent although we had a rainy day. It averaged between 15 and 20°C, quite warm for early November. It very much reminded me of San Francisco, not only because of the identical bridge but also the hills, cable cars and sunny weather.</p>
+<p>All in all, most things can you buy are quite cheap, especially food.</p>
+<p>When you get to Lisbon, go to the visitor center and buy a 72-hour Lisboa card. It offers a great deal of discounts + free entrances to some places + unlimited public transporation for free. Let's now move on to the things to do...</p>
+<h1>Transportation means</h1>
+<p>I highly recommend you ride a Tuk-Tuk, it's fun and cheap. A few are electrical.</p>
+<p>However, if you're more into getting old fashionned, ride the 28E tram. Fun guaranteed! It goes throughout the entire city and allow you to see it in no time.</p>
+<p>Finally, the three cable cars are also real fun. The ride is short, it takes some time, but it'll help you climb steep hills. The Ascensor da Glória is a nice one, with all the graffiti in the street and on the car itself.</p>
+<h1>Places</h1>
+<h2>Cristo Rei</h2>
+<p>A crazy big Jesus monument, just across the water. We went there by boat, and came back by taxi, just for the fun of driving on the famous red bridge.</p>
+<p>Once at the monument, climb to the top and enjoy the view over Lisbon. It almost feels like San Francisco up there.</p>
+<h2>Belém</h2>
+<p>A little far from the city center, I suggest you spend a full day there - that's what I did. Three main places to see: Torre de Belém, Padrão dos Descobrimentos (you can go to the top!) and Jerónimos Monastery. One thing, apparently famous, but overcrowded, is Pasteis de Belém. Never managed to get in though, the line was crazy long.</p>
+<h2>City center</h2>
+<p>In a random order:</p>
+<ul>
+<li>Comércio Plaza</li>
+<li>Arco da Rua Augusta: going to the top is fun</li>
+<li>Lisbon Cathedral</li>
+<li>Santa Justa Lift: 1-hour long line, for a view over Lisbon.</li>
+<li>Castelo de S. Jorge: don't expect anything crazy, it's mostly about the view.</li>
+<li>Square Pedro IV</li>
+<li>Praça da Figueira</li>
+<li>Praça dos Restauradores: that's where the Hardrock cafe is</li>
+<li>Monument to the Dead of the Great War</li>
+<li>Igreja de São Domingos</li>
+<li>Carmo Convent: unfortunately I did not get to see inside, because we went there at night</li>
+<li>TimeOut Market: one of my favorite places. A large range of food options, from sea food to pastries, pizzas, burgers, etc.</li>
+<li>National Pantheon: I did not get in</li>
+<li>Church of São Vicente of Fora: I did not get in</li>
+<li>Basílica da Estrela</li>
+<li>Jardim da Estrela</li>
+</ul>
+<h2>Parque das Nações</h2>
+<p>A place quite far from the city center, not as far as Belém though. Many entertaining activities to do there. We rode the telecabine. I wish we had time to go to the observation platform at the top of Torre Vasco da Gama. Also, the Oceanário de Lisboa is supposedly nice.</p>
+<p>Different yet interesting on a rainy day is the Centro Vasco da Gama. I bought shoes there. LOL.</p>
+<h1>Fun facts</h1>
+<p>Lisbon's only international airport is more of a shopping mall than an actual airport. Once the security checks passed, travellers end up in the middle of dozens of shops, from the luxuary ones to McDonald's and KFC.</p>
+<p><br /></p>
+<p>That's it! Next time, we'll most likely go to Sintra, as it appears to be a real nice place to see...</p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 07 November 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

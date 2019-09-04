@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, linux, shell, diff" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Different ways to diff two folders" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="How To Find Differences Between Two Directories On Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Different ways to diff two folders" />
+
+        <title>How To Find Differences Between Two Directories On Linux - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-12-10T23:20:00+01:00">Mon 10 December 2018</time>        </p>
+    <h1>How To Find Differences Between Two Directories On Linux</h1>
+    <div class="grey">
+        <p class="italic">Different ways to diff two folders</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 99 words.">Less than 1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/shell.html">shell</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diff.html">diff</a></p>    </div>
+</header>
+<article>
+    <h1><code>diff</code></h1>
+<p>Compares filenames and lines. <strong>Very slow</strong>.</p>
+<div class="highlight"><pre><span></span>/usr/bin/diff -qr /dirA /dirB
+</pre></div>
+
+
+<h1><code>comm</code> + <code>find</code></h1>
+<p>Only compares filenames. <strong>Fast</strong>.</p>
+<div class="highlight"><pre><span></span>comm -3 &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span> &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span>&gt;&gt;
+</pre></div>
+
+
+<p>Also works with <code>diff</code>.</p>
+<h1><code>diff</code> + <code>find</code> + <code>md5sum</code></h1>
+<p>Compares filenames and content. <strong>Slow</strong>.</p>
+<div class="highlight"><pre><span></span>/usr/bin/diff &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%f &quot;</span> -exec md5sum <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f1 <span class="p">|</span> sort<span class="o">)</span> <span class="se">\</span>
+    &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%f &quot;</span> -exec md5sum <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f1 <span class="p">|</span> sort<span class="o">)</span>
+</pre></div>
+
+
+<h1><code>git</code></h1>
+<p>Compares filenames and content. <strong>Slow</strong>.</p>
+<div class="highlight"><pre><span></span>git diff -D --no-index /dirA /dirB
+</pre></div>
+
+
+<p>Hope this helps.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 10 December 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

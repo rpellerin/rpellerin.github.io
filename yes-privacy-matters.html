@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, privacy, security, linux, gnu, ssh, free software, open source, ubuntu, exerbo, xubuntu" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Yes, Privacy Matters - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS" />
+
+        <title>Yes, Privacy Matters - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-02-04T01:40:00+01:00">Thu 04 February 2016</time> - Last Update: <time datetime="2016-07-03T02:55:00+02:00">Sun 03 July 2016</time>        </p>
+    <h1>Yes, Privacy Matters</h1>
+    <div class="grey">
+        <p class="italic">Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1299 words.">6 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/privacy.html">privacy</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/security.html">security</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gnu.html">gnu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ssh.html">ssh</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/free-software.html">free software</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/open-source.html">open source</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ubuntu.html">ubuntu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/exerbo.html">exerbo</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/xubuntu.html">xubuntu</a></p>    </div>
+</header>
+<article>
+    <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/BbkbdYoffX4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/mqUInAOfBWI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>If you do care about your privacy, you'd better read what follows carefully ;). Basically, some rules of thumb to avoid common pitfalls and a few tricks to take care of your privacy as much as possible.</p>
+<ul>
+<li><a href="https://github.com/lfit/itpol">Useful IT policies</a></li>
+<li>Use GNU/Linux (Ubuntu-based distro are not perfect but a good start, like Xubuntu; give <a href="http://exherbo.org/">exerbo</a> a try if you're brave enough)</li>
+<li>Don't use binaries coming from the Internet, compile every program to the extent possible</li>
+<li>Forbid proprietary software as well - see alternatives below in this article</li>
+<li>Encrypt your whole HDD (and any other external ones) - see right below</li>
+<li><strong>DO NOT INSTALL</strong> Facebook nor Twitter on your Android phone (or Cyanogen)</li>
+</ul>
+<p>Before starting reading this article, you might be interested in this webpage, a <a href="https://wiki.archlinux.org/index.php/Disk_encryption">full documentation about how encryption works with Linux</a>.</p>
+<h1>Secure your computer and encrypt (part of) your local hard disk drive</h1>
+<p>First, set all possible BIOS passwords (usually one for the administrator and one for user(s); each password will give different rights for the BIOS, for example sensitive settings will be accessible to the administrator only).</p>
+<p>Secondly, set HDD passwords from the BIOS panel (again, one for admins, one for user, both have the same purpose and rights: they kind of unlock the HDD, allowing it to be read and written).</p>
+<h2>Full disk encryption</h2>
+<p>Then, to encrypt your whole disk, you have 3 options:</p>
+<ol>
+<li>Use the *Ubuntu built-in installer to encrypt the whole disk, erasing <strong>EVERYTHING</strong> on the disk.</li>
+<li>Use the <em>Ubuntu built-in installer with Gparted to encrypt the whole disk, more flexible (select </em>something else*).</li>
+<li>DIY. It allows you to <a href="http://askubuntu.com/questions/293028/how-can-i-install-ubuntu-encrypted-with-luks-with-dual-boot">keep a dual boot installation</a>.</li>
+</ol>
+<p>I would recommend going with the 1., but if you're interested, <a href="https://thesimplecomputer.info/full-disk-encryption-with-ubuntu">have a deeper look at thoses 3 options</a>. Here is <a href="http://www.tecmint.com/install-debian-8-with-luks-encrypted-home-var-lvm-partitions/">another tutorial</a> to do it with Debian (not a *Ubuntu disto).</p>
+<p>In any case, here is how to write a new Xubuntu image on a USB stick:</p>
+<div class="highlight"><pre><span></span>lsblk <span class="c1"># To identify the USB stick</span>
+sudo dd <span class="k">if</span><span class="o">=</span>/home/user/Downloads/xubuntu-15.10-desktop-amd64.iso <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="se">\</span>
+    <span class="nv">bs</span><span class="o">=</span>1M <span class="o">&amp;&amp;</span> sudo sync
+</pre></div>
+
+
+<p>Please notice that with LUKS encryption, <a href="https://twopointfouristan.wordpress.com/2011/04/17/pwning-past-whole-disk-encryption/">your computer is still vulnerable as long as you have a boot partition unencrypted</a>.</p>
+<h2><code>/home</code> encryption (using the filesystem called eCryptfs)</h2>
+<p>Do it while installing your fresh new *Ubuntu. Otherwise, you can still <a href="http://askubuntu.com/questions/366749/enable-disk-encryption-after-installation">do it later</a> using <a href="http://www.howtogeek.com/116032/how-to-encrypt-your-home-folder-after-installing-ubuntu/"><code>ecryptfs-migrate-home</code></a>.</p>
+<h1>Encrypt external HDD with <code>dm-crypt</code> and LUKS</h1>
+<ol>
+<li>
+<p>Find the correct device (eg. <code>/dev/sdb1</code> as a second internal SATA-HDD) and umount it:</p>
+<div class="highlight"><pre><span></span>sudo aptitude update <span class="p">;</span> sudo aptitude install cryptsetup
+sudo modprobe dm-crypt sha256 aes <span class="c1"># Enable modules, might be already done</span>
+lsblk
+sudo umount /dev/sdb1
+sudo dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>4K <span class="c1"># Optional, add obfuscation</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Create one big partition using the whole space (system must be Linux):</p>
+<div class="highlight"><pre><span></span>sudo fdisk /dev/sdb
+</pre></div>
+
+
+</li>
+<li>
+<p>Encrypt the partition using LUKS:</p>
+<div class="highlight"><pre><span></span>sudo cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> <span class="se">\</span>
+     -h sha256 luksFormat /dev/sdb1 <span class="c1"># 512-bit AES encryption</span>
+     <span class="c1"># with 256-bit SHA hashing algorithm</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Create the filesystem:</p>
+<div class="highlight"><pre><span></span>sudo cryptsetup luksOpen /dev/sdb1 myhdd
+</pre></div>
+
+
+</li>
+<li>
+<p>Format it and test mounting:</p>
+<div class="highlight"><pre><span></span>sudo mkfs.ext4 /dev/mapper/myhdd -L &lt;LABEL&gt; -m <span class="m">1</span>
+<span class="c1"># -m specifies the percentage of the filesystem blocks reserved</span>
+<span class="c1"># for the super-user</span>
+mkdir /mnt/hdd
+mount /dev/mapper/myhdd /mnt/hdd
+df -H
+umount /mnt/hdd
+</pre></div>
+
+
+</li>
+<li>
+<p>Close container:</p>
+<div class="highlight"><pre><span></span>sudo cryptsetup luksClose /dev/mapper/myhdd
+sudo eject /dev/sdb
+</pre></div>
+
+
+</li>
+<li>
+<p>Optional step, after disconnecting and reconnecting the device:</p>
+<div class="highlight"><pre><span></span>sudo chown user:user /media/disk
+</pre></div>
+
+
+</li>
+</ol>
+<p>You can check the partition using</p>
+<div class="highlight"><pre><span></span>fsck -vy /dev/mapper/myhdd
+</pre></div>
+
+
+<p>Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like <em><code>cryptsetup</code></em> plus <em><code>luksHeaderBackup</code></em> or <em><code>luksHeaderRestore</code></em> or <em><code>isLuks</code></em> or <em><code>luksDump</code></em> or <em><code>luksAddKey</code></em> or <em><code>luksRemoveKey</code></em>.</p>
+<h2>Automount encrypted HDDs with LUKS on bootup</h2>
+<p>In <code>/etc/crypttab</code>, add:</p>
+<div class="highlight"><pre><span></span>mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
+</pre></div>
+
+
+<p>You can find the UUID using <code>blkid /dev/sdb</code>. You can also directly enter the path <code>/dev/sdb</code>. <em>none</em> means there's no keyfile, you'll have to type the password. <em>tries</em> is the number or tries you have.</p>
+<p>Then, in <code>/etc/fstab</code>, add:</p>
+<div class="highlight"><pre><span></span>/dev/mapper/mycryptedhdd     /mnt/mounteddirectory    ext4      defaults    0   0
+</pre></div>
+
+
+<p><em>mycryptedhdd</em> must be the same name used as before. <em>/mnt/mounteddirectory</em> is where the encrypted disk will be available. <em>ext4</em> is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the <code>fsck</code> utility.</p>
+<p>You're good!</p>
+<h1>Encrypt what you put on Cloud Storages</h1>
+<p>This part is inspired from <a href="http://haridas.in/how-to-put-encrypted-contents-on-cloud-storages.html">this blog post</a>. <strong>I highly recommend encrypting content put online, should it be on proprietary platforms such as Google Drive ou Dropbox, or even on ownCloud.</strong></p>
+<div class="highlight"><pre><span></span>sudo apt-get install ecryptfs-utils
+sudo modprobe cryptfs <span class="c1"># Optional</span>
+mkdir ~/Dropbox/Encrypted <span class="c1"># This directory will be put online; its content is encrypted</span>
+mkdir ~/SecureDropbox <span class="c1"># You&#39;ll put your unencrypted files here</span>
+sudo mount -t ecryptfs ~/Dropbox/Encrypted ~/SecureDropbox
+<span class="c1"># Choose a passphrase (which will act as a password), aes 32 bytes.</span>
+<span class="c1"># Disable plaintext passthrough. Filename encryption might be useful. I would enable it.</span>
+</pre></div>
+
+
+<p>Filename encryption might require another last command to be run, if your content is shared on more than one computer:</p>
+<div class="highlight"><pre><span></span>ecryptfs-add-passphrase --fnek
+</pre></div>
+
+
+<h1>Encrypt one single file</h1>
+<h2>Encryption</h2>
+<div class="highlight"><pre><span></span>openssl aes-256-cbc -in yourfile.txt -out file.enc
+<span class="c1"># OR</span>
+gpg -c filename
+</pre></div>
+
+
+<h2>Decryption</h2>
+<div class="highlight"><pre><span></span>openssl aes-256-cbc -d -in file.enc -out yourfile.txt
+<span class="c1"># OR</span>
+gpg filename.gpg
+</pre></div>
+
+
+<h1>Free alternatives to proprietary software</h1>
+<h2>Emails</h2>
+<ul>
+<li>Thunderbird</li>
+</ul>
+<h2>Web browser</h2>
+<ul>
+<li>Mozilla Firefox</li>
+</ul>
+<h2>Text editor</h2>
+<ul>
+<li>Atom (<s>Sublime Text</s> is proprietary)</li>
+<li>Vim or Emacs</li>
+</ul>
+<h2>Video editing</h2>
+<ul>
+<li><a href="http://www.shotcut.org/">Shotcut</a></li>
+</ul>
+<h2>Graphics editor</h2>
+<ul>
+<li>Gimp</li>
+<li>Inkscape (vector)</li>
+</ul>
+<h1>Further reading</h1>
+<ul>
+<li><a href="http://blog.adminrezo.fr/2016/01/comment-choisir-sa-cle-ssh-rsa-dsa-ecdsa-ed25519/">Quelle clé SSH choisir ? RSA, DSA, ou Ed25519 ?</a></li>
+<li><a href="http://linuxfr.org/news/nsa-a-propos-de-bullrun">NSA - À propos de BULLRUN</a></li>
+<li><a href="https://www.youtube.com/watch?v=PFsC1puqhA4">How to Destroy a Laptop with Top Secrets [cccamp15]</a></li>
+<li><a href="http://korben.info/comment-chiffrer-ses-emails-thunderbird-gpg.html">Comment chiffrer ses emails ? (Thunderbird + GPG)</a></li>
+<li><a href="https://help.riseup.net/en/security/message-security/openpgp/best-practices">OpenPGP Best Practices</a></li>
+<li><a href="http://jenairienacacher.fr/">Je n'ai rien à cacher.</a></li>
+<li><a href="http://framasoft.net/">Framasoft</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Tmpfs">tmpfs</a> &amp; <a href="http://korben.info/accelerez-votre-navigateur-en-mettant-son-cache-en-ram.html">Accélérez votre navigateur en mettant son cache en RAM</a></li>
+<li><a href="http://www.ted.com/talks/glenn_greenwald_why_privacy_matters">Why privacy matters</a></li>
+<li><a href="http://blog.codinghorror.com/your-password-is-too-damn-short/">Your Password is Too Damn Short</a></li>
+<li><a href="http://kacper.blog.redpill-linpro.com/archives/702">NSA-proof SSH</a></li>
+<li><a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html">Secure Secure Shell</a></li>
+<li><a href="https://nonblocking.info/cryptographie-de-comptoir/">Cryptographie de comptoir</a></li>
+<li><a href="http://www.guiguishow.info/2014/07/17/ma-premiere-vraie-cle-pgp/">Ma première (vraie) clé PGP</a></li>
+<li><a href="https://medium.com/@vrypan/explaining-public-key-cryptography-to-non-geeks-f0994b3c2d5">Explaining public-key cryptography to non-geeks</a></li>
+<li><a href="http://zythom.blogspot.fr/2015/12/le-noob-de-lautohebergement.html">Le noob de l'autohébergement</a></li>
+<li><a href="https://github.com/ChALkeR/notes/blob/master/Do-not-underestimate-credentials-leaks.md">Do not underestimate credentials leaks</a></li>
+<li><a href="http://www.27months.com/2013/10/its-always-sunny-in-iceland-or-how-i-nsa-proofed-my-email/">It’s Always Sunny in Reykjavik (or) How I NSA-Proofed my Email</a></li>
+<li><a href="https://www.whonix.org/wiki/DoNot">Things not to do on Tor</a></li>
+<li><a href="http://jumpespjump.blogspot.fr/2015/09/how-i-hacked-my-ip-camera-and-found.html">The IoT may be dangerous! Beware!</a></li>
+<li><a href="https://twitter.com/HTeuMeuLeu/status/719489886265454592">What every Browser knows about you</a></li>
+<li><a href="https://panopticlick.eff.org/">Panopticlick - Is your browser safe against tracking?</a></li>
+<li><a href="https://amiunique.org/">Am I Unique?</a></li>
+<li><a href="http://blog.appcanary.com/2016/encrypt-or-compress.html">Should you encrypt or compress first?</a></li>
+<li><a href="http://www.linux-magazine.com/Online/Features/Protect-your-Documents-with-GPG">Protect your Documents with GPG</a></li>
+<li><a href="https://stallman.org/articles/why-fear-surveillance.html">Yes, You Have Something to Fear</a></li>
+<li><a href="https://stallman.org/something-to-fear.html">Something to Fear</a></li>
+<li><a href="https://browserleaks.com/">BrowserLeaks.com</a></li>
+<li><a href="https://panopticlick.eff.org/">Panopticlick</a></li>
+<li><a href="http://someonewhocares.org/hosts/">how to make the internet not suck (as much)</a></li>
+<li><a href="https://github.com/tbds/FreeContributor">Simple DNS Ad Blocker</a></li>
+<li><a href="https://github.com/jmdugan/blocklists">Shared lists of problem domains people may want to block with hosts files</a></li>
+<li><a href="https://github.com/StevenBlack/hosts">hosts: Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category</a></li>
+<li><a href="http://korben.info/tout-ce-que-votre-navigateur-peut-balancer-sur-vous.html">Tout ce que votre navigateur peut balancer sur vous</a></li>
+<li><a href="http://sebsauvage.net/wiki/doku.php?id=firefox">Paramétrage de Firefox</a></li>
+<li><a href="https://medium.com/@FabioAEsteves/i-have-nothing-to-hide-why-should-i-care-about-my-privacy-f488281b8f1d">“I have nothing to hide. Why should I care about my privacy?”</a></li>
+<li><a href="https://www.youtube.com/watch?v=djbwzEIv7gE">NOTHING TO HIDE documentaire (français, film complet HD)</a></li>
+<li><a href="https://privacyinternational.org/node/1099">Through an app, darkly: How companies construct our financial identity</a></li>
+<li><a href="https://vpnreport.org/">I tested the most recommended VPN providers using my credit card to find the best ones — and which ones you should avoid.</a></li>
+<li><a href="https://blog.imirhil.fr/2015/12/08/extensions-vie-privee.html">Extensions Firefox pour protéger sa vie privée</a></li>
+<li><a href="https://amiunique.org/tools">More extensions</a></li>
+<li><a href="http://sebsauvage.net/wiki/doku.php?id=firefox">Even more extensions + how to configure Firefox</a></li>
+<li><a href="https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks">Privacy/Privacy Task Force/firefox about config privacy tweeks</a></li>
+<li><a href="https://spreadprivacy.com/linux-privacy-tips/">How To Protect Your Privacy On Linux</a></li>
+<li><a href="https://pi-hole.net/">Pi-hole</a></li>
+<li><a href="https://www.laquadrature.net/fr/temoin_cortana">Derrière les assistants vocaux, des humains vous entendent</a></li>
+<li><a href="https://mydatarequest.com/">My Data Request</a></li>
+<li><a href="https://twitter.com/sdeleuze/status/1021655647442616322">Yesterday, I finished to switch to @ProtonMail by...</a></li>
+<li><a href="https://www.youtube.com/watch?v=AOzkW2W6gfA">YOU ONLY LIVE ONLINE - Dries DEPOORTER - Web2day 2018</a></li>
+<li><a href="https://www.wired.com/story/mcsweeneys-excerpt-the-right-to-experiment/">Surveillance Kills Freedom By Killing Experimentation</a></li>
+<li><a href="https://motherboard.vice.com/amp/en_us/article/vba7xj/people-who-buy-smart-speakers-have-given-up-on-privacy-researchers-find">People Who Buy Smart Speakers Have Given Up on Privacy, Researchers Find</a></li>
+<li><a href="https://www.numerama.com/vroom/444440-en-chine-le-gouvernement-peut-geolocaliser-chaque-voiture-electrique-en-temps-reel.html">En Chine, le gouvernement peut géolocaliser chaque voiture électrique en temps réel</a></li>
+<li><a href="https://motherboard.vice.com/en_us/article/j5zap3/delete-all-your-apps">Delete All Your Apps</a></li>
+<li><a href="https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html">Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret</a></li>
+<li><a href="http://jeffreybigham.com/blog/2019/who-is-watching-you-in-your-airbnb.html">A Camera is Watching You in Your AirBnB: And, you consented to it.</a></li>
+<li><a href="https://gist.github.com/grugq/03167bed45e774551155">Operational PGP</a></li>
+<li><a href="https://crackedlabs.org/en/corporate-surveillance/#1">Corporate Surveillance in Everyday Life</a></li>
+<li><a href="https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html">It's Time to Panic About Privacy</a></li>
+<li><a href="https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7">Online Privacy Isn’t Dead—If We Fight for It</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 03 July 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

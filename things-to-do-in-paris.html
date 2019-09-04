@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, paris" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="The list of things to do in Paris I usually share with friends" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Things To Do In Paris - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="The list of things to do in Paris I usually share with friends" />
+
+        <title>Things To Do In Paris - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/paris.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-12-11T23:20:00+01:00">Tue 11 December 2018</time>        </p>
+    <h1>Things To Do In Paris</h1>
+    <div class="grey">
+        <p class="italic">The list of things to do in Paris I usually share with friends</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 246 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/paris.html">paris</a></p>    </div>
+</header>
+<article>
+    <ul>
+<li>Le Louvres</li>
+<li>Tour Eiffel - go to the third floor</li>
+<li>Champs Elysees</li>
+<li>Notre Dame Cathedral + towers</li>
+<li>Arc de Triomphe - go to the top!</li>
+<li>Montmartre - artistic elevated neighborhood</li>
+<li>Restaurant Indianafé Café Maine - nice restaurant, great decoration, with English speaking clients and staff - <a href="http://www.indianacafe.fr/restaurants-clubs/46/maine.html">http://www.indianacafe.fr/restaurants-clubs/46/maine.html</a></li>
+<li>Ground Control - one of my favorite places in Paris for chilling - <a href="https://www.groundcontrolparis.com/">https://www.groundcontrolparis.com/</a></li>
+<li>Bercy Village - a pedestrian street filled with restaurants essentially - <a href="https://www.bercyvillage.com/">https://www.bercyvillage.com/</a></li>
+<li>Le Comptoir Général - amazing jungle bar - <a href="https://www.lecomptoirgeneral.com/">https://www.lecomptoirgeneral.com/</a> - PHOTOS ==&gt; <a href="https://www.instagram.com/lecomptoirgeneral/">https://www.instagram.com/lecomptoirgeneral/</a></li>
+<li>La coulée verte - elevated linear park - <a href="https://en.wikipedia.org/wiki/Coul%C3%A9e_verte_Ren%C3%A9-Dumont">https://en.wikipedia.org/wiki/Coul%C3%A9e_verte_Ren%C3%A9-Dumont</a></li>
+<li>Palais de Tokyo - museum</li>
+<li>Musée du quai Branly - museum</li>
+<li>Centre Pompidou - AWESOME MUSEUM!! - <a href="https://www.centrepompidou.fr/en">https://www.centrepompidou.fr/en</a></li>
+<li>Musée d'Orsay - museum</li>
+<li>Père Lachaise Cemetery - Jim Morrison, Edith Piaf, Oscar Wilde, and others are buried there</li>
+<li>Pigalle - "hot" neighborhood with the famous Moulin Rouge, music shops, prostitutes, artists, etc</li>
+<li>Catacombes de Paris - underground ossuaries with actual skulls and bones</li>
+<li>Hanging out on the banks of the Seine</li>
+<li>Les jardins du Luxembourg - park</li>
+<li>Musée Grévin - wax museum with celebrities - <a href="https://www.grevin-paris.com/en">https://www.grevin-paris.com/en</a></li>
+<li>Le Marais - What Castro is to SF; gay neighborhood, very eccentric</li>
+<li>Palace of Versailles</li>
+<li>Street Art in Belleville - <a href="http://streetartparis.fr/visite-street-art-belleville/">http://streetartparis.fr/visite-street-art-belleville/</a></li>
+<li>Palais Garnier</li>
+<li>La Conciergerie</li>
+<li>Sainte Chapelle</li>
+<li>Château de Fontainebleau</li>
+<li>Château de Versailles</li>
+<li>Pantheon</li>
+<li>Musée Rodin</li>
+<li>Musée de l’Orangerie</li>
+<li>Musée national d'Histoire Naturelle</li>
+</ul>
+<h1>At night</h1>
+<ul>
+<li>Lido</li>
+<li>The Crazy Horse</li>
+<li>Le Moulin Rouge</li>
+<li><a href="https://www.louvre.fr/la-nocturne-du-samedi">La Nocture du samedi - Le Louvre</a></li>
+</ul>
+<p><a href="https://culturezvous.com/tarifs-abonnements-annuels-musees-paris/">Here are some additional places of interest</a>.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 11 December 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

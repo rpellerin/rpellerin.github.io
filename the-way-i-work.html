@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, work" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My daily routine to focus and remain productive" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The Way I Work - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My daily routine to focus and remain productive" />
+
+        <title>The Way I Work - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2019-02-17T23:20:00+01:00">Sun 17 February 2019</time>        </p>
+    <h1>The Way I Work</h1>
+    <div class="grey">
+        <p class="italic">My daily routine to focus and remain productive</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2180 words.">11 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/work.html">work</a></p>    </div>
+</header>
+<article>
+    <p>A few months ago I stumbled upon <a href="http://blog.samaltman.com/productivity">this article on productivity</a>. I found it very inspiring. It somehow convinced me to rethink the way I work. Since then, I've been actively working on perfecting my daily workflow to be more productive and also more organized. Reducing my stress level was also one of my goals.</p>
+<p>I think having a clearly defined and established workflow is more important than most people think. I find habits to be comforting. They help me concentrate and focus on what matters.</p>
+<p>The advice given in this article doesn't apply to everybody. Being a software engineer has its own constraints and requirements. In this article, I speak about work environment, tools and fighting physical and mental fatigue.</p>
+<h1>TODO.txt</h1>
+<p>I think the most important task one has to do daily is defining a list of priorities for the day to come. It is very important to know what to work on and when.</p>
+<p>I tried for a long time to keep a TODO list on a piece of paper (or in a booknote). It was working, but not as well as I wished. The main problem was that I needed to be physically present at my desk to access my list or edit it. That's why I eventually switched to a digital TODO list. Many people resort to apps for that, Evernote being one of the most popular I believe.  I however use a simple text file. I find these note taking apps too distracting, with countless features I would never use. What I like about my text file is the simplicity of it. Plus I can access it at any time, as long as I am carrying my work laptop. Plus I am not tempted to access it outside of office hours.</p>
+<p>Reading and editing my TODO list is something I do many times throughout the day, as I need to re-arrange my priorities and when I get work done. Moreover, at the end of each day, I make sure to prepare my TODO list for the following day.</p>
+<p>My TODO list is a simple plain text file yet it has its own sections, separated by empty lines. The topmost lines of the file are the tasks I need to get done by the end of the day, sorted from the most urgent one to the least. Then, the second section contains tasks that must be worked on in the short term, preferably in the month to come. Finally comes the third section which is a backlog of tasks I want to work on some day.</p>
+<p>I've been putting all this into practice for a few months now and I must admit it's working well for me. No distractions, simplicity, I can add/edit/remove entries with a few keystrokes, I can also make backups or send it over emails in seconds. In short, I love it. A stress-free TODO list, always up-to-date.</p>
+<p>Below is an extract of my list, in its current state:</p>
+<div class="highlight"><pre><span></span>- Finish feature 1691
+- Book plane tickets and hotel for Berlin trip
+
+- Delete 2 `const workshopVisitMotivesCountScenario = workshopVisitMotivesScenario(motives)` in `onChange`?
+- Schedule meeting front guild early April
+- Move Jenkins loc() to Heroku
+
+- Articles ideas
+  - eslint
+  - code/bundle splitting
+  - download/parse/exec time
+  - debugging with devtools (CSS, ...) in ffox and chrome (breaking point with mouse clicks, ...)
+</pre></div>
+
+
+<h1>Bookmarks</h1>
+<p>Bookmarks are an essential feature of any web browser. However, not everyone agrees on how to use it. Even I use bookmarks differently on my personal laptop than on my professional laptop.</p>
+<p>Professionally, I use bookmarks for websites I rarely visit, so rarely that neither me or my browser can remember the URL. What I mean by the browser can't remember it is that it does not show up in the list of suggested URLs are I type in the URL bar. I sort my bookmarks by topic, in folders named according to their topic. A few examples of folders I have:</p>
+<ul>
+<li><em>COMPANY-RELATED</em>: payrolls, holidays, expensify, etc</li>
+<li><em>TO READ LATER</em>: lengthy articles I'll probably read some day while waiting for the CI tests to run</li>
+<li><em>REACT TRAININGS I GIVE</em>: Asana list to keep track of the sessions, useful links to share</li>
+<li><em>1-ON-1</em>: contains stuff related to my quaterly objectives, the list of engineering roles and associated levels in my company, etc</li>
+<li><em>TO PRESENT</em>: things I want to present at the next All Hands meetings</li>
+</ul>
+<p>I never bookmark websites I visit daily, or frequently. Why? Because I can at least remember some part of the URL, or the title, and my browser is smart enough to autocomplete it and suggest it automatically. For websites I visit many times a day, like the Pull Requests page on Github, or my Twitter feed, I create keyboard shortcuts to access them instantly. For instance, Github Pull Requests is <code>&lt;Super&gt;+G</code> (G as in Github).</p>
+<p>In the past, I used to have bookmarks for every website. It wasn't until recently when I switched to very few bookmarks that I noticed how stressful it was for me to have all these bookmarks being constantly displayed before my eyes.</p>
+<h1>Opening new Pull Requests</h1>
+<p>Speaking of Github, I've got some interesting things to say about Pull Requests.</p>
+<p>I basically open a new Pull Request every time I start working on a new feature, a new bug fix, or when I'm refactoring code. When the specs are not great, it's sometimes hard to know precisely what needs to be done, code-wise. How do I deal with this? First, I start working on what is obvious: be it the core feature, or creating a new empty React component, creating a new Rails controller, etc. Then I git commit, push and open the Pull Request. That first commit is usally quite small in terms of changes. Only then do I start listing what is "left to be done" in the Pull Request description. Github offers a convenient way to create TODO lists in markdown, with actual checkboxes that are checkable. Just write "<code>- [ ] Something to do</code>" and it'll be displayed as a list item prefixed with an unchecked checkbox.</p>
+<p>When the TODO list is ready, I add the "WIP" label as well as my team label, and resume working.</p>
+<h1>Inbox and Thunderbird</h1>
+<p>Any email people receive fall in one of these three categories:</p>
+<ul>
+<li>Action required on your side: it could be a quick action (like replying) or a time-consuming one (like filling a form)</li>
+<li>Temporal information</li>
+<li>Important information that must be kept for a long time, or files</li>
+</ul>
+<p>It works essentially just like a mailbox. Mail people get in their mailboxes also fall into these categories: bills are actions required on your side, postcards are temporal information, payrolls are important information, parcels are like files, etc.</p>
+<p>Nobody would open a mailbox, see what's inside, and leave it there. Therefore, it does not make any sense to have inboxes full of emails. I am doing Inbox Zero: I aim (and almost always succeed) at keeping my inbox empty. My strategy is as follows:</p>
+<ul>
+<li>I open my email client a few times a day, usually at the beginning of the day, before lunch, after lunch, a few times in the afternoon when I'm on code-breaks, and before leaving work.</li>
+<li>
+<p>I process emails one by one:</p>
+<ul>
+<li>If it's an "action required" email and the action takes less than 5 minutes, I do it immediately then delete the email.</li>
+<li>If it's an "action required" email and the action takes more than 5 minutes, I keep the email in my inbox and add a new entry in my TODO list such as "<em>reply to email from X</em>" or "<em>do what X asked for</em>". I will then delete the email when the action is done.</li>
+<li>If it's a temporal information, I take note of it if needed and delete the email immediately. A temporal information could be a Google Calendar invite, a JIRA edit from my colleagues, an incident reported by New Relic, etc.</li>
+<li>If it's an important information, I move the email into the appropriate subfolder (they're called labels in Gmail). An important information could be a contract (PDF document), an organizational change, a POST-MORTEM document that I believe will be useful in the future, a train ticket that will eventually be deleted when the trip is done, etc.</li>
+</ul>
+</li>
+</ul>
+<p>As I just said, I use Gmail labels quite a lot, in the sense that many emails end up in labels. However, I only have a handful of them. Here are a few:</p>
+<ul>
+<li>Trips: business trips (train tickets, hotels, etc)</li>
+<li>Front stack: any important email regarding frontend</li>
+<li>Archives: anything that does not belong to another category</li>
+</ul>
+<p>I also rely on Gmail filters extensively. I get a lot of emails I don't need to see at all, that I want deleted automatically. For instance, I often check the notifications on Github, therefore I don't need to also see the emails they send me. Also, our staging environment is deployed with every new commit (every 10 minutes or so), therefore I don't need to know every time a new commit is deployed.</p>
+<p>Finally, I must confess I use Thundebird, and not the Gmail website. And I'm proud of it. The reasons I use Thunderbird are listed below:</p>
+<ul>
+<li>It works offline: I can access my emails when not connected to the Internet. Even though it happens very rarely, it's very handy when in the train for instance.</li>
+<li>Gmail is a website, and not a lightweight one. The tab consumes a lot of RAM memory, and opening/closing/opening the websites several times a day is not a better alternative, as it takes many seconds.</li>
+<li>Gmail is distracting: there's Google Hangout in the left bottom corner, many buttons here and there.</li>
+<li>I don't like the conversation-grouping feature of Gmail, I never got used to it. Thunderbird also has it but I disabled it.</li>
+<li>Thunderbird is simple, RAM-efficient. And having a distinct program for emails help see it as something important, it's not just another tab.</li>
+</ul>
+<h1>Slack and distractions</h1>
+<p><a href="//romainpellerin.eu/slack.html">I hate Slack</a>. But I have to deal with it. Slack is distracting (notifications mostly), there's a lot of noise and not much information. There are two-people conversations involving everyone, there are company-wide conversations to which only two people are contributing. There's the fear of missing out, and the useless necessity to read all the unread messages when coming back from days off. Plus important messages and notices get often lost in the never-ending flow of messages. It becomes hard to differentiate what's important from what is not.</p>
+<p>So my strategy here is very simple: I open Slack every time I open Thunderbird. Sometimes, I leave it open for longer periods of time, when I'm actively engaged in a conversation. But overall, I try to use it as little as possible.</p>
+<h1>Open spaces, headphone and sound</h1>
+<p><a href="//romainpellerin.eu/open-offices.html">I also hate open spaces</a>. Everyone is forced to share everyone else's emotions. Everyone is an indirect contributor who did not volonteer to someone else's conversation.</p>
+<p>The main problem with open spaces is sound, or most specifically noise. People talking out loud, laughing, going to the bathrooms, etc. I'm fighting this with a headphone. I wear it almost all the time, most of the time with no music playing. It acts as a symbolic barrier, it helps my brain isolate itself and focus. When I am actually listening to music, it has to be either a song I've heard a thousand times, so that I'm already used to it, or some lyricless song. It helps me get in the zone.</p>
+<h1>Standing up</h1>
+<p>Moving on to the physical section now... I've been using <a href="http://www.thefreedesk.com/">a standing desk</a> for a year now, at work. And I am entirely satisfied. I alternate between sitting and standing throughout the day, sometimes several times. <a href="//romainpellerin.eu/a-sedentary-life.html">It has many advantages</a>. I am feeling more energetic overall.</p>
+<h1>Sports</h1>
+<p>I recently started going to the gym many times a week. I am lucky enough to have a gym in the very same building, where I work. My sessions are usually split in two: first I do 15 minutes of jogging, then 30 minutes of workout. In a matter of weeks, I have noticed so much improvement on my sleep quality and productivity during the day. Short nights don't have a toll on me anymore, like they used to. Not that it's advisable or that I like it, but when it happens I can easily handle a few short nights in a row now. Not to mention the slight weight loss. I usually go 2 or 3 times a week, after work.</p>
+<h1>Conclusion</h1>
+<p>This is it. That's how I work. I hope you found something useful, or maybe you've learned something? I think most people don't pay enought attention to their daily routine and workflow. They don't seek improvement and don't see the importance of being healthy. There are many ways to reduce stress while increasing productivity. It could be a tiny habit to change or a big one. I think everyone should reflect on that every once in a while, and try to improve the way they work.</p>
+<p>Cheers!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 17 February 2019</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

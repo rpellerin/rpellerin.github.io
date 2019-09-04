@@ -1,0 +1,2318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 15 Dec 2018 16:00:00 +0100</lastBuildDate><item><title>How To Find Differences Between Two Directories On Linux</title><link>//romainpellerin.eu/how-to-find-differences-between-two-directories-on-linux.html</link><description>&lt;h1&gt;&lt;code&gt;diff&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Compares filenames and lines. &lt;strong&gt;Very slow&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/usr/bin/diff -qr /dirA /dirB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;code&gt;comm&lt;/code&gt; + &lt;code&gt;find&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Only compares filenames. &lt;strong&gt;Fast&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;comm -3 &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Also works with &lt;code&gt;diff&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;&lt;code&gt;diff&lt;/code&gt; + &lt;code&gt;find&lt;/code&gt; + &lt;code&gt;md5sum&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Compares filenames and content. &lt;strong&gt;Slow&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/usr/bin/diff &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%f &amp;quot;&lt;/span&gt; -exec md5sum &lt;span class="s1"&gt;&amp;#39;{}&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f1 &lt;span class="p"&gt;|&lt;/span&gt; sort&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%f &amp;quot;&lt;/span&gt; -exec md5sum &lt;span class="s1"&gt;&amp;#39;{}&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -d &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f1 &lt;span class="p"&gt;|&lt;/span&gt; sort&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;code&gt;git&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Compares filenames and content. &lt;strong&gt;Slow&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git diff -D --no-index /dirA /dirB
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 10 Dec 2018 23:20:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-12-10:/how-to-find-differences-between-two-directories-on-linux.html</guid><category>linux</category><category>shell</category><category>diff</category></item><item><title>Video Editing on Linux</title><link>//romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;This is a reminder for myself. I thought it could be useful to other people too, that's why I put it online.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Record in 1080p, at 60 FPS, unless you want to go fancy and do 4k.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://kdenlive.org/en/download/"&gt;Kdenlive&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Using VLC, &lt;code&gt;Tools&lt;/code&gt; &amp;gt; &lt;code&gt;Codec information&lt;/code&gt;, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.&lt;/li&gt;
+&lt;li&gt;When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in &lt;code&gt;Project&lt;/code&gt; &amp;gt; &lt;code&gt;Project Settings&lt;/code&gt; but &lt;strong&gt;it is not advised as it will shift clips randomly&lt;/strong&gt; (I experienced it). There, also enable &lt;code&gt;Proxy clips&lt;/code&gt; for videos larger than 1000 pixels.&lt;/li&gt;
+&lt;li&gt;In Kdenlive settings, under &lt;code&gt;Playback&lt;/code&gt;, make sure GPU acceleration is disabled, cause it's buggy. Under &lt;code&gt;Timeline&lt;/code&gt;, check &lt;code&gt;Automatically split audio and video&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;When rendering, set the speed encoder to the second level to the leftmost one and use 4 threads. Encoder speed and threads are two different settings not related.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead 1/60 of seconds.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 60 instead of 100: 0.4*60/100=0.24. Which gives you clips that last 2.24 seconds, Kdenlive-wise.&lt;/p&gt;
+&lt;p&gt;To find the BPM of a song, use any of the following links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getsongbpm.com/tools/audio"&gt;MP3 to BPM (Song Analyser)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://songbpm.com/"&gt;Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Beats calculator&lt;/h2&gt;
+&lt;p&gt;&lt;input type="text" placeholder="Beats per minute here"/&gt;
+&lt;pre id="results"&gt;&lt;/pre&gt;
+&lt;script&gt;
+    let BEATS = [1,2,3,4,6,8]
+    function inputChange(event) {
+        const value = event.target.value
+        if (!value || isNaN(value)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*60)/100
+                tempResult = (parseInt(integer, 10) + floating).toString()
+            }
+            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+        })
+    }
+    const input = document.querySelector('input')
+    input.oninput=inputChange
+    if (input.value) {
+        inputChange({target:{value:input.value}})
+    }
+&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>video</category><category>linux</category></item><item><title>Casting To Chromecast On Linux</title><link>//romainpellerin.eu/casting-to-chromecast-on-linux.html</link><description>&lt;p&gt;Several options exist when it comes to casting media content from Linux to a Chromecast.&lt;/p&gt;
+&lt;h1&gt;Casting the full desktop&lt;/h1&gt;
+&lt;p&gt;You can use Google Chrome (audio is not supported).&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img alt="Casting from Chrome" src="//romainpellerin.eu/images/chromecast-chrome.png" /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Alternatively, you can use Firefox with &lt;a href="https://hensm.github.io/fx_cast/"&gt;fx_cast&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Casting a browser tab&lt;/h1&gt;
+&lt;p&gt;Same as above, use Chrome.&lt;/p&gt;
+&lt;h1&gt;Casting a file&lt;/h1&gt;
+&lt;p&gt;Two options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Either VLC 3.0 (but it does not support subtitles yet)&lt;/li&gt;
+&lt;li&gt;Or &lt;code&gt;castnow&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Should you decide to go with VLC 3.0, please refer to &lt;a href="//romainpellerin.eu/vlc-3.0.html"&gt;this article about how to install it&lt;/a&gt;. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; vlc --sout&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#chromecast{ip=192.168.1.X}&amp;quot;&lt;/span&gt; myfile.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make sure you replace the IP with the one allocated to the Chromecast.&lt;/p&gt;
+&lt;p&gt;Another option is to use &lt;code&gt;castnow&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install -g castnow
+castnow --address &lt;span class="s1"&gt;&amp;#39;192.168.1.X&amp;#39;&lt;/span&gt; myfile.mp4 --subtitles mysubs.srt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enjoy!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 15:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/casting-to-chromecast-on-linux.html</guid><category>linux</category><category>chromecast</category></item><item><title>How To Reinstall Deleted Packages On Linux</title><link>//romainpellerin.eu/how-to-reinstall-deleted-packages-on-linux.html</link><description>&lt;p&gt;Recently, I inadvertently deleted a whole lot of packages on my Linux distribution by deleting one specific package and then running &lt;code&gt;sudo apt-get autoremove&lt;/code&gt;. Here is how I reinstalled them automatically, after noticing I could not boot the X server up anymore:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;awk &lt;span class="s1"&gt;&amp;#39;/Purge|Remove/ { gsub( /\([^()]*\)/, &amp;quot;&amp;quot; ); gsub(/ ,/, &amp;quot; &amp;quot;);sub(/Install:/,&amp;quot;&amp;quot;); print}&amp;#39;&lt;/span&gt; /var/log/apt/history.log &amp;gt; repair.txt
+sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 15:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/how-to-reinstall-deleted-packages-on-linux.html</guid><category>linux</category><category>packages</category></item><item><title>VLC 3.0</title><link>//romainpellerin.eu/vlc-3.0.html</link><description>&lt;p&gt;VLC 3.0 is currently in beta but yet brings long awaited features such as casting to a Chromecast natively. Here is how to install it on Debian/Ubuntu:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:videolan/master-daily
+sudo apt update
+sudo apt purge vlc &lt;span class="c1"&gt;# Delete old version&lt;/span&gt;
+sudo apt install vlc &lt;span class="c1"&gt;# This might not work&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If it worked for you, stop reading here. Otherwise, keep reading what is below.&lt;/p&gt;
+&lt;p&gt;Since there is a compatibility issue, we'll need to reinstall a tweaked version of &lt;code&gt;libgles1-mesa&lt;/code&gt; (or &lt;code&gt;libglapi-mesa&lt;/code&gt;, I can't remember):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt purge libgles1-mesa
+dpkg-deb -R libgles1-mesa_12.0.6-0ubuntu0.16.04.1_amd64.deb .
+&lt;span class="c1"&gt;# Edit the dependencies (DEBIAN/control) to match `libglapi-mesa=17.0.7-0ubuntu0.16.04.1` instead of `12.0.6-0ubuntu0.16.04.1`&lt;/span&gt;
+dpkg-deb -b . fixed.deb
+sudo dpkg -i fixed.deb
+sudo apt install vlc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It sould be working now! Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 14:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/vlc-3.0.html</guid><category>vlc linux</category></item><item><title>Nginx</title><link>//romainpellerin.eu/nginx.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/QnKE0XzCm-8?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://drive.google.com/drive/folders/0BxiOewB9d_xSb2hCR1NkeW92NkE"&gt;Slides&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 18 Feb 2017 23:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-18:/nginx.html</guid><category>nginx</category></item><item><title>Vim Tricks</title><link>//romainpellerin.eu/vim-tricks.html</link><description>&lt;h1&gt;Regex&lt;/h1&gt;
+&lt;h2&gt;Interactive find and replace&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%s/foo/bar/gc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;%&lt;/code&gt; means whole document, not just the current line.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/g&lt;/code&gt; means every occurence, not just the first one. &lt;code&gt;/c&lt;/code&gt; is the interactive option.&lt;/p&gt;
+&lt;h2&gt;Capturing groups&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%s/abc&lt;span class="se"&gt;\(&lt;/span&gt;def&lt;span class="se"&gt;\)&lt;/span&gt;ghi/ko&lt;span class="se"&gt;\1&lt;/span&gt;ok/g
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Will print &lt;code&gt;kodefok&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Non-greedy search&lt;/h2&gt;
+&lt;p&gt;Normally, to search in a non-greedy way, we add a punctuation mark, as in &lt;code&gt;.*?&lt;/code&gt; which means &lt;em&gt;any string of characters as short as possible&lt;/em&gt;. For instance:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/&amp;lt;.&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;.*?&lt;span class="o"&gt;)&lt;/span&gt;&amp;lt;.&amp;gt;/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Applied to the string &lt;code&gt;abc&amp;lt;p&amp;gt;def&amp;lt;a&amp;gt;ghi&amp;lt;b&amp;gt;jkl&lt;/code&gt; would match &lt;code&gt;&amp;lt;p&amp;gt;def&amp;lt;a&amp;gt;&lt;/code&gt; and capture &lt;code&gt;def&lt;/code&gt;. To make non-greedy searches with Vim, replace &lt;code&gt;*?&lt;/code&gt; with &lt;code&gt;\{-}&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Misc&lt;/h1&gt;
+&lt;h2&gt;Split the screen in half and display two different parts of a given file&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:vsp
+:set scrollbind
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then, on the right pane, scroll down or up, further in the file, and do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:set scrollbind
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;From that point on, as you scroll on one pane, the other one will follow. To undo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:set noscrollbind
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Useful links&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://vim.rtorr.com/"&gt;Vim Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vimgifs.com/"&gt;Vimgifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://danielallendeutsch.com/blog/2-vim-navigation-commands.html"&gt;Vim Navigation Commands: sequences you have no excuse not to know&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://learnvimscriptthehardway.stevelosh.com/"&gt;Learn Vimscript the Hard Way&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=XA2WjJbmmoM"&gt;How to Do 90% of What Plugins Do (With Just Vim)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sanctum.geek.nz/arabesque/vim-anti-patterns/"&gt;Vim anti-patterns&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source"&gt;Building Vim from source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://spacevim.org/2017/02/11/use-vim-as-a-java-ide"&gt;Use Vim as a Java IDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/garbas/vim-snipmate"&gt;SnipMate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://vim.wikia.com/wiki/Auto_closing_an_HTML_tag"&gt;Auto closing an HTML tag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.quora.com/What-is-the-best-JavaScript-programming-language-setup-with-Vim-text-editor"&gt;What is the best JavaScript (programming language) setup with Vim (text editor)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://vimcasts.org/"&gt;Vimcasts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.catonmat.net/blog/why-vim-uses-hjkl-as-arrow-keys/"&gt;Here is why vim uses the hjkl keys as arrow keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=lwD8G1P52Sk"&gt;Your First Vim Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=5r6yzFEXajQ"&gt;vim + tmux - OMG!Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim"&gt;What is your most productive shortcut with Vim?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/nicknisi/dotfiles"&gt;nicknisi/dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/shawncplus/dotfiles"&gt;shawncplus/dotfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85"&gt;Why I love Vim: It’s the lesser-known features that make it so amazing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Jan 2017 22:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-01-18:/vim-tricks.html</guid><category>vim</category><category>vi</category><category>linux</category></item><item><title>How To Modify PDF Files</title><link>//romainpellerin.eu/how-to-modify-pdf-files.html</link><description>&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gs&lt;/code&gt; is likely already installed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pdftk&lt;/code&gt; can be installed using &lt;code&gt;sudo aptitude install pdftk&lt;/code&gt;. &lt;code&gt;pdftk&lt;/code&gt; &lt;a href="http://askubuntu.com/questions/809800/whats-the-difference-between-gs-and-pdftk-in-merge-pdf-files"&gt;is not recommended because of its old and outdated PDF engine&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pdfjam&lt;/code&gt; is part of the LaTeX distribution (&lt;code&gt;sudo aptitude install texlive-full&lt;/code&gt;). However, &lt;code&gt;pdfjam&lt;/code&gt; &lt;a href="https://blog.dbrgn.ch/2013/8/14/merge-multiple-pdfs/"&gt;is not recommended&lt;/a&gt; either because hyperlinks are not preserved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So my advice is to go with &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Other commands exist such as &lt;code&gt;pdfseparate&lt;/code&gt; and &lt;code&gt;pdfunite&lt;/code&gt;. They are very good but the output files are quite heavy, compared to those obtained using &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Add a password to a PDF file&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pdftk input.pdf output output.pdf userpw &amp;lt;password here&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Extracting pages&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Extracts all pages from 1 to 5&lt;/span&gt;
+gs -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; -dLastPage&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt; -sOutputFile&lt;span class="o"&gt;=&lt;/span&gt;output.pdf input.pdf
+
+&lt;span class="c1"&gt;# Extracts all pages from 1 to 2 and 4 to the end&lt;/span&gt;
+pdftk input.pdf cat &lt;span class="m"&gt;1&lt;/span&gt;-2 &lt;span class="m"&gt;4&lt;/span&gt;-end output output.pdf
+
+&lt;span class="c1"&gt;# Extract only pages 1, 2, 4 and 5&lt;/span&gt;
+pdftk input.pdf cat &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt; output output.pdf
+
+&lt;span class="c1"&gt;# Split each page into a file&lt;/span&gt;
+pdftk input.pdf burst
+&lt;span class="c1"&gt;# OR&lt;/span&gt;
+&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;input.pdf
+&lt;span class="nv"&gt;pages&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;pdfinfo &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;&amp;quot;Pages&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt; 
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Detect &lt;/span&gt;&lt;span class="nv"&gt;$pages&lt;/span&gt;&lt;span class="s2"&gt; in &lt;/span&gt;&lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nv"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="p"&gt;%.*&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; i in &lt;span class="k"&gt;$(&lt;/span&gt;seq -w &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$pages&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    pdftk &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$file&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; cat &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; output &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$filename&lt;/span&gt;&lt;span class="s2"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$i&lt;/span&gt;&lt;span class="s2"&gt;.pdf&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Editing one page&lt;/h1&gt;
+&lt;p&gt;Use Gimp (import with 300-dpi setting).&lt;/p&gt;
+&lt;h1&gt;Merging several PDF files&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gs -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile&lt;span class="o"&gt;=&lt;/span&gt;output.pdf input1.pdf input2.pdf input3.pdf
+pdftk input1.pdf input2.pdf input3.pdf cat output output.pdf
+pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Convert one or several JPG files into a single pdf&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert image1.jpg image2.jpg output.pdf
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 10 Dec 2016 00:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</guid><category>pdf</category><category>linux</category></item><item><title>Using Vim with SSH</title><link>//romainpellerin.eu/using-vim-with-ssh.html</link><description>&lt;p&gt;I recently faced quite a challenging problem. I had to write C++ code and compile it on a remote server. Why would I need to compile on a remote server? Well, first my laptop is not very powerful and compiling takes some time, in comparison to the server which proved to be much faster. Moreover, my code was supposed to compile on the server "out of the box", as it was meant to be executed and tested there. Hence, no dependencies, no customized environmnent, and so forth.&lt;/p&gt;
+&lt;p&gt;Anyway, I then started looking for a way to use Vim over SSH effectively, without having to switch between terminals to compile. What's more, I wanted it to be as fast as possible. After asking for help on &lt;a href="http://unix.stackexchange.com/questions/315844/editing-and-compiling-files-on-a-remote-server-with-vim/315846"&gt;StackOverflow&lt;/a&gt;, I got a very helpful answer. I finally came up with the following solution. Let's get started!&lt;/p&gt;
+&lt;h1&gt;SSH&lt;/h1&gt;
+&lt;p&gt;First, edit &lt;code&gt;~/.ssh/config&lt;/code&gt; and add your remote host.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host my_server
+  Hostname &amp;lt;server&amp;gt;
+  User &amp;lt;user&amp;gt;
+  IdentityFile ~/.ssh/id_rsa
+    ControlMaster auto
+    ControlPath ~/.ssh/%C
+    &lt;span class="c1"&gt;# ControlPath ~/.ssh/cm_socket/%r@%h:%p&lt;/span&gt;
+    ControlPersist yes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then, enable &lt;em&gt;pubkey&lt;/em&gt; authentication using &lt;code&gt;ssh-copy-id -i ~/.ssh/id_rsa.pub user@server&lt;/code&gt;. You should now be able to connect using &lt;code&gt;ssh my_server&lt;/code&gt;. This will establish a permanent connection. As an example, simply open another terminal and try to connect to that server, you'll notice how fast it is this time!&lt;/p&gt;
+&lt;p&gt;Later, you'll be able to disconnect from the server using &lt;code&gt;ssh -O exit my_server&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Tmux&lt;/h1&gt;
+&lt;p&gt;Tmux is obviously a must-have and is thus already installed.&lt;/p&gt;
+&lt;h1&gt;Vim&lt;/h1&gt;
+&lt;h2&gt;Prerequisite&lt;/h2&gt;
+&lt;p&gt;Before starting editing files, you definitely want your Vim to be smart. Hence we'll use the plugin &lt;a href="https://github.com/tpope/vim-dispatch"&gt;vim-dispatch&lt;/a&gt;, which allows use to run the command &lt;code&gt;:make&lt;/code&gt; asynchronously from Vim, in another Tmux pane (the new command introduced by this plugin is &lt;code&gt;:Make&lt;/code&gt;).&lt;/p&gt;
+&lt;h2&gt;Editing and compiling&lt;/h2&gt;
+&lt;p&gt;Once you're connected over SSH, let's edit files on the server using Vim. Let's go!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim sftp://my_server//home/whoever/main.cpp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then, in Vim, type the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# The next two lines have the same effect,&lt;/span&gt;
+&lt;span class="c1"&gt;# except that the first one needs spaces to be escaped&lt;/span&gt;
+:set &lt;span class="nv"&gt;makeprg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ssh&lt;span class="se"&gt;\ &lt;/span&gt;my_server&lt;span class="se"&gt;\ &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;make &amp;amp;&amp;amp; ./main &amp;amp;&amp;amp; exit&amp;#39;&lt;/span&gt;
+:let &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;makeprg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ssh my_server &amp;#39;make &amp;amp;&amp;amp; ./main &amp;amp;&amp;amp; exit&amp;#39;&amp;quot;&lt;/span&gt;
+:map &amp;lt;f10&amp;gt; :Copen&amp;lt;cr&amp;gt;G
+:map &amp;lt;f9&amp;gt; :update&amp;lt;cr&amp;gt;:Make&amp;lt;cr&amp;gt;
+:map &amp;lt;f12&amp;gt; :cclose&amp;lt;cr&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The last three commands are just shortcuts meant to make the world a better place... or just developers happier.&lt;/p&gt;
+&lt;p&gt;That's it! I hope it was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 19 Oct 2016 03:35:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-10-19:/using-vim-with-ssh.html</guid><category>ssh</category><category>vim</category><category>terminal</category><category>vi</category></item><item><title>Raspberry Pi: The Ultimate Guide</title><link>//romainpellerin.eu/raspberry-pi-the-ultimate-guide.html</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.&lt;/p&gt;
+&lt;h1&gt;Goal&lt;/h1&gt;
+&lt;p&gt;I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.&lt;/p&gt;
+&lt;p&gt;To sum up, few requirements, but big advantages. Let's get started!&lt;/p&gt;
+&lt;h1&gt;What I used for this tutorial&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/"&gt;A Raspberry Pi v3 model B&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A hard disk drive (&lt;a href="http://wdlabs.wd.com/products/wd-pidrive-314gb/"&gt;WD's PiDrive&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Cables (&lt;a href="http://wdlabs.wd.com/products/raspberry-pi-accessories/"&gt;WD's PiDrive Cable Kit&lt;/a&gt; and an Ethernet cable)&lt;/li&gt;
+&lt;li&gt;A micro SD card (&lt;a href="http://www.samsung.com/us/computer/memory-storage/MB-MP16DA/AM"&gt;Samsung's microSDHC 16GB EVO Memory Card with Adapter&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;A TV with a HDMI cable&lt;/li&gt;
+&lt;li&gt;A laptop  with a card reader running GNU/Linux (Xubuntu to be precise)&lt;/li&gt;
+&lt;li&gt;A wired keyboard&lt;/li&gt;
+&lt;li&gt;A regular DSL Internet connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Setting up the Raspberry Pi&lt;/h1&gt;
+&lt;h2&gt;The OS&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Download Raspbian Lite from &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;the official website&lt;/a&gt;. It might be a good idea to verify the hash (SHA1).&lt;/li&gt;
+&lt;li&gt;Extract the file .img from the zip.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run one of the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;df
+lsblk
+blkid
+fdisk -l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plug in the SD card (on a regular computer, not the Raspberry Pi)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Redo step 3. in order to identify the SD card. &lt;code&gt;/dev/mmcblk0&lt;/code&gt; or &lt;code&gt;/dev/sdb&lt;/code&gt; for instance.  &lt;code&gt;/dev/mmcblk0pX&lt;/code&gt; or &lt;code&gt;/dev/sdbX&lt;/code&gt; would be a partition on the device, with X an integer.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unmount &lt;strong&gt;all&lt;/strong&gt; the partitions and copy Raspbian on the whole SD card:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;umount /dev/mmcblk0p1
+sudo dd &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4M &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-09-09-wheezy-raspbian.img &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0 &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
+sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;bs=1M&lt;/code&gt; can be used in case of error, it's slower but safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;First boot&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Insert the micro SD card in the Raspberry Pi. Plug in an Ethernet wire or make sure you have a Wifi access point available on which you can connect, Plug in the HDMI cable (connected to a screen), a keyboard and eventually the power cable.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Log in (user name is &lt;em&gt;pi&lt;/em&gt; and password is &lt;em&gt;raspberry&lt;/em&gt;). You can do it using a keyboard or over SSH if you Raspberry is connected. Then set the locales and the right keyboard layout:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+dpkg-reconfigure locales &lt;span class="c1"&gt;# Select with space bar, at least en_US.UTF-8 plus any other you need&lt;/span&gt;
+dpkg-reconfigure keyboard-configuration &lt;span class="c1"&gt;# A keyboard must be plugged in&lt;/span&gt;
+dpkg-reconfigure tzdata
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Regarding the keyboard layout, there are &lt;a href="http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103"&gt;other alternatives&lt;/a&gt;. Then reboot (&lt;code&gt;sudo reboot&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Configuration&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Should you need to connect over Wifi, here's how to do it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo iwlist wlan0 scan
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Go to the bottom of the file and add the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;network={
+    ssid=&amp;quot;The_ESSID_from_earlier&amp;quot;
+    psk=&amp;quot;Your_wifi_password&amp;quot;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Otherwise, disable Wifi (and Bluetooth) as it draws power. Create &lt;code&gt;/etc/modprobe.d/disable_rpi3_wifi_bt.conf&lt;/code&gt; and add the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##wifi
+blacklist brcmfmac
+blacklist brcmutil
+##bt
+blacklist btbcm
+blacklist hci_uart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save and reboot. &lt;a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md"&gt;More information&lt;/a&gt;. At next reboot, make sure you're either connected or that Wifi is disabled by typing &lt;code&gt;ip a&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Double the current limit if your intend to plug USB devices. In &lt;code&gt;/boot/config.txt&lt;/code&gt;, add the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;max_usb_current=1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=930695#p930695"&gt;Some people say this has no effect on Raspberry Pi 3&lt;/a&gt;.&lt;br&gt;
+You may finish editing this file by fine-tuning its parameters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Update you Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
+sudo apt upgrade
+&lt;span class="c1"&gt;# sudo apt install rpi-update # if this packet is missing&lt;/span&gt;
+&lt;span class="c1"&gt;# sudo reboot&lt;/span&gt;
+&lt;span class="c1"&gt;# sudo rpi-update # gets the latest firmware, normal users should not have to do it&lt;/span&gt;
+&lt;span class="c1"&gt;# More info, read: https://github.com/Hexxeh/rpi-update#notes&lt;/span&gt;
+&lt;span class="c1"&gt;# sudo reboot&lt;/span&gt;
+&lt;span class="c1"&gt;# sudo apt update&lt;/span&gt;
+&lt;span class="c1"&gt;# sudo apt upgrade&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For security concerns, let's create a new user. The &lt;em&gt;pi&lt;/em&gt; user will be deleted later.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+passwd &lt;span class="c1"&gt;# Add a password to the root account&lt;/span&gt;
+adduser pipi
+usermod -a -G video pipi &lt;span class="c1"&gt;# Otherwise omxplayer won&amp;#39;t work with this user&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export HISTSIZE=100000&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /root/.bashrc
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export HISTFILESIZE=100000&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /root/.bashrc
+&lt;span class="nb"&gt;exit&lt;/span&gt;
+&lt;span class="c1"&gt;# Stay connected as &amp;#39;pi&amp;#39; for now&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Config the Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo raspi-config
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should not expand the filesystem, neither change the user password cause we'll delete the &lt;em&gt;pi&lt;/em&gt; user anyway. However, you should change the boot options (select choice B2) and the internationalisation options to English (UTF-8) (same for the environment locale, do not use C.UTF-8). If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the &lt;em&gt;pi&lt;/em&gt; user.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You should probably remove the ability to run "root" commands without typing pi’s password.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo visudo &lt;span class="c1"&gt;# it will safely edit /etc/sudoers&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here, remove "NOPASSWD: ". If there is no such a line, check out the file &lt;code&gt;/etc/sudoers.d/010_pi-nopasswd&lt;/code&gt; and delete it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From another computer (not your Pi), do this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen &lt;span class="c1"&gt;# Use default choices&lt;/span&gt;
+ssh-copy-id -i &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.ssh/id_rsa.pub pipi@&amp;lt;raspberry-pi-IP&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Get back to your Pi, still logged in as &lt;em&gt;pi&lt;/em&gt; and do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install ntpdate rsync
+&lt;span class="c1"&gt;# ntpdate to set the clock correctly.&lt;/span&gt;
+&lt;span class="c1"&gt;# rsync is just better than cp&lt;/span&gt;
+ntpdate -u fr.pool.ntp.org
+reboot
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now, it's time to delete the &lt;em&gt;pi&lt;/em&gt; user. Log in as your new user (in my case it's &lt;em&gt;pipi&lt;/em&gt;) and then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su &lt;span class="c1"&gt;# Type the root password here&lt;/span&gt;
+deluser --remove-home pi 
+visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi user&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finally, make sure to copy these three lines in both your &lt;code&gt;&amp;lt;new home&amp;gt;/.bashrc&lt;/code&gt; and &lt;code&gt;/root/.bashrc&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LANGUAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And then run the following commands, as super-user:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .bashrc &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; locale-gen &lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; dpkg-reconfigure locales
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Moving &lt;code&gt;/root&lt;/code&gt; onto an external hard disk drive, not encrypted, with additional encrypted DATA partition&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED&lt;/strong&gt;: &lt;a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md"&gt;tutorial here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Right after this section you will find another one about how to do a similar operation using an encrypted hard disk.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;As root,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsblk &lt;span class="c1"&gt;# Identify the hard disk drive connected to the Pi&lt;/span&gt;
+fdisk /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Do the following sequence of keystrokes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;d # Delete all the existing partitions if many
+n # Create a new one
+p # Primary
+1
+&amp;lt;Enter&amp;gt; # Hit enter key
++100G # 100GB, or something else
+n # Create a second partition, swap
+p
+2
+&amp;lt;Enter&amp;gt;
++2G
+t # Change the type...
+2 # Of the second partion
+82 # Make it a swap partition
+n # Create the data partition
+p
+3
+&amp;lt;Enter&amp;gt;
+&amp;lt;Enter&amp;gt;
+p # Make sure everything is OK
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkfs.ext4 /dev/sda1 -L ROOT -m &lt;span class="m"&gt;5&lt;/span&gt;
+mkswap /dev/sda2
+mkfs.ext4 /dev/sda3 -L DATA -m &lt;span class="m"&gt;5&lt;/span&gt;
+apt install cryptsetup
+cryptsetup --verify-passphrase -c aes-xts-plain64 -s &lt;span class="m"&gt;512&lt;/span&gt; -h sha256 luksFormat /dev/sda3
+cryptsetup -v luksOpen /dev/sda3 hddcrypt
+mkfs.ext4 /dev/mapper/hddcrypt -L DATA -m &lt;span class="m"&gt;1&lt;/span&gt;
+mkdir /mnt/data_partition
+mount /dev/mapper/hddcrypt /mnt/data_partition/
+
+cat /boot/cmdline.txt &lt;span class="c1"&gt;# See if you can find root=/dev/mmcblk0p2. If yes then...&lt;/span&gt;
+sed -e &lt;span class="s2"&gt;&amp;quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&amp;quot;&lt;/span&gt; -i /boot/cmdline.txt
+&lt;span class="c1"&gt;# Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`&lt;/span&gt;
+&lt;span class="c1"&gt;# Add &amp;#39;bootwait&amp;#39; at the end of the line, in the same file&lt;/span&gt;
+&lt;span class="c1"&gt;# The &amp;#39;rootwait&amp;#39; option forces the kernel to wait until the root device becomes ready&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Edit &lt;code&gt;/etc/fstab&lt;/code&gt; that way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/sda1       /               ext4    defaults,noatime  0       1
+/dev/sda2       none            swap    sw                0       0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /tmp/rootsd &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mount /dev/mmcblk0p2 /tmp/rootsd
+mkdir /tmp/roothdd &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mount /dev/sda1 /tmp/roothdd
+rsync -a /tmp/rootsd/ /tmp/roothdd/
+sync
+e2fsck -f /dev/sda1 &lt;span class="c1"&gt;# You might need to umount it first&lt;/span&gt;
+reboot
+update-rc.d -f dphys-swapfile remove
+apt remove dphys-swapfile
+cat /proc/swaps
+swapoff /var/swap &lt;span class="c1"&gt;# Might fail if it was not listed in the previous command&lt;/span&gt;
+sudo rm -f /var/swap
+reboot
+su
+/sbin/swapon -s &lt;span class="c1"&gt;# Make sure only your swap partition is in use&lt;/span&gt;
+dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="c1"&gt;# Delete unused old root partition&lt;/span&gt;
+fdisk /dev/mmcblk0 &lt;span class="c1"&gt;# Delete second partition&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Moving &lt;code&gt;/root&lt;/code&gt; onto an external hard disk drive, encrypted&lt;/h2&gt;
+&lt;p&gt;I would like to thank a few websites which helped me a lot to write this article:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://paxswill.com/blog/2013/11/04/encrypted-raspberry-pi/"&gt;Using an Encrypted Root Partition with Raspbian&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://chezmanu.eu/RPI-Chiffrement.php"&gt;Chiffrement d'un Raspberry Pi avec Raspbian et Luks/Cryptsetup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.kali.org/kali-dojo/04-raspberry-pi-with-luks-disk-encryption"&gt;Raspberry Pi Disk Encryption&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Stay logged in as &lt;em&gt;root&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;initramfs initramfs.gz 0x00f00000&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /boot/config.txt
+cat /boot/config.txt
+
+cat /boot/cmdline.txt
+sed -e &lt;span class="s2"&gt;&amp;quot;s|root=/dev/mmcblk0p2|root=/dev/mapper/hddcrypt cryptdevice=/dev/sda1:hddcrypt|&amp;quot;&lt;/span&gt; -i /boot/cmdline.txt
+cat /boot/cmdline.txt &lt;span class="c1"&gt;# Check it has been effectively changed&lt;/span&gt;
+
+sed -e &lt;span class="s2"&gt;&amp;quot;s|/dev/mmcblk0p2|/dev/mapper/hddcrypt|&amp;quot;&lt;/span&gt; -i /etc/fstab
+cat /etc/fstab &lt;span class="c1"&gt;# Make sure it&amp;#39;s all right&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; -e &lt;span class="s2"&gt;&amp;quot;hddcrypt\t/dev/sda1\tnone\tluks&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/crypttab
+cat /etc/crypttab
+
+lsblk &lt;span class="c1"&gt;# Identify the hard disk drive connected to the Pi&lt;/span&gt;
+fdisk /dev/sda &lt;span class="c1"&gt;# Delete any existing partition, create new one with default choices&lt;/span&gt;
+apt install cryptsetup
+cryptsetup --verify-passphrase -c aes-xts-plain64 -s &lt;span class="m"&gt;512&lt;/span&gt; -h sha256 luksFormat /dev/sda1
+&lt;span class="c1"&gt;# 512-bit AES encryption with 256-bit SHA hashing algorithm&lt;/span&gt;
+cryptsetup -v luksOpen /dev/sda1 hddcrypt
+mkfs.ext4 /dev/mapper/hddcrypt -L ROOT_HDD -m &lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Let&amp;#39;s mount in two directories the unencrypted root partition from the SD card&lt;/span&gt;
+&lt;span class="c1"&gt;# and the new encrypted root partition from the HDD&lt;/span&gt;
+mkdir /tmp/rootplain &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mount /dev/mmcblk0p2 /tmp/rootplain/
+mkdir /tmp/rootcrypt &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mount /dev/mapper/hddcrypt /tmp/rootcrypt/
+rsync -a /tmp/rootplain/ /tmp/rootcrypt/ &lt;span class="c1"&gt;# Copy from plain to encrypted&lt;/span&gt;
+sync
+
+mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&lt;span class="k"&gt;)&lt;/span&gt;
+reboot
+
+&lt;span class="c1"&gt;# Delete old /root&lt;/span&gt;
+su 
+dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
+fdisk /dev/mmcblk0 &lt;span class="c1"&gt;# Delete second partition&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Enable remote unlocking&lt;/h3&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stinkyparkia.wordpress.com/2014/10/14/remote-unlocking-luks-encrypted-lvm-using-dropbear-ssh-in-ubuntu-server-14-04-1-with-static-ipst/"&gt;Remote unlocking LUKS encrypted LVM using Dropbear SSH in Ubuntu Server 14.04.1 (with Static IP)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://chicagolug.org/news/2015-10-09-remotely-unlock-encrypted-server-with-dropbear.html"&gt;Remotely Unlocking Encrypted Servers with Dropbear (on Ubuntu)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let's get started! On your Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install dropbear
+mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Triggers SSH key generation&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Next command is really important, it gives the Pi enough time to get an IP address&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/configure_networking\ \&amp;amp;/echo \&amp;quot;Waiting 5secs...\&amp;quot;\nsleep\ 5\nconfigure_networking\/&amp;quot;&lt;/span&gt; -i /usr/share/initramfs-tools/scripts/init-premount/dropbear
+cat /usr/share/initramfs-tools/scripts/init-premount/dropbear
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/dropbear/
+rm /etc/initramfs-tools/etc/dropbear/dropbear_dss_host_key
+rm /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+&lt;span class="c1"&gt;# Next command improves security. Default length is 1024&lt;/span&gt;
+dropbearkey -t rsa -s &lt;span class="m"&gt;4096&lt;/span&gt; -f /etc/initramfs-tools/etc/dropbear/dropbear_rsa_host_key
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, add the following at the beginning of the first line of the file &lt;code&gt;/etc/initramfs-tools/root/.ssh/authorized_keys&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;command=&amp;quot;/scripts/local-top/cryptroot &amp;amp;&amp;amp; kill -9 `ps | grep -m 1 &amp;#39;cryptroot&amp;#39; | cut -d &amp;#39; &amp;#39; -f 3`&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To forbid authentication using passwords and to change the listening port used by Dropbear, create the file &lt;code&gt;/etc/initramfs-tools/conf.d/dropbear&lt;/code&gt; and add:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export PKGOPTION_dropbear_OPTION=&amp;quot;-s -p 1234&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Might be useless&lt;/span&gt;
+update-initramfs -u
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;From now, you have 3 possibilities to access your Raspberry Pi remotely:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Using a public key&lt;/li&gt;
+&lt;li&gt;Using the Raspberry's private key&lt;/li&gt;
+&lt;li&gt;Using an account's password&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The two first possibilities are quite safe, compared to the third one. It's well known that authentication using passwords over SSH is not that safe.&lt;br&gt;
+Using your PC's SSH public key is a good solution but not reliable in the long term. Imagine you were to lose access to your personal computer, you would end up locked out of your Raspberry with no means to access it. On the other hand, using your Raspberry Pi's SSH private as an identity is far more convenient in that you can store that file on many devices. Should you lose you computer, you could still access your Raspberry from another computer, given that you still have access to that private key. I know it's not the safest solution but that's the one I chose to go with.&lt;/p&gt;
+&lt;p&gt;So here are how to do it with those two first choices, but I recommend you to go with the second one.&lt;/p&gt;
+&lt;h4&gt;Choice 1&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;cat /home/pipi/.ssh/authorized_keys&lt;span class="k"&gt;)&lt;/span&gt; &amp;gt;&amp;gt; /etc/initramfs-tools/root/.ssh/authorized_keys &lt;span class="c1"&gt;# Will grant us direct SSH access&lt;/span&gt;
+cat /etc/initramfs-tools/root/.ssh/authorized_keys &lt;span class="c1"&gt;# Make sure it&amp;#39;s all right&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Choice 2&lt;/h4&gt;
+&lt;p&gt;Save the content of &lt;code&gt;/etc/initramfs-tools/root/.ssh/id_rsa&lt;/code&gt; on your computer. &lt;strong&gt;Make sure to copy the entire file, including first and last lines.&lt;/strong&gt; And do that on the newly created file, on your computer:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod &lt;span class="m"&gt;0600&lt;/span&gt; id_rsa_rpi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, you can connect to your Pi like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -i id_rsa_rpi root@192.168.1.XX -v -p &lt;span class="m"&gt;1234&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Finally, last step:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;update-rc.d dropbear disable &lt;span class="c1"&gt;# Only openssh will be used after partition is decrypted&lt;/span&gt;
+mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# Might be useless&lt;/span&gt;
+update-initramfs -u
+reboot
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For more information in this whole thing, read the official documentation provided by cryptsetup:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;zcat /usr/share/doc/cryptsetup/README.remote.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Should you need to upgrade your firmware, make sure to update the right initramfs before rebooting. Read the end of &lt;a href="http://chezmanu.eu/RPI-Chiffrement.php"&gt;this article&lt;/a&gt; to find out how to do it.&lt;/p&gt;
+&lt;p&gt;Instead of unlocking your hard disk drive over SSH, if you prefer to use a keyfile, &lt;a href="http://longsteve.com/wiki/index.php?title=USB_Hard_Drive_Encryption_on_a_Raspberry_Pi"&gt;check out this website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are brave enough, have a look at the section below called &lt;em&gt;Hardening security&lt;/em&gt;. You might want to improve Dropbear settings.&lt;/p&gt;
+&lt;p&gt;You might also want to read about &lt;a href="https://wiki.mozilla.org/Security/Guidelines/OpenSSH"&gt;Mozilla's recommandation in terms of SSH security&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Tips&lt;/h1&gt;
+&lt;h2&gt;Screen blank time&lt;/h2&gt;
+&lt;p&gt;To avoid screen blanking after a while in the console (tty), change &lt;code&gt;BLANK_TIME&lt;/code&gt; to 0 in /etc/kbd/config.&lt;/p&gt;
+&lt;h2&gt;Auto login&lt;/h2&gt;
+&lt;p&gt;As previously seen, the tool &lt;code&gt;rasp-config&lt;/code&gt; allows you to configure auto login. But you can also do this with the command line. In &lt;em&gt;/etc/inittab&lt;/em&gt;, replace&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1:2345:respawn:/sbin/getty 115200 tty1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1:2345:respawn:/bin/login -f pi tty1 &amp;lt;/dev/tty1 &amp;gt;/dev/tty1 2&amp;gt;&amp;amp;1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Stopping Raspberry-Pi from auto changing source on TV&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;hdmi_ignore_cec_init=1&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /boot/config.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Auto-mount an external hard disk drive&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /home/pi/my_wonderful_hdd &lt;span class="c1"&gt;# Where the HDD will be mounted&lt;/span&gt;
+sudo fdisk -l &lt;span class="c1"&gt;# Note the location of the HDD (something like /dev/sda1)&lt;/span&gt;
+sudo mount -t auto /dev/sda1 /home/pi/my_wonderful_hdd &lt;span class="c1"&gt;# Mount it now&lt;/span&gt;
+sudo &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/dev/sda1 /home/pi/my_wonderful_hdd auto noatime 0 0&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/fstab &lt;span class="c1"&gt;# Auto mount at boot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Change hostname&lt;/h2&gt;
+&lt;p&gt;Use the tool &lt;code&gt;rasp-config&lt;/code&gt; or edit both &lt;em&gt;/etc/hostname&lt;/em&gt; and &lt;em&gt;/etc/hosts&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Disable SWAP permanently&lt;/h2&gt;
+&lt;p&gt;Swapping is bad for your SD card lifespan. You should disable it permanently. You might however want to keep swap on a partition on a hard disk drive (see above). To disable permatently on SD card and disk, run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo swapoff --all &lt;span class="c1"&gt;# Temporary, disables also dedicated partitions (like /dev/sda2)&lt;/span&gt;
+sudo update-rc.d dphys-swapfile remove
+sudo apt remove dphys-swapfile &lt;span class="c1"&gt;# Permanently&lt;/span&gt;
+sudo rm /var/swap
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;DynHost&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;apt install lynx&lt;/code&gt; (as root)&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://github.com/rpellerin/dotfiles"&gt;https://github.com/rpellerin/dotfiles&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Copy in your user's home folder the directory &lt;em&gt;scripts/DynHost&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add a cronjob (&lt;code&gt;crontab -e&lt;/code&gt;), on your Pi, with the same user (not root!):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/1 * * * * /home/pi/DynHost/dynhost
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All good!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Send email automatically on startup with a Python script (DEPRECATED: not recommended, instead use &lt;code&gt;sendmail&lt;/code&gt;)&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href="https://github.com/rpellerin/python-mailer"&gt;https://github.com/rpellerin/python-mailer&lt;/a&gt;. The instructions given right below are the same as those you'll find at this URL.&lt;/li&gt;
+&lt;li&gt;Install Python 3 (see instructions in &lt;a href="https://github.com/rpellerin/dotfiles/blob/master/README.md"&gt;https://github.com/rpellerin/dotfiles/blob/master/README.md&lt;/a&gt; for the latest version or simply do &lt;code&gt;apt install python3&lt;/code&gt; as root).&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do, as a normal user (not root!):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mv /path-to-python-mailer/scripts/script-pc-turned-on.py /path-to-python-mailer/script-pc-turned-on.py
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#!/bin/sh&amp;#39;&lt;/span&gt; &amp;gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/sendEmailOnStartup.sh
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;python3 /path-to-python-mailer/script-pc-turned-on.py&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/sendEmailOnStartup.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Edit, in &lt;em&gt;script-pc-turned-on.py&lt;/em&gt;, the path to the file containing recipients.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create that file and add email addresses in the following format:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;John Doe,john@doe.com
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Edit the file &lt;em&gt;config.py&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod +x &lt;span class="nv"&gt;$HOME&lt;/span&gt;/sendEmailOnStartup.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Try to execute that file, as a normal user (not root!), to make sure everything is all right:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./sendEmailOnStartup.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If OK, add the following in &lt;em&gt;/etc/rc.local&lt;/em&gt;, right above &lt;code&gt;exit 0&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su - pi -c /home/pi/sendEmailOnStartup.sh &amp;amp;
+sleep 5
+exit 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Don't forget to change the path if need be. You user might not be &lt;em&gt;pi&lt;/em&gt;. Reboot to make sure it worked.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Send email automatically on startup with &lt;code&gt;sendmail&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Add the following in &lt;code&gt;crontab -e&lt;/code&gt; as root:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@reboot /bin/sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; /usr/sbin/exim -qff&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Rpi turned on&amp;quot;&lt;/span&gt; me@domain
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, read the section right below.&lt;/p&gt;
+&lt;h1&gt;Configure a local SMTP email server&lt;/h1&gt;
+&lt;p&gt;Before doing this. make sure you did set the hostname of your Raspberry Pi through &lt;code&gt;raspi-config&lt;/code&gt;. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with &lt;strong&gt;an existing domain&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot. &lt;/p&gt;
+&lt;p&gt;This is pretty convient as some programs still prefer to send emails, such as &lt;code&gt;cron&lt;/code&gt;.&lt;br&gt;
+Normally, Exim4 comes pre-installed with Debian. If not, do &lt;code&gt;apt install exim4&lt;/code&gt;. Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+dpkg-reconfigure exim4-config
+&lt;span class="c1"&gt;# Second choice, &amp;quot;mail sent by smarthost; received via SMTP or fetchmail&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# System mail name: keep default; must be a valid FQDN though (ending with .com for example). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.&lt;/span&gt;
+&lt;span class="c1"&gt;# IP-addresses to listen on: keep default, we don&amp;#39;t want to receive external emails&lt;/span&gt;
+&lt;span class="c1"&gt;# Other destinations: leave blank&lt;/span&gt;
+&lt;span class="c1"&gt;# Machines to relay mail for: leave blank&lt;/span&gt;
+&lt;span class="c1"&gt;# IP address or host name of the outgoing smarthost: your SMTP server with port, like ssl0.ovh.net::465&lt;/span&gt;
+&lt;span class="c1"&gt;# Hide local mail name: no, or yes if you let &amp;#39;System mail name&amp;#39; blank. If you set a domain, it MUST EXIST otherwise some server will reject your emails.&lt;/span&gt;
+&lt;span class="c1"&gt;# Keep number of DNS-queries minimal: no&lt;/span&gt;
+&lt;span class="c1"&gt;# Delivery method for local mail: mbox&lt;/span&gt;
+&lt;span class="c1"&gt;# Split configuration into small files: no&lt;/span&gt;
+&lt;span class="c1"&gt;# Root and postmaster mail recipient: write one of your email addresses or leave blank&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now &lt;code&gt;update-exim4.conf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then, &lt;code&gt;cat /etc/mailname&lt;/code&gt; and make sure the system mail name you just specified is correctly reported here.&lt;/p&gt;
+&lt;p&gt;In &lt;em&gt;/etc/exim4/passwd.client&lt;/em&gt;, add you credentials, like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssl0.ovh.net:me@mydomain.com:password
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If your SMTP server uses port 465 with SSL, you'll need to edit &lt;em&gt;/etc/exim4/exim4.conf.template&lt;/em&gt;. Add the following line, after &lt;code&gt;driver = smtp&lt;/code&gt;, under &lt;code&gt;remote_smtp_smarthost&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;protocol = smtps
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://www.gossamer-threads.com/lists/exim/users/96817"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now add these lines in &lt;em&gt;/etc/aliases&lt;/em&gt; (changes the lines according to your needs):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root: user1
+user1: address1@domain
+user2: address2@domain
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Any email intended for user1 will be sent to the corresponding email address. &lt;strong&gt;Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.&lt;/strong&gt;&lt;br&gt;
+You can also edit &lt;em&gt;/etc/email-addresses&lt;/em&gt;: this file contains addresses used for &lt;em&gt;from&lt;/em&gt;, &lt;em&gt;reply-to&lt;/em&gt; and &lt;em&gt;sender addresses&lt;/em&gt; fields.&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;newaliases &lt;span class="c1"&gt;# To apply changes brought to aliases&lt;/span&gt;
+update-exim4.conf
+&lt;span class="c1"&gt;# /etc/init.d/exim4 restart&lt;/span&gt;
+systemctl restart exim4
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;This is a test.&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;test message&amp;quot;&lt;/span&gt; anotherme@somewhere.com &lt;span class="c1"&gt;# Try sending an email&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;This is a test.&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;test message for root&amp;quot;&lt;/span&gt; root &lt;span class="c1"&gt;# Try sending an email&lt;/span&gt;
+runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flush all email queues&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Send emails automatically on shell login&lt;/h1&gt;
+&lt;p&gt;Edit your user and root's &lt;code&gt;.bashrc&lt;/code&gt; and add at the end of the file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Root shell login&amp;quot;&lt;/span&gt; me@domain
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Installing Nextcloud 15.0.0&lt;/h1&gt;
+&lt;p&gt;Official tutorial: &lt;a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html"&gt;https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install apache2
+apt install mariadb-server
+apt install libapache2-mod-php7.0 php7.0
+apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+systemctl restart apache2
+
+&lt;span class="nb"&gt;cd&lt;/span&gt; /var/www
+mkdir nextcloud
+wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+sha256sum -c &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt; nextcloud-15.0.0.zip
+unzip nextcloud-15.0.0.zip
+chown -R www-data:www-data /var/www/nextcloud/
+
+mysql -u root -p &lt;span class="c1"&gt;# No password is required, just hit enter&lt;/span&gt;
+CREATE USER &lt;span class="s1"&gt;&amp;#39;nextclouduser&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;Password&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+create database nextcloud&lt;span class="p"&gt;;&lt;/span&gt;
+GRANT ALL ON nextcloud.* TO &lt;span class="s1"&gt;&amp;#39;nextclouduser&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
+exit&lt;span class="p"&gt;;&lt;/span&gt;
+
+mysql -u nextclouduser -p &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
+mysql_secure_installation
+
+a2enmod ssl
+a2ensite default-ssl &lt;span class="c1"&gt;# Enable HTTPS website&lt;/span&gt;
+
+apachectl -M &lt;span class="c1"&gt;# Check modules enabled&lt;/span&gt;
+&lt;span class="c1"&gt;# Enable the following if not already done&lt;/span&gt;
+a2enmod rewrite
+a2enmod headers
+a2enmod env
+a2enmod dir
+a2enmod mime
+systemctl restart apache2
+systemctl disable apache2 &lt;span class="c1"&gt;# No auto start on boot&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now edit &lt;code&gt;/etc/apache2/sites-enabled/000-default.conf&lt;/code&gt;. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Alias /nextcloud &amp;quot;/var/www/nextcloud/&amp;quot;
+&amp;lt;Directory &amp;quot;/var/www/nextcloud&amp;quot;&amp;gt;
+Options +FollowSymLinks
+AllowOverride All
+
+&amp;lt;IfModule mod_dav.c&amp;gt;
+        Dav off
+&amp;lt;/IfModule&amp;gt;
+
+SetEnv HOME /var/www/nextcloud
+SetEnv HTTP_HOME /var/www/nextcloud
+&amp;lt;/Directory&amp;gt;
+
+&amp;lt;Directory &amp;quot;/mnt/data_partition/&amp;quot;&amp;gt;
+# just in case if .htaccess gets disabled
+    Require all denied
+&amp;lt;/Directory&amp;gt;
+
+&amp;lt;VirtualHost *:80&amp;gt;
+        ServerName cloud.romainpellerin.eu
+        ServerAdmin romain@romainpellerin.eu
+        DocumentRoot /var/www/nextcloud
+
+        RewriteEngine on
+        RewriteCond %{HTTPS} off
+        RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+&amp;lt;/VirtualHost&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Bring the changes between &lt;code&gt;&amp;lt;VirtualHost&amp;gt;&lt;/code&gt; tags to &lt;em&gt;/etc/apache2/sites-enables/default-ssl.conf&lt;/em&gt;, except for the instruction &lt;code&gt;Redirect&lt;/code&gt;. Additionally, add instructions taken from &lt;a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.25&amp;amp;openssl=1.1.0j&amp;amp;hsts=yes&amp;amp;profile=modern"&gt;Mozilla SSL Configuration Generator&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;VirtualHost *:443&amp;gt;
+    ...
+    SSLEngine on
+
+    # HSTS (mod_headers is required) (15768000 seconds = 6 months)
+    Header always set Strict-Transport-Security &amp;quot;max-age=15768000&amp;quot;
+    ...
+&amp;lt;/VirtualHost&amp;gt;
+
+# modern configuration, tweak to your needs
+SSLProtocol             all -SSLv3 -TLSv1 -TLSv1.1
+SSLCipherSuite          ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256
+SSLHonorCipherOrder     on
+SSLCompression          off
+SSLSessionTickets       off
+
+# OCSP Stapling, only in httpd 2.3.3 and later
+SSLUseStapling          on
+SSLStaplingResponderTimeout 5
+SSLStaplingReturnResponderErrors off
+SSLStaplingCache        shmcb:/var/run/ocsp(128000)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To enable HTTP2, do &lt;code&gt;a2enmod http2&lt;/code&gt; and edit &lt;code&gt;default-ssl.conf&lt;/code&gt; again:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;VirtualHost *:443&amp;gt;
+    ...
+    ProtocolsHonorOrder On
+    Protocols h2 h2c http/1.1
+    H2Direct on
+    ...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://http2.pro/doc/Apache"&gt;Note that Apache prefork is not compatible with HTTP2&lt;/a&gt;. You'll have to &lt;a href="https://blog.feutl.com/nextcloud-http2/"&gt;use fpm&lt;/a&gt;. See &lt;a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html#php-ini-configuration-notes"&gt;Nextcloud's instructions also&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let us now improve a bit Apache's security. Edit &lt;em&gt;/etc/apache2/conf-enabled/security.conf&lt;/em&gt; like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ServerSignature Off
+Header set X-Frame-Options: &amp;quot;sameorigin&amp;quot; # Require mod_headers
+ServerTokens Prod
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, visit http://raspberry-pi-IP/nextcloud once. This will create &lt;code&gt;/var/www/nextcloud/config/config.php&lt;/code&gt;. Edit this file like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;overwrite.cli.url&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; &lt;span class="s1"&gt;&amp;#39;https://example.org/&amp;#39;&lt;/span&gt;,
+&lt;span class="s1"&gt;&amp;#39;htaccess.RewriteBase&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now edit &lt;code&gt;/etc/apache2/sites-enable/000-default.conf&lt;/code&gt; like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Alias / &lt;span class="s2"&gt;&amp;quot;/var/www/nextcloud/&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And restart &lt;code&gt;systemctl restart apache2&lt;/code&gt;. You should now be able to visit http://raspberry-pi-IP/.&lt;/p&gt;
+&lt;p&gt;Now get a browser-trusted certificate from &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install dirmngr
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb http://ftp.debian.org/debian stretch-backports main&amp;quot;&lt;/span&gt; &amp;gt; /etc/apt/sources.list.d/backports.list
+apt update
+apt install python-certbot-apache -t stretch-backports
+&lt;span class="c1"&gt;# Make sure your website is accessible from the Internet.&lt;/span&gt;
+&lt;span class="c1"&gt;# Set up NAT/PAT rules in your router. Then:&lt;/span&gt;
+certbot --apache
+certbot renew --dry-run &lt;span class="c1"&gt;# Try renewal&lt;/span&gt;
+&lt;span class="c1"&gt;# If successful, create a cronjob to be run twice a day&lt;/span&gt;
+&lt;span class="m"&gt;32&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt;/12 * * * certbot renew --quiet
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ultimately, verify everything is all right using &lt;a href="https://www.ssllabs.com/ssltest/"&gt;SSL LABS's SSL server test&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You may now restart Apache2.&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /mnt/data_partition/nextcloud_data
+chown -R www-data:www-data /mnt/data_partition/nextcloud_data/
+chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/.&lt;/p&gt;
+&lt;h2&gt;Improve PHP's performance&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/memory_limit = 128M/memory_limit = 512M/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/upload_max_filesize = 2M/upload_max_filesize = 16G/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/post_max_size = 8M/post_max_size = 16G/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/apache2/php.ini
+
+&lt;span class="c1"&gt;# /etc/php/7.0/cli/php.ini is used by Nextcloud&amp;#39;s CRON jobs&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -i /etc/php/7.0/cli/php.ini
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To significantly improve performance overall, you'll also need data caching: &lt;strong&gt;APCu&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install php7.0-apcu
+phpenmod apcu
+&lt;span class="c1"&gt;#echo &amp;quot;apc.enabled=1&amp;quot; &amp;gt;&amp;gt; /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it&amp;#39;s useless, check Nextcloud error logs in the admin page to make sure it&amp;#39;s working&lt;/span&gt;
+service apache2 restart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, add the following in &lt;em&gt;/var/www/nextcloud/config/config.php&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;memcache.local&amp;#39; =&amp;gt; &amp;#39;\OC\Memcache\APCu&amp;#39;,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Disabled&lt;/em&gt;. That's normal as we didn't enable opcaching for CLI, (&lt;em&gt;/etc/php/7.0/cli/php.ini&lt;/em&gt;), only for Apache2. However, if you create a webpage containing &lt;code&gt;&amp;lt;?php phpinfo();&lt;/code&gt;, when accessing this page you'll see that's it's &lt;em&gt;Up and Running&lt;/em&gt;. Make sure as well that APCu is enabled.&lt;/p&gt;
+&lt;h2&gt;Improve Nextcloud's settings&lt;/h2&gt;
+&lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config/php&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called &lt;em&gt;Encryption&lt;/em&gt; in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.&lt;/p&gt;
+&lt;p&gt;Also, do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+&lt;span class="nb"&gt;cd&lt;/span&gt; /var/www/nextcould
+sudo -u www-data php occ maintenance:update:htaccess
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.&lt;/p&gt;
+&lt;p&gt;In the admin page (&lt;code&gt;URL/settings/admin&lt;/code&gt;), increase the maximum upload size to 1.9 GB (it's a limitatiom from 32-bit PHP - Rasbian is a 32 bit OS).&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;URL/settings/admin/overview&lt;/code&gt; you might get some warnings about PHP not being properly configured. Edit &lt;code&gt;/etc/php/7.0/apache2/php.ini&lt;/code&gt; as it asks.&lt;/p&gt;
+&lt;p&gt;Install and enable the app "Two Factor TOTP Provider" in &lt;code&gt;URL/settings/apps&lt;/code&gt;. Then, go to &lt;code&gt;URL/settings/user/security&lt;/code&gt; and enable TOTP.&lt;/p&gt;
+&lt;h1&gt;OpenVPN 2.4.0&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install openvpn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Read the &lt;a href="https://openvpn.net/community-resources/how-to/"&gt;official documentation&lt;/a&gt; (&lt;a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto"&gt;here, short tutorial for easy-rsa3&lt;/a&gt;). Download &lt;a href="https://github.com/OpenVPN/easy-rsa"&gt;easy-rsa&lt;/a&gt; and checkout latest release.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn/
+git clone https://github.com/OpenVPN/easy-rsa.git
+&lt;span class="nb"&gt;cd&lt;/span&gt; easy-rsa
+git checkout v3.0.5
+&lt;span class="nb"&gt;cd&lt;/span&gt; easyrsa3
+cp vars.example vars
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;set_var EASYRSA_KEY_SIZE       2048&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; vars &lt;span class="c1"&gt;# No need to source this file&lt;/span&gt;
+&lt;span class="c1"&gt;# Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;From now on, I highly recommend you read &lt;em&gt;/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md&lt;/em&gt; and &lt;a href="https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md"&gt;https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md&lt;/a&gt; in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).&lt;/p&gt;
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./easyrsa init-pki
+./easyrsa build-ca &lt;span class="c1"&gt;# Add a strong password which will be used to sign other certificates&lt;/span&gt;
+./easyrsa gen-req server nopass &lt;span class="c1"&gt;# Do not add a password for the server; use &amp;#39;server&amp;#39; as CN&lt;/span&gt;
+./easyrsa sign-req server server
+./easyrsa gen-req client &lt;span class="c1"&gt;# Use &amp;#39;client&amp;#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server&lt;/span&gt;
+./easyrsa sign-req client client
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once the certificates and private keys are generated for the server and a client at least, do the following on your Pi and then go back to reading OpenVPN's documentation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./easyrsa gen-dh
+cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
+cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
+openvpn --genkey --secret ta.key
+gunzip server.conf.gz
+vim server.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should edit &lt;em&gt;server.conf&lt;/em&gt; like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;port 1194
+proto udp
+dev tun
+ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
+cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
+key /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
+dh /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
+push &amp;quot;route 192.168.1.0 255.255.255.0&amp;quot;
+push &amp;quot;redirect-gateway def1 bypass-dhcp&amp;quot;
+push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
+push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
+tls-auth /etc/openvpn/ta.key 0
+cipher AES-256-CBC
+max-clients 2
+comp-lzo
+user nobody
+group nogroup
+log-append  openvpn.log
+verb 6
+mute 20
+script-security 3
+client-connect &amp;quot;/etc/openvpn/notifyconnect.sh&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Keep the rest as-is. Now create &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;On `date`&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;OpenVPN client connection&amp;quot;&lt;/span&gt; root@localhost &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="c1"&gt;# We can&amp;#39;t run `runq`  or `exim -qff` since this script is called by user `nobody`.&lt;/span&gt;
+&lt;span class="c1"&gt;# Also make sure this script returns 0 otherwise the VPN connection will fail.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod +x /etc/openvpn/notifyconnect.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. Check OpenVPN logs, there might be a permission issue on &lt;code&gt;/var/log/exim4&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, edit &lt;em&gt;client.conf&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;remote &amp;lt;your DynHost domain&amp;gt; 1194
+user nobody
+group nogroup
+mute-replay-warnings
+# Normally next lines are uncommented but we won&amp;#39;t need them
+#ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
+#cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+#key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
+#tls-auth /etc/openvpn/ta.key 1
+#ns-cert-type server # OpenVPN 2.0 and below
+remote-cert-tls server # OpenVPN 2.1 and above
+cipher AES-256-CBC
+comp-lzo
+mute 20
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ultimately do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat /etc/openvpn/client.conf &amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;key-direction 1&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;script-security 2&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;up /etc/openvpn/update-resolv-conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;down /etc/openvpn/update-resolv-conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;ca&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/ca&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;cert&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt &lt;span class="p"&gt;|&lt;/span&gt; sed -ne &lt;span class="s1"&gt;&amp;#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/cert&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;key&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/key&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;tls-auth&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/ta.key &amp;gt;&amp;gt; client.ovpn
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/tls-auth&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Copy that &lt;em&gt;client.ovpn&lt;/em&gt; file on your client.&lt;/p&gt;
+&lt;p&gt;On your Pi, uncomment the following line in &lt;em&gt;/etc/sysctl.conf&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;net.ipv4.ip_forward=1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Apply changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+sysctl -p
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There's a &lt;a href="http://serverfault.com/questions/355520/after-reboot-debian-box-ignore-sysctl-conf-values"&gt;known bug&lt;/a&gt; which may prevent these values to be read on boot (check that it worked about rebooting with &lt;code&gt;sysctl -a | grep ip_forward&lt;/code&gt;). Add the following above &lt;code&gt;exit 0&lt;/code&gt; in &lt;em&gt;/etc/rc.local&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sysctl -p /etc/sysctl.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -A FORWARD -s &lt;span class="m"&gt;10&lt;/span&gt;.8.0.0/24 -j ACCEPT
+iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Finally, do the following on your server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
+su
+mv client.conf client.conf.old
+shred -u client.ovpn
+openvpn --config server.conf &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+tail -f openvpn.log
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At next boot, the server will run automatically. We needed to rename the &lt;em&gt;client.ovpn&lt;/em&gt; because the initscript will scan this directory for &lt;em&gt;.conf&lt;/em&gt; files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;shred -u client.conf.old
+shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
+shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now your client:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install resolvconf
+sudo openvpn --config client.ovpn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;iptables -t nat -A PREROUTING -i eth0 -p udp --dport &lt;span class="m"&gt;53&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;1194&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Hardening security&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
+chmod &lt;span class="m"&gt;700&lt;/span&gt; firewall.sh
+chown root:root firewall.sh
+mv firewall.sh /etc/init.d
+update-rc.d firewall.sh defaults
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the firewall, you might want to comment the line &lt;code&gt;NETWORK_MGMT=&lt;/code&gt; in order to be able to log in using SSH from any LAN, including your VPN.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3"&gt;Another helpful website about how to prevent SSH bruteforce attacks&lt;/a&gt;. However, we'll use fail2ban, see below.&lt;/p&gt;
+&lt;p&gt;Consider allowing SSH connections using public keys only. On a client do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
+ssh-keygen -t rsa -b 4096 -o -a 100 
+ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Hardening SSH configuration&lt;/h2&gt;
+&lt;p&gt;Edit &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Port &amp;lt;something you like&amp;gt;
+#HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
+#HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
+UsePrivilegeSeparation sandbox
+LoginGraceTime 10s
+PermitRootLogin no
+StrictModes yes
+PubkeyAuthentication yes
+IgnoreRhosts yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PasswordAuthentication no # Or yes, depending on your needs
+Banner /etc/issue.net # Message displayed at login
+UsePAM no
+
+# Custom settings
+AllowUsers pi # ONLY pi will be allowed to log in
+
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The last three lines are taken from &lt;a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html"&gt;this very helpful website&lt;/a&gt;. You should also read &lt;a href="http://kacper.blog.redpill-linpro.com/archives/702"&gt;this one&lt;/a&gt; after having read the first one (the order is important).&lt;/p&gt;
+&lt;h2&gt;Sending an email on every SSH connection&lt;/h2&gt;
+&lt;p&gt;Taken from &lt;a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602"&gt;this thread&lt;/a&gt;. As root, create &lt;code&gt;/etc/ssh/login-notify.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#!/bin/sh
+
+if [ &amp;quot;$PAM_TYPE&amp;quot; != &amp;quot;close_session&amp;quot; ]; then 
+    host=&amp;quot;`hostname`&amp;quot; 
+    subject=&amp;quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&amp;quot; 
+    message=&amp;quot;`date`&amp;quot;
+    echo &amp;quot;$message&amp;quot; | mail -s &amp;quot;$subject&amp;quot; root@mydomain
+fi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note though that you will need to change this line in &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;UsePAM yes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod +x /etc/ssh/login-notify.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And add the following line at the end of the file &lt;code&gt;/etc/pam.d/sshd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;session optional pam_exec.so seteuid /etc/ssh/login-notify.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now restart sshd by doing &lt;code&gt;service sshd restart&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Fail2Ban&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8"&gt;Official documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install fail2ban
+fail2ban-client -x start &lt;span class="c1"&gt;# To force the server to startup. However, a reboot is preferable.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make sure the file &lt;em&gt;/etc/init.d/fail2ban&lt;/em&gt; exists. Now edit &lt;em&gt;/etc/fail2ban/jail.local&lt;/em&gt; (make a copy of &lt;em&gt;/etc/fail2ban/jail.conf&lt;/em&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[DEFAULT]
+# Whatever fits you
+bantime = 86400
+findtime = 3600
+maxretry = 3
+ntime  = 8700
+action = %(action_mwl)s
+
+# Enable sshd (enabled = true) and sshd-dos, change &amp;#39;port&amp;#39; and the &amp;#39;maxretry&amp;#39; value if need be
+# Enable apache, apache-*
+# Add the following new entry
+[http-dos]
+enabled = true
+port = http,https
+filter = http-dos
+logpath = /var/log/apache*/*access.log
+maxretry = 360
+findtime = 120
+bantime = 600
+
+[ban-countries]
+enabled = true
+port = http,https
+filter = http-dos
+logpath = /var/log/apache*/*access.log
+maxretry = 1
+findtime = 120
+bantime = 6000
+banaction = ban-countries
+action = %(action_)s
+# action_ won&amp;#39;t send email when banning someone (cause would send a message for every new request) nor when starting/stopping
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now create &lt;em&gt;/etc/fail2ban/filter.d/http-dos.conf&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Definition]
+
+# Option: failregex
+# Note: This regex will match any GET or POST entry in your logs, so basically
+# all valid and not valid entries are a match.
+# You should set up in the jail.conf file, the maxretry and findtime carefully
+# in order to avoid false positives.
+
+failregex = ^&amp;lt;HOST&amp;gt; -.*\&amp;quot;(GET|POST).*
+
+# Option: ignoreregex
+# Notes.: regex to ignore. If this regex matches, the line is ignored.
+# Values: TEXT
+#
+
+ignoreregex =
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now create &lt;em&gt;/etc/fail2ban/action.d/ban-countries.conf&lt;/em&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Copied from iptables-allports.conf
+[Definition]
+
+actionstart = &amp;lt;iptables&amp;gt; -N f2b-&amp;lt;name&amp;gt;
+              &amp;lt;iptables&amp;gt; -A f2b-&amp;lt;name&amp;gt; -j &amp;lt;returntype&amp;gt;
+              &amp;lt;iptables&amp;gt; -I &amp;lt;chain&amp;gt; -p &amp;lt;protocol&amp;gt; -j f2b-&amp;lt;name&amp;gt;
+
+actionstop = &amp;lt;iptables&amp;gt; -D &amp;lt;chain&amp;gt; -p &amp;lt;protocol&amp;gt; -j f2b-&amp;lt;name&amp;gt;
+             &amp;lt;iptables&amp;gt; -F f2b-&amp;lt;name&amp;gt;
+             &amp;lt;iptables&amp;gt; -X f2b-&amp;lt;name&amp;gt;
+
+actioncheck = &amp;lt;iptables&amp;gt; -n -L &amp;lt;chain&amp;gt; | grep -q &amp;#39;f2b-&amp;lt;name&amp;gt;[ \t]&amp;#39;
+
+actionban = IP=&amp;lt;ip&amp;gt; &amp;amp;&amp;amp;
+            COUNTRY=$(geoiplookup $IP | egrep &amp;quot;&amp;lt;country_list&amp;gt;&amp;quot;) &amp;amp;&amp;amp; [ &amp;quot;$COUNTRY&amp;quot; ] &amp;amp;&amp;amp;
+            &amp;lt;iptables&amp;gt; -I f2b-&amp;lt;name&amp;gt; 1 -s &amp;lt;ip&amp;gt; -j &amp;lt;blocktype&amp;gt; || true
+
+actionunban = true
+
+[Init]
+
+country_list = CN|China
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now install missing packages, reload the service maually to make sure there is no error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+apt install geoip-bin geoip-database
+systemctl stop fail2ban
+fail2ban-client -x start
+cat /var/log/fail2ban.log
+&lt;span class="c1"&gt;# Check for errors&lt;/span&gt;
+fail2ban-client -x stop
+systemctl start fail2ban
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Troubleshooting&lt;/h1&gt;
+&lt;p&gt;Should you have a &lt;a href="https://www.youtube.com/watch?v=IGtzaIlMgWA"&gt;beeping hard disk drive&lt;/a&gt;, the reason might be power consumption. It usually beeps when it needs more electricity. &lt;a href="http://www.htpcguides.com/spin-down-and-manage-hard-drive-power-on-raspberry-pi/"&gt;Disabling Advanced Power Management&lt;/a&gt; will solve this problem in most cases (&lt;code&gt;sudo hdparm -B 255 /dev/sda&lt;/code&gt;).&lt;/p&gt;
+&lt;h1&gt;Going further&lt;/h1&gt;
+&lt;h2&gt;Pro tips&lt;/h2&gt;
+&lt;p&gt;Consider buying an &lt;a href="https://www.modmypi.com/raspberry-pi/breakout-boards/pi-modules/ups-pico"&gt;uninterruptible power supply (UPS) for your Raspberry to prevent damage caused by power outage&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Talk&lt;/h2&gt;
+&lt;p&gt;A year ago, I gave a talk at &lt;a href="http://humantalks.com/cities/compiegne"&gt;HumanTalks Compiègne&lt;/a&gt; about my Raspberry Pi. Here are the video and the slides.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="https://romainpellerin.eu/slides/self-hosting/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Interesting external links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.minimachines.net/actu/piwall-creer-un-mur-decrans-low-cost-avec-des-raspberry-pi-28656"&gt;Piwall : Créer un mur d’écrans low cost avec des Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/raspberry-pi-allonger-la-duree-de-vie-de-vos-cartes-sd.html"&gt;Raspberry Pi – Allonger la durée de vie de vos cartes SD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://linuxfr.org/news/se-passer-de-dropbox-en-montant-son-coffre-fort-numerique-a-la-maison"&gt;Se passer de Dropbox en montant son coffre-fort numérique à la maison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/idees-raspberry-pi.html"&gt;Plus de 50 idées pour votre Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.24joursdeweb.fr/2014/piloter-sa-maison-grace-au-web/"&gt;Piloter sa maison grâce au web&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Banrai/PiScan"&gt;PiScan: A personal shopping and inventory-tracking device based on the Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/magpi-issues/Projects_Book_v1.pdf"&gt;THE Official RASPBERRY PI PROJECTS BOOK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/"&gt;Raspberry Pi Zero Headless Setup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hackaday.com/2016/06/28/raspberry-pi-gets-turned-on/"&gt;RASPBERRY PI GETS TURNED ON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.geek-directeur-technique.com/2016/07/19/installation-serveur-https-rapide"&gt;Installation serveur HTTP(S) rapide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://techcrunch.com/2016/11/16/the-r-pi-iot-shield-adds-iot-connectivity-to-your-diy-project/"&gt;The R.Pi IoT Shield adds IoT connectivity to your DIY project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/deepsyx/home-automation"&gt;Raspberry Pi 3 based home automation with NodeJS and React Native.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bbrks.me/rpi-minidlna-media-server/"&gt;Using your Raspberry Pi as a DLNA/UPnP media server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/rpellerin/raspberry-pi-security-camera"&gt;raspberry-pi-security-camera&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mon-blog.jbriault.fr/index.php/blog/2019/02/06/s%C3%A9curiser-l-administration-de-son-vps"&gt;Protéger son VPS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Read-only Raspberry Pi&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://david.mercereau.info/raspberrypi-raspbian-en-lecture-seul-readonly-pour-preserver-la-carte-sd/"&gt;RaspberryPi &amp;amp; Raspbian en lecture seul (ReadOnly) pour préserver la carte SD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://tinycorelinux.net/ports.html"&gt;Tiny Core Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 10 Jul 2016 05:11:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</guid><category>raspberry pi</category><category>linux</category><category>talk</category></item><item><title>Migrating From Xubuntu To Debian</title><link>//romainpellerin.eu/migrating-from-xubuntu-to-debian.html</link><description>&lt;p&gt;Today marks a new beginning: &lt;strong&gt;I'm switching to Debian 8&lt;/strong&gt;. A very bare installation of Debian actually.&lt;/p&gt;
+&lt;p&gt;Until now, I've been using Xubuntu for over 3 years as my main operating system, on both my laptop and desktop computer. However, yesterday, as I was installing Xubuntu 16.04 on a friend's laptop, I noticed a few bugs quite annoying (like the &lt;a href="https://bugs.launchpad.net/ubuntu/+bug/1573454"&gt;disappearing mouse&lt;/a&gt;). In addition, I had been thinking about migrating to Debian for quite a long time (a friend of mine had already taken that step a couple of months ago). Xubuntu is shipped with a bunch of useless programs that I would never use. So time has come to have a lightweight bare distro, such as Debian 8. Moreover, my aging laptop would hugely benefit from that.&lt;/p&gt;
+&lt;h1&gt;Tutorial&lt;/h1&gt;
+&lt;p&gt;Let's get straight to the point: &lt;strong&gt;how to install Debian 8 on a whole encrypted disk?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Why encryption? Although I don't have sensitive data to protect, I take my laptop everywhere I go. Consequently, I am vulnerable to theft. What is on my disk is not valuable but still, I prefer to keep my stuff private.&lt;/p&gt;
+&lt;p&gt;Before starting, make sure you have two USB sticks ready nearby, and another computer with a working Internet connection.&lt;/p&gt;
+&lt;p&gt;Here are the steps to get a bare installation of Debian 8:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download a "&lt;em&gt;small installation image&lt;/em&gt;" on &lt;a href="https://www.debian.org/distrib/"&gt;the official website&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Flash it on a USB stick:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls /dev/sd*
+&lt;span class="c1"&gt;# Plug the USB stick&lt;/span&gt;
+ls /dev/sd* &lt;span class="c1"&gt;# Detect which is yours&lt;/span&gt;
+sudo umount /dev/sdX1
+sudo dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;debian-8.4.0-amd64-netinst.iso &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdX &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M
+sudo sync&lt;span class="p"&gt;;&lt;/span&gt; sync
+sudo umount /dev/sdX1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On the target PC, disable any HDD password or BIOS password. It might prevent you from encrypting the disk. I experienced it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Boot on the USB flash drive. Select "&lt;em&gt;Install&lt;/em&gt;", unless you prefer a graphical install. They both do the same thing.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Follow the instructions. You can leave the domain name blank. If you get a message "No common CD-ROM drive was detected", press ALT+F2 and do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;blkid &lt;span class="c1"&gt;# Identify a device with a partition of type iso9660&lt;/span&gt;
+mkdir /mnt/iso
+mount -t iso9660 /dev/sdb1 /mnt/iso
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Press ALT+F1 to return to the installation dialog. Continue the installation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If at some point a message says that proprietary firmware files are needed, it's time to go back to the other computer and USB stick. Otherwise, skip this step.&lt;/p&gt;
+&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note: this is doable with only one USB stick. But it is much harder.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download the mentioned file(s) from the &lt;a href="https://packages.debian.org/jessie/"&gt;Debian repository&lt;/a&gt;. In my case, I needed these ones: &lt;a href="https://packages.debian.org/stretch/all/firmware-misc-nonfree/download"&gt;https://packages.debian.org/stretch/all/firmware-misc-nonfree/download&lt;/a&gt; and &lt;a href="https://packages.debian.org/stretch/all/firmware-realtek/download"&gt;https://packages.debian.org/stretch/all/firmware-realtek/download&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Put the &lt;code&gt;.deb&lt;/code&gt; file(s) on the other USB stick. If you decided to re-use the same USB stick, first umount it: ALT+F2, &lt;code&gt;cat /etc/mtab&lt;/code&gt; then &lt;code&gt;sync &amp;amp;&amp;amp; umount /dev/sdb1 &amp;amp;&amp;amp; sync&lt;/code&gt;. Plug it in the other computer and delete existing partitions with &lt;code&gt;fdisk&lt;/code&gt; and create a new one of type &lt;code&gt;W95 FAT32&lt;/code&gt;. Format it using &lt;code&gt;sudo mkfs.vfat /dev/sdc1&lt;/code&gt;. Then put the files on the USB stick.&lt;/li&gt;
+&lt;li&gt;Plug the one containing firmwares files on your target computer, in the same USB port as the previous USB stick. You might need to hit ALT+F2, then check what is currently mounted (&lt;code&gt;cat /etc/mtab&lt;/code&gt;) (make sure nothing on &lt;code&gt;/cdrom&lt;/code&gt;) and mount the one you just plugged in: &lt;code&gt;mount -t vfat /dev/sdb1 /cdrom&lt;/code&gt;. ALT+F1 to go back to the install screen.&lt;/li&gt;
+&lt;li&gt;Answer "&lt;em&gt;Yes&lt;/em&gt;" to "&lt;em&gt;Load missing firmware from removable media?&lt;/em&gt;".&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Once completed, unplug the USB stick and plug the one containing Debian in the same port. You might need to re-write Debian if you re-used the same USB flash drive. Then press ALT+F1 and do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;blkid &lt;span class="c1"&gt;# Identify a device with a partition of type iso9660&lt;/span&gt;
+&lt;span class="c1"&gt;# Umount if need be&lt;/span&gt;
+mount -t iso9660 /dev/sdc1 /cdrom
+mount -t iso9660 /dev/sdc1 /mnt/iso &lt;span class="c1"&gt;# Might not be required&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Press ALT+F2 to return to the installation dialog. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When reaching the partitioning step, choose "&lt;em&gt;Guided using LVM encrypted&lt;/em&gt;". You should eventually obtain something like this:&lt;/p&gt;
+&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When reaching the "&lt;em&gt;Software Selection&lt;/em&gt;", choose &lt;a href="http://forums.debian.net/viewtopic.php?f=17&amp;amp;t=125037#p595087"&gt;only XFCE as a desktop manager&lt;/a&gt;, in combinaison with the &lt;a href="http://comments.gmane.org/gmane.linux.debian.user/455520"&gt;print server&lt;/a&gt; and utilities. Do not use the Debian desktop environment. It is shitty as f*ck.&lt;/p&gt;
+&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Merely follow instructions until completion of the installation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Switching from stable to testing&lt;/h2&gt;
+&lt;p&gt;If you need to be up-to-date, that's the right thing to do!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+cp /etc/apt/sources.list&lt;span class="o"&gt;{&lt;/span&gt;,.bak&lt;span class="o"&gt;}&lt;/span&gt;
+sed -i -e &lt;span class="s1"&gt;&amp;#39;s/ \(stable\|stretch\)/ testing/ig&amp;#39;&lt;/span&gt; /etc/apt/sources.list
+apt update
+apt --download-only dist-upgrade
+apt dist-upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="http://unix.stackexchange.com/questions/90389/how-to-upgrade-debian-stable-wheezy-to-testing-jessie"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Improve your privacy by using trustworthy DNS servers&lt;/h1&gt;
+&lt;p&gt;I recommend &lt;a href="https://larlet.fr/david/stream/2015/10/12/"&gt;French Data Network's DNS servers&lt;/a&gt;: 80.67.169.12 and 80.67.169.40. Follow &lt;a href="http://askubuntu.com/questions/627899/nameserver-127-0-1-1-in-resolv-conf-wont-go-away"&gt;this link&lt;/a&gt; to find out how to configure Ubuntu.&lt;/p&gt;
+&lt;h1&gt;Use free software&lt;/h1&gt;
+&lt;p&gt;Namely Icecat or Iceweasel and Icedove as alternatives to Firefox and Thunderbird respectively.&lt;/p&gt;
+&lt;p&gt;Hope it was helpful.&lt;/p&gt;
+&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.debian.org/fr/AtiHowTo"&gt;Problem with AMD drivers&lt;/a&gt;. And don't forget about &lt;code&gt;arandr&lt;/code&gt;!&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 21 May 2016 02:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-05-21:/migrating-from-xubuntu-to-debian.html</guid><category>linux</category><category>debian</category><category>xubuntu</category></item><item><title>Copy Pasting In Tmux And Vim</title><link>//romainpellerin.eu/copy-pasting-in-tmux-and-vim.html</link><description>&lt;p&gt;Over the last couple of years, I've spent quite a lot of time fine-tuning my prompt. Most of my &lt;a href="https://github.com/rpellerin/dotfiles"&gt;configuration is available online&lt;/a&gt;, so feel free to use it.&lt;/p&gt;
+&lt;p&gt;My configuration is as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I use &lt;code&gt;zsh&lt;/code&gt; rather than &lt;code&gt;bash&lt;/code&gt; cause it's way more powerful and convenient. In addition, I use the awesome &lt;a href="https://github.com/sorin-ionescu/prezto"&gt;Prezto&lt;/a&gt; which is a configuration framework built for &lt;code&gt;zsh&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tmux&lt;/code&gt; to be able to open as many terminals as I want in only one window (very helpful).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor.  I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, this is my current terminal (actually containing 3 terminals):&lt;/p&gt;
+&lt;p&gt;&lt;a href="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;img alt="Screenshot" src="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(the top-right terminal is of no use, I just opened it to show how clever zsh coupled with Prezto is).&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;The problem&lt;/h1&gt;
+&lt;p&gt;I guess most beginners with Tmux and Vim (especially Vim) stumble upon one problem (and the number of questions on StackOverflow asserts it): how to properly copy-paste? I had that problem too. I'll answer to these questions simply.&lt;/p&gt;
+&lt;p&gt;First of all, you have to know that, on X11 systems (which means most GNU/Llinux distros), there are two "clipboards":&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;* is the selection buffer. It's the one used when you select a text and paste it using the middle button of a mouse (it's actually made of two buffers called &lt;em&gt;PRIMARY&lt;/em&gt; and &lt;em&gt;SECONDARY&lt;/em&gt; but we don't need to know that).&lt;/li&gt;
+&lt;li&gt;+ is the cut buffer (the one used with C-c C-v) also called &lt;em&gt;CLIPBOARD&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Secondly, you may know that, in most programs you can use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;'Ctrl-c' or 'Ctrl-Shift-c' to copy to the cut buffer&lt;/li&gt;
+&lt;li&gt;'Ctrl-v' or 'Ctrl-Shift-v' to paste from the cut buffer&lt;/li&gt;
+&lt;li&gt;'Ctrl-Insert' to copy to the selection buffer or simply select text using a mouse&lt;/li&gt;
+&lt;li&gt;'Shift-Insert' to paste from the selection buffer or simply use the middle button of a mouse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let us now see how to copy paste from one environment to another one.&lt;/p&gt;
+&lt;h1&gt;Copy-pasting&lt;/h1&gt;
+&lt;h2&gt;Copy-pasting from Vim to Vim (same instance)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In normal mode, using the keys 'yy' (yank) or 'dd' (delete) and then 'p' (paste).&lt;/li&gt;
+&lt;li&gt;Also using the visual mode with 'y' (yank).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Copying from Tmux&lt;/h2&gt;
+&lt;p&gt;Use my &lt;a href="https://github.com/rpellerin/dotfiles/blob/master/.tmux.conf"&gt;conf file&lt;/a&gt; and install &lt;code&gt;xclip&lt;/code&gt; (&lt;code&gt;sudo apt-get install xclip&lt;/code&gt;) to achieve the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;'C-b [': enter copy mode&lt;/li&gt;
+&lt;li&gt;'v': begin selection&lt;/li&gt;
+&lt;li&gt;'y': copy to clipboard and exit copy mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Copying from Vim&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In normal or visual mode, using '"+yy' (normal) '"+y' (visual) to copy to the cut buffer or '*yy' and '"*y' to copy to the selection buffer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pasting in Tmux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Paste in Tmux: 'Ctrl-Shift-v' (paste the clipboard) or 'Shift-Insert' (paste the selection).&lt;/li&gt;
+&lt;li&gt;You can also use Tmux's own buffers (list them using &lt;code&gt;tmux list-buffers&lt;/code&gt; or show the current one with &lt;code&gt;tmux show-buffer&lt;/code&gt;). For instance, to past from the buffer, do 'C-b ]'.&lt;/li&gt;
+&lt;li&gt;Tmux also allows you to paste its buffer in a file, using &lt;code&gt;tmux save-buffer foo.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;To show or save a specific buffer, do &lt;code&gt;tmux show-buffer -b &amp;lt;n&amp;gt;&lt;/code&gt; or &lt;code&gt;tmux save-buffer -b &amp;lt;n&amp;gt; bar.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pasting in Vim&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Paste in Vim: '"+p' (cut buffer) or '"*p' (selection buffer).&lt;/li&gt;
+&lt;li&gt;You can also use the shortcuts shown above in &lt;em&gt;Pasting in Tmux&lt;/em&gt; (first bullet point).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hope this was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 06 Apr 2016 16:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-04-06:/copy-pasting-in-tmux-and-vim.html</guid><category>tmux</category><category>vi</category><category>vim</category><category>linux</category><category>terminal</category></item><item><title>Tips For FFMPEG</title><link>//romainpellerin.eu/tips-for-ffmpeg.html</link><description>&lt;p&gt;&lt;code&gt;-acodec&lt;/code&gt; is an alias for &lt;code&gt;-c:a&lt;/code&gt; which is an alias for &lt;code&gt;-codec:a&lt;/code&gt; (audio stream).&lt;br&gt;
+&lt;code&gt;-vcodec&lt;/code&gt; is an alias for &lt;code&gt;-c:v&lt;/code&gt; which is an alias for &lt;code&gt;-codec:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-af&lt;/code&gt; is an alias for &lt;code&gt;-filter:a&lt;/code&gt; (audio stream).&lt;br&gt;
+&lt;code&gt;-vf&lt;/code&gt; is an alias for &lt;code&gt;-filter:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;h1&gt;Create a GIF&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;palette&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/palette.png&amp;quot;&lt;/span&gt;
+
+&lt;span class="nv"&gt;filters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;fps=15,scale=320:-1:flags=lanczos&amp;quot;&lt;/span&gt;
+
+ffmpeg -v warning -i input.mp4 -vf &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$filters&lt;/span&gt;&lt;span class="s2"&gt;,palettegen&amp;quot;&lt;/span&gt; -y &lt;span class="nv"&gt;$palette&lt;/span&gt;
+ffmpeg -v warning -i input.mp4 -i &lt;span class="nv"&gt;$palette&lt;/span&gt; -lavfi &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$filters&lt;/span&gt;&lt;span class="s2"&gt; [x]; [x][1:v] paletteuse&amp;quot;&lt;/span&gt; -y output.gif
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Crop an OGV video&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.ogv -vcodec libtheora -vf &lt;span class="nv"&gt;crop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;700&lt;/span&gt;:400:0:0 -f ogg output.ogv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Merge an audio track (delayed) with a video, and cut the final video according to the shortest stream&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -itsoffset &lt;span class="m"&gt;00&lt;/span&gt;:00:15 -i input.mp4 -i audio.mp3 -acodec copy -vcodec copy &lt;span class="se"&gt;\&lt;/span&gt;
+    -map &lt;span class="m"&gt;0&lt;/span&gt;:0 -map &lt;span class="m"&gt;1&lt;/span&gt;:0 -shortest output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Cut a video (set the starting time and the duration)&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -ss &lt;span class="m"&gt;00&lt;/span&gt;:00:13 -t &lt;span class="m"&gt;00&lt;/span&gt;:09:00 -c copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In case you have a few seconds of blank video at the beginning, it is due to key-frames. Here is a command, way less accurate, but that will fix it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -ss &lt;span class="m"&gt;00&lt;/span&gt;:00:13 -i input.mp4 -t &lt;span class="m"&gt;00&lt;/span&gt;:09:00 -c copy -avoid_negative_ts &lt;span class="m"&gt;1&lt;/span&gt; output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://trac.ffmpeg.org/wiki/Seeking"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Extract EVERY image from a video&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i foo.avi -r &lt;span class="m"&gt;1&lt;/span&gt; -s WxH -f image2 foo-%03d.jpeg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;a href="http://trac.ffmpeg.org/wiki/Create%20a%20video%20slideshow%20from%20images"&gt;Create a 24fps video from many images&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -framerate &lt;span class="m"&gt;1&lt;/span&gt; -i foo-%02d.jpg -c:v libx264 -r &lt;span class="m"&gt;24&lt;/span&gt; -pix_fmt yuv420p foo.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Accelerate a video by 2&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -filter:v &lt;span class="s2"&gt;&amp;quot;setpts=0.5*PTS&amp;quot;&lt;/span&gt; output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Flip by 180° a video and fix the metadata&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vf &lt;span class="s2"&gt;&amp;quot;transpose=2,transpose=2&amp;quot;&lt;/span&gt; -metadata:s:v:0 &lt;span class="nv"&gt;rotate&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Remove the audio stream&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -an -vcodec copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Convert from .mov to .mp4&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mov -c:v libx264 -c:a copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;a href="https://trac.ffmpeg.org/wiki/Concatenate"&gt;Concatenate several MP4 files&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find . -type f -iname &lt;span class="s2"&gt;&amp;quot;*.MP4&amp;quot;&lt;/span&gt; -exec ffmpeg -i &lt;span class="s1"&gt;&amp;#39;{}&amp;#39;&lt;/span&gt; -c copy -bsf:v h264_mp4toannexb -f mpegts &lt;span class="s1"&gt;&amp;#39;{}.ts&amp;#39;&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ls *.ts &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; head -c -1&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Replace the audio track with another&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i output.mp4 -i yo.mp3 -map &lt;span class="m"&gt;0&lt;/span&gt;:0 -map &lt;span class="m"&gt;1&lt;/span&gt; -vcodec copy -acodec copy output2.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;a href="https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg"&gt;(Down) Scaling a video from 1080p to 720p&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vf &lt;span class="nv"&gt;scale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1280&lt;/span&gt;:-1 -acodec copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Concat MTS files to MP4&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ls *.MTS &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; head -c -1&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; -vcodec copy -acodec aac -ab 512k -cutoff &lt;span class="m"&gt;22050&lt;/span&gt; -sn output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://ehret.me/ffmpeg-tips/"&gt;FFmpeg tips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/carykh/jumpcutter"&gt;jumpcutter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 21 Feb 2016 21:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-21:/tips-for-ffmpeg.html</guid><category>ffmpeg</category><category>linux</category><category>video</category></item><item><title>Yes, Privacy Matters</title><link>//romainpellerin.eu/yes-privacy-matters.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/BbkbdYoffX4?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/mqUInAOfBWI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you do care about your privacy, you'd better read what follows carefully ;). Basically, some rules of thumb to avoid common pitfalls and a few tricks to take care of your privacy as much as possible.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/lfit/itpol"&gt;Useful IT policies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use GNU/Linux (Ubuntu-based distro are not perfect but a good start, like Xubuntu; give &lt;a href="http://exherbo.org/"&gt;exerbo&lt;/a&gt; a try if you're brave enough)&lt;/li&gt;
+&lt;li&gt;Don't use binaries coming from the Internet, compile every program to the extent possible&lt;/li&gt;
+&lt;li&gt;Forbid proprietary software as well - see alternatives below in this article&lt;/li&gt;
+&lt;li&gt;Encrypt your whole HDD (and any other external ones) - see right below&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DO NOT INSTALL&lt;/strong&gt; Facebook nor Twitter on your Android phone (or Cyanogen)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Before starting reading this article, you might be interested in this webpage, a &lt;a href="https://wiki.archlinux.org/index.php/Disk_encryption"&gt;full documentation about how encryption works with Linux&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Secure your computer and encrypt (part of) your local hard disk drive&lt;/h1&gt;
+&lt;p&gt;First, set all possible BIOS passwords (usually one for the administrator and one for user(s); each password will give different rights for the BIOS, for example sensitive settings will be accessible to the administrator only).&lt;/p&gt;
+&lt;p&gt;Secondly, set HDD passwords from the BIOS panel (again, one for admins, one for user, both have the same purpose and rights: they kind of unlock the HDD, allowing it to be read and written).&lt;/p&gt;
+&lt;h2&gt;Full disk encryption&lt;/h2&gt;
+&lt;p&gt;Then, to encrypt your whole disk, you have 3 options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use the *Ubuntu built-in installer to encrypt the whole disk, erasing &lt;strong&gt;EVERYTHING&lt;/strong&gt; on the disk.&lt;/li&gt;
+&lt;li&gt;Use the &lt;em&gt;Ubuntu built-in installer with Gparted to encrypt the whole disk, more flexible (select &lt;/em&gt;something else*).&lt;/li&gt;
+&lt;li&gt;DIY. It allows you to &lt;a href="http://askubuntu.com/questions/293028/how-can-i-install-ubuntu-encrypted-with-luks-with-dual-boot"&gt;keep a dual boot installation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I would recommend going with the 1., but if you're interested, &lt;a href="https://thesimplecomputer.info/full-disk-encryption-with-ubuntu"&gt;have a deeper look at thoses 3 options&lt;/a&gt;. Here is &lt;a href="http://www.tecmint.com/install-debian-8-with-luks-encrypted-home-var-lvm-partitions/"&gt;another tutorial&lt;/a&gt; to do it with Debian (not a *Ubuntu disto).&lt;/p&gt;
+&lt;p&gt;In any case, here is how to write a new Xubuntu image on a USB stick:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lsblk &lt;span class="c1"&gt;# To identify the USB stick&lt;/span&gt;
+sudo dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/user/Downloads/xubuntu-15.10-desktop-amd64.iso &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdb &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo sync
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Please notice that with LUKS encryption, &lt;a href="https://twopointfouristan.wordpress.com/2011/04/17/pwning-past-whole-disk-encryption/"&gt;your computer is still vulnerable as long as you have a boot partition unencrypted&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;code&gt;/home&lt;/code&gt; encryption (using the filesystem called eCryptfs)&lt;/h2&gt;
+&lt;p&gt;Do it while installing your fresh new *Ubuntu. Otherwise, you can still &lt;a href="http://askubuntu.com/questions/366749/enable-disk-encryption-after-installation"&gt;do it later&lt;/a&gt; using &lt;a href="http://www.howtogeek.com/116032/how-to-encrypt-your-home-folder-after-installing-ubuntu/"&gt;&lt;code&gt;ecryptfs-migrate-home&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Encrypt external HDD with &lt;code&gt;dm-crypt&lt;/code&gt; and LUKS&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Find the correct device (eg. &lt;code&gt;/dev/sdb1&lt;/code&gt; as a second internal SATA-HDD) and umount it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo aptitude update &lt;span class="p"&gt;;&lt;/span&gt; sudo aptitude install cryptsetup
+sudo modprobe dm-crypt sha256 aes &lt;span class="c1"&gt;# Enable modules, might be already done&lt;/span&gt;
+lsblk
+sudo umount /dev/sdb1
+sudo dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdb &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4K &lt;span class="c1"&gt;# Optional, add obfuscation&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create one big partition using the whole space (system must be Linux):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo fdisk /dev/sdb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Encrypt the partition using LUKS:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cryptsetup --verify-passphrase -c aes-xts-plain64 -s &lt;span class="m"&gt;512&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+     -h sha256 luksFormat /dev/sdb1 &lt;span class="c1"&gt;# 512-bit AES encryption&lt;/span&gt;
+     &lt;span class="c1"&gt;# with 256-bit SHA hashing algorithm&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create the filesystem:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cryptsetup luksOpen /dev/sdb1 myhdd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Format it and test mounting:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkfs.ext4 /dev/mapper/myhdd -L &amp;lt;LABEL&amp;gt; -m &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="c1"&gt;# -m specifies the percentage of the filesystem blocks reserved&lt;/span&gt;
+&lt;span class="c1"&gt;# for the super-user&lt;/span&gt;
+mkdir /mnt/hdd
+mount /dev/mapper/myhdd /mnt/hdd
+df -H
+umount /mnt/hdd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Close container:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo cryptsetup luksClose /dev/mapper/myhdd
+sudo eject /dev/sdb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optional step, after disconnecting and reconnecting the device:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo chown user:user /media/disk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can check the partition using&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fsck -vy /dev/mapper/myhdd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like &lt;em&gt;&lt;code&gt;cryptsetup&lt;/code&gt;&lt;/em&gt; plus &lt;em&gt;&lt;code&gt;luksHeaderBackup&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;&lt;code&gt;luksHeaderRestore&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;&lt;code&gt;isLuks&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;&lt;code&gt;luksDump&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;&lt;code&gt;luksAddKey&lt;/code&gt;&lt;/em&gt; or &lt;em&gt;&lt;code&gt;luksRemoveKey&lt;/code&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Automount encrypted HDDs with LUKS on bootup&lt;/h2&gt;
+&lt;p&gt;In &lt;code&gt;/etc/crypttab&lt;/code&gt;, add:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can find the UUID using &lt;code&gt;blkid /dev/sdb&lt;/code&gt;. You can also directly enter the path &lt;code&gt;/dev/sdb&lt;/code&gt;. &lt;em&gt;none&lt;/em&gt; means there's no keyfile, you'll have to type the password. &lt;em&gt;tries&lt;/em&gt; is the number or tries you have.&lt;/p&gt;
+&lt;p&gt;Then, in &lt;code&gt;/etc/fstab&lt;/code&gt;, add:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/dev/mapper/mycryptedhdd     /mnt/mounteddirectory    ext4      defaults    0   0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;mycryptedhdd&lt;/em&gt; must be the same name used as before. &lt;em&gt;/mnt/mounteddirectory&lt;/em&gt; is where the encrypted disk will be available. &lt;em&gt;ext4&lt;/em&gt; is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the &lt;code&gt;fsck&lt;/code&gt; utility.&lt;/p&gt;
+&lt;p&gt;You're good!&lt;/p&gt;
+&lt;h1&gt;Encrypt what you put on Cloud Storages&lt;/h1&gt;
+&lt;p&gt;This part is inspired from &lt;a href="http://haridas.in/how-to-put-encrypted-contents-on-cloud-storages.html"&gt;this blog post&lt;/a&gt;. &lt;strong&gt;I highly recommend encrypting content put online, should it be on proprietary platforms such as Google Drive ou Dropbox, or even on ownCloud.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install ecryptfs-utils
+sudo modprobe cryptfs &lt;span class="c1"&gt;# Optional&lt;/span&gt;
+mkdir ~/Dropbox/Encrypted &lt;span class="c1"&gt;# This directory will be put online; its content is encrypted&lt;/span&gt;
+mkdir ~/SecureDropbox &lt;span class="c1"&gt;# You&amp;#39;ll put your unencrypted files here&lt;/span&gt;
+sudo mount -t ecryptfs ~/Dropbox/Encrypted ~/SecureDropbox
+&lt;span class="c1"&gt;# Choose a passphrase (which will act as a password), aes 32 bytes.&lt;/span&gt;
+&lt;span class="c1"&gt;# Disable plaintext passthrough. Filename encryption might be useful. I would enable it.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Filename encryption might require another last command to be run, if your content is shared on more than one computer:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ecryptfs-add-passphrase --fnek
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Encrypt one single file&lt;/h1&gt;
+&lt;h2&gt;Encryption&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl aes-256-cbc -in yourfile.txt -out file.enc
+&lt;span class="c1"&gt;# OR&lt;/span&gt;
+gpg -c filename
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Decryption&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openssl aes-256-cbc -d -in file.enc -out yourfile.txt
+&lt;span class="c1"&gt;# OR&lt;/span&gt;
+gpg filename.gpg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Free alternatives to proprietary software&lt;/h1&gt;
+&lt;h2&gt;Emails&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Thunderbird&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Web browser&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mozilla Firefox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Text editor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Atom (&lt;s&gt;Sublime Text&lt;/s&gt; is proprietary)&lt;/li&gt;
+&lt;li&gt;Vim or Emacs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Video editing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.shotcut.org/"&gt;Shotcut&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Graphics editor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Gimp&lt;/li&gt;
+&lt;li&gt;Inkscape (vector)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.adminrezo.fr/2016/01/comment-choisir-sa-cle-ssh-rsa-dsa-ecdsa-ed25519/"&gt;Quelle clé SSH choisir ? RSA, DSA, ou Ed25519 ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://linuxfr.org/news/nsa-a-propos-de-bullrun"&gt;NSA - À propos de BULLRUN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=PFsC1puqhA4"&gt;How to Destroy a Laptop with Top Secrets [cccamp15]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/comment-chiffrer-ses-emails-thunderbird-gpg.html"&gt;Comment chiffrer ses emails ? (Thunderbird + GPG)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://help.riseup.net/en/security/message-security/openpgp/best-practices"&gt;OpenPGP Best Practices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jenairienacacher.fr/"&gt;Je n'ai rien à cacher.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://framasoft.net/"&gt;Framasoft&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/Tmpfs"&gt;tmpfs&lt;/a&gt; &amp;amp; &lt;a href="http://korben.info/accelerez-votre-navigateur-en-mettant-son-cache-en-ram.html"&gt;Accélérez votre navigateur en mettant son cache en RAM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.ted.com/talks/glenn_greenwald_why_privacy_matters"&gt;Why privacy matters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.codinghorror.com/your-password-is-too-damn-short/"&gt;Your Password is Too Damn Short&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://kacper.blog.redpill-linpro.com/archives/702"&gt;NSA-proof SSH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html"&gt;Secure Secure Shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nonblocking.info/cryptographie-de-comptoir/"&gt;Cryptographie de comptoir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.guiguishow.info/2014/07/17/ma-premiere-vraie-cle-pgp/"&gt;Ma première (vraie) clé PGP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@vrypan/explaining-public-key-cryptography-to-non-geeks-f0994b3c2d5"&gt;Explaining public-key cryptography to non-geeks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://zythom.blogspot.fr/2015/12/le-noob-de-lautohebergement.html"&gt;Le noob de l'autohébergement&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ChALkeR/notes/blob/master/Do-not-underestimate-credentials-leaks.md"&gt;Do not underestimate credentials leaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.27months.com/2013/10/its-always-sunny-in-iceland-or-how-i-nsa-proofed-my-email/"&gt;It’s Always Sunny in Reykjavik (or) How I NSA-Proofed my Email&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.whonix.org/wiki/DoNot"&gt;Things not to do on Tor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jumpespjump.blogspot.fr/2015/09/how-i-hacked-my-ip-camera-and-found.html"&gt;The IoT may be dangerous! Beware!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/HTeuMeuLeu/status/719489886265454592"&gt;What every Browser knows about you&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://panopticlick.eff.org/"&gt;Panopticlick - Is your browser safe against tracking?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://amiunique.org/"&gt;Am I Unique?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.appcanary.com/2016/encrypt-or-compress.html"&gt;Should you encrypt or compress first?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.linux-magazine.com/Online/Features/Protect-your-Documents-with-GPG"&gt;Protect your Documents with GPG&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stallman.org/articles/why-fear-surveillance.html"&gt;Yes, You Have Something to Fear&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stallman.org/something-to-fear.html"&gt;Something to Fear&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://browserleaks.com/"&gt;BrowserLeaks.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://panopticlick.eff.org/"&gt;Panopticlick&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://someonewhocares.org/hosts/"&gt;how to make the internet not suck (as much)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/tbds/FreeContributor"&gt;Simple DNS Ad Blocker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/jmdugan/blocklists"&gt;Shared lists of problem domains people may want to block with hosts files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/StevenBlack/hosts"&gt;hosts: Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others. You can optionally invoke extensions to block additional sites by category&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/tout-ce-que-votre-navigateur-peut-balancer-sur-vous.html"&gt;Tout ce que votre navigateur peut balancer sur vous&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sebsauvage.net/wiki/doku.php?id=firefox"&gt;Paramétrage de Firefox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@FabioAEsteves/i-have-nothing-to-hide-why-should-i-care-about-my-privacy-f488281b8f1d"&gt;“I have nothing to hide. Why should I care about my privacy?”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=djbwzEIv7gE"&gt;NOTHING TO HIDE documentaire (français, film complet HD)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://privacyinternational.org/node/1099"&gt;Through an app, darkly: How companies construct our financial identity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vpnreport.org/"&gt;I tested the most recommended VPN providers using my credit card to find the best ones — and which ones you should avoid.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.imirhil.fr/2015/12/08/extensions-vie-privee.html"&gt;Extensions Firefox pour protéger sa vie privée&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://amiunique.org/tools"&gt;More extensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sebsauvage.net/wiki/doku.php?id=firefox"&gt;Even more extensions + how to configure Firefox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks"&gt;Privacy/Privacy Task Force/firefox about config privacy tweeks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://spreadprivacy.com/linux-privacy-tips/"&gt;How To Protect Your Privacy On Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pi-hole.net/"&gt;Pi-hole&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.laquadrature.net/fr/temoin_cortana"&gt;Derrière les assistants vocaux, des humains vous entendent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mydatarequest.com/"&gt;My Data Request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/sdeleuze/status/1021655647442616322"&gt;Yesterday, I finished to switch to @ProtonMail by...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=AOzkW2W6gfA"&gt;YOU ONLY LIVE ONLINE - Dries DEPOORTER - Web2day 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.wired.com/story/mcsweeneys-excerpt-the-right-to-experiment/"&gt;Surveillance Kills Freedom By Killing Experimentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://motherboard.vice.com/amp/en_us/article/vba7xj/people-who-buy-smart-speakers-have-given-up-on-privacy-researchers-find"&gt;People Who Buy Smart Speakers Have Given Up on Privacy, Researchers Find&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.numerama.com/vroom/444440-en-chine-le-gouvernement-peut-geolocaliser-chaque-voiture-electrique-en-temps-reel.html"&gt;En Chine, le gouvernement peut géolocaliser chaque voiture électrique en temps réel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://motherboard.vice.com/en_us/article/j5zap3/delete-all-your-apps"&gt;Delete All Your Apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nytimes.com/interactive/2018/12/10/business/location-data-privacy-apps.html"&gt;Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jeffreybigham.com/blog/2019/who-is-watching-you-in-your-airbnb.html"&gt;A Camera is Watching You in Your AirBnB: And, you consented to it.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/grugq/03167bed45e774551155"&gt;Operational PGP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://crackedlabs.org/en/corporate-surveillance/#1"&gt;Corporate Surveillance in Everyday Life&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html"&gt;It's Time to Panic About Privacy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7"&gt;Online Privacy Isn’t Dead—If We Fight for It&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 01:40:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/yes-privacy-matters.html</guid><category>privacy</category><category>security</category><category>linux</category><category>gnu</category><category>ssh</category><category>free software</category><category>open source</category><category>ubuntu</category><category>exerbo</category><category>xubuntu</category></item><item><title>Mastering GNU/Linux</title><link>//romainpellerin.eu/mastering-gnu-linux.html</link><description>&lt;p&gt;Everything you have ever wanted to know about GNU/Linux plus some troubleshooting tips I learned the hard way.&lt;/p&gt;
+&lt;h1&gt;Installing Linux on a Dell preinstalled with Windows&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;In Windows, disable Fast startup in Panel Control &amp;gt; Power &amp;gt; Action when button pressed.&lt;/li&gt;
+&lt;li&gt;In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers&lt;/li&gt;
+&lt;li&gt;You might want to enable 'SD card boot' in the BIOS under Boot &amp;gt; Miscellaneous devices if you use a SD card to install Linux&lt;/li&gt;
+&lt;li&gt;In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: &lt;a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3"&gt;https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3&lt;/a&gt; and &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=204629"&gt;https://bbs.archlinux.org/viewtopic.php?id=204629&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's it. You should be able to install Linux on the entire disk now.&lt;/p&gt;
+&lt;h1&gt;Upgrading your distribution of *Ubuntu&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo &lt;span class="k"&gt;do&lt;/span&gt;-release-upgrade
+&lt;span class="c1"&gt;# OR&lt;/span&gt;
+sudo update-manager -c
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://help.ubuntu.com/lts/serverguide/installing-upgrading.html"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;GNU/Linux&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ANA134vEhEI"&gt;Nom de code : Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"&gt;Filesystem Hierarchy Standard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jvns.ca/blog/2016/11/10/a-few-drawings-about-linux/"&gt;A few drawings about Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mavielinux.com/2016/12/18/pourquoi-la-mascotte-de-linux-est-un-manchot/"&gt;Pourquoi la mascotte de Linux est un manchot?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=xqdWi6SblV8"&gt;Linux est ton meilleur ami (Pierre Antoine Grégoire - Olivier Robert - Nicolas Helleringer)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Free Software Foundation / Open source&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.gnu.org/philosophy/free-software-for-freedom.html"&gt;Why “Free Software” is better than “Open Source”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://remysharp.com/2015/01/09/dont-like-open-source"&gt;"Why I don't like open source" – my thoughts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Installing Linux&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.adminrezo.fr/2013/05/que-faire-apres-linstallation-dun-serveur-debian/"&gt;Que faire après l’installation d’un serveur Debian ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.adminrezo.fr/2014/01/post-installation-ubuntu-kubuntu/"&gt;Que faire après l’installation de (U|k|x)buntu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sites.google.com/site/easylinuxtipsproject/first-xubuntu"&gt;10 things to do first in Xubuntu 14.04 LTS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://superuser.com/questions/419876/grub-reinstall-after-partition-name-change"&gt;grub reinstall after partition name change&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://bookmarks.romainpellerin.eu/?page=1"&gt;How do I disable the guest session?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://g.eckenschwiller.free.fr/Tutoriels/Installation/greffons_Xfce.php"&gt;Quelques greffons pour Xfce&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://xubuntugeek.blogspot.fr/2011/12/add-items-to-xfce-applications-menu.html"&gt;Add items to Xfce Applications Menu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/dfkt/firefox-tweaks"&gt;firefox-tweaks: attempt to make Firefox suck less&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/MichielDerhaeg/build-linux/blob/master/README.md"&gt;Build yourself a Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Alongside Windows&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://help.ubuntu.com/community/UEFI"&gt;Windows 8+ dual boot on UEFI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.mercereau.info/reparer-grub-apres-une-installation-de-windows/"&gt;Réparer Grub après une installation de windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;The whole system&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.clever-cloud.com/blog/engineering/2012/11/22/knowing-your-system-part-basics-on-unixlike-systems/"&gt;Knowing your system - Part 1 - Basis on UNIX-like systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://gfx.developpez.com/tutoriel/linux/kernel/"&gt;La compilation du noyau&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.linuxfromscratch.org/"&gt;Linux From Scratcg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/"&gt;Linux file system hierarchy v2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://fredrb.github.io/2016/10/01/Understanding-proc/"&gt;Understanding /proc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Shells &amp;amp; Terminals&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/5163144/what-are-the-special-dollar-sign-shell-variables/5163260#5163260"&gt;What are the special dollar sign shell variables?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces"&gt;How to use double or single bracket, parentheses, curly braces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://mywiki.wooledge.org/BashFAQ/082"&gt;Why is $(...) preferred over &lt;code&gt;...&lt;/code&gt; (backticks)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.shellcheck.net/"&gt;Shell script analyzer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://samrowe.com/wordpress/advancing-in-the-bash-shell/"&gt;Advancing in the Bash Shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://ddfreyne.github.io/til/2016/12-03-terminal-cursor-movement/"&gt;Moving the terminal cursor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lambdaops.com/rm-rf-remains/"&gt;rm -rf remains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.guntram.de/?p=164"&gt;The annoying alternate screen in vte-based terminal applications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://st.suckless.org/"&gt;st - a simple terminal implementation for X&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vincent.bernat.im/en/blog/2017-write-own-terminal"&gt;Write your own terminal emulator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jvns.ca/blog/2017/03/26/bash-quirks/"&gt;Bash scripting quirks &amp;amp; safety tips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.regehr.org/archives/1483"&gt;Fun at the UNIX Terminal Part 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Software&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://putaindecode.fr/posts/shell/apprendre-les-makefiles/"&gt;Laissez-vous pousser la barbe, apprenez à écrire des Makefiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://monkey.org/~marius/unix-tools-hints.html"&gt;Hints for writing Unix tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://linrunner.de/en/tlp/tlp.html"&gt;TLP: battery optimizer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Commands / tips&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html"&gt;Linux Performance Analysis in 60,000 Milliseconds&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://korben.info/dintimite-lhistorique-bash.html"&gt;Pour avoir un peu d’intimité avec l’historique Bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zwischenzugs.com/2018/01/06/ten-things-i-wish-id-known-about-bash/"&gt;Ten Things I Wish I’d Known About bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zwischenzugs.com/2018/01/21/ten-more-things-i-wish-id-known-about-bash/"&gt;Ten More Things I Wish I'd Known About bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.binarytides.com/linux-commands-monitor-network/"&gt;18 commands to monitor network bandwidth on Linux server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://arthurdejong.org/recovery.html"&gt;Recovering hard drive disk problems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://hacklab.cz/2012/04/22/usefulness-linux-framebuffer-virtual-console"&gt;Usefulness of the Linux Framebuffer on the Virtual Console&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pythonhosted.org/pdftools.pdfposter/Examples.html"&gt;Print PDF on many pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.tjll.net/ssh-kung-fu/"&gt;SSH Kung Fu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lonesysadmin.net/2011/11/08/ssh-escape-sequences-aka-kill-dead-ssh-sessions/"&gt;SSH Escape Sequences (aka Kill Dead SSH Sessions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/utiliser-nano.html"&gt;NANO : Quelques raccourcis à retenir&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wiki.linux-france.org/wiki/Les_commandes_fondamentales_de_Linux"&gt;Les commandes fondamentales de Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-mail-postfix-courier-imap-ubuntu.pdf"&gt;Créer un serveur mail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nicodewaele.free.fr/Site/Stockage/Gnu-Linux/serveur-dns-bind.pdf"&gt;Un DNS avec Bind&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.bortzmeyer.org/unbound.html"&gt;Unbound, un autre résolveur DNS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zwischenzugs.com/2018/06/08/anatomy-of-a-linux-dns-lookup-part-i/"&gt;Anatomy of a Linux DNS Lookup – Part I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/long-didnt-read-pour-vos-man-pages.html"&gt;Too long; didn’t read pour vos man pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://askubuntu.com/questions/427818/how-can-i-run-this-sh-script-without-typing-the-full-path/527008#527008"&gt;Add a new command available in shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://askubuntu.com/questions/22381/how-to-format-a-usb-flash-drive/571340#571340"&gt;How to format a USB flash drive?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/yudai/gotty"&gt;gotty: Share your terminal as a web application&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://crontab.guru/"&gt;crontab.guru&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.security-helpzone.com/rendre-linux-ecologique-gren-it-news-335.html"&gt;Rendre Linux écologique (green-it)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://majantali.net/2016/10/how-breakpoints-are-set/"&gt;HOW BREAKPOINTS ARE SET&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/realiser-limage-dun-disque-dur-testdisk.html"&gt;Réaliser l’image d’un disque dur avec Testdisk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/chubin/wttr.in"&gt;The right way to check the weather http://wttr.in&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lopezferrando.com/30-interesting-shell-commands/"&gt;30 interesting commands for the Linux shell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Other distros&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/CBPP/cbpp"&gt;#!++, A CrunchBang revival project (very lightweight distro)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Security&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://dhavalkapil.com/blogs/Shellcode-Injection/"&gt;Shellcode Injection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.mailgun.com/security-guide-basic-infrastructure-security/"&gt;Security Guide: How to Protect Your Infrastructure Against the Basic Attacker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/"&gt;/dev/random vs /dev/urandom&lt;/a&gt; &amp;amp; &lt;a href="http://www.2uo.de/myths-about-urandom/"&gt;Myths about /dev/urandom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1"&gt;Hygiène numérique pour l’administrateur système&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://spreadprivacy.com/linux-privacy-tips/"&gt;How To Protect Your Privacy On Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://thegeekyway.com/hands-on-guide-on-gpg-keys/"&gt;Hands-on Guide on GPG Keys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.void.gr/kargig/blog/2013/12/02/creating-a-new-gpg-key-with-subkeys/"&gt;Creating a new GPG key with subkeys&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.beaupeyrat.com/wp-content/uploads/2015/07/gpg.pdf"&gt;GNU Privacy Guard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://incenp.org/notes/2015/using-an-offline-gnupg-master-key.html"&gt;Using an offline GnuPG master key&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.debian.org/Subkeys"&gt;Using OpenPGP subkeys in Debian development&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.debian.org/doc/manuals/securing-debian-howto/index.fr.html"&gt;Securing Debian Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server"&gt;How To Secure A Linux Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3"&gt;the-practical-linux-hardening-guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;NGINX&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/trimstray/nginx-admins-handbook"&gt;trimstray/nginx-admins-handbook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Other&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://tuhdo.github.io/os01/"&gt;Operating System: From 0 to 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mobile.twitter.com/clementd/status/837600575483179009"&gt;xmonad + vimperator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/netflix-techblog/linux-performance-analysis-in-60-000-milliseconds-accc10403c55"&gt;Linux Performance Analysis in 60,000 Milliseconds&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/angrave/SystemProgramming/wiki"&gt;System Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bash-prompt.net/guides/server-hacked/"&gt;How To Tell If Your Linux Server Has Been Compromised&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=v-jdlc5YdDc"&gt;SystemD pro level linux des temps modernes Process management, containers (P.A. Grégoire, Q. Adam)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://0x46.net/thoughts/2019/02/01/dotfile-madness/"&gt;Dotfile madness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/trimstray/the-book-of-secret-knowledge#cli-tools-toc"&gt;trimstray/the-book-of-secret-knowledge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://asciinema.org/"&gt;asciinema: Record and share your terminal sessions, the right way&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 02 Feb 2016 00:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-02:/mastering-gnu-linux.html</guid><category>linux</category><category>ubuntu</category><category>xubuntu</category><category>debian</category><category>unix</category><category>gnu</category></item><item><title>Hacking</title><link>//romainpellerin.eu/hacking.html</link><description>&lt;p&gt;This brief article solely contains a few lines of commands, to perform pentesting or network monitoring. It's basically something I might use in the future on my networks or apps, so I'm writing it down as a reminder. I thought it may help other people that's why I decided to put it online. Of course the preferred operating system is &lt;a href="https://www.kali.org/"&gt;Kali&lt;/a&gt; (or any Debian-based distro).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;WARNING: only for use on your own networks and devices, the law strictly forbids it otherwise.&lt;/strong&gt;&lt;/p&gt;
+&lt;h1&gt;Fake AP (access point)&lt;/h1&gt;
+&lt;p&gt;This technique is about creating a fake access point, similar to one already existing, so that people's computers will try to connect to your fake AP automatically, without them noticing.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Deactivate any firewall first&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Get super user rights&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install some required packages if not already present&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aptitude install dnsmasq aircrack-ng
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;List the existing network interfaces and turn one of them into monitor mode&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;airmon-ng
+airmon-ng start wlan0 &lt;span class="c1"&gt;# wlan0 is usually Wifi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start monitoring available networks around, and make a quick test&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;airodump-ng mon0
+aireplay-ng --test mon0 &lt;span class="c1"&gt;# Test&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose one network and fake it&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;airbase-ng --essid &lt;span class="s1"&gt;&amp;#39;HG655D-1BFF19&amp;#39;&lt;/span&gt; -c &lt;span class="m"&gt;7&lt;/span&gt; -W &lt;span class="m"&gt;1&lt;/span&gt; -Z &lt;span class="m"&gt;2&lt;/span&gt; -v mon0 &lt;span class="c1"&gt;# Fake WPA AP&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable packet forwarding&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A PREROUTING -p tcp --destination-port &lt;span class="m"&gt;80&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;8080&lt;/span&gt;
+iptables -t nat -A PREROUTING -p tcp --destination-port &lt;span class="m"&gt;443&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;8080&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write what follows in &lt;code&gt;/etc/dnsmasq.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;interface=at0
+dhcp-range=192.168.0.50,192.168.0.150,12h
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Do some other things for which I can't recall the usefulness right now (but I promise to update the article as soon as I do):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ifconfig at0 &lt;span class="m"&gt;192&lt;/span&gt;.168.0.1 up
+dnsmasq &lt;span class="c1"&gt;# pkill dnsmasq if needed&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Write what follows in &lt;code&gt;/tmp/tests.conf&lt;/code&gt; (&lt;code&gt;&amp;lt;tab&amp;gt;&lt;/code&gt; means you have to hit the tab key):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.0.1&amp;lt;tab&amp;gt;*
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;dnsspoof&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dnsspoof -i wlan0 -f /tmp/tests.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finally, start a webserver (Apache or using Python, or whatever)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 -m http.server &lt;span class="m"&gt;8080&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And you're good! All the clear traffic will pop up right in front of your eyes. To deal with HTTPS connections, have a look at &lt;a href="http://www.thoughtcrime.org/software/sslstrip/"&gt;SSLstrip&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Encountering problems with DNSspoof? &lt;a href="https://forums.hak5.org/index.php?/topic/29166-dnsspoof-problem/"&gt;Have a look there.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.backtrack-linux.org/forums/showthread.php?t=61240"&gt;More information about faking APs.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.offensive-security.com/kali-linux/kali-linux-evil-wireless-access-point/"&gt;Another interesting tutorial ("Kali Linux Evil Wireless Access Point").&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;MITM&lt;/h1&gt;
+&lt;p&gt;This is a commonly used technique to "put yourself" between a target user and an access point, in order to see all the traffic this user might send and receive.&lt;/p&gt;
+&lt;h2&gt;MITM on Android&lt;/h2&gt;
+&lt;p&gt;On Android, it has the advantage of allowing you to monitor your outcoming traffic, which is useful when debugging your own apps.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Grant yourself super user rights and enable packet forwarding on the right interface (here &lt;code&gt;eth0&lt;/code&gt; which is the Ethernet connection):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+sysctl -w net.ipv4.ip_forward&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport &lt;span class="m"&gt;80&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;8080&lt;/span&gt;
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport &lt;span class="m"&gt;443&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;8080&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install the required dependencies and mitmproxy:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+easy_install mitmproxy
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can as well &lt;a href="http://docs.mitmproxy.org/en/stable/install.html#installation-on-ubuntu"&gt;download mitmproxy and install it manually&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mitmproxy -T --no-upstream-cert --host &lt;span class="o"&gt;[&lt;/span&gt;-p &lt;span class="m"&gt;8080&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# -p is optional as 8080 is the default port&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The argument &lt;code&gt;-T&lt;/code&gt; is for &lt;em&gt;transparent&lt;/em&gt;. If you don't go for transparent, then the 3 lines about packet forwarding (point 1.) are useless (or maybe not, I can't remember).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On your Android device:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the current Wifi settings (long-press on the connected network).&lt;ul&gt;
+&lt;li&gt;If you decided to do transparent proxying (see above), set proxy to your computer's IP and port 8080, like: &lt;code&gt;192.168.1.2:8080&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you decided not to do transparent proxying (see above), don't set the proxy and instead set the IP to be static rather than using DHCP. Then write your computer's IP as the gateway.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Go to the website &lt;a href="http://mitm.it"&gt;mitm.it&lt;/a&gt; and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/Download
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Then you'll see the traffic in your terminal going through!&lt;/p&gt;
+&lt;p&gt;This part has been inspired from &lt;a href="https://medium.com/@rotxed/how-to-debug-http-s-traffic-on-android-7fbe5d2a34"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Other tools&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/xdavidhu/mitmAP"&gt;mitmAP - A python program, to create a fake AP, and sniff data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Other related topics&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.gvrachliotis.net/2013/10/how-to-reset-user-password-in-windows.html"&gt;How to: Reset user password in Windows 7/8/8.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nolimitsecu.fr/les-denis-de-service/"&gt;Les dénies de services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/wifi-ouvert-attention-aux-faux-hotspot-demo-module-arduino.html"&gt;Wifi ouvert – Attention aux faux hotspot ! (+ une démo avec un module Arduino)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.trustwave.com/Resources/SpiderLabs-Blog/How-I-Cracked-a-Keylogger-and-Ended-Up-in-Someone-s-Inbox/"&gt;How I Cracked a Keylogger and Ended Up in Someone's Inbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://defaultnamehere.tumblr.com/post/147747146865/stalking-your-facebook-friends-on-tinder"&gt;Stalking your Facebook friends on Tinder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.secureideas.com/2013/05/professionally-evil-this-is-not.html"&gt;Professionally Evil: This is NOT the Wireless Access Point You are Looking For&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://phreaklets.blogspot.kr/2013/06/cracking-wireless-networks-protected.html?m=1"&gt;Phreaklets: Cracking WPA2 Enterprise wireless networks with FreeRADIUS WPE, hostapd and asleap &amp;amp; John the Ripper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.guiguishow.info/2016/10/12/tp-mobilite-et-reseaux-sans-fil-reseau-sans-fil-securise-et-monitore-mobilite-ipv6/"&gt;TP Mobilité et réseaux sans fil : réseau sans fil sécurisé et monitoré + mobilité IPv6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.robertputt.co.uk/2016/11/28/learn-from-your-attackers-ssh-honeypot/"&gt;Learn from your attackers – SSH HoneyPot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@chrismcnab/alexseys-ttps-1204d9050551"&gt;Alexsey’s TTPs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.piotrbania.com/all/kon-boot/"&gt;KON-BOOT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://korben.info/rickroller-spotify.html"&gt;Rickroller Spotify !&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://null-byte.wonderhowto.com/"&gt;Null Byte&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/"&gt;Tabnabbing: A New Type of Phishing Attack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mathiasbynens.github.io/rel-noopener/"&gt;About rel=noopener&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/trustedsec/social-engineer-toolkit"&gt;social-engineer-toolkit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mango.pdf.zone/"&gt;mango.pdf.zone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 18 Jan 2016 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-01-18:/hacking.html</guid><category>hacking</category><category>kali</category><category>security</category><category>android</category><category>mitm</category><category>linux</category></item><item><title>Git</title><link>//romainpellerin.eu/git.html</link><description>&lt;p&gt;Here are two talks about Git I gave in the last two years, at &lt;a href="http://humantalks.com/cities/compiegne"&gt;HumanTalks Compiègne&lt;/a&gt;. I added the slides as well.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8d04CYP5U9Q?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9gdub0OMC8Y?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Going further&lt;/h1&gt;
+&lt;p&gt;Here are some resources to go deeper with Git.&lt;/p&gt;
+&lt;h2&gt;General&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=4XpnKHJAok8"&gt;Tech Talk: Linus Torvalds on git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cirosantilli.com/git-tutorial/"&gt;Git Version Control Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://codewords.recurse.com/issues/two/git-from-the-inside-out"&gt;Git from the inside out&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://dev.to/unseenwizzard/learn-git-concepts-not-commands-4gjc"&gt;Learn git concepts, not commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gitignore.io/"&gt;gitignore.io: auto generate .gitignore files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/github/gitignore"&gt;gitignore: A collection of useful .gitignore templates&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/13630849/git-difference-between-assume-unchanged-and-skip-worktree"&gt;Git - Difference Between 'assume-unchanged' and 'skip-worktree'&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.clever-cloud.com/blog/engineering/2015/06/09/git-server-30k-improvement/"&gt;How We Cut Latency Down by 30k% on Our Git Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/gitrob-evitez-la-catastrophe-sur-github.html"&gt;Gitrob – Évitez la catastrophe sur Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://gitolite.com/git-pull--rebase.html"&gt;What does "git pull --rebase" do?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jeffkreeftmeijer.com/2010/the-magical-and-not-harmful-rebase/"&gt;The magical (and not harmful) rebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jeffkreeftmeijer.com/2010/the-mighty-reflog-and-the-amazing-bisect/"&gt;The mighty reflog and the amazing bisect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://increment.com/open-source/more-productive-git/"&gt;More productive Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.git-attitude.fr/2015/12/18/learning-github/"&gt;Notre cours vidéo GitHub est sorti !&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.learnenough.com/git-tutorial"&gt;Learn Enough Git to Be Dangerous&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://mikegerwitz.com/papers/git-horror-story"&gt;A Git Horror Story: Repository Integrity With Signed Commits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stevelorek.com/how-to-shrink-a-git-repository.html"&gt;How to Shrink a Git Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1657017/how-to-squash-all-git-commits-into-one"&gt;How to squash all git commits into one?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://korben.info/gitminer-fouiller-github-profondeur.html"&gt;Gitminer – Pour fouiller Github en profondeur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.git-attitude.fr/2016/05/11/git-reset/"&gt;Git reset : rien ne se perd, tout se transforme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/k88hudson/git-flight-rules"&gt;Flight rules for git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Hd_UpJPDlik"&gt;Entrer dans les entrailles de Git, ou comment faire un commit sans faire du Git (Alexandre Garnier)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://delicious-insights.com/fr/articles/bien-utiliser-git-merge-et-rebase/"&gt;Bien utiliser Git merge et rebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://robots.thoughtbot.com/autosquashing-git-commits"&gt;Auto-squashing Git Commits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git-scm.com/docs/git-worktree#_examples"&gt;git worktree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sethrobertson.github.io/"&gt;Git stuff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://alblue.bandlem.com/2011/10/git-tip-of-week-merging-revisited.html"&gt;Git Tip of the Week: Merging Revisited&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde"&gt;Git caret and tilde&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Rebasing and cherry-picking&lt;/h2&gt;
+&lt;p&gt;Rebases mostly use &lt;code&gt;git am&lt;/code&gt;, which given diffs apply them sequentially. Diffs are computed between a given commit and its parent.&lt;/p&gt;
+&lt;p&gt;On the other hand, cherry-picks uses a three-way merge to notice file renames.&lt;/p&gt;
+&lt;p&gt;More on the topic below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/39279901/what-algorithm-is-used-during-git-rebase"&gt;What algorithm is used during Git rebase?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/42530381/issue-with-cherry-pick-changes-from-previous-commits-are-also-applied"&gt;Issue with cherry pick: changes from previous commits are also applied&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/10058068/in-a-git-cherry-pick-or-rebase-merge-conflict-how-are-base-aka-the-ancestor"&gt;In a Git cherry-pick or rebase merge conflict, how are BASE (aka “the ancestor”), LOCAL, and REMOTE determined?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Auto deployment&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-automatic-deployment-with-git-with-a-vps"&gt;How To Set Up Automatic Deployment with Git with a VPS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://krisjordan.com/essays/setting-up-push-to-deploy-with-git"&gt;Setting up Push-to-Deploy with git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.sitepoint.com/one-click-app-deployment-server-side-git-hooks/"&gt;One-click App Deployment with Server-side Git Hooks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://williamdurand.fr/2012/02/25/deploying-with-git/"&gt;Deploying With Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/olipo186/Git-Auto-Deploy"&gt;Git-Auto-Deploy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Commit messages&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://chris.beams.io/posts/git-commit/"&gt;How to Write a Git Commit Message&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://antirez.com/news/90"&gt;Commit messages are not titles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://jeffkreeftmeijer.com/2010/git-your-act-together/"&gt;Git your act together&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://alistapart.com/article/the-art-of-the-commit"&gt;The Art of the Commit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://conventionalcommits.org/"&gt;Conventional Commits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Sub-projects management: submobules and subtrees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://makingsoftware.wordpress.com/2013/02/16/using-git-subtrees-for-repository-separation/"&gt;Using Git subtrees for repository separation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.jingleweb.fr/2013/10/submodules-git-pourquoi-comment/"&gt;Submodules GIT: pourquoi, comment ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.git-attitude.fr/2014/12/31/git-submodules/"&gt;Comprendre et maîtriser les submodules Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging"&gt;Subtree Merging (official documentation)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@porteneuve/mastering-git-subtrees-943d29a798ec"&gt;Mastering Git subtrees&lt;/a&gt;: &lt;code&gt;git read-tree&lt;/code&gt; and &lt;code&gt;git subtree&lt;/code&gt; are two different commands.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.atlassian.com/blog/2015/05/the-power-of-git-subtree/"&gt;The power of Git subtree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tricks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://pypi.python.org/pypi/ansi2html/1.0.7"&gt;Git diff to HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/"&gt;Little Things I Like to Do with Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Rnh5QK__pLA"&gt;DevFest Nantes 2018 - Git Dammit !&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 03 Jun 2015 00:01:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-06-03:/git.html</guid><category>presentation</category><category>talk</category><category>git</category></item></channel></rss>

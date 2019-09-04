@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, movies" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My all time favorite movies. Or some of them." />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Favorite Movies - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My all time favorite movies. Or some of them." />
+
+        <title>Favorite Movies - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-02-10T00:50:00+01:00">Fri 10 February 2017</time>        </p>
+    <h1>Favorite Movies</h1>
+    <div class="grey">
+        <p class="italic">My all time favorite movies. Or some of them.</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 240 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/movies.html">movies</a></p>    </div>
+</header>
+<article>
+    <p>Just like I started listing <a href="//romainpellerin.eu/books.html">the books I read</a>, I want to list some of my favorite movies. So here is a first attempt to list them. Of course, I probably forgot lots of them, so I'll keep updating this article occasionally.</p>
+<p>For the moment, the list is unordered. I'll certainly re-order that at some point, when it gets confusing and messy.</p>
+<ul>
+<li>La La Land: <em>great actors, excellent OST</em></li>
+<li>Whiplash</li>
+<li>Birdman</li>
+<li>Begin Again: <em>great OST</em></li>
+<li>Dead Poets Society</li>
+<li>Good Will Hunting</li>
+<li>Forrest Gump</li>
+<li>Seven Pouds</li>
+<li>Titanic</li>
+<li>Avatar</li>
+<li>Star Wars movies</li>
+<li>Blue Valentine</li>
+<li>Drive: <em>great OST</em></li>
+<li>The Great Gatsby</li>
+<li>The Shawshank Redemption</li>
+<li>Hannibal movies with Hopkins (chronological order for the story): Hannibal Rising, Red Dragon, The Silence of the Lambs, and Hannibal</li>
+<li>The Pursuit of Happyness</li>
+<li>I Am Legend</li>
+<li>The Rocky movies</li>
+<li>The Wolf of Wall Street</li>
+<li>Ex Machina</li>
+<li>Leon The Professional</li>
+<li>Inside Lewyin Davis</li>
+<li>Juno</li>
+<li>Get Out</li>
+<li>Limitless</li>
+<li>Your name (Japanese anime)</li>
+<li>Grave of the Fireflies (Japanese anime)</li>
+<li>Whisper of the heart (Japanese anime)</li>
+<li>My neighbor Totoro (Japanese anime)</li>
+<li>The Wind Rises (Japanese anime)</li>
+<li>Wolf Children (Japanese anime)</li>
+<li>The Girl Who Leapt Through Time (Japanese anime)</li>
+<li>Kiki's Delivery Service (Japanese anime)</li>
+<li>When Marnie Was There (Japanese anime)</li>
+<li>Catch Me If You Can</li>
+<li>Creed</li>
+<li>Blade Runner and Blade Runner 2049</li>
+<li>Django Unchained</li>
+<li>Cast Away</li>
+<li>The Notebook</li>
+<li>The Artist</li>
+<li>Matrix movies</li>
+<li>San Junipero (an episode from the TV series <em>Black Mirror</em>)</li>
+<li>Hang the DJ (an episode from the TV series <em>Black Mirror</em>)</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 10 February 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

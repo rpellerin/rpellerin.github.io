@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, computer, memory" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Understanding how memory works" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Understanding The Memory - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Understanding how memory works" />
+
+        <title>Understanding The Memory - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2015-06-26T01:11:00+02:00">Fri 26 June 2015</time> - Last Update: <time datetime="2017-02-16T23:44:00+01:00">Thu 16 February 2017</time>        </p>
+    <h1>Understanding The Memory</h1>
+    <div class="grey">
+        <p class="italic">Understanding how memory works</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 804 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/computer.html">computer</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/memory.html">memory</a></p>    </div>
+</header>
+<article>
+    <p>Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.</p>
+<p>Nows, let's have a look at memory and let's try to understand how it works.</p>
+<h1>Processes and threads</h1>
+<p>Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains <strong>four main areas</strong>:</p>
+<ul>
+<li><strong>Data</strong>: contains the global and static variables (explicitly initialized with a non-zero or non-NULL value, according to <a href="https://en.wikipedia.org/wiki/Data_segment">Wikipedia</a>) used by the program. The content of constants is on the data segment, whereas references to constants are on the code (see next bullet point). The BSS segment (which is usually adjacent to the data segment) contains all global variables and static variables that are initialized to zero or do not have explicit initialization (in such a case, they <a href="http://stackoverflow.com/questions/13251083/the-initialization-of-static-variables-in-c">are implicitly initialized to 0</a>). The BSS segment can be considered a part of the data segment.</li>
+<li><strong>Code segment</strong>: contains the assembly code of the program to be executed.</li>
+<li><strong>Heap</strong>: contains all dynamically allocated primitive data types or objects (with <code>malloc</code> in C or <code>new</code> in C++, for instance). The developer is in charge of the lifetime of these variables, he has to explicitly deallocate memory (with <code>free</code> in C or <code>delete</code> in C++).</li>
+<li><strong>Stack</strong>: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. <strong>Stack values only exist within the scope of the function they are created in.</strong></li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/memory-stack.jpg" alt="The stack" />
+<figcaption>Image taken from <a href="http://www.linuxjournal.com/article/6391">http://www.linuxjournal.com/article/6391</a></figcaption>
+</figure>
+
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Let's see how this code gets compiled in x86 assembly.</p>
+<div class="highlight"><pre><span></span>gcc -S -masm<span class="o">=</span>intel main.c -fno-asynchronous-unwind-tables -o output.asm
+</pre></div>
+
+
+<p>Now, we'll see the instructions using the stack.</p>
+<div class="highlight"><pre><span></span>    .file   &quot;main.c&quot;
+    .intel_syntax noprefix
+    .text
+    .globl  add
+    .type   add, @function
+add:
+    push    rbp
+    mov rbp, rsp
+    mov DWORD PTR [rbp-4], edi
+    mov DWORD PTR [rbp-8], esi
+    mov edx, DWORD PTR [rbp-4]
+    mov eax, DWORD PTR [rbp-8]
+    add eax, edx
+    pop rbp
+    ret
+    .size   add, .-add
+    .globl  main
+    .type   main, @function
+main:
+    push    rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov esi, 2
+    mov edi, 1
+    call    add
+    mov DWORD PTR [rbp-4], eax
+    mov eax, 0
+    leave
+    ret
+    .size   main, .-main
+    .ident  &quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&quot;
+    .section    .note.GNU-stack,&quot;&quot;,@progbits
+</pre></div>
+
+
+<p>Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.</p>
+<h1>Allocating memory for objects and primitive data types</h1>
+<h2>C++</h2>
+<p>Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.</p>
+<p>Global variables and static variables (not only global) go to the data segment.</p>
+<p>Here are some examples, to make things clear:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fonction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Object</span> <span class="n">o</span><span class="p">();</span> <span class="c1">// On the stack</span>
+  <span class="n">Object</span> <span class="n">o2</span> <span class="o">=</span> <span class="n">Object</span><span class="p">();</span> <span class="c1">// On the stack</span>
+  <span class="n">Object</span><span class="o">&amp;</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">o</span><span class="p">;</span> <span class="c1">// The reference is on the stack</span>
+  <span class="n">Object</span><span class="o">*</span> <span class="n">pt</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">o</span><span class="p">;</span> <span class="c1">// The pointer is on the stack</span>
+  <span class="n">Object</span><span class="o">*</span> <span class="n">pt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">();</span> <span class="cm">/* The right handside (the actual object)</span>
+<span class="cm">    is on the heap, the left handside is on the stack */</span>
+
+  <span class="cm">/* Everything that has been allocated on the stack will be</span>
+<span class="cm">    deleted at the end of the function */</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>To delete what is on the heap, you need to use the <code>delete</code> keyword.</p>
+<figure class="center">
+<img alt="Pointers and addresses" src="//romainpellerin.eu/images/memory_cpp_example.png" />
+</figure>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h2>Java</h2>
+<p>The main difference is that objects on the heap are automatically destroyed by the garbage collector, once they are no longer referenced. Moreover, only primitives are on the stack. All the objects are allocated on the heap. However, references (which are addresses) are passed as arguments to functions on the stack.</p>
+<p>That's all folks!</p>
+<h1>Further reading</h1>
+<ul>
+<li><a href="http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html">7. Memory : Stack vs Heap</a></li>
+<li><a href="http://www.cplusplus.com/forum/articles/9/">The difference between pointers and arrays</a></li>
+<li><a href="http://canonical.org/~kragen/memory-models/">The memory models that underlie programming languages</a></li>
+<li><a href="https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/">Hack the Virtual Memory: malloc, the heap &amp; the program break</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 16 February 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

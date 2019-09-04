@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, politics" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Thoughts about politics" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Political Notes - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Thoughts about politics" />
+
+        <title>Political Notes - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2017-01-10T00:50:00+01:00">Tue 10 January 2017</time> - Last Update: <time datetime="2017-01-23T00:50:00+01:00">Mon 23 January 2017</time>        </p>
+    <h1>Political Notes</h1>
+    <div class="grey">
+        <p class="italic">Thoughts about politics</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 448 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/politics.html">politics</a></p>    </div>
+</header>
+<article>
+    <p><strong><em>This is a draft article.</em></strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Social_liberalism">Social liberalism</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Fiscal_conservatism">Fiscal conservatism</a></li>
+<li><a href="https://stallman.org/#politics">Richard Stallman's Political Articles</a></li>
+<li><a href="https://www.stallman.org/archives/2016-nov-feb.html">Richard Stallman's Political Notes</a></li>
+<li>The retirement age should be increased gradually as life expectancy improves. There should not be an upper limit: anyone must be able to keep working as long as they want. However there should be a minimum age.</li>
+<li>Gay couples should have the <strong>exact same rights</strong> as straight couples, especially regarding marriage and adoption. Preventing them from accessing such basic rights is just as stupid as preventing women from voting. Once the norm, it would nowadays sound ridiculous and outrageous.</li>
+<li>I am in favor of abortion.</li>
+<li>Public institutions and schools should <strong>not</strong> rely on proprietary software like Microsoft Windows. A GNU/Linux-based distribution should be de-facto installed on every computer. Proprietary software could be used as a last resort when special requirements apply (a specific software program for instance). This way, governments would save millions of euros/dollars (licenses are expensive).</li>
+<li>Healthcare should be universal and free. By free, I mean paid for by the government through tax revenue. Not by private companies whatsoever. It's not about how much one values a car, it's about us as human beings.</li>
+<li>We should all aim at reducing pollution. Sales of new diesel cars should be forbidden <strong>NOW</strong>. Then, within the next five to ten years, <a href="http://www.ibtimes.co.uk/netherlands-wants-ban-non-electric-car-sales-by-2025-1576071">All non-electric car sales should be banned</a>. <a href="http://www.pcmag.com/article2/0,2817,2423424,00.asp">Hybrid cars are just a temporary solution.</a> It misses the long-term goal.</li>
+<li>The working hours of a week should be negotiable on a 35 to 40-hour base, for a full-time worker.</li>
+<li>Basic income has to be taken into consideration seriously and experimented for that global population is climbing at a high pace towards <a href="https://esa.un.org/unpd/wpp/Graphs/Probabilistic/POP/TOT/">10B people by 2060</a> and a great number of jobs will soon by replaced by robots. I am not saying that it is the right way to go. Instead, I truly believe this could be a workable solution. Of course taxation would have to be reformed in order to finance it.<ul>
+<li><a href="https://techcrunch.com/2016/10/09/industrial-robots-will-replace-manufacturing-jobs-and-thats-a-good-thing/">Industrial robots will replace manufacturing jobs — and that’s a good thing</a></li>
+<li><a href="http://www.bbc.com/news/technology-34066941">Will a robot take your job?</a></li>
+<li><a href="https://www.replacedbyrobot.info/">Will your job be replaced by a robot?</a></li>
+</ul>
+</li>
+<li>Marijuana (cannabis) consumption should be legal. Both medical and recreational use should be allowed and regulated by heavy taxation. <a href="http://www.reuters.com/article/idUSL5730185">As seen in the Netherlands</a>, <a href="http://news.berkeley.edu/2011/09/13/lessons-from-dutch-cannabis-system/">consumption in countries where it is legal tends to be lower than countries where it is not</a>. Instead of wasting millions in the fight against it (which has proven to be ineffective), a smaller amount of money should be invested in prevention through media campaigns and events.</li>
+</ul>
+<h1>Interesting resources</h1>
+<ul>
+<li><a href="https://rev-parti.fr/base-programmatique/">Parti écologiste antispéciste et non-violent, pour la justice économique globale et les droits des humains, des non humains et des écosystèmes.</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 23 January 2017</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

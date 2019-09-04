@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, javascript, react, mobile, android" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A quick introduction to React.js" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="React - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A quick introduction to React.js" />
+
+        <title>React - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-01-08T01:00:00+01:00">Fri 08 January 2016</time>        </p>
+    <h1>React</h1>
+    <div class="grey">
+        <p class="italic">A quick introduction to React.js</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 563 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/javascript.html">javascript</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/react.html">react</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/mobile.html">mobile</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/android.html">android</a></p>    </div>
+</header>
+<article>
+    <p>First of all, I wish you a Happy New Year. May it be full of happiness and lines of code :-)</p>
+<p>Let's now talk about the new hotness, a JavaScript library getting more and more trendy, with an unceasingly growing community: <a href="https://facebook.github.io/react/">React</a>. It's under active development these days, powered by Facebook (and initially created by). Basically, it's meant to build user interfaces in a web context, but recently <a href="https://facebook.github.io/react-native/">they also exported it to mobile development</a>, alloying anyone to write some kind of cross-platform code for both Android and iOS, in JavaScript, just like Appcelerator Titanium.</p>
+<p>At the present time, I'm still getting acquinted with it, but here are a few pieces of advice about how to <a href="https://facebook.github.io/react/docs/getting-started.html">get started</a> <strong>correctly</strong>.</p>
+<h1>Must read</h1>
+<ol>
+<li><a href="https://github.com/petehunt/react-howto">react-howto</a></li>
+<li><a href="https://github.com/petehunt/webpack-howto">webpack-howto</a></li>
+<li><a href="https://www.npmjs.com/package/hjs-webpack">Presets for setting up webpack with hotloading react and ES6(2015) using Babel</a></li>
+<li><a href="http://rackt.org/redux/index.html">Redux</a></li>
+<li><a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.u601nht6y">Smart and Dumb Components</a></li>
+<li><a href="https://react.parts/native">React modules</a></li>
+<li><a href="https://gist.github.com/jnhuynh/86693d8b485f4d335300">Project structure</a></li>
+<li><a href="https://medium.com/@sapegin/react-and-redux-single-page-applications-resources-22cd859b0c1d">React and Redux Single Page Applications Resources</a></li>
+<li><a href="https://overreacted.io/">Overreacted</a></li>
+<li><a href="https://overreacted.io/react-as-a-ui-runtime/">React as a UI Runtime</a></li>
+</ol>
+<h1>How to</h1>
+<p>You have 2 main tools of choice, to compile it into some browser-compliant package: Webpack or Browserify. I personally decided to go with the former, as it's the most popular and offer more possibilites. Briefly, how to start a new project with webpack:</p>
+<div class="highlight"><pre><span></span>npm init <span class="c1"># Entry point: index.js</span>
+npm install --save react react-dom babel-preset-react babel-preset-es2015
+<span class="c1"># The previous line is required to run React with ES6</span>
+npm install webpack --save-dev
+<span class="c1"># --save-dev allow us to add it to the package.json</span>
+npm install webpack-dev-server --save-dev
+<span class="c1"># To live reload changes in the browser in development</span>
+<span class="c1"># MUST NOT BE USED IN PRODUCTION</span>
+npm link webpack <span class="c1"># To make the command available as if it was installed globally</span>
+npm link webpack-dev-server
+
+<span class="c1"># Install babel</span>
+npm install babel-loader --save-dev
+<span class="c1"># OR, in case of problem</span>
+npm install babel-loader@5.x --save-dev
+</pre></div>
+
+
+<h2>Configure webpack</h2>
+<p>There are <a href="http://webpack.github.io/docs/configuration.html">two ways</a> to pass the configuration object to webpack. However, here we're going to use the CLI way, which uses a conf file. Create <code>webpack.config.js</code> at the root of the project, containing this:</p>
+<div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// configuration</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>That's all for now. This article is likely to be updated in a near future, stay tuned!</p>
+<p>PS: a friend of mine also gave a talk last year, at our school, about React. He was an avant-gardist ;-)</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p><a href="https://medium.com/netscape/webpack-3-react-production-build-tips-d20507dba99a">Tips for Webpack here</a>.</p>
+<h1>Futher reading</h1>
+<ul>
+<li><a href="https://lacke.mn/reduce-your-bundle-js-file-size/">Reduce Your bundle.js File Size By Doing This One Thing</a></li>
+<li><a href="https://github.com/benoitvallon/react-native-nw-react-calculator">Mobile, desktop and website Apps with the same code (React native)</a></li>
+<li><a href="http://reactjsnews.com/structuring-react-projects/">How to Structure a React Project?</a></li>
+<li><a href="http://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/">How to Build a Todo App Using React, Redux, and Immutable.js</a></li>
+<li><a href="https://meetfinch.com/blog/cross-platform-app-nwjs-react-flux">Building a cross-platform desktop app with NW.js, React &amp; Flux</a></li>
+<li><a href="https://24ways.org/2015/universal-react">Universal React</a></li>
+<li><a href="https://blog.risingstack.com/react-js-best-practices-for-2016/">React.js Best Practices for 2016</a></li>
+<li><a href="https://egghead.io/technologies/react">React Lessons - Screencast Video Tutorials @eggheadio</a></li>
+<li><a href="https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree">Redux Lessons #1 - Screencast Video Tutorials @eggheadio</a></li>
+<li><a href="https://egghead.io/lessons/javascript-redux-simplifying-the-arrow-functions">Redux Lessons #2 - Screencast Video Tutorials @eggheadio</a></li>
+<li><a href="http://reactcheatsheet.com/">React Cheat Sheet</a></li>
+<li><a href="https://hacks.mozilla.org/2017/07/debug-react-redux-firefox-add-ons/">Inspect, Modify, and Debug React and Redux in Firefox with Add-ons</a></li>
+<li><a href="https://dmitripavlutin.com/7-architectural-attributes-of-a-reliable-react-component/">7 architectural attributes of a reliable React component</a></li>
+<li><a href="https://react.holiday/">React 🎄</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/react-devtools/">React Developer Tools</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/remotedev/">Redux DevTools</a></li>
+<li><a href="https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/">Best practices with React and Redux web application development</a></li>
+<li><a href="https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/">Testing Strategies for React and Redux</a></li>
+</ul>
+<h2>Performance</h2>
+<ul>
+<li><a href="https://houssein.me/progressive-react">Progressive React</a></li>
+<li><a href="https://www.youtube.com/watch?v=6WvSXoYrM5o">Improving a React app performance</a></li>
+<li><a href="https://github.com/nitin42/react-perf-devtool">react-perf-devtool</a></li>
+</ul>
+<h2>Functional components</h2>
+<ul>
+<li><a href="https://twitter.com/mjackson/status/1091475757530963968">Did you know that React classes are actually than function components and that React is optimized for function components?</a></li>
+<li><a href="https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f">45% Faster React Functional Components, Now</a></li>
+<li><a href="https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure">Declare a functional component as “pure”</a></li>
+<li><a href="https://medium.com/groww-engineering/stateless-component-vs-pure-component-d2af88a1200b">Stateless Component vs Pure Component</a></li>
+</ul>
+<h2>About Babel</h2>
+<ul>
+<li><a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md">Babel Handbook</a></li>
+</ul>
+<h2>About Redux</h2>
+<ul>
+<li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">A cartoon intro to Redux</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 08 January 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

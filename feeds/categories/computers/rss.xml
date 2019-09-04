@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 25 Jan 2019 00:06:00 +0100</lastBuildDate><item><title>On Storing Passwords In A Safe Way</title><link>//romainpellerin.eu/on-storing-passwords-in-a-safe-way.html</link><description>&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
+&lt;h1&gt;Storing passwords&lt;/h1&gt;
+&lt;p&gt;For a very long time I have stored my passwords within Firefox, synced "in the Cloud" through my Firefox account. This solution offers four main advantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Passwords are synced accross devices, always at hand&lt;/li&gt;
+&lt;li&gt;Passwords are conveniently auto-filled as I browse the web&lt;/li&gt;
+&lt;li&gt;Passwords are encrypted on Mozilla's servers (&lt;a href="https://support.mozilla.org/en-US/questions/1169355"&gt;source&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Passwords are encrypted locally on my computer (&lt;a href="https://support.mozilla.org/en-US/questions/1210914"&gt;source&lt;/a&gt;), although a Master Password is required to prevent theft (since the encryption key is stored in plain) by adding another layer of security (&lt;a href="https://support.mozilla.org/en-US/questions/1041243"&gt;source&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While this solution had seemed like a good one for a while, I recently thought I could do better than putting my trust in a company - even though Mozilla is respectable and trustworthy. Eventually, every big company gets hacked and I don't really know how they encrypt my data on their servers.&lt;/p&gt;
+&lt;p&gt;Moreover, I wanted to be able to safely backup my passwords somewhere (offline, if need be, or elsewhere). My past solution had a flaw: were I to lose my laptop and smartphone (theft, apartment burns dowm, earthquake, whatever), I'd have no way to recover my passwords since I don't know any of them, not even my Firefox password (what good would it be for anyway, since two factor authentication is enabled and my two only trusted devices would be lost).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Side note on this topic&lt;/em&gt;: I always randomly type my passwords as I create accounts. I don't use services that generate them for me (like Dashlane or Lastpass to mention a few). I don't trust these programs to store my passwords (we'll see why in a bit). Nonetheless, I always make sure to include capital letters, numbers and special characters, with a length greater than 8.&lt;/p&gt;
+&lt;p&gt;With this all in mind, I needed to find a solution that could fulfill the following requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Not hosted on someone else's servers&lt;/li&gt;
+&lt;li&gt;Encrypted at all times&lt;/li&gt;
+&lt;li&gt;Easily accessible on multiple devices, including Linux and mobile phone(s)&lt;/li&gt;
+&lt;li&gt;Synced accross my devices&lt;/li&gt;
+&lt;li&gt;As much user friendly as possible so that I can easily switch to this new solution and change my habits&lt;/li&gt;
+&lt;li&gt;Backed up offline or in a different location AND easily recoverable in case of loss of my trusted devices&lt;/li&gt;
+&lt;li&gt;Based on a non proprietary solution - both free and open source ideally - and free of charge&lt;/li&gt;
+&lt;li&gt;Auto form-filling on a web is a plus (through a web extension for instance)&lt;/li&gt;
+&lt;li&gt;Two factor auth management is a plus: it could be nice to save 2FA secrets as well&lt;/li&gt;
+&lt;li&gt;Password generation is optional, I'm fine with random typing on my keyboard every once in a while&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Market analysis&lt;/h2&gt;
+&lt;h3&gt;1password&lt;/h3&gt;
+&lt;p&gt;Apparently a great tool, I've read a lof of good reviews. Advocated by the famous website &lt;a href="https://haveibeenpwned.com/1Password"&gt;Have I Been Pwned&lt;/a&gt;. However, since this is proprietary software, it is de facto a no-go for me. Plus it's a paid service.&lt;/p&gt;
+&lt;h3&gt;Keepass&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://keepass.info/"&gt;A tool initially made for Windows&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption out of the box&lt;/li&gt;
+&lt;li&gt;Free and open source&lt;/li&gt;
+&lt;li&gt;Available on Linux through a port&lt;/li&gt;
+&lt;li&gt;There's an Android app&lt;/li&gt;
+&lt;li&gt;There's a &lt;a href="https://addons.mozilla.org/fr/firefox/addon/keefox/"&gt;Firefox extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Auto form filling&lt;/li&gt;
+&lt;li&gt;Automatic generation of passwords&lt;/li&gt;
+&lt;li&gt;I can easily save a backup file with all my passwords on my personal cloud&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://keepass.info/plugins.html#keeotp"&gt;2FA management through a plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://keepass.info/plugins.html#otpkeyprov"&gt;Database can be protected with 2FA through a plugin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I must trust the binaries or build them myself after reviewing the sources...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Pass (Linux CLI)&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.passwordstore.org/"&gt;A tool&lt;/a&gt; &lt;a href="https://wiki.archlinux.org/index.php/Pass"&gt;for Linux&lt;/a&gt; (CLI) based on GPG. Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass. One of the reasons I guess is that it's on the official Linux distributions repos.&lt;/p&gt;
+&lt;h4&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Encryption out of the box with GPG&lt;/li&gt;
+&lt;li&gt;Automatic generation of passwords&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.passwordstore.org/#other"&gt;Cross platform&lt;/a&gt;: Linux, Android and Firefox plugin at least&lt;/li&gt;
+&lt;li&gt;I can easily save a backup file with all my passwords on my personal cloud&lt;/li&gt;
+&lt;li&gt;2FA management (actually Pass can save any arbitraty data, it's essentially made up of encrypted plain text files)&lt;/li&gt;
+&lt;li&gt;Super easily backupable (zip the directory, that's all) on my personal cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Not very user friendly&lt;/li&gt;
+&lt;li&gt;I must trust binaries, specifically the Android app and Firefox binary; the Linux script has all my trust though (yes, &lt;code&gt;pass&lt;/code&gt; is a script)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dashlane and Lastpass&lt;/h3&gt;
+&lt;p&gt;Proprietary software: no go.&lt;/p&gt;
+&lt;p&gt;One cool feature Dashlane offers that is worth mentioning though: setting an emergency contact for your important accounts in case of a critical matter. I wish other tools offered the same feature.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Seems like I'll either go with either Keepass or Pass. I'll update this article as I become familiar with either of them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update January 2019&lt;/strong&gt;: I've been using &lt;code&gt;pass&lt;/code&gt; for a few months now and am very satisfied so far.&lt;/p&gt;
+&lt;h1&gt;Another topic: two-factor authentication&lt;/h1&gt;
+&lt;p&gt;For this one, I felt that storing my secrets on my phone (Google Authenticatgor to name it) only sounded a little too much like a Single Point of Failure. Should I ever lose access to my phone for any reason, I'd be locked out of services with two factor authentication enabled. Time had come to find a way to save a backup of these secrets.&lt;/p&gt;
+&lt;p&gt;To do so, I developed my own solution: &lt;a href="https://github.com/rpellerin/gauth2/"&gt;gauth2&lt;/a&gt;. It is forked from another project (&lt;a href="https://github.com/gbraad/gauth"&gt;gauth&lt;/a&gt;). I improved it and redesigned it a bit. I also added some features.&lt;/p&gt;
+&lt;p&gt;How does it work? Well, it is a web app that stores in one's browser (in the &lt;code&gt;LocalStorage&lt;/code&gt;, to be precise) one's secrets and generate One Time Passwords based on these secrets. The secrets can even be encrypted with a password, to prevent someone with access to the browser from stealing the secrets. It also allows secrets to be exported and imported for more convenience. I am very satisfied with it so far. This, on an encrypted laptop, coupled with Google Authenticator, is a pretty solid combination.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Hope this helps. Cheers!&lt;/p&gt;
+&lt;h1&gt;Online resources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.juliaferraioli.com/blog/2018/08/2fa-sms-you/"&gt;2FA, SMS, and you&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://korben.info/authentification-double-facteur-2fa.html"&gt;L’authentification double facteur (2FA), oui mais pas n’importe comment !&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://chown.me/blog/my-recent-journey-with-2FA.html"&gt;My recent journey with 2FA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1"&gt;The Definitive Guide to password-store&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592"&gt;Using pass in a team&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 31 Jul 2018 00:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</guid><category>password</category><category>security</category></item><item><title>Domain Names</title><link>//romainpellerin.eu/domain-names.html</link><description>&lt;p&gt;Short article, kind of a bookmark for myself. I usually buy my domain names from OVH but they're far from being cheap. Today, I was told the following three websites offer much cheaper domain names. What's more, they have a greater choice.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://porkbun.com/"&gt;porkbun.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.namecheap.com/"&gt;www.namecheap.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.internetbs.net/"&gt;www.internetbs.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://domainr.com/"&gt;domainr.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 23 Mar 2018 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-03-23:/domain-names.html</guid><category>dns</category><category>domain</category></item><item><title>How To Repair A Laptop Charger</title><link>//romainpellerin.eu/how-to-repair-a-laptop-charger.html</link><description>&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
+&lt;p&gt;Therefore, I decided to replace the defective charger. I searched the Internet, looking for the same charger, with no luck. All I found were cheap chargers selled by some weird Chinese sellers with poor reviews on Ebay and Amazon.&lt;/p&gt;
+&lt;p&gt;In the end, since I could not find the right replacement charger with the same connector and the right specifications, I decided to make my own! Here is how.&lt;/p&gt;
+&lt;h1&gt;How to make your own laptop charger&lt;/h1&gt;
+&lt;p&gt;Basically, one can replace a laptop charger with any other one &lt;a href="https://stickystatic.com/tech/laptop-charger"&gt;on three conditions&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Output voltage has to be the same&lt;/li&gt;
+&lt;li&gt;Output amperage has to be either the same or higher than the original charger&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Polarity_symbols"&gt;Polarity&lt;/a&gt; has to be the same&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All I needed was a power brick (AC/DC converter) meeting the above-mentionned requirements and a cord with the same connector. I decided not to reuse the cord from my original charger. Fortunately, my roommate had an old charger with the matching connector, so I decided to go with that one.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connectors.jpg" alt="Connectors" /&gt;
+&lt;figcaption&gt;My connector (top) and my roommate's one (bottom)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Here is the replacement charger I bought for $20, with the exact same specs as mine:&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/power-block.jpg" alt="Power brick" /&gt;
+&lt;figcaption&gt;My replacement power brick&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;So, as I said, I used my roommate's charger cord to get a connector suited for my laptop. I made sure to cut near the block so that the cord remained long enough.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/cut-cord.jpg" alt="Cutting the cord" /&gt;
+&lt;figcaption&gt;Cutting the cord&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Then, I split the end in two to separate the two wires.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/split-cord1.jpg" alt="Splitting the cord" /&gt;
+&lt;figcaption&gt;Splitting the cord&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I identified each wire using a multimeter. Since my laptop expects the center of the barrel plug to be the positive contact and the barrel to be negative, I needed to know that to correctly assemble the two parts of my to-be charger.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/multimeter1.jpg" alt="Identifying wires" /&gt;
+&lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I put adhesive tape on the negative one to remember it.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/split-cord2.jpg" alt="Adhesive tape on negative wire" /&gt;
+&lt;figcaption&gt;Adhesive tape on negative wire&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Then, I cut the connector from the new charger I had just bought. Inside the cord, the two wires were of different colors, one was red and the other blue. Using the multimeter and the connector I had just cut, I identified the negative and positive wires.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/multimeter2.jpg" alt="Identifying wires" /&gt;
+&lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This way, I figured out the blue wire was connected to the barrel and the red one to the center. Since the charger had the same polarity as mine, I knew that the blue wire was negative. Consequently, that wire had to be connected to the wire with adhesive tape.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/two-cords.jpg" alt="Both cords ready to be connected" /&gt;
+&lt;figcaption&gt;Both cords ready to be connected&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I twisted the wires to connect them and insulated them with electrical tape.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting1.jpg" alt="Twisting the wires" /&gt;
+&lt;figcaption&gt;Twisting the wires&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting2.jpg" alt="Insulating the wires" /&gt;
+&lt;figcaption&gt;Insulating the wires&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting3.jpg" alt="Insulating the cord" /&gt;
+&lt;figcaption&gt;Insulating the cord&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;That's all! Now I have a new functionning charger perfectly suited to my laptop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 02 May 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-05-02:/how-to-repair-a-laptop-charger.html</guid><category>laptop</category><category>charger</category></item><item><title>Fonts, Typefaces And The History Of UTF-8</title><link>//romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html</link><description>&lt;p&gt;First, let's start with the basics. &lt;a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"&gt;&lt;strong&gt;What's the difference between a font and a typeface?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Briefly, a fond is what we use whereas a typeface is what we see. But still, it's a bit more complex. I'll sum up the original article right below.&lt;/p&gt;
+&lt;p&gt;In the past, analog printing was done using metal letters rolled in ink and pressed down onto a piece of paper: that was the page layout. For a given typeface (for example Garamond), there were thousands of physical metal blocks, each with the character it was meant to represent, in relief (the type face), existing in different size (10 point, 12, etc.) and different weights (bold, light, medium). Basically, a font is just a subset of a typeface. For example, bolded Garamond in 12 point was considered a different font than normal Garamond in 8 point. But nowadays, both terms can be used interchangeably. However, just in case you would need to know, a reminder could be:&lt;/p&gt;
+&lt;p&gt;"&lt;em&gt;The difference between a font and a typeface is the same as that between songs and an album. The former makes up the latter.&lt;/em&gt;"&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Truth be told, let's now take a close look at UTF-8... Once again, I'll sum up &lt;a href="https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/"&gt;an article&lt;/a&gt;. But before, just a quick explanation about specific terms (taken from &lt;a href="https://en.wikipedia.org/wiki/Character_encoding#Code_unit"&gt;Wikipedia&lt;/a&gt;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;character&lt;/strong&gt; is a minimal unit of text that has semantic value.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;character set&lt;/strong&gt; is a collection of characters that might be used by multiple languages.
+    Example: The Latin character set is used by English and most European languages, though the Greek character set is used only by the Greek language.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;coded character set&lt;/strong&gt; is a character set, where each character is assigned with a unique number.&lt;/li&gt;
+&lt;li&gt;A &lt;strong&gt;code point&lt;/strong&gt; is a value that can be used in a coded character set. A code point is a 32-bit integer data type, where the lower 21 bits represent a valid code point value and the upper 11 bits are 0.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, a story about Unicode and UTF-8...&lt;/p&gt;
+&lt;p&gt;In the 1960's, the American Standards Association created a 7-bit encoding called &lt;em&gt;American Standard Code for Information Interchange&lt;/em&gt; (ASCII). Using 7 bits gives 128 possible characters (that was enough for all lower and upper case Latin letters, numerical digits and most punctuation marks; see an &lt;a href="http://www.asciitable.com/"&gt;ASCII table&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;A few years later, new microprocessors were created, able to process 8 bits at a time. So they used 8 bits (a byte) to store each character, giving 256 possible values, and thus leaving values from 128 to 255 spare.&lt;/p&gt;
+&lt;p&gt;Then, in the 80's, Microsoft Windows introduced its own &lt;strong&gt;character set&lt;/strong&gt; (also known as &lt;em&gt;code page&lt;/em&gt;) called &lt;strong&gt;Windows-1251&lt;/strong&gt;, whose goal was to fill in those space characters (for example, 224 represents the Cyrillic letter &lt;strong&gt;a&lt;/strong&gt;). Furthermore, in the 90's, fifteen other 8 bit character sets were created to cover many different alphabets (called &lt;a href="https://en.wikipedia.org/wiki/ISO/IEC_8859"&gt;ISO-8859-1 to ISO-8859-16&lt;/a&gt;; ISO-8859-12 was abandoned). Nowadays, in web pages, if you don't provide the charset used, most web browsers will use a default one, depending on your country of residence (ISO-8859-1 will likely be used for English countries).&lt;/p&gt;
+&lt;p&gt;Nevertheless, in the meantime, a &lt;strong&gt;new standard&lt;/strong&gt; called &lt;strong&gt;Unicode&lt;/strong&gt; was proposed. The purpose: to assign a unique number (known as a code point) to every letter in every language, in more than 256 slots. At the moment, we have &lt;a href="http://www.babelstone.co.uk/Unicode/unicode.html"&gt;over 120,000 code points&lt;/a&gt; and Unicode is also considered a character set itself.&lt;/p&gt;
+&lt;h1&gt;Unicode&lt;/h1&gt;
+&lt;p&gt;The next few lies were copy-pasted from the original article.&lt;/p&gt;
+&lt;p&gt;"&lt;em&gt;The first 128 Unicode code points are the same as ASCII. The range 128-255 contains currency symbols and other common signs and accented characters (aka characters with &lt;a href="https://en.wikipedia.org/wiki/Diacritic"&gt;diacritical marks&lt;/a&gt;), and much of it is borrowed ISO-8859-1. After 256 there are many more accented characters. After 880 it gets into Greek letters, then Cyrillic, Hebrew, Arabic, Indic scripts, and Thai. Chinese, Japanese and Korean start from 11904 with many others in between. This is great – no more ambiguity – each letter is represented by its own unique number.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;[...]&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note that these Unicode code points are officially written in hexadecimal preceded by U+. So the Unicode code point H is usually written as U+0048 rather than 72 (to convert from hexadecimal to decimal: 4*16+8=72).&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;Having more than 256 characters makes Unicode unable to fit into 8 bits. It could however perfectly fit into a 32 bit encoding. But &lt;strong&gt;Unicode is just a standard&lt;/strong&gt;, let's now find out which implementation (or character encoding) was designed.&lt;/p&gt;
+&lt;p&gt;It's also important to mention that internally, modern web browsers use Unicode. In C or C++ there is a "wide character" (32 bit character called &lt;code&gt;wchar_t&lt;/code&gt;, an extension of C's 8 bit &lt;code&gt;char&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;So, now, the remaining problems with Unicode are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A lot of existing software and protocols send/receive and read/write 8 bit characters&lt;/li&gt;
+&lt;li&gt;Using 32 bits to send/store English text would quadruple the amount of bandwidth/space required&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Several attempts were created to solve this problem such as UCS2 and UTF-16 but the winner is UTF-8 (&lt;em&gt;Universal Character Set Transformation Format 8 bit&lt;/em&gt;). &lt;strong&gt;At the moment and since several years, UTF-8 is the preferred character encoding for the Unicode standard.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;UTF-8&lt;/h2&gt;
+&lt;p&gt;"&lt;em&gt;UTF-8 is a clever. It works a bit like the Shift key on your keyboard. Normally when you press the H on your keyboard a lower case “h” appears on the screen. But if you press Shift first, a capital H will appear.&lt;/em&gt;" (copy-pasted from the original article)&lt;/p&gt;
+&lt;p&gt;UTF-8 treats numbers as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0-127 as ASCII&lt;/li&gt;
+&lt;li&gt;128-191 as the &lt;strong&gt;key to be shifted&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;192-247 as &lt;strong&gt;Shift keys&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;192-223 is a simple shift&lt;/li&gt;
+&lt;li&gt;224-239 are like a double shift&lt;/li&gt;
+&lt;li&gt;240 and over is a triple shift&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Consequently, to represent a character, you have four different ways (either on one, two, three or four bytes):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 byte: a number from 0 to 127, it will represent an ASCII character&lt;/li&gt;
+&lt;li&gt;2 bytes: a sequence of &amp;lt;Shift key from 192 to 223&amp;gt; + &amp;lt;key to be shifted from 128 to 191&amp;gt;&lt;/li&gt;
+&lt;li&gt;3 bytes: &amp;lt;224-239&amp;gt; + &amp;lt;128-191&amp;gt; + &amp;lt;128-191&amp;gt;&lt;/li&gt;
+&lt;li&gt;4 bytes: &amp;lt;240-&amp;gt; + &amp;lt;128-191&amp;gt; + &amp;lt;128-191&amp;gt; + &amp;lt;128-191&amp;gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example, the sequence 191 followed by 224 could never occur. Another example, taken from the original article:&lt;/p&gt;
+&lt;p&gt;"&lt;em&gt;For instance, characters 208 and 209 shift you into the Cyrillic range. 208 followed by 175 is character 1071, the Cyrillic Я. &lt;a href="https://en.wikipedia.org/wiki/UTF-8#Examples"&gt;The exact calculation is (208%32)*64 + (175%64) = 1071&lt;/a&gt;.&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;"&lt;em&gt;UTF-8 is therefore a multi-byte variable-width encoding. Multi-byte because a single character like Я takes more than one byte to specify it. Variable-width because some characters like H take only 1 byte and some up to 4.&lt;/em&gt;"&lt;/p&gt;
+&lt;p&gt;That makes UTF-8 backward compatible with ASCII.&lt;/p&gt;
+&lt;h2&gt;Avoid most common problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Be sure to use UTF-8 on every single page of your website(s).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(best when written on top of the page, for performance concerns)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Choose your font wisely because "&lt;em&gt;Unicode defines over 110,000 characters&lt;/em&gt;" and "&lt;em&gt;your browser may not have the correct font to display all of them.&lt;/em&gt;"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Be careful when dealing with &lt;a href="http://blog.tremend.ro/2006/09/26/mysql-php-and-utf8/"&gt;MySQL to store text&lt;/a&gt; (&lt;a href="http://cahnory.tumblr.com/post/17108999879/utf-8-comment-%C3%A7a-marche"&gt;another article about it in French, also about PHP&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's it about Unicode and UTF-8! Hope it was useful.&lt;/p&gt;
+&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://utf8everywhere.org/"&gt;UTF-8 Everywhere&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/"&gt;La maison des horreurs de l’encoding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://reedbeta.com/blog/programmers-intro-to-unicode/"&gt;A Programmer’s Introduction to Unicode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://slides.com/benoitaverty/unicode-pour-les-nuls#/"&gt;Unicode pour les nuls&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 19:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</guid><category>font</category><category>typeface</category><category>utf8</category><category>unicode</category></item><item><title>Understanding The Memory</title><link>//romainpellerin.eu/understanding-the-memory.html</link><description>&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
+&lt;p&gt;Nows, let's have a look at memory and let's try to understand how it works.&lt;/p&gt;
+&lt;h1&gt;Processes and threads&lt;/h1&gt;
+&lt;p&gt;Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains &lt;strong&gt;four main areas&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: contains the global and static variables (explicitly initialized with a non-zero or non-NULL value, according to &lt;a href="https://en.wikipedia.org/wiki/Data_segment"&gt;Wikipedia&lt;/a&gt;) used by the program. The content of constants is on the data segment, whereas references to constants are on the code (see next bullet point). The BSS segment (which is usually adjacent to the data segment) contains all global variables and static variables that are initialized to zero or do not have explicit initialization (in such a case, they &lt;a href="http://stackoverflow.com/questions/13251083/the-initialization-of-static-variables-in-c"&gt;are implicitly initialized to 0&lt;/a&gt;). The BSS segment can be considered a part of the data segment.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Code segment&lt;/strong&gt;: contains the assembly code of the program to be executed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Heap&lt;/strong&gt;: contains all dynamically allocated primitive data types or objects (with &lt;code&gt;malloc&lt;/code&gt; in C or &lt;code&gt;new&lt;/code&gt; in C++, for instance). The developer is in charge of the lifetime of these variables, he has to explicitly deallocate memory (with &lt;code&gt;free&lt;/code&gt; in C or &lt;code&gt;delete&lt;/code&gt; in C++).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stack&lt;/strong&gt;: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. &lt;strong&gt;Stack values only exist within the scope of the function they are created in.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/memory-stack.jpg" alt="The stack" /&gt;
+&lt;figcaption&gt;Image taken from &lt;a href="http://www.linuxjournal.com/article/6391"&gt;http://www.linuxjournal.com/article/6391&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's see how this code gets compiled in x86 assembly.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcc -S -masm&lt;span class="o"&gt;=&lt;/span&gt;intel main.c -fno-asynchronous-unwind-tables -o output.asm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, we'll see the instructions using the stack.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    .file   &amp;quot;main.c&amp;quot;
+    .intel_syntax noprefix
+    .text
+    .globl  add
+    .type   add, @function
+add:
+    push    rbp
+    mov rbp, rsp
+    mov DWORD PTR [rbp-4], edi
+    mov DWORD PTR [rbp-8], esi
+    mov edx, DWORD PTR [rbp-4]
+    mov eax, DWORD PTR [rbp-8]
+    add eax, edx
+    pop rbp
+    ret
+    .size   add, .-add
+    .globl  main
+    .type   main, @function
+main:
+    push    rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov esi, 2
+    mov edi, 1
+    call    add
+    mov DWORD PTR [rbp-4], eax
+    mov eax, 0
+    leave
+    ret
+    .size   main, .-main
+    .ident  &amp;quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&amp;quot;
+    .section    .note.GNU-stack,&amp;quot;&amp;quot;,@progbits
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.&lt;/p&gt;
+&lt;h1&gt;Allocating memory for objects and primitive data types&lt;/h1&gt;
+&lt;h2&gt;C++&lt;/h2&gt;
+&lt;p&gt;Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.&lt;/p&gt;
+&lt;p&gt;Global variables and static variables (not only global) go to the data segment.&lt;/p&gt;
+&lt;p&gt;Here are some examples, to make things clear:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;fonction&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// On the stack&lt;/span&gt;
+  &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// On the stack&lt;/span&gt;
+  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;ref&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// The reference is on the stack&lt;/span&gt;
+  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;pt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// The pointer is on the stack&lt;/span&gt;
+  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;pt2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cm"&gt;/* The right handside (the actual object)&lt;/span&gt;
+&lt;span class="cm"&gt;    is on the heap, the left handside is on the stack */&lt;/span&gt;
+
+  &lt;span class="cm"&gt;/* Everything that has been allocated on the stack will be&lt;/span&gt;
+&lt;span class="cm"&gt;    deleted at the end of the function */&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To delete what is on the heap, you need to use the &lt;code&gt;delete&lt;/code&gt; keyword.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img alt="Pointers and addresses" src="//romainpellerin.eu/images/memory_cpp_example.png" /&gt;
+&lt;/figure&gt;
+
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2&gt;Java&lt;/h2&gt;
+&lt;p&gt;The main difference is that objects on the heap are automatically destroyed by the garbage collector, once they are no longer referenced. Moreover, only primitives are on the stack. All the objects are allocated on the heap. However, references (which are addresses) are passed as arguments to functions on the stack.&lt;/p&gt;
+&lt;p&gt;That's all folks!&lt;/p&gt;
+&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html"&gt;7. Memory : Stack vs Heap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cplusplus.com/forum/articles/9/"&gt;The difference between pointers and arrays&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://canonical.org/~kragen/memory-models/"&gt;The memory models that underlie programming languages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/"&gt;Hack the Virtual Memory: malloc, the heap &amp;amp; the program break&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jun 2015 01:11:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-06-26:/understanding-the-memory.html</guid><category>code</category><category>computer</category><category>memory</category></item></channel></rss>

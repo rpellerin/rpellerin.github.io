@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, ireland" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My advice about Ireland" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Ireland - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My advice about Ireland" />
+
+        <title>Ireland - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/ireland.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-03-02T23:50:00+01:00">Fri 02 March 2018</time>        </p>
+    <h1>Ireland</h1>
+    <div class="grey">
+        <p class="italic">My advice about Ireland</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 369 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ireland.html">ireland</a></p>    </div>
+</header>
+<article>
+    <p>In 2015, I landed in Dublin! Yay! With a friend, we were en route to Galway to visit another friend who was doing a sort of internship there. Roughly, we spent a week in Ireland: from Dublin to Galway and back, we also went to some exotic places such as the Cliffs of Moher or Connemara.</p>
+<p>In this article, I'll walk you through the most iconic places I've been to so that you get the most out of YOUR trip.</p>
+<h1>Dublin</h1>
+<ul>
+<li>You definitely don't want to miss the Temple Bar district and its iconic pub The Oliver St John Gogarty</li>
+<li>The Barnacles Hostel Dublin on Temple Ln Street is one of the cheapeast you can find in the area, although we did not get to sleep there for it was fully booked</li>
+<li>Trinity College campus is fun for hanging out during the Summer days</li>
+<li>Stephen's Green Shopping Centre</li>
+<li>Shopping streets: Grafton street and Henry streets</li>
+<li>Also don't forget to check out the churches and cathedrals</li>
+</ul>
+<p><img alt="Temple Bar district" src="//romainpellerin.eu/images/temple-bar.jpg"></p>
+<h1>Galway</h1>
+<p>A beautiful small city on the West coast!</p>
+<ul>
+<li>We stayed at the Celtic Tourist Hostel. Highly recommended for their very affordable prices.</li>
+<li>William St and Shop St</li>
+<li>Naming all the pubs I went into would take ages, my recommendation is to check them all in those two above-mentionned streets</li>
+<li>The Galway Cathedral</li>
+<li>I also highly suggest you simply wander in the streets, near the Eglinton canal</li>
+<li>The Long Walk and the Galway City Museum</li>
+<li>The shore and the causeway to Mutton Island</li>
+</ul>
+<p>I am also pretty sure we spent a night at the Barnacles hostel (it's a chain, there's another one in Dublin as I wrote above).</p>
+<h1>Other places I've been to</h1>
+<ul>
+<li>Connemara: do a bus tour!</li>
+<li>Kylemore Abbey &amp; Victorian Walled Garden (in Connemara)</li>
+<li>Aillwee Cave: after the visit, do climb up the hill, it's fun</li>
+<li>Cliffs of Moher</li>
+<li>The Burren</li>
+</ul>
+<p>As far as I remember, we took a 2-day bus tour that took us to both Connemara (we stopped for a couple of hours at Kylemore Abbey) and Cliffs of Moher (+ the Burren and Aillwee Cave). It's definitely worth your money!</p>
+<h1>Other places to go I wish I visited</h1>
+<ul>
+<li>Cork</li>
+<li>Apparently the Guinness Storehouse in Dublin is great</li>
+<li>Aran Islands</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 02 March 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

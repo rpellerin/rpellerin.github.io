@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, environment, world, pollution, politics" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A Short Essay" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="I Was Born In 2100 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A Short Essay" />
+
+        <title>I Was Born In 2100 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2019-08-05T23:50:00+02:00">Mon 05 August 2019</time>        </p>
+    <h1>I Was Born In 2100</h1>
+    <div class="grey">
+        <p class="italic">A Short Essay</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 737 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/environment.html">environment</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/world.html">world</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/pollution.html">pollution</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/politics.html">politics</a></p>    </div>
+</header>
+<article>
+    <p>I was born in 2100.</p>
+<p>A long time ago, long before I was born, people used to smoke. The very concept of smoking is unknown to many these days, so let me explain. It's as stupid as eating small rocks, or wood maybe. But it's not that. It was dried tobacco leaves. It would hurt a little the first time people would do it, and even make them caugh. But then, as they kept trying, the pain would eventually fade away. After some time, they might even start to feel some joy when doing it. Or maybe they pretended to and forced themselves to believe it. Or maybe it's the social pressure, people did't really why know but they kind of liked it. Or maybe it was the ads in the 70's and 80's. People used to "go on a cigarette break". Except that smoking does your body no good whatsoever. Quite the opposite to be honest. Smoking was killing people so slowly that most people would not even acknowledge it. They would doubt it, refute it.<br>
+People were stupid.</p>
+<p>A long time ago, long before I was born, people used to move around in big boxes made of steel. They called it a car. Not only did a car take up a lot of space, it also was powered with gasoline (refined crude oil, something that's long gone now). Gas cars used to cause a lot of pollution, especially in big cities. That was bad. Real bad you know. In the 20th century, in less than a few decades, all cities changed and turned into car-centric cities: everything was designed around and for cars, not for humans. People were forced to walk on narrow sidewalks. They also had to endure noise, mostly from passing cars. If that wasn't enough, the only air they could breathe was extremely polluted, causing over <a href="https://www.eea.europa.eu/media/newsreleases/many-europeans-still-exposed-to-air-pollution-2015/premature-deaths-attributable-to-air-pollution">400,000 premature deaths in Europe in 2015</a>.</p>
+<p>A long time ago, long before I was born, people used to eat animals. You read it right, A-N-I-fucking-M-A-L-S. Not only wild ones. Actually, most of the eaten animals were raised in farms and fed with antibiotics. Some of them never saw the sunlight. People were slaughtering them: over 60,000,000,000 land animals were killed EVERY SINGLE YEAR in the 2000's. When it comes to sea animals, the figures were much worse... There were the hunters too, pretending to protect the environment and restoring some kind of balance. As if nature needed us for that...</p>
+<p>A long time ago, long before I was born, people used to cut down trees (mostly forests) to make room for crop fields... to feed animals which would in turn... feed humans. What a stupidity. No wonder CO2 levels rose exponentially.</p>
+<p>A long time ago, long before I was born, people used to worship plastic. Plastic was everywhere, all the time. Single-use plastic was a thing for sure. Plastic bottles, plastic spoons, plastic cups, plastic toys. A shit ton of plastic ended its course in oceans. It played a major role in the decline of sea animals.</p>
+<p>A long time ago, long before I was born, people used to care more about jobs than they cared about the environment. Transitioning the car industry from oil to electricity? Too many people said "<em>it's gonna destroy jobs cause electric engines require much less parts and workforce</em>". It's exactly like keeping your job and then the day you retire your house gets burned down versus giving up your job and starting looking for another one but knowning that the day you retire your house will still be there. <a href="https://www.thenation.com/article/jobs-vs-environment-how-counter-divisive-big-lie/">Jobs vs the Environment</a>.</p>
+<p><br /></p>
+<p>But all of that is gone now, people don't do that no more. Everyone's fucking dead. Humans. Animals. Forests. Everything is gone. The planet is barely fit to live. Our unstustainable way of life killed us all. Those who remain live harsh lifes. Every day is a fight for survival, for food, for clean water, for power. Most lands people inhabited are underwater now, as the sea level is much higher than in the early 2000's.</p>
+<p>It all changed at the end of the last century. The global population was reaching its peak: 10,500,000,000. In less than 20 years, the global average temperature rose by 1.5 Celsius degrees, by far exceeding the worst projections made in the beginning of the century. The Great Global Warming (GGW as they call it these days) was true after all.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 05 August 2019</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, ecology, environment, waste, earth" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Everything wrong with this world" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Damn World - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Everything wrong with this world" />
+
+        <title>Damn World - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-08-01T23:20:00+02:00">Wed 01 August 2018</time>        </p>
+    <h1>Damn World</h1>
+    <div class="grey">
+        <p class="italic">Everything wrong with this world</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 645 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/whats-bad-about.html">What's bad about</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ecology.html">ecology</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/environment.html">environment</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/waste.html">waste</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/earth.html">earth</a></p>    </div>
+</header>
+<article>
+    <h1>Companies</h1>
+<ul>
+<li>Monitors and TV screens left idle (on sleep mode, not turned off) all night</li>
+<li>Computers still on, either on sleep mode or simply with the current user session locked, sometimes with the screen on, all night</li>
+<li>Power supplies plugged all night</li>
+<li>Cleaners who clean the bathrooms and empty the trash bins 3 times a day, early in the morning, right after lunch and in the early evening, while once would have been enough (early morning or evening would do).</li>
+<li><a href="https://www.quechoisir.org/dossier-desodorisant-d-interieur-t287/">Use of toxic deodorizers in the bathrooms</a></li>
+<li>Lighting at night</li>
+<li>Plastics cups dispensed by coffee machines and water dispensers</li>
+<li>Setting to sugar by default on coffee machines; forced to manually select "no sugar"</li>
+</ul>
+<h1>On the streets</h1>
+<ul>
+<li>People who throw <a href="https://www.nbcnews.com/news/us-news/plastic-straw-ban-cigarette-butts-are-single-greatest-source-ocean-n903661">their cigarette butts</a> on the ground</li>
+<li>People waiting in their car, engine on</li>
+<li>Gas buses</li>
+<li><a href="https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/">Non-potable wat</a> <a href="http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php">used to clean Paris streets</a>. I'm pretty sure it all eventually ends up in the ocean, trash included.</li>
+<li>
+<p>Gas cars (diesel is the worst)</p>
+<ul>
+<li><a href="https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb">The Economics of the Office: Why Do We Still Commute?</a></li>
+<li><a href="https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/">5 Reasons Why Amsterdam Works So Well for Bikes</a></li>
+<li><a href="https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals">Air pollution causes ‘huge’ reduction in intelligence, study reveals</a></li>
+</ul>
+</li>
+</ul>
+<h1>At the supermarket</h1>
+<ul>
+<li><a href="https://images-cdn.9gag.com/photo/argyp26_700b.jpg">Excessive packaging</a></li>
+<li>Plastic bags (at Walmart mostly...)</li>
+<li><a href="https://www.youtube.com/watch?v=yXu7ui7KMSM">Rob Greenfield : l’homme qui défie les supermarchés - Tout Compte Fait</a></li>
+<li><a href="http://robgreenfield.tv/foodwaste/">Food waste</a> - <a href="https://www.youtube.com/watch?v=yXu7ui7KMSM">even when still eatable</a></li>
+<li><a href="https://www.youtube.com/watch?v=wZT3drAYIzo">Cash investigation - Plastique : la grande intox (Intégrale)</a></li>
+<li><a href="https://www.youtube.com/watch?v=x8GdFBp_pWs">30 JOURS ZÉRO DÉCHET : MON EXPÉRIENCE</a></li>
+<li><a href="https://twitter.com/brutofficiel/status/1005351036477992966">Vivre sans plastique ni déchet, c’est possible. C’est ce que fait Aline. Voilà comment.</a></li>
+<li><a href="https://www.cacommenceparmoi.org/">Ça Commence Par Moi</a></li>
+<li><a href="https://www.linkedin.com/pulse/comment-survivre-%C3%A0-notre-d%C3%A9ni-%C3%A9cologique-romuald-priol/">Comment survivre à notre déni écologique ?</a></li>
+<li><a href="http://www.sorteztoutvert.fr/">Sortez Tout Vert</a></li>
+<li><a href="https://www.youtube.com/watch?v=2SCmmn3GpTM">Supermarchés : et si on en finissait avec le plastique ? - Tout compte fait</a></li>
+<li><a href="https://www.youtube.com/watch?v=BoXPwoIPDX4">Des particules de plastique dans l'eau en bouteille ? - Tout compte fait</a></li>
+</ul>
+<h1>Hunting</h1>
+<ul>
+<li><a href="http://www.leparisien.fr/societe/le-terrible-elevage-des-animaux-sauvages-28-11-2018-7955652.php">Le terrible élevage des animaux «sauvages» destinés à la chasse</a></li>
+</ul>
+<h1>In general</h1>
+<ul>
+<li><a href="https://www.numerama.com/sciences/405296-la-terre-transformee-en-etuve-apres-ce-seuil-nos-efforts-seront-vains.html/amp">La Terre transformée en « étuve » : après ce seuil, nos efforts seront vains</a></li>
+<li>Plastic cutlery</li>
+<li><a href="https://twitter.com/FlorencePorcel/status/1024608339513298944">Sur les vols @AirFranceFR, en classe Premium, 2 linges blancs en coton par personne et par vol jetés à la poubelle + reliquat neuf non utilisé jeté également #OpérationLingeBlanc</a></li>
+<li><a href="https://lite1.infini.fr/p/OperationLingeBlanc">OperationLingeBlanc</a></li>
+<li><a href="https://freegan.info/">Capitalism</a></li>
+</ul>
+<h1>Other</h1>
+<ul>
+<li><a href="https://twitter.com/LeRasbo/status/930523617863053312">Goldfish</a></li>
+<li><a href="https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal">Goldfish bis</a></li>
+<li><a href="https://www.eea.europa.eu/highlights/eea-report-confirms-electric-cars">EEA report confirms: electric cars are better for climate and air quality</a></li>
+<li><a href="https://www.bloomberg.com/news/articles/2019-01-15/electric-cars-seen-getting-cleaner-even-where-grids-rely-on-coal">Electric Cars Are Cleaner Even When Powered by Coal</a></li>
+<li><a href="https://reporterre.org/Le-niveau-de-CO2-dans-l-atmosphere-n-a-jamais-ete-aussi-eleve-depuis-trois">Le niveau de CO2 dans l’atmosphère n’a jamais été aussi élevé depuis trois millions d’années</a></li>
+<li><a href="http://riendeneuf.org/">Rien de Neuf</a></li>
+<li><a href="https://www.youtube.com/watch?v=LXjcLLmVAvU">Le JTerre #3 L’info des Vivants qui Veulent le Rester</a></li>
+<li><a href="https://www.electricitymap.org/">Climate Impact by Area</a></li>
+<li><a href="https://lifehacker.com/stop-releasing-balloons-into-the-sky-1831873033">Stop Releasing Balloons Into the Sky</a></li>
+<li><a href="https://www.fastcompany.com/90294948/what-happened-when-oslo-decided-to-make-its-downtown-basically-car-free">What happened when Oslo decided to make its downtown basically car-free?</a></li>
+<li><a href="https://www.novethic.fr/actualite/environnement/climat/isr-rse/infographie-interdiction-d-acheter-une-voiture-neuve-ou-de-prendre-un-long-courrier-couvre-feu-thermique-quotas-sur-les-produits-importes-les-mesures-chocs-pour-rester-sous-1-5-c-146877.html">Infographie - Interdiction des long-courriers, couvre-feu thermique, quotas sur le café… les mesures extrêmes pour rester sous 1,5°C</a></li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/climate.png" alt="A picture showing how to fight climate change" />
+<figcaption>How to fight climate change.</figcaption>
+</figure>
+
+<ul>
+<li><a href="https://www.engadget.com/2019/02/11/global-insect-decline-scientific-review/">Insects could be extinct within a century, scientists say</a></li>
+<li><a href="https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html">L'air du métro ? Pollué, lui aussi...</a></li>
+<li><a href="https://www.franceinter.fr/environnement/est-ce-que-le-plastique-se-recycle-vraiment">Est-ce que le plastique se recycle vraiment ?</a></li>
+<li><a href="https://www.liberation.fr/planete/2019/04/02/la-fin-du-monde-justifie-t-elle-les-moyens_1719002">La fin du monde justifie-t-elle les moyens ?</a></li>
+<li><a href="https://medium.com/@andreasgal/no-one-should-have-to-travel-in-fear-b2bff4c460e5">No one should have to travel in fear</a></li>
+<li><a href="https://www.lemonde.fr/planete/article/2019/04/11/combien-de-co2-pourrez-vous-emettre-dans-votre-vie-si-le-rechauffement-est-contenu-a-1-5-degre_5448606_3244.html">Combien de CO2 pourrez-vous émettre dans votre vie si le réchauffement est contenu à 1,5 °C ?</a></li>
+<li><a href="https://www.nytimes.com/2019/04/24/well/mind/putting-down-your-phone-may-help-you-live-longer.html">Putting Down Your Phone May Help You Live Longer</a></li>
+<li><a href="https://qz.com/quartzy/1354651/shoppers-are-buying-clothes-just-for-the-instagram-pic-and-then-return-them/">Shoppers are buying clothes just for the Instagram pic, and then returning them</a></li>
+<li><a href="https://www.francetvinfo.fr/monde/environnement/video-comme-des-sacs-normaux-ces-sacs-biodegradables-qui-ne-le-sont-pas-vraiment_3422531.html">VIDEO. "Comme des sacs normaux" : ces sacs biodégradables qui ne le sont pas vraiment...</a></li>
+<li><a href="https://www.youtube.com/watch?v=rWfb0VMCQHE">The Bill - short film - Germanwatch</a></li>
+<li><a href="https://www.youtube.com/watch?v=eg-E1FtjaxY">The Story of a Spoon</a></li>
+<li><a href="https://truecostmovie.com/">The True Cost</a></li>
+<li><a href="https://www.youtube.com/watch?v=4LToxHsxJso">L'Homme, destructeur de la Terre | ARTE</a></li>
+<li><a href="https://www.bbc.com/news/world-us-canada-48486672">US demands social media details from visa applicants</a></li>
+<li><a href="https://twitter.com/laydgeur/status/1142767487420903424">Quel devrait être le taux de remplissage des trains pour avoir les mêmes émissions de CO2 que l’avion ?</a></li>
+<li><a href="https://mrmondialisation.org/un-cadre-dhsbc-demissionne-publiquement-avec-une-lettre-ouverte-a-lhumanite/">Un cadre d’HSBC démissionne publiquement avec une lettre ouverte à l’humanité</a></li>
+<li><a href="https://twitter.com/IvanduRoy/status/1164177859830845444">Thread #Amazonie - Ces petits points rouges, le long de la route BR 163 dans l'Etat du Para au Brésil, sont autant de feux allumés par les "fazendeiros" (gros propriétaires terriens), qui promettaient ce 10 août un "dia de fogo", un jour de feu.</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 01 August 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

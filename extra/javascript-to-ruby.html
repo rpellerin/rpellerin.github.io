@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-site-verification" content="n432Qah1uG-jdIZK7rk_ybXwlFWcRcmhk0CnuTWnG3o" />
+
+    <title>Getting Started with Ruby for JavaScript/Node Developers</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css?v=2b934026f8" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/prism.css?v=2b934026f8" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="http://frontendgods.com/getting-started-with-ruby-for/" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Frontend Gods" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Getting Started with Ruby for JavaScript/Node Developers" />
+    <meta property="og:description" content="Recently I have been brushing on some of the languages that I used to work with. After working with JavaScript for a while, I thought it might be interesting to make a guide for other JavaScript developers out there who may want to play with a different language like Ruby." />
+    <meta property="og:url" content="http://frontendgods.com/getting-started-with-ruby-for/" />
+    <meta property="article:published_time" content="2018-02-17T10:31:29.079Z" />
+    <meta property="article:modified_time" content="2018-02-17T10:31:29.076Z" />
+    <meta property="article:tag" content="node" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="ruby" />
+    <meta property="article:tag" content="npm" />
+    <meta property="article:tag" content="bundler" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Getting Started with Ruby for JavaScript/Node Developers" />
+    <meta name="twitter:description" content="Recently I have been brushing on some of the languages that I used to work with. After working with JavaScript for a while, I thought it might be interesting to make a guide for other JavaScript developers out there who may want to play with a different language like Ruby." />
+    <meta name="twitter:url" content="http://frontendgods.com/getting-started-with-ruby-for/" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Frontend Gods",
+    "author": {
+        "@type": "Person",
+        "name": "Amino",
+        "image": "//www.gravatar.com/avatar/c8b89038e81c07446497feff3127eb62?d=404&s=250",
+        "url": "http://frontendgods.com/author/amino/"
+    },
+    "headline": "Getting Started with Ruby for JavaScript/Node Developers",
+    "url": "http://frontendgods.com/getting-started-with-ruby-for/",
+    "datePublished": "2018-02-17T10:31:29.079Z",
+    "dateModified": "2018-02-17T10:31:29.076Z",
+    "keywords": "node, javascript, ruby, npm, bundler",
+    "description": "Recently I have been brushing on some of the languages that I used to work with. After working with JavaScript for a while, I thought it might be interesting to make a guide for other JavaScript developers out there who may want to play with a different language like Ruby."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="Frontend Gods" href="http://frontendgods.com/rss/" />
+</head>
+<body class="post-template tag-node tag-javascript tag-ruby tag-npm tag-bundler">
+
+
+    
+
+
+<header class="main-header post-head sub-page  no-cover">
+    <nav class="main-nav  subpage-main-nav   clearfix ">
+        <a class="back-button icon-arrow-left" href="http://frontendgods.com">Home</a>
+        <p class="c-share">If you want to share tips and tricks with the community, send an email to web@frontendgods.com and we will create an account for you!</p>
+<div  style="float: right;position: relative;top: -90px"  style="padding-top: 10px">
+    <a target="_blank" class="btn" href="https://www.youtube.com/user/meyghania">Tutorials</a>
+    <a class="btn icon-mail" id="js-subs" href="#">Subscribe</a>
+    <a target="_blank" class="btn" href="http://frontendgods.com/rss/"> <i class="icon-rss"></i> RSS</a>
+</div>
+    </nav>
+        <!-- Begin MailChimp Signup Form -->
+    <div id="mc_embed_signup" class="my-overlay subscribe-overlay">
+    <form action="//frontendgods.us9.list-manage.com/subscribe/post?u=e47b40a38cb74d60f53007555&amp;id=ca285b2406" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+        <label for="mce-EMAIL">Subscribe to take advantage of special offers!</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_e47b40a38cb74d60f53007555_ca285b2406" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+    </form>
+    </div>
+
+    <!--End mc_embed_signup-->
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-node tag-javascript tag-ruby tag-npm tag-bundler">
+
+        <header class="post-header">
+            
+            <h1 class="post-title">Getting Started with Ruby for JavaScript/Node Developers</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2018-02-17">17 February 2018</time>  on <a href="/tag/node/">node</a>, <a href="/tag/javascript/">javascript</a>, <a href="/tag/ruby/">ruby</a>, <a href="/tag/npm/">npm</a>, <a href="/tag/bundler/">bundler</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>Recently I have been brushing on some of the languages that I used to work with. After working with JavaScript for a while, I thought it might be interesting to make a guide for other JavaScript developers out there who may want to play with a different language like Ruby. In this guide we will go through setting up a dev environment for working with Ruby using <code>rbenv</code> and <code>bundler.</code></p>
+
+<h2 id="tldr">TL;DR</h2>
+
+<ul>
+<li><code>rbenv</code>: similar to <code>nvm</code> for managing different Ruby versions</li>
+<li><code>rbenv install &lt;Ruby version&gt;</code>: similar to <code>nvm install &lt;node version&gt;</code></li>
+<li><code>rbenv global &lt;Ruby Version&gt;</code>: similar to <code>nvm alias default &lt;node version&gt;</code></li>
+<li><code>rbenv local &lt;Ruby Version&gt;</code>: similar to <code>nvm use &lt;node version</code></li>
+<li><p><code>rbenv versions</code>: similar to <code>nvm ls</code> to see the list of installed Ruby versions</p></li>
+<li><p><code>bundle init</code>: similar to <code>npm init -y</code> to create a Gemfile</p></li>
+<li><code>Gemfile</code>: similar to <code>package.json</code> file to specify dependencies</li>
+<li><p><code>bundle add &lt;package&gt;</code>: similar to <code>npm install &lt;package&gt; --save</code></p></li>
+<li><p><code>gem install &lt;package&gt;</code>: similar to <code>npm install -g &lt;package&gt;</code></p></li>
+<li><code>bundle install</code>: similar to <code>npm install</code></li>
+<li><code>bundle install --path vendor --binstubs bin</code>: to set up a local folder for packages/gems. This is done automatically by default in Node when you do <code>npm install</code></li>
+<li><code>bundle exec ruby main.rb</code>: execute command in the context of the current bundle. This is done automatically by default in Node by the way modules are resolved.</li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+<li>Install <code>rbenv</code> and latest version of Ruby with <code>rbenv</code></li>
+<li>Install <code>bundler</code> for package management</li>
+<li>Install packages locally with pre defined local Ruby version</li>
+<li>Execute a simple script in the context of a project bundle</li>
+</ul>
+
+<h2 id="installingrbenvandruby">Installing <code>rbenv</code> and Ruby</h2>
+
+<p>You can install <code>rbenv</code> very easily with <code>brew install rbenv</code>. Afterwards, we need to install a version of Ruby. As of the time of writing this article, Ruby 2.5.0 is the latest version. You can run <code>rbenv install 2.5.0</code> to build and install the given version of Ruby. After it's installed you can set it to be the default global version by <code>rbenv global 2.5.0</code>. Now if you open a new shell and do <code>ruby -v</code> you should get the right version in the output. If you see the version in the output it means you are good to go to move on to the next section.</p>
+
+<h2 id="installbundler">Install <code>bundler</code></h2>
+
+<p>After setting up <code>rbenv</code> and a global Ruby version, go ahead and run <code>gem install bundler</code>. It will install the latest version of <code>bundler</code> in the respective global version of Ruby and the global <code>bundler</code> binary will become availbale. Run <code>bundle -v</code> to verify that the bundler is being installed successfully.</p>
+
+<h2 id="installpackageslocally">Install Packages Locally</h2>
+
+<p>After installing <code>bundler</code>, let's set up a project folder. Run the following one after the other to set up your project:</p>
+
+<pre><code class="language-bash">mkdir -p ~/Desktop/ruby-project &amp;&amp; cd $_  # &lt;-- create project folder and go to the folder  
+rbenv local 2.5.0 # &lt;-- Specify that this project uses Ruby 2.5.0  
+bundle init # &lt;-- Create a Gemfile to specify packages  
+bundle install --path vendor --binstubs bin # &lt;-- set up .bundle config to install packages to the local folder  
+touch .gitignore main.rb # &lt;-- create a gitignore and the main file  
+</code></pre>
+
+<p>Open the <code>.gitignore</code> file and make sure to add the <code>vendor</code> and <code>.bundle</code> folders to the list of ignored folders:</p>
+
+<p><strong>.gitignore</strong></p>
+
+<pre><code>vendor  
+.bundle
+</code></pre>
+
+<p>Now we are ready to install our first package/gem. When you install a new Gem documentation files will be added automatically. If you want to skip that step system-wide you can add the following to your <code>~/.gemrc</code> file:</p>
+
+<pre><code>gem: --no-document  
+</code></pre>
+
+<p>Next, run <code>bundle add countries</code> to install a Gem to help us with different country names and information. After running that you should be able to see the <code>vendor</code> folder being populated with new content. Also the Gemfile will include an entry like <code>gem "countries", "~&gt; 2.1"</code> to specify our new dependency.</p>
+
+<p>Now if you want to remove a package, simply remove the entry from the Gemfile and run <code>bundle clean</code> to remove unused packages. Also note that if you are given a Gemfile you can simply run <code>bundle install</code> or just <code>bundle</code> to install all the dependencies for the project.</p>
+
+<h2 id="executeasimplescript">Execute a Simple Script</h2>
+
+<p>After installing the Countries Gem, open the <code>main.rb</code> file and add the following:</p>
+
+<pre><code class="language-ruby">require "countries"  
+c = ISO3166::Country.new('US')  
+puts c  
+</code></pre>
+
+<p>Then run the script with <code>bundle exect ruby main.rb</code> and you should see the following output:</p>
+
+<pre><code>United States of America  
+</code></pre>
+
+<p>If you see the input it means your Ruby environment has been set up properly and you are ready to roll!</p>
+
+<h2 id="notes">Notes</h2>
+
+<p>When you specify <code>bundle install --path vendor</code> you tell Bundler to install all the dependencies to the local folder. If you don't specify the path option, Bundler is going to install your packages in the Ruby folder specified by your local Ruby version. The following is a path example to a package that have been installed to the <code>rbenv</code> folder:</p>
+
+<pre><code class="language-bash">~/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/test-unit-3.2.7
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Ruby is a great scripting server-side language that has a variety of applications. I hope that this article can save you a little bit of headache when you want to set up a dev environment that you are used to when working with Node and npm.</p>
+        </section>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'frontendgods'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="/author/amino/" style="background-image: url(//www.gravatar.com/avatar/c8b89038e81c07446497feff3127eb62?d=404&amp;s=250)"><span class="hidden">Amino's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="/author/amino/">Amino</a></h4>
+
+                    <p>Read <a href="/author/amino/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Getting%20Started%20with%20Ruby%20for%20JavaScript%2FNode%20Developers&amp;url=http://frontendgods.com/getting-started-with-ruby-for/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://frontendgods.com/getting-started-with-ruby-for/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://frontendgods.com/getting-started-with-ruby-for/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://frontendgods.com">Frontend Gods</a> &copy; 2018</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <!-- You can safely delete this line if your theme does not require jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js?v=2b934026f8"></script>
+    <script type="text/javascript" src="/assets/js/index.js?v=2b934026f8"></script>
+    <script type="text/javascript" src="/assets/js/prism.js?v=2b934026f8"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-56644240-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+</body>
+</html>

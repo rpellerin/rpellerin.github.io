@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, germany, dusseldorf, cologne" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="What I know about Germany" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Germany - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="What I know about Germany" />
+
+        <title>Germany - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-11-12T23:50:00+01:00">Mon 12 November 2018</time> - Last Update: <time datetime="2019-03-28T23:00:00+01:00">Thu 28 March 2019</time>        </p>
+    <h1>Germany</h1>
+    <div class="grey">
+        <p class="italic">What I know about Germany</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 958 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/dusseldorf.html">dusseldorf</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/cologne.html">cologne</a></p>    </div>
+</header>
+<article>
+    <p>Recently, I got to spend a few days in Düsseldorf and Cologne. Here is my take on Germany, its social differences, and the cities I got to visit.</p>
+<p>Generally speaking, Germany can be slightly more expensive than France, excepted for food and drinks. Housing in Berlin is also much cheaper than Paris. Supermakets are really affordable everywhere. Same goes for restaurants. However, note that tipping is still a thing in Germany, as opposed to France where hardly anybody tips.</p>
+<p>Travelling to western Germany from France can be done by riding a train, usually Thalys. Quite pricey but very convenient. Farther parts can be reached via cheap flights.</p>
+<p>One funny fact - and sometimes irritating: not many businesses accept credit/debit cards,they tend to favor cash. Be prepared!</p>
+<p>One thing that I hate about Germany is that most of the time, restaurants do not serve tap water. They usually have a large variety of bottles water, still or sparkling. They're always reluctant to serve it, and when they do, they might charge you for it. It happened to me once in Berlin: 1.40 euros for a  glass of water. Some people argue that restaurants make little money out of serving food and therefore want people to buy drinks, through which they make more money because of bigger margins. Other people argue that tap water is seen as unhealthy by some people, although quality standards for tap water are much higher than bottled water in Germany. As it turns out, no one really knows why tap water is a taboo matter in restaurants.</p>
+<p>Germans like to stick to the rules. Specifically, I've never seen any local jaywalk. However I've never been told off for doing it myself so far.</p>
+<p>Germans are also big on ecology and biking. To my greatest pleasure, I've seen countless bike lanes. But, surprisingly enough, it's still very legal to smoke in some bars.</p>
+<p>Moving on to cities now...</p>
+<h1>Düsseldorf</h1>
+<p>I recommend a little walk in Düsseldorf's old town, Altstadt. Walk by the Rhein, enjoy the fresh air.</p>
+<p>A very nice place to chill out and enjoy a nice view at sunset is 25hours Hotel Das Tour. Go to the bar at the top, get yourself a drink, it's very affordable!</p>
+<p>Finally, if you're into getting high... check out the Rhine Tower. 9 euros, if my memory serves well.</p>
+<h1>Cologne</h1>
+<p>Unfortunately, I did not get to spend much time there. However, I can still recommend the Cathedral. Most of it is open to the public for free, even a few parts of the crypt.</p>
+<p>Going to Cologne from Düsseldorf is cheap, only 11.5 euros by train. I heard one could get even lower prices, depending on the type of train.</p>
+<h1>Munich</h1>
+<p>Such a beautiful city! It is the third-largest city of Germany, and yet it does not feel so big. The must-see places include:</p>
+<ul>
+<li>Isartor</li>
+<li>Marienplatz, the main square of the city, and the New Town Hall, which you can climb to get a view of the whole city</li>
+<li>Ratskeller München, a restaurant right in the city hall courtyard</li>
+<li>Nearby are a bunch of churches: Peterskirche (you can go to the top), Heiliggeistkirche</li>
+<li>The world famous cathedral with its Devil's footprint: Frauenkirche</li>
+<li>Theatinerkirche, next to the Residenz (a 3-hour long museum)</li>
+<li>Feldherrnhalle, a monument between Theatinerkirche and the Residenz</li>
+<li>Deutsches Museum: again, dedicate at least 3 hours, and don't forget about the mine in the basement, a fun experience!</li>
+<li>Siegestor: a triumphal arc</li>
+<li>In the Englischen Garten: Monopteros, Chinese Tower and its beer garden</li>
+<li>Schloss Nymphenburg</li>
+<li>In Olympiapark: Olympiaturm (a tower, 7 euros to get to the top, with a rock museum at the top), BMW Welt (free) and BMW Museum (paid)</li>
+<li>Pinakothek der Moderne, a modern art museum - I did not really like that one, as opposed to others like Centre Pompidou in Paris or the Tate Modern Museum in London</li>
+<li>Maximilianstraße, a beautiful street</li>
+<li>Asamkirche, a tiny and surprising church</li>
+<li>Müller'sches Volksbad - pro tip: at night after 8pm, for 13 euros you get both spa and swimming pool</li>
+<li>And of course, the iconic Hofbräuhaus München</li>
+</ul>
+<p>I also highly recommend the Tollwood Winter Festival. That's where we spent 2018-2019 New Year's Eve, and it was F-A-B-U-L-O-U-S. They even had lockers for us to store our fireworks. Anyone could freely walk in and out, as long as they showed a stamp on their wrist to get back inside. Plus the bands and the music were great!</p>
+<p>Pro tip: most museums cost 1 euro on Sundays! The Deutsches Museum does, at least.</p>
+<p>Transporation tip: buy a weekly IsarCard. Also, I hear the CityTourCard is a good deal, with 80+ attraction discounts included. We did not try it though.</p>
+<h1>Berlin</h1>
+<p>Compared to Munich, it's a lot less pretty. Nonetheless, it's a city with so much history. It's also energetic, young, eclectic, and unpredictable. Berlin is so big that anything inside the Ringbahn is considered downtown. A few notable places I've been to:</p>
+<ul>
+<li>East side gallery</li>
+<li>Oberbaum Bridge</li>
+<li>Checkpoint Charlie</li>
+<li>Jewish Museum (2 hours is enough to see it all)</li>
+<li>The Remains Of Berlin Wall, on Niederkirchnerstraße</li>
+<li>Poostdamer Platz, the most central point of the city. Make sure to visit the mall of Berlin, there's a 2-story high glide inside.</li>
+<li>Caro's music and drinks bar: open 24 hours, smoking permitted inside. Cocktails are quite pricey: I paid 12 euros per Tequila Sunrise.</li>
+<li>Maximilians restaurant: a Bavarian-style bar and restaurant. They serve "quick lunch" for 6.95 euros (on weekdays only perhaps).</li>
+<li>Memorial to the Murdered Jews of Europe</li>
+<li>Brandenburg Gate</li>
+<li>Reichstag Building</li>
+<li>Siegessäule</li>
+<li>Berliner Fernsehturm: 16.50 euros to go to the top. Wait time is usually an hour.</li>
+<li>Rotes Rathaus</li>
+</ul>
+<p><br /></p>
+<p>That's it for now! Until next time...</p>
+<h1>Interesting links on Germany</h1>
+<ul>
+<li><a href="https://www.numbeo.com/cost-of-living/compare_cities.jsp?country1=France&amp;country2=Germany&amp;city1=Paris&amp;city2=Berlin">Cost of Living Comparison Between Paris and Berlin</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 28 March 2019</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

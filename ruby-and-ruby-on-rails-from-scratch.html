@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, ruby, rails" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to learn Ruby and Rails" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Ruby and Ruby on Rails from scratch - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to learn Ruby and Rails" />
+
+        <title>Ruby and Ruby on Rails from scratch - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2018-03-16T23:50:00+01:00">Fri 16 March 2018</time>        </p>
+    <h1>Ruby and Ruby on Rails from scratch</h1>
+    <div class="grey">
+        <p class="italic">How to learn Ruby and Rails</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 574 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ruby.html">ruby</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/rails.html">rails</a></p>    </div>
+</header>
+<article>
+    <p>Today I started learning a new language: Ruby! Coming from a JavaScript world, <a href="http://frontendgods.com/getting-started-with-ruby-for/">this article</a> helped me a lot (<a href="//romainpellerin.eu/extra/javascript-to-ruby.html">backed-up here, should it ever vanish from the Internet</a>). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.</p>
+<h1>Learning resources</h1>
+<h2>Ruby</h2>
+<ul>
+<li><a href="https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby">https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby</a> (French)</li>
+<li><a href="http://tryruby.org">http://tryruby.org</a>: awesome interactive tutoral</li>
+<li><a href="http://rubykoans.com/">http://rubykoans.com/</a>: learn by doing TDD (Test-Driven Development): make all tests pass</li>
+</ul>
+<h2>Rails</h2>
+<ul>
+<li><a href="http://rubyonrails.org/doctrine/">http://rubyonrails.org/doctrine/</a></li>
+<li><a href="https://ideamotive.co/ruby-on-rails-development-guide/?in-2019">CHOOSING RUBY ON RAILS FOR YOUR NEXT WEB DEVELOPMENT PROJECT</a></li>
+<li><a href="https://www.pluralsight.com/courses/code-school-rails-for-zombies">Code School: Rails for Zombies</a></li>
+<li><a href="https://openclassrooms.com/en/courses/3149156-initiez-vous-a-ruby-on-rails">Initiez-vous à Ruby on Rails</a></li>
+<li><a href="https://openclassrooms.com/en/courses/3432066-continuez-avec-ruby-on-rails">Continuez avec Ruby on Rails</a></li>
+</ul>
+<h1>Install</h1>
+<p><a href="https://github.com/rbenv/rbenv#basic-github-checkout">Install rbenv</a>. In short, here is how:</p>
+<div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install openssl libicu-dev libssl-dev libreadline-dev zlib1g-dev
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+<span class="nb">cd</span> ~/.rbenv <span class="o">&amp;&amp;</span> src/configure <span class="o">&amp;&amp;</span> make -C src
+<span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc
+~/.rbenv/bin/rbenv init
+<span class="c1"># Open a new shell</span>
+mkdir -p <span class="s2">&quot;</span><span class="k">$(</span>rbenv root<span class="k">)</span><span class="s2">&quot;</span>/plugins
+git clone https://github.com/rbenv/ruby-build.git <span class="s2">&quot;</span><span class="k">$(</span>rbenv root<span class="k">)</span><span class="s2">&quot;</span>/plugins/ruby-build
+rbenv install <span class="m">2</span>.5.0
+rbenv global <span class="m">2</span>.5.0
+
+<span class="c1"># Check everything is installed and correctly set up</span>
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor <span class="p">|</span> bash
+</pre></div>
+
+
+<p>Then, add must-have stuff:</p>
+<div class="highlight"><pre><span></span>gem install bundler
+
+<span class="c1"># In a fresh new Ruby project folder, create a Gemfile</span>
+rbenv <span class="nb">local</span> <span class="m">2</span>.5.0 <span class="c1"># Set version 2.5.0 for this project, same as .nvmrc for Node projects</span>
+bundle init
+bundle install --path vendor --binstubs bin <span class="c1"># Set up .bundle config to install packages to the local folder</span>
+<span class="c1"># Add vendor and .bundle to your .gitignore file</span>
+
+<span class="c1"># In a Ruby project folder, install all dependencies</span>
+bundle install <span class="c1"># or simply `bundle`</span>
+</pre></div>
+
+
+<h1>Upgrade Ruby version</h1>
+<p>Update the version in <code>Gemfile</code> and <code>.ruby-version</code>. Then run:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/.rbenv/plugins/ruby-build <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> <span class="nb">cd</span> -
+rbenv install
+gem install bundler
+bundle
+</pre></div>
+
+
+<h1>Stuff to know</h1>
+<ul>
+<li><code>;</code> is optional</li>
+<li>parentheses optional in <code>if</code> statements</li>
+<li><code>==</code> vs <code>===</code>:  <a href="https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby">https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby</a></li>
+<li><code>puts</code> (adds new line) vs <code>print</code> (no new line)</li>
+<li><code>.each do |item| ... end</code></li>
+<li><code>10.times do |i| ... end</code></li>
+<li><code>if</code>, <code>elsif</code>, <code>else</code>, <code>end</code></li>
+<li><code>array = [1,2]</code></li>
+<li><code>array[0]</code></li>
+<li>When you place a colon in front of a simple word, you get a Ruby symbol: <code>:a</code></li>
+<li><code>hash = {a:1,b:2} # creates symbols :a and :b</code></li>
+<li><code>hash[:a]</code></li>
+<li><code>hash['ok'] = 'yolo' # ok is not a symbol</code></li>
+<li><code>return</code> statement optional, last line is implicitely returned</li>
+<li><code>func(a,b)</code> == <code>func a, b</code></li>
+<li><code>obj.func</code> == <code>obj.func()</code></li>
+<li><code>def initialize ... end</code></li>
+<li><code>@classMemberVariable</code></li>
+<li><code>def func</code> == <code>def func()</code></li>
+<li><code>return true if ....</code> == <code>if ...&lt;line break&gt;return true&lt;line break&gt;end</code></li>
+<li>Inheritance: <code>class Child &lt; Mother</code></li>
+<li>Replace first occurrence in string: <code>string['word'] = 'new word'</code></li>
+<li><code>ratings = Hash.new(0)</code>: all new hashes will default to 0 as their value</li>
+<li><code>do..end</code> vs curly braces for blocks in Ruby: <a href="https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby">https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby</a></li>
+<li><code>pry</code>: pauses execution but does not give access to local variables</li>
+<li><code>binding.pry</code>: pauses execution, gives access to local variables but also pauses all threads (server and tests for instance)</li>
+<li><code>whereami</code> == <code>@</code> (in binding.pry / pry) </li>
+<li><code>help</code> (get help in binding.pry /pry)</li>
+<li><code>PRY_RESCUE_RAIL=1 rails test</code>: runs a test and pauses on falsy assertions</li>
+</ul>
+<h2>Ranges</h2>
+<ul>
+<li><code>x..y</code> (y included) vs <code>x...y</code> (y not included)</li>
+</ul>
+<h2>Tests</h2>
+<ul>
+<li><code>assert_equal x,y</code></li>
+<li><code>assert_match(/regex/, x)</code></li>
+</ul>
+<h2>Resources</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/1961030/ruby-ampersand-colon-shortcut">Ruby ampersand colon shortcut</a></li>
+<li><a href="https://stackoverflow.com/questions/14881125/what-does-to-proc-method-mean">What does to_proc method mean?</a></li>
+<li><a href="https://www.sitepoint.com/closures-ruby/">Closures in Ruby</a></li>
+<li><a href="https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby">What does &amp;. (ampersand dot) mean in Ruby?</a></li>
+<li><a href="https://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/">Ruby &amp; (Ampersand) Parameter Demystified</a></li>
+<li><a href="https://robots.thoughtbot.com/ruby-2-keyword-arguments">Ruby 2 Keyword Arguments</a></li>
+<li><a href="https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do">What does a double * (splat) operator do</a></li>
+<li><a href="https://stackoverflow.com/questions/26938262/what-do-and-mean-in-ruby?utm_medium=organic&amp;utm_source=google_rich_qa&amp;utm_campaign=google_rich_qa">What do =~ and /\ mean in Ruby?</a></li>
+<li><a href="https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/">%Q, %q, %W, %w, %x, %r, %s</a></li>
+<li><a href="https://romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html">Rails Routing from the Outside In</a></li>
+<li><a href="https://infinum.co/the-capsized-eight/multiline-strings-ruby-2-3-0-the-squiggly-heredoc">Multiline strings in Ruby 2.3 - the squiggly heredoc</a></li>
+<li><a href="http://blog.scoutapp.com/articles/2017/01/24/activerecord-includes-vs-joins-vs-preload-vs-eager_load-when-and-where">Making sense of ActiveRecord joins, includes, preload, and eager_load</a></li>
+<li><a href="https://stackoverflow.com/questions/8198811/whats-the-difference-between-colon-and-fat-arrow">What's the difference between colon “:” and fat arrow “=&gt;”</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 16 March 2018</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
