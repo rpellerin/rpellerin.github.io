@@ -23,6 +23,6 @@ A long time ago, long before I was born, people used to care more about jobs tha
 
 <br />
 
-But all of that is gone now, people don't do that no more. Everyone's fucking dead. Humans. Animals. Forests. Everything is gone. The planet is barely fit to live. Our unstustainable way of life killed us all. Those who remain live harsh lifes. Every day is a fight for survival, for food, for clean water, for power. Most lands people inhabited are underwater now, as the sea level is much higher than in the early 2000's.
+But all of that is gone now, people don't do that no more. Everyone's fucking dead. Humans. Animals. Forests. Everything is gone. The planet is barely fit to live. Our unsustainable way of life killed us all. Those who remain live harsh lifes. Every day is a fight for survival, for food, for clean water, for power. Most lands people inhabited are underwater now, as the sea level is much higher than in the early 2000's.
 
 It all changed at the end of the last century. The global population was reaching its peak: 10,500,000,000. In less than 20 years, the global average temperature rose by 1.5 Celsius degrees, by far exceeding the worst projections made in the beginning of the century. The Great Global Warming (GGW as they call it these days) was true after all.
