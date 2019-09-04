@@ -8,7 +8,7 @@ Summary: Vélo + taf = vélotaf <3
 
 *Ceci est la suite de [Riding A Bike In Paris]({filename}/riding-a-bike-in-paris.md).*
 
-Cet article a pour but d'être la bible ultime de référence du vélotafeur bobo écolo radin parisien !!! Les livres qu'il faut avoir lu, les films à avoir vu, les chaînes Youtube à suivre, les comptes Twitter à lire, comment réparer son vélo, les magasins à connaître, des liens à gogo, tout sur le vélotaf à Paris est ici !
+Cet article a pour but d'être la bible ultime de référence du vélotafeur bobo écolo radin parisien !!! Les livres qu'il faut avoir lu, les films à avoir vu, les chaînes Youtube à suivre, les comptes Twitter à lire, les podcasts à écouter, comment réparer son vélo, les magasins à connaître, des liens à gogo, tout sur le vélotaf à Paris est ici !
 
 # Livres
 
@@ -23,7 +23,7 @@ Une petite sélection de films et documentaires sur le vélo à voir et à revoi
 - [Why We Cycle](http://whywecycle.eu/)
 - [Bikes vs Cars](http://www.bikes-vs-cars.com/)
 
-# Chaines Youtube et/ou comptes Twitter
+# Chaines Youtube, comptes Twitter et podcasts
 
 La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui ressortent un peu partout. Entre militants de la première heure et étudiants amateurs de vidéos en passant par des élus, on trouve de tout.
 
@@ -35,6 +35,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - Paris en Selle : [Twitter](https://twitter.com/ParisEnSelle)
 - Abel Guggenheim : [Twitter](https://twitter.com/cyclAbel)
 - Isabelle Lesens : [Twitter](https://twitter.com/isaduvelo)
+- Stein van Oosteren : [Twitter](https://twitter.com/LCyclable)
 - Ailes cyclables : [Twitter](https://twitter.com/AilesCyclables)
 - Paris sans voiture : [Twitter](https://twitter.com/parisansvoiture)
 - Christophe Najdovski : [Twitter](https://twitter.com/C_Najdovski)
@@ -42,6 +43,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - Le Bon Sens c’est le vélo : [Twitter](https://twitter.com/LeBonSens10)
 - 🚲àParis&alive... : [Twitter](https://twitter.com/Marredescons2)
 - CycloTransEurope : [Twitter](https://twitter.com/eurovelo3)
+- [Rayons Libres](https://cause-commune.fm/podcastfilter/rayons-libres/), un podcast proposé par Abel Guggenheim avec plein d'invités variés. Très intéressant !
 
 # Customization
 
@@ -75,6 +77,7 @@ En résumé :
 - [Fédération française des usagers de la bicyclette](https://www.fub.fr/)
 - [Mieux se Déplacer à Bicyclette](https://mdb-idf.org/)
 - [Paris en Selle](https://parisenselle.fr/)
+- [Vélorution](http://velorution.org/)
 - [Filmer ses déplacements à vélo – quelles raisons, quel matériel ?](https://frerelaroute.wordpress.com/2017/09/27/filmer-ses-deplacements-a-velo-quelles-raisons-quel-materiel/)
 - [Vélo en ville : ces infractions méconnues qui peuvent vous coûter cher](http://www.leparisien.fr/info-paris-ile-de-france-oise/transports/velo-en-ville-ces-infractions-punies-de-135-euros-d-amende-25-03-2019-8039439.php)
 - [EuroVelo routes](http://www.eurovelo.com/en/eurovelos)
