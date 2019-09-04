@@ -2,23 +2,22 @@ language: python
 python: '3.5'
 
 branches:
-    only:
-        - develop
+  only:
+    - develop
 
 env:
-    global:
-        secure: "v59FBVSGk38dUdMTakJytTTy08hp6Rkifh6vd+zQ3IIhdMQuAuFN/851LI7XJCTCroYk5hJk6nu1EmYc16Q1sdVCucapiLDydazIj4UIkJt+pjKfi9OCTyjzlNZz6D4DgKEYHowL78vKw5uX9MsYGRGXB5w+OwSRAs29Nf/XbQAIjS1IA/CyAnuYRb7IUdT+ZbHHEh4m4VI5oZoqdB/LCHQxxpGu0fSL+gRP+cYAjAfQ2NImpytiSDbSZoFr4eElNYzHug0rlR3Q7yInCxOD5yTaclNaDcTFLN9Dtzl/l61mUx/1/87cZdj5QdK6Q8bc+6KG0/Zs+admJOYEEd9b/eAl2Oay7RY1lIQfRRyPPqnvvbSj+8tkR1C4oD3VCDi9BaISvxXiN9Z/QanGiotSPCsyXBY7TFcYXF5HLt5Ov07vsYjSMMxLtbYObWOdLm8pFz69FTwGedARU0MeZbxGmkJL0gEPsHhWwFqAzQpWPkGK4KLbinD3Wa40yAEJSr4DMLgby0D/uHclgySEJFgN+TcxdF28RnewgNYKDj1anQnwn50c28upFpkPW+kQ+8VkWThRy2dQWDEK874ZJoEtoK6c2PZNdfj0PgAKy4ZOhnMWdXV7nNA0p5SD7Ks6+hgkUlsX8XEro2mmyyO7NR67i9fG5/CUdXCA/83gYXAW0wQ="
+  global:
+    secure: 'v59FBVSGk38dUdMTakJytTTy08hp6Rkifh6vd+zQ3IIhdMQuAuFN/851LI7XJCTCroYk5hJk6nu1EmYc16Q1sdVCucapiLDydazIj4UIkJt+pjKfi9OCTyjzlNZz6D4DgKEYHowL78vKw5uX9MsYGRGXB5w+OwSRAs29Nf/XbQAIjS1IA/CyAnuYRb7IUdT+ZbHHEh4m4VI5oZoqdB/LCHQxxpGu0fSL+gRP+cYAjAfQ2NImpytiSDbSZoFr4eElNYzHug0rlR3Q7yInCxOD5yTaclNaDcTFLN9Dtzl/l61mUx/1/87cZdj5QdK6Q8bc+6KG0/Zs+admJOYEEd9b/eAl2Oay7RY1lIQfRRyPPqnvvbSj+8tkR1C4oD3VCDi9BaISvxXiN9Z/QanGiotSPCsyXBY7TFcYXF5HLt5Ov07vsYjSMMxLtbYObWOdLm8pFz69FTwGedARU0MeZbxGmkJL0gEPsHhWwFqAzQpWPkGK4KLbinD3Wa40yAEJSr4DMLgby0D/uHclgySEJFgN+TcxdF28RnewgNYKDj1anQnwn50c28upFpkPW+kQ+8VkWThRy2dQWDEK874ZJoEtoK6c2PZNdfj0PgAKy4ZOhnMWdXV7nNA0p5SD7Ks6+hgkUlsX8XEro2mmyyO7NR67i9fG5/CUdXCA/83gYXAW0wQ='
 
 install:
-    - pip install -r requirements.txt
+  - pip install -r requirements.txt
 
 script:
-    - make publish
+  - make publish
 
 notifications:
   email:
     on_failure: always
 
 after_success:
-    - ghp-import -m "$(git log -1 --oneline | cut -d ' ' -f2-)" -b master output
-    - git push -fq https://${GH_TOKEN}@github.com/rpellerin/rpellerin.github.io.git master:master >/dev/null 2>&1
+  - './deploy.sh'
