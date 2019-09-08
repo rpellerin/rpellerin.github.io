@@ -15,6 +15,7 @@ Cet article a pour but d'être la bible ultime de référence du vélotafeur bob
 - [Paris - Hors Série Juin 2019 - À vélo]({filename}/extra/Paris_HS_Velo_Juin-2019.pdf)
 - [Le code du cycliste](https://www.editions-dalloz.fr/le-code-du-cycliste.html)
 - [Le Guide des aménagements cyclables](https://parisenselle.fr/guide-amenagements-cyclables-paris-en-selle/)
+- [Vélotaf: Mode d'emploi du vélo au quotidien](https://www.amazon.fr/dp/2072827701/)
 
 # Films
 
