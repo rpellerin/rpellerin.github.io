@@ -19,6 +19,11 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Trip and Tech blog](http://blog.thomasmorel.io/feed.xml)
 - [Kyâne Pichou](https://www.kyane.fr/index.xml)
 
+# Bike
+
+- [Cause Commune](https://cause-commune.fm/feed/podcast)
+- [Pause Vélo](https://www.pausevelo.com/feed/)
+
 # HTML/CSS
 
 - [HTML5Rocks](http://feeds.feedburner.com/html5rocks)
