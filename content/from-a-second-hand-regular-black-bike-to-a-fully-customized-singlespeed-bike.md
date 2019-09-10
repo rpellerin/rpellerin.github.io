@@ -21,6 +21,8 @@ What I'd like to do is to recreate the same bike I had when I was in [South Kore
 
 <figure class="center"><img alt="My bike in South Korea, by a river" src="{filename}/images/bike-korea.jpg" /></figure>
 
+More photos: [here](http://www.bikey.co.kr/new/board.php?board=bt700c&command=body&no=77), [here](http://prod.danawa.com/info/?pcode=1414217&cate1=0&cate2=0&cate3=0&cate4=0), [here](https://biketago.com/bike/1912) and [there](https://www.pedalroom.com/bike/samchully-x-benetton-fixie-29131).
+
 So here we go, here's what I need:
 
 - [x] **A rear white wheel**
