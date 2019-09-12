@@ -32,6 +32,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - Cinquante Taureaux : [Youtube](https://www.youtube.com/channel/UC8rE-HbmlCjj_xWwPm13grQ) + [Twitter](https://twitter.com/50_euros)
 - CyclObs : [Youtube](https://www.youtube.com/channel/UCfytFPh4b0SIE0HsbPEXlUw) + [Twitter](https://twitter.com/Cycl_Obs)
 - Cycliste Urbain : [Twitter](https://twitter.com/CyclisteUrbain)
+- Bilook le cycliste : [Twitter](https://twitter.com/BilookVT)
 - Not Just Bikes : [Twitter](https://twitter.com/notjustbikes)
 - Paris en Selle : [Twitter](https://twitter.com/ParisEnSelle)
 - Abel Guggenheim : [Twitter](https://twitter.com/cyclAbel)
