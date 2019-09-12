@@ -47,6 +47,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - CycloTransEurope : [Twitter](https://twitter.com/eurovelo3)
 - Vélorution Paris IdF : [Twitter](https://twitter.com/velorutionParis)
 - 135€ : [Twitter](https://twitter.com/135euros)
+- Brice Perrin : [Twitter](https://twitter.com/briceperrin)
 - [Rayons Libres](https://cause-commune.fm/podcastfilter/rayons-libres/), un podcast proposé par Abel Guggenheim avec plein d'invités variés. Très intéressant !
 - [Pause Vélo](https://www.pausevelo.com), un autre podcast très sympa (+ le [Twitter qui va bien](https://twitter.com/PauseVelo)).
 
