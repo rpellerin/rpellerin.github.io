@@ -95,3 +95,4 @@ Summary: Everything wrong with this world
 - [Une nouvelle étude démontre que les émissions réelles des véhicules #diesel sont largement au-dessus des normes d’homologation](https://twitter.com/C_Najdovski/status/1171402033972355072)
 - [Pollution : à Paris, même les diesels les plus récents dépassent largement les normes](https://www.lemonde.fr/economie/article/2019/09/10/pollution-a-paris-meme-les-diesels-les-plus-recents-depassent-largement-les-normes_5508579_3234.html)
 - [Les enfants sont plus vulnérables à la pollution de l’air](https://www.respire-asso.org/les-enfants-sont-plus-vulnerables-pollution-de-l-air/)
+- [Sauvons la planète de l’écologie hystérique](https://ploum.net/sauvons-la-planete-de-lecologie-hysterique/)

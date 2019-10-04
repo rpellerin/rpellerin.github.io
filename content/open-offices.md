@@ -14,3 +14,4 @@ I might talk about it some day... meanwhile here are a few links.
 - [L’open space est-il l’arnaque du XXeme siècle ?](https://bfmbusiness.bfmtv.com/france/l-open-space-est-il-l-arnaque-du-xxeme-siecle-1603225.html)
 - [Open-plan offices make workers less collaborative, Harvard study finds](https://www.weforum.org/agenda/2018/11/open-plan-offices-make-workers-less-collaborative-harvard-study-finds)
 - [How my colleagues and I stay sane in our open office](https://qz.com/work/1685084/how-to-focus-in-an-open-office/)
+- [Open Offices Are a Capitalist Dead End](https://www.nytimes.com/2019/09/25/opinion/wework-adam-neumann.html#click=https://t.co/zaTkPdbxWK)
