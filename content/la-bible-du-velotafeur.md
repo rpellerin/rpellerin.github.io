@@ -101,3 +101,4 @@ En résumé :
 
 - [A cyclist's guide to biking the city – a cartoon](https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon)
 - [Des conseils pour débuter en vélotaf](http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/)
+- [Le vélo en musique](http://wiklou.org/wiki/Le_v%C3%A9lo_en_musique)

@@ -98,6 +98,13 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i "concat:$(ls *.MTS | tr '\n' '|' | head -c -1)" -vcodec copy -acodec aac -ab 512k -cutoff 22050 -sn output.mp4
 
+# [Reduce the size of a video](https://unix.stackexchange.com/a/337359/194594)
+
+    :::bash
+    ffmpeg -i input.mp4 -vcodec libx265 -crf 24 -r 25 output.mp4
+    # OR if libx265 is not supported
+    ffmpeg -i input.mp4 -vcodec libx264 -crf 24 -r 25 output.mp4
+
 # Resources
 
 - [FFmpeg tips](https://ehret.me/ffmpeg-tips/)
