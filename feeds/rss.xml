@@ -85,6 +85,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.theguardian.com/cities/2019/jun/28/a-cyclists-guide-to-biking-the-city-a-cartoon"&gt;A cyclist's guide to biking the city – a cartoon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/"&gt;Des conseils pour débuter en vélotaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://wiklou.org/wiki/Le_v%C3%A9lo_en_musique"&gt;Le vélo en musique&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 03 Sep 2019 23:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-09-03:/la-bible-du-velotafeur.html</guid><category>bike</category><category>velotaf</category></item><item><title>I Was Born In 2100</title><link>//romainpellerin.eu/i-was-born-in-2100.html</link><description>&lt;p&gt;I was born in 2100.&lt;/p&gt;
 &lt;p&gt;A long time ago, long before I was born, people used to smoke. The very concept of smoking is unknown to many these days, so let me explain. It's as stupid as eating small rocks, or wood maybe. But it's not that. It was dried tobacco leaves. It would hurt a little the first time people would do it, and even make them caugh. But then, as they kept trying, the pain would eventually fade away. After some time, they might even start to feel some joy when doing it. Or maybe they pretended to and forced themselves to believe it. Or maybe it's the social pressure, people did't really why know but they kind of liked it. Or maybe it was the ads in the 70's and 80's. People used to "go on a cigarette break". Except that smoking does your body no good whatsoever. Quite the opposite to be honest. Smoking was killing people so slowly that most people would not even acknowledge it. They would doubt it, refute it.&lt;br&gt;
 People were stupid.&lt;/p&gt;
@@ -4784,6 +4785,13 @@ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k
 
 &lt;h1&gt;Concat MTS files to MP4&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ls *.MTS &lt;span class="p"&gt;|&lt;/span&gt; tr &lt;span class="s1"&gt;&amp;#39;\n&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;|&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; head -c -1&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; -vcodec copy -acodec aac -ab 512k -cutoff &lt;span class="m"&gt;22050&lt;/span&gt; -sn output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;a href="https://unix.stackexchange.com/a/337359/194594"&gt;Reduce the size of a video&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vcodec libx265 -crf &lt;span class="m"&gt;24&lt;/span&gt; -r &lt;span class="m"&gt;25&lt;/span&gt; output.mp4
+&lt;span class="c1"&gt;# OR if libx265 is not supported&lt;/span&gt;
+ffmpeg -i input.mp4 -vcodec libx264 -crf &lt;span class="m"&gt;24&lt;/span&gt; -r &lt;span class="m"&gt;25&lt;/span&gt; output.mp4
 &lt;/pre&gt;&lt;/div&gt;
 
 
