@@ -56,7 +56,7 @@ In many scenarios, calls are forwarded to your voicemail. You may want to disabl
 - Reestablish: &ast;002#
 - Check status: &ast;#002#
 
-# 7. Call waiting: make your phone for new incoming phones even if you are alreay on the phone
+# 7. Call waiting: make your phone ring for new incoming phones even if you are alreay on the phone
 
 - Enable call waiting: call &ast;43#
 - Disable it: call #43#
@@ -64,9 +64,9 @@ In many scenarios, calls are forwarded to your voicemail. You may want to disabl
 
 # Complementary information
 
-In France, for mobile network provided 'Free mobile', the voicemail phone number is: 06 95 60 00 11.
+In France, for mobile network provider 'Free mobile', the voicemail phone number is: 06 95 60 00 11.
 
-[More GSM codes here.](https://community.giffgaff.com/t5/Tips-Guides/Turn-off-voicemail-more-handy-codes/td-p/4542132)
+[More GSM codes here](https://community.giffgaff.com/t5/Tips-Guides/Turn-off-voicemail-more-handy-codes/td-p/4542132) and [here](https://en.wikipedia.org/wiki/Call_forwarding).
 
 # Tips
 
