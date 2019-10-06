@@ -29,7 +29,7 @@ Une petite sélection de films et documentaires sur le vélo à voir et à revoi
 La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui ressortent un peu partout. Entre militants de la première heure et étudiants amateurs de vidéos en passant par des élus, on trouve de tout.
 
 - Observations Cyclistes : [Youtube](https://www.youtube.com/c/ObservationsCyclistes) + [Twitter](https://twitter.com/OCyclistes)
-- Cinquante Taureaux : [Youtube](https://www.youtube.com/channel/UC8rE-HbmlCjj_xWwPm13grQ) + [Twitter](https://twitter.com/50_euros)
+- Cinquante Euros : [Youtube](https://www.youtube.com/channel/UC8rE-HbmlCjj_xWwPm13grQ) + [Twitter](https://twitter.com/50_euros)
 - CyclObs : [Youtube](https://www.youtube.com/channel/UCfytFPh4b0SIE0HsbPEXlUw) + [Twitter](https://twitter.com/Cycl_Obs)
 - Cycliste Urbain : [Twitter](https://twitter.com/CyclisteUrbain)
 - Bilook le cycliste : [Twitter](https://twitter.com/BilookVT)
@@ -41,6 +41,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - Ailes cyclables : [Twitter](https://twitter.com/AilesCyclables)
 - Paris sans voiture : [Twitter](https://twitter.com/parisansvoiture)
 - Christophe Najdovski : [Twitter](https://twitter.com/C_Najdovski)
+- FUB : [Twitter](https://twitter.com/FUB_fr)
 - Ras Le Scoot : [Twitter](https://twitter.com/RasLeScoot)
 - Le Bon Sens c’est le vélo : [Twitter](https://twitter.com/LeBonSens10)
 - 🚲àParis&alive... : [Twitter](https://twitter.com/Marredescons2)
