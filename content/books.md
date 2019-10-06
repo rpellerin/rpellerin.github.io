@@ -59,3 +59,24 @@ Summary: Books I have read
 # To read
 
 - [7 romans de science-fiction déprimants et géniaux à lire avant la fin du monde](https://www.numerama.com/pop-culture/531136-7-romans-de-science-fiction-deprimants-et-geniaux-a-lire-avant-la-fin-du-monde.html)
+- Goodbye, Things: The New Japanese Minimalism
+- Winners Take All: The Elite Charade of Changing the World
+- It Doesn't Have to Be Crazy at Work
+- The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life
+- Les misérables Tome V - Jean Valjean (French Edition)
+- Les Misérables: Tome IV (Volume 4) (French Edition)
+- Les Miserables: Tome III - MARIUS (French Edition)
+- Les misérables: Tome 2 Cosette (Volume 2) (French Edition)
+- Les Misérables: Tome 1 : Fantine (French Edition)
+- Germinal (French Edition)
+- Together Is Better: A Little Book of Inspiration
+- On the Shortness of Life: Life Is Long if You Know How to Use It (Penguin Great Ideas)
+- The Pragmatic Programmer: From Journeyman to Master
+- The Clean Coder: A Code of Conduct for Professional Programmers
+- Clean Code: A Handbook of Agile Software Craftsmanship
+- McGraw-Hill's Conversational American English: The Illustrated Guide to Everyday Expressions of American English (McGraw-Hill ESL References)
+- How to Sound Really Clever
+- How the French Think: An Affectionate Portrait of an Intellectual People
+- 2001: a Space Odyssey (Space Odyssey Series)
+- An Astronaut's Guide to Life on Earth: What Going to Space Taught Me About Ingenuity, Determination, and Being Prepared for Anything
+- Work Rules!: Insights from Inside Google That Will Transform How You Live and Lead
