@@ -40,7 +40,7 @@ Summary: Books I have read
 
 ## Comics I started reading that year
 
-- **Paper Girls**, by *Brian K. Vaughan* and *Cliff Chiang*
+- **Paper Girls**, by *Brian K. Vaughan* and *Cliff Chiang*, ended in 2019
 - **Low**, *by Rick Remender and Greg Tocchini*
 - **Die!Die!Die!**, by *Robert Kirkman* and *Scott M. Gimple*
 - **Saga**, by *Brian K. Vaughan* and *Fiona Staples*
@@ -51,6 +51,10 @@ Summary: Books I have read
 - **Le code du cycliste**, by *Ludovic Duprey*
 - **Guide des aménagements cyclables**, by *Paris en Selle*
 - **Stoner**, by *John Edward Williams*
+
+## Comics I started reading that year
+
+- **Ascender** (comic books), by *Jeff Lemire* and *Dustin Nguyen*
 
 # To read
 
