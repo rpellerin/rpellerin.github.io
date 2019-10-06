@@ -1,13 +1,13 @@
 Title: Books 
 Date: 2017-01-26 16:50
-Modified: 2018-07-28 19:40
+Modified: 2019-10-07 00:30
 Category: About me
 Tags: books, comics
 Slug: books
 Authors: Romain Pellerin
 Summary: Books I have read
 
-# Since June 2012 and counting
+# June 2012 - July 2019
 
 - **The Walking Dead** (comic books), *by Robert Kirkman* and *Charlie Adlard*
 
