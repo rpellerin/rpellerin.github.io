@@ -38,16 +38,19 @@ Summary: Books I have read
 - **La Horde du Contrevent 1** (comic book), *by Éric Henninot*
 - And a few "first issue" comic books, including Outcast, Riverdale, The Wicked + The Divine, Infinite Dark, Blackbird
 
-# 2019
-
-- **The Lean Startup**, by *Eric Ries*.
-
 ## Comics I started reading that year
 
 - **Paper Girls**, by *Brian K. Vaughan* and *Cliff Chiang*
 - **Low**, *by Rick Remender and Greg Tocchini*
 - **Die!Die!Die!**, by *Robert Kirkman* and *Scott M. Gimple*
 - **Saga**, by *Brian K. Vaughan* and *Fiona Staples*
+
+# 2019
+
+- **The Lean Startup**, by *Eric Ries*.
+- **Le code du cycliste**, by *Ludovic Duprey*
+- **Guide des aménagements cyclables**, by *Paris en Selle*
+- **Stoner**, by *John Edward Williams*
 
 # To read
 
