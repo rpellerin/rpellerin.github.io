@@ -96,3 +96,8 @@ Summary: Everything wrong with this world
 - [Pollution : à Paris, même les diesels les plus récents dépassent largement les normes](https://www.lemonde.fr/economie/article/2019/09/10/pollution-a-paris-meme-les-diesels-les-plus-recents-depassent-largement-les-normes_5508579_3234.html)
 - [Les enfants sont plus vulnérables à la pollution de l’air](https://www.respire-asso.org/les-enfants-sont-plus-vulnerables-pollution-de-l-air/)
 - [Sauvons la planète de l’écologie hystérique](https://ploum.net/sauvons-la-planete-de-lecologie-hysterique/)
+- [SUV qui peut](https://lesjours.fr/obsessions/suv/)
+- [Exclusive: carmakers among key opponents of climate action](https://www.theguardian.com/environment/2019/oct/10/exclusive-carmakers-opponents-climate-action-us-europe-emissions)
+- ['A deadly problem': should we ban SUVs from our cities?](https://www.theguardian.com/cities/2019/oct/07/a-deadly-problem-should-we-ban-suvs-from-our-cities?CMP=Share_AndroidApp_Tweet)
+- [The biggest likely source of microplastics in California coastal waters? Our car tires](https://www.latimes.com/environment/story/2019-10-02/california-microplastics-ocean-study)
+- [Why We Should Ban SUVs in Cities](https://pricetags.ca/2019/10/07/why-we-should-ban-suvs-in-cities/)
