@@ -3016,7 +3016,7 @@ sudo apt install vlc
 &lt;/ul&gt;
 &lt;h1&gt;Bike&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://cause-commune.fm/feed/podcast"&gt;Cause Commune&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cause-commune.fm/podcastfilter/rayons-libres/feed/"&gt;Rayons libres&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.pausevelo.com/feed/"&gt;Pause Vélo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;HTML/CSS&lt;/h1&gt;
@@ -3089,6 +3089,7 @@ sudo apt install vlc
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCu34Tq5qMR-FiTYwLyy9U6w"&gt;Webosaures&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC9pVaOtZ8vdLBrlHu5xaaOA"&gt;What's up France ?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCeLfTu_89Qb1RPQ5gK9i_3Q"&gt;wherethehellisutc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLS9S-RWXlfOfL8I4LC54_AWqU-IWgsngH"&gt;LE MOMENT MEURICE&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="news"></category><category term="rss"></category><category term="feed"></category></entry><entry><title>How To Modify PDF Files</title><link href="//romainpellerin.eu/how-to-modify-pdf-files.html" rel="alternate"></link><published>2016-12-10T00:30:00+01:00</published><updated>2016-12-10T00:30:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</id><summary type="html">&lt;p&gt;On to extract/edit/merge pages from one or several PDF files&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gs&lt;/code&gt; is likely already installed.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdftk&lt;/code&gt; can be installed using &lt;code&gt;sudo aptitude install pdftk&lt;/code&gt;. &lt;code&gt;pdftk&lt;/code&gt; &lt;a href="http://askubuntu.com/questions/809800/whats-the-difference-between-gs-and-pdftk-in-merge-pdf-files"&gt;is not recommended because of its old and outdated PDF engine&lt;/a&gt;.&lt;/li&gt;
