@@ -21,7 +21,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 
 # Bike
 
-- [Cause Commune](https://cause-commune.fm/feed/podcast)
+- [Rayons libres](https://cause-commune.fm/podcastfilter/rayons-libres/feed/)
 - [Pause Vélo](https://www.pausevelo.com/feed/)
 
 # HTML/CSS
@@ -94,3 +94,4 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Webosaures](https://www.youtube.com/feeds/videos.xml?channel_id=UCu34Tq5qMR-FiTYwLyy9U6w)
 - [What's up France ?](https://www.youtube.com/feeds/videos.xml?channel_id=UC9pVaOtZ8vdLBrlHu5xaaOA)
 - [wherethehellisutc](https://www.youtube.com/feeds/videos.xml?channel_id=UCeLfTu_89Qb1RPQ5gK9i_3Q)
+- [LE MOMENT MEURICE](https://www.youtube.com/feeds/videos.xml?playlist_id=PLS9S-RWXlfOfL8I4LC54_AWqU-IWgsngH)
