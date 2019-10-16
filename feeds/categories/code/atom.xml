@@ -504,6 +504,11 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/"&gt;Best practices with React and Redux web application development&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/"&gt;Testing Strategies for React and Redux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;Bundle size optimization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/danvk/source-map-explorer"&gt;source-map-explorer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/webpack-contrib/webpack-bundle-analyzer"&gt;webpack-bundle-analyzer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;Performance&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://houssein.me/progressive-react"&gt;Progressive React&lt;/a&gt;&lt;/li&gt;
