@@ -84,6 +84,11 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 - [Best practices with React and Redux web application development](https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/)
 - [Testing Strategies for React and Redux](https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/)
 
+## Bundle size optimization
+
+- [source-map-explorer](https://github.com/danvk/source-map-explorer)
+- [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+
 ## Performance
 
 - [Progressive React](https://houssein.me/progressive-react)
