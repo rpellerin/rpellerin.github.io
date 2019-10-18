@@ -64,9 +64,19 @@ There is not much to do in Pisa, appart from the leaning tower of course. The ci
 
 # Rome
 
+<figure class="center">
+<img src="{filename}/images/italy/trevi.jpg" alt="The fountain of Trevi" />
+<figcaption>Trevi: reality.</figcaption>
+</figure>
+
 I highly recommend doing guided tours, as opposed to solo tours, especially when visiting the Vatican museums, the Colosseum and the Roman forum.
 
 Don't buy city passes, [it's in most cases cheaper to buy tickets individually](https://revealedrome.com/2017/05/is-a-roma-pass-worth-it-or-omnia-card/).
+
+<figure class="center">
+<img src="{filename}/images/italy/rome.jpg" alt="Prices for Colosseum" />
+<figcaption>Prices for the Colosseum.</figcaption>
+</figure>
 
 If you're on a tight schedule as I was, I found [this map](https://www.romewise.com/rome-highlights-in-one-day.html) very helpful when it comes to visiting main highlights efficiently.
 
