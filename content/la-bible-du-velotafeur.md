@@ -51,6 +51,7 @@ La vélosphère est petite à Paris et c'est souvent les mêmes têtes qui resso
 - Brice Perrin : [Twitter](https://twitter.com/briceperrin)
 - [Rayons Libres](https://cause-commune.fm/podcastfilter/rayons-libres/), un podcast proposé par Abel Guggenheim avec plein d'invités variés. Très intéressant !
 - [Pause Vélo](https://www.pausevelo.com), un autre podcast très sympa (+ le [Twitter qui va bien](https://twitter.com/PauseVelo)).
+- [Cyclocast](http://www.cyclocast.fr/), un podcast qui nous vient de Lyon.
 
 # Customization
 
@@ -77,6 +78,8 @@ En résumé :
 - Appliquer du lubrifiant (je recommande le [SQUIRT CHAIN LUBE 120ML](https://www.squirtcyclingproducts.com/) ([Amazon](https://www.amazon.fr/dp/B00ANNR15G)), c'est celui que j'ai et j'ai lu un peu partout que c'était le meilleur) dans l'intérieur de la chaine. Autrement dit, sur le haut de la partie basse de la chaine, de façon à ce que le produit soit le plus possible en contact avec les pignons et le pédalier. Faire tourner la chaine et passer les vitesses plusieurs fois.
 - Essuyer le trop plein de lubrifiant avec un chiffon.
 - Il est recommandé de laisser plusieurs heures passer entre la lubrification et un usage du vélo.
+
+## [Lubrification](https://www.provelo.org/fr/page/points-lubrification-un-velo)
 
 # Liens utiles
 

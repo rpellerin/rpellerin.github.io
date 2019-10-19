@@ -1,6 +1,6 @@
 Title: From a second hand regular black bike to a fully customized singlespeed bike
 Date: 2019-06-24 23:50
-Modified: 2019-06-29 19:00
+Modified: 2019-10-20 01:00
 Category: About me
 Tags: bike
 Slug: from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike
@@ -67,12 +67,12 @@ Regarding the tire, I'll go with [that one](https://www.lecyclo.com/velo/roue-pn
 
 - <s>A front green wheel</s> (**updated**)
 - <s>A white tire</s> (**updated**)
-- [A green chain](https://www.lecyclo.com/velo/pieces-detachees/transmission/chaine/chaine-velo-bmx-fixie-single-speed-verte.html): I need to be careful not to buy the wrong kind. There are two major kinds of chains: 1/2" 3/32" for most multiplespeed bikes and 1/2" 1/8" for BMX, fixies and singlespeed bikes. I currently have a 1/2" 3/32". A change of the type of chain requires a change of cogset and crankset.
-- [A single speed freewheel](https://www.lecyclo.com/velo/pieces-detachees/transmission/cassette-roue-libre/roue-libre-mono-vitesse-pour-velo.html)
-- A white frame
-- [A green saddle](https://www.lecyclo.com/velo/confort/selle-tige-et-housse/selle/selle-velo-vintage-verte-imitation-cuir-avec-rivets.html)
-- [Pink grips](https://www.lecyclo.com/velo/confort/potence-guidon/poignee-corne/grips-roses-pour-guidon-de-velo-get-shorty-blb.html)
-- A pink shifter cable housing and a white one
+- <s>[A green chain](https://www.lecyclo.com/velo/pieces-detachees/transmission/chaine/chaine-velo-bmx-fixie-single-speed-verte.html): I need to be careful not to buy the wrong kind. There are two major kinds of chains: 1/2" 3/32" for most multiplespeed bikes and 1/2" 1/8" for BMX, fixies and singlespeed bikes. I currently have a 1/2" 3/32". A change of the type of chain requires a change of cogset and crankset.</s> (**updated**)
+- <s>[A single speed freewheel](https://www.lecyclo.com/velo/pieces-detachees/transmission/cassette-roue-libre/roue-libre-mono-vitesse-pour-velo.html)</s> (**updated**)
+- <s>[A white frame](https://www.lecyclo.com/velo/pieces-detachees/produit-entretien/peinture/peinture-pour-velo-spray-bike-blb-london-collection-400-ml.html)</s> (**updated**)
+- <s>[A green saddle](https://www.lecyclo.com/velo/confort/selle-tige-et-housse/selle/selle-velo-vintage-verte-imitation-cuir-avec-rivets.html)</s> (**updated**)
+- <s>[Pink grips](https://www.lecyclo.com/velo/confort/potence-guidon/poignee-corne/grips-roses-pour-guidon-de-velo-get-shorty-blb.html)</s> (**updated**)
+- <s>[A pink shifter cable housing](https://www.amazon.fr/dp/B07PFD29VT/) and [a white one](https://www.lecyclo.com/velo/pieces-detachees/frein/cable-gaine/gaine-de-frein-velo-blanche-2-metres-brakco.html)</s> (**updated**)
 
 ### \*\*UPDATE JUNE 29, 2019\*\*
 
@@ -87,3 +87,9 @@ First, as I wrote above, I'd need to change the type of chain and use a 1/2" 1/8
 Also, and that's good to know, the ratio between speed and ease of pedaling must be taken into account. For instance, say you have a 14 teeth freewheel and a 42 teeth chainring, the ratio would be 42/14=3. The bigger the ratio the easier the pedaling.
 
 That's it for now. This article will likely be updated in the coming months...
+
+### \*\*UPDATE OCTOBER 20, 2019\*\*
+
+Well, that's it. I've bought everything needed to fully transform my bike, including making it singlespeed. To paint my frame, I followed [this tutorial](https://www.lecyclo.com/outils/peindre-son-velo-avec-spray-bike.html) and bought these products: [before paint](https://www.lecyclo.com/velo/pieces-detachees/produit-entretien/peinture/appret-anti-corrosion-peinture-velo-spray-bike-pour-tout-metal.html), [paint](https://www.lecyclo.com/velo/pieces-detachees/produit-entretien/peinture/peinture-pour-velo-spray-bike-blb-london-collection-400-ml.html), [after paint](https://www.lecyclo.com/velo/pieces-detachees/produit-entretien/peinture/vernis-pour-finitions-peinture-de-velo-spray-bike-400-ml.html).
+
+<figure class="center"><img alt="An animated image of the transformation of my bike" src="{filename}/images/bike.gif" /></figure>
