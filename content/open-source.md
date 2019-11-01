@@ -43,6 +43,7 @@ Here are a bunch of links for open source project maintainers/creators:
 - [Github Apps - Welcome](https://github.com/apps/welcome)
 - [Packager.io](https://packager.io/)
 - [What comes after “open source”](https://words.steveklabnik.com/what-comes-after-open-source)
+- [Open source promotion cheat sheet](https://github.com/zenika-open-source/open-source-promotion-cheat-sheet)
 
 # Getting paid
 
