@@ -91,3 +91,4 @@ Good luck!
 - [What you should know as a founder of a software company](https://qotoqot.com/blog/founder-skills/)
 - [F\*\*\* You, I Quit — Hiring Is Broken](https://medium.com/@evnowandforever/f-you-i-quit-hiring-is-broken-bb8f3a48d324)
 - [Interviewing for a Technical Position Doesn’t Have to Be Scary](https://css-tricks.com/interviewing-for-a-technical-position-doesnt-have-to-be-scary/)
+- [Ask an expert: How do you interview an engineer?](https://increment.com/teams/ask-an-expert-how-do-you-interview-an-engineer/)
