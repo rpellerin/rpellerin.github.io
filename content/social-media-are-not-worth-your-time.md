@@ -46,6 +46,7 @@ Summary: What I think about most social media
 - [Facebook says it 'unintentionally uploaded' 1.5 million people's email contacts without their consent](https://www.businessinsider.fr/us/facebook-uploaded-1-5-million-users-email-contacts-without-permission-2019-4)
 - [15 Months of Fresh Hell Inside Facebook](https://www.wired.com/story/facebook-mark-zuckerberg-15-months-of-fresh-hell/)
 - [Facebook moderators break their NDAs to expose desperate working conditions - The Verge](https://www.theverge.com/2019/6/19/18681845/facebook-moderator-interviews-video-trauma-ptsd-cognizant-tampa)
+- [Stop Using Facebook](https://www.stopusingfacebook.co/)
 
 # 2018 Facebook Cambridge Analytica data scandal
 
