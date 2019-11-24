@@ -174,3 +174,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [When we rush development, skip tests and refactoring, we get “Escalating Risk.” Please give up the “technical debt” description; it gives businesspeople a very wrong impression of the tradeoffs.](https://mobile.twitter.com/jessitron/status/1123310331957145601)
 - [Too DRY - The Grep Test](http://jamie-wong.com/2013/07/12/grep-test/)
 - [La dette technique : une supercherie mythologique pour galériens de l’IT](https://medium.com/@waxzce/la-dette-technique-une-supercherie-mythologique-pour-gal%C3%A9riens-de-lit-7ed0dfbf39c7)
+- [How to build a startup engineering team](https://increment.com/teams/how-to-build-a-startup-engineering-team/)
