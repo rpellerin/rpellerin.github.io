@@ -132,6 +132,7 @@ All set!
 - [The Cost Of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
 - [JavaScript hacks for ES6 hipsters](https://hackernoon.com/javascript-hacks-for-es6-hipsters-67d633ce8ace)
 - [The Vanilla JavaScript Toolkit](https://vanillajstoolkit.com/)
+- [Arrow Functions in Class Properties Might Not Be As Great As We Think](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
 
 ## Some cool node/npm stuff/packages/tools
 
