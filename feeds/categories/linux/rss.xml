@@ -2242,14 +2242,14 @@ easy_install mitmproxy
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 18 Jan 2016 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-01-18:/hacking.html</guid><category>hacking</category><category>kali</category><category>security</category><category>android</category><category>mitm</category><category>linux</category></item><item><title>Git</title><link>//romainpellerin.eu/git.html</link><description>&lt;p&gt;Here are two talks about Git I gave in the last two years, at &lt;a href="http://humantalks.com/cities/compiegne"&gt;HumanTalks Compiègne&lt;/a&gt;. I added the slides as well.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8d04CYP5U9Q?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://romainpellerin.eu/slides/git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9gdub0OMC8Y?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Going further&lt;/h1&gt;
 &lt;p&gt;Here are some resources to go deeper with Git.&lt;/p&gt;
 &lt;h2&gt;General&lt;/h2&gt;

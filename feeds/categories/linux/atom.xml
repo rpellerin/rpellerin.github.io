@@ -2242,14 +2242,14 @@ easy_install mitmproxy
 &lt;/ul&gt;</content><category term="hacking"></category><category term="kali"></category><category term="security"></category><category term="android"></category><category term="mitm"></category><category term="linux"></category></entry><entry><title>Git</title><link href="//romainpellerin.eu/git.html" rel="alternate"></link><published>2015-06-03T00:01:00+02:00</published><updated>2016-09-28T23:01:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-03:/git.html</id><summary type="html">&lt;p&gt;All about Git&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are two talks about Git I gave in the last two years, at &lt;a href="http://humantalks.com/cities/compiegne"&gt;HumanTalks Compiègne&lt;/a&gt;. I added the slides as well.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8d04CYP5U9Q?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://romainpellerin.eu/slides/git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9gdub0OMC8Y?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;&lt;a href="http://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html"&gt;Slides are available in HTML&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Going further&lt;/h1&gt;
 &lt;p&gt;Here are some resources to go deeper with Git.&lt;/p&gt;
 &lt;h2&gt;General&lt;/h2&gt;
