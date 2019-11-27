@@ -11,15 +11,15 @@ Here are two talks about Git I gave in the last two years, at [HumanTalks Compi√
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8d04CYP5U9Q?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen></iframe>
+<iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#git/slides.html" allowfullscreen></iframe>
 
-[Slides are available in HTML](http://romainpellerin.eu/slides/git/slides.html).
+[Slides are available in HTML](https://romainpellerin.eu/slides/git/slides.html).
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9gdub0OMC8Y?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="700" height="600" src="http://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen></iframe>
+<iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#continuous-integration-done-right-by-leveraging-git/slides.html" allowfullscreen></iframe>
 
-[Slides are available in HTML](http://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html).
+[Slides are available in HTML](https://romainpellerin.eu/slides/continuous-integration-done-right-by-leveraging-git/slides.html).
 
 # Going further
 
