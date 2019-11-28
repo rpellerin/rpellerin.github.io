@@ -509,6 +509,7 @@ npm install babel-loader@5.x --save-dev
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/danvk/source-map-explorer"&gt;source-map-explorer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/webpack-contrib/webpack-bundle-analyzer"&gt;webpack-bundle-analyzer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d"&gt;Three simple ways to inspect a Webpack bundle&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Performance&lt;/h2&gt;
 &lt;ul&gt;
