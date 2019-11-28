@@ -88,6 +88,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 
 - [source-map-explorer](https://github.com/danvk/source-map-explorer)
 - [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+- [Three simple ways to inspect a Webpack bundle](https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d)
 
 ## Performance
 
