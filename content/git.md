@@ -56,6 +56,8 @@ Here are some resources to go deeper with Git.
 - [Git Tip of the Week: Merging Revisited](http://alblue.bandlem.com/2011/10/git-tip-of-week-merging-revisited.html)
 - [Git caret and tilde](http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde)
 - [The anatomy of a Git commit](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html)
+- [The Biggest Misconception About Git](https://medium.com/@gohberg/the-biggest-misconception-about-git-b2f87d97ed52)
+- [Git gc](https://www.atlassian.com/git/tutorials/git-gc)
 
 ## Rebasing and cherry-picking
 
