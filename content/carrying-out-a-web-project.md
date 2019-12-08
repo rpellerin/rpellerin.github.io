@@ -145,6 +145,7 @@ On Linux, if you have `imagemagick` installed, do:
 
 - [Sometimes `sizes` is quite important.](https://css-tricks.com/sometimes-sizes-is-quite-important/)
 - [DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)
+- [Responsive Image Breakpoints Generator](https://responsivebreakpoints.com/)
 
 ## Debugging
 
@@ -190,6 +191,7 @@ On Linux, if you have `imagemagick` installed, do:
 ## Performance
 
 - [Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)](https://www.youtube.com/watch?v=YJGCZCaIZkQ)
+- [Fast load times](https://web.dev/fast/)
 
 ## Misc
 
