@@ -6045,6 +6045,7 @@ npm install babel-loader@5.x --save-dev
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://css-tricks.com/sometimes-sizes-is-quite-important/"&gt;Sometimes &lt;code&gt;sizes&lt;/code&gt; is quite important.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://responsivebreakpoints.com/"&gt;Responsive Image Breakpoints Generator&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Debugging&lt;/h2&gt;
 &lt;ul&gt;
@@ -6089,6 +6090,7 @@ npm install babel-loader@5.x --save-dev
 &lt;h2&gt;Performance&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=YJGCZCaIZkQ"&gt;Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://web.dev/fast/"&gt;Fast load times&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Misc&lt;/h2&gt;
 &lt;ul&gt;
