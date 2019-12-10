@@ -3176,6 +3176,12 @@ sudo apt install vlc
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h1&gt;Reduce size/quality of a PDF file&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ps2pdf -dPDFSETTINGS&lt;span class="o"&gt;=&lt;/span&gt;/ebook input.pdf output.pdf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;/ebook&lt;/code&gt; can also be replaced with &lt;code&gt;/screen&lt;/code&gt; for further reduction.&lt;/p&gt;
 &lt;h1&gt;Extracting pages&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Extracts all pages from 1 to 5&lt;/span&gt;
 gs -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; -dLastPage&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt; -sOutputFile&lt;span class="o"&gt;=&lt;/span&gt;output.pdf input.pdf

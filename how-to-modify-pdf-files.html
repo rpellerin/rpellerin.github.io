@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">On to extract/edit/merge pages from one or several PDF files</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 244 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 264 words.">1 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/pdf.html">pdf</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -106,6 +106,12 @@
 </pre></div>
 
 
+<h1>Reduce size/quality of a PDF file</h1>
+<div class="highlight"><pre><span></span>ps2pdf -dPDFSETTINGS<span class="o">=</span>/ebook input.pdf output.pdf
+</pre></div>
+
+
+<p><code>/ebook</code> can also be replaced with <code>/screen</code> for further reduction.</p>
 <h1>Extracting pages</h1>
 <div class="highlight"><pre><span></span><span class="c1"># Extracts all pages from 1 to 5</span>
 gs -sDEVICE<span class="o">=</span>pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage<span class="o">=</span><span class="m">1</span> -dLastPage<span class="o">=</span><span class="m">5</span> -sOutputFile<span class="o">=</span>output.pdf input.pdf
