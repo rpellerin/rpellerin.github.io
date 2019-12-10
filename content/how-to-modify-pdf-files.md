@@ -19,6 +19,13 @@ Other commands exist such as `pdfseparate` and `pdfunite`. They are very good bu
     :::bash
     pdftk input.pdf output output.pdf userpw <password here>
 
+# Reduce size/quality of a PDF file
+
+    :::bash
+    ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
+
+`/ebook` can also be replaced with `/screen` for further reduction.
+
 # Extracting pages
 
     :::bash
