@@ -13,6 +13,16 @@ Summary: A few tips with FFMPEG
 `-af` is an alias for `-filter:a` (audio stream).  
 `-vf` is an alias for `-filter:v` (video stream).
 
+# Add embedded subtitles
+
+    :::bash
+    sudo apt install subtitlecomposer
+
+In subtitlecomposer, import the video, add subtitles, and export the file as `filename.ass`. Edit the exported text file, change the font from 16px to 22. Then:
+
+    :::bash
+    ffmpeg -i input.mp4 -vf ass=filename.ass output.mp4
+
 # Create a GIF
 
     :::bash
