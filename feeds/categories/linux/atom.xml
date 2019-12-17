@@ -1607,6 +1607,16 @@ apt dist-upgrade
 &lt;code&gt;-vcodec&lt;/code&gt; is an alias for &lt;code&gt;-c:v&lt;/code&gt; which is an alias for &lt;code&gt;-codec:v&lt;/code&gt; (video stream).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-af&lt;/code&gt; is an alias for &lt;code&gt;-filter:a&lt;/code&gt; (audio stream).&lt;br&gt;
 &lt;code&gt;-vf&lt;/code&gt; is an alias for &lt;code&gt;-filter:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;h1&gt;Add embedded subtitles&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install subtitlecomposer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In subtitlecomposer, import the video, add subtitles, and export the file as &lt;code&gt;filename.ass&lt;/code&gt;. Edit the exported text file, change the font from 16px to 22. Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vf &lt;span class="nv"&gt;ass&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;filename.ass output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Create a GIF&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;palette&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/palette.png&amp;quot;&lt;/span&gt;
 

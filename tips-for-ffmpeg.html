@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 413 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 452 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -98,6 +98,16 @@
 <code>-vcodec</code> is an alias for <code>-c:v</code> which is an alias for <code>-codec:v</code> (video stream).</p>
 <p><code>-af</code> is an alias for <code>-filter:a</code> (audio stream).<br>
 <code>-vf</code> is an alias for <code>-filter:v</code> (video stream).</p>
+<h1>Add embedded subtitles</h1>
+<div class="highlight"><pre><span></span>sudo apt install subtitlecomposer
+</pre></div>
+
+
+<p>In subtitlecomposer, import the video, add subtitles, and export the file as <code>filename.ass</code>. Edit the exported text file, change the font from 16px to 22. Then:</p>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="nv">ass</span><span class="o">=</span>filename.ass output.mp4
+</pre></div>
+
+
 <h1>Create a GIF</h1>
 <div class="highlight"><pre><span></span><span class="nv">palette</span><span class="o">=</span><span class="s2">&quot;/tmp/palette.png&quot;</span>
 
