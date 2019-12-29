@@ -82,6 +82,10 @@ En résumé :
 
 ## [Lubrification](https://www.provelo.org/fr/page/points-lubrification-un-velo)
 
+## Tension de la chaîne
+
+En plus d'avoir une chaîne propre bien lubrifiée, il est important de vérifier la tension de la chaîne en permanence si l'on a un fixie ou single speed.  Une chaîne sous tendue aura tendance à dérailler ou craquer, trop tendue elle s'abimera et rendra le pédalage moins efficace.
+
 # Liens utiles
 
 - [Vélotaf.com](http://www.velotaf.com/) : le site où tout a commencé
