@@ -78,6 +78,7 @@ Here are a few questions I used to ask:
 - What is included in the utilities? Water, electricity, gas, heat, trash removal, Internet access, ...?
 - If there fiber optic Internet?
 - Are there window roller shutters?
+- Is the place ventilated?
 - How much is the electricity consumption per month? How bad is the insulation? (ask for the [building energy performance metrics](https://ec.europa.eu/energy/en/topics/energy-efficiency/buildings))
 - When is the apartment available?
 - Is the apartment eligible for APL (*Aide personnalisée au logement*)?
