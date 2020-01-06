@@ -68,6 +68,12 @@ Apparently a great tool, I've read a lof of good reviews. Advocated by the famou
 
 [A tool](https://www.passwordstore.org/) [for Linux](https://wiki.archlinux.org/index.php/Pass) (CLI) based on GPG. Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass. One of the reasons I guess is that it's on the official Linux distributions repos.
 
+In case of phone loss, here is a nice way to restore the code on your phone by generating QR codes from what's stored in pass:
+
+    :::bash
+    sudo apt install qrencode
+    find .password-store/ -type f -iname "*.otp.gpg" -printf '%P\n' | sed -n 's|\.gpg||p' | while read f; do pass "$f"; done | while read s; do qrencode -o - "$s" | display; done
+
 #### Pros
 
 - Encryption out of the box with GPG
