@@ -82,6 +82,7 @@ Here are a few questions I used to ask:
 - How much is the electricity consumption per month? How bad is the insulation? (ask for the [building energy performance metrics](https://ec.europa.eu/energy/en/topics/energy-efficiency/buildings))
 - When is the apartment available?
 - Is the apartment eligible for APL (*Aide personnalisée au logement*)?
+- Is there a cave? Bike parking?
 
 # Keeping track of the apartments you've found and the viewings you've done
 
