@@ -175,3 +175,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 - [Too DRY - The Grep Test](http://jamie-wong.com/2013/07/12/grep-test/)
 - [La dette technique : une supercherie mythologique pour galériens de l’IT](https://medium.com/@waxzce/la-dette-technique-une-supercherie-mythologique-pour-gal%C3%A9riens-de-lit-7ed0dfbf39c7)
 - [How to build a startup engineering team](https://increment.com/teams/how-to-build-a-startup-engineering-team/)
+- [#21 – Une organisation libre où prime innovation et bonheur – Quentin Adam](https://ifttd.io/21-une-organisation-libre-ou-prime-innovation-et-bonheur-quentin-adam/)
