@@ -56,7 +56,6 @@ There are two types of SCHUFAS: the one with the actual credit score (called **S
 Regarding the actual search now, here are the most used websites:
 
 - [www.immobilienscout24.de](https://www.immobilienscout24.de) - definitely the one I recommend most
-- [www.wg-gesucht.de](https://www.wg-gesucht.de)
 - [www.immonet.de](https://www.immonet.de)
 - [www.ebay-kleinanzeigen.de](https://www.ebay-kleinanzeigen.de)
 
