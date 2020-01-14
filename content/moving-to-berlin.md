@@ -74,6 +74,8 @@ Speaking of which, go to viewings prepared. Bring a file with the following docu
 
 You may also be asked to send these documents digitally after the viewing.
 
+[Here](http://vivreaberlin.com/trouver-un-logement.html) you'll find additional advice about the apartment search.
+
 # Weeks after moving
 
 ## Bank account
