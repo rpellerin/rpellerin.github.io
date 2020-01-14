@@ -24,6 +24,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Rayons libres](https://cause-commune.fm/podcastfilter/rayons-libres/feed/)
 - [Pause Vélo](https://www.pausevelo.com/feed/)
 - [Cyclocast](http://www.cyclocast.fr/category/Podcast/feed/)
+- [Bike In Berlin](https://bikeinberlin.com/index.php/feed/)
 
 # HTML/CSS
 
