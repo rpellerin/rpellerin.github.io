@@ -57,7 +57,11 @@ Regarding the actual search now, here are the most used websites:
 
 - [www.immobilienscout24.de](https://www.immobilienscout24.de) - definitely the one I recommend most
 - [www.immonet.de](https://www.immonet.de)
-- [www.ebay-kleinanzeigen.de](https://www.ebay-kleinanzeigen.de)
+- [www.immowelt.de/suche/wohnungen/mieten](https://www.immowelt.de/suche/wohnungen/mieten)
+- [salzundbrot.com](https://salzundbrot.com/)
+- [www.ebay-kleinanzeigen.de/s-wohnung-mieten/c203](https://www.ebay-kleinanzeigen.de/s-wohnung-mieten/c203)
+- [www.wohnungsboerse.net](https://www.wohnungsboerse.net/)
+- [www.lieblingsmieter.de](https://www.lieblingsmieter.de/)
 
 Beware of scams on these websites, as you would do in any other country. When it's too good to be true, it's most likely a scam. Also, you should never send any private document before going to a viewing.
 
