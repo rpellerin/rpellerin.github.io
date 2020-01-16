@@ -96,7 +96,7 @@ Consider [opening a German bank account](https://allaboutberlin.com/guides/first
 
 Other optional insurances but highly recommended are:
 
-- Liability insurance (called *Haftpflichtversicherung*): [more info](https://www.settle-in-berlin.com/personal-liability-insurance-germany/)
+- Liability insurance (called *Haftpflichtversicherung*): [more info](https://www.settle-in-berlin.com/personal-liability-insurance-germany/). In a nutshell, the 3 ones I saw and heard about repeatedly that are English-friendly and managed through an app are: GetSafe, Coya and PopSure. You can compare others [here](https://www.check24.de/privathaftpflicht). Axa is apparently big and has a reputation in Germany. Same for Allianz. Anyway, a decent price is around 50 euros a year.
 - Household contents insurance (called *Hausratversicherung*): only if you have valuable items or piece of furniture at home. It also covers bikes.
 
 ## Misc
