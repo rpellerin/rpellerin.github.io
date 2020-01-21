@@ -115,3 +115,4 @@ That's it!
 # More on Germany
 
 - [The German habits internationals say they can't shake off](https://www.thelocal.de/20200121/the-german-habits-internationals-say-they-cant-shake-off)
+- [5 key things you need to know about German working culture](https://www.thelocal.de/20200120/5-key-things-you-need-to-know-about-the-german-workplace)
