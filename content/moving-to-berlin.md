@@ -111,3 +111,7 @@ Other optional insurances but highly recommended are:
 <br />
 
 That's it!
+
+# More on Germany
+
+- [The German habits internationals say they can't shake off](https://www.thelocal.de/20200121/the-german-habits-internationals-say-they-cant-shake-off)
