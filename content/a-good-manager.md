@@ -15,6 +15,7 @@ Summary: Who I think a good manager should be
 - [How to make people work together?](https://www.youtube.com/watch?v=T6qxh4l3i_8)
 - [The Bad Boss Guide: How to Scar Your Employees](https://hackernoon.com/the-idiots-guide-to-being-a-bad-manager-e6e382b79064)
 - [How to Get Every Email Returned](https://www.nytimes.com/2019/05/25/opinion/sunday/writing-advice.html)
+- [The Eng Team Handbook (eng-handbook)](https://github.com/raylene/eng-handbook)
 
 ![E-mail like a boos]({filename}/images/emails.jpeg)
 
