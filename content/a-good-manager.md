@@ -16,6 +16,7 @@ Summary: Who I think a good manager should be
 - [The Bad Boss Guide: How to Scar Your Employees](https://hackernoon.com/the-idiots-guide-to-being-a-bad-manager-e6e382b79064)
 - [How to Get Every Email Returned](https://www.nytimes.com/2019/05/25/opinion/sunday/writing-advice.html)
 - [The Eng Team Handbook (eng-handbook)](https://github.com/raylene/eng-handbook)
+- [The Engineer’s Guide to Career Growth — Advice from My Time at Stripe and Facebook](https://firstround.com/review/the-engineers-guide-to-career-growth-advice-from-my-time-at-stripe-and-facebook/)
 
 ![E-mail like a boos]({filename}/images/emails.jpeg)
 
