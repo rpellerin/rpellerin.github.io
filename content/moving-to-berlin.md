@@ -49,7 +49,7 @@ Make sure to book a slot for registration ASAP, as it usually takes days or week
 
 ## Finding a long-term flat
 
-Apartment hunting is no different thant [in Paris]({filename}/looking-for-an-apartment-in-paris.md). Except that here, almost all landlords will ask for a German-specific document: your **[SCHUFA](https://mag.n26.com/how-to-get-your-schufa-score-in-germany-bb60295a7e1a)** (or credit score in English).
+Apartment hunting is no different than [in Paris]({filename}/looking-for-an-apartment-in-paris.md). Except that here, almost all landlords will ask for a German-specific document: your **[SCHUFA](https://mag.n26.com/how-to-get-your-schufa-score-in-germany-bb60295a7e1a)** (or credit score in English).
 
 There are two types of SCHUFAS: the one with the actual credit score (called **SCHUFA BonitätsAuskunft**), and the one that only states whether you have any debts or not (called **SCHUFA Bonitätscheck**). In most cases, the latter is enough. You can get it for 30 euros at [www.immobilienscout24.de](https://www.immobilienscout24.de/).
 
@@ -72,7 +72,7 @@ Speaking of which, go to viewings prepared. Bring a file with the following docu
 - Passport/ID scans
 - Scan of your Anmeldung
 - Scan of SCHUFA
-- Copy of work contract (*Arbeitsvertrag*)
+- Copy of work contract (*Arbeitsvertrag*): only include relevant pages (first and last pages usually, as well as the page that says your salary -- make sure to highlight it in yellow!!! -- also if you're not on a probationary period make sure to include the page stating that
 - Last three payslips (*Gehaltsabrechnungen*)
 - Proof of timely payments to your previous landlord (*Mietschuldenfreiheitsbescheinigung*). A letter from them will do.
 
