@@ -62,6 +62,7 @@ Summary: Books I have read
 - Goodbye, Things: The New Japanese Minimalism
 - Winners Take All: The Elite Charade of Changing the World
 - It Doesn't Have to Be Crazy at Work
+- World War Z
 - The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life
 - Les misérables Tome V - Jean Valjean (French Edition)
 - Les Misérables: Tome IV (Volume 4) (French Edition)
