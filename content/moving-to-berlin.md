@@ -7,6 +7,8 @@ Authors: Romain Pellerin
 Summary: Everything one has to go through when relocating to Berlin -- alternatve title: All the shit I went trough
 Image: berlin/berlin-tv-tower.jpg
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/FgTntxySQBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 *Ich bin ein Berliner.*
 
 This is it folks, I am now officially a resident of Berlin, Germany! After over 2 years in Paris, it was about time for me to move. Here's to a new adventure!!!
