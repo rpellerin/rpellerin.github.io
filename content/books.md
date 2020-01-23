@@ -26,7 +26,7 @@ Summary: Books I have read
 - **Universal War Two** (volume 3), by *Denis Bajram*
 - **One Day**, by *David Nicholls*
 - **Here's Negan**, *by Robert Kirkman* and *Charlie Adlard*
-- **Love Is Love**, comic *published DW Publishing, in collaboration with DC Entertainment*
+- **Love Is Love**, comic *published by DW Publishing, in collaboration with DC Entertainment*
 
 # 2018
 
