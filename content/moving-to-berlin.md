@@ -45,9 +45,18 @@ Also, I suggest you start selling the furniture you don't want to keep as soon a
 
 ## Registration (Anmeldung)
 
-You must ask your temporary landlord to provide you with a document called *Wohnungsgeberbestätigung*. Ideally get the original document, not a scan. This is the document you'll be bringing to the police station or city hall on the day you register, alongside your ID. 
+You must ask your temporary landlord to provide you with a document called *Wohnungsgeberbestätigung*. Ideally get the original document, not a scan. This is the document you'll be bringing to the *Bürgeramt* (police station or city hall) on the day you register, alongside your ID. 
 
-Make sure to book a slot for registration ASAP, as it usually takes days or weeks to get an appointment.
+Make sure to [book a slot for registration ASAP](https://service.berlin.de/dienstleistung/120686/), as it usually takes weeks to get an appointment. Bring the following documents:
+
+- Registration Form filled in (can also be found at the *Bürgeramt*): *[Anmeldung bei einer Meldebehörde](http://www.berlin.de/formularserver/formular.php?402608)*
+- EU ID or passport
+- *Mietvertrag* (lease)
+- *Wohnungsgeberbestätigung* filled out by landlord
+
+Also note that you are required to notify the *Bürgeramt* when you leave (*Abmelden*).
+
+More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/) and [there](https://allaboutberlin.com/guides/anmeldung-in-english-berlin).
 
 ## Finding a long-term flat
 
