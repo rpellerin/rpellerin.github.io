@@ -133,6 +133,7 @@ All set!
 - [JavaScript hacks for ES6 hipsters](https://hackernoon.com/javascript-hacks-for-es6-hipsters-67d633ce8ace)
 - [The Vanilla JavaScript Toolkit](https://vanillajstoolkit.com/)
 - [Arrow Functions in Class Properties Might Not Be As Great As We Think](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
+- [ECMA-262-3 in detail. Chapter 8. Evaluation strategy.](http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/)
 
 ## Some cool node/npm stuff/packages/tools
 
