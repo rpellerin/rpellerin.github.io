@@ -13,7 +13,7 @@ Image: berlin/berlin-tv-tower.jpg
 
 This is it folks, I am now officially a resident of Berlin, Germany! After over 2 years in Paris, it was about time for me to move. Here's to a new adventure!!!
 
-But wait a second. An international move doesn't happen with a snap! In this article, I list of the tasks I had to go through to make my move as smooth and painless as possible.
+But wait a second. An international move doesn't happen with a snap! In this article, I list all the tasks I had to go through to make my move as smooth and painless as possible.
 
 # Months in advance
 
