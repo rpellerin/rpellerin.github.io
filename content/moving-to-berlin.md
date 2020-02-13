@@ -9,8 +9,6 @@ Image: berlin/berlin-tv-tower.jpg
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/FgTntxySQBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-*Ich bin ein Berliner.*
-
 This is it folks, I am now officially a resident of Berlin, Germany! After over 2 years in Paris, it was about time for me to move. Here's to a new adventure!!!
 
 But wait a second. An international move doesn't happen with a snap! In this article, I list all the tasks I had to go through to make my move as smooth and painless as possible.
