@@ -14,3 +14,4 @@ I truly believe remote working has numerous advantages on the long term, but als
 - [What Most Remote Companies Don’t Tell You About Remote Work](https://blog.doist.com/mental-health-and-remote-work-1b77616f6945)
 - [A thread on Twitter](https://twitter.com/amix3k/status/1103740848519434240)
 - [11 Best Practices for Working Remotely](https://usefyi.com/remote-work-best-practices/)
+- [How To Embrace Remote Work](https://info.trello.com/hubfs/Trello-Embrace-Remote-Work-Ultimate-Guide.pdf)
