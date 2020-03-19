@@ -97,15 +97,15 @@ Consider [opening a German bank account](https://allaboutberlin.com/guides/first
 
 ## Various insurances
 
-[Germans are known to like insurances, so much that many various ones exist](https://www.expatica.com/de/finance/insurance/insurance-in-germany-100952/). Only a few are required by law though:
+[Germans are known to like insurances](https://allaboutberlin.com/guides/insurance), [so much that many various ones exist](https://www.expatica.com/de/finance/insurance/insurance-in-germany-100952/). Only a few are required by law though:
 
-- Health insurance: I was told to stick with public insurance (as opposed to private) and go with [TK](https://www.tk.de/en) as they are big and English-friendly.
+- [Health insurance](https://allaboutberlin.com/guides/german-health-insurance): I was told to stick with public insurance (as opposed to private) and go with [TK](https://www.tk.de/en) as they are big and English-friendly.
 - Work insurances: you get them automatically as soon as you start working, no need to worry here.
 - Vehicule insurance: if you own a car only.
 
 Other optional insurances but highly recommended are:
 
-- Liability insurance (called *Haftpflichtversicherung*): [more info](https://www.settle-in-berlin.com/personal-liability-insurance-germany/). In a nutshell, the 3 ones I saw and heard about repeatedly that are English-friendly and managed through an app are: GetSafe, Coya and PopSure. You can compare others [here](https://www.check24.de/privathaftpflicht). Axa is apparently big and has a reputation in Germany. Same for Allianz. Anyway, a decent price is around 50 euros a year.
+- Liability insurance (called *Haftpflichtversicherung*): [more info here](https://www.settle-in-berlin.com/personal-liability-insurance-germany/) and [here](https://allaboutberlin.com/guides/haftpflichtversicherung). In a nutshell, the 3 ones I saw and heard about repeatedly that are English-friendly and managed through an app are: GetSafe, Coya and PopSure. You can compare others [here](https://www.check24.de/privathaftpflicht). Axa is apparently big and has a reputation in Germany. Same for Allianz. Anyway, a decent price is around 50 euros a year.
 - Household contents insurance (called *Hausratversicherung*): only if you have valuable items or piece of furniture at home. It also covers bikes.
 
 ## Misc
