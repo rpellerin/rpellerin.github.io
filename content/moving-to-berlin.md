@@ -1,4 +1,4 @@
-Title: Moving To Belrin
+Title: Moving To Berlin
 Date: 2020-01-12 18:00
 Category: About me
 Tags: berlin, germany, apartment, housing
