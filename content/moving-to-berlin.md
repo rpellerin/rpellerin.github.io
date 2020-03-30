@@ -111,7 +111,7 @@ Other optional insurances but highly recommended are:
 ## Misc
 
 - [Get a bike](https://www.settle-in-berlin.com/bike-in-berlin/) and read [BikeInBerlin.com](https://bikeinberlin.com/)
-- [Register your bike](https://www.berlin.de/land/kalender/?+c=63) ([other link here](https://adfc-berlin.de/service/selbsthilfewerkstatt/codierung.html))
+- [Register your bike](https://www.berlin.de/land/kalender/?+c=63) ([other link here](https://adfc-berlin.de/service/43-codierung.html))
 - [Go to flea markets](https://www.visitberlin.de/en/blog/top-11-berlin-flea-markets) or [bike flea markets](https://bikeinberlin.com/index.php/2018/02/11/berlin-bike-flea-markets/)
 - [Get a monthly or yearly public transport ticket](https://marlonbernardes.github.io/awesome-berlin/en/pages/public-transport.html#how-to-buy-transport-tickets). Good to know: with a monthly (and surely a yearly one) subscription, you can bring a friend along on the weekend and on weekdays after 8pm for free.
 - [Read settle-in-berlin.com](https://www.settle-in-berlin.com/)
