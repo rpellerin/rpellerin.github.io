@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A list of bikes and cycling gear" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Bikes And Cycling Gear - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A list of bikes and cycling gear" />
+
+        <title>Bikes And Cycling Gear - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2020-04-20T01:30:00+02:00">Mon 20 April 2020</time>        </p>
+    <h1>Bikes And Cycling Gear</h1>
+    <div class="grey">
+        <p class="italic">A list of bikes and cycling gear</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 289 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/bike.html">bike</a></p>    </div>
+</header>
+<article>
+    <p>In this article, I maintain a list of good bikes and cycling gear that I am considering buying some day.</p>
+<h1>Bikes</h1>
+<h2>Famous and commong bike brands</h2>
+<ul>
+<li>Specialized</li>
+<li>Trek</li>
+<li>Cannondale</li>
+<li>Giant</li>
+<li>BMC</li>
+<li>Cube</li>
+<li>Felt</li>
+<li>GT Bicycle</li>
+<li>Kona</li>
+<li>Lapierre</li>
+<li>Merida</li>
+<li>Pinarello</li>
+<li>Ridley</li>
+<li>Scott</li>
+</ul>
+<h2>Bikes I am considering</h2>
+<h3>Road</h3>
+<style>
+table { border-collapse: collapse; }
+th { background-color: #ccc; }
+tr:nth-child(even) { background-color: #eee; }
+th, td { border: 1px solid black; }
+</style>
+
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Price</th>
+<th>Weight</th>
+<th>Type of brakes</th>
+<th>Groupset</th>
+<th>Brand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.decathlon.fr/p/velo-de-route-van-rysel-ultra-rcr-af-shimano-105-noir/_/R-p-303344?mc=8529249&amp;c=NOIR">VÉLO DE ROUTE VAN RYSEL ULTRA RCR AF SHIMANO 105 NOIR</a></td>
+<td>✅ 900 euros</td>
+<td>✅ 8.9 kg</td>
+<td>✅ Rim</td>
+<td>✅ Shimano 105</td>
+<td>Decathlon</td>
+</tr>
+<tr>
+<td><a href="https://www.decathlon.fr/p/velo-route-cyclotouriste-triban-rc520-frein-disque/_/R-p-301734?mc=8502389&amp;c=BLEU">Triban RC520 (road version)</a></td>
+<td>✅ 850 euros</td>
+<td>❌ 10.8 kg</td>
+<td>❌ Disc</td>
+<td>✅ Shimano 105</td>
+<td>Decathlon</td>
+</tr>
+<tr>
+<td><a href="https://www.decathlon.fr/p/velo-route-cyclotouriste-triban-rc500-noir-frein-disque/_/R-p-301728?mc=8518726&amp;c=BLEU_TURQUOISE">Triban RC500</a></td>
+<td>✅ 650 euros</td>
+<td>?</td>
+<td>❌ Disc</td>
+<td>❌ Shimano Sora</td>
+<td>Decathlon</td>
+</tr>
+<tr>
+<td><a href="https://www.decathlon.fr/p/velo-route-edr-af-105-noir/_/R-p-305449?mc=8529300&amp;c=NOIR">VELO ROUTE EDR AF 105 noir</a></td>
+<td>✅ 999 euros</td>
+<td>?</td>
+<td>✅ Rim</td>
+<td>✅ Shimano 105</td>
+<td>Decathlon</td>
+</tr>
+<tr>
+<td><a href="https://www.wigglesport.de/felt-fr40-rennrad-2019/">Felt FR40 road bike (2019)</a></td>
+<td>✅ 849 euros</td>
+<td>✅ 9.1 kg</td>
+<td>✅ Rim</td>
+<td>❌ Shimano Tiagra</td>
+<td>Felt</td>
+</tr>
+<tr>
+<td><a href="https://www.wigglesport.de/felt-fr30-rennrad-2019/">Felt FR30 road bike (2019)</a></td>
+<td>✅ 999 euros</td>
+<td>✅ 8.3 kg</td>
+<td>✅ Rim</td>
+<td>✅ Shimano 105</td>
+<td>Felt</td>
+</tr>
+<tr>
+<td><a href="https://www.cannondale.com/fr-fr/bikes/road/race/caad-optimo/caad-optimo-105?sku=c14100m1048">Cannondale CAAD Optimo</a></td>
+<td>❌1,199 euros</td>
+<td>✅ 8.9 kg</td>
+<td>✅ Rim</td>
+<td>✅ Shimano 105</td>
+<td>Cannonale</td>
+</tr>
+</tbody>
+</table>
+<p>To be continued...</p>
+<p>To check next:</p>
+<ul>
+<li>https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html</li>
+<li>https://www.wigglesport.de/rennrader/?cc=EUR&amp;bc=EUR&amp;omi=310&amp;oma=8000&amp;mi=310&amp;ma=1000</li>
+<li>https://www.veloscarbone.fr/</li>
+<li>wigglesport.de</li>
+</ul>
+<h3>Gravel</h3>
+<ul>
+<li>Triban RC520 (gravel version)</li>
+</ul>
+<h1>Cycling gear</h1>
+<h2>Puncture proof tires</h2>
+<ul>
+<li>Continental Grand Prix 4-Season</li>
+<li>Schwalbe marathon plus (very heavy though)</li>
+</ul>
+<h2><a href="https://www.telegraph.co.uk/health-fitness/body/best-gps-cycle-computers/">Bike computers</a></h2>
+<ul>
+<li><a href="https://fr-eu.wahoofitness.com/devices/bike-computers/gps-elemnt-bolt">Ordinateur de vélo GPS ELEMNT BOLT</a>: no turn by turn navigation from a Strava route export, <a href="https://www.youtube.com/watch?v=ccDMxcW1BuM">you have to export from Ride with GPS or Komoot</a>. Appart from that, seems like the best one on the market.</li>
+<li>Garmin Edge computers (530 is affordable, 830 is very expensive)</li>
+</ul>
+<h2>Lights</h2>
+<ul>
+<li>Sigma Buster 700 (front light)</li>
+</ul>
+<h1>Route planner</h1>
+<ul>
+<li>Strave</li>
+<li>Komoot</li>
+<li><a href="https://ridewithgps.com/">Ride with GPS</a></li>
+</ul>
+<h1>Cameras</h1>
+<h2>360 degrees</h2>
+<ul>
+<li>Rylo</li>
+<li>Insta360</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 20 April 2020</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
