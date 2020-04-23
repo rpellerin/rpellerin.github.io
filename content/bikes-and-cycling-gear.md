@@ -31,6 +31,8 @@ In this article, I maintain a list of good bikes and cycling gear that I am cons
 
 ### Road
 
+[How to choose the right frame size](https://www.cyclos-madic.com/choisirsonvelo.htm).
+
 <style>
 table { border-collapse: collapse; }
 th { background-color: #ccc; }
@@ -41,11 +43,13 @@ th, td { border: 1px solid black; }
 | Reference                                                                                                                                                                                   | Price          | Weight     | Type of brakes | Groupset                       | Brand       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------- | -------------- | ------------------------------ | ----------- |
 | [BMC Teammachine ALR](https://www.alltricks.fr/F-41505-velos-route-_-cyclocross-_-triathlon/P-1156884-velo_de_route_bmc_teammachine_alr_two_shimano_tiagra_10v_700_mm_gris_jaune_fluo_2020) | ✅ 1,299 euros | ✅ 9.16 kg | ✅ Rim         | ❌ Shimano Tiagra              | BMC         |
-| [Cannondale CAAD Optimo](https://www.cannondale.com/fr-fr/bikes/road/race/caad-optimo/caad-optimo-105?sku=c14100m1048)                                                                      | ✅ 1,199 euros | ✅ 8.9 kg  | ✅ Rim         | ✅ Shimano 105                 | Cannonale   |
+| [Cannondale CAAD Optimo](https://www.bike24.com/p2342296.html?menu=1000,173,157)                                                                                                            | ✅ 1,199 euros | ✅ 8.9 kg  | ✅ Rim         | ✅ Shimano 105                 | Cannonale   |
+| [CUBE ATTAIN GTC Pro 105 - Carbon Roadbike - 2019](https://www.bike24.com/p2188261.html?menu=1000,173,157)                                                                                  | ✅ 1,249 euros | ✅ 8.4 kg  | ✅ Rim         | ✅ Shimano 105                 | Cube        |
 | [Cube Attain](https://www.cube.eu/fr/2020/bikes/road/road-race/attain/cube-attain-greynflashyellow-2020/)                                                                                   | ✅ 849 euros   | ✅ 9.6 kg  | ✅ Rim         | ❌ Shimano Claris              | Cube        |
 | [Felt FR30 road bike (2019)](https://www.wigglesport.de/felt-fr30-rennrad-2019/)                                                                                                            | ✅ 999 euros   | ✅ 8.3 kg  | ✅ Rim         | ✅ Shimano 105                 | Felt        |
 | [Felt FR40 road bike (2019)](https://www.wigglesport.de/felt-fr40-rennrad-2019/)                                                                                                            | ✅ 849 euros   | ✅ 9.1 kg  | ✅ Rim         | ❌ Shimano Tiagra              | Felt        |
 | [Felt FR5 road bike (2019)](https://www.wigglesport.de/felt-fr5-rennrad-2019/)                                                                                                              | ✅ 1,199 euros | ✅ 8.26 kg | ✅ Rim         | ✅ Shimano 105 R7000 11-speed  | Felt        |
+| [FOCUS IZALCO RACE 9.7 105 Roadbike](https://www.bike24.com/p2347326.html?menu=1000,173,157)                                                                                                | ✅ 1,499 euros | ✅ 8.1 kg  | ✅ Rim         | ✅ Shimano 105                 | Focus       |
 | [Giant Contend SL 1 2019](https://www.giant-bicycles.com/fr/contend-sl-1)                                                                                                                   | ✅ 1249 euros  | ✅ 9.04 kg | ✅ Rim         | ✅ Shimano 105 (except brakes) | Giant       |
 | [Giant TCR Advanced 2 (PC) 2019](https://www.giant-bicycles.com/fr/tcr-advanced-2--pc-)                                                                                                     | ❌ 1620 euros  | ✅ 7.95 kg | ✅ Rim         | ✅ Shimano 105                 | Giant       |
 | [Specialized Allez Elite](https://www.specialized.com/de/en/allez-elite/p/171313?color=274140-171313)                                                                                       | ✅ 1,299 euros | ✅ 8.83 kg | ✅ Rim         | ✅ Shimano 105 (except brakes) | Specialized |
@@ -57,6 +61,7 @@ th, td { border: 1px solid black; }
 
 More references:
 
+- [https://www.globalcyclingnetwork.com/](https://www.globalcyclingnetwork.com/): a classic
 - [https://www.bikeradar.com/features/bike-of-the-year/](https://www.bikeradar.com/features/bike-of-the-year/): excellent list!
 - [https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html](https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html): they are very expensive!
 - [https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3](https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3)
