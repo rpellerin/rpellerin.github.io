@@ -27,6 +27,8 @@ In this article, I maintain a list of good bikes and cycling gear that I am cons
 - Ridley
 - Scott
 
+[Here are the bikes on the Tour de France.](https://www.bikeradar.com/features/pro-bike/tour-de-france-bikes/)
+
 ## Bikes I am considering
 
 ### Road
