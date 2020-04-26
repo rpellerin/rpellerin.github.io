@@ -77,6 +77,11 @@ th, td { border: 1px solid black; }
 - [Canyon Endurace CF 7.0](https://www.canyon.com/en-de/road-bikes/endurance-bikes/endurace/endurace-cf-7.0/2508.html?dwvar_2508_pv_rahmenfarbe=RD%2FWH)
 
     - [https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/](https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/)
+    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc) (2018): good
+    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0) (2019): not so good
+    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0) (2020): good
+    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/)
+    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/)
 
 - [CUBE ATTAIN GTC Pro 105 - Carbon Roadbike - 2019](https://www.bike24.com/p2188261.html?menu=1000,173,157)
 
@@ -97,12 +102,14 @@ th, td { border: 1px solid black; }
 - [https://www.globalcyclingnetwork.com/](https://www.globalcyclingnetwork.com/): a classic, worldwide
 - [https://www.bikeradar.com/features/bike-of-the-year/](https://www.bikeradar.com/features/bike-of-the-year/): excellent list!
 - [https://road.cc/](https://road.cc/): a classic in UK
+- [https://www.cyclingweekly.com/reviews](https://www.cyclingweekly.com/reviews): a good one
 
 #### Where to buy
 
 - [https://www.bike24.com/](https://www.bike24.com/): a classic, in Germany
-- [https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html](https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html): they are very expensive!
 - [https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3](https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3)
+- [https://www.bike-discount.de/en/road-bike/](https://www.bike-discount.de/en/road-bike/)
+- [https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html](https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html): they are very expensive!
 - [https://www.alltricks.fr/C-40958-route/N-774769-type~velo-de-route/N-790051-type-de-transmission~mecanique/N-774906-poids~moins-de-10-kg/N-774915-freinage~sur-jante?N774913=groupe~shimano-105](https://www.alltricks.fr/C-40958-route/N-774769-type~velo-de-route/N-790051-type-de-transmission~mecanique/N-774906-poids~moins-de-10-kg/N-774915-freinage~sur-jante?N774913=groupe~shimano-105)
 
 ### Gravel
