@@ -43,6 +43,8 @@ First, some vocabulary to know about frames:
 
 [How to choose the right frame size](https://www.cyclos-madic.com/choisirsonvelo.htm).
 
+General rule of thumb: the longer the reach and the shorter the stack, the more aggressive the bike. Likewise, the more the head angle is closer to 90 degrees and the smaller the wheel base is (long wheel base is for increaed stability), the more aggressive it is.
+
 <style>
 table { border-collapse: collapse; }
 th { background-color: #ccc; }
@@ -72,29 +74,31 @@ th, td { border: 1px solid black; }
 
 #### Short List
 
-- [Cannondale CAAD Optimo](https://www.bike24.com/p2342296.html?menu=1000,173,157)
-
 - [Canyon Endurace CF 7.0](https://www.canyon.com/en-de/road-bikes/endurance-bikes/endurace/endurace-cf-7.0/2508.html?dwvar_2508_pv_rahmenfarbe=RD%2FWH)
+
+    - [https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/](https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/)
 
 - [CUBE ATTAIN GTC Pro 105 - Carbon Roadbike - 2019](https://www.bike24.com/p2188261.html?menu=1000,173,157)
 
-- [Felt FR30 road bike (2019)](https://www.wigglesport.de/felt-fr30-rennrad-2019/)
+    - Geometry is not as aggressive as the other two
+    - [https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race](https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race): review is on a model with disc brakes and Ultegra Shimano, which qualifies it as a comfort-oriented bike
+    - [https://www.youtube.com/watch?v=9UCbv6FzJSM](https://www.youtube.com/watch?v=9UCbv6FzJSM) (oct 2018): good comfy bike
 
 - [FOCUS IZALCO RACE 9.7 105 Roadbike](https://www.bike24.com/p2347326.html?menu=1000,173,157)
 
-  - On the [official Focus website](https://www.focus-bikes.com/de_en/186026-izalco-race-9-7), the wheels are different (though they are the same on [this archive page](https://www.focus-bikes.com/de_en/95693-izalco-race-9-7))as well as the weight (8.65, 8.1 on [bike24](https://www.bike24.com/p2347326.html?menu=1000,173,157))
-  - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/): positive review
-  - [https://www.cyclingweekly.com/group-tests/focus-bikes-352805](https://www.cyclingweekly.com/group-tests/focus-bikes-352805) (oct 2019): _The Focus Izalco Race aims to take a speedy, racing chassis to the masses._
-  - [https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/](https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/) (nov 2018): excellent appart from the wheels but they have changed since 2018
-  - [https://road.cc/content/review/235885-focus-izalco-race-carbon-sora](https://road.cc/content/review/235885-focus-izalco-race-carbon-sora) (jan 2018): excellent review on a different model
+    - On the [official Focus website](https://www.focus-bikes.com/de_en/186026-izalco-race-9-7), the wheels are different (though they are the same on [this archive page](https://www.focus-bikes.com/de_en/95693-izalco-race-9-7)) as well as the weight (8.65, 8.1 on [bike24](https://www.bike24.com/p2347326.html?menu=1000,173,157))
+    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/): positive review
+    - [https://www.cyclingweekly.com/group-tests/focus-bikes-352805](https://www.cyclingweekly.com/group-tests/focus-bikes-352805) (oct 2019): _The Focus Izalco Race aims to take a speedy, racing chassis to the masses._
+    - [https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/](https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/) (nov 2018): excellent appart from the wheels but they have changed since 2018
+    - [https://road.cc/content/review/235885-focus-izalco-race-carbon-sora](https://road.cc/content/review/235885-focus-izalco-race-carbon-sora) (jan 2018): excellent review on a different model
 
-More references:
+#### More references
 
 - [https://www.globalcyclingnetwork.com/](https://www.globalcyclingnetwork.com/): a classic, worldwide
 - [https://www.bikeradar.com/features/bike-of-the-year/](https://www.bikeradar.com/features/bike-of-the-year/): excellent list!
 - [https://road.cc/](https://road.cc/): a classic in UK
 
-Where to buy:
+#### Where to buy
 
 - [https://www.bike24.com/](https://www.bike24.com/): a classic, in Germany
 - [https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html](https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html): they are very expensive!
