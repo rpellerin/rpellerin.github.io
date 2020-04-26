@@ -8,6 +8,14 @@ Summary: A list of bikes and cycling gear
 
 In this article, I maintain a list of good bikes and cycling gear that I am considering buying some day.
 
+First, some vocabulary to know about frames:
+
+- AL or AL usually means an Aluminum frame
+- CF means a Carbon Fiber frame
+- SL means Super Light
+- SLX stands for Super Light Extreme
+- WMN means it meant for women
+
 # Bikes
 
 ## Famous and commong bike brands
@@ -62,11 +70,33 @@ th, td { border: 1px solid black; }
 | [VÉLO DE ROUTE VAN RYSEL ULTRA RCR AF SHIMANO 105 NOIR](https://www.decathlon.fr/p/velo-de-route-van-rysel-ultra-rcr-af-shimano-105-noir/_/R-p-303344?mc=8529249&c=NOIR)                    | ✅ 900 euros   | ✅ 8.9 kg  | ✅ Rim         | ✅ Shimano 105                 | Decathlon   |
 | [VELO ROUTE EDR AF 105 noir](https://www.decathlon.fr/p/velo-route-edr-af-105-noir/_/R-p-305449?mc=8529300&c=NOIR)                                                                          | ✅ 999 euros   | ✅ 8.8 kg  | ✅ Rim         | ✅ Shimano 105                 | Decathlon   |
 
+#### Short List
+
+- [Cannondale CAAD Optimo](https://www.bike24.com/p2342296.html?menu=1000,173,157)
+
+- [Canyon Endurace CF 7.0](https://www.canyon.com/en-de/road-bikes/endurance-bikes/endurace/endurace-cf-7.0/2508.html?dwvar_2508_pv_rahmenfarbe=RD%2FWH)
+
+- [CUBE ATTAIN GTC Pro 105 - Carbon Roadbike - 2019](https://www.bike24.com/p2188261.html?menu=1000,173,157)
+
+- [Felt FR30 road bike (2019)](https://www.wigglesport.de/felt-fr30-rennrad-2019/)
+
+- [FOCUS IZALCO RACE 9.7 105 Roadbike](https://www.bike24.com/p2347326.html?menu=1000,173,157)
+
+  - On the [official Focus website](https://www.focus-bikes.com/de_en/186026-izalco-race-9-7), the wheels are different (though they are the same on [this archive page](https://www.focus-bikes.com/de_en/95693-izalco-race-9-7))as well as the weight (8.65, 8.1 on [bike24](https://www.bike24.com/p2347326.html?menu=1000,173,157))
+  - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/): positive review
+  - [https://www.cyclingweekly.com/group-tests/focus-bikes-352805](https://www.cyclingweekly.com/group-tests/focus-bikes-352805) (oct 2019): _The Focus Izalco Race aims to take a speedy, racing chassis to the masses._
+  - [https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/](https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/) (nov 2018): excellent appart from the wheels but they have changed since 2018
+  - [https://road.cc/content/review/235885-focus-izalco-race-carbon-sora](https://road.cc/content/review/235885-focus-izalco-race-carbon-sora) (jan 2018): excellent review on a different model
+
 More references:
 
 - [https://www.globalcyclingnetwork.com/](https://www.globalcyclingnetwork.com/): a classic, worldwide
-- [https://www.bike24.com/](https://www.bike24.com/): a classic, in Germany
 - [https://www.bikeradar.com/features/bike-of-the-year/](https://www.bikeradar.com/features/bike-of-the-year/): excellent list!
+- [https://road.cc/](https://road.cc/): a classic in UK
+
+Where to buy:
+
+- [https://www.bike24.com/](https://www.bike24.com/): a classic, in Germany
 - [https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html](https://www.probikeshop.com/en/gb/road/complete-bikes-road-bikes-c10084.html): they are very expensive!
 - [https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3](https://www.wigglesport.de/rennrader/felgenbremse-bremsentyp/?mi=600&ma=1300&omi=310&oma=8000&cc=EUR&bc=EUR&ris=1&o=3)
 - [https://www.alltricks.fr/C-40958-route/N-774769-type~velo-de-route/N-790051-type-de-transmission~mecanique/N-774906-poids~moins-de-10-kg/N-774915-freinage~sur-jante?N774913=groupe~shimano-105](https://www.alltricks.fr/C-40958-route/N-774769-type~velo-de-route/N-790051-type-de-transmission~mecanique/N-774906-poids~moins-de-10-kg/N-774915-freinage~sur-jante?N774913=groupe~shimano-105)
