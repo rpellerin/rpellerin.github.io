@@ -88,6 +88,7 @@ th, td { border: 1px solid black; }
     - Geometry is not as aggressive as the other two
     - [https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race](https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race): review is on a model with disc brakes and Ultegra Shimano, which qualifies it as a comfort-oriented bike
     - [https://www.youtube.com/watch?v=9UCbv6FzJSM](https://www.youtube.com/watch?v=9UCbv6FzJSM) (oct 2018): good comfy bike
+    - [https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760](https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760)
 
 - [FOCUS IZALCO RACE 9.7 105 Roadbike](https://www.bike24.com/p2347326.html?menu=1000,173,157)
 
@@ -103,6 +104,7 @@ th, td { border: 1px solid black; }
 - [https://www.bikeradar.com/features/bike-of-the-year/](https://www.bikeradar.com/features/bike-of-the-year/): excellent list!
 - [https://road.cc/](https://road.cc/): a classic in UK
 - [https://www.cyclingweekly.com/reviews](https://www.cyclingweekly.com/reviews): a good one
+- [https://99spokes.com/](https://99spokes.com/): to compare bike geometries
 
 #### Where to buy
 
