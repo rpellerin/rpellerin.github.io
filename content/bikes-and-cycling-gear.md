@@ -150,3 +150,4 @@ th, td { border: 1px solid black; }
 
 - Rylo
 - Insta360
+- Garmin VIRB(R) 360
