@@ -23,6 +23,11 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
     :::bash
     ffmpeg -i input.mp4 -vf ass=filename.ass output.mp4
 
+# Create a video out of several images
+
+    :::bash
+    ffmpeg -r 24 -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf 25 -pix_fmt yuv420p output.mp4 # image0001.jpg, image0002.jpg, etc
+
 # Create a GIF
 
     :::bash
