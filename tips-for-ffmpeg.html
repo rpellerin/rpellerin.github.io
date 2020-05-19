@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 452 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 479 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -105,6 +105,11 @@
 
 <p>In subtitlecomposer, import the video, add subtitles, and export the file as <code>filename.ass</code>. Edit the exported text file, change the font from 16px to 22. Then:</p>
 <div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="nv">ass</span><span class="o">=</span>filename.ass output.mp4
+</pre></div>
+
+
+<h1>Create a video out of several images</h1>
+<div class="highlight"><pre><span></span>ffmpeg -r <span class="m">24</span> -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf <span class="m">25</span> -pix_fmt yuv420p output.mp4 <span class="c1"># image0001.jpg, image0002.jpg, etc</span>
 </pre></div>
 
 

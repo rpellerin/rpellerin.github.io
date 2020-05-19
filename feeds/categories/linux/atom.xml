@@ -1617,6 +1617,11 @@ apt dist-upgrade
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h1&gt;Create a video out of several images&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -r &lt;span class="m"&gt;24&lt;/span&gt; -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf &lt;span class="m"&gt;25&lt;/span&gt; -pix_fmt yuv420p output.mp4 &lt;span class="c1"&gt;# image0001.jpg, image0002.jpg, etc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Create a GIF&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;palette&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/tmp/palette.png&amp;quot;&lt;/span&gt;
 
