@@ -98,6 +98,11 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     find . -type f -iname "*.MP4" -exec ffmpeg -i '{}' -c copy -bsf:v h264_mp4toannexb -f mpegts '{}.ts' \;
     ffmpeg -i "concat:$(ls *.ts | tr '\n' '|' | head -c -1)" -c copy -bsf:a aac_adtstoasc output.mp4
 
+# Fade out last 2 seconds of audio track
+
+    :::bash
+    ffmpeg -i output-with-sound.mp4 -c:v copy -filter_complex "areverse, afade=d=2, areverse" output-with-sound-fadeout.mp4
+
 # Replace the audio track with another
 
     :::bash
