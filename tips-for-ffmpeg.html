@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 479 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 497 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -179,6 +179,11 @@ ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span 
 <h1><a href="https://trac.ffmpeg.org/wiki/Concatenate">Concatenate several MP4 files</a></h1>
 <div class="highlight"><pre><span></span>find . -type f -iname <span class="s2">&quot;*.MP4&quot;</span> -exec ffmpeg -i <span class="s1">&#39;{}&#39;</span> -c copy -bsf:v h264_mp4toannexb -f mpegts <span class="s1">&#39;{}.ts&#39;</span> <span class="se">\;</span>
 ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;|&#39;</span> <span class="p">|</span> head -c -1<span class="k">)</span><span class="s2">&quot;</span> -c copy -bsf:a aac_adtstoasc output.mp4
+</pre></div>
+
+
+<h1>Fade out last 2 seconds of audio track</h1>
+<div class="highlight"><pre><span></span>ffmpeg -i output-with-sound.mp4 -c:v copy -filter_complex <span class="s2">&quot;areverse, afade=d=2, areverse&quot;</span> output-with-sound-fadeout.mp4
 </pre></div>
 
 
