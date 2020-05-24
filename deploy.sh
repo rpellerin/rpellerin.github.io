@@ -3,11 +3,14 @@
 BUILDING_BRANCH="develop"
 TARGET_BRANCH="master"
 DATE=$(date --iso-8601=seconds)
+BUILD_DIRECTORY="output"
 
-cd output # At this point, everything has been built
+cd "$BUILD_DIRECTORY" # At this point, everything has been built
 git init
 git checkout -b "$BUILDING_BRANCH"
-git remote add origin https://${GH_TOKEN}@github.com/rpellerin/rpellerin.github.io.git
+git remote add origin https://${GITHUB_ACTOR}:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+git config --local user.email "action@github.com"
+git config --local user.name "GitHub Action"
 git fetch origin
 
 BRANCH_EXISTS=`git rev-parse --verify origin/$TARGET_BRANCH`
@@ -31,4 +34,4 @@ fi
 
 git add -A
 git commit --no-verify -m "Release-$DATE"
-git push -q origin $TARGET_BRANCH:$TARGET_BRANCH >/dev/null 2>&1
+git push -q origin $TARGET_BRANCH:$TARGET_BRANCH
