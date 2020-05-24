@@ -26,4 +26,4 @@ jobs:
       - name: Publish
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: "./scripts/deploy.sh"
+        run: "./deploy.sh"
