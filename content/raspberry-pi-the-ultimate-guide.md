@@ -163,18 +163,6 @@ To sum up, few requirements, but big advantages. Let's get started!
         deluser --remove-home pi 
         visudo # Make sure there's no reference to pi user
 
-9. Finally, make sure to copy these three lines in both your `<new home>/.bashrc` and `/root/.bashrc`:
-
-        :::bash
-        export LC_ALL="en_US.UTF-8"
-        export LANG="en_US.UTF-8"
-        export LANGUAGE="en_US.UTF-8"
-
-    And then run the following commands, as super-user:
-
-        :::bash
-        source .bashrc && locale-gen "en_US.UTF-8" && dpkg-reconfigure locales
-
 ## Moving `/root` onto an external hard disk drive, not encrypted, with additional encrypted DATA partition
 
 **NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED**: [tutorial here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md).
