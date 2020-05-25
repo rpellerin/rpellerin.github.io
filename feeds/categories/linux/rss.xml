@@ -330,6 +330,8 @@ sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
 &lt;li&gt;
 &lt;p&gt;Log in (user name is &lt;em&gt;pi&lt;/em&gt; and password is &lt;em&gt;raspberry&lt;/em&gt;). You can do it using a keyboard or over SSH if you Raspberry is connected. Then set the locales and the right keyboard layout:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
+locale-gen en_US.UTF-8
 dpkg-reconfigure locales &lt;span class="c1"&gt;# Select with space bar, at least en_US.UTF-8 plus any other you need&lt;/span&gt;
 dpkg-reconfigure keyboard-configuration &lt;span class="c1"&gt;# A keyboard must be plugged in&lt;/span&gt;
 dpkg-reconfigure tzdata
