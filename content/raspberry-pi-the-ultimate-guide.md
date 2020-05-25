@@ -62,9 +62,7 @@ To sum up, few requirements, but big advantages. Let's get started!
 
         :::bash
         sudo su
-        export LC_ALL="en_US.UTF-8"
-        locale-gen en_US.UTF-8
-        dpkg-reconfigure locales # Select with space bar, at least en_US.UTF-8 plus any other you need
+        dpkg-reconfigure locales # Select with space bar, at least en_US.UTF-8 and fr_FR.UTF-8 plus any other you need
         dpkg-reconfigure keyboard-configuration # A keyboard must be plugged in
         dpkg-reconfigure tzdata
 
