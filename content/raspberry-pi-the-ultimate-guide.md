@@ -153,11 +153,8 @@ To sum up, few requirements, but big advantages. Let's get started!
 
         :::bash
         su
-        apt install ntpdate rsync
-        # ntpdate to set the clock correctly.
-        # rsync is just better than cp
-        ntpdate -u fr.pool.ntp.org
-        reboot
+        apt install rsync
+        # rsync is just better than cp, we'll need it later
 
 8. Now, it's time to delete the *pi* user. Log in as your new user (in my case it's *pipi*) and then:
 
