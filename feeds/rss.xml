@@ -4131,20 +4131,6 @@ visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi use
 
 
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Finally, make sure to copy these three lines in both your &lt;code&gt;&amp;lt;new home&amp;gt;/.bashrc&lt;/code&gt; and &lt;code&gt;/root/.bashrc&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LANGUAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;And then run the following commands, as super-user:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .bashrc &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; locale-gen &lt;span class="s2"&gt;&amp;quot;en_US.UTF-8&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; dpkg-reconfigure locales
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Moving &lt;code&gt;/root&lt;/code&gt; onto an external hard disk drive, not encrypted, with additional encrypted DATA partition&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED&lt;/strong&gt;: &lt;a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md"&gt;tutorial here&lt;/a&gt;.&lt;/p&gt;

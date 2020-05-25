@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5663 words.">28 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5626 words.">28 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -263,20 +263,6 @@ apt install rsync
 <div class="highlight"><pre><span></span>su <span class="c1"># Type the root password here</span>
 deluser --remove-home pi 
 visudo <span class="c1"># Make sure there&#39;s no reference to pi user</span>
-</pre></div>
-
-
-</li>
-<li>
-<p>Finally, make sure to copy these three lines in both your <code>&lt;new home&gt;/.bashrc</code> and <code>/root/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
-<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
-<span class="nb">export</span> <span class="nv">LANGUAGE</span><span class="o">=</span><span class="s2">&quot;en_US.UTF-8&quot;</span>
-</pre></div>
-
-
-<p>And then run the following commands, as super-user:</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> .bashrc <span class="o">&amp;&amp;</span> locale-gen <span class="s2">&quot;en_US.UTF-8&quot;</span> <span class="o">&amp;&amp;</span> dpkg-reconfigure locales
 </pre></div>
 
 
