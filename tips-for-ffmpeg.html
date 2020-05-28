@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 642 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 640 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -140,13 +140,17 @@ ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span 
 <ol>
 <li>
 <p>Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.</p>
-<p>:::bash
-ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4</p>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -ss <span class="m">00</span>:00:13 -t <span class="m">00</span>:09:00 output.mp4
+</pre></div>
+
+
 </li>
 <li>
 <p>Seek in input (fast but imprecise, <a href="https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding">can only cut at key frames</a>) and do not re-encode to preserve quality:</p>
-<p>:::bash
-ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4</p>
+<div class="highlight"><pre><span></span>ffmpeg -ss <span class="m">00</span>:00:13 -i input.mp4 -t <span class="m">00</span>:09:00 -c copy -avoid_negative_ts make_zero output.mp4
+</pre></div>
+
+
 </li>
 </ol>
 <p><a href="https://trac.ffmpeg.org/wiki/Seeking">More information</a>.</p>
