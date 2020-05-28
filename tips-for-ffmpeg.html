@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 534 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 642 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -136,15 +136,19 @@ ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span 
 
 
 <h1>Cut a video (set the starting time and the duration)</h1>
-<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -ss <span class="m">00</span>:00:13 -t <span class="m">00</span>:09:00 -c copy output.mp4
-</pre></div>
-
-
-<p>In case you have a few seconds of blank video at the beginning, it is due to key-frames. Here is a command, way less accurate, but that will fix it:</p>
-<div class="highlight"><pre><span></span>ffmpeg -ss <span class="m">00</span>:00:13 -i input.mp4 -t <span class="m">00</span>:09:00 -c copy -avoid_negative_ts <span class="m">1</span> output.mp4
-</pre></div>
-
-
+<p>Two options mostly.</p>
+<ol>
+<li>
+<p>Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.</p>
+<p>:::bash
+ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4</p>
+</li>
+<li>
+<p>Seek in input (fast but imprecise, <a href="https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding">can only cut at key frames</a>) and do not re-encode to preserve quality:</p>
+<p>:::bash
+ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4</p>
+</li>
+</ol>
 <p><a href="https://trac.ffmpeg.org/wiki/Seeking">More information</a>.</p>
 <h1>Extract EVERY image from a video</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i foo.avi -r <span class="m">1</span> -s WxH -f image2 foo-%03d.jpeg
@@ -190,15 +194,23 @@ ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts 
 <h1>Merge two videos placed side by side with audio from first video</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
   -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[myvideo]&quot;</span> <span class="se">\</span>
-  -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> output.mp4
+  -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> wide.mp4
 </pre></div>
 
 
-<p>Below, same with crop the two inputs:</p>
-<div class="highlight"><pre><span></span><span class="o">...</span> <span class="nt">-filter_complex</span> <span class="s2">&quot;</span><span class="cp">[</span><span class="mi">0</span><span class="p">:</span><span class="nx">v</span><span class="cp">]</span><span class="s2">crop=960:1080:480:0</span><span class="cp">[</span><span class="nx">left</span><span class="cp">]</span><span class="s2">;</span><span class="cp">[</span><span class="mi">1</span><span class="p">:</span><span class="nx">v</span><span class="cp">]</span><span class="s2">crop=960:1080:480:0</span><span class="cp">[</span><span class="nx">right</span><span class="cp">]</span><span class="s2">;</span><span class="cp">[</span><span class="nx">left</span><span class="cp">][</span><span class="nx">right</span><span class="cp">]</span><span class="s2">hstack=inputs=2</span><span class="cp">[</span><span class="nx">myvideo</span><span class="cp">]</span><span class="s2">&quot;</span> <span class="o">...</span>
+<p>Then you might want to scale it down and add black padding at the top and bottom:</p>
+<div class="highlight"><pre><span></span>ffmpeg -i wide.mp4 -filter_complex <span class="s2">&quot;[0:v]scale=1920:-1,pad=1920:1080:0:270,setsar=1&quot;</span> -acodec copy wide-scaled.mp4
 </pre></div>
 
 
+<p>Alternatively, you can crop the initial two inputs and directly produce a 1920x1080 video:</p>
+<div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
+  -filter_complex <span class="s2">&quot;[0:v]crop=960:1080:480:0[left];[1:v]crop=960:1080:480:0[right];[left][right]hstack=inputs=2[myvideo]&quot;</span> <span class="se">\</span>
+  -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> <span class="m">16</span>-9-video.mp4
+</pre></div>
+
+
+<p>If one of the two videos is not correctly synced with the other one, you can delay an input. Add <code>-ss 00:00:0x</code> before the <code>-i input</code> that needs adjustment.</p>
 <h1>Replace the audio track with another</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i output.mp4 -i yo.mp3 -map <span class="m">0</span>:0 -map <span class="m">1</span> -vcodec copy -acodec copy output2.mp4
 </pre></div>
