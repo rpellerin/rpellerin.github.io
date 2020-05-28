@@ -108,7 +108,7 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i left.mp4 -i right.mp4 \
       -filter_complex "[0:v][1:v]hstack=inputs=2[v]" \
-      -map "[v]" -map "0:a" -ac 2 output.mp4
+      -map "[v]" -map "0:a" output.mp4
 
 # Replace the audio track with another
 
