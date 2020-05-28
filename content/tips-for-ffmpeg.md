@@ -103,6 +103,13 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i output-with-sound.mp4 -c:v copy -filter_complex "areverse, afade=d=2, areverse" output-with-sound-fadeout.mp4
 
+# Merge two videos placed side by side with audio from first video
+
+    :::bash
+    ffmpeg -i left.mp4 -i right.mp4 \
+      -filter_complex "[0:v][1:v]hstack=inputs=2[v]" \
+      -map "[v]" -map "0:a" -ac 2 output.mp4
+
 # Replace the audio track with another
 
     :::bash
