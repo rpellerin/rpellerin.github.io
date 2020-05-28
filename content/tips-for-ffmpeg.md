@@ -56,13 +56,13 @@ Two options mostly.
 
 1. Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.
 
-    :::bash
-    ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4
+        :::bash
+        ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4
 
 2. Seek in input (fast but imprecise, [can only cut at key frames](https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding)) and do not re-encode to preserve quality:
 
-    :::bash
-    ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4
+        :::bash
+        ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4
 
 [More information](https://trac.ffmpeg.org/wiki/Seeking).
 
