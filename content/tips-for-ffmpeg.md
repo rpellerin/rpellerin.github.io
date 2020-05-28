@@ -52,13 +52,17 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
 
 # Cut a video (set the starting time and the duration)
 
-    :::bash
-    ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 -c copy output.mp4
+Two options mostly.
 
-In case you have a few seconds of blank video at the beginning, it is due to key-frames. Here is a command, way less accurate, but that will fix it:
+1. Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.
 
     :::bash
-    ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts 1 output.mp4
+    ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4
+
+2. Seek in input (fast but imprecise, [can only cut at key frames](https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding)) and do not re-encode to preserve quality:
+
+    :::bash
+    ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4
 
 [More information](https://trac.ffmpeg.org/wiki/Seeking).
 
@@ -108,12 +112,21 @@ In case you have a few seconds of blank video at the beginning, it is due to key
     :::bash
     ffmpeg -i left.mp4 -i right.mp4 \
       -filter_complex "[0:v][1:v]hstack=inputs=2[myvideo]" \
-      -map "[myvideo]" -map "0:a" output.mp4
+      -map "[myvideo]" -map "0:a" wide.mp4
 
-Below, same with crop the two inputs:
+Then you might want to scale it down and add black padding at the top and bottom:
 
-    :::
-    ... -filter_complex "[0:v]crop=960:1080:480:0[left];[1:v]crop=960:1080:480:0[right];[left][right]hstack=inputs=2[myvideo]" ...
+    :::bash
+    ffmpeg -i wide.mp4 -filter_complex "[0:v]scale=1920:-1,pad=1920:1080:0:270,setsar=1" -acodec copy wide-scaled.mp4
+
+Alternatively, you can crop the initial two inputs and directly produce a 1920x1080 video:
+
+    :::bash
+    ffmpeg -i left.mp4 -i right.mp4 \
+      -filter_complex "[0:v]crop=960:1080:480:0[left];[1:v]crop=960:1080:480:0[right];[left][right]hstack=inputs=2[myvideo]" \
+      -map "[myvideo]" -map "0:a" 16-9-video.mp4
+
+If one of the two videos is not correctly synced with the other one, you can delay an input. Add `-ss 00:00:0x` before the `-i input` that needs adjustment.
 
 # Replace the audio track with another
 
