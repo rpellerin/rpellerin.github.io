@@ -114,10 +114,13 @@ Two options mostly.
       -filter_complex "[0:v][1:v]hstack=inputs=2[myvideo]" \
       -map "[myvideo]" -map "0:a" wide.mp4
 
-Then you might want to scale it down and add black padding at the top and bottom:
+You might want to scale it down and add black padding at the top and bottom:
 
     :::bash
-    ffmpeg -i wide.mp4 -filter_complex "[0:v]scale=1920:-1,pad=1920:1080:0:270,setsar=1" -acodec copy wide-scaled.mp4
+    ffmpeg -i left.mp4 -i right.mp4 \
+      -filter_complex "[0:v][1:v]hstack=inputs=2[myvideo];[myvideo]scale=1920:-1,pad=1920:1080:0:270[myvideo]" \
+      -map "[myvideo]" -map "0:a" wide.mp4
+    :::bash
 
 Alternatively, you can crop the initial two inputs and directly produce a 1920x1080 video:
 
