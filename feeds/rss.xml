@@ -5377,8 +5377,11 @@ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Then you might want to scale it down and add black padding at the top and bottom:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i wide.mp4 -filter_complex &lt;span class="s2"&gt;&amp;quot;[0:v]scale=1920:-1,pad=1920:1080:0:270,setsar=1&amp;quot;&lt;/span&gt; -acodec copy wide-scaled.mp4
+&lt;p&gt;You might want to scale it down and add black padding at the top and bottom:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i left.mp4 -i right.mp4 &lt;span class="se"&gt;\&lt;/span&gt;
+  -filter_complex &lt;span class="s2"&gt;&amp;quot;[0:v][1:v]hstack=inputs=2[myvideo];[myvideo]scale=1920:-1,pad=1920:1080:0:270[myvideo]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -map &lt;span class="s2"&gt;&amp;quot;[myvideo]&amp;quot;&lt;/span&gt; -map &lt;span class="s2"&gt;&amp;quot;0:a&amp;quot;&lt;/span&gt; wide.mp4
+:::bash
 &lt;/pre&gt;&lt;/div&gt;
 
 
