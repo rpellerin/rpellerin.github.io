@@ -189,8 +189,8 @@ ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts 
 
 <h1>Merge two videos placed side by side with audio from first video</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
-  -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[v]&quot;</span> <span class="se">\</span>
-  -map <span class="s2">&quot;[v]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> output.mp4
+  -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[myvideo]&quot;</span> <span class="se">\</span>
+  -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> output.mp4
 </pre></div>
 
 

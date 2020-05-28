@@ -5364,8 +5364,8 @@ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k
 
 &lt;h1&gt;Merge two videos placed side by side with audio from first video&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i left.mp4 -i right.mp4 &lt;span class="se"&gt;\&lt;/span&gt;
-  -filter_complex &lt;span class="s2"&gt;&amp;quot;[0:v][1:v]hstack=inputs=2[v]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  -map &lt;span class="s2"&gt;&amp;quot;[v]&amp;quot;&lt;/span&gt; -map &lt;span class="s2"&gt;&amp;quot;0:a&amp;quot;&lt;/span&gt; output.mp4
+  -filter_complex &lt;span class="s2"&gt;&amp;quot;[0:v][1:v]hstack=inputs=2[myvideo]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -map &lt;span class="s2"&gt;&amp;quot;[myvideo]&amp;quot;&lt;/span&gt; -map &lt;span class="s2"&gt;&amp;quot;0:a&amp;quot;&lt;/span&gt; output.mp4
 &lt;/pre&gt;&lt;/div&gt;
 
 
