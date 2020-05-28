@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 525 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 523 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -190,7 +190,7 @@ ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts 
 <h1>Merge two videos placed side by side with audio from first video</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
   -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[v]&quot;</span> <span class="se">\</span>
-  -map <span class="s2">&quot;[v]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> -ac <span class="m">2</span> output.mp4
+  -map <span class="s2">&quot;[v]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> output.mp4
 </pre></div>
 
 
