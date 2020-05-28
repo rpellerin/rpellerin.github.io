@@ -110,6 +110,11 @@ In case you have a few seconds of blank video at the beginning, it is due to key
       -filter_complex "[0:v][1:v]hstack=inputs=2[myvideo]" \
       -map "[myvideo]" -map "0:a" output.mp4
 
+Below, same with crop the two inputs:
+
+    :::
+    ... -filter_complex "[0:v]crop=960:1080:480:0[left];[1:v]crop=960:1080:480:0[right];[left][right]hstack=inputs=2[myvideo]" ...
+
 # Replace the audio track with another
 
     :::bash
