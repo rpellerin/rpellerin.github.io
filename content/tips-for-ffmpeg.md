@@ -131,6 +131,13 @@ Alternatively, you can crop the initial two inputs and directly produce a 1920x1
 
 If one of the two videos is not correctly synced with the other one, you can delay an input. Add `-ss 00:00:0x` before the `-i input` that needs adjustment.
 
+# Put one video on top of another one (overlay), alternate between the two, and use audio from first video
+
+    :::bash
+    ffmpeg -i initial.mp4 -i ontop.mp4 -filter_complex \
+      "[0:0][1:0]overlay=enable='between(t\,19,28)'[myvideo];[myvideo][1:0]overlay=enable='between(t\,37,45)'[myvideo]" \
+      -map "[myvideo]" -map "0:a" -shortest output.mp4
+
 # Replace the audio track with another
 
     :::bash
