@@ -1710,6 +1710,13 @@ ffmpeg -i &lt;span class="s2"&gt;&amp;quot;concat:&lt;/span&gt;&lt;span class="k
 
 
 &lt;p&gt;If one of the two videos is not correctly synced with the other one, you can delay an input. Add &lt;code&gt;-ss 00:00:0x&lt;/code&gt; before the &lt;code&gt;-i input&lt;/code&gt; that needs adjustment.&lt;/p&gt;
+&lt;h1&gt;Put one video on top of another one (overlay), alternate between the two, and use audio from first video&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i initial.mp4 -i ontop.mp4 -filter_complex &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;[0:0][1:0]overlay=enable=&amp;#39;between(t\,19,28)&amp;#39;[myvideo];[myvideo][1:0]overlay=enable=&amp;#39;between(t\,37,45)&amp;#39;[myvideo]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -map &lt;span class="s2"&gt;&amp;quot;[myvideo]&amp;quot;&lt;/span&gt; -map &lt;span class="s2"&gt;&amp;quot;0:a&amp;quot;&lt;/span&gt; -shortest output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Replace the audio track with another&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i output.mp4 -i yo.mp3 -map &lt;span class="m"&gt;0&lt;/span&gt;:0 -map &lt;span class="m"&gt;1&lt;/span&gt; -vcodec copy -acodec copy output2.mp4
 &lt;/pre&gt;&lt;/div&gt;

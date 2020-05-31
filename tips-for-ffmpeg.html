@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 646 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 680 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -218,6 +218,13 @@ ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts 
 
 
 <p>If one of the two videos is not correctly synced with the other one, you can delay an input. Add <code>-ss 00:00:0x</code> before the <code>-i input</code> that needs adjustment.</p>
+<h1>Put one video on top of another one (overlay), alternate between the two, and use audio from first video</h1>
+<div class="highlight"><pre><span></span>ffmpeg -i initial.mp4 -i ontop.mp4 -filter_complex <span class="se">\</span>
+  <span class="s2">&quot;[0:0][1:0]overlay=enable=&#39;between(t\,19,28)&#39;[myvideo];[myvideo][1:0]overlay=enable=&#39;between(t\,37,45)&#39;[myvideo]&quot;</span> <span class="se">\</span>
+  -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> -shortest output.mp4
+</pre></div>
+
+
 <h1>Replace the audio track with another</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i output.mp4 -i yo.mp3 -map <span class="m">0</span>:0 -map <span class="m">1</span> -vcodec copy -acodec copy output2.mp4
 </pre></div>
