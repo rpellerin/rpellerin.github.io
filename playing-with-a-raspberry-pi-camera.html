@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, raspberry pi" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="What's possible with a Raspberry Pi camera" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Playing With A Raspberry Pi Camera - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="What's possible with a Raspberry Pi camera" />
+
+        <title>Playing With A Raspberry Pi Camera - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2020-06-01T02:50:00+02:00">Mon 01 June 2020</time>        </p>
+    <h1>Playing With A Raspberry Pi Camera</h1>
+    <div class="grey">
+        <p class="italic">What's possible with a Raspberry Pi camera</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 593 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a></p>    </div>
+</header>
+<article>
+    <p>Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.</p>
+<p><em>Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: <code>raspistill</code> and <code>raspivid</code>. For a complete user manual, follow <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2">this link</a>.</em></p>
+<p><em>Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).</em></p>
+<h1>A timelapse of the sky at night</h1>
+<p>For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. </p>
+<p>However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.</p>
+<p>There are multiple parameters that affect the look of a photos but after trying a few and a lot of <a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/">Googling</a>, here is a set of parameters that work pretty well for me:</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> <span class="se">\</span>
+  raspistill -q <span class="m">100</span> -t <span class="m">1</span> -ss <span class="m">6000000</span> -rot <span class="m">180</span> <span class="se">\</span>
+  -sh <span class="m">0</span> -co <span class="m">50</span> -br <span class="m">50</span> -sa <span class="m">0</span> -ev +2 -ex night <span class="se">\</span>
+  -awb auto -ISO <span class="m">800</span> -mm average -n <span class="se">\</span>
+  -o <span class="s2">&quot;</span><span class="k">$(</span>date -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="k">)</span><span class="s2">.jpg&quot;</span><span class="p">;</span> date<span class="p">;</span> <span class="se">\</span>
+  <span class="k">done</span>
+</pre></div>
+
+
+<p>This command takes as many shots as possible in a infinite loop, and displays the date and time between two shots in the terminal.</p>
+<p>Here the parameters <code>-awb auto</code>, <code>-mm average</code> and <code>-sa 0</code> seem to have no impact, I believe they are the default values. The rest makes a difference.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ybX9RmXJBX4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h1>Live streaming on Youtube</h1>
+<p>This is fairly easy and cool to do! Head out to <a href="https://studio.youtube.com/channel/UC/livestreaming">https://studio.youtube.com/channel/UC/livestreaming</a> and retrieve a "Stream key".</p>
+<div style="text-align: center">
+<img src="//romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" />
+</div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
+  <span class="p">|</span> ffmpeg -ar <span class="m">44100</span> -ac <span class="m">2</span> -f s16le -i /dev/zero -f h264 -i - <span class="se">\</span>
+  -vcodec copy -acodec aac -ab 128k -g <span class="m">50</span> -strict experimental -f flv <span class="se">\</span>
+  rtmp://a.rtmp.youtube.com/live2/&lt;your-secret-key-here&gt;
+</pre></div>
+
+
+<p>This would create a live stream with no audio. To add an audio track that repeats itself, do:</p>
+<div class="highlight"><pre><span></span>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
+  <span class="p">|</span> ffmpeg -stream_loop -1 -i ./audio.mp3 -f h264 <span class="se">\</span>
+  -use_wallclock_as_timestamps <span class="m">1</span> -thread_queue_size <span class="m">1024</span>  -i - <span class="se">\</span>
+  -map <span class="m">0</span>:0 -map <span class="m">1</span>:0 -vcodec copy -acodec copy -g <span class="m">50</span> -strict experimental -f flv <span class="se">\</span>
+  rtmp://a.rtmp.youtube.com/live2/&lt;your-secret-key-here&gt;
+</pre></div>
+
+
+<p><code>-use_wallclock_as_timestamps</code> makes a warning message about no timestamps disappear. <code>-thread_queue_size 1024</code> makes another warning message disappear.</p>
+<p>With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.</p>
+<div style="text-align: center">
+<a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"><img src="//romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /></a>
+</div>
+
+<h1>Daytime timelapse</h1>
+<p>Here, it's pretty much like a nighttime timelapse, except that we don't need as many parameters, the default ones should normally do a decent job. Also, since taking a picture is here much more faster, we must schedule the shots. Every 20 or 30 seconds is usually a safe bet. Since we can't predict with certainty how long taking the picture will take, in order to take timely shots, we must run a script in the background to take the photo and wait x seconds in an infinite loop:</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> ./take-pic.sh<span class="p">;</span> sleep <span class="m">20</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+
+
+<p>And the file <code>./take-pic.sh</code> (don't forget to <code>chmod +x ./take-pic.sh</code>):</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;Taking pic...&quot;</span>
+<span class="nv">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>date -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="k">)</span><span class="s2">.jpg&quot;</span>
+raspistill -q <span class="m">100</span> -rot <span class="m">180</span> -n -awb sun -co <span class="m">20</span> -o <span class="s2">&quot;</span><span class="nv">$name</span><span class="s2">&quot;</span> <span class="p">&amp;</span>
+date
+</pre></div>
+
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CxOuNB-NVDQ?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9GTVajBlVuM?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>That's it for today!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 01 June 2020</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
