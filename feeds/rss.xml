@@ -4526,7 +4526,7 @@ exit 0
 Normally, Exim4 comes pre-installed with Debian. If not, do &lt;code&gt;apt install exim4&lt;/code&gt;. Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 dpkg-reconfigure exim4-config
-&lt;span class="c1"&gt;# Second choice, &amp;quot;mail sent by smarthost; received via SMTP or fetchmail&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;# &amp;quot;mail sent by smarthost; no local mail&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;# System mail name: keep default; must be a valid FQDN though (ending with .com for example). Leaving blank is the same as reusing the same hostname you set for the Raspberry but it is sometimes buggy. Better to explicitely write your hostname.&lt;/span&gt;
 &lt;span class="c1"&gt;# IP-addresses to listen on: keep default, we don&amp;#39;t want to receive external emails&lt;/span&gt;
 &lt;span class="c1"&gt;# Other destinations: leave blank&lt;/span&gt;
