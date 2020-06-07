@@ -513,7 +513,22 @@ Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`.
     # Split configuration into small files: no
     # Root and postmaster mail recipient: write one of your email addresses or leave blank
 
-Now `update-exim4.conf`.
+`update-exim4.conf` should look like this:
+
+    :::text
+    dc_eximconfig_configtype='satellite'
+    dc_other_hostnames=''
+    dc_local_interfaces='127.0.0.1 ; ::1'
+    dc_readhost='<YOUR HOSTNAME>'
+    dc_relay_domains=''
+    dc_minimaldns='false'
+    dc_relay_nets=''
+    dc_smarthost='ssl0.ovh.net::465'
+    CFILEMODE='644'
+    dc_use_split_config='false'
+    dc_hide_mailname='true'
+    dc_mailname_in_oh='true'
+    dc_localdelivery='mail_spool'
 
 Then, `cat /etc/mailname` and make sure the system mail name you just specified is correctly reported here.
 
