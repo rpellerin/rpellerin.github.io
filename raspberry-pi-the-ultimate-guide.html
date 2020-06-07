@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5622 words.">28 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5641 words.">28 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -608,7 +608,23 @@ dpkg-reconfigure exim4-config
 </pre></div>
 
 
-<p>Now <code>update-exim4.conf</code>.</p>
+<p><code>update-exim4.conf</code> should look like this:</p>
+<div class="highlight"><pre><span></span>dc_eximconfig_configtype=&#39;satellite&#39;
+dc_other_hostnames=&#39;&#39;
+dc_local_interfaces=&#39;127.0.0.1 ; ::1&#39;
+dc_readhost=&#39;&lt;YOUR HOSTNAME&gt;&#39;
+dc_relay_domains=&#39;&#39;
+dc_minimaldns=&#39;false&#39;
+dc_relay_nets=&#39;&#39;
+dc_smarthost=&#39;ssl0.ovh.net::465&#39;
+CFILEMODE=&#39;644&#39;
+dc_use_split_config=&#39;false&#39;
+dc_hide_mailname=&#39;true&#39;
+dc_mailname_in_oh=&#39;true&#39;
+dc_localdelivery=&#39;mail_spool&#39;
+</pre></div>
+
+
 <p>Then, <code>cat /etc/mailname</code> and make sure the system mail name you just specified is correctly reported here.</p>
 <p>In <em>/etc/exim4/passwd.client</em>, add you credentials, like:</p>
 <div class="highlight"><pre><span></span>ssl0.ovh.net:me@mydomain.com:password

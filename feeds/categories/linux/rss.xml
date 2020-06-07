@@ -789,7 +789,23 @@ dpkg-reconfigure exim4-config
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now &lt;code&gt;update-exim4.conf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;update-exim4.conf&lt;/code&gt; should look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dc_eximconfig_configtype=&amp;#39;satellite&amp;#39;
+dc_other_hostnames=&amp;#39;&amp;#39;
+dc_local_interfaces=&amp;#39;127.0.0.1 ; ::1&amp;#39;
+dc_readhost=&amp;#39;&amp;lt;YOUR HOSTNAME&amp;gt;&amp;#39;
+dc_relay_domains=&amp;#39;&amp;#39;
+dc_minimaldns=&amp;#39;false&amp;#39;
+dc_relay_nets=&amp;#39;&amp;#39;
+dc_smarthost=&amp;#39;ssl0.ovh.net::465&amp;#39;
+CFILEMODE=&amp;#39;644&amp;#39;
+dc_use_split_config=&amp;#39;false&amp;#39;
+dc_hide_mailname=&amp;#39;true&amp;#39;
+dc_mailname_in_oh=&amp;#39;true&amp;#39;
+dc_localdelivery=&amp;#39;mail_spool&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Then, &lt;code&gt;cat /etc/mailname&lt;/code&gt; and make sure the system mail name you just specified is correctly reported here.&lt;/p&gt;
 &lt;p&gt;In &lt;em&gt;/etc/exim4/passwd.client&lt;/em&gt;, add you credentials, like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssl0.ovh.net:me@mydomain.com:password
