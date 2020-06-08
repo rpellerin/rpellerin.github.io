@@ -24,6 +24,7 @@ Une petite sélection de films et documentaires sur le vélo à voir et à revoi
 - [Why We Cycle](http://whywecycle.eu/)
 - [Bikes vs Cars](http://www.bikes-vs-cars.com/)
 - [Velotopia](http://www.velotopia.fr/)
+- [More videos here](https://urbancyclinginstitute.com/library-of-cycling-documentaries/)
 
 # Chaines Youtube, comptes Twitter et podcasts
 
