@@ -38,7 +38,7 @@ Assurez-vous d'être dans un endroit sec non humide où l'air circule et bien é
 
 ## 1. Poncer
 
-Comme je le disais, partir d'un grain 80 et diminuer la taille de grain progressivment. Enlever un maximum de peinture si vous comptez peindre une couleur claire sur une couleur foncée.
+Comme je le disais, partir d'un grain 80 et diminuer la taille de grain progressivement. Enlever un maximum de peinture si vous comptez peindre une couleur claire sur une couleur foncée.
 
 <figure class="center"><img alt="Cadre poncé" src="{filename}/images/bike-paint/bike-painting-1.jpg" /></figure>
 
