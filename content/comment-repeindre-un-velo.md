@@ -50,7 +50,7 @@ Passer un chiffon sec sur toutes les parties poncées pour enlever les résidus 
 
 ## 3. Appliquer la sous-couche
 
-J'ai mis une seule sous-couche mais j'aurais du en mettre deux. Premièrement car la contenance de la bombe le permet de deuxièmement pour mieux uniformiser partout. Après coup je me suis rendu compte que j'avais mis très peu de sous-couche sur certaines parties du cadre, et une fois la peinture appliquée, ça se voit. La texture est légèrement différement.
+J'ai mis une seule sous-couche mais j'aurais du en mettre deux. Premièrement car la contenance de la bombe le permet et deuxièmement pour mieux uniformiser partout. Après coup je me suis rendu compte que j'avais mis très peu de sous-couche sur certaines parties du cadre, et une fois la peinture appliquée, ça se voit. La texture est légèrement différement.
 
 À vaporiser de loin (au moins 20cm), en ayant au préalable secoué la bombe et testé sur du carton (à faire avant chaque couche).
 
