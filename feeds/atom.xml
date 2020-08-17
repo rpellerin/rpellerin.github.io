@@ -8093,8 +8093,6 @@ main:
 &lt;h1&gt;Shows still running&lt;/h1&gt;
 &lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series)"&gt;Altered Carbon&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;New stuff from Netflix, looks rad!&lt;/p&gt;
-&lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/Narcos"&gt;Narcos&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;It tells the story of Pablo Escobar. Produced by Netflix, 4 seasons.&lt;/p&gt;
 &lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/Black_Mirror"&gt;Black Mirror&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;An interesting analyze of our modern society.&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29"&gt;The Walking Dead&lt;/a&gt;&lt;/h2&gt;
@@ -8136,6 +8134,7 @@ main:
 &lt;li&gt;Sense 8 (after the very sexual episode, a Christmas special)&lt;/li&gt;
 &lt;li&gt;Legion (after season 2, episode 7)&lt;/li&gt;
 &lt;li&gt;Westworld (after season 2)&lt;/li&gt;
+&lt;li&gt;Narcos (I watched season 1 and 2 for sure - 3 I am not so sure)&lt;/li&gt;
 &lt;/ul&gt;</content><category term="televion"></category><category term="tv series"></category></entry><entry><title>I Want To Be A More Efficient Developer</title><link href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html" rel="alternate"></link><published>2015-05-25T17:17:00+02:00</published><updated>2016-01-09T19:45:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-05-25:/i-want-to-be-a-more-efficient-developer.html</id><summary type="html">&lt;p&gt;A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.&lt;/p&gt;
 &lt;p&gt;As a Software Engineering Student, I meet every day a lot of people learning programming languages, trying to build databases, creating websites. We, at the &lt;a href="http://www.utc.fr/"&gt;UTC&lt;/a&gt;, have a lot of projects, each semester. I feel so sad each time they fail at using best practices. Among them, the worst, in my opinion, is being stuck in Windows, the operating system. They simply miss a lot of things. They are ignorant, they have no idea how their computers work. But that's my opinion. Now, let's begin with a list of best practices I've learnt from great people.&lt;/p&gt;
 &lt;h1&gt;Use the right tools&lt;/h1&gt;
