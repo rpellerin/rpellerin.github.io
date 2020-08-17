@@ -33,10 +33,6 @@ A hilarious sitcom about a group of geeks founding a startup company. Extremely 
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
 
-## [Westworld](https://en.wikipedia.org/wiki/Westworld_(TV_series))
-
-A very promising new TV series about AI.
-
 ## [The Walking Dead](http://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29)
 
 A post-apocalyptic TV show, featuring... zombies! The scenario, based on the comic book series of the same name, is pretty good. By the way, if you have the opportunity, read them all!
@@ -92,3 +88,4 @@ New TV series from Netflix. Pretty cool!
 - The 100 (after season 2 or 3)
 - Sense 8 (after the very sexual episode, a Christmas special)
 - Legion (after season 2, episode 7)
+- Westworld (after season 2)
