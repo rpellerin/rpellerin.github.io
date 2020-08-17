@@ -27,10 +27,6 @@ A post-apocalyptic TV show, featuring... zombies! The scenario, based on the com
 
 Prequel to The Walking Dead! Seems really interesting so far...
 
-## [Vikings](http://en.wikipedia.org/wiki/Vikings_%28TV_series%29)
-
-An Irish-Canadian historical drama television series. Everything goes fast, which is quite appreciable, compared to Game of Thrones, where some episodes are less interesting than others.
-
 ## [Better Call Saul](http://en.wikipedia.org/wiki/Better_Call_Saul)
 
 A spin-off of Breaking Bad: same ambiance, a must-see!
@@ -42,6 +38,10 @@ A spin-off of Breaking Bad: same ambiance, a must-see!
 A great TV series produced by Netflix!
 
 # Ended or Canceled TV series
+
+## [Vikings](http://en.wikipedia.org/wiki/Vikings_%28TV_series%29)
+
+An Irish-Canadian historical drama television series. Everything goes fast, which is quite appreciable, compared to Game of Thrones, where some episodes are less interesting than others.
 
 ## [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot_%28TV_series%29)
 
