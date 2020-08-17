@@ -8103,8 +8103,6 @@ main:
 &lt;p&gt;A hilarious sitcom about a group of geeks founding a startup company. Extremely funny!&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/Westworld_(TV_series)"&gt;Westworld&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;A very promising new TV series about AI.&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29"&gt;The Walking Dead&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;A post-apocalyptic TV show, featuring... zombies! The scenario, based on the comic book series of the same name, is pretty good. By the way, if you have the opportunity, read them all!&lt;/p&gt;
 &lt;h2&gt;&lt;a href="https://en.wikipedia.org/wiki/Fear_the_Walking_Dead"&gt;Fear The Walking Dead&lt;/a&gt;&lt;/h2&gt;
@@ -8137,6 +8135,7 @@ main:
 &lt;li&gt;The 100 (after season 2 or 3)&lt;/li&gt;
 &lt;li&gt;Sense 8 (after the very sexual episode, a Christmas special)&lt;/li&gt;
 &lt;li&gt;Legion (after season 2, episode 7)&lt;/li&gt;
+&lt;li&gt;Westworld (after season 2)&lt;/li&gt;
 &lt;/ul&gt;</content><category term="televion"></category><category term="tv series"></category></entry><entry><title>I Want To Be A More Efficient Developer</title><link href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html" rel="alternate"></link><published>2015-05-25T17:17:00+02:00</published><updated>2016-01-09T19:45:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-05-25:/i-want-to-be-a-more-efficient-developer.html</id><summary type="html">&lt;p&gt;A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.&lt;/p&gt;
 &lt;p&gt;As a Software Engineering Student, I meet every day a lot of people learning programming languages, trying to build databases, creating websites. We, at the &lt;a href="http://www.utc.fr/"&gt;UTC&lt;/a&gt;, have a lot of projects, each semester. I feel so sad each time they fail at using best practices. Among them, the worst, in my opinion, is being stuck in Windows, the operating system. They simply miss a lot of things. They are ignorant, they have no idea how their computers work. But that's my opinion. Now, let's begin with a list of best practices I've learnt from great people.&lt;/p&gt;
 &lt;h1&gt;Use the right tools&lt;/h1&gt;
