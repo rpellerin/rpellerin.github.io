@@ -15,10 +15,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 
 New stuff from Netflix, looks rad!
 
-## [Narcos](https://en.wikipedia.org/wiki/Narcos)
-
-It tells the story of Pablo Escobar. Produced by Netflix, 4 seasons.
-
 ## [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror)
 
 An interesting analyze of our modern society.
@@ -89,3 +85,4 @@ New TV series from Netflix. Pretty cool!
 - Sense 8 (after the very sexual episode, a Christmas special)
 - Legion (after season 2, episode 7)
 - Westworld (after season 2)
+- Narcos (I watched season 1 and 2 for sure - 3 I am not so sure)
