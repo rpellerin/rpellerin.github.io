@@ -11,10 +11,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 
 # Shows still running
 
-## [Game of Thrones](http://en.wikipedia.org/wiki/Game_of_Thrones)
-
-Quite obvious, right?
-
 ## [Altered Carbon](https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series))
 
 New stuff from Netflix, looks rad!
@@ -26,12 +22,6 @@ It tells the story of Pablo Escobar. Produced by Netflix, 4 seasons.
 ## [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror)
 
 An interesting analyze of our modern society.
-
-## [Silicon Valley](http://en.wikipedia.org/wiki/Silicon_Valley_%28TV_series%29)
-
-A hilarious sitcom about a group of geeks founding a startup company. Extremely funny!
-
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## [The Walking Dead](http://en.wikipedia.org/wiki/The_Walking_Dead_%28TV_series%29)
 
@@ -63,9 +53,19 @@ One of the best TV shows! About hacking, cyber security, democracy, and so on.
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
 
+## [Game of Thrones](http://en.wikipedia.org/wiki/Game_of_Thrones)
+
+Quite obvious, right?
+
 ## [Breaking Bad](http://en.wikipedia.org/wiki/Breaking_Bad)
 
 **BEST TV SHOW EVER!** They have won so many awards... According to Wikipedia, "the show has won 110 industry awards and been nominated for 262".
+
+## [Silicon Valley](http://en.wikipedia.org/wiki/Silicon_Valley_%28TV_series%29)
+
+A hilarious sitcom about a group of geeks founding a startup company. Extremely funny!
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/69V__a49xtw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## [Revolution](http://en.wikipedia.org/wiki/Revolution_%28TV_series%29)
 
