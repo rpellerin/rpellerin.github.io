@@ -51,17 +51,17 @@ A spin-off of Breaking Bad: same ambiance, a must-see!
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9q4qzYrHVmI?rel=0" frameborder="0" allowfullscreen></iframe>
 
-## [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot_%28TV_series%29)
-
-One of the best TV shows! About hacking, cyber security, democracy, and so on.
-
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
-
 ## [Stranger Things](https://en.wikipedia.org/wiki/Stranger_Things_(TV_series))
 
 A great TV series produced by Netflix!
 
 # Ended or Canceled TV series
+
+## [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot_%28TV_series%29)
+
+One of the best TV shows! About hacking, cyber security, democracy, and so on.
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Ug4fRXGyIak?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## [Breaking Bad](http://en.wikipedia.org/wiki/Breaking_Bad)
 
