@@ -5358,6 +5358,11 @@ apt dist-upgrade
 &lt;code&gt;-vcodec&lt;/code&gt; is an alias for &lt;code&gt;-c:v&lt;/code&gt; which is an alias for &lt;code&gt;-codec:v&lt;/code&gt; (video stream).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-af&lt;/code&gt; is an alias for &lt;code&gt;-filter:a&lt;/code&gt; (audio stream).&lt;br&gt;
 &lt;code&gt;-vf&lt;/code&gt; is an alias for &lt;code&gt;-filter:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;h1&gt;Split a video in several chunks of same duration&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -c copy -map &lt;span class="m"&gt;0&lt;/span&gt; -segment_time &lt;span class="m"&gt;00&lt;/span&gt;:00:30 -f segment -reset_timestamps &lt;span class="m"&gt;1&lt;/span&gt; output%03d.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Add embedded subtitles&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install subtitlecomposer
 &lt;/pre&gt;&lt;/div&gt;
