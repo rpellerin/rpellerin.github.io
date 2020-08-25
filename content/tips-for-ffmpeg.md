@@ -13,6 +13,11 @@ Summary: A few tips with FFMPEG
 `-af` is an alias for `-filter:a` (audio stream).  
 `-vf` is an alias for `-filter:v` (video stream).
 
+# Split a video in several chunks of same duration
+
+    :::bash
+    ffmpeg -i input.mp4 -c copy -map 0 -segment_time 00:00:30 -f segment -reset_timestamps 1 output%03d.mp4
+
 # Add embedded subtitles
 
     :::bash
