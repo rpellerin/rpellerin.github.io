@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Romain Pellerin" />
-        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, linux, md5sum, git" />
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
@@ -61,12 +61,12 @@
         <!-- Social media -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@romainpellerin" />
-        <meta name="description" content="Romain Pellerin's Blog: posts tagged 'git'" />
+        <meta name="description" content="Checking the md5sum of files copied across two folders" />
         <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Posts tagged 'git' - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="Romain Pellerin's Blog: posts tagged 'git'" />
+        <meta property="og:title" name="twitter:title" content="How To Check The Integrity Of A Backup Folder - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Checking the md5sum of files copied across two folders" />
 
-        <title>Posts tagged 'git' - Romain Pellerin's Blog</title>
+        <title>How To Check The Integrity Of A Backup Folder - Romain Pellerin's Blog</title>
 
         <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
         <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
@@ -74,7 +74,6 @@
     <body>
         <div id="wrapper">
 
-<header>
 <nav class="flexbox-row">
     <a class="center" href="//romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
@@ -83,26 +82,39 @@
     <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
-</nav></header>
-<h1>Posts tagged 'git'</h1>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2020-08-27T23:50:00+02:00">Thu 27 August 2020</time>        </p>
+    <h1>How To Check The Integrity Of A Backup Folder</h1>
+    <div class="grey">
+        <p class="italic">Checking the md5sum of files copied across two folders</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 121 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/md5sum.html">md5sum</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/git.html">git</a></p>    </div>
+</header>
+<article>
+    <p>Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;ORIGINAL FOLDER&gt;
+find . -type f <span class="p">|</span> sort <span class="p">|</span> &gt; /tmp/original.files
+<span class="nb">cd</span> &lt;BACKUP FOLDER&gt;
+find . -type f <span class="p">|</span> sort <span class="p">|</span> &gt; /tmp/backup.files
+
+<span class="c1"># You may not have copied all the files, so let&#39;s only keep the common ones</span>
+comm -12 /tmp/original.files /tmp/backup.files &gt; /tmp/common.files
+
+<span class="nb">cd</span> &lt;ORIGINAL FOLDER&gt;
+cat /tmp/common.files <span class="p">|</span> xargs -d<span class="s1">&#39;\n&#39;</span> md5sum &gt; /tmp/original.md5sum
+<span class="c1"># -d&#39;\n&#39; so that filenames with space characters are handled</span>
+<span class="nb">cd</span> &lt;BACKUP FOLDER&gt;
+md5sum --check /tmp/original.md5sum <span class="c1"># Shows OK or FAILED for each file</span>
+</pre></div>
 
 
-    <section>
-        <ol>
-                    <li class="no-bullet-point">
-                        <a href="//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html" rel="bookmark" title="Permalink to How To Check The Integrity Of A Backup Folder">How To Check The Integrity Of A Backup Folder</a>
-<time class="grey italic small" datetime="2020-08-27T23:50:00+02:00">Thu 27 August 2020</time>                        <p class="grey italic indent">Checking the md5sum of files copied across two folders</p>
-                    </li>
-                    <li class="no-bullet-point">
-                        <a href="//romainpellerin.eu/continuous-integration.html" rel="bookmark" title="Permalink to Continuous Integration">Continuous Integration</a>
-<time class="grey italic small" datetime="2015-09-18T11:29:00+02:00">Fri 18 September 2015</time>                        <p class="grey italic indent">Why you should embrace continuous integration and how</p>
-                    </li>
-                    <li class="no-bullet-point">
-                        <a href="//romainpellerin.eu/git.html" rel="bookmark" title="Permalink to Git">Git</a>
-<time class="grey italic small" datetime="2015-06-03T00:01:00+02:00">Wed 03 June 2015</time>                        <p class="grey italic indent">All about Git</p>
-                    </li>
-        </ol>
-    </section>
+<p>Hope that helps.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 27 August 2020</footer>
 
         </div> <!-- WRAPPER -->
     </body>
