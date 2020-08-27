@@ -22,9 +22,11 @@ sudo apt-get install python3-pip
 
 Then:
 ```bash
-sudo pip3 install -U pip # Upgrade
-sudo pip3 install -U setuptools # Upgrade
-sudo pip3 install virtualenv
+sudo apt install python3-testresources # Needed for dependencies of setuptools
+# Run the following without `sudo`!
+pip3 install -U pip # Upgrade
+pip3 install -U setuptools # Upgrade
+pip3 install virtualenv
 ```
 
 ## Creating the virtual env
