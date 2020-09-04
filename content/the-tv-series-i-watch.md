@@ -79,6 +79,10 @@ Music!
 
 New TV series from Netflix. Pretty cool!
 
+## [Dark](https://en.wikipedia.org/wiki/Dark_(TV_series))
+
+Very cool! Similar to Stranger Things.
+
 # TV shows I dropped
 
 - The 100 (after season 2 or 3)
