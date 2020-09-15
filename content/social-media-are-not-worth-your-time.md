@@ -54,3 +54,4 @@ Summary: What I think about most social media
 - [Facebook and Cambridge Analytica: What just happened?](https://www.recode.net/2018/3/23/17153368/facebook-cambridge-analytica-mark-zuckerberg-lauren-goode-kara-swisher-kurt-wagner-recode-podcast)
 - [Elon Musk deletes Facebook following Cambridge Analytica scandal](https://www.telegraph.co.uk/technology/2018/03/23/elon-musk-deletes-facebook-following-cambridge-analytica-scandal/)
 - [Envoyé spécial. Facebook, l'envers du réseau - 12 avril 2018 (France 2)](https://www.youtube.com/watch?v=9kpKDaF3IFw)
+- [Whistleblower Says Facebook Ignored Global Political Manipulation](https://www.buzzfeednews.com/article/craigsilverman/facebook-ignore-political-manipulation-whistleblower-memo)
