@@ -432,7 +432,7 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 
 # DynHost
 
-1. `apt install lynx` (as root)
+1. `apt install lynx dnsutils` (as root) - `dnsutils` provides `dig`
 2. Download [https://github.com/rpellerin/dotfiles](https://github.com/rpellerin/dotfiles).
 3. Copy in your user's home folder the directory *scripts/DynHost*.
 4. Edit the lines `HOST`, `LOGIN`, `PASSWORD` and `PATH_APP` in the file *dynhost*.
