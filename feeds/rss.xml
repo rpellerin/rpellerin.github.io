@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 27 Aug 2020 23:50:00 +0200</lastBuildDate><item><title>How To Check The Integrity Of A Backup Folder</title><link>//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html</link><description>&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 21 Sep 2020 13:00:00 +0200</lastBuildDate><item><title>Le Bon Sens</title><link>//romainpellerin.eu/le-bon-sens.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ja4dG0KUuRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;em&gt;Les populistes et le retour du « bon sens » - C à Vous - 20/05/2020&lt;/em&gt;&lt;/p&gt;
+&lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/bon-sens.png" alt="Comics" /&gt;&lt;figcaption&gt;Mon avis sur le bon sens.&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h1&gt;Ressources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.ouest-france.fr/politique/emmanuel-macron/tenues-correctes-au-lycee-emmanuel-macron-prone-le-bon-sens-6979569"&gt;« Tenues correctes » au lycée. Emmanuel Macron prône le « bon sens »&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 21 Sep 2020 13:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-09-21:/le-bon-sens.html</guid><category>bon sens</category></item><item><title>How To Check The Integrity Of A Backup Folder</title><link>//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html</link><description>&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;ORIGINAL FOLDER&amp;gt;
 find . -type f &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; &amp;gt; /tmp/original.files
 &lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;BACKUP FOLDER&amp;gt;
