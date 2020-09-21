@@ -20,7 +20,7 @@ One of the things that I personally fear the most is forgetting to ask important
 - Do they do code reviews? How often? What is the process? How do they get code merged?
 - Agile methodology?
 - How many hours a week?
-- Do they track their time? Ticket-based tracking? Jenkis? Jira? Redmine?
+- Do they track their time? Ticket-based tracking? Jira? Redmine?
 - Visual regression testing? Browserstack.com? Unit/functional/integration testing? What tools?
 - Languages? Frameworks? Libraries?
 - Can we dress as we please? (shorts in Summer?)
