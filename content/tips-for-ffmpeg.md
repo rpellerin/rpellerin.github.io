@@ -13,6 +13,13 @@ Summary: A few tips with FFMPEG
 `-af` is an alias for `-filter:a` (audio stream).  
 `-vf` is an alias for `-filter:v` (video stream).
 
+# Cross fade a video for seamless loops
+
+    :::bash
+    curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
+    chmod +x ./video-crossfade
+    ./video-crossfade.sh -f 2 -o output.mp4 input.mp4 # 2 second crossfade
+
 # Split a video in several chunks of same duration
 
     :::bash
