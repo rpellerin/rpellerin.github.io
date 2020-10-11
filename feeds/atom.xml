@@ -5385,6 +5385,13 @@ apt dist-upgrade
 &lt;code&gt;-vcodec&lt;/code&gt; is an alias for &lt;code&gt;-c:v&lt;/code&gt; which is an alias for &lt;code&gt;-codec:v&lt;/code&gt; (video stream).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-af&lt;/code&gt; is an alias for &lt;code&gt;-filter:a&lt;/code&gt; (audio stream).&lt;br&gt;
 &lt;code&gt;-vf&lt;/code&gt; is an alias for &lt;code&gt;-filter:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;h1&gt;Cross fade a video for seamless loops&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
+chmod +x ./video-crossfade
+./video-crossfade.sh -f &lt;span class="m"&gt;2&lt;/span&gt; -o output.mp4 input.mp4 &lt;span class="c1"&gt;# 2 second crossfade&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Split a video in several chunks of same duration&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -c copy -map &lt;span class="m"&gt;0&lt;/span&gt; -segment_time &lt;span class="m"&gt;00&lt;/span&gt;:00:30 -f segment -reset_timestamps &lt;span class="m"&gt;1&lt;/span&gt; output%03d.mp4
 &lt;/pre&gt;&lt;/div&gt;
