@@ -1,6 +1,6 @@
 Title: The TV series I watch
 Date: 2015-06-02 01:00
-Modified: 2018-05-08 22:45
+Modified: 2020-11-09 23:48
 Category: About me
 Tags: televion, tv series
 Slug: the-tv-series-i-watch
@@ -26,6 +26,10 @@ A post-apocalyptic TV show, featuring... zombies! The scenario, based on the com
 ## [Fear The Walking Dead](https://en.wikipedia.org/wiki/Fear_the_Walking_Dead)
 
 Prequel to The Walking Dead! Seems really interesting so far...
+
+## [The Walking Dead: World Beyond](https://en.wikipedia.org/wiki/The_Walking_Dead:_World_Beyond#Episodes)
+
+Another spin-off of The Walking Dead.
 
 ## [Better Call Saul](http://en.wikipedia.org/wiki/Better_Call_Saul)
 
