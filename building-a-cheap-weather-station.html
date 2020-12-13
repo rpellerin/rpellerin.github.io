@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, raspberry pi, weather" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="How to build a cheap weather station with a Raspberry Pi and the BME280 module" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Building A Cheap Weather Station - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="How to build a cheap weather station with a Raspberry Pi and the BME280 module" />
+
+        <title>Building A Cheap Weather Station - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2020-12-13T23:50:00+01:00">Sun 13 December 2020</time>        </p>
+    <h1>Building A Cheap Weather Station</h1>
+    <div class="grey">
+        <p class="italic">How to build a cheap weather station with a Raspberry Pi and the BME280 module</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 397 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/weather.html">weather</a></p>    </div>
+</header>
+<article>
+    <p>Hi there! Long time no talk, uh?</p>
+<p>In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.</p>
+<p>Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/weather-station.png" alt="My weather station webpage" />
+<figcaption>My weather station webpage</figcaption>
+</figure>
+
+<p>For this tutorial you'll need:</p>
+<ul>
+<li>A Raspberry Pi</li>
+<li>A BME280 module and 4 cables</li>
+<li>A Google Form that you link to a spreadsheet. It's so much easier than using the Google Spreadsheet API. Your Raspberry PI will POST a form with the values and they'll automatically end up in the sheet.</li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" />
+<figcaption>The BME280 module plugged to the Raspberry Pi.</figcaption>
+</figure>
+
+<h1>Step by step tutorial</h1>
+<p><em>This tutorial was greatly inspired by <a href="https://github.com/rm-hull/bme280">that tutorial</a>.</em></p>
+<ol>
+<li>Raspberry Pi turned off, plug the module like shown in the photo above.</li>
+<li>Enable I2C. Run <code>sudo raspi-config</code>, choose <code>Interfacing options</code>. Then reboot. Run <code>lsmod | grep i2c</code> to confirm <code>i2c</code> has been enabled.</li>
+<li>Run <code>sudo apt install python3-pip i2c-tools &amp;&amp; i2cdetect -y 1</code> to make sure the BME280 module is detected.</li>
+<li><code>mkdir /home/pi/temperature &amp;&amp; cd /home/pi/temperature</code> (or any other directory of your liking).</li>
+<li><code>pip3 install virtualenv</code> (no <code>sudo</code>!)</li>
+<li><code>/home/pi/.local/bin/virtualenv -p /usr/bin/python3 .env &amp;&amp; source .env/bin/activate</code></li>
+<li><code>pip install smbus2 requests RPi.bme280</code></li>
+<li>Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with <code>/formResponse</code>. Copy the URL and the hidden input names, you'll need them in the next bullet point.</li>
+<li>
+<p><code>vim weatherstation.py</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">smbus2</span>
+<span class="kn">import</span> <span class="nn">bme280</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://docs.google.com/forms/TOKEN/formResponse&quot;</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">address</span> <span class="o">=</span> <span class="mh">0x76</span>
+<span class="n">bus</span> <span class="o">=</span> <span class="n">smbus2</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+
+<span class="n">calibration_params</span> <span class="o">=</span> <span class="n">bme280</span><span class="o">.</span><span class="n">load_calibration_params</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;entry.12&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">),</span>
+                <span class="s2">&quot;entry.34&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
+                <span class="s2">&quot;entry.56&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">humidity</span><span class="p">,</span>
+                <span class="s2">&quot;entry.78&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">pressure</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/octet-stream&quot;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">false</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">bme280</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">calibration_params</span><span class="p">)</span>
+
+<span class="n">successfully_sent</span> <span class="o">=</span> <span class="n">send_request</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">successfully_sent</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Failed to post to Google Form&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Finally, let's make it post values every 5 minutes through <code>crontab -e</code>: <code>*/5 * * * * /home/pi/temperature/.env/bin/python /home/pi/temperature/weatherstation.py</code></p>
+</li>
+</ol>
+<p>That's it!!!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 13 December 2020</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

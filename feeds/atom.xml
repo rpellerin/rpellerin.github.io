@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2020-11-09T23:48:00+01:00</updated><entry><title>Le Bon Sens</title><link href="//romainpellerin.eu/le-bon-sens.html" rel="alternate"></link><published>2020-09-21T13:00:00+02:00</published><updated>2020-09-21T13:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-09-21:/le-bon-sens.html</id><summary type="html">&lt;p&gt;Ce que je pense du bon sens&lt;/p&gt;</summary><content type="html">&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ja4dG0KUuRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2020-12-13T23:50:00+01:00</updated><entry><title>Building A Cheap Weather Station</title><link href="//romainpellerin.eu/building-a-cheap-weather-station.html" rel="alternate"></link><published>2020-12-13T23:50:00+01:00</published><updated>2020-12-13T23:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-12-13:/building-a-cheap-weather-station.html</id><summary type="html">&lt;p&gt;How to build a cheap weather station with a Raspberry Pi and the BME280 module&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
+&lt;p&gt;In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.&lt;/p&gt;
+&lt;p&gt;Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/weather-station.png" alt="My weather station webpage" /&gt;
+&lt;figcaption&gt;My weather station webpage&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For this tutorial you'll need:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Raspberry Pi&lt;/li&gt;
+&lt;li&gt;A BME280 module and 4 cables&lt;/li&gt;
+&lt;li&gt;A Google Form that you link to a spreadsheet. It's so much easier than using the Google Spreadsheet API. Your Raspberry PI will POST a form with the values and they'll automatically end up in the sheet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" /&gt;
+&lt;figcaption&gt;The BME280 module plugged to the Raspberry Pi.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1&gt;Step by step tutorial&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;This tutorial was greatly inspired by &lt;a href="https://github.com/rm-hull/bme280"&gt;that tutorial&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry Pi turned off, plug the module like shown in the photo above.&lt;/li&gt;
+&lt;li&gt;Enable I2C. Run &lt;code&gt;sudo raspi-config&lt;/code&gt;, choose &lt;code&gt;Interfacing options&lt;/code&gt;. Then reboot. Run &lt;code&gt;lsmod | grep i2c&lt;/code&gt; to confirm &lt;code&gt;i2c&lt;/code&gt; has been enabled.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;sudo apt install python3-pip i2c-tools &amp;amp;&amp;amp; i2cdetect -y 1&lt;/code&gt; to make sure the BME280 module is detected.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mkdir /home/pi/temperature &amp;amp;&amp;amp; cd /home/pi/temperature&lt;/code&gt; (or any other directory of your liking).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip3 install virtualenv&lt;/code&gt; (no &lt;code&gt;sudo&lt;/code&gt;!)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/home/pi/.local/bin/virtualenv -p /usr/bin/python3 .env &amp;amp;&amp;amp; source .env/bin/activate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pip install smbus2 requests RPi.bme280&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &amp;lt;form&amp;gt; whose URL ends with &lt;code&gt;/formResponse&lt;/code&gt;. Copy the URL and the hidden input names, you'll need them in the next bullet point.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;vim weatherstation.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;smbus2&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;bme280&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+
+&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://docs.google.com/forms/TOKEN/formResponse&amp;quot;&lt;/span&gt;
+
+&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="n"&gt;address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mh"&gt;0x76&lt;/span&gt;
+&lt;span class="n"&gt;bus&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;smbus2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SMBus&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;calibration_params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bme280&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_calibration_params&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bus&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;send_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;entry.12&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timezone&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hours&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%Y/%m/&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s1"&gt; %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;entry.34&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;temperature&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;entry.56&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;humidity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;entry.78&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pressure&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="p"&gt;},&lt;/span&gt;
+            &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="s2"&gt;&amp;quot;Content-Type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;application/octet-stream&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exceptions&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RequestException&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;false&lt;/span&gt;
+
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bme280&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bus&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;calibration_params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;successfully_sent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;send_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;successfully_sent&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Failed to post to Google Form&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finally, let's make it post values every 5 minutes through &lt;code&gt;crontab -e&lt;/code&gt;: &lt;code&gt;*/5 * * * * /home/pi/temperature/.env/bin/python /home/pi/temperature/weatherstation.py&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That's it!!!&lt;/p&gt;</content><category term="raspberry pi"></category><category term="weather"></category></entry><entry><title>Le Bon Sens</title><link href="//romainpellerin.eu/le-bon-sens.html" rel="alternate"></link><published>2020-09-21T13:00:00+02:00</published><updated>2020-09-21T13:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-09-21:/le-bon-sens.html</id><summary type="html">&lt;p&gt;Ce que je pense du bon sens&lt;/p&gt;</summary><content type="html">&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ja4dG0KUuRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;em&gt;Les populistes et le retour du « bon sens » - C à Vous - 20/05/2020&lt;/em&gt;&lt;/p&gt;
 &lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/bon-sens.png" alt="Comics" /&gt;&lt;figcaption&gt;Mon avis sur le bon sens.&lt;/figcaption&gt;&lt;/figure&gt;
