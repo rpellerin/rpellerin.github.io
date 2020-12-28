@@ -1,6 +1,6 @@
 Title: Raspberry Pi: The Ultimate Guide
 Date: 2016-07-10 05:11
-Modified: 2018-12-15 16:00
+Modified: 2021-01-01 19:00
 Category: Linux
 Tags: raspberry pi, linux, talk
 Slug: raspberry-pi-the-ultimate-guide
@@ -32,7 +32,7 @@ To sum up, few requirements, but big advantages. Let's get started!
 
 ## The OS
 
-1. Download Raspbian Lite from [the official website](https://www.raspberrypi.org/downloads/raspbian/). It might be a good idea to verify the hash (SHA1).
+1. Download Raspbian Lite from [the official website](https://www.raspberrypi.org/downloads/raspbian/). It might be a good idea to verify the hash (SHA1). **Consider downloading the 64-bit version of the OS.**. It adds supports for files larger than 4GB and also it fixes the issue with Nextcloud when the trashbin exceeds 4GB in size and can't be accessed anymore.
 2. Extract the file .img from the zip.
 3. Run one of the following commands:
     
@@ -48,10 +48,10 @@ To sum up, few requirements, but big advantages. Let's get started!
 
         :::bash
         umount /dev/mmcblk0p1
-        sudo dd bs=4M if=2014-09-09-wheezy-raspbian.img of=/dev/mmcblk0 status=progress conv=fsync
+        sudo dd bs=1M if=2014-09-09-wheezy-raspbian.img of=/dev/mmcblk0 status=progress conv=fsync
         sudo sync && sync
 
-    `bs=1M` can be used in case of error, it's slower but safer. There won't be any feedback during `dd` so wait till it finishes (might be long).
+    `bs=4M` can be used but it's more error prone, yet it's safer. There won't be any feedback during `dd` so wait till it finishes (might be long).
 
 7. You're done. For more information, see the [official website](http://www.raspberrypi.org/documentation/installation/installing-images/linux.md). Now [enable SSH](https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/) by creating an empty file named `ssh` in `/boot`. Then, unmount the SD card and eject it. 
 
@@ -84,7 +84,7 @@ To sum up, few requirements, but big advantages. Let's get started!
             psk="Your_wifi_password"
         }
        
-    Otherwise, disable Wifi (and Bluetooth) as it draws power. Create `/etc/modprobe.d/disable_rpi3_wifi_bt.conf` and add the following:
+    Otherwise, disable Wifi (and Bluetooth) as it draws power. One solution (preferred) is to list all blockable devices (`rfkill list all`) and then block bluetooth (`sudo rfkill block 1` (`0` is usually for Wi-Fi)). The other solution is to create `/etc/modprobe.d/disable_rpi3_wifi_bt.conf` and add the following:
     
         :::text
         ##wifi
@@ -109,6 +109,7 @@ To sum up, few requirements, but big advantages. Let's get started!
         :::bash
         sudo apt update
         sudo apt upgrade
+        sudo apt install vim
         # sudo apt install rpi-update # if this packet is missing
         # sudo reboot
         # sudo rpi-update # gets the latest firmware, normal users should not have to do it
@@ -126,6 +127,7 @@ To sum up, few requirements, but big advantages. Let's get started!
         usermod -a -G video pipi # Otherwise omxplayer won't work with this user
         echo 'export HISTSIZE=100000' >> /root/.bashrc
         echo 'export HISTFILESIZE=100000' >> /root/.bashrc
+        echo 'export EDITOR=vim' >> /root/.bashrc
         exit
         # Stay connected as 'pi' for now
 
@@ -134,7 +136,7 @@ To sum up, few requirements, but big advantages. Let's get started!
         :::bash
         sudo raspi-config
 
-    You should not expand the filesystem, neither change the user password cause we'll delete the *pi* user anyway. However, you should change the boot options (select choice B2) and the internationalisation options to English (UTF-8) (same for the environment locale, do not use C.UTF-8). If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the *pi* user.
+    You should not expand the filesystem, neither change the user password cause we'll delete the *pi* user anyway. However, you should change the system options (wait for network at boot). You might change the internationalisation options to English (UTF-8), but it's the same as running `dpkg-reconfigure locales`. If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the *pi* user.
 
 5. You should probably remove the ability to run "root" commands without typing pi’s password.
 
@@ -184,6 +186,7 @@ Do the following sequence of keystrokes:
     1
     <Enter> # Hit enter key
     +100G # 100GB, or something else
+    # This partition should be of type Linux (83)
     n # Create a second partition, swap
     p
     2
@@ -197,14 +200,15 @@ Do the following sequence of keystrokes:
     3
     <Enter>
     <Enter>
-    p # Make sure everything is OK
+    p # Make sure everything is OK and press w
+    w
 
 Then:
 
     :::bash
     mkfs.ext4 /dev/sda1 -L ROOT -m 5
     mkswap /dev/sda2
-    mkfs.ext4 /dev/sda3 -L DATA -m 5
+    mkfs.ext4 /dev/sda3 -L DATA -m 5 # I think this step is not necessary but did not check...
     apt install cryptsetup
     cryptsetup --verify-passphrase -c aes-xts-plain64 -s 512 -h sha256 luksFormat /dev/sda3
     cryptsetup -v luksOpen /dev/sda3 hddcrypt
@@ -215,7 +219,7 @@ Then:
     cat /boot/cmdline.txt # See if you can find root=/dev/mmcblk0p2. If yes then...
     sed -e "s|root=/dev/mmcblk0p2|root=/dev/sda1|" -i /boot/cmdline.txt
     # Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`
-    # Add 'bootwait' at the end of the line, in the same file
+    # Add 'bootwait' at the end of the line, in the same file, separated from the rest by a space char
     # The 'rootwait' option forces the kernel to wait until the root device becomes ready
 
 Edit `/etc/fstab` that way:
@@ -233,17 +237,18 @@ Then:
     mkdir /tmp/roothdd && mount /dev/sda1 /tmp/roothdd
     rsync -a /tmp/rootsd/ /tmp/roothdd/
     sync
-    e2fsck -f /dev/sda1 # You might need to umount it first
+    e2fsck -f /dev/sda1 # You might need to umount it first (umount /tmp/roothdd)
     reboot
+    su
     update-rc.d -f dphys-swapfile remove
     apt remove dphys-swapfile
     cat /proc/swaps
     swapoff /var/swap # Might fail if it was not listed in the previous command
-    sudo rm -f /var/swap
+    rm -f /var/swap
     reboot
     su
     /sbin/swapon -s # Make sure only your swap partition is in use
-    dd if=/dev/urandom of=/dev/mmcblk0p2 bs=10M # Delete unused old root partition
+    dd if=/dev/urandom of=/dev/mmcblk0p2 bs=10M # Overwrite data of unused old root partition
     fdisk /dev/mmcblk0 # Delete second partition
 
 ## Moving `/root` onto an external hard disk drive, encrypted
@@ -432,62 +437,15 @@ Swapping is bad for your SD card lifespan. You should disable it permanently. Yo
 
 # DynHost
 
-1. `apt install lynx dnsutils` (as root) - `dnsutils` provides `dig`
-2. Download [https://github.com/rpellerin/dotfiles](https://github.com/rpellerin/dotfiles).
-3. Copy in your user's home folder the directory *scripts/DynHost*.
-4. Edit the lines `HOST`, `LOGIN`, `PASSWORD` and `PATH_APP` in the file *dynhost*.
-5. Add a cronjob (`crontab -e`), on your Pi, with the same user (not root!):
+1. Run `apt install lynx dnsutils git` as root.  `dnsutils` provides `dig`.
+2. As a normal user, run `git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost`
+3. Edit the lines `HOST`, `LOGIN`, `PASSWORD` and `PATH_APP` in the file *dynhost*.
+4. Add a cronjob (`crontab -e`), on your Pi, with the same user (not root!):
 
         :::bash
-        */1 * * * * /home/pi/DynHost/dynhost
+        */5 * * * * /home/pi/dynhost/dynhost
 
     All good!
-
-# Send email automatically on startup with a Python script (DEPRECATED: not recommended, instead use `sendmail`)
-
-1. Download [https://github.com/rpellerin/python-mailer](https://github.com/rpellerin/python-mailer). The instructions given right below are the same as those you'll find at this URL.
-2. Install Python 3 (see instructions in [https://github.com/rpellerin/dotfiles/blob/master/README.md](https://github.com/rpellerin/dotfiles/blob/master/README.md) for the latest version or simply do `apt install python3` as root).
-3. Do, as a normal user (not root!):
-
-        :::bash
-        mv /path-to-python-mailer/scripts/script-pc-turned-on.py /path-to-python-mailer/script-pc-turned-on.py
-        echo '#!/bin/sh' > $HOME/sendEmailOnStartup.sh
-        echo "python3 /path-to-python-mailer/script-pc-turned-on.py" >> $HOME/sendEmailOnStartup.sh
-
-3. Edit, in *script-pc-turned-on.py*, the path to the file containing recipients.
-4. Create that file and add email addresses in the following format:
-
-        :::text
-        John Doe,john@doe.com
-
-5. Edit the file *config.py*.
-6. Do:
-
-        :::bash
-        chmod +x $HOME/sendEmailOnStartup.sh
-
-7. Try to execute that file, as a normal user (not root!), to make sure everything is all right:
-
-        :::bash
-        ./sendEmailOnStartup.sh
-
-8. If OK, add the following in */etc/rc.local*, right above `exit 0`:
-
-        :::text
-        su - pi -c /home/pi/sendEmailOnStartup.sh &
-        sleep 5
-        exit 0
-
-    Don't forget to change the path if need be. You user might not be *pi*. Reboot to make sure it worked.
-
-# Send email automatically on startup with `sendmail`
-
-Add the following in `crontab -e` as root:
-
-    :::bash
-    @reboot /bin/sleep 30; /usr/sbin/exim -qff; echo "So you know... ($(date))" | mail -s "Rpi turned on" me@domain
-
-Now, read the section right below.
 
 # Configure a local SMTP email server
 
@@ -547,9 +505,8 @@ If your SMTP server uses port 465 with SSL, you'll need to edit */etc/exim4/exim
 Now add these lines in */etc/aliases* (changes the lines according to your needs):
 
     :::text
-    root: user1
-    user1: address1@domain
-    user2: address2@domain
+    root: <your email address>
+    pipi: root
 
 Any email intended for user1 will be sent to the corresponding email address. **Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.**  
 You can also edit */etc/email-addresses*: this file contains addresses used for *from*, *reply-to* and *sender addresses* fields.
@@ -567,37 +524,83 @@ Then:
 
 [More information](http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux).
 
+# Send email automatically on startup with `sendmail`
+
+Add the following in `crontab -e` as root:
+
+    :::bash
+    @reboot /bin/sleep 30; /usr/sbin/exim -qff; echo "So you know... ($(date))" | mail -s "Rpi turned on" root
+
+Now, read the section right below.
+
 # Send emails automatically on shell login
 
 Edit your user and root's `.bashrc` and add at the end of the file:
 
     :::bash
-    echo "So you know... ($(date))" | mail -s "Root shell login" me@domain
+    echo "So you know... ($(date))" | mail -s "Root shell login" root
 
-# Installing Nextcloud 15.0.0
+# Installing Nextcloud
 
-Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html).
+Official tutorial: [https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html).
+
+<details>
+    <summary>Click here to know how to support HTTP2</summary>
+[Note that Apache prefork (which is used by `libapache2-mod-php`) is not compatible with HTTP2](https://http2.pro/doc/Apache). We have to [use fpm](https://blog.feutl.com/nextcloud-http2/). Here are some instructions on how to support HTTP2:
+
+1. Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
+1. After setting up the database, do:
+
+        :::bash
+        su
+        # If necessary, run the following
+        # systemctl stop apache2
+        # a2dismod php7.3
+        # apt purge libapache2-mod-php
+        a2dismod mpm_prefork
+        a2enmod mpm_event proxy_fcgi setenvif
+        a2enmod http2
+        a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
+
+1. Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+
+        :::text
+        <VirtualHost *:443>
+            ...
+            <FilesMatch \.php$>
+                SetHandler "proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost/"
+            </FilesMatch>
+            ...
+            ProtocolsHonorOrder On
+            Protocols h2 h2c http/1.1
+            ...
+
+1. [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
+1. Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
+1. `systemctl reload php7.3-fpm && systemctl restart apache2`
+1. Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
+1. See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
+
+</details>
 
     :::bash
     su
-    apt install apache2
-    apt install mariadb-server
-    apt install libapache2-mod-php7.0 php7.0
-    apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
-    apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+    apt install apache2 mariadb-server libapache2-mod-php
+    apt install php-gd php-json php-mysql php-curl php-mbstring
+    apt install php-intl php-imagick php-xml php-zip php-bz2
     systemctl restart apache2
 
     cd /var/www
     mkdir nextcloud
-    wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
-    sha256sum -c <(wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -) < nextcloud-15.0.0.zip
-    unzip nextcloud-15.0.0.zip
+    wget https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip
+    sha256sum -c <(wget -q https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip.sha256 -O -) < nextcloud-20.0.4.zip
+    unzip nextcloud-20.0.4.zip
     chown -R www-data:www-data /var/www/nextcloud/
 
     mysql -u root -p # No password is required, just hit enter
     CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY 'Password';
     create database nextcloud;
-    GRANT ALL ON nextcloud.* TO 'nextclouduser'@'localhost';
+    GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextclouduser'@'localhost';
     flush privileges;
     exit;
 
@@ -620,35 +623,33 @@ Official tutorial: [https://docs.nextcloud.com/server/15/admin_manual/installati
 Now edit `/etc/apache2/sites-enabled/000-default.conf`. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):
 
     :::text
-    Alias /nextcloud "/var/www/nextcloud/"
+    Alias / "/var/www/nextcloud/"
     <Directory "/var/www/nextcloud">
-    Options +FollowSymLinks
-    AllowOverride All
+        Options +FollowSymLinks
+        AllowOverride All
 
-    <IfModule mod_dav.c>
+        <IfModule mod_dav.c>
             Dav off
-    </IfModule>
+        </IfModule>
 
-    SetEnv HOME /var/www/nextcloud
-    SetEnv HTTP_HOME /var/www/nextcloud
+        SetEnv HOME /var/www/nextcloud
+        SetEnv HTTP_HOME /var/www/nextcloud
     </Directory>
 
     <Directory "/mnt/data_partition/">
-    # just in case if .htaccess gets disabled
+        # just in case if .htaccess gets disabled
         Require all denied
     </Directory>
     
     <VirtualHost *:80>
-            ServerName cloud.romainpellerin.eu
-            ServerAdmin romain@romainpellerin.eu
-            DocumentRoot /var/www/nextcloud
-            
-            RewriteEngine on
-            RewriteCond %{HTTPS} off
-            RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
+        ServerName <YOUR DOMAIN>
+        ServerAdmin <YOUR EMAIL ADDRESS>
+        DocumentRoot /var/www/nextcloud
+        
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
     
-            ErrorLog ${APACHE_LOG_DIR}/error.log
-            CustomLog ${APACHE_LOG_DIR}/access.log combined
+        Redirect permanent / https://<YOUR DOMAIN>/
     </VirtualHost>
 
 Bring the changes between `<VirtualHost>` tags to */etc/apache2/sites-enables/default-ssl.conf*, except for the instruction `Redirect`. Additionally, add instructions taken from [Mozilla SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.25&openssl=1.1.0j&hsts=yes&profile=modern):
@@ -656,10 +657,10 @@ Bring the changes between `<VirtualHost>` tags to */etc/apache2/sites-enables/de
     :::text
     <VirtualHost *:443>
         ...
-        SSLEngine on
+        # SSLEngine on # We'll uncomment this later
 
-        # HSTS (mod_headers is required) (15768000 seconds = 6 months)
-        Header always set Strict-Transport-Security "max-age=15768000"
+        # HSTS (mod_headers is required) (15552000 seconds = 6 months)
+        Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
         ...
     </VirtualHost>
 
@@ -676,18 +677,6 @@ Bring the changes between `<VirtualHost>` tags to */etc/apache2/sites-enables/de
     SSLStaplingReturnResponderErrors off
     SSLStaplingCache        shmcb:/var/run/ocsp(128000)
 
-To enable HTTP2, do `a2enmod http2` and edit `default-ssl.conf` again:
-    
-    :::text
-    <VirtualHost *:443>
-        ...
-        ProtocolsHonorOrder On
-        Protocols h2 h2c http/1.1
-        H2Direct on
-        ...
-
-[Note that Apache prefork is not compatible with HTTP2](https://http2.pro/doc/Apache). You'll have to [use fpm](https://blog.feutl.com/nextcloud-http2/). See [Nextcloud's instructions also](https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
-
 Let us now improve a bit Apache's security. Edit */etc/apache2/conf-enabled/security.conf* like this:
 
     :::text
@@ -695,36 +684,36 @@ Let us now improve a bit Apache's security. Edit */etc/apache2/conf-enabled/secu
     Header set X-Frame-Options: "sameorigin" # Require mod_headers
     ServerTokens Prod
     
-Now, visit http://raspberry-pi-IP/nextcloud once. This will create `/var/www/nextcloud/config/config.php`. Edit this file like this:
+
+Now get a browser-trusted certificate from [Let's Encrypt](https://letsencrypt.org/). Here is a summary of [the official instructions](https://certbot.eff.org/lets-encrypt/debianbuster-apache):
+
+    :::bash
+    su
+    apt update
+    apt install snapd
+    exit
+    su # To reload paths
+    snap install core
+    snap refresh core
+    snap install --classic certbot
+    ln -s /snap/bin/certbot /usr/bin/certbot
+
+    # Set up NAT/PAT rules in your router so that ports 80 and 443 are reachable from the Internet. Then:
+    certbot --apache
+    # Now uncomment SSLEngine on in default-ssl.conf
+    certbot renew --dry-run # Try renewal
+    # It should be programmed to regularily renew the certificate automatically.
+    # Check with `systemctl list-timers`.
+
+And restart `systemctl restart apache2`.
+
+Now, visit http://raspberry-pi-IP/ once. This will create `/var/www/nextcloud/config/config.php`. Edit this file like this:
 
     :::bash
     'overwrite.cli.url' => 'https://example.org/',
     'htaccess.RewriteBase' => '/',
 
-Now edit `/etc/apache2/sites-enable/000-default.conf` like this:
-
-    :::bash
-    Alias / "/var/www/nextcloud/"
-
-And restart `systemctl restart apache2`. You should now be able to visit http://raspberry-pi-IP/.
-
-Now get a browser-trusted certificate from [Let's Encrypt](https://letsencrypt.org/):
-
-    :::bash
-    su
-    apt install dirmngr
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
-    echo "deb http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list.d/backports.list
-    apt update
-    apt install python-certbot-apache -t stretch-backports
-    # Make sure your website is accessible from the Internet.
-    # Set up NAT/PAT rules in your router. Then:
-    certbot --apache
-    certbot renew --dry-run # Try renewal
-    # If successful, create a cronjob to be run twice a day
-    32 4/12 * * * certbot renew --quiet
-
+And run `cd /var/www/nextcloud && sudo -u www-data php occ maintenance:update:htaccess`.
 
 Ultimately, verify everything is all right using [SSL LABS's SSL server test](https://www.ssllabs.com/ssltest/).
 
@@ -733,56 +722,51 @@ You may now restart Apache2.
 Then:
 
     :::bash
+    cryptsetup -v luksOpen /dev/sda3 hddcrypt
+    mount /dev/mapper/hddcrypt /mnt/data_partition/
     mkdir /mnt/data_partition/nextcloud_data
     chown -R www-data:www-data /mnt/data_partition/nextcloud_data/
     chmod 750 /mnt/data_partition/nextcloud_data
 
-Now you can start setting up Nextcloud at https://raspberry-pi-IP/.
+Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be `/mnt/data_partition/nextcloud_data`. Once set up, go visit `/settings/admin/overview` for tips on how to improve your setup.
 
 ## Improve PHP's performance
 
     :::bash
     su
-    sed "s/;opcache.enable=0/opcache.enable=1/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/memory_limit = 128M/memory_limit = 512M/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/upload_max_filesize = 2M/upload_max_filesize = 16G/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/post_max_size = 8M/post_max_size = 16G/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/output_buffering = 4096/output_buffering = 0/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/max_input_time = 60/max_input_time = 3600/" \
-        -i /etc/php/7.0/apache2/php.ini
-    sed "s/max_execution_time = 30/max_execution_time = 3600/" \
-        -i /etc/php/7.0/apache2/php.ini
 
+    export CONF=/etc/php/7.3/apache2/php.ini
+    # Or /etc/php/7.3/fpm/php.ini if running HTTP2
+
+    sed "s/;opcache.enable=1/opcache.enable=1/" -i $CONF
+    sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" -i $CONF
+    sed "s/;opcache.memory_consumption=128/opcache.memory_consumption=128/" -i $CONF
+    sed "s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=8/" -i $CONF
+    sed "s/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=10000/" -i $CONF
+    sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" -i $CONF
+    sed "s/memory_limit = 128M/memory_limit = 512M/" -i $CONF
+    sed "s/upload_max_filesize = 2M/upload_max_filesize = 16G/" -i $CONF
+    sed "s/post_max_size = 8M/post_max_size = 16G/" -i $CONF
+    sed "s/output_buffering = 4096/output_buffering = 0/" -i $CONF
+    sed "s/max_input_time = 60/max_input_time = 3600/" -i $CONF
+    sed "s/max_execution_time = 30/max_execution_time = 3600/" -i $CONF
+
+    export CONF_CLI=/etc/php/7.3/cli/php.ini
     # /etc/php/7.0/cli/php.ini is used by Nextcloud's CRON jobs
-    sed "s/;opcache.enable=0/opcache.enable=1/" \
-        -i /etc/php/7.0/cli/php.ini
-    sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" \
-        -i /etc/php/7.0/cli/php.ini
-    sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" \
-        -i /etc/php/7.0/cli/php.ini
-    sed "s/output_buffering = 4096/output_buffering = 0/" \
-        -i /etc/php/7.0/cli/php.ini
-    sed "s/max_input_time = 60/max_input_time = 3600/" \
-        -i /etc/php/7.0/cli/php.ini
-    sed "s/max_execution_time = 30/max_execution_time = 3600/" \
-        -i /etc/php/7.0/cli/php.ini
+
+    sed "s/;opcache.enable=1/opcache.enable=1/" -i $CONF_CLI
+    sed "s/;opcache.enable_cli=0/opcache.enable_cli=1/" -i $CONF_CLI
+    sed "s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/" -i $CONF_CLI
+    sed "s/output_buffering = 4096/output_buffering = 0/" -i $CONF_CLI
+    sed "s/max_input_time = 60/max_input_time = 3600/" -i $CONF_CLI
+    sed "s/max_execution_time = 30/max_execution_time = 3600/" -i $CONF_CLI
 
 To significantly improve performance overall, you'll also need data caching: **APCu**.
 
     :::bash
     su
-    apt install php7.0-apcu
+    apt install php-apcu
     phpenmod apcu
-    #echo "apc.enabled=1" >> /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it's useless, check Nextcloud error logs in the admin page to make sure it's working
     service apache2 restart
 
 Now, add the following in */var/www/nextcloud/config/config.php*:
@@ -790,7 +774,7 @@ Now, add the following in */var/www/nextcloud/config/config.php*:
     :::text
     'memcache.local' => '\OC\Memcache\APCu',
 
-Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Disabled*. That's normal as we didn't enable opcaching for CLI, (*/etc/php/7.0/cli/php.ini*), only for Apache2. However, if you create a webpage containing `<?php phpinfo();`, when accessing this page you'll see that's it's *Up and Running*. Make sure as well that APCu is enabled.
+Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Caching => Up and Runnning*. If you temporarily replace the content of `status.php`  with `<?php phpinfo(); ?>`, when accessing `/status.php` you should see the same results. Make sure as well that APCu is enabled in the webpage.
 
 ## Improve Nextcloud's settings
 
@@ -798,42 +782,63 @@ Add the following in */var/www/nextcloud/config/config/php*:
 
     :::text
     'logtimezone' => 'Europe/Paris',
+    'logfile' => '/var/log/nextcloud.log',
 
-In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Encryption* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
-
-Also, do:
+Now:
 
     :::bash
     su
-    cd /var/www/nextcould
-    sudo -u www-data php occ maintenance:update:htaccess
+    touch /var/log/nextcloud.log
+    chown www-data:www-data /var/log/nextcloud.log
 
-It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.
-
-In the admin page (`URL/settings/admin`), increase the maximum upload size to 1.9 GB (it's a limitatiom from 32-bit PHP - Rasbian is a 32 bit OS).
-
-In `URL/settings/admin/overview` you might get some warnings about PHP not being properly configured. Edit `/etc/php/7.0/apache2/php.ini` as it asks.
+In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Default encryption module* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
 
 Install and enable the app "Two Factor TOTP Provider" in `URL/settings/apps`. Then, go to `URL/settings/user/security` and enable TOTP.
 
-# OpenVPN 2.4.0
+In `URL/settings/admin`, change the jobs mechanism to cron (read the documentation by clicking on the i icon).
+
+    :::bash
+    */5  *  *  *  * [ -L /dev/mapper/hddcrypt ] && php -f /var/www/nextcloud/cron.php
+
+# Firewall
+
+    :::bash
+    su
+    wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
+    wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.service
+    chmod 700 firewall.sh
+    chmod 700 firewall.service
+    chown root:root firewall.sh
+    chown root:root firewall.service
+    # Edit the content of firewall.service so that the path to firewall.sh is correct
+    mv firewall.service /etc/systemd/system/
+    systemctl enable firewall
+
+Edit `firewall.sh` that way:
+
+    :::bash
+    TCP_SERVICES="80 443" # SSH is handled separately elsewhere // http, https
+    UDP_SERVICES="68 1194" # DHCP, OpenVPN
+
+    REMOTE_TCP_SERVICES="21 22 43 80 443 465 993" # ftp, ssh, whois, http, https, smtp (ssl), imap
+    REMOTE_UDP_SERVICES="53 67 123" # DNS ("whois" command for example), DHCP, ntp (time update)
+
+    # NETWORK_MGMT=192.168.1.0/24
+
+# OpenVPN 2.4.7
 
     :::bash
     su
     apt update && apt install openvpn
 
-Read the [official documentation](https://openvpn.net/community-resources/how-to/) ([here, short tutorial for easy-rsa3](https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto)). Download [easy-rsa](https://github.com/OpenVPN/easy-rsa) and checkout latest release.
+Read the [official documentation](https://openvpn.net/community-resources/how-to/) ([here, short tutorial for easy-rsa3](https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto)).
 
     :::bash
-    su
-    cd /etc/openvpn/
-    git clone https://github.com/OpenVPN/easy-rsa.git
-    cd easy-rsa
-    git checkout v3.0.5
-    cd easyrsa3
+    cp -R /usr/share/easy-rsa/ /etc/openvpn
+    cd /etc/openvpn/easy-rsa
     cp vars.example vars
     echo "set_var EASYRSA_KEY_SIZE       2048" >> vars # No need to source this file
-    # Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL
+    # Edit also EASYRSA_REQ_COUNTRY, PROVINCE, CITY, ORG, and EMAIL
 
 From now on, I highly recommend you read */etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md* and [https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md) in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).
 
@@ -841,8 +846,8 @@ Then:
 
     :::bash
     ./easyrsa init-pki
-    ./easyrsa build-ca # Add a strong password which will be used to sign other certificates
-    ./easyrsa gen-req server nopass # Do not add a password for the server; use 'server' as CN
+    ./easyrsa build-ca # Add a strong password which will be used to sign other certificates. Leave unchanged the default Common Name.
+    ./easyrsa gen-req server nopass # Do not add a password for the server; use 'server' as the Common Name (CN)
     ./easyrsa sign-req server server
     ./easyrsa gen-req client # Use 'client' as CN; add a passphrase that you will need later when you try to connect to your VPN server
     ./easyrsa sign-req client client
@@ -864,18 +869,18 @@ You should edit *server.conf* like this:
     port 1194
     proto udp
     dev tun
-    ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
-    cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
-    key /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
-    dh /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
+    ca /etc/openvpn/easy-rsa/pki/ca.crt
+    cert /etc/openvpn/easy-rsa/pki/issued/server.crt
+    key /etc/openvpn/easy-rsa/pki/private/server.key
+    dh /etc/openvpn/easy-rsa/pki/dh.pem
     push "route 192.168.1.0 255.255.255.0"
     push "redirect-gateway def1 bypass-dhcp"
     push "dhcp-option DNS 208.67.222.222"
     push "dhcp-option DNS 208.67.220.220"
     tls-auth /etc/openvpn/ta.key 0
     cipher AES-256-CBC
-    max-clients 2
     comp-lzo
+    max-clients 2
     user nobody
     group nogroup
     log-append  openvpn.log
@@ -898,8 +903,6 @@ Then:
     :::bash
     chmod +x /etc/openvpn/notifyconnect.sh
 
-Then add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`. Check OpenVPN logs, there might be a permission issue on `/var/log/exim4`.
-
 Now, edit *client.conf*:
 
     :::text
@@ -912,8 +915,7 @@ Now, edit *client.conf*:
     #cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
     #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
     #tls-auth /etc/openvpn/ta.key 1
-    #ns-cert-type server # OpenVPN 2.0 and below
-    remote-cert-tls server # OpenVPN 2.1 and above
+    remote-cert-tls server
     cipher AES-256-CBC
     comp-lzo
     mute 20
@@ -927,13 +929,13 @@ Ultimately do:
     echo "up /etc/openvpn/update-resolv-conf" >> client.ovpn
     echo "down /etc/openvpn/update-resolv-conf" >> client.ovpn
     echo "<ca>" >> client.ovpn
-    cat /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt >> client.ovpn
+    cat /etc/openvpn/easy-rsa/pki/ca.crt >> client.ovpn
     echo "</ca>" >> client.ovpn
     echo "<cert>" >> client.ovpn
-    cat /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' >> client.ovpn
+    cat /etc/openvpn/easy-rsa/pki/issued/client.crt | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' >> client.ovpn
     echo "</cert>" >> client.ovpn
     echo "<key>" >> client.ovpn
-    cat /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key >> client.ovpn
+    cat /etc/openvpn/easy-rsa/pki/private/client.key >> client.ovpn
     echo "</key>" >> client.ovpn
     echo "<tls-auth>" >> client.ovpn
     cat /etc/openvpn/ta.key >> client.ovpn
@@ -957,7 +959,7 @@ There's a [known bug](http://serverfault.com/questions/355520/after-reboot-debia
     :::text
     sysctl -p /etc/sysctl.conf
 
-Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:
+Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in `firewall.sh` (the lines are there already, uncomment them):
 
     :::bash
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
@@ -971,78 +973,71 @@ Finally, do the following on your server:
     su
     mv client.conf client.conf.old
     shred -u client.ovpn
-    openvpn --config server.conf &
-    tail -f openvpn.log
+    systemctl restart openvpn
+    tail -f /var/log/openvpn/openvpn.log
 
 At next boot, the server will run automatically. We needed to rename the *client.ovpn* because the initscript will scan this directory for *.conf* files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:
 
     :::bash
     shred -u client.conf.old
-    shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
-    shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+    shred -u /etc/openvpn/easy-rsa/pki/private/client.key
+    shred -u /etc/openvpn/easy-rsa/pki/issued/client.crt
 
-Now your client:
+Now on your client:
 
     :::bash
     sudo apt update && sudo apt install resolvconf
     sudo openvpn --config client.ovpn
 
-You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:
+On the server, run `runq` and make sure you received the notification email. If not, check OpenVPN logs, there might be a permission issue on `/var/log/exim4`. To fix it, add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`.
+
+## Optional: use several ports
+
+You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit `firewall.sh`, change the first line and add the second one:
 
     :::bash
+    UDP_SERVICES="68 1194 53" # DCHP, OpenVPN, OpenVPN (other port)
+    # ...
     iptables -t nat -A PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-port 1194
 
-# Hardening security
+# Hardening SSH configuration
 
-    :::bash
-    su
-    wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
-    chmod 700 firewall.sh
-    chown root:root firewall.sh
-    mv firewall.sh /etc/init.d
-    update-rc.d firewall.sh defaults
+Edit */etc/ssh/sshd_config*:
 
-In the firewall, you might want to comment the line `NETWORK_MGMT=` in order to be able to log in using SSH from any LAN, including your VPN.
+    :::text
+    Port <something you like>
+    # If you change the default port, don't forget to update SSH_PORT in firewall.sh
+    #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
+    #HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
+    LoginGraceTime 10s
+    PermitRootLogin no
+    StrictModes yes
+    PubkeyAuthentication yes
+    IgnoreRhosts yes
+    PasswordAuthentication no # Or yes, depending on your needs
+    PermitEmptyPasswords no
+    ChallengeResponseAuthentication no
+    UsePAM no
+    Banner /etc/issue.net # Message displayed at login
+
+    # Custom settings
+    AllowUsers pi # ONLY pi will be allowed to log in
+
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+    MACs hmac-sha2-512,hmac-sha2-256
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+
+The last three lines are taken from [this very helpful website](https://stribika.github.io/2015/01/04/secure-secure-shell.html). You should also read [this one](http://kacper.blog.redpill-linpro.com/archives/702) after having read the first one (the order is important).
 
 [Another helpful website about how to prevent SSH bruteforce attacks](http://mysecureshell.sourceforge.net/fr/securessh.html#question3). However, we'll use fail2ban, see below.
 
 Consider allowing SSH connections using public keys only. On a client do:
 
     :::
-    ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
-    ssh-keygen -t rsa -b 4096 -o -a 100 
+    ssh-keygen -t rsa -b 4096 -o -a 100 # Accept default directory and no passphrase
     ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
 
-## Hardening SSH configuration
-
-Edit */etc/ssh/sshd_config*:
-
-    :::text
-    Port <something you like>
-    #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
-    #HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
-    UsePrivilegeSeparation sandbox
-    LoginGraceTime 10s
-    PermitRootLogin no
-    StrictModes yes
-    PubkeyAuthentication yes
-    IgnoreRhosts yes
-    PermitEmptyPasswords no
-    ChallengeResponseAuthentication no
-    PasswordAuthentication no # Or yes, depending on your needs
-    Banner /etc/issue.net # Message displayed at login
-    UsePAM no
-
-    # Custom settings
-    AllowUsers pi # ONLY pi will be allowed to log in
-
-    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-    MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
-    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
-
-The last three lines are taken from [this very helpful website](https://stribika.github.io/2015/01/04/secure-secure-shell.html). You should also read [this one](http://kacper.blog.redpill-linpro.com/archives/702) after having read the first one (the order is important).
-
-## Sending an email on every SSH connection
+# Sending an email on every SSH connection
 
 Taken from [this thread](http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602). As root, create `/etc/ssh/login-notify.sh`:
 
@@ -1073,14 +1068,14 @@ And add the following line at the end of the file `/etc/pam.d/sshd`:
 
 Now restart sshd by doing `service sshd restart`.
 
-## Fail2Ban
+# Fail2Ban
 
 [Official documentation](http://www.fail2ban.org/wiki/index.php/MANUAL_0_8).
 
     :::bash
     su
     apt install fail2ban
-    fail2ban-client -x start # To force the server to startup. However, a reboot is preferable.
+    systemctl status fail2ban
 
 Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.local* (make a copy of */etc/fail2ban/jail.conf*):
 
@@ -1090,18 +1085,17 @@ Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.l
     bantime = 86400
     findtime = 3600
     maxretry = 3
-    ntime  = 8700
     action = %(action_mwl)s
 
-    # Enable sshd (enabled = true) and sshd-dos, change 'port' and the 'maxretry' value if need be
+    # Enable sshd (enabled = true + mode = aggressive), change 'port' if need be
     # Enable apache, apache-*
     # Add the following new entry
     [http-dos]
     enabled = true
     port = http,https
     filter = http-dos
-    logpath = /var/log/apache*/*access.log
-    maxretry = 360
+    logpath = %(apache_access_log)s
+    maxretry = 200
     findtime = 120
     bantime = 600
 
@@ -1109,7 +1103,7 @@ Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.l
     enabled = true
     port = http,https
     filter = http-dos
-    logpath = /var/log/apache*/*access.log
+    logpath = %(apache_access_log)s
     maxretry = 1
     findtime = 120
     bantime = 6000
@@ -1163,6 +1157,8 @@ Now create */etc/fail2ban/action.d/ban-countries.conf*:
      
     country_list = CN|China
 
+Finally, [set up fail2ban to also protect you from attacks against Nextcloud](https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban). The `logpath` to use is `/var/log/nextcloud.log`.
+
 Now install missing packages, reload the service maually to make sure there is no error:
 
     :::bash
@@ -1170,7 +1166,7 @@ Now install missing packages, reload the service maually to make sure there is n
     apt install geoip-bin geoip-database
     systemctl stop fail2ban
     fail2ban-client -x start
-    cat /var/log/fail2ban.log
+    less /var/log/fail2ban.log
     # Check for errors
     fail2ban-client -x stop
     systemctl start fail2ban
