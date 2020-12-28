@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5688 words.">28 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5719 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -286,6 +286,7 @@ p # Primary
 1
 &lt;Enter&gt; # Hit enter key
 +100G # 100GB, or something else
+# This partition should be of type Linux (83)
 n # Create a second partition, swap
 p
 2
@@ -299,14 +300,15 @@ p
 3
 &lt;Enter&gt;
 &lt;Enter&gt;
-p # Make sure everything is OK
+p # Make sure everything is OK and press w
+w
 </pre></div>
 
 
 <p>Then:</p>
 <div class="highlight"><pre><span></span>mkfs.ext4 /dev/sda1 -L ROOT -m <span class="m">5</span>
 mkswap /dev/sda2
-mkfs.ext4 /dev/sda3 -L DATA -m <span class="m">5</span>
+mkfs.ext4 /dev/sda3 -L DATA -m <span class="m">5</span> <span class="c1"># I think this step is not necessary but did not check...</span>
 apt install cryptsetup
 cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> -h sha256 luksFormat /dev/sda3
 cryptsetup -v luksOpen /dev/sda3 hddcrypt
@@ -317,7 +319,7 @@ mount /dev/mapper/hddcrypt /mnt/data_partition/
 cat /boot/cmdline.txt <span class="c1"># See if you can find root=/dev/mmcblk0p2. If yes then...</span>
 sed -e <span class="s2">&quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&quot;</span> -i /boot/cmdline.txt
 <span class="c1"># Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`</span>
-<span class="c1"># Add &#39;bootwait&#39; at the end of the line, in the same file</span>
+<span class="c1"># Add &#39;bootwait&#39; at the end of the line, in the same file, separated from the rest by a space char</span>
 <span class="c1"># The &#39;rootwait&#39; option forces the kernel to wait until the root device becomes ready</span>
 </pre></div>
 
@@ -335,17 +337,18 @@ sed -e <span class="s2">&quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&quot;</span>
 mkdir /tmp/roothdd <span class="o">&amp;&amp;</span> mount /dev/sda1 /tmp/roothdd
 rsync -a /tmp/rootsd/ /tmp/roothdd/
 sync
-e2fsck -f /dev/sda1 <span class="c1"># You might need to umount it first</span>
+e2fsck -f /dev/sda1 <span class="c1"># You might need to umount it first (umount /tmp/roothdd)</span>
 reboot
+su
 update-rc.d -f dphys-swapfile remove
 apt remove dphys-swapfile
 cat /proc/swaps
 swapoff /var/swap <span class="c1"># Might fail if it was not listed in the previous command</span>
-sudo rm -f /var/swap
+rm -f /var/swap
 reboot
 su
 /sbin/swapon -s <span class="c1"># Make sure only your swap partition is in use</span>
-dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2 <span class="nv">bs</span><span class="o">=</span>10M <span class="c1"># Delete unused old root partition</span>
+dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2 <span class="nv">bs</span><span class="o">=</span>10M <span class="c1"># Overwrite data of unused old root partition</span>
 fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
 </pre></div>
 
@@ -518,13 +521,12 @@ sudo rm /var/swap
 
 <h1>DynHost</h1>
 <ol>
-<li><code>apt install lynx dnsutils</code> (as root) - <code>dnsutils</code> provides <code>dig</code></li>
-<li>Download <a href="https://github.com/rpellerin/dotfiles">https://github.com/rpellerin/dotfiles</a>.</li>
-<li>Copy in your user's home folder the directory <em>scripts/DynHost</em>.</li>
+<li>Run <code>apt install lynx dnsutils git</code> as root.  <code>dnsutils</code> provides <code>dig</code>.</li>
+<li><code>git clone git@github.com:rpellerin/dynhost.git $HOME/dynhost</code></li>
 <li>Edit the lines <code>HOST</code>, <code>LOGIN</code>, <code>PASSWORD</code> and <code>PATH_APP</code> in the file <em>dynhost</em>.</li>
 <li>
 <p>Add a cronjob (<code>crontab -e</code>), on your Pi, with the same user (not root!):</p>
-<div class="highlight"><pre><span></span>*/1 * * * * /home/pi/DynHost/dynhost
+<div class="highlight"><pre><span></span>*/1 * * * * /home/pi/dynhost/dynhost
 </pre></div>
 
 

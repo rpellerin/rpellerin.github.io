@@ -545,6 +545,7 @@ p # Primary
 1
 &amp;lt;Enter&amp;gt; # Hit enter key
 +100G # 100GB, or something else
+# This partition should be of type Linux (83)
 n # Create a second partition, swap
 p
 2
@@ -558,14 +559,15 @@ p
 3
 &amp;lt;Enter&amp;gt;
 &amp;lt;Enter&amp;gt;
-p # Make sure everything is OK
+p # Make sure everything is OK and press w
+w
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkfs.ext4 /dev/sda1 -L ROOT -m &lt;span class="m"&gt;5&lt;/span&gt;
 mkswap /dev/sda2
-mkfs.ext4 /dev/sda3 -L DATA -m &lt;span class="m"&gt;5&lt;/span&gt;
+mkfs.ext4 /dev/sda3 -L DATA -m &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# I think this step is not necessary but did not check...&lt;/span&gt;
 apt install cryptsetup
 cryptsetup --verify-passphrase -c aes-xts-plain64 -s &lt;span class="m"&gt;512&lt;/span&gt; -h sha256 luksFormat /dev/sda3
 cryptsetup -v luksOpen /dev/sda3 hddcrypt
@@ -576,7 +578,7 @@ mount /dev/mapper/hddcrypt /mnt/data_partition/
 cat /boot/cmdline.txt &lt;span class="c1"&gt;# See if you can find root=/dev/mmcblk0p2. If yes then...&lt;/span&gt;
 sed -e &lt;span class="s2"&gt;&amp;quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&amp;quot;&lt;/span&gt; -i /boot/cmdline.txt
 &lt;span class="c1"&gt;# Otherwise, manually replace root=PARTUUID=123 with the right PARTUUID found in `blkid`&lt;/span&gt;
-&lt;span class="c1"&gt;# Add &amp;#39;bootwait&amp;#39; at the end of the line, in the same file&lt;/span&gt;
+&lt;span class="c1"&gt;# Add &amp;#39;bootwait&amp;#39; at the end of the line, in the same file, separated from the rest by a space char&lt;/span&gt;
 &lt;span class="c1"&gt;# The &amp;#39;rootwait&amp;#39; option forces the kernel to wait until the root device becomes ready&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -594,17 +596,18 @@ sed -e &lt;span class="s2"&gt;&amp;quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&am
 mkdir /tmp/roothdd &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; mount /dev/sda1 /tmp/roothdd
 rsync -a /tmp/rootsd/ /tmp/roothdd/
 sync
-e2fsck -f /dev/sda1 &lt;span class="c1"&gt;# You might need to umount it first&lt;/span&gt;
+e2fsck -f /dev/sda1 &lt;span class="c1"&gt;# You might need to umount it first (umount /tmp/roothdd)&lt;/span&gt;
 reboot
+su
 update-rc.d -f dphys-swapfile remove
 apt remove dphys-swapfile
 cat /proc/swaps
 swapoff /var/swap &lt;span class="c1"&gt;# Might fail if it was not listed in the previous command&lt;/span&gt;
-sudo rm -f /var/swap
+rm -f /var/swap
 reboot
 su
 /sbin/swapon -s &lt;span class="c1"&gt;# Make sure only your swap partition is in use&lt;/span&gt;
-dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="c1"&gt;# Delete unused old root partition&lt;/span&gt;
+dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="c1"&gt;# Overwrite data of unused old root partition&lt;/span&gt;
 fdisk /dev/mmcblk0 &lt;span class="c1"&gt;# Delete second partition&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -777,13 +780,12 @@ sudo rm /var/swap
 
 &lt;h1&gt;DynHost&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;apt install lynx dnsutils&lt;/code&gt; (as root) - &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Download &lt;a href="https://github.com/rpellerin/dotfiles"&gt;https://github.com/rpellerin/dotfiles&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Copy in your user's home folder the directory &lt;em&gt;scripts/DynHost&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root.  &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone git@github.com:rpellerin/dynhost.git $HOME/dynhost&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Add a cronjob (&lt;code&gt;crontab -e&lt;/code&gt;), on your Pi, with the same user (not root!):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/1 * * * * /home/pi/DynHost/dynhost
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/1 * * * * /home/pi/dynhost/dynhost
 &lt;/pre&gt;&lt;/div&gt;
 
 
