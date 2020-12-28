@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5719 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5724 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -522,7 +522,7 @@ sudo rm /var/swap
 <h1>DynHost</h1>
 <ol>
 <li>Run <code>apt install lynx dnsutils git</code> as root.  <code>dnsutils</code> provides <code>dig</code>.</li>
-<li><code>git clone git@github.com:rpellerin/dynhost.git $HOME/dynhost</code></li>
+<li>As a normal user, run <code>git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost</code></li>
 <li>Edit the lines <code>HOST</code>, <code>LOGIN</code>, <code>PASSWORD</code> and <code>PATH_APP</code> in the file <em>dynhost</em>.</li>
 <li>
 <p>Add a cronjob (<code>crontab -e</code>), on your Pi, with the same user (not root!):</p>

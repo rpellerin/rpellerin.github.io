@@ -4560,7 +4560,7 @@ sudo rm /var/swap
 &lt;h1&gt;DynHost&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root.  &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;git clone git@github.com:rpellerin/dynhost.git $HOME/dynhost&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;As a normal user, run &lt;code&gt;git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Add a cronjob (&lt;code&gt;crontab -e&lt;/code&gt;), on your Pi, with the same user (not root!):&lt;/p&gt;
