@@ -4680,9 +4680,8 @@ dc_localdelivery=&amp;#39;mail_spool&amp;#39;
 
 &lt;p&gt;&lt;a href="http://www.gossamer-threads.com/lists/exim/users/96817"&gt;More information&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Now add these lines in &lt;em&gt;/etc/aliases&lt;/em&gt; (changes the lines according to your needs):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root: user1
-user1: address1@domain
-user2: address2@domain
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root: &amp;lt;your email address&amp;gt;
+pipi: root
 &lt;/pre&gt;&lt;/div&gt;
 
 
