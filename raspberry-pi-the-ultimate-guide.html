@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5646 words.">28 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5688 words.">28 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -132,12 +132,12 @@ fdisk -l
 <li>
 <p>Unmount <strong>all</strong> the partitions and copy Raspbian on the whole SD card:</p>
 <div class="highlight"><pre><span></span>umount /dev/mmcblk0p1
-sudo dd <span class="nv">bs</span><span class="o">=</span>4M <span class="k">if</span><span class="o">=</span><span class="m">2014</span>-09-09-wheezy-raspbian.img <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
+sudo dd <span class="nv">bs</span><span class="o">=</span>1M <span class="k">if</span><span class="o">=</span><span class="m">2014</span>-09-09-wheezy-raspbian.img <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0 <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 sudo sync <span class="o">&amp;&amp;</span> sync
 </pre></div>
 
 
-<p><code>bs=1M</code> can be used in case of error, it's slower but safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
+<p><code>bs=4M</code> can be used but it's more error prone, yet it's safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
 </li>
 <li>
 <p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it. </p>
@@ -175,7 +175,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 </pre></div>
 
 
-<p>Otherwise, disable Wifi (and Bluetooth) as it draws power. Create <code>/etc/modprobe.d/disable_rpi3_wifi_bt.conf</code> and add the following:</p>
+<p>Otherwise, disable Wifi (and Bluetooth) as it draws power. One solution (preferred) is to list all blockable devices (<code>rfkill list all</code>) and then block bluetooth (<code>sudo rfkill block 1</code> (<code>0</code> is usually for Wi-Fi)). The other solution is to create <code>/etc/modprobe.d/disable_rpi3_wifi_bt.conf</code> and add the following:</p>
 <div class="highlight"><pre><span></span>##wifi
 blacklist brcmfmac
 blacklist brcmutil
@@ -200,6 +200,7 @@ You may finish editing this file by fine-tuning its parameters.</p>
 <p>Update you Pi:</p>
 <div class="highlight"><pre><span></span>sudo apt update
 sudo apt upgrade
+sudo apt install vim
 <span class="c1"># sudo apt install rpi-update # if this packet is missing</span>
 <span class="c1"># sudo reboot</span>
 <span class="c1"># sudo rpi-update # gets the latest firmware, normal users should not have to do it</span>
@@ -219,6 +220,7 @@ adduser pipi
 usermod -a -G video pipi <span class="c1"># Otherwise omxplayer won&#39;t work with this user</span>
 <span class="nb">echo</span> <span class="s1">&#39;export HISTSIZE=100000&#39;</span> &gt;&gt; /root/.bashrc
 <span class="nb">echo</span> <span class="s1">&#39;export HISTFILESIZE=100000&#39;</span> &gt;&gt; /root/.bashrc
+<span class="nb">echo</span> <span class="s1">&#39;export EDITOR=vim&#39;</span> &gt;&gt; /root/.bashrc
 <span class="nb">exit</span>
 <span class="c1"># Stay connected as &#39;pi&#39; for now</span>
 </pre></div>
@@ -231,7 +233,7 @@ usermod -a -G video pipi <span class="c1"># Otherwise omxplayer won&#39;t work 
 </pre></div>
 
 
-<p>You should not expand the filesystem, neither change the user password cause we'll delete the <em>pi</em> user anyway. However, you should change the boot options (select choice B2) and the internationalisation options to English (UTF-8) (same for the environment locale, do not use C.UTF-8). If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the <em>pi</em> user.</p>
+<p>You should not expand the filesystem, neither change the user password cause we'll delete the <em>pi</em> user anyway. However, you should change the system options (wait for network at boot). You might change the internationalisation options to English (UTF-8), but it's the same as running <code>dpkg-reconfigure locales</code>. If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the <em>pi</em> user.</p>
 </li>
 <li>
 <p>You should probably remove the ability to run "root" commands without typing pi’s password.</p>

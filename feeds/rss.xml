@@ -4170,12 +4170,12 @@ fdisk -l
 &lt;li&gt;
 &lt;p&gt;Unmount &lt;strong&gt;all&lt;/strong&gt; the partitions and copy Raspbian on the whole SD card:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;umount /dev/mmcblk0p1
-sudo dd &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4M &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-09-09-wheezy-raspbian.img &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0 &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
+sudo dd &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2014&lt;/span&gt;-09-09-wheezy-raspbian.img &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0 &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
 sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;code&gt;bs=1M&lt;/code&gt; can be used in case of error, it's slower but safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bs=4M&lt;/code&gt; can be used but it's more error prone, yet it's safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it. &lt;/p&gt;
@@ -4213,7 +4213,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Otherwise, disable Wifi (and Bluetooth) as it draws power. Create &lt;code&gt;/etc/modprobe.d/disable_rpi3_wifi_bt.conf&lt;/code&gt; and add the following:&lt;/p&gt;
+&lt;p&gt;Otherwise, disable Wifi (and Bluetooth) as it draws power. One solution (preferred) is to list all blockable devices (&lt;code&gt;rfkill list all&lt;/code&gt;) and then block bluetooth (&lt;code&gt;sudo rfkill block 1&lt;/code&gt; (&lt;code&gt;0&lt;/code&gt; is usually for Wi-Fi)). The other solution is to create &lt;code&gt;/etc/modprobe.d/disable_rpi3_wifi_bt.conf&lt;/code&gt; and add the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;##wifi
 blacklist brcmfmac
 blacklist brcmutil
@@ -4238,6 +4238,7 @@ You may finish editing this file by fine-tuning its parameters.&lt;/p&gt;
 &lt;p&gt;Update you Pi:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt update
 sudo apt upgrade
+sudo apt install vim
 &lt;span class="c1"&gt;# sudo apt install rpi-update # if this packet is missing&lt;/span&gt;
 &lt;span class="c1"&gt;# sudo reboot&lt;/span&gt;
 &lt;span class="c1"&gt;# sudo rpi-update # gets the latest firmware, normal users should not have to do it&lt;/span&gt;
@@ -4257,6 +4258,7 @@ adduser pipi
 usermod -a -G video pipi &lt;span class="c1"&gt;# Otherwise omxplayer won&amp;#39;t work with this user&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export HISTSIZE=100000&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /root/.bashrc
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export HISTFILESIZE=100000&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /root/.bashrc
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;export EDITOR=vim&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /root/.bashrc
 &lt;span class="nb"&gt;exit&lt;/span&gt;
 &lt;span class="c1"&gt;# Stay connected as &amp;#39;pi&amp;#39; for now&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -4269,7 +4271,7 @@ usermod -a -G video pipi &lt;span class="c1"&gt;# Otherwise omxplayer won&amp;#
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You should not expand the filesystem, neither change the user password cause we'll delete the &lt;em&gt;pi&lt;/em&gt; user anyway. However, you should change the boot options (select choice B2) and the internationalisation options to English (UTF-8) (same for the environment locale, do not use C.UTF-8). If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the &lt;em&gt;pi&lt;/em&gt; user.&lt;/p&gt;
+&lt;p&gt;You should not expand the filesystem, neither change the user password cause we'll delete the &lt;em&gt;pi&lt;/em&gt; user anyway. However, you should change the system options (wait for network at boot). You might change the internationalisation options to English (UTF-8), but it's the same as running &lt;code&gt;dpkg-reconfigure locales&lt;/code&gt;. If you want to change the timezone and keyboard layout, plug in a keyboard on the Pi and do it from that keyboard. Change overscan if you see black bars. Change the hostname if you want. Finally, adjust memory split (128MB is sufficient for 1080p videos). Then, reboot. And log in back using the &lt;em&gt;pi&lt;/em&gt; user.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;You should probably remove the ability to run "root" commands without typing pi’s password.&lt;/p&gt;
