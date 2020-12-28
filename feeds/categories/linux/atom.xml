@@ -845,7 +845,7 @@ exit 0
 &lt;/ol&gt;
 &lt;h1&gt;Send email automatically on startup with &lt;code&gt;sendmail&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;Add the following in &lt;code&gt;crontab -e&lt;/code&gt; as root:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@reboot /bin/sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; /usr/sbin/exim -qff&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Rpi turned on&amp;quot;&lt;/span&gt; me@domain
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@reboot /bin/sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; /usr/sbin/exim -qff&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Rpi turned on&amp;quot;&lt;/span&gt; root
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -922,7 +922,7 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
 &lt;p&gt;&lt;a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux"&gt;More information&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Send emails automatically on shell login&lt;/h1&gt;
 &lt;p&gt;Edit your user and root's &lt;code&gt;.bashrc&lt;/code&gt; and add at the end of the file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Root shell login&amp;quot;&lt;/span&gt; me@domain
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Root shell login&amp;quot;&lt;/span&gt; root
 &lt;/pre&gt;&lt;/div&gt;
 
 

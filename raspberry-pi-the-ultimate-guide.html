@@ -586,7 +586,7 @@ exit 0
 </ol>
 <h1>Send email automatically on startup with <code>sendmail</code></h1>
 <p>Add the following in <code>crontab -e</code> as root:</p>
-<div class="highlight"><pre><span></span>@reboot /bin/sleep <span class="m">30</span><span class="p">;</span> /usr/sbin/exim -qff<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Rpi turned on&quot;</span> me@domain
+<div class="highlight"><pre><span></span>@reboot /bin/sleep <span class="m">30</span><span class="p">;</span> /usr/sbin/exim -qff<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Rpi turned on&quot;</span> root
 </pre></div>
 
 
@@ -663,7 +663,7 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
 <p><a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux">More information</a>.</p>
 <h1>Send emails automatically on shell login</h1>
 <p>Edit your user and root's <code>.bashrc</code> and add at the end of the file:</p>
-<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Root shell login&quot;</span> me@domain
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Root shell login&quot;</span> root
 </pre></div>
 
 
