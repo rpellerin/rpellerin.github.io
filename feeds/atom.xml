@@ -4853,7 +4853,9 @@ certbot renew --dry-run &lt;span class="c1"&gt;# Try renewal&lt;/span&gt;
 &lt;p&gt;Ultimately, verify everything is all right using &lt;a href="https://www.ssllabs.com/ssltest/"&gt;SSL LABS's SSL server test&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may now restart Apache2.&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /mnt/data_partition/nextcloud_data
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cryptsetup -v luksOpen /dev/sda3 hddcrypt
+mount /dev/mapper/hddcrypt /mnt/data_partition/
+mkdir /mnt/data_partition/nextcloud_data
 chown -R www-data:www-data /mnt/data_partition/nextcloud_data/
 chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;/pre&gt;&lt;/div&gt;
