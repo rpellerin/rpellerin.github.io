@@ -926,19 +926,17 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Installing Nextcloud 15.0.0&lt;/h1&gt;
-&lt;p&gt;Official tutorial: &lt;a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html"&gt;https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Installing Nextcloud&lt;/h1&gt;
+&lt;p&gt;Official tutorial: &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html"&gt;https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-apt install apache2
-apt install mariadb-server
-apt install libapache2-mod-php7.0 php7.0
-apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
-apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+apt install apache2 mariadb-server libapache2-mod-php
+apt install php-gd php-json php-mysql php-curl php-mbstring
+apt install php-intl php-imagick php-xml php-zip php-bz2
 systemctl restart apache2
 
 &lt;span class="nb"&gt;cd&lt;/span&gt; /var/www
 mkdir nextcloud
-wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+wget https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip
 sha256sum -c &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt; nextcloud-15.0.0.zip
 unzip nextcloud-15.0.0.zip
 chown -R www-data:www-data /var/www/nextcloud/

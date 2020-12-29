@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5724 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5718 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -667,19 +667,17 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
 </pre></div>
 
 
-<h1>Installing Nextcloud 15.0.0</h1>
-<p>Official tutorial: <a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html">https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html</a>.</p>
+<h1>Installing Nextcloud</h1>
+<p>Official tutorial: <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html">https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html</a>.</p>
 <div class="highlight"><pre><span></span>su
-apt install apache2
-apt install mariadb-server
-apt install libapache2-mod-php7.0 php7.0
-apt install php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
-apt install php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+apt install apache2 mariadb-server libapache2-mod-php
+apt install php-gd php-json php-mysql php-curl php-mbstring
+apt install php-intl php-imagick php-xml php-zip php-bz2
 systemctl restart apache2
 
 <span class="nb">cd</span> /var/www
 mkdir nextcloud
-wget https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+wget https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip
 sha256sum -c &lt;<span class="o">(</span>wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -<span class="o">)</span> &lt; nextcloud-15.0.0.zip
 unzip nextcloud-15.0.0.zip
 chown -R www-data:www-data /var/www/nextcloud/
