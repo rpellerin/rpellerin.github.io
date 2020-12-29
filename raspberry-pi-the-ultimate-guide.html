@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5718 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5727 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -679,7 +679,7 @@ systemctl restart apache2
 mkdir nextcloud
 wget https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip
 sha256sum -c &lt;<span class="o">(</span>wget -q https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip.sha256 -O -<span class="o">)</span> &lt; nextcloud-20.0.4.zip
-unzip nextcloud-15.0.0.zip
+unzip nextcloud-20.0.4.zip
 chown -R www-data:www-data /var/www/nextcloud/
 
 mysql -u root -p <span class="c1"># No password is required, just hit enter</span>
@@ -708,35 +708,36 @@ systemctl disable apache2 <span class="c1"># No auto start on boot</span>
 
 
 <p>Now edit <code>/etc/apache2/sites-enabled/000-default.conf</code>. It must contain the following (note that the redirection to https can be automatically added by Let's Encrypt, see farther below):</p>
-<div class="highlight"><pre><span></span>Alias /nextcloud &quot;/var/www/nextcloud/&quot;
+<div class="highlight"><pre><span></span>Alias / &quot;/var/www/nextcloud/&quot;
 &lt;Directory &quot;/var/www/nextcloud&quot;&gt;
-Options +FollowSymLinks
-AllowOverride All
+    Options +FollowSymLinks
+    AllowOverride All
 
-&lt;IfModule mod_dav.c&gt;
+    &lt;IfModule mod_dav.c&gt;
         Dav off
-&lt;/IfModule&gt;
+    &lt;/IfModule&gt;
 
-SetEnv HOME /var/www/nextcloud
-SetEnv HTTP_HOME /var/www/nextcloud
+    SetEnv HOME /var/www/nextcloud
+    SetEnv HTTP_HOME /var/www/nextcloud
 &lt;/Directory&gt;
 
 &lt;Directory &quot;/mnt/data_partition/&quot;&gt;
-# just in case if .htaccess gets disabled
+    # just in case if .htaccess gets disabled
     Require all denied
 &lt;/Directory&gt;
 
 &lt;VirtualHost *:80&gt;
-        ServerName cloud.romainpellerin.eu
-        ServerAdmin romain@romainpellerin.eu
-        DocumentRoot /var/www/nextcloud
+    ServerName &lt;YOUR DOMAIN&gt;
+    ServerAdmin &lt;YOUR EMAIL ADDRESS&gt;
+    DocumentRoot /var/www/nextcloud
 
-        RewriteEngine on
-        RewriteCond %{HTTPS} off
-        RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    # RewriteEngine on
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
 
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
+    Redirect permanent / https://&lt;YOU DOMAIN&gt;/
 &lt;/VirtualHost&gt;
 </pre></div>
 
@@ -744,7 +745,7 @@ SetEnv HTTP_HOME /var/www/nextcloud
 <p>Bring the changes between <code>&lt;VirtualHost&gt;</code> tags to <em>/etc/apache2/sites-enables/default-ssl.conf</em>, except for the instruction <code>Redirect</code>. Additionally, add instructions taken from <a href="https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=apache-2.4.25&amp;openssl=1.1.0j&amp;hsts=yes&amp;profile=modern">Mozilla SSL Configuration Generator</a>:</p>
 <div class="highlight"><pre><span></span>&lt;VirtualHost *:443&gt;
     ...
-    SSLEngine on
+    # SSLEngine on # We&#39;ll uncomment this later
 
     # HSTS (mod_headers is required) (15768000 seconds = 6 months)
     Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
@@ -784,32 +785,30 @@ ServerTokens Prod
 </pre></div>
 
 
-<p>Now, visit http://raspberry-pi-IP/nextcloud once. This will create <code>/var/www/nextcloud/config/config.php</code>. Edit this file like this:</p>
+<p>Now get a browser-trusted certificate from <a href="https://letsencrypt.org/">Let's Encrypt</a>. Here is a summary of <a href="https://certbot.eff.org/lets-encrypt/debianbuster-apache">the official instructions</a>:</p>
+<div class="highlight"><pre><span></span>su
+apt update
+apt install snapd
+<span class="nb">exit</span>
+su <span class="c1"># To reload paths</span>
+snap install core
+snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+
+<span class="c1"># Set up NAT/PAT rules in your router so that ports 80 and 443 are reachable from the Internet. Then:</span>
+certbot --apache
+<span class="c1"># Now uncomment SSLEngine on in default-ssl.conf</span>
+certbot renew --dry-run <span class="c1"># Try renewal</span>
+<span class="c1"># It should be programmed to regularily renew the certificate automatically.</span>
+<span class="c1"># Check with `systemctl list-timers`.</span>
+</pre></div>
+
+
+<p>And restart <code>systemctl restart apache2</code>.</p>
+<p>Now, visit http://raspberry-pi-IP/ once. This will create <code>/var/www/nextcloud/config/config.php</code>. Edit this file like this:</p>
 <div class="highlight"><pre><span></span><span class="s1">&#39;overwrite.cli.url&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;https://example.org/&#39;</span>,
 <span class="s1">&#39;htaccess.RewriteBase&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;/&#39;</span>,
-</pre></div>
-
-
-<p>Now edit <code>/etc/apache2/sites-enable/000-default.conf</code> like this:</p>
-<div class="highlight"><pre><span></span>Alias / <span class="s2">&quot;/var/www/nextcloud/&quot;</span>
-</pre></div>
-
-
-<p>And restart <code>systemctl restart apache2</code>. You should now be able to visit http://raspberry-pi-IP/.</p>
-<p>Now get a browser-trusted certificate from <a href="https://letsencrypt.org/">Let's Encrypt</a>:</p>
-<div class="highlight"><pre><span></span>su
-apt install dirmngr
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7638D0442B90D010
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
-<span class="nb">echo</span> <span class="s2">&quot;deb http://ftp.debian.org/debian stretch-backports main&quot;</span> &gt; /etc/apt/sources.list.d/backports.list
-apt update
-apt install python-certbot-apache -t stretch-backports
-<span class="c1"># Make sure your website is accessible from the Internet.</span>
-<span class="c1"># Set up NAT/PAT rules in your router. Then:</span>
-certbot --apache
-certbot renew --dry-run <span class="c1"># Try renewal</span>
-<span class="c1"># If successful, create a cronjob to be run twice a day</span>
-<span class="m">32</span> <span class="m">4</span>/12 * * * certbot renew --quiet
 </pre></div>
 
 
