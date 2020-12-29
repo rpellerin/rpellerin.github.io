@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5736 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5567 words.">28 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -533,57 +533,6 @@ sudo rm /var/swap
 <p>All good!</p>
 </li>
 </ol>
-<h1>Send email automatically on startup with a Python script (DEPRECATED: not recommended, instead use <code>sendmail</code>)</h1>
-<ol>
-<li>Download <a href="https://github.com/rpellerin/python-mailer">https://github.com/rpellerin/python-mailer</a>. The instructions given right below are the same as those you'll find at this URL.</li>
-<li>Install Python 3 (see instructions in <a href="https://github.com/rpellerin/dotfiles/blob/master/README.md">https://github.com/rpellerin/dotfiles/blob/master/README.md</a> for the latest version or simply do <code>apt install python3</code> as root).</li>
-<li>
-<p>Do, as a normal user (not root!):</p>
-<div class="highlight"><pre><span></span>mv /path-to-python-mailer/scripts/script-pc-turned-on.py /path-to-python-mailer/script-pc-turned-on.py
-<span class="nb">echo</span> <span class="s1">&#39;#!/bin/sh&#39;</span> &gt; <span class="nv">$HOME</span>/sendEmailOnStartup.sh
-<span class="nb">echo</span> <span class="s2">&quot;python3 /path-to-python-mailer/script-pc-turned-on.py&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/sendEmailOnStartup.sh
-</pre></div>
-
-
-</li>
-<li>
-<p>Edit, in <em>script-pc-turned-on.py</em>, the path to the file containing recipients.</p>
-</li>
-<li>
-<p>Create that file and add email addresses in the following format:</p>
-<div class="highlight"><pre><span></span>John Doe,john@doe.com
-</pre></div>
-
-
-</li>
-<li>
-<p>Edit the file <em>config.py</em>.</p>
-</li>
-<li>
-<p>Do:</p>
-<div class="highlight"><pre><span></span>chmod +x <span class="nv">$HOME</span>/sendEmailOnStartup.sh
-</pre></div>
-
-
-</li>
-<li>
-<p>Try to execute that file, as a normal user (not root!), to make sure everything is all right:</p>
-<div class="highlight"><pre><span></span>./sendEmailOnStartup.sh
-</pre></div>
-
-
-</li>
-<li>
-<p>If OK, add the following in <em>/etc/rc.local</em>, right above <code>exit 0</code>:</p>
-<div class="highlight"><pre><span></span>su - pi -c /home/pi/sendEmailOnStartup.sh &amp;
-sleep 5
-exit 0
-</pre></div>
-
-
-<p>Don't forget to change the path if need be. You user might not be <em>pi</em>. Reboot to make sure it worked.</p>
-</li>
-</ol>
 <h1>Send email automatically on startup with <code>sendmail</code></h1>
 <p>Add the following in <code>crontab -e</code> as root:</p>
 <div class="highlight"><pre><span></span>@reboot /bin/sleep <span class="m">30</span><span class="p">;</span> /usr/sbin/exim -qff<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Rpi turned on&quot;</span> root
@@ -864,7 +813,7 @@ service apache2 restart
 </pre></div>
 
 
-<p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Disabled</em>. That's normal as we didn't enable opcaching for CLI, (<em>/etc/php/7.0/cli/php.ini</em>), only for Apache2. However, if you create a webpage containing <code>&lt;?php phpinfo();</code>, when accessing this page you'll see that's it's <em>Up and Running</em>. Make sure as well that APCu is enabled.</p>
+<p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Up and Runnning</em>. If you temporarily replace the content of <code>status.php</code>  with <code>&lt;?php phpinfo(); ?&gt;</code>, when accessing <code>/status.php</code> you should see the same results. Make sure as well that APCu is enabled in the webpage.</p>
 <h2>Improve Nextcloud's settings</h2>
 <p>Add the following in <em>/var/www/nextcloud/config/config/php</em>:</p>
 <div class="highlight"><pre><span></span>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
