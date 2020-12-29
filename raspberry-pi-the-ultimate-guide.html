@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5757 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5736 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -853,9 +853,8 @@ sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&
 
 <p>To significantly improve performance overall, you'll also need data caching: <strong>APCu</strong>.</p>
 <div class="highlight"><pre><span></span>su
-apt install php7.0-apcu
+apt install php-apcu
 phpenmod apcu
-<span class="c1">#echo &quot;apc.enabled=1&quot; &gt;&gt; /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it&#39;s useless, check Nextcloud error logs in the admin page to make sure it&#39;s working</span>
 service apache2 restart
 </pre></div>
 

@@ -1112,9 +1112,8 @@ sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_tim
 
 &lt;p&gt;To significantly improve performance overall, you'll also need data caching: &lt;strong&gt;APCu&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-apt install php7.0-apcu
+apt install php-apcu
 phpenmod apcu
-&lt;span class="c1"&gt;#echo &amp;quot;apc.enabled=1&amp;quot; &amp;gt;&amp;gt; /etc/php/7.0/cli/conf.d/20-apcu.ini # Normally it&amp;#39;s useless, check Nextcloud error logs in the admin page to make sure it&amp;#39;s working&lt;/span&gt;
 service apache2 restart
 &lt;/pre&gt;&lt;/div&gt;
 
