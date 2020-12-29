@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5761 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5757 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -827,7 +827,7 @@ chmod <span class="m">750</span> /mnt/data_partition/nextcloud_data
 <h2>Improve PHP's performance</h2>
 <div class="highlight"><pre><span></span>su
 <span class="nb">export</span> <span class="nv">CONF</span><span class="o">=</span>/etc/php/7.3/apache2/php.ini
-sed <span class="s2">&quot;s/;opcache.enable=0/opcache.enable=1/&quot;</span> -i <span class="nv">$CONF</span>
+sed <span class="s2">&quot;s/;opcache.enable=1/opcache.enable=1/&quot;</span> -i <span class="nv">$CONF</span>
 sed <span class="s2">&quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&quot;</span> -i <span class="nv">$CONF</span>
 sed <span class="s2">&quot;s/;opcache.memory_consumption=128/opcache.memory_consumption=128/&quot;</span> -i <span class="nv">$CONF</span>
 sed <span class="s2">&quot;s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=8/&quot;</span> -i <span class="nv">$CONF</span>
@@ -841,18 +841,13 @@ sed <span class="s2">&quot;s/max_input_time = 60/max_input_time = 3600/&quot;</s
 sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&quot;</span> -i <span class="nv">$CONF</span>
 
 <span class="c1"># /etc/php/7.0/cli/php.ini is used by Nextcloud&#39;s CRON jobs</span>
-sed <span class="s2">&quot;s/;opcache.enable=0/opcache.enable=1/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
-sed <span class="s2">&quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
-sed <span class="s2">&quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
-sed <span class="s2">&quot;s/output_buffering = 4096/output_buffering = 0/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
-sed <span class="s2">&quot;s/max_input_time = 60/max_input_time = 3600/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
-sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&quot;</span> <span class="se">\</span>
-    -i /etc/php/7.0/cli/php.ini
+<span class="nb">export</span> <span class="nv">CONF_CLI</span><span class="o">=</span>/etc/php/7.3/cli/php.ini
+sed <span class="s2">&quot;s/;opcache.enable=1/opcache.enable=1/&quot;</span> -i <span class="nv">$CONF_CLI</span>
+sed <span class="s2">&quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&quot;</span> -i <span class="nv">$CONF_CLI</span>
+sed <span class="s2">&quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&quot;</span> -i <span class="nv">$CONF_CLI</span>
+sed <span class="s2">&quot;s/output_buffering = 4096/output_buffering = 0/&quot;</span> -i <span class="nv">$CONF_CLI</span>
+sed <span class="s2">&quot;s/max_input_time = 60/max_input_time = 3600/&quot;</span> -i <span class="nv">$CONF_CLI</span>
+sed <span class="s2">&quot;s/max_execution_time = 30/max_execution_time = 3600/&quot;</span> -i <span class="nv">$CONF_CLI</span>
 </pre></div>
 
 

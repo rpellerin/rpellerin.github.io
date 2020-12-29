@@ -4865,7 +4865,7 @@ chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;h2&gt;Improve PHP's performance&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=1/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.memory_consumption=128/opcache.memory_consumption=128/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=8/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
@@ -4879,18 +4879,13 @@ sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600
 sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 
 &lt;span class="c1"&gt;# /etc/php/7.0/cli/php.ini is used by Nextcloud&amp;#39;s CRON jobs&lt;/span&gt;
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/cli/php.ini
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF_CLI&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/cli/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=1/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
