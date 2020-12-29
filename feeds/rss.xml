@@ -4861,7 +4861,7 @@ chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/.&lt;/p&gt;
+&lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be &lt;code&gt;/mnt/data_partition/nextcloud_data&lt;/code&gt;.&lt;/p&gt;
 &lt;h2&gt;Improve PHP's performance&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
