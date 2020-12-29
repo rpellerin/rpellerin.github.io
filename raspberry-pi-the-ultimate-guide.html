@@ -678,7 +678,7 @@ systemctl restart apache2
 <span class="nb">cd</span> /var/www
 mkdir nextcloud
 wget https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip
-sha256sum -c &lt;<span class="o">(</span>wget -q https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip.sha256 -O -<span class="o">)</span> &lt; nextcloud-15.0.0.zip
+sha256sum -c &lt;<span class="o">(</span>wget -q https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip.sha256 -O -<span class="o">)</span> &lt; nextcloud-20.0.4.zip
 unzip nextcloud-15.0.0.zip
 chown -R www-data:www-data /var/www/nextcloud/
 
