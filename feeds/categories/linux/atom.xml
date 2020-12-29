@@ -1088,6 +1088,9 @@ chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/apache2/php.ini
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.memory_consumption=128/opcache.memory_consumption=128/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.interned_strings_buffer=8/opcache.interned_strings_buffer=8/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.max_accelerated_files=10000/opcache.max_accelerated_files=10000/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/memory_limit = 128M/memory_limit = 512M/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/upload_max_filesize = 2M/upload_max_filesize = 16G/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
