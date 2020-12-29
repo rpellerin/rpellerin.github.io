@@ -4861,27 +4861,19 @@ chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be &lt;code&gt;/mnt/data_partition/nextcloud_data&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be &lt;code&gt;/mnt/data_partition/nextcloud_data&lt;/code&gt;. Once set up, go visit &lt;code&gt;/settings/admin/overview&lt;/code&gt; for tips on how to improve your setup.&lt;/p&gt;
 &lt;h2&gt;Improve PHP's performance&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/memory_limit = 128M/memory_limit = 512M/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/upload_max_filesize = 2M/upload_max_filesize = 16G/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/post_max_size = 8M/post_max_size = 16G/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
-sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-    -i /etc/php/7.0/apache2/php.ini
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/apache2/php.ini
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/memory_limit = 128M/memory_limit = 512M/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/upload_max_filesize = 2M/upload_max_filesize = 16G/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/post_max_size = 8M/post_max_size = 16G/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering = 0/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
+sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 
 &lt;span class="c1"&gt;# /etc/php/7.0/cli/php.ini is used by Nextcloud&amp;#39;s CRON jobs&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=0/opcache.enable=1/&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
