@@ -792,13 +792,6 @@ sudo rm /var/swap
 &lt;p&gt;All good!&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1&gt;Send email automatically on startup with &lt;code&gt;sendmail&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;Add the following in &lt;code&gt;crontab -e&lt;/code&gt; as root:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@reboot /bin/sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; /usr/sbin/exim -qff&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Rpi turned on&amp;quot;&lt;/span&gt; root
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now, read the section right below.&lt;/p&gt;
 &lt;h1&gt;Configure a local SMTP email server&lt;/h1&gt;
 &lt;p&gt;Before doing this. make sure you did set the hostname of your Raspberry Pi through &lt;code&gt;raspi-config&lt;/code&gt;. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with &lt;strong&gt;an existing domain&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot. &lt;/p&gt;
@@ -869,6 +862,13 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
 
 
 &lt;p&gt;&lt;a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux"&gt;More information&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Send email automatically on startup with &lt;code&gt;sendmail&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Add the following in &lt;code&gt;crontab -e&lt;/code&gt; as root:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@reboot /bin/sleep &lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; /usr/sbin/exim -qff&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Rpi turned on&amp;quot;&lt;/span&gt; root
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, read the section right below.&lt;/p&gt;
 &lt;h1&gt;Send emails automatically on shell login&lt;/h1&gt;
 &lt;p&gt;Edit your user and root's &lt;code&gt;.bashrc&lt;/code&gt; and add at the end of the file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;So you know... (&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;Root shell login&amp;quot;&lt;/span&gt; root
@@ -877,6 +877,50 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
 
 &lt;h1&gt;Installing Nextcloud&lt;/h1&gt;
 &lt;p&gt;Official tutorial: &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html"&gt;https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;details&gt;
+    &lt;summary&gt;Click here to know how to support HTTP2&lt;/summary&gt;
+&lt;a href="https://http2.pro/doc/Apache"&gt;Note that Apache prefork (which is used by &lt;code&gt;libapache2-mod-php&lt;/code&gt;) is not compatible with HTTP2&lt;/a&gt;. We have to &lt;a href="https://blog.feutl.com/nextcloud-http2/"&gt;use fpm&lt;/a&gt;. Here are some instructions on how to support HTTP2:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Follow the instructions below but do no install &lt;code&gt;libapache2-mod-php&lt;/code&gt;, instead install &lt;code&gt;php-fpm&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After setting up the database, do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+&lt;span class="c1"&gt;# If necessary, run the following&lt;/span&gt;
+&lt;span class="c1"&gt;# systemctl stop apache2&lt;/span&gt;
+&lt;span class="c1"&gt;# a2dismod php7.3&lt;/span&gt;
+&lt;span class="c1"&gt;# apt purge libapache2-mod-php&lt;/span&gt;
+a2dismod mpm_prefork
+a2enmod mpm_event proxy_fcgi setenvif
+a2enmod http2
+a2enconf php7.3-fpm &lt;span class="c1"&gt;# Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keep reading the instructions. When editing &lt;code&gt;/etc/apache2/sites-enables/default-ssl.conf&lt;/code&gt;, add these lines in the virtual host:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;VirtualHost *:443&amp;gt;
+    ...
+    &amp;lt;FilesMatch \.php$&amp;gt;
+        SetHandler &amp;quot;proxy:unix:/run/php/php7.3-fpm.sock|fcgi://localhost/&amp;quot;
+    &amp;lt;/FilesMatch&amp;gt;
+    ...
+    ProtocolsHonorOrder On
+    Protocols h2 h2c http/1.1
+    ...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm"&gt;Tune PHP-FPM&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Copy the lines &lt;code&gt;php_value&lt;/code&gt; from &lt;code&gt;/var/www/nextcloud/.htaccess&lt;/code&gt; &lt;a href="https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336"&gt;to &lt;code&gt;/var/www/nextcloud/.htaccess&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;systemctl reload php7.3-fpm &amp;amp;&amp;amp; systemctl restart apache2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check if Apache2 MPM is changed to events: &lt;code&gt;sudo apachectl -V | grep MPM&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;See &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes"&gt;Nextcloud's instructions on the php.ini file&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/details&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt install apache2 mariadb-server libapache2-mod-php
 apt install php-gd php-json php-mysql php-curl php-mbstring
@@ -893,7 +937,7 @@ chown -R www-data:www-data /var/www/nextcloud/
 mysql -u root -p &lt;span class="c1"&gt;# No password is required, just hit enter&lt;/span&gt;
 CREATE USER &lt;span class="s1"&gt;&amp;#39;nextclouduser&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt; IDENTIFIED BY &lt;span class="s1"&gt;&amp;#39;Password&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 create database nextcloud&lt;span class="p"&gt;;&lt;/span&gt;
-GRANT ALL ON nextcloud.* TO &lt;span class="s1"&gt;&amp;#39;nextclouduser&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+GRANT ALL PRIVILEGES ON nextcloud.* TO &lt;span class="s1"&gt;&amp;#39;nextclouduser&amp;#39;&lt;/span&gt;@&lt;span class="s1"&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
 exit&lt;span class="p"&gt;;&lt;/span&gt;
 
@@ -941,11 +985,8 @@ systemctl disable apache2 &lt;span class="c1"&gt;# No auto start on boot&lt;/spa
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-    # RewriteEngine on
-    # RewriteCond %{HTTPS} off
-    # RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [END,QSA,R=permanent]
 
-    Redirect permanent / https://&amp;lt;YOU DOMAIN&amp;gt;/
+    Redirect permanent / https://&amp;lt;YOUR DOMAIN&amp;gt;/
 &amp;lt;/VirtualHost&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -975,17 +1016,6 @@ SSLStaplingCache        shmcb:/var/run/ocsp(128000)
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;To enable HTTP2, do &lt;code&gt;a2enmod http2&lt;/code&gt; and edit &lt;code&gt;default-ssl.conf&lt;/code&gt; again:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;VirtualHost *:443&amp;gt;
-    ...
-    ProtocolsHonorOrder On
-    Protocols h2 h2c http/1.1
-    H2Direct on
-    ...
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;&lt;a href="https://http2.pro/doc/Apache"&gt;Note that Apache prefork is not compatible with HTTP2&lt;/a&gt;. You'll have to &lt;a href="https://blog.feutl.com/nextcloud-http2/"&gt;use fpm&lt;/a&gt;. See &lt;a href="https://docs.nextcloud.com/server/15/admin_manual/installation/source_installation.html#php-ini-configuration-notes"&gt;Nextcloud's instructions also&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Let us now improve a bit Apache's security. Edit &lt;em&gt;/etc/apache2/conf-enabled/security.conf&lt;/em&gt; like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ServerSignature Off
 Header set X-Frame-Options: &amp;quot;sameorigin&amp;quot; # Require mod_headers
@@ -1020,6 +1050,7 @@ certbot renew --dry-run &lt;span class="c1"&gt;# Try renewal&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;And run &lt;code&gt;cd /var/www/nextcloud &amp;amp;&amp;amp; sudo -u www-data php occ maintenance:update:htaccess&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ultimately, verify everything is all right using &lt;a href="https://www.ssllabs.com/ssltest/"&gt;SSL LABS's SSL server test&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You may now restart Apache2.&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
@@ -1034,7 +1065,10 @@ chmod &lt;span class="m"&gt;750&lt;/span&gt; /mnt/data_partition/nextcloud_data
 &lt;p&gt;Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be &lt;code&gt;/mnt/data_partition/nextcloud_data&lt;/code&gt;. Once set up, go visit &lt;code&gt;/settings/admin/overview&lt;/code&gt; for tips on how to improve your setup.&lt;/p&gt;
 &lt;h2&gt;Improve PHP's performance&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/apache2/php.ini
+&lt;span class="c1"&gt;# Or /etc/php/7.3/fpm/php.ini if running HTTP2&lt;/span&gt;
+
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=1/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.memory_consumption=128/opcache.memory_consumption=128/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
@@ -1048,8 +1082,9 @@ sed &lt;span class="s2"&gt;&amp;quot;s/output_buffering = 4096/output_buffering 
 sed &lt;span class="s2"&gt;&amp;quot;s/max_input_time = 60/max_input_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/max_execution_time = 30/max_execution_time = 3600/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF&lt;/span&gt;
 
-&lt;span class="c1"&gt;# /etc/php/7.0/cli/php.ini is used by Nextcloud&amp;#39;s CRON jobs&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CONF_CLI&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/php/7.3/cli/php.ini
+&lt;span class="c1"&gt;# /etc/php/7.0/cli/php.ini is used by Nextcloud&amp;#39;s CRON jobs&lt;/span&gt;
+
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable=1/opcache.enable=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.enable_cli=0/opcache.enable_cli=1/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
 sed &lt;span class="s2"&gt;&amp;quot;s/;opcache.revalidate_freq=2/opcache.revalidate_freq=240/&amp;quot;&lt;/span&gt; -i &lt;span class="nv"&gt;$CONF_CLI&lt;/span&gt;
@@ -1080,17 +1115,8 @@ service apache2 restart
 
 
 &lt;p&gt;In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called &lt;em&gt;Encryption&lt;/em&gt; in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.&lt;/p&gt;
-&lt;p&gt;Also, do:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-&lt;span class="nb"&gt;cd&lt;/span&gt; /var/www/nextcould
-sudo -u www-data php occ maintenance:update:htaccess
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;It will allow Nextcloud to change these settings directly from the Admin webpage. It will also update some settings.&lt;/p&gt;
-&lt;p&gt;In the admin page (&lt;code&gt;URL/settings/admin&lt;/code&gt;), increase the maximum upload size to 1.9 GB (it's a limitatiom from 32-bit PHP - Rasbian is a 32 bit OS).&lt;/p&gt;
-&lt;p&gt;In &lt;code&gt;URL/settings/admin/overview&lt;/code&gt; you might get some warnings about PHP not being properly configured. Edit &lt;code&gt;/etc/php/7.0/apache2/php.ini&lt;/code&gt; as it asks.&lt;/p&gt;
 &lt;p&gt;Install and enable the app "Two Factor TOTP Provider" in &lt;code&gt;URL/settings/apps&lt;/code&gt;. Then, go to &lt;code&gt;URL/settings/user/security&lt;/code&gt; and enable TOTP.&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;URL/settings/admin&lt;/code&gt;, change the jobs mechanism to cron (read the documentation by clicking on the i icon).&lt;/p&gt;
 &lt;h1&gt;OpenVPN 2.4.0&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install openvpn
