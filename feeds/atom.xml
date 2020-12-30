@@ -4151,7 +4151,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;h1&gt;Setting up the Raspberry Pi&lt;/h1&gt;
 &lt;h2&gt;The OS&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Download Raspbian Lite from &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;the official website&lt;/a&gt;. It might be a good idea to verify the hash (SHA1).&lt;/li&gt;
+&lt;li&gt;Download Raspbian Lite from &lt;a href="https://www.raspberrypi.org/downloads/raspbian/"&gt;the official website&lt;/a&gt;. It might be a good idea to verify the hash (SHA1). &lt;strong&gt;Consider downloading the 64-bit version of the OS.&lt;/strong&gt;. It adds supports for files larger than 4GB and also it fixes the issue with Nextcloud when the trashbin exceeds 4GB in size and can't be accessed anymore.&lt;/li&gt;
 &lt;li&gt;Extract the file .img from the zip.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Run one of the following commands:&lt;/p&gt;
@@ -4775,8 +4775,8 @@ systemctl disable apache2 &lt;span class="c1"&gt;# No auto start on boot&lt;/spa
     ...
     # SSLEngine on # We&amp;#39;ll uncomment this later
 
-    # HSTS (mod_headers is required) (15768000 seconds = 6 months)
-    Header always set Strict-Transport-Security &amp;quot;max-age=15768000&amp;quot;
+    # HSTS (mod_headers is required) (15552000 seconds = 6 months)
+    Header always set Strict-Transport-Security &amp;quot;max-age=15552000; includeSubDomains&amp;quot;
     ...
 &amp;lt;/VirtualHost&amp;gt;
 
@@ -4893,9 +4893,13 @@ service apache2 restart
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called &lt;em&gt;Encryption&lt;/em&gt; in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.&lt;/p&gt;
+&lt;p&gt;In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called &lt;em&gt;Default encryption module&lt;/em&gt; in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.&lt;/p&gt;
 &lt;p&gt;Install and enable the app "Two Factor TOTP Provider" in &lt;code&gt;URL/settings/apps&lt;/code&gt;. Then, go to &lt;code&gt;URL/settings/user/security&lt;/code&gt; and enable TOTP.&lt;/p&gt;
 &lt;p&gt;In &lt;code&gt;URL/settings/admin&lt;/code&gt;, change the jobs mechanism to cron (read the documentation by clicking on the i icon).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/5  *  *  *  * &lt;span class="o"&gt;[&lt;/span&gt; -L /dev/mapper/hddcrypt &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; php -f /var/www/nextcloud/cron.php
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;OpenVPN 2.4.0&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install openvpn
@@ -5233,6 +5237,7 @@ country_list = CN|China
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Finally, &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban"&gt;set up fail2ban to also protect you from attacks against Nextcloud&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Now install missing packages, reload the service maually to make sure there is no error:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt install geoip-bin geoip-database

@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5644 words.">28 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5708 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -113,7 +113,7 @@
 <h1>Setting up the Raspberry Pi</h1>
 <h2>The OS</h2>
 <ol>
-<li>Download Raspbian Lite from <a href="https://www.raspberrypi.org/downloads/raspbian/">the official website</a>. It might be a good idea to verify the hash (SHA1).</li>
+<li>Download Raspbian Lite from <a href="https://www.raspberrypi.org/downloads/raspbian/">the official website</a>. It might be a good idea to verify the hash (SHA1). <strong>Consider downloading the 64-bit version of the OS.</strong>. It adds supports for files larger than 4GB and also it fixes the issue with Nextcloud when the trashbin exceeds 4GB in size and can't be accessed anymore.</li>
 <li>Extract the file .img from the zip.</li>
 <li>
 <p>Run one of the following commands:</p>
@@ -737,8 +737,8 @@ systemctl disable apache2 <span class="c1"># No auto start on boot</span>
     ...
     # SSLEngine on # We&#39;ll uncomment this later
 
-    # HSTS (mod_headers is required) (15768000 seconds = 6 months)
-    Header always set Strict-Transport-Security &quot;max-age=15768000&quot;
+    # HSTS (mod_headers is required) (15552000 seconds = 6 months)
+    Header always set Strict-Transport-Security &quot;max-age=15552000; includeSubDomains&quot;
     ...
 &lt;/VirtualHost&gt;
 
@@ -855,9 +855,13 @@ service apache2 restart
 </pre></div>
 
 
-<p>In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called <em>Encryption</em> in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.</p>
+<p>In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called <em>Default encryption module</em> in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.</p>
 <p>Install and enable the app "Two Factor TOTP Provider" in <code>URL/settings/apps</code>. Then, go to <code>URL/settings/user/security</code> and enable TOTP.</p>
 <p>In <code>URL/settings/admin</code>, change the jobs mechanism to cron (read the documentation by clicking on the i icon).</p>
+<div class="highlight"><pre><span></span>*/5  *  *  *  * <span class="o">[</span> -L /dev/mapper/hddcrypt <span class="o">]</span> <span class="o">&amp;&amp;</span> php -f /var/www/nextcloud/cron.php
+</pre></div>
+
+
 <h1>OpenVPN 2.4.0</h1>
 <div class="highlight"><pre><span></span>su
 apt update <span class="o">&amp;&amp;</span> apt install openvpn
@@ -1195,6 +1199,7 @@ country_list = CN|China
 </pre></div>
 
 
+<p>Finally, <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban">set up fail2ban to also protect you from attacks against Nextcloud</a>.</p>
 <p>Now install missing packages, reload the service maually to make sure there is no error:</p>
 <div class="highlight"><pre><span></span>su
 apt install geoip-bin geoip-database
