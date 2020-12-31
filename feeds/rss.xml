@@ -4900,30 +4900,51 @@ service apache2 restart
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;OpenVPN 2.4.0&lt;/h1&gt;
+&lt;h1&gt;Firewall&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.service
+chmod &lt;span class="m"&gt;700&lt;/span&gt; firewall.sh
+chmod &lt;span class="m"&gt;700&lt;/span&gt; firewall.service
+chown root:root firewall.sh
+chown root:root firewall.service
+&lt;span class="c1"&gt;# Edit the content of firewall.service so that the path to firewall.sh is correct&lt;/span&gt;
+mv firewall.service /etc/systemd/system/
+systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; firewall
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Edit &lt;code&gt;firewall.sh&lt;/code&gt; that way:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;TCP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;80 443&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# SSH is handled separately elsewhere // http, https&lt;/span&gt;
+&lt;span class="nv"&gt;UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;68 1194&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DHCP, OpenVPN&lt;/span&gt;
+
+&lt;span class="nv"&gt;REMOTE_TCP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;21 22 43 80 443 465 993&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# ftp, ssh, whois, http, https, smtp (ssl), imap&lt;/span&gt;
+&lt;span class="nv"&gt;REMOTE_UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;53 67 123&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DNS (&amp;quot;whois&amp;quot; command for example), DHCP, ntp (time update)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# NETWORK_MGMT=192.168.1.0/24&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;OpenVPN 2.4.7&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install openvpn
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Read the &lt;a href="https://openvpn.net/community-resources/how-to/"&gt;official documentation&lt;/a&gt; (&lt;a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto"&gt;here, short tutorial for easy-rsa3&lt;/a&gt;). Download &lt;a href="https://github.com/OpenVPN/easy-rsa"&gt;easy-rsa&lt;/a&gt; and checkout latest release.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn/
-git clone https://github.com/OpenVPN/easy-rsa.git
-&lt;span class="nb"&gt;cd&lt;/span&gt; easy-rsa
-git checkout v3.0.5
-&lt;span class="nb"&gt;cd&lt;/span&gt; easyrsa3
+&lt;p&gt;Read the &lt;a href="https://openvpn.net/community-resources/how-to/"&gt;official documentation&lt;/a&gt; (&lt;a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto"&gt;here, short tutorial for easy-rsa3&lt;/a&gt;).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cp -R /usr/share/easy-rsa/ /etc/openvpn
+&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn/easy-rsa
 cp vars.example vars
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;set_var EASYRSA_KEY_SIZE       2048&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; vars &lt;span class="c1"&gt;# No need to source this file&lt;/span&gt;
-&lt;span class="c1"&gt;# Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL&lt;/span&gt;
+&lt;span class="c1"&gt;# Edit also EASYRSA_REQ_COUNTRY, PROVINCE, CITY, ORG, and EMAIL&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;From now on, I highly recommend you read &lt;em&gt;/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md&lt;/em&gt; and &lt;a href="https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md"&gt;https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md&lt;/a&gt; in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./easyrsa init-pki
-./easyrsa build-ca &lt;span class="c1"&gt;# Add a strong password which will be used to sign other certificates&lt;/span&gt;
-./easyrsa gen-req server nopass &lt;span class="c1"&gt;# Do not add a password for the server; use &amp;#39;server&amp;#39; as CN&lt;/span&gt;
+./easyrsa build-ca &lt;span class="c1"&gt;# Add a strong password which will be used to sign other certificates. Leave unchanged the default Common Name.&lt;/span&gt;
+./easyrsa gen-req server nopass &lt;span class="c1"&gt;# Do not add a password for the server; use &amp;#39;server&amp;#39; as the Common Name (CN)&lt;/span&gt;
 ./easyrsa sign-req server server
 ./easyrsa gen-req client &lt;span class="c1"&gt;# Use &amp;#39;client&amp;#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server&lt;/span&gt;
 ./easyrsa sign-req client client
@@ -4945,18 +4966,18 @@ vim server.conf
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;port 1194
 proto udp
 dev tun
-ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
-cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
-key /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
-dh /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
+ca /etc/openvpn/easy-rsa/pki/ca.crt
+cert /etc/openvpn/easy-rsa/pki/issued/server.crt
+key /etc/openvpn/easy-rsa/pki/private/server.key
+dh /etc/openvpn/easy-rsa/pki/dh.pem
 push &amp;quot;route 192.168.1.0 255.255.255.0&amp;quot;
 push &amp;quot;redirect-gateway def1 bypass-dhcp&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
-max-clients 2
 comp-lzo
+max-clients 2
 user nobody
 group nogroup
 log-append  openvpn.log
@@ -4992,8 +5013,7 @@ mute-replay-warnings
 #cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
 #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
 #tls-auth /etc/openvpn/ta.key 1
-#ns-cert-type server # OpenVPN 2.0 and below
-remote-cert-tls server # OpenVPN 2.1 and above
+remote-cert-tls server
 cipher AES-256-CBC
 comp-lzo
 mute 20
@@ -5007,13 +5027,13 @@ mute 20
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;up /etc/openvpn/update-resolv-conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;down /etc/openvpn/update-resolv-conf&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;ca&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/ca.crt &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/ca&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;cert&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt &lt;span class="p"&gt;|&lt;/span&gt; sed -ne &lt;span class="s1"&gt;&amp;#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/issued/client.crt &lt;span class="p"&gt;|&lt;/span&gt; sed -ne &lt;span class="s1"&gt;&amp;#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/cert&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;key&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key &amp;gt;&amp;gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/private/client.key &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;/key&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;tls-auth&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; client.ovpn
 cat /etc/openvpn/ta.key &amp;gt;&amp;gt; client.ovpn
@@ -5038,7 +5058,7 @@ sysctl -p
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:&lt;/p&gt;
+&lt;p&gt;Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in &lt;code&gt;firewall.sh&lt;/code&gt; (the lines are there already, uncomment them):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 iptables -A FORWARD -s &lt;span class="m"&gt;10&lt;/span&gt;.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
@@ -5068,31 +5088,14 @@ sudo openvpn --config client.ovpn
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;iptables -t nat -A PREROUTING -i eth0 -p udp --dport &lt;span class="m"&gt;53&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;1194&lt;/span&gt;
+&lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit &lt;code&gt;firewall.sh&lt;/code&gt;, change the first line and add the second one:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;68 1194 53&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DCHP, OpenVPN, OpenVPN (other port)&lt;/span&gt;
+&lt;span class="c1"&gt;# ...&lt;/span&gt;
+iptables -t nat -A PREROUTING -i eth0 -p udp --dport &lt;span class="m"&gt;53&lt;/span&gt; -j REDIRECT --to-port &lt;span class="m"&gt;1194&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h1&gt;Hardening security&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
-chmod &lt;span class="m"&gt;700&lt;/span&gt; firewall.sh
-chown root:root firewall.sh
-mv firewall.sh /etc/init.d
-update-rc.d firewall.sh defaults
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;In the firewall, you might want to comment the line &lt;code&gt;NETWORK_MGMT=&lt;/code&gt; in order to be able to log in using SSH from any LAN, including your VPN.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3"&gt;Another helpful website about how to prevent SSH bruteforce attacks&lt;/a&gt;. However, we'll use fail2ban, see below.&lt;/p&gt;
-&lt;p&gt;Consider allowing SSH connections using public keys only. On a client do:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
-ssh-keygen -t rsa -b 4096 -o -a 100 
-ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Hardening SSH configuration&lt;/h2&gt;
+&lt;h1&gt;Hardening SSH configuration&lt;/h1&gt;
 &lt;p&gt;Edit &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Port &amp;lt;something you like&amp;gt;
 #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
@@ -5119,7 +5122,15 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 
 
 &lt;p&gt;The last three lines are taken from &lt;a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html"&gt;this very helpful website&lt;/a&gt;. You should also read &lt;a href="http://kacper.blog.redpill-linpro.com/archives/702"&gt;this one&lt;/a&gt; after having read the first one (the order is important).&lt;/p&gt;
-&lt;h2&gt;Sending an email on every SSH connection&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3"&gt;Another helpful website about how to prevent SSH bruteforce attacks&lt;/a&gt;. However, we'll use fail2ban, see below.&lt;/p&gt;
+&lt;p&gt;Consider allowing SSH connections using public keys only. On a client do:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
+ssh-keygen -t rsa -b 4096 -o -a 100 
+ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Sending an email on every SSH connection&lt;/h1&gt;
 &lt;p&gt;Taken from &lt;a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602"&gt;this thread&lt;/a&gt;. As root, create &lt;code&gt;/etc/ssh/login-notify.sh&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#!/bin/sh
 
@@ -5148,7 +5159,7 @@ fi
 
 
 &lt;p&gt;Now restart sshd by doing &lt;code&gt;service sshd restart&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Fail2Ban&lt;/h2&gt;
+&lt;h1&gt;Fail2Ban&lt;/h1&gt;
 &lt;p&gt;&lt;a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8"&gt;Official documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt install fail2ban

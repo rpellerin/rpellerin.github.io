@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5708 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5769 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -862,30 +862,51 @@ service apache2 restart
 </pre></div>
 
 
-<h1>OpenVPN 2.4.0</h1>
+<h1>Firewall</h1>
+<div class="highlight"><pre><span></span>su
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
+wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.service
+chmod <span class="m">700</span> firewall.sh
+chmod <span class="m">700</span> firewall.service
+chown root:root firewall.sh
+chown root:root firewall.service
+<span class="c1"># Edit the content of firewall.service so that the path to firewall.sh is correct</span>
+mv firewall.service /etc/systemd/system/
+systemctl <span class="nb">enable</span> firewall
+</pre></div>
+
+
+<p>Edit <code>firewall.sh</code> that way:</p>
+<div class="highlight"><pre><span></span><span class="nv">TCP_SERVICES</span><span class="o">=</span><span class="s2">&quot;80 443&quot;</span> <span class="c1"># SSH is handled separately elsewhere // http, https</span>
+<span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194&quot;</span> <span class="c1"># DHCP, OpenVPN</span>
+
+<span class="nv">REMOTE_TCP_SERVICES</span><span class="o">=</span><span class="s2">&quot;21 22 43 80 443 465 993&quot;</span> <span class="c1"># ftp, ssh, whois, http, https, smtp (ssl), imap</span>
+<span class="nv">REMOTE_UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;53 67 123&quot;</span> <span class="c1"># DNS (&quot;whois&quot; command for example), DHCP, ntp (time update)</span>
+
+<span class="c1"># NETWORK_MGMT=192.168.1.0/24</span>
+</pre></div>
+
+
+<h1>OpenVPN 2.4.7</h1>
 <div class="highlight"><pre><span></span>su
 apt update <span class="o">&amp;&amp;</span> apt install openvpn
 </pre></div>
 
 
-<p>Read the <a href="https://openvpn.net/community-resources/how-to/">official documentation</a> (<a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto">here, short tutorial for easy-rsa3</a>). Download <a href="https://github.com/OpenVPN/easy-rsa">easy-rsa</a> and checkout latest release.</p>
-<div class="highlight"><pre><span></span>su
-<span class="nb">cd</span> /etc/openvpn/
-git clone https://github.com/OpenVPN/easy-rsa.git
-<span class="nb">cd</span> easy-rsa
-git checkout v3.0.5
-<span class="nb">cd</span> easyrsa3
+<p>Read the <a href="https://openvpn.net/community-resources/how-to/">official documentation</a> (<a href="https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto">here, short tutorial for easy-rsa3</a>).</p>
+<div class="highlight"><pre><span></span>cp -R /usr/share/easy-rsa/ /etc/openvpn
+<span class="nb">cd</span> /etc/openvpn/easy-rsa
 cp vars.example vars
 <span class="nb">echo</span> <span class="s2">&quot;set_var EASYRSA_KEY_SIZE       2048&quot;</span> &gt;&gt; vars <span class="c1"># No need to source this file</span>
-<span class="c1"># Edit also KEY_COUNTRY, KEY_PROVINCE, KEY_CITY, KEY_ORG, and KEY_EMAIL</span>
+<span class="c1"># Edit also EASYRSA_REQ_COUNTRY, PROVINCE, CITY, ORG, and EMAIL</span>
 </pre></div>
 
 
 <p>From now on, I highly recommend you read <em>/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md</em> and <a href="https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md">https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md</a> in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).</p>
 <p>Then:</p>
 <div class="highlight"><pre><span></span>./easyrsa init-pki
-./easyrsa build-ca <span class="c1"># Add a strong password which will be used to sign other certificates</span>
-./easyrsa gen-req server nopass <span class="c1"># Do not add a password for the server; use &#39;server&#39; as CN</span>
+./easyrsa build-ca <span class="c1"># Add a strong password which will be used to sign other certificates. Leave unchanged the default Common Name.</span>
+./easyrsa gen-req server nopass <span class="c1"># Do not add a password for the server; use &#39;server&#39; as the Common Name (CN)</span>
 ./easyrsa sign-req server server
 ./easyrsa gen-req client <span class="c1"># Use &#39;client&#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server</span>
 ./easyrsa sign-req client client
@@ -907,18 +928,18 @@ vim server.conf
 <div class="highlight"><pre><span></span>port 1194
 proto udp
 dev tun
-ca /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt
-cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/server.crt
-key /etc/openvpn/easy-rsa/easyrsa3/pki/private/server.key
-dh /etc/openvpn/easy-rsa/easyrsa3/pki/dh.pem
+ca /etc/openvpn/easy-rsa/pki/ca.crt
+cert /etc/openvpn/easy-rsa/pki/issued/server.crt
+key /etc/openvpn/easy-rsa/pki/private/server.key
+dh /etc/openvpn/easy-rsa/pki/dh.pem
 push &quot;route 192.168.1.0 255.255.255.0&quot;
 push &quot;redirect-gateway def1 bypass-dhcp&quot;
 push &quot;dhcp-option DNS 208.67.222.222&quot;
 push &quot;dhcp-option DNS 208.67.220.220&quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
-max-clients 2
 comp-lzo
+max-clients 2
 user nobody
 group nogroup
 log-append  openvpn.log
@@ -954,8 +975,7 @@ mute-replay-warnings
 #cert /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
 #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
 #tls-auth /etc/openvpn/ta.key 1
-#ns-cert-type server # OpenVPN 2.0 and below
-remote-cert-tls server # OpenVPN 2.1 and above
+remote-cert-tls server
 cipher AES-256-CBC
 comp-lzo
 mute 20
@@ -969,13 +989,13 @@ mute 20
 <span class="nb">echo</span> <span class="s2">&quot;up /etc/openvpn/update-resolv-conf&quot;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;down /etc/openvpn/update-resolv-conf&quot;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;ca&gt;&quot;</span> &gt;&gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/ca.crt &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/ca.crt &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;/ca&gt;&quot;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;cert&gt;&quot;</span> &gt;&gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt <span class="p">|</span> sed -ne <span class="s1">&#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39;</span> &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/issued/client.crt <span class="p">|</span> sed -ne <span class="s1">&#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;/cert&gt;&quot;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;key&gt;&quot;</span> &gt;&gt; client.ovpn
-cat /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key &gt;&gt; client.ovpn
+cat /etc/openvpn/easy-rsa/pki/private/client.key &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;/key&gt;&quot;</span> &gt;&gt; client.ovpn
 <span class="nb">echo</span> <span class="s2">&quot;&lt;tls-auth&gt;&quot;</span> &gt;&gt; client.ovpn
 cat /etc/openvpn/ta.key &gt;&gt; client.ovpn
@@ -1000,7 +1020,7 @@ sysctl -p
 </pre></div>
 
 
-<p>Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules:</p>
+<p>Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in <code>firewall.sh</code> (the lines are there already, uncomment them):</p>
 <div class="highlight"><pre><span></span>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 iptables -A FORWARD -s <span class="m">10</span>.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
@@ -1030,31 +1050,14 @@ sudo openvpn --config client.ovpn
 </pre></div>
 
 
-<p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules, for instance:</p>
-<div class="highlight"><pre><span></span>iptables -t nat -A PREROUTING -i eth0 -p udp --dport <span class="m">53</span> -j REDIRECT --to-port <span class="m">1194</span>
+<p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit <code>firewall.sh</code>, change the first line and add the second one:</p>
+<div class="highlight"><pre><span></span><span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194 53&quot;</span> <span class="c1"># DCHP, OpenVPN, OpenVPN (other port)</span>
+<span class="c1"># ...</span>
+iptables -t nat -A PREROUTING -i eth0 -p udp --dport <span class="m">53</span> -j REDIRECT --to-port <span class="m">1194</span>
 </pre></div>
 
 
-<h1>Hardening security</h1>
-<div class="highlight"><pre><span></span>su
-wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
-chmod <span class="m">700</span> firewall.sh
-chown root:root firewall.sh
-mv firewall.sh /etc/init.d
-update-rc.d firewall.sh defaults
-</pre></div>
-
-
-<p>In the firewall, you might want to comment the line <code>NETWORK_MGMT=</code> in order to be able to log in using SSH from any LAN, including your VPN.</p>
-<p><a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3">Another helpful website about how to prevent SSH bruteforce attacks</a>. However, we'll use fail2ban, see below.</p>
-<p>Consider allowing SSH connections using public keys only. On a client do:</p>
-<div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
-ssh-keygen -t rsa -b 4096 -o -a 100 
-ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
-</pre></div>
-
-
-<h2>Hardening SSH configuration</h2>
+<h1>Hardening SSH configuration</h1>
 <p>Edit <em>/etc/ssh/sshd_config</em>:</p>
 <div class="highlight"><pre><span></span>Port &lt;something you like&gt;
 #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
@@ -1081,7 +1084,15 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 
 
 <p>The last three lines are taken from <a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html">this very helpful website</a>. You should also read <a href="http://kacper.blog.redpill-linpro.com/archives/702">this one</a> after having read the first one (the order is important).</p>
-<h2>Sending an email on every SSH connection</h2>
+<p><a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3">Another helpful website about how to prevent SSH bruteforce attacks</a>. However, we'll use fail2ban, see below.</p>
+<p>Consider allowing SSH connections using public keys only. On a client do:</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
+ssh-keygen -t rsa -b 4096 -o -a 100 
+ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
+</pre></div>
+
+
+<h1>Sending an email on every SSH connection</h1>
 <p>Taken from <a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602">this thread</a>. As root, create <code>/etc/ssh/login-notify.sh</code>:</p>
 <div class="highlight"><pre><span></span>#!/bin/sh
 
@@ -1110,7 +1121,7 @@ fi
 
 
 <p>Now restart sshd by doing <code>service sshd restart</code>.</p>
-<h2>Fail2Ban</h2>
+<h1>Fail2Ban</h1>
 <p><a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8">Official documentation</a>.</p>
 <div class="highlight"><pre><span></span>su
 apt install fail2ban
