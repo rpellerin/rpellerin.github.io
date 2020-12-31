@@ -4564,7 +4564,7 @@ sudo rm /var/swap
 &lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Add a cronjob (&lt;code&gt;crontab -e&lt;/code&gt;), on your Pi, with the same user (not root!):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/1 * * * * /home/pi/dynhost/dynhost
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/5 * * * * /home/pi/dynhost/dynhost
 &lt;/pre&gt;&lt;/div&gt;
 
 
