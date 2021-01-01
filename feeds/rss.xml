@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 13 Dec 2020 23:50:00 +0100</lastBuildDate><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 01 Jan 2021 19:00:00 +0100</lastBuildDate><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
 &lt;p&gt;In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.&lt;/p&gt;
 &lt;p&gt;Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:&lt;/p&gt;
 &lt;figure class="center"&gt;
