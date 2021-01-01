@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5769 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5795 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -852,6 +852,14 @@ service apache2 restart
 <h2>Improve Nextcloud's settings</h2>
 <p>Add the following in <em>/var/www/nextcloud/config/config/php</em>:</p>
 <div class="highlight"><pre><span></span>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
+&#39;logfile&#39; =&gt; &#39;/var/log/nextcloud.log&#39;,
+</pre></div>
+
+
+<p>Now:</p>
+<div class="highlight"><pre><span></span>su
+touch /var/log/nextcloud.log
+chown www-data:www-data /var/log/nextcloud.log
 </pre></div>
 
 
@@ -964,7 +972,6 @@ sleep <span class="m">1</span>
 </pre></div>
 
 
-<p>Then add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. Check OpenVPN logs, there might be a permission issue on <code>/var/log/exim4</code>.</p>
 <p>Now, edit <em>client.conf</em>:</p>
 <div class="highlight"><pre><span></span>remote &lt;your DynHost domain&gt; 1194
 user nobody
@@ -1032,24 +1039,26 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 su
 mv client.conf client.conf.old
 shred -u client.ovpn
-openvpn --config server.conf <span class="p">&amp;</span>
-tail -f openvpn.log
+systemctl restart openvpn
+tail -f /var/log/openvpn/openvpn.log
 </pre></div>
 
 
 <p>At next boot, the server will run automatically. We needed to rename the <em>client.ovpn</em> because the initscript will scan this directory for <em>.conf</em> files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:</p>
 <div class="highlight"><pre><span></span>shred -u client.conf.old
-shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
-shred -u /etc/openvpn/easy-rsa/easyrsa3/pki/issued/client.crt
+shred -u /etc/openvpn/easy-rsa/pki/private/client.key
+shred -u /etc/openvpn/easy-rsa/pki/issued/client.crt
 </pre></div>
 
 
-<p>Now your client:</p>
+<p>Now on your client:</p>
 <div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install resolvconf
 sudo openvpn --config client.ovpn
 </pre></div>
 
 
+<p>On the server, run <code>runq</code> and make sure you received the notification email. If not, check OpenVPN logs, there might be a permission issue on <code>/var/log/exim4</code>. To fix it, add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>.</p>
+<h2>Optional: use several ports</h2>
 <p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit <code>firewall.sh</code>, change the first line and add the second one:</p>
 <div class="highlight"><pre><span></span><span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194 53&quot;</span> <span class="c1"># DCHP, OpenVPN, OpenVPN (other port)</span>
 <span class="c1"># ...</span>
@@ -1060,25 +1069,25 @@ iptables -t nat -A PREROUTING -i eth0 -p udp --dport <span class="m">53</span> -
 <h1>Hardening SSH configuration</h1>
 <p>Edit <em>/etc/ssh/sshd_config</em>:</p>
 <div class="highlight"><pre><span></span>Port &lt;something you like&gt;
+# If you change the default port, don&#39;t forget to update SSH_PORT in firewall.sh
 #HostKey /etc/ssh/ssh_host_dsa_key # Comment because too old
 #HostKey /etc/ssh/ssh_host_ecdsa_key # Same reason
-UsePrivilegeSeparation sandbox
 LoginGraceTime 10s
 PermitRootLogin no
 StrictModes yes
 PubkeyAuthentication yes
 IgnoreRhosts yes
+PasswordAuthentication no # Or yes, depending on your needs
 PermitEmptyPasswords no
 ChallengeResponseAuthentication no
-PasswordAuthentication no # Or yes, depending on your needs
-Banner /etc/issue.net # Message displayed at login
 UsePAM no
+Banner /etc/issue.net # Message displayed at login
 
 # Custom settings
 AllowUsers pi # ONLY pi will be allowed to log in
 
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+MACs hmac-sha2-512,hmac-sha2-256
 KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 </pre></div>
 
@@ -1086,8 +1095,7 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 <p>The last three lines are taken from <a href="https://stribika.github.io/2015/01/04/secure-secure-shell.html">this very helpful website</a>. You should also read <a href="http://kacper.blog.redpill-linpro.com/archives/702">this one</a> after having read the first one (the order is important).</p>
 <p><a href="http://mysecureshell.sourceforge.net/fr/securessh.html#question3">Another helpful website about how to prevent SSH bruteforce attacks</a>. However, we'll use fail2ban, see below.</p>
 <p>Consider allowing SSH connections using public keys only. On a client do:</p>
-<div class="highlight"><pre><span></span>ssh-keygen -t ed25519 -o -a 100 # Accept default directory and no passphrase
-ssh-keygen -t rsa -b 4096 -o -a 100 
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 4096 -o -a 100 # Accept default directory and no passphrase
 ssh-copy-id -i ~/.ssh/id_rsa.pub pi@raspberrypi-IP
 </pre></div>
 
@@ -1125,7 +1133,7 @@ fi
 <p><a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8">Official documentation</a>.</p>
 <div class="highlight"><pre><span></span>su
 apt install fail2ban
-fail2ban-client -x start <span class="c1"># To force the server to startup. However, a reboot is preferable.</span>
+systemctl status fail2ban
 </pre></div>
 
 
@@ -1135,18 +1143,17 @@ fail2ban-client -x start <span class="c1"># To force the server to startup. Howe
 bantime = 86400
 findtime = 3600
 maxretry = 3
-ntime  = 8700
 action = %(action_mwl)s
 
-# Enable sshd (enabled = true) and sshd-dos, change &#39;port&#39; and the &#39;maxretry&#39; value if need be
+# Enable sshd (enabled = true + mode = aggressive), change &#39;port&#39; if need be
 # Enable apache, apache-*
 # Add the following new entry
 [http-dos]
 enabled = true
 port = http,https
 filter = http-dos
-logpath = /var/log/apache*/*access.log
-maxretry = 360
+logpath = %(apache_access_log)s
+maxretry = 200
 findtime = 120
 bantime = 600
 
@@ -1154,7 +1161,7 @@ bantime = 600
 enabled = true
 port = http,https
 filter = http-dos
-logpath = /var/log/apache*/*access.log
+logpath = %(apache_access_log)s
 maxretry = 1
 findtime = 120
 bantime = 6000
@@ -1210,13 +1217,13 @@ country_list = CN|China
 </pre></div>
 
 
-<p>Finally, <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban">set up fail2ban to also protect you from attacks against Nextcloud</a>.</p>
+<p>Finally, <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban">set up fail2ban to also protect you from attacks against Nextcloud</a>. The <code>logpath</code> to use is <code>/var/log/nextcloud.log</code>.</p>
 <p>Now install missing packages, reload the service maually to make sure there is no error:</p>
 <div class="highlight"><pre><span></span>su
 apt install geoip-bin geoip-database
 systemctl stop fail2ban
 fail2ban-client -x start
-cat /var/log/fail2ban.log
+less /var/log/fail2ban.log
 <span class="c1"># Check for errors</span>
 fail2ban-client -x stop
 systemctl start fail2ban
