@@ -5095,7 +5095,7 @@ sudo openvpn --config client.ovpn
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;On the server, run &lt;code&gt;runq&lt;/code&gt; and make sure you received the notification email. If not, check OpenVPN logs, there might be a permission issue on &lt;code&gt;/var/log/exim4&lt;/code&gt;. To fix it, add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. &lt;a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/"&gt;Here is why&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Optional: use several ports&lt;/h2&gt;
 &lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit &lt;code&gt;firewall.sh&lt;/code&gt;, change the first line and add the second one:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;68 1194 53&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DCHP, OpenVPN, OpenVPN (other port)&lt;/span&gt;

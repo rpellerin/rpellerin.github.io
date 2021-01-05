@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5795 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5769 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -1057,7 +1057,7 @@ sudo openvpn --config client.ovpn
 </pre></div>
 
 
-<p>On the server, run <code>runq</code> and make sure you received the notification email. If not, check OpenVPN logs, there might be a permission issue on <code>/var/log/exim4</code>. To fix it, add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>.</p>
+<p>Add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. <a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/">Here is why</a>.</p>
 <h2>Optional: use several ports</h2>
 <p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit <code>firewall.sh</code>, change the first line and add the second one:</p>
 <div class="highlight"><pre><span></span><span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194 53&quot;</span> <span class="c1"># DCHP, OpenVPN, OpenVPN (other port)</span>
