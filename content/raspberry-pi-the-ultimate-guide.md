@@ -989,7 +989,7 @@ Now on your client:
     sudo apt update && sudo apt install resolvconf
     sudo openvpn --config client.ovpn
 
-On the server, run `runq` and make sure you received the notification email. If not, check OpenVPN logs, there might be a permission issue on `/var/log/exim4`. To fix it, add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`.
+Add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`. [Here is why](https://alexaf.gitlab.io/posts/broken_vpn_notifications/).
 
 ## Optional: use several ports
 
