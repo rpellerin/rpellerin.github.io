@@ -72,12 +72,17 @@ For this tutorial you'll need:
                 )
                 return response.status_code == 200
             except requests.exceptions.RequestException:
-                return false
+                return False
 
 
         data = bme280.sample(bus, address, calibration_params)
 
-        successfully_sent = send_request(data)
+        successfully_sent = False
+
+        try:
+            successfully_sent = send_request(data)
+        except BaseException as e:
+            print("Error: %s" % str(e))
 
         if not successfully_sent:
             print('Failed to post to Google Form')
