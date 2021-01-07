@@ -1111,6 +1111,11 @@ Make sure the file */etc/init.d/fail2ban* exists. Now edit */etc/fail2ban/jail.l
     action = %(action_)s
     # action_ won't send email when banning someone (cause would send a message for every new request) nor when starting/stopping
 
+In `/etc/fail2ban/filter.d/apache-auth.conf`, edit the line `ignoreregex` like this to fix a known issue between [Nextcloud and fail2ban](https://github.com/nextcloud/server/issues/15688):
+
+    :::text
+    ignoreregex = var/www/nextcloud/config
+
 Now create */etc/fail2ban/filter.d/http-dos.conf*:
 
     :::text
