@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5769 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5789 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -1168,6 +1168,11 @@ bantime = 6000
 banaction = ban-countries
 action = %(action_)s
 # action_ won&#39;t send email when banning someone (cause would send a message for every new request) nor when starting/stopping
+</pre></div>
+
+
+<p>In <code>/etc/fail2ban/filter.d/apache-auth.conf</code>, edit the line <code>ignoreregex</code> like this to fix a known issue between <a href="https://github.com/nextcloud/server/issues/15688">Nextcloud and fail2ban</a>:</p>
+<div class="highlight"><pre><span></span>ignoreregex = var/www/nextcloud/config
 </pre></div>
 
 

@@ -5214,6 +5214,11 @@ action = %(action_)s
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;In &lt;code&gt;/etc/fail2ban/filter.d/apache-auth.conf&lt;/code&gt;, edit the line &lt;code&gt;ignoreregex&lt;/code&gt; like this to fix a known issue between &lt;a href="https://github.com/nextcloud/server/issues/15688"&gt;Nextcloud and fail2ban&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ignoreregex = var/www/nextcloud/config
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Now create &lt;em&gt;/etc/fail2ban/filter.d/http-dos.conf&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[Definition]
 
