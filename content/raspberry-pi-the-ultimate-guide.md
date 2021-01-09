@@ -544,6 +544,8 @@ Edit your user and root's `.bashrc` and add at the end of the file:
 
 Official tutorial: [https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html).
 
+([here is another tutorial on how to install Nextcloud via SNAP](https://kiramclean.com/blog/how-to-set-up-your-own-nextcloud-server/))
+
 <details>
     <summary>Click here to know how to support HTTP2</summary>
 [Note that Apache prefork (which is used by `libapache2-mod-php`) is not compatible with HTTP2](https://http2.pro/doc/Apache). We have to [use fpm](https://blog.feutl.com/nextcloud-http2/). Here are some instructions on how to support HTTP2:
