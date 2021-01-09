@@ -4662,6 +4662,7 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
 
 &lt;h1&gt;Installing Nextcloud&lt;/h1&gt;
 &lt;p&gt;Official tutorial: &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html"&gt;https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(&lt;a href="https://kiramclean.com/blog/how-to-set-up-your-own-nextcloud-server/"&gt;here is another tutorial on how to install Nextcloud via SNAP&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;details&gt;
     &lt;summary&gt;Click here to know how to support HTTP2&lt;/summary&gt;
 &lt;a href="https://http2.pro/doc/Apache"&gt;Note that Apache prefork (which is used by &lt;code&gt;libapache2-mod-php&lt;/code&gt;) is not compatible with HTTP2&lt;/a&gt;. We have to &lt;a href="https://blog.feutl.com/nextcloud-http2/"&gt;use fpm&lt;/a&gt;. Here are some instructions on how to support HTTP2:&lt;/p&gt;
