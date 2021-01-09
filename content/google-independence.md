@@ -28,3 +28,4 @@ Summary: Resources to be Google-independent
 - [Dégooglisons Internet](https://degooglisons-internet.org/fr/alternatives/)
 - [Comment se débarrasser de Google](https://iampox.com/blog/comment-se-debarrasser-de-google)
 - [Google's Software is Malware](https://www.gnu.org/proprietary/malware-google.en.html)
+- [What I Use Now Instead Of Google](https://kiramclean.com/blog/what-i-use-now-instead-of-google/)
