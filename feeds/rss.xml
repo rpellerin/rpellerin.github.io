@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 01 Jan 2021 19:00:00 +0100</lastBuildDate><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 10 Jan 2021 17:50:00 +0100</lastBuildDate><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1&gt;SSDs&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://storage.jamesachambers.com/popular/"&gt;Crucial BX500&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1653853#p1653853"&gt;HP S600 120GB SSD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;Kingston A400&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other SSDs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;SATA to USB 3.0 adapters&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt; seems to be the preferred adapters among all the existing ones when it comes to Raspberry Pis.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;StarTech 2.5" SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other adapters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 10 Jan 2021 17:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</guid><category>raspberry pi</category></item><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
 &lt;p&gt;In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.&lt;/p&gt;
 &lt;p&gt;Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:&lt;/p&gt;
 &lt;figure class="center"&gt;
