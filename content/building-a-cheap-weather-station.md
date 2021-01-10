@@ -54,6 +54,7 @@ For this tutorial you'll need:
         port = 1
         address = 0x76
         bus = smbus2.SMBus(port)
+        utc_offset_in_hours = int(-time.timezone/3600)
 
         calibration_params = bme280.load_calibration_params(bus, address)
         def send_request(data):
@@ -61,7 +62,7 @@ For this tutorial you'll need:
                 response = requests.post(
                     url,
                     params={
-                        "entry.12": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=1))).strftime('%Y/%m/%d %H:%M:%S'),
+                        "entry.12": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=utc_offset_in_hours))).isoformat(), 
                         "entry.34": data.temperature,
                         "entry.56": data.humidity,
                         "entry.78": data.pressure,
