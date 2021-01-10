@@ -38,7 +38,7 @@ For this tutorial you'll need:
 1. `mkdir /home/pi/temperature && cd /home/pi/temperature` (or any other directory of your liking).
 1. `pip3 install virtualenv` (no `sudo`!)
 1. `/home/pi/.local/bin/virtualenv -p /usr/bin/python3 .env && source .env/bin/activate`
-1. `pip install smbus2 requests RPi.bme280`
+1. `pip install smbus2 requests RPi.bme280 redis`
 1. Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with `/formResponse`. Copy the URL and the hidden input names, you'll need them in the next bullet point.
 1. `vim weatherstation.py`
 
@@ -48,6 +48,7 @@ For this tutorial you'll need:
         import time
         import requests
         import datetime
+        import redis
 
         url="https://docs.google.com/forms/TOKEN/formResponse"
 
@@ -55,6 +56,7 @@ For this tutorial you'll need:
         address = 0x76
         bus = smbus2.SMBus(port)
         utc_offset_in_hours = int(-time.timezone/3600)
+        now = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=utc_offset_in_hours))).strftime('%d/%m/%Y %H:%M:%S')
 
         calibration_params = bme280.load_calibration_params(bus, address)
         def send_request(data):
@@ -62,10 +64,10 @@ For this tutorial you'll need:
                 response = requests.post(
                     url,
                     params={
-                        "entry.12": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=utc_offset_in_hours))).isoformat(), 
-                        "entry.34": data.temperature,
-                        "entry.56": data.humidity,
-                        "entry.78": data.pressure,
+                        "entry.12": data['timestamp'], 
+                        "entry.34": data['temperature'],
+                        "entry.56": data['humidity'],
+                        "entry.78": data['pressure'],
                     },
                     headers={
                         "Content-Type": "application/octet-stream",
@@ -76,7 +78,8 @@ For this tutorial you'll need:
                 return False
 
 
-        data = bme280.sample(bus, address, calibration_params)
+        raw_data = bme280.sample(bus, address, calibration_params)
+        data = { 'timestamp': now, 'temperature': raw_data.temperature, 'humidity': raw_data.humidity, 'pressure': raw_data.pressure }
 
         successfully_sent = False
 
@@ -88,6 +91,8 @@ For this tutorial you'll need:
         if not successfully_sent:
             print('Failed to post to Google Form')
             print(data)
+            r = redis.Redis()
+            r.rpush('weather_reports', str(data))
 
 
 1. Finally, let's make it post values every 5 minutes through `crontab -e`: `*/5 * * * * /home/pi/temperature/.env/bin/python /home/pi/temperature/weatherstation.py`
