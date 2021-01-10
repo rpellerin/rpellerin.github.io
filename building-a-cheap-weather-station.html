@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">How to build a cheap weather station with a Raspberry Pi and the BME280 module</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 409 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 411 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/weather.html">weather</a></p>    </div>
 </header>
@@ -137,6 +137,7 @@
 <span class="n">port</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">address</span> <span class="o">=</span> <span class="mh">0x76</span>
 <span class="n">bus</span> <span class="o">=</span> <span class="n">smbus2</span><span class="o">.</span><span class="n">SMBus</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="n">utc_offset_in_hours</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="n">time</span><span class="o">.</span><span class="n">timezone</span><span class="o">/</span><span class="mi">3600</span><span class="p">)</span>
 
 <span class="n">calibration_params</span> <span class="o">=</span> <span class="n">bme280</span><span class="o">.</span><span class="n">load_calibration_params</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">send_request</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
@@ -144,7 +145,7 @@
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="n">url</span><span class="p">,</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s2">&quot;entry.12&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">),</span>
+                <span class="s2">&quot;entry.12&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">utc_offset_in_hours</span><span class="p">)))</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span> 
                 <span class="s2">&quot;entry.34&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span>
                 <span class="s2">&quot;entry.56&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">humidity</span><span class="p">,</span>
                 <span class="s2">&quot;entry.78&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">pressure</span><span class="p">,</span>
