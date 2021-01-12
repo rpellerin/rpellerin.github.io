@@ -11,10 +11,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 
 # Shows still running
 
-## [Altered Carbon](https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series))
-
-New stuff from Netflix, looks rad!
-
 ## [Black Mirror](https://en.wikipedia.org/wiki/Black_Mirror)
 
 An interesting analyze of our modern society.
@@ -41,7 +37,15 @@ A spin-off of Breaking Bad: same ambiance, a must-see!
 
 A great TV series produced by Netflix!
 
+## [La Casa de Papel](https://en.wikipedia.org/wiki/Money_Heist)
+
+New TV series from Netflix. Pretty cool!
+
 # Ended or Canceled TV series
+
+## [Altered Carbon](https://en.wikipedia.org/wiki/Altered_Carbon_(TV_series))
+
+Very good cyberpunk show.
 
 ## [Vikings](http://en.wikipedia.org/wiki/Vikings_%28TV_series%29)
 
@@ -78,10 +82,6 @@ About the personal computer revolution in the 80's. The show ended in 2017.
 ## [Sun Records](https://en.wikipedia.org/wiki/Sun_Records_(TV_series))
 
 Music!
-
-## [La Casa de Papel](https://en.wikipedia.org/wiki/Money_Heist)
-
-New TV series from Netflix. Pretty cool!
 
 ## [Dark](https://en.wikipedia.org/wiki/Dark_(TV_series))
 
