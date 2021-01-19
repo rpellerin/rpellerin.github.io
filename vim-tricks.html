@@ -84,17 +84,93 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2017-01-18T22:50:00+01:00">Wed 18 January 2017</time>        </p>
+<time datetime="2017-01-18T22:50:00+01:00">Wed 18 January 2017</time> - Last Update: <time datetime="2021-01-19T23:00:00+01:00">Tue 19 January 2021</time>        </p>
     <h1>Vim Tricks</h1>
     <div class="grey">
         <p class="italic">A few tricks for Vim that I have learned over all my years of using this incredible tool.</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 247 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 736 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/vim.html">vim</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/vi.html">vi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <h1>Regex</h1>
+    <h1>Left-right and up-down motions</h1>
+<ul>
+<li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>: left, down, up, right</li>
+<li><code>^e</code>: scoll window down (ctrl + e)</li>
+<li><code>^y</code>: scroll window up</li>
+<li><code>^f</code>: scroll down one page</li>
+<li><code>^b</code>: scroll up one page</li>
+<li><code>H</code>: move cursor to the top</li>
+<li><code>M</code>: move cursor to the middle</li>
+<li><code>L</code>: move cursor to the bottom</li>
+<li><code>gg</code>: top of file</li>
+<li><code>G</code>: bottom of file</li>
+<li><code>t&lt;char&gt;</code>: till some character</li>
+<li><code>T&lt;char&gt;</code>: till some character (backward)</li>
+<li><code>f&lt;char&gt;</code>: find forward (it will include the found character, unlike till)</li>
+<li><code>F&lt;char&gt;</code>: find backward</li>
+</ul>
+<h1>Text objects motions</h1>
+<ul>
+<li><code>&lt;n&gt; w</code>: n words forward (n is optional)</li>
+<li><code>b</code>: beginning of word</li>
+<li><code>e</code>: end of word</li>
+<li><code>{</code>: beginning of paragraph</li>
+<li><code>}</code>: end of paragraph</li>
+</ul>
+<h1>Text objects (only in visual mode or after an operator)</h1>
+<ul>
+<li><code>s</code>: sentences</li>
+<li><code>p</code>: paragraphs</li>
+<li><code>t</code>: tags (html/xml only)</li>
+</ul>
+<h1>Copying and moving text / Inserting text</h1>
+<ul>
+<li><code>d{motion}</code>: delete/cut (<code>dd</code> to delete entire line)</li>
+<li><code>p</code>: paste (a line that was cut for instance)</li>
+<li><code>c</code>: change (replace)</li>
+<li><code>D</code> / <code>C</code>: delete/change until end of line</li>
+<li><code>y{motion{</code>: yank (<code>yy</code> to copy entire line)</li>
+<li><code>&gt;</code>: indent</li>
+<li><code>^</code>: go to beginning of line</li>
+<li><code>$</code>: go to end of line</li>
+<li><code>I</code>: go to beginning of line and enter insert mode</li>
+<li><code>A</code>: go to end of line and enter insert mode</li>
+<li><code>o</code>: add a new line below and enter insert mode</li>
+<li><code>O</code>: add a new line above and enter insert mode</li>
+</ul>
+<h2>Examples</h2>
+<p>General rule: <code>[optional number to repeat]{command}{text object or motion}</code>.</p>
+<ul>
+<li><code>diw</code>: delete in word</li>
+<li><code>caw</code>: change all word (all will grab surrounding whitespaces)</li>
+<li><code>yi(</code>: yank all text inside parentheses</li>
+<li><code>di[</code>: delete between square brackets</li>
+<li><code>va"</code>: visually select all inside doublequotes (including doublequotes)</li>
+<li><code>3dd</code> is equal to <code>d2j</code></li>
+<li><code>3J</code>: join the next three lines into 1 line</li>
+<li><code>d5}</code>: delete from the current line through the end of the fifth paragraph down from here</li>
+</ul>
+<h1>Registers</h1>
+<ul>
+<li><code>:reg</code>: access the registers</li>
+<li><code>i</code> (insert mode) then <code>^r</code> and a register letter to paste from it, instead of <code>"{register}p</code>.</li>
+<li><code>m{register}</code>: mark a cursor position in some register</li>
+<li><code>`{register}</code>: go back to the marked position</li>
+<li><code>'{register}</code>: go to beginning of line where there is the marked position</li>
+<li><code>d`a</code>: delete from here to position marked in register 'a'</li>
+</ul>
+<h1>Autocomplete (in insert mode)</h1>
+<ul>
+<li><code>^x^n</code>: for just this file</li>
+<li><code>^x^f</code>: for filenames</li>
+<li><code>^x^]</code>: for tags only</li>
+<li><code>^x^l</code>: whole lines</li>
+<li><code>^n</code> and <code>^p</code>: go back and forth in the suggestion list</li>
+</ul>
+<p>(<code>^n</code> is disabled by YouCompleteMe.)</p>
+<h1>Regex</h1>
 <h2>Interactive find and replace</h2>
 <div class="highlight"><pre><span></span>:%s/foo/bar/gc
 </pre></div>
@@ -132,6 +208,21 @@
 </pre></div>
 
 
+<h2>Other</h2>
+<ul>
+<li><code>v</code>: visually select (enters visual mode)</li>
+<li><code>.</code>: repeat the last command</li>
+<li><code>~</code>: invert the case for current char</li>
+<li><code>/</code>: search something (c/myvar, delete and insert from here to myvar)</li>
+<li><code>:earlier 2m</code>: go back to state in history that is 2 minutes old</li>
+<li><code>:cl</code>: to list errors</li>
+<li><code>:cc#</code> to jump to error number #</li>
+<li><code>:cn</code> and <code>:cp</code>: to navigate forward and back</li>
+<li><code>:help ^n</code>: to know about what ctrl n does</li>
+<li><code>:help c_^n</code>: ctrl n in command mode</li>
+<li><code>:help i_^n</code>, <code>:help v_^n</code>: ctrl n in insert mode or visual mode</li>
+<li><code>:helpgrep whatever</code>: search in all documentation, then use :cl, :cc, :cp, :cn</li>
+</ul>
 <h1>Useful links</h1>
 <ul>
 <li><a href="https://vim.rtorr.com/">Vim Cheat Sheet</a></li>
@@ -156,7 +247,7 @@
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Wed 18 January 2017</footer>
+    Last update: Tue 19 January 2021</footer>
 
         </div> <!-- WRAPPER -->
     </body>
