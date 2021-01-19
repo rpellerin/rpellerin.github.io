@@ -1,10 +1,89 @@
-Title: Vim Tricks 
+Title: Vim Tricks
 Date: 2017-01-18 22:50
+Modified: 2021-01-19 23:00
 Category: Linux
 Tags: vim, vi, linux
 Slug: vim-tricks
 Authors: Romain Pellerin
 Summary: A few tricks for Vim that I have learned over all my years of using this incredible tool.
+
+# Left-right and up-down motions
+
+- `h`, `j`, `k`, `l`: left, down, up, right
+- `^e`: scoll window down (ctrl + e)
+- `^y`: scroll window up
+- `^f`: scroll down one page
+- `^b`: scroll up one page
+- `H`: move cursor to the top
+- `M`: move cursor to the middle
+- `L`: move cursor to the bottom
+- `gg`: top of file
+- `G`: bottom of file
+- `t<char>`: till some character
+- `T<char>`: till some character (backward)
+- `f<char>`: find forward (it will include the found character, unlike till)
+- `F<char>`: find backward
+
+# Text objects motions
+
+- `<n> w`: n words forward (n is optional)
+- `b`: beginning of word
+- `e`: end of word
+- `{`: beginning of paragraph
+- `}`: end of paragraph
+
+# Text objects (only in visual mode or after an operator)
+
+- `s`: sentences
+- `p`: paragraphs
+- `t`: tags (html/xml only)
+
+# Copying and moving text / Inserting text
+
+- `d{motion}`: delete/cut (`dd` to delete entire line)
+- `p`: paste (a line that was cut for instance)
+- `c`: change (replace)
+- `D` / `C`: delete/change until end of line
+- `y{motion{`: yank (`yy` to copy entire line)
+- `>`: indent
+- `^`: go to beginning of line
+- `$`: go to end of line
+- `I`: go to beginning of line and enter insert mode
+- `A`: go to end of line and enter insert mode
+- `o`: add a new line below and enter insert mode
+- `O`: add a new line above and enter insert mode
+
+## Examples
+
+General rule: `[optional number to repeat]{command}{text object or motion}`.
+
+- `diw`: delete in word
+- `caw`: change all word (all will grab surrounding whitespaces)
+- `yi(`: yank all text inside parentheses
+- `di[`: delete between square brackets
+- `va"`: visually select all inside doublequotes (including doublequotes)
+- `3dd` is equal to `d2j`
+- `3J`: join the next three lines into 1 line
+- `d5}`: delete from the current line through the end of the fifth paragraph down from here
+
+# Registers
+
+- `:reg`: access the registers
+- `i` (insert mode) then `^r` and a register letter to paste from it, instead of `"{register}p`.
+- `m{register}`: mark a cursor position in some register
+- ``{register}`: go back to the marked position
+- `'{register}`: go to beginning of line where there is the marked position
+- `` d`a ``: delete from here to position marked in register 'a'
+
+# Autocomplete (in insert mode)
+
+- `^x^n`: for just this file
+- `^x^f`: for filenames
+- `^x^]`: for tags only
+- `^x^l`: whole lines
+- `^n` and `^p`: go back and forth in the suggestion list
+
+(`^n` is disabled by YouCompleteMe.)
 
 # Regex
 
@@ -26,7 +105,7 @@ Will print `kodefok`.
 
 ## Non-greedy search
 
-Normally, to search in a non-greedy way, we add a punctuation mark, as in `.*?` which means *any string of characters as short as possible*. For instance:
+Normally, to search in a non-greedy way, we add a punctuation mark, as in `.*?` which means _any string of characters as short as possible_. For instance:
 
     :::bash
     /<.>(.*?)<.>/
@@ -50,6 +129,21 @@ From that point on, as you scroll on one pane, the other one will follow. To und
 
     :::bash
     :set noscrollbind
+
+## Other
+
+- `v`: visually select (enters visual mode)
+- `.`: repeat the last command
+- `~`: invert the case for current char
+- `/`: search something (c/myvar, delete and insert from here to myvar)
+- `:earlier 2m`: go back to state in history that is 2 minutes old
+- `:cl`: to list errors
+- `:cc#` to jump to error number #
+- `:cn` and `:cp`: to navigate forward and back
+- `:help ^n`: to know about what ctrl n does
+- `:help c_^n`: ctrl n in command mode
+- `:help i_^n`, `:help v_^n`: ctrl n in insert mode or visual mode
+- `:helpgrep whatever`: search in all documentation, then use :cl, :cc, :cp, :cn
 
 # Useful links
 
