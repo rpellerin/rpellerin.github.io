@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-01-19T23:00:00+01:00</updated><entry><title>Raspberry Pi and SSD</title><link href="//romainpellerin.eu/raspberry-pi-and-ssd.html" rel="alternate"></link><published>2021-01-10T17:50:00+01:00</published><updated>2021-01-10T17:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</id><summary type="html">&lt;p&gt;Resources on Raspberry Pis and SSDs&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SSDs&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-01-23T17:16:00+01:00</updated><entry><title>Raspberry Pi and SSD</title><link href="//romainpellerin.eu/raspberry-pi-and-ssd.html" rel="alternate"></link><published>2021-01-10T17:50:00+01:00</published><updated>2021-01-10T17:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</id><summary type="html">&lt;p&gt;Resources on Raspberry Pis and SSDs&lt;/p&gt;</summary><content type="html">&lt;h1&gt;SSDs&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://storage.jamesachambers.com/popular/"&gt;Crucial BX500&lt;/a&gt;&lt;/li&gt;
@@ -3806,7 +3806,7 @@ sudo apt install vlc
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=nTbzx4-lAAI"&gt;TUTO - Mon Top 10 des astuces en VOYAGE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2PZNLlprlwc"&gt;TUTO - Faire son SAC A DOS pour un TOUR DU MONDE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://mricon.com/i/travel-laptop-setup.html"&gt;Travel (Linux) laptop setup&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="travel"></category></entry><entry><title>My RSS Subscriptions</title><link href="//romainpellerin.eu/my-rss-subscriptions.html" rel="alternate"></link><published>2016-12-18T23:00:00+01:00</published><updated>2021-01-13T12:16:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-18:/my-rss-subscriptions.html</id><summary type="html">&lt;p&gt;The RSS feeds I subscribed to.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here is a list of all the websites I subscribed to. Those are very interesting and cover a wide variety of topics. A few of them are in French though.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="travel"></category></entry><entry><title>My RSS Subscriptions</title><link href="//romainpellerin.eu/my-rss-subscriptions.html" rel="alternate"></link><published>2016-12-18T23:00:00+01:00</published><updated>2021-01-23T17:16:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-18:/my-rss-subscriptions.html</id><summary type="html">&lt;p&gt;The RSS feeds I subscribed to.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here is a list of all the websites I subscribed to. Those are very interesting and cover a wide variety of topics. A few of them are in French though.&lt;/p&gt;
 &lt;h1&gt;Bike&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.pausevelo.com/feed/"&gt;Pause Velo&lt;/a&gt;&lt;/li&gt;
@@ -3835,22 +3835,12 @@ sudo apt install vlc
 &lt;h1&gt;Humor&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.commitstrip.com/fr/feed/"&gt;CommitStrip&lt;/a&gt; (&lt;a href="http://www.commitstrip.com/en/feed/"&gt;English feed&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCyWqModMQlbIo8274Wh_ZsQ"&gt;Cyprien&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCGZ8z1V-Z3eUKbzBt8cHqjg"&gt;Dan Rock&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCOhfLu1DXGjncY5QBdMFRhw"&gt;French Fried TV&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLS9S-RWXlfOfL8I4LC54_AWqU-IWgsngH"&gt;LE MOMENT MEURICE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.monkeyuser.com/feed.xml"&gt;MonkeyUser&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCww2zZWg4Cf5xcRKG-ThmXQ"&gt;NORMAN FAIT DES VIDÉOS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCd56yga015uI5hfOfnXdzCQ"&gt;Paul Taylor&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Misc&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCm5wThREh298TkK8hCT9HuA"&gt;Data Gueule&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCsVPQfo5RZErDL41LoWvk0A"&gt;Devoxx FR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC-2EkisRV8h9KsHpslQ1gXA"&gt;Et tout le monde s'en fout&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UCDoKG5pBrK3XYntCEGal2-w"&gt;Le JTerre&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://rss.allocine.fr/ac/cine/cettesemaine"&gt;Les sorties de la semaine&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?channel_id=UC4m2G6T18_JcjwxwtwKJijw"&gt;Samy Kamkar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Some friends of mine&lt;/h1&gt;
 &lt;ul&gt;
