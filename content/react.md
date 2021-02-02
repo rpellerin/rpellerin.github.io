@@ -65,6 +65,7 @@ PS: a friend of mine also gave a talk last year, at our school, about React. He 
 
 # Futher reading
 
+- [I Almost Got Fired for Choosing React in Our Enterprise App](https://medium.com/better-programming/i-almost-got-fired-for-choosing-react-in-our-enterprise-app-846ea840841c)
 - [Reduce Your bundle.js File Size By Doing This One Thing](https://lacke.mn/reduce-your-bundle-js-file-size/)
 - [Mobile, desktop and website Apps with the same code (React native)](https://github.com/benoitvallon/react-native-nw-react-calculator)
 - [How to Structure a React Project?](http://reactjsnews.com/structuring-react-projects/)
