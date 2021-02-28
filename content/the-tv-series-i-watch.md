@@ -20,6 +20,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - La Casa de Papel
 - Lupin
 - Tribes of Europa
+- Ted Lasso
 
 # Ended or Canceled TV series
 
