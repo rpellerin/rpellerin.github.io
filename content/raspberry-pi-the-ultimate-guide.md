@@ -784,14 +784,17 @@ Add the following in */var/www/nextcloud/config/config/php*:
 
     :::text
     'logtimezone' => 'Europe/Paris',
-    'logfile' => '/var/log/nextcloud.log',
+    'logfile' => '/var/log/nextcloud/nextcloud.log',
 
 Now:
 
     :::bash
-    su
-    touch /var/log/nextcloud.log
-    chown www-data:www-data /var/log/nextcloud.log
+    su -
+    mkdir /var/log/nextcloud
+    chown www-data:www-data /var/log/nextcloud
+    exit
+    sudo -u www-data bash
+    touch /var/log/nextcloud/nextcloud.log
 
 In Nextcloud, enable the server-side encryption in the admin settings, and enable the app called *Default encryption module* in the web interface, while logged in as an admin. You'll need to log out and in to actually enable encryption for good.
 
@@ -1164,7 +1167,7 @@ Now create */etc/fail2ban/action.d/ban-countries.conf*:
      
     country_list = CN|China
 
-Finally, [set up fail2ban to also protect you from attacks against Nextcloud](https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban). The `logpath` to use is `/var/log/nextcloud.log`.
+Finally, [set up fail2ban to also protect you from attacks against Nextcloud](https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban). The `logpath` to use is `/var/log/nextcloud/nextcloud.log`.
 
 Now install missing packages, reload the service maually to make sure there is no error:
 
