@@ -1214,14 +1214,17 @@ service apache2 restart
 &lt;h2&gt;Improve Nextcloud's settings&lt;/h2&gt;
 &lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config/php&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
-&amp;#39;logfile&amp;#39; =&amp;gt; &amp;#39;/var/log/nextcloud.log&amp;#39;,
+&amp;#39;logfile&amp;#39; =&amp;gt; &amp;#39;/var/log/nextcloud/nextcloud.log&amp;#39;,
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
-touch /var/log/nextcloud.log
-chown www-data:www-data /var/log/nextcloud.log
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su -
+mkdir /var/log/nextcloud
+chown www-data:www-data /var/log/nextcloud
+&lt;span class="nb"&gt;exit&lt;/span&gt;
+sudo -u www-data bash
+touch /var/log/nextcloud/nextcloud.log
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1584,7 +1587,7 @@ country_list = CN|China
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Finally, &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban"&gt;set up fail2ban to also protect you from attacks against Nextcloud&lt;/a&gt;. The &lt;code&gt;logpath&lt;/code&gt; to use is &lt;code&gt;/var/log/nextcloud.log&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, &lt;a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/harden_server.html#setup-fail2ban"&gt;set up fail2ban to also protect you from attacks against Nextcloud&lt;/a&gt;. The &lt;code&gt;logpath&lt;/code&gt; to use is &lt;code&gt;/var/log/nextcloud/nextcloud.log&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now install missing packages, reload the service maually to make sure there is no error:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt install geoip-bin geoip-database
