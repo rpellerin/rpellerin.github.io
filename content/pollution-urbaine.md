@@ -212,3 +212,7 @@ En conclusion, je dirais qu'il reste difficile d'évaluer la réelle efficacité
 <br />
 
 Voilà qui clôt cet article sur la pollution urbaine.
+
+# Resources on the topic
+
+- [Reclaim our cities from the SUV army](https://www.ft.com/content/552b37dd-0d86-403c-ba50-af793049799b)
