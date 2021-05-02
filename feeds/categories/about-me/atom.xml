@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - About me</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/about-me/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-02-27T17:48:00+01:00</updated><entry><title>Bikes And Cycling Gear</title><link href="//romainpellerin.eu/bikes-and-cycling-gear.html" rel="alternate"></link><published>2020-04-20T01:30:00+02:00</published><updated>2020-04-20T01:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-04-20:/bikes-and-cycling-gear.html</id><summary type="html">&lt;p&gt;A list of bikes and cycling gear&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I maintain a list of good bikes and cycling gear that I am considering buying some day.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - About me</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/about-me/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-05-02T23:30:00+02:00</updated><entry><title>Cycling Events</title><link href="//romainpellerin.eu/cycling-events.html" rel="alternate"></link><published>2021-05-02T23:30:00+02:00</published><updated>2021-05-02T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-05-02:/cycling-events.html</id><summary type="html">&lt;p&gt;Some cycling events I know of, and would like to participate in&lt;/p&gt;</summary><content type="html">&lt;h1&gt;In Berlin&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://criticalmass.berlin/"&gt;Critical Mass&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://velofestivals.com/veloberlin/"&gt;VELOBerlin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nicolawernerchallenge.org/"&gt;The Nicola Werner Challenge&lt;/a&gt;: in Berlin and Paris&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Elsewhere&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.letapebyletourdefrance.com/"&gt;L'Étape du Tour de France&lt;/a&gt;: in France and other countries, every year&lt;/li&gt;
+&lt;/ul&gt;</content><category term="bike"></category><category term="cycling"></category><category term="berlin"></category></entry><entry><title>Bikes And Cycling Gear</title><link href="//romainpellerin.eu/bikes-and-cycling-gear.html" rel="alternate"></link><published>2020-04-20T01:30:00+02:00</published><updated>2020-04-20T01:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-04-20:/bikes-and-cycling-gear.html</id><summary type="html">&lt;p&gt;A list of bikes and cycling gear&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I maintain a list of good bikes and cycling gear that I am considering buying some day.&lt;/p&gt;
 &lt;p&gt;First, some vocabulary to know about frames:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;AL or AL usually means an Aluminum frame&lt;/li&gt;
@@ -522,6 +531,7 @@ th, td { border: 1px solid black; }
 &lt;li&gt;&lt;a href="http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/"&gt;Des conseils pour débuter en vélotaf&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://wiklou.org/wiki/Le_v%C3%A9lo_en_musique"&gt;Le vélo en musique&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=y4JzaaNmZsE"&gt;Le langage des signes cycliste&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cyclingboardgames.net/cyclogames.htm"&gt;CYCLING BOARD GAMES&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="bike"></category><category term="velotaf"></category></entry><entry><title>Workout</title><link href="//romainpellerin.eu/workout.html" rel="alternate"></link><published>2019-07-06T16:50:00+02:00</published><updated>2019-07-06T16:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2019-07-06:/workout.html</id><summary type="html">&lt;p&gt;Videos&lt;/p&gt;</summary><content type="html">&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/BkS1-El_WlE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/m2LfqLLjWE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
