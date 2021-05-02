@@ -114,3 +114,4 @@ En plus d'avoir une chaîne propre bien lubrifiée, il est important de vérifie
 - [Des conseils pour débuter en vélotaf](http://forum.velotaf.com/topic/28351-des-conseils-pour-debuter-en-velotaf/)
 - [Le vélo en musique](http://wiklou.org/wiki/Le_v%C3%A9lo_en_musique)
 - [Le langage des signes cycliste](https://www.youtube.com/watch?v=y4JzaaNmZsE)
+- [CYCLING BOARD GAMES](http://www.cyclingboardgames.net/cyclogames.htm)
