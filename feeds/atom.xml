@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-05-02T23:30:00+02:00</updated><entry><title>Cycling Events</title><link href="//romainpellerin.eu/cycling-events.html" rel="alternate"></link><published>2021-05-02T23:30:00+02:00</published><updated>2021-05-02T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-05-02:/cycling-events.html</id><summary type="html">&lt;p&gt;Some cycling events I know of, and would like to participate in&lt;/p&gt;</summary><content type="html">&lt;h1&gt;In Berlin&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2021-05-05T23:30:00+02:00</updated><entry><title>Fahrräder und Deutsche Bahn</title><link href="//romainpellerin.eu/fahrraeder-und-deutsche-bahn.html" rel="alternate"></link><published>2021-05-05T23:30:00+02:00</published><updated>2021-05-05T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-05-05:/fahrraeder-und-deutsche-bahn.html</id><summary type="html">&lt;p&gt;Things to know if you intend to carry your dismantled bike on a Deutsche Bahn train&lt;/p&gt;</summary><content type="html">&lt;h1&gt;German resources&lt;/h1&gt;
+&lt;h2&gt;Official&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bahn.de/hilfe/view/pk/en/fahrrad.shtml"&gt;https://www.bahn.de/hilfe/view/pk/en/fahrrad.shtml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bahn.de/p/view/service/zug/gepaeck.shtml"&gt;https://www.bahn.de/p/view/service/zug/gepaeck.shtml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bahn.de/p/view/service/fahrrad/07rad_fahrradzuege.shtml"&gt;https://www.bahn.de/p/view/service/fahrrad/07rad_fahrradzuege.shtml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Return on Experience&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://lifecyclemag.de/tranzbag/"&gt;https://lifecyclemag.de/tranzbag/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.diamantrad.com/blog/fahrradmitnahme-bahn/#Fahrrad_in_der_Bahn_als_Handgepaeck_mitnehmen"&gt;https://www.diamantrad.com/blog/fahrradmitnahme-bahn/#Fahrrad_in_der_Bahn_als_Handgepaeck_mitnehmen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://nationaler-radverkehrsplan.de/de/aktuell/nachrichten/neue-bedingungen-zur-fahrradmitnahme-der-bahn"&gt;https://nationaler-radverkehrsplan.de/de/aktuell/nachrichten/neue-bedingungen-zur-fahrradmitnahme-der-bahn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;English resources&lt;/h1&gt;
+&lt;h2&gt;Official&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bahn.com/en/view/trains/on-board-service/luggage.shtml"&gt;https://www.bahn.com/en/view/trains/on-board-service/luggage.shtml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bahn.de/hilfe/view/pk/en/fahrrad.shtml"&gt;https://www.bahn.de/hilfe/view/pk/en/fahrrad.shtml&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="bike"></category><category term="fahrrad"></category><category term="germany"></category><category term="deutsche bahn"></category></entry><entry><title>Cycling Events</title><link href="//romainpellerin.eu/cycling-events.html" rel="alternate"></link><published>2021-05-02T23:30:00+02:00</published><updated>2021-05-02T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-05-02:/cycling-events.html</id><summary type="html">&lt;p&gt;Some cycling events I know of, and would like to participate in&lt;/p&gt;</summary><content type="html">&lt;h1&gt;In Berlin&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://criticalmass.berlin/"&gt;Critical Mass&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://velofestivals.com/veloberlin/"&gt;VELOBerlin&lt;/a&gt;&lt;/li&gt;
