@@ -20,6 +20,11 @@ Summary: A few tips with FFMPEG
     chmod +x ./video-crossfade
     ./video-crossfade.sh -f 2 -o output.mp4 input.mp4 # 2 second crossfade
 
+# Scale a 2.7K (2704x1520) video down to 1080p
+
+    :::bash
+    ffmpeg -i input.mp4 -vf "scale=1920:1080,setsar=1" -acodec copy output.mp4
+
 # Convert a video framerate to NTSC (29.97002997)
 
     :::bash
