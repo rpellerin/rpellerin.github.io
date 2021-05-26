@@ -5571,6 +5571,11 @@ chmod +x ./video-crossfade
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h1&gt;Convert a video framerate to NTSC (29.97002997)&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Split a video in several chunks of same duration&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -c copy -map &lt;span class="m"&gt;0&lt;/span&gt; -segment_time &lt;span class="m"&gt;00&lt;/span&gt;:00:30 -f segment -reset_timestamps &lt;span class="m"&gt;1&lt;/span&gt; output%03d.mp4
 &lt;/pre&gt;&lt;/div&gt;

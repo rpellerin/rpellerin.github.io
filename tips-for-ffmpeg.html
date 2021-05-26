@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 728 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 743 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -102,6 +102,11 @@
 <div class="highlight"><pre><span></span>curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
 chmod +x ./video-crossfade
 ./video-crossfade.sh -f <span class="m">2</span> -o output.mp4 input.mp4 <span class="c1"># 2 second crossfade</span>
+</pre></div>
+
+
+<h1>Convert a video framerate to NTSC (29.97002997)</h1>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
 </pre></div>
 
 
