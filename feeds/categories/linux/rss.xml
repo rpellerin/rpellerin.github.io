@@ -1791,6 +1791,11 @@ chmod +x ./video-crossfade
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h1&gt;Scale a 2.7K (2704x1520) video down to 1080p&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vf &lt;span class="s2"&gt;&amp;quot;scale=1920:1080,setsar=1&amp;quot;&lt;/span&gt; -acodec copy output.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Convert a video framerate to NTSC (29.97002997)&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
 &lt;/pre&gt;&lt;/div&gt;
