@@ -20,6 +20,11 @@ Summary: A few tips with FFMPEG
     chmod +x ./video-crossfade
     ./video-crossfade.sh -f 2 -o output.mp4 input.mp4 # 2 second crossfade
 
+# Convert a video framerate to NTSC (29.97002997)
+
+    :::bash
+    ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
+
 # Split a video in several chunks of same duration
 
     :::bash
