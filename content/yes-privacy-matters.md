@@ -246,3 +246,4 @@ Filename encryption might require another last command to be run, if your conten
 - [Corporate Surveillance in Everyday Life](https://crackedlabs.org/en/corporate-surveillance/#1)
 - [It's Time to Panic About Privacy](https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html)
 - [Online Privacy Isn’t Dead—If We Fight for It](https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7)
+- [Browser Fingerprinting: What Is It and What Should You Do About It?](https://pixelprivacy.com/resources/browser-fingerprinting/)
