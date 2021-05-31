@@ -11,6 +11,7 @@ Summary: Some cycling events I know of, and would like to participate in
 - [Critical Mass](https://criticalmass.berlin/)
 - [VELOBerlin](https://velofestivals.com/veloberlin/)
 - [The Nicola Werner Challenge](https://www.nicolawernerchallenge.org/): in Berlin and Paris
+- [RUND UM BERLIN](https://www.regionalparks-brandenburg-berlin.de/rund-um-berlin-2/)
 
 # Elsewhere
 
