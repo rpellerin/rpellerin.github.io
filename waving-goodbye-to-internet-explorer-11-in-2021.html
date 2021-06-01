@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, internet explorer, browsers" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Waving Goodbye to Internet Explorer 11 in 2021 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…" />
+
+        <title>Waving Goodbye to Internet Explorer 11 in 2021 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/waving-goodbye-to-internet-explorer-11-in-2021/waving-goodbye-internet-explorer.png" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2021-06-01T23:30:00+02:00">Tue 01 June 2021</time>        </p>
+    <h1>Waving Goodbye to Internet Explorer 11 in 2021</h1>
+    <div class="grey">
+        <p class="italic">Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1067 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/internet-explorer.html">internet explorer</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/browsers.html">browsers</a></p>    </div>
+</header>
+<article>
+    <p><em>Originally published on <a href="https://medium.com/doctolib/waving-goodbye-to-internet-explorer-11-in-2021-b01a8c5c9864">Medium</a>.</em></p>
+<p>Two years ago, we published "<a href="//romainpellerin.eu/supporting-internet-explorer-11-in-2019.html">Supporting Internet Explorer 11 in 2019</a>". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (<a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date">and we're not the only ones</a> 🤫)</p>
+<h1>Motivations</h1>
+<p>Back in 2019, a major motivation for us to stop supporting old browsers on the website healthcare professionals use to access our service was that we had two different pipelines to bundle JavaScript code: one was through Webpack and <a href="https://babeljs.io/">Babel</a>, the other one through the <a href="https://guides.rubyonrails.org/asset_pipeline.html">Ruby on Rails asset pipeline</a> (also known as Sprockets). The good news is, last year we managed to get rid of Sprockets. Now, all of our JavaScript files go through Webpack. Therefore, we do not need to write ES5-compliant code anymore, we can write modern JavaScript everywhere in our mono-repository. However we still have to instruct Babel to transpile some packages that do not come pre-transpiled. And let's be honest, monitoring breaking changes as library authors release new versions is no fun at all.</p>
+<p>Our other motivations were:</p>
+<ul>
+<li>Cost of maintaining additional integration tests running on old browsers. Back then we were using Browserstack, we since then moved to Lambdatest, because we found it to be more reliable and noticed less random test fails. But that still remains a pain to maintain. Not only does Lambdatest occasionally fail, but also some specific browser versions do not mingle well with <a href="https://github.com/teamcapybara/capybara">Capybara</a> (our test framework). For instance, we found that <a href="https://rubydoc.info/github/jnicklas/capybara/Capybara/Node/Actions#click_link_or_button-instance_method"><code>click_on</code></a> would consistently not work with Safari 13 in some pages.</li>
+<li>We still have occasional down incidents. One of the recent ones was due to <code>scrollTo</code> being used with options, which is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#browser_compatibility">not supported by Internet Explorer 11</a>. And of course, Babel can't do anything about it.</li>
+</ul>
+<p>These motivations are still valid to this day. On top of that, since 2019, we have developed new features and brought <a href="https://info.doctolib.fr/blog/doctolib-adopte-le-chiffrement-de-bout-en-bout-nouvelle-etape-dans-la-securisation-des-donnees-de-sante/">end-to-end encryption everywhere in the app</a>. Yet, some of these old browsers have limited support for some of the web APIs we are using. As a consequence, these users can not enjoy the complete feature set Doctolib has to offer, and they are unable to see encrypted documents (PDF documents for instance), as encryption/decryption is done in the browser. Therefore, at the beginning of this year, we initiated a new project that we like to call "Browser Upgrade Campaign: reborn".</p>
+<h1>Browser Upgrade Campaign: reborn</h1>
+<p>Admittedly, our previous attempt at having our customers upgrade their browsers was a failure. We are trying to get it right this time. The timeline we laid out was as follows:</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" />
+<figcaption>Timeline of our new project to reduce the use of outdated browsers, over 2021</figcaption>
+</figure>
+
+<p>Regarding the list of browsers we wanted to keep supporting, we kept the same list as in 2019, with one minor change: we would no longer support Edge 17. Here are the browsers we officially support from now on, on our pro website:</p>
+<ul>
+<li>Safari 12+</li>
+<li>Edge 18+ (18 is the last non Chrome-based version of Edge)</li>
+<li>Chrome 50+</li>
+<li>Firefox 45+ (version 45 in an Extended Support Release)</li>
+<li>No Internet Explorer version at all</li>
+</ul>
+<p>Preventing the use of non supported browsers internally was an easy win. All it took was good communication and the flip of a switch. After that, any Doctolib employee trying to use an outdated browser would be welcomed by the following page:</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/page.png" alt="A screenshot of the page preventing the use of Doctolib" />
+<figcaption>The page preventing people from using an outdated browser</figcaption>
+</figure>
+
+<p>The two following steps were almost as easy. After setting up some tracking through New Relic, we realized we did not have that many new connections on outdated browsers every day. What's a new connection? It's a connection from a browser that never connected to Doctolib before. How do we determine whether it ever accessed Doctolib before? We look for existing cookies sent in the request.</p>
+<p>Based on that fact, we first blocked any new connection on Internet Explorer 11. Then, over the next few days, we monitored the amount of support tickets and phone calls: nothing. No one complained. We then did the same operation with other deprecated browsers.</p>
+<p>Then came the fourth step.</p>
+<h1>Walking on eggs</h1>
+<p>Given that there had been a red banner displayed at the top of Doctolib for the last two years to users surfing with outdated browsers, our users were well aware of that. But of course we knew it was not enough. Why would our graphs still show relatively high usage of outdated browsers, uh?</p>
+<p>In April and May we sent out two email campaigns: one to remote secretaryship centers, another one to key accounts (most of them being hospitals or Covid-19 vaccination centers). This time, unlike in 2019, we explicitly told them which users were still using non supported browsers and gave them a deadline after which we would no longer be able to use these browsers. We made sure to tell them which obsolete browsers they were using and what options they had to upgrade.</p>
+<p>In the meantime, we compiled a big list of user accounts that were using multiple browsers, both supported and non supported ones. Every day, we'd pick a bunch of them and enable a feature switch on their account, that would prevent them from logging in with a non supported browser. Once again, we daily monitored our support, making sure everything was going as smoothly as possible.</p>
+<p>And it finally happened for good this time: the curve went down and eventually reached zero.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/graph.png" alt="A graph showing the use of Internet Explorer over time" />
+<figcaption>Use of Internet Explorer among healthcare professionals on Doctolib</figcaption>
+</figure>
+
+<p>After the feature switch had been flipped for all of our users seamlessly, we removed the feature switch and hardcoded these browsers' name and versions directly in the codebase, to make sure no one would ever use them again.</p>
+<p>This project is, as I am writing this article, coming to an end. Interestingly enough, in two years' time, our browser market share changed a lot, Internet Explorer slowing fading out into oblivion... and Microsoft Edge taking off!</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/market-share.png" alt="Browser market share over time" />
+<figcaption>Browser market share on Doctolib pro</figcaption>
+</figure>
+
+<hr />
+
+<p><em>If you want more technical news, follow our journey through our <a href="https://doctolib.engineering/engineering-news-ruby-rails-react/">docto-tech-life newsletter</a>.</em></p>
+<p><em>And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France and Germany, feel free to have a look at the <a href="https://about.doctolib.com/jobs?department=Engineering">open positions</a>.</em></p>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 01 June 2021</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
