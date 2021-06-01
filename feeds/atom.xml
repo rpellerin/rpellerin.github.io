@@ -1879,31 +1879,38 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="https://songbpm.com/"&gt;Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Beats calculator&lt;/h2&gt;
-&lt;p&gt;&lt;input type="text" placeholder="Beats per minute here"/&gt;
+&lt;p&gt;&lt;input type="text" id="beats" placeholder="Beats per minute here"/&gt;
+&lt;input type="text" id="fps" placeholder="Desired frames per second here"/&gt;
 &lt;pre id="results"&gt;&lt;/pre&gt;
 &lt;script&gt;
     let BEATS = [1,2,3,4,6,8]
-    function inputChange(event) {
-        const value = event.target.value
-        if (!value || isNaN(value)) return
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).map(function(beat) {
+        const result = BEATS.concat(value).filter(function(beat) { return beat &gt; 0 }).map(function(beat) {
             let tempResult = (beat*60)/value
             const regex = tempResult.toString().match(/^(\d+.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
-                const floating = (parseFloat("0." + regex[2], 10)*60)/100
-                tempResult = (parseInt(integer, 10) + floating).toString()
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
             }
-            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+            else {
+                tempResult = `${tempResult} seconds and 0 frames`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
     }
-    const input = document.querySelector('input')
-    input.oninput=inputChange
-    if (input.value) {
-        inputChange({target:{value:input.value}})
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
     }
 &lt;/script&gt;&lt;/p&gt;
 &lt;p&gt;That's about it!&lt;/p&gt;</content><category term="video"></category><category term="linux"></category></entry><entry><title>Finland</title><link href="//romainpellerin.eu/finland.html" rel="alternate"></link><published>2018-04-26T23:40:00+02:00</published><updated>2018-04-26T23:40:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-04-26:/finland.html</id><summary type="html">&lt;p&gt;Finland, land of lakes and forests&lt;/p&gt;</summary><content type="html">&lt;p&gt;Late March this year, I went to Finland for 3 days over the weekend. As a first-timer, I was not expecting so much snow and ice this late in Winter. We had two sunny days, slightly above 0 degrees celsius. The third day was all snowy.&lt;/p&gt;

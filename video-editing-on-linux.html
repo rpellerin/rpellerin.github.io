@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">How to edit videos on Linux</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 376 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 409 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -111,31 +111,38 @@
 <li><a href="https://songbpm.com/">Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm</a></li>
 </ul>
 <h2>Beats calculator</h2>
-<p><input type="text" placeholder="Beats per minute here"/>
+<p><input type="text" id="beats" placeholder="Beats per minute here"/>
+<input type="text" id="fps" placeholder="Desired frames per second here"/>
 <pre id="results"></pre>
 <script>
     let BEATS = [1,2,3,4,6,8]
-    function inputChange(event) {
-        const value = event.target.value
-        if (!value || isNaN(value)) return
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).map(function(beat) {
+        const result = BEATS.concat(value).filter(function(beat) { return beat > 0 }).map(function(beat) {
             let tempResult = (beat*60)/value
             const regex = tempResult.toString().match(/^(\d+.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
-                const floating = (parseFloat("0." + regex[2], 10)*60)/100
-                tempResult = (parseInt(integer, 10) + floating).toString()
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
             }
-            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+            else {
+                tempResult = `${tempResult} seconds and 0 frames`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
     }
-    const input = document.querySelector('input')
-    input.oninput=inputChange
-    if (input.value) {
-        inputChange({target:{value:input.value}})
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
     }
 </script></p>
 <p>That's about it!</p>
