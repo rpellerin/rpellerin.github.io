@@ -25,31 +25,38 @@ To find the BPM of a song, use any of the following links:
 
 ## Beats calculator
 
-<input type="text" placeholder="Beats per minute here"/>
+<input type="text" id="beats" placeholder="Beats per minute here"/>
+<input type="text" id="fps" placeholder="Desired frames per second here"/>
 <pre id="results"></pre>
 <script>
     let BEATS = [1,2,3,4,6,8]
-    function inputChange(event) {
-        const value = event.target.value
-        if (!value || isNaN(value)) return
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).map(function(beat) {
+        const result = BEATS.concat(value).filter(function(beat) { return beat \> 0 }).map(function(beat) {
             let tempResult = (beat\*60)/value
             const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
-                const floating = (parseFloat("0." + regex[2], 10)\*60)/100
-                tempResult = (parseInt(integer, 10) + floating).toString()
+                const floating = (parseFloat("0." + regex[2], 10)\*100*fps)/100
+                tempResult = \`${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames\`
             }
-            pre.innerHTML += "- " + beat + " beats: " + tempResult + " seconds\n"
+            else {
+                tempResult = \`${tempResult} seconds and 0 frames\`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
     }
-    const input = document.querySelector('input')
-    input.oninput=inputChange
-    if (input.value) {
-        inputChange({target:{value:input.value}})
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
     }
 </script>
 
