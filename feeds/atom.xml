@@ -1871,7 +1871,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;In Kdenlive settings, under &lt;code&gt;Playback&lt;/code&gt;, make sure GPU acceleration is disabled, cause it's buggy. Under &lt;code&gt;Timeline&lt;/code&gt;, check &lt;code&gt;Automatically split audio and video&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;When rendering, set the speed encoder to the second level to the leftmost one and use 4 threads. Encoder speed and threads are two different settings not related.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead 1/60 of seconds.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 60 instead of 100: 0.4*60/100=0.24. Which gives you clips that last 2.24 seconds, Kdenlive-wise.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead a number of frames.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 30 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 30 instead of 100: 0.4*30=12 frames. Which gives you clips that last 00:00:04 seconds and 12 frames, Kdenlive-wise.&lt;/p&gt;
 &lt;p&gt;To find the BPM of a song, use any of the following links:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;&lt;/li&gt;
