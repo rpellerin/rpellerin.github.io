@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">How to edit videos on Linux</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 420 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 489 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -100,8 +100,8 @@
 <li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a>.</li>
 <li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.</li>
 <li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly</strong> (I experienced it). There, also enable <code>Proxy clips</code> for videos larger than 1000 pixels.</li>
-<li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy. Under <code>Timeline</code>, check <code>Automatically split audio and video</code>.</li>
-<li>When rendering, set the speed encoder to the second level to the leftmost one and use 4 threads. Encoder speed and threads are two different settings not related.</li>
+<li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy.</li>
+<li>When rendering, set the quality to the maximum, the speed encoder to the second level to the leftmost one and use 4 threads. Encoder speed and threads are two different settings not related. Export in H264 or HEVC (smaller file size). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out.</li>
 </ol>
 <p><strong>Do not forget that Kdenlive does not use milliseconds but instead a number of frames.</strong> That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 30 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 30 instead of 100: 0.4*30=12 frames. Which gives you clips that last 00:00:04 seconds and 12 frames, Kdenlive-wise.</p>
 <p>To find the BPM of a song, use any of the following links:</p>
