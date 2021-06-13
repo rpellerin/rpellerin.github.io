@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, shin splints, health, running" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="I got that... and healed. Here is the truth about my healing... haha!" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Shin Splints - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="I got that... and healed. Here is the truth about my healing... haha!" />
+
+        <title>Shin Splints - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2021-06-13T21:30:00+02:00">Sun 13 June 2021</time>        </p>
+    <h1>Shin Splints</h1>
+    <div class="grey">
+        <p class="italic">I got that... and healed. Here is the truth about my healing... haha!</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 494 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/shin-splints.html">shin splints</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/health.html">health</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/running.html">running</a></p>    </div>
+</header>
+<article>
+    <p>So now that I am a pro runner because I managed to run <a href="https://www.strava.com/activities/5368040239">a half marathon once in my life</a>, let me tell you about shin splints. Cause yeah, I got that following that run, and I could barely walk over the next 10 days, let alone running. So yes, I am kidding, I am no pro runner at all, quite the opposite actually...</p>
+<h1>What the heck is "shin splints"?</h1>
+<p>[This website] says it's "<em>an inflammation of the muscles, tendons, and bone tissue around your tibia</em>". Basically, a pain around the tibia. It can be as benign as an inflammation, and be as bad as a stress fracture. Fortunately, I had the former form of it (I guess?!). It mostly happens when you're over-exercising (like running twice the distance you had previously run the longest before, on a whim), are under-prepared, when you exercice too often or don't give your body time to rest.</p>
+<h1>How did I heal?</h1>
+<p>As I had a minor form of it (again, I guess, not sure, I did not see any doctor for that), healing took rather little time. From the day I ran till the day I was not feeling any pain any longer, 10 days went by. The pain started to kick in in the last couple of kilometers, during the run. Then, the first three days I swear I could not walk, I was limping. Oddly enough, casual urban cycling was fine. I am not talking about proper road cycling, but you know, going from A to B in a city.</p>
+<p>After these 3 first days, some googling and a lot of Youtube searching, I applied ice on my tibia 1 or 2 times a day, for a few days. In addition to that, I lightly wrapped (strapped) my leg in a gym plastic band several hours a day, something similar to a resistance band, so as to keep my flesh tight. Not too much of course, I did not want to block the blood flow. Also I did no running and very little walking on these days. The first two or three days I did not notice any improvement, and then all of a sudden, the pain when walking greatly decreased. It took another 2 or 3 days plus some proper good paced road cycling towards the end of the recovery period, for the pain to finally completely go away.</p>
+<p>What I am writing here is no medical advise at all, I am just sharing my personal experience. Maybe what I did was good, maybe not, maybe I would have healed faster or slower should I have done things differenlty differently, I have no clue.</p>
+<p>Anyway, as I am writing this, I still have not tried running again, as I injured myself only 20 days ago, but the pain is 100% gone and I walk normaly again. Hopefully the next time I try running I'll be fine... and hopefully you'll find this article helpful. :)</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 13 June 2021</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
