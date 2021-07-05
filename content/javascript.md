@@ -134,6 +134,8 @@ All set!
 - [The Vanilla JavaScript Toolkit](https://vanillajstoolkit.com/)
 - [Arrow Functions in Class Properties Might Not Be As Great As We Think](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1
 - [ECMA-262-3 in detail. Chapter 8. Evaluation strategy.](http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/)
+- [`export default thing` is different to `export { thing as default }`](https://jakearchibald.com/2021/export-default-thing-vs-thing-as-default/)
+- [In JS functions, the 'last' return wins](https://jakearchibald.com/2021/last-return-wins/)
 
 ## Some cool node/npm stuff/packages/tools
 
