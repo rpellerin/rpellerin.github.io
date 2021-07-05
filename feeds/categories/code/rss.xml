@@ -1041,6 +1041,8 @@ yarn add --dev eslint-config-standard &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://vanillajstoolkit.com/"&gt;The Vanilla JavaScript Toolkit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[Arrow Functions in Class Properties Might Not Be As Great As We Think](https://medium.com/@charpeni/arrow-functions-in-class-properties-might-not-be-as-great-as-we-think-3b3551c440b1&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dmitrysoshnikov.com/ecmascript/chapter-8-evaluation-strategy/"&gt;ECMA-262-3 in detail. Chapter 8. Evaluation strategy.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jakearchibald.com/2021/export-default-thing-vs-thing-as-default/"&gt;&lt;code&gt;export default thing&lt;/code&gt; is different to &lt;code&gt;export { thing as default }&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jakearchibald.com/2021/last-return-wins/"&gt;In JS functions, the 'last' return wins&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Some cool node/npm stuff/packages/tools&lt;/h2&gt;
 &lt;ul&gt;
