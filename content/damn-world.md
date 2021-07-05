@@ -102,3 +102,4 @@ Summary: Everything wrong with this world
 - [The biggest likely source of microplastics in California coastal waters? Our car tires](https://www.latimes.com/environment/story/2019-10-02/california-microplastics-ocean-study)
 - [Why We Should Ban SUVs in Cities](https://pricetags.ca/2019/10/07/why-we-should-ban-suvs-in-cities/)
 - [1.5 Million Packages a Day: The Internet Brings Chaos to N.Y. Streets](https://www.nytimes.com/2019/10/27/nyregion/nyc-amazon-delivery.html)
+- [POUR NE RIEN DIRE, Ep. 02 : L'écolobashing et le greenwashing](https://www.youtube.com/watch?v=9w2SmxAQjk0)
