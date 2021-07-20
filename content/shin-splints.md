@@ -10,7 +10,7 @@ So now that I am a pro runner because I managed to run [a half marathon once in 
 
 # What the heck is "shin splints"?
 
-[This website] says it's "*an inflammation of the muscles, tendons, and bone tissue around your tibia*". Basically, a pain around the tibia. It can be as benign as an inflammation, and be as bad as a stress fracture. Fortunately, I had the former form of it (I guess?!). It mostly happens when you're over-exercising (like running twice the distance you had previously run the longest before, on a whim), are under-prepared, when you exercice too often or don't give your body time to rest.
+[This website](https://orthoinfo.aaos.org/en/diseases--conditions/shin-splints/) says it's "*an inflammation of the muscles, tendons, and bone tissue around your tibia*". Basically, a pain around the tibia. It can be as benign as an inflammation, and be as bad as a stress fracture. Fortunately, I had the former form of it (I guess?!). It mostly happens when you're over-exercising (like running twice the distance you had previously run the longest before, on a whim), are under-prepared, when you exercice too often or don't give your body time to rest.
 
 # How did I heal?
 
