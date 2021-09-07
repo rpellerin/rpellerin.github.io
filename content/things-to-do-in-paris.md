@@ -29,7 +29,6 @@ Image: paris.jpg
 - Les jardins du Luxembourg - park
 - Musée Grévin - wax museum with celebrities - [https://www.grevin-paris.com/en](https://www.grevin-paris.com/en)
 - Le Marais - What Castro is to SF; gay neighborhood, very eccentric
-- Palace of Versailles
 - Street Art in Belleville - [http://streetartparis.fr/visite-street-art-belleville/](http://streetartparis.fr/visite-street-art-belleville/)
 - Palais Garnier
 - La Conciergerie
