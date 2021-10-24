@@ -1,6 +1,6 @@
 Title: The TV series I watch
 Date: 2015-06-02 01:00
-Modified: 2021-02-27 17:48
+Modified: 2021-10-24 23:48
 Category: About me
 Tags: televion, tv series
 Slug: the-tv-series-i-watch
@@ -22,6 +22,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Tribes of Europa
 - Ted Lasso
 - Formula 1: Drive to Survive
+- Squid Game
 
 # Ended or Canceled TV series
 
