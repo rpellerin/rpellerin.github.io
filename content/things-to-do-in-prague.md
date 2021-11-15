@@ -29,7 +29,7 @@ Prague is a relatively small city, for a capital. But it is gorgeous! The city c
 
 While you're in Prague, you HAVE to eat a Trdelník (also called Trdlo). It is amazingly good!
 
-Accomodation-wise, I recommend staying in the Hotel Leonardo Prague, it is fairly inexpensive for a 4-star hotel, and perfectly located, close to all the rouristy places.
+Accomodation-wise, I recommend staying in the Hotel Leonardo Prague, it is fairly inexpensive for a 4-star hotel, and perfectly located, close to all the touristy places.
 
 In Prague, you'll find many Nextbike stations and bikes in the city. It's the best way to get around!
 
