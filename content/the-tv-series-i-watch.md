@@ -14,7 +14,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Black Mirror
 - The Walking Dead
 - Fear The Walking Dead
-- The Walking Dead: World Beyond
 - Better Call Saul
 - Stranger Things
 - La Casa de Papel
@@ -27,6 +26,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 # Ended or Canceled TV series
 
 - Altered Carbon
+- The Walking Dead: World Beyond
 - Vikings
 - Mr. Robot
 - Game of Thrones
