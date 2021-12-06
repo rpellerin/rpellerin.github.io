@@ -16,7 +16,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Fear The Walking Dead
 - Better Call Saul
 - Stranger Things
-- La Casa de Papel
 - Lupin
 - Tribes of Europa
 - Ted Lasso
@@ -25,6 +24,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 
 # Ended or Canceled TV series
 
+- La Casa de Papel
 - Altered Carbon
 - The Walking Dead: World Beyond
 - Vikings
