@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, localization, internationalization, i18n, l10n" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Keys to efficient i18n - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…" />
+
+        <title>Keys to efficient i18n - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2021-12-16T12:00:00+01:00">Thu 16 December 2021</time>        </p>
+    <h1>Keys to efficient i18n</h1>
+    <div class="grey">
+        <p class="italic">2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2827 words.">14 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/localization.html">localization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/internationalization.html">internationalization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/i18n.html">i18n</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/l10n.html">l10n</a></p>    </div>
+</header>
+<article>
+    <p><em>Originally published on <a href="https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d">Medium</a>.</em></p>
+<p>2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to English as a default language/locale.</p>
+<p><em>As Doctolib is not present in any English speaking country, we don't have region-specific locales such as en-GB or en-US, nor do we have multiple French, German or Italian locales. We therefore in the rest of this article use the terms</em> <strong><em>locale</em></strong> <em>and</em> <strong><em>language</em></strong> <em>interchangeably. Localization (formatting of dates, currency, the change of language) and translation in Ruby on Rails are the same process. Only in the front end does localization require extra setting of some packages like <a href="https://momentjs.com/">Moment.js</a> or <a href="https://day.js.org/">Day.js</a>.</em></p>
+<p>It was not an easy move. But we did it for multiple reasons:</p>
+<ul>
+<li>Our products are used by health practitioners and patients in France, Germany and Italy. Whenever a translation would go missing or not be translated in time, defaulting to French on the production website was not making much sense.</li>
+<li>While 3 years ago, almost all of our developers were French (or at least French-speaking), this is not true anymore. We have people coming from more than 40 countries and our tech centers are established in three different European countries. Writing tests in French by default was slowing everybody down. Using the development environment in English was difficult, and not an option known to many developers. In reality it should have been the default option.</li>
+<li>We wanted to make our translation process homogeneous for all countries. In doing so, we addressed problems only the German and Italian teams had been experiencing in the past, such as the delay between merging a pull request and having the translations available in production, or the fact that tests would occasionally fail because of new or changed translations. Specifically, tests testing features only available outside of France but asserting texts in French. When the German or Italian translations would eventually make it to the codebase, those tests would break. We therefore decided all tests now had to be written in English, unless testing a feature only available in one country.</li>
+</ul>
+<p>With the whys out of the way, let's now see tips and tricks we've learned — sometimes the hard way.</p>
+<h1>Tools are your friends, leverage them</h1>
+<p>Dependencies-wise, we use <a href="https://github.com/ruby-i18n/i18n">the default Rails gem</a> to localize our app on the back end, and we use <a href="https://www.npmjs.com/package/i18n-js">i18n-js</a> on the front end.</p>
+<p>In most applications, localization is done through YAML files. For instance, a <code>en.yml</code> file might look like this:</p>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">welcome</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Welcome to my website</span>
+    <span class="l l-Scalar l-Scalar-Plain">menu_options</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">login</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Log in</span>
+        <span class="l l-Scalar l-Scalar-Plain">logout</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Log out</span>
+    <span class="l l-Scalar l-Scalar-Plain">users_connected</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">zero</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">No users connected</span>
+        <span class="l l-Scalar l-Scalar-Plain">one</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">One user connected</span>
+        <span class="l l-Scalar l-Scalar-Plain">other</span><span class="p p-Indicator">:</span> <span class="s">&quot;%{count}</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">connected&quot;</span>
+</pre></div>
+
+
+<p>We refer to full-path YAML keys as "i18n keys". For instance, <code>en.menu_options.login</code> is a full-path YAML key, although the first key in the hierarchy (<code>en</code> as in "English", the language) is generally omitted when talking about i18n keys. We refer to the values as "translations". Here, we have an English translation for each key.</p>
+<p>We use <a href="https://phrase.com/">Phrase</a> to manage our translations. In Phrase, translations are identified by "i18n key + locale", and alongside their translation string also have two different attributes:</p>
+<ul>
+<li><em>translated</em>: <code>true</code> or <code>false</code>. Indicates whether a given key has been translated in a specific locale. If <code>false</code>, it means the translation is an empty string.</li>
+<li><em>verified</em>: <code>true</code> or <code>false</code>. Indicates whether the existing translation for this couple key+locale was marked as verified or not. It other words, it tells you whether a human approved this translation in Phrase or not.</li>
+</ul>
+<p>Phrase can be used through their editor on the website, through <a href="https://phrase.com/cli/">their CLI</a>, or through <a href="https://developers.phrase.com/api/">their API</a>.</p>
+<p>At Doctolib, every commit to the <code>master</code> branch leads to our file <code>en.yml</code> being uploaded to Phrase. This way, we keep our English translations and our keys in sync with Phrase at all times.</p>
+<p>We've set Phrase up so that any new i18n key pushed to Phrase automatically creates the French, German and Italian translations based on the uploaded English translation. This is what they call <a href="https://help.phrase.com/help/machine-translation">Machine Translation</a>. It's like Google Translate, but automated. It saves us a lot of time. Then, our UX writers only have to review the translations, correct them if necessary, and mark them as verified.</p>
+<p>Phrase is a great tool with many options, that can be configured either in the website or in <code>.phraseapp.yml</code>. After trying different settings for a while, here is what we found to work best for us:</p>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">phraseapp</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">access_token</span><span class="p p-Indicator">:</span> <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">project_id</span><span class="p p-Indicator">:</span> <span class="c1"># ...</span>
+    <span class="l l-Scalar l-Scalar-Plain">file_format</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
+    <span class="l l-Scalar l-Scalar-Plain">push</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">sources</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./config/locales/en.yml</span>
+            <span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">locale_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
+            <span class="l l-Scalar l-Scalar-Plain">file_format</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
+            <span class="l l-Scalar l-Scalar-Plain">skip_upload_tags</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="l l-Scalar l-Scalar-Plain">update_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="l l-Scalar l-Scalar-Plain">skip_unverification</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="l l-Scalar l-Scalar-Plain">pull</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">targets</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./config/locales/fr.yml</span>
+            <span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">locale_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fr</span>
+            <span class="l l-Scalar l-Scalar-Plain">include_empty_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="l l-Scalar l-Scalar-Plain">exclude_empty_zero_forms</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+            <span class="l l-Scalar l-Scalar-Plain">include_unverified_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+        <span class="c1"># Here, same configuration for de.yml and it.yml</span>
+</pre></div>
+
+
+<p><code>include_unverified_translations: false</code> makes sure only human-verified translations are downloaded when we run <code>phrase_cli pull</code> . This is critical as we don't want machine translated translations to make it to production without any human review, as the translation has oftentimes to be context dependent.</p>
+<p><code>skip_unverification: true</code> makes sure than any edits to an English translation does not unverify (i.e. mark as "not verified") the corresponding FR/DE/IT translations. This may sound counter-intuitive as it means that updates to English translations are not reflected in the other languages as long as no one updates the translations. But it actually allow us to keep our current translations in production. Because of the above-mentioned setting (<code>include_unverified_translations: false)</code> , if we were to mark our translations as unverified, they would actually be removed when we next run <code>phrase_cli pull</code>.</p>
+<p><a href="https://help.phrase.com/help/working-with-pluralization">Pluralization is done through special keys.</a> The most common ones are <code>zero</code> , <code>one</code> and <code>other</code>, as shown in the example file above. All plural forms are optional, meaning we can provide as many as we want. While some plural forms might be the same in a given language, they might all differ in another one. To make translating in other languages in the Phrase editor easier, we've decided to always provide the <code>zero</code> form, in addition to <code>one</code> and <code>many</code> in our <code>en.yml</code> file. We enforce this through a static test. That's also why we also have <code>exclude_empty_zero_forms: true</code> so that whenever the <code>zero</code> form is the same as <code>other</code>, we can skip translating it in Phrase and therefore not clutter our <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> files unnecessarily.</p>
+<p>Finally, <code>include_empty_translations</code> is required by Rails to work properly, as some translations need to remain explicitly empty, such as the ones that help Rails format numbers.</p>
+<h1>Keeping Phrase up-to-date</h1>
+<p>We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
+<figcaption>The Phrase web editor tells you how many unverified translations you have</figcaption>
+</figure>
+
+<p>Since we just launched Doctolib in Italy, we have a little less than 10% of our i18n keys not yet available in Italian, as we are slowly catching up. Regarding the 163 unverified German translations, those are for features not used in Germany at the moment. But we’re nonetheless in the process of verifying them, because first of all these features might someday become available in Germany, and also German-speaking developers might want to use the German language while working on French or Italian features.</p>
+<h1>String interpolation is often a bad idea</h1>
+<p>While we were doing the switch from French to English, we realized at some point that we had a ton of unused keys in <code>en.yml</code> . Keys from deleted features, keys from refactored code, etc. How to know which keys are actually used?</p>
+<p>We first try running <code>grep</code> for every i18n key found in <code>en.yml</code> across the entire codebase. But string interpolation made this impossible.</p>
+<p>What's string interpolation? There you go:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
+    <span class="n">account_type</span> <span class="o">=</span> <span class="s1">&#39;doctor&#39;</span>
+<span class="k">else</span>
+    <span class="n">account_type</span> <span class="o">=</span> <span class="s1">&#39;patient&#39;</span>
+<span class="k">end</span>
+
+<span class="c1"># many many lines further down...</span>
+<span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="s2">&quot;common.account.</span><span class="si">#{</span><span class="n">account_type</span><span class="si">}</span><span class="s2">.greetings&quot;</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="no">Hello</span><span class="p">,</span> <span class="n">doctor</span>
+</pre></div>
+
+
+<p>In this example, it is near impossible to detect through <code>grep</code> that both the keys <code>common.account.doctor.greetings</code> and <code>common.account.patient.greetings</code> are used. What's the solution? This:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
+    <span class="n">i18n_key</span> <span class="o">=</span> <span class="s1">&#39;common.account.doctor.greetings&#39;</span>
+<span class="k">else</span>
+    <span class="n">i18n_key</span> <span class="o">=</span> <span class="s1">&#39;common.account.patient.greetings&#39;</span>
+<span class="k">end</span>
+
+<span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="n">i18n_key</span><span class="p">)</span>
+</pre></div>
+
+
+<p>To this day, we have not found a way (yet) to prevent string interpolation in i18n keys, but we're working on it. We've however communicated internally largely about it.</p>
+<h1>The same locale in your test server as in your web server you shall set</h1>
+<p>When running integration tests with Ruby on Rails, <a href="https://rspec.info/">RSpec</a> and <a href="https://github.com/teamcapybara/capybara">Capybara</a>, there are actually two different servers being launched with every test. One is the test server, the one that executes assertions, pilots the browser, opens tabs, etc. And there's the web server, the one that responds to HTTP queries and renders your website.</p>
+<p>We've found that both servers do not necessarily answer the same to <code>I18n.locale</code>. For instance, when writing tests for features only available in one country, we'd change the Top-Level Domain (TLD) to .fr, .de. or .it. This would, in turn, change the locale used in our web server through some business logic in our <code>ApplicationController.rb</code>. But the test server would remain in English, regardless of the TLD.</p>
+<p>Consequently, trying <code>assert_text I18n.t("some.key")</code> in a test of the French website would be looking for the English translation of <code>some.key</code>, while only the French translation was to be found. Through some fine tuning of our subclasses of <code>ActiveSupport::TestCase</code>, we have managed to sync the locale of both servers.</p>
+<h1>Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key</h1>
+<p>Say you have a <code>en.yml</code> file as follows:</p>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">greetings</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">hello</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Hello</span>
+        <span class="l l-Scalar l-Scalar-Plain">bye</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Good bye</span>
+        <span class="l l-Scalar l-Scalar-Plain">good_evening</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Good evening</span>
+        <span class="l l-Scalar l-Scalar-Plain">bye</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Bye</span>
+</pre></div>
+
+
+<p>What does <code>I18n.t("greetings.bye")</code> returns? Yep, <code>"Bye"</code>. Why? Because the Ruby YAML parser used under the hood silently overwrites any already defined key.</p>
+<p>We added a test that is greatly inspired <a href="https://stackoverflow.com/a/55705853/2105309">by this StackOverlow answer,</a> to make sure we do not have duplicated i18n keys. The risk was, we could be breaking an untested feature by unknowingly overwriting an existing translation.</p>
+<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;makes sure we have no duplicated key&#39;</span> <span class="k">do</span>
+    <span class="n">yaml_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;config/locales/en.yml&#39;</span><span class="p">)</span>
+    <span class="n">assert_empty</span><span class="p">(</span><span class="no">PhraseHelper</span><span class="o">.</span><span class="n">duplicate_keys</span><span class="p">(</span><span class="n">yaml_file</span><span class="p">))</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<h1>Enforcing a simple format for keys</h1>
+<p>Although many characters are permitted for keys (only the dot is not, as it marks levels in the hierarchy), we found it much easier to only deal with keys using only basic characters, such as the regular ASCII letters, upper or lower case, digits, hyphens and underscores. Why is that? First of all, because it's more readable, and second of all because it makes grepping through the codebase with regular expressions a lot easier.</p>
+<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;enforces a simple format for keys&#39;</span> <span class="k">do</span>
+    <span class="n">wrongly_formatted_keys</span> <span class="o">=</span>
+        <span class="no">PhraseHelper</span>
+            <span class="o">.</span><span class="n">phrase_keys</span>
+            <span class="o">.</span><span class="n">grep_v</span><span class="p">(</span><span class="sr">%r{^[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+)*$}</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">grep_v</span><span class="p">(</span><span class="sr">/^i18n\.transliterate\.rule\.[ÄäéöÖßüÜ€]$/</span><span class="p">)</span> <span class="c1"># These keys are special on purpose, exclude them</span>
+
+    <span class="n">assert_empty</span><span class="p">(</span>
+        <span class="n">wrongly_formatted_keys</span><span class="p">,</span>
+        <span class="s1">&#39;Please keep translation keys as simple as possible: &#39;</span> <span class="p">\</span>
+        <span class="s1">&#39;digits, lowercase letters, hyphens and underscores only&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<h1>Preventing the insertion of hidden characters whose behavior might be unexpected</h1>
+<p>Have you ever seen this warning message on GitHub?</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
+<figcaption>GitHub warning you about bidirectional Unicode text</figcaption>
+</figure>
+
+<p>Well, we have. And many times. This happens when people using the Phrase Editor, would mistakenly type special characters on their keyboard while trying to simply type letters with accents.</p>
+<p>To prevent this from happening again and again, we've added a test. This way, whenever we pull the latest translations from Phrase and open a Pull Request to merge them, we can know right away if something is wrong with any translation.</p>
+<p>Here, a screenshot of the test. It's a screenshot as one would not be able to see the hidden Unicode characters otherwise.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" />
+<figcaption>A test making sure our translation files do not contain special hidden Unicode characters</figcaption>
+</figure>
+
+<h1>Avoid duplicate translations at the same node level</h1>
+<p>Why create a new translation when one can reuse an existing one? Especially if the translation is a sibling (i.e at the same node level in the YAML file) of the one you're trying to add. Well again, we've added a test so that we avoid duplicating existing English translations. Because we've found that, since the translations YAML files tend to be very big, it is easy to overlook and miss a translation you're looking for, think it does not exist, and add it again.</p>
+<h1>Ensuring the file is correctly formatted at all times</h1>
+<p>Because throughout our journey of switching to English as a default locale, we've had to edit our <code>en.yml</code> file many times, we've found that enforcing the formatting makes <code>git diff</code>s easier to review. It's like when one starts using <a href="https://prettier.io/">Prettier</a> and stops caring about how to format their JavaScript code. All of a sudden, single quotes, double quotes, escaping characters, where to break a line, etc, are no longer problems.</p>
+<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;makes sure en.yml is correctly formatted&#39;</span> <span class="k">do</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;config/locales/en.yml&#39;</span>
+    <span class="n">yaml</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">formatted_yaml</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">to_yaml</span><span class="p">(</span><span class="ss">indentation</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">assert_equal</span><span class="p">(</span><span class="n">formatted_yaml</span><span class="p">,</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="o">&lt;&lt;~</span><span class="no">MESSAGE</span><span class="o">.</span><span class="n">chomp</span><span class="p">)</span>
+    <span class="no">The</span> <span class="c1">#{file} file is not correctly formatted.</span>
+    <span class="no">Please</span> <span class="n">put</span> <span class="n">a</span> <span class="nb">binding</span><span class="o">.</span><span class="n">pry</span> <span class="n">at</span> <span class="n">the</span> <span class="k">end</span> <span class="n">of</span> <span class="n">this</span> <span class="nb">test</span><span class="p">,</span> <span class="n">run</span> <span class="n">it</span><span class="p">,</span> <span class="ow">and</span> <span class="ss">launch</span><span class="p">:</span>
+        <span class="no">File</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#{file}&#39;</span><span class="p">,</span> <span class="n">formatted_yaml</span><span class="p">)</span>
+<span class="no">MESSAGE</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<h1>Finding unused keys and removing them</h1>
+<p>That's the trickiest part. And unfortunately, we don't have a universal answer to that problem. But before finding which keys are not used, how do we even find the ones actually used?</p>
+<p>As we've seen before, string interpolation makes it impossible to statically find all used keys. We need to come up with something dynamic.</p>
+<p>Logging that a given i18n key is used at runtime is fairly simple, code-wise. "All we have to do" is monkey patch the Ruby gem or the JavaScript package so that we log or store somewhere which keys are being used. For instance, this is most of our JavaScript monkey patch:</p>
+<div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">i18n</span> <span class="nx">from</span> <span class="s1">&#39;i18n-js&#39;</span>
+
+<span class="kr">const</span> <span class="nx">addTranslationKey</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">actualKey</span> <span class="o">=</span> <span class="nx">key</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">scope</span><span class="p">)</span> <span class="nx">actualKey</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">options</span><span class="p">.</span><span class="nx">scope</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">actualKey</span><span class="si">}</span><span class="sb">`</span>
+    <span class="kr">const</span> <span class="nx">set</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span> <span class="o">||</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;{}&#39;</span><span class="p">)</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span> <span class="o">=</span> <span class="nx">set</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">])</span> <span class="k">return</span>
+
+    <span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">set</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nx">i18n</span><span class="p">.</span><span class="nx">_t</span> <span class="o">=</span> <span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span>
+<span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="p">...</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">translation</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="p">...</span><span class="nx">options</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">translation</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">defaultOptionWasUsed</span> <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">defaults</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">defaults</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">message</span> <span class="o">===</span> <span class="nx">translation</span>
+    <span class="c1">// Do not track if we used a default</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">defaultOptionWasUsed</span><span class="p">)</span> <span class="nx">addTranslationKey</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">translation</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Regarding our Ruby monkey patch, we've come up with something similar, except that we store the used keys in Redis.</p>
+<p>Now that we know how to track the used keys, when do we track them? Two options present themselves:</p>
+<ol>
+<li>We keep a record of the ones used in production</li>
+<li>We keep a record of the ones used in tests (on the CI pipeline for instance)</li>
+</ol>
+<p>The second option has the disadvantage of not being a 100% reliable. First, because we don't necessarily have a test for each and every feature of Doctolib, and second because even though we might, not all possible usage scenario for a given feature are tested, therefore we can't be sure that all the i18n keys would actually be used even once.</p>
+<p>The first option has the disadvantage of using our users' local storage at their expense and using our production Redis instance for something else that a feature. And likewise, we can't be 100% sure all of our features are even used at all. Also, the keys used today might not be the same ones as tomorrow, because we constantly merge pull requests and rollout new code to production.</p>
+<p>Therefore, the idea of capturing a "snapshot" of the keys used at one point in time, without interfering with the production website, sounded like our best bet.</p>
+<p>We're now capable of doing that snapshot and computing a diff between our existing keys and the ones used, yet we still have to find a way of making sure we're not deleting keys that could still be used in production, but that are simply not part of a tested feature.</p>
+<h1>Removing translations as the source language keys are removed</h1>
+<p>Finally, the last thing we had to deal with was, how do we remove from Phrase (and therefore the other YAML files) the i18n keys that we occasionally remove from <code>en.yml</code>, for instance when we delete a feature?</p>
+<p>We came up with a script that runs at night, once a day. It basically does a diff of all the i18n keys found in <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> minus those from <code>en.yml</code>. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.</p>
+<hr>
+<p>That's it. This is how Doctolib switched from French as a default language to English. We hope this is helpful. Beyond the migration itself, we've learned a lot and were not only able to improve our translation process but also how features are internationalized, making our engineers' lives easier.</p>
+<hr>
+<p><em>If you want more technical news, follow our journey through our <a href="https://doctolib.engineering/engineering-news-ruby-rails-react/">docto-tech-life newsletter</a>.</em></p>
+<p><em>And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France, Germany and Italy, feel free to have a look at the <a href="https://about.doctolib.com/jobs?department=Engineering">open positions</a>.</em></p>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 16 December 2021</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
