@@ -18,14 +18,11 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 # Computers
 
 - [2ality feed](http://feeds.feedburner.com/2ality?format=xml)
-- [@’s Adminrezo.fr - Adminrezo.fr](http://blog.adminrezo.fr/feed/)
 - [A Few Thoughts on Cryptographic Engineering](http://blog.cryptographyengineering.com/feeds/posts/default)
 - [Armin Ronacher's Thoughts and Writings](https://lucumr.pocoo.org/feed.atom)
 - [Communauté Mozilla francophone](https://blog.mozfr.org/feed/atom)
-- [I'm Siegfried. A developer. Yep.](https://ehret.me/en/index.xml)
 - [Informatique – David Mercereau](http://www.mercereau.info/categorie/informatique/feed/)
 - [Infrequently Noted](https://infrequently.org/feed/)
-- [Korben](http://korben.info/feed)
 - [Mozilla Hacks – the Web developer blog](https://hacks.mozilla.org/feed/)
 - [Overreacted](https://overreacted.io/rss.xml)
 
