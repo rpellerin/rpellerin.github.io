@@ -5,6 +5,7 @@ Tags: localization, internationalization, i18n, l10n
 Slug: keys-to-efficient-i18n
 Authors: Romain Pellerin
 Summary: 2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to… 
+Image: keys-to-efficient-i18n/header.png
 
 *Originally published on [Medium](https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d).*
 
