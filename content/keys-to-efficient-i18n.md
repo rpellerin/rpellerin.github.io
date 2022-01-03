@@ -273,7 +273,7 @@ We're now capable of doing that snapshot and computing a diff between our existi
 
 Finally, the last thing we had to deal with was, how do we remove from Phrase (and therefore the other YAML files) the i18n keys that we occasionally remove from `en.yml`, for instance when we delete a feature?
 
-We came up with a script that runs at night, once a day. It basically does a diff of all the i18n keys found in `fr.yml`, `de.yml` and `it.yml` minus those from `en.yml`. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.
+We came up with a script that runs at night, once a day, on the CI. It basically does a diff of all the i18n keys found in `fr.yml`, `de.yml` and `it.yml` minus those from `en.yml`. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.
 
 ---
 
