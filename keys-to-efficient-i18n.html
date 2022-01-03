@@ -90,7 +90,7 @@
     <div class="grey">
         <p class="italic">2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2827 words.">14 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2830 words.">14 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/localization.html">localization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/internationalization.html">internationalization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/i18n.html">i18n</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/l10n.html">l10n</a></p>    </div>
 </header>
@@ -315,7 +315,7 @@
 <p>We're now capable of doing that snapshot and computing a diff between our existing keys and the ones used, yet we still have to find a way of making sure we're not deleting keys that could still be used in production, but that are simply not part of a tested feature.</p>
 <h1>Removing translations as the source language keys are removed</h1>
 <p>Finally, the last thing we had to deal with was, how do we remove from Phrase (and therefore the other YAML files) the i18n keys that we occasionally remove from <code>en.yml</code>, for instance when we delete a feature?</p>
-<p>We came up with a script that runs at night, once a day. It basically does a diff of all the i18n keys found in <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> minus those from <code>en.yml</code>. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.</p>
+<p>We came up with a script that runs at night, once a day, on the CI. It basically does a diff of all the i18n keys found in <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> minus those from <code>en.yml</code>. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.</p>
 <hr>
 <p>That's it. This is how Doctolib switched from French as a default language to English. We hope this is helpful. Beyond the migration itself, we've learned a lot and were not only able to improve our translation process but also how features are internationalized, making our engineers' lives easier.</p>
 <hr>
