@@ -14,6 +14,11 @@ So my advice is to go with `gs`.
 
 Other commands exist such as `pdfseparate` and `pdfunite`. They are very good but the output files are quite heavy, compared to those obtained using `gs`.
 
+# Convert a PDF to a PNG
+
+    :::bash
+    convert input.pdf -density 300 -background 'white' -alpha remove output.png
+
 # Add a password to a PDF file
 
     :::bash
