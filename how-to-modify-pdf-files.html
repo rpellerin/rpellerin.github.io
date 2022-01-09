@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">On to extract/edit/merge pages from one or several PDF files</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 264 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 279 words.">1 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/pdf.html">pdf</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -101,6 +101,11 @@
 </ul>
 <p>So my advice is to go with <code>gs</code>.</p>
 <p>Other commands exist such as <code>pdfseparate</code> and <code>pdfunite</code>. They are very good but the output files are quite heavy, compared to those obtained using <code>gs</code>.</p>
+<h1>Convert a PDF to a PNG</h1>
+<div class="highlight"><pre><span></span>convert input.pdf -density <span class="m">300</span> -background <span class="s1">&#39;white&#39;</span> -alpha remove output.png
+</pre></div>
+
+
 <h1>Add a password to a PDF file</h1>
 <div class="highlight"><pre><span></span>pdftk input.pdf output output.pdf userpw &lt;password here&gt;
 </pre></div>

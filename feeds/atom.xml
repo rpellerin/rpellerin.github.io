@@ -4257,6 +4257,11 @@ sudo apt install vlc
 &lt;/ul&gt;
 &lt;p&gt;So my advice is to go with &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Other commands exist such as &lt;code&gt;pdfseparate&lt;/code&gt; and &lt;code&gt;pdfunite&lt;/code&gt;. They are very good but the output files are quite heavy, compared to those obtained using &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;Convert a PDF to a PNG&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert input.pdf -density &lt;span class="m"&gt;300&lt;/span&gt; -background &lt;span class="s1"&gt;&amp;#39;white&amp;#39;&lt;/span&gt; -alpha remove output.png
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Add a password to a PDF file&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pdftk input.pdf output output.pdf userpw &amp;lt;password here&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
