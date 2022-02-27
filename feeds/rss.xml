@@ -6430,6 +6430,7 @@ gpg filename.gpg
 &lt;li&gt;&lt;a href="https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html"&gt;It's Time to Panic About Privacy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7"&gt;Online Privacy Isn’t Dead—If We Fight for It&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pixelprivacy.com/resources/browser-fingerprinting/"&gt;Browser Fingerprinting: What Is It and What Should You Do About It?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://makandracards.com/makandra-orga/13644-what-to-do-when-your-gpg-pgp-key-expires"&gt;What to do when your GPG/PGP key expires&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 01:40:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/yes-privacy-matters.html</guid><category>privacy</category><category>security</category><category>linux</category><category>gnu</category><category>ssh</category><category>free software</category><category>open source</category><category>ubuntu</category><category>exerbo</category><category>xubuntu</category></item><item><title>Mastering GNU/Linux</title><link>//romainpellerin.eu/mastering-gnu-linux.html</link><description>&lt;p&gt;Everything you have ever wanted to know about GNU/Linux plus some troubleshooting tips I learned the hard way.&lt;/p&gt;
 &lt;h1&gt;Installing Linux on a Dell preinstalled with Windows&lt;/h1&gt;
 &lt;ul&gt;
