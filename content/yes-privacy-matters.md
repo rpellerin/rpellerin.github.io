@@ -247,3 +247,4 @@ Filename encryption might require another last command to be run, if your conten
 - [It's Time to Panic About Privacy](https://www.nytimes.com/interactive/2019/04/10/opinion/internet-data-privacy.html)
 - [Online Privacy Isn’t Dead—If We Fight for It](https://medium.com/s/oversight/online-privacy-isnt-dead-if-we-fight-for-it-ef586a27d9b7)
 - [Browser Fingerprinting: What Is It and What Should You Do About It?](https://pixelprivacy.com/resources/browser-fingerprinting/)
+- [What to do when your GPG/PGP key expires](https://makandracards.com/makandra-orga/13644-what-to-do-when-your-gpg-pgp-key-expires)
