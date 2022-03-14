@@ -4349,6 +4349,17 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 
 
 &lt;h1&gt;Convert one or several JPG files into a single pdf&lt;/h1&gt;
+&lt;p&gt;First, in &lt;code&gt;/etc/ImageMagick-6/policy.xml&lt;/code&gt;, comment out the last 6 lines:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- &amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;PS&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;PS2&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;PS3&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;EPS&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;PDF&amp;quot; /&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;policy domain=&amp;quot;coder&amp;quot; rights=&amp;quot;none&amp;quot; pattern=&amp;quot;XPS&amp;quot; /&amp;gt; --&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert image1.jpg image2.jpg output.pdf
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 10 Dec 2016 00:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</guid><category>pdf</category><category>linux</category></item><item><title>Google Independence</title><link>//romainpellerin.eu/google-independence.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://fsfe.org/campaigns/android/liberate.en.html"&gt;Liberate Your Device!&lt;/a&gt;&lt;/li&gt;
