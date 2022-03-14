@@ -67,5 +67,17 @@ Use Gimp (import with 300-dpi setting).
 
 # Convert one or several JPG files into a single pdf
 
+First, in `/etc/ImageMagick-6/policy.xml`, comment out the last 6 lines:
+
+    :::xml
+    <!-- <policy domain="coder" rights="none" pattern="PS" />
+    <policy domain="coder" rights="none" pattern="PS2" />
+    <policy domain="coder" rights="none" pattern="PS3" />
+    <policy domain="coder" rights="none" pattern="EPS" />
+    <policy domain="coder" rights="none" pattern="PDF" />
+    <policy domain="coder" rights="none" pattern="XPS" /> -->
+
+Then:
+
     :::bash
     convert image1.jpg image2.jpg output.pdf
