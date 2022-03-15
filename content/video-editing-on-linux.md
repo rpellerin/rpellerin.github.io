@@ -8,7 +8,7 @@ Summary: How to edit videos on Linux
 
 This is a reminder for myself. I thought it could be useful to other people too, that's why I put it online.
 
-1. Record in 1080p, at 25 FPS, unless you want to go fancy and do 50 FPS and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 is truly 30. While 25 is always 25, on any camera.
+1. Record in 1080p, at 25 FPS, unless you want to go fancy and do 50 FPS and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 givess 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.
 2. Download [Kdenlive](https://kdenlive.org/en/download/).
 3. Using VLC, `Tools` > `Codec information`, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.
 4. When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in `Project` > `Project Settings` but **it is not advised as it will shift clips randomly** (I experienced it). There, also enable `Proxy clips` for videos larger than 1000 pixels.
