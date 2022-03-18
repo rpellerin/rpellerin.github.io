@@ -81,3 +81,12 @@ Then:
 
     :::bash
     convert image1.jpg image2.jpg output.pdf
+
+## Set the PDF size to A4 (210 x 297 mm)
+
+Make sure your image has a resolution of 1050x1485 pixels. Then:
+
+    :::bash
+    convert input.jpg -density 50 -units pixelspercentimeter output.pdf
+
+[Source](https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309)
