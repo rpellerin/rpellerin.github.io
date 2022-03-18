@@ -4363,7 +4363,16 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert image1.jpg image2.jpg output.pdf
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 10 Dec 2016 00:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</guid><category>pdf</category><category>linux</category></item><item><title>Google Independence</title><link>//romainpellerin.eu/google-independence.html</link><description>&lt;ul&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Set the PDF size to A4 (210 x 297 mm)&lt;/h2&gt;
+&lt;p&gt;Make sure your image has a resolution of 1050x1485 pixels. Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert input.jpg -density &lt;span class="m"&gt;50&lt;/span&gt; -units pixelspercentimeter output.pdf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 10 Dec 2016 00:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</guid><category>pdf</category><category>linux</category></item><item><title>Google Independence</title><link>//romainpellerin.eu/google-independence.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://fsfe.org/campaigns/android/liberate.en.html"&gt;Liberate Your Device!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.replicant.us/"&gt;Replicant: a fully free Android distribution running on several devices&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://owncloud.org/"&gt;ownCloud: files, calendar and contacts&lt;/a&gt;&lt;/li&gt;
