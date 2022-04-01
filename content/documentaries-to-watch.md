@@ -48,6 +48,20 @@ Seen on Arte.
 - [https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4](https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4)
 - [https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48](https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48)
 
+# Urbanisme : La fin de la maison individuelle
+
+- [https://www.youtube.com/watch?v=_-gsCVB99u8](https://www.youtube.com/watch?v=_-gsCVB99u8)
+
+# Nucléaire : une solution pour la planète ?
+
+- [https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/](https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/)
+
+## Alternative links
+
+- [https://www.youtube.com/watch?v=6EBm2vWxe4o](https://www.youtube.com/watch?v=6EBm2vWxe4o)
+- [https://video.ploud.fr/w/fbP5cbT2C6rbEesgoQjNEh](https://video.ploud.fr/w/fbP5cbT2C6rbEesgoQjNEh)
+- [https://odysee.com/@Marie-JeanneTV:1/Nucl%C3%A9aire-une-solution-pour-la-plan%C3%A8te:e](https://odysee.com/@Marie-JeanneTV:1/Nucl%C3%A9aire-une-solution-pour-la-plan%C3%A8te:e)
+
 ---
 
 Search engine of PeerTube videos: [https://sepiasearch.org](https://sepiasearch.org)
