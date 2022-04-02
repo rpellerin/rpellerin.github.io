@@ -56,6 +56,8 @@ Seen on Arte.
 
 - [https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/](https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/)
 
+This video is heavily criticized [here](https://fr.linkedin.com/pulse/fabriquer-lignorance-en-documentaire-myriam-tonelotto).
+
 ## Alternative links
 
 - [https://www.youtube.com/watch?v=6EBm2vWxe4o](https://www.youtube.com/watch?v=6EBm2vWxe4o)
