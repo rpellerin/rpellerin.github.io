@@ -84,7 +84,7 @@ I just received a new parcel in my mailbox: [a front green wheel](https://www.be
 
 First, as I wrote above, I'd need to change the type of chain and use a 1/2" 1/8". Why? Because it's pretty much the standard for fixes and singlespeed bikes. Plus the choices in terms of colors are much wider. And there are more singlespeed freewheels that work with this kind of chain. Then, as a consequence, I'd need to change the cogset and crankset, and remove the derailleur. I could just do it myself with [the](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/demonte-roue-libre-super-b-tb-1045.html) [right](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/derive-chaine-de-velo.html) [tools](https://www.lecyclo.com/velo/pieces-detachees/outils/transmission/pince-a-maillon-chaine-velo-2-en-1-montage-et-demontage.html) but for now, it's too much work. I'll just wait until my chain or cogset get too old and damaged and only then will I switch to singlespeed.
 
-Also, and that's good to know, the ratio between speed and ease of pedaling must be taken into account. For instance, say you have a 14 teeth freewheel and a 42 teeth chainring, the ratio would be 42/14=3. The bigger the ratio the easier the pedaling.
+Also, and that's good to know, the ratio between speed and ease of pedaling must be taken into account. For instance, say you have a 14 teeth freewheel and a 42 teeth chainring, the ratio would be 42/14=3.
 
 That's it for now. This article will likely be updated in the coming months...
 
