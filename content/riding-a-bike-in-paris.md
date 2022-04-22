@@ -1,6 +1,6 @@
 Title: Riding A Bike In Paris
 Date: 2019-03-07 22:50
-Category: About me
+Category: Bikes
 Tags: bike, paris
 Slug: riding-a-bike-in-paris
 Authors: Romain Pellerin

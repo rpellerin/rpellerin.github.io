@@ -1,6 +1,6 @@
 Title: Bikes And Cycling Gear
 Date: 2020-04-20 01:30
-Category: About me
+Category: Bikes
 Tags: bike
 Slug: bikes-and-cycling-gear
 Authors: Romain Pellerin

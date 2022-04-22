@@ -1,7 +1,7 @@
 Title: From a second hand regular black bike to a fully customized singlespeed bike
 Date: 2019-06-24 23:50
 Modified: 2019-10-20 01:00
-Category: About me
+Category: Bikes
 Tags: bike
 Slug: from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike
 Authors: Romain Pellerin

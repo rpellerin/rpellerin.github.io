@@ -1,6 +1,6 @@
 Title: Fahrräder und Deutsche Bahn
 Date: 2021-05-05 23:30
-Category: About me
+Category: Bikes
 Tags: bike, fahrrad, germany, deutsche bahn
 Slug: fahrraeder-und-deutsche-bahn
 Authors: Romain Pellerin

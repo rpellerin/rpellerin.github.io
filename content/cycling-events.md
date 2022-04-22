@@ -1,6 +1,6 @@
 Title: Cycling Events
 Date: 2021-05-02 23:30
-Category: About me
+Category: Bikes
 Tags: bike, cycling, berlin
 Slug: cycling-events
 Authors: Romain Pellerin

@@ -1,6 +1,6 @@
 Title: Comment repeindre un vélo ? 
 Date: 2019-12-29 17:00
-Category: About me
+Category: Bikes
 Tags: bike
 Slug: comment-repeindre-un-velo
 Authors: Romain Pellerin

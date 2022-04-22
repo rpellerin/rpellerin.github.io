@@ -1,6 +1,6 @@
 Title: La Bible Du Vélotafeur
 Date: 2019-09-03 23:30
-Category: About me
+Category: Bikes
 Tags: bike, velotaf
 Slug: la-bible-du-velotafeur
 Authors: Romain Pellerin

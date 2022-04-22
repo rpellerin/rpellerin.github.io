@@ -1,6 +1,6 @@
 Title: Nuit Blanche Parisienne 2019
 Date: 2019-10-06 22:00
-Category: Miscellaneous
+Category: Bikes
 Tags: nuit blanche, paris, bike
 Slug: nuit-blanche-parisienne-2019
 Authors: Romain Pellerin
