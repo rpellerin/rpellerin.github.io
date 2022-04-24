@@ -1,8 +1,8 @@
-Title: Things To Do In Berlin
+Title: Living in Germany: Things To Do In Berlin
 Date: 2021-09-24 22:30
 Category: Travels
 Tags: berlin, germany
-Slug: things-to-do-in-berlin
+Slug: living-in-germany-things-to-do-in-berlin
 Authors: Romain Pellerin
 Summary: The ultimate travel guide for Berlin
 Image: things-to-do-in-berlin.jpg

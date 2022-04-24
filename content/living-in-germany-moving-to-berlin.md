@@ -1,8 +1,8 @@
-Title: Moving To Berlin
+Title: Living in Germany: Moving To Berlin
 Date: 2020-01-12 18:00
 Category: About me
 Tags: berlin, germany, apartment, housing
-Slug: moving-to-berlin
+Slug: living-in-germany-moving-to-berlin
 Authors: Romain Pellerin
 Summary: Everything one has to go through when relocating to Berlin -- alternatve title: All the shit I went trough
 Image: berlin/berlin-tv-tower.jpg
@@ -43,16 +43,16 @@ Also, I suggest you start selling the furniture you don't want to keep as soon a
 
 ## Registration (Anmeldung)
 
-You must ask your temporary landlord to provide you with a document called *Wohnungsgeberbestätigung*. Ideally get the original document, not a scan. This is the document you'll be bringing to the *Bürgeramt* (police station or city hall) on the day you register, alongside your ID. 
+You must ask your temporary landlord to provide you with a document called _Wohnungsgeberbestätigung_. Ideally get the original document, not a scan. This is the document you'll be bringing to the _Bürgeramt_ (police station or city hall) on the day you register, alongside your ID.
 
 Make sure to [book a slot for registration ASAP](https://service.berlin.de/dienstleistung/120686/), as it usually takes weeks to get an appointment. Bring the following documents:
 
-- Registration Form filled in (can also be found at the *Bürgeramt*): *[Anmeldung bei einer Meldebehörde](http://www.berlin.de/formularserver/formular.php?402608)*
+- Registration Form filled in (can also be found at the _Bürgeramt_): _[Anmeldung bei einer Meldebehörde](http://www.berlin.de/formularserver/formular.php?402608)_
 - EU ID or passport
-- *Mietvertrag* (lease)
-- *Wohnungsgeberbestätigung* filled out by landlord
+- _Mietvertrag_ (lease)
+- _Wohnungsgeberbestätigung_ filled out by landlord
 
-Also note that you are required to notify the *Bürgeramt* when you leave (*Abmelden*).
+Also note that you are required to notify the _Bürgeramt_ when you leave (_Abmelden_).
 
 More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/) and [there](https://allaboutberlin.com/guides/anmeldung-in-english-berlin).
 
@@ -77,13 +77,13 @@ Beware of scams on these websites, as you would do in any other country. When it
 Speaking of which, go to viewings prepared. Bring a file with the following documents:
 
 - A nice introduction about you with a picture. Make sure to state if you own pets, if you have children, whether you smoke or not and if you play music. Explain why you're looking for an apartment.
-- *Mieterselbstauskunft*: find a template online and pre-fill it. Most landlords provide their own versions: in such a case, use theirs and fill it in while doing the viewing.
+- _Mieterselbstauskunft_: find a template online and pre-fill it. Most landlords provide their own versions: in such a case, use theirs and fill it in while doing the viewing.
 - Passport/ID scans
 - Scan of your Anmeldung
 - Scan of SCHUFA
-- Copy of work contract (*Arbeitsvertrag*): only include relevant pages (first and last pages usually, as well as the page that says your salary -- make sure to highlight it in yellow!!! -- also if you're not on a probationary period make sure to include the page stating that
-- Last three payslips (*Gehaltsabrechnungen*)
-- Proof of timely payments to your previous landlord (*Mietschuldenfreiheitsbescheinigung*). A letter from them will do.
+- Copy of work contract (_Arbeitsvertrag_): only include relevant pages (first and last pages usually, as well as the page that says your salary -- make sure to highlight it in yellow!!! -- also if you're not on a probationary period make sure to include the page stating that
+- Last three payslips (_Gehaltsabrechnungen_)
+- Proof of timely payments to your previous landlord (_Mietschuldenfreiheitsbescheinigung_). A letter from them will do.
 
 You may also be asked to send these documents digitally after the viewing.
 
@@ -105,8 +105,8 @@ Consider [opening a German bank account](https://allaboutberlin.com/guides/first
 
 Other optional insurances but highly recommended are:
 
-- Liability insurance (called *Haftpflichtversicherung*): [more info here](https://www.settle-in-berlin.com/personal-liability-insurance-germany/) and [here](https://allaboutberlin.com/guides/haftpflichtversicherung). In a nutshell, the 3 ones I saw and heard about repeatedly that are English-friendly and managed through an app are: GetSafe, Coya and PopSure. You can compare others [here](https://www.check24.de/privathaftpflicht). Axa is apparently big and has a reputation in Germany. Same for Allianz. Anyway, a decent price is around 50 euros a year.
-- Household contents insurance (called *Hausratversicherung*): only if you have valuable items or piece of furniture at home. It also covers bikes.
+- Liability insurance (called _Haftpflichtversicherung_): [more info here](https://www.settle-in-berlin.com/personal-liability-insurance-germany/) and [here](https://allaboutberlin.com/guides/haftpflichtversicherung). In a nutshell, the 3 ones I saw and heard about repeatedly that are English-friendly and managed through an app are: GetSafe, Coya and PopSure. You can compare others [here](https://www.check24.de/privathaftpflicht). Axa is apparently big and has a reputation in Germany. Same for Allianz. Anyway, a decent price is around 50 euros a year.
+- Household contents insurance (called _Hausratversicherung_): only if you have valuable items or piece of furniture at home. It also covers bikes.
 
 ## Misc
 

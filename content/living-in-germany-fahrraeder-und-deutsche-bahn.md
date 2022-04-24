@@ -1,8 +1,8 @@
-Title: Fahrräder und Deutsche Bahn
+Title: Living in Germany: Fahrräder und Deutsche Bahn
 Date: 2021-05-05 23:30
 Category: Bikes
 Tags: bike, fahrrad, germany, deutsche bahn
-Slug: fahrraeder-und-deutsche-bahn
+Slug: living-in-germany-fahrraeder-und-deutsche-bahn
 Authors: Romain Pellerin
 Summary: Things to know if you intend to carry your dismantled bike on a Deutsche Bahn train
 

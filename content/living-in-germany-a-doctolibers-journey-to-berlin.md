@@ -1,15 +1,15 @@
-Title: A Doctoliber's Journey To Berlin
+Title: Living in Germany: A Doctoliber's Journey To Berlin
 Date: 2020-02-13 17:00
 Category: About me
 Tags: berlin, germany, doctolib
-Slug: a-doctolibers-journey-to-berlin
+Slug: living-in-germany-a-doctolibers-journey-to-berlin
 Authors: Romain Pellerin
 Summary: About my professional relocation
 Image: doctolib-berlin/brandenburg-gate.jpg
 
-*Originally published on [Medium](https://medium.com/@romain.pellerin/a-doctolibers-journey-to-berlin-8e791383aa00).*
+_Originally published on [Medium](https://medium.com/@romain.pellerin/a-doctolibers-journey-to-berlin-8e791383aa00)._
 
-*„Ich bin ein Berliner” — myself.*
+_„Ich bin ein Berliner” — myself._
 
 Well, this has been true for the past two months at least.
 
@@ -19,7 +19,7 @@ But over time I grew tired of it, not being a native Parisian myself. I missed l
 
 Back in 2018, Doctolib opened its second tech center, right here in Berlin. What started as a 2-person adventure back then is now a rapidly growing engineering hub with more than 40 people, including 20 software engineers (and counting).
 
-I pretty much knew when the Berlin tech center opened that I’d want to relocate at some point. I had yet to experience Berlin as a local though. so that’s what I did in March 2019. I was able to join a feature team in Berlin as a full-time member for two weeks through a Doctolib program called “*Vis Ma Vie*” (Live My Life). This program is a great way to discover processes that different teams use and to also learn more about unfamiliar business scopes. At the end of those two weeks, I knew Berlin would be the next step in my life.
+I pretty much knew when the Berlin tech center opened that I’d want to relocate at some point. I had yet to experience Berlin as a local though. so that’s what I did in March 2019. I was able to join a feature team in Berlin as a full-time member for two weeks through a Doctolib program called “_Vis Ma Vie_” (Live My Life). This program is a great way to discover processes that different teams use and to also learn more about unfamiliar business scopes. At the end of those two weeks, I knew Berlin would be the next step in my life.
 
 I started setting things in motion once I got back to Paris. I wanted my move to be as smooth as possible, for both my work-wise and personal life. The first step was to tell my manager about my plans. With the VPs of Engineering in France and Germany, we laid out a more concrete plan for me. We decided which team I’d join, based on my preferences and where I’d be most helpful. A few months later I was asked to choose a date for my first day in the Berlin office.
 
@@ -40,4 +40,4 @@ One thing is certain: I’m already in love with Berlin and happy to be part of 
 
 Come join us! Come have fun and revolutionize health care in Europe! [🇩🇪](https://careers.doctolib.de/) [🇫🇷](https://careers.doctolib.fr/) Or you can also [subscribe to our tech newsletter](http://bit.ly/doctotechlife). :)
 
-*Originally published on [Medium](https://medium.com/@romain.pellerin/a-doctolibers-journey-to-berlin-8e791383aa00).*
+_Originally published on [Medium](https://medium.com/@romain.pellerin/a-doctolibers-journey-to-berlin-8e791383aa00)._
