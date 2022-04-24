@@ -1,8 +1,8 @@
-Title: Nuit Blanche Parisienne 2019
+Title: Living In Paris: Nuit Blanche Parisienne 2019
 Date: 2019-10-06 22:00
 Category: Bikes
 Tags: nuit blanche, paris, bike
-Slug: nuit-blanche-parisienne-2019
+Slug: living-in-paris-nuit-blanche-parisienne-2019
 Authors: Romain Pellerin
 Summary: Un peu de vélo sur le périphérique parisien à l'occasion de la nuit blanche 2019
 Image: nuit-blanche-2019-logo.png

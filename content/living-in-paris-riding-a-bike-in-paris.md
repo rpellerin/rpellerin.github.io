@@ -1,13 +1,13 @@
-Title: Riding A Bike In Paris
+Title: Living In Paris: Riding A Bike In Paris
 Date: 2019-03-07 22:50
 Category: Bikes
 Tags: bike, paris
-Slug: riding-a-bike-in-paris
+Slug: living-in-paris-riding-a-bike-in-paris
 Authors: Romain Pellerin
 Summary: I just bought a bike. Here's to a whole new life!
 Image: bike-paris1.jpg
 
-*This article is continued [here]({filename}/la-bible-du-velotafeur.md).*
+_This article is continued [here]({filename}/la-bible-du-velotafeur.md)._
 
 I recently purchased a second-hand bike from one of my colleagues. By doing so, I intend to commute with it as often as possible and thus reduce metro-induced stress. It's also a good opportunity to save time: exercice while commuting, how great of a combination is that?!
 

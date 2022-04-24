@@ -1,8 +1,8 @@
-Title: Air Purifying Houseplants
+Title: Living In Paris: Air Purifying Houseplants
 Date: 2017-09-28 12:50
 Category: Miscellaneous
 Tags: plants, air
-Slug: air-purifying-houseplants
+Slug: living-in-paris-air-purifying-houseplants
 Authors: Romain Pellerin
 Summary: How to purify air using houseplants... or how to pretend you breath purified air.
 
@@ -11,7 +11,7 @@ Recently, I moved into my new apartment, in one of the most polluted cities on E
 Consequently, I started googling about evergreen houseplants that clean the air. I ended up buying the following plants:
 
 - **[Spathiphyllum](http://www.plantes-depolluantes.com/_plantes/spathiphyllum.php)**: the best at improving indoor air quality!
-- **[Aglaonema Silver Bay](http://www.plantes-depolluantes.com/_plantes/aglaonema.php)**: the plant from the movie *Leon: The Professional*.
+- **[Aglaonema Silver Bay](http://www.plantes-depolluantes.com/_plantes/aglaonema.php)**: the plant from the movie _Leon: The Professional_.
 - **[Dracaena Marginata](http://www.plantes-depolluantes.com/_plantes/dracaena_marginata.php)**
 - **Dieffenbachia**
 - **[Chlorophytum](http://www.plantes-depolluantes.com/_plantes/chlorophytum.php)** (comosum? no sure about its species)
@@ -131,7 +131,7 @@ Every other year in March or April, in a bigger pot.
 ## Complementary information
 
 Leaves are poisonous.
- 
+
 <br />
 
 Hope this helps, folks!

@@ -1,9 +1,9 @@
-Title: Looking For An Apartment In Paris
+Title: Living In Paris: Looking For An Apartment In Paris
 Date: 2017-09-02 22:50
 Modified: 2018-03-02 15:50
 Category: Miscellaneous
 Tags: apartement, paris, housing
-Slug: looking-for-an-apartment-in-paris
+Slug: living-in-paris-looking-for-an-apartment-in-paris
 Authors: Romain Pellerin
 Summary: My advice for apartment seekers in Paris
 
@@ -46,16 +46,16 @@ In Paris, landlords usually expect people to know what documents are required. H
 **Must**
 
 - Copies of your ID and your rent guarantors' IDs
-- You last three payslips (and those or your guarantors) 
-- Last tax notice (*avis d'impôts*)
+- You last three payslips (and those or your guarantors)
+- Last tax notice (_avis d'impôts_)
 - Your work contract (or student certificate if still a student) and your guarantors' work contracts or some proof from their employer
 
 **Optional but often required**
 
-- Three last rent receipts (*quittances de loyer*)
-- Guarantors' land tax (*taxe foncière*). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/)
-- Guarantors' residence tax (*taxe d'habitation*). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/).
-- Sworn statement from your guarantors stating they are your guarantors (*attestation sur l'honneur*)
+- Three last rent receipts (_quittances de loyer_)
+- Guarantors' land tax (_taxe foncière_). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/)
+- Guarantors' residence tax (_taxe d'habitation_). [More on this here](https://www.frenchentree.com/french-property/local-property-taxes-taxe-fonciere-and-taxe-dhabitation/).
+- Sworn statement from your guarantors stating they are your guarantors (_attestation sur l'honneur_)
 
 **Rarely required**
 
@@ -81,7 +81,7 @@ Here are a few questions I used to ask:
 - Is the place ventilated?
 - How much is the electricity consumption per month? How bad is the insulation? (ask for the [building energy performance metrics](https://ec.europa.eu/energy/en/topics/energy-efficiency/buildings))
 - When is the apartment available?
-- Is the apartment eligible for APL (*Aide personnalisée au logement*)?
+- Is the apartment eligible for APL (_Aide personnalisée au logement_)?
 - Is there a cave? Bike parking?
 
 # Keeping track of the apartments you've found and the viewings you've done

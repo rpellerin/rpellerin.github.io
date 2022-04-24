@@ -1,12 +1,12 @@
-Title: La Bible Du Vélotafeur
+Title: Living In Paris: La Bible Du Vélotafeur
 Date: 2019-09-03 23:30
 Category: Bikes
 Tags: bike, velotaf
-Slug: la-bible-du-velotafeur
+Slug: living-in-paris-la-bible-du-velotafeur
 Authors: Romain Pellerin
 Summary: Vélo + taf = vélotaf <3
 
-*Ceci est la suite de [Riding A Bike In Paris]({filename}/riding-a-bike-in-paris.md).*
+_Ceci est la suite de [Riding A Bike In Paris]({filename}/riding-a-bike-in-paris.md)._
 
 Cet article a pour but d'être la bible ultime de référence du vélotafeur bobo écolo radin parisien !!! Les livres qu'il faut avoir lu, les films à avoir vu, les chaînes Youtube à suivre, les comptes Twitter à lire, les podcasts à écouter, comment réparer son vélo, les magasins à connaître, des liens à gogo, tout sur le vélotaf à Paris est ici !
 
@@ -86,7 +86,7 @@ En résumé :
 
 ## Tension de la chaîne
 
-En plus d'avoir une chaîne propre bien lubrifiée, il est important de vérifier la tension de la chaîne en permanence si l'on a un fixie ou single speed.  Une chaîne sous tendue aura tendance à dérailler ou craquer, trop tendue elle s'abimera et rendra le pédalage moins efficace.
+En plus d'avoir une chaîne propre bien lubrifiée, il est important de vérifier la tension de la chaîne en permanence si l'on a un fixie ou single speed. Une chaîne sous tendue aura tendance à dérailler ou craquer, trop tendue elle s'abimera et rendra le pédalage moins efficace.
 
 # Liens utiles
 
