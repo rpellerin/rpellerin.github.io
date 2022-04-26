@@ -217,3 +217,4 @@ Voilà qui clôt cet article sur la pollution urbaine.
 
 - [Reclaim our cities from the SUV army](https://www.ft.com/content/552b37dd-0d86-403c-ba50-af793049799b)
 - [The real cost of freeways in LA](https://www.youtube.com/watch?v=HS6WrJZKbjs)
+- [Cars make cities less compact](https://voxeu.org/article/cars-make-cities-less-compact)
