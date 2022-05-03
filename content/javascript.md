@@ -96,6 +96,7 @@ All set!
 
 ## General
 
+- [Dans cette jungle de l’outillage JavaScript, un retour à la simplicité est-... (Hubert SABLONNIÈRE)](https://www.youtube.com/watch?v=t52gxrBGAIQ)
 - [30 seconds of code](https://30secondsofcode.org/)
 - [Clean Code concepts adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
 - [A different way of understanding this in JavaScript](http://2ality.com/2017/12/alternate-this.html)
