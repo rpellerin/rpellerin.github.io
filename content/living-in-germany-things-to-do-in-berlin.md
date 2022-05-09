@@ -45,6 +45,7 @@ Before diving into the list of things to do, make sure to get yourself a bike to
 - YAFO
 - Umami (in Prenzlauer Berg)
 - Cafe Anna Blume = go there for a nice brunch
+- Hofbräu Wirtshaus Berlin = AMAZING atmosphere, expect some singing and jumping on the benches! And loads of beer!
 
 # Bonus
 
