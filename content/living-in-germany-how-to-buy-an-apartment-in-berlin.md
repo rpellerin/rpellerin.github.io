@@ -13,4 +13,14 @@ Summary: Some tips and tricks about buying real estate in Berlin
 - [https://www.objectifeco.com/expatriation/mode-demploi/debuter-choisir-son-pays/j-ai-achete-un-appartement-de-120m-a-berlin-et-je-quitte-la-france.html](https://www.objectifeco.com/expatriation/mode-demploi/debuter-choisir-son-pays/j-ai-achete-un-appartement-de-120m-a-berlin-et-je-quitte-la-france.html)
 - [https://www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html](https://www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html)
 - [https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/](https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/)
+
+# Real estate agencies
+
 - [https://www.immo-boerse.com/immobilien/](https://www.immo-boerse.com/immobilien/)
+- [https://www.next-estate.de/de/](https://www.next-estate.de/de/)
+- [https://www.engelvoelkersberlin.com/](https://www.engelvoelkersberlin.com/)
+
+# Mortgage brokers
+
+- [https://www.interhyp.de/](https://www.interhyp.de/)
+- [https://hypofriend.de/en](https://hypofriend.de/en)
