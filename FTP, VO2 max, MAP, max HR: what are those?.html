@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike, training" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="These are the questions every cyclist asked themself once" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="FTP, VO2 max, MAP, max HR: what are those? - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="These are the questions every cyclist asked themself once" />
+
+        <title>FTP, VO2 max, MAP, max HR: what are those? - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2022-07-03T23:20:00+02:00">Sun 03 July 2022</time>        </p>
+    <h1>FTP, VO2 max, MAP, max HR: what are those?</h1>
+    <div class="grey">
+        <p class="italic">These are the questions every cyclist asked themself once</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 519 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/bikes.html">Bikes</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/training.html">training</a></p>    </div>
+</header>
+<article>
+    <p>Yeah, I'm into cycling. Road cycling, to be precise. It's been two years now. I've never felt so good in my life. I've become a sportsman. Me, who used to smoke half a pack a day and do no exercise at all.</p>
+<p>So after two years of ramp-up, I have now reached a stage at which I'm into improving my performance through data. Of course I already got myself a bike computer, a heart rate strap and a cadence sensor. The next level is now to measure body metrics, beyond the "simple" heart rate. We're talking FTP, VO2 max, MAP, max HR. BOOM.</p>
+<h1>FTP</h1>
+<p>What on Earth is that? Well it stands for <strong>Functional Threshold Power</strong>. Basically it's the most accurate metric about how fit and how well a person is performing that one can use to establish training zones. It is the maximum mean power (aka MMP) one can sustain for one hour, measured in watts (absolute value or watts per kilogram). Known as CP60, for <em>Critical Power 60</em>. In other words, the best average power that can be held during a full hour.</p>
+<h2>How to measure it</h2>
+<p>With a specialized sports doctor in a laboratory or with a power meter (in the pedals for instance).</p>
+<p>Instead of a full hour, a 20-min test can be done (CP20). 95% of the results is often considered to be close enough to the FTP.</p>
+<h1>VO2 max</h1>
+<p>It refers to how much oxygen one's body can absorb. This is a measure used to determine other metrics, such as the MAP (see below).</p>
+<h2>How to measure it</h2>
+<p>As far as I know, only in a laboratory, on a stationary bike or while running.</p>
+<h1>MAP</h1>
+<p>It stands for <strong>Maximal Aerobic Power</strong> (in French "PMA", for <em>Puissance Maximale Aérobie</em>).</p>
+<p>It is the power in watts reached when at VO2 max (when the body is consuming the maximum of 02 it can).</p>
+<h2>How to measure it</h2>
+<p>Either with an incremental test, with a warm up phase ahead of the test. Otherwise, measure the maximum mean power (MMP) held during 5 or 6 minutes (= CP6 - Critical Power 6).</p>
+<p>Like the FTP, it must be measured with a power meter.</p>
+<h1>Max HR</h1>
+<p>Well, it's the maximum heart rate one can reach. As simple as that.</p>
+<p>There are a few criticized inaccurate but known formulas to calculate the theoretical maximum hear rate of somebody:</p>
+<ul>
+<li>214 - (0.8 * age), for men</li>
+<li>209 - (0.9 * age), for women</li>
+<li>220 - age, for all (the most outdated formula, and of course the most popular)</li>
+</ul>
+<p>Oftentimes, a fit person will exceed their theoretical max HR. I'm 29, supposedly my maximum HR should be 190-191. Yet, I reached 194 twice recently.</p>
+<p>The best way to find out what your max HR is to go crazy, climbing some hills, or sprinting, repeatedly. Google should be able to help you find ideas or protocols.</p>
+<h1>What to do with all of that?</h1>
+<p>Now that you measured some metrics and gained data, you can start establishing training zones, for instance based on your FTP or max HR.</p>
+<p>Have fun on the bike :)</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 03 July 2022</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
