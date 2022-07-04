@@ -2,7 +2,7 @@ Title: FTP, VO2 max, MAP, max HR: what are those?
 Date: 2022-07-03 23:20
 Category: Bikes
 Tags: bike, training
-Slug: FTP, VO2 max, MAP, max HR: what are those?
+Slug: ftp-vo2-max-map-max-hr-what-are-those
 Authors: Romain Pellerin
 Summary: These are the questions every cyclist asked themself once
 
