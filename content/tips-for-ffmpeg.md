@@ -50,7 +50,7 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
     :::bash
     ffmpeg -r 24 -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf 25 -pix_fmt yuv420p output.mp4 # image0001.jpg, image0002.jpg, etc
 
-# Create a GIF
+# Create a GIF from a video
 
     :::bash
     palette="/tmp/palette.png"
@@ -60,6 +60,11 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
     ffmpeg -v warning -i input.mp4 -vf "$filters,palettegen" -y $palette
     ffmpeg -v warning -i input.mp4 -i $palette -lavfi \
         "$filters [x]; [x][1:v] paletteuse" -y output.gif
+
+# Create a GIF from images (01.jpg, 02.jpg, 03.jpg, etc...)
+
+    :::bash
+    ffmpeg -f image2 -framerate 1 -i %02d.jpg output.gif
 
 # Crop an OGV video
 
