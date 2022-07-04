@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 759 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 779 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -135,7 +135,7 @@ chmod +x ./video-crossfade
 </pre></div>
 
 
-<h1>Create a GIF</h1>
+<h1>Create a GIF from a video</h1>
 <div class="highlight"><pre><span></span><span class="nv">palette</span><span class="o">=</span><span class="s2">&quot;/tmp/palette.png&quot;</span>
 
 <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;fps=15,scale=320:-1:flags=lanczos&quot;</span>
@@ -143,6 +143,11 @@ chmod +x ./video-crossfade
 ffmpeg -v warning -i input.mp4 -vf <span class="s2">&quot;</span><span class="nv">$filters</span><span class="s2">,palettegen&quot;</span> -y <span class="nv">$palette</span>
 ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span class="se">\</span>
     <span class="s2">&quot;</span><span class="nv">$filters</span><span class="s2"> [x]; [x][1:v] paletteuse&quot;</span> -y output.gif
+</pre></div>
+
+
+<h1>Create a GIF from images (01.jpg, 02.jpg, 03.jpg, etc...)</h1>
+<div class="highlight"><pre><span></span>ffmpeg -f image2 -framerate <span class="m">1</span> -i %02d.jpg output.gif
 </pre></div>
 
 
