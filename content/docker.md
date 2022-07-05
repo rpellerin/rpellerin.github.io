@@ -19,3 +19,4 @@ During his time at Doctolib, I learned quite a lot. And I kept feeding my intere
 - `WORKDIR /home/yolo` creates the `/home/yolo` directory
 - `CMD` vs `RUN`: `RUN` is a build step, it creates a layer in the docker image and is therefore cached. `CMD` is the command to execute when runnning a docker image. If the command outputs something in stdin, it can be reused by other Docker images (see below).
 - `ADD . /home/yolo` copy the output of the base image (through stdin) to `/home/app`. If the base image (`FROM xxx`) output assets as a result of its `CMD` command, the files will end up in `/home/yolo`.
+- [What's the difference between the docker commands: run, build, and create](https://stackoverflow.com/questions/37513511/whats-the-difference-between-the-docker-commands-run-build-and-create)
