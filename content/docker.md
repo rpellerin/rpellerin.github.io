@@ -20,3 +20,11 @@ During his time at Doctolib, I learned quite a lot. And I kept feeding my intere
 - `CMD` vs `RUN`: `RUN` is a build step, it creates a layer in the docker image and is therefore cached. `CMD` is the command to execute when runnning a docker image. If the command outputs something in stdin, it can be reused by other Docker images (see below).
 - `ADD . /home/yolo` copy the output of the base image (through stdin) to `/home/app`. If the base image (`FROM xxx`) output assets as a result of its `CMD` command, the files will end up in `/home/yolo`.
 - [What's the difference between the docker commands: run, build, and create](https://stackoverflow.com/questions/37513511/whats-the-difference-between-the-docker-commands-run-build-and-create)
+- Basic common commands:
+
+    - `docker build -t toto .`: builds an image from the Dockerfile in the current folder and labels it "toto"
+    - `docker run --init --rm -ti toto bash`: starts a new container from the image labeled "toto" and opens a shell in it
+
+# Resources
+
+- [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
