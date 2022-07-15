@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">My cheatsheet for Docker</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 251 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 301 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/docker.html">docker</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/container.html">container</a></p>    </div>
 </header>
@@ -106,6 +106,17 @@
 <li><code>CMD</code> vs <code>RUN</code>: <code>RUN</code> is a build step, it creates a layer in the docker image and is therefore cached. <code>CMD</code> is the command to execute when runnning a docker image. If the command outputs something in stdin, it can be reused by other Docker images (see below).</li>
 <li><code>ADD . /home/yolo</code> copy the output of the base image (through stdin) to <code>/home/app</code>. If the base image (<code>FROM xxx</code>) output assets as a result of its <code>CMD</code> command, the files will end up in <code>/home/yolo</code>.</li>
 <li><a href="https://stackoverflow.com/questions/37513511/whats-the-difference-between-the-docker-commands-run-build-and-create">What's the difference between the docker commands: run, build, and create</a></li>
+<li>
+<p>Basic common commands:</p>
+<ul>
+<li><code>docker build -t toto .</code>: builds an image from the Dockerfile in the current folder and labels it "toto"</li>
+<li><code>docker run --init --rm -ti toto bash</code>: starts a new container from the image labeled "toto" and opens a shell in it</li>
+</ul>
+</li>
+</ul>
+<h1>Resources</h1>
+<ul>
+<li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">Best practices for writing Dockerfiles</a></li>
 </ul>
 </article>
 <footer class="grey italic small">

@@ -11,6 +11,17 @@
 &lt;li&gt;&lt;code&gt;CMD&lt;/code&gt; vs &lt;code&gt;RUN&lt;/code&gt;: &lt;code&gt;RUN&lt;/code&gt; is a build step, it creates a layer in the docker image and is therefore cached. &lt;code&gt;CMD&lt;/code&gt; is the command to execute when runnning a docker image. If the command outputs something in stdin, it can be reused by other Docker images (see below).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ADD . /home/yolo&lt;/code&gt; copy the output of the base image (through stdin) to &lt;code&gt;/home/app&lt;/code&gt;. If the base image (&lt;code&gt;FROM xxx&lt;/code&gt;) output assets as a result of its &lt;code&gt;CMD&lt;/code&gt; command, the files will end up in &lt;code&gt;/home/yolo&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/37513511/whats-the-difference-between-the-docker-commands-run-build-and-create"&gt;What's the difference between the docker commands: run, build, and create&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Basic common commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker build -t toto .&lt;/code&gt;: builds an image from the Dockerfile in the current folder and labels it "toto"&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker run --init --rm -ti toto bash&lt;/code&gt;: starts a new container from the image labeled "toto" and opens a shell in it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"&gt;Best practices for writing Dockerfiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 05 Jul 2022 12:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-07-05:/docker.html</guid><category>docker</category><category>linux</category><category>container</category></item><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
 &lt;p&gt;In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.&lt;/p&gt;
 &lt;p&gt;Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:&lt;/p&gt;

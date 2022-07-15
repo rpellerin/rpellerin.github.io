@@ -11,6 +11,17 @@
 &lt;li&gt;&lt;code&gt;CMD&lt;/code&gt; vs &lt;code&gt;RUN&lt;/code&gt;: &lt;code&gt;RUN&lt;/code&gt; is a build step, it creates a layer in the docker image and is therefore cached. &lt;code&gt;CMD&lt;/code&gt; is the command to execute when runnning a docker image. If the command outputs something in stdin, it can be reused by other Docker images (see below).&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ADD . /home/yolo&lt;/code&gt; copy the output of the base image (through stdin) to &lt;code&gt;/home/app&lt;/code&gt;. If the base image (&lt;code&gt;FROM xxx&lt;/code&gt;) output assets as a result of its &lt;code&gt;CMD&lt;/code&gt; command, the files will end up in &lt;code&gt;/home/yolo&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/37513511/whats-the-difference-between-the-docker-commands-run-build-and-create"&gt;What's the difference between the docker commands: run, build, and create&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Basic common commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker build -t toto .&lt;/code&gt;: builds an image from the Dockerfile in the current folder and labels it "toto"&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker run --init --rm -ti toto bash&lt;/code&gt;: starts a new container from the image labeled "toto" and opens a shell in it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"&gt;Best practices for writing Dockerfiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="docker"></category><category term="linux"></category><category term="container"></category></entry><entry><title>FTP, VO2 max, MAP, max HR: what are those?</title><link href="//romainpellerin.eu/ftp-vo2-max-map-max-hr-what-are-those.html" rel="alternate"></link><published>2022-07-03T23:20:00+02:00</published><updated>2022-07-03T23:20:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-03:/ftp-vo2-max-map-max-hr-what-are-those.html</id><summary type="html">&lt;p&gt;These are the questions every cyclist asked themself once&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yeah, I'm into cycling. Road cycling, to be precise. It's been two years now. I've never felt so good in my life. I've become a sportsman. Me, who used to smoke half a pack a day and do no exercise at all.&lt;/p&gt;
 &lt;p&gt;So after two years of ramp-up, I have now reached a stage at which I'm into improving my performance through data. Of course I already got myself a bike computer, a heart rate strap and a cadence sensor. The next level is now to measure body metrics, beyond the "simple" heart rate. We're talking FTP, VO2 max, MAP, max HR. BOOM.&lt;/p&gt;
 &lt;h1&gt;FTP&lt;/h1&gt;
