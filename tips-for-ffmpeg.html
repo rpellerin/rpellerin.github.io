@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 779 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 801 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -193,6 +193,12 @@ ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span 
 
 <h1>Accelerate a video by 2</h1>
 <div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mp4
+</pre></div>
+
+
+<h1>Keep the original metadata of a MP4 file</h1>
+<div class="highlight"><pre><span></span>ffmpeg -i original_video.mp4 -c:v libx264 -c:a copy -map_metadata <span class="m">0</span> transcoded_video.mp4
+touch -r original_video.mp4 transcoded_video.mp4
 </pre></div>
 
 

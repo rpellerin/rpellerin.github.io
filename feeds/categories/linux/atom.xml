@@ -1939,6 +1939,12 @@ ffmpeg -v warning -i input.mp4 -i &lt;span class="nv"&gt;$palette&lt;/span&gt; -
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h1&gt;Keep the original metadata of a MP4 file&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i original_video.mp4 -c:v libx264 -c:a copy -map_metadata &lt;span class="m"&gt;0&lt;/span&gt; transcoded_video.mp4
+touch -r original_video.mp4 transcoded_video.mp4
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Flip by 180° a video and fix the metadata&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ffmpeg -i input.mp4 -vf &lt;span class="s2"&gt;&amp;quot;transpose=2,transpose=2&amp;quot;&lt;/span&gt; -metadata:s:v:0 &lt;span class="nv"&gt;rotate&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; output.mp4
 &lt;/pre&gt;&lt;/div&gt;
