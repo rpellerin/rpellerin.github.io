@@ -108,6 +108,12 @@ Two options mostly.
     :::bash
     ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" output.mp4
 
+# Keep the original metadata of a MP4 file
+
+    :::bash
+    ffmpeg -i original_video.mp4 -c:v libx264 -c:a copy -map_metadata 0 transcoded_video.mp4
+    touch -r original_video.mp4 transcoded_video.mp4
+
 # Flip by 180° a video and fix the metadata
 
     :::bash
