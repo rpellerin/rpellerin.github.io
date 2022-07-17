@@ -5339,7 +5339,7 @@ a2enconf php7.3-fpm &lt;span class="c1"&gt;# Check the generated conf file in /e
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;su
 apt install apache2 mariadb-server libapache2-mod-php
 apt install php-gd php-json php-mysql php-curl php-mbstring
-apt install php-intl php-imagick php-xml php-zip php-bz2
+apt install php-intl php-imagick imagemagick php-xml php-zip php-bz2
 systemctl restart apache2
 
 &lt;span class="nb"&gt;cd&lt;/span&gt; /var/www
@@ -5527,6 +5527,7 @@ service apache2 restart
 &lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config/php&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
 &amp;#39;logfile&amp;#39; =&amp;gt; &amp;#39;/var/log/nextcloud/nextcloud.log&amp;#39;,
+&amp;#39;default_phone_region&amp;#39; =&amp;gt; &amp;#39;DE&amp;#39;,
 &lt;/pre&gt;&lt;/div&gt;
 
 
