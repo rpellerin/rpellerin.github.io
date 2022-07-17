@@ -780,7 +780,7 @@ Restart Apache. Running `php -i` will say *opcache.enable => On* and *Opcode Cac
 
 ## Improve Nextcloud's settings
 
-Add the following in */var/www/nextcloud/config/config/php*:
+Add the following in */var/www/nextcloud/config/config.php*:
 
     :::text
     'logtimezone' => 'Europe/Paris',
