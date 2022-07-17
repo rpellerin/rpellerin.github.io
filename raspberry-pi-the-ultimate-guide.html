@@ -851,7 +851,7 @@ service apache2 restart
 
 <p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Up and Runnning</em>. If you temporarily replace the content of <code>status.php</code>  with <code>&lt;?php phpinfo(); ?&gt;</code>, when accessing <code>/status.php</code> you should see the same results. Make sure as well that APCu is enabled in the webpage.</p>
 <h2>Improve Nextcloud's settings</h2>
-<p>Add the following in <em>/var/www/nextcloud/config/config/php</em>:</p>
+<p>Add the following in <em>/var/www/nextcloud/config/config.php</em>:</p>
 <div class="highlight"><pre><span></span>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
 &#39;logfile&#39; =&gt; &#39;/var/log/nextcloud/nextcloud.log&#39;,
 &#39;default_phone_region&#39; =&gt; &#39;DE&#39;,

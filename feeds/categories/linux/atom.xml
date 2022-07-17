@@ -1269,7 +1269,7 @@ service apache2 restart
 
 &lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Up and Runnning&lt;/em&gt;. If you temporarily replace the content of &lt;code&gt;status.php&lt;/code&gt;  with &lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;, when accessing &lt;code&gt;/status.php&lt;/code&gt; you should see the same results. Make sure as well that APCu is enabled in the webpage.&lt;/p&gt;
 &lt;h2&gt;Improve Nextcloud's settings&lt;/h2&gt;
-&lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config/php&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config.php&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
 &amp;#39;logfile&amp;#39; =&amp;gt; &amp;#39;/var/log/nextcloud/nextcloud.log&amp;#39;,
 &amp;#39;default_phone_region&amp;#39; =&amp;gt; &amp;#39;DE&amp;#39;,
