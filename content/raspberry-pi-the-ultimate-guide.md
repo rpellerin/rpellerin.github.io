@@ -589,7 +589,7 @@ Official tutorial: [https://docs.nextcloud.com/server/latest/admin_manual/instal
     su
     apt install apache2 mariadb-server libapache2-mod-php
     apt install php-gd php-json php-mysql php-curl php-mbstring
-    apt install php-intl php-imagick php-xml php-zip php-bz2
+    apt install php-intl php-imagick imagemagick php-xml php-zip php-bz2
     systemctl restart apache2
 
     cd /var/www
@@ -785,6 +785,7 @@ Add the following in */var/www/nextcloud/config/config/php*:
     :::text
     'logtimezone' => 'Europe/Paris',
     'logfile' => '/var/log/nextcloud/nextcloud.log',
+    'default_phone_region' => 'DE',
 
 Now:
 
