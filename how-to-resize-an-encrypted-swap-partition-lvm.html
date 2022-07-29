@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, swap, lvm, linux" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A few commands to resize a SWAP partition" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="How to resize an encrypted SWAP partition (LVM) - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A few commands to resize a SWAP partition" />
+
+        <title>How to resize an encrypted SWAP partition (LVM) - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time>        </p>
+    <h1>How to resize an encrypted SWAP partition (LVM)</h1>
+    <div class="grey">
+        <p class="italic">A few commands to resize a SWAP partition</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 362 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/swap.html">swap</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/lvm.html">lvm</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
+</header>
+<article>
+    <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard.</p>
+<p>Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.</p>
+<p>First, check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
+<div class="highlight"><pre><span></span>lslbk
+<span class="c1"># └─sda6                  8:6    0 464,6G  0 part</span>
+<span class="c1">#   └─sda6_crypt        253:0    0 464,5G  0 crypt</span>
+<span class="c1">#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /</span>
+<span class="c1">#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]</span>
+</pre></div>
+
+
+<p>Now, boot your Linux from a USB stick and open a terminal:</p>
+<div class="highlight"><pre><span></span>sudo su
+<span class="c1"># `sudo`    =&gt; Execute a command as another user.</span>
+<span class="c1"># `sudo su [user]` =&gt; Run a command with substitute user, default is root.</span>
+
+<span class="c1"># Encrypted device should NOT be unlocked</span>
+lsblk <span class="c1"># =&gt; list block devices</span>
+    <span class="c1"># └─sda6 =&gt; no `crypt`/`lvm``</span>
+
+<span class="c1"># Unlock encrypted device</span>
+cryptsetup open /dev/sda6 crypt <span class="c1"># Enter passphrase</span>
+    <span class="c1"># `cryptsetup` =&gt; Manage dm-crypt + LUKS encrypted volumes.</span>
+    <span class="c1"># `cryptsetup open &lt;device&gt; &lt;name&gt;` =&gt; Opens encrypted lv as &lt;name&gt;</span>
+
+<span class="c1"># Get logical volume identifiers</span>
+lsblk
+    <span class="c1"># └─sda6                  8:6    0 464,6G  0 part</span>
+    <span class="c1">#   └─sda6_crypt        253:0    0 464,5G  0 crypt</span>
+    <span class="c1">#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /</span>
+    <span class="c1">#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]</span>
+
+<span class="c1"># Shrink logical root volume AND filesystem</span>
+lvresize --verbose --resizefs -L -7G /dev/mapper/vgubuntu-root
+    <span class="c1"># `lvresize` &lt;volume&gt; =&gt; resize a logical volume</span>
+    <span class="c1">#   --verbose  =&gt; Give more info.</span>
+    <span class="c1">#   --resizefs =&gt; Resize filesystem AND LV with fsadm(8).</span>
+    <span class="c1">#   -L         =&gt; Specifies the new size of the LV,</span>
+    <span class="c1">#                 +/- add/subtracts to/from current size, g|G is GiB.</span>
+
+<span class="c1"># Check filesystem of logical root volume for errors</span>
+e2fsck -f /dev/mapper/vgubuntu-root
+    <span class="c1"># `e2fsck`&lt;fs-path&gt; =&gt; Check a Linux ext2/ext3/ext4 file system</span>
+    <span class="c1">#   -f =&gt; Force checking even if the file system seems clean.</span>
+
+<span class="c1"># Increase swapsize</span>
+lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+</pre></div>
+
+
+<p>After rebooting, check the sizes using <code>lslbk</code>. That's it!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 29 July 2022</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

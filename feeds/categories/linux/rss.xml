@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 05 Jul 2022 12:30:00 +0200</lastBuildDate><item><title>Docker</title><link>//romainpellerin.eu/docker.html</link><description>&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 29 Jul 2022 19:00:00 +0200</lastBuildDate><item><title>How to resize an encrypted SWAP partition (LVM)</title><link>//romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html</link><description>&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard.&lt;/p&gt;
+&lt;p&gt;Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.&lt;/p&gt;
+&lt;p&gt;First, check what your LVM disk currently looks like, running &lt;code&gt;lsblk&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lslbk
+&lt;span class="c1"&gt;# └─sda6                  8:6    0 464,6G  0 part&lt;/span&gt;
+&lt;span class="c1"&gt;#   └─sda6_crypt        253:0    0 464,5G  0 crypt&lt;/span&gt;
+&lt;span class="c1"&gt;#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /&lt;/span&gt;
+&lt;span class="c1"&gt;#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, boot your Linux from a USB stick and open a terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
+&lt;span class="c1"&gt;# `sudo`    =&amp;gt; Execute a command as another user.&lt;/span&gt;
+&lt;span class="c1"&gt;# `sudo su [user]` =&amp;gt; Run a command with substitute user, default is root.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Encrypted device should NOT be unlocked&lt;/span&gt;
+lsblk &lt;span class="c1"&gt;# =&amp;gt; list block devices&lt;/span&gt;
+    &lt;span class="c1"&gt;# └─sda6 =&amp;gt; no `crypt`/`lvm``&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Unlock encrypted device&lt;/span&gt;
+cryptsetup open /dev/sda6 crypt &lt;span class="c1"&gt;# Enter passphrase&lt;/span&gt;
+    &lt;span class="c1"&gt;# `cryptsetup` =&amp;gt; Manage dm-crypt + LUKS encrypted volumes.&lt;/span&gt;
+    &lt;span class="c1"&gt;# `cryptsetup open &amp;lt;device&amp;gt; &amp;lt;name&amp;gt;` =&amp;gt; Opens encrypted lv as &amp;lt;name&amp;gt;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Get logical volume identifiers&lt;/span&gt;
+lsblk
+    &lt;span class="c1"&gt;# └─sda6                  8:6    0 464,6G  0 part&lt;/span&gt;
+    &lt;span class="c1"&gt;#   └─sda6_crypt        253:0    0 464,5G  0 crypt&lt;/span&gt;
+    &lt;span class="c1"&gt;#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /&lt;/span&gt;
+    &lt;span class="c1"&gt;#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Shrink logical root volume AND filesystem&lt;/span&gt;
+lvresize --verbose --resizefs -L -7G /dev/mapper/vgubuntu-root
+    &lt;span class="c1"&gt;# `lvresize` &amp;lt;volume&amp;gt; =&amp;gt; resize a logical volume&lt;/span&gt;
+    &lt;span class="c1"&gt;#   --verbose  =&amp;gt; Give more info.&lt;/span&gt;
+    &lt;span class="c1"&gt;#   --resizefs =&amp;gt; Resize filesystem AND LV with fsadm(8).&lt;/span&gt;
+    &lt;span class="c1"&gt;#   -L         =&amp;gt; Specifies the new size of the LV,&lt;/span&gt;
+    &lt;span class="c1"&gt;#                 +/- add/subtracts to/from current size, g|G is GiB.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Check filesystem of logical root volume for errors&lt;/span&gt;
+e2fsck -f /dev/mapper/vgubuntu-root
+    &lt;span class="c1"&gt;# `e2fsck`&amp;lt;fs-path&amp;gt; =&amp;gt; Check a Linux ext2/ext3/ext4 file system&lt;/span&gt;
+    &lt;span class="c1"&gt;#   -f =&amp;gt; Force checking even if the file system seems clean.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Increase swapsize&lt;/span&gt;
+lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After rebooting, check the sizes using &lt;code&gt;lslbk&lt;/code&gt;. That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 29 Jul 2022 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-07-29:/how-to-resize-an-encrypted-swap-partition-lvm.html</guid><category>swap</category><category>lvm</category><category>linux</category></item><item><title>Docker</title><link>//romainpellerin.eu/docker.html</link><description>&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, Docker has always been a mystery to me. Mostly because I never took time to dive into it. For the past year, I was lucky enough to have David Gageot as my manager at Doctolib. As far as I know, he was one of the early contributors to it, and remains to this day one of the main contributors. Docker has no secrets for him. Here is a video starring David himself, a year after Docker was released to the public:&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d3bUoz_G2VU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
