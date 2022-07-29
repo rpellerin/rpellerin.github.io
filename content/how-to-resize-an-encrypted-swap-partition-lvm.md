@@ -6,7 +6,7 @@ Slug: how-to-resize-an-encrypted-swap-partition-lvm
 Authors: Romain Pellerin
 Summary: A few commands to resize a SWAP partition
 
-Just because I am afraid [this page](https://askubuntu.com/a/1412311) might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard.
+Just because I am afraid [this page](https://askubuntu.com/a/1412311) might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.
 
 Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.
 
