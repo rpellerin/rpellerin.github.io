@@ -10,6 +10,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;For me, &lt;code&gt;sda6&lt;/code&gt; was &lt;code&gt;nvme0n1p3&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Now, boot your Linux from a USB stick and open a terminal:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo su
 &lt;span class="c1"&gt;# `sudo`    =&amp;gt; Execute a command as another user.&lt;/span&gt;
