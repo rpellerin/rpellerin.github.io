@@ -19,6 +19,8 @@ First, check what your LVM disk currently looks like, running `lsblk`:
     #     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /
     #     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]
 
+For me, `sda6` was `nvme0n1p3`.
+
 Now, boot your Linux from a USB stick and open a terminal:
 
     :::bash
