@@ -59,8 +59,10 @@ Now, boot your Linux from a USB stick and open a terminal:
 
     # Increase swapsize
     lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+    # Format to make it usable
+    mkswap /dev/mapper/vgubuntu-swap_1
 
 Now, deactive the volume group: `vgchange -a n`
 And finally: `cryptsetup close crypt; reboot`
 
-After rebooting, check the sizes using `lslbk`. That's it!
+After rebooting, check the sizes using `lslbk`, `swapon -s` and `free -h`. That's it!
