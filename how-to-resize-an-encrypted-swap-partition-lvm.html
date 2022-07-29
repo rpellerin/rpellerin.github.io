@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few commands to resize a SWAP partition</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 381 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 394 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/swap.html">swap</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/lvm.html">lvm</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -142,12 +142,14 @@ e2fsck -f /dev/mapper/vgubuntu-root
 
 <span class="c1"># Increase swapsize</span>
 lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+<span class="c1"># Format to make it usable</span>
+mkswap /dev/mapper/vgubuntu-swap_1
 </pre></div>
 
 
 <p>Now, deactive the volume group: <code>vgchange -a n</code>
 And finally: <code>cryptsetup close crypt; reboot</code></p>
-<p>After rebooting, check the sizes using <code>lslbk</code>. That's it!</p>
+<p>After rebooting, check the sizes using <code>lslbk</code>, <code>swapon -s</code> and <code>free -h</code>. That's it!</p>
 </article>
 <footer class="grey italic small">
     Last update: Fri 29 July 2022</footer>
