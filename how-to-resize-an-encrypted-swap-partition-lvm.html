@@ -89,12 +89,12 @@
     <div class="grey">
         <p class="italic">A few commands to resize a SWAP partition</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 394 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 405 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/swap.html">swap</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/lvm.html">lvm</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard.</p>
+    <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.</p>
 <p>Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.</p>
 <p>First, check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
 <div class="highlight"><pre><span></span>lslbk
