@@ -46,7 +46,9 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Kiki's Delivery Service (Japanese anime)
 - When Marnie Was There (Japanese anime)
 - Catch Me If You Can
-- Creed
+- Creed movies
+- Top Gun movies
+- Harry Potter movies 1 to 6
 - Blade Runner and Blade Runner 2049
 - Django Unchained
 - Cast Away
