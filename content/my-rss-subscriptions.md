@@ -1,6 +1,6 @@
 Title: My RSS Subscriptions
 Date: 2016-12-18 23:00
-Modified: 2021-01-23 17:16
+Modified: 2022-08-01 11:55
 Category: About me
 Tags: news, rss, feed 
 Slug: my-rss-subscriptions
@@ -12,7 +12,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 # Bike
 
 - [Pause Velo](https://www.pausevelo.com/feed/)
-- [Podcast – Cyclocast](http://www.cyclocast.fr/category/Podcast/feed/)
+- [Podcast – Cyclocast](https://cyclocast.fr/category/Podcast/feed/)
 - [rayons libres – Cause Commune – Paris – 93.1 FM](https://cause-commune.fm/podcastfilter/rayons-libres/feed/)
 
 # Computers
