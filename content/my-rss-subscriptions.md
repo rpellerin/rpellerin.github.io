@@ -40,7 +40,3 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 # Misc
 
 - [Les sorties de la semaine](http://rss.allocine.fr/ac/cine/cettesemaine)
-
-# Some friends of mine
-
-- [Kyâne Pichou](https://www.kyane.fr/index.xml)
