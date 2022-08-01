@@ -4449,10 +4449,6 @@ sudo apt install vlc
 &lt;h1&gt;Misc&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://rss.allocine.fr/ac/cine/cettesemaine"&gt;Les sorties de la semaine&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;Some friends of mine&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.kyane.fr/index.xml"&gt;Kyâne Pichou&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="news"></category><category term="rss"></category><category term="feed"></category></entry><entry><title>How To Modify PDF Files</title><link href="//romainpellerin.eu/how-to-modify-pdf-files.html" rel="alternate"></link><published>2016-12-10T00:30:00+01:00</published><updated>2016-12-10T00:30:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</id><summary type="html">&lt;p&gt;On to extract/edit/merge pages from one or several PDF files&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gs&lt;/code&gt; is likely already installed.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdftk&lt;/code&gt; can be installed using &lt;code&gt;sudo aptitude install pdftk&lt;/code&gt;. &lt;code&gt;pdftk&lt;/code&gt; &lt;a href="http://askubuntu.com/questions/809800/whats-the-difference-between-gs-and-pdftk-in-merge-pdf-files"&gt;is not recommended because of its old and outdated PDF engine&lt;/a&gt;.&lt;/li&gt;
