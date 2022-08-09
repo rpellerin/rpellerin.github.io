@@ -14,6 +14,10 @@ Summary: Some tips and tricks about buying real estate in Berlin
 - [https://www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html](https://www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html)
 - [https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/](https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/)
 
+# The steps
+
+- [Steps achat immo](https://www.youtube.com/watch?v=8lN4lKSqFSM)
+
 # Real estate agencies
 
 - [https://www.immo-boerse.com/immobilien/](https://www.immo-boerse.com/immobilien/)
