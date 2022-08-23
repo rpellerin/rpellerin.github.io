@@ -29,7 +29,7 @@ Summary: Some tips and tricks about buying real estate in Berlin
 # Mortgage brokers
 
 - [https://www.interhyp.de/](https://www.interhyp.de/)
-- [https://hypofriend.de/en](https://hypofriend.de/en)
+- [https://hypofriend.de/en](https://hypofriend.de/en), and [a good guide](https://hypofriend.de/en/buy-apartment-berlin.afb)
 
 # From Reddit
 
