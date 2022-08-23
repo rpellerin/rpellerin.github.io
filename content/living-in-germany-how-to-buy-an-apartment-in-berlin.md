@@ -37,3 +37,7 @@ Summary: Some tips and tricks about buying real estate in Berlin
 - [Buying and owning an apartment in Berlin](https://www.reddit.com/r/eupersonalfinance/comments/uhccds/buying_and_owning_an_apartment_in_berlin/)
 - [How to buy an Apartment in Germany? Focuses on specifics while buying an apartment for self-use and not for investment purposes.](https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/)
 - [Buying an apartment in Berlin (2021, Covid)](https://www.reddit.com/r/berlin/comments/m2ldbw/buying_an_apartment_in_berlin_2021_covid/)
+
+# Vocabulary
+
+- Tilgungssatz (also called "Sparrate"): the repayment rate
