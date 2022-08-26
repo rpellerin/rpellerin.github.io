@@ -14,7 +14,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Black Mirror
 - The Walking Dead
 - Fear The Walking Dead
-- Better Call Saul
 - Stranger Things
 - Lupin
 - Tribes of Europa
@@ -31,7 +30,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Vikings
 - Mr. Robot
 - Game of Thrones
-- Breaking Bad
+- Breaking Bad + El Camino (a Breaking Bad movie ) + Better Call Saul
 - Silicon Valley
 - Revolution
 - Halt and Catch Fire
