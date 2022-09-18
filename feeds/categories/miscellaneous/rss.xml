@@ -13,6 +13,119 @@
 &lt;p&gt;As the owner of an apartment, you will have to pay the Hausgeld: it's money used for the common parts. It usually varies between 3 and 4 euros per square meter. For each apartment, you can get this piece of information directly on the listing or during the viewing.&lt;/p&gt;
 &lt;p&gt;On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in Berlin.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/"&gt;More on the topic here.&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Recap&lt;/h2&gt;
+&lt;style&gt;
+    table { border-collapse: collapse; }
+    thead { background: gray }
+    th,td { border: 1px solid black; }
+    tr.red { background: red }
+    tr.green { background: green }
+    tr.purple { background: purple }
+&lt;/style&gt;
+
+&lt;div&gt;&lt;input id="maklerprovisionfrei" type="checkbox" /&gt;&lt;label for="maklerprovisionfrei"&gt;No broker commission&lt;/label&gt;&lt;/div&gt;
+
+&lt;table style="border: 1px solid black"&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Expenditure&lt;/th&gt;
+    &lt;th&gt;Capital&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class="green"&gt;
+    &lt;td&gt;&lt;strong&gt;Equity capital&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input value="20000" id="capital" type="number" placeholder="Money on your bank account" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;&lt;strong&gt;Repair costs&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input id="repair" type="number" placeholder="New kitchen, etc" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="green"&gt;
+    &lt;td&gt;&lt;strong&gt;Sum capital - repair&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td id="capitalMinusRepair"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;Tax (Grunderwerbsteuer 6%)&lt;/td&gt;
+    &lt;td id="grunderwerbsteuer"&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;Notar (Notarkosten 1,5% + Grundbucheintrag 0,5%)&lt;/td&gt;
+    &lt;td id="notar"&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;Broker commision (usually 3,57%)&lt;/td&gt;
+    &lt;td id="maklerprovision"&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;&lt;strong&gt;Sum Tax + Notar + Broker commision&lt;/strong&gt;&lt;/td&gt;
+    &lt;td id="sumTaxNotarMakler"&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;&lt;strong&gt;Purchase price&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input id="kaufpreis" type="number" value="100000" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="red"&gt;
+    &lt;td&gt;&lt;strong&gt;Total price (Purchase price + Tax + Notar + Broker commision)&lt;/strong&gt;&lt;/td&gt;
+    &lt;td id="totalPrice"&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="green"&gt;
+    &lt;td&gt;&lt;strong&gt;Remaining capital for the apartement alone&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td id="remainingCapital"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class="purple"&gt;
+    &lt;td&gt;&lt;strong&gt;Loan needed&lt;/strong&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td id="loan"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tbody&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+function roundToTwo(num) {
+  return +(Math.round(num + "e+2") + "e-2");
+}
+
+function toCurrency(num) {
+return `${num.toLocaleString()} €`
+}
+
+const multiply = (a,b) =&gt; (a*b)
+
+function computerLoanTable() {
+const capital = +(document.querySelector('input#capital').value || 0)
+const repair = +(document.querySelector('input#repair').value || 0)
+const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
+const maklerprovisionfrei = document.querySelector('input#maklerprovisionfrei').checked
+const capitalMinusRepair = capital - repair
+document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
+const tax = roundToTwo(multiply(kaufpreis, 0.06))
+document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
+const notar = roundToTwo(multiply(kaufpreis, 0.02))
+document.querySelector("#notar").innerHTML = toCurrency(notar)
+const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
+document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
+const sumTaxNotarMakler = roundToTwo(tax + notar + makler)
+document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
+const totalPrice = kaufpreis + sumTaxNotarMakler
+document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
+const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
+document.querySelector("#remainingCapital").innerHTML = toCurrency(roundToTwo(remainingCapital))
+document.querySelector("#loan").innerHTML = toCurrency(roundToTwo(kaufpreis - remainingCapital))
+}
+&lt;/script&gt;
+
 &lt;h1&gt;2. Make sure you have a SCHUFA Score, that is not too bad&lt;/h1&gt;
 &lt;p&gt;This is especially true if you are a foreigner and do not have a German bank account, or barely use it. N26 can fuck things up and somehow not transmit any data to SCHUFA. Not having a SCHUFA Score is even worse than having a poor score, as some banks will simply not proceed at all with you, not even studying your case, since they can't get any score at all. &lt;a href="https://myhelpbuddy.com/how-to-get-your-schufa-score-for-free/"&gt;You can ask SCHUFA to provide you with the data they have about you by invoking the GDPR&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;3. The apartment hunt&lt;/h1&gt;
@@ -47,7 +160,65 @@
 &lt;p&gt;If your German is good enough and you have plenty of time, 1. is the best option, as you'll likely get the best interest rate. With 2., you will &lt;strong&gt;likely&lt;/strong&gt; get a worse deal, cause even though you don't need to pay the mortage broker, the bank will (the broker usually get a fixed percent of the loan). So in theory, banks will "compensate" without telling you.
 But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers are experienced, they know how to solve many tricky situations (no Schufa score...). Not to mention that brokers who speak your mother tongue are a HUGE HELP. They can offer additionnal services, such as acting as an official translator during the Notar meeting, probably free of charges.&lt;/p&gt;
 &lt;p&gt;For expats, &lt;a href="https://hypofriend.de/en"&gt;Hypofriend&lt;/a&gt; has been gaining a lot of traction these past few years, as they offer all their services online and in English. For French speakers, &lt;a href="https://www.connexion-francaise.com"&gt;www.connexion-francaise.com&lt;/a&gt; and &lt;a href="https://expatriation-allemagne.com/"&gt;expatriation-allemagne.com/&lt;/a&gt; are good options.&lt;/p&gt;
-&lt;p&gt;Most banks in Germany will want to secure their investement with a mortage deed (Grundschuldbestellungsurkunde). More on that in the next section.&lt;/p&gt;
+&lt;p&gt;Most banks in Germany will want to secure their investement with a mortage deed (Grundschuldbestellungsurkunde). More on that in the next chapter.&lt;/p&gt;
+&lt;h1&gt;Understand your loan offers&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;"Sollzinssatz" is the interest rate.&lt;/li&gt;
+&lt;li&gt;"Monatliche Rate" is what you pay each month out of your bank account: this is the sum of the interests and the repayment&lt;/li&gt;
+&lt;li&gt;"Tilgungssatz" (also called "Sparrate") is the repayment rate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Germany, the most common type of loan is with a fixed-interest period (usually 10 or 15 years) after which you can either renegociate a new interest, pay the whole remaining debt back, or continue the loan with another bank (and another interest rate, most likely).&lt;/p&gt;
+&lt;p&gt;Almost all banks allow exceptional repayments (Sondertilgung) every year, up to 5% of the loan. For instance, the Deutsche Bank allow you those Sondertilgung after the first 12 months in the loan, up to 5% of the loan per calendar year.&lt;/p&gt;
+&lt;p&gt;You will agree with your bank on a Monatliche Rate, the amount of money that comes out of your bank account every month. In this amount, you pay both interests and debt back. The Monatliche Rate is always the same until the end of the agreed fixed-interest period.&lt;/p&gt;
+&lt;p&gt;Each month, you will pay back ((INTEREST RATE * REMAINING DEBT) / 12) in interests, and you will pay back (MONATLICHE RATE - INTERESTS PAID) as debt repayment.&lt;/p&gt;
+&lt;p&gt;For instance, the first month, for a loan of 400,000 euros with an interest of 2%, and a monatlich Rate of 2,000 euros, you will pay&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In interests: (0.02 * 400,000) / 12 = 666.67 euros&lt;/li&gt;
+&lt;li&gt;In debt: 2,000 - 666.67 euros = 1333.33 euros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next month, you will pay:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In interests: (0.02 * (400,000 - 1333.33)) / 12 = 664.44 euros&lt;/li&gt;
+&lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;input type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;input type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;input type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;input type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung per year&lt;/label&gt;&lt;/div&gt;
+
+&lt;p&gt;After 10 years, you would have paid in interests...
+&lt;div id="interests_results" style="text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;...&lt;/div&gt;&lt;/p&gt;
+&lt;script&gt;
+function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, anticipatedPaymentSum, anticipatedPaymentFrequency = 0, stopAfterMonth, currentMonth = 1) {
+  if (remainingDebt === 0 || currentMonth &gt; stopAfterMonth) return 0
+  const paidInterest = roundToTwo((remainingDebt * interestPercent) / 12)
+  const paidAnticipatedPayment = anticipatedPaymentFrequency &gt; 0 &amp;&amp; currentMonth % anticipatedPaymentFrequency === 0 ? anticipatedPaymentSum : 0
+  const paidDebt = Math.min((monthlyPayment - paidInterest) + paidAnticipatedPayment, remainingDebt)
+  const newRemainingDebt = remainingDebt - paidDebt
+  return paidInterest + INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, anticipatedPaymentSum, anticipatedPaymentFrequency, stopAfterMonth, currentMonth + 1)
+};
+
+function computeAll() {
+    computerLoanTable()
+    document.querySelector('#interests_results').innerHTML = toCurrency(INTERESTS_FOR(
+        +(document.querySelector('#loan_amount').value || 0),
+        +(document.querySelector('#rate').value || 0),
+        +(document.querySelector('#interests').value || 0) / 100,
+        +(document.querySelector('#sondertilgung').value || 0),
+        12,
+        120
+    ))
+}
+
+computeAll(); // first loading
+document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', computeAll))
+
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;GOOD TO KNOW: After the loan is signed, you have 14 days to rescind (cancel) it.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1&gt;7. Kaufvertrag (Purchase contract)&lt;/h1&gt;
 &lt;p&gt;While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.&lt;/p&gt;
 &lt;p&gt;If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.&lt;/p&gt;
@@ -55,12 +226,6 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;p&gt;Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).&lt;/p&gt;
 &lt;p&gt;A few days ahead of the notary meeting, the notary will ask you a bunch of papers from your financing bank, so that they can start writing the draft of the Grundschuldbestellungsurkunde (mortgage deed). Forward that request to your mortgage broker if you have one.&lt;/p&gt;
 &lt;p&gt;The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.&lt;/p&gt;
-&lt;h1&gt;Understand your loan offers&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;"Sollzinssatz" is the interest rate.&lt;/li&gt;
-&lt;li&gt;"Monatliche Rate" is what you pay each month out of your bank account: this is the sum of the interests and the repayment&lt;/li&gt;
-&lt;li&gt;"Tilgungssatz" (also called "Sparrate") is the repayment rate&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h1&gt;Conclusion: timeline of events&lt;/h1&gt;
 &lt;figure class="center"&gt;&lt;img alt="All the events and when then take place" src="//romainpellerin.eu/images/buying_an_apartment_in_berlin.png" /&gt;&lt;/figure&gt;
 
