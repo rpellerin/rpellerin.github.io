@@ -116,7 +116,6 @@ The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN fir
 ## In French
 
 - [www.goodmorningberlin.com/financer-achat-immobilier-a-berlin/](https://www.goodmorningberlin.com/financer-achat-immobilier-a-berlin/)
-- [www.bientotdemain.com/immobilier/conseils-pour-acheter-un-appartement-a-berlin/](https://www.bientotdemain.com/immobilier/conseils-pour-acheter-un-appartement-a-berlin/)
 - [aberlin.fr/acheter-un-appartement-a-berlin.php](https://aberlin.fr/acheter-un-appartement-a-berlin.php)
 - [guide.mfc.bayern/Acheter_de_l%27immobilier](https://guide.mfc.bayern/Acheter_de_l%27immobilier)
 - [www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html](https://www.guidewebimmobilier.com/annonce-immobiliere/achat-appartement-berlin-quil-faut-savoir.html)
