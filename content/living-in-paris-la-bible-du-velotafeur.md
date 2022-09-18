@@ -6,7 +6,7 @@ Slug: living-in-paris-la-bible-du-velotafeur
 Authors: Romain Pellerin
 Summary: Vélo + taf = vélotaf <3
 
-_Ceci est la suite de [Riding A Bike In Paris]({filename}/riding-a-bike-in-paris.md)._
+_Ceci est la suite de [Riding A Bike In Paris]({filename}/living-in-paris-riding-a-bike-in-paris.md)._
 
 Cet article a pour but d'être la bible ultime de référence du vélotafeur bobo écolo radin parisien !!! Les livres qu'il faut avoir lu, les films à avoir vu, les chaînes Youtube à suivre, les comptes Twitter à lire, les podcasts à écouter, comment réparer son vélo, les magasins à connaître, des liens à gogo, tout sur le vélotaf à Paris est ici !
 

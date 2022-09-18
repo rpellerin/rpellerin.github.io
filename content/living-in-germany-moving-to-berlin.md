@@ -58,7 +58,7 @@ More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/) and [ther
 
 ## Finding a long-term flat
 
-[Apartment hunting](https://docs.google.com/document/d/1jw-geK3X5fxCMfJMeF90eGQVAwktOvN42i5RctUnc2k/edit#heading=h.4rxwb3gjrtlm) is no different than [in Paris]({filename}/looking-for-an-apartment-in-paris.md). Except that here, almost all landlords will ask for a German-specific document: your **[SCHUFA](https://mag.n26.com/how-to-get-your-schufa-score-in-germany-bb60295a7e1a)** (or credit score in English).
+[Apartment hunting](https://docs.google.com/document/d/1jw-geK3X5fxCMfJMeF90eGQVAwktOvN42i5RctUnc2k/edit#heading=h.4rxwb3gjrtlm) is no different than [in Paris]({filename}/living-in-paris-looking-for-an-apartment-in-paris.md). Except that here, almost all landlords will ask for a German-specific document: your **[SCHUFA](https://mag.n26.com/how-to-get-your-schufa-score-in-germany-bb60295a7e1a)** (or credit score in English).
 
 There are two types of SCHUFAS: the one with the actual credit score (called **SCHUFA BonitätsAuskunft**), and the one that only states whether you have any debts or not (called **SCHUFA Bonitätscheck**). In most cases, the latter is enough. You can get it for 30 euros at [www.immobilienscout24.de](https://www.immobilienscout24.de/).
 

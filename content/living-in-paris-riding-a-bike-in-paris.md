@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: I just bought a bike. Here's to a whole new life!
 Image: bike-paris1.jpg
 
-_This article is continued [here]({filename}/la-bible-du-velotafeur.md)._
+_This article is continued [here]({filename}/living-in-paris-la-bible-du-velotafeur.md)._
 
 I recently purchased a second-hand bike from one of my colleagues. By doing so, I intend to commute with it as often as possible and thus reduce metro-induced stress. It's also a good opportunity to save time: exercice while commuting, how great of a combination is that?!
 
