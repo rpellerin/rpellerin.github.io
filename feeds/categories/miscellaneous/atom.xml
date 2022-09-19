@@ -16,7 +16,10 @@
 &lt;h2&gt;Recap&lt;/h2&gt;
 &lt;style&gt;
     table { border-collapse: collapse; }
+    table.right { text-align: right }
+    table.stripes tbody tr:nth-child(even) { background: #DDD; }
     thead { background: gray }
+    thead.sticky { position: sticky; top: 0; }
     th,td { border: 1px solid black; }
     tr.red { background: red }
     tr.green { background: green }
@@ -103,33 +106,33 @@ function roundToTwo(num) {
 }
 
 function toCurrency(num) {
-return `${num.toLocaleString()} €`
+return `${roundToTwo(num).toLocaleString()} €`
 }
 
 const multiply = (a,b) =&gt; (a*b)
 
 function computerLoanTable() {
-const capital = +(document.querySelector('input#capital').value || 0)
-const repair = +(document.querySelector('input#repair').value || 0)
-const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
-const maklerprovisionfrei = document.querySelector('input#maklerprovisionfrei').checked
-const capitalMinusRepair = capital - repair
-document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
-const tax = roundToTwo(multiply(kaufpreis, 0.06))
-document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
-const notar = roundToTwo(multiply(kaufpreis, 0.015))
-document.querySelector("#notar").innerHTML = toCurrency(notar)
-const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
-document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
-const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
-document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
-const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
-document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
-const totalPrice = kaufpreis + sumTaxNotarMakler
-document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
-const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
-document.querySelector("#remainingCapital").innerHTML = toCurrency(roundToTwo(remainingCapital))
-document.querySelector("#loan").innerHTML = toCurrency(roundToTwo(kaufpreis - remainingCapital))
+    const capital = +(document.querySelector('input#capital').value || 0)
+    const repair = +(document.querySelector('input#repair').value || 0)
+    const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
+    const maklerprovisionfrei = document.querySelector('input#maklerprovisionfrei').checked
+    const capitalMinusRepair = capital - repair
+    document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
+    const tax = roundToTwo(multiply(kaufpreis, 0.06))
+    document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
+    const notar = roundToTwo(multiply(kaufpreis, 0.015))
+    document.querySelector("#notar").innerHTML = toCurrency(notar)
+    const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
+    document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
+    const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
+    document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
+    const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
+    document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
+    const totalPrice = kaufpreis + sumTaxNotarMakler
+    document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
+    const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
+    document.querySelector("#remainingCapital").innerHTML = toCurrency(remainingCapital)
+    document.querySelector("#loan").innerHTML = toCurrency(kaufpreis - remainingCapital)
 }
 &lt;/script&gt;
 
@@ -168,7 +171,8 @@ document.querySelector("#loan").innerHTML = toCurrency(roundToTwo(kaufpreis - re
 But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers are experienced, they know how to solve many tricky situations (no Schufa score...). Not to mention that brokers who speak your mother tongue are a HUGE HELP. They can offer additionnal services, such as acting as an official translator during the Notar meeting, probably free of charges.&lt;/p&gt;
 &lt;p&gt;For expats, &lt;a href="https://hypofriend.de/en"&gt;Hypofriend&lt;/a&gt; has been gaining a lot of traction these past few years, as they offer all their services online and in English. For French speakers, &lt;a href="https://www.connexion-francaise.com"&gt;www.connexion-francaise.com&lt;/a&gt; and &lt;a href="https://expatriation-allemagne.com/"&gt;expatriation-allemagne.com/&lt;/a&gt; are good options.&lt;/p&gt;
 &lt;p&gt;Most banks in Germany will want to secure their investement with a mortage deed (Grundschuldbestellungsurkunde). More on that in the next chapter.&lt;/p&gt;
-&lt;h1&gt;Understand your loan offers&lt;/h1&gt;
+&lt;h2&gt;Understand your loan offers&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;After the loan is signed, you have 14 days to rescind (cancel) it. It is therfore very important to go to the notary to sign the Kaufvertrag (purchase contract) within these 14 days. Otherwise, should the purchase never happen, you would not be able to cancel the loan.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;"Sollzinssatz" is the interest rate.&lt;/li&gt;
 &lt;li&gt;"Monatliche Rate" is what you pay each month out of your bank account: this is the sum of the interests and the repayment&lt;/li&gt;
@@ -188,36 +192,120 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;In interests: (0.02 * (400,000 - 1333.33)) / 12 = 664.44 euros&lt;/li&gt;
 &lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;Simulation: Tilgungsplan&lt;/h2&gt;
 &lt;div&gt;&lt;input type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
 
 &lt;div&gt;&lt;input type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
 
 &lt;div&gt;&lt;input type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;input type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung per year&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
 
-&lt;p&gt;After 10 years, you would have paid in interests...
-&lt;div id="interests_results" style="text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;...&lt;/div&gt;&lt;/p&gt;
+&lt;div id="interests_results" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;For exemple, after 10 years, you would have paid in interests...&lt;/div&gt;
+
+&lt;table id="tilgungsplan" class="stripes right"&gt;
+&lt;thead class="sticky"&gt;
+&lt;tr&gt;
+    &lt;th&gt;Date&lt;/th&gt;
+    &lt;th&gt;#&lt;/th&gt;
+    &lt;th&gt;Repayment&lt;/th&gt;
+    &lt;th&gt;Interest&lt;/th&gt;
+    &lt;th&gt;Total paid this far&lt;/th&gt;
+    &lt;th&gt;Remaining debt&lt;/th&gt;
+    &lt;th&gt;Debt repaid&lt;/th&gt;
+    &lt;th&gt;Interests paid&lt;/th&gt;
+    &lt;th&gt;Sonder-tilgung&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
 &lt;script&gt;
-function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, anticipatedPaymentSum, anticipatedPaymentFrequency = 0, stopAfterMonth, currentMonth = 1) {
+function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths = 0, stopAfterMonth, currentMonth = 1) {
   if (remainingDebt === 0 || currentMonth &gt; stopAfterMonth) return 0
   const paidInterest = roundToTwo((remainingDebt * interestPercent) / 12)
-  const paidAnticipatedPayment = anticipatedPaymentFrequency &gt; 0 &amp;&amp; currentMonth % anticipatedPaymentFrequency === 0 ? anticipatedPaymentSum : 0
-  const paidDebt = Math.min((monthlyPayment - paidInterest) + paidAnticipatedPayment, remainingDebt)
-  const newRemainingDebt = remainingDebt - paidDebt
-  return paidInterest + INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, anticipatedPaymentSum, anticipatedPaymentFrequency, stopAfterMonth, currentMonth + 1)
+  const paidDebt = Math.min((monthlyPayment - paidInterest), remainingDebt)
+  const paidAnticipatedPayment = currentMonth &gt; 12 &amp;&amp; sondertilgungEveryXMonths &gt; 0 &amp;&amp; (currentMonth - 1) % sondertilgungEveryXMonths === 0 ? sondertilgung : 0
+  const newRemainingDebt = Math.max(remainingDebt - paidDebt - paidAnticipatedPayment)
+  return paidInterest + INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
 };
 
 function computeAll() {
     computerLoanTable()
-    document.querySelector('#interests_results').innerHTML = toCurrency(INTERESTS_FOR(
-        +(document.querySelector('#loan_amount').value || 0),
-        +(document.querySelector('#rate').value || 0),
-        +(document.querySelector('#interests').value || 0) / 100,
-        +(document.querySelector('#sondertilgung').value || 0),
+
+    const loanAmount = +(document.querySelector('#loan_amount').value || 0)
+    const rate = +(document.querySelector('#rate').value || 0)
+    const interestRate = +(document.querySelector('#interests').value || 0) / 100
+    const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
+
+    document.querySelector('#interests_results').innerHTML = `For example, after 10 years, you would have paid in interests ${toCurrency(INTERESTS_FOR(
+        loanAmount,
+        rate,
+        interestRate,
+        sondertilgung,
         12,
         120
-    ))
+    ))}`
+    const tBody = document.querySelector('#tilgungsplan tbody')
+    tBody.innerHTML = null
+    let remainingDebt = loanAmount
+    let interestsPaid = 0
+    let currentRowDate = new Date()
+    let totalPaid = 0
+    for (let currentMonth = 0; true; currentMonth++) {
+        const tr = document.createElement('tr')
+
+        const dateTd = document.createElement('td')
+        const monthTd = document.createElement('td')
+        const repaymentTd = document.createElement('td')
+        const interestTd = document.createElement('td')
+        const totalTd = document.createElement('td')
+        const remainingDebtTd = document.createElement('td')
+        const debtRepaidTd = document.createElement('td')
+        const interestPaidTd = document.createElement('td')
+        const sondertilgungTd = document.createElement('td')
+
+        dateTd.innerHTML = currentRowDate.toLocaleDateString()
+        currentRowDate.setMonth(currentRowDate.getMonth() + 1);
+        currentRowDate.setDate(1);
+        monthTd.innerHTML = currentMonth
+
+        const interestsToPay = roundToTwo(currentMonth === 0 ? 0 : multiply(remainingDebt, interestRate) / 12)
+        let sonderTilgungToPay = currentMonth &gt; 12 &amp;&amp; (currentMonth - 1) % 12 === 0 ? sondertilgung : 0
+        const debtToPay = currentMonth === 0 ? 0 : Math.min(rate - interestsToPay, remainingDebt)
+
+        repaymentTd.innerHTML = toCurrency(debtToPay)
+        interestTd.innerHTML = toCurrency(interestsToPay)
+        remainingDebt -= currentMonth === 0 ? 0 : debtToPay
+        if (remainingDebt &lt; sonderTilgungToPay) {
+            sonderTilgungToPay = remainingDebt
+            remainingDebt = 0
+        }
+        else {
+            remainingDebt -= sonderTilgungToPay
+        }
+        totalPaid += (interestsToPay + debtToPay + sonderTilgungToPay)
+        totalTd.innerHTML = toCurrency(totalPaid)
+        remainingDebtTd.innerHTML = toCurrency(remainingDebt)
+        interestsPaid = interestsPaid + interestsToPay
+        interestPaidTd.innerHTML = toCurrency(interestsPaid)
+        debtRepaidTd.innerHTML = toCurrency(totalPaid - interestsPaid)
+        sondertilgungTd.innerHTML = toCurrency(sonderTilgungToPay)
+
+
+        tr.appendChild(dateTd)
+        tr.appendChild(monthTd)
+        tr.appendChild(repaymentTd)
+        tr.appendChild(interestTd)
+        tr.appendChild(totalTd)
+        tr.appendChild(remainingDebtTd)
+        tr.appendChild(debtRepaidTd)
+        tr.appendChild(interestPaidTd)
+        tr.appendChild(sondertilgungTd)
+        tBody.appendChild(tr)
+        if (remainingDebt &lt;= 0) break
+    }
 }
 
 computeAll(); // first loading
@@ -225,7 +313,6 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 
 &lt;/script&gt;
 
-&lt;p&gt;&lt;strong&gt;GOOD TO KNOW: After the loan is signed, you have 14 days to rescind (cancel) it.&lt;/strong&gt;&lt;/p&gt;
 &lt;h1&gt;7. Kaufvertrag (Purchase contract)&lt;/h1&gt;
 &lt;p&gt;While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.&lt;/p&gt;
 &lt;p&gt;If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.&lt;/p&gt;
