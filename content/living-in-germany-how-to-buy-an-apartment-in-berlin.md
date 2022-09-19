@@ -74,8 +74,13 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
     <td></td>
 </tr>
 <tr class="red">
-    <td>Notar (Notarkosten 1,5% + Grundbucheintrag 0,5%)</td>
+    <td>Notar (Notarkosten 1,5%)</td>
     <td id="notar"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td>Notar (Grundbucheintrag 0,5%)</td>
+    <td id="grundbucheintrag"></td>
     <td></td>
 </tr>
 <tr class="red">
@@ -130,11 +135,13 @@ const capitalMinusRepair = capital - repair
 document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
 const tax = roundToTwo(multiply(kaufpreis, 0.06))
 document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
-const notar = roundToTwo(multiply(kaufpreis, 0.02))
+const notar = roundToTwo(multiply(kaufpreis, 0.015))
 document.querySelector("#notar").innerHTML = toCurrency(notar)
+const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
+document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
 const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
 document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
-const sumTaxNotarMakler = roundToTwo(tax + notar + makler)
+const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
 document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
 const totalPrice = kaufpreis + sumTaxNotarMakler
 document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
