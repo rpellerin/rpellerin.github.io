@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">Some tips and tricks about buying real estate in Berlin</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1914 words.">10 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1924 words.">10 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/berlin.html">berlin</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/apartment.html">apartment</a></p>    </div>
 </header>
@@ -150,8 +150,13 @@
     <td></td>
 </tr>
 <tr class="red">
-    <td>Notar (Notarkosten 1,5% + Grundbucheintrag 0,5%)</td>
+    <td>Notar (Notarkosten 1,5%)</td>
     <td id="notar"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td>Notar (Grundbucheintrag 0,5%)</td>
+    <td id="grundbucheintrag"></td>
     <td></td>
 </tr>
 <tr class="red">
@@ -207,11 +212,13 @@ const capitalMinusRepair = capital - repair
 document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
 const tax = roundToTwo(multiply(kaufpreis, 0.06))
 document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
-const notar = roundToTwo(multiply(kaufpreis, 0.02))
+const notar = roundToTwo(multiply(kaufpreis, 0.015))
 document.querySelector("#notar").innerHTML = toCurrency(notar)
+const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
+document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
 const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
 document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
-const sumTaxNotarMakler = roundToTwo(tax + notar + makler)
+const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
 document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
 const totalPrice = kaufpreis + sumTaxNotarMakler
 document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
