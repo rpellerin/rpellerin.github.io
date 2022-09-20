@@ -178,7 +178,7 @@ If the Exposé does not contain any NO-GO information (like a crazy Energieklass
 
 The PDF I mentioned in the introduction has some great pieces of advice as to what to look for. For instance, mold on the walls/ceiling is a no go, just like single-glazed windows are. Pay attention to the Energieklasse. Be quiet for a few seconds, make sure the neighborhood is not noisy (metro, car traffic, trams, schools, etc). Assess how much repair is needed. Ask about:
 
-- Hansgeld
+- Hausgeld
 - New owners, old owners, what the WEG (Wohnungseigentümergemeinschaft - homeowner association) is made of.
 - Which walls can be torn down
 - How freely you can change the windows, doors, etc
