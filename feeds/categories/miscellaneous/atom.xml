@@ -24,6 +24,7 @@
     tr.red { background: red }
     tr.green { background: green }
     tr.purple { background: purple }
+    input:invalid { outline: 1px solid red; }
 &lt;/style&gt;
 
 &lt;div&gt;&lt;input id="maklerprovisionfrei" type="checkbox" /&gt;&lt;label for="maklerprovisionfrei"&gt;No broker commission&lt;/label&gt;&lt;/div&gt;
@@ -40,11 +41,11 @@
 &lt;tr class="green"&gt;
     &lt;td&gt;&lt;strong&gt;Equity capital&lt;/strong&gt;&lt;/td&gt;
     &lt;td&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;input value="20000" id="capital" type="number" placeholder="Money on your bank account" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input step=".01" value="20000" id="capital" type="number" placeholder="Money on your bank account" /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class="red"&gt;
     &lt;td&gt;&lt;strong&gt;Repair costs&lt;/strong&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;input id="repair" type="number" placeholder="New kitchen, etc" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input step=".01" id="repair" type="number" placeholder="New kitchen, etc" /&gt;&lt;/td&gt;
     &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class="green"&gt;
@@ -79,7 +80,7 @@
 &lt;/tr&gt;
 &lt;tr class="red"&gt;
     &lt;td&gt;&lt;strong&gt;Purchase price&lt;/strong&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;input id="kaufpreis" type="number" value="100000" /&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input step=".01" id="kaufpreis" type="number" value="100000" /&gt;&lt;/td&gt;
     &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class="red"&gt;
@@ -193,15 +194,15 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Simulation: Tilgungsplan&lt;/h2&gt;
-&lt;div&gt;&lt;input type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input step=".01" type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;input type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input step=".01" type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;input type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input step=".01" type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;input type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
 
-&lt;div id="interests_results" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;For exemple, after 10 years, you would have paid in interests...&lt;/div&gt;
+&lt;div id="summary" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;&lt;/div&gt;
 
 &lt;table id="tilgungsplan" class="stripes right"&gt;
 &lt;thead class="sticky"&gt;
@@ -223,13 +224,16 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 
 &lt;script&gt;
 function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths = 0, stopAfterMonth, currentMonth = 1) {
-  if (remainingDebt === 0 || currentMonth &gt; stopAfterMonth) return 0
+  if (remainingDebt === 0 || currentMonth &gt; stopAfterMonth) return [0,0,remainingDebt]
   const paidInterest = roundToTwo((remainingDebt * interestPercent) / 12)
   const paidDebt = Math.min((monthlyPayment - paidInterest), remainingDebt)
   const paidAnticipatedPayment = currentMonth &gt; 12 &amp;&amp; sondertilgungEveryXMonths &gt; 0 &amp;&amp; (currentMonth - 1) % sondertilgungEveryXMonths === 0 ? sondertilgung : 0
   const newRemainingDebt = Math.max(remainingDebt - paidDebt - paidAnticipatedPayment)
-  return paidInterest + INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
+  const [totalDebtPaid, totalInterestsPaid, debtLeftToPay] = INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
+  return [totalDebtPaid + paidDebt, totalInterestsPaid + paidInterest, debtLeftToPay]
 };
+
+
 
 function computeAll() {
     computerLoanTable()
@@ -239,21 +243,36 @@ function computeAll() {
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
     const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
 
-    document.querySelector('#interests_results').innerHTML = `For example, after 10 years, you would have paid in interests ${toCurrency(INTERESTS_FOR(
+    const tBody = document.querySelector('#tilgungsplan tbody')
+    tBody.innerHTML = null
+
+    const [ totalDebtPaid, totalInterestsPaid, debtLeftToPay ] = INTERESTS_FOR(
         loanAmount,
         rate,
         interestRate,
         sondertilgung,
         12,
-        120
-    ))}`
-    const tBody = document.querySelector('#tilgungsplan tbody')
-    tBody.innerHTML = null
+        120)
+    document.querySelector('#summary').innerHTML = `After 10 years, you would have...
+        &lt;ul&gt;
+          &lt;li&gt;Paid ${toCurrency(totalInterestsPaid)} in interests&lt;/li&gt;
+          &lt;li&gt;Paid ${toCurrency(totalDebtPaid)} in debt back&lt;/li&gt;
+          &lt;li&gt;${toCurrency(debtLeftToPay)} still to pay&lt;/li&gt;
+        &lt;/ul&gt;
+    `
+
     let remainingDebt = loanAmount
     let interestsPaid = 0
     let currentRowDate = new Date()
     let totalPaid = 0
     for (let currentMonth = 0; true; currentMonth++) {
+        if (currentMonth &gt; 12 * 50) {
+            // No need to process a loan of more than 50 years, abort...
+            tBody.innerHTML = null
+            window.alert(`The Monatliche Rate (${rate}) has to be higher, otherwise your loan will last over 50 years`)
+            return
+        }
+
         const tr = document.createElement('tr')
 
         const dateTd = document.createElement('td')
