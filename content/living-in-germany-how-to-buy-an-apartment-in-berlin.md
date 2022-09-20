@@ -45,6 +45,7 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
     tr.red { background: red }
     tr.green { background: green }
     tr.purple { background: purple }
+    input:invalid { outline: 1px solid red; }
 </style>
 <div><input id="maklerprovisionfrei" type="checkbox" /><label for="maklerprovisionfrei">No broker commission</label></div>
 <table style="border: 1px solid black">
@@ -59,11 +60,11 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 <tr class="green">
     <td><strong>Equity capital</strong></td>
     <td></td>
-    <td><input value="20000" id="capital" type="number" placeholder="Money on your bank account" /></td>
+    <td><input step=".01" value="20000" id="capital" type="number" placeholder="Money on your bank account" /></td>
 </tr>
 <tr class="red">
     <td><strong>Repair costs</strong></td>
-    <td><input id="repair" type="number" placeholder="New kitchen, etc" /></td>
+    <td><input step=".01" id="repair" type="number" placeholder="New kitchen, etc" /></td>
     <td></td>
 </tr>
 <tr class="green">
@@ -98,7 +99,7 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 </tr>
 <tr class="red">
     <td><strong>Purchase price</strong></td>
-    <td><input id="kaufpreis" type="number" value="100000" /></td>
+    <td><input step=".01" id="kaufpreis" type="number" value="100000" /></td>
     <td></td>
 </tr>
 <tr class="red">
@@ -232,12 +233,12 @@ The next month, you will pay:
 
 ## Simulation: Tilgungsplan
 
-<div><input type="number" value="400000" id="loan_amount"/> <label for="loan_amount">Loan</label></div>
-<div><input type="number" placeholder="2" value="2" id="interests"/> <label for="interests">Interests rate (%)</label></div>
-<div><input type="number" placeholder="2000" value="2000" id="rate"/> <label for="rate">Monatliche Rate</label></div>
-<div><input type="number" placeholder="0" value="0" id="sondertilgung"/> <label for="sondertilgung">Sondertilgung (one payment every 12 months, after 1 year)</label></div>
+<div><input step=".01" type="number" value="400000" id="loan_amount"/> <label for="loan_amount">Loan</label></div>
+<div><input step=".01" type="number" placeholder="2" value="2" id="interests"/> <label for="interests">Interests rate (%)</label></div>
+<div><input step=".01" type="number" placeholder="2000" value="2000" id="rate"/> <label for="rate">Monatliche Rate</label></div>
+<div><input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/> <label for="sondertilgung">Sondertilgung (one payment every 12 months, after 1 year)</label></div>
 
-<div id="interests_results" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)">For exemple, after 10 years, you would have paid in interests...</div>
+<div id="summary" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"></div>
 
 <table id="tilgungsplan" class="stripes right">
 <thead class="sticky">
@@ -259,13 +260,16 @@ The next month, you will pay:
 
 <script>
 function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths = 0, stopAfterMonth, currentMonth = 1) {
-  if (remainingDebt === 0 || currentMonth > stopAfterMonth) return 0
+  if (remainingDebt === 0 || currentMonth > stopAfterMonth) return [0,0,remainingDebt]
   const paidInterest = roundToTwo((remainingDebt * interestPercent) / 12)
   const paidDebt = Math.min((monthlyPayment - paidInterest), remainingDebt)
   const paidAnticipatedPayment = currentMonth > 12 && sondertilgungEveryXMonths > 0 && (currentMonth - 1) % sondertilgungEveryXMonths === 0 ? sondertilgung : 0
   const newRemainingDebt = Math.max(remainingDebt - paidDebt - paidAnticipatedPayment)
-  return paidInterest + INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
+  const [totalDebtPaid, totalInterestsPaid, debtLeftToPay] = INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
+  return [totalDebtPaid + paidDebt, totalInterestsPaid + paidInterest, debtLeftToPay]
 };
+
+
 
 function computeAll() {
     computerLoanTable()
@@ -275,21 +279,36 @@ function computeAll() {
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
     const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
 
-    document.querySelector('#interests_results').innerHTML = `For example, after 10 years, you would have paid in interests ${toCurrency(INTERESTS_FOR(
+    const tBody = document.querySelector('#tilgungsplan tbody')
+    tBody.innerHTML = null
+
+    const [ totalDebtPaid, totalInterestsPaid, debtLeftToPay ] = INTERESTS_FOR(
         loanAmount,
         rate,
         interestRate,
         sondertilgung,
         12,
-        120
-    ))}`
-    const tBody = document.querySelector('#tilgungsplan tbody')
-    tBody.innerHTML = null
+        120)
+    document.querySelector('#summary').innerHTML = `After 10 years, you would have...
+        <ul>
+          <li>Paid ${toCurrency(totalInterestsPaid)} in interests</li>
+          <li>Paid ${toCurrency(totalDebtPaid)} in debt back</li>
+          <li>${toCurrency(debtLeftToPay)} still to pay</li>
+        </ul>
+    `
+
     let remainingDebt = loanAmount
     let interestsPaid = 0
     let currentRowDate = new Date()
     let totalPaid = 0
     for (let currentMonth = 0; true; currentMonth++) {
+        if (currentMonth > 12 * 50) {
+            // No need to process a loan of more than 50 years, abort...
+            tBody.innerHTML = null
+            window.alert(`The Monatliche Rate (${rate}) has to be higher, otherwise your loan will last over 50 years`)
+            return
+        }
+
         const tr = document.createElement('tr')
 
         const dateTd = document.createElement('td')
