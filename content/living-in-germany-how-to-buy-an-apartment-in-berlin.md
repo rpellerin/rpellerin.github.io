@@ -474,7 +474,7 @@ While you are reviewing the loan offer, you should start thinking about the Kauf
 
 If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.
 
-The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it written in the contract.
+The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.
 
 Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).
 
