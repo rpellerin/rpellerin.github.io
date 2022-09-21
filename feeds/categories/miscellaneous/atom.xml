@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Miscellaneous</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/miscellaneous/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2022-09-18T23:45:00+02:00</updated><entry><title>Living in Germany: How to buy an apartment in Berlin</title><link href="//romainpellerin.eu/living-in-germany-how-to-buy-an-apartment-in-berlin.html" rel="alternate"></link><published>2022-04-24T19:00:00+02:00</published><updated>2022-09-18T23:45:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-04-24:/living-in-germany-how-to-buy-an-apartment-in-berlin.html</id><summary type="html">&lt;p&gt;Some tips and tricks about buying real estate in Berlin&lt;/p&gt;</summary><content type="html">&lt;p&gt;There's already plenty of resources online. Specifically, there is &lt;a href="//romainpellerin.eu/extra/Buying_an_Apartment_in_Germany.pdf"&gt;this unique priceless PDF&lt;/a&gt; that I found on &lt;a href="https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/"&gt;Reddit&lt;/a&gt;, which covers pretty much everything in detail.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Miscellaneous</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/miscellaneous/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2022-09-21T12:15:00+02:00</updated><entry><title>Living in Germany: How to buy an apartment in Berlin</title><link href="//romainpellerin.eu/living-in-germany-how-to-buy-an-apartment-in-berlin.html" rel="alternate"></link><published>2022-04-24T19:00:00+02:00</published><updated>2022-09-21T12:15:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-04-24:/living-in-germany-how-to-buy-an-apartment-in-berlin.html</id><summary type="html">&lt;p&gt;Some tips and tricks about buying real estate in Berlin&lt;/p&gt;</summary><content type="html">&lt;p&gt;There's already plenty of resources online. Specifically, there is &lt;a href="//romainpellerin.eu/extra/Buying_an_Apartment_in_Germany.pdf"&gt;this unique priceless PDF&lt;/a&gt; that I found on &lt;a href="https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/"&gt;Reddit&lt;/a&gt;, which covers pretty much everything in detail.&lt;/p&gt;
 &lt;p&gt;For French speakers, here is a short video that explains in 10 minutes the steps to buy an apartment in Germany.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8lN4lKSqFSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -14,8 +14,9 @@
 &lt;p&gt;On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in Berlin.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/"&gt;More on the topic here.&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Recap&lt;/h2&gt;
+&lt;h3&gt;Loan needed&lt;/h3&gt;
 &lt;style&gt;
-    table { border-collapse: collapse; }
+    table { border-collapse: collapse; margin: auto; }
     table.right { text-align: right }
     table.stripes tbody tr:nth-child(even) { background: #DDD; }
     thead { background: gray }
@@ -25,6 +26,13 @@
     tr.green { background: green }
     tr.purple { background: purple }
     input:invalid { outline: 1px solid red; }
+    .results {
+        margin: 5px 0;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        background: rgba(252, 3, 3, 0.5);
+    }
 &lt;/style&gt;
 
 &lt;div&gt;&lt;input id="maklerprovisionfrei" type="checkbox" /&gt;&lt;label for="maklerprovisionfrei"&gt;No broker commission&lt;/label&gt;&lt;/div&gt;
@@ -101,7 +109,93 @@
 &lt;tbody&gt;
 &lt;/table&gt;
 
+&lt;h3&gt;Profitability comparator&lt;/h3&gt;
+&lt;div&gt;&lt;input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /&gt; &lt;label for="rent"&gt;Current rent (Warmmiete)&lt;/label&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /&gt; &lt;label for="hausgeld"&gt;Hausgeld in the new apartment&lt;/label&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/&gt; &lt;label for="grundsteuer"&gt;Expected Grundsteuer per month&lt;/label&gt;&lt;/div&gt;
+
+&lt;div id="profitability" class="results"&gt;&lt;/div&gt;
+
 &lt;script&gt;
+function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
+    const rent = +(document.querySelector('input#rent').value || 0)
+    const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
+    const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
+
+    const profitabilityDiv = document.querySelector('#profitability')
+
+    let sumPaidInOldApartment = 0
+    let sumPaidInNewApartment = sumTaxNotarMakler
+
+    let remainingDebt = loanAmount
+    let currentMonth = 0
+    const rows = []
+    const rowZero = document.createElement('tr')
+
+    const rowZeromonthNumber = document.createElement('td')
+    rowZeromonthNumber.innerHTML = currentMonth
+    const rowZeroAccruedRents = document.createElement('td')
+    rowZeroAccruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+    const rowZeroNewApartmentCosts = document.createElement('td')
+    rowZeroNewApartmentCosts.innerHTML = toCurrency(sumPaidInNewApartment)
+
+    rowZero.appendChild(rowZeromonthNumber)
+    rowZero.appendChild(rowZeroAccruedRents)
+    rowZero.appendChild(rowZeroNewApartmentCosts)
+
+    rows.push(rowZero)
+    while(sumPaidInOldApartment &lt; sumPaidInNewApartment) {
+        currentMonth++
+        if (currentMonth &gt; 12 * 50) {
+            // No need to process profitability beyond 50, abort...
+            profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
+            return
+        }
+        const paidInterest = roundToTwo((remainingDebt * interestRate) / 12)
+        const paidDebt = Math.min((rate - paidInterest), remainingDebt)
+        remainingDebt = Math.max(remainingDebt - paidDebt)
+
+        sumPaidInOldApartment += rent
+
+        const row = document.createElement('tr')
+
+        const rowMonthNumber = document.createElement('td')
+        rowMonthNumber.innerHTML = currentMonth
+        const accruedRents = document.createElement('td')
+        accruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+        const rowNewApartmentCosts = document.createElement('td')
+        rowNewApartmentCosts.innerHTML = `${toCurrency(sumPaidInNewApartment)} + ${toCurrency(paidInterest)} + ${toCurrency(hausgeld)} + ${toCurrency(grundsteuer)}`
+
+        row.appendChild(rowMonthNumber)
+        row.appendChild(accruedRents)
+        row.appendChild(rowNewApartmentCosts)
+
+        rows.push(row)
+
+        sumPaidInNewApartment += paidInterest + hausgeld + grundsteuer
+        rowNewApartmentCosts.innerHTML += ` = ${toCurrency(sumPaidInNewApartment)}`
+    }
+    profitabilityDiv.innerHTML = `&lt;p&gt;With a monthly payment of ${toCurrency(rate)} (&lt;a href="#rate"&gt;adjust&lt;/a&gt;) and an interest rate of ${interestRate * 100}% (&lt;a href="#interests"&gt;adjust&lt;/a&gt;)...&lt;/p&gt;&lt;details&gt;
+        &lt;summary&gt;Your investment becomes profitable on the ${currentMonth}th month (year ${roundToTwo(currentMonth/12)})&lt;/summary&gt;
+        &lt;table id="profitability_table"&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Month&lt;/th&gt;
+                &lt;th&gt;Accrued rents&lt;/th&gt;
+                &lt;th&gt;Tax + Notar + Broker +&lt;br /&gt;Accrued Interests + Hausgeld + Grundsteuer&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/details&gt;`
+
+    const profitabilityTbody = document.querySelector('#profitability_table tbody')
+    profitabilityTbody.append(...rows)
+}
+
 function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
@@ -112,7 +206,7 @@ return `${roundToTwo(num).toLocaleString()} €`
 
 const multiply = (a,b) =&gt; (a*b)
 
-function computerLoanTable() {
+function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
     const capital = +(document.querySelector('input#capital').value || 0)
     const repair = +(document.querySelector('input#repair').value || 0)
     const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
@@ -134,6 +228,8 @@ function computerLoanTable() {
     const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
     document.querySelector("#remainingCapital").innerHTML = toCurrency(remainingCapital)
     document.querySelector("#loan").innerHTML = toCurrency(kaufpreis - remainingCapital)
+
+    computeProfitability({loanAmount, rate, interestRate, sondertilgung, sumTaxNotarMakler})
 }
 &lt;/script&gt;
 
@@ -202,7 +298,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
 
-&lt;div id="summary" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"&gt;&lt;/div&gt;
+&lt;div id="summary" class="results"&gt;&lt;/div&gt;
 
 &lt;table id="tilgungsplan" class="stripes right"&gt;
 &lt;thead class="sticky"&gt;
@@ -236,8 +332,6 @@ function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertil
 
 
 function computeAll() {
-    computerLoanTable()
-
     const loanAmount = +(document.querySelector('#loan_amount').value || 0)
     const rate = +(document.querySelector('#rate').value || 0)
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
@@ -245,6 +339,11 @@ function computeAll() {
 
     const tBody = document.querySelector('#tilgungsplan tbody')
     tBody.innerHTML = null
+
+    computeLoanTable({loanAmount,
+        rate,
+        interestRate,
+        sondertilgung})
 
     const [ totalDebtPaid, totalInterestsPaid, debtLeftToPay ] = INTERESTS_FOR(
         loanAmount,
