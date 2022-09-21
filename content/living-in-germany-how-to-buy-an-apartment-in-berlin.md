@@ -1,6 +1,6 @@
 Title: Living in Germany: How to buy an apartment in Berlin
 Date: 2022-04-24 19:00
-Modified: 2022-09-18 23:45
+Modified: 2022-09-21 12:15
 Category: Miscellaneous
 Tags: berlin, germany, apartment
 Slug: living-in-germany-how-to-buy-an-apartment-in-berlin
@@ -35,8 +35,10 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 
 ## Recap
 
+### Loan needed
+
 <style>
-    table { border-collapse: collapse; }
+    table { border-collapse: collapse; margin: auto; }
     table.right { text-align: right }
     table.stripes tbody tr:nth-child(even) { background: #DDD; }
     thead { background: gray }
@@ -46,6 +48,13 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
     tr.green { background: green }
     tr.purple { background: purple }
     input:invalid { outline: 1px solid red; }
+    .results {
+        margin: 5px 0;
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+        background: rgba(252, 3, 3, 0.5);
+    }
 </style>
 <div><input id="maklerprovisionfrei" type="checkbox" /><label for="maklerprovisionfrei">No broker commission</label></div>
 <table style="border: 1px solid black">
@@ -119,7 +128,93 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 </tr>
 <tbody>
 </table>
+
+### Profitability comparator
+
+<div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
+<div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
+<div><input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/> <label for="grundsteuer">Expected Grundsteuer per month</label></div>
+
+<div id="profitability" class="results"></div>
+
 <script>
+function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
+    const rent = +(document.querySelector('input#rent').value || 0)
+    const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
+    const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
+
+    const profitabilityDiv = document.querySelector('#profitability')
+
+    let sumPaidInOldApartment = 0
+    let sumPaidInNewApartment = sumTaxNotarMakler
+
+    let remainingDebt = loanAmount
+    let currentMonth = 0
+    const rows = []
+    const rowZero = document.createElement('tr')
+
+    const rowZeromonthNumber = document.createElement('td')
+    rowZeromonthNumber.innerHTML = currentMonth
+    const rowZeroAccruedRents = document.createElement('td')
+    rowZeroAccruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+    const rowZeroNewApartmentCosts = document.createElement('td')
+    rowZeroNewApartmentCosts.innerHTML = toCurrency(sumPaidInNewApartment)
+
+    rowZero.appendChild(rowZeromonthNumber)
+    rowZero.appendChild(rowZeroAccruedRents)
+    rowZero.appendChild(rowZeroNewApartmentCosts)
+
+    rows.push(rowZero)
+    while(sumPaidInOldApartment < sumPaidInNewApartment) {
+        currentMonth++
+        if (currentMonth > 12 * 50) {
+            // No need to process profitability beyond 50, abort...
+            profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
+            return
+        }
+        const paidInterest = roundToTwo((remainingDebt * interestRate) / 12)
+        const paidDebt = Math.min((rate - paidInterest), remainingDebt)
+        remainingDebt = Math.max(remainingDebt - paidDebt)
+
+        sumPaidInOldApartment += rent
+
+        const row = document.createElement('tr')
+
+        const rowMonthNumber = document.createElement('td')
+        rowMonthNumber.innerHTML = currentMonth
+        const accruedRents = document.createElement('td')
+        accruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+        const rowNewApartmentCosts = document.createElement('td')
+        rowNewApartmentCosts.innerHTML = `${toCurrency(sumPaidInNewApartment)} + ${toCurrency(paidInterest)} + ${toCurrency(hausgeld)} + ${toCurrency(grundsteuer)}`
+
+        row.appendChild(rowMonthNumber)
+        row.appendChild(accruedRents)
+        row.appendChild(rowNewApartmentCosts)
+
+        rows.push(row)
+
+        sumPaidInNewApartment += paidInterest + hausgeld + grundsteuer
+        rowNewApartmentCosts.innerHTML += ` = ${toCurrency(sumPaidInNewApartment)}`
+    }
+    profitabilityDiv.innerHTML = `<p>With a monthly payment of ${toCurrency(rate)} (<a href="#rate">adjust</a>) and an interest rate of ${interestRate * 100}% (<a href="#interests">adjust</a>)...</p><details>
+        <summary>Your investment becomes profitable on the ${currentMonth}th month (year ${roundToTwo(currentMonth/12)})</summary>
+        <table id="profitability_table">
+            <thead>
+            <tr>
+                <th>Month</th>
+                <th>Accrued rents</th>
+                <th>Tax + Notar + Broker +<br />Accrued Interests + Hausgeld + Grundsteuer</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </details>`
+
+    const profitabilityTbody = document.querySelector('#profitability_table tbody')
+    profitabilityTbody.append(...rows)
+}
+
 function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
@@ -130,7 +225,7 @@ return `${roundToTwo(num).toLocaleString()} €`
 
 const multiply = (a,b) => (a*b)
 
-function computerLoanTable() {
+function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
     const capital = +(document.querySelector('input#capital').value || 0)
     const repair = +(document.querySelector('input#repair').value || 0)
     const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
@@ -152,6 +247,8 @@ function computerLoanTable() {
     const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
     document.querySelector("#remainingCapital").innerHTML = toCurrency(remainingCapital)
     document.querySelector("#loan").innerHTML = toCurrency(kaufpreis - remainingCapital)
+
+    computeProfitability({loanAmount, rate, interestRate, sondertilgung, sumTaxNotarMakler})
 }
 </script>
 
@@ -238,7 +335,7 @@ The next month, you will pay:
 <div><input step=".01" type="number" placeholder="2000" value="2000" id="rate"/> <label for="rate">Monatliche Rate</label></div>
 <div><input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/> <label for="sondertilgung">Sondertilgung (one payment every 12 months, after 1 year)</label></div>
 
-<div id="summary" style="margin: 5px 0; text-align: center; font-weight: bold; padding: 10px; background: rgba(252, 3, 3, 0.5)"></div>
+<div id="summary" class="results"></div>
 
 <table id="tilgungsplan" class="stripes right">
 <thead class="sticky">
@@ -272,8 +369,6 @@ function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertil
 
 
 function computeAll() {
-    computerLoanTable()
-
     const loanAmount = +(document.querySelector('#loan_amount').value || 0)
     const rate = +(document.querySelector('#rate').value || 0)
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
@@ -281,6 +376,11 @@ function computeAll() {
 
     const tBody = document.querySelector('#tilgungsplan tbody')
     tBody.innerHTML = null
+
+    computeLoanTable({loanAmount,
+        rate,
+        interestRate,
+        sondertilgung})
 
     const [ totalDebtPaid, totalInterestsPaid, debtLeftToPay ] = INTERESTS_FOR(
         loanAmount,
