@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 21 Sep 2022 12:15:00 +0200</lastBuildDate><item><title>How to resize an encrypted SWAP partition (LVM)</title><link>//romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html</link><description>&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 22 Sep 2022 23:55:00 +0200</lastBuildDate><item><title>How to resize an encrypted SWAP partition (LVM)</title><link>//romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html</link><description>&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
 &lt;p&gt;Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.&lt;/p&gt;
 &lt;p&gt;First, check what your LVM disk currently looks like, running &lt;code&gt;lsblk&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;lslbk
@@ -3910,10 +3910,10 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;Dallas&lt;/li&gt;
 &lt;li&gt;Redwood State Park&lt;/li&gt;
 &lt;li&gt;Huston&lt;/li&gt;
-&lt;li&gt;Miami&lt;/li&gt;
+&lt;li&gt;~~Miami~~&lt;/li&gt;
 &lt;li&gt;Texas&lt;/li&gt;
 &lt;li&gt;Mount Rushmore National Memorial&lt;/li&gt;
-&lt;li&gt;Philadelphia (especially the Rocky Statue and the Rocky Steps)&lt;/li&gt;
+&lt;li&gt;~~Philadelphia (especially the Rocky Statue and the Rocky Steps)~~&lt;/li&gt;
 &lt;li&gt;Forrest Gump Point in Utah (GPS coordinates: 37.1015063,-109.9908129)&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Boston:&lt;/p&gt;
@@ -3940,22 +3940,22 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;ul&gt;
 &lt;li&gt;Vienna&lt;/li&gt;
 &lt;li&gt;Hallstatt, Austria &lt;/li&gt;
-&lt;li&gt;Prague&lt;/li&gt;
+&lt;li&gt;~~Prague~~&lt;/li&gt;
 &lt;li&gt;Greece&lt;/li&gt;
 &lt;li&gt;Cyprus&lt;/li&gt;
-&lt;li&gt;Berlin, Hamburg and Munich, Germany&lt;/li&gt;
+&lt;li&gt;~~Berlin, Hamburg and Munich, Germany~~&lt;/li&gt;
 &lt;li&gt;Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)&lt;/li&gt;
-&lt;li&gt;Finland&lt;/li&gt;
+&lt;li&gt;~~Finland~~&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Italy:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Rome and Venice&lt;/li&gt;
+&lt;li&gt;~~Rome~~ and Venice&lt;/li&gt;
 &lt;li&gt;Colosseum in Verona&lt;/li&gt;
-&lt;li&gt;Tower of Pisa&lt;/li&gt;
+&lt;li&gt;~~Tower of Pisa~~&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Madrid&lt;/p&gt;
+&lt;p&gt;~~Madrid~~&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Other countries&lt;/h1&gt;
