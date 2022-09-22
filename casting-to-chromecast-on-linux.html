@@ -110,7 +110,7 @@
 <li>Either VLC 3.0 (but it does not support subtitles yet)</li>
 <li>Or <code>castnow</code></li>
 </ul>
-<p>Should you decide to go with VLC 3.0, please refer to <a href="//romainpellerin.eu/vlc-3.0.html">this article about how to install it</a>. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &gt; Renderer &gt; Scan. If unsuccessful, close it and run vlc from the command line:</p>
+<p>Should you decide to go with VLC 3.0, please refer to <a href="{filename}/vlc-3.0.md">this article about how to install it</a>. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &gt; Renderer &gt; Scan. If unsuccessful, close it and run vlc from the command line:</p>
 <div class="highlight"><pre><span></span> vlc --sout<span class="o">=</span><span class="s2">&quot;#chromecast{ip=192.168.1.X}&quot;</span> myfile.mp4
 </pre></div>
 

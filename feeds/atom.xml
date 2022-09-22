@@ -3513,7 +3513,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;Either VLC 3.0 (but it does not support subtitles yet)&lt;/li&gt;
 &lt;li&gt;Or &lt;code&gt;castnow&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Should you decide to go with VLC 3.0, please refer to &lt;a href="//romainpellerin.eu/vlc-3.0.html"&gt;this article about how to install it&lt;/a&gt;. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
+&lt;p&gt;Should you decide to go with VLC 3.0, please refer to &lt;a href="{filename}/vlc-3.0.md"&gt;this article about how to install it&lt;/a&gt;. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; vlc --sout&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#chromecast{ip=192.168.1.X}&amp;quot;&lt;/span&gt; myfile.mp4
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -3531,26 +3531,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Hope this helps.&lt;/p&gt;</content><category term="linux"></category><category term="packages"></category></entry><entry><title>VLC 3.0</title><link href="//romainpellerin.eu/vlc-3.0.html" rel="alternate"></link><published>2017-08-18T14:50:00+02:00</published><updated>2017-08-18T14:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-08-18:/vlc-3.0.html</id><summary type="html">&lt;p&gt;How to install VLC 3.0 beta on Debian/Ubuntu&lt;/p&gt;</summary><content type="html">&lt;p&gt;VLC 3.0 is currently in beta but yet brings long awaited features such as casting to a Chromecast natively. Here is how to install it on Debian/Ubuntu:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:videolan/master-daily
-sudo apt update
-sudo apt purge vlc &lt;span class="c1"&gt;# Delete old version&lt;/span&gt;
-sudo apt install vlc &lt;span class="c1"&gt;# This might not work&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;If it worked for you, stop reading here. Otherwise, keep reading what is below.&lt;/p&gt;
-&lt;p&gt;Since there is a compatibility issue, we'll need to reinstall a tweaked version of &lt;code&gt;libgles1-mesa&lt;/code&gt; (or &lt;code&gt;libglapi-mesa&lt;/code&gt;, I can't remember):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt purge libgles1-mesa
-dpkg-deb -R libgles1-mesa_12.0.6-0ubuntu0.16.04.1_amd64.deb .
-&lt;span class="c1"&gt;# Edit the dependencies (DEBIAN/control) to match `libglapi-mesa=17.0.7-0ubuntu0.16.04.1` instead of `12.0.6-0ubuntu0.16.04.1`&lt;/span&gt;
-dpkg-deb -b . fixed.deb
-sudo dpkg -i fixed.deb
-sudo apt install vlc
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;It sould be working now! Hope this helps.&lt;/p&gt;</content><category term="vlc linux"></category></entry><entry><title>Emotions</title><link href="//romainpellerin.eu/emotions.html" rel="alternate"></link><published>2017-08-18T00:50:00+02:00</published><updated>2017-08-18T00:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-08-18:/emotions.html</id><summary type="html">&lt;p&gt;Weird emotions&lt;/p&gt;</summary><content type="html">&lt;figure class="center"&gt;
+&lt;p&gt;Hope this helps.&lt;/p&gt;</content><category term="linux"></category><category term="packages"></category></entry><entry><title>Emotions</title><link href="//romainpellerin.eu/emotions.html" rel="alternate"></link><published>2017-08-18T00:50:00+02:00</published><updated>2017-08-18T00:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-08-18:/emotions.html</id><summary type="html">&lt;p&gt;Weird emotions&lt;/p&gt;</summary><content type="html">&lt;figure class="center"&gt;
 &lt;img alt="Emotions" src="//romainpellerin.eu/images/emotions.jpg" /&gt;
 &lt;/figure&gt;
 
