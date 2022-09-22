@@ -279,9 +279,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 15:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/how-to-reinstall-deleted-packages-on-linux.html</guid><category>linux</category><category>packages</category></item><item><title>Nginx</title><link>//romainpellerin.eu/nginx.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/QnKE0XzCm-8?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href="https://drive.google.com/drive/folders/0BxiOewB9d_xSb2hCR1NkeW92NkE"&gt;Slides&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 18 Feb 2017 23:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-18:/nginx.html</guid><category>nginx</category></item><item><title>Vim Tricks</title><link>//romainpellerin.eu/vim-tricks.html</link><description>&lt;h1&gt;Left-right and up-down motions&lt;/h1&gt;
+&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 15:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/how-to-reinstall-deleted-packages-on-linux.html</guid><category>linux</category><category>packages</category></item><item><title>Vim Tricks</title><link>//romainpellerin.eu/vim-tricks.html</link><description>&lt;h1&gt;Left-right and up-down motions&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;h&lt;/code&gt;, &lt;code&gt;j&lt;/code&gt;, &lt;code&gt;k&lt;/code&gt;, &lt;code&gt;l&lt;/code&gt;: left, down, up, right&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;^e&lt;/code&gt;: scoll window down (ctrl + e)&lt;/li&gt;
