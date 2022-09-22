@@ -1,5 +1,6 @@
 Title: My Travel List
 Date: 2017-01-31 16:55
+Modified: 2022-09-22 23:55
 Category: About me
 Tags: travel
 Slug: my-travel-list
@@ -11,10 +12,10 @@ Summary: Places I want to visit.
 - Dallas
 - Redwood State Park
 - Huston
-- Miami
+- <del>Miami</del>
 - Texas
 - Mount Rushmore National Memorial
-- Philadelphia (especially the Rocky Statue and the Rocky Steps)
+- <del>Philadelphia (especially the Rocky Statue and the Rocky Steps)</del>
 - Forrest Gump Point in Utah (GPS coordinates: 37.1015063,-109.9908129)
 - Boston:
 
@@ -38,19 +39,19 @@ Summary: Places I want to visit.
 
 - Vienna
 - Hallstatt, Austria 
-- Prague
+- <del>Prague</del>
 - Greece
 - Cyprus
-- Berlin, Hamburg and Munich, Germany
+- <del>Berlin, Hamburg and Munich, Germany</del>
 - Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)
-- Finland
+- <del>Finland</del>
 - Italy:
 
-    - Rome and Venice
+    - <del>Rome</del> and Venice
     - Colosseum in Verona
-    - Tower of Pisa
+    - <del>Tower of Pisa</del>
 
-- Madrid
+- <del>Madrid</del>
 
 # Other countries
 
