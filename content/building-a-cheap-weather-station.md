@@ -34,10 +34,9 @@ For this tutorial you'll need:
 
 1. Raspberry Pi turned off, plug the module like shown in the photo above.
 1. Enable I2C. Run `sudo raspi-config`, choose `Interfacing options`. Then reboot. Run `lsmod | grep i2c` to confirm `i2c` has been enabled.
-1. Run `sudo apt install python3-pip i2c-tools && i2cdetect -y 1` to make sure the BME280 module is detected.
+1. Run `sudo apt install python3-venv python3-pip i2c-tools && i2cdetect -y 1` to make sure the BME280 module is detected.
 1. `mkdir /home/pi/temperature && cd /home/pi/temperature` (or any other directory of your liking).
-1. `pip3 install virtualenv` (no `sudo`!)
-1. `/home/pi/.local/bin/virtualenv -p /usr/bin/python3 .env && source .env/bin/activate`
+1. `python3 -m venv .env && source .env/bin/activate`
 1. `pip install smbus2 requests RPi.bme280 redis`
 1. Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with `/formResponse`. Copy the URL and the hidden input names, you'll need them in the next bullet point.
 1. `vim weatherstation.py`
