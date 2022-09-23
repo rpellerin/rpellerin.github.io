@@ -11,13 +11,13 @@ Everything you have ever wanted to know about GNU/Linux plus some troubleshootin
 # Installing Linux on a Dell preinstalled with Windows
 
 - In Windows, disable Fast startup in Panel Control > Power > Action when button pressed.
-- In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers
+- In the BIOS/UEFI, keep enabled SecureBoot
 - You might want to enable 'SD card boot' in the BIOS under Boot > Miscellaneous devices if you use a SD card to install Linux
-- In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: [https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3](https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3) and [https://bbs.archlinux.org/viewtopic.php?id=204629](https://bbs.archlinux.org/viewtopic.php?id=204629).
+- If your SSD disk is a NVMe, it is possible that Linux can't see it. In such a case, in SATA operation, uncheck RAID and select AHCI. Also uncheck legacy Options ROMs (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: [https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3](https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3) and [https://bbs.archlinux.org/viewtopic.php?id=204629](https://bbs.archlinux.org/viewtopic.php?id=204629).
 
 That's it. You should be able to install Linux on the entire disk now.
 
-# Upgrading your distribution of *Ubuntu
+# Upgrading your distribution of \*Ubuntu
 
     :::bash
     sudo do-release-upgrade
