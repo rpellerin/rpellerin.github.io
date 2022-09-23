@@ -2304,9 +2304,9 @@ gpg filename.gpg
 &lt;h1&gt;Installing Linux on a Dell preinstalled with Windows&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;In Windows, disable Fast startup in Panel Control &amp;gt; Power &amp;gt; Action when button pressed.&lt;/li&gt;
-&lt;li&gt;In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers&lt;/li&gt;
+&lt;li&gt;In the BIOS/UEFI, keep enabled SecureBoot&lt;/li&gt;
 &lt;li&gt;You might want to enable 'SD card boot' in the BIOS under Boot &amp;gt; Miscellaneous devices if you use a SD card to install Linux&lt;/li&gt;
-&lt;li&gt;In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: &lt;a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3"&gt;https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3&lt;/a&gt; and &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=204629"&gt;https://bbs.archlinux.org/viewtopic.php?id=204629&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If your SSD disk is a NVMe, it is possible that Linux can't see it. In such a case, in SATA operation, uncheck RAID and select AHCI. Also uncheck legacy Options ROMs (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: &lt;a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3"&gt;https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3&lt;/a&gt; and &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=204629"&gt;https://bbs.archlinux.org/viewtopic.php?id=204629&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That's it. You should be able to install Linux on the entire disk now.&lt;/p&gt;
 &lt;h1&gt;Upgrading your distribution of *Ubuntu&lt;/h1&gt;
