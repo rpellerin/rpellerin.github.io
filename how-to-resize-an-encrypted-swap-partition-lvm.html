@@ -97,17 +97,16 @@
     <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.</p>
 <p>Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.</p>
 <p>First, check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
-<div class="highlight"><pre><span></span>lslbk
+<div class="highlight"><pre><span></span><code>lslbk
 <span class="c1"># └─sda6                  8:6    0 464,6G  0 part</span>
 <span class="c1">#   └─sda6_crypt        253:0    0 464,5G  0 crypt</span>
 <span class="c1">#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /</span>
 <span class="c1">#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>For me, <code>sda6</code> was <code>nvme0n1p3</code>.</p>
 <p>Now, boot your Linux from a USB stick and open a terminal:</p>
-<div class="highlight"><pre><span></span>sudo su
+<div class="highlight"><pre><span></span><code>sudo su
 <span class="c1"># `sudo`    =&gt; Execute a command as another user.</span>
 <span class="c1"># `sudo su [user]` =&gt; Run a command with substitute user, default is root.</span>
 
@@ -144,8 +143,7 @@ e2fsck -f /dev/mapper/vgubuntu-root
 lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
 <span class="c1"># Format to make it usable</span>
 mkswap /dev/mapper/vgubuntu-swap_1
-</pre></div>
-
+</code></pre></div>
 
 <p>Now, deactive the volume group: <code>vgchange -a n</code>
 And finally: <code>cryptsetup close crypt; reboot</code></p>

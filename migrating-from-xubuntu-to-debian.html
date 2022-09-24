@@ -105,15 +105,14 @@
 <li>Download a "<em>small installation image</em>" on <a href="https://www.debian.org/distrib/">the official website</a>.</li>
 <li>
 <p>Flash it on a USB stick:</p>
-<div class="highlight"><pre><span></span>ls /dev/sd*
+<div class="highlight"><pre><span></span><code>ls /dev/sd*
 <span class="c1"># Plug the USB stick</span>
 ls /dev/sd* <span class="c1"># Detect which is yours</span>
 sudo umount /dev/sdX1
 sudo dd <span class="k">if</span><span class="o">=</span>debian-8.4.0-amd64-netinst.iso <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>1M
 sudo sync<span class="p">;</span> sync
 sudo umount /dev/sdX1
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
@@ -122,11 +121,10 @@ sudo umount /dev/sdX1
 <li>Boot on the USB flash drive. Select "<em>Install</em>", unless you prefer a graphical install. They both do the same thing.</li>
 <li>
 <p>Follow the instructions. You can leave the domain name blank. If you get a message "No common CD-ROM drive was detected", press ALT+F2 and do the following:</p>
-<div class="highlight"><pre><span></span>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
+<div class="highlight"><pre><span></span><code>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
 mkdir /mnt/iso
 mount -t iso9660 /dev/sdb1 /mnt/iso
-</pre></div>
-
+</code></pre></div>
 
 <p>Press ALT+F1 to return to the installation dialog. Continue the installation.</p>
 </li>
@@ -141,16 +139,15 @@ mount -t iso9660 /dev/sdb1 /mnt/iso
 <li>Answer "<em>Yes</em>" to "<em>Load missing firmware from removable media?</em>".</li>
 <li>
 <p>Once completed, unplug the USB stick and plug the one containing Debian in the same port. You might need to re-write Debian if you re-used the same USB flash drive. Then press ALT+F1 and do:</p>
-<div class="highlight"><pre><span></span>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
+<div class="highlight"><pre><span></span><code>blkid <span class="c1"># Identify a device with a partition of type iso9660</span>
 <span class="c1"># Umount if need be</span>
 mount -t iso9660 /dev/sdc1 /cdrom
 mount -t iso9660 /dev/sdc1 /mnt/iso <span class="c1"># Might not be required</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
-<p>Press ALT+F2 to return to the installation dialog. </p>
+<p>Press ALT+F2 to return to the installation dialog.</p>
 </li>
 </ol>
 </li>
@@ -168,14 +165,13 @@ mount -t iso9660 /dev/sdc1 /mnt/iso <span class="c1"># Might not be required</sp
 </ol>
 <h2>Switching from stable to testing</h2>
 <p>If you need to be up-to-date, that's the right thing to do!</p>
-<div class="highlight"><pre><span></span>su
+<div class="highlight"><pre><span></span><code>su
 cp /etc/apt/sources.list<span class="o">{</span>,.bak<span class="o">}</span>
 sed -i -e <span class="s1">&#39;s/ \(stable\|stretch\)/ testing/ig&#39;</span> /etc/apt/sources.list
 apt update
 apt --download-only dist-upgrade
 apt dist-upgrade
-</pre></div>
-
+</code></pre></div>
 
 <p><a href="http://unix.stackexchange.com/questions/90389/how-to-upgrade-debian-stable-wheezy-to-testing-jessie">More information</a>.</p>
 <h1>Improve your privacy by using trustworthy DNS servers</h1>

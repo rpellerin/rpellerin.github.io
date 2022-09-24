@@ -95,7 +95,6 @@
 </header>
 <article>
     <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/BbkbdYoffX4?rel=0" frameborder="0" allowfullscreen></iframe>
-
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/mqUInAOfBWI?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <p>If you do care about your privacy, you'd better read what follows carefully ;). Basically, some rules of thumb to avoid common pitfalls and a few tricks to take care of your privacy as much as possible.</p>
@@ -114,17 +113,16 @@
 <h2>Full disk encryption</h2>
 <p>Then, to encrypt your whole disk, you have 3 options:</p>
 <ol>
-<li>Use the *Ubuntu built-in installer to encrypt the whole disk, erasing <strong>EVERYTHING</strong> on the disk.</li>
+<li>Use the <em>Ubuntu built-in installer to encrypt the whole disk, erasing </em><em>EVERYTHING</em>* on the disk.</li>
 <li>Use the <em>Ubuntu built-in installer with Gparted to encrypt the whole disk, more flexible (select </em>something else*).</li>
 <li>DIY. It allows you to <a href="http://askubuntu.com/questions/293028/how-can-i-install-ubuntu-encrypted-with-luks-with-dual-boot">keep a dual boot installation</a>.</li>
 </ol>
 <p>I would recommend going with the 1., but if you're interested, <a href="https://thesimplecomputer.info/full-disk-encryption-with-ubuntu">have a deeper look at thoses 3 options</a>. Here is <a href="http://www.tecmint.com/install-debian-8-with-luks-encrypted-home-var-lvm-partitions/">another tutorial</a> to do it with Debian (not a *Ubuntu disto).</p>
 <p>In any case, here is how to write a new Xubuntu image on a USB stick:</p>
-<div class="highlight"><pre><span></span>lsblk <span class="c1"># To identify the USB stick</span>
+<div class="highlight"><pre><span></span><code>lsblk <span class="c1"># To identify the USB stick</span>
 sudo dd <span class="k">if</span><span class="o">=</span>/home/user/Downloads/xubuntu-15.10-desktop-amd64.iso <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="se">\</span>
     <span class="nv">bs</span><span class="o">=</span>1M <span class="o">&amp;&amp;</span> sudo sync
-</pre></div>
-
+</code></pre></div>
 
 <p>Please notice that with LUKS encryption, <a href="https://twopointfouristan.wordpress.com/2011/04/17/pwning-past-whole-disk-encryption/">your computer is still vulnerable as long as you have a boot partition unencrypted</a>.</p>
 <h2><code>/home</code> encryption (using the filesystem called eCryptfs)</h2>
@@ -133,118 +131,104 @@ sudo dd <span class="k">if</span><span class="o">=</span>/home/user/Downloads/xu
 <ol>
 <li>
 <p>Find the correct device (eg. <code>/dev/sdb1</code> as a second internal SATA-HDD) and umount it:</p>
-<div class="highlight"><pre><span></span>sudo aptitude update <span class="p">;</span> sudo aptitude install cryptsetup
+<div class="highlight"><pre><span></span><code>sudo aptitude update <span class="p">;</span> sudo aptitude install cryptsetup
 sudo modprobe dm-crypt sha256 aes <span class="c1"># Enable modules, might be already done</span>
 lsblk
 sudo umount /dev/sdb1
 sudo dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/sdb <span class="nv">bs</span><span class="o">=</span>4K <span class="c1"># Optional, add obfuscation</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
 <p>Create one big partition using the whole space (system must be Linux):</p>
-<div class="highlight"><pre><span></span>sudo fdisk /dev/sdb
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>sudo fdisk /dev/sdb
+</code></pre></div>
 
 </li>
 <li>
 <p>Encrypt the partition using LUKS:</p>
-<div class="highlight"><pre><span></span>sudo cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>sudo cryptsetup --verify-passphrase -c aes-xts-plain64 -s <span class="m">512</span> <span class="se">\</span>
      -h sha256 luksFormat /dev/sdb1 <span class="c1"># 512-bit AES encryption</span>
      <span class="c1"># with 256-bit SHA hashing algorithm</span>
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
 <p>Create the filesystem:</p>
-<div class="highlight"><pre><span></span>sudo cryptsetup luksOpen /dev/sdb1 myhdd
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>sudo cryptsetup luksOpen /dev/sdb1 myhdd
+</code></pre></div>
 
 </li>
 <li>
 <p>Format it and test mounting:</p>
-<div class="highlight"><pre><span></span>sudo mkfs.ext4 /dev/mapper/myhdd -L &lt;LABEL&gt; -m <span class="m">1</span>
+<div class="highlight"><pre><span></span><code>sudo mkfs.ext4 /dev/mapper/myhdd -L &lt;LABEL&gt; -m <span class="m">1</span>
 <span class="c1"># -m specifies the percentage of the filesystem blocks reserved</span>
 <span class="c1"># for the super-user</span>
 mkdir /mnt/hdd
 mount /dev/mapper/myhdd /mnt/hdd
 df -H
 umount /mnt/hdd
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
 <p>Close container:</p>
-<div class="highlight"><pre><span></span>sudo cryptsetup luksClose /dev/mapper/myhdd
+<div class="highlight"><pre><span></span><code>sudo cryptsetup luksClose /dev/mapper/myhdd
 sudo eject /dev/sdb
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
 <p>Optional step, after disconnecting and reconnecting the device:</p>
-<div class="highlight"><pre><span></span>sudo chown user:user /media/disk
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>sudo chown user:user /media/disk
+</code></pre></div>
 
 </li>
 </ol>
 <p>You can check the partition using</p>
-<div class="highlight"><pre><span></span>fsck -vy /dev/mapper/myhdd
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>fsck -vy /dev/mapper/myhdd
+</code></pre></div>
 
 <p>Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like <em><code>cryptsetup</code></em> plus <em><code>luksHeaderBackup</code></em> or <em><code>luksHeaderRestore</code></em> or <em><code>isLuks</code></em> or <em><code>luksDump</code></em> or <em><code>luksAddKey</code></em> or <em><code>luksRemoveKey</code></em>.</p>
 <h2>Automount encrypted HDDs with LUKS on bootup</h2>
 <p>In <code>/etc/crypttab</code>, add:</p>
-<div class="highlight"><pre><span></span>mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
+</code></pre></div>
 
 <p>You can find the UUID using <code>blkid /dev/sdb</code>. You can also directly enter the path <code>/dev/sdb</code>. <em>none</em> means there's no keyfile, you'll have to type the password. <em>tries</em> is the number or tries you have.</p>
 <p>Then, in <code>/etc/fstab</code>, add:</p>
-<div class="highlight"><pre><span></span>/dev/mapper/mycryptedhdd     /mnt/mounteddirectory    ext4      defaults    0   0
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>/dev/mapper/mycryptedhdd     /mnt/mounteddirectory    ext4      defaults    0   0
+</code></pre></div>
 
 <p><em>mycryptedhdd</em> must be the same name used as before. <em>/mnt/mounteddirectory</em> is where the encrypted disk will be available. <em>ext4</em> is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the <code>fsck</code> utility.</p>
 <p>You're good!</p>
 <h1>Encrypt what you put on Cloud Storages</h1>
 <p>This part is inspired from <a href="http://haridas.in/how-to-put-encrypted-contents-on-cloud-storages.html">this blog post</a>. <strong>I highly recommend encrypting content put online, should it be on proprietary platforms such as Google Drive ou Dropbox, or even on ownCloud.</strong></p>
-<div class="highlight"><pre><span></span>sudo apt-get install ecryptfs-utils
+<div class="highlight"><pre><span></span><code>sudo apt-get install ecryptfs-utils
 sudo modprobe cryptfs <span class="c1"># Optional</span>
 mkdir ~/Dropbox/Encrypted <span class="c1"># This directory will be put online; its content is encrypted</span>
 mkdir ~/SecureDropbox <span class="c1"># You&#39;ll put your unencrypted files here</span>
 sudo mount -t ecryptfs ~/Dropbox/Encrypted ~/SecureDropbox
 <span class="c1"># Choose a passphrase (which will act as a password), aes 32 bytes.</span>
 <span class="c1"># Disable plaintext passthrough. Filename encryption might be useful. I would enable it.</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Filename encryption might require another last command to be run, if your content is shared on more than one computer:</p>
-<div class="highlight"><pre><span></span>ecryptfs-add-passphrase --fnek
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>ecryptfs-add-passphrase --fnek
+</code></pre></div>
 
 <h1>Encrypt one single file</h1>
 <h2>Encryption</h2>
-<div class="highlight"><pre><span></span>openssl aes-256-cbc -in yourfile.txt -out file.enc
+<div class="highlight"><pre><span></span><code>openssl aes-256-cbc -in yourfile.txt -out file.enc
 <span class="c1"># OR</span>
 gpg -c filename
-</pre></div>
-
+</code></pre></div>
 
 <h2>Decryption</h2>
-<div class="highlight"><pre><span></span>openssl aes-256-cbc -d -in file.enc -out yourfile.txt
+<div class="highlight"><pre><span></span><code>openssl aes-256-cbc -d -in file.enc -out yourfile.txt
 <span class="c1"># OR</span>
 gpg filename.gpg
-</pre></div>
-
+</code></pre></div>
 
 <h1>Free alternatives to proprietary software</h1>
 <h2>Emails</h2>

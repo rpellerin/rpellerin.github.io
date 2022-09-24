@@ -97,7 +97,7 @@
     <p>After having experienced software development in many languages, from desktop programs to mobile applications and web sites, comes a moment when I felt compelled to standardize my software development process. In the last couple of months, we, at <a href="http://www.wearesmiths.com/">The Smiths</a>, tried to define our workflow more formally by integrating continuous integration. How to properly "synchronize" a team made of many developers, "spread all around the world", in different time zones? How to make sure there is no bottleneck at any level, during the development? First, let’s have a look at the definition.</p>
 <p>What is <strong>continuous integration</strong>? According to <a href="https://en.wikipedia.org/wiki/Continuous_integration">Wikipedia</a>, it's:</p>
 <blockquote>
-<p><em>[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.</em>  </p>
+<p><em>[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.</em></p>
 </blockquote>
 <p>But not only. It's much more than this. Let's dive into continuous integration.</p>
 <h1>Purpose</h1>
@@ -149,15 +149,13 @@
 <p>Now, let's move onto <strong>our workflow</strong> that we daily use, with Github:</p>
 <h3>Our Git workflow</h3>
 <ul>
-<li>There is a remote repository called <code>origin</code>. Then, every new developer (including the owner) has to fork this repository. The <code>origin</code> repo will <strong>ONLY</strong> contains two branches: <code>master</code> and <code>develop</code>.<ul>
+<li>There is a remote repository called <code>origin</code>. Then, every new developer (including the owner) has to fork this repository. The <code>origin</code> repo will <strong>ONLY</strong> contains two branches: <code>master</code> and <code>develop</code>.</li>
 <li><code>master</code>: contains <strong>only the stable realeases</strong> (General Availability), tagged with<br>
 <code>git tag -a</code><br>
-Those are production releases.</li>
+    Those are production releases.</li>
 <li><code>develop</code>: contains <strong>only stable code</strong> with newly developed features. This branch has been created with<br>
 <code>git checkout -b develop master</code><br>
-It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.</li>
-</ul>
-</li>
+    It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.</li>
 <li>No one is allowed to commit into <code>master</code> nor into <code>develop</code> (except for the first commit into <code>master</code>, then <code>develop</code> is forked from <code>master</code>), in either <code>origin</code> or the forked repository. Not even locally!</li>
 <li>There's <strong>one developer responsible for the entire project</strong>. Let's call him/her <em>Integrator</em>.</li>
 <li>To add a new feature, one of the developers create a local branch called <code>feature-x</code> from <code>develop</code> and commit into it. He/she may push this branch to their own forked repository.</li>
@@ -173,21 +171,19 @@ It’s the latest cutting-edge release (Release Candidate). It may contains some
 <p>Finally, we're also taking advantage of <strong>Milestones</strong>, a GitHub feature, which can be seen as a simplified scheduler, permitting us to create deadlines with goals to reach. It's somehow a list of deadlines with progress bars automatically filled as we would create and merge Pull requests.</p>
 <h4>Some commands</h4>
 <p>To generate the message for a Pull request:</p>
-<div class="highlight"><pre><span></span>git log --pretty<span class="o">=</span>oneline --abbrev-commit &lt;branch-from&gt;..&lt;current-branch&gt;
+<div class="highlight"><pre><span></span><code>git log --pretty<span class="o">=</span>oneline --abbrev-commit &lt;branch-from&gt;..&lt;current-branch&gt;
 <span class="c1"># Prints the commits you made since last merge and the associated messages</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>To update <code>develop</code> (works with <code>master</code> as well):</p>
-<div class="highlight"><pre><span></span>git fetch origin
+<div class="highlight"><pre><span></span><code>git fetch origin
 git checkout develop
 git merge --ff-only origin/develop
 <span class="c1"># Only fast forward is important to keep the history clear and clean</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>To update a feature branch (after a PR has been merged):</p>
-<div class="highlight"><pre><span></span>git fetch origin
+<div class="highlight"><pre><span></span><code>git fetch origin
 git checkout feature-x
 <span class="c1"># Three options (choose only one):</span>
 <span class="c1"># 1.</span>
@@ -196,24 +192,21 @@ git merge --ff-only origin/develop
 git rebase origin/develop
 <span class="c1"># 3. If you&#39;re a badass and want to ignore your own changes:</span>
 git reset --hard origin/develop
-</pre></div>
-
+</code></pre></div>
 
 <p>To merge a <em>Pull request</em> (only <strong>Ingrator</strong> is supposed to do it) and push it:</p>
-<div class="highlight"><pre><span></span>git remote add feature-x_repo git@github.com:someone/forked-repo.git
+<div class="highlight"><pre><span></span><code>git remote add feature-x_repo git@github.com:someone/forked-repo.git
 git fetch feature-x_repo feature-x
 git checkout develop
 git merge --no-ff feature-x_repo/feature-x <span class="c1"># You could add --no-commit to edit files before committing</span>
 <span class="c1"># &#39;no fast forward&#39; is important to keep the history clear and clean</span>
 git push origin develop
-</pre></div>
-
+</code></pre></div>
 
 <p>To delete a branch (locally and remotely) once it has been merged into the main repository:</p>
-<div class="highlight"><pre><span></span>git push feature-x_repo --delete feature-x
+<div class="highlight"><pre><span></span><code>git push feature-x_repo --delete feature-x
 git branch -d feature-x
-</pre></div>
-
+</code></pre></div>
 
 <h3>Contributors</h3>
 <p>There's another approach to the scheme above. Instead of using only <em>Pull requests</em>, you could add other developers as <a href="https://help.github.com/articles/setting-guidelines-for-repository-contributors/">contributors</a>. This way, there's no Mr/Ms <strong>Integrator</strong>, any contributor is free to merge their features into <code>develop</code>. Also, feature branches can be on the remote repository.</p>
@@ -247,8 +240,9 @@ git branch -d feature-x
 <p>The one we picked is called <strong>Scrum</strong>. Again, I won't explain it here but will instead expose the workflow we adopted, derived from it. For a better comprehension, I recommend you read the <a href="https://en.wikipedia.org/wiki/Scrum_(software_development)">Wikipedia page</a>.</p>
 <p>Basically, at the very beginning of the project, the CTO would meet client and discuss with them. As a result, he would obtain detailed specifications from them. Then, all together, we would brainstorm and define Milestones, which are fundamentally the most important steps to a final product. For instance, from scratch, we would aim at developing a MVP (which is a working product, see the picture below), then progressively add features, grouping features under Milestones. As a reminder, "Milestones" is a feature of GitHub. Each Milestone would last a week, tops. In Scrum, Milestones are called <em>Sprints</em>.</p>
 <p>Starting with an MVP is the right way to go. The client is always satisfied as they would get a working copy of the product being-developed, at each stage, continuously getting improved. They would not have to wait for weeks or months before being able to test anything.</p>
-<p><img alt="MVP" src="//romainpellerin.eu/images/continuous-integration-mvp.png">
-<div style="text-align: center"><em>Courtesy of <a href="https://twitter.com/henrikkniberg/status/685474589539983360">Henrik Kniberg</a></em></div></p>
+<p><img alt="MVP" src="//romainpellerin.eu/images/continuous-integration-mvp.png"></p>
+<div style="text-align: center">*Courtesy of [Henrik Kniberg](https://twitter.com/henrikkniberg/status/685474589539983360)*</div>
+
 <p>Then, each developer would get assigned or choose a few features from the first Milestone until completion. Every morning, we would gather for a 10-minute stand-up meeting, during which everyone would say what they did the previous day and what is left to do, especially regarding the current day. Standing forces us to speak concisely and don't waste each other's time, since it is not as comfortable as being sat down.</p>
 <p>At the end of the Milestone's week, we would merge all the Pull requests resulting from the features, then review all together all the work done, conduct tests and create issues on GitHub to be resolved before starting the next Milestone. Eventually, we would readjust the remaining Milestones when needed.</p>
 <p>This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.</p>

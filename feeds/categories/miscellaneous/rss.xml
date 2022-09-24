@@ -34,9 +34,7 @@
         background: rgba(252, 3, 3, 0.5);
     }
 &lt;/style&gt;
-
 &lt;div&gt;&lt;input id="maklerprovisionfrei" type="checkbox" /&gt;&lt;label for="maklerprovisionfrei"&gt;No broker commission&lt;/label&gt;&lt;/div&gt;
-
 &lt;table style="border: 1px solid black"&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -111,9 +109,7 @@
 
 &lt;h3&gt;Profitability comparator&lt;/h3&gt;
 &lt;div&gt;&lt;input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /&gt; &lt;label for="rent"&gt;Current rent (Warmmiete)&lt;/label&gt;&lt;/div&gt;
-
 &lt;div&gt;&lt;input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /&gt; &lt;label for="hausgeld"&gt;Hausgeld in the new apartment&lt;/label&gt;&lt;/div&gt;
-
 &lt;div&gt;&lt;input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/&gt; &lt;label for="grundsteuer"&gt;Expected Grundsteuer per month&lt;/label&gt;&lt;/div&gt;
 
 &lt;div id="profitability" class="results"&gt;&lt;/div&gt;
@@ -291,11 +287,8 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;/ul&gt;
 &lt;h2&gt;Simulation: Tilgungsplan&lt;/h2&gt;
 &lt;div&gt;&lt;input step=".01" type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
-
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
-
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
-
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
 
 &lt;div id="summary" class="results"&gt;&lt;/div&gt;
@@ -460,7 +453,7 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/berlin/comments/pgfd3z/to_people_who_own_their_flats_in_berlin_which/"&gt;To people who own their flats in Berlin, which tips would you give your past-self, before your first purchase?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/eupersonalfinance/comments/uhccds/buying_and_owning_an_apartment_in_berlin/"&gt;Buying and owning an apartment in Berlin&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/berlin/comments/m2ldbw/buying_an_apartment_in_berlin_2021_covid/"&gt;Buying an apartment in Berlin (2021, Covid)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 24 Apr 2022 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-04-24:/living-in-germany-how-to-buy-an-apartment-in-berlin.html</guid><category>berlin</category><category>germany</category><category>apartment</category></item><item><title>Documentaries To Watch</title><link>//romainpellerin.eu/documentaries-to-watch.html</link><description>&lt;h1&gt;Antivax - Les Marchands de doute&lt;/h1&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 24 Apr 2022 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-04-24:/living-in-germany-how-to-buy-an-apartment-in-berlin.html</guid><category>Miscellaneous</category><category>berlin</category><category>germany</category><category>apartment</category></item><item><title>Documentaries To Watch</title><link>//romainpellerin.eu/documentaries-to-watch.html</link><description>&lt;h1&gt;Antivax - Les Marchands de doute&lt;/h1&gt;
 &lt;p&gt;Seen on Arte.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=HpUVJcKBMb0"&gt;https://www.youtube.com/watch?v=HpUVJcKBMb0&lt;/a&gt;&lt;/li&gt;
@@ -518,7 +511,7 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;li&gt;&lt;a href="https://odysee.com/@Marie-JeanneTV:1/Nucl%C3%A9aire-une-solution-pour-la-plan%C3%A8te:e"&gt;https://odysee.com/@Marie-JeanneTV:1/Nucl%C3%A9aire-une-solution-pour-la-plan%C3%A8te:e&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;Search engine of PeerTube videos: &lt;a href="https://sepiasearch.org"&gt;https://sepiasearch.org&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 12 Mar 2022 13:40:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-03-12:/documentaries-to-watch.html</guid><category>documentaries</category><category>videos</category><category>education</category></item><item><title>I Was Born In 2100</title><link>//romainpellerin.eu/i-was-born-in-2100.html</link><description>&lt;p&gt;I was born in 2100.&lt;/p&gt;
+&lt;p&gt;Search engine of PeerTube videos: &lt;a href="https://sepiasearch.org"&gt;https://sepiasearch.org&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 12 Mar 2022 13:40:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-03-12:/documentaries-to-watch.html</guid><category>Miscellaneous</category><category>documentaries</category><category>videos</category><category>education</category></item><item><title>I Was Born In 2100</title><link>//romainpellerin.eu/i-was-born-in-2100.html</link><description>&lt;p&gt;I was born in 2100.&lt;/p&gt;
 &lt;p&gt;A long time ago, long before I was born, people used to smoke. The very concept of smoking is unknown to many these days, so let me explain. It's as stupid as eating small rocks, or wood maybe. But it's not that. It was dried tobacco leaves. It would hurt a little the first time people would do it, and even make them caugh. But then, as they kept trying, the pain would eventually fade away. After some time, they might even start to feel some joy when doing it. Or maybe they pretended to and forced themselves to believe it. Or maybe it's the social pressure, people did't really why know but they kind of liked it. Or maybe it was the ads in the 70's and 80's. People used to "go on a cigarette break". Except that smoking does your body no good whatsoever. Quite the opposite to be honest. Smoking was killing people so slowly that most people would not even acknowledge it. They would doubt it, refute it.&lt;br&gt;
 People were stupid.&lt;/p&gt;
 &lt;p&gt;A long time ago, long before I was born, people used to move around in big boxes made of steel. They called it a car. Not only did a car take up a lot of space, it also was powered with gasoline (refined crude oil, something that's long gone now). Gas cars used to cause a lot of pollution, especially in big cities. That was bad. Real bad you know. In the 20th century, in less than a few decades, all cities changed and turned into car-centric cities: everything was designed around and for cars, not for humans. People were forced to walk on narrow sidewalks. They also had to endure noise, mostly from passing cars. If that wasn't enough, the only air they could breathe was extremely polluted, causing over &lt;a href="https://www.eea.europa.eu/media/newsreleases/many-europeans-still-exposed-to-air-pollution-2015/premature-deaths-attributable-to-air-pollution"&gt;400,000 premature deaths in Europe in 2015&lt;/a&gt;.&lt;/p&gt;
@@ -528,10 +521,10 @@ People were stupid.&lt;/p&gt;
 &lt;p&gt;A long time ago, long before I was born, people used to care more about jobs than they cared about the environment. Transitioning the car industry from oil to electricity? Too many people said "&lt;em&gt;it's gonna destroy jobs cause electric engines require much less parts and workforce&lt;/em&gt;". It's exactly like keeping your job and then the day you retire your house gets burned down versus giving up your job and starting looking for another one but knowning that the day you retire your house will still be there. &lt;a href="https://www.thenation.com/article/jobs-vs-environment-how-counter-divisive-big-lie/"&gt;Jobs vs the Environment&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;But all of that is gone now, people don't do that no more. Everyone's fucking dead. Humans. Animals. Forests. Everything is gone. The planet is barely fit to live. Our unsustainable way of life killed us all. Those who remain live harsh lifes. Every day is a fight for survival, for food, for clean water, for power. Most lands people inhabited are underwater now, as the sea level is much higher than in the early 2000's.&lt;/p&gt;
-&lt;p&gt;It all changed at the end of the last century. The global population was reaching its peak: 10,500,000,000. In less than 20 years, the global average temperature rose by 1.5 Celsius degrees, by far exceeding the worst projections made in the beginning of the century. The Great Global Warming (GGW as they call it these days) was true after all.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 05 Aug 2019 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-08-05:/i-was-born-in-2100.html</guid><category>environment</category><category>world</category><category>pollution</category><category>politics</category></item><item><title>Music</title><link>//romainpellerin.eu/music.html</link><description>&lt;ul&gt;
+&lt;p&gt;It all changed at the end of the last century. The global population was reaching its peak: 10,500,000,000. In less than 20 years, the global average temperature rose by 1.5 Celsius degrees, by far exceeding the worst projections made in the beginning of the century. The Great Global Warming (GGW as they call it these days) was true after all.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 05 Aug 2019 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-08-05:/i-was-born-in-2100.html</guid><category>Miscellaneous</category><category>environment</category><category>world</category><category>pollution</category><category>politics</category></item><item><title>Music</title><link>//romainpellerin.eu/music.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://radiooooo.com/"&gt;Radiooooo - The Musical Time Machine&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://everynoise.com/"&gt;Every Noice at Once&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 18 Jun 2019 22:40:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-06-18:/music.html</guid><category>music</category></item><item><title>Hope</title><link>//romainpellerin.eu/hope.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/3LvTgiWSAAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 18 Jun 2019 22:40:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-06-18:/music.html</guid><category>Miscellaneous</category><category>music</category></item><item><title>Hope</title><link>//romainpellerin.eu/hope.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/3LvTgiWSAAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/wTTMMMaTaf0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -545,7 +538,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://youthforclimate.fr/"&gt;Youth For Climate&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.courrierinternational.com/article/pays-bas-amsterdam-la-mairie-devient-vegetarienne"&gt;Pays-Bas.À Amsterdam, la mairie devient végétarienne&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://standblog.org/blog/post/2019/06/30/Le-deni"&gt;Le déni&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 17 Apr 2019 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-04-17:/hope.html</guid><category>hope</category></item><item><title>The Happy Life</title><link>//romainpellerin.eu/the-happy-life.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/7lECIsRif10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 17 Apr 2019 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2019-04-17:/hope.html</guid><category>Miscellaneous</category><category>hope</category></item><item><title>The Happy Life</title><link>//romainpellerin.eu/the-happy-life.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/7lECIsRif10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://journal.thriveglobal.com/ikigai-the-japanese-secret-to-a-long-and-happy-life-might-just-help-you-live-a-more-fulfilling-9871d01992b7"&gt;Ikigai: The Japanese Secret to a Long and Happy Life Might Just Help You Live a More Fulfilling Life&lt;/a&gt;&lt;/li&gt;
@@ -554,7 +547,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://usbeketrica.com/article/cyberminimalisme-temps-rencontres-biosphere"&gt;« Le cyberminimalisme libère du temps, réhabilite les rencontres, préserve la biosphère »&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.vox.com/2019/3/27/18226563/50-years-wrong-side-of-history-future-prediction"&gt;Hindsight 2070: We asked 15 experts, “What do we do now that will be considered unthinkable in 50 years?” Here’s what they told us.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.demotivateur.fr/article-buzz/11-fruits-et-legumes-que-vous-ne-devriez-acheter-qu-une-seule-fois-dans-votre-vie-si-vous-apprenez-ces-petits-trucs-pour-les-regenerer-chez-vous--2972"&gt;Hackez votre supermarché : Voici 11 fruits et légumes que vous ne devriez acheter qu'une seule fois dans votre vie, si vous connaissez ces astuces !&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jan 2018 20:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-01-26:/the-happy-life.html</guid><category>ikigai</category><category>happiness</category></item><item><title>Disabling Voicemail</title><link>//romainpellerin.eu/disabling-voicemail.html</link><description>&lt;p&gt;In many scenarios, calls are forwarded to your voicemail. You may want to disable it, or re-enable it.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jan 2018 20:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-01-26:/the-happy-life.html</guid><category>Miscellaneous</category><category>ikigai</category><category>happiness</category></item><item><title>Disabling Voicemail</title><link>//romainpellerin.eu/disabling-voicemail.html</link><description>&lt;p&gt;In many scenarios, calls are forwarded to your voicemail. You may want to disable it, or re-enable it.&lt;/p&gt;
 &lt;h1&gt;1. You are not picking up the phone (no reply)&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;61&amp;ast;(number to forward to)&amp;ast;&amp;ast;(seconds to wait before forwarding)# - note that your phone will ring as long as your caller is on hold&lt;/li&gt;
@@ -613,7 +606,7 @@ People were stupid.&lt;/p&gt;
 &lt;p&gt;In France, for mobile network provider 'Free mobile', the voicemail phone number is: 06 95 60 00 11.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://community.giffgaff.com/t5/Tips-Guides/Turn-off-voicemail-more-handy-codes/td-p/4542132"&gt;More GSM codes here&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/Call_forwarding"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Tips&lt;/h1&gt;
-&lt;p&gt;To call someone anonymously, type: #31#(the number you are calling). To show your identity, type: &amp;ast;31#(the number you are calling).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 03 Jan 2018 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-01-03:/disabling-voicemail.html</guid><category>phone</category><category>voicemail</category></item><item><title>Living In Paris: Air Purifying Houseplants</title><link>//romainpellerin.eu/living-in-paris-air-purifying-houseplants.html</link><description>&lt;p&gt;Recently, I moved into my new apartment, in one of the most polluted cities on Earth, Paris. Therefore I decided I needed houseplants to clean the air. What an idea! Is it bullshit? Does it actually work? Who cares?! As long as it makes my apartment look cool!&lt;/p&gt;
+&lt;p&gt;To call someone anonymously, type: #31#(the number you are calling). To show your identity, type: &amp;ast;31#(the number you are calling).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 03 Jan 2018 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-01-03:/disabling-voicemail.html</guid><category>Miscellaneous</category><category>phone</category><category>voicemail</category></item><item><title>Living In Paris: Air Purifying Houseplants</title><link>//romainpellerin.eu/living-in-paris-air-purifying-houseplants.html</link><description>&lt;p&gt;Recently, I moved into my new apartment, in one of the most polluted cities on Earth, Paris. Therefore I decided I needed houseplants to clean the air. What an idea! Is it bullshit? Does it actually work? Who cares?! As long as it makes my apartment look cool!&lt;/p&gt;
 &lt;p&gt;Consequently, I started googling about evergreen houseplants that clean the air. I ended up buying the following plants:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://www.plantes-depolluantes.com/_plantes/spathiphyllum.php"&gt;Spathiphyllum&lt;/a&gt;&lt;/strong&gt;: the best at improving indoor air quality!&lt;/li&gt;
@@ -689,8 +682,8 @@ People were stupid.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Good source of information, in French: &lt;a href="http://www.jardiner-malin.fr/"&gt;http://www.jardiner-malin.fr/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Great article in French, very helpful to me: &lt;a href="https://www.rustica.fr/articles-jardin/24-plantes-depolluantes-qui-ameliorent-votre-maison,2136.html"&gt;24 plantes dépolluantes qui améliorent votre maison&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 28 Sep 2017 12:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-28:/living-in-paris-air-purifying-houseplants.html</guid><category>plants</category><category>air</category></item><item><title>Millennials</title><link>//romainpellerin.eu/millennials.html</link><description>&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=vudaAYx2IcE"&gt;&lt;em&gt;The Millennial Question&lt;/em&gt;, by Simon Sinek.&lt;/a&gt;&lt;/p&gt;
-&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vudaAYx2IcE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 02 Sep 2017 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-02:/millennials.html</guid><category>millennials</category><category>inspiration</category></item><item><title>Living In Paris: Looking For An Apartment In Paris</title><link>//romainpellerin.eu/living-in-paris-looking-for-an-apartment-in-paris.html</link><description>&lt;p&gt;Looking for an apartment in Paris... is a hassle. A lot of demand, too little supply. Not to mention you always - well, almost - need rent guarantors.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 28 Sep 2017 12:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-28:/living-in-paris-air-purifying-houseplants.html</guid><category>Miscellaneous</category><category>plants</category><category>air</category></item><item><title>Millennials</title><link>//romainpellerin.eu/millennials.html</link><description>&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=vudaAYx2IcE"&gt;&lt;em&gt;The Millennial Question&lt;/em&gt;, by Simon Sinek.&lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vudaAYx2IcE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 02 Sep 2017 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-02:/millennials.html</guid><category>Miscellaneous</category><category>millennials</category><category>inspiration</category></item><item><title>Living In Paris: Looking For An Apartment In Paris</title><link>//romainpellerin.eu/living-in-paris-looking-for-an-apartment-in-paris.html</link><description>&lt;p&gt;Looking for an apartment in Paris... is a hassle. A lot of demand, too little supply. Not to mention you always - well, almost - need rent guarantors.&lt;/p&gt;
 &lt;h1&gt;First of all, where to look for apartments?&lt;/h1&gt;
 &lt;p&gt;My three favorite ones, that gather ads from many agencies:&lt;/p&gt;
 &lt;ul&gt;
@@ -784,19 +777,19 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;h1&gt;Resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://twitter.com/paldama/status/1109017746883387392"&gt;Beware of scammers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 02 Sep 2017 22:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-02:/living-in-paris-looking-for-an-apartment-in-paris.html</guid><category>apartement</category><category>paris</category><category>housing</category></item><item><title>Emotions</title><link>//romainpellerin.eu/emotions.html</link><description>&lt;figure class="center"&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 02 Sep 2017 22:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-02:/living-in-paris-looking-for-an-apartment-in-paris.html</guid><category>Miscellaneous</category><category>apartement</category><category>paris</category><category>housing</category></item><item><title>Emotions</title><link>//romainpellerin.eu/emotions.html</link><description>&lt;figure class="center"&gt;
 &lt;img alt="Emotions" src="//romainpellerin.eu/images/emotions.jpg" /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;em&gt;Source: &lt;a href="https://twitter.com/eliistender10/status/883582636567998464"&gt;https://twitter.com/eliistender10/status/883582636567998464&lt;/a&gt; (comments say the true source is &lt;a href="http://www.dictionaryofobscuresorrows.com/"&gt;http://www.dictionaryofobscuresorrows.com/&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 00:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/emotions.html</guid><category>emotions</category></item><item><title>Fasting</title><link>//romainpellerin.eu/fasting.html</link><description>&lt;ul&gt;
+&lt;p&gt;&lt;em&gt;Source: &lt;a href="https://twitter.com/eliistender10/status/883582636567998464"&gt;https://twitter.com/eliistender10/status/883582636567998464&lt;/a&gt; (comments say the true source is &lt;a href="http://www.dictionaryofobscuresorrows.com/"&gt;http://www.dictionaryofobscuresorrows.com/&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 00:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/emotions.html</guid><category>Miscellaneous</category><category>emotions</category></item><item><title>Fasting</title><link>//romainpellerin.eu/fasting.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Fc_L22P69Mk"&gt;Le Jeûne : Une Recette Miracle ? ARTE HD Documentaire 2017&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=XMNWcYGAe6c"&gt;Le jeûne thérapeutique et le jeûne du bien-être&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 26 Jun 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-06-26:/fasting.html</guid><category>diet</category><category>fasting</category></item><item><title>Managing One's Time</title><link>//romainpellerin.eu/managing-ones-time.html</link><description>&lt;figure class="center"&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 26 Jun 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-06-26:/fasting.html</guid><category>Miscellaneous</category><category>diet</category><category>fasting</category></item><item><title>Managing One's Time</title><link>//romainpellerin.eu/managing-ones-time.html</link><description>&lt;figure class="center"&gt;
 &lt;a href="//romainpellerin.eu/images/managing-time.png"&gt;&lt;img src="//romainpellerin.eu/images/managing-time.png" alt="Managing time" /&gt;&lt;/a&gt;
 &lt;figcaption&gt;Managing one's time: 6 laws to know&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;a href="https://twitter.com/paulbrounais/status/840262793278431232" target="_blank"&gt;Credit: Paul Brounais&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 03 May 2017 20:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-05-03:/managing-ones-time.html</guid><category>time</category></item><item><title>Living In The USA: Visa, Insurance, SSN, and Taxes</title><link>//romainpellerin.eu/living-in-the-usa-visa-insurance-ssn-and-taxes.html</link><description>&lt;p&gt;In this article, I explain and sum up everything one needs to know to apply for a J-1 visa in the US, in order to do an internship. Everything below is based on my experience and on the instructions I received.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/paulbrounais/status/840262793278431232" target="_blank"&gt;Credit: Paul Brounais&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 03 May 2017 20:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-05-03:/managing-ones-time.html</guid><category>Miscellaneous</category><category>time</category></item><item><title>Living In The USA: Visa, Insurance, SSN, and Taxes</title><link>//romainpellerin.eu/living-in-the-usa-visa-insurance-ssn-and-taxes.html</link><description>&lt;p&gt;In this article, I explain and sum up everything one needs to know to apply for a J-1 visa in the US, in order to do an internship. Everything below is based on my experience and on the instructions I received.&lt;/p&gt;
 &lt;h1&gt;Visa&lt;/h1&gt;
 &lt;p&gt;Getting a J-1 visa for the US is a quite &lt;a href="http://gaelleinlosangeles.com/demarches-visa-j1/"&gt;long process&lt;/a&gt;. First and foremost, a sponsor is required. The most popular sponsor of J-1 visa programs is undoubtedly &lt;a href="https://www.ciee.org/"&gt;CIEE&lt;/a&gt;, a non-profit organization. But there are &lt;a href="http://gaelleinlosangeles.com/visa-j1-choix-sponsor/"&gt;others&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;CIEE has many partners throughout the world. A good one in France is &lt;a href="http://www.parenthese-paris.com/"&gt;Parenthèse&lt;/a&gt;. It is the one I decided to go with, since my internship company is used to working with them.&lt;/p&gt;
@@ -891,14 +884,14 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;a href="https://www.irs.gov/pub/irs-pdf/p519.pdf"&gt;Publication 519: U.S. Tax Guidefor Aliens&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;That's it! Hope it was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 19 Feb 2017 01:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-19:/living-in-the-usa-visa-insurance-ssn-and-taxes.html</guid><category>usa</category><category>visa</category><category>insurance</category></item><item><title>Living In The USA: Skiing</title><link>//romainpellerin.eu/living-in-the-usa-skiing.html</link><description>&lt;p&gt;Last weekend, my boss took me to Heavenly Moutain Resort, near Lake Tahoe, at the border between Northern California and Nevada. With his wife and some of their friends, we went there for the weekend. Despite pretty bad road conditions (two major roads closed because of the snow and a mudslide), we eventually made it there, at 6pm on Saturday.&lt;/p&gt;
+&lt;p&gt;That's it! Hope it was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 19 Feb 2017 01:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-19:/living-in-the-usa-visa-insurance-ssn-and-taxes.html</guid><category>Miscellaneous</category><category>usa</category><category>visa</category><category>insurance</category></item><item><title>Living In The USA: Skiing</title><link>//romainpellerin.eu/living-in-the-usa-skiing.html</link><description>&lt;p&gt;Last weekend, my boss took me to Heavenly Moutain Resort, near Lake Tahoe, at the border between Northern California and Nevada. With his wife and some of their friends, we went there for the weekend. Despite pretty bad road conditions (two major roads closed because of the snow and a mudslide), we eventually made it there, at 6pm on Saturday.&lt;/p&gt;
 &lt;p&gt;The next day, we had a clear blue sky and great snow on the slopes. Monday was almost as good.&lt;/p&gt;
 &lt;p&gt;Below is a video of these two days.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Qpw-btGnWt4?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;This resort is extremely pricey. It was $144.72 (tax incl.) for ski rental (for 2 days). Plus $135 per day to get a lift ticket (so $270 for 2 days). But the view from the top is breathtaking.&lt;/p&gt;
 &lt;p&gt;One noticeable difference with the French Alps is that ski runs are quite short, at most 15 minutes. At the end of the day, you've spent 1/3 of your time on a chairlift.&lt;/p&gt;
-&lt;p&gt;All in all, it was a great sojourn! We hit the road again on Monday afternoon, headed back to home.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 15 Feb 2017 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-15:/living-in-the-usa-skiing.html</guid><category>usa</category><category>ski</category></item><item><title>Living In The USA</title><link>//romainpellerin.eu/living-in-the-usa.html</link><description>&lt;p&gt;&lt;strong&gt;Friday, January 27, 2017&lt;/strong&gt;: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!&lt;/p&gt;
+&lt;p&gt;All in all, it was a great sojourn! We hit the road again on Monday afternoon, headed back to home.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 15 Feb 2017 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-15:/living-in-the-usa-skiing.html</guid><category>Miscellaneous</category><category>usa</category><category>ski</category></item><item><title>Living In The USA</title><link>//romainpellerin.eu/living-in-the-usa.html</link><description>&lt;p&gt;&lt;strong&gt;Friday, January 27, 2017&lt;/strong&gt;: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/living-usa/greenland.jpg" alt="Greenland" /&gt;
 &lt;figcaption&gt;Greenland&lt;/figcaption&gt;
@@ -1006,7 +999,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/les-differences-france-etats-unis-part-ii/"&gt;Les différences France / Etats-Unis, Part II&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/to-do-list/"&gt;To-Do List&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.eexit.net/usa-preparer-son-stage-pour-les-etats-unis/"&gt;USA: Préparer son stage pour les États-Unis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 30 Jan 2017 16:55:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-01-30:/living-in-the-usa.html</guid><category>housing</category><category>usa</category><category>living</category></item><item><title>Political Notes</title><link>//romainpellerin.eu/political-notes.html</link><description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a draft article.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 30 Jan 2017 16:55:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-01-30:/living-in-the-usa.html</guid><category>Miscellaneous</category><category>housing</category><category>usa</category><category>living</category></item><item><title>Political Notes</title><link>//romainpellerin.eu/political-notes.html</link><description>&lt;p&gt;&lt;strong&gt;&lt;em&gt;This is a draft article.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Social_liberalism"&gt;Social liberalism&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Fiscal_conservatism"&gt;Fiscal conservatism&lt;/a&gt;&lt;/li&gt;
@@ -1030,7 +1023,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;h1&gt;Interesting resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://rev-parti.fr/base-programmatique/"&gt;Parti écologiste antispéciste et non-violent, pour la justice économique globale et les droits des humains, des non humains et des écosystèmes.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 10 Jan 2017 00:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-01-10:/political-notes.html</guid><category>politics</category></item><item><title>The Art Of Writing</title><link>//romainpellerin.eu/the-art-of-writing.html</link><description>&lt;p&gt;Writing any kind of profesionnal document in English is not a straightforward thing, especially if it's not something you do on a regular basis. There are rules to stick to, a formatting to respect, mistakes to avoid. Readers must be able to find information quickly, at the right place. Might it be either in a glossary, a footnote, an appendix, and so on., you must follow a specific order.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 10 Jan 2017 00:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-01-10:/political-notes.html</guid><category>Miscellaneous</category><category>politics</category></item><item><title>The Art Of Writing</title><link>//romainpellerin.eu/the-art-of-writing.html</link><description>&lt;p&gt;Writing any kind of profesionnal document in English is not a straightforward thing, especially if it's not something you do on a regular basis. There are rules to stick to, a formatting to respect, mistakes to avoid. Readers must be able to find information quickly, at the right place. Might it be either in a glossary, a footnote, an appendix, and so on., you must follow a specific order.&lt;/p&gt;
 &lt;p&gt;This year, I decided to write my internship report in English and thus stick to what English readers are used to. In general, thoses rules are almost the same as in French, almost. However, there are a few significant differences you'd better know.&lt;/p&gt;
 &lt;p&gt;I'm going to first explain how I would write a technical report — it works for an internship report as well, since it's supposed to be technical.&lt;/p&gt;
 &lt;h1&gt;Writing a report&lt;/h1&gt;
@@ -1065,16 +1058,14 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;h2&gt;LaTeX&lt;/h2&gt;
 &lt;p&gt;Basically and quickly, it's an open source tool written a while ago which allows you to write any kind of document and export them as PDF (and some other formats). You can write books, reports, CVs, slides, anything! You write it as plain text surrounded with some sort of code (it's a markup language actually). It's available on Linux, Mac and Windows. As it's plain old text, there's no compatibility issue &lt;strong&gt;at all&lt;/strong&gt;. What is more, LaTeX doesn't evolve that much over years so. Should it does some day, they will always ensure backward compatibility. When you're done with it, you just compile it and you're good: a beautiful PDF is procuded. There are plenty of tools available for each platform. For instance, I recommend &lt;code&gt;pdflatex&lt;/code&gt; on Linux. And if you're too lazy to install any of them, use &lt;a href="https://www.sharelatex.com/"&gt;ShareLaTeX&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/scottkosty/install-tl-ubuntu/blob/master/install-tl-ubuntu"&gt;See this tutorial to install the latest version of LaTeX.&lt;/a&gt;. Otherwise, you might install it using your system package manager:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo aptitude install texlive-full biber &lt;span class="c1"&gt;# biber is for the bibliography&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo aptitude install texlive-full biber &lt;span class="c1"&gt;# biber is for the bibliography&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, make sure LaTeX's package manager is working:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo aptitude install xzdec
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo aptitude install xzdec
 tlmgr init-usertree
 tlmgr update --list
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.&lt;/p&gt;
 &lt;p&gt;You can find some examples of CVs, cover letters, reports and slideshows on &lt;a href="https://github.com/rpellerin/LaTeX-templates"&gt;my GitHub account&lt;/a&gt;. For advice about CVs, &lt;a href="//romainpellerin.eu/how-not-to-get-hired.html"&gt;see my article "How Not To Get Hired"&lt;/a&gt;&lt;/p&gt;
@@ -1095,9 +1086,8 @@ tlmgr update --list
 &lt;p&gt;Now that you started using LaTeX (I'm glad you did!), you might wonder how to check spelling, grammar, conjugation, etc.? Actually, there are dozens of tools for Linux.&lt;/p&gt;
 &lt;h3&gt;Grammar and style&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://dsl.org/cookbook/cookbook_15.html#SEC220"&gt;Here are two old fashionned tools to check grammar and style&lt;/a&gt;, installable with&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install diction
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install diction
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;diction&lt;/code&gt; and &lt;code&gt;style&lt;/code&gt; are both great tools but don't trust them completely, they tend to be really strict.&lt;/p&gt;
 &lt;h3&gt;Spelling&lt;/h3&gt;
@@ -1108,43 +1098,38 @@ tlmgr update --list
 &lt;li&gt;&lt;code&gt;hunspell&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;They mostly do the same job. However, I would rather recommand &lt;code&gt;aspell&lt;/code&gt; as it's the preferred tool for programmers (&lt;a href="http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html"&gt;source&lt;/a&gt;).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aspell -l en-US -c -t &amp;lt;file.tex&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;aspell -l en-US -c -t &amp;lt;file.tex&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;General tools&lt;/h3&gt;
 &lt;h4&gt;TextLint&lt;/h4&gt;
 &lt;p&gt;Another awesome tool to check the style, mostly.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/DamienCassou/textlint
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/DamienCassou/textlint
 &lt;span class="nb"&gt;cd&lt;/span&gt; textlint
 ./textlint.bash &lt;span class="se"&gt;\&lt;/span&gt;
     &amp;lt;file.tex&amp;gt; &lt;span class="se"&gt;\&lt;/span&gt;
     ./Linux32/pharo &lt;span class="se"&gt;\&lt;/span&gt;
     ./TextLint.tmbundle/Support/TextLint.image
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;They also offer a &lt;a href="http://textlint.lukas-renggli.ch/"&gt;web application&lt;/a&gt;.&lt;/p&gt;
 &lt;h4&gt;LanguageTool&lt;/h4&gt;
 &lt;p&gt;Finally, here is a general word/grammer checker (probably one of the best): &lt;a href="https://languagetool.org/"&gt;languagetool.org&lt;/a&gt;. According to their &lt;a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool"&gt;official documentation regarding LaTeX&lt;/a&gt;, the best way to check any file is as follows. You will need Java version 8 or higher.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:openjdk-r/ppa
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now, &lt;a href="https://languagetool.org/#download"&gt;download languagetool (stand-alone version for Desktop)&lt;/a&gt;. Then:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;detex &amp;lt;file.tex&amp;gt; &lt;span class="p"&gt;|&lt;/span&gt;java -jar languagetool-commandline.jar -l en-US -c UTF-8 &lt;span class="p"&gt;|&lt;/span&gt;less
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;detex &amp;lt;file.tex&amp;gt; &lt;span class="p"&gt;|&lt;/span&gt;java -jar languagetool-commandline.jar -l en-US -c UTF-8 &lt;span class="p"&gt;|&lt;/span&gt;less
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;detex&lt;/code&gt; will turn your Tex file into a plain text one (it will remove the LaTeX formatting). You can disable rules. Simply add the argument &lt;code&gt;-d&lt;/code&gt; with the rules' IDs (as many as you want), for example:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d &lt;span class="s1"&gt;&amp;#39;EN_QUOTES,UPPERCASE_SENTENCE_START&amp;#39;&lt;/span&gt; &amp;lt;file.tex&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d &lt;span class="s1"&gt;&amp;#39;EN_QUOTES,UPPERCASE_SENTENCE_START&amp;#39;&lt;/span&gt; &amp;lt;file.tex&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1&gt;Books&lt;/h1&gt;
 &lt;p&gt;To conclude, here a two famous books to produce high-quality documents in English:&lt;/p&gt;
@@ -1155,7 +1140,7 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;h1&gt;Great articles&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.uni.edu/~gotera/gradapp/stmtpurpose.htm"&gt;How to Write a Great Statement of Purpose&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 27 Jan 2016 18:15:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-01-27:/the-art-of-writing.html</guid><category>writing</category><category>english</category><category>latex</category><category>cv</category><category>resume</category><category>cover letter</category><category>report</category></item><item><title>Machine Learning And AI</title><link>//romainpellerin.eu/machine-learning-and-ai.html</link><description>&lt;ul&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 27 Jan 2016 18:15:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-01-27:/the-art-of-writing.html</guid><category>Miscellaneous</category><category>writing</category><category>english</category><category>latex</category><category>cv</category><category>resume</category><category>cover letter</category><category>report</category></item><item><title>Machine Learning And AI</title><link>//romainpellerin.eu/machine-learning-and-ai.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/backchannel/how-elon-musk-and-y-combinator-plan-to-stop-computers-from-taking-over-17e0e27dd02a"&gt;How Elon Musk and Y Combinator Plan to Stop Computers From Taking Over&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://rinuboney.github.io/2015/10/18/theoretical-motivations-deep-learning.html"&gt;Theoretical Motivations for Deep Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"&gt;A Visual Introduction to Machine Learning&lt;/a&gt;&lt;/li&gt;
@@ -1168,7 +1153,7 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://medium.com/machine-learnings/a-humans-guide-to-machine-learning-e179f43b67a0"&gt;The Non-Technical Guide to Machine Learning &amp;amp; Artificial Intelligence&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/ZuzooVn/machine-learning-for-software-engineers"&gt;A complete daily plan for studying to become a machine learning engineer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://ahogrammer.com/2016/11/15/deep-learning-enables-you-to-hide-screen-when-your-boss-is-approaching/"&gt;Deep Learning Enables You to Hide Screen when Your Boss is Approaching&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 28 Nov 2015 13:14:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-11-28:/machine-learning-and-ai.html</guid><category>ai</category><category>machine learning</category><category>learning</category><category>artificial intelligence</category></item><item><title>Android, iOS: What Alternatives?</title><link>//romainpellerin.eu/android-ios-what-alternatives.html</link><description>&lt;p&gt;As 2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 28 Nov 2015 13:14:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-11-28:/machine-learning-and-ai.html</guid><category>Miscellaneous</category><category>ai</category><category>machine learning</category><category>learning</category><category>artificial intelligence</category></item><item><title>Android, iOS: What Alternatives?</title><link>//romainpellerin.eu/android-ios-what-alternatives.html</link><description>&lt;p&gt;As 2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Market share" src="//romainpellerin.eu/images/chart-ww-smartphone-os-market-share.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="http://www.idc.com/prodserv/smartphone-os-market-share.jsp"&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It makes no doubt that &lt;strong&gt;the world is ruled by two main OSes: Android and iOS&lt;/strong&gt;. But as you may have heard, those operating systems are powered by two giants, Google and Apple, and in many cases, this can lead to privacy issues. In addition, iOS is proprietary softare and Android tends to be more and more opaque as well. So, what other alternatives do we have? How can we regain control over software we use?&lt;/p&gt;
@@ -1178,61 +1163,55 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;p&gt;For now, as these OSes are still in early development, they're not available worldwide easily. Somes phones run theses OSes but they're not mainstream yet. An easy option is to build them yourself and install them on your own Android device. Here are short tutorials.&lt;/p&gt;
 &lt;h1&gt;Installing Ubuntu for devices&lt;/h1&gt;
 &lt;h2&gt;For Nexus 4&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-device-flash phablet-tools
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Plug in your phone, enable the developer mode and USB debugging.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adb reboot bootloader
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;adb reboot bootloader
 sudo fastboot oem unlock
 ubuntu-device-flash touch --channel&lt;span class="o"&gt;=&lt;/span&gt;stable --bootstrap
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="https://developer.ubuntu.com/en/start/ubuntu-for-devices/installing-ubuntu-for-devices/"&gt;More information&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;For Nexus 5&lt;/h2&gt;
 &lt;p&gt;There are 3 methods (updated in December 2017). First, plug in your phone. Then:&lt;/p&gt;
 &lt;h3&gt;1&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://devices.ubports.com/#/hammerhead"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/MariusQuabeck/magic-device-tool.git
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/MariusQuabeck/magic-device-tool.git
 &lt;span class="nb"&gt;cd&lt;/span&gt; magic-device-tool
 sudo ./launcher.sh
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;2&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://devices.ubports.com/#/hammerhead"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install ubuntu-device-flash phablet-tools
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install ubuntu-device-flash phablet-tools
 adb reboot bootloader
 sudo fastboot oem unlock
 sudo ubuntu-device-flash --server&lt;span class="o"&gt;=&lt;/span&gt;http://system-image.ubports.com touch --device&lt;span class="o"&gt;=&lt;/span&gt;hammerhead --channel&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.04/stable --bootstrap
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;3&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://ubports.com/page/ubuntu-nexus-5"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
 sudo dpkg -i /tmp/ubports.deb
 ubports-installer
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1&gt;Building and installing Firefox OS&lt;/h1&gt;
 &lt;h2&gt;For Nexus 4&lt;/h2&gt;
 &lt;p&gt;Plug in your phone, enable the developer mode and USB debugging.&lt;/p&gt;
 &lt;h3&gt;First step: flash your Nexus 4 with Android 4.3&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install android-tools-adb
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install android-tools-adb
 wget https://dl.google.com/dl/android/aosp/mantaray-jwr66y-factory-3d8252dd.tgz
 tar xvzf occam-jwr66y-factory-74b1deab.tgz
 &lt;span class="nb"&gt;cd&lt;/span&gt; occam-jwr66y
 ./flash-all.sh &lt;span class="c1"&gt;# Boot to fastboot and unlock bootloader&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Second step: build Firefox OS (on a 14.04 Ubuntu)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dpkg --add-architecture i386
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache &lt;span class="se"&gt;\&lt;/span&gt;
     curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib git &lt;span class="se"&gt;\&lt;/span&gt;
@@ -1245,11 +1224,10 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 &lt;span cl
 sudo update-alternatives --set gcc &lt;span class="s2"&gt;&amp;quot;/usr/bin/gcc-4.6&amp;quot;&lt;/span&gt;
 sudo update-alternatives --set g++ &lt;span class="s2"&gt;&amp;quot;/usr/bin/g++-4.6&amp;quot;&lt;/span&gt;
 ccache --max-size 10GB
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Plug in your phone, enable the developer mode and USB debugging.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adb pull /system /tmp/system
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;adb pull /system /tmp/system
 adb pull /data /tmp/data
 adb pull /vendor /tmp/vendor
 git clone git://github.com/mozilla-b2g/B2G.git
@@ -1258,16 +1236,14 @@ git pull
 ./repo sync
 ./config nexus-4
 ./build.sh
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Third step: install it&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./flash.sh
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./flash.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Some additional settings&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; gaia
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; gaia
 make reset-gaia &lt;span class="nv"&gt;PRODUCTION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
 mkdir -p locales
 sudo aptitude install mercurial
@@ -1283,15 +1259,14 @@ rm locales/languages_dev.json -f
 &lt;span class="s1"&gt; &amp;quot;fr&amp;quot;        : &amp;quot;Français&amp;quot;&lt;/span&gt;
 &lt;span class="s1"&gt;}&amp;#39;&lt;/span&gt; &amp;gt; locales/languages_dev.json
 make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production &lt;span class="nv"&gt;LOCALES_FILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;locales/languages_dev.json
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS"&gt;More information&lt;/a&gt;.&lt;/p&gt;
 &lt;h1&gt;Other alternatives&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lineageos.org/"&gt;LineageOS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://puri.sm/shop/librem-5/"&gt;Purism's Librem 5&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 26 Nov 2015 15:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-11-26:/android-ios-what-alternatives.html</guid><category>mobile</category><category>android</category><category>ios</category><category>ubuntu</category><category>firefox</category></item><item><title>How To Give A Good Presentation</title><link>//romainpellerin.eu/how-to-give-a-good-presentation.html</link><description>&lt;p&gt;Since I graduated from High School, I've had the chance to attend a lot of presentations (talks, conferences, lectures), given either by students to teachers, or by some non-student people. Most of them are tech people. I would like to distinguish two kinds of presentation:&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 26 Nov 2015 15:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-11-26:/android-ios-what-alternatives.html</guid><category>Miscellaneous</category><category>mobile</category><category>android</category><category>ios</category><category>ubuntu</category><category>firefox</category></item><item><title>How To Give A Good Presentation</title><link>//romainpellerin.eu/how-to-give-a-good-presentation.html</link><description>&lt;p&gt;Since I graduated from High School, I've had the chance to attend a lot of presentations (talks, conferences, lectures), given either by students to teachers, or by some non-student people. Most of them are tech people. I would like to distinguish two kinds of presentation:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Those given by students or employees, often at the end of projects, or to explain quite serious things, or to expose problems. I will call them “formal presentations”&lt;/li&gt;
 &lt;li&gt;Those given by any kind of people, aiming at making the attendees discover technologies, languages, tools. I like to refers to these lecturers as evangelists. I will now call these presentations “informal presentations”, since they rarely happen in a professional or university context.&lt;/li&gt;
@@ -1336,7 +1311,7 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;li&gt;&lt;a href="https://dev.to/emmawedekind/tips-for-first-time-speakers-3fcb"&gt;Tips For First Time Speakers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/tatianamac/493ca668ee7f7c07a5b282f6d9132552"&gt;Speaker Rider&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/dgageot/demoit"&gt;https://github.com/dgageot/demoit&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 16 Jun 2015 01:49:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-06-16:/how-to-give-a-good-presentation.html</guid><category>presentation</category><category>talk</category></item><item><title>I Want To Be A More Efficient Developer</title><link>//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html</link><description>&lt;p&gt;This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 16 Jun 2015 01:49:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-06-16:/how-to-give-a-good-presentation.html</guid><category>Miscellaneous</category><category>presentation</category><category>talk</category></item><item><title>I Want To Be A More Efficient Developer</title><link>//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html</link><description>&lt;p&gt;This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.&lt;/p&gt;
 &lt;p&gt;As a Software Engineering Student, I meet every day a lot of people learning programming languages, trying to build databases, creating websites. We, at the &lt;a href="http://www.utc.fr/"&gt;UTC&lt;/a&gt;, have a lot of projects, each semester. I feel so sad each time they fail at using best practices. Among them, the worst, in my opinion, is being stuck in Windows, the operating system. They simply miss a lot of things. They are ignorant, they have no idea how their computers work. But that's my opinion. Now, let's begin with a list of best practices I've learnt from great people.&lt;/p&gt;
 &lt;h1&gt;Use the right tools&lt;/h1&gt;
 &lt;h2&gt;GNU/Linux&lt;/h2&gt;
@@ -1466,4 +1441,4 @@ Well, that's all for this article. Some very simple tips to follow, and then you
 &lt;li&gt;&lt;a href="https://increment.com/teams/how-to-build-a-startup-engineering-team/"&gt;How to build a startup engineering team&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://ifttd.io/21-une-organisation-libre-ou-prime-innovation-et-bonheur-quentin-adam/"&gt;#21 – Une organisation libre où prime innovation et bonheur – Quentin Adam&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=20pj_ajDBOg"&gt;Shitlist-driven development and other tricks for working on large codebases - RedDotRubyConf 2017&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 25 May 2015 17:17:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-05-25:/i-want-to-be-a-more-efficient-developer.html</guid><category>code</category><category>workflow</category><category>learning</category><category>succeed</category></item></channel></rss>
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 25 May 2015 17:17:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-05-25:/i-want-to-be-a-more-efficient-developer.html</guid><category>Miscellaneous</category><category>code</category><category>workflow</category><category>learning</category><category>succeed</category></item></channel></rss>

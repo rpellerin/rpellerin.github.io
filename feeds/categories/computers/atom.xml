@@ -12,8 +12,8 @@
 &lt;li&gt;The &lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt; seems to be the preferred adapters among all the existing ones when it comes to Raspberry Pis.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;StarTech 2.5" SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other adapters&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="raspberry pi"></category></entry><entry><title>How To Check The Integrity Of A Backup Folder</title><link href="//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html" rel="alternate"></link><published>2020-08-27T23:50:00+02:00</published><updated>2020-08-27T23:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-08-27:/how-to-check-the-integrity-of-a-backup-folder.html</id><summary type="html">&lt;p&gt;Checking the md5sum of files copied across two folders&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;ORIGINAL FOLDER&amp;gt;
+&lt;/ul&gt;</content><category term="Computers"></category><category term="raspberry pi"></category></entry><entry><title>How To Check The Integrity Of A Backup Folder</title><link href="//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html" rel="alternate"></link><published>2020-08-27T23:50:00+02:00</published><updated>2020-08-27T23:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-08-27:/how-to-check-the-integrity-of-a-backup-folder.html</id><summary type="html">&lt;p&gt;Checking the md5sum of files copied across two folders&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;ORIGINAL FOLDER&amp;gt;
 find . -type f &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; &amp;gt; /tmp/original.files
 &lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;BACKUP FOLDER&amp;gt;
 find . -type f &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; &amp;gt; /tmp/backup.files
@@ -26,24 +26,22 @@ cat /tmp/common.files &lt;span class="p"&gt;|&lt;/span&gt; xargs -d&lt;span clas
 &lt;span class="c1"&gt;# -d&amp;#39;\n&amp;#39; so that filenames with space characters are handled&lt;/span&gt;
 &lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;BACKUP FOLDER&amp;gt;
 md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED for each file&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
-&lt;p&gt;Hope that helps.&lt;/p&gt;</content><category term="linux"></category><category term="md5sum"></category><category term="git"></category></entry><entry><title>Playing With A Raspberry Pi Camera</title><link href="//romainpellerin.eu/playing-with-a-raspberry-pi-camera.html" rel="alternate"></link><published>2020-06-01T02:50:00+02:00</published><updated>2020-06-01T02:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-06-01:/playing-with-a-raspberry-pi-camera.html</id><summary type="html">&lt;p&gt;What's possible with a Raspberry Pi camera&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.&lt;/p&gt;
+&lt;p&gt;Hope that helps.&lt;/p&gt;</content><category term="Computers"></category><category term="linux"></category><category term="md5sum"></category><category term="git"></category></entry><entry><title>Playing With A Raspberry Pi Camera</title><link href="//romainpellerin.eu/playing-with-a-raspberry-pi-camera.html" rel="alternate"></link><published>2020-06-01T02:50:00+02:00</published><updated>2020-06-01T02:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2020-06-01:/playing-with-a-raspberry-pi-camera.html</id><summary type="html">&lt;p&gt;What's possible with a Raspberry Pi camera&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: &lt;code&gt;raspistill&lt;/code&gt; and &lt;code&gt;raspivid&lt;/code&gt;. For a complete user manual, follow &lt;a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2"&gt;this link&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).&lt;/em&gt;&lt;/p&gt;
 &lt;h1&gt;A timelapse of the sky at night&lt;/h1&gt;
-&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. &lt;/p&gt;
+&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.&lt;/p&gt;
 &lt;p&gt;However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;There are multiple parameters that affect the look of a photos but after trying a few and a lot of &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/"&gt;Googling&lt;/a&gt;, here is a set of parameters that work pretty well for me:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   raspistill -q &lt;span class="m"&gt;100&lt;/span&gt; -t &lt;span class="m"&gt;1&lt;/span&gt; -ss &lt;span class="m"&gt;6000000&lt;/span&gt; -rot &lt;span class="m"&gt;180&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   -sh &lt;span class="m"&gt;0&lt;/span&gt; -co &lt;span class="m"&gt;50&lt;/span&gt; -br &lt;span class="m"&gt;50&lt;/span&gt; -sa &lt;span class="m"&gt;0&lt;/span&gt; -ev +2 -ex night &lt;span class="se"&gt;\&lt;/span&gt;
   -awb auto -ISO &lt;span class="m"&gt;800&lt;/span&gt; -mm average -n &lt;span class="se"&gt;\&lt;/span&gt;
   -o &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date -u +&lt;span class="s1"&gt;&amp;#39;%Y-%m-%dT%H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;.jpg&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; date&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This command takes as many shots as possible in a infinite loop, and displays the date and time between two shots in the terminal.&lt;/p&gt;
 &lt;p&gt;Here the parameters &lt;code&gt;-awb auto&lt;/code&gt;, &lt;code&gt;-mm average&lt;/code&gt; and &lt;code&gt;-sa 0&lt;/code&gt; seem to have no impact, I believe they are the default values. The rest makes a difference.&lt;/p&gt;
@@ -56,21 +54,19 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;/div&gt;
 
 &lt;p&gt;Then:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspivid -o - -rot &lt;span class="m"&gt;180&lt;/span&gt; -t &lt;span class="m"&gt;0&lt;/span&gt; -w &lt;span class="m"&gt;1280&lt;/span&gt; -h &lt;span class="m"&gt;720&lt;/span&gt; -fps &lt;span class="m"&gt;25&lt;/span&gt; -b &lt;span class="m"&gt;4000000&lt;/span&gt; -g &lt;span class="m"&gt;50&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;raspivid -o - -rot &lt;span class="m"&gt;180&lt;/span&gt; -t &lt;span class="m"&gt;0&lt;/span&gt; -w &lt;span class="m"&gt;1280&lt;/span&gt; -h &lt;span class="m"&gt;720&lt;/span&gt; -fps &lt;span class="m"&gt;25&lt;/span&gt; -b &lt;span class="m"&gt;4000000&lt;/span&gt; -g &lt;span class="m"&gt;50&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   &lt;span class="p"&gt;|&lt;/span&gt; ffmpeg -ar &lt;span class="m"&gt;44100&lt;/span&gt; -ac &lt;span class="m"&gt;2&lt;/span&gt; -f s16le -i /dev/zero -f h264 -i - &lt;span class="se"&gt;\&lt;/span&gt;
   -vcodec copy -acodec aac -ab 128k -g &lt;span class="m"&gt;50&lt;/span&gt; -strict experimental -f flv &lt;span class="se"&gt;\&lt;/span&gt;
   rtmp://a.rtmp.youtube.com/live2/&amp;lt;your-secret-key-here&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This would create a live stream with no audio. To add an audio track that repeats itself, do:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;raspivid -o - -rot &lt;span class="m"&gt;180&lt;/span&gt; -t &lt;span class="m"&gt;0&lt;/span&gt; -w &lt;span class="m"&gt;1280&lt;/span&gt; -h &lt;span class="m"&gt;720&lt;/span&gt; -fps &lt;span class="m"&gt;25&lt;/span&gt; -b &lt;span class="m"&gt;4000000&lt;/span&gt; -g &lt;span class="m"&gt;50&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;raspivid -o - -rot &lt;span class="m"&gt;180&lt;/span&gt; -t &lt;span class="m"&gt;0&lt;/span&gt; -w &lt;span class="m"&gt;1280&lt;/span&gt; -h &lt;span class="m"&gt;720&lt;/span&gt; -fps &lt;span class="m"&gt;25&lt;/span&gt; -b &lt;span class="m"&gt;4000000&lt;/span&gt; -g &lt;span class="m"&gt;50&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   &lt;span class="p"&gt;|&lt;/span&gt; ffmpeg -stream_loop -1 -i ./audio.mp3 -f h264 &lt;span class="se"&gt;\&lt;/span&gt;
   -use_wallclock_as_timestamps &lt;span class="m"&gt;1&lt;/span&gt; -thread_queue_size &lt;span class="m"&gt;1024&lt;/span&gt;  -i - &lt;span class="se"&gt;\&lt;/span&gt;
   -map &lt;span class="m"&gt;0&lt;/span&gt;:0 -map &lt;span class="m"&gt;1&lt;/span&gt;:0 -vcodec copy -acodec copy -g &lt;span class="m"&gt;50&lt;/span&gt; -strict experimental -f flv &lt;span class="se"&gt;\&lt;/span&gt;
   rtmp://a.rtmp.youtube.com/live2/&amp;lt;your-secret-key-here&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;-use_wallclock_as_timestamps&lt;/code&gt; makes a warning message about no timestamps disappear. &lt;code&gt;-thread_queue_size 1024&lt;/code&gt; makes another warning message disappear.&lt;/p&gt;
 &lt;p&gt;With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.&lt;/p&gt;
@@ -80,24 +76,22 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 
 &lt;h1&gt;Daytime timelapse&lt;/h1&gt;
 &lt;p&gt;Here, it's pretty much like a nighttime timelapse, except that we don't need as many parameters, the default ones should normally do a decent job. Also, since taking a picture is here much more faster, we must schedule the shots. Every 20 or 30 seconds is usually a safe bet. Since we can't predict with certainty how long taking the picture will take, in order to take timely shots, we must run a script in the background to take the photo and wait x seconds in an infinite loop:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; ./take-pic.sh&lt;span class="p"&gt;;&lt;/span&gt; sleep &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; ./take-pic.sh&lt;span class="p"&gt;;&lt;/span&gt; sleep &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And the file &lt;code&gt;./take-pic.sh&lt;/code&gt; (don't forget to &lt;code&gt;chmod +x ./take-pic.sh&lt;/code&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Taking pic...&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date -u +&lt;span class="s1"&gt;&amp;#39;%Y-%m-%dT%H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;.jpg&amp;quot;&lt;/span&gt;
 raspistill -q &lt;span class="m"&gt;100&lt;/span&gt; -rot &lt;span class="m"&gt;180&lt;/span&gt; -n -awb sun -co &lt;span class="m"&gt;20&lt;/span&gt; -o &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$name&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
 date
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CxOuNB-NVDQ?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9GTVajBlVuM?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;That's it for today!&lt;/p&gt;</content><category term="raspberry pi"></category></entry><entry><title>On Storing Passwords In A Safe Way</title><link href="//romainpellerin.eu/on-storing-passwords-in-a-safe-way.html" rel="alternate"></link><published>2018-07-31T00:20:00+02:00</published><updated>2019-01-25T00:06:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</id><summary type="html">&lt;p&gt;My journey towards increased security&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
+&lt;p&gt;That's it for today!&lt;/p&gt;</content><category term="Computers"></category><category term="raspberry pi"></category></entry><entry><title>On Storing Passwords In A Safe Way</title><link href="//romainpellerin.eu/on-storing-passwords-in-a-safe-way.html" rel="alternate"></link><published>2018-07-31T00:20:00+02:00</published><updated>2019-01-25T00:06:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</id><summary type="html">&lt;p&gt;My journey towards increased security&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
 &lt;h1&gt;Storing passwords&lt;/h1&gt;
 &lt;p&gt;For a very long time I have stored my passwords within Firefox, synced "in the Cloud" through my Firefox account. This solution offers four main advantages:&lt;/p&gt;
 &lt;ul&gt;
@@ -147,10 +141,9 @@ date
 &lt;h3&gt;Pass (Linux CLI)&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://www.passwordstore.org/"&gt;A tool&lt;/a&gt; &lt;a href="https://wiki.archlinux.org/index.php/Pass"&gt;for Linux&lt;/a&gt; (CLI) based on GPG. Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass. One of the reasons I guess is that it's on the official Linux distributions repos.&lt;/p&gt;
 &lt;p&gt;In case of phone loss, here is a nice way to restore the code on your phone by generating QR codes from what's stored in pass:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install qrencode
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install qrencode
 find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&amp;quot;&lt;/span&gt; -printf &lt;span class="s1"&gt;&amp;#39;%P\n&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -n &lt;span class="s1"&gt;&amp;#39;s|\.gpg||p&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nb"&gt;read&lt;/span&gt; f&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; pass &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nb"&gt;read&lt;/span&gt; s&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; qrencode -o - &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$s&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; display&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h4&gt;Pros&lt;/h4&gt;
 &lt;ul&gt;
@@ -185,13 +178,13 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="https://chown.me/blog/my-recent-journey-with-2FA.html"&gt;My recent journey with 2FA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1"&gt;The Definitive Guide to password-store&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592"&gt;Using pass in a team&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="password"></category><category term="security"></category></entry><entry><title>Domain Names</title><link href="//romainpellerin.eu/domain-names.html" rel="alternate"></link><published>2018-03-23T20:00:00+01:00</published><updated>2018-03-23T20:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-03-23:/domain-names.html</id><summary type="html">&lt;p&gt;Where to buy domain names&lt;/p&gt;</summary><content type="html">&lt;p&gt;Short article, kind of a bookmark for myself. I usually buy my domain names from OVH but they're far from being cheap. Today, I was told the following three websites offer much cheaper domain names. What's more, they have a greater choice.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Computers"></category><category term="password"></category><category term="security"></category></entry><entry><title>Domain Names</title><link href="//romainpellerin.eu/domain-names.html" rel="alternate"></link><published>2018-03-23T20:00:00+01:00</published><updated>2018-03-23T20:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-03-23:/domain-names.html</id><summary type="html">&lt;p&gt;Where to buy domain names&lt;/p&gt;</summary><content type="html">&lt;p&gt;Short article, kind of a bookmark for myself. I usually buy my domain names from OVH but they're far from being cheap. Today, I was told the following three websites offer much cheaper domain names. What's more, they have a greater choice.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://porkbun.com/"&gt;porkbun.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.namecheap.com/"&gt;www.namecheap.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.internetbs.net/"&gt;www.internetbs.net&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://domainr.com/"&gt;domainr.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="dns"></category><category term="domain"></category></entry><entry><title>How To Repair A Laptop Charger</title><link href="//romainpellerin.eu/how-to-repair-a-laptop-charger.html" rel="alternate"></link><published>2017-05-02T21:50:00+02:00</published><updated>2017-05-02T21:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-05-02:/how-to-repair-a-laptop-charger.html</id><summary type="html">&lt;p&gt;How I replaced my defective laptop charger&lt;/p&gt;</summary><content type="html">&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Computers"></category><category term="dns"></category><category term="domain"></category></entry><entry><title>How To Repair A Laptop Charger</title><link href="//romainpellerin.eu/how-to-repair-a-laptop-charger.html" rel="alternate"></link><published>2017-05-02T21:50:00+02:00</published><updated>2017-05-02T21:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-05-02:/how-to-repair-a-laptop-charger.html</id><summary type="html">&lt;p&gt;How I replaced my defective laptop charger&lt;/p&gt;</summary><content type="html">&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
 &lt;p&gt;Therefore, I decided to replace the defective charger. I searched the Internet, looking for the same charger, with no luck. All I found were cheap chargers selled by some weird Chinese sellers with poor reviews on Ebay and Amazon.&lt;/p&gt;
 &lt;p&gt;In the end, since I could not find the right replacement charger with the same connector and the right specifications, I decided to make my own! Here is how.&lt;/p&gt;
 &lt;h1&gt;How to make your own laptop charger&lt;/h1&gt;
@@ -265,7 +258,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;figcaption&gt;Insulating the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;That's all! Now I have a new functionning charger perfectly suited to my laptop.&lt;/p&gt;</content><category term="laptop"></category><category term="charger"></category></entry><entry><title>Fonts, Typefaces And The History Of UTF-8</title><link href="//romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html" rel="alternate"></link><published>2016-02-04T19:00:00+01:00</published><updated>2016-02-04T19:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</id><summary type="html">&lt;p&gt;Everything about character encodings, fonts and typefaces&lt;/p&gt;</summary><content type="html">&lt;p&gt;First, let's start with the basics. &lt;a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"&gt;&lt;strong&gt;What's the difference between a font and a typeface?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That's all! Now I have a new functionning charger perfectly suited to my laptop.&lt;/p&gt;</content><category term="Computers"></category><category term="laptop"></category><category term="charger"></category></entry><entry><title>Fonts, Typefaces And The History Of UTF-8</title><link href="//romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html" rel="alternate"></link><published>2016-02-04T19:00:00+01:00</published><updated>2016-02-04T19:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</id><summary type="html">&lt;p&gt;Everything about character encodings, fonts and typefaces&lt;/p&gt;</summary><content type="html">&lt;p&gt;First, let's start with the basics. &lt;a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"&gt;&lt;strong&gt;What's the difference between a font and a typeface?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Briefly, a fond is what we use whereas a typeface is what we see. But still, it's a bit more complex. I'll sum up the original article right below.&lt;/p&gt;
 &lt;p&gt;In the past, analog printing was done using metal letters rolled in ink and pressed down onto a piece of paper: that was the page layout. For a given typeface (for example Garamond), there were thousands of physical metal blocks, each with the character it was meant to represent, in relief (the type face), existing in different size (10 point, 12, etc.) and different weights (bold, light, medium). Basically, a font is just a subset of a typeface. For example, bolded Garamond in 12 point was considered a different font than normal Garamond in 8 point. But nowadays, both terms can be used interchangeably. However, just in case you would need to know, a reminder could be:&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;The difference between a font and a typeface is the same as that between songs and an album. The former makes up the latter.&lt;/em&gt;"&lt;/p&gt;
@@ -325,9 +318,8 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Be sure to use UTF-8 on every single page of your website(s).&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;UTF-8&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;(best when written on top of the page, for performance concerns)&lt;/p&gt;
 &lt;/li&gt;
@@ -343,7 +335,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/"&gt;La maison des horreurs de l’encoding&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://reedbeta.com/blog/programmers-intro-to-unicode/"&gt;A Programmer’s Introduction to Unicode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://slides.com/benoitaverty/unicode-pour-les-nuls#/"&gt;Unicode pour les nuls&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="font"></category><category term="typeface"></category><category term="utf8"></category><category term="unicode"></category></entry><entry><title>Understanding The Memory</title><link href="//romainpellerin.eu/understanding-the-memory.html" rel="alternate"></link><published>2015-06-26T01:11:00+02:00</published><updated>2017-02-16T23:44:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-26:/understanding-the-memory.html</id><summary type="html">&lt;p&gt;Understanding how memory works&lt;/p&gt;</summary><content type="html">&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Computers"></category><category term="font"></category><category term="typeface"></category><category term="utf8"></category><category term="unicode"></category></entry><entry><title>Understanding The Memory</title><link href="//romainpellerin.eu/understanding-the-memory.html" rel="alternate"></link><published>2015-06-26T01:11:00+02:00</published><updated>2017-02-16T23:44:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-26:/understanding-the-memory.html</id><summary type="html">&lt;p&gt;Understanding how memory works&lt;/p&gt;</summary><content type="html">&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
 &lt;p&gt;Nows, let's have a look at memory and let's try to understand how it works.&lt;/p&gt;
 &lt;h1&gt;Processes and threads&lt;/h1&gt;
 &lt;p&gt;Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains &lt;strong&gt;four main areas&lt;/strong&gt;:&lt;/p&gt;
@@ -358,57 +350,54 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;figcaption&gt;Image taken from &lt;a href="http://www.linuxjournal.com/article/6391"&gt;http://www.linuxjournal.com/article/6391&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Let's see how this code gets compiled in x86 assembly.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gcc -S -masm&lt;span class="o"&gt;=&lt;/span&gt;intel main.c -fno-asynchronous-unwind-tables -o output.asm
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gcc -S -masm&lt;span class="o"&gt;=&lt;/span&gt;intel main.c -fno-asynchronous-unwind-tables -o output.asm
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now, we'll see the instructions using the stack.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    .file   &amp;quot;main.c&amp;quot;
-    .intel_syntax noprefix
-    .text
-    .globl  add
-    .type   add, @function
-add:
-    push    rbp
-    mov rbp, rsp
-    mov DWORD PTR [rbp-4], edi
-    mov DWORD PTR [rbp-8], esi
-    mov edx, DWORD PTR [rbp-4]
-    mov eax, DWORD PTR [rbp-8]
-    add eax, edx
-    pop rbp
-    ret
-    .size   add, .-add
-    .globl  main
-    .type   main, @function
-main:
-    push    rbp
-    mov rbp, rsp
-    sub rsp, 16
-    mov esi, 2
-    mov edi, 1
-    call    add
-    mov DWORD PTR [rbp-4], eax
-    mov eax, 0
-    leave
-    ret
-    .size   main, .-main
-    .ident  &amp;quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&amp;quot;
-    .section    .note.GNU-stack,&amp;quot;&amp;quot;,@progbits
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;file&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;main.c&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;intel_syntax&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;noprefix&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;text&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;globl&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@function&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;rbp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rbp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rsp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DWORD&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PTR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rbp-4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;edi&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DWORD&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PTR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rbp-8&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;esi&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;edx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DWORD&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PTR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rbp-4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DWORD&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PTR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rbp-8&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;edx&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rbp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ret&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;globl&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@function&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="nl"&gt;main&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;rbp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rbp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rsp&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rsp&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;esi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;edi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;call&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;add&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;DWORD&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;PTR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rbp-4&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eax&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;mov&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;leave&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ret&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ident&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;section&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;note&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GNU&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;@progbits&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.&lt;/p&gt;
 &lt;h1&gt;Allocating memory for objects and primitive data types&lt;/h1&gt;
@@ -416,19 +405,18 @@ main:
 &lt;p&gt;Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.&lt;/p&gt;
 &lt;p&gt;Global variables and static variables (not only global) go to the data segment.&lt;/p&gt;
 &lt;p&gt;Here are some examples, to make things clear:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;fonction&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// On the stack&lt;/span&gt;
-  &lt;span class="n"&gt;Object&lt;/span&gt; &lt;span class="n"&gt;o2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="c1"&gt;// On the stack&lt;/span&gt;
-  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;ref&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// The reference is on the stack&lt;/span&gt;
-  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;pt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// The pointer is on the stack&lt;/span&gt;
-  &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;pt2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="cm"&gt;/* The right handside (the actual object)&lt;/span&gt;
-&lt;span class="cm"&gt;    is on the heap, the left handside is on the stack */&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;fonction&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// On the stack&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;o2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// On the stack&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ref&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// The reference is on the stack&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// The pointer is on the stack&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pt2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cm"&gt;/* The right handside (the actual object)&lt;/span&gt;
+&lt;span class="cm"&gt;    is on the heap, the left handside is on the stack */&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
-  &lt;span class="cm"&gt;/* Everything that has been allocated on the stack will be&lt;/span&gt;
-&lt;span class="cm"&gt;    deleted at the end of the function */&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="cm"&gt;/* Everything that has been allocated on the stack will be&lt;/span&gt;
+&lt;span class="cm"&gt;    deleted at the end of the function */&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To delete what is on the heap, you need to use the &lt;code&gt;delete&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -446,4 +434,4 @@ main:
 &lt;li&gt;&lt;a href="http://www.cplusplus.com/forum/articles/9/"&gt;The difference between pointers and arrays&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://canonical.org/~kragen/memory-models/"&gt;The memory models that underlie programming languages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/"&gt;Hack the Virtual Memory: malloc, the heap &amp;amp; the program break&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="code"></category><category term="computer"></category><category term="memory"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Computers"></category><category term="code"></category><category term="computer"></category><category term="memory"></category></entry></feed>

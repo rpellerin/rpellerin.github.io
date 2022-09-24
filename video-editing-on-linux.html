@@ -114,7 +114,7 @@
 </ul>
 <h2>Beats calculator</h2>
 <p><input type="text" id="beats" placeholder="Beats per minute here"/>
-<input type="text" id="fps" placeholder="Desired frames per second here"/>
+<input type="text" id="fps" placeholder="Desired frames per second here"/></p>
 <pre id="results"></pre>
 <script>
     let BEATS = [1,2,3,4,6,8]
@@ -127,16 +127,16 @@
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).filter(function(beat) { return beat > 0 }).map(function(beat) {
-            let tempResult = (beat*60)/value
-            const regex = tempResult.toString().match(/^(\d+.)(\d+)$/)
+        const result = BEATS.concat(value).filter(function(beat) { return beat \> 0 }).map(function(beat) {
+            let tempResult = (beat\*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
-                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
-                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
+                const floating = (parseFloat("0." + regex[2], 10)\*100*fps)/100
+                tempResult = \`${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames\`
             }
             else {
-                tempResult = `${tempResult} seconds and 0 frames`
+                tempResult = \`${tempResult} seconds and 0 frames\`
             }
             pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
@@ -146,7 +146,8 @@
     if (inputBeats.value || inputFps.value) {
         inputChange()
     }
-</script></p>
+</script>
+
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">

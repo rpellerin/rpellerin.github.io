@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">Everything you have ever wanted to know about GNU/Linux</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 712 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 714 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ubuntu.html">ubuntu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/xubuntu.html">xubuntu</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/debian.html">debian</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/unix.html">unix</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gnu.html">gnu</a></p>    </div>
 </header>
@@ -98,17 +98,16 @@
 <h1>Installing Linux on a Dell preinstalled with Windows</h1>
 <ul>
 <li>In Windows, disable Fast startup in Panel Control &gt; Power &gt; Action when button pressed.</li>
-<li>In the BIOS/UEFI, disable SecureBoot if you're planning on installing proprietary third-aprty drivers</li>
+<li>In the BIOS/UEFI, keep enabled SecureBoot</li>
 <li>You might want to enable 'SD card boot' in the BIOS under Boot &gt; Miscellaneous devices if you use a SD card to install Linux</li>
-<li>In SATA operation, uncheck RAID and select AHCI otherwise Linux won't be able to see NVMe SDD drives. Also uncheck legacy ROM option (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: <a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3">https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3</a> and <a href="https://bbs.archlinux.org/viewtopic.php?id=204629">https://bbs.archlinux.org/viewtopic.php?id=204629</a>.</li>
+<li>If your SSD disk is a NVMe, it is possible that Linux can't see it. In such a case, in SATA operation, uncheck RAID and select AHCI. Also uncheck legacy Options ROMs (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: <a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3">https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3</a> and <a href="https://bbs.archlinux.org/viewtopic.php?id=204629">https://bbs.archlinux.org/viewtopic.php?id=204629</a>.</li>
 </ul>
 <p>That's it. You should be able to install Linux on the entire disk now.</p>
 <h1>Upgrading your distribution of *Ubuntu</h1>
-<div class="highlight"><pre><span></span>sudo <span class="k">do</span>-release-upgrade
+<div class="highlight"><pre><span></span><code>sudo <span class="k">do</span>-release-upgrade
 <span class="c1"># OR</span>
 sudo update-manager -c
-</pre></div>
-
+</code></pre></div>
 
 <p><a href="https://help.ubuntu.com/lts/serverguide/installing-upgrading.html">More information</a>.</p>
 <h1>GNU/Linux</h1>

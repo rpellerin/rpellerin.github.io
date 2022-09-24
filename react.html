@@ -112,7 +112,7 @@
 </ol>
 <h1>How to</h1>
 <p>You have 2 main tools of choice, to compile it into some browser-compliant package: Webpack or Browserify. I personally decided to go with the former, as it's the most popular and offer more possibilites. Briefly, how to start a new project with webpack:</p>
-<div class="highlight"><pre><span></span>npm init <span class="c1"># Entry point: index.js</span>
+<div class="highlight"><pre><span></span><code>npm init <span class="c1"># Entry point: index.js</span>
 npm install --save react react-dom babel-preset-react babel-preset-es2015
 <span class="c1"># The previous line is required to run React with ES6</span>
 npm install webpack --save-dev
@@ -127,16 +127,14 @@ npm link webpack-dev-server
 npm install babel-loader --save-dev
 <span class="c1"># OR, in case of problem</span>
 npm install babel-loader@5.x --save-dev
-</pre></div>
-
+</code></pre></div>
 
 <h2>Configure webpack</h2>
 <p>There are <a href="http://webpack.github.io/docs/configuration.html">two ways</a> to pass the configuration object to webpack. However, here we're going to use the CLI way, which uses a conf file. Create <code>webpack.config.js</code> at the root of the project, containing this:</p>
-<div class="highlight"><pre><span></span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">// configuration</span>
-<span class="p">};</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// configuration</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
 
 <p>That's all for now. This article is likely to be updated in a near future, stay tuned!</p>
 <p>PS: a friend of mine also gave a talk last year, at our school, about React. He was an avant-gardist ;-)</p>

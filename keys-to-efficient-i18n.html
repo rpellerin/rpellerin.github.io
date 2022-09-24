@@ -108,17 +108,16 @@
 <h1>Tools are your friends, leverage them</h1>
 <p>Dependencies-wise, we use <a href="https://github.com/ruby-i18n/i18n">the default Rails gem</a> to localize our app on the back end, and we use <a href="https://www.npmjs.com/package/i18n-js">i18n-js</a> on the front end.</p>
 <p>In most applications, localization is done through YAML files. For instance, a <code>en.yml</code> file might look like this:</p>
-<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">welcome</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Welcome to my website</span>
-    <span class="l l-Scalar l-Scalar-Plain">menu_options</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">login</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Log in</span>
-        <span class="l l-Scalar l-Scalar-Plain">logout</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Log out</span>
-    <span class="l l-Scalar l-Scalar-Plain">users_connected</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">zero</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">No users connected</span>
-        <span class="l l-Scalar l-Scalar-Plain">one</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">One user connected</span>
-        <span class="l l-Scalar l-Scalar-Plain">other</span><span class="p p-Indicator">:</span> <span class="s">&quot;%{count}</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">connected&quot;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">welcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Welcome to my website</span><span class="w"></span>
+<span class="w">    </span><span class="nt">menu_options</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">login</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log in</span><span class="w"></span>
+<span class="w">        </span><span class="nt">logout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log out</span><span class="w"></span>
+<span class="w">    </span><span class="nt">users_connected</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">zero</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">No users connected</span><span class="w"></span>
+<span class="w">        </span><span class="nt">one</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">One user connected</span><span class="w"></span>
+<span class="w">        </span><span class="nt">other</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;%{count}</span><span class="nv"> </span><span class="s">users</span><span class="nv"> </span><span class="s">connected&quot;</span><span class="w"></span>
+</code></pre></div>
 
 <p>We refer to full-path YAML keys as "i18n keys". For instance, <code>en.menu_options.login</code> is a full-path YAML key, although the first key in the hierarchy (<code>en</code> as in "English", the language) is generally omitted when talking about i18n keys. We refer to the values as "translations". Here, we have an English translation for each key.</p>
 <p>We use <a href="https://phrase.com/">Phrase</a> to manage our translations. In Phrase, translations are identified by "i18n key + locale", and alongside their translation string also have two different attributes:</p>
@@ -130,30 +129,29 @@
 <p>At Doctolib, every commit to the <code>master</code> branch leads to our file <code>en.yml</code> being uploaded to Phrase. This way, we keep our English translations and our keys in sync with Phrase at all times.</p>
 <p>We've set Phrase up so that any new i18n key pushed to Phrase automatically creates the French, German and Italian translations based on the uploaded English translation. This is what they call <a href="https://help.phrase.com/help/machine-translation">Machine Translation</a>. It's like Google Translate, but automated. It saves us a lot of time. Then, our UX writers only have to review the translations, correct them if necessary, and mark them as verified.</p>
 <p>Phrase is a great tool with many options, that can be configured either in the website or in <code>.phraseapp.yml</code>. After trying different settings for a while, here is what we found to work best for us:</p>
-<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">phraseapp</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">access_token</span><span class="p p-Indicator">:</span> <span class="c1"># ...</span>
-    <span class="l l-Scalar l-Scalar-Plain">project_id</span><span class="p p-Indicator">:</span> <span class="c1"># ...</span>
-    <span class="l l-Scalar l-Scalar-Plain">file_format</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
-    <span class="l l-Scalar l-Scalar-Plain">push</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">sources</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./config/locales/en.yml</span>
-            <span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">locale_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
-            <span class="l l-Scalar l-Scalar-Plain">file_format</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yml</span>
-            <span class="l l-Scalar l-Scalar-Plain">skip_upload_tags</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-            <span class="l l-Scalar l-Scalar-Plain">update_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-            <span class="l l-Scalar l-Scalar-Plain">skip_unverification</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="l l-Scalar l-Scalar-Plain">pull</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">targets</span><span class="p p-Indicator">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">file</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./config/locales/fr.yml</span>
-            <span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span>
-            <span class="l l-Scalar l-Scalar-Plain">locale_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">fr</span>
-            <span class="l l-Scalar l-Scalar-Plain">include_empty_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-            <span class="l l-Scalar l-Scalar-Plain">exclude_empty_zero_forms</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-            <span class="l l-Scalar l-Scalar-Plain">include_unverified_translations</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-        <span class="c1"># Here, same configuration for de.yml and it.yml</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nt">phraseapp</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">access_token</span><span class="p">:</span><span class="w"> </span><span class="c1"># ...</span><span class="w"></span>
+<span class="w">    </span><span class="nt">project_id</span><span class="p">:</span><span class="w"> </span><span class="c1"># ...</span><span class="w"></span>
+<span class="w">    </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yml</span><span class="w"></span>
+<span class="w">    </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">sources</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config/locales/en.yml</span><span class="w"></span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">locale_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="w"></span>
+<span class="w">            </span><span class="nt">file_format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yml</span><span class="w"></span>
+<span class="w">            </span><span class="nt">skip_upload_tags</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">            </span><span class="nt">update_translations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">            </span><span class="nt">skip_unverification</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pull</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">targets</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config/locales/fr.yml</span><span class="w"></span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">params</span><span class="p p-Indicator">:</span><span class="w"></span>
+<span class="w">            </span><span class="nt">locale_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fr</span><span class="w"></span>
+<span class="w">            </span><span class="nt">include_empty_translations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">            </span><span class="nt">exclude_empty_zero_forms</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">            </span><span class="nt">include_unverified_translations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># Here, same configuration for de.yml and it.yml</span><span class="w"></span>
+</code></pre></div>
 
 <p><code>include_unverified_translations: false</code> makes sure only human-verified translations are downloaded when we run <code>phrase_cli pull</code> . This is critical as we don't want machine translated translations to make it to production without any human review, as the translation has oftentimes to be context dependent.</p>
 <p><code>skip_unverification: true</code> makes sure than any edits to an English translation does not unverify (i.e. mark as "not verified") the corresponding FR/DE/IT translations. This may sound counter-intuitive as it means that updates to English translations are not reflected in the other languages as long as no one updates the translations. But it actually allow us to keep our current translations in production. Because of the above-mentioned setting (<code>include_unverified_translations: false)</code> , if we were to mark our translations as unverified, they would actually be removed when we next run <code>phrase_cli pull</code>.</p>
@@ -171,7 +169,7 @@
 <p>While we were doing the switch from French to English, we realized at some point that we had a ton of unused keys in <code>en.yml</code> . Keys from deleted features, keys from refactored code, etc. How to know which keys are actually used?</p>
 <p>We first try running <code>grep</code> for every i18n key found in <code>en.yml</code> across the entire codebase. But string interpolation made this impossible.</p>
 <p>What's string interpolation? There you go:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
     <span class="n">account_type</span> <span class="o">=</span> <span class="s1">&#39;doctor&#39;</span>
 <span class="k">else</span>
     <span class="n">account_type</span> <span class="o">=</span> <span class="s1">&#39;patient&#39;</span>
@@ -181,19 +179,17 @@
 <span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="s2">&quot;common.account.</span><span class="si">#{</span><span class="n">account_type</span><span class="si">}</span><span class="s2">.greetings&quot;</span><span class="p">)</span>
 
 <span class="o">=&gt;</span> <span class="no">Hello</span><span class="p">,</span> <span class="n">doctor</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>In this example, it is near impossible to detect through <code>grep</code> that both the keys <code>common.account.doctor.greetings</code> and <code>common.account.patient.greetings</code> are used. What's the solution? This:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">account</span><span class="o">.</span><span class="n">doctor?</span>
     <span class="n">i18n_key</span> <span class="o">=</span> <span class="s1">&#39;common.account.doctor.greetings&#39;</span>
 <span class="k">else</span>
     <span class="n">i18n_key</span> <span class="o">=</span> <span class="s1">&#39;common.account.patient.greetings&#39;</span>
 <span class="k">end</span>
 
 <span class="no">I18n</span><span class="o">.</span><span class="n">t</span><span class="p">(</span><span class="n">i18n_key</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>To this day, we have not found a way (yet) to prevent string interpolation in i18n keys, but we're working on it. We've however communicated internally largely about it.</p>
 <h1>The same locale in your test server as in your web server you shall set</h1>
@@ -202,27 +198,25 @@
 <p>Consequently, trying <code>assert_text I18n.t("some.key")</code> in a test of the French website would be looking for the English translation of <code>some.key</code>, while only the French translation was to be found. Through some fine tuning of our subclasses of <code>ActiveSupport::TestCase</code>, we have managed to sync the locale of both servers.</p>
 <h1>Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key</h1>
 <p>Say you have a <code>en.yml</code> file as follows:</p>
-<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">en</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">greetings</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">hello</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Hello</span>
-        <span class="l l-Scalar l-Scalar-Plain">bye</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Good bye</span>
-        <span class="l l-Scalar l-Scalar-Plain">good_evening</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Good evening</span>
-        <span class="l l-Scalar l-Scalar-Plain">bye</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Bye</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">greetings</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">hello</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span><span class="w"></span>
+<span class="w">        </span><span class="nt">bye</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Good bye</span><span class="w"></span>
+<span class="w">        </span><span class="nt">good_evening</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Good evening</span><span class="w"></span>
+<span class="w">        </span><span class="nt">bye</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bye</span><span class="w"></span>
+</code></pre></div>
 
 <p>What does <code>I18n.t("greetings.bye")</code> returns? Yep, <code>"Bye"</code>. Why? Because the Ruby YAML parser used under the hood silently overwrites any already defined key.</p>
 <p>We added a test that is greatly inspired <a href="https://stackoverflow.com/a/55705853/2105309">by this StackOverlow answer,</a> to make sure we do not have duplicated i18n keys. The risk was, we could be breaking an untested feature by unknowingly overwriting an existing translation.</p>
-<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;makes sure we have no duplicated key&#39;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="n">it</span> <span class="s1">&#39;makes sure we have no duplicated key&#39;</span> <span class="k">do</span>
     <span class="n">yaml_file</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;config/locales/en.yml&#39;</span><span class="p">)</span>
     <span class="n">assert_empty</span><span class="p">(</span><span class="no">PhraseHelper</span><span class="o">.</span><span class="n">duplicate_keys</span><span class="p">(</span><span class="n">yaml_file</span><span class="p">))</span>
 <span class="k">end</span>
-</pre></div>
-
+</code></pre></div>
 
 <h1>Enforcing a simple format for keys</h1>
 <p>Although many characters are permitted for keys (only the dot is not, as it marks levels in the hierarchy), we found it much easier to only deal with keys using only basic characters, such as the regular ASCII letters, upper or lower case, digits, hyphens and underscores. Why is that? First of all, because it's more readable, and second of all because it makes grepping through the codebase with regular expressions a lot easier.</p>
-<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;enforces a simple format for keys&#39;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="n">it</span> <span class="s1">&#39;enforces a simple format for keys&#39;</span> <span class="k">do</span>
     <span class="n">wrongly_formatted_keys</span> <span class="o">=</span>
         <span class="no">PhraseHelper</span>
             <span class="o">.</span><span class="n">phrase_keys</span>
@@ -235,8 +229,7 @@
         <span class="s1">&#39;digits, lowercase letters, hyphens and underscores only&#39;</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="k">end</span>
-</pre></div>
-
+</code></pre></div>
 
 <h1>Preventing the insertion of hidden characters whose behavior might be unexpected</h1>
 <p>Have you ever seen this warning message on GitHub?</p>
@@ -257,51 +250,49 @@
 <p>Why create a new translation when one can reuse an existing one? Especially if the translation is a sibling (i.e at the same node level in the YAML file) of the one you're trying to add. Well again, we've added a test so that we avoid duplicating existing English translations. Because we've found that, since the translations YAML files tend to be very big, it is easy to overlook and miss a translation you're looking for, think it does not exist, and add it again.</p>
 <h1>Ensuring the file is correctly formatted at all times</h1>
 <p>Because throughout our journey of switching to English as a default locale, we've had to edit our <code>en.yml</code> file many times, we've found that enforcing the formatting makes <code>git diff</code>s easier to review. It's like when one starts using <a href="https://prettier.io/">Prettier</a> and stops caring about how to format their JavaScript code. All of a sudden, single quotes, double quotes, escaping characters, where to break a line, etc, are no longer problems.</p>
-<div class="highlight"><pre><span></span><span class="n">it</span> <span class="s1">&#39;makes sure en.yml is correctly formatted&#39;</span> <span class="k">do</span>
+<div class="highlight"><pre><span></span><code><span class="n">it</span> <span class="s1">&#39;makes sure en.yml is correctly formatted&#39;</span> <span class="k">do</span>
     <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;config/locales/en.yml&#39;</span>
     <span class="n">yaml</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
     <span class="n">formatted_yaml</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">to_yaml</span><span class="p">(</span><span class="ss">indentation</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">assert_equal</span><span class="p">(</span><span class="n">formatted_yaml</span><span class="p">,</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="o">&lt;&lt;~</span><span class="no">MESSAGE</span><span class="o">.</span><span class="n">chomp</span><span class="p">)</span>
-    <span class="no">The</span> <span class="c1">#{file} file is not correctly formatted.</span>
-    <span class="no">Please</span> <span class="n">put</span> <span class="n">a</span> <span class="nb">binding</span><span class="o">.</span><span class="n">pry</span> <span class="n">at</span> <span class="n">the</span> <span class="k">end</span> <span class="n">of</span> <span class="n">this</span> <span class="nb">test</span><span class="p">,</span> <span class="n">run</span> <span class="n">it</span><span class="p">,</span> <span class="ow">and</span> <span class="ss">launch</span><span class="p">:</span>
-        <span class="no">File</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;#{file}&#39;</span><span class="p">,</span> <span class="n">formatted_yaml</span><span class="p">)</span>
-<span class="no">MESSAGE</span>
+    <span class="n">assert_equal</span><span class="p">(</span><span class="n">formatted_yaml</span><span class="p">,</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="o">&lt;&lt;~</span><span class="dl">MESSAGE</span><span class="o">.</span><span class="n">chomp</span><span class="p">)</span>
+<span class="sh">    The #{file} file is not correctly formatted.</span>
+<span class="sh">    Please put a binding.pry at the end of this test, run it, and launch:</span>
+<span class="sh">        File.write(&#39;#{file}&#39;, formatted_yaml)</span>
+<span class="dl">MESSAGE</span>
 <span class="k">end</span>
-</pre></div>
-
+</code></pre></div>
 
 <h1>Finding unused keys and removing them</h1>
 <p>That's the trickiest part. And unfortunately, we don't have a universal answer to that problem. But before finding which keys are not used, how do we even find the ones actually used?</p>
 <p>As we've seen before, string interpolation makes it impossible to statically find all used keys. We need to come up with something dynamic.</p>
 <p>Logging that a given i18n key is used at runtime is fairly simple, code-wise. "All we have to do" is monkey patch the Ruby gem or the JavaScript package so that we log or store somewhere which keys are being used. For instance, this is most of our JavaScript monkey patch:</p>
-<div class="highlight"><pre><span></span><span class="kr">import</span> <span class="nx">i18n</span> <span class="nx">from</span> <span class="s1">&#39;i18n-js&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">i18n</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;i18n-js&#39;</span><span class="w"></span>
 
-<span class="kr">const</span> <span class="nx">addTranslationKey</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">actualKey</span> <span class="o">=</span> <span class="nx">key</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">scope</span><span class="p">)</span> <span class="nx">actualKey</span> <span class="o">=</span> <span class="sb">`</span><span class="si">${</span><span class="nx">options</span><span class="p">.</span><span class="nx">scope</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">actualKey</span><span class="si">}</span><span class="sb">`</span>
-    <span class="kr">const</span> <span class="nx">set</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span> <span class="o">||</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;{}&#39;</span><span class="p">)</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span> <span class="o">=</span> <span class="nx">set</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">addTranslationKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">actualKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">key</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">scope</span><span class="p">)</span><span class="w"> </span><span class="nx">actualKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">options</span><span class="p">.</span><span class="nx">scope</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">actualKey</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;{}&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">_usedI18nKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">set</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">])</span> <span class="k">return</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">])</span><span class="w"> </span><span class="k">return</span><span class="w"></span>
 
-    <span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">set</span><span class="p">))</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nx">set</span><span class="p">[</span><span class="nx">actualKey</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"></span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;i18n-keys&#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">set</span><span class="p">))</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">i18n</span><span class="p">.</span><span class="nx">_t</span> <span class="o">=</span> <span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span>
-<span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="p">...</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">translation</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="p">...</span><span class="nx">options</span><span class="p">)</span>
+<span class="nx">i18n</span><span class="p">.</span><span class="nx">_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span><span class="w"></span>
+<span class="nx">i18n</span><span class="p">.</span><span class="nx">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">translation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">_t</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">options</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">translation</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">defaultOptionWasUsed</span> <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">defaults</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">defaults</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">message</span> <span class="o">===</span> <span class="nx">translation</span>
-    <span class="c1">// Do not track if we used a default</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">defaultOptionWasUsed</span><span class="p">)</span> <span class="nx">addTranslationKey</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">options</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">translation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">defaultOptionWasUsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">options</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">defaults</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">options</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">defaults</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">message</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">translation</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Do not track if we used a default</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">defaultOptionWasUsed</span><span class="p">)</span><span class="w"> </span><span class="nx">addTranslationKey</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="k">return</span> <span class="nx">translation</span>
-<span class="p">}</span>
-</pre></div>
-
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">translation</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>Regarding our Ruby monkey patch, we've come up with something similar, except that we store the used keys in Redis.</p>
 <p>Now that we know how to track the used keys, when do we track them? Two options present themselves:</p>
