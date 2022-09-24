@@ -107,33 +107,29 @@ I also used <a href="https://github.com/rpellerin/php-mvc-base">PHP</a> and Java
 <p>In "<em>REST API</em>", "<em>REST</em>" stands for "<em>Representational State Transfer</em>", which is the software architectural style of the web. Basically, this means that any REST API relies on the HTTP protocol (and by extension HTTPS). As a consequence, the first step is to understand all the strengths and weaknesses of HTTP in order to use everything it has to offer. I will only be referring to HTTP version 1.1 in this article, since version 2 is still hardly used overall, and quite badly supported.</p>
 <h1>It's all about resources</h1>
 <p>URLs (<em>Uniform Resource Locator</em>) represent resources. When designing an API, think about it as resource containers. Every end-point should represent either <strong>a resource</strong> or <strong>a list of resources</strong>. Following this, there must be <strong>two-end points per resource</strong>, the resource collection, and an individual resource within the collection:</p>
-<div class="highlight"><pre><span></span>/myresource
+<div class="highlight"><pre><span></span><code>/myresource
 /myresource/{id}
-</pre></div>
-
+</code></pre></div>
 
 <p>If our API is hosted at <a href="https://my-api.com">https://my-api.com</a>, then we've just created the end-points <a href="https://my-api.com/myresource">https://my-api.com/myresource</a> and <a href="https://my-api.com/myresource/id">https://my-api.com/myresource/{id}</a>. But let's try to avoid abstraction and use real examples.</p>
 <p>We are developing a website where registered users can upload pictures. So, we need two end-points for our two entities:</p>
-<div class="highlight"><pre><span></span>/users
+<div class="highlight"><pre><span></span><code>/users
 /pictures
-</pre></div>
-
+</code></pre></div>
 
 <p>Those two end-points will then allow us to get the list of either all the users, or all the pictures. Now, what if we want to know the categories of the pictures? We also need to access individual resources. Let's create other end-points:</p>
-<div class="highlight"><pre><span></span>/users/{id}
+<div class="highlight"><pre><span></span><code>/users/{id}
 /pictures/{id}
 /pictures/categories
 /pictures/categories/{id}
-</pre></div>
-
+</code></pre></div>
 
 <p>The important thing here, is to understand that <code>{id}</code> is a resource's unique identifier. For users, we retrieved these unique identifiers thanks to the <code>/users</code> end-point (which had given us the list of users). So, <code>/users/{id}</code> will give us all the details about ONE resource, the targeted user. The same rule applies for any other collection of resources.</p>
 <p>Also, <code>/pictures/categories</code> represent a list of resources, in our case a list of categories. But this list belongs to a "bigger" resource, a container, <code>/pictures</code>. It's a <strong>hierarchy</strong>. This way, we are going to get all the possible categories for any picture.</p>
 <p>Now, let's add a feature: users can send messages to each other. How do we get all the messages sent by a specific user? And a specific message sent by a specific user? Like this:</p>
-<div class="highlight"><pre><span></span>/users/{userId}/messages
+<div class="highlight"><pre><span></span><code>/users/{userId}/messages
 /users/{userId}/messages/{messageId}
-</pre></div>
-
+</code></pre></div>
 
 <h2>Naming convention</h2>
 <p>To remain consistent, try to use the plural form of every word used for your end-points, it will make things easier. <a href="https://en.wikipedia.org/wiki/CamelCase"><em>camelCase</em></a> is also a good practice, when necessary (but we always try to use simple single words).</p>
@@ -141,18 +137,16 @@ I also used <a href="https://github.com/rpellerin/php-mvc-base">PHP</a> and Java
 <p>One of the biggest strengths of HTTP is <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">its verbs</a>. The most popular are GET and POST. The latter is mostly used for asynchronous calls (AJAX) or forms in web pages, whereas the former is used every time a page is accessed or reloaded from a browser.</p>
 <p>So, what are the equivalent verbs for our old friend called <em>CRUD</em> (Create, Read, Update and Delete)? <strong>PUT</strong>, <strong>GET</strong>, <strong>POST</strong> and <strong>DELETE</strong>. Consequently, any well designed REST API must make use of at least these four verbs. And yes, HTTP has more <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">than four verbs</a>.</p>
 <p>For example, this is how to create, get, update and delete a specific user:</p>
-<div class="highlight"><pre><span></span>POST   /users      <span class="c1"># Create</span>
+<div class="highlight"><pre><span></span><code>POST   /users      <span class="c1"># Create</span>
 PUT    /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1"># Create</span>
 GET    /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1"># Get</span>
 PUT    /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1"># Update</span>
 DELETE /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1"># Delete</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Here, the important thing is that <code>PUT</code> is used to create a <strong>specific resource</strong> (a user), whose identifier has been chosen by the client. Then, the second <code>PUT</code> updates the newly created resource. <strong><code>POST</code> is only dedicated to creating resources</strong>, unlike <code>PUT</code> that will mostly be used to update, but can also be used to create. When you want to create a resource without specifying its identifier, use <code>POST</code>, like in the first line, where a user is signing up (then the API will create an identifier for this user). Logging in would be achieved like this:</p>
-<div class="highlight"><pre><span></span>POST /users/login
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>POST /users/login
+</code></pre></div>
 
 <p><a href="http://www.restapitutorial.com/">More information about verbs</a>.</p>
 <h1>Understanding HTTP</h1>
@@ -163,31 +157,27 @@ DELETE /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1
 <li>The body, separated from the headers by a blank line</li>
 </ul>
 <p>For requests, the initial line is made of a verb, a URL and the HTTP version used. For instance:</p>
-<div class="highlight"><pre><span></span>GET /users HTTP/1.1
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>GET /users HTTP/1.1
+</code></pre></div>
 
 <p>On the other hand, for responses, it's a bit different: the HTTP version, a response status code and an English reason phrase describing the status code, like in the following example:</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 404 Not Found
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>HTTP/1.1 404 Not Found
+</code></pre></div>
 
 <p>A typical simple request would look like this:</p>
-<div class="highlight"><pre><span></span>POST /users/123 HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /users/123 HTTP/1.1
 Host: my-api.com
 Content-Type: application/x-www-form-urlencoded
 
 name=Jon&amp;lastName=Snow
-</pre></div>
-
+</code></pre></div>
 
 <p>And a (non-related) response (I chose a random header):</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
 Expires: Thu, 24 Sep 2015 19:36:25 GMT
 
 Hello world
-</pre></div>
-
+</code></pre></div>
 
 <p>That said, let’s get back to APIs.</p>
 <p>In the previous sections we learned the correct use of the HTTP verbs, so now let's talk about the body and the status code. Headers will come later.</p>
@@ -268,9 +258,8 @@ Hello world
 <p><a href="http://i.stack.imgur.com/whhD1.png">Need help in choosing the correct status code?</a></p>
 <h2>The body</h2>
 <p>Sending parameters, from HTML forms, is pretty easy, it's a key-value thing, where parameters are separated by "&amp;", like this:</p>
-<div class="highlight"><pre><span></span>firstName=Jon&amp;lastName=Snow
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>firstName=Jon&amp;lastName=Snow
+</code></pre></div>
 
 <p>Here, there's no recommended convention. I used camelCase (as shown above) without any particular reason. Choose one and be consistent.</p>
 <p>However, out of the context of HTML forms, how to format the body? Well, one could say we could use the same key-value format, but actually, it's not a good idea. Let's see what options we have.</p>
@@ -281,14 +270,13 @@ Hello world
 <h2>A particular header</h2>
 <p>Earlier on, we saw that the second part of every HTTP request is the headers section. Let me introduce one of them, probably the most important one: <code>Content-Type</code>.</p>
 <p>Its only purpose is to specify what kind of data we are sending. Consequently, in our case, this header should be like:</p>
-<div class="highlight"><pre><span></span>Content-Type: application/json
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>Content-Type: application/json
+</code></pre></div>
 
 <p>Basically, its value is just a <a href="https://en.wikipedia.org/wiki/Media_type">MIME type</a>.</p>
 <h1>Real world example</h1>
 <p>A <strong>POST</strong> request sent by the client:</p>
-<div class="highlight"><pre><span></span>POST /users HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /users HTTP/1.1
 Host: my-api.com
 Content-Type: application/json
 
@@ -302,27 +290,24 @@ Content-Type: application/json
         ],
     &quot;is_a_badass&quot;: true
 }
-</pre></div>
-
+</code></pre></div>
 
 <p>Basically, its value is just a MIME type. To such a request, the response the server would send back:</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 201 Created
+<div class="highlight"><pre><span></span><code>HTTP/1.1 201 Created
 Content-Type: application/json
 
 {
     &quot;id&quot;: 123
 }
-</pre></div>
-
+</code></pre></div>
 
 <p>We can see that the server created the resource (thanks to the status code). It also gives us its ID, JSON-formatted. Then, we can do:</p>
-<div class="highlight"><pre><span></span>GET /users/123 HTTP/1.1
+<div class="highlight"><pre><span></span><code>GET /users/123 HTTP/1.1
 Host: my-api.com
-</pre></div>
-
+</code></pre></div>
 
 <p>We would get:</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
@@ -338,8 +323,7 @@ Content-Type: application/json
     &quot;created_at&quot;: &quot;2015-09-02T17:05:22.996Z&quot;,
     &quot;updated_at&quot;: &quot;2015-09-02T17:05:22.996Z&quot;
 }
-</pre></div>
-
+</code></pre></div>
 
 <hr>
 <p>At this point, our API is able to do the four basic operations we needed (<a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>, remember?), on any kind of entity, easily, thanks to a pretty format, JSON. End-points are semantic and hierarchically ordered. Everything is perfect.</p>
@@ -359,7 +343,7 @@ Content-Type: application/json
 <li>Finally, do <code>GET /users/123</code></li>
 </ol>
 <p>Another approach would be providing directly every resource's URL in the list (among other links if necessary), like this:</p>
-<div class="highlight"><pre><span></span>[
+<div class="highlight"><pre><span></span><code>[
     {
         &quot;id&quot;: 123,
         name: &quot;Jon Snow&quot;,
@@ -382,11 +366,10 @@ Content-Type: application/json
         ...
     }
 ]
-</pre></div>
-
+</code></pre></div>
 
 <p>Instead of providing the full URL, you might as well only provide the path name:</p>
-<div class="highlight"><pre><span></span>&quot;links&quot;:
+<div class="highlight"><pre><span></span><code>&quot;links&quot;:
     [
         {
             &quot;rel&quot;: &quot;self&quot;,
@@ -394,8 +377,7 @@ Content-Type: application/json
         },
         ...
     ]
-</pre></div>
-
+</code></pre></div>
 
 <p>I'm not a huge fan of HATEOAS. I believe that an API should be consistent in its manner of accessing resources. I like to assume that, as soon as I know a resource's unique identifier, I can access it by constructing its URL, as I explained above. So, I don't need the links, I can construct them by myself.</p>
 <p><strong>But I'm wrong</strong>. This is definitely the best way to do. It adds a layer of abstraction. If one day you change the way to access a resource (not with a unique identifier anymore, but with a token, or an email address, or anything), if you always provided the link for each resource, the change would be transparent for your users.</p>
@@ -410,7 +392,7 @@ Content-Type: application/json
 <p>User management can be be achieved with cookies. This way, you can restrict some end-points to logged in users only.</p>
 <p>In parallel, you might want to restrict the entire API to specific clients. One could say "<em>Use basic authentication</em>", but that doesn't really fit our need since it's not the original purpose of basic auth.</p>
 <p>What you can do instead is quite easy: create as many HTTP headers as you want and send (secret) keys on every request. For example, let's create a key to make sure we're accessing the right app, and another one to define the access level granted:</p>
-<div class="highlight"><pre><span></span>POST /users HTTP/1.1
+<div class="highlight"><pre><span></span><code>POST /users HTTP/1.1
 Host: my-api.com
 Content-Type: application/json
 Security-APP-ID: 123456
@@ -419,29 +401,26 @@ Security-Access-Level: 3
 {
     &quot;name&quot;: &quot;Jon Snow&quot;
 }
-</pre></div>
-
+</code></pre></div>
 
 <p>Obviously, as I said in the beginning of this article, all of this doesn't make sense at all if you don't use HTTPS (and force it!). You really don't want to expose such keys to anyone on the network.</p>
 <p><a href="http://restcookbook.com/Basics/loggingin/">More information about authentication</a> and about <a href="http://blog.slaks.net/2015-10-13/web-authentication-arms-race-a-tale-of-two-security-experts/">security in general</a>.</p>
 <h2>Location</h2>
 <p>Another useful header is <code>Location</code>. A good practice is to use it after creating a resource with <strong>POST</strong>, to give back the location of the resource newly created. This way, no body is needed and your API can respond with a status code <em>201 Created</em>, without a body. For example, after creating the user <em>Jon Snow</em>, we would get:</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 201 Created
+<div class="highlight"><pre><span></span><code>HTTP/1.1 201 Created
 Location: https://my-api.com/users/123
-</pre></div>
-
+</code></pre></div>
 
 <p>The protocol and domain are optional, we could just send <code>/users/123</code>.</p>
 <h2>Other useful piece of information</h2>
 <p>Basically, you can create as many custom headers as you want. A good practice with end-points returning a list of resources, is to give the total number of records in the database when relevant, via a header. You may wonder why, since we can programmatically count the number of results. But, as I will explain it in the next section, you are never going to return the full list of results in a single response.</p>
 <p>So, this is an example of a header specifying the number of rows. The request:</p>
-<div class="highlight"><pre><span></span>GET /users HTTP/1.1
+<div class="highlight"><pre><span></span><code>GET /users HTTP/1.1
 Host: my-api.com
-</pre></div>
-
+</code></pre></div>
 
 <p>The response:</p>
-<div class="highlight"><pre><span></span>HTTP/1.1 200 OK
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
 Content-Type: application/json
 Total-Rows: 7897
 
@@ -452,25 +431,22 @@ Total-Rows: 7897
     },
     ...
 ]
-</pre></div>
-
+</code></pre></div>
 
 <h1>Pagination</h1>
 <p><strong>When returning a list of resources</strong>, above a certain number or results, you should split your response in pages. It's a good practice for reducing waiting time and the weight of responses. Moreover, you might not need the whole list at once. Depending on the amount of details provided for each resource, a general rule would be returning between 100 and 1000 results per request as a maximum.</p>
 <p>Requesting a page is as simple as providing a query parameter:</p>
-<div class="highlight"><pre><span></span>GET /users?page=3
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>GET /users?page=3
+</code></pre></div>
 
 <p>On the server side, you would just skip the <em>&lt;number-of-results-per-page&gt;*&lt;number-of-page&gt;</em> first users. Pages start at 0.</p>
 <p>For instance, if you return 100 users per request, with page 0 you would skip no one and simply returns the first 100 users (from 0 to 99). On page 1, you skip the first 100 users from your database and return the users from 100 to 199, and so on.</p>
 <p>But there's a problem...</p>
 <p>Let's say you have 10 users in your database. Every <code>GET /users</code> returns 3 users at most, sorted by age.</p>
 <p>In SQL, this would be something like:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">AGE</span> <span class="k">LIMIT</span> <span class="mi">3</span> <span class="k">OFFSET</span> <span class="n">x</span><span class="p">;</span>
-<span class="cm">/* where x equals 3*&lt;number of page&gt; */</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AGE</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="cm">/* where x equals 3*&lt;number of page&gt; */</span><span class="w"></span>
+</code></pre></div>
 
 <p>You'll then have 3 pages.</p>
 <table>
@@ -515,9 +491,8 @@ Total-Rows: 7897
 </ol>
 <p>To achieve this, you can either write a more complex SQL query of simply do the pagination programmatically.</p>
 <p>The only problem that still remains is that, by doing this, we have no way to retrieve Mary, except if we request page 0 again, by doing this, for example:</p>
-<div class="highlight"><pre><span></span>GET /users?pageBefore=3
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>GET /users?pageBefore=3
+</code></pre></div>
 
 <p>Two last things:</p>
 <ul>
@@ -527,9 +502,8 @@ Total-Rows: 7897
 <p><a href="http://metabates.com/2012/02/22/adding-pagination-to-an-api/">More information about pagination</a>.</p>
 <h1>Filtering and sorting</h1>
 <p>Every end-point that returns a list of resource should allow filtering on fields, as well as sorting. The following request should be possible:</p>
-<div class="highlight"><pre><span></span>GET /users?country=US&amp;age=21&amp;sortBy=name
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>GET /users?country=US&amp;age=21&amp;sortBy=name
+</code></pre></div>
 
 <p>We request all the users from the US, aged of 21, sorted by name. The inner mechanism is up to the developers.</p>
 <hr>
@@ -547,46 +521,44 @@ Total-Rows: 7897
 <p><a href="https://www.npmjs.com/package/cliparse">cliparse</a></p>
 <h1>Quick example with Express.js</h1>
 <p><a href="http://expressjs.com/">Express</a> ease the process of developing APIs with Javascript so much! You should definitely give it a try!</p>
-<div class="highlight"><pre><span></span>npm init
+<div class="highlight"><pre><span></span><code>npm init
 npm install -g express <span class="c1"># Globally, to be able to use the CLI of express</span>
 npm install -S express <span class="c1"># Locally, added as a dependency</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Here is how to define a little API with Express (I only wrote the most important lines). Every controller defines many functions to handle the end-points (storing data into the database, etc.).</p>
 <p>In this example, the access to all the end-points is restricted, with a <a href="http://expressjs.com/guide/using-middleware.html">middleware</a> called <code>auth</code>. The clients need to provide specific headers in order to perfom actions with the API.</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Controllers</span>
-<span class="kd">var</span> <span class="nx">usersController</span>       <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/controllers/users.js&#39;</span><span class="p">),</span>
-    <span class="nx">categoriesController</span>  <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/controllers/category.js&#39;</span><span class="p">);</span>
+<span class="c1">// Controllers</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">usersController</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/controllers/users.js&#39;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">categoriesController</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/controllers/category.js&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Configuration</span>
-<span class="kd">var</span> <span class="nx">app</span>  <span class="o">=</span> <span class="nx">express</span><span class="p">(),</span>
-    <span class="nx">auth</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/functions/security&#39;</span><span class="p">);</span>
+<span class="c1">// Configuration</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">app</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cloud/functions/security&#39;</span><span class="p">);</span><span class="w"></span>
 
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">methodOverride</span><span class="p">());</span> <span class="c1">// Allow PUT and DELETE</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">methodOverride</span><span class="p">());</span><span class="w"> </span><span class="c1">// Allow PUT and DELETE</span><span class="w"></span>
 
-<span class="cm">/*** API ***/</span>
-<span class="c1">// Users</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span>             <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">all</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span>         <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">get</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span>            <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">signup</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/users/login&#39;</span><span class="p">,</span>      <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">login</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span>         <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">edit</span><span class="p">);</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">_delete</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span>     <span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span> <span class="nx">usersController</span><span class="p">.</span><span class="nx">_delete</span><span class="p">);</span>
+<span class="cm">/*** API ***/</span><span class="w"></span>
+<span class="c1">// Users</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span><span class="w">             </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">all</span><span class="p">);</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span><span class="w">         </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">get</span><span class="p">);</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/users&#39;</span><span class="p">,</span><span class="w">            </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">signup</span><span class="p">);</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/users/login&#39;</span><span class="p">,</span><span class="w">      </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">login</span><span class="p">);</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span><span class="w">         </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">edit</span><span class="p">);</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">_delete</span><span class="p">(</span><span class="s1">&#39;/users/:id&#39;</span><span class="p">,</span><span class="w">     </span><span class="nx">auth</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span><span class="w"> </span><span class="nx">usersController</span><span class="p">.</span><span class="nx">_delete</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// In case of failure</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Some logging</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">code</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">});</span>
-<span class="p">});</span>
+<span class="c1">// In case of failure</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Some logging</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">code</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">});</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="c1">// Let it beee</span>
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">();</span>
-</pre></div>
-
+<span class="c1">// Let it beee</span><span class="w"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
 
 <p>That's it! With only a few lines, you can easily get a working API.</p>
 <p>This is now the end of this article, hope it will help you! Any feedback appreciated ;)</p>

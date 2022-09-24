@@ -107,7 +107,7 @@
 <ol>
 <li>
 <p>Now, do:</p>
-<div class="highlight"><pre><span></span>git init
+<div class="highlight"><pre><span></span><code>git init
 git add remote origin ... <span class="c1"># If need be</span>
 npm init
 yarn add --dev babel-cli babel-preset-es2015
@@ -117,17 +117,15 @@ yarn add --dev eslint-config-standard <span class="se">\</span>
                eslint-plugin-promise <span class="se">\</span>
                eslint-plugin-import <span class="se">\</span>
                eslint-plugin-node
-</pre></div>
-
+</code></pre></div>
 
 <p>We use <code>babel</code> to transpile our code, to better support old versions of NodeJS.</p>
 <p>Regarding the last line, the config <a href="https://github.com/feross/eslint-config-standard">eslint-config-standard</a> sets the configuration of these four plugins: <code>standard</code>, <code>promise</code>, <code>import</code> and <code>node</code>. That is why we need to install them alongside the shareable config. Of course it is a config for <code>eslint</code>, that is why we installed it on the previous line.</p>
 </li>
 <li>
 <p>Do:</p>
-<div class="highlight"><pre><span></span>yarn add prettier-eslint-cli
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>yarn add prettier-eslint-cli
+</code></pre></div>
 
 <p>Normally, <a href="https://github.com/prettier/prettier-eslint"><code>prettier-eslint</code></a> only operates on strings, not on files. <code>prettier-eslint-cli</code> will provide you with a command to apply <code>prettier-eslint</code> on files.</p>
 <p><strong>What is <code>prettier-eslint</code> meant for?</strong> Well, under the hood it calls <a href="https://github.com/prettier"><code>prettier</code></a> (probably the best JavaScript formatter to date) and then <code>eslint --fix</code> to format your code. Twice. But there's <a href="https://github.com/prettier/prettier-eslint#the-problem">a reason for that</a>.</p>
@@ -135,11 +133,10 @@ yarn add --dev eslint-config-standard <span class="se">\</span>
 </li>
 <li>
 <p>To use the standard style with ESlint, create <code>.eslint</code> in the root directory of your project and write:</p>
-<div class="highlight"><pre><span></span>{
+<div class="highlight"><pre><span></span><code>{
     &quot;extends&quot;: &quot;standard&quot;
 }
-</pre></div>
-
+</code></pre></div>
 
 </li>
 <li>
@@ -147,17 +144,16 @@ yarn add --dev eslint-config-standard <span class="se">\</span>
 </li>
 <li>
 <p>Configure <code>package.json</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">...,</span>
-<span class="s2">&quot;scripts&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;test&quot;</span><span class="p">:</span> <span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;build&quot;</span><span class="p">:</span> <span class="s2">&quot;babel src --presets babel-preset-es2015 --out-dir dist&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;prettier-eslint \&quot;src/*.js\&quot;&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;lint&quot;</span><span class="p">:</span> <span class="s2">&quot;eslint src&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;check&quot;</span><span class="p">:</span> <span class="s2">&quot;npm run lint &amp;&amp; npm run test&quot;</span>
-<span class="p">}</span><span class="err">,</span>
-<span class="err">...</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="err">...</span><span class="p">,</span><span class="w"></span>
+<span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;babel src --presets babel-preset-es2015 --out-dir dist&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prettier-eslint \&quot;src/*.js\&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;lint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eslint src&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;check&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npm run lint &amp;&amp; npm run test&quot;</span><span class="w"></span>
+<span class="p">},</span><span class="w"></span>
+<span class="err">...</span><span class="w"></span>
+</code></pre></div>
 
 </li>
 <li>

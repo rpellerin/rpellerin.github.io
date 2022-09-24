@@ -102,23 +102,20 @@
 <p>So my advice is to go with <code>gs</code>.</p>
 <p>Other commands exist such as <code>pdfseparate</code> and <code>pdfunite</code>. They are very good but the output files are quite heavy, compared to those obtained using <code>gs</code>.</p>
 <h1>Convert a PDF to multiple PNGs (one image per page)</h1>
-<div class="highlight"><pre><span></span>convert input.pdf -density <span class="m">300</span> -background <span class="s1">&#39;white&#39;</span> -alpha remove output.png
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>convert input.pdf -density <span class="m">300</span> -background <span class="s1">&#39;white&#39;</span> -alpha remove output.png
+</code></pre></div>
 
 <h1>Add a password to a PDF file</h1>
-<div class="highlight"><pre><span></span>pdftk input.pdf output output.pdf userpw &lt;password here&gt;
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pdftk input.pdf output output.pdf userpw &lt;password here&gt;
+</code></pre></div>
 
 <h1>Reduce size/quality of a PDF file</h1>
-<div class="highlight"><pre><span></span>ps2pdf -dPDFSETTINGS<span class="o">=</span>/ebook input.pdf output.pdf
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>ps2pdf -dPDFSETTINGS<span class="o">=</span>/ebook input.pdf output.pdf
+</code></pre></div>
 
 <p><code>/ebook</code> can also be replaced with <code>/screen</code> for further reduction.</p>
 <h1>Extracting pages</h1>
-<div class="highlight"><pre><span></span><span class="c1"># Extracts all pages from 1 to 5</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Extracts all pages from 1 to 5</span>
 gs -sDEVICE<span class="o">=</span>pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage<span class="o">=</span><span class="m">1</span> -dLastPage<span class="o">=</span><span class="m">5</span> -sOutputFile<span class="o">=</span>output.pdf input.pdf
 
 <span class="c1"># Extracts all pages from 1 to 2 and 4 to the end</span>
@@ -134,42 +131,37 @@ pdftk input.pdf burst
 <span class="nv">pages</span><span class="o">=</span><span class="k">$(</span>pdfinfo <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="p">|</span> grep <span class="s2">&quot;Pages&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span> 
 <span class="nb">echo</span> <span class="s2">&quot;Detect </span><span class="nv">$pages</span><span class="s2"> in </span><span class="nv">$file</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="nv">filename</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.*</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="k">for</span> i in <span class="k">$(</span>seq -w <span class="m">1</span> <span class="s2">&quot;</span><span class="nv">$pages</span><span class="s2">&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>seq -w <span class="m">1</span> <span class="s2">&quot;</span><span class="nv">$pages</span><span class="s2">&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
     pdftk <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> cat <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> output <span class="s2">&quot;</span><span class="nv">$filename</span><span class="s2">-</span><span class="nv">$i</span><span class="s2">.pdf&quot;</span><span class="p">;</span>
 <span class="k">done</span><span class="p">;</span>
-</pre></div>
-
+</code></pre></div>
 
 <h1>Editing one page</h1>
 <p>Use Gimp (import with 300-dpi setting).</p>
 <h1>Merging several PDF files</h1>
-<div class="highlight"><pre><span></span>gs -sDEVICE<span class="o">=</span>pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile<span class="o">=</span>output.pdf input1.pdf input2.pdf input3.pdf
+<div class="highlight"><pre><span></span><code>gs -sDEVICE<span class="o">=</span>pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile<span class="o">=</span>output.pdf input1.pdf input2.pdf input3.pdf
 pdftk input1.pdf input2.pdf input3.pdf cat output output.pdf
 pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
-</pre></div>
-
+</code></pre></div>
 
 <h1>Convert one or several JPG files into a single pdf</h1>
 <p>First, in <code>/etc/ImageMagick-6/policy.xml</code>, comment out the last 6 lines:</p>
-<div class="highlight"><pre><span></span><span class="c">&lt;!-- &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS&quot; /&gt;</span>
-<span class="c">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS2&quot; /&gt;</span>
-<span class="c">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS3&quot; /&gt;</span>
-<span class="c">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;EPS&quot; /&gt;</span>
-<span class="c">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PDF&quot; /&gt;</span>
-<span class="c">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;XPS&quot; /&gt; --&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS&quot; /&gt;</span>
+<span class="cm">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS2&quot; /&gt;</span>
+<span class="cm">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS3&quot; /&gt;</span>
+<span class="cm">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;EPS&quot; /&gt;</span>
+<span class="cm">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PDF&quot; /&gt;</span>
+<span class="cm">&lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;XPS&quot; /&gt; --&gt;</span>
+</code></pre></div>
 
 <p>Then:</p>
-<div class="highlight"><pre><span></span>convert image1.jpg image2.jpg output.pdf
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>convert image1.jpg image2.jpg output.pdf
+</code></pre></div>
 
 <h2>Set the PDF size to A4 (210 x 297 mm)</h2>
 <p>Make sure your image has a resolution of 1050x1485 pixels. Then:</p>
-<div class="highlight"><pre><span></span>convert input.jpg -density <span class="m">50</span> -units pixelspercentimeter output.pdf
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>convert input.jpg -density <span class="m">50</span> -units pixelspercentimeter output.pdf
+</code></pre></div>
 
 <p><a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309">Source</a></p>
 </article>

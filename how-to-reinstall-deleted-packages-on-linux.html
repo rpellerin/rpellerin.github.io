@@ -95,10 +95,9 @@
 </header>
 <article>
     <p>Recently, I inadvertently deleted a whole lot of packages on my Linux distribution by deleting one specific package and then running <code>sudo apt-get autoremove</code>. Here is how I reinstalled them automatically, after noticing I could not boot the X server up anymore:</p>
-<div class="highlight"><pre><span></span>awk <span class="s1">&#39;/Purge|Remove/ { gsub( /\([^()]*\)/, &quot;&quot; ); gsub(/ ,/, &quot; &quot;);sub(/Install:/,&quot;&quot;); print}&#39;</span> /var/log/apt/history.log &gt; repair.txt
+<div class="highlight"><pre><span></span><code>awk <span class="s1">&#39;/Purge|Remove/ { gsub( /\([^()]*\)/, &quot;&quot; ); gsub(/ ,/, &quot; &quot;);sub(/Install:/,&quot;&quot;); print}&#39;</span> /var/log/apt/history.log &gt; repair.txt
 sudo apt install <span class="k">$(</span>cat repair.txt<span class="k">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Hope this helps.</p>
 </article>
