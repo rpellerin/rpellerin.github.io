@@ -6985,8 +6985,16 @@ sudo update-manager -c
 &lt;li&gt;&lt;a href="https://github.com/CBPP/cbpp"&gt;#!++, A CrunchBang revival project (very lightweight distro)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;Security&lt;/h1&gt;
+&lt;p&gt;Generally, security is achieved on Linux with:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://dhavalkapil.com/blogs/Shellcode-Injection/"&gt;Shellcode Injection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Setting the right file permissions: &lt;code&gt;chmod&lt;/code&gt; + &lt;code&gt;chown&lt;/code&gt;) or with &lt;a href="https://help.ubuntu.com/community/FilePermissions#ACL_.28Access_Control_List.29"&gt;ACLs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AppArmor&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SELinux&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://dhavalkapil.com/blogs/Shellcode-Injection/"&gt;Shellcode Injection&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.mailgun.com/security-guide-basic-infrastructure-security/"&gt;Security Guide: How to Protect Your Infrastructure Against the Basic Attacker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.onkarjoshi.com/blog/191/device-dev-random-vs-urandom/"&gt;/dev/random vs /dev/urandom&lt;/a&gt; &amp;amp; &lt;a href="http://www.2uo.de/myths-about-urandom/"&gt;Myths about /dev/urandom&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://confs.imirhil.fr/20170513_root66_securite-admin-sys/#1"&gt;Hygiène numérique pour l’administrateur système&lt;/a&gt;&lt;/li&gt;
