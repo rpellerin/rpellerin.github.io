@@ -7,8 +7,11 @@ Slug: yes-privacy-matters
 Authors: Romain Pellerin
 Summary: Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS
 
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/BbkbdYoffX4?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="700" height="394" sandbox="allow-same-origin allow-scripts allow-popups" title="Si, vous avez quelque chose à cacher. - Numendil" src="https://video.passageenseine.fr/videos/embed/e71c6466-9085-48ca-8693-62ed014c1a96" frameborder="0" allowfullscreen></iframe>
+*"Si ! vous avez quelque chose à cacher"*
+
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/mqUInAOfBWI?rel=0" frameborder="0" allowfullscreen></iframe>
+*"La surveillance sur Internet - Fabrice Epelboin - Web2day 2014"*
 
 If you do care about your privacy, you'd better read what follows carefully ;). Basically, some rules of thumb to avoid common pitfalls and a few tricks to take care of your privacy as much as possible.
 
@@ -31,11 +34,11 @@ Secondly, set HDD passwords from the BIOS panel (again, one for admins, one for 
 
 Then, to encrypt your whole disk, you have 3 options:
 
-1. Use the *Ubuntu built-in installer to encrypt the whole disk, erasing **EVERYTHING** on the disk.
-2. Use the *Ubuntu built-in installer with Gparted to encrypt the whole disk, more flexible (select *something else*).
+1. Use the \*Ubuntu built-in installer to encrypt the whole disk, erasing **EVERYTHING** on the disk.
+2. Use the \*Ubuntu built-in installer with Gparted to encrypt the whole disk, more flexible (select _something else_).
 3. DIY. It allows you to [keep a dual boot installation](http://askubuntu.com/questions/293028/how-can-i-install-ubuntu-encrypted-with-luks-with-dual-boot).
 
-I would recommend going with the 1., but if you're interested, [have a deeper look at thoses 3 options](https://thesimplecomputer.info/full-disk-encryption-with-ubuntu). Here is [another tutorial](http://www.tecmint.com/install-debian-8-with-luks-encrypted-home-var-lvm-partitions/) to do it with Debian (not a *Ubuntu disto).
+I would recommend going with the 1., but if you're interested, [have a deeper look at thoses 3 options](https://thesimplecomputer.info/full-disk-encryption-with-ubuntu). Here is [another tutorial](http://www.tecmint.com/install-debian-8-with-luks-encrypted-home-var-lvm-partitions/) to do it with Debian (not a \*Ubuntu disto).
 
 In any case, here is how to write a new Xubuntu image on a USB stick:
 
@@ -48,11 +51,11 @@ Please notice that with LUKS encryption, [your computer is still vulnerable as l
 
 ## `/home` encryption (using the filesystem called eCryptfs)
 
-Do it while installing your fresh new *Ubuntu. Otherwise, you can still [do it later](http://askubuntu.com/questions/366749/enable-disk-encryption-after-installation) using [`ecryptfs-migrate-home`](http://www.howtogeek.com/116032/how-to-encrypt-your-home-folder-after-installing-ubuntu/).
+Do it while installing your fresh new \*Ubuntu. Otherwise, you can still [do it later](http://askubuntu.com/questions/366749/enable-disk-encryption-after-installation) using [`ecryptfs-migrate-home`](http://www.howtogeek.com/116032/how-to-encrypt-your-home-folder-after-installing-ubuntu/).
 
 # Encrypt external HDD with `dm-crypt` and LUKS
 
-1. Find the correct device (eg. `/dev/sdb1` as a second internal SATA-HDD) and umount it:
+1.  Find the correct device (eg. `/dev/sdb1` as a second internal SATA-HDD) and umount it:
 
         :::bash
         sudo aptitude update ; sudo aptitude install cryptsetup
@@ -61,24 +64,24 @@ Do it while installing your fresh new *Ubuntu. Otherwise, you can still [do it l
         sudo umount /dev/sdb1
         sudo dd if=/dev/urandom of=/dev/sdb bs=4K # Optional, add obfuscation
 
-2. Create one big partition using the whole space (system must be Linux):
+2.  Create one big partition using the whole space (system must be Linux):
 
         :::bash
         sudo fdisk /dev/sdb
 
-3. Encrypt the partition using LUKS:
+3.  Encrypt the partition using LUKS:
 
         :::bash
         sudo cryptsetup --verify-passphrase -c aes-xts-plain64 -s 512 \
              -h sha256 luksFormat /dev/sdb1 # 512-bit AES encryption
              # with 256-bit SHA hashing algorithm
 
-4. Create the filesystem:
+4.  Create the filesystem:
 
         :::bash
         sudo cryptsetup luksOpen /dev/sdb1 myhdd
 
-5. Format it and test mounting:
+5.  Format it and test mounting:
 
         :::bash
         sudo mkfs.ext4 /dev/mapper/myhdd -L <LABEL> -m 1
@@ -89,14 +92,13 @@ Do it while installing your fresh new *Ubuntu. Otherwise, you can still [do it l
         df -H
         umount /mnt/hdd
 
-
-6. Close container:
+6.  Close container:
 
         :::bash
         sudo cryptsetup luksClose /dev/mapper/myhdd
         sudo eject /dev/sdb
 
-7. Optional step, after disconnecting and reconnecting the device:
+7.  Optional step, after disconnecting and reconnecting the device:
 
         :::bash
         sudo chown user:user /media/disk
@@ -106,7 +108,7 @@ You can check the partition using
     :::bash
     fsck -vy /dev/mapper/myhdd
 
-Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like *`cryptsetup`* plus *`luksHeaderBackup`* or *`luksHeaderRestore`* or *`isLuks`* or *`luksDump`* or *`luksAddKey`* or *`luksRemoveKey`*.
+Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like _`cryptsetup`_ plus _`luksHeaderBackup`_ or _`luksHeaderRestore`_ or _`isLuks`_ or _`luksDump`_ or _`luksAddKey`_ or _`luksRemoveKey`_.
 
 ## Automount encrypted HDDs with LUKS on bootup
 
@@ -115,14 +117,14 @@ In `/etc/crypttab`, add:
     :::text
     mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
 
-You can find the UUID using `blkid /dev/sdb`. You can also directly enter the path `/dev/sdb`. *none* means there's no keyfile, you'll have to type the password. *tries* is the number or tries you have.
+You can find the UUID using `blkid /dev/sdb`. You can also directly enter the path `/dev/sdb`. _none_ means there's no keyfile, you'll have to type the password. _tries_ is the number or tries you have.
 
 Then, in `/etc/fstab`, add:
 
     :::text
     /dev/mapper/mycryptedhdd     /mnt/mounteddirectory    ext4      defaults    0   0
 
-*mycryptedhdd* must be the same name used as before. */mnt/mounteddirectory* is where the encrypted disk will be available. *ext4* is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the `fsck` utility.
+_mycryptedhdd_ must be the same name used as before. _/mnt/mounteddirectory_ is where the encrypted disk will be available. _ext4_ is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the `fsck` utility.
 
 You're good!
 
@@ -183,7 +185,6 @@ Filename encryption might require another last command to be run, if your conten
 
 - Gimp
 - Inkscape (vector)
-
 
 # Further reading
 
