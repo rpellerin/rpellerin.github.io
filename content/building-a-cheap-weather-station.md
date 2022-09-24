@@ -13,7 +13,7 @@ In this article, I explain how I managed to build a very cheap weather station t
 Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:
 
 <figure class="center">
-<img src="{filename}/images/weather-station.png" alt="My weather station webpage" />
+<img src="{static}/images/weather-station.png" alt="My weather station webpage" />
 <figcaption>My weather station webpage</figcaption>
 </figure>
 
@@ -24,22 +24,22 @@ For this tutorial you'll need:
 - A Google Form that you link to a spreadsheet. It's so much easier than using the Google Spreadsheet API. Your Raspberry PI will POST a form with the values and they'll automatically end up in the sheet.
 
 <figure class="center">
-<img src="{filename}/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" />
+<img src="{static}/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" />
 <figcaption>The BME280 module plugged to the Raspberry Pi.</figcaption>
 </figure>
 
 # Step by step tutorial
 
-*This tutorial was greatly inspired by [that tutorial](https://github.com/rm-hull/bme280).*
+_This tutorial was greatly inspired by [that tutorial](https://github.com/rm-hull/bme280)._
 
-1. Raspberry Pi turned off, plug the module like shown in the photo above.
-1. Enable I2C. Run `sudo raspi-config`, choose `Interfacing options`. Then reboot. Run `lsmod | grep i2c` to confirm `i2c` has been enabled.
-1. Run `sudo apt install python3-venv python3-pip i2c-tools && i2cdetect -y 1` to make sure the BME280 module is detected.
-1. `mkdir /home/pi/temperature && cd /home/pi/temperature` (or any other directory of your liking).
-1. `python3 -m venv .env && source .env/bin/activate`
-1. `pip install smbus2 requests RPi.bme280 redis`
-1. Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with `/formResponse`. Copy the URL and the hidden input names, you'll need them in the next bullet point.
-1. `vim weatherstation.py`
+1.  Raspberry Pi turned off, plug the module like shown in the photo above.
+1.  Enable I2C. Run `sudo raspi-config`, choose `Interfacing options`. Then reboot. Run `lsmod | grep i2c` to confirm `i2c` has been enabled.
+1.  Run `sudo apt install python3-venv python3-pip i2c-tools && i2cdetect -y 1` to make sure the BME280 module is detected.
+1.  `mkdir /home/pi/temperature && cd /home/pi/temperature` (or any other directory of your liking).
+1.  `python3 -m venv .env && source .env/bin/activate`
+1.  `pip install smbus2 requests RPi.bme280 redis`
+1.  Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with `/formResponse`. Copy the URL and the hidden input names, you'll need them in the next bullet point.
+1.  `vim weatherstation.py`
 
         :::python
         import smbus2
@@ -63,7 +63,7 @@ For this tutorial you'll need:
                 response = requests.post(
                     url,
                     params={
-                        "entry.12": data['timestamp'], 
+                        "entry.12": data['timestamp'],
                         "entry.34": data['temperature'],
                         "entry.56": data['humidity'],
                         "entry.78": data['pressure'],
@@ -93,7 +93,6 @@ For this tutorial you'll need:
             r = redis.Redis()
             r.rpush('weather_reports', str(data))
 
-
-1. Finally, let's make it post values every 5 minutes through `crontab -e`: `*/5 * * * * /home/pi/temperature/.env/bin/python /home/pi/temperature/weatherstation.py`
+1.  Finally, let's make it post values every 5 minutes through `crontab -e`: `*/5 * * * * /home/pi/temperature/.env/bin/python /home/pi/temperature/weatherstation.py`
 
 That's it!!!

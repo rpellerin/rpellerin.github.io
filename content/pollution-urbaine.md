@@ -18,7 +18,7 @@ Commençons tout d'abord par savoir de quoi l'on parle : les polluants. Quels so
 [Airparif](https://www.airparif.asso.fr/), qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans [un PDF plutôt bien fait ici](https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf). Voici un aperçu de ce PDF :
 
 <figure class="center">
-    <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{filename}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
+    <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{static}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
     <figcaption>Principaux polluants répertorieś par Airparis.</figcaption>
 </figure>
 
@@ -26,12 +26,12 @@ Citons en quelques un, majoritairement trouvés en ville :
 
 1. **Les particules fines PM10, PM2.5 et PM1** dont le diamètre est respectivement de <= 10, <= 2.5 et <=1 μm. Pour donner un ordre d'idée, [un cheveux humain fait entre 50 et 70 μm de diamètre](http://www.irceline.be/fr/qualite-de-lair/mesures/particules-fines/information).
 
-    <figure class="center">
-      <img src="{filename}/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" />
-      <figcaption>Comparaison avec un cheveu.</figcaption>
-    </figure>
+   <figure class="center">
+     <img src="{static}/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" />
+     <figcaption>Comparaison avec un cheveu.</figcaption>
+   </figure>
 
-    Les PM sont émises principalement par les combustions industrielles et domestiques (chauffage par exemple) et le transport routier ([essentiellement le diesel mais de plus en plus l'essence](https://theconversation.com/pollution-de-lair-diesel-essence-ou-electrique-tous-les-vehicules-emettent-des-particules-fines-95336), surtout ceux à [injection directe](http://www.lefigaro.fr/vox/politique/2018/12/07/31001-20181207ARTFIG00299--un-vehicule-essence-emet-autant-de-particules-fines-que-dix-vilains-diesel.php)). Elles sont associées à une hausse de la mortalité et sont de surcroît cancérigènes. *[Elles sont considérées comme le «polluant atmosphérique le plus nocif pour la santé humaine en Europe», par l'Agence européenne de l'environnement (AEE) qui a récemment indiqué que 90% des urbains y étaient exposés au-delà des seuils recommandés par l'Organisation mondiale de la Santé (OMS).](http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair)*
+   Les PM sont émises principalement par les combustions industrielles et domestiques (chauffage par exemple) et le transport routier ([essentiellement le diesel mais de plus en plus l'essence](https://theconversation.com/pollution-de-lair-diesel-essence-ou-electrique-tous-les-vehicules-emettent-des-particules-fines-95336), surtout ceux à [injection directe](http://www.lefigaro.fr/vox/politique/2018/12/07/31001-20181207ARTFIG00299--un-vehicule-essence-emet-autant-de-particules-fines-que-dix-vilains-diesel.php)). Elles sont associées à une hausse de la mortalité et sont de surcroît cancérigènes. _[Elles sont considérées comme le «polluant atmosphérique le plus nocif pour la santé humaine en Europe», par l'Agence européenne de l'environnement (AEE) qui a récemment indiqué que 90% des urbains y étaient exposés au-delà des seuils recommandés par l'Organisation mondiale de la Santé (OMS).](http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair)_
 
 2. **Les oxydes d'azote : le monoxyde d'azote NO (polluant primaire) et dioxyde d'azote NO2 (polluant secondaire)**, eux aussi émis par les combustions, dont le transport routier. Le NO est relativement peu dangereux. Le N02 est irritant et aggrave les crises d'asthmes.
 
@@ -146,7 +146,7 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 [Une enquête menée à Toulouse entre 2008 et 2009](https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf) affirme que la voiture est de loin le pire moyen de transport puisque l'habitacle crée un espace fermé où l'air est très peu renouvelé, air qui est d'ailleurs très pollué puisque venant directement de l'extérieur, où la pollution est la plus forte, sur la chaussée. En deuxième vient le bus pour les mêmes raisons. Ensuite, viennent en troisième et quatrième positions le vélo et le bus, respectivement, en considérant 5 polluants. **En revanche, l'étude souligne que les mesures du nombre de particules fines (PM10) montrent que l'air du métro est bien plus pollué que celui respiré par un cycliste : au moins 2 à 3 fois plus de particules fines dans le métro.** [Un autre document PDF](http://www.oramip.org/pdf/expo/Plaquette-Oramip-transport.pdf) donne le détail des mesures effectuées.
 
 <figure class="center">
-    <img src="{filename}/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /></a>
+    <img src="{static}/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /></a>
     <figcaption>Résultats de l'étude</figcaption>
 </figure>
 
@@ -156,7 +156,7 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 
 [Cet article du Monde](https://www.lemonde.fr/planete/article/2014/03/13/auto-metro-ou-velo-ou-respire-t-on-le-moins-d-air-pollue_4382697_3244.html) et [celui-ci de Libération](https://www.liberation.fr/chroniques/2015/07/03/faut-il-eviter-le-velo-pendant-les-pics-de-pollution_1342312) résument les 2 études ci-dessus. Libération insiste sur les effets bénéfiques d'une activité sportive, bien supérieurs aux effets négatifs de la pollution, tout comme le fait [l'Express dans cet autre article](https://www.lexpress.fr/actualite/societe/environnement/faire-du-velo-en-periode-de-pollution-il-faut-moderer-son-allure_1858072.html). Sur le même sujet "bénéfices vs risques", on peut citer ces trois autres pages :
 
-- [http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/](http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/): "*À Paris, il vous faudra 8 heures de vélo dans la journée pour y* [rouler assez longtemps à vélo avant que les effets bénéfiques soient « compensés » par la pollution] *parvenir dans une journée normale, mais seulement 45 minutes les jours de pic de pollution à 75 μg/m3 de PM 2,5.*"
+- [http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/](http://data.blog.lemonde.fr/2016/06/08/pollution-air-villes-deplacement-velo/): "_À Paris, il vous faudra 8 heures de vélo dans la journée pour y_ [rouler assez longtemps à vélo avant que les effets bénéfiques soient « compensés » par la pollution] _parvenir dans une journée normale, mais seulement 45 minutes les jours de pic de pollution à 75 μg/m3 de PM 2,5._"
 - [http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/](http://transports.blog.lemonde.fr/2012/09/17/ne-pas-faire-de-velo-cest-dangereux-pour-la-sante/)
 - [https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf](https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf)
 
@@ -168,9 +168,9 @@ En quelques mots, l'air du métro est différemment pollué de l'air extérieur 
 
 [Cet article de Terraeco](https://www.terraeco.net/Faut-il-arreter-de-respirer-quand,51829.html), qui se base à nouveau sur l'étude de Toulouse, nous dit :
 
-*Le meilleur, c’est le vélo. C’est en selle que vous êtes le moins exposé aux particules fines. Et l’exposition au dioxyde d’azote – qui est facteur de troubles respiratoires – est anecdotique. « L’exposition à la pollution peut être ponctuellement importante mais sans phénomène d’accumulation », note l’Oramip. En clair, avoir le nez dans un tuyau d’échappement au feu rouge n’est pas bon mais reste peu dangereux puisque l’exposition reste brève, ouf.*
+_Le meilleur, c’est le vélo. C’est en selle que vous êtes le moins exposé aux particules fines. Et l’exposition au dioxyde d’azote – qui est facteur de troubles respiratoires – est anecdotique. « L’exposition à la pollution peut être ponctuellement importante mais sans phénomène d’accumulation », note l’Oramip. En clair, avoir le nez dans un tuyau d’échappement au feu rouge n’est pas bon mais reste peu dangereux puisque l’exposition reste brève, ouf._
 
-*En métro, vous êtes fortement exposé aux particules fines, on l’a vu plus haut. Mais vous êtes plutôt épargné pour le dioxyde d’azote (c’est à peine moins bien qu’à vélo). De même pour les – très toxiques – benzène et monoxyde de carbone.*
+_En métro, vous êtes fortement exposé aux particules fines, on l’a vu plus haut. Mais vous êtes plutôt épargné pour le dioxyde d’azote (c’est à peine moins bien qu’à vélo). De même pour les – très toxiques – benzène et monoxyde de carbone._
 
 [La RATP met à disposition les derniers relevés de pollution dans certaines stations de métro sur ce site](https://data.ratp.fr/explore/?sort=modified&refine.keyword=Qualit%C3%A9+de+l%27air) et [ce site](http://www.iseo.fr/ratp/RATP.php).
 
@@ -189,13 +189,13 @@ Enfin, tous les masques ne filtrent pas la même chose. Certaines filtrent les p
 
 ## Masques jetables
 
-Concernant les masques non-réutilisables, [ce site](http://masquepollution.com/masque-contre-les-particules-fines/) semble affirmer qu'ils offrent une meilleure protection contre les particules fines, en citant notamment le [masque 3M 9332](https://www.amazon.fr/3M-9332-respiratoire-filtrant-particules/dp/B00EJIMZZ2?tag=masquepolluti-21) comme étant le meilleur. Le site dit aussi "*les certifications de type FFP (Europe), et KN (Chine) ou N (USA) permettent d’éliminer les plus mauvais masques.*". En effet, en Europe la certification FFP3 (la meilleure) est à favoriser.
+Concernant les masques non-réutilisables, [ce site](http://masquepollution.com/masque-contre-les-particules-fines/) semble affirmer qu'ils offrent une meilleure protection contre les particules fines, en citant notamment le [masque 3M 9332](https://www.amazon.fr/3M-9332-respiratoire-filtrant-particules/dp/B00EJIMZZ2?tag=masquepolluti-21) comme étant le meilleur. Le site dit aussi "_les certifications de type FFP (Europe), et KN (Chine) ou N (USA) permettent d’éliminer les plus mauvais masques._". En effet, en Europe la certification FFP3 (la meilleure) est à favoriser.
 
 Pour ce qui est des masques jetables contre les gaz, [cette page](http://masquepollution.com/masque-anti-pollution/) nous dit :
 
-- *ozone (O3) et au dioxyde de soufre (SO2): il vous faut un masque ayant une couche de charbon actif. Les odeurs et les composés organiques volatils (COV) seront aussi captées par le filtre.*
-- *oxydes d’azote (NOx): ces gaz peuvent être capté par des filtres spécifiques, mais généralement ces filtres n’existent pas en combinaison avec les filtres à particule pour l’ozone et le dioxyde de soufre.*
-- *enfin, le monoxyde de carbone (CO) ne peut pas être filtré par des protections respiratoires conventionnelles.*
+- _ozone (O3) et au dioxyde de soufre (SO2): il vous faut un masque ayant une couche de charbon actif. Les odeurs et les composés organiques volatils (COV) seront aussi captées par le filtre._
+- _oxydes d’azote (NOx): ces gaz peuvent être capté par des filtres spécifiques, mais généralement ces filtres n’existent pas en combinaison avec les filtres à particule pour l’ozone et le dioxyde de soufre._
+- _enfin, le monoxyde de carbone (CO) ne peut pas être filtré par des protections respiratoires conventionnelles._
 
 ## Masques réutilisables
 

@@ -13,7 +13,7 @@ Several options exist when it comes to casting media content from Linux to a Chr
 You can use Google Chrome (audio is not supported).
 
 <figure class="center">
-<img alt="Casting from Chrome" src="{filename}/images/chromecast-chrome.png" />
+<img alt="Casting from Chrome" src="{static}/images/chromecast-chrome.png" />
 </figure>
 
 Alternatively, you can use Firefox with [fx_cast](https://hensm.github.io/fx_cast/).
@@ -29,7 +29,7 @@ Two options:
 - Either VLC 3.0 (but it does not support subtitles yet)
 - Or `castnow`
 
-Should you decide to go with VLC 3.0, please refer to [this article about how to install it]({filename}/vlc-3.0.md). Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video > Renderer > Scan. If unsuccessful, close it and run vlc from the command line:
+With VLC, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video > Renderer > Scan. If unsuccessful, close it and run vlc from the command line:
 
 ```bash
  vlc --sout="#chromecast{ip=192.168.1.X}" myfile.mp4

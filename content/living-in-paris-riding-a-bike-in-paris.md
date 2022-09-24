@@ -28,4 +28,4 @@ A very important thing to do is to get one's bike engraved as soon as possible. 
 
 That's it for now.
 
-![My bike]({filename}/images/bike-paris2.jpg)
+![My bike]({static}/images/bike-paris2.jpg)

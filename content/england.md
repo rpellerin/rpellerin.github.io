@@ -35,7 +35,7 @@ London is to England what Paris is to France, plus the shittier weather minus al
 
 # Manchester
 
-![Manchester]({filename}/images/manchester.jpg)
+![Manchester]({static}/images/manchester.jpg)
 
 A beautiful small city, with a lot of industrial legacy. A couple of interesting stuff to do:
 
@@ -59,6 +59,6 @@ The one time I went to Liverpool, I had the chance to attend a soccer match, Liv
 
 Not too much to do there but yet quite a nice town, very typical. If you're just passing through, make sure to stop at the Clifton Suspension Bridge, an impresive highly suspended bridge! If you're afraid of heights, pass on that on.
 
-![Bristol's most famous bridge]({filename}/images/bristol.jpg)
+![Bristol's most famous bridge]({static}/images/bristol.jpg)
 
 That's it for now!

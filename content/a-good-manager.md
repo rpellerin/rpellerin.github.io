@@ -18,6 +18,6 @@ Summary: Who I think a good manager should be
 - [The Eng Team Handbook (eng-handbook)](https://github.com/raylene/eng-handbook)
 - [The Engineer’s Guide to Career Growth — Advice from My Time at Stripe and Facebook](https://firstround.com/review/the-engineers-guide-to-career-growth-advice-from-my-time-at-stripe-and-facebook/)
 
-![E-mail like a boos]({filename}/images/emails.jpeg)
+![E-mail like a boos]({static}/images/emails.jpeg)
 
-*[Source](https://twitter.com/danidonovan/status/1131213545050386432)*
+_[Source](https://twitter.com/danidonovan/status/1131213545050386432)_

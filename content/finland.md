@@ -22,7 +22,7 @@ Almost every house with more than one floor has its own [wall ladder](http://www
 Also, most houses have two doors and double windows, to protect them from the cold.
 
 <figure class="center">
-<img src="{filename}/images/finland/window.jpg" alt="A window" />
+<img src="{static}/images/finland/window.jpg" alt="A window" />
 <figcaption>A window in Finland</figcaption>
 </figure>
 
@@ -33,21 +33,21 @@ To get to the city center from the airport, ride the I or P train for about half
 I was told that the sea shore and all lakes are completely frozen from December until April every year. Frozen to the point that people do activities on lakes, such as skiing, riding snowmobiles or four wheelers, ice skating, walking their dog, sledding, biking, and even kiteboarding (true story!). I also witnessed a smallplow that was making a road on the ice for bikes to ride.
 
 <figure class="center">
-<img src="{filename}/images/finland/gmaps.gif" alt="Frozen lake" />
+<img src="{static}/images/finland/gmaps.gif" alt="Frozen lake" />
 <figcaption>Not swimming, but walking on a frozen lake</figcaption>
 </figure>
 
 There is a showerhead connected to sinks in every bathroom, apparently used to... better wash one's ass, after wiping it.
 
 <figure class="center">
-<img src="{filename}/images/finland/bathroom.jpg" alt="Bahtroom showerhead" />
+<img src="{static}/images/finland/bathroom.jpg" alt="Bahtroom showerhead" />
 <figcaption>A bathroom in a restaurant</figcaption>
 </figure>
 
 Last but not least, we found this very peculiar wall cabinet in our AirBnB room. Extremely useful! Apparently, [it's a thing in Finland](https://99percentinvisible.org/article/finnish-dishes-simple-nordic-design-beats-dishwashers-drying-racks/). [Smart people!](https://www.apartmenttherapy.com/finnish-dish-drying-closets-251178)
 
 <figure class="center">
-<img src="{filename}/images/finland/dish.jpg" alt="A drying cabinet" />
+<img src="{static}/images/finland/dish.jpg" alt="A drying cabinet" />
 <figcaption>A drying cabinet</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ For sushi lovers, check out "Fuku", close to the train station: amazing buffet!
 - Särkänniemi
 
 <figure class="center">
-<img src="{filename}/images/finland/tampere.jpg" alt="View from the tower in Tampere" />
+<img src="{static}/images/finland/tampere.jpg" alt="View from the tower in Tampere" />
 <figcaption>View from the tower in Tampere</figcaption>
 </figure>
 

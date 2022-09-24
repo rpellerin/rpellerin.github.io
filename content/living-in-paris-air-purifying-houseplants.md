@@ -18,7 +18,7 @@ Consequently, I started googling about evergreen houseplants that clean the air.
 
 # Aglaonema
 
-<figure class="center"><img src="{filename}/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /><figcaption>Aglaonema Silver Bay, the big one on the left.</figcaption></figure>
+<figure class="center"><img src="{static}/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /><figcaption>Aglaonema Silver Bay, the big one on the left.</figcaption></figure>
 
 ## Temperature
 
@@ -60,7 +60,7 @@ Repotting is from March to May, every 2 to 3 years. Every other year, replace th
 
 # Spathiphyllum
 
-<figure class="center"><img src="{filename}/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /><figcaption>From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium</figcaption></figure>
+<figure class="center"><img src="{static}/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /><figcaption>From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium</figcaption></figure>
 
 ## Temperature
 
@@ -86,7 +86,7 @@ To foster blossoming, deprive the plant of water for a few days.
 
 # Chlorophytum
 
-<figure class="center"><img src="{filename}/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /><figcaption>Chlorophytum</figcaption></figure>
+<figure class="center"><img src="{static}/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /><figcaption>Chlorophytum</figcaption></figure>
 
 ## Temperature
 

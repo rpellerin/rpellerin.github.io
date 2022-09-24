@@ -20,7 +20,7 @@ In this article, I'll walk you through the most iconic places I've been to so th
 - Shopping streets: Grafton street and Henry streets
 - Also don't forget to check out the churches and cathedrals
 
-![Temple Bar district]({filename}/images/temple-bar.jpg)
+![Temple Bar district]({static}/images/temple-bar.jpg)
 
 # Galway
 

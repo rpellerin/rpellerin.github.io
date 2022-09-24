@@ -9,11 +9,11 @@ Summary: Yay, another injury after too much runnning. Let's see how I heal this 
 Alright alright alright. April the 3rd, 2022, I ran my first official half-marathon, in Berlin. Oh boy was it tough! But I did it. 2 hours and 22 seconds, official time. Not bad, although I must admit I was aiming under 2 hours. But let's blame Strava, as it was giving me the finish line 500 meters shorter. Ha ha!
 
 <figure class="center">
-<img src="{filename}/images/half-marathon-2022.jpg" alt="Photo of me running" />
+<img src="{static}/images/half-marathon-2022.jpg" alt="Photo of me running" />
 <figcaption>Me, about to cross the finish line</figcaption>
 </figure>
 
-Of course, a race wouldn't be a race without a propre injury, would it? Well, let's be honest, it's not that bad of an injury, but still. I got... "Plantar fasciitis" (in French: *aponévrosite plantaire* or *fasciapathie plantaire* or *fasciite plantaire*)! To be fair, it started a week prior to the race. I overtrained (I guess). Indeed, I ran 17 kilometers exactly one week before. The next day the pain came. Not too strong, but strong enough for me to call it a discomfort. A ran the race nonethless.
+Of course, a race wouldn't be a race without a propre injury, would it? Well, let's be honest, it's not that bad of an injury, but still. I got... "Plantar fasciitis" (in French: _aponévrosite plantaire_ or _fasciapathie plantaire_ or _fasciite plantaire_)! To be fair, it started a week prior to the race. I overtrained (I guess). Indeed, I ran 17 kilometers exactly one week before. The next day the pain came. Not too strong, but strong enough for me to call it a discomfort. A ran the race nonethless.
 
 A [random Google search](https://www.mayoclinic.org/diseases-conditions/plantar-fasciitis/symptoms-causes/syc-20354846) tells me that it's
 

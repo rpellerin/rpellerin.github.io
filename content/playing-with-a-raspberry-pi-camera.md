@@ -8,13 +8,13 @@ Summary: What's possible with a Raspberry Pi camera
 
 Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.
 
-*Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: `raspistill` and `raspivid`. For a complete user manual, follow [this link](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2).*
+_Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: `raspistill` and `raspivid`. For a complete user manual, follow [this link](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2)._
 
-*Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).*
+_Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects)._
 
 # A timelapse of the sky at night
 
-For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. 
+For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.
 
 However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.
 
@@ -39,7 +39,7 @@ Here the parameters `-awb auto`, `-mm average` and `-sa 0` seem to have no impac
 This is fairly easy and cool to do! Head out to [https://studio.youtube.com/channel/UC/livestreaming](https://studio.youtube.com/channel/UC/livestreaming) and retrieve a "Stream key".
 
 <div style="text-align: center">
-<img src="{filename}/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" />
+<img src="{static}/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" />
 </div>
 
 Then:
@@ -64,7 +64,7 @@ This would create a live stream with no audio. To add an audio track that repeat
 With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.
 
 <div style="text-align: center">
-<a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"><img src="{filename}/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /></a>
+<a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"><img src="{static}/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /></a>
 </div>
 
 # Daytime timelapse
@@ -88,4 +88,3 @@ And the file `./take-pic.sh` (don't forget to `chmod +x ./take-pic.sh`):
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9GTVajBlVuM?rel=0" frameborder="0" allowfullscreen></iframe>
 
 That's it for today!
-

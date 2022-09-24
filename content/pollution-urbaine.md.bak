@@ -18,7 +18,7 @@ Commençons tout d'abord par savoir de quoi l'on parle : les polluants. Quels so
 [Airparif](https://www.airparif.asso.fr/), qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans [un PDF plutôt bien fait ici](https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf). Voici un aperçu de ce PDF :
 
 <figure class="center">
-    <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{filename}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
+    <a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf" target="_blank"><img src="{static}/images/pollution-urbaine/tableau-polluants-origine-impacts.png" alt="Tableau des principaux polluants" /></a>
     <figcaption>Principaux polluants répertorieś par Airparis.</figcaption>
 </figure>
 
@@ -27,7 +27,7 @@ Citons en quelques un, majoritairement trouvés en ville :
 1. **Les particules fines PM10, PM2.5 et PM1** dont le diamètre est respectivement de <= 10, <= 2.5 et <=1 μm. Pour donner un ordre d'idée, [un cheveux humain fait entre 50 et 70 μm de diamètre](http://www.irceline.be/fr/qualite-de-lair/mesures/particules-fines/information).
 
     <figure class="center">
-      <img src="{filename}/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" />
+      <img src="{static}/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" />
       <figcaption>Comparaison avec un cheveu.</figcaption>
     </figure>
 
@@ -146,7 +146,7 @@ Sur le plan mondial, [l'OMS recommande sensiblement les mêmes seuils à ne pas 
 [Une enquête menée à Toulouse entre 2008 et 2009](https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf) affirme que la voiture est de loin le pire moyen de transport puisque l'habitacle crée un espace fermé où l'air est très peu renouvelé, air qui est d'ailleurs très pollué puisque venant directement de l'extérieur, où la pollution est la plus forte, sur la chaussée. En deuxième vient le bus pour les mêmes raisons. Ensuite, viennent en troisième et quatrième positions le vélo et le bus, respectivement, en considérant 5 polluants. **En revanche, l'étude souligne que les mesures du nombre de particules fines (PM10) montrent que l'air du métro est bien plus pollué que celui respiré par un cycliste : au moins 2 à 3 fois plus de particules fines dans le métro.** [Un autre document PDF](http://www.oramip.org/pdf/expo/Plaquette-Oramip-transport.pdf) donne le détail des mesures effectuées.
 
 <figure class="center">
-    <img src="{filename}/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /></a>
+    <img src="{static}/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /></a>
     <figcaption>Résultats de l'étude</figcaption>
 </figure>
 

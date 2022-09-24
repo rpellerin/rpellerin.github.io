@@ -4,14 +4,14 @@ Category: Code
 Tags: localization, internationalization, i18n, l10n
 Slug: keys-to-efficient-i18n
 Authors: Romain Pellerin
-Summary: 2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to… 
+Summary: 2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…
 Image: keys-to-efficient-i18n/header.png
 
-*Originally published on [Medium](https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d).*
+_Originally published on [Medium](https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d)._
 
 2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to English as a default language/locale.
 
-*As Doctolib is not present in any English speaking country, we don't have region-specific locales such as en-GB or en-US, nor do we have multiple French, German or Italian locales. We therefore in the rest of this article use the terms* ***locale*** *and* ***language*** *interchangeably. Localization (formatting of dates, currency, the change of language) and translation in Ruby on Rails are the same process. Only in the front end does localization require extra setting of some packages like [Moment.js](https://momentjs.com/) or [Day.js](https://day.js.org/).*
+_As Doctolib is not present in any English speaking country, we don't have region-specific locales such as en-GB or en-US, nor do we have multiple French, German or Italian locales. We therefore in the rest of this article use the terms_ **_locale_** _and_ **_language_** _interchangeably. Localization (formatting of dates, currency, the change of language) and translation in Ruby on Rails are the same process. Only in the front end does localization require extra setting of some packages like [Moment.js](https://momentjs.com/) or [Day.js](https://day.js.org/)._
 
 It was not an easy move. But we did it for multiple reasons:
 
@@ -42,8 +42,8 @@ We refer to full-path YAML keys as "i18n keys". For instance, `en.menu_options.l
 
 We use [Phrase](https://phrase.com/) to manage our translations. In Phrase, translations are identified by "i18n key + locale", and alongside their translation string also have two different attributes:
 
--   *translated*: `true` or `false`. Indicates whether a given key has been translated in a specific locale. If `false`, it means the translation is an empty string.
--   *verified*: `true` or `false`. Indicates whether the existing translation for this couple key+locale was marked as verified or not. It other words, it tells you whether a human approved this translation in Phrase or not.
+- _translated_: `true` or `false`. Indicates whether a given key has been translated in a specific locale. If `false`, it means the translation is an empty string.
+- _verified_: `true` or `false`. Indicates whether the existing translation for this couple key+locale was marked as verified or not. It other words, it tells you whether a human approved this translation in Phrase or not.
 
 Phrase can be used through their editor on the website, through [their CLI](https://phrase.com/cli/), or through [their API](https://developers.phrase.com/api/).
 
@@ -90,7 +90,7 @@ Finally, `include_empty_translations` is required by Rails to work properly, as 
 We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.
 
 <figure class="center">
-<img src="{filename}/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
+<img src="{static}/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
 <figcaption>The Phrase web editor tells you how many unverified translations you have</figcaption>
 </figure>
 
@@ -183,7 +183,7 @@ Although many characters are permitted for keys (only the dot is not, as it mark
 Have you ever seen this warning message on GitHub?
 
 <figure class="center">
-<img src="{filename}/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
+<img src="{static}/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
 <figcaption>GitHub warning you about bidirectional Unicode text</figcaption>
 </figure>
 
@@ -194,7 +194,7 @@ To prevent this from happening again and again, we've added a test. This way, wh
 Here, a screenshot of the test. It's a screenshot as one would not be able to see the hidden Unicode characters otherwise.
 
 <figure class="center">
-<img src="{filename}/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" />
+<img src="{static}/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" />
 <figcaption>A test making sure our translation files do not contain special hidden Unicode characters</figcaption>
 </figure>
 
@@ -240,7 +240,7 @@ Logging that a given i18n key is used at runtime is fairly simple, code-wise. "A
         set[actualKey] = 1
         window.localStorage.setItem('i18n-keys', JSON.stringify(set))
     }
-    
+
     i18n._t = i18n.t
     i18n.t = function t(key, ...options) {
         const translation = this._t(key, ...options)
@@ -250,7 +250,7 @@ Logging that a given i18n key is used at runtime is fairly simple, code-wise. "A
         // Do not track if we used a default
         if (!defaultOptionWasUsed) addTranslationKey(key, options[0])
         }
-        
+
         return translation
     }
 
@@ -281,6 +281,6 @@ That's it. This is how Doctolib switched from French as a default language to En
 
 ---
 
-*If you want more technical news, follow our journey through our [docto-tech-life newsletter](https://doctolib.engineering/engineering-news-ruby-rails-react/).*
+_If you want more technical news, follow our journey through our [docto-tech-life newsletter](https://doctolib.engineering/engineering-news-ruby-rails-react/)._
 
-*And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France, Germany and Italy, feel free to have a look at the [open positions](https://about.doctolib.com/jobs?department=Engineering).*
+_And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France, Germany and Italy, feel free to have a look at the [open positions](https://about.doctolib.com/jobs?department=Engineering)._

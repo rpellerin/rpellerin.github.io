@@ -1,4 +1,4 @@
-Title: Comment repeindre un vélo ? 
+Title: Comment repeindre un vélo ?
 Date: 2019-12-29 17:00
 Category: Bikes
 Tags: bike
@@ -6,9 +6,9 @@ Slug: comment-repeindre-un-velo
 Authors: Romain Pellerin
 Summary: Conseils pour repeindre son vélo efficacement
 
-[J'ai récemment repeint mon vélo moi-même en blanc.]({filename}/from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike.md) Et ce n'était pas une mince affaire !! C'était la première fois et ce fût riche en leçons ! Petit guide *home-made* sur comment repeindre son vélo...
+[J'ai récemment repeint mon vélo moi-même en blanc.]({filename}/from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike.md) Et ce n'était pas une mince affaire !! C'était la première fois et ce fût riche en leçons ! Petit guide _home-made_ sur comment repeindre son vélo...
 
-<figure class="center"><img alt="An animated image of the transformation of my bike" src="{filename}/images/bike.gif" /></figure>
+<figure class="center"><img alt="An animated image of the transformation of my bike" src="{static}/images/bike.gif" /></figure>
 
 # Matériel
 
@@ -40,9 +40,9 @@ Assurez-vous d'être dans un endroit sec non humide où l'air circule et bien é
 
 Comme je le disais, partir d'un grain 80 et diminuer la taille de grain progressivement. Enlever un maximum de peinture si vous comptez peindre une couleur claire sur une couleur foncée.
 
-<figure class="center"><img alt="Cadre poncé" src="{filename}/images/bike-paint/bike-painting-1.jpg" /></figure>
+<figure class="center"><img alt="Cadre poncé" src="{static}/images/bike-paint/bike-painting-1.jpg" /></figure>
 
-<figure class="center"><img alt="Cadre poncé" src="{filename}/images/bike-paint/bike-painting-2.jpg" /></figure>
+<figure class="center"><img alt="Cadre poncé" src="{static}/images/bike-paint/bike-painting-2.jpg" /></figure>
 
 ## 2. Essuyer
 
@@ -60,9 +60,9 @@ Deux couches donc, appliquée avec au moins 6 heures d'intervalle, bien que les 
 
 Ici rien de sorcier. Deux couches à nouveau, avec 12 heures d'intervalle. À vaporiser de près (5 à 12cm), en ayant au préalable secoué la bombe et testé sur du carton.
 
-<figure class="center"><img alt="Vélo repeint" src="{filename}/images/bike-paint/bike-painting-3.jpg" /></figure>
+<figure class="center"><img alt="Vélo repeint" src="{static}/images/bike-paint/bike-painting-3.jpg" /></figure>
 
-<figure class="center"><img alt="Vélo repeint" src="{filename}/images/bike-paint/bike-painting-4.jpg" /></figure>
+<figure class="center"><img alt="Vélo repeint" src="{static}/images/bike-paint/bike-painting-4.jpg" /></figure>
 
 ## 5. Appliquer le vernis
 

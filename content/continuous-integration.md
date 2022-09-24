@@ -11,7 +11,7 @@ After having experienced software development in many languages, from desktop pr
 
 What is **continuous integration**? According to [Wikipedia](https://en.wikipedia.org/wiki/Continuous_integration), it's:
 
-> *[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.*  
+> _[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day._
 
 But not only. It's much more than this. Let's dive into continuous integration.
 
@@ -23,7 +23,7 @@ Continuous integration is an entire concept that tries to ease software developm
 
 Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like [Quentin Adam]({filename}/i-want-to-be-a-more-efficient-developer.md) is used to saying,
 
-> *[Hosting has to become a commodity.](https://twitter.com/waxzce/status/639078610230476800)*
+> _[Hosting has to become a commodity.](https://twitter.com/waxzce/status/639078610230476800)_
 
 The same applies for documentation generation, testing and deploying. Repetitive tasks are most of the time painful and should be performed by computers.
 
@@ -37,7 +37,7 @@ Writting documentation is for humans. Generating it is for machines. Again, it's
 
 ## Deploying
 
-With continuous integration, deploying should be as simple as a [```git push```](https://twitter.com/Tim_LHUILLIER/status/396652013716770816). When time has come for deployment, no one has to use ```ssh``` or ```rcp```, not even ```ftp```. **It's unsafe insofar as it's too much of a risk to let a human get inside a production machine.** A developer has nothing to do in a production machine, as long as all the tests have been passed before pushing to production. All one can do is breaking something. A production machine is meant to be administrated by a sysadmin, no one else. Once it's set up, the only action required by developers is pushing code when it's ready to go live.
+With continuous integration, deploying should be as simple as a [`git push`](https://twitter.com/Tim_LHUILLIER/status/396652013716770816). When time has come for deployment, no one has to use `ssh` or `rcp`, not even `ftp`. **It's unsafe insofar as it's too much of a risk to let a human get inside a production machine.** A developer has nothing to do in a production machine, as long as all the tests have been passed before pushing to production. All one can do is breaking something. A production machine is meant to be administrated by a sysadmin, no one else. Once it's set up, the only action required by developers is pushing code when it's ready to go live.
 
 It's the same story for releases. Packaging and releasing a new version **must** be a simple task anyone can do, not only the CTO, regardless of the OS, configuration, and so on.
 
@@ -51,7 +51,7 @@ In parallel, you can improve maintainability and evolutivity of the software pro
 
 Remember in the old days, when you used to package your code into a zip file and name it according to the version? How boring it was to keep all of those files. Was it easy to track differences between two given versions? How could you determine the changes? How could you apply hotfixes on an old (but still in use) version as well as on the latest one? How could you know which developer had written which feature? Here come the version control systems, or more simply, Git.
 
-Another example. For every new version (and sometimes between two) you had to set up your environment correctly, generate the documentation from source code, bump the version number in both code and documentation, run unit/integration/system tests and finally, if everything goes well, compile it for **as many platforms as you support** (which quite often would mean a lot), and make it available on a website (or somewhere else). Well, how pleasant would it be if **all of this** could be achieved right after a ```git push```?
+Another example. For every new version (and sometimes between two) you had to set up your environment correctly, generate the documentation from source code, bump the version number in both code and documentation, run unit/integration/system tests and finally, if everything goes well, compile it for **as many platforms as you support** (which quite often would mean a lot), and make it available on a website (or somewhere else). Well, how pleasant would it be if **all of this** could be achieved right after a `git push`?
 
 Let's now see how to get started with continuous integration, easily.
 
@@ -65,14 +65,14 @@ In my opinion, the most important thing with continuous integration is... your G
 
 At The Smiths, we identified **four main components** that we wanted as **core parts of our Continuous Integration process**:
 
-* Semantic versioning
-* A Git workflow
-* Travis-ci.org
-* Agile methodology
+- Semantic versioning
+- A Git workflow
+- Travis-ci.org
+- Agile methodology
 
 ## Semantic versioning
 
-We decided to stick to the very simple rules proposed by [semver.org](http://semver.org/). Basically, it says that a version number should be something like *MAJOR.MINOR.PATCH*, where (what follows has been extracted from their website):
+We decided to stick to the very simple rules proposed by [semver.org](http://semver.org/). Basically, it says that a version number should be something like _MAJOR.MINOR.PATCH_, where (what follows has been extracted from their website):
 
 1. MAJOR version when you make incompatible API changes
 2. MINOR version when you add functionality in a backwards-compatible manner
@@ -86,31 +86,31 @@ This part is clearly the most important, as it’s being used every single day b
 
 After some research, we came across a very popular Git workflow, the branching model.
 
-![Git workflow]({filename}/images/continuous-integration-git-workflow.png)
+![Git workflow]({static}/images/continuous-integration-git-workflow.png)
 
-This picture has been taken from *[A successful Git branching model, by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)* ([thanks to him](https://twitter.com/nvie/status/644601079985008640)). Overall, it’s the best Git workflow we’ve ever encountered. **So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.** It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.
+This picture has been taken from _[A successful Git branching model, by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)_ ([thanks to him](https://twitter.com/nvie/status/644601079985008640)). Overall, it’s the best Git workflow we’ve ever encountered. **So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.** It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.
 
 Now, let's move onto **our workflow** that we daily use, with Github:
 
 ### Our Git workflow
 
-- There is a remote repository called ```origin```. Then, every new developer (including the owner) has to fork this repository. The ```origin``` repo will **ONLY** contains two branches: ```master``` and ```develop```.
-    - ```master```: contains **only the stable realeases** (General Availability), tagged with  
-    ```git tag -a```  
+- There is a remote repository called `origin`. Then, every new developer (including the owner) has to fork this repository. The `origin` repo will **ONLY** contains two branches: `master` and `develop`.
+  - `master`: contains **only the stable realeases** (General Availability), tagged with  
+    `git tag -a`  
     Those are production releases.
-    - ```develop```: contains **only stable code** with newly developed features. This branch has been created with  
-    ```git checkout -b develop master```  
+  - `develop`: contains **only stable code** with newly developed features. This branch has been created with  
+    `git checkout -b develop master`  
     It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.
-- No one is allowed to commit into ```master``` nor into ```develop``` (except for the first commit into ```master```, then ```develop``` is forked from ```master```), in either ```origin``` or the forked repository. Not even locally!
-- There's **one developer responsible for the entire project**. Let's call him/her *Integrator*.
-- To add a new feature, one of the developers create a local branch called ```feature-x``` from ```develop``` and commit into it. He/she may push this branch to their own forked repository.
-- When this feature is fully developed and tested, and ready to go into ```develop```, the developer creates a *Pull request* from the forked repository to ```origin``` (from branch ```feature-x``` to ```develop```). Then, **only one person can accept it and merge it: *Integrator*.** He/she can also refuses it and comment about the reason(s).
-- If the *Pull request* has been accepted, everyone has to update their ```develop``` branch (locally and on their forked repo).
-- The same applies for hotfixes: anyone can create branches called ```hotfix-y``` and create *Pull requests* from them.
-- When time has come for a new release, *Integrator* merges back ```develop``` into ```master``` and tags it with a release number (according to the Semantic versioning). Then, anyone update their ```master``` branch.
+- No one is allowed to commit into `master` nor into `develop` (except for the first commit into `master`, then `develop` is forked from `master`), in either `origin` or the forked repository. Not even locally!
+- There's **one developer responsible for the entire project**. Let's call him/her _Integrator_.
+- To add a new feature, one of the developers create a local branch called `feature-x` from `develop` and commit into it. He/she may push this branch to their own forked repository.
+- When this feature is fully developed and tested, and ready to go into `develop`, the developer creates a _Pull request_ from the forked repository to `origin` (from branch `feature-x` to `develop`). Then, **only one person can accept it and merge it: _Integrator_.** He/she can also refuses it and comment about the reason(s).
+- If the _Pull request_ has been accepted, everyone has to update their `develop` branch (locally and on their forked repo).
+- The same applies for hotfixes: anyone can create branches called `hotfix-y` and create _Pull requests_ from them.
+- When time has come for a new release, _Integrator_ merges back `develop` into `master` and tags it with a release number (according to the Semantic versioning). Then, anyone update their `master` branch.
 - Everyone is strongly encouraged to rebase on top of `master` as often as possible, especially before submitting PRs.
 
-In case you're working alone on a project, no need to fork anything. Just apply the same principles to the only remote repository (*Pull requests*, merge, etc). You can skip *Pull requests* if you want so, it just helps keeping a trace of every new feature.
+In case you're working alone on a project, no need to fork anything. Just apply the same principles to the only remote repository (_Pull requests_, merge, etc). You can skip _Pull requests_ if you want so, it just helps keeping a trace of every new feature.
 
 I've found out that this workflow works pretty well with any of our projects, might it be an entire app or a mere widget. However, as I said we've made some adjustments to the original workflow found on the Internet, making it a bit simpler to use.
 
@@ -126,7 +126,7 @@ To generate the message for a Pull request:
     git log --pretty=oneline --abbrev-commit <branch-from>..<current-branch>
     # Prints the commits you made since last merge and the associated messages
 
-To update ```develop``` (works with ```master``` as well):
+To update `develop` (works with `master` as well):
 
     :::bash
     git fetch origin
@@ -147,7 +147,7 @@ To update a feature branch (after a PR has been merged):
     # 3. If you're a badass and want to ignore your own changes:
     git reset --hard origin/develop
 
-To merge a *Pull request* (only **Ingrator** is supposed to do it) and push it:
+To merge a _Pull request_ (only **Ingrator** is supposed to do it) and push it:
 
     :::bash
     git remote add feature-x_repo git@github.com:someone/forked-repo.git
@@ -165,7 +165,7 @@ To delete a branch (locally and remotely) once it has been merged into the main 
 
 ### Contributors
 
-There's another approach to the scheme above. Instead of using only *Pull requests*, you could add other developers as [contributors](https://help.github.com/articles/setting-guidelines-for-repository-contributors/). This way, there's no Mr/Ms **Integrator**, any contributor is free to merge their features into ```develop```. Also, feature branches can be on the remote repository.
+There's another approach to the scheme above. Instead of using only _Pull requests_, you could add other developers as [contributors](https://help.github.com/articles/setting-guidelines-for-repository-contributors/). This way, there's no Mr/Ms **Integrator**, any contributor is free to merge their features into `develop`. Also, feature branches can be on the remote repository.
 
 ### Git branching model considered harmful
 
@@ -175,13 +175,13 @@ The Git workflow we used as a starting point (the branching model) has been cons
 
 Soon, Travis will be your best friend. But first, what is Travis?
 
-Basically, it's an online service delivered through a website, providing sets of virtual machines started especially for a developer whenever needed. Those machines run some scripts and shut down themselves automatically. Usually, a developer sets up their Travis account to run scripts on every ```git push``` performed on a GitHub repository. However, one can configure Travis to be run with any kind of Git hook. **Travis is free** but they also have paid services with much more features (that we didn't require).
+Basically, it's an online service delivered through a website, providing sets of virtual machines started especially for a developer whenever needed. Those machines run some scripts and shut down themselves automatically. Usually, a developer sets up their Travis account to run scripts on every `git push` performed on a GitHub repository. However, one can configure Travis to be run with any kind of Git hook. **Travis is free** but they also have paid services with much more features (that we didn't require).
 
 So, how is Travis so helpful for us?
 
 ### Most common use cases of Travis
 
-Well, one can imagine dozens of scenarios. Documentation generated from the source on every new ```git push``` in ```develop```? Easy. Running a whole set of tests automatically? Easy as well.
+Well, one can imagine dozens of scenarios. Documentation generated from the source on every new `git push` in `develop`? Easy. Running a whole set of tests automatically? Easy as well.
 
 Let's dream a bit further... One of the most fancy things one can do is **running a set of tests, bump version numbers in the code and the documentation, compiling the software program and generating the updated documentation, pushing the binaries to Amazon S3 and the documentation to GitHub Pages, and making the whole set available to everyone, automatically!** And yes, Travis, can push into specific branches as well. That might be really useful to update web pages automatically (a link to the latest stable release, listed on a download page, for instance).
 
@@ -189,36 +189,37 @@ That is definitely the most perfect and automated scenario one could imagine, bu
 
 ### An example with Github Pages
 
-A good example is my blog (yes, the one you're reading). My articles are written in Markdown and contained in the branch ```master```. However, what you're reading, is a [Github page](https://pages.github.com/) (contained in a branch called ```gh-pages```). What is happening hunder the hood is that, every time I push on ```master```, Travis fetches it, generates the HTML pages from the Markdown files, and pushes them to the branch ```gh-pages``` on Github. This way, my blog gets updated automatically.
+A good example is my blog (yes, the one you're reading). My articles are written in Markdown and contained in the branch `master`. However, what you're reading, is a [Github page](https://pages.github.com/) (contained in a branch called `gh-pages`). What is happening hunder the hood is that, every time I push on `master`, Travis fetches it, generates the HTML pages from the Markdown files, and pushes them to the branch `gh-pages` on Github. This way, my blog gets updated automatically.
 
 I followed [this tutorial](http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html) to do that (and [this presentation](http://fle.github.io/lectures/pelican-github-2014.html) as well).
 
 #### How does it work
 
-At the root of your repo, just add a *.travis.yml* with some pieces of configuration inside. And you're done! A few more options are available on their web interface as well.
+At the root of your repo, just add a _.travis.yml_ with some pieces of configuration inside. And you're done! A few more options are available on their web interface as well.
 
 You can have a look at [my .travis.yml for this blog](https://github.com/rpellerin/blog/blob/master/.travis.yml).
 
 ### Tips with Travis
 
 - [Get a new token from Github](https://github.com/settings/tokens) in order to give Travis access to your repo
-- In travis, disable *Build on Pull requests*, enable only if .travis.yml is present
+- In travis, disable _Build on Pull requests_, enable only if .travis.yml is present
 
 ## Agile methodology
 
 Last but not least, agile methodology. Behind that term that sounds rather complex is a concept pretty simple. In Computer Science, we use the term "Agile Software Development". Wikipedia says:
 
-> *Agile Software Development is a set of software development methods in which requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development, early delivery, continuous improvement, and encourages rapid and flexible response to change.*
+> _Agile Software Development is a set of software development methods in which requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development, early delivery, continuous improvement, and encourages rapid and flexible response to change._
 
 There is also an official Agile Manifesto that tries to describe it more precisely, based on twelve principles. **From that original manifesto have appeared dozens of practices that we refer to as "Agile methods"**. I won't explain them here as it is not the purpose, for more information visit the [Wikipedia page](https://en.wikipedia.org/wiki/Agile_software_development).
 
-The one we picked is called **Scrum**. Again, I won't explain it here but will instead expose the workflow we adopted, derived from it. For a better comprehension, I recommend you read the [Wikipedia page](https://en.wikipedia.org/wiki/Scrum_(software_development)).
+The one we picked is called **Scrum**. Again, I won't explain it here but will instead expose the workflow we adopted, derived from it. For a better comprehension, I recommend you read the [Wikipedia page](<https://en.wikipedia.org/wiki/Scrum_(software_development)>).
 
-Basically, at the very beginning of the project, the CTO would meet client and discuss with them. As a result, he would obtain detailed specifications from them. Then, all together, we would brainstorm and define Milestones, which are fundamentally the most important steps to a final product. For instance, from scratch, we would aim at developing a MVP (which is a working product, see the picture below), then progressively add features, grouping features under Milestones. As a reminder, "Milestones" is a feature of GitHub. Each Milestone would last a week, tops. In Scrum, Milestones are called *Sprints*.
+Basically, at the very beginning of the project, the CTO would meet client and discuss with them. As a result, he would obtain detailed specifications from them. Then, all together, we would brainstorm and define Milestones, which are fundamentally the most important steps to a final product. For instance, from scratch, we would aim at developing a MVP (which is a working product, see the picture below), then progressively add features, grouping features under Milestones. As a reminder, "Milestones" is a feature of GitHub. Each Milestone would last a week, tops. In Scrum, Milestones are called _Sprints_.
 
 Starting with an MVP is the right way to go. The client is always satisfied as they would get a working copy of the product being-developed, at each stage, continuously getting improved. They would not have to wait for weeks or months before being able to test anything.
 
-![MVP]({filename}/images/continuous-integration-mvp.png)
+![MVP]({static}/images/continuous-integration-mvp.png)
+
 <div style="text-align: center">*Courtesy of [Henrik Kniberg](https://twitter.com/henrikkniberg/status/685474589539983360)*</div>
 
 Then, each developer would get assigned or choose a few features from the first Milestone until completion. Every morning, we would gather for a 10-minute stand-up meeting, during which everyone would say what they did the previous day and what is left to do, especially regarding the current day. Standing forces us to speak concisely and don't waste each other's time, since it is not as comfortable as being sat down.
@@ -227,7 +228,7 @@ At the end of the Milestone's week, we would merge all the Pull requests resulti
 
 This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.
 
-![SCRUM]({filename}/images/continuous-integration-scrum.png)
+![SCRUM]({static}/images/continuous-integration-scrum.png)
 
 Sometimes, the part "Bug fixing" would require extra-time. In such a case, we would extend that part onto the next week, only assigning one person, so that the rest of the team could stick strictly to the rule "a Milestone per week". But that rarely happened fortunately.
 

@@ -25,9 +25,9 @@ Summary: Everything wrong with this world
 - [Non-potable wat](https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/) [used to clean Paris streets](http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php). I'm pretty sure it all eventually ends up in the ocean, trash included.
 - Gas cars (diesel is the worst)
 
-    - [The Economics of the Office: Why Do We Still Commute?](https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb)
-    - [5 Reasons Why Amsterdam Works So Well for Bikes](https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/)
-    - [Air pollution causes ‘huge’ reduction in intelligence, study reveals](https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals)
+  - [The Economics of the Office: Why Do We Still Commute?](https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb)
+  - [5 Reasons Why Amsterdam Works So Well for Bikes](https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/)
+  - [Air pollution causes ‘huge’ reduction in intelligence, study reveals](https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals)
 
 # At the supermarket
 
@@ -71,7 +71,7 @@ Summary: Everything wrong with this world
 - [Infographie - Interdiction des long-courriers, couvre-feu thermique, quotas sur le café… les mesures extrêmes pour rester sous 1,5°C](https://www.novethic.fr/actualite/environnement/climat/isr-rse/infographie-interdiction-d-acheter-une-voiture-neuve-ou-de-prendre-un-long-courrier-couvre-feu-thermique-quotas-sur-les-produits-importes-les-mesures-chocs-pour-rester-sous-1-5-c-146877.html)
 
 <figure class="center">
-<img src="{filename}/images/climate.png" alt="A picture showing how to fight climate change" />
+<img src="{static}/images/climate.png" alt="A picture showing how to fight climate change" />
 <figcaption>How to fight climate change.</figcaption>
 </figure>
 

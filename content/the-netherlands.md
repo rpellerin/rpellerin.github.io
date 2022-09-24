@@ -18,12 +18,12 @@ The best city of Europe of course! Well, not to everyone but to me at least. Gre
 Not everything is great though. Finding an appartment in Amsterdam was a pain in the ass. I ended up renting the creepiest of all kinds when I first got there, a tiny 10 square meter apartment on the last floor, with a broken sink, no stores and a direct access to the roof with no railings whatsover, even though it was a damn 4-story building. Plus the bathroom was on the landing. Fucking **GREAT**. As you guessed, I did not stay there for long. Shortly after, I found a nice shared house just outside of Amsterdam but easily reachable by metro. Speaking of which, their metro system is really good!
 
 <figure class="center">
-<img src="{filename}/images/the-netherlands/room1.jpg" alt="My first room in Amsterdam" />
+<img src="{static}/images/the-netherlands/room1.jpg" alt="My first room in Amsterdam" />
 <figcaption>My wonderful first room in Amsterdam.</figcaption>
 </figure>
 
 <figure class="center">
-<img src="{filename}/images/the-netherlands/room2.jpg" alt="Another view of my room" />
+<img src="{static}/images/the-netherlands/room2.jpg" alt="Another view of my room" />
 <figcaption>So big. Great sink.</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ A city which was bombed almost entirely during WW2, then rebuilt. Its architectu
 - They also have **boat tours**, that take you throughout the gigantic port. Lasts about an hour, maybe two, can't remember. Not to expensive and fun to do. For the one I did, the boarding was right by Erasmus Bridge.
 
 <figure class="center">
-<img src="{filename}/images/the-netherlands/rotterdam.jpg" alt="Cube Houses" />
+<img src="{static}/images/the-netherlands/rotterdam.jpg" alt="Cube Houses" />
 <figcaption>Cube Houses</figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ A city which was bombed almost entirely during WW2, then rebuilt. Its architectu
 Small town yet very nice. My only recommendation is to check out the **Nieuwe Kerk**, a church, for it is a place of history and the climb to the top is definitely worth the effort. Then, wander around randomly in the streets.
 
 <figure class="center">
-<img src="{filename}/images/the-netherlands/delft.jpg" alt="View the top of Delft's church" />
+<img src="{static}/images/the-netherlands/delft.jpg" alt="View the top of Delft's church" />
 <figcaption>View from the top of Delft's church</figcaption>
 </figure>
 

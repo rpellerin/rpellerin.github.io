@@ -11,16 +11,16 @@ Image: living-usa.jpg
 **Friday, January 27, 2017**: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!
 
 <figure class="center">
-<img src="{filename}/images/living-usa/greenland.jpg" alt="Greenland" />
+<img src="{static}/images/living-usa/greenland.jpg" alt="Greenland" />
 <figcaption>Greenland</figcaption>
 </figure>
 
 <figure class="center">
-<img src="{filename}/images/living-usa/nothern_canada.jpg" alt="Northern Canada" />
+<img src="{static}/images/living-usa/nothern_canada.jpg" alt="Northern Canada" />
 <figcaption>Northern Canada</figcaption>
 </figure>
 
-As I am writing these lines, I already moved in in my new home for the next 6 months: a room in a shared apartment, located between the University of San Francisco and the [Painted Ladies](https://en.wikipedia.org/wiki/Painted_ladies). We are only two people living in this apartment. The neighborhood is mostly residential. I am close to many grocery stores, very convenient! Moreover, there is an awesome neighborhood located within a walkable distance, called Hayes Valley, which is supposedly the French neighborhood. Indeed, there is a significant number of French businesses (restaurants, a *boulangerie*, etc.). The area is known for its artistic shops.
+As I am writing these lines, I already moved in in my new home for the next 6 months: a room in a shared apartment, located between the University of San Francisco and the [Painted Ladies](https://en.wikipedia.org/wiki/Painted_ladies). We are only two people living in this apartment. The neighborhood is mostly residential. I am close to many grocery stores, very convenient! Moreover, there is an awesome neighborhood located within a walkable distance, called Hayes Valley, which is supposedly the French neighborhood. Indeed, there is a significant number of French businesses (restaurants, a _boulangerie_, etc.). The area is known for its artistic shops.
 
 So, what's the purpose of my trip there? Well, I will be interning at a French company who recently (2013) opened offices in San Francisco to expand their business. This internship is the last step required for me to graduade.
 
@@ -97,11 +97,11 @@ Luckily, my appointment to see the room was on the day following my arrival, so 
 However, my "landlord" could not provide me with bed sheets. He however suggested that I go to ROSS to get some, since they are fairly cheap there. I had a hard time figuring out how bed sheet sizes work in the US. I learned the hard way that they go by weird names: King, Queen, Full to name a few.
 
 <figure class="center">
-    <img src="{filename}/images/living-usa/mattress-size.png" alt="Mattress sizes" />
+    <img src="{static}/images/living-usa/mattress-size.png" alt="Mattress sizes" />
     <figcaption>Taken from <a href="https://www.mattresscloseouts.com/mattresses/mattresses-by-size/queen.html">this website</a></figcaption>
 </figure>
 
-Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance *drap housse* translates to *fitted sheet*, that's good to know!
+Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance _drap housse_ translates to _fitted sheet_, that's good to know!
 
 # Banking
 
@@ -109,7 +109,7 @@ In the US, they have not only banks but also credit unions. Confusing at first, 
 
 Essentially, a credit union is non-profit, so it has lower fees.
 
-*Edit:* yay I just got my first american debit card! Out of all the credit unions available in San Francisco, I picked Redwood Credit Union. They don't charge any fees as long as I maintain a balance of $75 on my savings account, and I can withdraw money from "other" ATMS three times a month for free. That's perfect for me! They also offer online banking for free... but their website is like 10 years old. Not user-friendly whatsoever. But I don't mind :)
+_Edit:_ yay I just got my first american debit card! Out of all the credit unions available in San Francisco, I picked Redwood Credit Union. They don't charge any fees as long as I maintain a balance of $75 on my savings account, and I can withdraw money from "other" ATMS three times a month for free. That's perfect for me! They also offer online banking for free... but their website is like 10 years old. Not user-friendly whatsoever. But I don't mind :)
 
 # Taxes in the US
 
@@ -123,7 +123,7 @@ It is still a total mystery to me. Apparently, most people pay too much taxes an
 
 Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have actual supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.
 
-*Edit:* I went to Trader Joe's a couple of times. [I really like it](http://gaelleinlosangeles.com/passion-trader-joes/). I think I'll stick with it.
+_Edit:_ I went to Trader Joe's a couple of times. [I really like it](http://gaelleinlosangeles.com/passion-trader-joes/). I think I'll stick with it.
 
 <br />
 

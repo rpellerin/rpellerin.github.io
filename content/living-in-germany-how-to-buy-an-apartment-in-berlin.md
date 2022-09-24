@@ -7,7 +7,7 @@ Slug: living-in-germany-how-to-buy-an-apartment-in-berlin
 Authors: Romain Pellerin
 Summary: Some tips and tricks about buying real estate in Berlin
 
-There's already plenty of resources online. Specifically, there is [this unique priceless PDF]({filename}/extra/Buying_an_Apartment_in_Germany.pdf) that I found on [Reddit](https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/), which covers pretty much everything in detail.
+There's already plenty of resources online. Specifically, there is [this unique priceless PDF]({static}/extra/Buying_an_Apartment_in_Germany.pdf) that I found on [Reddit](https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/), which covers pretty much everything in detail.
 
 For French speakers, here is a short video that explains in 10 minutes the steps to buy an apartment in Germany.
 
@@ -484,7 +484,7 @@ The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN fir
 
 # Conclusion: timeline of events
 
-<figure class="center"><img alt="All the events and when then take place" src="{filename}/images/buying_an_apartment_in_berlin.png" /></figure>
+<figure class="center"><img alt="All the events and when then take place" src="{static}/images/buying_an_apartment_in_berlin.png" /></figure>
 
 # Great how-to articles about buying in Berlin
 

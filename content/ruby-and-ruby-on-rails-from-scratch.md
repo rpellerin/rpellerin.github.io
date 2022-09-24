@@ -6,7 +6,7 @@ Slug: ruby-and-ruby-on-rails-from-scratch
 Authors: Romain Pellerin
 Summary: How to learn Ruby and Rails
 
-Today I started learning a new language: Ruby! Coming from a JavaScript world, [this article](http://frontendgods.com/getting-started-with-ruby-for/) helped me a lot ([backed-up here, should it ever vanish from the Internet]({filename}/extra/javascript-to-ruby.html)). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.
+Today I started learning a new language: Ruby! Coming from a JavaScript world, [this article](http://frontendgods.com/getting-started-with-ruby-for/) helped me a lot ([backed-up here, should it ever vanish from the Internet]({static}/extra/javascript-to-ruby.html)). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.
 
 # Learning resources
 
@@ -72,7 +72,7 @@ bundle
 
 - `;` is optional
 - parentheses optional in `if` statements
-- `==` vs `===`:  [https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby](https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby)
+- `==` vs `===`: [https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby](https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby)
 - `puts` (adds new line) vs `print` (no new line)
 - `.each do |item| ... end`
 - `10.times do |i| ... end`
@@ -96,7 +96,7 @@ bundle
 - `do..end` vs curly braces for blocks in Ruby: [https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby](https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby)
 - `pry`: pauses execution but does not give access to local variables
 - `binding.pry`: pauses execution, gives access to local variables but also pauses all threads (server and tests for instance)
-- `whereami` == `@` (in binding.pry / pry) 
+- `whereami` == `@` (in binding.pry / pry)
 - `help` (get help in binding.pry /pry)
 - `PRY_RESCUE_RAIL=1 rails test`: runs a test and pauses on falsy assertions
 
@@ -117,7 +117,7 @@ bundle
 - [What does &. (ampersand dot) mean in Ruby?](https://stackoverflow.com/questions/36812647/what-does-ampersand-dot-mean-in-ruby)
 - [Ruby & (Ampersand) Parameter Demystified](https://www.skorks.com/2013/04/ruby-ampersand-parameter-demystified/)
 - [Ruby 2 Keyword Arguments](https://robots.thoughtbot.com/ruby-2-keyword-arguments)
-- [What does a double * (splat) operator do](https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do)
+- [What does a double \* (splat) operator do](https://stackoverflow.com/questions/18289152/what-does-a-double-splat-operator-do)
 - [What do =~ and /\ mean in Ruby?](https://stackoverflow.com/questions/26938262/what-do-and-mean-in-ruby?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 - [%Q, %q, %W, %w, %x, %r, %s](https://simpleror.wordpress.com/2009/03/15/q-q-w-w-x-r-s/)
 - [Rails Routing from the Outside In](https://romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html)

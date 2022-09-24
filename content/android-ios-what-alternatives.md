@@ -9,13 +9,13 @@ Summary: What alternatives do we have to Android and iOS? How to install Firefox
 
 As 2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.
 
-![Market share]({filename}/images/chart-ww-smartphone-os-market-share.png)
+![Market share]({static}/images/chart-ww-smartphone-os-market-share.png)
 
-*[Source](http://www.idc.com/prodserv/smartphone-os-market-share.jsp)*
+_[Source](http://www.idc.com/prodserv/smartphone-os-market-share.jsp)_
 
 It makes no doubt that **the world is ruled by two main OSes: Android and iOS**. But as you may have heard, those operating systems are powered by two giants, Google and Apple, and in many cases, this can lead to privacy issues. In addition, iOS is proprietary softare and Android tends to be more and more opaque as well. So, what other alternatives do we have? How can we regain control over software we use?
 
-Since a few years, two other operating systems offering good alternatives, have been in intense development. One is made by Mozilla, called "*Firefox OS*", the other one is powered by Canonical (the company behind Ubuntu), called "*Ubuntu for devices*". Those two OSes are really different in the way they work.
+Since a few years, two other operating systems offering good alternatives, have been in intense development. One is made by Mozilla, called "_Firefox OS_", the other one is powered by Canonical (the company behind Ubuntu), called "_Ubuntu for devices_". Those two OSes are really different in the way they work.
 
 Firefox OS relies on HTML5. As a web developer, you'll find developing on this platform pretty straightforward. Applications are built on top of HTML/CSS.
 
@@ -31,7 +31,7 @@ For now, as these OSes are still in early development, they're not available wor
     sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
     sudo apt-get update
     sudo apt-get install ubuntu-device-flash phablet-tools
-    
+
 Plug in your phone, enable the developer mode and USB debugging.
 
     :::bash
@@ -119,7 +119,7 @@ Plug in your phone, enable the developer mode and USB debugging.
     ./build.sh
 
 ### Third step: install it
-    
+
     :::bash
     ./flash.sh
 

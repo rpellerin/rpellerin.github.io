@@ -31,13 +31,13 @@ It has been demonstrated that each individual has two categories of vocabulary f
 According to [this website](http://www.lingholic.com/how-many-words-do-i-need-to-know-the-955-rule-in-language-learning-part-2/), native English speakers have an average of 20.000 words in their active vocabulary whereas they have around 40.000 in their passive. This is a gigantic difference.
 
 <div style="text-align: center">
-<img src="{filename}/images/learn-language-vocabulary.png" alt="Active and passive vocabulary" />
+<img src="{static}/images/learn-language-vocabulary.png" alt="Active and passive vocabulary" />
 </div>
 
 My guess is that all along your course to learn a foreign language, your two types of vocabulary evolve like this:
 
 <div style="text-align: center">
-<img src="{filename}/images/learn-language-curve.png" alt="Learning curve" />
+<img src="{static}/images/learn-language-curve.png" alt="Learning curve" />
 </div>
 
 When you take up classes during childhood, your two kinds of vocabulary are mixed up. A some point they slightly fork, like after elementary school. Then, when you have your first experience abroad, your amount of passive and active vocabulary will usually soar. But still, the gap between the two of them increases, making an even bigger difference.
@@ -59,7 +59,7 @@ With such an app, I would get exposed to my vocabulary list frequently, many tim
 Today, I'm proud to announce that the project is officially [available on Github](https://github.com/rpellerin/learn-a-foreign-language). It's open source, so feel free to contribute. Moreover, the app has been [published on the Android Play Store](https://play.google.com/store/apps/details?id=learnaforeignlanguage.eu.romainpellerin). Finally, [here is the website](http://learnenglishbackend-romainpellerin.rhcloud.com/) to create an account and add words or expressions to lists.
 
 <div style="text-align: center">
-<img src="{filename}/images/learn-language-app.gif" alt="My Android app" />
+<img src="{static}/images/learn-language-app.gif" alt="My Android app" />
 </div>
 
 Let's now move on to other ways to reduce that gap between active and passive vocabulary.
@@ -86,7 +86,7 @@ The Internet is full of [high-quality podcasts](http://www.bbc.co.uk/podcasts), 
 
 Finally, I need to mention writing. It's not well known, and that's a pity. But writing is one of the most efficient ways to put into practice what you daily learn and make sure you don't forget it. It's just like rehearsing. Write blog posts, write comments, send out emails, but get out of your comfort zone and do it in a foreign language!
 
-If you have the opportunity, write reports in English as well, or give presentations in English, and so on. 
+If you have the opportunity, write reports in English as well, or give presentations in English, and so on.
 
 <br />
 
@@ -143,7 +143,7 @@ I decided to gather here all the little things to know in English, which are not
 - [What is the difference between taking courses, classes or lessons?](http://english.stackexchange.com/questions/33443/what-is-the-difference-between-taking-courses-classes-or-lessons)
 - [(over) here/there](http://forum.wordreference.com/threads/over-here-there.2692066/)
 - [Difference between “socket” and “outlet”](http://english.stackexchange.com/questions/42259/difference-between-socket-and-outlet)
-- [passing vs having passed](http://ell.stackexchange.com/questions/18223/passing-vs-having-passed)
+  - [passing vs having passed](http://ell.stackexchange.com/questions/18223/passing-vs-having-passed)
 - [satisfying or satisfactory?](http://forum.wordreference.com/threads/satisfying-or-satisfactory.334680/)
 - [in that](https://en.wiktionary.org/wiki/in_that)
 - [Is this construct correct? “This one something…”](http://english.stackexchange.com/questions/91804/is-this-construct-correct-this-one-something)

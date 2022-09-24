@@ -20,7 +20,7 @@ I was shocked by the number of smokers. It's by far worse than in France. People
 The density of traffic in cities is incredible. Cars and scooters are everywhere, and pollution must be a serious concern. It smells like gas everywhere. It is not uncommon to find roads with 4 or 6 lanes (2x3) in cities, so no wonder why it's so polluted. Also be prepared to hear horn hooking all the time. I also saw scooters parked on the rightmost lane (not a parking spot at all) alongside the sidewalk, crazy! Likewise, Smarts park perpendicularly to the sidewalks.
 
 <figure class="center">
-<img src="{filename}/images/italy/smart.jpg" alt="A Smart perpendicularly parked" />
+<img src="{static}/images/italy/smart.jpg" alt="A Smart perpendicularly parked" />
 <figcaption>A Smart nicely parked.</figcaption>
 </figure>
 
@@ -31,19 +31,19 @@ Public transportation seems to be poorly developed. Even Rome has only 3 metro l
 The garbage collection system is also not ideal. It is not uncommon at all to see overfilled street collectors.
 
 <figure class="center">
-<img src="{filename}/images/italy/trash1.jpg" alt="A trash collector" />
+<img src="{static}/images/italy/trash1.jpg" alt="A trash collector" />
 <figcaption>Trash management, italian style #1.</figcaption>
 </figure>
 
 <figure class="center">
-<img src="{filename}/images/italy/trash2.jpg" alt="A trash collector" />
+<img src="{static}/images/italy/trash2.jpg" alt="A trash collector" />
 <figcaption>Trash managemnt, italian style #2.</figcaption>
 </figure>
 
 Last funny fact: the water tank of toilets is... unusually located.
 
 <figure class="center">
-<img src="{filename}/images/italy/toilet.jpg" alt="An italian toilet" />
+<img src="{static}/images/italy/toilet.jpg" alt="An italian toilet" />
 <figcaption>A classic italian toilet.</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ Cinque Terre is meant to be visited by train or hiking, forget about your car as
 # Pisa
 
 <figure class="center">
-<img src="{filename}/images/italy/pisa.jpg" alt="Me and the leaning tower of Pisa" />
+<img src="{static}/images/italy/pisa.jpg" alt="Me and the leaning tower of Pisa" />
 <figcaption>Obligatory picture.</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ There is not much to do in Pisa, appart from the leaning tower of course. The ci
 # Rome
 
 <figure class="center">
-<img src="{filename}/images/italy/trevi.jpg" alt="The fountain of Trevi" />
+<img src="{static}/images/italy/trevi.jpg" alt="The fountain of Trevi" />
 <figcaption>Trevi: reality.</figcaption>
 </figure>
 
@@ -74,14 +74,14 @@ I highly recommend doing guided tours, as opposed to solo tours, especially when
 Don't buy city passes, [it's in most cases cheaper to buy tickets individually](https://revealedrome.com/2017/05/is-a-roma-pass-worth-it-or-omnia-card/).
 
 <figure class="center">
-<img src="{filename}/images/italy/rome.jpg" alt="Prices for Colosseum" />
+<img src="{static}/images/italy/rome.jpg" alt="Prices for Colosseum" />
 <figcaption>Prices for the Colosseum.</figcaption>
 </figure>
 
 If you're on a tight schedule as I was, I found [this map](https://www.romewise.com/rome-highlights-in-one-day.html) very helpful when it comes to visiting main highlights efficiently.
 
 <figure class="center">
-<img src="{filename}/images/italy/rome-highlights.png" alt="A map of main Rome highlights with a path to see them all" />
+<img src="{static}/images/italy/rome-highlights.png" alt="A map of main Rome highlights with a path to see them all" />
 <figcaption>Rome highlights in one day</figcaption>
 </figure>
 

@@ -28,7 +28,7 @@ As time went by, it felt like things were accelerating. I first had to plan my a
 As my involvement with my French team at Doctolib began to wind down, I worked more with my future team in Berlin, remotely. My last day in the Paris office was bittersweet. I was sad to leave people I loved but excited about my new life to come! And then it happened!
 
 <figure class="center">
-<img src="{filename}/images/doctolib-berlin/cargo-bike.jpg" alt="Me on a cargo bike" />
+<img src="{static}/images/doctolib-berlin/cargo-bike.jpg" alt="Me on a cargo bike" />
 <figcaption>Me adapting to life in Berlin</figcaption>
 </figure>
 

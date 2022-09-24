@@ -8,9 +8,9 @@ Summary: Ce que je pense du bon sens
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ja4dG0KUuRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-*Les populistes et le retour du « bon sens » - C à Vous - 20/05/2020*
+_Les populistes et le retour du « bon sens » - C à Vous - 20/05/2020_
 
-<figure class="center"><img src="{filename}/images/bon-sens.png" alt="Comics" /><figcaption>Mon avis sur le bon sens.</figcaption></figure>
+<figure class="center"><img src="{static}/images/bon-sens.png" alt="Comics" /><figcaption>Mon avis sur le bon sens.</figcaption></figure>
 
 # Ressources
 

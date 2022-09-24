@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: Following the recent publication of A Conspiracy To Kill IE6, we at Doctolib thought we’d in turn unveil our plan to stop supporting not only Internet Explorer 11 but also other outdated desktop…
 Image: supporting-internet-explorer-11-in-2019/header.png
 
-*Originally published on [Medium](https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c).*
+_Originally published on [Medium](https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c)._
 
 Following the recent publication of [A Conspiracy To Kill IE6](https://blog.chriszacharias.com/a-conspiracy-to-kill-ie6), we [at Doctolib](https://www.doctolib.com/) thought we’d in turn unveil our plan to stop supporting not only Internet Explorer 11 but also other outdated desktop browser versions, and help the world move towards a faster and more secure web. Everything that follows took place between March 2019 and July 2019.
 
@@ -18,14 +18,14 @@ Moreover, most public healthcare institutions (hospitals, for example) manage th
 In light of this, here’s what Doctolib’s browser market share looked like in March 2019.
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/browsers-share.png" alt="Historical browser market share for Doctolib customers week by week" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/browsers-share.png" alt="Historical browser market share for Doctolib customers week by week" />
 <figcaption>Historical browser market share for Doctolib customers week by week</figcaption>
 </figure>
 
 The graph shows unique browser connections per week. As one can see, Internet Explorer 11 users represent on average between 2.5 and 3.5% of all users. Among our Chrome and Firefox users, some users rely on outdated versions, sometimes more than 4-year-old versions. Same goes for Safari, with pretty stable curves not showing any signs of decline.
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/safari.png" alt="Historical Safari browser market share for Doctolib customers day by day up until March 2019" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/safari.png" alt="Historical Safari browser market share for Doctolib customers day by day up until March 2019" />
 <figcaption>Historical Safari browser market share for Doctolib customers day by day up until March 2019</figcaption>
 </figure>
 
@@ -82,7 +82,7 @@ How did we set this in motion?
 The whole plan is based on displaying a banner at the right time, to the right users, progressively over time. The banner explains that the browser is no longer supported and gives links to Chrome or Firefox upgrade help pages. The banner can be hidden for 5 days before appearing again.
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/red-banner.png" alt="The top red banner we display on outdated browsers" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/red-banner.png" alt="The top red banner we display on outdated browsers" />
 <figcaption>The top red banner we display on outdated browsers</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ We started off with Safari. Why is that? Users who run Safari most likely run Ma
 Over time, we could see the number of users for these unsupported versions significantly decreasing, while seeing Safari 12 slowly but surely rising. It did not work as well as expected though, some users probably don’t care too much about seeing a banner that can be closed anyway.
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/safari-2.png" alt="Usage of unsupported Safari versions among Doctolib customers" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/safari-2.png" alt="Usage of unsupported Safari versions among Doctolib customers" />
 <figcaption>Usage of unsupported Safari versions among Doctolib customers</figcaption>
 </figure>
 
@@ -104,12 +104,12 @@ All along we closely monitored our usage share of web browsers through dashboard
 As it turned out, having our customers working in hospitals upgrade their browsers was much harder than we thought. People and organizations need time to adapt. It’s also our mission as a tech company providing an online service to educate our customers and explain why upgrading software is important.
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/ie.png" alt="Usage of IE among Doctolib customers" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/ie.png" alt="Usage of IE among Doctolib customers" />
 <figcaption>Usage of IE among Doctolib customers</figcaption>
 </figure>
 
 <figure class="center">
-<img src="{filename}/images/supporting-internet-explorer-11-in-2019/firefox.png" alt="Usage of ESR Firefox versions among Doctolib customers" />
+<img src="{static}/images/supporting-internet-explorer-11-in-2019/firefox.png" alt="Usage of ESR Firefox versions among Doctolib customers" />
 <figcaption>Usage of ESR Firefox versions among Doctolib customers</figcaption>
 </figure>
 
@@ -121,4 +121,4 @@ What did this plan teach us? First of all, we can’t force users to upgrade the
 
 Also, such an ambitious plan cannot be executed overnight. Internal communication is key and all the relevant departments must be involved as soon as possible, e.g. Customer Service, Account Management, Tech, etc. It works best when everyone is aligned and knows what we are aiming for and why.
 
-*Originally published on [Medium](https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c).*
+_Originally published on [Medium](https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c)._

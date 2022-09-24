@@ -10,7 +10,7 @@ Image: nuit-blanche-2019-logo.png
 Hier samedi 5 octobre 2019, à l'occasion de la 18ème édition de la [Nuit Blanche à Paris](https://quefaire.paris.fr/nuitblanche), j'ai pu faire du vélo sur une portion du périphérique entre porte de Pantin et porte de la Vilette, fermée exprès pour l'évènement et ouverte aux piétons et cyclistes.
 
 <figure class="center">
-<img src="{filename}/images/nuit-blanche-2019.jpg" alt="Portion de périphérique fermée à la circulation" />
+<img src="{static}/images/nuit-blanche-2019.jpg" alt="Portion de périphérique fermée à la circulation" />
 <figcaption>Portion de périphérique fermée à la circulation</figcaption>
 </figure>
 

@@ -17,11 +17,11 @@ Basically, when a program is launched, the operating system grants it a certain 
 
 - **Data**: contains the global and static variables (explicitly initialized with a non-zero or non-NULL value, according to [Wikipedia](https://en.wikipedia.org/wiki/Data_segment)) used by the program. The content of constants is on the data segment, whereas references to constants are on the code (see next bullet point). The BSS segment (which is usually adjacent to the data segment) contains all global variables and static variables that are initialized to zero or do not have explicit initialization (in such a case, they [are implicitly initialized to 0](http://stackoverflow.com/questions/13251083/the-initialization-of-static-variables-in-c)). The BSS segment can be considered a part of the data segment.
 - **Code segment**: contains the assembly code of the program to be executed.
-- **Heap**: contains all dynamically allocated primitive data types or objects (with ```malloc``` in C or ```new``` in C++, for instance). The developer is in charge of the lifetime of these variables, he has to explicitly deallocate memory (with ```free``` in C or ```delete``` in C++).
+- **Heap**: contains all dynamically allocated primitive data types or objects (with `malloc` in C or `new` in C++, for instance). The developer is in charge of the lifetime of these variables, he has to explicitly deallocate memory (with `free` in C or `delete` in C++).
 - **Stack**: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. **Stack values only exist within the scope of the function they are created in.**
 
 <figure class="center">
-<img src="{filename}/images/memory-stack.jpg" alt="The stack" />
+<img src="{static}/images/memory-stack.jpg" alt="The stack" />
 <figcaption>Image taken from <a href="http://www.linuxjournal.com/article/6391">http://www.linuxjournal.com/article/6391</a></figcaption>
 </figure>
 
@@ -101,10 +101,10 @@ Here are some examples, to make things clear:
         deleted at the end of the function */
     }
 
-To delete what is on the heap, you need to use the ```delete``` keyword.
+To delete what is on the heap, you need to use the `delete` keyword.
 
 <figure class="center">
-<img alt="Pointers and addresses" src="{filename}/images/memory_cpp_example.png" />
+<img alt="Pointers and addresses" src="{static}/images/memory_cpp_example.png" />
 </figure>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen></iframe>

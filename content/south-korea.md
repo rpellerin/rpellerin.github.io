@@ -5,17 +5,17 @@ Category: Travels
 Tags: travel, korea
 Slug: south-korea
 Authors: Romain Pellerin
-Summary: My exchange program in South Korea 
+Summary: My exchange program in South Korea
 Image: korea.jpg
 
-# *Update January 12, 2017*
+# _Update January 12, 2017_
 
-*During my stay in South Korea, we also went to Busan (we slept at [Kimchee Guesthouse](http://www.kimcheeguesthouse.com/busan) which I highly recommend). There, we went hiking in the mountain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world.*
+_During my stay in South Korea, we also went to Busan (we slept at [Kimchee Guesthouse](http://www.kimcheeguesthouse.com/busan) which I highly recommend). There, we went hiking in the mountain to reach Seokbulsa Temple. We also went to beaches, namely Gwangalli and Songjeong. At the end of the semester, we went back to Seoul and had a chance to visit Gangnam. In addition, we went see the gigantic and impressive Lotte World Tower, the tallest building in OECD and the 5th tallest building in the world._
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/lR4kRSw062Q?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <figure class="center">
-<img src="{filename}/images/south-korea/changgyeonggung.jpg" alt="Changgyeonggung" />
+<img src="{static}/images/south-korea/changgyeonggung.jpg" alt="Changgyeonggung" />
 <figcaption>The Changgyeonggung palace.</figcaption>
 </figure>
 
@@ -25,13 +25,13 @@ I was given the opportunity to go abroad do an exchange program, during the 2016
 
 In August 2016, I landed in Seoul. With other people from my French school we spent a week there, mostly visiting and discovering the Korean culture. Our guesthouse was located in a great neighborhood called Hongdae. Very lively area!
 
-<figure class="center"><img src="{filename}/images/south-korea/n-tower1.jpg" alt="View from the N Tower" /><figcaption>Views from the N-tower (pictures above and below).</figcaption></figure>
-<figure class="center"><img alt="Another view from the N Tower" src="{filename}/images/south-korea/n-tower2.jpg" /></figure>
-<figure class="center"><img src="{filename}/images/south-korea/bbq.jpg" alt="A Korean barbecue" /><figcaption>A Korean barbecue.</figcaption></figure>
-<figure class="center"><img src="{filename}/images/south-korea/market.jpg" alt="Gwangjang market" /><figcaption>The Gwangjang market.</figcaption></figure>
-<figure class="center"><img src="{filename}/images/south-korea/gyeongbokgung1.jpg" alt="Gyeongbokgung" /><figcaption>The Gyeongbokgung palace (pictures above and below).</figcaption></figure>
-<figure class="center"><img alt="Gyeongbokgung" src="{filename}/images/south-korea/gyeongbokgung2.jpg" /></figure>
-<figure class="center"><img src="{filename}/images/south-korea/rooftops.jpg" alt="Rooftops" /><figcaption>Rooftops.</figcaption></figure>
+<figure class="center"><img src="{static}/images/south-korea/n-tower1.jpg" alt="View from the N Tower" /><figcaption>Views from the N-tower (pictures above and below).</figcaption></figure>
+<figure class="center"><img alt="Another view from the N Tower" src="{static}/images/south-korea/n-tower2.jpg" /></figure>
+<figure class="center"><img src="{static}/images/south-korea/bbq.jpg" alt="A Korean barbecue" /><figcaption>A Korean barbecue.</figcaption></figure>
+<figure class="center"><img src="{static}/images/south-korea/market.jpg" alt="Gwangjang market" /><figcaption>The Gwangjang market.</figcaption></figure>
+<figure class="center"><img src="{static}/images/south-korea/gyeongbokgung1.jpg" alt="Gyeongbokgung" /><figcaption>The Gyeongbokgung palace (pictures above and below).</figcaption></figure>
+<figure class="center"><img alt="Gyeongbokgung" src="{static}/images/south-korea/gyeongbokgung2.jpg" /></figure>
+<figure class="center"><img src="{static}/images/south-korea/rooftops.jpg" alt="Rooftops" /><figcaption>Rooftops.</figcaption></figure>
 
 # Funny facts about South Korea
 
@@ -64,7 +64,7 @@ In August 2016, I landed in Seoul. With other people from my French school we sp
 - Some toilets are... confusing.
 
 <figure class="center">
-<img alt="A magic toilet" src="{filename}/images/south-korea/toilet.jpg" />
+<img alt="A magic toilet" src="{static}/images/south-korea/toilet.jpg" />
 </figure>
 
 # KAIST (Daejeon)
@@ -75,7 +75,7 @@ The campus is just gigantic.
 
 <figure class="center">
 <a href="http://www.kaist.ac.kr/camtour/kr/images/common/campusmap.jpg" target="_blank">
-    <img alt="The campus" src="{filename}/images/south-korea/campusmap.jpg" />
+    <img alt="The campus" src="{static}/images/south-korea/campusmap.jpg" />
 </a>
 </figure>
 
@@ -99,14 +99,14 @@ With more than 10,000 students, it has any kind of facilities you might expect, 
 - Tennis courts
 - A bank
 
-<figure class="center"><img alt="A soccer field" src="{filename}/images/south-korea/soccer.jpg" /></figure>
-<figure class="center"><img alt="The sports complex" src="{filename}/images/south-korea/sports_complex.jpg" /></figure>
-<figure class="center"><img alt="My bike" src="{filename}/images/south-korea/bike.jpg" /></figure>
-<figure class="center"><img alt="A fitness center" src="{filename}/images/south-korea/fitness_center.jpg" /></figure>
+<figure class="center"><img alt="A soccer field" src="{static}/images/south-korea/soccer.jpg" /></figure>
+<figure class="center"><img alt="The sports complex" src="{static}/images/south-korea/sports_complex.jpg" /></figure>
+<figure class="center"><img alt="My bike" src="{static}/images/south-korea/bike.jpg" /></figure>
+<figure class="center"><img alt="A fitness center" src="{static}/images/south-korea/fitness_center.jpg" /></figure>
 
 All dormitories are not mixed and most of them are made of small rooms shared by 2 people of the same sex. My roommate is a French man studying Computer Science as well, called Bastien.
 
-<figure class="center"><img src="{filename}/images/south-korea/room.jpg" alt="My room" /><figcaption>My bed is the one on the left.</figcaption></figure>
+<figure class="center"><img src="{static}/images/south-korea/room.jpg" alt="My room" /><figcaption>My bed is the one on the left.</figcaption></figure>
 
 I took 4 courses for the whole semester:
 
@@ -118,17 +118,17 @@ I took 4 courses for the whole semester:
 For every course, I have two classes per week, each of them last for 1 hour and 15 minutes. So in total, I have 10 hours of class per week, which may seem very little but on the other hand we get so much homework to do. Most of the time, between two classes of the same course, we have a bunch of papers (publications) to read online, that we're supposed to sum up. Sometimes, we even get questions to answer. I'd say we have an average of 6 hours of homework per course per week. By the way, all Fridays are off. Here is my timetable:
 
 <figure class="center">
-<img src="{filename}/images/south-korea/timetable.png" alt="My weekly timetable" />
+<img src="{static}/images/south-korea/timetable.png" alt="My weekly timetable" />
 </figure>
 
 During our first week at KAIST, we had the chance to attend many performances in the auditorium. It was kind of a welcome ceremony.
 
-<figure class="center"><img alt="Welcome ceremony" src="{filename}/images/south-korea/ceremony.jpg" /></figure>
+<figure class="center"><img alt="Welcome ceremony" src="{static}/images/south-korea/ceremony.jpg" /></figure>
 
 Finally, here are two photos taken in Daejeon.
 
-<figure class="center"><img alt="Daejeon" src="{filename}/images/south-korea/daejeon.jpg" /></figure>
-<figure class="center"><img src="{filename}/images/south-korea/restaurant.jpg" alt="Dinning in a restaurant" /><figcaption>This term, there are more than 250 exchange students, mostly coming from Europe.</figcaption></figure>
+<figure class="center"><img alt="Daejeon" src="{static}/images/south-korea/daejeon.jpg" /></figure>
+<figure class="center"><img src="{static}/images/south-korea/restaurant.jpg" alt="Dinning in a restaurant" /><figcaption>This term, there are more than 250 exchange students, mostly coming from Europe.</figcaption></figure>
 
 # Travel tips
 
