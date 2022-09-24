@@ -129,14 +129,16 @@
 <h2>LaTeX</h2>
 <p>Basically and quickly, it's an open source tool written a while ago which allows you to write any kind of document and export them as PDF (and some other formats). You can write books, reports, CVs, slides, anything! You write it as plain text surrounded with some sort of code (it's a markup language actually). It's available on Linux, Mac and Windows. As it's plain old text, there's no compatibility issue <strong>at all</strong>. What is more, LaTeX doesn't evolve that much over years so. Should it does some day, they will always ensure backward compatibility. When you're done with it, you just compile it and you're good: a beautiful PDF is procuded. There are plenty of tools available for each platform. For instance, I recommend <code>pdflatex</code> on Linux. And if you're too lazy to install any of them, use <a href="https://www.sharelatex.com/">ShareLaTeX</a>.</p>
 <p><a href="https://github.com/scottkosty/install-tl-ubuntu/blob/master/install-tl-ubuntu">See this tutorial to install the latest version of LaTeX.</a>. Otherwise, you might install it using your system package manager:</p>
-<div class="highlight"><pre><span></span><code>sudo aptitude install texlive-full biber <span class="c1"># biber is for the bibliography</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo aptitude install texlive-full biber <span class="c1"># biber is for the bibliography</span>
+</pre></div>
+
 
 <p>Then, make sure LaTeX's package manager is working:</p>
-<div class="highlight"><pre><span></span><code>sudo aptitude install xzdec
+<div class="highlight"><pre><span></span>sudo aptitude install xzdec
 tlmgr init-usertree
 tlmgr update --list
-</code></pre></div>
+</pre></div>
+
 
 <p>In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.</p>
 <p>You can find some examples of CVs, cover letters, reports and slideshows on <a href="https://github.com/rpellerin/LaTeX-templates">my GitHub account</a>. For advice about CVs, <a href="//romainpellerin.eu/how-not-to-get-hired.html">see my article "How Not To Get Hired"</a></p>
@@ -157,8 +159,9 @@ tlmgr update --list
 <p>Now that you started using LaTeX (I'm glad you did!), you might wonder how to check spelling, grammar, conjugation, etc.? Actually, there are dozens of tools for Linux.</p>
 <h3>Grammar and style</h3>
 <p><a href="http://dsl.org/cookbook/cookbook_15.html#SEC220">Here are two old fashionned tools to check grammar and style</a>, installable with</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install diction
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo apt-get install diction
+</pre></div>
+
 
 <p><code>diction</code> and <code>style</code> are both great tools but don't trust them completely, they tend to be really strict.</p>
 <h3>Spelling</h3>
@@ -169,38 +172,43 @@ tlmgr update --list
 <li><code>hunspell</code></li>
 </ul>
 <p>They mostly do the same job. However, I would rather recommand <code>aspell</code> as it's the preferred tool for programmers (<a href="http://blog.binchen.org/posts/what-s-the-best-spell-check-set-up-in-emacs.html">source</a>).</p>
-<div class="highlight"><pre><span></span><code>aspell -l en-US -c -t &lt;file.tex&gt;
-</code></pre></div>
+<div class="highlight"><pre><span></span>aspell -l en-US -c -t &lt;file.tex&gt;
+</pre></div>
+
 
 <h3>General tools</h3>
 <h4>TextLint</h4>
 <p>Another awesome tool to check the style, mostly.</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/DamienCassou/textlint
+<div class="highlight"><pre><span></span>git clone https://github.com/DamienCassou/textlint
 <span class="nb">cd</span> textlint
 ./textlint.bash <span class="se">\</span>
     &lt;file.tex&gt; <span class="se">\</span>
     ./Linux32/pharo <span class="se">\</span>
     ./TextLint.tmbundle/Support/TextLint.image
-</code></pre></div>
+</pre></div>
+
 
 <p>They also offer a <a href="http://textlint.lukas-renggli.ch/">web application</a>.</p>
 <h4>LanguageTool</h4>
 <p>Finally, here is a general word/grammer checker (probably one of the best): <a href="https://languagetool.org/">languagetool.org</a>. According to their <a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool">official documentation regarding LaTeX</a>, the best way to check any file is as follows. You will need Java version 8 or higher.</p>
-<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:openjdk-r/ppa
+<div class="highlight"><pre><span></span>sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
 java -version <span class="c1"># Make sure it worked</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>Now, <a href="https://languagetool.org/#download">download languagetool (stand-alone version for Desktop)</a>. Then:</p>
-<div class="highlight"><pre><span></span><code>detex &lt;file.tex&gt; <span class="p">|</span>java -jar languagetool-commandline.jar -l en-US -c UTF-8 <span class="p">|</span>less
-</code></pre></div>
+<div class="highlight"><pre><span></span>detex &lt;file.tex&gt; <span class="p">|</span>java -jar languagetool-commandline.jar -l en-US -c UTF-8 <span class="p">|</span>less
+</pre></div>
+
 
 <p><code>detex</code> will turn your Tex file into a plain text one (it will remove the LaTeX formatting). You can disable rules. Simply add the argument <code>-d</code> with the rules' IDs (as many as you want), for example:</p>
-<div class="highlight"><pre><span></span><code>java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d <span class="s1">&#39;EN_QUOTES,UPPERCASE_SENTENCE_START&#39;</span> &lt;file.tex&gt;
-</code></pre></div>
+<div class="highlight"><pre><span></span>java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d <span class="s1">&#39;EN_QUOTES,UPPERCASE_SENTENCE_START&#39;</span> &lt;file.tex&gt;
+</pre></div>
+
 
 <h1>Books</h1>
 <p>To conclude, here a two famous books to produce high-quality documents in English:</p>

@@ -95,7 +95,7 @@
 </header>
 <article>
     <p>Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> &lt;ORIGINAL FOLDER&gt;
+<div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;ORIGINAL FOLDER&gt;
 find . -type f <span class="p">|</span> sort <span class="p">|</span> &gt; /tmp/original.files
 <span class="nb">cd</span> &lt;BACKUP FOLDER&gt;
 find . -type f <span class="p">|</span> sort <span class="p">|</span> &gt; /tmp/backup.files
@@ -108,7 +108,8 @@ cat /tmp/common.files <span class="p">|</span> xargs -d<span class="s1">&#39;\n&
 <span class="c1"># -d&#39;\n&#39; so that filenames with space characters are handled</span>
 <span class="nb">cd</span> &lt;BACKUP FOLDER&gt;
 md5sum --check /tmp/original.md5sum <span class="c1"># Shows OK or FAILED for each file</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>Hope that helps.</p>
 </article>

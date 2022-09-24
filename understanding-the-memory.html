@@ -109,54 +109,57 @@
 <figcaption>Image taken from <a href="http://www.linuxjournal.com/article/6391">http://www.linuxjournal.com/article/6391</a></figcaption>
 </figure>
 
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <p>Let's see how this code gets compiled in x86 assembly.</p>
-<div class="highlight"><pre><span></span><code>gcc -S -masm<span class="o">=</span>intel main.c -fno-asynchronous-unwind-tables -o output.asm
-</code></pre></div>
+<div class="highlight"><pre><span></span>gcc -S -masm<span class="o">=</span>intel main.c -fno-asynchronous-unwind-tables -o output.asm
+</pre></div>
+
 
 <p>Now, we'll see the instructions using the stack.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">.</span><span class="k">file</span><span class="w">   </span><span class="ss">&quot;main.c&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">intel_syntax</span><span class="w"> </span><span class="n">noprefix</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nc">text</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">globl</span><span class="w">  </span><span class="k">add</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w">   </span><span class="k">add</span><span class="p">,</span><span class="w"> </span><span class="nv">@function</span><span class="w"></span>
-<span class="k">add</span><span class="err">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">push</span><span class="w">    </span><span class="n">rbp</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">rbp</span><span class="p">,</span><span class="w"> </span><span class="n">rsp</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">DWORD</span><span class="w"> </span><span class="n">PTR</span><span class="w"> </span><span class="o">[</span><span class="n">rbp-4</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">edi</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">DWORD</span><span class="w"> </span><span class="n">PTR</span><span class="w"> </span><span class="o">[</span><span class="n">rbp-8</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">esi</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">edx</span><span class="p">,</span><span class="w"> </span><span class="n">DWORD</span><span class="w"> </span><span class="n">PTR</span><span class="w"> </span><span class="o">[</span><span class="n">rbp-4</span><span class="o">]</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="w"> </span><span class="n">DWORD</span><span class="w"> </span><span class="n">PTR</span><span class="w"> </span><span class="o">[</span><span class="n">rbp-8</span><span class="o">]</span><span class="w"></span>
-<span class="w">    </span><span class="k">add</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="w"> </span><span class="n">edx</span><span class="w"></span>
-<span class="w">    </span><span class="n">pop</span><span class="w"> </span><span class="n">rbp</span><span class="w"></span>
-<span class="w">    </span><span class="n">ret</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">size</span><span class="w">   </span><span class="k">add</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="o">-</span><span class="k">add</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">globl</span><span class="w">  </span><span class="n">main</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">type</span><span class="w">   </span><span class="n">main</span><span class="p">,</span><span class="w"> </span><span class="nv">@function</span><span class="w"></span>
-<span class="nl">main</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">push</span><span class="w">    </span><span class="n">rbp</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">rbp</span><span class="p">,</span><span class="w"> </span><span class="n">rsp</span><span class="w"></span>
-<span class="w">    </span><span class="n">sub</span><span class="w"> </span><span class="n">rsp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">esi</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">edi</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="k">call</span><span class="w">    </span><span class="k">add</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">DWORD</span><span class="w"> </span><span class="n">PTR</span><span class="w"> </span><span class="o">[</span><span class="n">rbp-4</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">eax</span><span class="w"></span>
-<span class="w">    </span><span class="n">mov</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">    </span><span class="n">leave</span><span class="w"></span>
-<span class="w">    </span><span class="n">ret</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">size</span><span class="w">   </span><span class="n">main</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="o">-</span><span class="n">main</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">ident</span><span class="w">  </span><span class="ss">&quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="k">section</span><span class="w">    </span><span class="p">.</span><span class="n">note</span><span class="p">.</span><span class="n">GNU</span><span class="o">-</span><span class="n">stack</span><span class="p">,</span><span class="ss">&quot;&quot;</span><span class="p">,</span><span class="nv">@progbits</span><span class="w"></span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>    .file   &quot;main.c&quot;
+    .intel_syntax noprefix
+    .text
+    .globl  add
+    .type   add, @function
+add:
+    push    rbp
+    mov rbp, rsp
+    mov DWORD PTR [rbp-4], edi
+    mov DWORD PTR [rbp-8], esi
+    mov edx, DWORD PTR [rbp-4]
+    mov eax, DWORD PTR [rbp-8]
+    add eax, edx
+    pop rbp
+    ret
+    .size   add, .-add
+    .globl  main
+    .type   main, @function
+main:
+    push    rbp
+    mov rbp, rsp
+    sub rsp, 16
+    mov esi, 2
+    mov edi, 1
+    call    add
+    mov DWORD PTR [rbp-4], eax
+    mov eax, 0
+    leave
+    ret
+    .size   main, .-main
+    .ident  &quot;GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609&quot;
+    .section    .note.GNU-stack,&quot;&quot;,@progbits
+</pre></div>
+
 
 <p>Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.</p>
 <h1>Allocating memory for objects and primitive data types</h1>
@@ -164,18 +167,19 @@
 <p>Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.</p>
 <p>Global variables and static variables (not only global) go to the data segment.</p>
 <p>Here are some examples, to make things clear:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">fonction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">();</span><span class="w"> </span><span class="c1">// On the stack</span>
-<span class="w">  </span><span class="n">Object</span><span class="w"> </span><span class="n">o2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w"> </span><span class="c1">// On the stack</span>
-<span class="w">  </span><span class="n">Object</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">;</span><span class="w"> </span><span class="c1">// The reference is on the stack</span>
-<span class="w">  </span><span class="n">Object</span><span class="o">*</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">o</span><span class="p">;</span><span class="w"> </span><span class="c1">// The pointer is on the stack</span>
-<span class="w">  </span><span class="n">Object</span><span class="o">*</span><span class="w"> </span><span class="n">pt2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w"> </span><span class="cm">/* The right handside (the actual object)</span>
-<span class="cm">    is on the heap, the left handside is on the stack */</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">fonction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Object</span> <span class="n">o</span><span class="p">();</span> <span class="c1">// On the stack</span>
+  <span class="n">Object</span> <span class="n">o2</span> <span class="o">=</span> <span class="n">Object</span><span class="p">();</span> <span class="c1">// On the stack</span>
+  <span class="n">Object</span><span class="o">&amp;</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">o</span><span class="p">;</span> <span class="c1">// The reference is on the stack</span>
+  <span class="n">Object</span><span class="o">*</span> <span class="n">pt</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">o</span><span class="p">;</span> <span class="c1">// The pointer is on the stack</span>
+  <span class="n">Object</span><span class="o">*</span> <span class="n">pt2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="p">();</span> <span class="cm">/* The right handside (the actual object)</span>
+<span class="cm">    is on the heap, the left handside is on the stack */</span>
 
-<span class="w">  </span><span class="cm">/* Everything that has been allocated on the stack will be</span>
-<span class="cm">    deleted at the end of the function */</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
+  <span class="cm">/* Everything that has been allocated on the stack will be</span>
+<span class="cm">    deleted at the end of the function */</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <p>To delete what is on the heap, you need to use the <code>delete</code> keyword.</p>
 <figure class="center">

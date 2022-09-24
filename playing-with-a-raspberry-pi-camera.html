@@ -98,16 +98,17 @@
 <p><em>Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: <code>raspistill</code> and <code>raspivid</code>. For a complete user manual, follow <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2">this link</a>.</em></p>
 <p><em>Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).</em></p>
 <h1>A timelapse of the sky at night</h1>
-<p>For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.</p>
+<p>For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. </p>
 <p>However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.</p>
 <p>There are multiple parameters that affect the look of a photos but after trying a few and a lot of <a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/">Googling</a>, here is a set of parameters that work pretty well for me:</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> <span class="se">\</span>
   raspistill -q <span class="m">100</span> -t <span class="m">1</span> -ss <span class="m">6000000</span> -rot <span class="m">180</span> <span class="se">\</span>
   -sh <span class="m">0</span> -co <span class="m">50</span> -br <span class="m">50</span> -sa <span class="m">0</span> -ev +2 -ex night <span class="se">\</span>
   -awb auto -ISO <span class="m">800</span> -mm average -n <span class="se">\</span>
   -o <span class="s2">&quot;</span><span class="k">$(</span>date -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="k">)</span><span class="s2">.jpg&quot;</span><span class="p">;</span> date<span class="p">;</span> <span class="se">\</span>
   <span class="k">done</span>
-</code></pre></div>
+</pre></div>
+
 
 <p>This command takes as many shots as possible in a infinite loop, and displays the date and time between two shots in the terminal.</p>
 <p>Here the parameters <code>-awb auto</code>, <code>-mm average</code> and <code>-sa 0</code> seem to have no impact, I believe they are the default values. The rest makes a difference.</p>
@@ -120,19 +121,21 @@
 </div>
 
 <p>Then:</p>
-<div class="highlight"><pre><span></span><code>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
   <span class="p">|</span> ffmpeg -ar <span class="m">44100</span> -ac <span class="m">2</span> -f s16le -i /dev/zero -f h264 -i - <span class="se">\</span>
   -vcodec copy -acodec aac -ab 128k -g <span class="m">50</span> -strict experimental -f flv <span class="se">\</span>
   rtmp://a.rtmp.youtube.com/live2/&lt;your-secret-key-here&gt;
-</code></pre></div>
+</pre></div>
+
 
 <p>This would create a live stream with no audio. To add an audio track that repeats itself, do:</p>
-<div class="highlight"><pre><span></span><code>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span>raspivid -o - -rot <span class="m">180</span> -t <span class="m">0</span> -w <span class="m">1280</span> -h <span class="m">720</span> -fps <span class="m">25</span> -b <span class="m">4000000</span> -g <span class="m">50</span> <span class="se">\</span>
   <span class="p">|</span> ffmpeg -stream_loop -1 -i ./audio.mp3 -f h264 <span class="se">\</span>
   -use_wallclock_as_timestamps <span class="m">1</span> -thread_queue_size <span class="m">1024</span>  -i - <span class="se">\</span>
   -map <span class="m">0</span>:0 -map <span class="m">1</span>:0 -vcodec copy -acodec copy -g <span class="m">50</span> -strict experimental -f flv <span class="se">\</span>
   rtmp://a.rtmp.youtube.com/live2/&lt;your-secret-key-here&gt;
-</code></pre></div>
+</pre></div>
+
 
 <p><code>-use_wallclock_as_timestamps</code> makes a warning message about no timestamps disappear. <code>-thread_queue_size 1024</code> makes another warning message disappear.</p>
 <p>With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.</p>
@@ -142,16 +145,18 @@
 
 <h1>Daytime timelapse</h1>
 <p>Here, it's pretty much like a nighttime timelapse, except that we don't need as many parameters, the default ones should normally do a decent job. Also, since taking a picture is here much more faster, we must schedule the shots. Every 20 or 30 seconds is usually a safe bet. Since we can't predict with certainty how long taking the picture will take, in order to take timely shots, we must run a script in the background to take the photo and wait x seconds in an infinite loop:</p>
-<div class="highlight"><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> ./take-pic.sh<span class="p">;</span> sleep <span class="m">20</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> ./take-pic.sh<span class="p">;</span> sleep <span class="m">20</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+
 
 <p>And the file <code>./take-pic.sh</code> (don't forget to <code>chmod +x ./take-pic.sh</code>):</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nb">echo</span> <span class="s2">&quot;Taking pic...&quot;</span>
 <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>date -u +<span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="k">)</span><span class="s2">.jpg&quot;</span>
 raspistill -q <span class="m">100</span> -rot <span class="m">180</span> -n -awb sun -co <span class="m">20</span> -o <span class="s2">&quot;</span><span class="nv">$name</span><span class="s2">&quot;</span> <span class="p">&amp;</span>
 date
-</code></pre></div>
+</pre></div>
+
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CxOuNB-NVDQ?rel=0" frameborder="0" allowfullscreen></iframe>
 

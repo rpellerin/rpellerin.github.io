@@ -172,35 +172,41 @@
 <p>(<code>^n</code> is disabled by YouCompleteMe.)</p>
 <h1>Regex</h1>
 <h2>Interactive find and replace</h2>
-<div class="highlight"><pre><span></span><code>:%s/foo/bar/gc
-</code></pre></div>
+<div class="highlight"><pre><span></span>:%s/foo/bar/gc
+</pre></div>
+
 
 <p><code>%</code> means whole document, not just the current line.</p>
 <p><code>/g</code> means every occurence, not just the first one. <code>/c</code> is the interactive option.</p>
 <h2>Capturing groups</h2>
-<div class="highlight"><pre><span></span><code>:%s/abc<span class="se">\(</span>def<span class="se">\)</span>ghi/ko<span class="se">\1</span>ok/g
-</code></pre></div>
+<div class="highlight"><pre><span></span>:%s/abc<span class="se">\(</span>def<span class="se">\)</span>ghi/ko<span class="se">\1</span>ok/g
+</pre></div>
+
 
 <p>Will print <code>kodefok</code>.</p>
 <h2>Non-greedy search</h2>
 <p>Normally, to search in a non-greedy way, we add a punctuation mark, as in <code>.*?</code> which means <em>any string of characters as short as possible</em>. For instance:</p>
-<div class="highlight"><pre><span></span><code>/&lt;.&gt;<span class="o">(</span>.*?<span class="o">)</span>&lt;.&gt;/
-</code></pre></div>
+<div class="highlight"><pre><span></span>/&lt;.&gt;<span class="o">(</span>.*?<span class="o">)</span>&lt;.&gt;/
+</pre></div>
+
 
 <p>Applied to the string <code>abc&lt;p&gt;def&lt;a&gt;ghi&lt;b&gt;jkl</code> would match <code>&lt;p&gt;def&lt;a&gt;</code> and capture <code>def</code>. To make non-greedy searches with Vim, replace <code>*?</code> with <code>\{-}</code>.</p>
 <h1>Misc</h1>
 <h2>Split the screen in half and display two different parts of a given file</h2>
-<div class="highlight"><pre><span></span><code>:vsp
+<div class="highlight"><pre><span></span>:vsp
 :set scrollbind
-</code></pre></div>
+</pre></div>
+
 
 <p>Then, on the right pane, scroll down or up, further in the file, and do:</p>
-<div class="highlight"><pre><span></span><code>:set scrollbind
-</code></pre></div>
+<div class="highlight"><pre><span></span>:set scrollbind
+</pre></div>
+
 
 <p>From that point on, as you scroll on one pane, the other one will follow. To undo:</p>
-<div class="highlight"><pre><span></span><code>:set noscrollbind
-</code></pre></div>
+<div class="highlight"><pre><span></span>:set noscrollbind
+</pre></div>
+
 
 <h2>Other</h2>
 <ul>

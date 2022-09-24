@@ -104,55 +104,61 @@
 <p>For now, as these OSes are still in early development, they're not available worldwide easily. Somes phones run theses OSes but they're not mainstream yet. An easy option is to build them yourself and install them on your own Android device. Here are short tutorials.</p>
 <h1>Installing Ubuntu for devices</h1>
 <h2>For Nexus 4</h2>
-<div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
+<div class="highlight"><pre><span></span>sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-device-flash phablet-tools
-</code></pre></div>
+</pre></div>
+
 
 <p>Plug in your phone, enable the developer mode and USB debugging.</p>
-<div class="highlight"><pre><span></span><code>adb reboot bootloader
+<div class="highlight"><pre><span></span>adb reboot bootloader
 sudo fastboot oem unlock
 ubuntu-device-flash touch --channel<span class="o">=</span>stable --bootstrap
-</code></pre></div>
+</pre></div>
+
 
 <p><a href="https://developer.ubuntu.com/en/start/ubuntu-for-devices/installing-ubuntu-for-devices/">More information</a>.</p>
 <h2>For Nexus 5</h2>
 <p>There are 3 methods (updated in December 2017). First, plug in your phone. Then:</p>
 <h3>1</h3>
 <p><a href="https://devices.ubports.com/#/hammerhead">Official tutorial</a>.</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/MariusQuabeck/magic-device-tool.git
+<div class="highlight"><pre><span></span>git clone https://github.com/MariusQuabeck/magic-device-tool.git
 <span class="nb">cd</span> magic-device-tool
 sudo ./launcher.sh
-</code></pre></div>
+</pre></div>
+
 
 <h3>2</h3>
 <p><a href="https://devices.ubports.com/#/hammerhead">Official tutorial</a>.</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install ubuntu-device-flash phablet-tools
+<div class="highlight"><pre><span></span>sudo apt-get install ubuntu-device-flash phablet-tools
 adb reboot bootloader
 sudo fastboot oem unlock
 sudo ubuntu-device-flash --server<span class="o">=</span>http://system-image.ubports.com touch --device<span class="o">=</span>hammerhead --channel<span class="o">=</span><span class="m">15</span>.04/stable --bootstrap
-</code></pre></div>
+</pre></div>
+
 
 <h3>3</h3>
 <p><a href="https://ubports.com/page/ubuntu-nexus-5">Official tutorial</a>.</p>
-<div class="highlight"><pre><span></span><code>wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
+<div class="highlight"><pre><span></span>wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
 sudo dpkg -i /tmp/ubports.deb
 ubports-installer
-</code></pre></div>
+</pre></div>
+
 
 <h1>Building and installing Firefox OS</h1>
 <h2>For Nexus 4</h2>
 <p>Plug in your phone, enable the developer mode and USB debugging.</p>
 <h3>First step: flash your Nexus 4 with Android 4.3</h3>
-<div class="highlight"><pre><span></span><code>sudo apt-get install android-tools-adb
+<div class="highlight"><pre><span></span>sudo apt-get install android-tools-adb
 wget https://dl.google.com/dl/android/aosp/mantaray-jwr66y-factory-3d8252dd.tgz
 tar xvzf occam-jwr66y-factory-74b1deab.tgz
 <span class="nb">cd</span> occam-jwr66y
 ./flash-all.sh <span class="c1"># Boot to fastboot and unlock bootloader</span>
-</code></pre></div>
+</pre></div>
+
 
 <h3>Second step: build Firefox OS (on a 14.04 Ubuntu)</h3>
-<div class="highlight"><pre><span></span><code>sudo dpkg --add-architecture i386
+<div class="highlight"><pre><span></span>sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache <span class="se">\</span>
     curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib git <span class="se">\</span>
@@ -165,10 +171,11 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 <span class
 sudo update-alternatives --set gcc <span class="s2">&quot;/usr/bin/gcc-4.6&quot;</span>
 sudo update-alternatives --set g++ <span class="s2">&quot;/usr/bin/g++-4.6&quot;</span>
 ccache --max-size 10GB
-</code></pre></div>
+</pre></div>
+
 
 <p>Plug in your phone, enable the developer mode and USB debugging.</p>
-<div class="highlight"><pre><span></span><code>adb pull /system /tmp/system
+<div class="highlight"><pre><span></span>adb pull /system /tmp/system
 adb pull /data /tmp/data
 adb pull /vendor /tmp/vendor
 git clone git://github.com/mozilla-b2g/B2G.git
@@ -177,14 +184,16 @@ git pull
 ./repo sync
 ./config nexus-4
 ./build.sh
-</code></pre></div>
+</pre></div>
+
 
 <h3>Third step: install it</h3>
-<div class="highlight"><pre><span></span><code>./flash.sh
-</code></pre></div>
+<div class="highlight"><pre><span></span>./flash.sh
+</pre></div>
+
 
 <h3>Some additional settings</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> gaia
+<div class="highlight"><pre><span></span><span class="nb">cd</span> gaia
 make reset-gaia <span class="nv">PRODUCTION</span><span class="o">=</span><span class="m">1</span>
 mkdir -p locales
 sudo aptitude install mercurial
@@ -200,7 +209,8 @@ rm locales/languages_dev.json -f
 <span class="s1"> &quot;fr&quot;        : &quot;Français&quot;</span>
 <span class="s1">}&#39;</span> &gt; locales/languages_dev.json
 make clean <span class="o">&amp;&amp;</span> make production <span class="nv">LOCALES_FILE</span><span class="o">=</span>locales/languages_dev.json
-</code></pre></div>
+</pre></div>
+
 
 <p><a href="https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS">More information</a>.</p>
 <h1>Other alternatives</h1>

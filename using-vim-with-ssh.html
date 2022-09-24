@@ -98,7 +98,7 @@
 <p>Anyway, I then started looking for a way to use Vim over SSH effectively, without having to switch between terminals to compile. What's more, I wanted it to be as fast as possible. After asking for help on <a href="http://unix.stackexchange.com/questions/315844/editing-and-compiling-files-on-a-remote-server-with-vim/315846">StackOverflow</a>, I got a very helpful answer. I finally came up with the following solution. Let's get started!</p>
 <h1>SSH</h1>
 <p>First, edit <code>~/.ssh/config</code> and add your remote host.</p>
-<div class="highlight"><pre><span></span><code>Host my_server
+<div class="highlight"><pre><span></span>Host my_server
   Hostname &lt;server&gt;
   User &lt;user&gt;
   IdentityFile ~/.ssh/id_rsa
@@ -106,7 +106,8 @@
     ControlPath ~/.ssh/%C
     <span class="c1"># ControlPath ~/.ssh/cm_socket/%r@%h:%p</span>
     ControlPersist yes
-</code></pre></div>
+</pre></div>
+
 
 <p>Then, enable <em>pubkey</em> authentication using <code>ssh-copy-id -i ~/.ssh/id_rsa.pub user@server</code>. You should now be able to connect using <code>ssh my_server</code>. This will establish a permanent connection. As an example, simply open another terminal and try to connect to that server, you'll notice how fast it is this time!</p>
 <p>Later, you'll be able to disconnect from the server using <code>ssh -O exit my_server</code>.</p>
@@ -117,18 +118,20 @@
 <p>Before starting editing files, you definitely want your Vim to be smart. Hence we'll use the plugin <a href="https://github.com/tpope/vim-dispatch">vim-dispatch</a>, which allows use to run the command <code>:make</code> asynchronously from Vim, in another Tmux pane (the new command introduced by this plugin is <code>:Make</code>).</p>
 <h2>Editing and compiling</h2>
 <p>Once you're connected over SSH, let's edit files on the server using Vim. Let's go!</p>
-<div class="highlight"><pre><span></span><code>vim sftp://my_server//home/whoever/main.cpp
-</code></pre></div>
+<div class="highlight"><pre><span></span>vim sftp://my_server//home/whoever/main.cpp
+</pre></div>
+
 
 <p>Then, in Vim, type the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># The next two lines have the same effect,</span>
+<div class="highlight"><pre><span></span><span class="c1"># The next two lines have the same effect,</span>
 <span class="c1"># except that the first one needs spaces to be escaped</span>
 :set <span class="nv">makeprg</span><span class="o">=</span>ssh<span class="se">\ </span>my_server<span class="se">\ </span><span class="s1">&#39;make &amp;&amp; ./main &amp;&amp; exit&#39;</span>
 :let <span class="p">&amp;</span><span class="nv">makeprg</span><span class="o">=</span><span class="s2">&quot;ssh my_server &#39;make &amp;&amp; ./main &amp;&amp; exit&#39;&quot;</span>
 :map &lt;f10&gt; :Copen&lt;cr&gt;G
 :map &lt;f9&gt; :update&lt;cr&gt;:Make&lt;cr&gt;
 :map &lt;f12&gt; :cclose&lt;cr&gt;
-</code></pre></div>
+</pre></div>
+
 
 <p>The last three commands are just shortcuts meant to make the world a better place... or just developers happier.</p>
 <p>That's it! I hope it was helpful.</p>

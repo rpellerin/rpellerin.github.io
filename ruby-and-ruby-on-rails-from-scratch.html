@@ -112,7 +112,7 @@
 </ul>
 <h1>Install</h1>
 <p><a href="https://github.com/rbenv/rbenv#basic-github-checkout">Install rbenv</a>. In short, here is how:</p>
-<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install openssl libicu-dev libssl-dev libreadline-dev zlib1g-dev
+<div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install openssl libicu-dev libssl-dev libreadline-dev zlib1g-dev
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 <span class="nb">cd</span> ~/.rbenv <span class="o">&amp;&amp;</span> src/configure <span class="o">&amp;&amp;</span> make -C src
 <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc
@@ -125,10 +125,11 @@ rbenv global <span class="m">2</span>.5.0
 
 <span class="c1"># Check everything is installed and correctly set up</span>
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor <span class="p">|</span> bash
-</code></pre></div>
+</pre></div>
+
 
 <p>Then, add must-have stuff:</p>
-<div class="highlight"><pre><span></span><code>gem install bundler
+<div class="highlight"><pre><span></span>gem install bundler
 
 <span class="c1"># In a fresh new Ruby project folder, create a Gemfile</span>
 rbenv <span class="nb">local</span> <span class="m">2</span>.5.0 <span class="c1"># Set version 2.5.0 for this project, same as .nvmrc for Node projects</span>
@@ -138,21 +139,23 @@ bundle install --path vendor --binstubs bin <span class="c1"># Set up .bundle co
 
 <span class="c1"># In a Ruby project folder, install all dependencies</span>
 bundle install <span class="c1"># or simply `bundle`</span>
-</code></pre></div>
+</pre></div>
+
 
 <h1>Upgrade Ruby version</h1>
 <p>Update the version in <code>Gemfile</code> and <code>.ruby-version</code>. Then run:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$HOME</span>/.rbenv/plugins/ruby-build <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> <span class="nb">cd</span> -
+<div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>/.rbenv/plugins/ruby-build <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> <span class="nb">cd</span> -
 rbenv install
 gem install bundler
 bundle
-</code></pre></div>
+</pre></div>
+
 
 <h1>Stuff to know</h1>
 <ul>
 <li><code>;</code> is optional</li>
 <li>parentheses optional in <code>if</code> statements</li>
-<li><code>==</code> vs <code>===</code>: <a href="https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby">https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby</a></li>
+<li><code>==</code> vs <code>===</code>:  <a href="https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby">https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby</a></li>
 <li><code>puts</code> (adds new line) vs <code>print</code> (no new line)</li>
 <li><code>.each do |item| ... end</code></li>
 <li><code>10.times do |i| ... end</code></li>
@@ -176,7 +179,7 @@ bundle
 <li><code>do..end</code> vs curly braces for blocks in Ruby: <a href="https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby">https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby</a></li>
 <li><code>pry</code>: pauses execution but does not give access to local variables</li>
 <li><code>binding.pry</code>: pauses execution, gives access to local variables but also pauses all threads (server and tests for instance)</li>
-<li><code>whereami</code> == <code>@</code> (in binding.pry / pry)</li>
+<li><code>whereami</code> == <code>@</code> (in binding.pry / pry) </li>
 <li><code>help</code> (get help in binding.pry /pry)</li>
 <li><code>PRY_RESCUE_RAIL=1 rails test</code>: runs a test and pauses on falsy assertions</li>
 </ul>

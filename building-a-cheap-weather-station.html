@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">How to build a cheap weather station with a Raspberry Pi and the BME280 module</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 431 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 435 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/weather.html">weather</a></p>    </div>
 </header>
@@ -118,14 +118,15 @@
 <ol>
 <li>Raspberry Pi turned off, plug the module like shown in the photo above.</li>
 <li>Enable I2C. Run <code>sudo raspi-config</code>, choose <code>Interfacing options</code>. Then reboot. Run <code>lsmod | grep i2c</code> to confirm <code>i2c</code> has been enabled.</li>
-<li>Run <code>sudo apt install python3-venv python3-pip i2c-tools &amp;&amp; i2cdetect -y 1</code> to make sure the BME280 module is detected.</li>
+<li>Run <code>sudo apt install python3-pip i2c-tools &amp;&amp; i2cdetect -y 1</code> to make sure the BME280 module is detected.</li>
 <li><code>mkdir /home/pi/temperature &amp;&amp; cd /home/pi/temperature</code> (or any other directory of your liking).</li>
-<li><code>python3 -m venv .env &amp;&amp; source .env/bin/activate</code></li>
+<li><code>pip3 install virtualenv</code> (no <code>sudo</code>!)</li>
+<li><code>/home/pi/.local/bin/virtualenv -p /usr/bin/python3 .env &amp;&amp; source .env/bin/activate</code></li>
 <li><code>pip install smbus2 requests RPi.bme280 redis</code></li>
 <li>Create the Google Form, add 4 free text inputs: datetime, temperature, humidity and pressure. Then navigate to the form and inspect the DOM, you should be able to find hidden inputs whose names contain the word "entity" and a &lt;form&gt; whose URL ends with <code>/formResponse</code>. Copy the URL and the hidden input names, you'll need them in the next bullet point.</li>
 <li>
 <p><code>vim weatherstation.py</code></p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">smbus2</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">smbus2</span>
 <span class="kn">import</span> <span class="nn">bme280</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -146,7 +147,7 @@
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="n">url</span><span class="p">,</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
-                <span class="s2">&quot;entry.12&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span>
+                <span class="s2">&quot;entry.12&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">],</span> 
                 <span class="s2">&quot;entry.34&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">],</span>
                 <span class="s2">&quot;entry.56&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;humidity&#39;</span><span class="p">],</span>
                 <span class="s2">&quot;entry.78&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">],</span>
@@ -157,24 +158,25 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
     <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">bme280</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">bus</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">calibration_params</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">now</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">temperature</span><span class="p">,</span> <span class="s1">&#39;humidity&#39;</span><span class="p">:</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">humidity</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">pressure</span> <span class="p">}</span>
 
-<span class="n">successfully_sent</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">successfully_sent</span> <span class="o">=</span> <span class="bp">False</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="n">successfully_sent</span> <span class="o">=</span> <span class="n">send_request</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Error: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">successfully_sent</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to post to Google Form&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Failed to post to Google Form&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="p">()</span>
     <span class="n">r</span><span class="o">.</span><span class="n">rpush</span><span class="p">(</span><span class="s1">&#39;weather_reports&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>

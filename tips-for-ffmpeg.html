@@ -99,156 +99,186 @@
 <p><code>-af</code> is an alias for <code>-filter:a</code> (audio stream).<br>
 <code>-vf</code> is an alias for <code>-filter:v</code> (video stream).</p>
 <h1>Cross fade a video for seamless loops</h1>
-<div class="highlight"><pre><span></span><code>curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
+<div class="highlight"><pre><span></span>curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
 chmod +x ./video-crossfade
 ./video-crossfade.sh -f <span class="m">2</span> -o output.mp4 input.mp4 <span class="c1"># 2 second crossfade</span>
-</code></pre></div>
+</pre></div>
+
 
 <h1>Scale a 2.7K (2704x1520) video down to 1080p</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=1920:1080,setsar=1&quot;</span> -acodec copy output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="s2">&quot;scale=1920:1080,setsar=1&quot;</span> -acodec copy output.mp4
+</pre></div>
+
 
 <h1>Convert a video framerate to NTSC (29.97002997)</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -r ntsc -acodec copy output.mp4
+</pre></div>
+
 
 <h1>Split a video in several chunks of same duration</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -c copy -map <span class="m">0</span> -segment_time <span class="m">00</span>:00:30 -f segment -reset_timestamps <span class="m">1</span> output%03d.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -c copy -map <span class="m">0</span> -segment_time <span class="m">00</span>:00:30 -f segment -reset_timestamps <span class="m">1</span> output%03d.mp4
+</pre></div>
+
 
 <h1>Add embedded subtitles</h1>
-<div class="highlight"><pre><span></span><code>sudo apt install subtitlecomposer
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo apt install subtitlecomposer
+</pre></div>
+
 
 <p>In subtitlecomposer, import the video, add subtitles, and export the file as <code>filename.ass</code>. Edit the exported text file, change the font from 16px to 22. Then:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="nv">ass</span><span class="o">=</span>filename.ass output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="nv">ass</span><span class="o">=</span>filename.ass output.mp4
+</pre></div>
+
 
 <h1>Create a video out of several images</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -r <span class="m">24</span> -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf <span class="m">25</span> -pix_fmt yuv420p output.mp4 <span class="c1"># image0001.jpg, image0002.jpg, etc</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -r <span class="m">24</span> -f image2 -s 1440x1080 -i image%04d.jpg -vcodec libx264 -crf <span class="m">25</span> -pix_fmt yuv420p output.mp4 <span class="c1"># image0001.jpg, image0002.jpg, etc</span>
+</pre></div>
+
 
 <h1>Create a GIF from a video</h1>
-<div class="highlight"><pre><span></span><code><span class="nv">palette</span><span class="o">=</span><span class="s2">&quot;/tmp/palette.png&quot;</span>
+<div class="highlight"><pre><span></span><span class="nv">palette</span><span class="o">=</span><span class="s2">&quot;/tmp/palette.png&quot;</span>
 
 <span class="nv">filters</span><span class="o">=</span><span class="s2">&quot;fps=15,scale=320:-1:flags=lanczos&quot;</span>
 
 ffmpeg -v warning -i input.mp4 -vf <span class="s2">&quot;</span><span class="nv">$filters</span><span class="s2">,palettegen&quot;</span> -y <span class="nv">$palette</span>
 ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span class="se">\</span>
     <span class="s2">&quot;</span><span class="nv">$filters</span><span class="s2"> [x]; [x][1:v] paletteuse&quot;</span> -y output.gif
-</code></pre></div>
+</pre></div>
+
 
 <h1>Create a GIF from images (01.jpg, 02.jpg, 03.jpg, etc...)</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -f image2 -framerate <span class="m">1</span> -i %02d.jpg output.gif
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -f image2 -framerate <span class="m">1</span> -i %02d.jpg output.gif
+</pre></div>
+
 
 <h1>Crop an OGV video</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.ogv -vcodec libtheora -vf <span class="nv">crop</span><span class="o">=</span><span class="m">700</span>:400:0:0 -f ogg output.ogv
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.ogv -vcodec libtheora -vf <span class="nv">crop</span><span class="o">=</span><span class="m">700</span>:400:0:0 -f ogg output.ogv
+</pre></div>
+
 
 <h1>Merge an audio track (delayed) with a video, and cut the final video according to the shortest stream</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -itsoffset <span class="m">00</span>:00:15 -i input.mp4 -i audio.mp3 -acodec copy -vcodec copy <span class="se">\</span>
+<div class="highlight"><pre><span></span>ffmpeg -itsoffset <span class="m">00</span>:00:15 -i input.mp4 -i audio.mp3 -acodec copy -vcodec copy <span class="se">\</span>
     -map <span class="m">0</span>:0 -map <span class="m">1</span>:0 -shortest output.mp4
-</code></pre></div>
+</pre></div>
+
 
 <h1>Cut a video (set the starting time and the duration)</h1>
 <p>Two options mostly.</p>
 <ol>
 <li>
 <p>Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -ss <span class="m">00</span>:00:13 -t <span class="m">00</span>:09:00 output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -ss <span class="m">00</span>:00:13 -t <span class="m">00</span>:09:00 output.mp4
+</pre></div>
+
 
 </li>
 <li>
 <p>Seek in input (fast but imprecise, <a href="https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding">can only cut at key frames</a>) and do not re-encode to preserve quality:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -ss <span class="m">00</span>:00:13 -i input.mp4 -t <span class="m">00</span>:09:00 -c copy -avoid_negative_ts make_zero output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -ss <span class="m">00</span>:00:13 -i input.mp4 -t <span class="m">00</span>:09:00 -c copy -avoid_negative_ts make_zero output.mp4
+</pre></div>
+
 
 </li>
 </ol>
 <p><a href="https://trac.ffmpeg.org/wiki/Seeking">More information</a>.</p>
 <h1>Extract EVERY image from a video</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i foo.avi -r <span class="m">1</span> -s WxH -f image2 foo-%03d.jpeg
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i foo.avi -r <span class="m">1</span> -s WxH -f image2 foo-%03d.jpeg
+</pre></div>
+
 
 <h1><a href="http://trac.ffmpeg.org/wiki/Create%20a%20video%20slideshow%20from%20images">Create a 24fps video from many images</a></h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -framerate <span class="m">1</span> -i foo-%02d.jpg -c:v libx264 -r <span class="m">24</span> -pix_fmt yuv420p foo.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -framerate <span class="m">1</span> -i foo-%02d.jpg -c:v libx264 -r <span class="m">24</span> -pix_fmt yuv420p foo.mp4
+</pre></div>
+
 
 <h1>Accelerate a video by 2</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -filter:v <span class="s2">&quot;setpts=0.5*PTS&quot;</span> output.mp4
+</pre></div>
+
 
 <h1>Keep the original metadata of a MP4 file</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i original_video.mp4 -c:v libx264 -c:a copy -map_metadata <span class="m">0</span> transcoded_video.mp4
+<div class="highlight"><pre><span></span>ffmpeg -i original_video.mp4 -c:v libx264 -c:a copy -map_metadata <span class="m">0</span> transcoded_video.mp4
 touch -r original_video.mp4 transcoded_video.mp4
-</code></pre></div>
+</pre></div>
+
 
 <h1>Flip by 180° a video and fix the metadata</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s2">&quot;transpose=2,transpose=2&quot;</span> -metadata:s:v:0 <span class="nv">rotate</span><span class="o">=</span><span class="m">0</span> output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="s2">&quot;transpose=2,transpose=2&quot;</span> -metadata:s:v:0 <span class="nv">rotate</span><span class="o">=</span><span class="m">0</span> output.mp4
+</pre></div>
+
 
 <h1>Remove the audio stream</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -an -vcodec copy output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -an -vcodec copy output.mp4
+</pre></div>
+
 
 <h1>Convert from .mov to .mp4</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mov -c:v libx264 -c:a copy output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mov -c:v libx264 -c:a copy output.mp4
+</pre></div>
+
 
 <h1><a href="https://trac.ffmpeg.org/wiki/Concatenate">Concatenate several MP4 files</a></h1>
-<div class="highlight"><pre><span></span><code>find . -type f -iname <span class="s2">&quot;*.MP4&quot;</span> -exec ffmpeg -i <span class="s1">&#39;{}&#39;</span> -c copy -bsf:v h264_mp4toannexb -f mpegts <span class="s1">&#39;{}.ts&#39;</span> <span class="se">\;</span>
+<div class="highlight"><pre><span></span>find . -type f -iname <span class="s2">&quot;*.MP4&quot;</span> -exec ffmpeg -i <span class="s1">&#39;{}&#39;</span> -c copy -bsf:v h264_mp4toannexb -f mpegts <span class="s1">&#39;{}.ts&#39;</span> <span class="se">\;</span>
 ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.ts <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;|&#39;</span> <span class="p">|</span> head -c -1<span class="k">)</span><span class="s2">&quot;</span> -c copy -bsf:a aac_adtstoasc output.mp4
-</code></pre></div>
+</pre></div>
+
 
 <h1>Fade out last 2 seconds of audio track</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i output-with-sound.mp4 -c:v copy -filter_complex <span class="s2">&quot;areverse, afade=d=2, areverse&quot;</span> output-with-sound-fadeout.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i output-with-sound.mp4 -c:v copy -filter_complex <span class="s2">&quot;areverse, afade=d=2, areverse&quot;</span> output-with-sound-fadeout.mp4
+</pre></div>
+
 
 <h1>Merge two videos placed side by side with audio from first video</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
+<div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
   -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[myvideo]&quot;</span> <span class="se">\</span>
   -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> wide.mp4
-</code></pre></div>
+</pre></div>
+
 
 <p>You might want to scale it down and add black padding at the top and bottom:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
+<div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
   -filter_complex <span class="s2">&quot;[0:v][1:v]hstack=inputs=2[myvideo];[myvideo]scale=1920:-1,pad=1920:1080:0:270[myvideo]&quot;</span> <span class="se">\</span>
   -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> wide.mp4
 :::bash
-</code></pre></div>
+</pre></div>
+
 
 <p>Alternatively, you can crop the initial two inputs and directly produce a 1920x1080 video:</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
+<div class="highlight"><pre><span></span>ffmpeg -i left.mp4 -i right.mp4 <span class="se">\</span>
   -filter_complex <span class="s2">&quot;[0:v]crop=960:1080:480:0[left];[1:v]crop=960:1080:480:0[right];[left][right]hstack=inputs=2[myvideo]&quot;</span> <span class="se">\</span>
   -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> <span class="m">16</span>-9-video.mp4
-</code></pre></div>
+</pre></div>
+
 
 <p>If one of the two videos is not correctly synced with the other one, you can delay an input. Add <code>-ss 00:00:0x</code> before the <code>-i input</code> that needs adjustment.</p>
 <h1>Put one video on top of another one (overlay), alternate between the two, and use audio from first video</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i initial.mp4 -i ontop.mp4 -filter_complex <span class="se">\</span>
+<div class="highlight"><pre><span></span>ffmpeg -i initial.mp4 -i ontop.mp4 -filter_complex <span class="se">\</span>
   <span class="s2">&quot;[0:0][1:0]overlay=enable=&#39;between(t\,19,28)&#39;[myvideo];[myvideo][1:0]overlay=enable=&#39;between(t\,37,45)&#39;[myvideo]&quot;</span> <span class="se">\</span>
   -map <span class="s2">&quot;[myvideo]&quot;</span> -map <span class="s2">&quot;0:a&quot;</span> -shortest output.mp4
-</code></pre></div>
+</pre></div>
+
 
 <h1>Replace the audio track with another</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i output.mp4 -i yo.mp3 -map <span class="m">0</span>:0 -map <span class="m">1</span> -vcodec copy -acodec copy output2.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i output.mp4 -i yo.mp3 -map <span class="m">0</span>:0 -map <span class="m">1</span> -vcodec copy -acodec copy output2.mp4
+</pre></div>
+
 
 <h1><a href="https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg">(Down) Scaling a video from 1080p to 720p</a></h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1280</span>:-1 -acodec copy output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span><span class="m">1280</span>:-1 -acodec copy output.mp4
+</pre></div>
+
 
 <h1>Concat MTS files to MP4</h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.MTS <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;|&#39;</span> <span class="p">|</span> head -c -1<span class="k">)</span><span class="s2">&quot;</span> -vcodec copy -acodec aac -ab 512k -cutoff <span class="m">22050</span> -sn output.mp4
-</code></pre></div>
+<div class="highlight"><pre><span></span>ffmpeg -i <span class="s2">&quot;concat:</span><span class="k">$(</span>ls *.MTS <span class="p">|</span> tr <span class="s1">&#39;\n&#39;</span> <span class="s1">&#39;|&#39;</span> <span class="p">|</span> head -c -1<span class="k">)</span><span class="s2">&quot;</span> -vcodec copy -acodec aac -ab 512k -cutoff <span class="m">22050</span> -sn output.mp4
+</pre></div>
+
 
 <h1><a href="https://unix.stackexchange.com/a/337359/194594">Reduce the size of a video</a></h1>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vcodec libx265 -crf <span class="m">24</span> -r <span class="m">25</span> output.mp4
+<div class="highlight"><pre><span></span>ffmpeg -i input.mp4 -vcodec libx265 -crf <span class="m">24</span> -r <span class="m">25</span> output.mp4
 <span class="c1"># OR if libx265 is not supported</span>
 ffmpeg -i input.mp4 -vcodec libx264 -crf <span class="m">24</span> -r <span class="m">25</span> output.mp4
-</code></pre></div>
+</pre></div>
+
 
 <h1>Resources</h1>
 <ul>

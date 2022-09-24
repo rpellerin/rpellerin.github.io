@@ -102,74 +102,85 @@
 <li>Deactivate any firewall first</li>
 <li>
 <p>Get super user rights</p>
-<div class="highlight"><pre><span></span><code>sudo su
-</code></pre></div>
+<div class="highlight"><pre><span></span>sudo su
+</pre></div>
+
 
 </li>
 <li>
 <p>Install some required packages if not already present</p>
-<div class="highlight"><pre><span></span><code>aptitude install dnsmasq aircrack-ng
-</code></pre></div>
+<div class="highlight"><pre><span></span>aptitude install dnsmasq aircrack-ng
+</pre></div>
+
 
 </li>
 <li>
 <p>List the existing network interfaces and turn one of them into monitor mode</p>
-<div class="highlight"><pre><span></span><code>airmon-ng
+<div class="highlight"><pre><span></span>airmon-ng
 airmon-ng start wlan0 <span class="c1"># wlan0 is usually Wifi</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Start monitoring available networks around, and make a quick test</p>
-<div class="highlight"><pre><span></span><code>airodump-ng mon0
+<div class="highlight"><pre><span></span>airodump-ng mon0
 aireplay-ng --test mon0 <span class="c1"># Test</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Choose one network and fake it</p>
-<div class="highlight"><pre><span></span><code>airbase-ng --essid <span class="s1">&#39;HG655D-1BFF19&#39;</span> -c <span class="m">7</span> -W <span class="m">1</span> -Z <span class="m">2</span> -v mon0 <span class="c1"># Fake WPA AP</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>airbase-ng --essid <span class="s1">&#39;HG655D-1BFF19&#39;</span> -c <span class="m">7</span> -W <span class="m">1</span> -Z <span class="m">2</span> -v mon0 <span class="c1"># Fake WPA AP</span>
+</pre></div>
+
 
 </li>
 <li>
 <p>Enable packet forwarding</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A PREROUTING -p tcp --destination-port <span class="m">80</span> -j REDIRECT --to-port <span class="m">8080</span>
 iptables -t nat -A PREROUTING -p tcp --destination-port <span class="m">443</span> -j REDIRECT --to-port <span class="m">8080</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Write what follows in <code>/etc/dnsmasq.conf</code>:</p>
-<div class="highlight"><pre><span></span><code>interface=at0
+<div class="highlight"><pre><span></span>interface=at0
 dhcp-range=192.168.0.50,192.168.0.150,12h
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Do some other things for which I can't recall the usefulness right now (but I promise to update the article as soon as I do):</p>
-<div class="highlight"><pre><span></span><code>ifconfig at0 <span class="m">192</span>.168.0.1 up
+<div class="highlight"><pre><span></span>ifconfig at0 <span class="m">192</span>.168.0.1 up
 dnsmasq <span class="c1"># pkill dnsmasq if needed</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Write what follows in <code>/tmp/tests.conf</code> (<code>&lt;tab&gt;</code> means you have to hit the tab key):</p>
-<div class="highlight"><pre><span></span><code><span class="m">192</span>.168.0.1&lt;tab&gt;*
-</code></pre></div>
+<div class="highlight"><pre><span></span><span class="m">192</span>.168.0.1&lt;tab&gt;*
+</pre></div>
+
 
 </li>
 <li>
 <p>Run <code>dnsspoof</code>:</p>
-<div class="highlight"><pre><span></span><code>dnsspoof -i wlan0 -f /tmp/tests.conf
-</code></pre></div>
+<div class="highlight"><pre><span></span>dnsspoof -i wlan0 -f /tmp/tests.conf
+</pre></div>
+
 
 </li>
 <li>
 <p>Finally, start a webserver (Apache or using Python, or whatever)</p>
-<div class="highlight"><pre><span></span><code>python3 -m http.server <span class="m">8080</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>python3 -m http.server <span class="m">8080</span>
+</pre></div>
+
 
 </li>
 </ol>
@@ -184,25 +195,28 @@ dnsmasq <span class="c1"># pkill dnsmasq if needed</span>
 <ol>
 <li>
 <p>Grant yourself super user rights and enable packet forwarding on the right interface (here <code>eth0</code> which is the Ethernet connection):</p>
-<div class="highlight"><pre><span></span><code>sudo su
+<div class="highlight"><pre><span></span>sudo su
 sysctl -w net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport <span class="m">80</span> -j REDIRECT --to-port <span class="m">8080</span>
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport <span class="m">443</span> -j REDIRECT --to-port <span class="m">8080</span>
-</code></pre></div>
+</pre></div>
+
 
 </li>
 <li>
 <p>Install the required dependencies and mitmproxy:</p>
-<div class="highlight"><pre><span></span><code>apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+<div class="highlight"><pre><span></span>apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
 easy_install mitmproxy
-</code></pre></div>
+</pre></div>
+
 
 <p>You can as well <a href="http://docs.mitmproxy.org/en/stable/install.html#installation-on-ubuntu">download mitmproxy and install it manually</a>.</p>
 </li>
 <li>
 <p>Run it:</p>
-<div class="highlight"><pre><span></span><code>mitmproxy -T --no-upstream-cert --host <span class="o">[</span>-p <span class="m">8080</span><span class="o">]</span> <span class="c1"># -p is optional as 8080 is the default port</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span>mitmproxy -T --no-upstream-cert --host <span class="o">[</span>-p <span class="m">8080</span><span class="o">]</span> <span class="c1"># -p is optional as 8080 is the default port</span>
+</pre></div>
+
 
 <p>The argument <code>-T</code> is for <em>transparent</em>. If you don't go for transparent, then the 3 lines about packet forwarding (point 1.) are useless (or maybe not, I can't remember).</p>
 </li>
@@ -214,8 +228,9 @@ easy_install mitmproxy
 <li>If you decided not to do transparent proxying (see above), don't set the proxy and instead set the IP to be static rather than using DHCP. Then write your computer's IP as the gateway.</li>
 </ul>
 </li>
-<li>Go to the website <a href="http://mitm.it">mitm.it</a> and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):<div class="highlight"><pre><span></span><code>adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/Download
-</code></pre></div>
+<li>Go to the website <a href="http://mitm.it">mitm.it</a> and click on the Android icon to install the certificate. If this doesn't work (website unreachable), push the certificate manually from your computer (run the following command from your computer):<div class="highlight"><pre><span></span>adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /sdcard/Download
+</pre></div>
+
 
 </li>
 </ol>
