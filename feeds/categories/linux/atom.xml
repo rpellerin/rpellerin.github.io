@@ -127,7 +127,7 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
         &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
             &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="s2"&gt;&amp;quot;entry.12&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; 
+                &lt;span class="s2"&gt;&amp;quot;entry.12&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.34&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;temperature&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.56&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;humidity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.78&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pressure&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -254,7 +254,7 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;Either VLC 3.0 (but it does not support subtitles yet)&lt;/li&gt;
 &lt;li&gt;Or &lt;code&gt;castnow&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Should you decide to go with VLC 3.0, please refer to &lt;a href="{filename}/vlc-3.0.md"&gt;this article about how to install it&lt;/a&gt;. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
+&lt;p&gt;With VLC, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; vlc --sout&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#chromecast{ip=192.168.1.X}&amp;quot;&lt;/span&gt; myfile.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -531,7 +531,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;li&gt;Cables (&lt;a href="http://wdlabs.wd.com/products/raspberry-pi-accessories/"&gt;WD's PiDrive Cable Kit&lt;/a&gt; and an Ethernet cable)&lt;/li&gt;
 &lt;li&gt;A micro SD card (&lt;a href="http://www.samsung.com/us/computer/memory-storage/MB-MP16DA/AM"&gt;Samsung's microSDHC 16GB EVO Memory Card with Adapter&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;A TV with a HDMI cable&lt;/li&gt;
-&lt;li&gt;A laptop  with a card reader running GNU/Linux (Xubuntu to be precise)&lt;/li&gt;
+&lt;li&gt;A laptop with a card reader running GNU/Linux (Xubuntu to be precise)&lt;/li&gt;
 &lt;li&gt;A wired keyboard&lt;/li&gt;
 &lt;li&gt;A regular DSL Internet connection&lt;/li&gt;
 &lt;/ul&gt;
@@ -552,7 +552,7 @@ fdisk -l
 &lt;li&gt;
 &lt;p&gt;Plug in the SD card (on a regular computer, not the Raspberry Pi)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;Redo step 3. in order to identify the SD card. &lt;code&gt;/dev/mmcblk0&lt;/code&gt; or &lt;code&gt;/dev/sdb&lt;/code&gt; for instance.  &lt;code&gt;/dev/mmcblk0pX&lt;/code&gt; or &lt;code&gt;/dev/sdbX&lt;/code&gt; would be a partition on the device, with X an integer.&lt;/li&gt;
+&lt;li&gt;Redo step 3. in order to identify the SD card. &lt;code&gt;/dev/mmcblk0&lt;/code&gt; or &lt;code&gt;/dev/sdb&lt;/code&gt; for instance. &lt;code&gt;/dev/mmcblk0pX&lt;/code&gt; or &lt;code&gt;/dev/sdbX&lt;/code&gt; would be a partition on the device, with X an integer.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Unmount &lt;strong&gt;all&lt;/strong&gt; the partitions and copy Raspbian on the whole SD card:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;umount /dev/mmcblk0p1
@@ -563,7 +563,7 @@ sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
 &lt;p&gt;&lt;code&gt;bs=4M&lt;/code&gt; can be used but it's more error prone, yet it's safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it. &lt;/p&gt;
+&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;First boot&lt;/h2&gt;
@@ -675,7 +675,7 @@ apt install rsync
 &lt;li&gt;
 &lt;p&gt;Now, it's time to delete the &lt;em&gt;pi&lt;/em&gt; user. Log in as your new user (in my case it's &lt;em&gt;pipi&lt;/em&gt;) and then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su &lt;span class="c1"&gt;# Type the root password here&lt;/span&gt;
-deluser --remove-home pi 
+deluser --remove-home pi
 visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -798,7 +798,7 @@ mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&
 reboot
 
 &lt;span class="c1"&gt;# Delete old /root&lt;/span&gt;
-su 
+su
 dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
 fdisk /dev/mmcblk0 &lt;span class="c1"&gt;# Delete second partition&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -912,7 +912,7 @@ sudo rm /var/swap
 
 &lt;h1&gt;DynHost&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root.  &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root. &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;As a normal user, run &lt;code&gt;git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;
@@ -925,7 +925,7 @@ sudo rm /var/swap
 &lt;/ol&gt;
 &lt;h1&gt;Configure a local SMTP email server&lt;/h1&gt;
 &lt;p&gt;Before doing this. make sure you did set the hostname of your Raspberry Pi through &lt;code&gt;raspi-config&lt;/code&gt;. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with &lt;strong&gt;an existing domain&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot. &lt;/p&gt;
+&lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot.&lt;/p&gt;
 &lt;p&gt;This is pretty convient as some programs still prefer to send emails, such as &lt;code&gt;cron&lt;/code&gt;.&lt;br&gt;
 Normally, Exim4 comes pre-installed with Debian. If not, do &lt;code&gt;apt install exim4&lt;/code&gt;. Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su
@@ -1005,8 +1005,8 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
     &lt;summary&gt;Click here to know how to support HTTP2&lt;/summary&gt;
 [Note that Apache prefork (which is used by `libapache2-mod-php`) is not compatible with HTTP2](https://http2.pro/doc/Apache). We have to [use fpm](https://blog.feutl.com/nextcloud-http2/). Here are some instructions on how to support HTTP2:
 
-1. Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
-1. After setting up the database, do:
+1.  Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
+1.  After setting up the database, do:
 
         :::bash
         su
@@ -1019,7 +1019,7 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1. Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         &lt;VirtualHost *:443&gt;
@@ -1032,11 +1032,11 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
             Protocols h2 h2c http/1.1
             ...
 
-1. [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
-1. Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
-1. `systemctl reload php7.3-fpm &amp;&amp; systemctl restart apache2`
-1. Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
-1. See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
+1.  [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
+1.  Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
+1.  `systemctl reload php7.3-fpm &amp;&amp; systemctl restart apache2`
+1.  Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
+1.  See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
 
 &lt;/details&gt;
 
@@ -1216,7 +1216,7 @@ service apache2 restart
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;#39;memcache.local&amp;#39; =&amp;gt; &amp;#39;\OC\Memcache\APCu&amp;#39;,
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Up and Runnning&lt;/em&gt;. If you temporarily replace the content of &lt;code&gt;status.php&lt;/code&gt;  with &lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;, when accessing &lt;code&gt;/status.php&lt;/code&gt; you should see the same results. Make sure as well that APCu is enabled in the webpage.&lt;/p&gt;
+&lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Up and Runnning&lt;/em&gt;. If you temporarily replace the content of &lt;code&gt;status.php&lt;/code&gt; with &lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;, when accessing &lt;code&gt;/status.php&lt;/code&gt; you should see the same results. Make sure as well that APCu is enabled in the webpage.&lt;/p&gt;
 &lt;h2&gt;Improve Nextcloud's settings&lt;/h2&gt;
 &lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config.php&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
@@ -1452,9 +1452,9 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 &lt;p&gt;Taken from &lt;a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602"&gt;this thread&lt;/a&gt;. As root, create &lt;code&gt;/etc/ssh/login-notify.sh&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#!/bin/sh
 
-if [ &amp;quot;$PAM_TYPE&amp;quot; != &amp;quot;close_session&amp;quot; ]; then 
-    host=&amp;quot;`hostname`&amp;quot; 
-    subject=&amp;quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&amp;quot; 
+if [ &amp;quot;$PAM_TYPE&amp;quot; != &amp;quot;close_session&amp;quot; ]; then
+    host=&amp;quot;`hostname`&amp;quot;
+    subject=&amp;quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&amp;quot;
     message=&amp;quot;`date`&amp;quot;
     echo &amp;quot;$message&amp;quot; | mail -s &amp;quot;$subject&amp;quot; root@mydomain
 fi
@@ -1660,7 +1660,7 @@ mount -t iso9660 /dev/sdc1 /mnt/iso &lt;span class="c1"&gt;# Might not be requir
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Press ALT+F2 to return to the installation dialog. &lt;/p&gt;
+&lt;p&gt;Press ALT+F2 to return to the installation dialog.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -1700,7 +1700,7 @@ apt dist-upgrade
 &lt;ul&gt;
 &lt;li&gt;I use &lt;code&gt;zsh&lt;/code&gt; rather than &lt;code&gt;bash&lt;/code&gt; cause it's way more powerful and convenient. In addition, I use the awesome &lt;a href="https://github.com/sorin-ionescu/prezto"&gt;Prezto&lt;/a&gt; which is a configuration framework built for &lt;code&gt;zsh&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tmux&lt;/code&gt; to be able to open as many terminals as I want in only one window (very helpful).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor.  I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor. I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For example, this is my current terminal (actually containing 3 terminals):&lt;/p&gt;
 &lt;p&gt;&lt;a href="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;img alt="Screenshot" src="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;/a&gt;&lt;/p&gt;

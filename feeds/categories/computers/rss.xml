@@ -32,7 +32,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;&lt;em&gt;Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: &lt;code&gt;raspistill&lt;/code&gt; and &lt;code&gt;raspivid&lt;/code&gt;. For a complete user manual, follow &lt;a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2"&gt;this link&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).&lt;/em&gt;&lt;/p&gt;
 &lt;h1&gt;A timelapse of the sky at night&lt;/h1&gt;
-&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. &lt;/p&gt;
+&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.&lt;/p&gt;
 &lt;p&gt;However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;There are multiple parameters that affect the look of a photos but after trying a few and a lot of &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/"&gt;Googling&lt;/a&gt;, here is a set of parameters that work pretty well for me:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;

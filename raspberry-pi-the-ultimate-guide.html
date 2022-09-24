@@ -106,7 +106,7 @@
 <li>Cables (<a href="http://wdlabs.wd.com/products/raspberry-pi-accessories/">WD's PiDrive Cable Kit</a> and an Ethernet cable)</li>
 <li>A micro SD card (<a href="http://www.samsung.com/us/computer/memory-storage/MB-MP16DA/AM">Samsung's microSDHC 16GB EVO Memory Card with Adapter</a>)</li>
 <li>A TV with a HDMI cable</li>
-<li>A laptop  with a card reader running GNU/Linux (Xubuntu to be precise)</li>
+<li>A laptop with a card reader running GNU/Linux (Xubuntu to be precise)</li>
 <li>A wired keyboard</li>
 <li>A regular DSL Internet connection</li>
 </ul>
@@ -127,7 +127,7 @@ fdisk -l
 <li>
 <p>Plug in the SD card (on a regular computer, not the Raspberry Pi)</p>
 </li>
-<li>Redo step 3. in order to identify the SD card. <code>/dev/mmcblk0</code> or <code>/dev/sdb</code> for instance.  <code>/dev/mmcblk0pX</code> or <code>/dev/sdbX</code> would be a partition on the device, with X an integer.</li>
+<li>Redo step 3. in order to identify the SD card. <code>/dev/mmcblk0</code> or <code>/dev/sdb</code> for instance. <code>/dev/mmcblk0pX</code> or <code>/dev/sdbX</code> would be a partition on the device, with X an integer.</li>
 <li>
 <p>Unmount <strong>all</strong> the partitions and copy Raspbian on the whole SD card:</p>
 <div class="highlight"><pre><span></span><code>umount /dev/mmcblk0p1
@@ -138,7 +138,7 @@ sudo sync <span class="o">&amp;&amp;</span> sync
 <p><code>bs=4M</code> can be used but it's more error prone, yet it's safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
 </li>
 <li>
-<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it. </p>
+<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it.</p>
 </li>
 </ol>
 <h2>First boot</h2>
@@ -250,7 +250,7 @@ apt install rsync
 <li>
 <p>Now, it's time to delete the <em>pi</em> user. Log in as your new user (in my case it's <em>pipi</em>) and then:</p>
 <div class="highlight"><pre><span></span><code>su <span class="c1"># Type the root password here</span>
-deluser --remove-home pi 
+deluser --remove-home pi
 visudo <span class="c1"># Make sure there&#39;s no reference to pi user</span>
 </code></pre></div>
 
@@ -373,7 +373,7 @@ mkinitramfs -o /boot/initramfs.gz <span class="k">$(</span>uname -r<span class="
 reboot
 
 <span class="c1"># Delete old /root</span>
-su 
+su
 dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/mmcblk0p2 <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">status</span><span class="o">=</span>progress <span class="nv">conv</span><span class="o">=</span>fsync
 fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
 </code></pre></div>
@@ -487,7 +487,7 @@ sudo rm /var/swap
 
 <h1>DynHost</h1>
 <ol>
-<li>Run <code>apt install lynx dnsutils git</code> as root.  <code>dnsutils</code> provides <code>dig</code>.</li>
+<li>Run <code>apt install lynx dnsutils git</code> as root. <code>dnsutils</code> provides <code>dig</code>.</li>
 <li>As a normal user, run <code>git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost</code></li>
 <li>Edit the lines <code>HOST</code>, <code>LOGIN</code>, <code>PASSWORD</code> and <code>PATH_APP</code> in the file <em>dynhost</em>.</li>
 <li>
@@ -500,7 +500,7 @@ sudo rm /var/swap
 </ol>
 <h1>Configure a local SMTP email server</h1>
 <p>Before doing this. make sure you did set the hostname of your Raspberry Pi through <code>raspi-config</code>. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with <strong>an existing domain</strong>.</p>
-<p>Make sure to disable <code>/var/log</code> from being in RAM since Exim4 needs <code>/var/log/exim4/mainlog</code> to exist, even after a reboot. </p>
+<p>Make sure to disable <code>/var/log</code> from being in RAM since Exim4 needs <code>/var/log/exim4/mainlog</code> to exist, even after a reboot.</p>
 <p>This is pretty convient as some programs still prefer to send emails, such as <code>cron</code>.<br>
 Normally, Exim4 comes pre-installed with Debian. If not, do <code>apt install exim4</code>. Then:</p>
 <div class="highlight"><pre><span></span><code>su
@@ -580,8 +580,8 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
     <summary>Click here to know how to support HTTP2</summary>
 [Note that Apache prefork (which is used by `libapache2-mod-php`) is not compatible with HTTP2](https://http2.pro/doc/Apache). We have to [use fpm](https://blog.feutl.com/nextcloud-http2/). Here are some instructions on how to support HTTP2:
 
-1. Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
-1. After setting up the database, do:
+1.  Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
+1.  After setting up the database, do:
 
         :::bash
         su
@@ -594,7 +594,7 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1. Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         <VirtualHost *:443>
@@ -607,11 +607,11 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
             Protocols h2 h2c http/1.1
             ...
 
-1. [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
-1. Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
-1. `systemctl reload php7.3-fpm && systemctl restart apache2`
-1. Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
-1. See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
+1.  [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
+1.  Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
+1.  `systemctl reload php7.3-fpm && systemctl restart apache2`
+1.  Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
+1.  See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
 
 </details>
 
@@ -791,7 +791,7 @@ service apache2 restart
 <div class="highlight"><pre><span></span><code>&#39;memcache.local&#39; =&gt; &#39;\OC\Memcache\APCu&#39;,
 </code></pre></div>
 
-<p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Up and Runnning</em>. If you temporarily replace the content of <code>status.php</code>  with <code>&lt;?php phpinfo(); ?&gt;</code>, when accessing <code>/status.php</code> you should see the same results. Make sure as well that APCu is enabled in the webpage.</p>
+<p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Up and Runnning</em>. If you temporarily replace the content of <code>status.php</code> with <code>&lt;?php phpinfo(); ?&gt;</code>, when accessing <code>/status.php</code> you should see the same results. Make sure as well that APCu is enabled in the webpage.</p>
 <h2>Improve Nextcloud's settings</h2>
 <p>Add the following in <em>/var/www/nextcloud/config/config.php</em>:</p>
 <div class="highlight"><pre><span></span><code>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
@@ -1027,9 +1027,9 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 <p>Taken from <a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602">this thread</a>. As root, create <code>/etc/ssh/login-notify.sh</code>:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 
-if [ &quot;$PAM_TYPE&quot; != &quot;close_session&quot; ]; then 
-    host=&quot;`hostname`&quot; 
-    subject=&quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&quot; 
+if [ &quot;$PAM_TYPE&quot; != &quot;close_session&quot; ]; then
+    host=&quot;`hostname`&quot;
+    subject=&quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&quot;
     message=&quot;`date`&quot;
     echo &quot;$message&quot; | mail -s &quot;$subject&quot; root@mydomain
 fi

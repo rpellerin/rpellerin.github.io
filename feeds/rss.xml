@@ -1099,7 +1099,7 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
         &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
             &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-                &lt;span class="s2"&gt;&amp;quot;entry.12&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; 
+                &lt;span class="s2"&gt;&amp;quot;entry.12&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.34&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;temperature&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.56&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;humidity&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
                 &lt;span class="s2"&gt;&amp;quot;entry.78&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;pressure&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -1162,7 +1162,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;&lt;em&gt;Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: &lt;code&gt;raspistill&lt;/code&gt; and &lt;code&gt;raspivid&lt;/code&gt;. For a complete user manual, follow &lt;a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2"&gt;this link&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).&lt;/em&gt;&lt;/p&gt;
 &lt;h1&gt;A timelapse of the sky at night&lt;/h1&gt;
-&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough. &lt;/p&gt;
+&lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.&lt;/p&gt;
 &lt;p&gt;However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;There are multiple parameters that affect the look of a photos but after trying a few and a lot of &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/"&gt;Googling&lt;/a&gt;, here is a set of parameters that work pretty well for me:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
@@ -2033,6 +2033,9 @@ People were stupid.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;What is your biggest pain point on the frontend stack?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;What elements are holding you back? What prevents you from being more effective?&lt;/li&gt;
 &lt;li&gt;Is there anything you don’t understand/you don’t master? RxJS, recompact, react-form? React context, HOC, …?&lt;/li&gt;
 &lt;li&gt;Is the directory structure good enough? Does it make sense?&lt;/li&gt;
@@ -2041,7 +2044,6 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Do you know Jest? Do you know how to write JavaScript unit tests?&lt;/li&gt;
 &lt;li&gt;Do you know what React components we have? Do you know how to use them and what props they expect?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;These simple, short questionnaires allow us to gather valuable feedback from all of the engineers. Using them, we are able to identify the most-cited problems and define what legacy means at Doctolib during our bi-annual meetings.&lt;/p&gt;
 &lt;p&gt;After analyzing the results of these surveys, we usually come up with a new direction and a list of tasks for the following two quarters. These actions are then shared with the rest of the engineers during an all-hands meeting with the entire tech team.&lt;/p&gt;
 &lt;h1&gt;What is legacy code at Doctolib in 2018?&lt;/h1&gt;
@@ -2154,14 +2156,15 @@ People were stupid.&lt;/p&gt;
 
 &lt;p&gt;Citons en quelques un, majoritairement trouvés en ville :&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Les particules fines PM10, PM2.5 et PM1&lt;/strong&gt; dont le diamètre est respectivement de &amp;lt;= 10, &amp;lt;= 2.5 et &amp;lt;=1 μm. Pour donner un ordre d'idée, &lt;a href="http://www.irceline.be/fr/qualite-de-lair/mesures/particules-fines/information"&gt;un cheveux humain fait entre 50 et 70 μm de diamètre&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" /&gt;
-  &lt;figcaption&gt;Comparaison avec un cheveu.&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
+&lt;li&gt;&lt;strong&gt;Les particules fines PM10, PM2.5 et PM1&lt;/strong&gt; dont le diamètre est respectivement de &amp;lt;= 10, &amp;lt;= 2.5 et &amp;lt;=1 μm. Pour donner un ordre d'idée, &lt;a href="http://www.irceline.be/fr/qualite-de-lair/mesures/particules-fines/information"&gt;un cheveux humain fait entre 50 et 70 μm de diamètre&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
+     &lt;img src="//romainpellerin.eu/images/pollution-urbaine/cheveux.png" alt="Comparaison particules fines et cheveux" /&gt;
+     &lt;figcaption&gt;Comparaison avec un cheveu.&lt;/figcaption&gt;
+   &lt;/figure&gt;
+
 &lt;p&gt;Les PM sont émises principalement par les combustions industrielles et domestiques (chauffage par exemple) et le transport routier (&lt;a href="https://theconversation.com/pollution-de-lair-diesel-essence-ou-electrique-tous-les-vehicules-emettent-des-particules-fines-95336"&gt;essentiellement le diesel mais de plus en plus l'essence&lt;/a&gt;, surtout ceux à &lt;a href="http://www.lefigaro.fr/vox/politique/2018/12/07/31001-20181207ARTFIG00299--un-vehicule-essence-emet-autant-de-particules-fines-que-dix-vilains-diesel.php"&gt;injection directe&lt;/a&gt;). Elles sont associées à une hausse de la mortalité et sont de surcroît cancérigènes. &lt;em&gt;&lt;a href="http://sante.lefigaro.fr/actualite/2013/10/17/21407-principaux-polluants-dans-lair"&gt;Elles sont considérées comme le «polluant atmosphérique le plus nocif pour la santé humaine en Europe», par l'Agence européenne de l'environnement (AEE) qui a récemment indiqué que 90% des urbains y étaient exposés au-delà des seuils recommandés par l'Organisation mondiale de la Santé (OMS).&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Les oxydes d'azote : le monoxyde d'azote NO (polluant primaire) et dioxyde d'azote NO2 (polluant secondaire)&lt;/strong&gt;, eux aussi émis par les combustions, dont le transport routier. Le NO est relativement peu dangereux. Le N02 est irritant et aggrave les crises d'asthmes.&lt;/p&gt;
 &lt;/li&gt;
@@ -2613,12 +2616,12 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://medias.mobi/ipj/blog/2016/09/30/mais-dou-vient-leau-qui-coule-dans-les-rues-de-paris/"&gt;Non-potable wat&lt;/a&gt; &lt;a href="http://www.leparisien.fr/espace-premium/yvelines-78/de-l-eau-brute-pour-laver-paris-09-09-2013-3118575.php"&gt;used to clean Paris streets&lt;/a&gt;. I'm pretty sure it all eventually ends up in the ocean, trash included.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Gas cars (diesel is the worst)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb"&gt;The Economics of the Office: Why Do We Still Commute?&lt;/a&gt;&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.citylab.com/transportation/2017/11/why-do-we-still-commute/544733/?utm_source=twb"&gt;The Economics of the Office: Why Do We Still Commute?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/"&gt;5 Reasons Why Amsterdam Works So Well for Bikes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals"&gt;Air pollution causes ‘huge’ reduction in intelligence, study reveals&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;At the supermarket&lt;/h1&gt;
 &lt;ul&gt;
@@ -3046,7 +3049,7 @@ bundle
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;;&lt;/code&gt; is optional&lt;/li&gt;
 &lt;li&gt;parentheses optional in &lt;code&gt;if&lt;/code&gt; statements&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;==&lt;/code&gt; vs &lt;code&gt;===&lt;/code&gt;:  &lt;a href="https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby"&gt;https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;==&lt;/code&gt; vs &lt;code&gt;===&lt;/code&gt;: &lt;a href="https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby"&gt;https://stackoverflow.com/questions/4467538/what-does-the-operator-do-in-ruby&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;puts&lt;/code&gt; (adds new line) vs &lt;code&gt;print&lt;/code&gt; (no new line)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;.each do |item| ... end&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;10.times do |i| ... end&lt;/code&gt;&lt;/li&gt;
@@ -3070,7 +3073,7 @@ bundle
 &lt;li&gt;&lt;code&gt;do..end&lt;/code&gt; vs curly braces for blocks in Ruby: &lt;a href="https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby"&gt;https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pry&lt;/code&gt;: pauses execution but does not give access to local variables&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;binding.pry&lt;/code&gt;: pauses execution, gives access to local variables but also pauses all threads (server and tests for instance)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;whereami&lt;/code&gt; == &lt;code&gt;@&lt;/code&gt; (in binding.pry / pry) &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;whereami&lt;/code&gt; == &lt;code&gt;@&lt;/code&gt; (in binding.pry / pry)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;help&lt;/code&gt; (get help in binding.pry /pry)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PRY_RESCUE_RAIL=1 rails test&lt;/code&gt;: runs a test and pauses on falsy assertions&lt;/li&gt;
 &lt;/ul&gt;
@@ -3478,7 +3481,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;Either VLC 3.0 (but it does not support subtitles yet)&lt;/li&gt;
 &lt;li&gt;Or &lt;code&gt;castnow&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Should you decide to go with VLC 3.0, please refer to &lt;a href="{filename}/vlc-3.0.md"&gt;this article about how to install it&lt;/a&gt;. Then, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
+&lt;p&gt;With VLC, open it and go to Preferences. Open the tab 'Video' and set Output to 'X11 video output (XCB)'. Then, try to find your Chromecast in the menu Video &amp;gt; Renderer &amp;gt; Scan. If unsuccessful, close it and run vlc from the command line:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; vlc --sout&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#chromecast{ip=192.168.1.X}&amp;quot;&lt;/span&gt; myfile.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -5196,7 +5199,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;li&gt;Cables (&lt;a href="http://wdlabs.wd.com/products/raspberry-pi-accessories/"&gt;WD's PiDrive Cable Kit&lt;/a&gt; and an Ethernet cable)&lt;/li&gt;
 &lt;li&gt;A micro SD card (&lt;a href="http://www.samsung.com/us/computer/memory-storage/MB-MP16DA/AM"&gt;Samsung's microSDHC 16GB EVO Memory Card with Adapter&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;A TV with a HDMI cable&lt;/li&gt;
-&lt;li&gt;A laptop  with a card reader running GNU/Linux (Xubuntu to be precise)&lt;/li&gt;
+&lt;li&gt;A laptop with a card reader running GNU/Linux (Xubuntu to be precise)&lt;/li&gt;
 &lt;li&gt;A wired keyboard&lt;/li&gt;
 &lt;li&gt;A regular DSL Internet connection&lt;/li&gt;
 &lt;/ul&gt;
@@ -5217,7 +5220,7 @@ fdisk -l
 &lt;li&gt;
 &lt;p&gt;Plug in the SD card (on a regular computer, not the Raspberry Pi)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;Redo step 3. in order to identify the SD card. &lt;code&gt;/dev/mmcblk0&lt;/code&gt; or &lt;code&gt;/dev/sdb&lt;/code&gt; for instance.  &lt;code&gt;/dev/mmcblk0pX&lt;/code&gt; or &lt;code&gt;/dev/sdbX&lt;/code&gt; would be a partition on the device, with X an integer.&lt;/li&gt;
+&lt;li&gt;Redo step 3. in order to identify the SD card. &lt;code&gt;/dev/mmcblk0&lt;/code&gt; or &lt;code&gt;/dev/sdb&lt;/code&gt; for instance. &lt;code&gt;/dev/mmcblk0pX&lt;/code&gt; or &lt;code&gt;/dev/sdbX&lt;/code&gt; would be a partition on the device, with X an integer.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Unmount &lt;strong&gt;all&lt;/strong&gt; the partitions and copy Raspbian on the whole SD card:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;umount /dev/mmcblk0p1
@@ -5228,7 +5231,7 @@ sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
 &lt;p&gt;&lt;code&gt;bs=4M&lt;/code&gt; can be used but it's more error prone, yet it's safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it. &lt;/p&gt;
+&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;First boot&lt;/h2&gt;
@@ -5340,7 +5343,7 @@ apt install rsync
 &lt;li&gt;
 &lt;p&gt;Now, it's time to delete the &lt;em&gt;pi&lt;/em&gt; user. Log in as your new user (in my case it's &lt;em&gt;pipi&lt;/em&gt;) and then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su &lt;span class="c1"&gt;# Type the root password here&lt;/span&gt;
-deluser --remove-home pi 
+deluser --remove-home pi
 visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -5463,7 +5466,7 @@ mkinitramfs -o /boot/initramfs.gz &lt;span class="k"&gt;$(&lt;/span&gt;uname -r&
 reboot
 
 &lt;span class="c1"&gt;# Delete old /root&lt;/span&gt;
-su 
+su
 dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/urandom &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/mmcblk0p2 &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10M &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress &lt;span class="nv"&gt;conv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fsync
 fdisk /dev/mmcblk0 &lt;span class="c1"&gt;# Delete second partition&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -5577,7 +5580,7 @@ sudo rm /var/swap
 
 &lt;h1&gt;DynHost&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root.  &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;apt install lynx dnsutils git&lt;/code&gt; as root. &lt;code&gt;dnsutils&lt;/code&gt; provides &lt;code&gt;dig&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;As a normal user, run &lt;code&gt;git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit the lines &lt;code&gt;HOST&lt;/code&gt;, &lt;code&gt;LOGIN&lt;/code&gt;, &lt;code&gt;PASSWORD&lt;/code&gt; and &lt;code&gt;PATH_APP&lt;/code&gt; in the file &lt;em&gt;dynhost&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;
@@ -5590,7 +5593,7 @@ sudo rm /var/swap
 &lt;/ol&gt;
 &lt;h1&gt;Configure a local SMTP email server&lt;/h1&gt;
 &lt;p&gt;Before doing this. make sure you did set the hostname of your Raspberry Pi through &lt;code&gt;raspi-config&lt;/code&gt;. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with &lt;strong&gt;an existing domain&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot. &lt;/p&gt;
+&lt;p&gt;Make sure to disable &lt;code&gt;/var/log&lt;/code&gt; from being in RAM since Exim4 needs &lt;code&gt;/var/log/exim4/mainlog&lt;/code&gt; to exist, even after a reboot.&lt;/p&gt;
 &lt;p&gt;This is pretty convient as some programs still prefer to send emails, such as &lt;code&gt;cron&lt;/code&gt;.&lt;br&gt;
 Normally, Exim4 comes pre-installed with Debian. If not, do &lt;code&gt;apt install exim4&lt;/code&gt;. Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su
@@ -5670,8 +5673,8 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
     &lt;summary&gt;Click here to know how to support HTTP2&lt;/summary&gt;
 [Note that Apache prefork (which is used by `libapache2-mod-php`) is not compatible with HTTP2](https://http2.pro/doc/Apache). We have to [use fpm](https://blog.feutl.com/nextcloud-http2/). Here are some instructions on how to support HTTP2:
 
-1. Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
-1. After setting up the database, do:
+1.  Follow the instructions below but do no install `libapache2-mod-php`, instead install `php-fpm`.
+1.  After setting up the database, do:
 
         :::bash
         su
@@ -5684,7 +5687,7 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1. Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         &lt;VirtualHost *:443&gt;
@@ -5697,11 +5700,11 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
             Protocols h2 h2c http/1.1
             ...
 
-1. [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
-1. Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
-1. `systemctl reload php7.3-fpm &amp;&amp; systemctl restart apache2`
-1. Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
-1. See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
+1.  [Tune PHP-FPM](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#tune-php-fpm).
+1.  Copy the lines `php_value` from `/var/www/nextcloud/.htaccess` [to `/var/www/nextcloud/.htaccess`](https://medium.com/@jacksonpauls/moving-from-mod-php-to-php-fpm-914125a7f336).
+1.  `systemctl reload php7.3-fpm &amp;&amp; systemctl restart apache2`
+1.  Check if Apache2 MPM is changed to events: `sudo apachectl -V | grep MPM`
+1.  See [Nextcloud's instructions on the php.ini file](https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html#php-ini-configuration-notes).
 
 &lt;/details&gt;
 
@@ -5881,7 +5884,7 @@ service apache2 restart
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;#39;memcache.local&amp;#39; =&amp;gt; &amp;#39;\OC\Memcache\APCu&amp;#39;,
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Up and Runnning&lt;/em&gt;. If you temporarily replace the content of &lt;code&gt;status.php&lt;/code&gt;  with &lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;, when accessing &lt;code&gt;/status.php&lt;/code&gt; you should see the same results. Make sure as well that APCu is enabled in the webpage.&lt;/p&gt;
+&lt;p&gt;Restart Apache. Running &lt;code&gt;php -i&lt;/code&gt; will say &lt;em&gt;opcache.enable =&amp;gt; On&lt;/em&gt; and &lt;em&gt;Opcode Caching =&amp;gt; Up and Runnning&lt;/em&gt;. If you temporarily replace the content of &lt;code&gt;status.php&lt;/code&gt; with &lt;code&gt;&amp;lt;?php phpinfo(); ?&amp;gt;&lt;/code&gt;, when accessing &lt;code&gt;/status.php&lt;/code&gt; you should see the same results. Make sure as well that APCu is enabled in the webpage.&lt;/p&gt;
 &lt;h2&gt;Improve Nextcloud's settings&lt;/h2&gt;
 &lt;p&gt;Add the following in &lt;em&gt;/var/www/nextcloud/config/config.php&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&amp;#39;logtimezone&amp;#39; =&amp;gt; &amp;#39;Europe/Paris&amp;#39;,
@@ -6117,9 +6120,9 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 &lt;p&gt;Taken from &lt;a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602"&gt;this thread&lt;/a&gt;. As root, create &lt;code&gt;/etc/ssh/login-notify.sh&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#!/bin/sh
 
-if [ &amp;quot;$PAM_TYPE&amp;quot; != &amp;quot;close_session&amp;quot; ]; then 
-    host=&amp;quot;`hostname`&amp;quot; 
-    subject=&amp;quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&amp;quot; 
+if [ &amp;quot;$PAM_TYPE&amp;quot; != &amp;quot;close_session&amp;quot; ]; then
+    host=&amp;quot;`hostname`&amp;quot;
+    subject=&amp;quot;SSH Login: $PAM_USER from $PAM_RHOST on $host&amp;quot;
     message=&amp;quot;`date`&amp;quot;
     echo &amp;quot;$message&amp;quot; | mail -s &amp;quot;$subject&amp;quot; root@mydomain
 fi
@@ -6325,7 +6328,7 @@ mount -t iso9660 /dev/sdc1 /mnt/iso &lt;span class="c1"&gt;# Might not be requir
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Press ALT+F2 to return to the installation dialog. &lt;/p&gt;
+&lt;p&gt;Press ALT+F2 to return to the installation dialog.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -6365,7 +6368,7 @@ apt dist-upgrade
 &lt;ul&gt;
 &lt;li&gt;I use &lt;code&gt;zsh&lt;/code&gt; rather than &lt;code&gt;bash&lt;/code&gt; cause it's way more powerful and convenient. In addition, I use the awesome &lt;a href="https://github.com/sorin-ionescu/prezto"&gt;Prezto&lt;/a&gt; which is a configuration framework built for &lt;code&gt;zsh&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tmux&lt;/code&gt; to be able to open as many terminals as I want in only one window (very helpful).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor.  I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor. I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For example, this is my current terminal (actually containing 3 terminals):&lt;/p&gt;
 &lt;p&gt;&lt;a href="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;img alt="Screenshot" src="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -7175,7 +7178,7 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;p&gt;The Internet is full of &lt;a href="http://www.bbc.co.uk/podcasts"&gt;high-quality podcasts&lt;/a&gt;, take advantage of them if you don't have much time to spend reading or watching.&lt;/p&gt;
 &lt;h1&gt;Writing&lt;/h1&gt;
 &lt;p&gt;Finally, I need to mention writing. It's not well known, and that's a pity. But writing is one of the most efficient ways to put into practice what you daily learn and make sure you don't forget it. It's just like rehearsing. Write blog posts, write comments, send out emails, but get out of your comfort zone and do it in a foreign language!&lt;/p&gt;
-&lt;p&gt;If you have the opportunity, write reports in English as well, or give presentations in English, and so on. &lt;/p&gt;
+&lt;p&gt;If you have the opportunity, write reports in English as well, or give presentations in English, and so on.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;There's no frontier to knowledge, embrace a foreign language right now :-)&lt;/p&gt;
 &lt;h1&gt;Resources&lt;/h1&gt;
@@ -7224,7 +7227,7 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;li&gt;&lt;a href="http://english.stackexchange.com/questions/33443/what-is-the-difference-between-taking-courses-classes-or-lessons"&gt;What is the difference between taking courses, classes or lessons?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://forum.wordreference.com/threads/over-here-there.2692066/"&gt;(over) here/there&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://english.stackexchange.com/questions/42259/difference-between-socket-and-outlet"&gt;Difference between “socket” and “outlet”&lt;/a&gt;
-- &lt;a href="http://ell.stackexchange.com/questions/18223/passing-vs-having-passed"&gt;passing vs having passed&lt;/a&gt;&lt;/li&gt;
+  - &lt;a href="http://ell.stackexchange.com/questions/18223/passing-vs-having-passed"&gt;passing vs having passed&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://forum.wordreference.com/threads/satisfying-or-satisfactory.334680/"&gt;satisfying or satisfactory?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wiktionary.org/wiki/in_that"&gt;in that&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://english.stackexchange.com/questions/91804/is-this-construct-correct-this-one-something"&gt;Is this construct correct? “This one something…”&lt;/a&gt;&lt;/li&gt;
@@ -8239,19 +8242,13 @@ Hello world
 &lt;p&gt;Basically, clients need to send &lt;strong&gt;one type of information&lt;/strong&gt; in the body: data to be put into the remote database, via a &lt;strong&gt;PUT&lt;/strong&gt; or &lt;strong&gt;POST&lt;/strong&gt; request. It can be either to create a new resource or to update it (it depends on the HTTP verb used).&lt;/p&gt;
 &lt;p&gt;On the other hand, the server can send different types of information:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Via the status code:&lt;ul&gt;
+&lt;li&gt;Via the status code:&lt;/li&gt;
 &lt;li&gt;How the request was handled&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;In headers:&lt;ul&gt;
+&lt;li&gt;In headers:&lt;/li&gt;
 &lt;li&gt;Metadata&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;In the body:&lt;ul&gt;
+&lt;li&gt;In the body:&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A resource&lt;/strong&gt; or &lt;strong&gt;a list of resources&lt;/strong&gt;, in response to a &lt;strong&gt;GET&lt;/strong&gt; request.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Some details about a resource&lt;/strong&gt; newly created, in response to a &lt;strong&gt;PUT&lt;/strong&gt; or &lt;strong&gt;POST&lt;/strong&gt; request. For example, the resource's unique identifier or URL, to access this resource.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As you can see, the body is only dedicated to the requested resources(s). That's all. All other useful information &lt;strong&gt;must&lt;/strong&gt; be transmitted via the HTTP status code or headers.&lt;/p&gt;
 &lt;h2&gt;The status code&lt;/h2&gt;
@@ -8623,27 +8620,21 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;li&gt;Use HTTPS verbs: &lt;strong&gt;GET&lt;/strong&gt;, &lt;strong&gt;PUT&lt;/strong&gt;, &lt;strong&gt;POST&lt;/strong&gt; and &lt;strong&gt;DELETE&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Use HTTP status codes (those already existing or yours)&lt;/li&gt;
 &lt;li&gt;Use JSON&lt;/li&gt;
-&lt;li&gt;The body must only contain the requested information. It can be either:&lt;ul&gt;
+&lt;li&gt;The body must only contain the requested information. It can be either:&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A resource or partial details about a resource&lt;/strong&gt; (JSON object)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;A list of resources&lt;/strong&gt; (JSON array): also provide full link with each resource (&lt;a href="https://my-api/users/123"&gt;https://my-api/users/123&lt;/a&gt; for example)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Metadata must be put inside headers&lt;ul&gt;
+&lt;li&gt;Metadata must be put inside headers&lt;/li&gt;
 &lt;li&gt;Number of rows when returning a list of results (added by the server)&lt;/li&gt;
 &lt;li&gt;Secret keys for authentication/restricting access to the API (added by the client)&lt;/li&gt;
 &lt;li&gt;Cookies for user management&lt;/li&gt;
 &lt;li&gt;Use the &lt;code&gt;Location&lt;/code&gt; header (with the status code &lt;em&gt;201 Created&lt;/em&gt;, but without a body) after creating a resource with &lt;strong&gt;POST&lt;/strong&gt;, to give the resource's link&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Use query parameters&lt;ul&gt;
+&lt;li&gt;Use query parameters&lt;/li&gt;
 &lt;li&gt;Filtering: &lt;code&gt;GET /users?country=US&amp;amp;age=21&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Sorting: &lt;code&gt;GET /users?sortBy=name&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Pagination: &lt;code&gt;GET /users?pageAfter=3&lt;/code&gt;&lt;ul&gt;
 &lt;li&gt;Always enable pagination on any collection, even for the small ones&lt;/li&gt;
 &lt;li&gt;Pagination must be based on "&lt;em&gt;after a resource's identifier&lt;/em&gt;" or "&lt;em&gt;before a resource's identifier&lt;/em&gt;" to avoid duplicate content across pages&lt;/li&gt;
 &lt;li&gt;Use the status code 200 when the entire collection fits in one page, otherwise 206&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -8660,7 +8651,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 24 Sep 2015 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-09-24:/designing-an-efficient-rest-api.html</guid><category>Code</category><category>javascript</category><category>code</category><category>api</category><category>http</category><category>rest</category><category>express</category><category>json</category><category>web</category></item><item><title>Continuous Integration</title><link>//romainpellerin.eu/continuous-integration.html</link><description>&lt;p&gt;After having experienced software development in many languages, from desktop programs to mobile applications and web sites, comes a moment when I felt compelled to standardize my software development process. In the last couple of months, we, at &lt;a href="http://www.wearesmiths.com/"&gt;The Smiths&lt;/a&gt;, tried to define our workflow more formally by integrating continuous integration. How to properly "synchronize" a team made of many developers, "spread all around the world", in different time zones? How to make sure there is no bottleneck at any level, during the development? First, let’s have a look at the definition.&lt;/p&gt;
 &lt;p&gt;What is &lt;strong&gt;continuous integration&lt;/strong&gt;? According to &lt;a href="https://en.wikipedia.org/wiki/Continuous_integration"&gt;Wikipedia&lt;/a&gt;, it's:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.&lt;/em&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;But not only. It's much more than this. Let's dive into continuous integration.&lt;/p&gt;
 &lt;h1&gt;Purpose&lt;/h1&gt;
@@ -8712,15 +8703,13 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;Now, let's move onto &lt;strong&gt;our workflow&lt;/strong&gt; that we daily use, with Github:&lt;/p&gt;
 &lt;h3&gt;Our Git workflow&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;There is a remote repository called &lt;code&gt;origin&lt;/code&gt;. Then, every new developer (including the owner) has to fork this repository. The &lt;code&gt;origin&lt;/code&gt; repo will &lt;strong&gt;ONLY&lt;/strong&gt; contains two branches: &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;develop&lt;/code&gt;.&lt;ul&gt;
+&lt;li&gt;There is a remote repository called &lt;code&gt;origin&lt;/code&gt;. Then, every new developer (including the owner) has to fork this repository. The &lt;code&gt;origin&lt;/code&gt; repo will &lt;strong&gt;ONLY&lt;/strong&gt; contains two branches: &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;develop&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;master&lt;/code&gt;: contains &lt;strong&gt;only the stable realeases&lt;/strong&gt; (General Availability), tagged with&lt;br&gt;
 &lt;code&gt;git tag -a&lt;/code&gt;&lt;br&gt;
-Those are production releases.&lt;/li&gt;
+    Those are production releases.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;develop&lt;/code&gt;: contains &lt;strong&gt;only stable code&lt;/strong&gt; with newly developed features. This branch has been created with&lt;br&gt;
 &lt;code&gt;git checkout -b develop master&lt;/code&gt;&lt;br&gt;
-It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+    It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.&lt;/li&gt;
 &lt;li&gt;No one is allowed to commit into &lt;code&gt;master&lt;/code&gt; nor into &lt;code&gt;develop&lt;/code&gt; (except for the first commit into &lt;code&gt;master&lt;/code&gt;, then &lt;code&gt;develop&lt;/code&gt; is forked from &lt;code&gt;master&lt;/code&gt;), in either &lt;code&gt;origin&lt;/code&gt; or the forked repository. Not even locally!&lt;/li&gt;
 &lt;li&gt;There's &lt;strong&gt;one developer responsible for the entire project&lt;/strong&gt;. Let's call him/her &lt;em&gt;Integrator&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;To add a new feature, one of the developers create a local branch called &lt;code&gt;feature-x&lt;/code&gt; from &lt;code&gt;develop&lt;/code&gt; and commit into it. He/she may push this branch to their own forked repository.&lt;/li&gt;

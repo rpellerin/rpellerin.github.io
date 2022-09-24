@@ -186,19 +186,13 @@ Hello world
 <p>Basically, clients need to send <strong>one type of information</strong> in the body: data to be put into the remote database, via a <strong>PUT</strong> or <strong>POST</strong> request. It can be either to create a new resource or to update it (it depends on the HTTP verb used).</p>
 <p>On the other hand, the server can send different types of information:</p>
 <ul>
-<li>Via the status code:<ul>
+<li>Via the status code:</li>
 <li>How the request was handled</li>
-</ul>
-</li>
-<li>In headers:<ul>
+<li>In headers:</li>
 <li>Metadata</li>
-</ul>
-</li>
-<li>In the body:<ul>
+<li>In the body:</li>
 <li><strong>A resource</strong> or <strong>a list of resources</strong>, in response to a <strong>GET</strong> request.</li>
 <li><strong>Some details about a resource</strong> newly created, in response to a <strong>PUT</strong> or <strong>POST</strong> request. For example, the resource's unique identifier or URL, to access this resource.</li>
-</ul>
-</li>
 </ul>
 <p>As you can see, the body is only dedicated to the requested resources(s). That's all. All other useful information <strong>must</strong> be transmitted via the HTTP status code or headers.</p>
 <h2>The status code</h2>
@@ -570,27 +564,21 @@ npm install -S express <span class="c1"># Locally, added as a dependency</span>
 <li>Use HTTPS verbs: <strong>GET</strong>, <strong>PUT</strong>, <strong>POST</strong> and <strong>DELETE</strong></li>
 <li>Use HTTP status codes (those already existing or yours)</li>
 <li>Use JSON</li>
-<li>The body must only contain the requested information. It can be either:<ul>
+<li>The body must only contain the requested information. It can be either:</li>
 <li><strong>A resource or partial details about a resource</strong> (JSON object)</li>
 <li><strong>A list of resources</strong> (JSON array): also provide full link with each resource (<a href="https://my-api/users/123">https://my-api/users/123</a> for example)</li>
-</ul>
-</li>
-<li>Metadata must be put inside headers<ul>
+<li>Metadata must be put inside headers</li>
 <li>Number of rows when returning a list of results (added by the server)</li>
 <li>Secret keys for authentication/restricting access to the API (added by the client)</li>
 <li>Cookies for user management</li>
 <li>Use the <code>Location</code> header (with the status code <em>201 Created</em>, but without a body) after creating a resource with <strong>POST</strong>, to give the resource's link</li>
-</ul>
-</li>
-<li>Use query parameters<ul>
+<li>Use query parameters</li>
 <li>Filtering: <code>GET /users?country=US&amp;age=21</code></li>
 <li>Sorting: <code>GET /users?sortBy=name</code></li>
 <li>Pagination: <code>GET /users?pageAfter=3</code><ul>
 <li>Always enable pagination on any collection, even for the small ones</li>
 <li>Pagination must be based on "<em>after a resource's identifier</em>" or "<em>before a resource's identifier</em>" to avoid duplicate content across pages</li>
 <li>Use the status code 200 when the entire collection fits in one page, otherwise 206</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

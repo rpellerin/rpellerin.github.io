@@ -97,7 +97,7 @@
     <p>After having experienced software development in many languages, from desktop programs to mobile applications and web sites, comes a moment when I felt compelled to standardize my software development process. In the last couple of months, we, at <a href="http://www.wearesmiths.com/">The Smiths</a>, tried to define our workflow more formally by integrating continuous integration. How to properly "synchronize" a team made of many developers, "spread all around the world", in different time zones? How to make sure there is no bottleneck at any level, during the development? First, let’s have a look at the definition.</p>
 <p>What is <strong>continuous integration</strong>? According to <a href="https://en.wikipedia.org/wiki/Continuous_integration">Wikipedia</a>, it's:</p>
 <blockquote>
-<p><em>[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.</em>  </p>
+<p><em>[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.</em></p>
 </blockquote>
 <p>But not only. It's much more than this. Let's dive into continuous integration.</p>
 <h1>Purpose</h1>
@@ -149,15 +149,13 @@
 <p>Now, let's move onto <strong>our workflow</strong> that we daily use, with Github:</p>
 <h3>Our Git workflow</h3>
 <ul>
-<li>There is a remote repository called <code>origin</code>. Then, every new developer (including the owner) has to fork this repository. The <code>origin</code> repo will <strong>ONLY</strong> contains two branches: <code>master</code> and <code>develop</code>.<ul>
+<li>There is a remote repository called <code>origin</code>. Then, every new developer (including the owner) has to fork this repository. The <code>origin</code> repo will <strong>ONLY</strong> contains two branches: <code>master</code> and <code>develop</code>.</li>
 <li><code>master</code>: contains <strong>only the stable realeases</strong> (General Availability), tagged with<br>
 <code>git tag -a</code><br>
-Those are production releases.</li>
+    Those are production releases.</li>
 <li><code>develop</code>: contains <strong>only stable code</strong> with newly developed features. This branch has been created with<br>
 <code>git checkout -b develop master</code><br>
-It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.</li>
-</ul>
-</li>
+    It’s the latest cutting-edge release (Release Candidate). It may contains some bugs.</li>
 <li>No one is allowed to commit into <code>master</code> nor into <code>develop</code> (except for the first commit into <code>master</code>, then <code>develop</code> is forked from <code>master</code>), in either <code>origin</code> or the forked repository. Not even locally!</li>
 <li>There's <strong>one developer responsible for the entire project</strong>. Let's call him/her <em>Integrator</em>.</li>
 <li>To add a new feature, one of the developers create a local branch called <code>feature-x</code> from <code>develop</code> and commit into it. He/she may push this branch to their own forked repository.</li>
