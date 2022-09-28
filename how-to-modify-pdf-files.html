@@ -165,7 +165,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 
 <p>If the image is of a different resolution, <a href="https://unix.stackexchange.com/a/20057">use this</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">i</span><span class="o">=</span><span class="m">100</span><span class="p">;</span> convert input.png -compress jpeg -quality <span class="m">70</span> <span class="se">\</span>
-  -density <span class="si">${</span><span class="nv">i</span><span class="si">}</span>x<span class="si">${</span><span class="nv">i</span><span class="si">}</span> -units PixelsPerCentimer <span class="se">\</span>
+  -density <span class="si">${</span><span class="nv">i</span><span class="si">}</span>x<span class="si">${</span><span class="nv">i</span><span class="si">}</span> -units pixelspercentimer <span class="se">\</span>
   -resize <span class="k">$((</span>i*21<span class="k">))</span>x<span class="k">$((</span>i*29.7<span class="k">))</span> <span class="se">\</span>
   -repage <span class="k">$((</span>i*21<span class="k">))</span>x<span class="k">$((</span>i*29.7<span class="k">))</span> output.pdf
 </code></pre></div>
