@@ -484,7 +484,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 
 &lt;p&gt;If the image is of a different resolution, &lt;a href="https://unix.stackexchange.com/a/20057"&gt;use this&lt;/a&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; convert input.png -compress jpeg -quality &lt;span class="m"&gt;70&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
-  -density &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;x&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -units pixelspercentimer &lt;span class="se"&gt;\&lt;/span&gt;
+  -density &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;x&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -units pixelspercentimeter &lt;span class="se"&gt;\&lt;/span&gt;
   -resize &lt;span class="k"&gt;$((&lt;/span&gt;i*21&lt;span class="k"&gt;))&lt;/span&gt;x&lt;span class="k"&gt;$((&lt;/span&gt;i*29.7&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
   -repage &lt;span class="k"&gt;$((&lt;/span&gt;i*21&lt;span class="k"&gt;))&lt;/span&gt;x&lt;span class="k"&gt;$((&lt;/span&gt;i*29.7&lt;span class="k"&gt;))&lt;/span&gt; output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
