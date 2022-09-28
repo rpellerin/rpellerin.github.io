@@ -89,4 +89,12 @@ Make sure your image has a resolution of 1050x1485 pixels. Then:
     :::bash
     convert input.jpg -density 50 -units pixelspercentimeter output.pdf
 
+If the image is of a different resolution, [use this](https://unix.stackexchange.com/a/20057):
+
+    :::bash
+    i=100; convert input.png -compress jpeg -quality 70 \
+      -density ${i}x${i} -units pixelspercentimeter \
+      -resize $((i*21))x$((i*29.7)) \
+      -repage $((i*21))x$((i*29.7)) output.pdf
+
 [Source](https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309)
