@@ -4900,6 +4900,13 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.jpg -density &lt;span class="m"&gt;50&lt;/span&gt; -units pixelspercentimeter output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;p&gt;If the image is of a different resolution, &lt;a href="https://unix.stackexchange.com/a/20057"&gt;use this&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;150&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; convert input.png -compress jpeg -quality &lt;span class="m"&gt;70&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -density &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;x&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; -units PixelsPerCentimer &lt;span class="se"&gt;\&lt;/span&gt;
+  -resize &lt;span class="k"&gt;$((&lt;/span&gt;i*21&lt;span class="k"&gt;))&lt;/span&gt;x&lt;span class="k"&gt;$((&lt;/span&gt;i*29.7&lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+  -repage &lt;span class="k"&gt;$((&lt;/span&gt;i*21&lt;span class="k"&gt;))&lt;/span&gt;x&lt;span class="k"&gt;$((&lt;/span&gt;i*29.7&lt;span class="k"&gt;))&lt;/span&gt; output.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 10 Dec 2016 00:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</guid><category>Linux</category><category>pdf</category><category>linux</category></item><item><title>Google Independence</title><link>//romainpellerin.eu/google-independence.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://fsfe.org/campaigns/android/liberate.en.html"&gt;Liberate Your Device!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.replicant.us/"&gt;Replicant: a fully free Android distribution running on several devices&lt;/a&gt;&lt;/li&gt;
