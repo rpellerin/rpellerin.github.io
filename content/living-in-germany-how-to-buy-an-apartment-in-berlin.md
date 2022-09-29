@@ -482,6 +482,12 @@ A few days ahead of the notary meeting, the notary will ask you a bunch of paper
 
 The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.
 
+# 8. Payments
+
+A few days later, you will receive various invoices from the Notar (Notarkosten at least, maybe the Grundbucheintrag too).
+
+**Another few days later, the Notar will ask you to pay the apartment before a given due date.** What you'll most likely do is, transfer your equity capital to some temporary bank account provided by your financing bank. Then, the bank will pay the seller. The bank might ask you to transfer all of the equity capital you said you had, minus what you paid to the Notar already, and then ask you to pay the remaining future invoices (Grunderwerbsteuer at least) from that temporary bank account.
+
 # Conclusion: timeline of events
 
 <figure class="center"><img alt="All the events and when then take place" src="{static}/images/buying_an_apartment_in_berlin.png" /></figure>
