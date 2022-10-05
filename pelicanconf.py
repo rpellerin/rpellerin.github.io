@@ -61,3 +61,15 @@ EXTRA_PATH_METADATA = {
 
 # Disable parsing HTML files
 READERS = {'html': None}
+
+
+# Default value for MARKDOWN, only `markdown.extensions.toc` is an addition of mine
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.toc': {},
+    },
+    'output_format': 'html5',
+}

@@ -23,10 +23,15 @@ Now install pelican and its dependencies:
 pip3 install -r requirements.txt
 ```
 
-## Publishing
+## Developing
 
 ```bash
 pelican content -o output -s pelicanconf.py --ignore-cache -d -r
+```
+
+## Publishing
+
+```bash
 make publish
 ghp-import -m "Commit message" output
 git push origin gh-pages:gh-pages -r
