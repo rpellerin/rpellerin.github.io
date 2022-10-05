@@ -97,7 +97,7 @@
     <p>Writing any kind of profesionnal document in English is not a straightforward thing, especially if it's not something you do on a regular basis. There are rules to stick to, a formatting to respect, mistakes to avoid. Readers must be able to find information quickly, at the right place. Might it be either in a glossary, a footnote, an appendix, and so on., you must follow a specific order.</p>
 <p>This year, I decided to write my internship report in English and thus stick to what English readers are used to. In general, thoses rules are almost the same as in French, almost. However, there are a few significant differences you'd better know.</p>
 <p>I'm going to first explain how I would write a technical report — it works for an internship report as well, since it's supposed to be technical.</p>
-<h1>Writing a report</h1>
+<h1 id="writing-a-report">Writing a report</h1>
 <p>I decided to base my report on <a href="https://en.wikipedia.org/wiki/Book_design">a book design</a>. However, you can find <a href="https://en.wikibooks.org/wiki/Professional_and_Technical_Writing/Table_of_Contents">here a complete guide about profesionnal and technical writing</a>.</p>
 <p>The report is done in <strong>a two-sided printing style</strong>. Here is the plan I would follow for an internship or a technical report:</p>
 <ul>
@@ -118,15 +118,15 @@
 <p><strong>Footnotes</strong> are rather different. There are meant to add short pieces of information not necessarly related to the main content (like anecdotes, complementary information, web links). In regular books, you might encounter notes at the end of them, which purpose is approximatively the same. However, it's a bit annoying, as it interrupts the flow of reading. It's better suited for long footnotes that wouldn't fit at the bottom of a page. Personally, I don't write notes at the end of a document, I would rather write footnotes. And sometimes, when footnotes are extremely short, you might want to use either <a href="http://english.stackexchange.com/questions/250492/what-is-the-difference-between-a-dash-and-a-semicolon/250494#250494">a dash or a semicolon to add complementary information</a>.</p>
 <p><strong>Appendices</strong> are for any other document you haven't produced yourself, or big ones, like charts, graphs or emails. They should not be an important part, the reader must be able to understand your point without seeing the appendix. Otherwise, it must go in the main content.</p>
 <p>Pay attention to <strong>headings</strong>, there are <a href="http://titlecapitalization.com/">different rules regarding capitalization</a>.</p>
-<h1>Writing a formal business letter</h1>
+<h1 id="writing-a-formal-business-letter">Writing a formal business letter</h1>
 <ul>
 <li><a href="http://www.dailywritingtips.com/how-to-format-a-us-business-letter/">How to format it (the layout)</a> (<strong>read the comment as well</strong>)</li>
 <li>The Closing: use "Yours sincerely" when you know your recipient's name, otherwise use "Yours faithfully". If you know the person quite well, you can use "Best regards" or "Kind regards".</li>
 </ul>
-<h1>Using modern tools</h1>
+<h1 id="using-modern-tools">Using modern tools</h1>
 <p>There are great tools out there to write beautiful reports, not to mention Microsoft Word, Pages or LibreOffice Writer. But these ones are too focused on the form instead of the content. People spend way too much time formatting, adding colors, setting the margins, and so forth, instead of... writing the actual content. Moreover, between two given versions of the same program (let's say Word 2003 and Word 2007), there might be huge differences introducing compatibility issues, not easily solvable.</p>
 <p>So, is there some sort of an ultimate solution? The answer is <strong>YES</strong>. Let me introduce LaTeX.</p>
-<h2>LaTeX</h2>
+<h2 id="latex">LaTeX</h2>
 <p>Basically and quickly, it's an open source tool written a while ago which allows you to write any kind of document and export them as PDF (and some other formats). You can write books, reports, CVs, slides, anything! You write it as plain text surrounded with some sort of code (it's a markup language actually). It's available on Linux, Mac and Windows. As it's plain old text, there's no compatibility issue <strong>at all</strong>. What is more, LaTeX doesn't evolve that much over years so. Should it does some day, they will always ensure backward compatibility. When you're done with it, you just compile it and you're good: a beautiful PDF is procuded. There are plenty of tools available for each platform. For instance, I recommend <code>pdflatex</code> on Linux. And if you're too lazy to install any of them, use <a href="https://www.sharelatex.com/">ShareLaTeX</a>.</p>
 <p><a href="https://github.com/scottkosty/install-tl-ubuntu/blob/master/install-tl-ubuntu">See this tutorial to install the latest version of LaTeX.</a>. Otherwise, you might install it using your system package manager:</p>
 <div class="highlight"><pre><span></span><code>sudo aptitude install texlive-full biber <span class="c1"># biber is for the bibliography</span>
@@ -140,28 +140,28 @@ tlmgr update --list
 
 <p>In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.</p>
 <p>You can find some examples of CVs, cover letters, reports and slideshows on <a href="https://github.com/rpellerin/LaTeX-templates">my GitHub account</a>. For advice about CVs, <a href="//romainpellerin.eu/how-not-to-get-hired.html">see my article "How Not To Get Hired"</a></p>
-<h3>The commands <code>\input{}</code> and <code>\include{}</code></h3>
+<h3 id="the-commands-input-and-include">The commands <code>\input{}</code> and <code>\include{}</code></h3>
 <p><code>\input{}</code> doesn't do <code>\newpage</code>, unlike <code>\include{}</code>. <a href="http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include">More info</a>.</p>
-<h3>Splitting files</h3>
+<h3 id="splitting-files">Splitting files</h3>
 <p>Is a best practice. I personally try to have "conf" files and "content" files. Then I gather them in the main Tex file (thanks to <code>\input{}</code>), which will be compiled eventually.</p>
-<h3>Bibliography</h3>
+<h3 id="bibliography">Bibliography</h3>
 <p>It's a really important part of any report or publication. Basically, there are two engines to compile the ".bib" file: <code>bibtex</code> and <code>biber</code>. As well, there are two LaTeX packages to format citations and bibliographies: <code>natbib</code> and <code>biblatex</code>. I personally recommend using <strong><code>biber</code></strong> and <strong><code>biblatex</code></strong>. <a href="http://tex.stackexchange.com/a/25702/96790">Read here why.</a>.</p>
-<h3>Going further with LaTeX</h3>
+<h3 id="going-further-with-latex">Going further with LaTeX</h3>
 <ul>
 <li><a href="http://framabook.org/docs/latex/framabook-versionenligne_v1_5.pdf">Tout ce que vous avez toujours voulu savoir sur LATEX sans jamais oser le demander</a></li>
 <li><a href="http://xoph.co/20111024/latex-tutorial/">Everything You Wanted To Know About TeX, But Were Too Afraid To Ask</a></li>
 <li><a href="http://doc.ubuntu-fr.org/latex">Documentation Ubuntu FR</a></li>
 <li><a href="http://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu/95502#95502">How to remove everything related to TeX Live for fresh install on Ubuntu?</a></li>
 </ul>
-<h2>Unix tools</h2>
+<h2 id="unix-tools">Unix tools</h2>
 <p>Now that you started using LaTeX (I'm glad you did!), you might wonder how to check spelling, grammar, conjugation, etc.? Actually, there are dozens of tools for Linux.</p>
-<h3>Grammar and style</h3>
+<h3 id="grammar-and-style">Grammar and style</h3>
 <p><a href="http://dsl.org/cookbook/cookbook_15.html#SEC220">Here are two old fashionned tools to check grammar and style</a>, installable with</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install diction
 </code></pre></div>
 
 <p><code>diction</code> and <code>style</code> are both great tools but don't trust them completely, they tend to be really strict.</p>
-<h3>Spelling</h3>
+<h3 id="spelling">Spelling</h3>
 <p>There are three main tools really wide spread among the Linux community</p>
 <ul>
 <li><code>aspell</code></li>
@@ -172,8 +172,8 @@ tlmgr update --list
 <div class="highlight"><pre><span></span><code>aspell -l en-US -c -t &lt;file.tex&gt;
 </code></pre></div>
 
-<h3>General tools</h3>
-<h4>TextLint</h4>
+<h3 id="general-tools">General tools</h3>
+<h4 id="textlint">TextLint</h4>
 <p>Another awesome tool to check the style, mostly.</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/DamienCassou/textlint
 <span class="nb">cd</span> textlint
@@ -184,7 +184,7 @@ tlmgr update --list
 </code></pre></div>
 
 <p>They also offer a <a href="http://textlint.lukas-renggli.ch/">web application</a>.</p>
-<h4>LanguageTool</h4>
+<h4 id="languagetool">LanguageTool</h4>
 <p>Finally, here is a general word/grammer checker (probably one of the best): <a href="https://languagetool.org/">languagetool.org</a>. According to their <a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool">official documentation regarding LaTeX</a>, the best way to check any file is as follows. You will need Java version 8 or higher.</p>
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
@@ -202,13 +202,13 @@ java -version <span class="c1"># Make sure it worked</span>
 <div class="highlight"><pre><span></span><code>java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d <span class="s1">&#39;EN_QUOTES,UPPERCASE_SENTENCE_START&#39;</span> &lt;file.tex&gt;
 </code></pre></div>
 
-<h1>Books</h1>
+<h1 id="books">Books</h1>
 <p>To conclude, here a two famous books to produce high-quality documents in English:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style">The Chicago Manual of Style</a>: the ultimate book to learn how to write documents in English and be the perfect writer. Best suited for journalists.</li>
 <li><a href="https://en.wikipedia.org/wiki/The_Elements_of_Style">The Elements of Style</a>: a short and yet excellent book to know the basic rules and avoid common mistakes and pitfalls.</li>
 </ul>
-<h1>Great articles</h1>
+<h1 id="great-articles">Great articles</h1>
 <ul>
 <li><a href="http://www.uni.edu/~gotera/gradapp/stmtpurpose.htm">How to Write a Great Statement of Purpose</a></li>
 </ul>

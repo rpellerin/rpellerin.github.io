@@ -102,8 +102,8 @@
 <p>Firefox OS relies on HTML5. As a web developer, you'll find developing on this platform pretty straightforward. Applications are built on top of HTML/CSS.</p>
 <p>On the other hand, Ubuntu is... kind of a Ubuntu distribution but developed and optimized for mobiles. It allows you to do most of what you might do on a desktop distribution.</p>
 <p>For now, as these OSes are still in early development, they're not available worldwide easily. Somes phones run theses OSes but they're not mainstream yet. An easy option is to build them yourself and install them on your own Android device. Here are short tutorials.</p>
-<h1>Installing Ubuntu for devices</h1>
-<h2>For Nexus 4</h2>
+<h1 id="installing-ubuntu-for-devices">Installing Ubuntu for devices</h1>
+<h2 id="for-nexus-4">For Nexus 4</h2>
 <div class="highlight"><pre><span></span><code>sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-device-flash phablet-tools
@@ -116,16 +116,16 @@ ubuntu-device-flash touch --channel<span class="o">=</span>stable --bootstrap
 </code></pre></div>
 
 <p><a href="https://developer.ubuntu.com/en/start/ubuntu-for-devices/installing-ubuntu-for-devices/">More information</a>.</p>
-<h2>For Nexus 5</h2>
+<h2 id="for-nexus-5">For Nexus 5</h2>
 <p>There are 3 methods (updated in December 2017). First, plug in your phone. Then:</p>
-<h3>1</h3>
+<h3 id="1">1</h3>
 <p><a href="https://devices.ubports.com/#/hammerhead">Official tutorial</a>.</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/MariusQuabeck/magic-device-tool.git
 <span class="nb">cd</span> magic-device-tool
 sudo ./launcher.sh
 </code></pre></div>
 
-<h3>2</h3>
+<h3 id="2">2</h3>
 <p><a href="https://devices.ubports.com/#/hammerhead">Official tutorial</a>.</p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install ubuntu-device-flash phablet-tools
 adb reboot bootloader
@@ -133,17 +133,17 @@ sudo fastboot oem unlock
 sudo ubuntu-device-flash --server<span class="o">=</span>http://system-image.ubports.com touch --device<span class="o">=</span>hammerhead --channel<span class="o">=</span><span class="m">15</span>.04/stable --bootstrap
 </code></pre></div>
 
-<h3>3</h3>
+<h3 id="3">3</h3>
 <p><a href="https://ubports.com/page/ubuntu-nexus-5">Official tutorial</a>.</p>
 <div class="highlight"><pre><span></span><code>wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
 sudo dpkg -i /tmp/ubports.deb
 ubports-installer
 </code></pre></div>
 
-<h1>Building and installing Firefox OS</h1>
-<h2>For Nexus 4</h2>
+<h1 id="building-and-installing-firefox-os">Building and installing Firefox OS</h1>
+<h2 id="for-nexus-4_1">For Nexus 4</h2>
 <p>Plug in your phone, enable the developer mode and USB debugging.</p>
-<h3>First step: flash your Nexus 4 with Android 4.3</h3>
+<h3 id="first-step-flash-your-nexus-4-with-android-43">First step: flash your Nexus 4 with Android 4.3</h3>
 <div class="highlight"><pre><span></span><code>sudo apt-get install android-tools-adb
 wget https://dl.google.com/dl/android/aosp/mantaray-jwr66y-factory-3d8252dd.tgz
 tar xvzf occam-jwr66y-factory-74b1deab.tgz
@@ -151,7 +151,7 @@ tar xvzf occam-jwr66y-factory-74b1deab.tgz
 ./flash-all.sh <span class="c1"># Boot to fastboot and unlock bootloader</span>
 </code></pre></div>
 
-<h3>Second step: build Firefox OS (on a 14.04 Ubuntu)</h3>
+<h3 id="second-step-build-firefox-os-on-a-1404-ubuntu">Second step: build Firefox OS (on a 14.04 Ubuntu)</h3>
 <div class="highlight"><pre><span></span><code>sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache <span class="se">\</span>
@@ -179,11 +179,11 @@ git pull
 ./build.sh
 </code></pre></div>
 
-<h3>Third step: install it</h3>
+<h3 id="third-step-install-it">Third step: install it</h3>
 <div class="highlight"><pre><span></span><code>./flash.sh
 </code></pre></div>
 
-<h3>Some additional settings</h3>
+<h3 id="some-additional-settings">Some additional settings</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> gaia
 make reset-gaia <span class="nv">PRODUCTION</span><span class="o">=</span><span class="m">1</span>
 mkdir -p locales
@@ -203,7 +203,7 @@ make clean <span class="o">&amp;&amp;</span> make production <span class="nv">LO
 </code></pre></div>
 
 <p><a href="https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS">More information</a>.</p>
-<h1>Other alternatives</h1>
+<h1 id="other-alternatives">Other alternatives</h1>
 <ul>
 <li><a href="https://lineageos.org/">LineageOS</a></li>
 <li><a href="https://puri.sm/shop/librem-5/">Purism's Librem 5</a></li>

@@ -96,7 +96,7 @@
 <article>
     <p>Today marks a new beginning: <strong>I'm switching to Debian 8</strong>. A very bare installation of Debian actually.</p>
 <p>Until now, I've been using Xubuntu for over 3 years as my main operating system, on both my laptop and desktop computer. However, yesterday, as I was installing Xubuntu 16.04 on a friend's laptop, I noticed a few bugs quite annoying (like the <a href="https://bugs.launchpad.net/ubuntu/+bug/1573454">disappearing mouse</a>). In addition, I had been thinking about migrating to Debian for quite a long time (a friend of mine had already taken that step a couple of months ago). Xubuntu is shipped with a bunch of useless programs that I would never use. So time has come to have a lightweight bare distro, such as Debian 8. Moreover, my aging laptop would hugely benefit from that.</p>
-<h1>Tutorial</h1>
+<h1 id="tutorial">Tutorial</h1>
 <p>Let's get straight to the point: <strong>how to install Debian 8 on a whole encrypted disk?</strong></p>
 <p>Why encryption? Although I don't have sensitive data to protect, I take my laptop everywhere I go. Consequently, I am vulnerable to theft. What is on my disk is not valuable but still, I prefer to keep my stuff private.</p>
 <p>Before starting, make sure you have two USB sticks ready nearby, and another computer with a working Internet connection.</p>
@@ -163,7 +163,7 @@ mount -t iso9660 /dev/sdc1 /mnt/iso <span class="c1"># Might not be required</sp
 <p>Merely follow instructions until completion of the installation.</p>
 </li>
 </ol>
-<h2>Switching from stable to testing</h2>
+<h2 id="switching-from-stable-to-testing">Switching from stable to testing</h2>
 <p>If you need to be up-to-date, that's the right thing to do!</p>
 <div class="highlight"><pre><span></span><code>su
 cp /etc/apt/sources.list<span class="o">{</span>,.bak<span class="o">}</span>
@@ -174,12 +174,12 @@ apt dist-upgrade
 </code></pre></div>
 
 <p><a href="http://unix.stackexchange.com/questions/90389/how-to-upgrade-debian-stable-wheezy-to-testing-jessie">More information</a>.</p>
-<h1>Improve your privacy by using trustworthy DNS servers</h1>
+<h1 id="improve-your-privacy-by-using-trustworthy-dns-servers">Improve your privacy by using trustworthy DNS servers</h1>
 <p>I recommend <a href="https://larlet.fr/david/stream/2015/10/12/">French Data Network's DNS servers</a>: 80.67.169.12 and 80.67.169.40. Follow <a href="http://askubuntu.com/questions/627899/nameserver-127-0-1-1-in-resolv-conf-wont-go-away">this link</a> to find out how to configure Ubuntu.</p>
-<h1>Use free software</h1>
+<h1 id="use-free-software">Use free software</h1>
 <p>Namely Icecat or Iceweasel and Icedove as alternatives to Firefox and Thunderbird respectively.</p>
 <p>Hope it was helpful.</p>
-<h1>Further reading</h1>
+<h1 id="further-reading">Further reading</h1>
 <ul>
 <li><a href="https://wiki.debian.org/fr/AtiHowTo">Problem with AMD drivers</a>. And don't forget about <code>arandr</code>!</li>
 </ul>

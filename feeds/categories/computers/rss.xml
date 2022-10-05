@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 10 Jan 2021 17:50:00 +0100</lastBuildDate><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1&gt;SSDs&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 10 Jan 2021 17:50:00 +0100</lastBuildDate><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://storage.jamesachambers.com/popular/"&gt;Crucial BX500&lt;/a&gt;&lt;/li&gt;
@@ -7,7 +7,7 @@
 &lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;Kingston A400&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other SSDs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;SATA to USB 3.0 adapters&lt;/h1&gt;
+&lt;h1 id="sata-to-usb-30-adapters"&gt;SATA to USB 3.0 adapters&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;The &lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt; seems to be the preferred adapters among all the existing ones when it comes to Raspberry Pis.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;StarTech 2.5" SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
@@ -31,7 +31,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;Hope that helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 27 Aug 2020 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-08-27:/how-to-check-the-integrity-of-a-backup-folder.html</guid><category>Computers</category><category>linux</category><category>md5sum</category><category>git</category></item><item><title>Playing With A Raspberry Pi Camera</title><link>//romainpellerin.eu/playing-with-a-raspberry-pi-camera.html</link><description>&lt;p&gt;Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: &lt;code&gt;raspistill&lt;/code&gt; and &lt;code&gt;raspivid&lt;/code&gt;. For a complete user manual, follow &lt;a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2"&gt;this link&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;A timelapse of the sky at night&lt;/h1&gt;
+&lt;h1 id="a-timelapse-of-the-sky-at-night"&gt;A timelapse of the sky at night&lt;/h1&gt;
 &lt;p&gt;For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.&lt;/p&gt;
 &lt;p&gt;However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.&lt;/p&gt;
 &lt;p&gt;There are multiple parameters that affect the look of a photos but after trying a few and a lot of &lt;a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/"&gt;Googling&lt;/a&gt;, here is a set of parameters that work pretty well for me:&lt;/p&gt;
@@ -47,7 +47,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;Here the parameters &lt;code&gt;-awb auto&lt;/code&gt;, &lt;code&gt;-mm average&lt;/code&gt; and &lt;code&gt;-sa 0&lt;/code&gt; seem to have no impact, I believe they are the default values. The rest makes a difference.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ybX9RmXJBX4?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;h1&gt;Live streaming on Youtube&lt;/h1&gt;
+&lt;h1 id="live-streaming-on-youtube"&gt;Live streaming on Youtube&lt;/h1&gt;
 &lt;p&gt;This is fairly easy and cool to do! Head out to &lt;a href="https://studio.youtube.com/channel/UC/livestreaming"&gt;https://studio.youtube.com/channel/UC/livestreaming&lt;/a&gt; and retrieve a "Stream key".&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
 &lt;img src="//romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" /&gt;
@@ -74,7 +74,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"&gt;&lt;img src="//romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;h1&gt;Daytime timelapse&lt;/h1&gt;
+&lt;h1 id="daytime-timelapse"&gt;Daytime timelapse&lt;/h1&gt;
 &lt;p&gt;Here, it's pretty much like a nighttime timelapse, except that we don't need as many parameters, the default ones should normally do a decent job. Also, since taking a picture is here much more faster, we must schedule the shots. Every 20 or 30 seconds is usually a safe bet. Since we can't predict with certainty how long taking the picture will take, in order to take timely shots, we must run a script in the background to take the photo and wait x seconds in an infinite loop:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;while&lt;/span&gt; true&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; ./take-pic.sh&lt;span class="p"&gt;;&lt;/span&gt; sleep &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -92,7 +92,7 @@ date
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9GTVajBlVuM?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That's it for today!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 01 Jun 2020 02:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-06-01:/playing-with-a-raspberry-pi-camera.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>On Storing Passwords In A Safe Way</title><link>//romainpellerin.eu/on-storing-passwords-in-a-safe-way.html</link><description>&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
-&lt;h1&gt;Storing passwords&lt;/h1&gt;
+&lt;h1 id="storing-passwords"&gt;Storing passwords&lt;/h1&gt;
 &lt;p&gt;For a very long time I have stored my passwords within Firefox, synced "in the Cloud" through my Firefox account. This solution offers four main advantages:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Passwords are synced accross devices, always at hand&lt;/li&gt;
@@ -116,12 +116,12 @@ date
 &lt;li&gt;Two factor auth management is a plus: it could be nice to save 2FA secrets as well&lt;/li&gt;
 &lt;li&gt;Password generation is optional, I'm fine with random typing on my keyboard every once in a while&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Market analysis&lt;/h2&gt;
-&lt;h3&gt;1password&lt;/h3&gt;
+&lt;h2 id="market-analysis"&gt;Market analysis&lt;/h2&gt;
+&lt;h3 id="1password"&gt;1password&lt;/h3&gt;
 &lt;p&gt;Apparently a great tool, I've read a lof of good reviews. Advocated by the famous website &lt;a href="https://haveibeenpwned.com/1Password"&gt;Have I Been Pwned&lt;/a&gt;. However, since this is proprietary software, it is de facto a no-go for me. Plus it's a paid service.&lt;/p&gt;
-&lt;h3&gt;Keepass&lt;/h3&gt;
+&lt;h3 id="keepass"&gt;Keepass&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://keepass.info/"&gt;A tool initially made for Windows&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Pros&lt;/h4&gt;
+&lt;h4 id="pros"&gt;Pros&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Encryption out of the box&lt;/li&gt;
 &lt;li&gt;Free and open source&lt;/li&gt;
@@ -134,18 +134,18 @@ date
 &lt;li&gt;&lt;a href="https://keepass.info/plugins.html#keeotp"&gt;2FA management through a plugin&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://keepass.info/plugins.html#otpkeyprov"&gt;Database can be protected with 2FA through a plugin&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Cons&lt;/h4&gt;
+&lt;h4 id="cons"&gt;Cons&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;I must trust the binaries or build them myself after reviewing the sources...&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Pass (Linux CLI)&lt;/h3&gt;
+&lt;h3 id="pass-linux-cli"&gt;Pass (Linux CLI)&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://www.passwordstore.org/"&gt;A tool&lt;/a&gt; &lt;a href="https://wiki.archlinux.org/index.php/Pass"&gt;for Linux&lt;/a&gt; (CLI) based on GPG. Convenient on a laptop, not very much on a mobile phone. However, I tend to trust a CLI tool more than Keepass. One of the reasons I guess is that it's on the official Linux distributions repos.&lt;/p&gt;
 &lt;p&gt;In case of phone loss, here is a nice way to restore the code on your phone by generating QR codes from what's stored in pass:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install qrencode
 find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&amp;quot;&lt;/span&gt; -printf &lt;span class="s1"&gt;&amp;#39;%P\n&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sed -n &lt;span class="s1"&gt;&amp;#39;s|\.gpg||p&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nb"&gt;read&lt;/span&gt; f&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; pass &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="nb"&gt;read&lt;/span&gt; s&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; qrencode -o - &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$s&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; display&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h4&gt;Pros&lt;/h4&gt;
+&lt;h4 id="pros_1"&gt;Pros&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Encryption out of the box with GPG&lt;/li&gt;
 &lt;li&gt;Automatic generation of passwords&lt;/li&gt;
@@ -154,24 +154,24 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;2FA management (actually Pass can save any arbitraty data, it's essentially made up of encrypted plain text files)&lt;/li&gt;
 &lt;li&gt;Super easily backupable (zip the directory, that's all) on my personal cloud&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;Cons&lt;/h4&gt;
+&lt;h4 id="cons_1"&gt;Cons&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Not very user friendly&lt;/li&gt;
 &lt;li&gt;I must trust binaries, specifically the Android app and Firefox binary; the Linux script has all my trust though (yes, &lt;code&gt;pass&lt;/code&gt; is a script)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Dashlane and Lastpass&lt;/h3&gt;
+&lt;h3 id="dashlane-and-lastpass"&gt;Dashlane and Lastpass&lt;/h3&gt;
 &lt;p&gt;Proprietary software: no go.&lt;/p&gt;
 &lt;p&gt;One cool feature Dashlane offers that is worth mentioning though: setting an emergency contact for your important accounts in case of a critical matter. I wish other tools offered the same feature.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Seems like I'll either go with either Keepass or Pass. I'll update this article as I become familiar with either of them.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update January 2019&lt;/strong&gt;: I've been using &lt;code&gt;pass&lt;/code&gt; for a few months now and am very satisfied so far.&lt;/p&gt;
-&lt;h1&gt;Another topic: two-factor authentication&lt;/h1&gt;
+&lt;h1 id="another-topic-two-factor-authentication"&gt;Another topic: two-factor authentication&lt;/h1&gt;
 &lt;p&gt;For this one, I felt that storing my secrets on my phone (Google Authenticatgor to name it) only sounded a little too much like a Single Point of Failure. Should I ever lose access to my phone for any reason, I'd be locked out of services with two factor authentication enabled. Time had come to find a way to save a backup of these secrets.&lt;/p&gt;
 &lt;p&gt;To do so, I developed my own solution: &lt;a href="https://github.com/rpellerin/gauth2/"&gt;gauth2&lt;/a&gt;. It is forked from another project (&lt;a href="https://github.com/gbraad/gauth"&gt;gauth&lt;/a&gt;). I improved it and redesigned it a bit. I also added some features.&lt;/p&gt;
 &lt;p&gt;How does it work? Well, it is a web app that stores in one's browser (in the &lt;code&gt;LocalStorage&lt;/code&gt;, to be precise) one's secrets and generate One Time Passwords based on these secrets. The secrets can even be encrypted with a password, to prevent someone with access to the browser from stealing the secrets. It also allows secrets to be exported and imported for more convenience. I am very satisfied with it so far. This, on an encrypted laptop, coupled with Google Authenticator, is a pretty solid combination.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Hope this helps. Cheers!&lt;/p&gt;
-&lt;h1&gt;Online resources&lt;/h1&gt;
+&lt;h1 id="online-resources"&gt;Online resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.juliaferraioli.com/blog/2018/08/2fa-sms-you/"&gt;2FA, SMS, and you&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://korben.info/authentification-double-facteur-2fa.html"&gt;L’authentification double facteur (2FA), oui mais pas n’importe comment !&lt;/a&gt;&lt;/li&gt;
@@ -187,7 +187,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 23 Mar 2018 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-03-23:/domain-names.html</guid><category>Computers</category><category>dns</category><category>domain</category></item><item><title>How To Repair A Laptop Charger</title><link>//romainpellerin.eu/how-to-repair-a-laptop-charger.html</link><description>&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
 &lt;p&gt;Therefore, I decided to replace the defective charger. I searched the Internet, looking for the same charger, with no luck. All I found were cheap chargers selled by some weird Chinese sellers with poor reviews on Ebay and Amazon.&lt;/p&gt;
 &lt;p&gt;In the end, since I could not find the right replacement charger with the same connector and the right specifications, I decided to make my own! Here is how.&lt;/p&gt;
-&lt;h1&gt;How to make your own laptop charger&lt;/h1&gt;
+&lt;h1 id="how-to-make-your-own-laptop-charger"&gt;How to make your own laptop charger&lt;/h1&gt;
 &lt;p&gt;Basically, one can replace a laptop charger with any other one &lt;a href="https://stickystatic.com/tech/laptop-charger"&gt;on three conditions&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Output voltage has to be the same&lt;/li&gt;
@@ -277,7 +277,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;p&gt;A few years later, new microprocessors were created, able to process 8 bits at a time. So they used 8 bits (a byte) to store each character, giving 256 possible values, and thus leaving values from 128 to 255 spare.&lt;/p&gt;
 &lt;p&gt;Then, in the 80's, Microsoft Windows introduced its own &lt;strong&gt;character set&lt;/strong&gt; (also known as &lt;em&gt;code page&lt;/em&gt;) called &lt;strong&gt;Windows-1251&lt;/strong&gt;, whose goal was to fill in those space characters (for example, 224 represents the Cyrillic letter &lt;strong&gt;a&lt;/strong&gt;). Furthermore, in the 90's, fifteen other 8 bit character sets were created to cover many different alphabets (called &lt;a href="https://en.wikipedia.org/wiki/ISO/IEC_8859"&gt;ISO-8859-1 to ISO-8859-16&lt;/a&gt;; ISO-8859-12 was abandoned). Nowadays, in web pages, if you don't provide the charset used, most web browsers will use a default one, depending on your country of residence (ISO-8859-1 will likely be used for English countries).&lt;/p&gt;
 &lt;p&gt;Nevertheless, in the meantime, a &lt;strong&gt;new standard&lt;/strong&gt; called &lt;strong&gt;Unicode&lt;/strong&gt; was proposed. The purpose: to assign a unique number (known as a code point) to every letter in every language, in more than 256 slots. At the moment, we have &lt;a href="http://www.babelstone.co.uk/Unicode/unicode.html"&gt;over 120,000 code points&lt;/a&gt; and Unicode is also considered a character set itself.&lt;/p&gt;
-&lt;h1&gt;Unicode&lt;/h1&gt;
+&lt;h1 id="unicode"&gt;Unicode&lt;/h1&gt;
 &lt;p&gt;The next few lies were copy-pasted from the original article.&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;The first 128 Unicode code points are the same as ASCII. The range 128-255 contains currency symbols and other common signs and accented characters (aka characters with &lt;a href="https://en.wikipedia.org/wiki/Diacritic"&gt;diacritical marks&lt;/a&gt;), and much of it is borrowed ISO-8859-1. After 256 there are many more accented characters. After 880 it gets into Greek letters, then Cyrillic, Hebrew, Arabic, Indic scripts, and Thai. Chinese, Japanese and Korean start from 11904 with many others in between. This is great – no more ambiguity – each letter is represented by its own unique number.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;[...]&lt;/p&gt;
@@ -290,7 +290,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;Using 32 bits to send/store English text would quadruple the amount of bandwidth/space required&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Several attempts were created to solve this problem such as UCS2 and UTF-16 but the winner is UTF-8 (&lt;em&gt;Universal Character Set Transformation Format 8 bit&lt;/em&gt;). &lt;strong&gt;At the moment and since several years, UTF-8 is the preferred character encoding for the Unicode standard.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;UTF-8&lt;/h2&gt;
+&lt;h2 id="utf-8"&gt;UTF-8&lt;/h2&gt;
 &lt;p&gt;"&lt;em&gt;UTF-8 is a clever. It works a bit like the Shift key on your keyboard. Normally when you press the H on your keyboard a lower case “h” appears on the screen. But if you press Shift first, a capital H will appear.&lt;/em&gt;" (copy-pasted from the original article)&lt;/p&gt;
 &lt;p&gt;UTF-8 treats numbers as follows:&lt;/p&gt;
 &lt;ul&gt;
@@ -314,7 +314,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;p&gt;"&lt;em&gt;For instance, characters 208 and 209 shift you into the Cyrillic range. 208 followed by 175 is character 1071, the Cyrillic Я. &lt;a href="https://en.wikipedia.org/wiki/UTF-8#Examples"&gt;The exact calculation is (208%32)*64 + (175%64) = 1071&lt;/a&gt;.&lt;/em&gt;"&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;UTF-8 is therefore a multi-byte variable-width encoding. Multi-byte because a single character like Я takes more than one byte to specify it. Variable-width because some characters like H take only 1 byte and some up to 4.&lt;/em&gt;"&lt;/p&gt;
 &lt;p&gt;That makes UTF-8 backward compatible with ASCII.&lt;/p&gt;
-&lt;h2&gt;Avoid most common problems&lt;/h2&gt;
+&lt;h2 id="avoid-most-common-problems"&gt;Avoid most common problems&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Be sure to use UTF-8 on every single page of your website(s).&lt;/p&gt;
@@ -329,7 +329,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;Be careful when dealing with &lt;a href="http://blog.tremend.ro/2006/09/26/mysql-php-and-utf8/"&gt;MySQL to store text&lt;/a&gt; (&lt;a href="http://cahnory.tumblr.com/post/17108999879/utf-8-comment-%C3%A7a-marche"&gt;another article about it in French, also about PHP&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That's it about Unicode and UTF-8! Hope it was useful.&lt;/p&gt;
-&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;h1 id="further-reading"&gt;Further reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://utf8everywhere.org/"&gt;UTF-8 Everywhere&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/"&gt;La maison des horreurs de l’encoding&lt;/a&gt;&lt;/li&gt;
@@ -337,7 +337,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="http://slides.com/benoitaverty/unicode-pour-les-nuls#/"&gt;Unicode pour les nuls&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 19:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</guid><category>Computers</category><category>font</category><category>typeface</category><category>utf8</category><category>unicode</category></item><item><title>Understanding The Memory</title><link>//romainpellerin.eu/understanding-the-memory.html</link><description>&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
 &lt;p&gt;Nows, let's have a look at memory and let's try to understand how it works.&lt;/p&gt;
-&lt;h1&gt;Processes and threads&lt;/h1&gt;
+&lt;h1 id="processes-and-threads"&gt;Processes and threads&lt;/h1&gt;
 &lt;p&gt;Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains &lt;strong&gt;four main areas&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Data&lt;/strong&gt;: contains the global and static variables (explicitly initialized with a non-zero or non-NULL value, according to &lt;a href="https://en.wikipedia.org/wiki/Data_segment"&gt;Wikipedia&lt;/a&gt;) used by the program. The content of constants is on the data segment, whereas references to constants are on the code (see next bullet point). The BSS segment (which is usually adjacent to the data segment) contains all global variables and static variables that are initialized to zero or do not have explicit initialization (in such a case, they &lt;a href="http://stackoverflow.com/questions/13251083/the-initialization-of-static-variables-in-c"&gt;are implicitly initialized to 0&lt;/a&gt;). The BSS segment can be considered a part of the data segment.&lt;/li&gt;
@@ -400,8 +400,8 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.&lt;/p&gt;
-&lt;h1&gt;Allocating memory for objects and primitive data types&lt;/h1&gt;
-&lt;h2&gt;C++&lt;/h2&gt;
+&lt;h1 id="allocating-memory-for-objects-and-primitive-data-types"&gt;Allocating memory for objects and primitive data types&lt;/h1&gt;
+&lt;h2 id="c"&gt;C++&lt;/h2&gt;
 &lt;p&gt;Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.&lt;/p&gt;
 &lt;p&gt;Global variables and static variables (not only global) go to the data segment.&lt;/p&gt;
 &lt;p&gt;Here are some examples, to make things clear:&lt;/p&gt;
@@ -425,10 +425,10 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;h2&gt;Java&lt;/h2&gt;
+&lt;h2 id="java"&gt;Java&lt;/h2&gt;
 &lt;p&gt;The main difference is that objects on the heap are automatically destroyed by the garbage collector, once they are no longer referenced. Moreover, only primitives are on the stack. All the objects are allocated on the heap. However, references (which are addresses) are passed as arguments to functions on the stack.&lt;/p&gt;
 &lt;p&gt;That's all folks!&lt;/p&gt;
-&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;h1 id="further-reading"&gt;Further reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html"&gt;7. Memory : Stack vs Heap&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.cplusplus.com/forum/articles/9/"&gt;The difference between pointers and arrays&lt;/a&gt;&lt;/li&gt;

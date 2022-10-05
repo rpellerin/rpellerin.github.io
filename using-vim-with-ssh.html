@@ -96,7 +96,7 @@
 <article>
     <p>I recently faced quite a challenging problem. I had to write C++ code and compile it on a remote server. Why would I need to compile on a remote server? Well, first my laptop is not very powerful and compiling takes some time, in comparison to the server which proved to be much faster. Moreover, my code was supposed to compile on the server "out of the box", as it was meant to be executed and tested there. Hence, no dependencies, no customized environmnent, and so forth.</p>
 <p>Anyway, I then started looking for a way to use Vim over SSH effectively, without having to switch between terminals to compile. What's more, I wanted it to be as fast as possible. After asking for help on <a href="http://unix.stackexchange.com/questions/315844/editing-and-compiling-files-on-a-remote-server-with-vim/315846">StackOverflow</a>, I got a very helpful answer. I finally came up with the following solution. Let's get started!</p>
-<h1>SSH</h1>
+<h1 id="ssh">SSH</h1>
 <p>First, edit <code>~/.ssh/config</code> and add your remote host.</p>
 <div class="highlight"><pre><span></span><code>Host my_server
   Hostname &lt;server&gt;
@@ -110,12 +110,12 @@
 
 <p>Then, enable <em>pubkey</em> authentication using <code>ssh-copy-id -i ~/.ssh/id_rsa.pub user@server</code>. You should now be able to connect using <code>ssh my_server</code>. This will establish a permanent connection. As an example, simply open another terminal and try to connect to that server, you'll notice how fast it is this time!</p>
 <p>Later, you'll be able to disconnect from the server using <code>ssh -O exit my_server</code>.</p>
-<h1>Tmux</h1>
+<h1 id="tmux">Tmux</h1>
 <p>Tmux is obviously a must-have and is thus already installed.</p>
-<h1>Vim</h1>
-<h2>Prerequisite</h2>
+<h1 id="vim">Vim</h1>
+<h2 id="prerequisite">Prerequisite</h2>
 <p>Before starting editing files, you definitely want your Vim to be smart. Hence we'll use the plugin <a href="https://github.com/tpope/vim-dispatch">vim-dispatch</a>, which allows use to run the command <code>:make</code> asynchronously from Vim, in another Tmux pane (the new command introduced by this plugin is <code>:Make</code>).</p>
-<h2>Editing and compiling</h2>
+<h2 id="editing-and-compiling">Editing and compiling</h2>
 <p>Once you're connected over SSH, let's edit files on the server using Vim. Let's go!</p>
 <div class="highlight"><pre><span></span><code>vim sftp://my_server//home/whoever/main.cpp
 </code></pre></div>

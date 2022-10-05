@@ -95,14 +95,14 @@
 </header>
 <article>
     <p>Today I started learning a new language: Ruby! Coming from a JavaScript world, <a href="http://frontendgods.com/getting-started-with-ruby-for/">this article</a> helped me a lot (<a href="//romainpellerin.eu/extra/javascript-to-ruby.html">backed-up here, should it ever vanish from the Internet</a>). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.</p>
-<h1>Learning resources</h1>
-<h2>Ruby</h2>
+<h1 id="learning-resources">Learning resources</h1>
+<h2 id="ruby">Ruby</h2>
 <ul>
 <li><a href="https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby">https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby</a> (French)</li>
 <li><a href="http://tryruby.org">http://tryruby.org</a>: awesome interactive tutoral</li>
 <li><a href="http://rubykoans.com/">http://rubykoans.com/</a>: learn by doing TDD (Test-Driven Development): make all tests pass</li>
 </ul>
-<h2>Rails</h2>
+<h2 id="rails">Rails</h2>
 <ul>
 <li><a href="http://rubyonrails.org/doctrine/">http://rubyonrails.org/doctrine/</a></li>
 <li><a href="https://ideamotive.co/ruby-on-rails-development-guide/?in-2019">CHOOSING RUBY ON RAILS FOR YOUR NEXT WEB DEVELOPMENT PROJECT</a></li>
@@ -110,7 +110,7 @@
 <li><a href="https://openclassrooms.com/en/courses/3149156-initiez-vous-a-ruby-on-rails">Initiez-vous à Ruby on Rails</a></li>
 <li><a href="https://openclassrooms.com/en/courses/3432066-continuez-avec-ruby-on-rails">Continuez avec Ruby on Rails</a></li>
 </ul>
-<h1>Install</h1>
+<h1 id="install">Install</h1>
 <p><a href="https://github.com/rbenv/rbenv#basic-github-checkout">Install rbenv</a>. In short, here is how:</p>
 <div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install openssl libicu-dev libssl-dev libreadline-dev zlib1g-dev
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -140,7 +140,7 @@ bundle install --path vendor --binstubs bin <span class="c1"># Set up .bundle co
 bundle install <span class="c1"># or simply `bundle`</span>
 </code></pre></div>
 
-<h1>Upgrade Ruby version</h1>
+<h1 id="upgrade-ruby-version">Upgrade Ruby version</h1>
 <p>Update the version in <code>Gemfile</code> and <code>.ruby-version</code>. Then run:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$HOME</span>/.rbenv/plugins/ruby-build <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> <span class="nb">cd</span> -
 rbenv install
@@ -148,7 +148,7 @@ gem install bundler
 bundle
 </code></pre></div>
 
-<h1>Stuff to know</h1>
+<h1 id="stuff-to-know">Stuff to know</h1>
 <ul>
 <li><code>;</code> is optional</li>
 <li>parentheses optional in <code>if</code> statements</li>
@@ -180,16 +180,16 @@ bundle
 <li><code>help</code> (get help in binding.pry /pry)</li>
 <li><code>PRY_RESCUE_RAIL=1 rails test</code>: runs a test and pauses on falsy assertions</li>
 </ul>
-<h2>Ranges</h2>
+<h2 id="ranges">Ranges</h2>
 <ul>
 <li><code>x..y</code> (y included) vs <code>x...y</code> (y not included)</li>
 </ul>
-<h2>Tests</h2>
+<h2 id="tests">Tests</h2>
 <ul>
 <li><code>assert_equal x,y</code></li>
 <li><code>assert_match(/regex/, x)</code></li>
 </ul>
-<h2>Resources</h2>
+<h2 id="resources">Resources</h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/1961030/ruby-ampersand-colon-shortcut">Ruby ampersand colon shortcut</a></li>
 <li><a href="https://stackoverflow.com/questions/14881125/what-does-to-proc-method-mean">What does to_proc method mean?</a></li>

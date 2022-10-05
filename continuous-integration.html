@@ -100,22 +100,22 @@
 <p><em>[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.</em></p>
 </blockquote>
 <p>But not only. It's much more than this. Let's dive into continuous integration.</p>
-<h1>Purpose</h1>
+<h1 id="purpose">Purpose</h1>
 <p>Continuous integration is an entire concept that tries to ease software development by making things much easier and more flexible. Like agile methodology, it's been getting more and more popular since the beginning of the 2000's. Nowadays, it tends to be widely adopted in any kind of software company.</p>
-<h2>Effortless automation</h2>
+<h2 id="effortless-automation">Effortless automation</h2>
 <p>Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like <a href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html">Quentin Adam</a> is used to saying,</p>
 <blockquote>
 <p><em><a href="https://twitter.com/waxzce/status/639078610230476800">Hosting has to become a commodity.</a></em></p>
 </blockquote>
 <p>The same applies for documentation generation, testing and deploying. Repetitive tasks are most of the time painful and should be performed by computers.</p>
-<h2>Continuous testing</h2>
+<h2 id="continuous-testing">Continuous testing</h2>
 <p><strong>Every new release should be tested.</strong> Automatically. Without any human intervention. In a safe and minimal environment, not a human's environment with tons of programs, custom environment variables, outdated dependencies, etc. It's a human job to design the tests but running and validating them is a machine job. This way, the results can be shared with an entire team over automatic emails and archived.</p>
-<h2>Documentation</h2>
+<h2 id="documentation">Documentation</h2>
 <p>Writting documentation is for humans. Generating it is for machines. Again, it's a repetitive task that no one should be assigned. It's a waste of time. Machines can do it instead of us, at the right time, usually when a new release is about to come out. Furthermore, machines don't forget to bump the version numbers.</p>
-<h2>Deploying</h2>
+<h2 id="deploying">Deploying</h2>
 <p>With continuous integration, deploying should be as simple as a <a href="https://twitter.com/Tim_LHUILLIER/status/396652013716770816"><code>git push</code></a>. When time has come for deployment, no one has to use <code>ssh</code> or <code>rcp</code>, not even <code>ftp</code>. <strong>It's unsafe insofar as it's too much of a risk to let a human get inside a production machine.</strong> A developer has nothing to do in a production machine, as long as all the tests have been passed before pushing to production. All one can do is breaking something. A production machine is meant to be administrated by a sysadmin, no one else. Once it's set up, the only action required by developers is pushing code when it's ready to go live.</p>
 <p>It's the same story for releases. Packaging and releasing a new version <strong>must</strong> be a simple task anyone can do, not only the CTO, regardless of the OS, configuration, and so on.</p>
-<h1>Why</h1>
+<h1 id="why">Why</h1>
 <p>Now that I exposed the principles of <strong>continuous integration</strong>, the question you may want to ask is "Yes, but why?". Indeed, prior to continuous integration, everything was already working well, more or less. So, you might wonder how anyone can benefit from continuous integration.</p>
 <p>In fact, continuous integration should simply be regarded as an entire development workflow. It enables your team of developers (or even a single developer) to be more agile. You can easily get rid of god-awful tasks without actually deleting them, just by delegating them to computers.</p>
 <p>In parallel, you can improve maintainability and evolutivity of the software produced by adopting the right versioning and bug tracking tools. How? Let's take an example.</p>
@@ -123,7 +123,7 @@
 <p>Another example. For every new version (and sometimes between two) you had to set up your environment correctly, generate the documentation from source code, bump the version number in both code and documentation, run unit/integration/system tests and finally, if everything goes well, compile it for <strong>as many platforms as you support</strong> (which quite often would mean a lot), and make it available on a website (or somewhere else). Well, how pleasant would it be if <strong>all of this</strong> could be achieved right after a <code>git push</code>?</p>
 <p>Let's now see how to get started with continuous integration, easily.</p>
 <hr>
-<h1>How</h1>
+<h1 id="how">How</h1>
 <p>Now, you might have understood that you <strong>have to use Git</strong>. And if you stil don't know why, you read read my article <a href="//romainpellerin.eu/git.html">about Git</a>.</p>
 <p>In my opinion, the most important thing with continuous integration is... your Git workflow. You have to remain consistent from the beginning of a project to its end. Everyone involved has to be careful and focused at each step. Working within a big team is not something easy. Everyone has different schedules, information doesn't spread that well. That's why having a robust and error-proof Git workflow matters.</p>
 <p>At The Smiths, we identified <strong>four main components</strong> that we wanted as <strong>core parts of our Continuous Integration process</strong>:</p>
@@ -133,7 +133,7 @@
 <li>Travis-ci.org</li>
 <li>Agile methodology</li>
 </ul>
-<h2>Semantic versioning</h2>
+<h2 id="semantic-versioning">Semantic versioning</h2>
 <p>We decided to stick to the very simple rules proposed by <a href="http://semver.org/">semver.org</a>. Basically, it says that a version number should be something like <em>MAJOR.MINOR.PATCH</em>, where (what follows has been extracted from their website):</p>
 <ol>
 <li>MAJOR version when you make incompatible API changes</li>
@@ -141,13 +141,13 @@
 <li>PATCH version when you make backwards-compatible bug fixes</li>
 </ol>
 <p>Sticking to this rule forced us to think more about the logic behind the versions, reshape road maps more precisely, and allowed us to bump our version numbers more cleverly. We applied this to our mobile apps and Titanium widgets, bumping version numbers carefully over time.</p>
-<h2>A Successful Git Workflow</h2>
+<h2 id="a-successful-git-workflow">A Successful Git Workflow</h2>
 <p>This part is clearly the most important, as it’s being used every single day by everyone. In general, it’s likely the most important aspect about continuous integration, to which we had paid a lot of attention.</p>
 <p>After some research, we came across a very popular Git workflow, the branching model.</p>
 <p><img alt="Git workflow" src="//romainpellerin.eu/images/continuous-integration-git-workflow.png"></p>
 <p>This picture has been taken from <em><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model, by Vincent Driessen</a></em> (<a href="https://twitter.com/nvie/status/644601079985008640">thanks to him</a>). Overall, it’s the best Git workflow we’ve ever encountered. <strong>So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.</strong> It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.</p>
 <p>Now, let's move onto <strong>our workflow</strong> that we daily use, with Github:</p>
-<h3>Our Git workflow</h3>
+<h3 id="our-git-workflow">Our Git workflow</h3>
 <ul>
 <li>There is a remote repository called <code>origin</code>. Then, every new developer (including the owner) has to fork this repository. The <code>origin</code> repo will <strong>ONLY</strong> contains two branches: <code>master</code> and <code>develop</code>.</li>
 <li><code>master</code>: contains <strong>only the stable realeases</strong> (General Availability), tagged with<br>
@@ -169,7 +169,7 @@
 <p>I've found out that this workflow works pretty well with any of our projects, might it be an entire app or a mere widget. However, as I said we've made some adjustments to the original workflow found on the Internet, making it a bit simpler to use.</p>
 <p><strong>Issues</strong> are also great features brought by GitHub that allow us to track down bugs and list them. One can assign people to fix an issue, and let others know of its progression thanks to emails or notifications. Issues can also be linked to specific commits which helps a lot when tracking regression bugs.</p>
 <p>Finally, we're also taking advantage of <strong>Milestones</strong>, a GitHub feature, which can be seen as a simplified scheduler, permitting us to create deadlines with goals to reach. It's somehow a list of deadlines with progress bars automatically filled as we would create and merge Pull requests.</p>
-<h4>Some commands</h4>
+<h4 id="some-commands">Some commands</h4>
 <p>To generate the message for a Pull request:</p>
 <div class="highlight"><pre><span></span><code>git log --pretty<span class="o">=</span>oneline --abbrev-commit &lt;branch-from&gt;..&lt;current-branch&gt;
 <span class="c1"># Prints the commits you made since last merge and the associated messages</span>
@@ -208,30 +208,30 @@ git push origin develop
 git branch -d feature-x
 </code></pre></div>
 
-<h3>Contributors</h3>
+<h3 id="contributors">Contributors</h3>
 <p>There's another approach to the scheme above. Instead of using only <em>Pull requests</em>, you could add other developers as <a href="https://help.github.com/articles/setting-guidelines-for-repository-contributors/">contributors</a>. This way, there's no Mr/Ms <strong>Integrator</strong>, any contributor is free to merge their features into <code>develop</code>. Also, feature branches can be on the remote repository.</p>
-<h3>Git branching model considered harmful</h3>
+<h3 id="git-branching-model-considered-harmful">Git branching model considered harmful</h3>
 <p>The Git workflow we used as a starting point (the branching model) has been considered harmful <a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/">by someone, and thus that person proposed another model</a>. The reading is worthwhile although I'm still not fully convinced by this alternative.</p>
-<h2><a href="https://travis-ci.org/">Travis</a>, the all-in-one tool</h2>
+<h2 id="travis-the-all-in-one-tool"><a href="https://travis-ci.org/">Travis</a>, the all-in-one tool</h2>
 <p>Soon, Travis will be your best friend. But first, what is Travis?</p>
 <p>Basically, it's an online service delivered through a website, providing sets of virtual machines started especially for a developer whenever needed. Those machines run some scripts and shut down themselves automatically. Usually, a developer sets up their Travis account to run scripts on every <code>git push</code> performed on a GitHub repository. However, one can configure Travis to be run with any kind of Git hook. <strong>Travis is free</strong> but they also have paid services with much more features (that we didn't require).</p>
 <p>So, how is Travis so helpful for us?</p>
-<h3>Most common use cases of Travis</h3>
+<h3 id="most-common-use-cases-of-travis">Most common use cases of Travis</h3>
 <p>Well, one can imagine dozens of scenarios. Documentation generated from the source on every new <code>git push</code> in <code>develop</code>? Easy. Running a whole set of tests automatically? Easy as well.</p>
 <p>Let's dream a bit further... One of the most fancy things one can do is <strong>running a set of tests, bump version numbers in the code and the documentation, compiling the software program and generating the updated documentation, pushing the binaries to Amazon S3 and the documentation to GitHub Pages, and making the whole set available to everyone, automatically!</strong> And yes, Travis, can push into specific branches as well. That might be really useful to update web pages automatically (a link to the latest stable release, listed on a download page, for instance).</p>
 <p>That is definitely the most perfect and automated scenario one could imagine, but that's easily achievable, although it would take quite a long time to set it up.</p>
-<h3>An example with Github Pages</h3>
+<h3 id="an-example-with-github-pages">An example with Github Pages</h3>
 <p>A good example is my blog (yes, the one you're reading). My articles are written in Markdown and contained in the branch <code>master</code>. However, what you're reading, is a <a href="https://pages.github.com/">Github page</a> (contained in a branch called <code>gh-pages</code>). What is happening hunder the hood is that, every time I push on <code>master</code>, Travis fetches it, generates the HTML pages from the Markdown files, and pushes them to the branch <code>gh-pages</code> on Github. This way, my blog gets updated automatically.</p>
 <p>I followed <a href="http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html">this tutorial</a> to do that (and <a href="http://fle.github.io/lectures/pelican-github-2014.html">this presentation</a> as well).</p>
-<h4>How does it work</h4>
+<h4 id="how-does-it-work">How does it work</h4>
 <p>At the root of your repo, just add a <em>.travis.yml</em> with some pieces of configuration inside. And you're done! A few more options are available on their web interface as well.</p>
 <p>You can have a look at <a href="https://github.com/rpellerin/blog/blob/master/.travis.yml">my .travis.yml for this blog</a>.</p>
-<h3>Tips with Travis</h3>
+<h3 id="tips-with-travis">Tips with Travis</h3>
 <ul>
 <li><a href="https://github.com/settings/tokens">Get a new token from Github</a> in order to give Travis access to your repo</li>
 <li>In travis, disable <em>Build on Pull requests</em>, enable only if .travis.yml is present</li>
 </ul>
-<h2>Agile methodology</h2>
+<h2 id="agile-methodology">Agile methodology</h2>
 <p>Last but not least, agile methodology. Behind that term that sounds rather complex is a concept pretty simple. In Computer Science, we use the term "Agile Software Development". Wikipedia says:</p>
 <blockquote>
 <p><em>Agile Software Development is a set of software development methods in which requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development, early delivery, continuous improvement, and encourages rapid and flexible response to change.</em></p>
@@ -248,12 +248,12 @@ git branch -d feature-x
 <p>This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.</p>
 <p><img alt="SCRUM" src="//romainpellerin.eu/images/continuous-integration-scrum.png"></p>
 <p>Sometimes, the part "Bug fixing" would require extra-time. In such a case, we would extend that part onto the next week, only assigning one person, so that the rest of the team could stick strictly to the rule "a Milestone per week". But that rarely happened fortunately.</p>
-<h2>Mix them all</h2>
+<h2 id="mix-them-all">Mix them all</h2>
 <p>As a brief conclusion, when thinking back at all the parts of our workflow, one can see that it's an entire whole in which GitHub plays a key-role. Being organized, knowing everyone's role and keeping in mind goals to reach are important as well, just like the tools we decided to go with. Furthermore, being able to release intermediate versions, quickly, allowed us to give constant feedback to the client, which is reassuring.</p>
 <p>This workflow is surely perfectible, but until now it has proved really efficient.</p>
 <p><br />
 I hope this article was helpful. It's a good start with Continuous Integration. First, focus on your workflow (especially with Git) and then set up the right tools (including Travis) and you're good!</p>
-<h1>Resources to go deeper</h1>
+<h1 id="resources-to-go-deeper">Resources to go deeper</h1>
 <ul>
 <li><a href="http://putaindecode.fr/posts/ci/le-deploiement-continu/">Introduction au déploiement continu</a></li>
 <li><a href="http://putaindecode.fr/posts/ci/introduction/">Qu'est-ce que l'intégration continue ?</a></li>
@@ -265,7 +265,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 <li><a href="http://k33g.github.io/2016/11/27/GH-FLOW.html">GitHub Flow</a></li>
 <li><a href="https://www.youtube.com/watch?v=jCwzf9adAtE">Intégration et déploiement en continu @ Github (Alain Hélaïli)</a></li>
 </ul>
-<h2>Android</h2>
+<h2 id="android">Android</h2>
 <ul>
 <li><a href="https://github.com/codepath/android_guides/wiki/Automating-Publishing-to-the-Play-Store">Automating Publishing to the Play Store</a></li>
 <li><a href="http://blog.stablekernel.com/deploying-google-play-continuous-delivery-android-part-4/">PUBLISH TO GOOGLE PLAY - CONTINUOUS DELIVERY FOR ANDROID (PART 4)</a></li>

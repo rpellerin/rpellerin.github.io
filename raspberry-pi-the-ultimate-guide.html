@@ -96,10 +96,10 @@
 <article>
     <p><em><a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip">Here is an old document I created a while ago. I keep it here for legacy purposes.</a></em></p>
 <p>I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.</p>
-<h1>Goal</h1>
+<h1 id="goal">Goal</h1>
 <p>I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.</p>
 <p>To sum up, few requirements, but big advantages. Let's get started!</p>
-<h1>What I used for this tutorial</h1>
+<h1 id="what-i-used-for-this-tutorial">What I used for this tutorial</h1>
 <ul>
 <li><a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b/">A Raspberry Pi v3 model B</a></li>
 <li>A hard disk drive (<a href="http://wdlabs.wd.com/products/wd-pidrive-314gb/">WD's PiDrive</a>)</li>
@@ -110,8 +110,8 @@
 <li>A wired keyboard</li>
 <li>A regular DSL Internet connection</li>
 </ul>
-<h1>Setting up the Raspberry Pi</h1>
-<h2>The OS</h2>
+<h1 id="setting-up-the-raspberry-pi">Setting up the Raspberry Pi</h1>
+<h2 id="the-os">The OS</h2>
 <ol>
 <li>Download Raspbian Lite from <a href="https://www.raspberrypi.org/downloads/raspbian/">the official website</a>. It might be a good idea to verify the hash (SHA1). <strong>Consider downloading the 64-bit version of the OS.</strong>. It adds supports for files larger than 4GB and also it fixes the issue with Nextcloud when the trashbin exceeds 4GB in size and can't be accessed anymore.</li>
 <li>Extract the file .img from the zip.</li>
@@ -141,7 +141,7 @@ sudo sync <span class="o">&amp;&amp;</span> sync
 <p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it.</p>
 </li>
 </ol>
-<h2>First boot</h2>
+<h2 id="first-boot">First boot</h2>
 <ol>
 <li>Insert the micro SD card in the Raspberry Pi. Plug in an Ethernet wire or make sure you have a Wifi access point available on which you can connect, Plug in the HDMI cable (connected to a screen), a keyboard and eventually the power cable.</li>
 <li>
@@ -155,7 +155,7 @@ dpkg-reconfigure tzdata
 <p>Regarding the keyboard layout, there are <a href="http://raspberrypi.stackexchange.com/questions/10060/raspbian-keyboard-layout/10103#10103">other alternatives</a>. Then reboot (<code>sudo reboot</code>).</p>
 </li>
 </ol>
-<h2>Configuration</h2>
+<h2 id="configuration">Configuration</h2>
 <ol>
 <li>
 <p>Should you need to connect over Wifi, here's how to do it:</p>
@@ -256,7 +256,7 @@ visudo <span class="c1"># Make sure there&#39;s no reference to pi user</span>
 
 </li>
 </ol>
-<h2>Moving <code>/root</code> onto an external hard disk drive, not encrypted, with additional encrypted DATA partition</h2>
+<h2 id="moving-root-onto-an-external-hard-disk-drive-not-encrypted-with-additional-encrypted-data-partition">Moving <code>/root</code> onto an external hard disk drive, not encrypted, with additional encrypted DATA partition</h2>
 <p><strong>NOTE THAT RECENT RASPBERRY PIS CAN BOOT DIRECTLY FROM A USB MASS STORAGE DEVICE, WITH NO SD INSERTED</strong>: <a href="https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md">tutorial here</a>.</p>
 <p><em>Right after this section you will find another one about how to do a similar operation using an encrypted hard disk.</em></p>
 <p>As root,</p>
@@ -334,7 +334,7 @@ dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv
 fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
 </code></pre></div>
 
-<h2>Moving <code>/root</code> onto an external hard disk drive, encrypted</h2>
+<h2 id="moving-root-onto-an-external-hard-disk-drive-encrypted">Moving <code>/root</code> onto an external hard disk drive, encrypted</h2>
 <p>I would like to thank a few websites which helped me a lot to write this article:</p>
 <ul>
 <li><a href="http://paxswill.com/blog/2013/11/04/encrypted-raspberry-pi/">Using an Encrypted Root Partition with Raspbian</a></li>
@@ -378,7 +378,7 @@ dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv
 fdisk /dev/mmcblk0 <span class="c1"># Delete second partition</span>
 </code></pre></div>
 
-<h3>Enable remote unlocking</h3>
+<h3 id="enable-remote-unlocking">Enable remote unlocking</h3>
 <p>References:</p>
 <ul>
 <li><a href="https://stinkyparkia.wordpress.com/2014/10/14/remote-unlocking-luks-encrypted-lvm-using-dropbear-ssh-in-ubuntu-server-14-04-1-with-static-ipst/">Remote unlocking LUKS encrypted LVM using Dropbear SSH in Ubuntu Server 14.04.1 (with Static IP)</a></li>
@@ -422,12 +422,12 @@ update-initramfs -u
 <p>The two first possibilities are quite safe, compared to the third one. It's well known that authentication using passwords over SSH is not that safe.<br>
 Using your PC's SSH public key is a good solution but not reliable in the long term. Imagine you were to lose access to your personal computer, you would end up locked out of your Raspberry with no means to access it. On the other hand, using your Raspberry Pi's SSH private as an identity is far more convenient in that you can store that file on many devices. Should you lose you computer, you could still access your Raspberry from another computer, given that you still have access to that private key. I know it's not the safest solution but that's the one I chose to go with.</p>
 <p>So here are how to do it with those two first choices, but I recommend you to go with the second one.</p>
-<h4>Choice 1</h4>
+<h4 id="choice-1">Choice 1</h4>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="k">$(</span>cat /home/pipi/.ssh/authorized_keys<span class="k">)</span> &gt;&gt; /etc/initramfs-tools/root/.ssh/authorized_keys <span class="c1"># Will grant us direct SSH access</span>
 cat /etc/initramfs-tools/root/.ssh/authorized_keys <span class="c1"># Make sure it&#39;s all right</span>
 </code></pre></div>
 
-<h4>Choice 2</h4>
+<h4 id="choice-2">Choice 2</h4>
 <p>Save the content of <code>/etc/initramfs-tools/root/.ssh/id_rsa</code> on your computer. <strong>Make sure to copy the entire file, including first and last lines.</strong> And do that on the newly created file, on your computer:</p>
 <div class="highlight"><pre><span></span><code>chmod <span class="m">0600</span> id_rsa_rpi
 </code></pre></div>
@@ -452,10 +452,10 @@ reboot
 <p>Instead of unlocking your hard disk drive over SSH, if you prefer to use a keyfile, <a href="http://longsteve.com/wiki/index.php?title=USB_Hard_Drive_Encryption_on_a_Raspberry_Pi">check out this website</a>.</p>
 <p>If you are brave enough, have a look at the section below called <em>Hardening security</em>. You might want to improve Dropbear settings.</p>
 <p>You might also want to read about <a href="https://wiki.mozilla.org/Security/Guidelines/OpenSSH">Mozilla's recommandation in terms of SSH security</a>.</p>
-<h1>Tips</h1>
-<h2>Screen blank time</h2>
+<h1 id="tips">Tips</h1>
+<h2 id="screen-blank-time">Screen blank time</h2>
 <p>To avoid screen blanking after a while in the console (tty), change <code>BLANK_TIME</code> to 0 in /etc/kbd/config.</p>
-<h2>Auto login</h2>
+<h2 id="auto-login">Auto login</h2>
 <p>As previously seen, the tool <code>rasp-config</code> allows you to configure auto login. But you can also do this with the command line. In <em>/etc/inittab</em>, replace</p>
 <div class="highlight"><pre><span></span><code>1:2345:respawn:/sbin/getty 115200 tty1
 </code></pre></div>
@@ -464,20 +464,20 @@ reboot
 <div class="highlight"><pre><span></span><code>1:2345:respawn:/bin/login -f pi tty1 &lt;/dev/tty1 &gt;/dev/tty1 2&gt;&amp;1
 </code></pre></div>
 
-<h2>Stopping Raspberry-Pi from auto changing source on TV</h2>
+<h2 id="stopping-raspberry-pi-from-auto-changing-source-on-tv">Stopping Raspberry-Pi from auto changing source on TV</h2>
 <div class="highlight"><pre><span></span><code>sudo <span class="nb">echo</span> <span class="s2">&quot;hdmi_ignore_cec_init=1&quot;</span> &gt;&gt; /boot/config.txt
 </code></pre></div>
 
-<h2>Auto-mount an external hard disk drive</h2>
+<h2 id="auto-mount-an-external-hard-disk-drive">Auto-mount an external hard disk drive</h2>
 <div class="highlight"><pre><span></span><code>mkdir /home/pi/my_wonderful_hdd <span class="c1"># Where the HDD will be mounted</span>
 sudo fdisk -l <span class="c1"># Note the location of the HDD (something like /dev/sda1)</span>
 sudo mount -t auto /dev/sda1 /home/pi/my_wonderful_hdd <span class="c1"># Mount it now</span>
 sudo <span class="nb">echo</span> <span class="s2">&quot;/dev/sda1 /home/pi/my_wonderful_hdd auto noatime 0 0&quot;</span> &gt;&gt; /etc/fstab <span class="c1"># Auto mount at boot</span>
 </code></pre></div>
 
-<h2>Change hostname</h2>
+<h2 id="change-hostname">Change hostname</h2>
 <p>Use the tool <code>rasp-config</code> or edit both <em>/etc/hostname</em> and <em>/etc/hosts</em>.</p>
-<h2>Disable SWAP permanently</h2>
+<h2 id="disable-swap-permanently">Disable SWAP permanently</h2>
 <p>Swapping is bad for your SD card lifespan. You should disable it permanently. You might however want to keep swap on a partition on a hard disk drive (see above). To disable permatently on SD card and disk, run:</p>
 <div class="highlight"><pre><span></span><code>sudo swapoff --all <span class="c1"># Temporary, disables also dedicated partitions (like /dev/sda2)</span>
 sudo update-rc.d dphys-swapfile remove
@@ -485,7 +485,7 @@ sudo apt remove dphys-swapfile <span class="c1"># Permanently</span>
 sudo rm /var/swap
 </code></pre></div>
 
-<h1>DynHost</h1>
+<h1 id="dynhost">DynHost</h1>
 <ol>
 <li>Run <code>apt install lynx dnsutils git</code> as root. <code>dnsutils</code> provides <code>dig</code>.</li>
 <li>As a normal user, run <code>git clone https://github.com/rpellerin/dynhost.git $HOME/dynhost</code></li>
@@ -498,7 +498,7 @@ sudo rm /var/swap
 <p>All good!</p>
 </li>
 </ol>
-<h1>Configure a local SMTP email server</h1>
+<h1 id="configure-a-local-smtp-email-server">Configure a local SMTP email server</h1>
 <p>Before doing this. make sure you did set the hostname of your Raspberry Pi through <code>raspi-config</code>. Note: to successfully send email, the domain you set must exist as a valid DNS entry. Otherwise some email servers will reject your emails. If your Raspberry won't answer to no domain, let as is but make sure while setting up exim4 to hide local mail name with <strong>an existing domain</strong>.</p>
 <p>Make sure to disable <code>/var/log</code> from being in RAM since Exim4 needs <code>/var/log/exim4/mainlog</code> to exist, even after a reboot.</p>
 <p>This is pretty convient as some programs still prefer to send emails, such as <code>cron</code>.<br>
@@ -562,18 +562,18 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
 </code></pre></div>
 
 <p><a href="http://debian-facile.org/doc:reseau:exim4:redirection-mails-locaux">More information</a>.</p>
-<h1>Send email automatically on startup with <code>sendmail</code></h1>
+<h1 id="send-email-automatically-on-startup-with-sendmail">Send email automatically on startup with <code>sendmail</code></h1>
 <p>Add the following in <code>crontab -e</code> as root:</p>
 <div class="highlight"><pre><span></span><code>@reboot /bin/sleep <span class="m">30</span><span class="p">;</span> /usr/sbin/exim -qff<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Rpi turned on&quot;</span> root
 </code></pre></div>
 
 <p>Now, read the section right below.</p>
-<h1>Send emails automatically on shell login</h1>
+<h1 id="send-emails-automatically-on-shell-login">Send emails automatically on shell login</h1>
 <p>Edit your user and root's <code>.bashrc</code> and add at the end of the file:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;So you know... (</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">)&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;Root shell login&quot;</span> root
 </code></pre></div>
 
-<h1>Installing Nextcloud</h1>
+<h1 id="installing-nextcloud">Installing Nextcloud</h1>
 <p>Official tutorial: <a href="https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html">https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html</a>.</p>
 <p>(<a href="https://kiramclean.com/blog/how-to-set-up-your-own-nextcloud-server/">here is another tutorial on how to install Nextcloud via SNAP</a>)</p>
 <details>
@@ -750,7 +750,7 @@ chmod <span class="m">750</span> /mnt/data_partition/nextcloud_data
 </code></pre></div>
 
 <p>Now you can start setting up Nextcloud at https://raspberry-pi-IP/. Set the data folder to be <code>/mnt/data_partition/nextcloud_data</code>. Once set up, go visit <code>/settings/admin/overview</code> for tips on how to improve your setup.</p>
-<h2>Improve PHP's performance</h2>
+<h2 id="improve-phps-performance">Improve PHP's performance</h2>
 <div class="highlight"><pre><span></span><code>su
 
 <span class="nb">export</span> <span class="nv">CONF</span><span class="o">=</span>/etc/php/7.3/apache2/php.ini
@@ -792,7 +792,7 @@ service apache2 restart
 </code></pre></div>
 
 <p>Restart Apache. Running <code>php -i</code> will say <em>opcache.enable =&gt; On</em> and <em>Opcode Caching =&gt; Up and Runnning</em>. If you temporarily replace the content of <code>status.php</code> with <code>&lt;?php phpinfo(); ?&gt;</code>, when accessing <code>/status.php</code> you should see the same results. Make sure as well that APCu is enabled in the webpage.</p>
-<h2>Improve Nextcloud's settings</h2>
+<h2 id="improve-nextclouds-settings">Improve Nextcloud's settings</h2>
 <p>Add the following in <em>/var/www/nextcloud/config/config.php</em>:</p>
 <div class="highlight"><pre><span></span><code>&#39;logtimezone&#39; =&gt; &#39;Europe/Paris&#39;,
 &#39;logfile&#39; =&gt; &#39;/var/log/nextcloud/nextcloud.log&#39;,
@@ -814,7 +814,7 @@ touch /var/log/nextcloud/nextcloud.log
 <div class="highlight"><pre><span></span><code>*/5  *  *  *  * <span class="o">[</span> -L /dev/mapper/hddcrypt <span class="o">]</span> <span class="o">&amp;&amp;</span> php -f /var/www/nextcloud/cron.php
 </code></pre></div>
 
-<h1>Firewall</h1>
+<h1 id="firewall">Firewall</h1>
 <div class="highlight"><pre><span></span><code>su
 wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.sh
 wget --no-check-certificate https://raw.githubusercontent.com/rpellerin/dotfiles/master/scripts/firewall.service
@@ -837,7 +837,7 @@ systemctl <span class="nb">enable</span> firewall
 <span class="c1"># NETWORK_MGMT=192.168.1.0/24</span>
 </code></pre></div>
 
-<h1>OpenVPN 2.4.7</h1>
+<h1 id="openvpn-247">OpenVPN 2.4.7</h1>
 <div class="highlight"><pre><span></span><code>su
 apt update <span class="o">&amp;&amp;</span> apt install openvpn
 </code></pre></div>
@@ -984,14 +984,14 @@ sudo openvpn --config client.ovpn
 </code></pre></div>
 
 <p>Add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. <a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/">Here is why</a>.</p>
-<h2>Optional: use several ports</h2>
+<h2 id="optional-use-several-ports">Optional: use several ports</h2>
 <p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit <code>firewall.sh</code>, change the first line and add the second one:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194 53&quot;</span> <span class="c1"># DCHP, OpenVPN, OpenVPN (other port)</span>
 <span class="c1"># ...</span>
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport <span class="m">53</span> -j REDIRECT --to-port <span class="m">1194</span>
 </code></pre></div>
 
-<h1>Hardening SSH configuration</h1>
+<h1 id="hardening-ssh-configuration">Hardening SSH configuration</h1>
 <p>Edit <em>/etc/ssh/sshd_config</em>:</p>
 <div class="highlight"><pre><span></span><code>Port &lt;something you like&gt;
 # If you change the default port, don&#39;t forget to update SSH_PORT in firewall.sh
@@ -1023,7 +1023,7 @@ KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 <span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="n">id</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@raspberrypi</span><span class="o">-</span><span class="n">IP</span><span class="w"></span>
 </code></pre></div>
 
-<h1>Sending an email on every SSH connection</h1>
+<h1 id="sending-an-email-on-every-ssh-connection">Sending an email on every SSH connection</h1>
 <p>Taken from <a href="http://askubuntu.com/questions/179889/how-do-i-set-up-an-email-alert-when-a-ssh-login-is-successful#answer-448602">this thread</a>. As root, create <code>/etc/ssh/login-notify.sh</code>:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 
@@ -1048,7 +1048,7 @@ fi
 </code></pre></div>
 
 <p>Now restart sshd by doing <code>service sshd restart</code>.</p>
-<h1>Fail2Ban</h1>
+<h1 id="fail2ban">Fail2Ban</h1>
 <p><a href="http://www.fail2ban.org/wiki/index.php/MANUAL_0_8">Official documentation</a>.</p>
 <div class="highlight"><pre><span></span><code>su
 apt install fail2ban
@@ -1148,19 +1148,19 @@ fail2ban-client -x stop
 systemctl start fail2ban
 </code></pre></div>
 
-<h1>Troubleshooting</h1>
+<h1 id="troubleshooting">Troubleshooting</h1>
 <p>Should you have a <a href="https://www.youtube.com/watch?v=IGtzaIlMgWA">beeping hard disk drive</a>, the reason might be power consumption. It usually beeps when it needs more electricity. <a href="http://www.htpcguides.com/spin-down-and-manage-hard-drive-power-on-raspberry-pi/">Disabling Advanced Power Management</a> will solve this problem in most cases (<code>sudo hdparm -B 255 /dev/sda</code>).</p>
-<h1>Going further</h1>
-<h2>Pro tips</h2>
+<h1 id="going-further">Going further</h1>
+<h2 id="pro-tips">Pro tips</h2>
 <p>Consider buying an <a href="https://www.modmypi.com/raspberry-pi/breakout-boards/pi-modules/ups-pico">uninterruptible power supply (UPS) for your Raspberry to prevent damage caused by power outage</a>.</p>
-<h2>Talk</h2>
+<h2 id="talk">Talk</h2>
 <p>A year ago, I gave a talk at <a href="http://humantalks.com/cities/compiegne">HumanTalks Compiègne</a> about my Raspberry Pi. Here are the video and the slides.</p>
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ECzGnX644yc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="700" height="600" src="https://romainpellerin.eu/slides/embedder.html#self-hosting/slides.html" allowfullscreen></iframe>
 
 <p><a href="https://romainpellerin.eu/slides/self-hosting/slides.html">Slides are available in HTML</a>.</p>
-<h2>Interesting external links</h2>
+<h2 id="interesting-external-links">Interesting external links</h2>
 <ul>
 <li><a href="http://www.minimachines.net/actu/piwall-creer-un-mur-decrans-low-cost-avec-des-raspberry-pi-28656">Piwall : Créer un mur d’écrans low cost avec des Raspberry Pi</a></li>
 <li><a href="http://korben.info/raspberry-pi-allonger-la-duree-de-vie-de-vos-cartes-sd.html">Raspberry Pi – Allonger la durée de vie de vos cartes SD</a></li>
@@ -1178,7 +1178,7 @@ systemctl start fail2ban
 <li><a href="https://github.com/rpellerin/raspberry-pi-security-camera">raspberry-pi-security-camera</a></li>
 <li><a href="https://mon-blog.jbriault.fr/index.php/blog/2019/02/06/s%C3%A9curiser-l-administration-de-son-vps">Protéger son VPS</a></li>
 </ul>
-<h3>Read-only Raspberry Pi</h3>
+<h3 id="read-only-raspberry-pi">Read-only Raspberry Pi</h3>
 <ul>
 <li><a href="http://david.mercereau.info/raspberrypi-raspbian-en-lecture-seul-readonly-pour-preserver-la-carte-sd/">RaspberryPi &amp; Raspbian en lecture seul (ReadOnly) pour préserver la carte SD</a></li>
 <li><a href="http://tinycorelinux.net/ports.html">Tiny Core Linux</a></li>

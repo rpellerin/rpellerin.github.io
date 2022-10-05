@@ -94,7 +94,7 @@
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/vim.html">vim</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/vi.html">vi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <h1>Left-right and up-down motions</h1>
+    <h1 id="left-right-and-up-down-motions">Left-right and up-down motions</h1>
 <ul>
 <li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>: left, down, up, right</li>
 <li><code>^e</code>: scoll window down (ctrl + e)</li>
@@ -111,7 +111,7 @@
 <li><code>f&lt;char&gt;</code>: find forward (it will include the found character, unlike till)</li>
 <li><code>F&lt;char&gt;</code>: find backward</li>
 </ul>
-<h1>Text objects motions</h1>
+<h1 id="text-objects-motions">Text objects motions</h1>
 <ul>
 <li><code>&lt;n&gt; w</code>: n words forward (n is optional)</li>
 <li><code>b</code>: beginning of word</li>
@@ -119,13 +119,13 @@
 <li><code>{</code>: beginning of paragraph</li>
 <li><code>}</code>: end of paragraph</li>
 </ul>
-<h1>Text objects (only in visual mode or after an operator)</h1>
+<h1 id="text-objects-only-in-visual-mode-or-after-an-operator">Text objects (only in visual mode or after an operator)</h1>
 <ul>
 <li><code>s</code>: sentences</li>
 <li><code>p</code>: paragraphs</li>
 <li><code>t</code>: tags (html/xml only)</li>
 </ul>
-<h1>Copying and moving text / Inserting text</h1>
+<h1 id="copying-and-moving-text-inserting-text">Copying and moving text / Inserting text</h1>
 <ul>
 <li><code>d{motion}</code>: delete/cut (<code>dd</code> to delete entire line)</li>
 <li><code>p</code>: paste (a line that was cut for instance)</li>
@@ -140,7 +140,7 @@
 <li><code>o</code>: add a new line below and enter insert mode</li>
 <li><code>O</code>: add a new line above and enter insert mode</li>
 </ul>
-<h2>Examples</h2>
+<h2 id="examples">Examples</h2>
 <p>General rule: <code>[optional number to repeat]{command}{text object or motion}</code>.</p>
 <ul>
 <li><code>diw</code>: delete in word</li>
@@ -152,7 +152,7 @@
 <li><code>3J</code>: join the next three lines into 1 line</li>
 <li><code>d5}</code>: delete from the current line through the end of the fifth paragraph down from here</li>
 </ul>
-<h1>Registers</h1>
+<h1 id="registers">Registers</h1>
 <ul>
 <li><code>:reg</code>: access the registers</li>
 <li><code>i</code> (insert mode) then <code>^r</code> and a register letter to paste from it, instead of <code>"{register}p</code>.</li>
@@ -161,7 +161,7 @@
 <li><code>'{register}</code>: go to beginning of line where there is the marked position</li>
 <li><code>d`a</code>: delete from here to position marked in register 'a'</li>
 </ul>
-<h1>Autocomplete (in insert mode)</h1>
+<h1 id="autocomplete-in-insert-mode">Autocomplete (in insert mode)</h1>
 <ul>
 <li><code>^x^n</code>: for just this file</li>
 <li><code>^x^f</code>: for filenames</li>
@@ -170,26 +170,26 @@
 <li><code>^n</code> and <code>^p</code>: go back and forth in the suggestion list</li>
 </ul>
 <p>(<code>^n</code> is disabled by YouCompleteMe.)</p>
-<h1>Regex</h1>
-<h2>Interactive find and replace</h2>
+<h1 id="regex">Regex</h1>
+<h2 id="interactive-find-and-replace">Interactive find and replace</h2>
 <div class="highlight"><pre><span></span><code>:%s/foo/bar/gc
 </code></pre></div>
 
 <p><code>%</code> means whole document, not just the current line.</p>
 <p><code>/g</code> means every occurence, not just the first one. <code>/c</code> is the interactive option.</p>
-<h2>Capturing groups</h2>
+<h2 id="capturing-groups">Capturing groups</h2>
 <div class="highlight"><pre><span></span><code>:%s/abc<span class="se">\(</span>def<span class="se">\)</span>ghi/ko<span class="se">\1</span>ok/g
 </code></pre></div>
 
 <p>Will print <code>kodefok</code>.</p>
-<h2>Non-greedy search</h2>
+<h2 id="non-greedy-search">Non-greedy search</h2>
 <p>Normally, to search in a non-greedy way, we add a punctuation mark, as in <code>.*?</code> which means <em>any string of characters as short as possible</em>. For instance:</p>
 <div class="highlight"><pre><span></span><code>/&lt;.&gt;<span class="o">(</span>.*?<span class="o">)</span>&lt;.&gt;/
 </code></pre></div>
 
 <p>Applied to the string <code>abc&lt;p&gt;def&lt;a&gt;ghi&lt;b&gt;jkl</code> would match <code>&lt;p&gt;def&lt;a&gt;</code> and capture <code>def</code>. To make non-greedy searches with Vim, replace <code>*?</code> with <code>\{-}</code>.</p>
-<h1>Misc</h1>
-<h2>Split the screen in half and display two different parts of a given file</h2>
+<h1 id="misc">Misc</h1>
+<h2 id="split-the-screen-in-half-and-display-two-different-parts-of-a-given-file">Split the screen in half and display two different parts of a given file</h2>
 <div class="highlight"><pre><span></span><code>:vsp
 :set scrollbind
 </code></pre></div>
@@ -202,7 +202,7 @@
 <div class="highlight"><pre><span></span><code>:set noscrollbind
 </code></pre></div>
 
-<h2>Other</h2>
+<h2 id="other">Other</h2>
 <ul>
 <li><code>v</code>: visually select (enters visual mode)</li>
 <li><code>.</code>: repeat the last command</li>
@@ -217,7 +217,7 @@
 <li><code>:help i_^n</code>, <code>:help v_^n</code>: ctrl n in insert mode or visual mode</li>
 <li><code>:helpgrep whatever</code>: search in all documentation, then use :cl, :cc, :cp, :cn</li>
 </ul>
-<h1>Useful links</h1>
+<h1 id="useful-links">Useful links</h1>
 <ul>
 <li><a href="https://vim.rtorr.com/">Vim Cheat Sheet</a></li>
 <li><a href="https://vimgifs.com/">Vimgifs</a></li>

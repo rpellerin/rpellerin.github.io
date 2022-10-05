@@ -12,11 +12,11 @@
 &lt;p&gt;&lt;em&gt;Les populistes et le retour du « bon sens » - C à Vous - 20/05/2020&lt;/em&gt;&lt;/p&gt;
 &lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/bon-sens.png" alt="Comics" /&gt;&lt;figcaption&gt;Mon avis sur le bon sens.&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;h1&gt;Ressources&lt;/h1&gt;
+&lt;h1 id="ressources"&gt;Ressources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.ouest-france.fr/politique/emmanuel-macron/tenues-correctes-au-lycee-emmanuel-macron-prone-le-bon-sens-6979569"&gt;« Tenues correctes » au lycée. Emmanuel Macron prône le « bon sens »&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="What's bad about"></category><category term="bon sens"></category></entry><entry><title>Pollution Urbaine</title><link href="//romainpellerin.eu/pollution-urbaine.html" rel="alternate"></link><published>2019-03-12T23:17:00+01:00</published><updated>2019-03-31T19:03:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2019-03-12:/pollution-urbaine.html</id><summary type="html">&lt;p&gt;Divers éléments de vérité sur l'état de l'air que nous respirons, notamment à Paris&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans cet article, j'essaie de démêler le vrai du faux concernant la pollution urbaine et je m'intéresse aussi aux différents moyens de transport urbains.&lt;/p&gt;
-&lt;h1&gt;Les polluants&lt;/h1&gt;
+&lt;h1 id="les-polluants"&gt;Les polluants&lt;/h1&gt;
 &lt;p&gt;Commençons tout d'abord par savoir de quoi l'on parle : les polluants. Quels sont les principaux polluants qui nous affectent chaque jour en ville et surtout quels sont leurs effets sur notre santé ?&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.greenfacts.org/fr/glossaire/pqrs/polluants-primaires-et-secondaires.htm"&gt;Distinguons aussi les polluants primaires, émis directement par une source donnée, des polluants secondaires, résultant de l'interaction des polluants primaires dans l'atmosphère.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.airparif.asso.fr/"&gt;Airparif&lt;/a&gt;, qui est la référence en matière de qualité de l'air en Île-de-France, répertorie les principaux polluants dans &lt;a href="https://www.airparif.asso.fr/_pdf/tableau-polluants-origine-impacts.pdf"&gt;un PDF plutôt bien fait ici&lt;/a&gt;. Voici un aperçu de ce PDF :&lt;/p&gt;
@@ -53,7 +53,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Par ailleurs, &lt;a href="https://www.consoglobe.com/etudes-particules-cerveau-cg"&gt;la pollution urbaine serait liée à une forte détérioration des fonctions cognitives sur le long terme&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Ce que dit la loi&lt;/h1&gt;
+&lt;h1 id="ce-que-dit-la-loi"&gt;Ce que dit la loi&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://airparif.asso.fr/reglementation/normes-europeennes"&gt;À la date de rédaction de cet article (mars 2019), la législation européenne recommande de ne pas dépasser les niveaux suivants&lt;/a&gt; :&lt;/p&gt;
 &lt;table width="100%" cellspacing="0" cellpadding="0" border="1"&gt;
 &lt;tbody&gt;&lt;tr&gt;
@@ -137,13 +137,13 @@
 &lt;li&gt;Ozone (O3) : 100 µg/m³ à ne pas dépasser sur une durée de 8 heures&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://apps.who.int/iris/bitstream/handle/10665/69477/WHO_SDE_PHE_OEH_06.02_eng.pdf;jsessionid=4901648722D8771E0F501AE6B9A32412?sequence=1"&gt;Plus d'informations sur les recommandations de l'OMS ici&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Cartes de l'état de l'air&lt;/h1&gt;
+&lt;h1 id="cartes-de-letat-de-lair"&gt;Cartes de l'état de l'air&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.airparif.asso.fr/"&gt;À Paris : Airparif&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www2.prevair.org/"&gt;En France : Prev'air&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://aqicn.org"&gt;Mondial : AQICN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Comparaison avec les autres moyens de transport&lt;/h1&gt;
+&lt;h1 id="comparaison-avec-les-autres-moyens-de-transport"&gt;Comparaison avec les autres moyens de transport&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.atmo-occitanie.org/sites/default/files/imports/pdf/exposition_qualite_air_5_Oramip.pdf"&gt;Une enquête menée à Toulouse entre 2008 et 2009&lt;/a&gt; affirme que la voiture est de loin le pire moyen de transport puisque l'habitacle crée un espace fermé où l'air est très peu renouvelé, air qui est d'ailleurs très pollué puisque venant directement de l'extérieur, où la pollution est la plus forte, sur la chaussée. En deuxième vient le bus pour les mêmes raisons. Ensuite, viennent en troisième et quatrième positions le vélo et le bus, respectivement, en considérant 5 polluants. &lt;strong&gt;En revanche, l'étude souligne que les mesures du nombre de particules fines (PM10) montrent que l'air du métro est bien plus pollué que celui respiré par un cycliste : au moins 2 à 3 fois plus de particules fines dans le métro.&lt;/strong&gt; &lt;a href="http://www.oramip.org/pdf/expo/Plaquette-Oramip-transport.pdf"&gt;Un autre document PDF&lt;/a&gt; donne le détail des mesures effectuées.&lt;/p&gt;
 &lt;figure class="center"&gt;
     &lt;img src="//romainpellerin.eu/images/pollution-urbaine/etude-toulouse.png" alt="Comparaison des moyens de transport" /&gt;&lt;/a&gt;
@@ -159,7 +159,7 @@
 &lt;li&gt;&lt;a href="https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf"&gt;https://vader-fr.fr/IMG/pdf/rapportvelobeneficesrisques.pdf&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Enfin, &lt;a href="https://www.lemonde.fr/planete/article/2014/03/14/pollution-de-l-air-quels-risques-pour-quels-niveaux-de-protection_4383192_3244.html"&gt;cet article du monde qui décrit les principaux polluants et leur effets&lt;/a&gt; conseille à nouveau de privilégier le vélo ou la marche à pied aux autres moyens de transport.&lt;/p&gt;
-&lt;h2&gt;Pollution du métro&lt;/h2&gt;
+&lt;h2 id="pollution-du-metro"&gt;Pollution du métro&lt;/h2&gt;
 &lt;p&gt;En quelques mots, l'air du métro est différemment pollué de l'air extérieur mais contient &lt;strong&gt;bien plus&lt;/strong&gt; de particules fines (PM10), dues aux frottement des rames sur les rails et au système de freinage. Or, ces particules fines constituent probablement l'un des polluants les plus néfastes pour notre santé.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.terraeco.net/Faut-il-arreter-de-respirer-quand,51829.html"&gt;Cet article de Terraeco&lt;/a&gt;, qui se base à nouveau sur l'étude de Toulouse, nous dit :&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Le meilleur, c’est le vélo. C’est en selle que vous êtes le moins exposé aux particules fines. Et l’exposition au dioxyde d’azote – qui est facteur de troubles respiratoires – est anecdotique. « L’exposition à la pollution peut être ponctuellement importante mais sans phénomène d’accumulation », note l’Oramip. En clair, avoir le nez dans un tuyau d’échappement au feu rouge n’est pas bon mais reste peu dangereux puisque l’exposition reste brève, ouf.&lt;/em&gt;&lt;/p&gt;
@@ -170,11 +170,11 @@
 &lt;li&gt;&lt;a href="http://www.airparif.asso.fr/pollution/air-interieur-metro"&gt;http://www.airparif.asso.fr/pollution/air-interieur-metro&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html"&gt;https://www.lemonde.fr/planete/article/2014/01/14/l-air-du-metro-pollue-lui-aussi_4347287_3244.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Masques antipollution : mythes et vérités&lt;/h1&gt;
+&lt;h1 id="masques-antipollution-mythes-et-verites"&gt;Masques antipollution : mythes et vérités&lt;/h1&gt;
 &lt;p&gt;Les masques ne sont pas magiques. Ils visent à réduire l'exposition à la pollution, ils ne peuvent pas la supprimer à 100%. Il faut aussi prendre en compte que les taux de filtrations promis sont bien souvent mesurés en laboratoire, avec une étanchéité des masques qui est optimale. Dans des conditions réelles, l'étanchéite est bien souvent plus faible. La barbe par exemple contribue grandement aux fuites d'étanchéité.&lt;/p&gt;
 &lt;p&gt;Par ailleurs, bon nombre de masques sont destinés aux deux roues motorisées. La ventilation peut donc devenir difficile avec l'effort à vélo.&lt;/p&gt;
 &lt;p&gt;Enfin, tous les masques ne filtrent pas la même chose. Certaines filtrent les particules fines, d'autres les gaz, d'autres encore filtrent les deux à la fois.&lt;/p&gt;
-&lt;h2&gt;Masques jetables&lt;/h2&gt;
+&lt;h2 id="masques-jetables"&gt;Masques jetables&lt;/h2&gt;
 &lt;p&gt;Concernant les masques non-réutilisables, &lt;a href="http://masquepollution.com/masque-contre-les-particules-fines/"&gt;ce site&lt;/a&gt; semble affirmer qu'ils offrent une meilleure protection contre les particules fines, en citant notamment le &lt;a href="https://www.amazon.fr/3M-9332-respiratoire-filtrant-particules/dp/B00EJIMZZ2?tag=masquepolluti-21"&gt;masque 3M 9332&lt;/a&gt; comme étant le meilleur. Le site dit aussi "&lt;em&gt;les certifications de type FFP (Europe), et KN (Chine) ou N (USA) permettent d’éliminer les plus mauvais masques.&lt;/em&gt;". En effet, en Europe la certification FFP3 (la meilleure) est à favoriser.&lt;/p&gt;
 &lt;p&gt;Pour ce qui est des masques jetables contre les gaz, &lt;a href="http://masquepollution.com/masque-anti-pollution/"&gt;cette page&lt;/a&gt; nous dit :&lt;/p&gt;
 &lt;ul&gt;
@@ -182,7 +182,7 @@
 &lt;li&gt;&lt;em&gt;oxydes d’azote (NOx): ces gaz peuvent être capté par des filtres spécifiques, mais généralement ces filtres n’existent pas en combinaison avec les filtres à particule pour l’ozone et le dioxyde de soufre.&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;enfin, le monoxyde de carbone (CO) ne peut pas être filtré par des protections respiratoires conventionnelles.&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Masques réutilisables&lt;/h2&gt;
+&lt;h2 id="masques-reutilisables"&gt;Masques réutilisables&lt;/h2&gt;
 &lt;p&gt;Concernant les masques réutilisables, en France, il y en a trois principaux :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.wair.fr/"&gt;Wair&lt;/a&gt;, celui que j'ai personnellement choisi. Il est nécessaire de changer le filtre tous les mois pour une filtration optimale. &lt;a href="https://www.wair.fr/fr/content/16-filtration"&gt;Ils promettent aussi une filtration contre les gaz&lt;/a&gt;, en plus des particules fines.&lt;/li&gt;
@@ -193,12 +193,12 @@
 &lt;p&gt;En conclusion, je dirais qu'il reste difficile d'évaluer la réelle efficacité de ces masques. Une chose est sûr : tant qu'ils ne gênent pas la respiration et ne forcent pas à hyperventiler, il n'y a aucune raison de ne pas les porter.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Voilà qui clôt cet article sur la pollution urbaine.&lt;/p&gt;
-&lt;h1&gt;Resources on the topic&lt;/h1&gt;
+&lt;h1 id="resources-on-the-topic"&gt;Resources on the topic&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.ft.com/content/552b37dd-0d86-403c-ba50-af793049799b"&gt;Reclaim our cities from the SUV army&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=HS6WrJZKbjs"&gt;The real cost of freeways in LA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://voxeu.org/article/cars-make-cities-less-compact"&gt;Cars make cities less compact&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="What's bad about"></category><category term="air"></category><category term="pollution"></category><category term="paris"></category></entry><entry><title>Damn World</title><link href="//romainpellerin.eu/damn-world.html" rel="alternate"></link><published>2018-08-01T23:20:00+02:00</published><updated>2018-08-01T23:20:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-08-01:/damn-world.html</id><summary type="html">&lt;p&gt;Everything wrong with this world&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Companies&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="What's bad about"></category><category term="air"></category><category term="pollution"></category><category term="paris"></category></entry><entry><title>Damn World</title><link href="//romainpellerin.eu/damn-world.html" rel="alternate"></link><published>2018-08-01T23:20:00+02:00</published><updated>2018-08-01T23:20:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-08-01:/damn-world.html</id><summary type="html">&lt;p&gt;Everything wrong with this world&lt;/p&gt;</summary><content type="html">&lt;h1 id="companies"&gt;Companies&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Monitors and TV screens left idle (on sleep mode, not turned off) all night&lt;/li&gt;
 &lt;li&gt;Computers still on, either on sleep mode or simply with the current user session locked, sometimes with the screen on, all night&lt;/li&gt;
@@ -209,7 +209,7 @@
 &lt;li&gt;Plastics cups dispensed by coffee machines and water dispensers&lt;/li&gt;
 &lt;li&gt;Setting to sugar by default on coffee machines; forced to manually select "no sugar"&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;On the streets&lt;/h1&gt;
+&lt;h1 id="on-the-streets"&gt;On the streets&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;People who throw &lt;a href="https://www.nbcnews.com/news/us-news/plastic-straw-ban-cigarette-butts-are-single-greatest-source-ocean-n903661"&gt;their cigarette butts&lt;/a&gt; on the ground&lt;/li&gt;
 &lt;li&gt;People waiting in their car, engine on&lt;/li&gt;
@@ -224,7 +224,7 @@
 &lt;li&gt;&lt;a href="https://www.citylab.com/transportation/2017/10/5-reasons-why-amsterdam-works-so-well-for-bikes/544101/"&gt;5 Reasons Why Amsterdam Works So Well for Bikes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.theguardian.com/environment/2018/aug/27/air-pollution-causes-huge-reduction-in-intelligence-study-reveals"&gt;Air pollution causes ‘huge’ reduction in intelligence, study reveals&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;At the supermarket&lt;/h1&gt;
+&lt;h1 id="at-the-supermarket"&gt;At the supermarket&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://images-cdn.9gag.com/photo/argyp26_700b.jpg"&gt;Excessive packaging&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Plastic bags (at Walmart mostly...)&lt;/li&gt;
@@ -239,11 +239,11 @@
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=2SCmmn3GpTM"&gt;Supermarchés : et si on en finissait avec le plastique ? - Tout compte fait&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=BoXPwoIPDX4"&gt;Des particules de plastique dans l'eau en bouteille ? - Tout compte fait&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Hunting&lt;/h1&gt;
+&lt;h1 id="hunting"&gt;Hunting&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.leparisien.fr/societe/le-terrible-elevage-des-animaux-sauvages-28-11-2018-7955652.php"&gt;Le terrible élevage des animaux «sauvages» destinés à la chasse&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;In general&lt;/h1&gt;
+&lt;h1 id="in-general"&gt;In general&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.numerama.com/sciences/405296-la-terre-transformee-en-etuve-apres-ce-seuil-nos-efforts-seront-vains.html/amp"&gt;La Terre transformée en « étuve » : après ce seuil, nos efforts seront vains&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Plastic cutlery&lt;/li&gt;
@@ -251,7 +251,7 @@
 &lt;li&gt;&lt;a href="https://lite1.infini.fr/p/OperationLingeBlanc"&gt;OperationLingeBlanc&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://freegan.info/"&gt;Capitalism&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Other&lt;/h1&gt;
+&lt;h1 id="other"&gt;Other&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://twitter.com/LeRasbo/status/930523617863053312"&gt;Goldfish&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.france24.com/fr/20180405-pourquoi-il-est-cruel-avoir-poisson-rouge-bocal"&gt;Goldfish bis&lt;/a&gt;&lt;/li&gt;
@@ -330,7 +330,7 @@
 &lt;li&gt;&lt;a href="https://qz.com/work/1685084/how-to-focus-in-an-open-office/"&gt;How my colleagues and I stay sane in our open office&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.nytimes.com/2019/09/25/opinion/wework-adam-neumann.html#click=https://t.co/zaTkPdbxWK"&gt;Open Offices Are a Capitalist Dead End&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="What's bad about"></category><category term="open office"></category></entry><entry><title>Slack</title><link href="//romainpellerin.eu/slack.html" rel="alternate"></link><published>2017-11-04T13:40:00+01:00</published><updated>2017-11-04T13:40:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-11-04:/slack.html</id><summary type="html">&lt;p&gt;Slack is evil&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Draft article&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;Raw thoughts&lt;/h1&gt;
+&lt;h1 id="raw-thoughts"&gt;Raw thoughts&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;The online presence indicator is a nightmare&lt;/li&gt;
 &lt;li&gt;
@@ -361,17 +361,17 @@
 &lt;/ul&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Qcd4VIkCI3k?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;h1&gt;Related topics&lt;/h1&gt;
+&lt;h1 id="related-topics"&gt;Related topics&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://backchannel.com/inside-one-founders-personal-fast-club-dea3a3592123"&gt;Phil Libin Hasn’t Eaten Since Sunday&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="What's bad about"></category><category term="meat"></category><category term="dairy"></category><category term="milk"></category><category term="pollution"></category></entry><entry><title>TV Sucks</title><link href="//romainpellerin.eu/tv-sucks.html" rel="alternate"></link><published>2017-01-16T02:50:00+01:00</published><updated>2017-01-16T02:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-16:/tv-sucks.html</id><summary type="html">&lt;p&gt;What I think of television&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ads. I hate ads. And TV broadcasts a shit ton of commercials.&lt;/p&gt;
 &lt;p&gt;Worse, TV channels speed up TV shows and movies. What for? Ads again. The French do it, and the Americans as well. As a result, movies are shortened and constantly interrupted by commercials.&lt;/p&gt;
-&lt;h2&gt;US&lt;/h2&gt;
+&lt;h2 id="us"&gt;US&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.engadget.com/2015/02/19/cable-networks-speeding-up-shows/"&gt;How cable networks speed up shows to squeeze in more ads&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.wsj.com/articles/cable-tv-shows-are-sped-up-to-squeeze-in-more-ads-1424301320"&gt;Cable TV Shows Are Sped Up to Squeeze in More Ads&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;France&lt;/h2&gt;
+&lt;h2 id="france"&gt;France&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://tvmag.lefigaro.fr/le-scan-tele/actu-tele/2015/01/29/28001-20150129ARTFIG00350-pourquoi-les-films-ne-durent-pas-le-meme-temps-a-la-television-et-au-cinema.php"&gt;Pourquoi les films ne durent pas le même temps à la télévision et au cinéma&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.lesaviezvous.net/art/un-film-a-la-television-est-plus-court-qu%E2%80%99en-cinema.html"&gt;Un film à la télévision est plus court qu’en cinéma&lt;/a&gt;&lt;/li&gt;
@@ -432,7 +432,7 @@
 &lt;li&gt;&lt;a href="https://www.theverge.com/2019/6/19/18681845/facebook-moderator-interviews-video-trauma-ptsd-cognizant-tampa"&gt;Facebook moderators break their NDAs to expose desperate working conditions - The Verge&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.stopusingfacebook.co/"&gt;Stop Using Facebook&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;2018 Facebook Cambridge Analytica data scandal&lt;/h1&gt;
+&lt;h1 id="2018-facebook-cambridge-analytica-data-scandal"&gt;2018 Facebook Cambridge Analytica data scandal&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.forbes.com/sites/kathleenchaykowski/2018/03/21/mark-zuckerberg-addresses-breach-of-trust-in-facebook-user-data-crisis/#265ae103e367"&gt;Mark Zuckerberg Addresses 'Breach Of Trust' In Facebook User Data Crisis&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.recode.net/2018/3/23/17153368/facebook-cambridge-analytica-mark-zuckerberg-lauren-goode-kara-swisher-kurt-wagner-recode-podcast"&gt;Facebook and Cambridge Analytica: What just happened?&lt;/a&gt;&lt;/li&gt;

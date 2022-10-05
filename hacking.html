@@ -96,7 +96,7 @@
 <article>
     <p>This brief article solely contains a few lines of commands, to perform pentesting or network monitoring. It's basically something I might use in the future on my networks or apps, so I'm writing it down as a reminder. I thought it may help other people that's why I decided to put it online. Of course the preferred operating system is <a href="https://www.kali.org/">Kali</a> (or any Debian-based distro).</p>
 <p><strong>WARNING: only for use on your own networks and devices, the law strictly forbids it otherwise.</strong></p>
-<h1>Fake AP (access point)</h1>
+<h1 id="fake-ap-access-point">Fake AP (access point)</h1>
 <p>This technique is about creating a fake access point, similar to one already existing, so that people's computers will try to connect to your fake AP automatically, without them noticing.</p>
 <ol>
 <li>Deactivate any firewall first</li>
@@ -177,9 +177,9 @@ dnsmasq <span class="c1"># pkill dnsmasq if needed</span>
 <p>Encountering problems with DNSspoof? <a href="https://forums.hak5.org/index.php?/topic/29166-dnsspoof-problem/">Have a look there.</a></p>
 <p><a href="http://www.backtrack-linux.org/forums/showthread.php?t=61240">More information about faking APs.</a></p>
 <p><a href="https://www.offensive-security.com/kali-linux/kali-linux-evil-wireless-access-point/">Another interesting tutorial ("Kali Linux Evil Wireless Access Point").</a></p>
-<h1>MITM</h1>
+<h1 id="mitm">MITM</h1>
 <p>This is a commonly used technique to "put yourself" between a target user and an access point, in order to see all the traffic this user might send and receive.</p>
-<h2>MITM on Android</h2>
+<h2 id="mitm-on-android">MITM on Android</h2>
 <p>On Android, it has the advantage of allowing you to monitor your outcoming traffic, which is useful when debugging your own apps.</p>
 <ol>
 <li>
@@ -223,11 +223,11 @@ easy_install mitmproxy
 </ol>
 <p>Then you'll see the traffic in your terminal going through!</p>
 <p>This part has been inspired from <a href="https://medium.com/@rotxed/how-to-debug-http-s-traffic-on-android-7fbe5d2a34">this article</a>.</p>
-<h1>Other tools</h1>
+<h1 id="other-tools">Other tools</h1>
 <ul>
 <li><a href="https://github.com/xdavidhu/mitmAP">mitmAP - A python program, to create a fake AP, and sniff data</a></li>
 </ul>
-<h1>Other related topics</h1>
+<h1 id="other-related-topics">Other related topics</h1>
 <ul>
 <li><a href="http://www.gvrachliotis.net/2013/10/how-to-reset-user-password-in-windows.html">How to: Reset user password in Windows 7/8/8.1</a></li>
 <li><a href="https://www.nolimitsecu.fr/les-denis-de-service/">Les dénies de services</a></li>

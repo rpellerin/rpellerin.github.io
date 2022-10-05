@@ -97,7 +97,7 @@
 <article>
     <p><em>Originally published on <a href="https://medium.com/doctolib/waving-goodbye-to-internet-explorer-11-in-2021-b01a8c5c9864">Medium</a>.</em></p>
 <p>Two years ago, we published "<a href="//romainpellerin.eu/supporting-internet-explorer-11-in-2019.html">Supporting Internet Explorer 11 in 2019</a>". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (<a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date">and we're not the only ones</a> 🤫)</p>
-<h1>Motivations</h1>
+<h1 id="motivations">Motivations</h1>
 <p>Back in 2019, a major motivation for us to stop supporting old browsers on the website healthcare professionals use to access our service was that we had two different pipelines to bundle JavaScript code: one was through Webpack and <a href="https://babeljs.io/">Babel</a>, the other one through the <a href="https://guides.rubyonrails.org/asset_pipeline.html">Ruby on Rails asset pipeline</a> (also known as Sprockets). The good news is, last year we managed to get rid of Sprockets. Now, all of our JavaScript files go through Webpack. Therefore, we do not need to write ES5-compliant code anymore, we can write modern JavaScript everywhere in our mono-repository. However we still have to instruct Babel to transpile some packages that do not come pre-transpiled. And let's be honest, monitoring breaking changes as library authors release new versions is no fun at all.</p>
 <p>Our other motivations were:</p>
 <ul>
@@ -105,7 +105,7 @@
 <li>We still have occasional down incidents. One of the recent ones was due to <code>scrollTo</code> being used with options, which is <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#browser_compatibility">not supported by Internet Explorer 11</a>. And of course, Babel can't do anything about it.</li>
 </ul>
 <p>These motivations are still valid to this day. On top of that, since 2019, we have developed new features and brought <a href="https://info.doctolib.fr/blog/doctolib-adopte-le-chiffrement-de-bout-en-bout-nouvelle-etape-dans-la-securisation-des-donnees-de-sante/">end-to-end encryption everywhere in the app</a>. Yet, some of these old browsers have limited support for some of the web APIs we are using. As a consequence, these users can not enjoy the complete feature set Doctolib has to offer, and they are unable to see encrypted documents (PDF documents for instance), as encryption/decryption is done in the browser. Therefore, at the beginning of this year, we initiated a new project that we like to call "Browser Upgrade Campaign: reborn".</p>
-<h1>Browser Upgrade Campaign: reborn</h1>
+<h1 id="browser-upgrade-campaign-reborn">Browser Upgrade Campaign: reborn</h1>
 <p>Admittedly, our previous attempt at having our customers upgrade their browsers was a failure. We are trying to get it right this time. The timeline we laid out was as follows:</p>
 <figure class="center">
 <img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" />
@@ -129,7 +129,7 @@
 <p>The two following steps were almost as easy. After setting up some tracking through New Relic, we realized we did not have that many new connections on outdated browsers every day. What's a new connection? It's a connection from a browser that never connected to Doctolib before. How do we determine whether it ever accessed Doctolib before? We look for existing cookies sent in the request.</p>
 <p>Based on that fact, we first blocked any new connection on Internet Explorer 11. Then, over the next few days, we monitored the amount of support tickets and phone calls: nothing. No one complained. We then did the same operation with other deprecated browsers.</p>
 <p>Then came the fourth step.</p>
-<h1>Walking on eggs</h1>
+<h1 id="walking-on-eggs">Walking on eggs</h1>
 <p>Given that there had been a red banner displayed at the top of Doctolib for the last two years to users surfing with outdated browsers, our users were well aware of that. But of course we knew it was not enough. Why would our graphs still show relatively high usage of outdated browsers, uh?</p>
 <p>In April and May we sent out two email campaigns: one to remote secretaryship centers, another one to key accounts (most of them being hospitals or Covid-19 vaccination centers). This time, unlike in 2019, we explicitly told them which users were still using non supported browsers and gave them a deadline after which we would no longer be able to use these browsers. We made sure to tell them which obsolete browsers they were using and what options they had to upgrade.</p>
 <p>In the meantime, we compiled a big list of user accounts that were using multiple browsers, both supported and non supported ones. Every day, we'd pick a bunch of them and enable a feature switch on their account, that would prevent them from logging in with a non supported browser. Once again, we daily monitored our support, making sure everything was going as smoothly as possible.</p>

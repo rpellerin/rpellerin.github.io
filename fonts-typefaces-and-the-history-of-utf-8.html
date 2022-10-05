@@ -113,7 +113,7 @@
 <p>A few years later, new microprocessors were created, able to process 8 bits at a time. So they used 8 bits (a byte) to store each character, giving 256 possible values, and thus leaving values from 128 to 255 spare.</p>
 <p>Then, in the 80's, Microsoft Windows introduced its own <strong>character set</strong> (also known as <em>code page</em>) called <strong>Windows-1251</strong>, whose goal was to fill in those space characters (for example, 224 represents the Cyrillic letter <strong>a</strong>). Furthermore, in the 90's, fifteen other 8 bit character sets were created to cover many different alphabets (called <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859">ISO-8859-1 to ISO-8859-16</a>; ISO-8859-12 was abandoned). Nowadays, in web pages, if you don't provide the charset used, most web browsers will use a default one, depending on your country of residence (ISO-8859-1 will likely be used for English countries).</p>
 <p>Nevertheless, in the meantime, a <strong>new standard</strong> called <strong>Unicode</strong> was proposed. The purpose: to assign a unique number (known as a code point) to every letter in every language, in more than 256 slots. At the moment, we have <a href="http://www.babelstone.co.uk/Unicode/unicode.html">over 120,000 code points</a> and Unicode is also considered a character set itself.</p>
-<h1>Unicode</h1>
+<h1 id="unicode">Unicode</h1>
 <p>The next few lies were copy-pasted from the original article.</p>
 <p>"<em>The first 128 Unicode code points are the same as ASCII. The range 128-255 contains currency symbols and other common signs and accented characters (aka characters with <a href="https://en.wikipedia.org/wiki/Diacritic">diacritical marks</a>), and much of it is borrowed ISO-8859-1. After 256 there are many more accented characters. After 880 it gets into Greek letters, then Cyrillic, Hebrew, Arabic, Indic scripts, and Thai. Chinese, Japanese and Korean start from 11904 with many others in between. This is great – no more ambiguity – each letter is represented by its own unique number.</em></p>
 <p>[...]</p>
@@ -126,7 +126,7 @@
 <li>Using 32 bits to send/store English text would quadruple the amount of bandwidth/space required</li>
 </ul>
 <p>Several attempts were created to solve this problem such as UCS2 and UTF-16 but the winner is UTF-8 (<em>Universal Character Set Transformation Format 8 bit</em>). <strong>At the moment and since several years, UTF-8 is the preferred character encoding for the Unicode standard.</strong></p>
-<h2>UTF-8</h2>
+<h2 id="utf-8">UTF-8</h2>
 <p>"<em>UTF-8 is a clever. It works a bit like the Shift key on your keyboard. Normally when you press the H on your keyboard a lower case “h” appears on the screen. But if you press Shift first, a capital H will appear.</em>" (copy-pasted from the original article)</p>
 <p>UTF-8 treats numbers as follows:</p>
 <ul>
@@ -150,7 +150,7 @@
 <p>"<em>For instance, characters 208 and 209 shift you into the Cyrillic range. 208 followed by 175 is character 1071, the Cyrillic Я. <a href="https://en.wikipedia.org/wiki/UTF-8#Examples">The exact calculation is (208%32)*64 + (175%64) = 1071</a>.</em>"</p>
 <p>"<em>UTF-8 is therefore a multi-byte variable-width encoding. Multi-byte because a single character like Я takes more than one byte to specify it. Variable-width because some characters like H take only 1 byte and some up to 4.</em>"</p>
 <p>That makes UTF-8 backward compatible with ASCII.</p>
-<h2>Avoid most common problems</h2>
+<h2 id="avoid-most-common-problems">Avoid most common problems</h2>
 <ul>
 <li>
 <p>Be sure to use UTF-8 on every single page of your website(s).</p>
@@ -165,7 +165,7 @@
 <li>Be careful when dealing with <a href="http://blog.tremend.ro/2006/09/26/mysql-php-and-utf8/">MySQL to store text</a> (<a href="http://cahnory.tumblr.com/post/17108999879/utf-8-comment-%C3%A7a-marche">another article about it in French, also about PHP</a>)</li>
 </ul>
 <p>That's it about Unicode and UTF-8! Hope it was useful.</p>
-<h1>Further reading</h1>
+<h1 id="further-reading">Further reading</h1>
 <ul>
 <li><a href="http://utf8everywhere.org/">UTF-8 Everywhere</a></li>
 <li><a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/">La maison des horreurs de l’encoding</a></li>

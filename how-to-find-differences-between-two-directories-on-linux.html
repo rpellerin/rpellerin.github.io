@@ -94,24 +94,24 @@
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/shell.html">shell</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diff.html">diff</a></p>    </div>
 </header>
 <article>
-    <h1><code>diff</code></h1>
+    <h1 id="diff"><code>diff</code></h1>
 <p>Compares filenames and lines. <strong>Very slow</strong>.</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/diff -qr /dirA /dirB
 </code></pre></div>
 
-<h1><code>comm</code> + <code>find</code></h1>
+<h1 id="comm-find"><code>comm</code> + <code>find</code></h1>
 <p>Only compares filenames. <strong>Fast</strong>.</p>
 <div class="highlight"><pre><span></span><code>comm -3 &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span> &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span>&gt;&gt;
 </code></pre></div>
 
 <p>Also works with <code>diff</code>.</p>
-<h1><code>diff</code> + <code>find</code> + <code>md5sum</code></h1>
+<h1 id="diff-find-md5sum"><code>diff</code> + <code>find</code> + <code>md5sum</code></h1>
 <p>Compares filenames and content. <strong>Slow</strong>.</p>
 <div class="highlight"><pre><span></span><code>/usr/bin/diff &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%f &quot;</span> -exec md5sum <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f1 <span class="p">|</span> sort<span class="o">)</span> <span class="se">\</span>
     &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%f &quot;</span> -exec md5sum <span class="s1">&#39;{}&#39;</span> <span class="se">\;</span> <span class="p">|</span> cut -d <span class="s1">&#39;/&#39;</span> -f1 <span class="p">|</span> sort<span class="o">)</span>
 </code></pre></div>
 
-<h1><code>git</code></h1>
+<h1 id="git"><code>git</code></h1>
 <p>Compares filenames and content. <strong>Slow</strong>.</p>
 <div class="highlight"><pre><span></span><code>git diff -D --no-index /dirA /dirB
 </code></pre></div>

@@ -97,7 +97,7 @@
     <p>First of all, I wish you a Happy New Year. May it be full of happiness and lines of code :-)</p>
 <p>Let's now talk about the new hotness, a JavaScript library getting more and more trendy, with an unceasingly growing community: <a href="https://facebook.github.io/react/">React</a>. It's under active development these days, powered by Facebook (and initially created by). Basically, it's meant to build user interfaces in a web context, but recently <a href="https://facebook.github.io/react-native/">they also exported it to mobile development</a>, alloying anyone to write some kind of cross-platform code for both Android and iOS, in JavaScript, just like Appcelerator Titanium.</p>
 <p>At the present time, I'm still getting acquinted with it, but here are a few pieces of advice about how to <a href="https://facebook.github.io/react/docs/getting-started.html">get started</a> <strong>correctly</strong>.</p>
-<h1>Must read</h1>
+<h1 id="must-read">Must read</h1>
 <ol>
 <li><a href="https://github.com/petehunt/react-howto">react-howto</a></li>
 <li><a href="https://github.com/petehunt/webpack-howto">webpack-howto</a></li>
@@ -110,7 +110,7 @@
 <li><a href="https://overreacted.io/">Overreacted</a></li>
 <li><a href="https://overreacted.io/react-as-a-ui-runtime/">React as a UI Runtime</a></li>
 </ol>
-<h1>How to</h1>
+<h1 id="how-to">How to</h1>
 <p>You have 2 main tools of choice, to compile it into some browser-compliant package: Webpack or Browserify. I personally decided to go with the former, as it's the most popular and offer more possibilites. Briefly, how to start a new project with webpack:</p>
 <div class="highlight"><pre><span></span><code>npm init <span class="c1"># Entry point: index.js</span>
 npm install --save react react-dom babel-preset-react babel-preset-es2015
@@ -129,7 +129,7 @@ npm install babel-loader --save-dev
 npm install babel-loader@5.x --save-dev
 </code></pre></div>
 
-<h2>Configure webpack</h2>
+<h2 id="configure-webpack">Configure webpack</h2>
 <p>There are <a href="http://webpack.github.io/docs/configuration.html">two ways</a> to pass the configuration object to webpack. However, here we're going to use the CLI way, which uses a conf file. Create <code>webpack.config.js</code> at the root of the project, containing this:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// configuration</span><span class="w"></span>
@@ -141,7 +141,7 @@ npm install babel-loader@5.x --save-dev
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <p><a href="https://medium.com/netscape/webpack-3-react-production-build-tips-d20507dba99a">Tips for Webpack here</a>.</p>
-<h1>Futher reading</h1>
+<h1 id="futher-reading">Futher reading</h1>
 <ul>
 <li><a href="https://medium.com/better-programming/i-almost-got-fired-for-choosing-react-in-our-enterprise-app-846ea840841c">I Almost Got Fired for Choosing React in Our Enterprise App</a></li>
 <li><a href="https://lacke.mn/reduce-your-bundle-js-file-size/">Reduce Your bundle.js File Size By Doing This One Thing</a></li>
@@ -163,30 +163,30 @@ npm install babel-loader@5.x --save-dev
 <li><a href="https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/">Best practices with React and Redux web application development</a></li>
 <li><a href="https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/">Testing Strategies for React and Redux</a></li>
 </ul>
-<h2>Bundle size optimization</h2>
+<h2 id="bundle-size-optimization">Bundle size optimization</h2>
 <ul>
 <li><a href="https://github.com/danvk/source-map-explorer">source-map-explorer</a></li>
 <li><a href="https://github.com/webpack-contrib/webpack-bundle-analyzer">webpack-bundle-analyzer</a></li>
 <li><a href="https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d">Three simple ways to inspect a Webpack bundle</a></li>
 </ul>
-<h2>Performance</h2>
+<h2 id="performance">Performance</h2>
 <ul>
 <li><a href="https://houssein.me/progressive-react">Progressive React</a></li>
 <li><a href="https://www.youtube.com/watch?v=6WvSXoYrM5o">Improving a React app performance</a></li>
 <li><a href="https://github.com/nitin42/react-perf-devtool">react-perf-devtool</a></li>
 </ul>
-<h2>Functional components</h2>
+<h2 id="functional-components">Functional components</h2>
 <ul>
 <li><a href="https://twitter.com/mjackson/status/1091475757530963968">Did you know that React classes are actually than function components and that React is optimized for function components?</a></li>
 <li><a href="https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f">45% Faster React Functional Components, Now</a></li>
 <li><a href="https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure">Declare a functional component as “pure”</a></li>
 <li><a href="https://medium.com/groww-engineering/stateless-component-vs-pure-component-d2af88a1200b">Stateless Component vs Pure Component</a></li>
 </ul>
-<h2>About Babel</h2>
+<h2 id="about-babel">About Babel</h2>
 <ul>
 <li><a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md">Babel Handbook</a></li>
 </ul>
-<h2>About Redux</h2>
+<h2 id="about-redux">About Redux</h2>
 <ul>
 <li><a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">A cartoon intro to Redux</a></li>
 </ul>

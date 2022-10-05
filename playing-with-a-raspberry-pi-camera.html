@@ -97,7 +97,7 @@
     <p>Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.</p>
 <p><em>Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: <code>raspistill</code> and <code>raspivid</code>. For a complete user manual, follow <a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2">this link</a>.</em></p>
 <p><em>Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).</em></p>
-<h1>A timelapse of the sky at night</h1>
+<h1 id="a-timelapse-of-the-sky-at-night">A timelapse of the sky at night</h1>
 <p>For such night shots, we need to leave the shutter open as long as possible. With this camera, there is a cap at 6 seconds, which is more than enough.</p>
 <p>However, taking 6-second-long pictures takes approximatively 45 seconds to be processed by the Raspberry Pi.</p>
 <p>There are multiple parameters that affect the look of a photos but after trying a few and a lot of <a href="https://www.reddit.com/r/raspberry_pi/comments/3r29ix/night_photography_and_the_pi_camera/">Googling</a>, here is a set of parameters that work pretty well for me:</p>
@@ -113,7 +113,7 @@
 <p>Here the parameters <code>-awb auto</code>, <code>-mm average</code> and <code>-sa 0</code> seem to have no impact, I believe they are the default values. The rest makes a difference.</p>
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/ybX9RmXJBX4?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<h1>Live streaming on Youtube</h1>
+<h1 id="live-streaming-on-youtube">Live streaming on Youtube</h1>
 <p>This is fairly easy and cool to do! Head out to <a href="https://studio.youtube.com/channel/UC/livestreaming">https://studio.youtube.com/channel/UC/livestreaming</a> and retrieve a "Stream key".</p>
 <div style="text-align: center">
 <img src="//romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" />
@@ -140,7 +140,7 @@
 <a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"><img src="//romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /></a>
 </div>
 
-<h1>Daytime timelapse</h1>
+<h1 id="daytime-timelapse">Daytime timelapse</h1>
 <p>Here, it's pretty much like a nighttime timelapse, except that we don't need as many parameters, the default ones should normally do a decent job. Also, since taking a picture is here much more faster, we must schedule the shots. Every 20 or 30 seconds is usually a safe bet. Since we can't predict with certainty how long taking the picture will take, in order to take timely shots, we must run a script in the background to take the photo and wait x seconds in an infinite loop:</p>
 <div class="highlight"><pre><span></span><code><span class="k">while</span> true<span class="p">;</span> <span class="k">do</span> ./take-pic.sh<span class="p">;</span> sleep <span class="m">20</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>

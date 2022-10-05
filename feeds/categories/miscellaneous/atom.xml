@@ -4,17 +4,17 @@
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8lN4lKSqFSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;But here I wanted to write a summary/short article, with the key facts and steps, about buying an apartment in Berlin. Here we go!&lt;/p&gt;
-&lt;h1&gt;1. Know what you can afford&lt;/h1&gt;
-&lt;h2&gt;The one-time payment for the apartment and the side costs&lt;/h2&gt;
+&lt;h1 id="1-know-what-you-can-afford"&gt;1. Know what you can afford&lt;/h1&gt;
+&lt;h2 id="the-one-time-payment-for-the-apartment-and-the-side-costs"&gt;The one-time payment for the apartment and the side costs&lt;/h2&gt;
 &lt;p&gt;Ask around you. Ask loan brokers. Use online tools, such as &lt;a href="https://hypofriend.de/en/criteria/start"&gt;this one from Hypofriend&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You must be able to afford the invoices for Notar + Grundbucheintrag (~2% of the price of the apartment), Grunderwerbsteuer (~6%) and Maklerprovision (usually 3,57% in Berlin at the time of writing) with your equity capital/own money (Eigenkapital). The loan can only cover the price of the apartment (Kaufpreis). Up to 100% of the Kaufpreis can be covered by the loan, depending on the bank. You'll get the best interest rates though if you can finance 20% of the Kaufpreis with your Eigenkapital.&lt;/p&gt;
 &lt;p&gt;A good rule of thumb I have once been told is that most banks will generally accept to finance up to 110 times your monthly net income. Say you earn 3,000 euros net per month, you could in theory borrow up to 330,000 euros.&lt;/p&gt;
-&lt;h2&gt;The monthly cost of being a home-owner in Germany&lt;/h2&gt;
+&lt;h2 id="the-monthly-cost-of-being-a-home-owner-in-germany"&gt;The monthly cost of being a home-owner in Germany&lt;/h2&gt;
 &lt;p&gt;As the owner of an apartment, you will have to pay the Hausgeld: it's money used for the common parts. It usually varies between 3 and 4 euros per square meter. For each apartment, you can get this piece of information directly on the listing or during the viewing.&lt;/p&gt;
 &lt;p&gt;On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in Berlin.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/"&gt;More on the topic here.&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Recap&lt;/h2&gt;
-&lt;h3&gt;Loan needed&lt;/h3&gt;
+&lt;h2 id="recap"&gt;Recap&lt;/h2&gt;
+&lt;h3 id="loan-needed"&gt;Loan needed&lt;/h3&gt;
 &lt;style&gt;
     table { border-collapse: collapse; margin: auto; }
     table.right { text-align: right }
@@ -107,7 +107,7 @@
 &lt;tbody&gt;
 &lt;/table&gt;
 
-&lt;h3&gt;Profitability comparator&lt;/h3&gt;
+&lt;h3 id="profitability-comparator"&gt;Profitability comparator&lt;/h3&gt;
 &lt;div&gt;&lt;input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /&gt; &lt;label for="rent"&gt;Current rent (Warmmiete)&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /&gt; &lt;label for="hausgeld"&gt;Hausgeld in the new apartment&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/&gt; &lt;label for="grundsteuer"&gt;Expected Grundsteuer per month&lt;/label&gt;&lt;/div&gt;
@@ -229,9 +229,9 @@ function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
 }
 &lt;/script&gt;
 
-&lt;h1&gt;2. Make sure you have a SCHUFA Score, that is not too bad&lt;/h1&gt;
+&lt;h1 id="2-make-sure-you-have-a-schufa-score-that-is-not-too-bad"&gt;2. Make sure you have a SCHUFA Score, that is not too bad&lt;/h1&gt;
 &lt;p&gt;This is especially true if you are a foreigner and do not have a German bank account, or barely use it. N26 can fuck things up and somehow not transmit any data to SCHUFA. Not having a SCHUFA Score is even worse than having a poor score, as some banks will simply not proceed at all with you, not even studying your case, since they can't get any score at all. &lt;a href="https://myhelpbuddy.com/how-to-get-your-schufa-score-for-free/"&gt;You can ask SCHUFA to provide you with the data they have about you by invoking the GDPR&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;3. The apartment hunt&lt;/h1&gt;
+&lt;h1 id="3-the-apartment-hunt"&gt;3. The apartment hunt&lt;/h1&gt;
 &lt;p&gt;Start with &lt;a href="https://www.immobilienscout24.de/"&gt;immobilienscout24&lt;/a&gt;. Set an alert to get hourly emails. Discover agencies through the website. Then check those agencies' websites. Here are some:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.immo-boerse.com/immobilien/"&gt;www.immo-boerse.com/immobilien/&lt;/a&gt;&lt;/li&gt;
@@ -241,7 +241,7 @@ function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
 &lt;/ul&gt;
 &lt;p&gt;Set alerts on each website. Be on the lookout for "Vermietet", which means "rented". Surely you don't want to buy an apartment where there's already a tenant with an unlimited contract...&lt;/p&gt;
 &lt;p&gt;Whenever you see a listing of interest, send an email. After 6 hours without any reply, call them directly. For each apartment, they should send you back a document presenting the property called an "Exposé". Tell them straight away what your availabilities are for a viewing.&lt;/p&gt;
-&lt;h1&gt;4. Go to viewings&lt;/h1&gt;
+&lt;h1 id="4-go-to-viewings"&gt;4. Go to viewings&lt;/h1&gt;
 &lt;p&gt;If the Exposé does not contain any NO-GO information (like a crazy Energieklasse...), move forward and go to the viewing.&lt;/p&gt;
 &lt;p&gt;The PDF I mentioned in the introduction has some great pieces of advice as to what to look for. For instance, mold on the walls/ceiling is a no go, just like single-glazed windows are. Pay attention to the Energieklasse. Be quiet for a few seconds, make sure the neighborhood is not noisy (metro, car traffic, trams, schools, etc). Assess how much repair is needed. Ask about:&lt;/p&gt;
 &lt;ul&gt;
@@ -250,10 +250,10 @@ function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
 &lt;li&gt;Which walls can be torn down&lt;/li&gt;
 &lt;li&gt;How freely you can change the windows, doors, etc&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;5. You found one you like? It's in your price range? Reserve it!&lt;/h1&gt;
+&lt;h1 id="5-you-found-one-you-like-its-in-your-price-range-reserve-it"&gt;5. You found one you like? It's in your price range? Reserve it!&lt;/h1&gt;
 &lt;p&gt;This step mostly depends on your Makler. Some will ask for a bunch of papers to sign + ID card copies to send, some others will also want to see a proof that you have fund and a bank backing you up. Unless stated in the PDF aforementioned, I never heard of anyone having to make some down payment/pay a reservation fee ahead.Just reach out to your Makler and ask how to reserve it.&lt;/p&gt;
-&lt;h1&gt;6. Money time: the loan&lt;/h1&gt;
-&lt;h2&gt;How to get a loan&lt;/h2&gt;
+&lt;h1 id="6-money-time-the-loan"&gt;6. Money time: the loan&lt;/h1&gt;
+&lt;h2 id="how-to-get-a-loan"&gt;How to get a loan&lt;/h2&gt;
 &lt;p&gt;You know how much the Kaufpreis of what you reserved is. You should be able to calculate the price you'll have to pay for the Notar, Grundbucheintrag, Grunderwerbsteuer and Maklerprovision (sometimes this one is "free"). You also know your Eigenkapital. Estimate the repair costs (new kitchen, new floor, etc). Do the maths of that all and you'll know how much money you need to borrow.&lt;/p&gt;
 &lt;p&gt;Now, 2 options:&lt;/p&gt;
 &lt;ol&gt;
@@ -264,7 +264,7 @@ function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
 But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers are experienced, they know how to solve many tricky situations (no Schufa score...). Not to mention that brokers who speak your mother tongue are a HUGE HELP. They can offer additionnal services, such as acting as an official translator during the Notar meeting, probably free of charges.&lt;/p&gt;
 &lt;p&gt;For expats, &lt;a href="https://hypofriend.de/en"&gt;Hypofriend&lt;/a&gt; has been gaining a lot of traction these past few years, as they offer all their services online and in English. For French speakers, &lt;a href="https://www.connexion-francaise.com"&gt;www.connexion-francaise.com&lt;/a&gt; and &lt;a href="https://expatriation-allemagne.com/"&gt;expatriation-allemagne.com/&lt;/a&gt; are good options.&lt;/p&gt;
 &lt;p&gt;Most banks in Germany will want to secure their investement with a mortage deed (Grundschuldbestellungsurkunde). More on that in the next chapter.&lt;/p&gt;
-&lt;h2&gt;Understand your loan offers&lt;/h2&gt;
+&lt;h2 id="understand-your-loan-offers"&gt;Understand your loan offers&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;After the loan is signed, you have 14 days to rescind (cancel) it. It is therfore very important to go to the notary to sign the Kaufvertrag (purchase contract) within these 14 days. Otherwise, should the purchase never happen, you would not be able to cancel the loan.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;"Sollzinssatz" is the interest rate.&lt;/li&gt;
@@ -285,7 +285,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;In interests: (0.02 * (400,000 - 1333.33)) / 12 = 664.44 euros&lt;/li&gt;
 &lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Simulation: Tilgungsplan&lt;/h2&gt;
+&lt;h2 id="simulation-tilgungsplan"&gt;Simulation: Tilgungsplan&lt;/h2&gt;
 &lt;div&gt;&lt;input step=".01" type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="2000" value="2000" id="rate"/&gt; &lt;label for="rate"&gt;Monatliche Rate&lt;/label&gt;&lt;/div&gt;
@@ -424,25 +424,25 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 
 &lt;/script&gt;
 
-&lt;h1&gt;7. Kaufvertrag (Purchase contract)&lt;/h1&gt;
+&lt;h1 id="7-kaufvertrag-purchase-contract"&gt;7. Kaufvertrag (Purchase contract)&lt;/h1&gt;
 &lt;p&gt;While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.&lt;/p&gt;
 &lt;p&gt;If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.&lt;/p&gt;
 &lt;p&gt;The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via &lt;a href="https://www.deepl.com/translator"&gt;DeepL&lt;/a&gt; if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.&lt;/p&gt;
 &lt;p&gt;Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).&lt;/p&gt;
 &lt;p&gt;A few days ahead of the notary meeting, the notary will ask you a bunch of papers from your financing bank, so that they can start writing the draft of the Grundschuldbestellungsurkunde (mortgage deed). Forward that request to your mortgage broker if you have one.&lt;/p&gt;
 &lt;p&gt;The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.&lt;/p&gt;
-&lt;h1&gt;8. Payments&lt;/h1&gt;
+&lt;h1 id="8-payments"&gt;8. Payments&lt;/h1&gt;
 &lt;p&gt;A few days later, you will receive various invoices from the Notar (Notarkosten at least, maybe the Grundbucheintrag too).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Another few days later, the Notar will ask you to pay the apartment before a given due date.&lt;/strong&gt; What you'll most likely do is, transfer your equity capital to some temporary bank account provided by your financing bank. Then, the bank will pay the seller. The bank might ask you to transfer all of the equity capital you said you had, minus what you paid to the Notar already, and then ask you to pay the remaining future invoices (Grunderwerbsteuer at least) from that temporary bank account.&lt;/p&gt;
-&lt;h1&gt;Conclusion: timeline of events&lt;/h1&gt;
+&lt;h1 id="conclusion-timeline-of-events"&gt;Conclusion: timeline of events&lt;/h1&gt;
 &lt;figure class="center"&gt;&lt;img alt="All the events and when then take place" src="//romainpellerin.eu/images/buying_an_apartment_in_berlin.png" /&gt;&lt;/figure&gt;
 
-&lt;h1&gt;Great how-to articles about buying in Berlin&lt;/h1&gt;
-&lt;h2&gt;In English&lt;/h2&gt;
+&lt;h1 id="great-how-to-articles-about-buying-in-berlin"&gt;Great how-to articles about buying in Berlin&lt;/h1&gt;
+&lt;h2 id="in-english"&gt;In English&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.settle-in-berlin.com/buy-apartment-berlin-in-5-steps/"&gt;www.settle-in-berlin.com/buy-apartment-berlin-in-5-steps/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;In French&lt;/h2&gt;
+&lt;h2 id="in-french"&gt;In French&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.goodmorningberlin.com/financer-achat-immobilier-a-berlin/"&gt;www.goodmorningberlin.com/financer-achat-immobilier-a-berlin/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://aberlin.fr/acheter-un-appartement-a-berlin.php"&gt;aberlin.fr/acheter-un-appartement-a-berlin.php&lt;/a&gt;&lt;/li&gt;
@@ -451,24 +451,24 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;li&gt;&lt;a href="https://expatriation-allemagne.com/categorie/nos-expertises/immobilier/"&gt;expatriation-allemagne.com/categorie/nos-expertises/immobilier/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.connexion-francaise.com/vivre-en-allemagne/acheter-un-bien-immobilier-en-allemagne"&gt;www.connexion-francaise.com/vivre-en-allemagne/acheter-un-bien-immobilier-en-allemagne&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;From Reddit&lt;/h1&gt;
+&lt;h1 id="from-reddit"&gt;From Reddit&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/berlin/comments/pgfd3z/to_people_who_own_their_flats_in_berlin_which/"&gt;To people who own their flats in Berlin, which tips would you give your past-self, before your first purchase?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/eupersonalfinance/comments/uhccds/buying_and_owning_an_apartment_in_berlin/"&gt;Buying and owning an apartment in Berlin&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.reddit.com/r/berlin/comments/m2ldbw/buying_an_apartment_in_berlin_2021_covid/"&gt;Buying an apartment in Berlin (2021, Covid)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="berlin"></category><category term="germany"></category><category term="apartment"></category></entry><entry><title>Documentaries To Watch</title><link href="//romainpellerin.eu/documentaries-to-watch.html" rel="alternate"></link><published>2022-03-12T13:40:00+01:00</published><updated>2022-03-12T13:40:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-03-12:/documentaries-to-watch.html</id><summary type="html">&lt;p&gt;Educational videos on various topics&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Antivax - Les Marchands de doute&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="berlin"></category><category term="germany"></category><category term="apartment"></category></entry><entry><title>Documentaries To Watch</title><link href="//romainpellerin.eu/documentaries-to-watch.html" rel="alternate"></link><published>2022-03-12T13:40:00+01:00</published><updated>2022-03-12T13:40:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-03-12:/documentaries-to-watch.html</id><summary type="html">&lt;p&gt;Educational videos on various topics&lt;/p&gt;</summary><content type="html">&lt;h1 id="antivax-les-marchands-de-doute"&gt;Antivax - Les Marchands de doute&lt;/h1&gt;
 &lt;p&gt;Seen on Arte.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=HpUVJcKBMb0"&gt;https://www.youtube.com/watch?v=HpUVJcKBMb0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Alternative links&lt;/h2&gt;
+&lt;h2 id="alternative-links"&gt;Alternative links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://odysee.com/@Contreverse:7/Antivax---Les-marchands-de-doute-_-ARTE:4"&gt;https://odysee.com/@Contreverse:7/Antivax---Les-marchands-de-doute-_-ARTE:4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://video.ploud.fr/w/061396b1-408a-438d-93ec-7c66fb45ce33"&gt;https://video.ploud.fr/w/061396b1-408a-438d-93ec-7c66fb45ce33&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Covid-19, la course aux vaccins&lt;/h1&gt;
+&lt;h1 id="covid-19-la-course-aux-vaccins"&gt;Covid-19, la course aux vaccins&lt;/h1&gt;
 &lt;p&gt;Seen on Arte.&lt;/p&gt;
-&lt;h2&gt;Alternative links&lt;/h2&gt;
+&lt;h2 id="alternative-links_1"&gt;Alternative links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://tube.cloud-libre.eu/w/47518989-9e7d-4d7c-ad7c-7479b2206ffe"&gt;https://tube.cloud-libre.eu/w/47518989-9e7d-4d7c-ad7c-7479b2206ffe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://video.ploud.fr/w/6e67d423-82bd-4b94-8a3c-5b757921db40"&gt;https://video.ploud.fr/w/6e67d423-82bd-4b94-8a3c-5b757921db40&lt;/a&gt;&lt;/li&gt;
@@ -476,38 +476,38 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;li&gt;&lt;a href="https://odysee.com/@Roms17:d/Covid-19,-la-course-aux-vaccins:0"&gt;https://odysee.com/@Roms17:d/Covid-19,-la-course-aux-vaccins:0&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://odysee.com/@MascaradeetleCoronavirus:c/covid-19-la-course-aux-vaccins-arte:c"&gt;https://odysee.com/@MascaradeetleCoronavirus:c/covid-19-la-course-aux-vaccins-arte:c&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;L'homeopathie  - Médecine douce ou imposture&lt;/h1&gt;
+&lt;h1 id="lhomeopathie-medecine-douce-ou-imposture"&gt;L'homeopathie  - Médecine douce ou imposture&lt;/h1&gt;
 &lt;p&gt;Seen on Arte.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://boutique.arte.tv/detail/homeopathie-medecine-douce-ou-imposture"&gt;https://boutique.arte.tv/detail/homeopathie-medecine-douce-ou-imposture&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Alternative links&lt;/h2&gt;
+&lt;h2 id="alternative-links_2"&gt;Alternative links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.dailymotion.com/video/x7ylh0j"&gt;https://www.dailymotion.com/video/x7ylh0j&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Nucléaire - une énergie qui dérange&lt;/h1&gt;
+&lt;h1 id="nucleaire-une-energie-qui-derange"&gt;Nucléaire - une énergie qui dérange&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=yNUIaqCPttc"&gt;https://www.youtube.com/watch?v=yNUIaqCPttc&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Alternative links&lt;/h2&gt;
+&lt;h2 id="alternative-links_3"&gt;Alternative links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4"&gt;https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48"&gt;https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Urbanisme : La fin de la maison individuelle&lt;/h1&gt;
+&lt;h1 id="urbanisme-la-fin-de-la-maison-individuelle"&gt;Urbanisme : La fin de la maison individuelle&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=_-gsCVB99u8"&gt;https://www.youtube.com/watch?v=_-gsCVB99u8&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Vers des transports durables - Des métropoles en mouvement&lt;/h1&gt;
+&lt;h1 id="vers-des-transports-durables-des-metropoles-en-mouvement"&gt;Vers des transports durables - Des métropoles en mouvement&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.arte.tv/fr/videos/096280-000-A/vers-des-transports-durables/"&gt;https://www.arte.tv/fr/videos/096280-000-A/vers-des-transports-durables/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Nucléaire : une solution pour la planète ?&lt;/h1&gt;
+&lt;h1 id="nucleaire-une-solution-pour-la-planete"&gt;Nucléaire : une solution pour la planète ?&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/"&gt;https://www.arte.tv/fr/videos/098818-000-A/nucleaire-une-solution-pour-la-planete/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This video is heavily criticized &lt;a href="https://fr.linkedin.com/pulse/fabriquer-lignorance-en-documentaire-myriam-tonelotto"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Alternative links&lt;/h2&gt;
+&lt;h2 id="alternative-links_4"&gt;Alternative links&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=6EBm2vWxe4o"&gt;https://www.youtube.com/watch?v=6EBm2vWxe4o&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://video.ploud.fr/w/fbP5cbT2C6rbEesgoQjNEh"&gt;https://video.ploud.fr/w/fbP5cbT2C6rbEesgoQjNEh&lt;/a&gt;&lt;/li&gt;
@@ -533,7 +533,7 @@ People were stupid.&lt;/p&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Lw0ioljqNpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;h1&gt;Links&lt;/h1&gt;
+&lt;h1 id="links"&gt;Links&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.footprintcalculator.org/"&gt;Ecological Footprint Calculator&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.deepgreenresistance.fr/"&gt;Deep Green Resistance France&lt;/a&gt;&lt;/li&gt;
@@ -551,7 +551,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.vox.com/2019/3/27/18226563/50-years-wrong-side-of-history-future-prediction"&gt;Hindsight 2070: We asked 15 experts, “What do we do now that will be considered unthinkable in 50 years?” Here’s what they told us.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.demotivateur.fr/article-buzz/11-fruits-et-legumes-que-vous-ne-devriez-acheter-qu-une-seule-fois-dans-votre-vie-si-vous-apprenez-ces-petits-trucs-pour-les-regenerer-chez-vous--2972"&gt;Hackez votre supermarché : Voici 11 fruits et légumes que vous ne devriez acheter qu'une seule fois dans votre vie, si vous connaissez ces astuces !&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="ikigai"></category><category term="happiness"></category></entry><entry><title>Disabling Voicemail</title><link href="//romainpellerin.eu/disabling-voicemail.html" rel="alternate"></link><published>2018-01-03T22:00:00+01:00</published><updated>2018-01-03T22:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-01-03:/disabling-voicemail.html</id><summary type="html">&lt;p&gt;How to disable your voicemail&lt;/p&gt;</summary><content type="html">&lt;p&gt;In many scenarios, calls are forwarded to your voicemail. You may want to disable it, or re-enable it.&lt;/p&gt;
-&lt;h1&gt;1. You are not picking up the phone (no reply)&lt;/h1&gt;
+&lt;h1 id="1-you-are-not-picking-up-the-phone-no-reply"&gt;1. You are not picking up the phone (no reply)&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;61&amp;ast;(number to forward to)&amp;ast;&amp;ast;(seconds to wait before forwarding)# - note that your phone will ring as long as your caller is on hold&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #61#&lt;/li&gt;
@@ -559,7 +559,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;61#&lt;/li&gt;
 &lt;li&gt;Check status: call &amp;ast;#61#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;2. You are unreachable (plane mode, phone turned off, no connectivity)&lt;/h1&gt;
+&lt;h1 id="2-you-are-unreachable-plane-mode-phone-turned-off-no-connectivity"&gt;2. You are unreachable (plane mode, phone turned off, no connectivity)&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;62&amp;ast;(number to forward to)#&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #62#&lt;/li&gt;
@@ -567,7 +567,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;62#&lt;/li&gt;
 &lt;li&gt;Check status: call &amp;ast;#62#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;3. You are already on the phone (busy)&lt;/h1&gt;
+&lt;h1 id="3-you-are-already-on-the-phone-busy"&gt;3. You are already on the phone (busy)&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;67&amp;ast;(number to forward to)#&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #67#&lt;/li&gt;
@@ -575,7 +575,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;67#&lt;/li&gt;
 &lt;li&gt;Check status: &amp;ast;#67#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;4. All three conditions above&lt;/h1&gt;
+&lt;h1 id="4-all-three-conditions-above"&gt;4. All three conditions above&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;004&amp;ast;(number to forward to)#&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #004#&lt;/li&gt;
@@ -583,7 +583,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;004#&lt;/li&gt;
 &lt;li&gt;Check status: &amp;ast;#004#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;5. You are free, forward all incoming calls&lt;/h1&gt;
+&lt;h1 id="5-you-are-free-forward-all-incoming-calls"&gt;5. You are free, forward all incoming calls&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;21&amp;ast;(number to forward to)#&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #21#&lt;/li&gt;
@@ -591,7 +591,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;21#&lt;/li&gt;
 &lt;li&gt;Check status: &amp;ast;#21#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;6. All four conditions above&lt;/h1&gt;
+&lt;h1 id="6-all-four-conditions-above"&gt;6. All four conditions above&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable forwarding: call &amp;ast;&amp;ast;002&amp;ast;(number to forward to)#&lt;/li&gt;
 &lt;li&gt;Disable it and retain: call #002#&lt;/li&gt;
@@ -599,16 +599,16 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Reestablish: &amp;ast;002#&lt;/li&gt;
 &lt;li&gt;Check status: &amp;ast;#002#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;7. Call waiting: make your phone ring for new incoming phones even if you are alreay on the phone&lt;/h1&gt;
+&lt;h1 id="7-call-waiting-make-your-phone-ring-for-new-incoming-phones-even-if-you-are-alreay-on-the-phone"&gt;7. Call waiting: make your phone ring for new incoming phones even if you are alreay on the phone&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable call waiting: call &amp;ast;43#&lt;/li&gt;
 &lt;li&gt;Disable it: call #43#&lt;/li&gt;
 &lt;li&gt;Check status: &amp;ast;#43#&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Complementary information&lt;/h1&gt;
+&lt;h1 id="complementary-information"&gt;Complementary information&lt;/h1&gt;
 &lt;p&gt;In France, for mobile network provider 'Free mobile', the voicemail phone number is: 06 95 60 00 11.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://community.giffgaff.com/t5/Tips-Guides/Turn-off-voicemail-more-handy-codes/td-p/4542132"&gt;More GSM codes here&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/Call_forwarding"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Tips&lt;/h1&gt;
+&lt;h1 id="tips"&gt;Tips&lt;/h1&gt;
 &lt;p&gt;To call someone anonymously, type: #31#(the number you are calling). To show your identity, type: &amp;ast;31#(the number you are calling).&lt;/p&gt;</content><category term="Miscellaneous"></category><category term="phone"></category><category term="voicemail"></category></entry><entry><title>Living In Paris: Air Purifying Houseplants</title><link href="//romainpellerin.eu/living-in-paris-air-purifying-houseplants.html" rel="alternate"></link><published>2017-09-28T12:50:00+02:00</published><updated>2017-09-28T12:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-09-28:/living-in-paris-air-purifying-houseplants.html</id><summary type="html">&lt;p&gt;How to purify air using houseplants... or how to pretend you breath purified air.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I moved into my new apartment, in one of the most polluted cities on Earth, Paris. Therefore I decided I needed houseplants to clean the air. What an idea! Is it bullshit? Does it actually work? Who cares?! As long as it makes my apartment look cool!&lt;/p&gt;
 &lt;p&gt;Consequently, I started googling about evergreen houseplants that clean the air. I ended up buying the following plants:&lt;/p&gt;
 &lt;ul&gt;
@@ -618,76 +618,76 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Dieffenbachia&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://www.plantes-depolluantes.com/_plantes/chlorophytum.php"&gt;Chlorophytum&lt;/a&gt;&lt;/strong&gt; (comosum? no sure about its species)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Aglaonema&lt;/h1&gt;
+&lt;h1 id="aglaonema"&gt;Aglaonema&lt;/h1&gt;
 &lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /&gt;&lt;figcaption&gt;Aglaonema Silver Bay, the big one on the left.&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;h2&gt;Temperature&lt;/h2&gt;
+&lt;h2 id="temperature"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;Between 15°C and 25°C. Cannot tolerate below 13.&lt;/p&gt;
-&lt;h2&gt;Light&lt;/h2&gt;
+&lt;h2 id="light"&gt;Light&lt;/h2&gt;
 &lt;p&gt;300 lux, half shadow, must get sun light a few hours per day (no direct sunlignt though).&lt;/p&gt;
-&lt;h2&gt;Watering&lt;/h2&gt;
+&lt;h2 id="watering"&gt;Watering&lt;/h2&gt;
 &lt;p&gt;Soil should be kept moist at all times. Don't allow it to dry otherwise it can cause leaves to drop. In summer, water twice a week. In winter, once. Don't leave standing water in the saucer.&lt;/p&gt;
-&lt;h2&gt;Repotting&lt;/h2&gt;
+&lt;h2 id="repotting"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;Repotting is from March to May, every 2 to 3 years. For an old Aglaonema, just replace the upper layer of the soil, do not repot.&lt;/p&gt;
-&lt;h2&gt;Complementary information&lt;/h2&gt;
+&lt;h2 id="complementary-information"&gt;Complementary information&lt;/h2&gt;
 &lt;p&gt;Leaves and fruits are toxic for humans and pets.&lt;/p&gt;
-&lt;h1&gt;Dracaena Marginata&lt;/h1&gt;
-&lt;h2&gt;Temperature&lt;/h2&gt;
+&lt;h1 id="dracaena-marginata"&gt;Dracaena Marginata&lt;/h1&gt;
+&lt;h2 id="temperature_1"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;Between 15°C and 22°C. Avoid below 15 (won't grow otherwise). Below 10 could damage it. Best between 20 and 22.&lt;/p&gt;
-&lt;h2&gt;Light&lt;/h2&gt;
+&lt;h2 id="light_1"&gt;Light&lt;/h2&gt;
 &lt;p&gt;500 lux, quite a log of light. Avoid too much direct sun light. It does not like absence of light.&lt;/p&gt;
-&lt;h2&gt;Watering&lt;/h2&gt;
+&lt;h2 id="watering_1"&gt;Watering&lt;/h2&gt;
 &lt;p&gt;Soil must remain hardly moist. Once a week in Summer, twice a month in Winter. Mist the leaves twice a week also, if possible.&lt;/p&gt;
-&lt;h2&gt;Repotting&lt;/h2&gt;
+&lt;h2 id="repotting_1"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;Repotting is from March to May, every 2 to 3 years. Every other year, replace the upper layer of the soil, do not repot.&lt;/p&gt;
-&lt;h1&gt;Spathiphyllum&lt;/h1&gt;
+&lt;h1 id="spathiphyllum"&gt;Spathiphyllum&lt;/h1&gt;
 &lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /&gt;&lt;figcaption&gt;From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;h2&gt;Temperature&lt;/h2&gt;
+&lt;h2 id="temperature_2"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;Between 15°C and 25°C. Below 10 could damage it seriously. Best between 20 and 22.&lt;/p&gt;
-&lt;h2&gt;Light&lt;/h2&gt;
+&lt;h2 id="light_2"&gt;Light&lt;/h2&gt;
 &lt;p&gt;A significant amount (300 lux at least) but no direct sun though. Dim light is OK.&lt;/p&gt;
-&lt;h2&gt;Watering&lt;/h2&gt;
+&lt;h2 id="watering_2"&gt;Watering&lt;/h2&gt;
 &lt;p&gt;Once a week, a lot. Don't leave standing water! Reduce the amount of water in winter.&lt;/p&gt;
-&lt;h2&gt;Repotting&lt;/h2&gt;
+&lt;h2 id="repotting_2"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;In March, every two to three years. When not repotting, replace the upper layer of the soil.&lt;/p&gt;
-&lt;h2&gt;Complementary information&lt;/h2&gt;
+&lt;h2 id="complementary-information_1"&gt;Complementary information&lt;/h2&gt;
 &lt;p&gt;Avoid dry air as well as fresh air flows. Keep it away from heaters.&lt;/p&gt;
 &lt;p&gt;To foster blossoming, deprive the plant of water for a few days.&lt;/p&gt;
-&lt;h1&gt;Chlorophytum&lt;/h1&gt;
+&lt;h1 id="chlorophytum"&gt;Chlorophytum&lt;/h1&gt;
 &lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /&gt;&lt;figcaption&gt;Chlorophytum&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;h2&gt;Temperature&lt;/h2&gt;
+&lt;h2 id="temperature_3"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;10 to 20°C. Don't go below 5.&lt;/p&gt;
-&lt;h2&gt;Light&lt;/h2&gt;
+&lt;h2 id="light_3"&gt;Light&lt;/h2&gt;
 &lt;p&gt;A lot! 600 lux at least. No direct sun light.&lt;/p&gt;
-&lt;h2&gt;Watering&lt;/h2&gt;
+&lt;h2 id="watering_3"&gt;Watering&lt;/h2&gt;
 &lt;p&gt;Once a week, twice if the environment is quite hot or luminous. Don't leave standing water. The plant likes moisture. Reduce watering in winter.&lt;/p&gt;
-&lt;h2&gt;Repotting&lt;/h2&gt;
+&lt;h2 id="repotting_3"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;Every year in March or April, in a slightly bigger pot.&lt;/p&gt;
-&lt;h2&gt;Complementary information&lt;/h2&gt;
+&lt;h2 id="complementary-information_2"&gt;Complementary information&lt;/h2&gt;
 &lt;p&gt;If possible, use good quality soil.&lt;/p&gt;
 &lt;p&gt;Also, cut off dead parts of leaves (not the whole leaf).&lt;/p&gt;
-&lt;h1&gt;Dieffenbachia&lt;/h1&gt;
-&lt;h2&gt;Temperature&lt;/h2&gt;
+&lt;h1 id="dieffenbachia"&gt;Dieffenbachia&lt;/h1&gt;
+&lt;h2 id="temperature_4"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;18°C to 24°C in Summer and 15 to 18 in Winter. Keep away from heaters, the plant likes moisture. Keep away from air flows.&lt;/p&gt;
-&lt;h2&gt;Light&lt;/h2&gt;
+&lt;h2 id="light_4"&gt;Light&lt;/h2&gt;
 &lt;p&gt;A significant amount but no direct light.&lt;/p&gt;
-&lt;h2&gt;Watering&lt;/h2&gt;
+&lt;h2 id="watering_4"&gt;Watering&lt;/h2&gt;
 &lt;p&gt;Once a week. Don't leave standing water. Reduce watering in Winter.&lt;/p&gt;
-&lt;h2&gt;Repotting&lt;/h2&gt;
+&lt;h2 id="repotting_4"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;Every other year in March or April, in a bigger pot.&lt;/p&gt;
-&lt;h2&gt;Complementary information&lt;/h2&gt;
+&lt;h2 id="complementary-information_3"&gt;Complementary information&lt;/h2&gt;
 &lt;p&gt;Leaves are poisonous.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Hope this helps, folks!&lt;/p&gt;
-&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;h1 id="resources"&gt;Resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Good source of information, in French: &lt;a href="http://www.jardiner-malin.fr/"&gt;http://www.jardiner-malin.fr/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Great article in French, very helpful to me: &lt;a href="https://www.rustica.fr/articles-jardin/24-plantes-depolluantes-qui-ameliorent-votre-maison,2136.html"&gt;24 plantes dépolluantes qui améliorent votre maison&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="plants"></category><category term="air"></category></entry><entry><title>Millennials</title><link href="//romainpellerin.eu/millennials.html" rel="alternate"></link><published>2017-09-02T23:50:00+02:00</published><updated>2017-09-02T23:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-09-02:/millennials.html</id><summary type="html">&lt;p&gt;An inspirational video about millennials&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=vudaAYx2IcE"&gt;&lt;em&gt;The Millennial Question&lt;/em&gt;, by Simon Sinek.&lt;/a&gt;&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vudaAYx2IcE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Miscellaneous"></category><category term="millennials"></category><category term="inspiration"></category></entry><entry><title>Living In Paris: Looking For An Apartment In Paris</title><link href="//romainpellerin.eu/living-in-paris-looking-for-an-apartment-in-paris.html" rel="alternate"></link><published>2017-09-02T22:50:00+02:00</published><updated>2018-03-02T15:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-09-02:/living-in-paris-looking-for-an-apartment-in-paris.html</id><summary type="html">&lt;p&gt;My advice for apartment seekers in Paris&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looking for an apartment in Paris... is a hassle. A lot of demand, too little supply. Not to mention you always - well, almost - need rent guarantors.&lt;/p&gt;
-&lt;h1&gt;First of all, where to look for apartments?&lt;/h1&gt;
+&lt;h1 id="first-of-all-where-to-look-for-apartments"&gt;First of all, where to look for apartments?&lt;/h1&gt;
 &lt;p&gt;My three favorite ones, that gather ads from many agencies:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.leboncoin.fr/locations/offres/ile_de_france/?th=1&amp;amp;ret=2&amp;amp;furn=1"&gt;Leboncoin.fr&lt;/a&gt;&lt;/li&gt;
@@ -702,7 +702,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://www.laforet.com/"&gt;Laforêt&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.fnaim.fr/"&gt;FNAIM&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Arranging a viewing&lt;/h1&gt;
+&lt;h1 id="arranging-a-viewing"&gt;Arranging a viewing&lt;/h1&gt;
 &lt;p&gt;My tip is to always try to phone them. If no one picks up, them text the person who posted the ad if they wrote their phone number. As a last resort, email them.&lt;/p&gt;
 &lt;p&gt;In short, the email should look like this:&lt;/p&gt;
 &lt;ul&gt;
@@ -712,7 +712,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;Leave your phone number just in case&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Once you've arranged a viewing, you should prepare the documents you are going to have to hand in along with the questions you want to ask.&lt;/p&gt;
-&lt;h1&gt;The documents&lt;/h1&gt;
+&lt;h1 id="the-documents"&gt;The documents&lt;/h1&gt;
 &lt;p&gt;In Paris, landlords usually expect people to know what documents are required. However, this might drastically vary from one to another. Here is a list of must and optional ones. If you are extremelly well paid you might not need rent guarantors:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Must&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -736,7 +736,7 @@ People were stupid.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;However, never hand in your bank details before officially signing the apartment lease.&lt;/strong&gt;
 Some agencies or landlords ask you to hand in these documents during the viewing. But most of the time, sending them over email is fine. Ask beforehand just in case.&lt;/p&gt;
-&lt;h1&gt;Questions to ask during the viewing&lt;/h1&gt;
+&lt;h1 id="questions-to-ask-during-the-viewing"&gt;Questions to ask during the viewing&lt;/h1&gt;
 &lt;p&gt;Here are a few questions I used to ask:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Does it come with a refrigerator? Oven/stove, stovetop or range? Washing machine or connections for one? Dishwasher?&lt;/li&gt;
@@ -753,7 +753,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;Is the apartment eligible for APL (&lt;em&gt;Aide personnalisée au logement&lt;/em&gt;)?&lt;/li&gt;
 &lt;li&gt;Is there a cave? Bike parking?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Keeping track of the apartments you've found and the viewings you've done&lt;/h1&gt;
+&lt;h1 id="keeping-track-of-the-apartments-youve-found-and-the-viewings-youve-done"&gt;Keeping track of the apartments you've found and the viewings you've done&lt;/h1&gt;
 &lt;p&gt;I recommend that you create an Excel file to do that. Here is an extract of mine:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Title of the ad&lt;/li&gt;
@@ -777,7 +777,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;Additional information&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That's it! Hope this helps.&lt;/p&gt;
-&lt;h1&gt;Resources&lt;/h1&gt;
+&lt;h1 id="resources"&gt;Resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://twitter.com/paldama/status/1109017746883387392"&gt;Beware of scammers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="apartement"></category><category term="paris"></category><category term="housing"></category></entry><entry><title>Emotions</title><link href="//romainpellerin.eu/emotions.html" rel="alternate"></link><published>2017-08-18T00:50:00+02:00</published><updated>2017-08-18T00:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-08-18:/emotions.html</id><summary type="html">&lt;p&gt;Weird emotions&lt;/p&gt;</summary><content type="html">&lt;figure class="center"&gt;
@@ -793,7 +793,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;a href="https://twitter.com/paulbrounais/status/840262793278431232" target="_blank"&gt;Credit: Paul Brounais&lt;/a&gt;.&lt;/p&gt;</content><category term="Miscellaneous"></category><category term="time"></category></entry><entry><title>Living In The USA: Visa, Insurance, SSN, and Taxes</title><link href="//romainpellerin.eu/living-in-the-usa-visa-insurance-ssn-and-taxes.html" rel="alternate"></link><published>2017-02-19T01:50:00+01:00</published><updated>2019-04-27T00:03:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-02-19:/living-in-the-usa-visa-insurance-ssn-and-taxes.html</id><summary type="html">&lt;p&gt;Everything one needs to know before applying for a visa in the US&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I explain and sum up everything one needs to know to apply for a J-1 visa in the US, in order to do an internship. Everything below is based on my experience and on the instructions I received.&lt;/p&gt;
-&lt;h1&gt;Visa&lt;/h1&gt;
+&lt;h1 id="visa"&gt;Visa&lt;/h1&gt;
 &lt;p&gt;Getting a J-1 visa for the US is a quite &lt;a href="http://gaelleinlosangeles.com/demarches-visa-j1/"&gt;long process&lt;/a&gt;. First and foremost, a sponsor is required. The most popular sponsor of J-1 visa programs is undoubtedly &lt;a href="https://www.ciee.org/"&gt;CIEE&lt;/a&gt;, a non-profit organization. But there are &lt;a href="http://gaelleinlosangeles.com/visa-j1-choix-sponsor/"&gt;others&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;CIEE has many partners throughout the world. A good one in France is &lt;a href="http://www.parenthese-paris.com/"&gt;Parenthèse&lt;/a&gt;. It is the one I decided to go with, since my internship company is used to working with them.&lt;/p&gt;
 &lt;p&gt;Parenthèse's staff is very professional and helpful. They guided me all along the entire process.&lt;/p&gt;
@@ -808,9 +808,9 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;Finally, you will get to go to the embassy. Bring your passport, DS-2019, DS-7002, DS-160, SEVIS receipt, a 5"x5" photo of you (although a regular passport photo worked for me), and a proof of ties to your home country. Do not expect anything crazy, you'll get asked a couple of questions (like what the purpose of your trip is), fingerprints scanned, and within minutes you're out! Damn stressing though. Make sure you arrive at least 15 minutes early. Here are two links to articles (written in French), about how to prepare for this interview: &lt;a href="http://gaelleinlosangeles.com/visa-j1-l-ambassade/"&gt;Visa J1 – L’ambassade&lt;/a&gt; and &lt;a href="http://blog.eexit.net/usa-entretien-a-lambassade-des-etats-unis-damerique/"&gt;USA: ENTRETIEN À L'AMBASSADE DES ÉTATS-UNIS D'AMÉRIQUE&lt;/a&gt; (the latter is outdated).&lt;/li&gt;
 &lt;li&gt;Roughly a week later, you will receive your passport with your visa. The last step before leaving is to complete the CIEE online orientation, which is basically an introduction to the US and what it's like to live there. You should normally have received an email with a link to that orientation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Insurance&lt;/h1&gt;
+&lt;h1 id="insurance"&gt;Insurance&lt;/h1&gt;
 &lt;p&gt;Getting a visa with CIEE as a sponsor is quite expensive, but there's a reason for that: they provide you with an insurance plan. Not the best for sure - not every expense is refunded and oftentimes you'll pay copays - but it's sufficient for most people. More information on &lt;a href="https://www.ciee.org/insurance/index.html"&gt;their website&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Things to do upon arrival: SEVIS and Social Security Number&lt;/h1&gt;
+&lt;h1 id="things-to-do-upon-arrival-sevis-and-social-security-number"&gt;Things to do upon arrival: SEVIS and Social Security Number&lt;/h1&gt;
 &lt;p&gt;First, make sure to carry your insurance card and passport with visa with you at all times.&lt;/p&gt;
 &lt;p&gt;At the airport, you will be required to show the following documents:&lt;/p&gt;
 &lt;ul&gt;
@@ -835,11 +835,11 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;p&gt;Likewise, opening a bank account could be useful and sometimes necessary to get paid.&lt;/p&gt;
 &lt;p&gt;You should notify CIEE of any change in US home address, phone number or email address within 10 days of the change.&lt;/p&gt;
 &lt;p&gt;During your internship, you'll get two online evaluations to complete, one at mid-point and one at the end of the program. Your supervisor will get online evaluations to complete too. Should there be a problem (you or your supervisor didn't get the emails about the evaluation, for example), email CIEE at &lt;a href="mailto:evals@ciee.org"&gt;evals@ciee.org&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Trips outside of the USA&lt;/h1&gt;
+&lt;h1 id="trips-outside-of-the-usa"&gt;Trips outside of the USA&lt;/h1&gt;
 &lt;p&gt;If you intend to go out of the USA temporarily, call CIEE at least 3 weeks prior to your departure. You will have to do some paperwork and CIEE will need to countersign your DS-2019. Each trip cannot exceed 30 days.&lt;/p&gt;
-&lt;h1&gt;Things to do upon departing&lt;/h1&gt;
+&lt;h1 id="things-to-do-upon-departing"&gt;Things to do upon departing&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.irs.gov/individuals/international-taxpayers/departing-alien-clearance-sailing-permit"&gt;Nothing ("&lt;em&gt;Aliens Not Required To Obtain Sailing or Departure Permits&lt;/em&gt;")&lt;/a&gt;, as far as I remember. Maybe change your personal details on your bank account, such as your home address.&lt;/p&gt;
-&lt;h1&gt;Taxes&lt;/h1&gt;
+&lt;h1 id="taxes"&gt;Taxes&lt;/h1&gt;
 &lt;p&gt;First of all, this &lt;a href="http://www.parenthese-paris.com/etudiants/visa-j1-intern/sur-place-usa/declaration-dimpots-aux-usa/"&gt;article from Parenthèse&lt;/a&gt; is quite useful for French expats.&lt;/p&gt;
 &lt;p&gt;Also, here are some resources as to how to file your tax return (form 1040NR-EZ for J1 visas) if you want to do it by yourself instead of using a third party online service such as &lt;a href="https://www.taxback.com/en/"&gt;TaxBack&lt;/a&gt; or &lt;a href="https://www.turbotax.com/"&gt;TurboTax&lt;/a&gt; (TurboTax is not compatible with J1 visa holders):&lt;/p&gt;
 &lt;ul&gt;
@@ -848,8 +848,8 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;a href="https://cms.montgomerycollege.edu/edu/department2.aspx?id=38693"&gt;1040NR-EZ line by line instructions&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As to me, well I used TaxBack.com. How did it go? Would I recommend their service? Everything you need to know right below.&lt;/p&gt;
-&lt;h2&gt;TaxBack.com for J1 visa holders&lt;/h2&gt;
-&lt;h3&gt;Pros&lt;/h3&gt;
+&lt;h2 id="taxbackcom-for-j1-visa-holders"&gt;TaxBack.com for J1 visa holders&lt;/h2&gt;
+&lt;h3 id="pros"&gt;Pros&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;It's the only online service (that I found) that also handles J1 visas.&lt;/li&gt;
 &lt;li&gt;They take care of everything, which means you save yourself approximatively a day of hassle.&lt;/li&gt;
@@ -859,7 +859,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;They take care of sending all the papers to IRS in the US, in your place.&lt;/li&gt;
 &lt;li&gt;They can transfer your money back to any bank account in the world, in any currency. I believe the IRS is much more restrictive (only a cheque or transfer in USD on a US bank account?).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Cons&lt;/h3&gt;
+&lt;h3 id="cons"&gt;Cons&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;EXPENSIVE&lt;/strong&gt;: oh boy don't you expect them to be cheap. From the amount I was supposed to get back, they subtracted:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Processing fees&lt;/li&gt;
@@ -868,7 +868,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;/ul&gt;
 &lt;p&gt;Also they applied a very disadventageous exchange rate (USD to EUR): between May 1 and May 11 (today), the official exchange rate fluctuated between 0.83 and 0.84. They used 0.79052 for my transfer, which occured some day between these two dates. You read it well.&lt;/p&gt;
 &lt;p&gt;Before using their service, you'd better read &lt;a href="https://www.taxback.com/en/tax-service-fees/"&gt;this page&lt;/a&gt; very carefully. As an example, I was supposed to get $1156.91 back from FICA. The processing fee was $231.38 and the handling fee was $46.28. &lt;strong&gt;They kept 24% of my refund.&lt;/strong&gt; Plus a $35 bank transfer fee. Geez! Not sure my time is worth that much money, after all. Maybe I should have taken the time to fill the documents by myself...&lt;/p&gt;
-&lt;h2&gt;Taxes on bank interest for nonresident aliens&lt;/h2&gt;
+&lt;h2 id="taxes-on-bank-interest-for-nonresident-aliens"&gt;Taxes on bank interest for nonresident aliens&lt;/h2&gt;
 &lt;p&gt;This topic is still quite unclear to me, but apparently it's "nontaxable and nonreportable", as per &lt;a href="https://www.irs.gov/individuals/international-taxpayers/federal-income-tax-withholding-and-reporting-on-other-kinds-of-us-source-income-paid-to-nonresident-aliens"&gt;Federal Income Tax Withholding and Reporting on Other Kinds of U.S. Source Income Paid to Nonresident Aliens&lt;/a&gt;. Even when you're no longer living in the US.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://busfin.osu.edu/sites/default/files/nrafaqs.pdf"&gt;This other document&lt;/a&gt; says:&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;My only income was some bank interest. Do I have to file a tax return?&lt;/em&gt;"&lt;/p&gt;
@@ -908,9 +908,9 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;p&gt;As I am writing these lines, I already moved in in my new home for the next 6 months: a room in a shared apartment, located between the University of San Francisco and the &lt;a href="https://en.wikipedia.org/wiki/Painted_ladies"&gt;Painted Ladies&lt;/a&gt;. We are only two people living in this apartment. The neighborhood is mostly residential. I am close to many grocery stores, very convenient! Moreover, there is an awesome neighborhood located within a walkable distance, called Hayes Valley, which is supposedly the French neighborhood. Indeed, there is a significant number of French businesses (restaurants, a &lt;em&gt;boulangerie&lt;/em&gt;, etc.). The area is known for its artistic shops.&lt;/p&gt;
 &lt;p&gt;So, what's the purpose of my trip there? Well, I will be interning at a French company who recently (2013) opened offices in San Francisco to expand their business. This internship is the last step required for me to graduade.&lt;/p&gt;
 &lt;p&gt;In this article, I will explain and describes my daily life there. Hence, this article will be updated on a regular basis.&lt;/p&gt;
-&lt;h1&gt;Places I want to visit/Things I want to do while I'm there&lt;/h1&gt;
+&lt;h1 id="places-i-want-to-visitthings-i-want-to-do-while-im-there"&gt;Places I want to visit/Things I want to do while I'm there&lt;/h1&gt;
 &lt;p&gt;First, I want to take advantage of being in California to travel a bit and expand my knowledge of the American culture. So, I'd like to do and see:&lt;/p&gt;
-&lt;h2&gt;In San Francisco&lt;/h2&gt;
+&lt;h2 id="in-san-francisco"&gt;In San Francisco&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Go see whales&lt;/li&gt;
 &lt;li&gt;&lt;s&gt;Alcatraz&lt;/s&gt;&lt;/li&gt;
@@ -931,7 +931,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;s&gt;Baker Beach&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;Bernal Heights Park&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Los Angeles&lt;/h2&gt;
+&lt;h2 id="los-angeles"&gt;Los Angeles&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;s&gt;The pier which appeared in La La Land&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;The jazz clubs from La La Land (I got to see the Light House cafe from the outside)&lt;/li&gt;
@@ -941,11 +941,11 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;s&gt;Griffith Observatory&lt;/s&gt;&lt;/li&gt;
 &lt;li&gt;&lt;s&gt;Santa Monica (go to the pier)&lt;/s&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Las Vegas&lt;/h2&gt;
+&lt;h2 id="las-vegas"&gt;Las Vegas&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;s&gt;The Roller Coaster (New York-New York Hotel)&lt;/s&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Other&lt;/h2&gt;
+&lt;h2 id="other"&gt;Other&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Stanford University&lt;/li&gt;
 &lt;li&gt;&lt;s&gt;Yosemite National Park&lt;/s&gt;&lt;/li&gt;
@@ -956,14 +956,14 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;Let us now talk about my first few days on the American soil.&lt;/p&gt;
-&lt;h1&gt;Cell phone plans&lt;/h1&gt;
+&lt;h1 id="cell-phone-plans"&gt;Cell phone plans&lt;/h1&gt;
 &lt;p&gt;When I started looking for cell phone plans, I quickly realized how expensive they are here in the US. There are basically four big companies driving the market (known as the Big Four), namely T-Mobile, Verizon, AT&amp;amp;T and Sprint. Appart from them, there are dozens of MVNOs operating on the Big Four's networks. Note that in America, there are different kind of technlogies in use. The two most common ones are CDMA and GSM. In Europe, the huge majority of people rely on GSM. However, phones are nowadays compatible with both technologies (at least the newest phones).&lt;/p&gt;
 &lt;p&gt;At first, I wanted to go with MetroPCS, an MVNO which uses T-Mobile as a host network. I wasn't entirely sure my phone would work with CDMA, and since MetroPCS (and T-Mobile) are based on GSM, it sounded like a good plan. Plus they have a $30 plan with everything unlimited (including data at 3G speed) and 3GB of 4G. Decent. Turned out that, for some reason, my phone did not detect their SIM card so I ended up with T-Mobile and a $40 plan which offers pretty much the same features.&lt;/p&gt;
 &lt;p&gt;Compared to my 20€ all unlimited plan with 50GB of 4G, back in France, well that's damn expensive.&lt;/p&gt;
-&lt;h1&gt;Housing&lt;/h1&gt;
+&lt;h1 id="housing"&gt;Housing&lt;/h1&gt;
 &lt;p&gt;Not as bad as it is in Amsterdam (in 2015 I had to find a place there, a total disaster) but yet quite complicated. I found my room on &lt;a href="http://www.craigslist.com/"&gt;www.craigslist.com&lt;/a&gt;, which I would definitely recommend. I read somewhere that &lt;a href="http://www.easyroommate.com/"&gt;www.easyroommate.com&lt;/a&gt; is not bad either.&lt;/p&gt;
 &lt;p&gt;Luckily, my appointment to see the room was on the day following my arrival, so I was able to move in that very same day.&lt;/p&gt;
-&lt;h1&gt;Bedding&lt;/h1&gt;
+&lt;h1 id="bedding"&gt;Bedding&lt;/h1&gt;
 &lt;p&gt;However, my "landlord" could not provide me with bed sheets. He however suggested that I go to ROSS to get some, since they are fairly cheap there. I had a hard time figuring out how bed sheet sizes work in the US. I learned the hard way that they go by weird names: King, Queen, Full to name a few.&lt;/p&gt;
 &lt;figure class="center"&gt;
     &lt;img src="//romainpellerin.eu/images/living-usa/mattress-size.png" alt="Mattress sizes" /&gt;
@@ -971,23 +971,23 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;/figure&gt;
 
 &lt;p&gt;Eventually, I managed to buy bed sheets; I even learned a lot of vocabulary. For instance &lt;em&gt;drap housse&lt;/em&gt; translates to &lt;em&gt;fitted sheet&lt;/em&gt;, that's good to know!&lt;/p&gt;
-&lt;h1&gt;Banking&lt;/h1&gt;
+&lt;h1 id="banking"&gt;Banking&lt;/h1&gt;
 &lt;p&gt;In the US, they have not only banks but also credit unions. Confusing at first, I googled the difference. I think I'll choose a credit union to get an account.&lt;/p&gt;
 &lt;p&gt;Essentially, a credit union is non-profit, so it has lower fees.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Edit:&lt;/em&gt; yay I just got my first american debit card! Out of all the credit unions available in San Francisco, I picked Redwood Credit Union. They don't charge any fees as long as I maintain a balance of $75 on my savings account, and I can withdraw money from "other" ATMS three times a month for free. That's perfect for me! They also offer online banking for free... but their website is like 10 years old. Not user-friendly whatsoever. But I don't mind :)&lt;/p&gt;
-&lt;h1&gt;Taxes in the US&lt;/h1&gt;
+&lt;h1 id="taxes-in-the-us"&gt;Taxes in the US&lt;/h1&gt;
 &lt;p&gt;It is still a total mystery to me. Apparently, most people pay too much taxes and they can get back a part of it, at the beginning of each year. Below are a few links giving more details about that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/bien-remplir-w-4/"&gt;Bien remplir son W-4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/preparer-son-tax-return/"&gt;Préparer son tax return&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/faire-son-tax-return/"&gt;Faire son tax return&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Grocery shopping&lt;/h1&gt;
+&lt;h1 id="grocery-shopping"&gt;Grocery shopping&lt;/h1&gt;
 &lt;p&gt;Finally, one needs to know that shopping is insane here in America. They have drugstores featuring pharmacies, what a weird concept for a Frenchman like me! Some of them are as big as supermarkets. They also have actual supermarkets and convenience stores. Target, Safeway, CVS, Walgreens, Trader's Joe, you name it! I'm still trying to figure out which one is the cheapest though.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Edit:&lt;/em&gt; I went to Trader Joe's a couple of times. &lt;a href="http://gaelleinlosangeles.com/passion-trader-joes/"&gt;I really like it&lt;/a&gt;. I think I'll stick with it.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;That's it for now. Stay tuned!&lt;/p&gt;
-&lt;h1&gt;Fun stuff to do in San Francisco&lt;/h1&gt;
+&lt;h1 id="fun-stuff-to-do-in-san-francisco"&gt;Fun stuff to do in San Francisco&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.7x7.com/where-to-watch-movies-outside-this-summer-1787120123.html"&gt;Where to Watch Movies Outside This Summer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.calacademy.org/nightlife"&gt;NightLife at the California Academia of Sciences&lt;/a&gt;&lt;/li&gt;
@@ -995,7 +995,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;li&gt;&lt;a href="http://sf.funcheap.com/events/"&gt;San Francisco Events &amp;amp; Things to Do&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.notfortourists.com/Overview.aspx/SanFrancisco/Nightlife"&gt;San Francisco / Nightlife&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Complementary information&lt;/h1&gt;
+&lt;h1 id="complementary-information"&gt;Complementary information&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/transfert-dargent/"&gt;Transfert d’argent&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/differences-insolites-france-etats-unis/"&gt;Différences insolites France / Etats Unis&lt;/a&gt;&lt;/li&gt;
@@ -1023,13 +1023,13 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;/li&gt;
 &lt;li&gt;Marijuana (cannabis) consumption should be legal. Both medical and recreational use should be allowed and regulated by heavy taxation. &lt;a href="http://www.reuters.com/article/idUSL5730185"&gt;As seen in the Netherlands&lt;/a&gt;, &lt;a href="http://news.berkeley.edu/2011/09/13/lessons-from-dutch-cannabis-system/"&gt;consumption in countries where it is legal tends to be lower than countries where it is not&lt;/a&gt;. Instead of wasting millions in the fight against it (which has proven to be ineffective), a smaller amount of money should be invested in prevention through media campaigns and events.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Interesting resources&lt;/h1&gt;
+&lt;h1 id="interesting-resources"&gt;Interesting resources&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://rev-parti.fr/base-programmatique/"&gt;Parti écologiste antispéciste et non-violent, pour la justice économique globale et les droits des humains, des non humains et des écosystèmes.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="politics"></category></entry><entry><title>The Art Of Writing</title><link href="//romainpellerin.eu/the-art-of-writing.html" rel="alternate"></link><published>2016-01-27T18:15:00+01:00</published><updated>2016-01-27T18:15:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-01-27:/the-art-of-writing.html</id><summary type="html">&lt;p&gt;How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Writing any kind of profesionnal document in English is not a straightforward thing, especially if it's not something you do on a regular basis. There are rules to stick to, a formatting to respect, mistakes to avoid. Readers must be able to find information quickly, at the right place. Might it be either in a glossary, a footnote, an appendix, and so on., you must follow a specific order.&lt;/p&gt;
 &lt;p&gt;This year, I decided to write my internship report in English and thus stick to what English readers are used to. In general, thoses rules are almost the same as in French, almost. However, there are a few significant differences you'd better know.&lt;/p&gt;
 &lt;p&gt;I'm going to first explain how I would write a technical report — it works for an internship report as well, since it's supposed to be technical.&lt;/p&gt;
-&lt;h1&gt;Writing a report&lt;/h1&gt;
+&lt;h1 id="writing-a-report"&gt;Writing a report&lt;/h1&gt;
 &lt;p&gt;I decided to base my report on &lt;a href="https://en.wikipedia.org/wiki/Book_design"&gt;a book design&lt;/a&gt;. However, you can find &lt;a href="https://en.wikibooks.org/wiki/Professional_and_Technical_Writing/Table_of_Contents"&gt;here a complete guide about profesionnal and technical writing&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The report is done in &lt;strong&gt;a two-sided printing style&lt;/strong&gt;. Here is the plan I would follow for an internship or a technical report:&lt;/p&gt;
 &lt;ul&gt;
@@ -1050,15 +1050,15 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;p&gt;&lt;strong&gt;Footnotes&lt;/strong&gt; are rather different. There are meant to add short pieces of information not necessarly related to the main content (like anecdotes, complementary information, web links). In regular books, you might encounter notes at the end of them, which purpose is approximatively the same. However, it's a bit annoying, as it interrupts the flow of reading. It's better suited for long footnotes that wouldn't fit at the bottom of a page. Personally, I don't write notes at the end of a document, I would rather write footnotes. And sometimes, when footnotes are extremely short, you might want to use either &lt;a href="http://english.stackexchange.com/questions/250492/what-is-the-difference-between-a-dash-and-a-semicolon/250494#250494"&gt;a dash or a semicolon to add complementary information&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Appendices&lt;/strong&gt; are for any other document you haven't produced yourself, or big ones, like charts, graphs or emails. They should not be an important part, the reader must be able to understand your point without seeing the appendix. Otherwise, it must go in the main content.&lt;/p&gt;
 &lt;p&gt;Pay attention to &lt;strong&gt;headings&lt;/strong&gt;, there are &lt;a href="http://titlecapitalization.com/"&gt;different rules regarding capitalization&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Writing a formal business letter&lt;/h1&gt;
+&lt;h1 id="writing-a-formal-business-letter"&gt;Writing a formal business letter&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.dailywritingtips.com/how-to-format-a-us-business-letter/"&gt;How to format it (the layout)&lt;/a&gt; (&lt;strong&gt;read the comment as well&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;The Closing: use "Yours sincerely" when you know your recipient's name, otherwise use "Yours faithfully". If you know the person quite well, you can use "Best regards" or "Kind regards".&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Using modern tools&lt;/h1&gt;
+&lt;h1 id="using-modern-tools"&gt;Using modern tools&lt;/h1&gt;
 &lt;p&gt;There are great tools out there to write beautiful reports, not to mention Microsoft Word, Pages or LibreOffice Writer. But these ones are too focused on the form instead of the content. People spend way too much time formatting, adding colors, setting the margins, and so forth, instead of... writing the actual content. Moreover, between two given versions of the same program (let's say Word 2003 and Word 2007), there might be huge differences introducing compatibility issues, not easily solvable.&lt;/p&gt;
 &lt;p&gt;So, is there some sort of an ultimate solution? The answer is &lt;strong&gt;YES&lt;/strong&gt;. Let me introduce LaTeX.&lt;/p&gt;
-&lt;h2&gt;LaTeX&lt;/h2&gt;
+&lt;h2 id="latex"&gt;LaTeX&lt;/h2&gt;
 &lt;p&gt;Basically and quickly, it's an open source tool written a while ago which allows you to write any kind of document and export them as PDF (and some other formats). You can write books, reports, CVs, slides, anything! You write it as plain text surrounded with some sort of code (it's a markup language actually). It's available on Linux, Mac and Windows. As it's plain old text, there's no compatibility issue &lt;strong&gt;at all&lt;/strong&gt;. What is more, LaTeX doesn't evolve that much over years so. Should it does some day, they will always ensure backward compatibility. When you're done with it, you just compile it and you're good: a beautiful PDF is procuded. There are plenty of tools available for each platform. For instance, I recommend &lt;code&gt;pdflatex&lt;/code&gt; on Linux. And if you're too lazy to install any of them, use &lt;a href="https://www.sharelatex.com/"&gt;ShareLaTeX&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/scottkosty/install-tl-ubuntu/blob/master/install-tl-ubuntu"&gt;See this tutorial to install the latest version of LaTeX.&lt;/a&gt;. Otherwise, you might install it using your system package manager:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo aptitude install texlive-full biber &lt;span class="c1"&gt;# biber is for the bibliography&lt;/span&gt;
@@ -1072,28 +1072,28 @@ tlmgr update --list
 
 &lt;p&gt;In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.&lt;/p&gt;
 &lt;p&gt;You can find some examples of CVs, cover letters, reports and slideshows on &lt;a href="https://github.com/rpellerin/LaTeX-templates"&gt;my GitHub account&lt;/a&gt;. For advice about CVs, &lt;a href="//romainpellerin.eu/how-not-to-get-hired.html"&gt;see my article "How Not To Get Hired"&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;The commands &lt;code&gt;\input{}&lt;/code&gt; and &lt;code&gt;\include{}&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id="the-commands-input-and-include"&gt;The commands &lt;code&gt;\input{}&lt;/code&gt; and &lt;code&gt;\include{}&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;\input{}&lt;/code&gt; doesn't do &lt;code&gt;\newpage&lt;/code&gt;, unlike &lt;code&gt;\include{}&lt;/code&gt;. &lt;a href="http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include"&gt;More info&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Splitting files&lt;/h3&gt;
+&lt;h3 id="splitting-files"&gt;Splitting files&lt;/h3&gt;
 &lt;p&gt;Is a best practice. I personally try to have "conf" files and "content" files. Then I gather them in the main Tex file (thanks to &lt;code&gt;\input{}&lt;/code&gt;), which will be compiled eventually.&lt;/p&gt;
-&lt;h3&gt;Bibliography&lt;/h3&gt;
+&lt;h3 id="bibliography"&gt;Bibliography&lt;/h3&gt;
 &lt;p&gt;It's a really important part of any report or publication. Basically, there are two engines to compile the ".bib" file: &lt;code&gt;bibtex&lt;/code&gt; and &lt;code&gt;biber&lt;/code&gt;. As well, there are two LaTeX packages to format citations and bibliographies: &lt;code&gt;natbib&lt;/code&gt; and &lt;code&gt;biblatex&lt;/code&gt;. I personally recommend using &lt;strong&gt;&lt;code&gt;biber&lt;/code&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;code&gt;biblatex&lt;/code&gt;&lt;/strong&gt;. &lt;a href="http://tex.stackexchange.com/a/25702/96790"&gt;Read here why.&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Going further with LaTeX&lt;/h3&gt;
+&lt;h3 id="going-further-with-latex"&gt;Going further with LaTeX&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://framabook.org/docs/latex/framabook-versionenligne_v1_5.pdf"&gt;Tout ce que vous avez toujours voulu savoir sur LATEX sans jamais oser le demander&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://xoph.co/20111024/latex-tutorial/"&gt;Everything You Wanted To Know About TeX, But Were Too Afraid To Ask&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://doc.ubuntu-fr.org/latex"&gt;Documentation Ubuntu FR&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://tex.stackexchange.com/questions/95483/how-to-remove-everything-related-to-tex-live-for-fresh-install-on-ubuntu/95502#95502"&gt;How to remove everything related to TeX Live for fresh install on Ubuntu?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Unix tools&lt;/h2&gt;
+&lt;h2 id="unix-tools"&gt;Unix tools&lt;/h2&gt;
 &lt;p&gt;Now that you started using LaTeX (I'm glad you did!), you might wonder how to check spelling, grammar, conjugation, etc.? Actually, there are dozens of tools for Linux.&lt;/p&gt;
-&lt;h3&gt;Grammar and style&lt;/h3&gt;
+&lt;h3 id="grammar-and-style"&gt;Grammar and style&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://dsl.org/cookbook/cookbook_15.html#SEC220"&gt;Here are two old fashionned tools to check grammar and style&lt;/a&gt;, installable with&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install diction
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;diction&lt;/code&gt; and &lt;code&gt;style&lt;/code&gt; are both great tools but don't trust them completely, they tend to be really strict.&lt;/p&gt;
-&lt;h3&gt;Spelling&lt;/h3&gt;
+&lt;h3 id="spelling"&gt;Spelling&lt;/h3&gt;
 &lt;p&gt;There are three main tools really wide spread among the Linux community&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;aspell&lt;/code&gt;&lt;/li&gt;
@@ -1104,8 +1104,8 @@ tlmgr update --list
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;aspell -l en-US -c -t &amp;lt;file.tex&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;General tools&lt;/h3&gt;
-&lt;h4&gt;TextLint&lt;/h4&gt;
+&lt;h3 id="general-tools"&gt;General tools&lt;/h3&gt;
+&lt;h4 id="textlint"&gt;TextLint&lt;/h4&gt;
 &lt;p&gt;Another awesome tool to check the style, mostly.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/DamienCassou/textlint
 &lt;span class="nb"&gt;cd&lt;/span&gt; textlint
@@ -1116,7 +1116,7 @@ tlmgr update --list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;They also offer a &lt;a href="http://textlint.lukas-renggli.ch/"&gt;web application&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;LanguageTool&lt;/h4&gt;
+&lt;h4 id="languagetool"&gt;LanguageTool&lt;/h4&gt;
 &lt;p&gt;Finally, here is a general word/grammer checker (probably one of the best): &lt;a href="https://languagetool.org/"&gt;languagetool.org&lt;/a&gt;. According to their &lt;a href="http://wiki.languagetool.org/checking-la-tex-with-languagetool"&gt;official documentation regarding LaTeX&lt;/a&gt;, the best way to check any file is as follows. You will need Java version 8 or higher.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
@@ -1134,13 +1134,13 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;java -jar languagetool-commandline.jar -l en-US -c UTF-8 -d &lt;span class="s1"&gt;&amp;#39;EN_QUOTES,UPPERCASE_SENTENCE_START&amp;#39;&lt;/span&gt; &amp;lt;file.tex&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Books&lt;/h1&gt;
+&lt;h1 id="books"&gt;Books&lt;/h1&gt;
 &lt;p&gt;To conclude, here a two famous books to produce high-quality documents in English:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style"&gt;The Chicago Manual of Style&lt;/a&gt;: the ultimate book to learn how to write documents in English and be the perfect writer. Best suited for journalists.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Elements_of_Style"&gt;The Elements of Style&lt;/a&gt;: a short and yet excellent book to know the basic rules and avoid common mistakes and pitfalls.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Great articles&lt;/h1&gt;
+&lt;h1 id="great-articles"&gt;Great articles&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.uni.edu/~gotera/gradapp/stmtpurpose.htm"&gt;How to Write a Great Statement of Purpose&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="writing"></category><category term="english"></category><category term="latex"></category><category term="cv"></category><category term="resume"></category><category term="cover letter"></category><category term="report"></category></entry><entry><title>Machine Learning And AI</title><link href="//romainpellerin.eu/machine-learning-and-ai.html" rel="alternate"></link><published>2015-11-28T13:14:00+01:00</published><updated>2015-11-28T13:14:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-11-28:/machine-learning-and-ai.html</id><summary type="html">&lt;p&gt;Resources about machine learning and AI&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
@@ -1164,8 +1164,8 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;p&gt;Firefox OS relies on HTML5. As a web developer, you'll find developing on this platform pretty straightforward. Applications are built on top of HTML/CSS.&lt;/p&gt;
 &lt;p&gt;On the other hand, Ubuntu is... kind of a Ubuntu distribution but developed and optimized for mobiles. It allows you to do most of what you might do on a desktop distribution.&lt;/p&gt;
 &lt;p&gt;For now, as these OSes are still in early development, they're not available worldwide easily. Somes phones run theses OSes but they're not mainstream yet. An easy option is to build them yourself and install them on your own Android device. Here are short tutorials.&lt;/p&gt;
-&lt;h1&gt;Installing Ubuntu for devices&lt;/h1&gt;
-&lt;h2&gt;For Nexus 4&lt;/h2&gt;
+&lt;h1 id="installing-ubuntu-for-devices"&gt;Installing Ubuntu for devices&lt;/h1&gt;
+&lt;h2 id="for-nexus-4"&gt;For Nexus 4&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo add-apt-repository ppa:ubuntu-sdk-team/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-device-flash phablet-tools
@@ -1178,16 +1178,16 @@ ubuntu-device-flash touch --channel&lt;span class="o"&gt;=&lt;/span&gt;stable --
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="https://developer.ubuntu.com/en/start/ubuntu-for-devices/installing-ubuntu-for-devices/"&gt;More information&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;For Nexus 5&lt;/h2&gt;
+&lt;h2 id="for-nexus-5"&gt;For Nexus 5&lt;/h2&gt;
 &lt;p&gt;There are 3 methods (updated in December 2017). First, plug in your phone. Then:&lt;/p&gt;
-&lt;h3&gt;1&lt;/h3&gt;
+&lt;h3 id="1"&gt;1&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://devices.ubports.com/#/hammerhead"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git clone https://github.com/MariusQuabeck/magic-device-tool.git
 &lt;span class="nb"&gt;cd&lt;/span&gt; magic-device-tool
 sudo ./launcher.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;2&lt;/h3&gt;
+&lt;h3 id="2"&gt;2&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://devices.ubports.com/#/hammerhead"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install ubuntu-device-flash phablet-tools
 adb reboot bootloader
@@ -1195,17 +1195,17 @@ sudo fastboot oem unlock
 sudo ubuntu-device-flash --server&lt;span class="o"&gt;=&lt;/span&gt;http://system-image.ubports.com touch --device&lt;span class="o"&gt;=&lt;/span&gt;hammerhead --channel&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;.04/stable --bootstrap
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;3&lt;/h3&gt;
+&lt;h3 id="3"&gt;3&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://ubports.com/page/ubuntu-nexus-5"&gt;Official tutorial&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wget https://github.com/ubports/ubports-installer/releases/download/0.1.9-beta/ubports-installer_0.1.9-beta_amd64.deb -O /tmp/ubports.deb
 sudo dpkg -i /tmp/ubports.deb
 ubports-installer
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Building and installing Firefox OS&lt;/h1&gt;
-&lt;h2&gt;For Nexus 4&lt;/h2&gt;
+&lt;h1 id="building-and-installing-firefox-os"&gt;Building and installing Firefox OS&lt;/h1&gt;
+&lt;h2 id="for-nexus-4_1"&gt;For Nexus 4&lt;/h2&gt;
 &lt;p&gt;Plug in your phone, enable the developer mode and USB debugging.&lt;/p&gt;
-&lt;h3&gt;First step: flash your Nexus 4 with Android 4.3&lt;/h3&gt;
+&lt;h3 id="first-step-flash-your-nexus-4-with-android-43"&gt;First step: flash your Nexus 4 with Android 4.3&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt-get install android-tools-adb
 wget https://dl.google.com/dl/android/aosp/mantaray-jwr66y-factory-3d8252dd.tgz
 tar xvzf occam-jwr66y-factory-74b1deab.tgz
@@ -1213,7 +1213,7 @@ tar xvzf occam-jwr66y-factory-74b1deab.tgz
 ./flash-all.sh &lt;span class="c1"&gt;# Boot to fastboot and unlock bootloader&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Second step: build Firefox OS (on a 14.04 Ubuntu)&lt;/h3&gt;
+&lt;h3 id="second-step-build-firefox-os-on-a-1404-ubuntu"&gt;Second step: build Firefox OS (on a 14.04 Ubuntu)&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo dpkg --add-architecture i386
 sudo apt-get update
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache &lt;span class="se"&gt;\&lt;/span&gt;
@@ -1241,11 +1241,11 @@ git pull
 ./build.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Third step: install it&lt;/h3&gt;
+&lt;h3 id="third-step-install-it"&gt;Third step: install it&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./flash.sh
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Some additional settings&lt;/h3&gt;
+&lt;h3 id="some-additional-settings"&gt;Some additional settings&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; gaia
 make reset-gaia &lt;span class="nv"&gt;PRODUCTION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
 mkdir -p locales
@@ -1265,7 +1265,7 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS"&gt;More information&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Other alternatives&lt;/h1&gt;
+&lt;h1 id="other-alternatives"&gt;Other alternatives&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://lineageos.org/"&gt;LineageOS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://puri.sm/shop/librem-5/"&gt;Purism's Librem 5&lt;/a&gt;&lt;/li&gt;
@@ -1275,32 +1275,32 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;li&gt;Those given by any kind of people, aiming at making the attendees discover technologies, languages, tools. I like to refers to these lecturers as evangelists. I will now call these presentations “informal presentations”, since they rarely happen in a professional or university context.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now let's get started with some pieces of advice. Then, you can go even further by reading &lt;a href="http://www.troyhunt.com/2015/06/speaker-style-bingo-10-presentation.html"&gt;this great article about 10 presentation anti-patterns&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Know your topic&lt;/h1&gt;
+&lt;h1 id="know-your-topic"&gt;Know your topic&lt;/h1&gt;
 &lt;p&gt;This may sound obvious and yet, some people (they're pretty rare) don't know perfectly their topic. They hesitate, or even worse, say absolute nonsense. Prepare your topic if you're not very familiar with it, but know it.&lt;/p&gt;
-&lt;h1&gt;Know your speech (or pitch)&lt;/h1&gt;
+&lt;h1 id="know-your-speech-or-pitch"&gt;Know your speech (or pitch)&lt;/h1&gt;
 &lt;p&gt;Knowing your topic is not enough. You will often be granted an allocated time. To avoid exceeding that time, rehearse a lot before going on stage. No secret, just repeat until you feel confident with your time management.&lt;/p&gt;
-&lt;h1&gt;Smile&lt;/h1&gt;
+&lt;h1 id="smile"&gt;Smile&lt;/h1&gt;
 &lt;p&gt;This is really true for “informal presentations”, but it also applies to “formal presentations” (but don't overdo it). Show your audience you're happy to be there. Then, it will help you deliver your message. Set aside your problems. No sound on the computer? It doesn't matter, apologize and keep on smiling. The demo failed? It's OK. Do not show signs of stress. Crack a joke about it (if appropriate, depending on the audience).&lt;/p&gt;
-&lt;h1&gt;Filming?&lt;/h1&gt;
+&lt;h1 id="filming"&gt;Filming?&lt;/h1&gt;
 &lt;p&gt;Add the slides on the righthand side, inside the video. It's a terrible thing for those who will watch you online, if you make a joke about what is on the slides and they cannot actually see them.&lt;/p&gt;
 &lt;p&gt;Also, when asked a question, make sure that the speaker repeats the question in the microphone, so that the web audience can understand the answer. Another alternative is to use two microphones, but this is not very handy, since someone has to move the microphone around everytime a question is asked.&lt;/p&gt;
-&lt;h1&gt;Look at the audience&lt;/h1&gt;
+&lt;h1 id="look-at-the-audience"&gt;Look at the audience&lt;/h1&gt;
 &lt;p&gt;Attendees can easily get distracted. Establish a privileged contact with them. Don't look at your slides. I know it's really hard not to, but try to find a way to get a display in front of you that reminds you of the slide you are on. People will give you credit. On top of that, you would also benefit from speaking slowly, at an understandable pace so that you don't lose anyone in your thoughts. Allow people to concentrate and understand what you just said: mark pauses between slides, when need be.&lt;/p&gt;
-&lt;h1&gt;The Art of Creating Slides&lt;/h1&gt;
-&lt;h2&gt;The content&lt;/h2&gt;
+&lt;h1 id="the-art-of-creating-slides"&gt;The Art of Creating Slides&lt;/h1&gt;
+&lt;h2 id="the-content"&gt;The content&lt;/h2&gt;
 &lt;p&gt;A 140-character-long slide is OK, but not more! Use simple words (often keywords) and images or videos (as backgrounds). Funny slides help a lot, people won't get bored.&lt;/p&gt;
-&lt;h2&gt;Avoid PowerPoint and LibreOffice Impress&lt;/h2&gt;
+&lt;h2 id="avoid-powerpoint-and-libreoffice-impress"&gt;Avoid PowerPoint and LibreOffice Impress&lt;/h2&gt;
 &lt;p&gt;You have no guarantee that the version of PowerPoint (or LibreOffice) you'll find on the computer is the same as yours. What's more, not everyone can afford Microsoft Office suite. The “source code” of a slideshow should be a text file, and the output should be a PDF file. Stick to this rule and everything's gonna be fine!&lt;/p&gt;
 &lt;p&gt;Giving a “formal presentation”? Use LaTeX to generate the PDF. Otherwise, use Markdown to generate your PDF. There are a lot of tools for that. Personally, on Linux, I recommend &lt;a href="http://pandoc.org/"&gt;Pandoc&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Why LaTeX? The formatting looks very professional. Just like scientific reports are always writtin with LaTeX, your slides should be as well.&lt;/p&gt;
 &lt;p&gt;Why Markdown for your “informal presentations”? It allows you to create your slides in only a couple of minutes. Don't spend too much time on transitions, nor on the colors, etc. The only things that matters is the content, and Markdown is all about content. You can even get some help from &lt;a href="https://github.com/rpellerin/slides"&gt;my own slides&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Next slide, please&lt;/h1&gt;
+&lt;h1 id="next-slide-please"&gt;Next slide, please&lt;/h1&gt;
 &lt;p&gt;Don't rely on anyone but yourself to switch between your slides! Whenever possible, use a &lt;a href="http://amzn.com/B000FPGP4U"&gt;cheap remote controller&lt;/a&gt; (a presenter).&lt;/p&gt;
-&lt;h1&gt;Holding the microphone the right way&lt;/h1&gt;
+&lt;h1 id="holding-the-microphone-the-right-way"&gt;Holding the microphone the right way&lt;/h1&gt;
 &lt;p&gt;Place the microphone on your chin. If you have a beard, put your thumb between your chin and the microphone to avoid rustling noises. That's the only way of keeping a constant and good sound level.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;I know these pieces of advice can sometimes be hard to follow, I also made and still make a lot of mistakes, but I am constantly trying to improve myself. Watch your past presentations, notice what you did wrong and keep on improving yourself. Good luck!&lt;/p&gt;
-&lt;h1&gt;Further reading and watching&lt;/h1&gt;
+&lt;h1 id="further-reading-and-watching"&gt;Further reading and watching&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.troyhunt.com/2015/06/speaker-style-bingo-10-presentation.html"&gt;Speaker style bingo: 10 presentation anti-patterns&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://thenextweb.com/lifehacks/2013/09/12/10-things-you-should-never-say-during-presentations-2/"&gt;10 things you should NEVER say during presentations&lt;/a&gt;&lt;/li&gt;
@@ -1316,43 +1316,43 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;li&gt;&lt;a href="https://github.com/dgageot/demoit"&gt;https://github.com/dgageot/demoit&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="presentation"></category><category term="talk"></category></entry><entry><title>I Want To Be A More Efficient Developer</title><link href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html" rel="alternate"></link><published>2015-05-25T17:17:00+02:00</published><updated>2016-01-09T19:45:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-05-25:/i-want-to-be-a-more-efficient-developer.html</id><summary type="html">&lt;p&gt;A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article is mainly aimed at junior software engineers. It's kind of a set of tips to improve your everyday workflow, be a better programmer, find your dream job, or more generally, improve your skills in Computer Science.&lt;/p&gt;
 &lt;p&gt;As a Software Engineering Student, I meet every day a lot of people learning programming languages, trying to build databases, creating websites. We, at the &lt;a href="http://www.utc.fr/"&gt;UTC&lt;/a&gt;, have a lot of projects, each semester. I feel so sad each time they fail at using best practices. Among them, the worst, in my opinion, is being stuck in Windows, the operating system. They simply miss a lot of things. They are ignorant, they have no idea how their computers work. But that's my opinion. Now, let's begin with a list of best practices I've learnt from great people.&lt;/p&gt;
-&lt;h1&gt;Use the right tools&lt;/h1&gt;
-&lt;h2&gt;GNU/Linux&lt;/h2&gt;
+&lt;h1 id="use-the-right-tools"&gt;Use the right tools&lt;/h1&gt;
+&lt;h2 id="gnulinux"&gt;GNU/Linux&lt;/h2&gt;
 &lt;p&gt;Or at least a Unix-like system. The terminal should be your best friend, be familiar with it. It's a lot more powerful than user interfaces. Unless you want to be a web designer, you must know how GNU/Linux works. Why? Because almost ALL servers rely on Unix systems. Another argument would be privacy, but that's another topic.&lt;/p&gt;
 &lt;p&gt;There are plenty of user-friendly distributions, like Ubuntu or Xubuntu (my favorite one). As Windows users, you will hardly notice any difference, except for software compatibility. But hey, there are alternatives. And yes, you can keep Winodws on a separate partition for video games. I also &lt;a href="//romainpellerin.eu/mastering-gnu-linux.html"&gt;wrote an article about GNU/Linux&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Git&lt;/h2&gt;
+&lt;h2 id="git"&gt;Git&lt;/h2&gt;
 &lt;p&gt;I've seen sooo many people sending each other source code via emails, or worse, Google Drive! What a pain in the ass! A lot of tools exist, such as Subversion, Mercurial, or Git. Obviously, Git is my favorite one (one of the reason is because it's Linus Torvalds himself who wrote it). And it's also more powerful than any other tool. For more information, checkout &lt;a href="//romainpellerin.eu/git.html"&gt;my talk about Git&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Show the world what you've done&lt;/h1&gt;
+&lt;h1 id="show-the-world-what-youve-done"&gt;Show the world what you've done&lt;/h1&gt;
 &lt;p&gt;Every programmers should have public Git repositories. Github is a good platform for exposing your source code publicly, for free. I've heard a lot of recruiters asking for source code to browse, in order to see what you do, how good your code is (or is not), what kind of personal projects you have. They want to make sure you'll write good code if they hire you. Having many projects available on the Internet is also a proof that you're passionate about Computer Science. That's a huuuuge plus!&lt;/p&gt;
 &lt;p&gt;Github. Recruiters love it. Literally.&lt;/p&gt;
 &lt;p&gt;A blog is another good way to express your feelings, write down your thoughts, your discoveries. &lt;a href="https://github.com/getpelican/pelican"&gt;Setting up a blog doesn't take more than 5 minutes!&lt;/a&gt;. &lt;a href="http://blog.penso.info/2015/03/21/improve-blog-visibility/"&gt;Further reading about blogs here&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Great inspiration from... inspirational people&lt;/h1&gt;
+&lt;h1 id="great-inspiration-from-inspirational-people"&gt;Great inspiration from... inspirational people&lt;/h1&gt;
 &lt;p&gt;Learn from them. They're all around us, just find them. Go to conferences, follow them on Twitter, read blog posts. During my last internship, I met a lot of talented people. I learnt a lot from them at that time. They're full of good advice. They have experience (and you don't, as a student).&lt;/p&gt;
-&lt;h1&gt;Never stop learning&lt;/h1&gt;
+&lt;h1 id="never-stop-learning"&gt;Never stop learning&lt;/h1&gt;
 &lt;p&gt;What's more, &lt;a href="https://github.com/alex/what-happens-when"&gt;be curious&lt;/a&gt;! And, &lt;a href="https://github.com/sindresorhus/awesome"&gt;read&lt;/a&gt;, &lt;a href="https://github.com/bayandin/awesome-awesomeness"&gt;read a lot&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;RSS is not dead and is still a really good ally to be kept up-to-date with the latest news in Computer Science. RIP Google Reader, long live &lt;a href="https://github.com/FreshRSS/freshrss.org"&gt;FreshRSS&lt;/a&gt;!&lt;/p&gt;
-&lt;h1&gt;Be a super-programmer&lt;/h1&gt;
+&lt;h1 id="be-a-super-programmer"&gt;Be a super-programmer&lt;/h1&gt;
 &lt;p&gt;Some basics I used to neglect... but now I regret. Every programmer should know those basic things. Once again, it helps a lot when it comes to interviews (for either an internship or a job). And this will be useful all your life. &lt;a href="http://www.joelonsoftware.com/articles/fog0000000043.html"&gt;The Joel Test&lt;/a&gt; is also a good indicator about how good your are with code.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/pusher/atom-pair"&gt;Pair programming&lt;/a&gt; is an incredible way to learn from your friends (or teach them) as well.&lt;/p&gt;
-&lt;h2&gt;Data structures and Memory management&lt;/h2&gt;
+&lt;h2 id="data-structures-and-memory-management"&gt;Data structures and Memory management&lt;/h2&gt;
 &lt;p&gt;Know the basic data structures, such a hash tables, primitives, etc. Those are the very basics of every programming language. You can't avoid them.&lt;/p&gt;
 &lt;p&gt;You use Java everyday? Then you should know everything about Java memory management. Where are stored primitive types and objects? Stack? Heap? Doing C++? Where are stored lvalues, rvalues? And so on... A brief explanation about memory is in &lt;a href="//romainpellerin.eu/understanding-the-memory.html"&gt;one of my articles&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This kind of advice applies to every language you claim to know.&lt;/p&gt;
-&lt;h2&gt;Sorting algorithms&lt;/h2&gt;
+&lt;h2 id="sorting-algorithms"&gt;Sorting algorithms&lt;/h2&gt;
 &lt;p&gt;Know them. At least bubble, merge, quick sort, etc. Here is &lt;a href="http://www.sorting-algorithms.com/"&gt;a great website&lt;/a&gt;. Half the time, recruiters will ask you something about array sorting or things like that. And most of all, know their complexities!&lt;/p&gt;
-&lt;h1&gt;Backup every little thing that is on your computer/servers&lt;/h1&gt;
+&lt;h1 id="backup-every-little-thing-that-is-on-your-computerservers"&gt;Backup every little thing that is on your computer/servers&lt;/h1&gt;
 &lt;p&gt;Consider everyday as the day your PC is gonna die. Projects should go to Github (or alternatives) if they are not confidential, personnal files to external hard drives (backed-up as well, so use at least two hard drives) or to the Cloud (I personally installed ownCloud on one of my servers). Once again, backup everything. Losing a whole hard drive disk is such a terrible thing, you can't predict nor prevent it. Be prepared. And for sure, you're gonna experience it, sooner or later.&lt;/p&gt;
-&lt;h1&gt;English, English everywhere&lt;/h1&gt;
+&lt;h1 id="english-english-everywhere"&gt;English, English everywhere&lt;/h1&gt;
 &lt;p&gt;Programming languages use English words, manuals are mostly written in English, almost everything in the Computer Science World is in English. So you'll have to get used to it. Be fluent. Set-up your devices to be in English. Same thing for your computer(s). Watch talks given in English. You will have to write English documentation, even though your company is not English. I wish every software engineer was bilingual, it would make things way easier. And guess what, &lt;a href="//romainpellerin.eu/learning-a-foreign-language.html"&gt;learning a foreign language is not that hard!&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Know how to use search engines&lt;/h1&gt;
+&lt;h1 id="know-how-to-use-search-engines"&gt;Know how to use search engines&lt;/h1&gt;
 &lt;p&gt;People whom repeatedly ask you simple things are such a pain! We have the entire world at our fingertips, thanks to the Internet. And we have Google. So please, Google everything! Google is smarter than us (or at least, he knows much more things). But first, learn (by yourself) how to use it. For instance, don't type whole sentences, use keywords.&lt;/p&gt;
-&lt;h1&gt;Teach&lt;/h1&gt;
+&lt;h1 id="teach"&gt;Teach&lt;/h1&gt;
 &lt;p&gt;Teaching people around you is a great way to stay "up-to-date". Sharing your knowledge, your passion, allows you to first organize ideas, sort them out, remove what's unnecessary. You then reach an even greater understanding of what you believed to know. Giving talks on a regular basis is a good way to practice.&lt;/p&gt;
-&lt;h1&gt;Bonus&lt;/h1&gt;
+&lt;h1 id="bonus"&gt;Bonus&lt;/h1&gt;
 &lt;p&gt;A while ago, I came upon &lt;a href="http://www.infoq.com/fr/presentations/be-a-efficient-developer"&gt;this talk&lt;/a&gt;, given by Quentin Adam (CEO of &lt;a href="http://clever-cloud.com/"&gt;Clever Cloud&lt;/a&gt;) at Mix It 2014. Last year, I had been given the opportunity to do an internship at WhoWanna, a French startup. Back then, we were working in the same open space as Clever Cloud. Consequently, I was working very close to Clever Cloud, thus Quentin Adam. And I can tell you, he is a very good developer, and above all, a very good CEO, full of good advice. But let's move on to his talk.&lt;/p&gt;
 &lt;p&gt;The full talk (video), with its slides, is accessible &lt;a href="http://www.infoq.com/fr/presentations/be-a-efficient-developer"&gt;here&lt;/a&gt;. For those of you that don't have the time to watch it, I summed up the content right below. But the video is worth it, you should watch it (although it's in French, &lt;a href="http://www.slideshare.net/quentinadam/mixit-efficient"&gt;the slides&lt;/a&gt; are in English).&lt;/p&gt;
 &lt;p&gt;For your information, the article's title is shamelessly copied/inspired from his talk :-)&lt;/p&gt;
-&lt;h2&gt;Sum up (in order of appearance)&lt;/h2&gt;
+&lt;h2 id="sum-up-in-order-of-appearance"&gt;Sum up (in order of appearance)&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Be happy&lt;/strong&gt;: always try to work on projects you love. Work processes matter. Why people are happy? Cause they know that, as developers, they solve problems. They're not useless &lt;strong&gt;at all&lt;/strong&gt;. Get inspiration from Open Source.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Get the right environment&lt;/strong&gt;: work wherever you feel good. As developers, we only need a laptop and an Internet connection.&lt;/li&gt;
@@ -1379,7 +1379,7 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;p&gt;Hope you'll find it useful.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;
 Well, that's all for this article. Some very simple tips to follow, and then you'll become a real software engineer (in my opinion, at least).&lt;/p&gt;
-&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;h1 id="further-reading"&gt;Further reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://lea.verou.me/2012/01/why-tabs-are-clearly-superior/"&gt;Why tabs are clearly superior&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.uslide.io/presentations/Aw6sX5ug-Tfzw5rNXAmdJg"&gt;"Development Principles and Philosophy" par F.G. Ribreau&lt;/a&gt;&lt;/li&gt;

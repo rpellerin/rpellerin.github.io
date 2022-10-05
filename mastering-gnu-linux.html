@@ -95,7 +95,7 @@
 </header>
 <article>
     <p>Everything you have ever wanted to know about GNU/Linux plus some troubleshooting tips I learned the hard way.</p>
-<h1>Installing Linux on a Dell preinstalled with Windows</h1>
+<h1 id="installing-linux-on-a-dell-preinstalled-with-windows">Installing Linux on a Dell preinstalled with Windows</h1>
 <ul>
 <li>In Windows, disable Fast startup in Panel Control &gt; Power &gt; Action when button pressed.</li>
 <li>In the BIOS/UEFI, keep enabled SecureBoot</li>
@@ -103,14 +103,14 @@
 <li>If your SSD disk is a NVMe, it is possible that Linux can't see it. In such a case, in SATA operation, uncheck RAID and select AHCI. Also uncheck legacy Options ROMs (very important otherwise you will experience very slow boots, up to 10 min to access the BIOS). More information: <a href="https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3">https://www.dell.com/community/General/Dell-XPS-13-9365-Won-t-boot-USB-in-SATA-Mode-AHCI-Trying-to/td-p/5119108/page/3</a> and <a href="https://bbs.archlinux.org/viewtopic.php?id=204629">https://bbs.archlinux.org/viewtopic.php?id=204629</a>.</li>
 </ul>
 <p>That's it. You should be able to install Linux on the entire disk now.</p>
-<h1>Upgrading your distribution of *Ubuntu</h1>
+<h1 id="upgrading-your-distribution-of-ubuntu">Upgrading your distribution of *Ubuntu</h1>
 <div class="highlight"><pre><span></span><code>sudo <span class="k">do</span>-release-upgrade
 <span class="c1"># OR</span>
 sudo update-manager -c
 </code></pre></div>
 
 <p><a href="https://help.ubuntu.com/lts/serverguide/installing-upgrading.html">More information</a>.</p>
-<h1>GNU/Linux</h1>
+<h1 id="gnulinux">GNU/Linux</h1>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=ANA134vEhEI">Nom de code : Linux</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Filesystem Hierarchy Standard</a></li>
@@ -118,12 +118,12 @@ sudo update-manager -c
 <li><a href="https://mavielinux.com/2016/12/18/pourquoi-la-mascotte-de-linux-est-un-manchot/">Pourquoi la mascotte de Linux est un manchot?</a></li>
 <li><a href="https://www.youtube.com/watch?v=xqdWi6SblV8">Linux est ton meilleur ami (Pierre Antoine Grégoire - Olivier Robert - Nicolas Helleringer)</a></li>
 </ul>
-<h2>Free Software Foundation / Open source</h2>
+<h2 id="free-software-foundation-open-source">Free Software Foundation / Open source</h2>
 <ul>
 <li><a href="https://www.gnu.org/philosophy/free-software-for-freedom.html">Why “Free Software” is better than “Open Source”</a></li>
 <li><a href="https://remysharp.com/2015/01/09/dont-like-open-source">"Why I don't like open source" – my thoughts</a></li>
 </ul>
-<h1>Installing Linux</h1>
+<h1 id="installing-linux">Installing Linux</h1>
 <ul>
 <li><a href="http://blog.adminrezo.fr/2013/05/que-faire-apres-linstallation-dun-serveur-debian/">Que faire après l’installation d’un serveur Debian ?</a></li>
 <li><a href="http://blog.adminrezo.fr/2014/01/post-installation-ubuntu-kubuntu/">Que faire après l’installation de (U|k|x)buntu</a></li>
@@ -135,12 +135,12 @@ sudo update-manager -c
 <li><a href="https://github.com/dfkt/firefox-tweaks">firefox-tweaks: attempt to make Firefox suck less</a></li>
 <li><a href="https://github.com/MichielDerhaeg/build-linux/blob/master/README.md">Build yourself a Linux</a></li>
 </ul>
-<h2>Alongside Windows</h2>
+<h2 id="alongside-windows">Alongside Windows</h2>
 <ul>
 <li><a href="https://help.ubuntu.com/community/UEFI">Windows 8+ dual boot on UEFI</a></li>
 <li><a href="http://www.mercereau.info/reparer-grub-apres-une-installation-de-windows/">Réparer Grub après une installation de windows</a></li>
 </ul>
-<h1>The whole system</h1>
+<h1 id="the-whole-system">The whole system</h1>
 <ul>
 <li><a href="https://www.clever-cloud.com/blog/engineering/2012/11/22/knowing-your-system-part-basics-on-unixlike-systems/">Knowing your system - Part 1 - Basis on UNIX-like systems</a></li>
 <li><a href="http://gfx.developpez.com/tutoriel/linux/kernel/">La compilation du noyau</a></li>
@@ -148,7 +148,7 @@ sudo update-manager -c
 <li><a href="https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/">Linux file system hierarchy v2.0</a></li>
 <li><a href="https://fredrb.github.io/2016/10/01/Understanding-proc/">Understanding /proc</a></li>
 </ul>
-<h1>Shells &amp; Terminals</h1>
+<h1 id="shells-terminals">Shells &amp; Terminals</h1>
 <ul>
 <li><a href="http://stackoverflow.com/questions/5163144/what-are-the-special-dollar-sign-shell-variables/5163260#5163260">What are the special dollar sign shell variables?</a></li>
 <li><a href="http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces">How to use double or single bracket, parentheses, curly braces</a></li>
@@ -163,13 +163,13 @@ sudo update-manager -c
 <li><a href="http://jvns.ca/blog/2017/03/26/bash-quirks/">Bash scripting quirks &amp; safety tips</a></li>
 <li><a href="http://blog.regehr.org/archives/1483">Fun at the UNIX Terminal Part 1</a></li>
 </ul>
-<h1>Software</h1>
+<h1 id="software">Software</h1>
 <ul>
 <li><a href="http://putaindecode.fr/posts/shell/apprendre-les-makefiles/">Laissez-vous pousser la barbe, apprenez à écrire des Makefiles</a></li>
 <li><a href="http://monkey.org/~marius/unix-tools-hints.html">Hints for writing Unix tools</a></li>
 <li><a href="http://linrunner.de/en/tlp/tlp.html">TLP: battery optimizer</a></li>
 </ul>
-<h1>Commands / tips</h1>
+<h1 id="commands-tips">Commands / tips</h1>
 <ul>
 <li><a href="http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html">Linux Performance Analysis in 60,000 Milliseconds</a></li>
 <li><a href="https://korben.info/dintimite-lhistorique-bash.html">Pour avoir un peu d’intimité avec l’historique Bash</a></li>
@@ -198,11 +198,11 @@ sudo update-manager -c
 <li><a href="https://github.com/chubin/wttr.in">The right way to check the weather http://wttr.in</a></li>
 <li><a href="https://www.lopezferrando.com/30-interesting-shell-commands/">30 interesting commands for the Linux shell</a></li>
 </ul>
-<h1>Other distros</h1>
+<h1 id="other-distros">Other distros</h1>
 <ul>
 <li><a href="https://github.com/CBPP/cbpp">#!++, A CrunchBang revival project (very lightweight distro)</a></li>
 </ul>
-<h1>Security</h1>
+<h1 id="security">Security</h1>
 <p>Generally, security is achieved on Linux with:</p>
 <ul>
 <li>Setting the right file permissions: <code>chmod</code> + <code>chown</code>) or with <a href="https://help.ubuntu.com/community/FilePermissions#ACL_.28Access_Control_List.29">ACLs</a></li>
@@ -226,11 +226,11 @@ sudo update-manager -c
 <li><a href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server">How To Secure A Linux Server</a></li>
 <li><a href="https://github.com/trimstray/the-practical-linux-hardening-guide#information_source-introduction-3">the-practical-linux-hardening-guide</a></li>
 </ul>
-<h1>NGINX</h1>
+<h1 id="nginx">NGINX</h1>
 <ul>
 <li><a href="https://github.com/trimstray/nginx-admins-handbook">trimstray/nginx-admins-handbook</a></li>
 </ul>
-<h1>Other</h1>
+<h1 id="other">Other</h1>
 <ul>
 <li><a href="https://tuhdo.github.io/os01/">Operating System: From 0 to 1</a></li>
 <li><a href="https://mobile.twitter.com/clementd/status/837600575483179009">xmonad + vimperator</a></li>

@@ -112,7 +112,7 @@
 </figure>
 
 <p>So what’s the big deal?</p>
-<h1>Cost of supporting old browsers</h1>
+<h1 id="cost-of-supporting-old-browsers">Cost of supporting old browsers</h1>
 <p>The more browsers a company decides to support, the more problems it brings. At Doctolib, we identified the following specific problems:</p>
 <ul>
 <li>
@@ -130,12 +130,12 @@
 </ul>
 <p>On a side note, supporting multiple browsers creates bigger JavaScript bundles because code transpiled through Babel is usually bigger and polyfills take space. It slightly increases compile time, bandwidth consumption, and JavaScript load/parse times.</p>
 <p>Knowing this, in a perfect world we’d only support the latest version of each browser, Internet Explorer 11 excluded of course. But that is not possible.</p>
-<h1>Limitations</h1>
+<h1 id="limitations">Limitations</h1>
 <p>Why is it so hard to have all of our customers upgrade their browsers? Why can’t we just display a banner, or send them an email, threatening to drop support for outdated browsers, and eventually do it?</p>
 <p>Well, there are many good reasons. First, healthcare professionals are generally not computer savvy. Computers are a tool, a means to them, not an end. They don’t want to have to worry about upgrades or browser versions.</p>
 <p>Also, as written in the introductory paragraph, people working in health establishments have no control over what browser they run. Budget and time constraints prevent these organizations from providing their employees with the latest computers, or prevent them from upgrading software on a regular basis. Also, some organizations are more concerned about privacy than others and thus insist on running specific browsers. Finally, some organizations sometimes use Internet Explorer because they also use other websites which require ActiveX for instance.</p>
 <p>There are multiple valid reasons for running old and outdated browsers. And multiple reasons for being unable to upgrade regularly. That’s why we can’t just cut off access to these users overnight.</p>
-<h1>Master Plan (aka Conspiracy)</h1>
+<h1 id="master-plan-aka-conspiracy">Master Plan (aka Conspiracy)</h1>
 <p>To kickstart the move towards up-to-date browsers, in March 2019 we came up with a very detailed plan, spanning over several months. When the idea arose for this plan, we were supporting:</p>
 <ul>
 <li>Safari 6+</li>
@@ -181,7 +181,7 @@
 <figcaption>Usage of ESR Firefox versions among Doctolib customers</figcaption>
 </figure>
 
-<h1>Conclusion</h1>
+<h1 id="conclusion">Conclusion</h1>
 <p>Eventually, we reached all the goals we had in terms of browsers we officially support, even though there is a significant portion of our customers still using unsupported browsers. We’ve already committed to repeat this plan in a few months to try to get rid of Firefox browsers below version 50 and Chrome browsers below 60.</p>
 <p>What did this plan teach us? First of all, we can’t force users to upgrade their browsers. We can’t decide what they use. They have constraints of their own and we must take them into account. However, good communication and giving them time brings long lasting relationships and builds trust between us and our customers, which is a requirement if we want them to use the right tools.</p>
 <p>Also, such an ambitious plan cannot be executed overnight. Internal communication is key and all the relevant departments must be involved as soon as possible, e.g. Customer Service, Account Management, Tech, etc. It works best when everyone is aligned and knows what we are aiming for and why.</p>

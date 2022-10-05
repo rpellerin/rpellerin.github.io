@@ -9,7 +9,7 @@
 &lt;li&gt;We wanted to make our translation process homogeneous for all countries. In doing so, we addressed problems only the German and Italian teams had been experiencing in the past, such as the delay between merging a pull request and having the translations available in production, or the fact that tests would occasionally fail because of new or changed translations. Specifically, tests testing features only available outside of France but asserting texts in French. When the German or Italian translations would eventually make it to the codebase, those tests would break. We therefore decided all tests now had to be written in English, unless testing a feature only available in one country.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With the whys out of the way, let's now see tips and tricks we've learned — sometimes the hard way.&lt;/p&gt;
-&lt;h1&gt;Tools are your friends, leverage them&lt;/h1&gt;
+&lt;h1 id="tools-are-your-friends-leverage-them"&gt;Tools are your friends, leverage them&lt;/h1&gt;
 &lt;p&gt;Dependencies-wise, we use &lt;a href="https://github.com/ruby-i18n/i18n"&gt;the default Rails gem&lt;/a&gt; to localize our app on the back end, and we use &lt;a href="https://www.npmjs.com/package/i18n-js"&gt;i18n-js&lt;/a&gt; on the front end.&lt;/p&gt;
 &lt;p&gt;In most applications, localization is done through YAML files. For instance, a &lt;code&gt;en.yml&lt;/code&gt; file might look like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;en&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -61,7 +61,7 @@
 &lt;p&gt;&lt;code&gt;skip_unverification: true&lt;/code&gt; makes sure than any edits to an English translation does not unverify (i.e. mark as "not verified") the corresponding FR/DE/IT translations. This may sound counter-intuitive as it means that updates to English translations are not reflected in the other languages as long as no one updates the translations. But it actually allow us to keep our current translations in production. Because of the above-mentioned setting (&lt;code&gt;include_unverified_translations: false)&lt;/code&gt; , if we were to mark our translations as unverified, they would actually be removed when we next run &lt;code&gt;phrase_cli pull&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://help.phrase.com/help/working-with-pluralization"&gt;Pluralization is done through special keys.&lt;/a&gt; The most common ones are &lt;code&gt;zero&lt;/code&gt; , &lt;code&gt;one&lt;/code&gt; and &lt;code&gt;other&lt;/code&gt;, as shown in the example file above. All plural forms are optional, meaning we can provide as many as we want. While some plural forms might be the same in a given language, they might all differ in another one. To make translating in other languages in the Phrase editor easier, we've decided to always provide the &lt;code&gt;zero&lt;/code&gt; form, in addition to &lt;code&gt;one&lt;/code&gt; and &lt;code&gt;many&lt;/code&gt; in our &lt;code&gt;en.yml&lt;/code&gt; file. We enforce this through a static test. That's also why we also have &lt;code&gt;exclude_empty_zero_forms: true&lt;/code&gt; so that whenever the &lt;code&gt;zero&lt;/code&gt; form is the same as &lt;code&gt;other&lt;/code&gt;, we can skip translating it in Phrase and therefore not clutter our &lt;code&gt;fr.yml&lt;/code&gt;, &lt;code&gt;de.yml&lt;/code&gt; and &lt;code&gt;it.yml&lt;/code&gt; files unnecessarily.&lt;/p&gt;
 &lt;p&gt;Finally, &lt;code&gt;include_empty_translations&lt;/code&gt; is required by Rails to work properly, as some translations need to remain explicitly empty, such as the ones that help Rails format numbers.&lt;/p&gt;
-&lt;h1&gt;Keeping Phrase up-to-date&lt;/h1&gt;
+&lt;h1 id="keeping-phrase-up-to-date"&gt;Keeping Phrase up-to-date&lt;/h1&gt;
 &lt;p&gt;We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" /&gt;
@@ -69,7 +69,7 @@
 &lt;/figure&gt;
 
 &lt;p&gt;Since we just launched Doctolib in Italy, we have a little less than 10% of our i18n keys not yet available in Italian, as we are slowly catching up. Regarding the 163 unverified German translations, those are for features not used in Germany at the moment. But we’re nonetheless in the process of verifying them, because first of all these features might someday become available in Germany, and also German-speaking developers might want to use the German language while working on French or Italian features.&lt;/p&gt;
-&lt;h1&gt;String interpolation is often a bad idea&lt;/h1&gt;
+&lt;h1 id="string-interpolation-is-often-a-bad-idea"&gt;String interpolation is often a bad idea&lt;/h1&gt;
 &lt;p&gt;While we were doing the switch from French to English, we realized at some point that we had a ton of unused keys in &lt;code&gt;en.yml&lt;/code&gt; . Keys from deleted features, keys from refactored code, etc. How to know which keys are actually used?&lt;/p&gt;
 &lt;p&gt;We first try running &lt;code&gt;grep&lt;/code&gt; for every i18n key found in &lt;code&gt;en.yml&lt;/code&gt; across the entire codebase. But string interpolation made this impossible.&lt;/p&gt;
 &lt;p&gt;What's string interpolation? There you go:&lt;/p&gt;
@@ -96,11 +96,11 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;To this day, we have not found a way (yet) to prevent string interpolation in i18n keys, but we're working on it. We've however communicated internally largely about it.&lt;/p&gt;
-&lt;h1&gt;The same locale in your test server as in your web server you shall set&lt;/h1&gt;
+&lt;h1 id="the-same-locale-in-your-test-server-as-in-your-web-server-you-shall-set"&gt;The same locale in your test server as in your web server you shall set&lt;/h1&gt;
 &lt;p&gt;When running integration tests with Ruby on Rails, &lt;a href="https://rspec.info/"&gt;RSpec&lt;/a&gt; and &lt;a href="https://github.com/teamcapybara/capybara"&gt;Capybara&lt;/a&gt;, there are actually two different servers being launched with every test. One is the test server, the one that executes assertions, pilots the browser, opens tabs, etc. And there's the web server, the one that responds to HTTP queries and renders your website.&lt;/p&gt;
 &lt;p&gt;We've found that both servers do not necessarily answer the same to &lt;code&gt;I18n.locale&lt;/code&gt;. For instance, when writing tests for features only available in one country, we'd change the Top-Level Domain (TLD) to .fr, .de. or .it. This would, in turn, change the locale used in our web server through some business logic in our &lt;code&gt;ApplicationController.rb&lt;/code&gt;. But the test server would remain in English, regardless of the TLD.&lt;/p&gt;
 &lt;p&gt;Consequently, trying &lt;code&gt;assert_text I18n.t("some.key")&lt;/code&gt; in a test of the French website would be looking for the English translation of &lt;code&gt;some.key&lt;/code&gt;, while only the French translation was to be found. Through some fine tuning of our subclasses of &lt;code&gt;ActiveSupport::TestCase&lt;/code&gt;, we have managed to sync the locale of both servers.&lt;/p&gt;
-&lt;h1&gt;Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key&lt;/h1&gt;
+&lt;h1 id="preventing-the-creation-of-duplicate-keys-as-the-ruby-yaml-parser-silently-ignores-them-and-use-the-latest-defined-key"&gt;Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key&lt;/h1&gt;
 &lt;p&gt;Say you have a &lt;code&gt;en.yml&lt;/code&gt; file as follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;en&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;greetings&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -118,7 +118,7 @@
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Enforcing a simple format for keys&lt;/h1&gt;
+&lt;h1 id="enforcing-a-simple-format-for-keys"&gt;Enforcing a simple format for keys&lt;/h1&gt;
 &lt;p&gt;Although many characters are permitted for keys (only the dot is not, as it marks levels in the hierarchy), we found it much easier to only deal with keys using only basic characters, such as the regular ASCII letters, upper or lower case, digits, hyphens and underscores. Why is that? First of all, because it's more readable, and second of all because it makes grepping through the codebase with regular expressions a lot easier.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;enforces a simple format for keys&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="n"&gt;wrongly_formatted_keys&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
@@ -135,7 +135,7 @@
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Preventing the insertion of hidden characters whose behavior might be unexpected&lt;/h1&gt;
+&lt;h1 id="preventing-the-insertion-of-hidden-characters-whose-behavior-might-be-unexpected"&gt;Preventing the insertion of hidden characters whose behavior might be unexpected&lt;/h1&gt;
 &lt;p&gt;Have you ever seen this warning message on GitHub?&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" /&gt;
@@ -150,9 +150,9 @@
 &lt;figcaption&gt;A test making sure our translation files do not contain special hidden Unicode characters&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h1&gt;Avoid duplicate translations at the same node level&lt;/h1&gt;
+&lt;h1 id="avoid-duplicate-translations-at-the-same-node-level"&gt;Avoid duplicate translations at the same node level&lt;/h1&gt;
 &lt;p&gt;Why create a new translation when one can reuse an existing one? Especially if the translation is a sibling (i.e at the same node level in the YAML file) of the one you're trying to add. Well again, we've added a test so that we avoid duplicating existing English translations. Because we've found that, since the translations YAML files tend to be very big, it is easy to overlook and miss a translation you're looking for, think it does not exist, and add it again.&lt;/p&gt;
-&lt;h1&gt;Ensuring the file is correctly formatted at all times&lt;/h1&gt;
+&lt;h1 id="ensuring-the-file-is-correctly-formatted-at-all-times"&gt;Ensuring the file is correctly formatted at all times&lt;/h1&gt;
 &lt;p&gt;Because throughout our journey of switching to English as a default locale, we've had to edit our &lt;code&gt;en.yml&lt;/code&gt; file many times, we've found that enforcing the formatting makes &lt;code&gt;git diff&lt;/code&gt;s easier to review. It's like when one starts using &lt;a href="https://prettier.io/"&gt;Prettier&lt;/a&gt; and stops caring about how to format their JavaScript code. All of a sudden, single quotes, double quotes, escaping characters, where to break a line, etc, are no longer problems.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;makes sure en.yml is correctly formatted&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;config/locales/en.yml&amp;#39;&lt;/span&gt;
@@ -166,7 +166,7 @@
 &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Finding unused keys and removing them&lt;/h1&gt;
+&lt;h1 id="finding-unused-keys-and-removing-them"&gt;Finding unused keys and removing them&lt;/h1&gt;
 &lt;p&gt;That's the trickiest part. And unfortunately, we don't have a universal answer to that problem. But before finding which keys are not used, how do we even find the ones actually used?&lt;/p&gt;
 &lt;p&gt;As we've seen before, string interpolation makes it impossible to statically find all used keys. We need to come up with something dynamic.&lt;/p&gt;
 &lt;p&gt;Logging that a given i18n key is used at runtime is fairly simple, code-wise. "All we have to do" is monkey patch the Ruby gem or the JavaScript package so that we log or store somewhere which keys are being used. For instance, this is most of our JavaScript monkey patch:&lt;/p&gt;
@@ -208,7 +208,7 @@
 &lt;p&gt;The first option has the disadvantage of using our users' local storage at their expense and using our production Redis instance for something else that a feature. And likewise, we can't be 100% sure all of our features are even used at all. Also, the keys used today might not be the same ones as tomorrow, because we constantly merge pull requests and rollout new code to production.&lt;/p&gt;
 &lt;p&gt;Therefore, the idea of capturing a "snapshot" of the keys used at one point in time, without interfering with the production website, sounded like our best bet.&lt;/p&gt;
 &lt;p&gt;We're now capable of doing that snapshot and computing a diff between our existing keys and the ones used, yet we still have to find a way of making sure we're not deleting keys that could still be used in production, but that are simply not part of a tested feature.&lt;/p&gt;
-&lt;h1&gt;Removing translations as the source language keys are removed&lt;/h1&gt;
+&lt;h1 id="removing-translations-as-the-source-language-keys-are-removed"&gt;Removing translations as the source language keys are removed&lt;/h1&gt;
 &lt;p&gt;Finally, the last thing we had to deal with was, how do we remove from Phrase (and therefore the other YAML files) the i18n keys that we occasionally remove from &lt;code&gt;en.yml&lt;/code&gt;, for instance when we delete a feature?&lt;/p&gt;
 &lt;p&gt;We came up with a script that runs at night, once a day, on the CI. It basically does a diff of all the i18n keys found in &lt;code&gt;fr.yml&lt;/code&gt;, &lt;code&gt;de.yml&lt;/code&gt; and &lt;code&gt;it.yml&lt;/code&gt; minus those from &lt;code&gt;en.yml&lt;/code&gt;. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.&lt;/p&gt;
 &lt;hr&gt;
@@ -217,7 +217,7 @@
 &lt;p&gt;&lt;em&gt;If you want more technical news, follow our journey through our &lt;a href="https://doctolib.engineering/engineering-news-ruby-rails-react/"&gt;docto-tech-life newsletter&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France, Germany and Italy, feel free to have a look at the &lt;a href="https://about.doctolib.com/jobs?department=Engineering"&gt;open positions&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="localization"></category><category term="internationalization"></category><category term="i18n"></category><category term="l10n"></category></entry><entry><title>Waving Goodbye to Internet Explorer 11 in 2021</title><link href="//romainpellerin.eu/waving-goodbye-to-internet-explorer-11-in-2021.html" rel="alternate"></link><published>2021-06-01T23:30:00+02:00</published><updated>2021-06-01T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-06-01:/waving-goodbye-to-internet-explorer-11-in-2021.html</id><summary type="html">&lt;p&gt;Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/doctolib/waving-goodbye-to-internet-explorer-11-in-2021-b01a8c5c9864"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Two years ago, we published "&lt;a href="//romainpellerin.eu/supporting-internet-explorer-11-in-2019.html"&gt;Supporting Internet Explorer 11 in 2019&lt;/a&gt;". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (&lt;a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date"&gt;and we're not the only ones&lt;/a&gt; 🤫)&lt;/p&gt;
-&lt;h1&gt;Motivations&lt;/h1&gt;
+&lt;h1 id="motivations"&gt;Motivations&lt;/h1&gt;
 &lt;p&gt;Back in 2019, a major motivation for us to stop supporting old browsers on the website healthcare professionals use to access our service was that we had two different pipelines to bundle JavaScript code: one was through Webpack and &lt;a href="https://babeljs.io/"&gt;Babel&lt;/a&gt;, the other one through the &lt;a href="https://guides.rubyonrails.org/asset_pipeline.html"&gt;Ruby on Rails asset pipeline&lt;/a&gt; (also known as Sprockets). The good news is, last year we managed to get rid of Sprockets. Now, all of our JavaScript files go through Webpack. Therefore, we do not need to write ES5-compliant code anymore, we can write modern JavaScript everywhere in our mono-repository. However we still have to instruct Babel to transpile some packages that do not come pre-transpiled. And let's be honest, monitoring breaking changes as library authors release new versions is no fun at all.&lt;/p&gt;
 &lt;p&gt;Our other motivations were:&lt;/p&gt;
 &lt;ul&gt;
@@ -225,7 +225,7 @@
 &lt;li&gt;We still have occasional down incidents. One of the recent ones was due to &lt;code&gt;scrollTo&lt;/code&gt; being used with options, which is &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#browser_compatibility"&gt;not supported by Internet Explorer 11&lt;/a&gt;. And of course, Babel can't do anything about it.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;These motivations are still valid to this day. On top of that, since 2019, we have developed new features and brought &lt;a href="https://info.doctolib.fr/blog/doctolib-adopte-le-chiffrement-de-bout-en-bout-nouvelle-etape-dans-la-securisation-des-donnees-de-sante/"&gt;end-to-end encryption everywhere in the app&lt;/a&gt;. Yet, some of these old browsers have limited support for some of the web APIs we are using. As a consequence, these users can not enjoy the complete feature set Doctolib has to offer, and they are unable to see encrypted documents (PDF documents for instance), as encryption/decryption is done in the browser. Therefore, at the beginning of this year, we initiated a new project that we like to call "Browser Upgrade Campaign: reborn".&lt;/p&gt;
-&lt;h1&gt;Browser Upgrade Campaign: reborn&lt;/h1&gt;
+&lt;h1 id="browser-upgrade-campaign-reborn"&gt;Browser Upgrade Campaign: reborn&lt;/h1&gt;
 &lt;p&gt;Admittedly, our previous attempt at having our customers upgrade their browsers was a failure. We are trying to get it right this time. The timeline we laid out was as follows:&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" /&gt;
@@ -249,7 +249,7 @@
 &lt;p&gt;The two following steps were almost as easy. After setting up some tracking through New Relic, we realized we did not have that many new connections on outdated browsers every day. What's a new connection? It's a connection from a browser that never connected to Doctolib before. How do we determine whether it ever accessed Doctolib before? We look for existing cookies sent in the request.&lt;/p&gt;
 &lt;p&gt;Based on that fact, we first blocked any new connection on Internet Explorer 11. Then, over the next few days, we monitored the amount of support tickets and phone calls: nothing. No one complained. We then did the same operation with other deprecated browsers.&lt;/p&gt;
 &lt;p&gt;Then came the fourth step.&lt;/p&gt;
-&lt;h1&gt;Walking on eggs&lt;/h1&gt;
+&lt;h1 id="walking-on-eggs"&gt;Walking on eggs&lt;/h1&gt;
 &lt;p&gt;Given that there had been a red banner displayed at the top of Doctolib for the last two years to users surfing with outdated browsers, our users were well aware of that. But of course we knew it was not enough. Why would our graphs still show relatively high usage of outdated browsers, uh?&lt;/p&gt;
 &lt;p&gt;In April and May we sent out two email campaigns: one to remote secretaryship centers, another one to key accounts (most of them being hospitals or Covid-19 vaccination centers). This time, unlike in 2019, we explicitly told them which users were still using non supported browsers and gave them a deadline after which we would no longer be able to use these browsers. We made sure to tell them which obsolete browsers they were using and what options they had to upgrade.&lt;/p&gt;
 &lt;p&gt;In the meantime, we compiled a big list of user accounts that were using multiple browsers, both supported and non supported ones. Every day, we'd pick a bunch of them and enable a feature switch on their account, that would prevent them from logging in with a non supported browser. Once again, we daily monitored our support, making sure everything was going as smoothly as possible.&lt;/p&gt;
@@ -286,7 +286,7 @@
 &lt;/figure&gt;
 
 &lt;p&gt;So what’s the big deal?&lt;/p&gt;
-&lt;h1&gt;Cost of supporting old browsers&lt;/h1&gt;
+&lt;h1 id="cost-of-supporting-old-browsers"&gt;Cost of supporting old browsers&lt;/h1&gt;
 &lt;p&gt;The more browsers a company decides to support, the more problems it brings. At Doctolib, we identified the following specific problems:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -304,12 +304,12 @@
 &lt;/ul&gt;
 &lt;p&gt;On a side note, supporting multiple browsers creates bigger JavaScript bundles because code transpiled through Babel is usually bigger and polyfills take space. It slightly increases compile time, bandwidth consumption, and JavaScript load/parse times.&lt;/p&gt;
 &lt;p&gt;Knowing this, in a perfect world we’d only support the latest version of each browser, Internet Explorer 11 excluded of course. But that is not possible.&lt;/p&gt;
-&lt;h1&gt;Limitations&lt;/h1&gt;
+&lt;h1 id="limitations"&gt;Limitations&lt;/h1&gt;
 &lt;p&gt;Why is it so hard to have all of our customers upgrade their browsers? Why can’t we just display a banner, or send them an email, threatening to drop support for outdated browsers, and eventually do it?&lt;/p&gt;
 &lt;p&gt;Well, there are many good reasons. First, healthcare professionals are generally not computer savvy. Computers are a tool, a means to them, not an end. They don’t want to have to worry about upgrades or browser versions.&lt;/p&gt;
 &lt;p&gt;Also, as written in the introductory paragraph, people working in health establishments have no control over what browser they run. Budget and time constraints prevent these organizations from providing their employees with the latest computers, or prevent them from upgrading software on a regular basis. Also, some organizations are more concerned about privacy than others and thus insist on running specific browsers. Finally, some organizations sometimes use Internet Explorer because they also use other websites which require ActiveX for instance.&lt;/p&gt;
 &lt;p&gt;There are multiple valid reasons for running old and outdated browsers. And multiple reasons for being unable to upgrade regularly. That’s why we can’t just cut off access to these users overnight.&lt;/p&gt;
-&lt;h1&gt;Master Plan (aka Conspiracy)&lt;/h1&gt;
+&lt;h1 id="master-plan-aka-conspiracy"&gt;Master Plan (aka Conspiracy)&lt;/h1&gt;
 &lt;p&gt;To kickstart the move towards up-to-date browsers, in March 2019 we came up with a very detailed plan, spanning over several months. When the idea arose for this plan, we were supporting:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Safari 6+&lt;/li&gt;
@@ -355,13 +355,13 @@
 &lt;figcaption&gt;Usage of ESR Firefox versions among Doctolib customers&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;Eventually, we reached all the goals we had in terms of browsers we officially support, even though there is a significant portion of our customers still using unsupported browsers. We’ve already committed to repeat this plan in a few months to try to get rid of Firefox browsers below version 50 and Chrome browsers below 60.&lt;/p&gt;
 &lt;p&gt;What did this plan teach us? First of all, we can’t force users to upgrade their browsers. We can’t decide what they use. They have constraints of their own and we must take them into account. However, good communication and giving them time brings long lasting relationships and builds trust between us and our customers, which is a requirement if we want them to use the right tools.&lt;/p&gt;
 &lt;p&gt;Also, such an ambitious plan cannot be executed overnight. Internal communication is key and all the relevant departments must be involved as soon as possible, e.g. Customer Service, Account Management, Tech, etc. It works best when everyone is aligned and knows what we are aiming for and why.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/doctolib/supporting-internet-explorer-11-in-2019-12dc1f1ebc3c"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="internet explorer"></category><category term="browsers"></category></entry><entry><title>Regaining control over Doctolib.com frontend</title><link href="//romainpellerin.eu/regaining-control-over-doctolib-com-frontend.html" rel="alternate"></link><published>2019-05-14T14:30:00+02:00</published><updated>2019-05-14T14:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2019-05-14:/regaining-control-over-doctolib-com-frontend.html</id><summary type="html">&lt;p&gt;Doctolib has been growing rapidly over the past 5 years, as has our code base. We have been able to deliver numerous features in a timely manner, but oftentimes at the expense of code legibility and…&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/@romain.pellerin/regaining-control-over-doctolib-com-frontend-9ec8cc41037f"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Doctolib has been growing rapidly over the past 5 years, as has our code base. We have been able to deliver numerous features in a timely manner, but oftentimes at the expense of code legibility and simplicity. The year 2018 was for us an opportunity to step back, learn from our mistakes, and set goals in order for us to regain control over our frontend. Specifically, we re-defined &lt;a href="https://medium.com/doctolib/treating-technical-debt-62630ee64ef7"&gt;technical debt and legacy code&lt;/a&gt; and took measures to reduce it so that we could keep growing at an ever-faster rate and continue to ship features that practitioners and patients love.&lt;/p&gt;
-&lt;h1&gt;Identifying pain points&lt;/h1&gt;
+&lt;h1 id="identifying-pain-points"&gt;Identifying pain points&lt;/h1&gt;
 &lt;p&gt;Twice a year a team of people with a strong interest in JavaScript gather to discuss frontend at Doctolib. One person from each feature team is selected to join the meetings. Nevertheless, the meetings are also open to anyone, as long as they express an interest and have proved themselves to be proficient in JavaScript.&lt;/p&gt;
 &lt;p&gt;In advance of these meetings, we circulate email surveys to all of the software engineers to identify their specific issues and struggles. Below is an extract from the latest survey we sent out in November 2018:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -380,8 +380,8 @@
 &lt;/ul&gt;
 &lt;p&gt;These simple, short questionnaires allow us to gather valuable feedback from all of the engineers. Using them, we are able to identify the most-cited problems and define what legacy means at Doctolib during our bi-annual meetings.&lt;/p&gt;
 &lt;p&gt;After analyzing the results of these surveys, we usually come up with a new direction and a list of tasks for the following two quarters. These actions are then shared with the rest of the engineers during an all-hands meeting with the entire tech team.&lt;/p&gt;
-&lt;h1&gt;What is legacy code at Doctolib in 2018?&lt;/h1&gt;
-&lt;h2&gt;RxJS&lt;/h2&gt;
+&lt;h1 id="what-is-legacy-code-at-doctolib-in-2018"&gt;What is legacy code at Doctolib in 2018?&lt;/h1&gt;
+&lt;h2 id="rxjs"&gt;RxJS&lt;/h2&gt;
 &lt;p&gt;When Doctolib was in its early stages, state management for React apps was still very experimental and there was no consensus about which way to go. Two emerging libraries were becoming fashionable: Redux and RxJS. The decision was made to pick RxJS, but it could have just as well been Redux.&lt;/p&gt;
 &lt;p&gt;Over time, RxJS usage grew and the library was soon imported into every file and used for just about anything and everything: app state management, tiny component states, forms, buttons, AJAX requests, etc.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why is this legacy now?&lt;/strong&gt; Well, first of all, RxJS is not entirely legacy but the way it’s being used at Doctolib is. This is mostly because it has been used for everything, although &lt;a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html"&gt;its use cases are normally meant to be very specific and restricted&lt;/a&gt;. RxJS also makes unit testing difficult because Observables need to be mocked-up. &lt;a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html"&gt;Reactive programming is not known by many&lt;/a&gt;, as indicated on the graph below, therefore it does not help shorten new joiners’ ramp-up time — quite the opposite, to be honest. Our aim is to restrain its use cases to what it was originally intended to be used for: event-based computations and asynchronous sequences of data.&lt;/p&gt;
@@ -390,15 +390,15 @@
 &lt;figcaption&gt;RxJS ranks last among the “other” JavaScript libraries in 2018 &lt;a target="_blank" href="https://2018.stateofjs.com/front-end-frameworks/other-libraries/"&gt;[Source]&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Recompose/Recompact&lt;/h2&gt;
+&lt;h2 id="recomposerecompact"&gt;Recompose/Recompact&lt;/h2&gt;
 &lt;p&gt;At the same time as RxJS was released, another helper library came out: &lt;a href="https://github.com/acdlite/recompose"&gt;recompose&lt;/a&gt;. As recompose was not meeting all of our needs, the project was forked, patched, and renamed as &lt;a href="https://github.com/neoziro/recompact"&gt;recompact&lt;/a&gt;. Once again, it quickly spread across the code base, bringing Higher Order Components everywhere, as well as additional complexity for new joiners.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why is this legacy now?&lt;/strong&gt; Most helpers from recompact can be written in vanilla React (recompact.pure or recompact.withProps to name a few). Given that early advocates of recompact at Doctolib left the company a while ago, it became challenging to pass down knowledge and help new joiners get up to speed quickly. Moreover, the original library (recompose) was recently officially &lt;a href="https://github.com/acdlite/recompose#a-note-from-the-author-acdlite-oct-25-2018"&gt;deprecated&lt;/a&gt; because of an upcoming React feature, &lt;a href="https://reactjs.org/docs/hooks-intro.html"&gt;Hooks&lt;/a&gt;, not forgetting that recompose/recompact rely on the legacy React Context API. We now aim at getting rid of recompact altogether.&lt;/p&gt;
-&lt;h2&gt;jQuery and CoffeeScript&lt;/h2&gt;
+&lt;h2 id="jquery-and-coffeescript"&gt;jQuery and CoffeeScript&lt;/h2&gt;
 &lt;p&gt;Since the very beginning, jQuery and CoffeeScript have been lying around in the code base. jQuery helped features come to life in no time, bridging the gap between various browsers, oftentimes with poor support for new Web APIs. As for CoffeeScript, it is tightly coupled with Ruby on Rails, our backend, thus it has been there from the beginning.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why is this legacy now?&lt;/strong&gt; Starting this year, we only support modern browsers and Internet Explorer 11. Consequently, it does not make any sense to use jQuery when we can write plain JavaScript; and CoffeeScript adds unneeded complexity given that very few people can understand it at a glance, let alone write it.&lt;/p&gt;
-&lt;h2&gt;React unsafe life-cycle methods&lt;/h2&gt;
+&lt;h2 id="react-unsafe-life-cycle-methods"&gt;React unsafe life-cycle methods&lt;/h2&gt;
 &lt;p&gt;Last but not least, we recently deprecated a few React life-cycle methods and helpers, following the maintainers’ advice about unsafe methods. &lt;a href="https://reactjs.org/docs/strict-mode.html"&gt;React.StrictMode was recently introduced&lt;/a&gt; as a tool to help detect potential issues within an app. We cautiously started adding it in the codebase, to avoid having too many warnings popping up here and there while developing. Here is the list of life-cycle methods or helpers we decided to deprecate early in our codebase: &lt;em&gt;componentWillMount&lt;/em&gt;, &lt;em&gt;componentWillReceiveProps&lt;/em&gt;, &lt;em&gt;componentWillUpdate&lt;/em&gt; and &lt;em&gt;findDOMNode&lt;/em&gt;.&lt;/p&gt;
-&lt;h1&gt;Tackling and killing legacy&lt;/h1&gt;
+&lt;h1 id="tackling-and-killing-legacy"&gt;Tackling and killing legacy&lt;/h1&gt;
 &lt;p&gt;After agreeing upon what can be defined as legacy, the time comes to actually kill it. The way frontend legacy is handled at Doctolib is always the same; we pretty much stick to &lt;a href="https://medium.com/@addyosmani/measure-optimize-monitor-33e36108e014"&gt;MOM&lt;/a&gt;: &lt;em&gt;Measure, Optimize and Monitor&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Measuring&lt;/em&gt;&lt;/strong&gt; is done by way of our survey and our own experience while developing. While evaluating the relevance of each pain point collected, we prioritize them according to the number of times they are mentioned. We also assess the feasibility over the short-term: short and easy tasks tend to move up on the list of actions. Finally, these actions become Tech Tasks.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Optimizing&lt;/em&gt;&lt;/strong&gt; is done progressively, after our bi-annual meetings, through special tasks we call &lt;strong&gt;Tech Tasks&lt;/strong&gt;. These tasks are differentiated from regular feature tasks by their very own nature: they are purely technical tasks whose goal is to improve platform stability, security, and performance as well as to reduce technical debt. People usually pick the ones they like best when they work on Tech Tasks (Fridays are Tech Tasks days for most feature teams). However, a few big and/or complex tasks do get assigned during our bi-annual meeting in order to make sure that they will eventually be carried out. These big tasks are prioritized by the solution architects and engineering managers on a regular basis to ensure they fit into the roadmap.&lt;/p&gt;
@@ -418,15 +418,15 @@
 &lt;/figure&gt;
 
 &lt;p&gt;These graphs are a helpful starting point from which we can monitor progress.&lt;/p&gt;
-&lt;h2&gt;Preventing people from using it&lt;/h2&gt;
+&lt;h2 id="preventing-people-from-using-it"&gt;Preventing people from using it&lt;/h2&gt;
 &lt;p&gt;There is a long-lasting tradition of heavily relying on static checks at Doctolib. Essentially, they are script files which we run on source code as it is — before transpilation and bundling. Our CI pipeline runs these tests first, before running any of our 8000+ end-to-end tests. Below is the one test which checks for new lines containing deprecated React methods and recompact helpers, and then reports on Pull Requests.&lt;/p&gt;
 &lt;script src="https://gist.github.com/rpellerin/2521a2dd9e9a0c6cd993755441fffcea.js"&gt;&lt;/script&gt;
 
 &lt;p&gt;In addition to relying on static checks, we also regularly inform and remind people about our best practices on the frontend stack. We usually demo state-of-the-art JavaScript once a month, during what we call “Tech Time” — a meeting for and by software engineers. It’s also a good opportunity to show how much progress is being made on reducing legacy code.&lt;/p&gt;
-&lt;h2&gt;Meeting objectives&lt;/h2&gt;
+&lt;h2 id="meeting-objectives"&gt;Meeting objectives&lt;/h2&gt;
 &lt;p&gt;Oftentimes, the long tasks tend to remain “&lt;em&gt;in progress&lt;/em&gt;” forever and people lose interest in them. This is when the people who first defined these objectives come into play. It is their responsibility to help these tasks reach a conclusion by supporting those working on it and providing a helping hand if need be.&lt;/p&gt;
 &lt;p&gt;In any case, every bi-annual meeting starts off with a review of what has been achieved during the previous term and carries on from there.&lt;/p&gt;
-&lt;h1&gt;Long-term vision&lt;/h1&gt;
+&lt;h1 id="long-term-vision"&gt;Long-term vision&lt;/h1&gt;
 &lt;p&gt;Deprecating these few React functions, recompact, a significant part of our RxJS usage, jQuery, and CoffeeScript is a major first step. By doing so we can ease new joiners’ onboarding, keep up with the latest JavaScript standards, and reduce our technical debt. It also belongs to a bigger picture. Creating these dashboards opens the door to more monitoring, which ultimately means more control. A recent concrete example is the bundle size dashboard, which we introduced a few weeks ago.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/bundle-sizes.png" alt="Bundle sizes graphs" /&gt;
@@ -442,14 +442,14 @@
 &lt;p&gt;In addition to more monitoring, we’ll keep collecting feedback on a regular basis from all of the software engineers, calling for more meetings when needed. We will specifically be paying attention to new joiners, how they feel about the frontend stack and how we can make their onboarding even easier. We don’t want to be held back by legacy code. Instead, we want to be able to experiment with new technologies when relevant, adopt the latest JavaScript standards, and keep up with React.&lt;/p&gt;
 &lt;p&gt;There is still much to do on the frontend. A Single-Page-Application is much more than just a website. It’s software that runs in a browser. Hundreds of different browser versions actually, operating at various speeds, with unreliable network connectivity. It has to be as good as any software program. The time when servers were the unique focus point has come and gone; frontend requires a different kind of attention, not less.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/@romain.pellerin/regaining-control-over-doctolib-com-frontend-9ec8cc41037f"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="code"></category><category term="javascript"></category><category term="frontend"></category></entry><entry><title>Ruby and Ruby on Rails from scratch</title><link href="//romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html" rel="alternate"></link><published>2018-03-16T23:50:00+01:00</published><updated>2018-03-16T23:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-03-16:/ruby-and-ruby-on-rails-from-scratch.html</id><summary type="html">&lt;p&gt;How to learn Ruby and Rails&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I started learning a new language: Ruby! Coming from a JavaScript world, &lt;a href="http://frontendgods.com/getting-started-with-ruby-for/"&gt;this article&lt;/a&gt; helped me a lot (&lt;a href="//romainpellerin.eu/extra/javascript-to-ruby.html"&gt;backed-up here, should it ever vanish from the Internet&lt;/a&gt;). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.&lt;/p&gt;
-&lt;h1&gt;Learning resources&lt;/h1&gt;
-&lt;h2&gt;Ruby&lt;/h2&gt;
+&lt;h1 id="learning-resources"&gt;Learning resources&lt;/h1&gt;
+&lt;h2 id="ruby"&gt;Ruby&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby"&gt;https://openclassrooms.com/courses/lancez-vous-dans-la-programmation-avec-ruby&lt;/a&gt; (French)&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://tryruby.org"&gt;http://tryruby.org&lt;/a&gt;: awesome interactive tutoral&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://rubykoans.com/"&gt;http://rubykoans.com/&lt;/a&gt;: learn by doing TDD (Test-Driven Development): make all tests pass&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Rails&lt;/h2&gt;
+&lt;h2 id="rails"&gt;Rails&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://rubyonrails.org/doctrine/"&gt;http://rubyonrails.org/doctrine/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://ideamotive.co/ruby-on-rails-development-guide/?in-2019"&gt;CHOOSING RUBY ON RAILS FOR YOUR NEXT WEB DEVELOPMENT PROJECT&lt;/a&gt;&lt;/li&gt;
@@ -457,7 +457,7 @@
 &lt;li&gt;&lt;a href="https://openclassrooms.com/en/courses/3149156-initiez-vous-a-ruby-on-rails"&gt;Initiez-vous à Ruby on Rails&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://openclassrooms.com/en/courses/3432066-continuez-avec-ruby-on-rails"&gt;Continuez avec Ruby on Rails&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Install&lt;/h1&gt;
+&lt;h1 id="install"&gt;Install&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/rbenv/rbenv#basic-github-checkout"&gt;Install rbenv&lt;/a&gt;. In short, here is how:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install openssl libicu-dev libssl-dev libreadline-dev zlib1g-dev
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -487,7 +487,7 @@ bundle install --path vendor --binstubs bin &lt;span class="c1"&gt;# Set up .bun
 bundle install &lt;span class="c1"&gt;# or simply `bundle`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Upgrade Ruby version&lt;/h1&gt;
+&lt;h1 id="upgrade-ruby-version"&gt;Upgrade Ruby version&lt;/h1&gt;
 &lt;p&gt;Update the version in &lt;code&gt;Gemfile&lt;/code&gt; and &lt;code&gt;.ruby-version&lt;/code&gt;. Then run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.rbenv/plugins/ruby-build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git pull &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; -
 rbenv install
@@ -495,7 +495,7 @@ gem install bundler
 bundle
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Stuff to know&lt;/h1&gt;
+&lt;h1 id="stuff-to-know"&gt;Stuff to know&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;;&lt;/code&gt; is optional&lt;/li&gt;
 &lt;li&gt;parentheses optional in &lt;code&gt;if&lt;/code&gt; statements&lt;/li&gt;
@@ -527,16 +527,16 @@ bundle
 &lt;li&gt;&lt;code&gt;help&lt;/code&gt; (get help in binding.pry /pry)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;PRY_RESCUE_RAIL=1 rails test&lt;/code&gt;: runs a test and pauses on falsy assertions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Ranges&lt;/h2&gt;
+&lt;h2 id="ranges"&gt;Ranges&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;x..y&lt;/code&gt; (y included) vs &lt;code&gt;x...y&lt;/code&gt; (y not included)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Tests&lt;/h2&gt;
+&lt;h2 id="tests"&gt;Tests&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;assert_equal x,y&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;assert_match(/regex/, x)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;h2 id="resources"&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/1961030/ruby-ampersand-colon-shortcut"&gt;Ruby ampersand colon shortcut&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/14881125/what-does-to-proc-method-mean"&gt;What does to_proc method mean?&lt;/a&gt;&lt;/li&gt;
@@ -632,11 +632,11 @@ bundle
 &lt;/ul&gt;
 &lt;p&gt;Bonus point if the project uses as many Github badges (meaning CI services) as I referenced on &lt;a href="//romainpellerin.eu/open-source.html"&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Reminder for myself&lt;/strong&gt;: check out &lt;a href="//romainpellerin.eu/carrying-out-a-web-project.html"&gt;this article&lt;/a&gt;&lt;/p&gt;</content><category term="Code"></category><category term="web"></category><category term="javascript"></category><category term="css"></category><category term="html"></category></entry><entry><title>Open Source</title><link href="//romainpellerin.eu/open-source.html" rel="alternate"></link><published>2017-03-07T21:50:00+01:00</published><updated>2017-03-07T21:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-03-07:/open-source.html</id><summary type="html">&lt;p&gt;Resources for open source projects&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are a bunch of links for open source project maintainers/creators:&lt;/p&gt;
-&lt;h1&gt;Documentation&lt;/h1&gt;
+&lt;h1 id="documentation"&gt;Documentation&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Tools/Continuous integration/Continuous testing&lt;/h1&gt;
+&lt;h1 id="toolscontinuous-integrationcontinuous-testing"&gt;Tools/Continuous integration/Continuous testing&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://greenkeeper.io/"&gt;GreenKeeper&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://coveralls.io/"&gt;Coveralls&lt;/a&gt;&lt;/li&gt;
@@ -653,7 +653,7 @@ bundle
 &lt;li&gt;&lt;a href="https://www.npmjs.com/package/standard-version"&gt;standard-version&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/conventional-changelog"&gt;Conventional Changelog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Miscellaneous&lt;/h1&gt;
+&lt;h1 id="miscellaneous"&gt;Miscellaneous&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://makeapullrequest.com/"&gt;Make a Pull Request&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://keepachangelog.com/en/0.3.0/"&gt;Keep A Changelog&lt;/a&gt;&lt;/li&gt;
@@ -669,18 +669,18 @@ bundle
 &lt;li&gt;&lt;a href="https://words.steveklabnik.com/what-comes-after-open-source"&gt;What comes after “open source”&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/zenika-open-source/open-source-promotion-cheat-sheet"&gt;Open source promotion cheat sheet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Getting paid&lt;/h1&gt;
+&lt;h1 id="getting-paid"&gt;Getting paid&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://codefund.app/"&gt;CodeFund&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Free software&lt;/h1&gt;
+&lt;h1 id="free-software"&gt;Free software&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://video.tedomum.net/videos/watch/22382fb9-ad79-4ac1-8df3-c7c027749425"&gt;Internet ou la révolution du partage&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Code"></category><category term="open source"></category></entry><entry><title>Architectures</title><link href="//romainpellerin.eu/architectures.html" rel="alternate"></link><published>2017-01-05T11:00:00+01:00</published><updated>2017-01-05T11:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-05:/architectures.html</id><summary type="html">&lt;p&gt;A bunch of resources about architectures&lt;/p&gt;</summary><content type="html">&lt;h1&gt;General&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Code"></category><category term="open source"></category></entry><entry><title>Architectures</title><link href="//romainpellerin.eu/architectures.html" rel="alternate"></link><published>2017-01-05T11:00:00+01:00</published><updated>2017-01-05T11:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-05:/architectures.html</id><summary type="html">&lt;p&gt;A bunch of resources about architectures&lt;/p&gt;</summary><content type="html">&lt;h1 id="general"&gt;General&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://nickcraver.com/blog/2016/02/17/stack-overflow-the-architecture-2016-edition/"&gt;Stack Overflow: The Architecture - 2016 Edition&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Scalability and distributed systems&lt;/h1&gt;
+&lt;h1 id="scalability-and-distributed-systems"&gt;Scalability and distributed systems&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html"&gt;How Twitter Handles 3,000 Images Per Second&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/aphyr/distsys-class/blob/master/README.markdown"&gt;An introduction to distributed systems&lt;/a&gt;&lt;/li&gt;
@@ -688,7 +688,7 @@ bundle
 &lt;/ul&gt;</content><category term="Code"></category><category term="networks"></category><category term="systems"></category><category term="infrastructure"></category><category term="architecture"></category></entry><entry><title>React</title><link href="//romainpellerin.eu/react.html" rel="alternate"></link><published>2016-01-08T01:00:00+01:00</published><updated>2016-01-08T01:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-01-08:/react.html</id><summary type="html">&lt;p&gt;A quick introduction to React.js&lt;/p&gt;</summary><content type="html">&lt;p&gt;First of all, I wish you a Happy New Year. May it be full of happiness and lines of code :-)&lt;/p&gt;
 &lt;p&gt;Let's now talk about the new hotness, a JavaScript library getting more and more trendy, with an unceasingly growing community: &lt;a href="https://facebook.github.io/react/"&gt;React&lt;/a&gt;. It's under active development these days, powered by Facebook (and initially created by). Basically, it's meant to build user interfaces in a web context, but recently &lt;a href="https://facebook.github.io/react-native/"&gt;they also exported it to mobile development&lt;/a&gt;, alloying anyone to write some kind of cross-platform code for both Android and iOS, in JavaScript, just like Appcelerator Titanium.&lt;/p&gt;
 &lt;p&gt;At the present time, I'm still getting acquinted with it, but here are a few pieces of advice about how to &lt;a href="https://facebook.github.io/react/docs/getting-started.html"&gt;get started&lt;/a&gt; &lt;strong&gt;correctly&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;Must read&lt;/h1&gt;
+&lt;h1 id="must-read"&gt;Must read&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://github.com/petehunt/react-howto"&gt;react-howto&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/petehunt/webpack-howto"&gt;webpack-howto&lt;/a&gt;&lt;/li&gt;
@@ -701,7 +701,7 @@ bundle
 &lt;li&gt;&lt;a href="https://overreacted.io/"&gt;Overreacted&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://overreacted.io/react-as-a-ui-runtime/"&gt;React as a UI Runtime&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1&gt;How to&lt;/h1&gt;
+&lt;h1 id="how-to"&gt;How to&lt;/h1&gt;
 &lt;p&gt;You have 2 main tools of choice, to compile it into some browser-compliant package: Webpack or Browserify. I personally decided to go with the former, as it's the most popular and offer more possibilites. Briefly, how to start a new project with webpack:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm init &lt;span class="c1"&gt;# Entry point: index.js&lt;/span&gt;
 npm install --save react react-dom babel-preset-react babel-preset-es2015
@@ -720,7 +720,7 @@ npm install babel-loader --save-dev
 npm install babel-loader@5.x --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Configure webpack&lt;/h2&gt;
+&lt;h2 id="configure-webpack"&gt;Configure webpack&lt;/h2&gt;
 &lt;p&gt;There are &lt;a href="http://webpack.github.io/docs/configuration.html"&gt;two ways&lt;/a&gt; to pass the configuration object to webpack. However, here we're going to use the CLI way, which uses a conf file. Create &lt;code&gt;webpack.config.js&lt;/code&gt; at the root of the project, containing this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;exports&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// configuration&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -732,7 +732,7 @@ npm install babel-loader@5.x --save-dev
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_u3z_kIlXgg?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;&lt;a href="https://medium.com/netscape/webpack-3-react-production-build-tips-d20507dba99a"&gt;Tips for Webpack here&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Futher reading&lt;/h1&gt;
+&lt;h1 id="futher-reading"&gt;Futher reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/better-programming/i-almost-got-fired-for-choosing-react-in-our-enterprise-app-846ea840841c"&gt;I Almost Got Fired for Choosing React in Our Enterprise App&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://lacke.mn/reduce-your-bundle-js-file-size/"&gt;Reduce Your bundle.js File Size By Doing This One Thing&lt;/a&gt;&lt;/li&gt;
@@ -754,41 +754,41 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://developers.redhat.com/blog/2017/11/15/best-practices-react-redux-web-application-development/"&gt;Best practices with React and Redux web application development&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/"&gt;Testing Strategies for React and Redux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Bundle size optimization&lt;/h2&gt;
+&lt;h2 id="bundle-size-optimization"&gt;Bundle size optimization&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/danvk/source-map-explorer"&gt;source-map-explorer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/webpack-contrib/webpack-bundle-analyzer"&gt;webpack-bundle-analyzer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d"&gt;Three simple ways to inspect a Webpack bundle&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Performance&lt;/h2&gt;
+&lt;h2 id="performance"&gt;Performance&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://houssein.me/progressive-react"&gt;Progressive React&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=6WvSXoYrM5o"&gt;Improving a React app performance&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/nitin42/react-perf-devtool"&gt;react-perf-devtool&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Functional components&lt;/h2&gt;
+&lt;h2 id="functional-components"&gt;Functional components&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://twitter.com/mjackson/status/1091475757530963968"&gt;Did you know that React classes are actually than function components and that React is optimized for function components?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f"&gt;45% Faster React Functional Components, Now&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/questions/43470659/declare-a-functional-component-as-pure"&gt;Declare a functional component as “pure”&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/groww-engineering/stateless-component-vs-pure-component-d2af88a1200b"&gt;Stateless Component vs Pure Component&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;About Babel&lt;/h2&gt;
+&lt;h2 id="about-babel"&gt;About Babel&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/README.md"&gt;Babel Handbook&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;About Redux&lt;/h2&gt;
+&lt;h2 id="about-redux"&gt;About Redux&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6"&gt;A cartoon intro to Redux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="javascript"></category><category term="react"></category><category term="mobile"></category><category term="android"></category></entry><entry><title>Carrying Out A Web Project</title><link href="//romainpellerin.eu/carrying-out-a-web-project.html" rel="alternate"></link><published>2015-12-03T00:40:00+01:00</published><updated>2015-12-03T00:40:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-12-03:/carrying-out-a-web-project.html</id><summary type="html">&lt;p&gt;Resources for web projects&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are some resources.&lt;/p&gt;
-&lt;h1&gt;How to carry out a web project?&lt;/h1&gt;
+&lt;h1 id="how-to-carry-out-a-web-project"&gt;How to carry out a web project?&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://darklg.me/2012/04/methodologie-integration-web-front-end/"&gt;Ma méthodologie d’intégration web&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://old.etherpad-mozilla.org/RAI9OV5U2k"&gt;Some pieces of advice&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.24joursdeweb.fr/2017/maintenabilite-du-code-html-css-entre-automatisation-et-guide-de-style/"&gt;Maintenabilité du code HTML / CSS : entre automatisation et guide de style&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://css-tricks.com/developer-roadmaps/"&gt;Developer Roadmaps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;CSS&lt;/h1&gt;
+&lt;h1 id="css"&gt;CSS&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/dhoko/Guidelines/blob/master/CSS-guidelines.md"&gt;Pour une CSS simple et réutilisable&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://cssvalues.com/"&gt;CSS Values&lt;/a&gt;: a good documentation about CSS properties&lt;/li&gt;
@@ -805,7 +805,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://css-tricks.com/did-you-know-that-style-and-script-tags-can-be-set-to-display-block/"&gt;Did you know that style and script tags can be set to display: block?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://30-seconds.github.io/30-seconds-of-css/"&gt;30 Seconds of CSS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Support and compatibility&lt;/h2&gt;
+&lt;h2 id="support-and-compatibility"&gt;Support and compatibility&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://caniuse.com"&gt;caniuse.com&lt;/a&gt;: check out the tab 'Relative'&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gs.statcounter.com"&gt;gs.statcounter.com&lt;/a&gt;&lt;/li&gt;
@@ -816,35 +816,35 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://platform-status.mozilla.org"&gt;platform-status.mozilla.org&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://bugzilla.mozilla.com"&gt;bugzilla.mozilla.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Centering&lt;/h2&gt;
+&lt;h2 id="centering"&gt;Centering&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://howtocenterincss.com/"&gt;How to Center in CSS&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Mobile development&lt;/h1&gt;
+&lt;h1 id="mobile-development"&gt;Mobile development&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://putaindecode.fr/posts/frontend/comment-deboguer-du-web-sur-tablettes-et-telephones/"&gt;Comment déboguer facilement du web y compris sur tablettes et téléphones&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Responsive design&lt;/h2&gt;
+&lt;h2 id="responsive-design"&gt;Responsive design&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://goetter.fr/nav/"&gt;Ultra simple Responsive navigation snippets&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Glossary/Responsive_web_design"&gt;Responsive web design&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Compatibility&lt;/h1&gt;
+&lt;h1 id="compatibility"&gt;Compatibility&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://caniuse.com/"&gt;Can I Use&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Testing&lt;/h1&gt;
+&lt;h1 id="testing"&gt;Testing&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://hacks.mozilla.org/2017/03/doubling-down-on-cross-browser-testing/"&gt;Doubling Down on Cross-Browser Testing&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.softwaretestinghelp.com/web-application-testing/"&gt;Web Testing: A Complete guide about testing web applications&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Finalizing&lt;/h1&gt;
+&lt;h1 id="finalizing"&gt;Finalizing&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://webdevchecklist.com/"&gt;Web Developer Checklist&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://frontendchecklist.com/"&gt;Front-End-Checklist&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=SVrgarg3KNs"&gt;Donner du sens à vos pages web avec Schema.org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;HTTPS and security&lt;/h2&gt;
+&lt;h2 id="https-and-security"&gt;HTTPS and security&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://wooster.checkmy.ws/2014/10/upgrade-http-vers-https/"&gt;Check liste pour passer un site de HTTP à HTTPS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.ssllabs.com/ssltest/"&gt;SSL Server Test&lt;/a&gt;&lt;/li&gt;
@@ -859,7 +859,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://wiki.mozilla.org/Security/Guidelines/Web_Security"&gt;Security/Guidelines/Web Security&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://google-gruyere.appspot.com/#0__hackers"&gt;Web Application Exploits and Defenses&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Formatting / minimizing / indentation / compressing&lt;/h2&gt;
+&lt;h2 id="formatting-minimizing-indentation-compressing"&gt;Formatting / minimizing / indentation / compressing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://lab.darklg.me/HTMLLisible/"&gt;HTMLLisible&lt;/a&gt;: auto-indent HTML&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://csslisible.com/en/"&gt;CSSLisible&lt;/a&gt;: order properties and auto-indent CSS&lt;/li&gt;
@@ -869,12 +869,12 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://developers.google.com/speed/pagespeed/insights/"&gt;PageSpeed Insights&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.cowchimp.com/monitoring-unused-css-by-unleashing-the-devtools-protocol/"&gt;Monitoring unused CSS by unleashing the raw power of the DevTools Protocol&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Apache setup&lt;/h2&gt;
+&lt;h2 id="apache-setup"&gt;Apache setup&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/phanan/htaccess"&gt;.htaccess Snippets&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://korben.info/quelques-regles-htaccess-pour-securiser-votre-site.html"&gt;Quelques règles htaccess pour sécuriser votre site&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Favicon&lt;/h2&gt;
+&lt;h2 id="favicon"&gt;Favicon&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.jonathantneal.com/blog/understand-the-favicon/"&gt;Understand the Favicon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://putaindecode.io/fr/articles/favicon/"&gt;Un favicon vite fait bien fait&lt;/a&gt;&lt;/li&gt;
@@ -885,14 +885,14 @@ npm install babel-loader@5.x --save-dev
     favicon.ico
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Useful resources&lt;/h1&gt;
-&lt;h2&gt;UI&lt;/h2&gt;
+&lt;h1 id="useful-resources"&gt;Useful resources&lt;/h1&gt;
+&lt;h2 id="ui"&gt;UI&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://refactoringui.com/"&gt;Refactoring UI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://uidb.io/"&gt;User Interface UI design Inspiration&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog-en.tilda.cc/articles-website-design-mistakes"&gt;Common webpage design mistakes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Fonts&lt;/h2&gt;
+&lt;h2 id="fonts"&gt;Fonts&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.filamentgroup.com/lab/font-loading.html"&gt;How we use web fonts responsibly, or, avoiding a @font-face-palm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://font-display.glitch.me/"&gt;Font-display &lt;/a&gt;&lt;/li&gt;
@@ -901,7 +901,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://css-tricks.com/understanding-web-fonts-getting/"&gt;Understanding Web Fonts and Getting the Most Out of Them&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://css-tricks.com/fitting-text-to-a-container/"&gt;Fitting Text to a Container&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Icons&lt;/h2&gt;
+&lt;h2 id="icons"&gt;Icons&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://goetter.fr/unicode/"&gt;Icones web Unicode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pictonic.co/free"&gt;Pictonic - free&lt;/a&gt;&lt;/li&gt;
@@ -912,36 +912,36 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="http://benfrain.com/seriously-use-icon-fonts/"&gt;Seriously, use icon fonts&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://preethisam.com/2018/06/25/how-to-use-emojis-as-icons/"&gt;How to Use Emojis as Icon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Images&lt;/h2&gt;
+&lt;h2 id="images"&gt;Images&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://css-tricks.com/sometimes-sizes-is-quite-important/"&gt;Sometimes &lt;code&gt;sizes&lt;/code&gt; is quite important.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[DevFest Nantes 2018 - Fast and Beautiful Modern Image Delivery Techniques(https://www.youtube.com/watch?v=bTKRic9FWmM)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://responsivebreakpoints.com/"&gt;Responsive Image Breakpoints Generator&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Debugging&lt;/h2&gt;
+&lt;h2 id="debugging"&gt;Debugging&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/datadriveninvestor/stopping-using-console-log-and-start-using-your-browsers-debugger-62bc893d93ff"&gt;How to stop using console.log() and start using your browser’s debugger&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.24joursdeweb.fr/2018/la-console-javascript-avancee/"&gt;La console JavaScript avancée&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Bonus: HTML Emails&lt;/h1&gt;
+&lt;h1 id="bonus-html-emails"&gt;Bonus: HTML Emails&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.sitepoint.com/my-current-html-email-development-workflow/"&gt;My Current HTML Email Development Workflow&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.inkbrush.com/"&gt;Build Fully Responsive Email In Just Minutes.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://foundation.zurb.com/emails.html"&gt;Foundation for Emails&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Going further&lt;/h1&gt;
-&lt;h2&gt;Methodology&lt;/h2&gt;
+&lt;h1 id="going-further"&gt;Going further&lt;/h1&gt;
+&lt;h2 id="methodology"&gt;Methodology&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.aaron-gray.com/a-criticism-of-scrum/"&gt;A CRITICISM OF SCRUM&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.aaron-gray.com/ways-to-protect-flow/"&gt;WAYS TO PROTECT FLOW&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Web Assembly&lt;/h2&gt;
+&lt;h2 id="web-assembly"&gt;Web Assembly&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/mbasso/awesome-wasm"&gt;Awesome wasm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.openbloc.fr/webassembly-first-steps/"&gt;WebAssembly 101: a developer's first steps&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.octo.com/en/webassembly-an-executable-format-for-the-web/"&gt;WebAssembly, an executable format for the web &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;PWAs&lt;/h2&gt;
+&lt;h2 id="pwas"&gt;PWAs&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154"&gt;A Pinterest Progressive Web App Performance Case Study&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developers.google.com/web/ilt/pwa/lab-migrating-to-workbox-from-sw-precache-and-sw-toolbox"&gt;Lab: Migrating to Workbox from sw-precache and sw-toolbox&lt;/a&gt;&lt;/li&gt;
@@ -949,21 +949,21 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://developers.google.com/web/tools/workbox/"&gt;Workbox&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc"&gt;Google Play Store now open for Progressive Web Apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Linters&lt;/h2&gt;
+&lt;h2 id="linters"&gt;Linters&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/stylelint/stylelint"&gt;CSS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/eslint/eslint"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Testing&lt;/h2&gt;
+&lt;h2 id="testing_1"&gt;Testing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://hacks.mozilla.org/2017/12/using-headless-mode-in-firefox/"&gt;Using Headless Mode in Firefox&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Performance&lt;/h2&gt;
+&lt;h2 id="performance"&gt;Performance&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=YJGCZCaIZkQ"&gt;Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O ’19)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://web.dev/fast/"&gt;Fast load times&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Misc&lt;/h2&gt;
+&lt;h2 id="misc"&gt;Misc&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/"&gt;6 Rules of thumb to build blazing fast web server applications&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7"&gt;10 things I learned making the fastest site in the world&lt;/a&gt;&lt;/li&gt;
@@ -986,7 +986,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://github.com/Microsoft/frontend-bootcamp"&gt;Frontend Bootcamp / Days in the Web&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://illustrated.dev/"&gt;Illustrated.dev&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Code"></category><category term="web"></category><category term="code"></category><category term="html"></category><category term="css"></category><category term="javascript"></category></entry><entry><title>Embracing Java</title><link href="//romainpellerin.eu/embracing-java.html" rel="alternate"></link><published>2015-12-03T00:35:00+01:00</published><updated>2015-12-03T00:35:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-12-03:/embracing-java.html</id><summary type="html">&lt;p&gt;Java is cool! Here are some useful resources.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are some useful links about Java.&lt;/p&gt;
-&lt;h1&gt;General&lt;/h1&gt;
+&lt;h1 id="general"&gt;General&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.roseindia.net/java/beginners/OSInformation.shtml"&gt;Operating System Information&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html"&gt;Summary of Operators&lt;/a&gt;&lt;/li&gt;
@@ -995,7 +995,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://github.com/winterbe/java8-tutorial"&gt;Modern Java - A Guide to Java 8&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/7569658/where-can-i-find-javaee-packages-sources"&gt;Where can I find JavaEE packages' sources?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Concurrency&lt;/h1&gt;
+&lt;h1 id="concurrency"&gt;Concurrency&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://rom.developpez.com/java-synchronisation/"&gt;Java et la synchronisation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://alwin.developpez.com/tutorial/JavaThread/"&gt;Programmation des threads en Java&lt;/a&gt;&lt;/li&gt;
@@ -1004,19 +1004,19 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="http://viennet.developpez.com/cours/java/thread/"&gt;Cours Thread et Communication en Java&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://zenika.developpez.com/tutoriels/java/core/javaprogconcurrente/"&gt;Introduction à la programmation concurrente en Java&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Code quality&lt;/h1&gt;
+&lt;h1 id="code-quality"&gt;Code quality&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.qulice.com/"&gt;Source Code Quality Police (Qulice)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Blogs&lt;/h1&gt;
+&lt;h1 id="blogs"&gt;Blogs&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.yegor256.com/"&gt;Blog About Computers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="java"></category></entry><entry><title>Developing For Android</title><link href="//romainpellerin.eu/developing-for-android.html" rel="alternate"></link><published>2015-12-02T16:30:00+01:00</published><updated>2015-12-02T16:30:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-12-02:/developing-for-android.html</id><summary type="html">&lt;p&gt;Resources for Android development&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are some useful resources for Android development.&lt;/p&gt;
-&lt;h1&gt;Internationalization&lt;/h1&gt;
+&lt;h1 id="internationalization"&gt;Internationalization&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2017/03/13/i18n-good-practices/"&gt;Internationalizing an Android app&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Design&lt;/h1&gt;
+&lt;h1 id="design"&gt;Design&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://romannurik.github.io/AndroidAssetStudio/"&gt;Android Asset Studio&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/"&gt;Android Cheatsheet for Graphic Designers&lt;/a&gt;&lt;/li&gt;
@@ -1025,51 +1025,51 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="http://google.github.io/material-design-icons/"&gt;Material icons guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/lgvalle/Material-Animations"&gt;Android Transition animations explanation with examples&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Fragments&lt;/h1&gt;
+&lt;h1 id="fragments"&gt;Fragments&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://mathias-seguy.developpez.com/cours/android/fragments/"&gt;Les Fragments&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Asynchronism&lt;/h1&gt;
+&lt;h1 id="asynchronism"&gt;Asynchronism&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://android-er.blogspot.fr/2014/04/run-multi-asynctask-as-same-time.html"&gt;Run multi AsyncTask at the same time&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Security&lt;/h1&gt;
+&lt;h1 id="security"&gt;Security&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://android-developers.blogspot.fr/2013/02/using-cryptography-to-store-credentials.html"&gt;Using Cryptography to Store Credentials Safely&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://docs.google.com/presentation/d/1TvS_mAvDpuaODAK4RG77x0OZsH4CfmxkYM9u1b6JDPo/mobilepresent"&gt;Secure your app: Fight the leaks! - Samsung&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Libraries&lt;/h1&gt;
+&lt;h1 id="libraries"&gt;Libraries&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://android-arsenal.com/"&gt;Android Arsenal&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://play.google.com/store/apps/details?id=com.desarrollodroide.repos"&gt;Libraries for developers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://infinum.co/the-capsized-eight/articles/top-5-android-libraries-every-android-developer-should-know-about"&gt;Top 5 Android libraries every Android developer should know about&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Finalizing the app / promoting it&lt;/h1&gt;
+&lt;h1 id="finalizing-the-app-promoting-it"&gt;Finalizing the app / promoting it&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://placeit.net/"&gt;Free iPhone Mockup Generator &amp;amp; App Demo Videos by Placeit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://developer.android.com/distribute/tools/promote/device-art.html"&gt;Device Art Generator&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.opoloo.com/blog/articles/android-app-publishing-checklist--2"&gt;Android App Publishing Checklist&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Testing&lt;/h1&gt;
+&lt;h1 id="testing"&gt;Testing&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2015/04/17/tests-android/"&gt;No more excuses, Android testing is possible&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2016/02/16/unit-tests/"&gt;3 unit tests to avoid bad surprises on Android&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Continuous Integration&lt;/h1&gt;
+&lt;h1 id="continuous-integration"&gt;Continuous Integration&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2016/04/19/gocd-android/"&gt;Use GoCD for Android and get rid of Jenkins&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2016/01/14/devops-on-android/"&gt;DevOps on Android: From one Git push to production&lt;/a&gt; and &lt;a href="https://www.youtube.com/watch?v=3Ises8TgAp4"&gt;the talk given by the author&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://engineeringblog.yelp.com/2017/04/continuous-integration-on-android.html"&gt;Continuous Integration on Android&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;h1 id="further-reading"&gt;Further reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/google-developers/developing-for-android-introduction-5345b451567c"&gt;Developing for Android: Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ekN2zvFytZk"&gt;Deep Dive Into State Restoration (en) - Cyril Mottier, Capitaine Train - Droidcon Paris 2014&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://cyrilmottier.com/2014/12/09/a-story-of-software-development-methodologies/"&gt;A Story of Software Development Methodologies&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="android"></category><category term="java"></category></entry><entry><title>Introduction To Functional Programming</title><link href="//romainpellerin.eu/introduction-to-functional-programming.html" rel="alternate"></link><published>2015-10-21T23:30:00+02:00</published><updated>2015-10-21T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-10-21:/introduction-to-functional-programming.html</id><summary type="html">&lt;p&gt;What is functional programming, some resources and how to start painlessly&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Functional programming is the new hotness... or not&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="android"></category><category term="java"></category></entry><entry><title>Introduction To Functional Programming</title><link href="//romainpellerin.eu/introduction-to-functional-programming.html" rel="alternate"></link><published>2015-10-21T23:30:00+02:00</published><updated>2015-10-21T23:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-10-21:/introduction-to-functional-programming.html</id><summary type="html">&lt;p&gt;What is functional programming, some resources and how to start painlessly&lt;/p&gt;</summary><content type="html">&lt;h1 id="functional-programming-is-the-new-hotness-or-not"&gt;Functional programming is the new hotness... or not&lt;/h1&gt;
 &lt;p&gt;Functional programming, or &lt;strong&gt;FP&lt;/strong&gt; to its friends, is a quite old paradigm, but still very little used. Here are some useful resources to get started with this, &lt;strong&gt;easily&lt;/strong&gt;.&lt;/p&gt;
-&lt;h1&gt;Resources&lt;/h1&gt;
-&lt;h2&gt;General&lt;/h2&gt;
+&lt;h1 id="resources"&gt;Resources&lt;/h1&gt;
+&lt;h2 id="general"&gt;General&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@jugoncalves/functional-programming-should-be-your-1-priority-for-2015-47dd4641d6b9"&gt;Functional Programming should be your #1 priority for 2015&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html"&gt;Functors, Applicatives, And Monads In Pictures&lt;/a&gt;&lt;/li&gt;
@@ -1077,7 +1077,7 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=d-h0rsLKc9c"&gt;Apéro fonctionnel (P. Charrière - N. Leroux - E. Issartial - Q. Adam - T. Guenoux)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/hemanth/functional-programming-jargon"&gt;Jargon from the functional programming world in simple terms!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;FP with Javascript&lt;/h2&gt;
+&lt;h2 id="fp-with-javascript"&gt;FP with Javascript&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://medium.com/javascript-scene/the-rise-and-fall-and-rise-of-functional-programming-composable-software-c2d91b424c8c"&gt;The Rise and Fall and Rise of Functional Programming (Composing Software)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/MostlyAdequate/mostly-adequate-guide"&gt;Mostly Adequate Guide To FP&lt;/a&gt;&lt;/li&gt;
@@ -1093,29 +1093,29 @@ npm install babel-loader@5.x --save-dev
 &lt;li&gt;&lt;a href="http://javascriptplayground.com/blog/2014/04/real-life-es6-arrow-fn/"&gt;ES6 Arrow functions&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://casualjavascript.com/javascript/es6/haskell/native/implementation/2015/11/12/haskell-in-es6-part-1.html"&gt;Haskell in ES6: Part 1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Scala&lt;/h2&gt;
+&lt;h2 id="scala"&gt;Scala&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://blog.clement.delafargue.name/posts/2015-05-19-fp-patterns-scala-beginners.html"&gt;FP patterns for Scala beginners&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Haskell&lt;/h2&gt;
+&lt;h2 id="haskell"&gt;Haskell&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://wiki.haskell.org/Learn_Haskell_in_10_minutes"&gt;Learn Haskell in 10 minutes&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://learnyouahaskell.com/chapters"&gt;Learn You a Haskell For Great Good!&lt;/a&gt; (&lt;a href="http://lyah.haskell.fr/"&gt;French version&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://docs.haskellstack.org/en/stable/README/"&gt;The Haskell Tool Stack&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Erlang&lt;/h2&gt;
+&lt;h2 id="erlang"&gt;Erlang&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://learnyousomeerlang.com/content"&gt;Learn You Some Erlang For Gread Good!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.wired.com/2015/09/whatsapp-serves-900-million-users-50-engineers/"&gt;Why WhatsApp Only Needs 50 Engineers for Its 900M Users&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Code"></category><category term="javascript"></category><category term="code"></category><category term="functional programming"></category><category term="fp"></category></entry><entry><title>JavaScript</title><link href="//romainpellerin.eu/javascript.html" rel="alternate"></link><published>2015-10-21T23:00:00+02:00</published><updated>2017-03-14T22:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-10-21:/javascript.html</id><summary type="html">&lt;p&gt;Why Javascript is the new hotness&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Dates&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Code"></category><category term="javascript"></category><category term="code"></category><category term="functional programming"></category><category term="fp"></category></entry><entry><title>JavaScript</title><link href="//romainpellerin.eu/javascript.html" rel="alternate"></link><published>2015-10-21T23:00:00+02:00</published><updated>2017-03-14T22:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-10-21:/javascript.html</id><summary type="html">&lt;p&gt;Why Javascript is the new hotness&lt;/p&gt;</summary><content type="html">&lt;h1 id="dates"&gt;Dates&lt;/h1&gt;
 &lt;p&gt;Use &lt;a href="https://github.com/date-fns/date-fns"&gt;date-fns&lt;/a&gt;. It is &lt;a href="https://github.com/date-fns/date-fns/issues/275"&gt;lighter&lt;/a&gt; than Moment.js. And it is &lt;a href="https://twitter.com/dan_abramov/status/805030922785525760"&gt;immutable&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;A word on ESlint&lt;/h1&gt;
+&lt;h1 id="a-word-on-eslint"&gt;A word on ESlint&lt;/h1&gt;
 &lt;p&gt;ESlint is probably the most popular linter for JavaScript. It is also very convenient and benefits from a large community. That is why I use it.&lt;/p&gt;
 &lt;p&gt;When I started using, I got confused by two different things: &lt;a href="http://eslint.org/docs/developer-guide/shareable-configs"&gt;shareable configs&lt;/a&gt; and &lt;a href="http://eslint.org/docs/developer-guide/working-with-plugins"&gt;plugins&lt;/a&gt;. This &lt;a href="https://groups.google.com/forum/#!topic/eslint/ttZUG3v7vn0"&gt;thread&lt;/a&gt; explains the difference between the two quite well. Here is my version:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plugins are like function definitions (a set of custom rules). Configs are like actual calls to thoses functions (pre-defined configuration of rules - like whether they're enabled or not, and how they are configured).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1&gt;How to start a new JavaScript project?&lt;/h1&gt;
+&lt;h1 id="how-to-start-a-new-javascript-project"&gt;How to start a new JavaScript project?&lt;/h1&gt;
 &lt;p&gt;If it is a simple project or a NPM package, I recommend having two distinct folders: &lt;code&gt;src&lt;/code&gt; for sources and &lt;code&gt;dist&lt;/code&gt; for builds.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1174,23 +1174,23 @@ yarn add --dev eslint-config-standard &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;All set!&lt;/p&gt;
-&lt;h1&gt;Resources&lt;/h1&gt;
-&lt;h2&gt;NodeJS&lt;/h2&gt;
+&lt;h1 id="resources"&gt;Resources&lt;/h1&gt;
+&lt;h2 id="nodejs"&gt;NodeJS&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://node.green/"&gt;Node.js ES2015/ES6, ES2016 and ES2017 support&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=RIRB2AFrPV8"&gt;Node js comme les grands (Romain Maton)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/i0natan/nodebestpractices"&gt;Node.js Best Practices&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Set-up your environment&lt;/h2&gt;
+&lt;h2 id="set-up-your-environment"&gt;Set-up your environment&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://eslint.org/docs/user-guide/getting-started"&gt;Getting Started with ESLint&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Documentation&lt;/h2&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://usejsdoc.org/index.html"&gt;JSDoc&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/senchalabs/jsduck"&gt;JSDuck&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;General&lt;/h2&gt;
+&lt;h2 id="general"&gt;General&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=t52gxrBGAIQ"&gt;Dans cette jungle de l’outillage JavaScript, un retour à la simplicité est-... (Hubert SABLONNIÈRE)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://30secondsofcode.org/"&gt;30 seconds of code&lt;/a&gt;&lt;/li&gt;
@@ -1234,7 +1234,7 @@ yarn add --dev eslint-config-standard &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://jakearchibald.com/2021/export-default-thing-vs-thing-as-default/"&gt;&lt;code&gt;export default thing&lt;/code&gt; is different to &lt;code&gt;export { thing as default }&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jakearchibald.com/2021/last-return-wins/"&gt;In JS functions, the 'last' return wins&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Some cool node/npm stuff/packages/tools&lt;/h2&gt;
+&lt;h2 id="some-cool-nodenpm-stuffpackagestools"&gt;Some cool node/npm stuff/packages/tools&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://blog.risingstack.com/how-to-become-a-better-node-js-developer-in-2016/"&gt;How to Become a Better Node.js Developer in 2016&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.heroku.com/archives/2015/11/10/node-habits-2016"&gt;10 Habits of a Happy Node Hacker (2016)&lt;/a&gt;&lt;/li&gt;
@@ -1246,7 +1246,7 @@ yarn add --dev eslint-config-standard &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://github.com/shime/livedown"&gt;Livedown&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.sequelizejs.com/en/v3/"&gt;Sequelize: a promise-based ORM for Node.js (PostgreSQL, MySQL, MariaDB, SQLite and MSSQL)&lt;/a&gt; + &lt;a href="https://github.com/dchester/epilogue"&gt;Epilogue: create flexible REST endpoints and controllers from Sequelize models in your Express app&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Closures&lt;/h2&gt;
+&lt;h2 id="closures"&gt;Closures&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://renderedtext.com/blog/2015/11/18/closures-are-not-magic/"&gt;Closures are not magic&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1255,14 +1255,14 @@ yarn add --dev eslint-config-standard &lt;span class="se"&gt;\&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"&gt;Before ECMAScript 6 (double closures)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.sitepoint.com/preparing-ecmascript-6-let-const/"&gt;After ECMAScript 6 (the let keyword)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Testing&lt;/h2&gt;
+&lt;h2 id="testing"&gt;Testing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://karma-runner.github.io/1.0/index.html"&gt;Karma&lt;/a&gt; with &lt;a href="https://jasmine.github.io/"&gt;Jasmine&lt;/a&gt; (&lt;strong&gt;edit March 14, 2017: I'd rather recommend going with Jest instead of Jasmine. Karma is different from Jest or Jasmine, it runs tests within web browsers, whereas plain Jasmine/Jest use Nodejs&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Code"></category><category term="javascript"></category><category term="code"></category><category term="web"></category><category term="node"></category></entry><entry><title>Documentation</title><link href="//romainpellerin.eu/documentation.html" rel="alternate"></link><published>2015-09-25T12:00:00+02:00</published><updated>2015-10-21T23:43:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-09-25:/documentation.html</id><summary type="html">&lt;p&gt;Resources related to documentation&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Create your documentation&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Code"></category><category term="javascript"></category><category term="code"></category><category term="web"></category><category term="node"></category></entry><entry><title>Documentation</title><link href="//romainpellerin.eu/documentation.html" rel="alternate"></link><published>2015-09-25T12:00:00+02:00</published><updated>2015-10-21T23:43:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-09-25:/documentation.html</id><summary type="html">&lt;p&gt;Resources related to documentation&lt;/p&gt;</summary><content type="html">&lt;h1 id="create-your-documentation"&gt;Create your documentation&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://readthedocs.org/"&gt;Read the Docs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Real world documentations&lt;/h1&gt;
+&lt;h1 id="real-world-documentations"&gt;Real world documentations&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://devdocs.io/express/"&gt;All the documentations about EVERYTHING (DevDocs)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://overapi.com/"&gt;All the cheatsheets about EVERYTHING (OverAPI)&lt;/a&gt;&lt;/li&gt;
@@ -1276,9 +1276,9 @@ I also used &lt;a href="https://github.com/rpellerin/php-mvc-base"&gt;PHP&lt;/a&
 &lt;p&gt;But that's not our purpose in this article. Let's move on to the big question, "&lt;em&gt;How to design an efficient REST API&lt;/em&gt;". Then, we'll have a quick look at &lt;a href="http://expressjs.com/"&gt;Express&lt;/a&gt;, a famous Javascript framework and one of the best for APIs, in my opinion.&lt;/p&gt;
 &lt;p&gt;In this article, I'll try to follow what &lt;a href="http://martinfowler.com/articles/richardsonMaturityModel.html"&gt;someone once wrote beautifully&lt;/a&gt;, in order to introduce REST APIs, and gradually explain how to improve them. I assume you - the reader - have some knowledge of the HTTP protocol.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.ssllabs.com/"&gt;It goes without saying that you &lt;strong&gt;must use HTTPS&lt;/strong&gt; to ensure privacy. This way, everything will be encrypted and anyone sniffing the network won't be able to see the content of your requests or responses.&lt;/a&gt; Let's dive into REST APIs now!&lt;/p&gt;
-&lt;h1&gt;You said "&lt;em&gt;REST&lt;/em&gt;"?&lt;/h1&gt;
+&lt;h1 id="you-said-rest"&gt;You said "&lt;em&gt;REST&lt;/em&gt;"?&lt;/h1&gt;
 &lt;p&gt;In "&lt;em&gt;REST API&lt;/em&gt;", "&lt;em&gt;REST&lt;/em&gt;" stands for "&lt;em&gt;Representational State Transfer&lt;/em&gt;", which is the software architectural style of the web. Basically, this means that any REST API relies on the HTTP protocol (and by extension HTTPS). As a consequence, the first step is to understand all the strengths and weaknesses of HTTP in order to use everything it has to offer. I will only be referring to HTTP version 1.1 in this article, since version 2 is still hardly used overall, and quite badly supported.&lt;/p&gt;
-&lt;h1&gt;It's all about resources&lt;/h1&gt;
+&lt;h1 id="its-all-about-resources"&gt;It's all about resources&lt;/h1&gt;
 &lt;p&gt;URLs (&lt;em&gt;Uniform Resource Locator&lt;/em&gt;) represent resources. When designing an API, think about it as resource containers. Every end-point should represent either &lt;strong&gt;a resource&lt;/strong&gt; or &lt;strong&gt;a list of resources&lt;/strong&gt;. Following this, there must be &lt;strong&gt;two-end points per resource&lt;/strong&gt;, the resource collection, and an individual resource within the collection:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/myresource
 /myresource/{id}
@@ -1304,9 +1304,9 @@ I also used &lt;a href="https://github.com/rpellerin/php-mvc-base"&gt;PHP&lt;/a&
 /users/{userId}/messages/{messageId}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Naming convention&lt;/h2&gt;
+&lt;h2 id="naming-convention"&gt;Naming convention&lt;/h2&gt;
 &lt;p&gt;To remain consistent, try to use the plural form of every word used for your end-points, it will make things easier. &lt;a href="https://en.wikipedia.org/wiki/CamelCase"&gt;&lt;em&gt;camelCase&lt;/em&gt;&lt;/a&gt; is also a good practice, when necessary (but we always try to use simple single words).&lt;/p&gt;
-&lt;h1&gt;Methods (also called verbs)&lt;/h1&gt;
+&lt;h1 id="methods-also-called-verbs"&gt;Methods (also called verbs)&lt;/h1&gt;
 &lt;p&gt;One of the biggest strengths of HTTP is &lt;a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"&gt;its verbs&lt;/a&gt;. The most popular are GET and POST. The latter is mostly used for asynchronous calls (AJAX) or forms in web pages, whereas the former is used every time a page is accessed or reloaded from a browser.&lt;/p&gt;
 &lt;p&gt;So, what are the equivalent verbs for our old friend called &lt;em&gt;CRUD&lt;/em&gt; (Create, Read, Update and Delete)? &lt;strong&gt;PUT&lt;/strong&gt;, &lt;strong&gt;GET&lt;/strong&gt;, &lt;strong&gt;POST&lt;/strong&gt; and &lt;strong&gt;DELETE&lt;/strong&gt;. Consequently, any well designed REST API must make use of at least these four verbs. And yes, HTTP has more &lt;a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"&gt;than four verbs&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;For example, this is how to create, get, update and delete a specific user:&lt;/p&gt;
@@ -1322,7 +1322,7 @@ DELETE /users/&lt;span class="o"&gt;{&lt;/span&gt;id&lt;span class="o"&gt;}&lt;/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a href="http://www.restapitutorial.com/"&gt;More information about verbs&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Understanding HTTP&lt;/h1&gt;
+&lt;h1 id="understanding-http"&gt;Understanding HTTP&lt;/h1&gt;
 &lt;p&gt;At this point, I need to add some explanation about the HTTP protocol. Every HTTP transaction (request or response) is made of three main parts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;An initial line&lt;/li&gt;
@@ -1354,7 +1354,7 @@ Hello world
 
 &lt;p&gt;That said, let’s get back to APIs.&lt;/p&gt;
 &lt;p&gt;In the previous sections we learned the correct use of the HTTP verbs, so now let's talk about the body and the status code. Headers will come later.&lt;/p&gt;
-&lt;h1&gt;Transmitting data&lt;/h1&gt;
+&lt;h1 id="transmitting-data"&gt;Transmitting data&lt;/h1&gt;
 &lt;p&gt;How can a client update a user on the server? What if someone wants to update their biography for example? Or wants to mention their age? Likewise, how does the server respond and send data back to clients? Here come the status codes and the body.&lt;/p&gt;
 &lt;p&gt;Basically, clients need to send &lt;strong&gt;one type of information&lt;/strong&gt; in the body: data to be put into the remote database, via a &lt;strong&gt;PUT&lt;/strong&gt; or &lt;strong&gt;POST&lt;/strong&gt; request. It can be either to create a new resource or to update it (it depends on the HTTP verb used).&lt;/p&gt;
 &lt;p&gt;On the other hand, the server can send different types of information:&lt;/p&gt;
@@ -1368,7 +1368,7 @@ Hello world
 &lt;li&gt;&lt;strong&gt;Some details about a resource&lt;/strong&gt; newly created, in response to a &lt;strong&gt;PUT&lt;/strong&gt; or &lt;strong&gt;POST&lt;/strong&gt; request. For example, the resource's unique identifier or URL, to access this resource.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;As you can see, the body is only dedicated to the requested resources(s). That's all. All other useful information &lt;strong&gt;must&lt;/strong&gt; be transmitted via the HTTP status code or headers.&lt;/p&gt;
-&lt;h2&gt;The status code&lt;/h2&gt;
+&lt;h2 id="the-status-code"&gt;The status code&lt;/h2&gt;
 &lt;p&gt;Want to tell the client the resource has been created? Use the code 201. Want to say something went wrong? 500. Forbidden? 403. Resource not found? 404. &lt;a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes"&gt;Choose the right one&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here are the most used status codes for an API:&lt;/p&gt;
 &lt;table&gt;
@@ -1423,25 +1423,25 @@ Hello world
 &lt;/table&gt;
 &lt;p&gt;The HTTP protocol is very flexible, allowing us to use any non existing code if needed and relevant, when none of them fits our needs. For example, the range 550-599 can be used freely, the way you want.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://i.stack.imgur.com/whhD1.png"&gt;Need help in choosing the correct status code?&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;The body&lt;/h2&gt;
+&lt;h2 id="the-body"&gt;The body&lt;/h2&gt;
 &lt;p&gt;Sending parameters, from HTML forms, is pretty easy, it's a key-value thing, where parameters are separated by "&amp;amp;", like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;firstName=Jon&amp;amp;lastName=Snow
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Here, there's no recommended convention. I used camelCase (as shown above) without any particular reason. Choose one and be consistent.&lt;/p&gt;
 &lt;p&gt;However, out of the context of HTML forms, how to format the body? Well, one could say we could use the same key-value format, but actually, it's not a good idea. Let's see what options we have.&lt;/p&gt;
-&lt;h3&gt;A historic battle: XML vs. JSON or SOAP vs. REST&lt;/h3&gt;
+&lt;h3 id="a-historic-battle-xml-vs-json-or-soap-vs-rest"&gt;A historic battle: XML vs. JSON or SOAP vs. REST&lt;/h3&gt;
 &lt;p&gt;You have two main options: XML or JSON. Nowadays, a lot of people use JSON. I won't try to defend JSON here, please &lt;a href="http://www.json.org/xml.html"&gt;read this comparison&lt;/a&gt; or &lt;a href="http://www.json.org/"&gt;the official description&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To briefly sum it up, JSON brings efficiency, lightness and high-readability in a single format. Additionally, it's extremely easy to parse with any language, thanks to a great integration and a lot of support. It’s definitely the most popular format when dealing with APIs. You can easily create a single object or an array of objects.&lt;/p&gt;
 &lt;p&gt;Just keep in mind that JSON is probably your best ally.&lt;/p&gt;
-&lt;h2&gt;A particular header&lt;/h2&gt;
+&lt;h2 id="a-particular-header"&gt;A particular header&lt;/h2&gt;
 &lt;p&gt;Earlier on, we saw that the second part of every HTTP request is the headers section. Let me introduce one of them, probably the most important one: &lt;code&gt;Content-Type&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Its only purpose is to specify what kind of data we are sending. Consequently, in our case, this header should be like:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Content-Type: application/json
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Basically, its value is just a &lt;a href="https://en.wikipedia.org/wiki/Media_type"&gt;MIME type&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Real world example&lt;/h1&gt;
+&lt;h1 id="real-world-example"&gt;Real world example&lt;/h1&gt;
 &lt;p&gt;A &lt;strong&gt;POST&lt;/strong&gt; request sent by the client:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;POST /users HTTP/1.1
 Host: my-api.com
@@ -1501,7 +1501,7 @@ Content-Type: application/json
 &lt;p&gt;But... (there's always a &lt;em&gt;but&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;We don't take advantage of all the strengths of HTTP. Headers, you remember? And what if we want to apply some filters to our &lt;strong&gt;GET&lt;/strong&gt; requests? Sorting? What about pagination? Getting your 1M users in a single response body isn't a good idea, trust me.&lt;/p&gt;
 &lt;p&gt;More importantly, what about security? Authentication? But first, let's talk about HATEOAS...&lt;/p&gt;
-&lt;h1&gt;&lt;a href="http://putaindecode.fr/posts/api/hateoas/"&gt;HATEOAS, the Holy Grail&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="hateoas-the-holy-grail"&gt;&lt;a href="http://putaindecode.fr/posts/api/hateoas/"&gt;HATEOAS, the Holy Grail&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Most of the time, to access a specific resource, you need to:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Get the list of resources, e.g. &lt;code&gt;GET /users&lt;/code&gt;&lt;/li&gt;
@@ -1548,9 +1548,9 @@ Content-Type: application/json
 
 &lt;p&gt;I'm not a huge fan of HATEOAS. I believe that an API should be consistent in its manner of accessing resources. I like to assume that, as soon as I know a resource's unique identifier, I can access it by constructing its URL, as I explained above. So, I don't need the links, I can construct them by myself.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;But I'm wrong&lt;/strong&gt;. This is definitely the best way to do. It adds a layer of abstraction. If one day you change the way to access a resource (not with a unique identifier anymore, but with a token, or an email address, or anything), if you always provided the link for each resource, the change would be transparent for your users.&lt;/p&gt;
-&lt;h1&gt;Headers are metadata&lt;/h1&gt;
+&lt;h1 id="headers-are-metadata"&gt;Headers are metadata&lt;/h1&gt;
 &lt;p&gt;A great thing to consider is that the body &lt;strong&gt;must&lt;/strong&gt; only contain the requested resource(s). Any other piece of information must go to the headers. Furthermore, you can create any header you want.&lt;/p&gt;
-&lt;h2&gt;Authentication&lt;/h2&gt;
+&lt;h2 id="authentication"&gt;Authentication&lt;/h2&gt;
 &lt;p&gt;There are two major concepts under the name of &lt;em&gt;authentication&lt;/em&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Sign up/Log in/Log out: &lt;strong&gt;user management&lt;/strong&gt;&lt;/li&gt;
@@ -1572,14 +1572,14 @@ Security-Access-Level: 3
 
 &lt;p&gt;Obviously, as I said in the beginning of this article, all of this doesn't make sense at all if you don't use HTTPS (and force it!). You really don't want to expose such keys to anyone on the network.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://restcookbook.com/Basics/loggingin/"&gt;More information about authentication&lt;/a&gt; and about &lt;a href="http://blog.slaks.net/2015-10-13/web-authentication-arms-race-a-tale-of-two-security-experts/"&gt;security in general&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Location&lt;/h2&gt;
+&lt;h2 id="location"&gt;Location&lt;/h2&gt;
 &lt;p&gt;Another useful header is &lt;code&gt;Location&lt;/code&gt;. A good practice is to use it after creating a resource with &lt;strong&gt;POST&lt;/strong&gt;, to give back the location of the resource newly created. This way, no body is needed and your API can respond with a status code &lt;em&gt;201 Created&lt;/em&gt;, without a body. For example, after creating the user &lt;em&gt;Jon Snow&lt;/em&gt;, we would get:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;HTTP/1.1 201 Created
 Location: https://my-api.com/users/123
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The protocol and domain are optional, we could just send &lt;code&gt;/users/123&lt;/code&gt;.&lt;/p&gt;
-&lt;h2&gt;Other useful piece of information&lt;/h2&gt;
+&lt;h2 id="other-useful-piece-of-information"&gt;Other useful piece of information&lt;/h2&gt;
 &lt;p&gt;Basically, you can create as many custom headers as you want. A good practice with end-points returning a list of resources, is to give the total number of records in the database when relevant, via a header. You may wonder why, since we can programmatically count the number of results. But, as I will explain it in the next section, you are never going to return the full list of results in a single response.&lt;/p&gt;
 &lt;p&gt;So, this is an example of a header specifying the number of rows. The request:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GET /users HTTP/1.1
@@ -1600,7 +1600,7 @@ Total-Rows: 7897
 ]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1&gt;Pagination&lt;/h1&gt;
+&lt;h1 id="pagination"&gt;Pagination&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;When returning a list of resources&lt;/strong&gt;, above a certain number or results, you should split your response in pages. It's a good practice for reducing waiting time and the weight of responses. Moreover, you might not need the whole list at once. Depending on the amount of details provided for each resource, a general rule would be returning between 100 and 1000 results per request as a maximum.&lt;/p&gt;
 &lt;p&gt;Requesting a page is as simple as providing a query parameter:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GET /users?page=3
@@ -1648,7 +1648,7 @@ Total-Rows: 7897
 &lt;li&gt;A new user (Mary) signs up on your website/mobile application, aged of 24.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;GET /users?page=1&lt;/code&gt;: you get results from Jean to Bob. You got the same person twice (Jean), this is a problem.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;What happened?&lt;/h2&gt;
+&lt;h2 id="what-happened"&gt;What happened?&lt;/h2&gt;
 &lt;p&gt;As Mary is 24 and the API returns results sorted by age, Mary would be returned on page 0, which shifts Jean to page 1.&lt;/p&gt;
 &lt;p&gt;A good way to solve this problem is to create a pagination based on an entity (here, a user). Instead of requesting a particular page, you would say to the API "&lt;em&gt;give me results after this user&lt;/em&gt;" or "&lt;em&gt;before this user&lt;/em&gt;". Let me explain it by replaying our scenario:&lt;/p&gt;
 &lt;ol&gt;
@@ -1667,7 +1667,7 @@ Total-Rows: 7897
 &lt;li&gt;If a page returns this entire collection, use the status code 200. Otherwise, use the status code 206 (&lt;em&gt;Partial Content&lt;/em&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="http://metabates.com/2012/02/22/adding-pagination-to-an-api/"&gt;More information about pagination&lt;/a&gt;.&lt;/p&gt;
-&lt;h1&gt;Filtering and sorting&lt;/h1&gt;
+&lt;h1 id="filtering-and-sorting"&gt;Filtering and sorting&lt;/h1&gt;
 &lt;p&gt;Every end-point that returns a list of resource should allow filtering on fields, as well as sorting. The following request should be possible:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GET /users?country=US&amp;amp;age=21&amp;amp;sortBy=name
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1677,16 +1677,16 @@ Total-Rows: 7897
 &lt;p&gt;We're done! Now, you know how to build efficient and robust APIs.&lt;/p&gt;
 &lt;p&gt;Building an efficient API involves many aspects to consider, and most of all, requires a good knowledge of HTTP. It's time-consuming at first sight, but once you know what you're doing, what your needs are in terms of features, it's pretty straightforward. Considering all aspects right at the beginning, like security or the database architecture and how you would like to expose it, is key. That's what is called designing an architecture, and one should pay heed to it. When properly and carefully done, the API implementation job is fairly easy.&lt;/p&gt;
 &lt;p&gt;What are the next steps?&lt;/p&gt;
-&lt;h1&gt;Add a documentation for other developers who use your API&lt;/h1&gt;
+&lt;h1 id="add-a-documentation-for-other-developers-who-use-your-api"&gt;Add a documentation for other developers who use your API&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://apidocjs.com/"&gt;apidoc&lt;/a&gt; (I really like this one, very easy)&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://swagger.io/"&gt;Swagger.io&lt;/a&gt; (good reputation, altough I never tried it)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@orliesaurus/a-review-of-all-most-common-api-editors-6a720dc4f4e6"&gt;A full list of most common API editors&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Going further: create a CLI&lt;/h1&gt;
+&lt;h1 id="going-further-create-a-cli"&gt;Going further: create a CLI&lt;/h1&gt;
 &lt;p&gt;Make you API public! Create a documentation and a NPM package to ease the work for developers. &lt;a href="https://www.clever-cloud.com/blog/features/2015/09/21/Public-API-available/"&gt;Read how Clever Cloud did it&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.npmjs.com/package/cliparse"&gt;cliparse&lt;/a&gt;&lt;/p&gt;
-&lt;h1&gt;Quick example with Express.js&lt;/h1&gt;
+&lt;h1 id="quick-example-with-expressjs"&gt;Quick example with Express.js&lt;/h1&gt;
 &lt;p&gt;&lt;a href="http://expressjs.com/"&gt;Express&lt;/a&gt; ease the process of developing APIs with Javascript so much! You should definitely give it a try!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npm init
 npm install -g express &lt;span class="c1"&gt;# Globally, to be able to use the CLI of express&lt;/span&gt;
@@ -1730,7 +1730,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;That's it! With only a few lines, you can easily get a working API.&lt;/p&gt;
 &lt;p&gt;This is now the end of this article, hope it will help you! Any feedback appreciated ;)&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;TL;DR&lt;/h1&gt;
+&lt;h1 id="tldr"&gt;TL;DR&lt;/h1&gt;
 &lt;p&gt;Here is a little recap of everything above:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;End-points represent either an individual resource or a collection of resources&lt;/li&gt;
@@ -1755,7 +1755,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1&gt;Going further&lt;/h1&gt;
+&lt;h1 id="going-further"&gt;Going further&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://speakerdeck.com/dzuelke/designing-http-interfaces-and-restful-web-services-sfliveparis2012-2012-06-08"&gt;Designing HTTP Interfaces and RESTful Web Services (SFLiveParis2012 2012-06-08)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/"&gt;Serious Security: How to store your users' passwords safely&lt;/a&gt;&lt;/li&gt;
@@ -1771,22 +1771,22 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;&lt;em&gt;[...] the practice, in software engineering, of merging all developer working copies to a shared mainline several times a day.&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;But not only. It's much more than this. Let's dive into continuous integration.&lt;/p&gt;
-&lt;h1&gt;Purpose&lt;/h1&gt;
+&lt;h1 id="purpose"&gt;Purpose&lt;/h1&gt;
 &lt;p&gt;Continuous integration is an entire concept that tries to ease software development by making things much easier and more flexible. Like agile methodology, it's been getting more and more popular since the beginning of the 2000's. Nowadays, it tends to be widely adopted in any kind of software company.&lt;/p&gt;
-&lt;h2&gt;Effortless automation&lt;/h2&gt;
+&lt;h2 id="effortless-automation"&gt;Effortless automation&lt;/h2&gt;
 &lt;p&gt;Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like &lt;a href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html"&gt;Quentin Adam&lt;/a&gt; is used to saying,&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="https://twitter.com/waxzce/status/639078610230476800"&gt;Hosting has to become a commodity.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The same applies for documentation generation, testing and deploying. Repetitive tasks are most of the time painful and should be performed by computers.&lt;/p&gt;
-&lt;h2&gt;Continuous testing&lt;/h2&gt;
+&lt;h2 id="continuous-testing"&gt;Continuous testing&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Every new release should be tested.&lt;/strong&gt; Automatically. Without any human intervention. In a safe and minimal environment, not a human's environment with tons of programs, custom environment variables, outdated dependencies, etc. It's a human job to design the tests but running and validating them is a machine job. This way, the results can be shared with an entire team over automatic emails and archived.&lt;/p&gt;
-&lt;h2&gt;Documentation&lt;/h2&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
 &lt;p&gt;Writting documentation is for humans. Generating it is for machines. Again, it's a repetitive task that no one should be assigned. It's a waste of time. Machines can do it instead of us, at the right time, usually when a new release is about to come out. Furthermore, machines don't forget to bump the version numbers.&lt;/p&gt;
-&lt;h2&gt;Deploying&lt;/h2&gt;
+&lt;h2 id="deploying"&gt;Deploying&lt;/h2&gt;
 &lt;p&gt;With continuous integration, deploying should be as simple as a &lt;a href="https://twitter.com/Tim_LHUILLIER/status/396652013716770816"&gt;&lt;code&gt;git push&lt;/code&gt;&lt;/a&gt;. When time has come for deployment, no one has to use &lt;code&gt;ssh&lt;/code&gt; or &lt;code&gt;rcp&lt;/code&gt;, not even &lt;code&gt;ftp&lt;/code&gt;. &lt;strong&gt;It's unsafe insofar as it's too much of a risk to let a human get inside a production machine.&lt;/strong&gt; A developer has nothing to do in a production machine, as long as all the tests have been passed before pushing to production. All one can do is breaking something. A production machine is meant to be administrated by a sysadmin, no one else. Once it's set up, the only action required by developers is pushing code when it's ready to go live.&lt;/p&gt;
 &lt;p&gt;It's the same story for releases. Packaging and releasing a new version &lt;strong&gt;must&lt;/strong&gt; be a simple task anyone can do, not only the CTO, regardless of the OS, configuration, and so on.&lt;/p&gt;
-&lt;h1&gt;Why&lt;/h1&gt;
+&lt;h1 id="why"&gt;Why&lt;/h1&gt;
 &lt;p&gt;Now that I exposed the principles of &lt;strong&gt;continuous integration&lt;/strong&gt;, the question you may want to ask is "Yes, but why?". Indeed, prior to continuous integration, everything was already working well, more or less. So, you might wonder how anyone can benefit from continuous integration.&lt;/p&gt;
 &lt;p&gt;In fact, continuous integration should simply be regarded as an entire development workflow. It enables your team of developers (or even a single developer) to be more agile. You can easily get rid of god-awful tasks without actually deleting them, just by delegating them to computers.&lt;/p&gt;
 &lt;p&gt;In parallel, you can improve maintainability and evolutivity of the software produced by adopting the right versioning and bug tracking tools. How? Let's take an example.&lt;/p&gt;
@@ -1794,7 +1794,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;Another example. For every new version (and sometimes between two) you had to set up your environment correctly, generate the documentation from source code, bump the version number in both code and documentation, run unit/integration/system tests and finally, if everything goes well, compile it for &lt;strong&gt;as many platforms as you support&lt;/strong&gt; (which quite often would mean a lot), and make it available on a website (or somewhere else). Well, how pleasant would it be if &lt;strong&gt;all of this&lt;/strong&gt; could be achieved right after a &lt;code&gt;git push&lt;/code&gt;?&lt;/p&gt;
 &lt;p&gt;Let's now see how to get started with continuous integration, easily.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1&gt;How&lt;/h1&gt;
+&lt;h1 id="how"&gt;How&lt;/h1&gt;
 &lt;p&gt;Now, you might have understood that you &lt;strong&gt;have to use Git&lt;/strong&gt;. And if you stil don't know why, you read read my article &lt;a href="//romainpellerin.eu/git.html"&gt;about Git&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In my opinion, the most important thing with continuous integration is... your Git workflow. You have to remain consistent from the beginning of a project to its end. Everyone involved has to be careful and focused at each step. Working within a big team is not something easy. Everyone has different schedules, information doesn't spread that well. That's why having a robust and error-proof Git workflow matters.&lt;/p&gt;
 &lt;p&gt;At The Smiths, we identified &lt;strong&gt;four main components&lt;/strong&gt; that we wanted as &lt;strong&gt;core parts of our Continuous Integration process&lt;/strong&gt;:&lt;/p&gt;
@@ -1804,7 +1804,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;li&gt;Travis-ci.org&lt;/li&gt;
 &lt;li&gt;Agile methodology&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Semantic versioning&lt;/h2&gt;
+&lt;h2 id="semantic-versioning"&gt;Semantic versioning&lt;/h2&gt;
 &lt;p&gt;We decided to stick to the very simple rules proposed by &lt;a href="http://semver.org/"&gt;semver.org&lt;/a&gt;. Basically, it says that a version number should be something like &lt;em&gt;MAJOR.MINOR.PATCH&lt;/em&gt;, where (what follows has been extracted from their website):&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;MAJOR version when you make incompatible API changes&lt;/li&gt;
@@ -1812,13 +1812,13 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;li&gt;PATCH version when you make backwards-compatible bug fixes&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Sticking to this rule forced us to think more about the logic behind the versions, reshape road maps more precisely, and allowed us to bump our version numbers more cleverly. We applied this to our mobile apps and Titanium widgets, bumping version numbers carefully over time.&lt;/p&gt;
-&lt;h2&gt;A Successful Git Workflow&lt;/h2&gt;
+&lt;h2 id="a-successful-git-workflow"&gt;A Successful Git Workflow&lt;/h2&gt;
 &lt;p&gt;This part is clearly the most important, as it’s being used every single day by everyone. In general, it’s likely the most important aspect about continuous integration, to which we had paid a lot of attention.&lt;/p&gt;
 &lt;p&gt;After some research, we came across a very popular Git workflow, the branching model.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Git workflow" src="//romainpellerin.eu/images/continuous-integration-git-workflow.png"&gt;&lt;/p&gt;
 &lt;p&gt;This picture has been taken from &lt;em&gt;&lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;A successful Git branching model, by Vincent Driessen&lt;/a&gt;&lt;/em&gt; (&lt;a href="https://twitter.com/nvie/status/644601079985008640"&gt;thanks to him&lt;/a&gt;). Overall, it’s the best Git workflow we’ve ever encountered. &lt;strong&gt;So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.&lt;/strong&gt; It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.&lt;/p&gt;
 &lt;p&gt;Now, let's move onto &lt;strong&gt;our workflow&lt;/strong&gt; that we daily use, with Github:&lt;/p&gt;
-&lt;h3&gt;Our Git workflow&lt;/h3&gt;
+&lt;h3 id="our-git-workflow"&gt;Our Git workflow&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;There is a remote repository called &lt;code&gt;origin&lt;/code&gt;. Then, every new developer (including the owner) has to fork this repository. The &lt;code&gt;origin&lt;/code&gt; repo will &lt;strong&gt;ONLY&lt;/strong&gt; contains two branches: &lt;code&gt;master&lt;/code&gt; and &lt;code&gt;develop&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;master&lt;/code&gt;: contains &lt;strong&gt;only the stable realeases&lt;/strong&gt; (General Availability), tagged with&lt;br&gt;
@@ -1840,7 +1840,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;I've found out that this workflow works pretty well with any of our projects, might it be an entire app or a mere widget. However, as I said we've made some adjustments to the original workflow found on the Internet, making it a bit simpler to use.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Issues&lt;/strong&gt; are also great features brought by GitHub that allow us to track down bugs and list them. One can assign people to fix an issue, and let others know of its progression thanks to emails or notifications. Issues can also be linked to specific commits which helps a lot when tracking regression bugs.&lt;/p&gt;
 &lt;p&gt;Finally, we're also taking advantage of &lt;strong&gt;Milestones&lt;/strong&gt;, a GitHub feature, which can be seen as a simplified scheduler, permitting us to create deadlines with goals to reach. It's somehow a list of deadlines with progress bars automatically filled as we would create and merge Pull requests.&lt;/p&gt;
-&lt;h4&gt;Some commands&lt;/h4&gt;
+&lt;h4 id="some-commands"&gt;Some commands&lt;/h4&gt;
 &lt;p&gt;To generate the message for a Pull request:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git log --pretty&lt;span class="o"&gt;=&lt;/span&gt;oneline --abbrev-commit &amp;lt;branch-from&amp;gt;..&amp;lt;current-branch&amp;gt;
 &lt;span class="c1"&gt;# Prints the commits you made since last merge and the associated messages&lt;/span&gt;
@@ -1879,30 +1879,30 @@ git push origin develop
 git branch -d feature-x
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3&gt;Contributors&lt;/h3&gt;
+&lt;h3 id="contributors"&gt;Contributors&lt;/h3&gt;
 &lt;p&gt;There's another approach to the scheme above. Instead of using only &lt;em&gt;Pull requests&lt;/em&gt;, you could add other developers as &lt;a href="https://help.github.com/articles/setting-guidelines-for-repository-contributors/"&gt;contributors&lt;/a&gt;. This way, there's no Mr/Ms &lt;strong&gt;Integrator&lt;/strong&gt;, any contributor is free to merge their features into &lt;code&gt;develop&lt;/code&gt;. Also, feature branches can be on the remote repository.&lt;/p&gt;
-&lt;h3&gt;Git branching model considered harmful&lt;/h3&gt;
+&lt;h3 id="git-branching-model-considered-harmful"&gt;Git branching model considered harmful&lt;/h3&gt;
 &lt;p&gt;The Git workflow we used as a starting point (the branching model) has been considered harmful &lt;a href="https://barro.github.io/2016/02/a-succesful-git-branching-model-considered-harmful/"&gt;by someone, and thus that person proposed another model&lt;/a&gt;. The reading is worthwhile although I'm still not fully convinced by this alternative.&lt;/p&gt;
-&lt;h2&gt;&lt;a href="https://travis-ci.org/"&gt;Travis&lt;/a&gt;, the all-in-one tool&lt;/h2&gt;
+&lt;h2 id="travis-the-all-in-one-tool"&gt;&lt;a href="https://travis-ci.org/"&gt;Travis&lt;/a&gt;, the all-in-one tool&lt;/h2&gt;
 &lt;p&gt;Soon, Travis will be your best friend. But first, what is Travis?&lt;/p&gt;
 &lt;p&gt;Basically, it's an online service delivered through a website, providing sets of virtual machines started especially for a developer whenever needed. Those machines run some scripts and shut down themselves automatically. Usually, a developer sets up their Travis account to run scripts on every &lt;code&gt;git push&lt;/code&gt; performed on a GitHub repository. However, one can configure Travis to be run with any kind of Git hook. &lt;strong&gt;Travis is free&lt;/strong&gt; but they also have paid services with much more features (that we didn't require).&lt;/p&gt;
 &lt;p&gt;So, how is Travis so helpful for us?&lt;/p&gt;
-&lt;h3&gt;Most common use cases of Travis&lt;/h3&gt;
+&lt;h3 id="most-common-use-cases-of-travis"&gt;Most common use cases of Travis&lt;/h3&gt;
 &lt;p&gt;Well, one can imagine dozens of scenarios. Documentation generated from the source on every new &lt;code&gt;git push&lt;/code&gt; in &lt;code&gt;develop&lt;/code&gt;? Easy. Running a whole set of tests automatically? Easy as well.&lt;/p&gt;
 &lt;p&gt;Let's dream a bit further... One of the most fancy things one can do is &lt;strong&gt;running a set of tests, bump version numbers in the code and the documentation, compiling the software program and generating the updated documentation, pushing the binaries to Amazon S3 and the documentation to GitHub Pages, and making the whole set available to everyone, automatically!&lt;/strong&gt; And yes, Travis, can push into specific branches as well. That might be really useful to update web pages automatically (a link to the latest stable release, listed on a download page, for instance).&lt;/p&gt;
 &lt;p&gt;That is definitely the most perfect and automated scenario one could imagine, but that's easily achievable, although it would take quite a long time to set it up.&lt;/p&gt;
-&lt;h3&gt;An example with Github Pages&lt;/h3&gt;
+&lt;h3 id="an-example-with-github-pages"&gt;An example with Github Pages&lt;/h3&gt;
 &lt;p&gt;A good example is my blog (yes, the one you're reading). My articles are written in Markdown and contained in the branch &lt;code&gt;master&lt;/code&gt;. However, what you're reading, is a &lt;a href="https://pages.github.com/"&gt;Github page&lt;/a&gt; (contained in a branch called &lt;code&gt;gh-pages&lt;/code&gt;). What is happening hunder the hood is that, every time I push on &lt;code&gt;master&lt;/code&gt;, Travis fetches it, generates the HTML pages from the Markdown files, and pushes them to the branch &lt;code&gt;gh-pages&lt;/code&gt; on Github. This way, my blog gets updated automatically.&lt;/p&gt;
 &lt;p&gt;I followed &lt;a href="http://blog.mathieu-leplatre.info/publish-your-pelican-blog-on-github-pages-via-travis-ci.html"&gt;this tutorial&lt;/a&gt; to do that (and &lt;a href="http://fle.github.io/lectures/pelican-github-2014.html"&gt;this presentation&lt;/a&gt; as well).&lt;/p&gt;
-&lt;h4&gt;How does it work&lt;/h4&gt;
+&lt;h4 id="how-does-it-work"&gt;How does it work&lt;/h4&gt;
 &lt;p&gt;At the root of your repo, just add a &lt;em&gt;.travis.yml&lt;/em&gt; with some pieces of configuration inside. And you're done! A few more options are available on their web interface as well.&lt;/p&gt;
 &lt;p&gt;You can have a look at &lt;a href="https://github.com/rpellerin/blog/blob/master/.travis.yml"&gt;my .travis.yml for this blog&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Tips with Travis&lt;/h3&gt;
+&lt;h3 id="tips-with-travis"&gt;Tips with Travis&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/settings/tokens"&gt;Get a new token from Github&lt;/a&gt; in order to give Travis access to your repo&lt;/li&gt;
 &lt;li&gt;In travis, disable &lt;em&gt;Build on Pull requests&lt;/em&gt;, enable only if .travis.yml is present&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Agile methodology&lt;/h2&gt;
+&lt;h2 id="agile-methodology"&gt;Agile methodology&lt;/h2&gt;
 &lt;p&gt;Last but not least, agile methodology. Behind that term that sounds rather complex is a concept pretty simple. In Computer Science, we use the term "Agile Software Development". Wikipedia says:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Agile Software Development is a set of software development methods in which requirements and solutions evolve through collaboration between self-organizing, cross-functional teams. It promotes adaptive planning, evolutionary development, early delivery, continuous improvement, and encourages rapid and flexible response to change.&lt;/em&gt;&lt;/p&gt;
@@ -1919,12 +1919,12 @@ git branch -d feature-x
 &lt;p&gt;This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="SCRUM" src="//romainpellerin.eu/images/continuous-integration-scrum.png"&gt;&lt;/p&gt;
 &lt;p&gt;Sometimes, the part "Bug fixing" would require extra-time. In such a case, we would extend that part onto the next week, only assigning one person, so that the rest of the team could stick strictly to the rule "a Milestone per week". But that rarely happened fortunately.&lt;/p&gt;
-&lt;h2&gt;Mix them all&lt;/h2&gt;
+&lt;h2 id="mix-them-all"&gt;Mix them all&lt;/h2&gt;
 &lt;p&gt;As a brief conclusion, when thinking back at all the parts of our workflow, one can see that it's an entire whole in which GitHub plays a key-role. Being organized, knowing everyone's role and keeping in mind goals to reach are important as well, just like the tools we decided to go with. Furthermore, being able to release intermediate versions, quickly, allowed us to give constant feedback to the client, which is reassuring.&lt;/p&gt;
 &lt;p&gt;This workflow is surely perfectible, but until now it has proved really efficient.&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;
 I hope this article was helpful. It's a good start with Continuous Integration. First, focus on your workflow (especially with Git) and then set up the right tools (including Travis) and you're good!&lt;/p&gt;
-&lt;h1&gt;Resources to go deeper&lt;/h1&gt;
+&lt;h1 id="resources-to-go-deeper"&gt;Resources to go deeper&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://putaindecode.fr/posts/ci/le-deploiement-continu/"&gt;Introduction au déploiement continu&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://putaindecode.fr/posts/ci/introduction/"&gt;Qu'est-ce que l'intégration continue ?&lt;/a&gt;&lt;/li&gt;
@@ -1936,13 +1936,13 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;li&gt;&lt;a href="http://k33g.github.io/2016/11/27/GH-FLOW.html"&gt;GitHub Flow&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=jCwzf9adAtE"&gt;Intégration et déploiement en continu @ Github (Alain Hélaïli)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Android&lt;/h2&gt;
+&lt;h2 id="android"&gt;Android&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/codepath/android_guides/wiki/Automating-Publishing-to-the-Play-Store"&gt;Automating Publishing to the Play Store&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://blog.stablekernel.com/deploying-google-play-continuous-delivery-android-part-4/"&gt;PUBLISH TO GOOGLE PLAY - CONTINUOUS DELIVERY FOR ANDROID (PART 4)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://jeremie-martinez.com/2016/01/14/devops-on-android/"&gt;DevOps on Android: From one Git push to production&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="workflow"></category><category term="git"></category></entry><entry><title>(Re)Learn A Programming Language Quickly</title><link href="//romainpellerin.eu/learn-a-programming-language-quickly.html" rel="alternate"></link><published>2015-05-22T17:17:00+02:00</published><updated>2015-05-26T01:08:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-05-22:/learn-a-programming-language-quickly.html</id><summary type="html">&lt;p&gt;Need to (re)learn a programming language in less than 10 minutes? Here is how to do it.&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I need to learn a programming language quickly, or just recall it, I often use a few tips, very simple.&lt;/p&gt;
-&lt;h1&gt;Data Types&lt;/h1&gt;
+&lt;h1 id="data-types"&gt;Data Types&lt;/h1&gt;
 &lt;p&gt;Also known as primitive data types. Data types are the very basis of every programming language. Knowing them allow you to manipulate variables, arrays, functions, etc. Generally, there are less than 10 of them. For example, Java has the following primitive data types:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;byte&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="kt"&gt;short&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -1955,7 +1955,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;code&gt;String&lt;/code&gt; could also be considered as a primitive data type since it doesn't require the keyword &lt;code&gt;new&lt;/code&gt; to be instanciated.&lt;/p&gt;
-&lt;h1&gt;Keywords&lt;/h1&gt;
+&lt;h1 id="keywords"&gt;Keywords&lt;/h1&gt;
 &lt;p&gt;While we're on the subject, keywords (also called "reserved words") are another excellent way to quickly recall a programming language. Here again, they are not so numerous, generally around 50. Here are some keywords in Java:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;abstract&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="kt"&gt;boolean&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -1968,15 +1968,15 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Those words are reserved and used by the compiler, that's why you can't use them as variable names for example. Consequently, they give you a pretty clear overview of what you can do with each language. Furthermore, if you've already learnt that language, you'll then quickly remember what each keyword means. Then, just iterate through those keywords and in less than 5 minutes, you'll remember everything about this language!&lt;/p&gt;
-&lt;h1&gt;The main function&lt;/h1&gt;
+&lt;h1 id="the-main-function"&gt;The main function&lt;/h1&gt;
 &lt;p&gt;Each language has its own approach. Here are some of them:&lt;/p&gt;
-&lt;h2&gt;Java&lt;/h2&gt;
+&lt;h2 id="java"&gt;Java&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;C&lt;/h2&gt;
+&lt;h2 id="c"&gt;C&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;argc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;char&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[])&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -1984,7 +1984,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2&gt;Python&lt;/h2&gt;
+&lt;h2 id="python"&gt;Python&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -1992,9 +1992,9 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Don't forget to know this function!&lt;/p&gt;
-&lt;h1&gt;Have a look at some of your previous projects... or code&lt;/h1&gt;
+&lt;h1 id="have-a-look-at-some-of-your-previous-projects-or-code"&gt;Have a look at some of your previous projects... or code&lt;/h1&gt;
 &lt;p&gt;Giving a quick look at projects helps a lot! Try to look at the basics: inherited classes, overloaded and overriding functions, asbstract classes, IO functions, etc. If you have time, try to code some of them again!&lt;/p&gt;
-&lt;h1&gt;Further reading&lt;/h1&gt;
+&lt;h1 id="further-reading"&gt;Further reading&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://learnxinyminutes.com/"&gt;Learn X in Y minutes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Code"></category><category term="code"></category><category term="programming"></category></entry></feed>

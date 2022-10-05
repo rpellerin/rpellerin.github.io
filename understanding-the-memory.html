@@ -96,7 +96,7 @@
 <article>
     <p>Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.</p>
 <p>Nows, let's have a look at memory and let's try to understand how it works.</p>
-<h1>Processes and threads</h1>
+<h1 id="processes-and-threads">Processes and threads</h1>
 <p>Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains <strong>four main areas</strong>:</p>
 <ul>
 <li><strong>Data</strong>: contains the global and static variables (explicitly initialized with a non-zero or non-NULL value, according to <a href="https://en.wikipedia.org/wiki/Data_segment">Wikipedia</a>) used by the program. The content of constants is on the data segment, whereas references to constants are on the code (see next bullet point). The BSS segment (which is usually adjacent to the data segment) contains all global variables and static variables that are initialized to zero or do not have explicit initialization (in such a case, they <a href="http://stackoverflow.com/questions/13251083/the-initialization-of-static-variables-in-c">are implicitly initialized to 0</a>). The BSS segment can be considered a part of the data segment.</li>
@@ -159,8 +159,8 @@
 </code></pre></div>
 
 <p>Threads can be seen as sub-processes, although they belong to a specific process. Thus, they share the same virtual space (same data segment, etc). Only one thing is unique to each thread: they all have their own stack.</p>
-<h1>Allocating memory for objects and primitive data types</h1>
-<h2>C++</h2>
+<h1 id="allocating-memory-for-objects-and-primitive-data-types">Allocating memory for objects and primitive data types</h1>
+<h2 id="c">C++</h2>
 <p>Every dynamic allocation goes to the heap. The rest on the stack. So every left handside part of the following lines (what is on the left of the equal sign) is on the stack.</p>
 <p>Global variables and static variables (not only global) go to the data segment.</p>
 <p>Here are some examples, to make things clear:</p>
@@ -184,10 +184,10 @@
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<h2>Java</h2>
+<h2 id="java">Java</h2>
 <p>The main difference is that objects on the heap are automatically destroyed by the garbage collector, once they are no longer referenced. Moreover, only primitives are on the stack. All the objects are allocated on the heap. However, references (which are addresses) are passed as arguments to functions on the stack.</p>
 <p>That's all folks!</p>
-<h1>Further reading</h1>
+<h1 id="further-reading">Further reading</h1>
 <ul>
 <li><a href="http://gribblelab.org/CBootcamp/7_Memory_Stack_vs_Heap.html">7. Memory : Stack vs Heap</a></li>
 <li><a href="http://www.cplusplus.com/forum/articles/9/">The difference between pointers and arrays</a></li>

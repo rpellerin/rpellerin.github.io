@@ -105,7 +105,7 @@
 <li>We wanted to make our translation process homogeneous for all countries. In doing so, we addressed problems only the German and Italian teams had been experiencing in the past, such as the delay between merging a pull request and having the translations available in production, or the fact that tests would occasionally fail because of new or changed translations. Specifically, tests testing features only available outside of France but asserting texts in French. When the German or Italian translations would eventually make it to the codebase, those tests would break. We therefore decided all tests now had to be written in English, unless testing a feature only available in one country.</li>
 </ul>
 <p>With the whys out of the way, let's now see tips and tricks we've learned — sometimes the hard way.</p>
-<h1>Tools are your friends, leverage them</h1>
+<h1 id="tools-are-your-friends-leverage-them">Tools are your friends, leverage them</h1>
 <p>Dependencies-wise, we use <a href="https://github.com/ruby-i18n/i18n">the default Rails gem</a> to localize our app on the back end, and we use <a href="https://www.npmjs.com/package/i18n-js">i18n-js</a> on the front end.</p>
 <p>In most applications, localization is done through YAML files. For instance, a <code>en.yml</code> file might look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span><span class="w"></span>
@@ -157,7 +157,7 @@
 <p><code>skip_unverification: true</code> makes sure than any edits to an English translation does not unverify (i.e. mark as "not verified") the corresponding FR/DE/IT translations. This may sound counter-intuitive as it means that updates to English translations are not reflected in the other languages as long as no one updates the translations. But it actually allow us to keep our current translations in production. Because of the above-mentioned setting (<code>include_unverified_translations: false)</code> , if we were to mark our translations as unverified, they would actually be removed when we next run <code>phrase_cli pull</code>.</p>
 <p><a href="https://help.phrase.com/help/working-with-pluralization">Pluralization is done through special keys.</a> The most common ones are <code>zero</code> , <code>one</code> and <code>other</code>, as shown in the example file above. All plural forms are optional, meaning we can provide as many as we want. While some plural forms might be the same in a given language, they might all differ in another one. To make translating in other languages in the Phrase editor easier, we've decided to always provide the <code>zero</code> form, in addition to <code>one</code> and <code>many</code> in our <code>en.yml</code> file. We enforce this through a static test. That's also why we also have <code>exclude_empty_zero_forms: true</code> so that whenever the <code>zero</code> form is the same as <code>other</code>, we can skip translating it in Phrase and therefore not clutter our <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> files unnecessarily.</p>
 <p>Finally, <code>include_empty_translations</code> is required by Rails to work properly, as some translations need to remain explicitly empty, such as the ones that help Rails format numbers.</p>
-<h1>Keeping Phrase up-to-date</h1>
+<h1 id="keeping-phrase-up-to-date">Keeping Phrase up-to-date</h1>
 <p>We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.</p>
 <figure class="center">
 <img src="//romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
@@ -165,7 +165,7 @@
 </figure>
 
 <p>Since we just launched Doctolib in Italy, we have a little less than 10% of our i18n keys not yet available in Italian, as we are slowly catching up. Regarding the 163 unverified German translations, those are for features not used in Germany at the moment. But we’re nonetheless in the process of verifying them, because first of all these features might someday become available in Germany, and also German-speaking developers might want to use the German language while working on French or Italian features.</p>
-<h1>String interpolation is often a bad idea</h1>
+<h1 id="string-interpolation-is-often-a-bad-idea">String interpolation is often a bad idea</h1>
 <p>While we were doing the switch from French to English, we realized at some point that we had a ton of unused keys in <code>en.yml</code> . Keys from deleted features, keys from refactored code, etc. How to know which keys are actually used?</p>
 <p>We first try running <code>grep</code> for every i18n key found in <code>en.yml</code> across the entire codebase. But string interpolation made this impossible.</p>
 <p>What's string interpolation? There you go:</p>
@@ -192,11 +192,11 @@
 </code></pre></div>
 
 <p>To this day, we have not found a way (yet) to prevent string interpolation in i18n keys, but we're working on it. We've however communicated internally largely about it.</p>
-<h1>The same locale in your test server as in your web server you shall set</h1>
+<h1 id="the-same-locale-in-your-test-server-as-in-your-web-server-you-shall-set">The same locale in your test server as in your web server you shall set</h1>
 <p>When running integration tests with Ruby on Rails, <a href="https://rspec.info/">RSpec</a> and <a href="https://github.com/teamcapybara/capybara">Capybara</a>, there are actually two different servers being launched with every test. One is the test server, the one that executes assertions, pilots the browser, opens tabs, etc. And there's the web server, the one that responds to HTTP queries and renders your website.</p>
 <p>We've found that both servers do not necessarily answer the same to <code>I18n.locale</code>. For instance, when writing tests for features only available in one country, we'd change the Top-Level Domain (TLD) to .fr, .de. or .it. This would, in turn, change the locale used in our web server through some business logic in our <code>ApplicationController.rb</code>. But the test server would remain in English, regardless of the TLD.</p>
 <p>Consequently, trying <code>assert_text I18n.t("some.key")</code> in a test of the French website would be looking for the English translation of <code>some.key</code>, while only the French translation was to be found. Through some fine tuning of our subclasses of <code>ActiveSupport::TestCase</code>, we have managed to sync the locale of both servers.</p>
-<h1>Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key</h1>
+<h1 id="preventing-the-creation-of-duplicate-keys-as-the-ruby-yaml-parser-silently-ignores-them-and-use-the-latest-defined-key">Preventing the creation of duplicate keys as the Ruby YAML parser silently ignores them and use the latest defined key</h1>
 <p>Say you have a <code>en.yml</code> file as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">en</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">greetings</span><span class="p">:</span><span class="w"></span>
@@ -214,7 +214,7 @@
 <span class="k">end</span>
 </code></pre></div>
 
-<h1>Enforcing a simple format for keys</h1>
+<h1 id="enforcing-a-simple-format-for-keys">Enforcing a simple format for keys</h1>
 <p>Although many characters are permitted for keys (only the dot is not, as it marks levels in the hierarchy), we found it much easier to only deal with keys using only basic characters, such as the regular ASCII letters, upper or lower case, digits, hyphens and underscores. Why is that? First of all, because it's more readable, and second of all because it makes grepping through the codebase with regular expressions a lot easier.</p>
 <div class="highlight"><pre><span></span><code><span class="n">it</span> <span class="s1">&#39;enforces a simple format for keys&#39;</span> <span class="k">do</span>
     <span class="n">wrongly_formatted_keys</span> <span class="o">=</span>
@@ -231,7 +231,7 @@
 <span class="k">end</span>
 </code></pre></div>
 
-<h1>Preventing the insertion of hidden characters whose behavior might be unexpected</h1>
+<h1 id="preventing-the-insertion-of-hidden-characters-whose-behavior-might-be-unexpected">Preventing the insertion of hidden characters whose behavior might be unexpected</h1>
 <p>Have you ever seen this warning message on GitHub?</p>
 <figure class="center">
 <img src="//romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
@@ -246,9 +246,9 @@
 <figcaption>A test making sure our translation files do not contain special hidden Unicode characters</figcaption>
 </figure>
 
-<h1>Avoid duplicate translations at the same node level</h1>
+<h1 id="avoid-duplicate-translations-at-the-same-node-level">Avoid duplicate translations at the same node level</h1>
 <p>Why create a new translation when one can reuse an existing one? Especially if the translation is a sibling (i.e at the same node level in the YAML file) of the one you're trying to add. Well again, we've added a test so that we avoid duplicating existing English translations. Because we've found that, since the translations YAML files tend to be very big, it is easy to overlook and miss a translation you're looking for, think it does not exist, and add it again.</p>
-<h1>Ensuring the file is correctly formatted at all times</h1>
+<h1 id="ensuring-the-file-is-correctly-formatted-at-all-times">Ensuring the file is correctly formatted at all times</h1>
 <p>Because throughout our journey of switching to English as a default locale, we've had to edit our <code>en.yml</code> file many times, we've found that enforcing the formatting makes <code>git diff</code>s easier to review. It's like when one starts using <a href="https://prettier.io/">Prettier</a> and stops caring about how to format their JavaScript code. All of a sudden, single quotes, double quotes, escaping characters, where to break a line, etc, are no longer problems.</p>
 <div class="highlight"><pre><span></span><code><span class="n">it</span> <span class="s1">&#39;makes sure en.yml is correctly formatted&#39;</span> <span class="k">do</span>
     <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;config/locales/en.yml&#39;</span>
@@ -262,7 +262,7 @@
 <span class="k">end</span>
 </code></pre></div>
 
-<h1>Finding unused keys and removing them</h1>
+<h1 id="finding-unused-keys-and-removing-them">Finding unused keys and removing them</h1>
 <p>That's the trickiest part. And unfortunately, we don't have a universal answer to that problem. But before finding which keys are not used, how do we even find the ones actually used?</p>
 <p>As we've seen before, string interpolation makes it impossible to statically find all used keys. We need to come up with something dynamic.</p>
 <p>Logging that a given i18n key is used at runtime is fairly simple, code-wise. "All we have to do" is monkey patch the Ruby gem or the JavaScript package so that we log or store somewhere which keys are being used. For instance, this is most of our JavaScript monkey patch:</p>
@@ -304,7 +304,7 @@
 <p>The first option has the disadvantage of using our users' local storage at their expense and using our production Redis instance for something else that a feature. And likewise, we can't be 100% sure all of our features are even used at all. Also, the keys used today might not be the same ones as tomorrow, because we constantly merge pull requests and rollout new code to production.</p>
 <p>Therefore, the idea of capturing a "snapshot" of the keys used at one point in time, without interfering with the production website, sounded like our best bet.</p>
 <p>We're now capable of doing that snapshot and computing a diff between our existing keys and the ones used, yet we still have to find a way of making sure we're not deleting keys that could still be used in production, but that are simply not part of a tested feature.</p>
-<h1>Removing translations as the source language keys are removed</h1>
+<h1 id="removing-translations-as-the-source-language-keys-are-removed">Removing translations as the source language keys are removed</h1>
 <p>Finally, the last thing we had to deal with was, how do we remove from Phrase (and therefore the other YAML files) the i18n keys that we occasionally remove from <code>en.yml</code>, for instance when we delete a feature?</p>
 <p>We came up with a script that runs at night, once a day, on the CI. It basically does a diff of all the i18n keys found in <code>fr.yml</code>, <code>de.yml</code> and <code>it.yml</code> minus those from <code>en.yml</code>. Then, though Phrase's API, it sequentially removes all the French/German/Italian translations for these keys from Phrase. In the next day, when our job than pulls translations from Phrase will run, all our YAML files will contain the same i18n keys.</p>
 <hr>

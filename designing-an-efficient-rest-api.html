@@ -103,9 +103,9 @@ I also used <a href="https://github.com/rpellerin/php-mvc-base">PHP</a> and Java
 <p>But that's not our purpose in this article. Let's move on to the big question, "<em>How to design an efficient REST API</em>". Then, we'll have a quick look at <a href="http://expressjs.com/">Express</a>, a famous Javascript framework and one of the best for APIs, in my opinion.</p>
 <p>In this article, I'll try to follow what <a href="http://martinfowler.com/articles/richardsonMaturityModel.html">someone once wrote beautifully</a>, in order to introduce REST APIs, and gradually explain how to improve them. I assume you - the reader - have some knowledge of the HTTP protocol.</p>
 <p><a href="https://www.ssllabs.com/">It goes without saying that you <strong>must use HTTPS</strong> to ensure privacy. This way, everything will be encrypted and anyone sniffing the network won't be able to see the content of your requests or responses.</a> Let's dive into REST APIs now!</p>
-<h1>You said "<em>REST</em>"?</h1>
+<h1 id="you-said-rest">You said "<em>REST</em>"?</h1>
 <p>In "<em>REST API</em>", "<em>REST</em>" stands for "<em>Representational State Transfer</em>", which is the software architectural style of the web. Basically, this means that any REST API relies on the HTTP protocol (and by extension HTTPS). As a consequence, the first step is to understand all the strengths and weaknesses of HTTP in order to use everything it has to offer. I will only be referring to HTTP version 1.1 in this article, since version 2 is still hardly used overall, and quite badly supported.</p>
-<h1>It's all about resources</h1>
+<h1 id="its-all-about-resources">It's all about resources</h1>
 <p>URLs (<em>Uniform Resource Locator</em>) represent resources. When designing an API, think about it as resource containers. Every end-point should represent either <strong>a resource</strong> or <strong>a list of resources</strong>. Following this, there must be <strong>two-end points per resource</strong>, the resource collection, and an individual resource within the collection:</p>
 <div class="highlight"><pre><span></span><code>/myresource
 /myresource/{id}
@@ -131,9 +131,9 @@ I also used <a href="https://github.com/rpellerin/php-mvc-base">PHP</a> and Java
 /users/{userId}/messages/{messageId}
 </code></pre></div>
 
-<h2>Naming convention</h2>
+<h2 id="naming-convention">Naming convention</h2>
 <p>To remain consistent, try to use the plural form of every word used for your end-points, it will make things easier. <a href="https://en.wikipedia.org/wiki/CamelCase"><em>camelCase</em></a> is also a good practice, when necessary (but we always try to use simple single words).</p>
-<h1>Methods (also called verbs)</h1>
+<h1 id="methods-also-called-verbs">Methods (also called verbs)</h1>
 <p>One of the biggest strengths of HTTP is <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">its verbs</a>. The most popular are GET and POST. The latter is mostly used for asynchronous calls (AJAX) or forms in web pages, whereas the former is used every time a page is accessed or reloaded from a browser.</p>
 <p>So, what are the equivalent verbs for our old friend called <em>CRUD</em> (Create, Read, Update and Delete)? <strong>PUT</strong>, <strong>GET</strong>, <strong>POST</strong> and <strong>DELETE</strong>. Consequently, any well designed REST API must make use of at least these four verbs. And yes, HTTP has more <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">than four verbs</a>.</p>
 <p>For example, this is how to create, get, update and delete a specific user:</p>
@@ -149,7 +149,7 @@ DELETE /users/<span class="o">{</span>id<span class="o">}</span> <span class="c1
 </code></pre></div>
 
 <p><a href="http://www.restapitutorial.com/">More information about verbs</a>.</p>
-<h1>Understanding HTTP</h1>
+<h1 id="understanding-http">Understanding HTTP</h1>
 <p>At this point, I need to add some explanation about the HTTP protocol. Every HTTP transaction (request or response) is made of three main parts:</p>
 <ul>
 <li>An initial line</li>
@@ -181,7 +181,7 @@ Hello world
 
 <p>That said, let’s get back to APIs.</p>
 <p>In the previous sections we learned the correct use of the HTTP verbs, so now let's talk about the body and the status code. Headers will come later.</p>
-<h1>Transmitting data</h1>
+<h1 id="transmitting-data">Transmitting data</h1>
 <p>How can a client update a user on the server? What if someone wants to update their biography for example? Or wants to mention their age? Likewise, how does the server respond and send data back to clients? Here come the status codes and the body.</p>
 <p>Basically, clients need to send <strong>one type of information</strong> in the body: data to be put into the remote database, via a <strong>PUT</strong> or <strong>POST</strong> request. It can be either to create a new resource or to update it (it depends on the HTTP verb used).</p>
 <p>On the other hand, the server can send different types of information:</p>
@@ -195,7 +195,7 @@ Hello world
 <li><strong>Some details about a resource</strong> newly created, in response to a <strong>PUT</strong> or <strong>POST</strong> request. For example, the resource's unique identifier or URL, to access this resource.</li>
 </ul>
 <p>As you can see, the body is only dedicated to the requested resources(s). That's all. All other useful information <strong>must</strong> be transmitted via the HTTP status code or headers.</p>
-<h2>The status code</h2>
+<h2 id="the-status-code">The status code</h2>
 <p>Want to tell the client the resource has been created? Use the code 201. Want to say something went wrong? 500. Forbidden? 403. Resource not found? 404. <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">Choose the right one</a>.</p>
 <p>Here are the most used status codes for an API:</p>
 <table>
@@ -250,25 +250,25 @@ Hello world
 </table>
 <p>The HTTP protocol is very flexible, allowing us to use any non existing code if needed and relevant, when none of them fits our needs. For example, the range 550-599 can be used freely, the way you want.</p>
 <p><a href="http://i.stack.imgur.com/whhD1.png">Need help in choosing the correct status code?</a></p>
-<h2>The body</h2>
+<h2 id="the-body">The body</h2>
 <p>Sending parameters, from HTML forms, is pretty easy, it's a key-value thing, where parameters are separated by "&amp;", like this:</p>
 <div class="highlight"><pre><span></span><code>firstName=Jon&amp;lastName=Snow
 </code></pre></div>
 
 <p>Here, there's no recommended convention. I used camelCase (as shown above) without any particular reason. Choose one and be consistent.</p>
 <p>However, out of the context of HTML forms, how to format the body? Well, one could say we could use the same key-value format, but actually, it's not a good idea. Let's see what options we have.</p>
-<h3>A historic battle: XML vs. JSON or SOAP vs. REST</h3>
+<h3 id="a-historic-battle-xml-vs-json-or-soap-vs-rest">A historic battle: XML vs. JSON or SOAP vs. REST</h3>
 <p>You have two main options: XML or JSON. Nowadays, a lot of people use JSON. I won't try to defend JSON here, please <a href="http://www.json.org/xml.html">read this comparison</a> or <a href="http://www.json.org/">the official description</a>.</p>
 <p>To briefly sum it up, JSON brings efficiency, lightness and high-readability in a single format. Additionally, it's extremely easy to parse with any language, thanks to a great integration and a lot of support. It’s definitely the most popular format when dealing with APIs. You can easily create a single object or an array of objects.</p>
 <p>Just keep in mind that JSON is probably your best ally.</p>
-<h2>A particular header</h2>
+<h2 id="a-particular-header">A particular header</h2>
 <p>Earlier on, we saw that the second part of every HTTP request is the headers section. Let me introduce one of them, probably the most important one: <code>Content-Type</code>.</p>
 <p>Its only purpose is to specify what kind of data we are sending. Consequently, in our case, this header should be like:</p>
 <div class="highlight"><pre><span></span><code>Content-Type: application/json
 </code></pre></div>
 
 <p>Basically, its value is just a <a href="https://en.wikipedia.org/wiki/Media_type">MIME type</a>.</p>
-<h1>Real world example</h1>
+<h1 id="real-world-example">Real world example</h1>
 <p>A <strong>POST</strong> request sent by the client:</p>
 <div class="highlight"><pre><span></span><code>POST /users HTTP/1.1
 Host: my-api.com
@@ -328,7 +328,7 @@ Content-Type: application/json
 <p>But... (there's always a <em>but</em>).</p>
 <p>We don't take advantage of all the strengths of HTTP. Headers, you remember? And what if we want to apply some filters to our <strong>GET</strong> requests? Sorting? What about pagination? Getting your 1M users in a single response body isn't a good idea, trust me.</p>
 <p>More importantly, what about security? Authentication? But first, let's talk about HATEOAS...</p>
-<h1><a href="http://putaindecode.fr/posts/api/hateoas/">HATEOAS, the Holy Grail</a></h1>
+<h1 id="hateoas-the-holy-grail"><a href="http://putaindecode.fr/posts/api/hateoas/">HATEOAS, the Holy Grail</a></h1>
 <p>Most of the time, to access a specific resource, you need to:</p>
 <ol>
 <li>Get the list of resources, e.g. <code>GET /users</code></li>
@@ -375,9 +375,9 @@ Content-Type: application/json
 
 <p>I'm not a huge fan of HATEOAS. I believe that an API should be consistent in its manner of accessing resources. I like to assume that, as soon as I know a resource's unique identifier, I can access it by constructing its URL, as I explained above. So, I don't need the links, I can construct them by myself.</p>
 <p><strong>But I'm wrong</strong>. This is definitely the best way to do. It adds a layer of abstraction. If one day you change the way to access a resource (not with a unique identifier anymore, but with a token, or an email address, or anything), if you always provided the link for each resource, the change would be transparent for your users.</p>
-<h1>Headers are metadata</h1>
+<h1 id="headers-are-metadata">Headers are metadata</h1>
 <p>A great thing to consider is that the body <strong>must</strong> only contain the requested resource(s). Any other piece of information must go to the headers. Furthermore, you can create any header you want.</p>
-<h2>Authentication</h2>
+<h2 id="authentication">Authentication</h2>
 <p>There are two major concepts under the name of <em>authentication</em>.</p>
 <ul>
 <li>Sign up/Log in/Log out: <strong>user management</strong></li>
@@ -399,14 +399,14 @@ Security-Access-Level: 3
 
 <p>Obviously, as I said in the beginning of this article, all of this doesn't make sense at all if you don't use HTTPS (and force it!). You really don't want to expose such keys to anyone on the network.</p>
 <p><a href="http://restcookbook.com/Basics/loggingin/">More information about authentication</a> and about <a href="http://blog.slaks.net/2015-10-13/web-authentication-arms-race-a-tale-of-two-security-experts/">security in general</a>.</p>
-<h2>Location</h2>
+<h2 id="location">Location</h2>
 <p>Another useful header is <code>Location</code>. A good practice is to use it after creating a resource with <strong>POST</strong>, to give back the location of the resource newly created. This way, no body is needed and your API can respond with a status code <em>201 Created</em>, without a body. For example, after creating the user <em>Jon Snow</em>, we would get:</p>
 <div class="highlight"><pre><span></span><code>HTTP/1.1 201 Created
 Location: https://my-api.com/users/123
 </code></pre></div>
 
 <p>The protocol and domain are optional, we could just send <code>/users/123</code>.</p>
-<h2>Other useful piece of information</h2>
+<h2 id="other-useful-piece-of-information">Other useful piece of information</h2>
 <p>Basically, you can create as many custom headers as you want. A good practice with end-points returning a list of resources, is to give the total number of records in the database when relevant, via a header. You may wonder why, since we can programmatically count the number of results. But, as I will explain it in the next section, you are never going to return the full list of results in a single response.</p>
 <p>So, this is an example of a header specifying the number of rows. The request:</p>
 <div class="highlight"><pre><span></span><code>GET /users HTTP/1.1
@@ -427,7 +427,7 @@ Total-Rows: 7897
 ]
 </code></pre></div>
 
-<h1>Pagination</h1>
+<h1 id="pagination">Pagination</h1>
 <p><strong>When returning a list of resources</strong>, above a certain number or results, you should split your response in pages. It's a good practice for reducing waiting time and the weight of responses. Moreover, you might not need the whole list at once. Depending on the amount of details provided for each resource, a general rule would be returning between 100 and 1000 results per request as a maximum.</p>
 <p>Requesting a page is as simple as providing a query parameter:</p>
 <div class="highlight"><pre><span></span><code>GET /users?page=3
@@ -475,7 +475,7 @@ Total-Rows: 7897
 <li>A new user (Mary) signs up on your website/mobile application, aged of 24.</li>
 <li><code>GET /users?page=1</code>: you get results from Jean to Bob. You got the same person twice (Jean), this is a problem.</li>
 </ol>
-<h2>What happened?</h2>
+<h2 id="what-happened">What happened?</h2>
 <p>As Mary is 24 and the API returns results sorted by age, Mary would be returned on page 0, which shifts Jean to page 1.</p>
 <p>A good way to solve this problem is to create a pagination based on an entity (here, a user). Instead of requesting a particular page, you would say to the API "<em>give me results after this user</em>" or "<em>before this user</em>". Let me explain it by replaying our scenario:</p>
 <ol>
@@ -494,7 +494,7 @@ Total-Rows: 7897
 <li>If a page returns this entire collection, use the status code 200. Otherwise, use the status code 206 (<em>Partial Content</em>)</li>
 </ul>
 <p><a href="http://metabates.com/2012/02/22/adding-pagination-to-an-api/">More information about pagination</a>.</p>
-<h1>Filtering and sorting</h1>
+<h1 id="filtering-and-sorting">Filtering and sorting</h1>
 <p>Every end-point that returns a list of resource should allow filtering on fields, as well as sorting. The following request should be possible:</p>
 <div class="highlight"><pre><span></span><code>GET /users?country=US&amp;age=21&amp;sortBy=name
 </code></pre></div>
@@ -504,16 +504,16 @@ Total-Rows: 7897
 <p>We're done! Now, you know how to build efficient and robust APIs.</p>
 <p>Building an efficient API involves many aspects to consider, and most of all, requires a good knowledge of HTTP. It's time-consuming at first sight, but once you know what you're doing, what your needs are in terms of features, it's pretty straightforward. Considering all aspects right at the beginning, like security or the database architecture and how you would like to expose it, is key. That's what is called designing an architecture, and one should pay heed to it. When properly and carefully done, the API implementation job is fairly easy.</p>
 <p>What are the next steps?</p>
-<h1>Add a documentation for other developers who use your API</h1>
+<h1 id="add-a-documentation-for-other-developers-who-use-your-api">Add a documentation for other developers who use your API</h1>
 <ul>
 <li><a href="http://apidocjs.com/">apidoc</a> (I really like this one, very easy)</li>
 <li><a href="http://swagger.io/">Swagger.io</a> (good reputation, altough I never tried it)</li>
 <li><a href="https://medium.com/@orliesaurus/a-review-of-all-most-common-api-editors-6a720dc4f4e6">A full list of most common API editors</a>.</li>
 </ul>
-<h1>Going further: create a CLI</h1>
+<h1 id="going-further-create-a-cli">Going further: create a CLI</h1>
 <p>Make you API public! Create a documentation and a NPM package to ease the work for developers. <a href="https://www.clever-cloud.com/blog/features/2015/09/21/Public-API-available/">Read how Clever Cloud did it</a>.</p>
 <p><a href="https://www.npmjs.com/package/cliparse">cliparse</a></p>
-<h1>Quick example with Express.js</h1>
+<h1 id="quick-example-with-expressjs">Quick example with Express.js</h1>
 <p><a href="http://expressjs.com/">Express</a> ease the process of developing APIs with Javascript so much! You should definitely give it a try!</p>
 <div class="highlight"><pre><span></span><code>npm init
 npm install -g express <span class="c1"># Globally, to be able to use the CLI of express</span>
@@ -557,7 +557,7 @@ npm install -S express <span class="c1"># Locally, added as a dependency</span>
 <p>That's it! With only a few lines, you can easily get a working API.</p>
 <p>This is now the end of this article, hope it will help you! Any feedback appreciated ;)</p>
 <hr>
-<h1>TL;DR</h1>
+<h1 id="tldr">TL;DR</h1>
 <p>Here is a little recap of everything above:</p>
 <ul>
 <li>End-points represent either an individual resource or a collection of resources</li>
@@ -582,7 +582,7 @@ npm install -S express <span class="c1"># Locally, added as a dependency</span>
 </ul>
 </li>
 </ul>
-<h1>Going further</h1>
+<h1 id="going-further">Going further</h1>
 <ul>
 <li><a href="https://speakerdeck.com/dzuelke/designing-http-interfaces-and-restful-web-services-sfliveparis2012-2012-06-08">Designing HTTP Interfaces and RESTful Web Services (SFLiveParis2012 2012-06-08)</a></li>
 <li><a href="https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/">Serious Security: How to store your users' passwords safely</a></li>

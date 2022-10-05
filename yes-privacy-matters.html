@@ -108,10 +108,10 @@
 <li><strong>DO NOT INSTALL</strong> Facebook nor Twitter on your Android phone (or Cyanogen)</li>
 </ul>
 <p>Before starting reading this article, you might be interested in this webpage, a <a href="https://wiki.archlinux.org/index.php/Disk_encryption">full documentation about how encryption works with Linux</a>.</p>
-<h1>Secure your computer and encrypt (part of) your local hard disk drive</h1>
+<h1 id="secure-your-computer-and-encrypt-part-of-your-local-hard-disk-drive">Secure your computer and encrypt (part of) your local hard disk drive</h1>
 <p>First, set all possible BIOS passwords (usually one for the administrator and one for user(s); each password will give different rights for the BIOS, for example sensitive settings will be accessible to the administrator only).</p>
 <p>Secondly, set HDD passwords from the BIOS panel (again, one for admins, one for user, both have the same purpose and rights: they kind of unlock the HDD, allowing it to be read and written).</p>
-<h2>Full disk encryption</h2>
+<h2 id="full-disk-encryption">Full disk encryption</h2>
 <p>Then, to encrypt your whole disk, you have 3 options:</p>
 <ol>
 <li>Use the *Ubuntu built-in installer to encrypt the whole disk, erasing <strong>EVERYTHING</strong> on the disk.</li>
@@ -126,9 +126,9 @@ sudo dd <span class="k">if</span><span class="o">=</span>/home/user/Downloads/xu
 </code></pre></div>
 
 <p>Please notice that with LUKS encryption, <a href="https://twopointfouristan.wordpress.com/2011/04/17/pwning-past-whole-disk-encryption/">your computer is still vulnerable as long as you have a boot partition unencrypted</a>.</p>
-<h2><code>/home</code> encryption (using the filesystem called eCryptfs)</h2>
+<h2 id="home-encryption-using-the-filesystem-called-ecryptfs"><code>/home</code> encryption (using the filesystem called eCryptfs)</h2>
 <p>Do it while installing your fresh new *Ubuntu. Otherwise, you can still <a href="http://askubuntu.com/questions/366749/enable-disk-encryption-after-installation">do it later</a> using <a href="http://www.howtogeek.com/116032/how-to-encrypt-your-home-folder-after-installing-ubuntu/"><code>ecryptfs-migrate-home</code></a>.</p>
-<h1>Encrypt external HDD with <code>dm-crypt</code> and LUKS</h1>
+<h1 id="encrypt-external-hdd-with-dm-crypt-and-luks">Encrypt external HDD with <code>dm-crypt</code> and LUKS</h1>
 <ol>
 <li>
 <p>Find the correct device (eg. <code>/dev/sdb1</code> as a second internal SATA-HDD) and umount it:</p>
@@ -191,7 +191,7 @@ sudo eject /dev/sdb
 </code></pre></div>
 
 <p>Finally, you might want to backup the LUKS headers or add or change keys (passwords), if so look some keywords up on the Internet, like <em><code>cryptsetup</code></em> plus <em><code>luksHeaderBackup</code></em> or <em><code>luksHeaderRestore</code></em> or <em><code>isLuks</code></em> or <em><code>luksDump</code></em> or <em><code>luksAddKey</code></em> or <em><code>luksRemoveKey</code></em>.</p>
-<h2>Automount encrypted HDDs with LUKS on bootup</h2>
+<h2 id="automount-encrypted-hdds-with-luks-on-bootup">Automount encrypted HDDs with LUKS on bootup</h2>
 <p>In <code>/etc/crypttab</code>, add:</p>
 <div class="highlight"><pre><span></span><code>mycryptedhdd    UUID=00000000-0000-0000-0000-000000000000   none    luks,tries=3
 </code></pre></div>
@@ -203,7 +203,7 @@ sudo eject /dev/sdb
 
 <p><em>mycryptedhdd</em> must be the same name used as before. <em>/mnt/mounteddirectory</em> is where the encrypted disk will be available. <em>ext4</em> is the filesystem used on the disk (see step 5). First 0 means the device will not be backed up by the dump utility, second 0 means the device will never be automatically checked by the <code>fsck</code> utility.</p>
 <p>You're good!</p>
-<h1>Encrypt what you put on Cloud Storages</h1>
+<h1 id="encrypt-what-you-put-on-cloud-storages">Encrypt what you put on Cloud Storages</h1>
 <p>This part is inspired from <a href="http://haridas.in/how-to-put-encrypted-contents-on-cloud-storages.html">this blog post</a>. <strong>I highly recommend encrypting content put online, should it be on proprietary platforms such as Google Drive ou Dropbox, or even on ownCloud.</strong></p>
 <div class="highlight"><pre><span></span><code>sudo apt-get install ecryptfs-utils
 sudo modprobe cryptfs <span class="c1"># Optional</span>
@@ -218,43 +218,43 @@ sudo mount -t ecryptfs ~/Dropbox/Encrypted ~/SecureDropbox
 <div class="highlight"><pre><span></span><code>ecryptfs-add-passphrase --fnek
 </code></pre></div>
 
-<h1>Encrypt one single file</h1>
-<h2>Encryption</h2>
+<h1 id="encrypt-one-single-file">Encrypt one single file</h1>
+<h2 id="encryption">Encryption</h2>
 <div class="highlight"><pre><span></span><code>openssl aes-256-cbc -in yourfile.txt -out file.enc
 <span class="c1"># OR</span>
 gpg -c filename
 </code></pre></div>
 
-<h2>Decryption</h2>
+<h2 id="decryption">Decryption</h2>
 <div class="highlight"><pre><span></span><code>openssl aes-256-cbc -d -in file.enc -out yourfile.txt
 <span class="c1"># OR</span>
 gpg filename.gpg
 </code></pre></div>
 
-<h1>Free alternatives to proprietary software</h1>
-<h2>Emails</h2>
+<h1 id="free-alternatives-to-proprietary-software">Free alternatives to proprietary software</h1>
+<h2 id="emails">Emails</h2>
 <ul>
 <li>Thunderbird</li>
 </ul>
-<h2>Web browser</h2>
+<h2 id="web-browser">Web browser</h2>
 <ul>
 <li>Mozilla Firefox</li>
 </ul>
-<h2>Text editor</h2>
+<h2 id="text-editor">Text editor</h2>
 <ul>
 <li>Atom (<s>Sublime Text</s> is proprietary)</li>
 <li>Vim or Emacs</li>
 </ul>
-<h2>Video editing</h2>
+<h2 id="video-editing">Video editing</h2>
 <ul>
 <li><a href="http://www.shotcut.org/">Shotcut</a></li>
 </ul>
-<h2>Graphics editor</h2>
+<h2 id="graphics-editor">Graphics editor</h2>
 <ul>
 <li>Gimp</li>
 <li>Inkscape (vector)</li>
 </ul>
-<h1>Further reading</h1>
+<h1 id="further-reading">Further reading</h1>
 <ul>
 <li><a href="http://blog.adminrezo.fr/2016/01/comment-choisir-sa-cle-ssh-rsa-dsa-ecdsa-ed25519/">Quelle clé SSH choisir ? RSA, DSA, ou Ed25519 ?</a></li>
 <li><a href="http://linuxfr.org/news/nsa-a-propos-de-bullrun">NSA - À propos de BULLRUN</a></li>
