@@ -132,6 +132,7 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 ### Profitability comparator
 
 <div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
+<div><input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /> <label for="rent_increase">Expected rent increase per year in euros</label></div>
 <div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
 <div><input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/> <label for="grundsteuer">Expected Grundsteuer per month</label></div>
 
@@ -140,6 +141,7 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 <script>
 function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
     const rent = +(document.querySelector('input#rent').value || 0)
+    const rent_increase = +(document.querySelector('input#rent_increase').value || 0)
     const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
     const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
 
@@ -165,8 +167,12 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
     rowZero.appendChild(rowZeroNewApartmentCosts)
 
     rows.push(rowZero)
+    let currentRent = rent
     while(sumPaidInOldApartment < sumPaidInNewApartment) {
         currentMonth++
+        if (currentMonth > 12 && (currentMonth - 1) % 12 === 0) {
+            currentRent = roundToTwo(currentRent + rent_increase)
+        }
         if (currentMonth > 12 * 50) {
             // No need to process profitability beyond 50, abort...
             profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
@@ -176,7 +182,7 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
         const paidDebt = Math.min((rate - paidInterest), remainingDebt)
         remainingDebt = Math.max(remainingDebt - paidDebt)
 
-        sumPaidInOldApartment += rent
+        sumPaidInOldApartment += currentRent
 
         const row = document.createElement('tr')
 
