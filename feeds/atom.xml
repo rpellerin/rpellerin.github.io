@@ -236,6 +236,7 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id="profitability-comparator"&gt;Profitability comparator&lt;/h3&gt;
 &lt;div&gt;&lt;input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /&gt; &lt;label for="rent"&gt;Current rent (Warmmiete)&lt;/label&gt;&lt;/div&gt;
+&lt;div&gt;&lt;input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /&gt; &lt;label for="rent_increase"&gt;Expected rent increase per year in euros&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /&gt; &lt;label for="hausgeld"&gt;Hausgeld in the new apartment&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/&gt; &lt;label for="grundsteuer"&gt;Expected Grundsteuer per month&lt;/label&gt;&lt;/div&gt;
 
@@ -244,6 +245,7 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
 &lt;script&gt;
 function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
     const rent = +(document.querySelector('input#rent').value || 0)
+    const rent_increase = +(document.querySelector('input#rent_increase').value || 0)
     const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
     const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
 
@@ -269,8 +271,12 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
     rowZero.appendChild(rowZeroNewApartmentCosts)
 
     rows.push(rowZero)
+    let currentRent = rent
     while(sumPaidInOldApartment &lt; sumPaidInNewApartment) {
         currentMonth++
+        if (currentMonth &gt; 12 &amp;&amp; (currentMonth - 1) % 12 === 0) {
+            currentRent = roundToTwo(currentRent + rent_increase)
+        }
         if (currentMonth &gt; 12 * 50) {
             // No need to process profitability beyond 50, abort...
             profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
@@ -280,7 +286,7 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
         const paidDebt = Math.min((rate - paidInterest), remainingDebt)
         remainingDebt = Math.max(remainingDebt - paidDebt)
 
-        sumPaidInOldApartment += rent
+        sumPaidInOldApartment += currentRent
 
         const row = document.createElement('tr')
 

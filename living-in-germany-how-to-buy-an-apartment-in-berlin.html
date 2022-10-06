@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">Some tips and tricks about buying real estate in Berlin</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2806 words.">14 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2842 words.">14 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/berlin.html">berlin</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/apartment.html">apartment</a></p>    </div>
 </header>
@@ -204,6 +204,7 @@
 
 <h3 id="profitability-comparator">Profitability comparator</h3>
 <div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
+<div><input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /> <label for="rent_increase">Expected rent increase per year in euros</label></div>
 <div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
 <div><input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/> <label for="grundsteuer">Expected Grundsteuer per month</label></div>
 
@@ -212,6 +213,7 @@
 <script>
 function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
     const rent = +(document.querySelector('input#rent').value || 0)
+    const rent_increase = +(document.querySelector('input#rent_increase').value || 0)
     const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
     const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
 
@@ -237,8 +239,12 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
     rowZero.appendChild(rowZeroNewApartmentCosts)
 
     rows.push(rowZero)
+    let currentRent = rent
     while(sumPaidInOldApartment < sumPaidInNewApartment) {
         currentMonth++
+        if (currentMonth > 12 && (currentMonth - 1) % 12 === 0) {
+            currentRent = roundToTwo(currentRent + rent_increase)
+        }
         if (currentMonth > 12 * 50) {
             // No need to process profitability beyond 50, abort...
             profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
@@ -248,7 +254,7 @@ function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler
         const paidDebt = Math.min((rate - paidInterest), remainingDebt)
         remainingDebt = Math.max(remainingDebt - paidDebt)
 
-        sumPaidInOldApartment += rent
+        sumPaidInOldApartment += currentRent
 
         const row = document.createElement('tr')
 
