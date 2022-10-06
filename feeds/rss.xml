@@ -412,6 +412,8 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;In interests: (0.02 * (400,000 - 1333.33)) / 12 = 664.44 euros&lt;/li&gt;
 &lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id="lebensversicherungrisikolebensversicherung"&gt;Lebensversicherung/Risikolebensversicherung&lt;/h2&gt;
+&lt;p&gt;Depending on which bank you go with, they might require that you sign up for a Risikolebensversicherung: an insurance that would pay a lump sump agreed on (which decreases over the years), in the event of death. It can covers multiple people, if you're not buying alone. The Deutsche Bank is one of the banks that require such an insurance. The cost varies depending on how much money is covered, but expect to pay between 15 and 40 euros per month.&lt;/p&gt;
 &lt;h2 id="simulation-tilgungsplan"&gt;Simulation: Tilgungsplan&lt;/h2&gt;
 &lt;div&gt;&lt;input step=".01" type="number" value="400000" id="loan_amount"/&gt; &lt;label for="loan_amount"&gt;Loan&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="2" value="2" id="interests"/&gt; &lt;label for="interests"&gt;Interests rate (%)&lt;/label&gt;&lt;/div&gt;
