@@ -328,6 +328,12 @@ The next month, you will pay:
 - In interests: (0.02 \* (400,000 - 1333.33)) / 12 = 664.44 euros
 - In debt: 2,000 - 664.44 euros = 1335.56 euros
 
+## Lebensversicherung/Risikolebensversicherung
+
+Depending on which bank you go with, they might require that you sign up for a Risikolebensversicherung: an insurance that would pay a lump sump agreed on (which decreases over the years), in the event of death. It can covers multiple people, if you're not buying alone. The Deutsche Bank is one of the banks that require such an insurance. The cost varies depending on how much money is covered, but expect to pay between 15 and 40 euros per month.
+
+
+
 ## Simulation: Tilgungsplan
 
 <div><input step=".01" type="number" value="400000" id="loan_amount"/> <label for="loan_amount">Loan</label></div>
