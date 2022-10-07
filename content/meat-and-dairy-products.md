@@ -1,4 +1,4 @@
-Title: Meat and Dairy Products 
+Title: Meat and Dairy Products
 Date: 2017-01-19 01:50
 Category: What's bad about
 Tags: meat, dairy, milk, pollution
@@ -9,6 +9,7 @@ Summary: A bunch of links in favor of lesser comsumption of meat and dairy produ
 - [UN urges global move to meat and dairy-free diet](https://www.theguardian.com/environment/2010/jun/02/un-report-meat-free-diet)
 - [COwSPIRACY: the film that environmental organizations don't want you to see!](http://www.cowspiracy.com/)
 - [4500 litres d'eau dans mon steak ? Vrai](https://www.sciencepresse.qc.ca/actualite/detecteur-rumeurs/2017/03/22/4500-litres-eau-steak-vrai)
+- [EATING OUR WAY TO EXTINCTION](https://www.youtube.com/channel/UCYNldGFnfcDE8ItayYf7izg)
 - [Ce que 10 ans de végétalisme ont fait à mon corps.](http://www.insolente-veggie.com/ce-que-10-ans-de-vegetalisme-ont-fait-a-mon-corps/)
 - [Véganisme, végétalisme : ce que dit la science](https://blogs.mediapart.fr/florence-dellerie/blog/140218/veganisme-vegetalisme-ce-que-dit-la-science)
 
