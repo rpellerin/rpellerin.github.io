@@ -100,6 +100,10 @@ There's no frontier to knowledge, embrace a foreign language right now :-)
 
 To conclude, try to [read this](http://www.thepoke.co.uk/2011/12/23/english-pronunciation/). Good luck!
 
+## Going further with German
+
+- [5 of the most cringeworthy mistakes I’ve made in German](https://www.thelocal.de/20221010/5-of-the-most-cringeworthy-mistakes-ive-made-in-german/)
+
 ## Going further with English
 
 I decided to gather here all the little things to know in English, which are not obvious.
