@@ -33,231 +33,6 @@ On top of that, you need to pay a new tax: the Grundsteuer. It's pretty cheap in
 
 [More on the topic here.](https://www.thelocal.de/20210930/explained-the-hidden-costs-of-buying-a-house-in-germany/)
 
-## Recap
-
-### Loan needed
-
-<style>
-    table { border-collapse: collapse; margin: auto; }
-    table.right { text-align: right }
-    table.stripes tbody tr:nth-child(even) { background: #DDD; }
-    thead { background: gray }
-    thead.sticky { position: sticky; top: 0; }
-    th,td { border: 1px solid black; }
-    tr.red { background: red }
-    tr.green { background: green }
-    tr.purple { background: purple }
-    input:invalid { outline: 1px solid red; }
-    .results {
-        margin: 5px 0;
-        text-align: center;
-        font-weight: bold;
-        padding: 10px;
-        background: rgba(252, 3, 3, 0.5);
-    }
-</style>
-<div><input id="maklerprovisionfrei" type="checkbox" /><label for="maklerprovisionfrei">No broker commission</label></div>
-<table style="border: 1px solid black">
-<thead>
-<tr>
-    <th>Name</th>
-    <th>Expenditure</th>
-    <th>Capital</th>
-</tr>
-</thead>
-<tbody>
-<tr class="green">
-    <td><strong>Equity capital</strong></td>
-    <td></td>
-    <td><input step=".01" value="20000" id="capital" type="number" placeholder="Money on your bank account" /></td>
-</tr>
-<tr class="red">
-    <td><strong>Repair costs</strong></td>
-    <td><input step=".01" id="repair" type="number" placeholder="New kitchen, etc" /></td>
-    <td></td>
-</tr>
-<tr class="green">
-    <td><strong>Sum capital - repair</strong></td>
-    <td></td>
-    <td id="capitalMinusRepair"></td>
-</tr>
-<tr class="red">
-    <td>Tax (Grunderwerbsteuer 6%)</td>
-    <td id="grunderwerbsteuer"></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td>Notar (Notarkosten 1,5%)</td>
-    <td id="notar"></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td>Notar (Grundbucheintrag 0,5%)</td>
-    <td id="grundbucheintrag"></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td>Broker commision (usually 3,57%)</td>
-    <td id="maklerprovision"></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td><strong>Sum Tax + Notar + Broker commision</strong></td>
-    <td id="sumTaxNotarMakler"></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td><strong>Purchase price</strong></td>
-    <td><input step=".01" id="kaufpreis" type="number" value="100000" /></td>
-    <td></td>
-</tr>
-<tr class="red">
-    <td><strong>Total price (Purchase price + Tax + Notar + Broker commision)</strong></td>
-    <td id="totalPrice"></td>
-    <td></td>
-</tr>
-<tr class="green">
-    <td><strong>Remaining capital for the apartement alone</strong></td>
-    <td></td>
-    <td id="remainingCapital"></td>
-</tr>
-<tr class="purple">
-    <td><strong>Loan needed</strong></td>
-    <td></td>
-    <td id="loan"></td>
-</tr>
-<tbody>
-</table>
-
-### Profitability comparator
-
-<div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
-<div><input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /> <label for="rent_increase">Expected rent increase per year in euros</label></div>
-<div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
-<div><input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/> <label for="grundsteuer">Expected Grundsteuer per month</label></div>
-
-<div id="profitability" class="results"></div>
-
-<script>
-function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
-    const rent = +(document.querySelector('input#rent').value || 0)
-    const rent_increase = +(document.querySelector('input#rent_increase').value || 0)
-    const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
-    const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
-
-    const profitabilityDiv = document.querySelector('#profitability')
-
-    let sumPaidInOldApartment = 0
-    let sumPaidInNewApartment = sumTaxNotarMakler
-
-    let remainingDebt = loanAmount
-    let currentMonth = 0
-    const rows = []
-    const rowZero = document.createElement('tr')
-
-    const rowZeromonthNumber = document.createElement('td')
-    rowZeromonthNumber.innerHTML = currentMonth
-    const rowZeroAccruedRents = document.createElement('td')
-    rowZeroAccruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
-    const rowZeroNewApartmentCosts = document.createElement('td')
-    rowZeroNewApartmentCosts.innerHTML = toCurrency(sumPaidInNewApartment)
-
-    rowZero.appendChild(rowZeromonthNumber)
-    rowZero.appendChild(rowZeroAccruedRents)
-    rowZero.appendChild(rowZeroNewApartmentCosts)
-
-    rows.push(rowZero)
-    let currentRent = rent
-    while(sumPaidInOldApartment < sumPaidInNewApartment) {
-        currentMonth++
-        if (currentMonth > 12 && (currentMonth - 1) % 12 === 0) {
-            currentRent = roundToTwo(currentRent + rent_increase)
-        }
-        if (currentMonth > 12 * 50) {
-            // No need to process profitability beyond 50, abort...
-            profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
-            return
-        }
-        const paidInterest = roundToTwo((remainingDebt * interestRate) / 12)
-        const paidDebt = Math.min((rate - paidInterest), remainingDebt)
-        remainingDebt = Math.max(remainingDebt - paidDebt)
-
-        sumPaidInOldApartment += currentRent
-
-        const row = document.createElement('tr')
-
-        const rowMonthNumber = document.createElement('td')
-        rowMonthNumber.innerHTML = currentMonth
-        const accruedRents = document.createElement('td')
-        accruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
-        const rowNewApartmentCosts = document.createElement('td')
-        rowNewApartmentCosts.innerHTML = `${toCurrency(sumPaidInNewApartment)} + ${toCurrency(paidInterest)} + ${toCurrency(hausgeld)} + ${toCurrency(grundsteuer)}`
-
-        row.appendChild(rowMonthNumber)
-        row.appendChild(accruedRents)
-        row.appendChild(rowNewApartmentCosts)
-
-        rows.push(row)
-
-        sumPaidInNewApartment += paidInterest + hausgeld + grundsteuer
-        rowNewApartmentCosts.innerHTML += ` = ${toCurrency(sumPaidInNewApartment)}`
-    }
-    profitabilityDiv.innerHTML = `<p>With a monthly payment of ${toCurrency(rate)} (<a href="#rate">adjust</a>) and an interest rate of ${interestRate * 100}% (<a href="#interests">adjust</a>)...</p><details>
-        <summary>Your investment becomes profitable on the ${currentMonth}th month (year ${roundToTwo(currentMonth/12)})</summary>
-        <table id="profitability_table">
-            <thead>
-            <tr>
-                <th>Month</th>
-                <th>Accrued rents</th>
-                <th>Tax + Notar + Broker +<br />Accrued Interests + Hausgeld + Grundsteuer</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </details>`
-
-    const profitabilityTbody = document.querySelector('#profitability_table tbody')
-    profitabilityTbody.append(...rows)
-}
-
-function roundToTwo(num) {
-  return +(Math.round(num + "e+2") + "e-2");
-}
-
-function toCurrency(num) {
-return `${roundToTwo(num).toLocaleString()} €`
-}
-
-const multiply = (a,b) => (a*b)
-
-function computeLoanTable({loanAmount, rate, interestRate, sondertilgung}) {
-    const capital = +(document.querySelector('input#capital').value || 0)
-    const repair = +(document.querySelector('input#repair').value || 0)
-    const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
-    const maklerprovisionfrei = document.querySelector('input#maklerprovisionfrei').checked
-    const capitalMinusRepair = capital - repair
-    document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
-    const tax = roundToTwo(multiply(kaufpreis, 0.06))
-    document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
-    const notar = roundToTwo(multiply(kaufpreis, 0.015))
-    document.querySelector("#notar").innerHTML = toCurrency(notar)
-    const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
-    document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
-    const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
-    document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
-    const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
-    document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
-    const totalPrice = kaufpreis + sumTaxNotarMakler
-    document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
-    const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
-    document.querySelector("#remainingCapital").innerHTML = toCurrency(remainingCapital)
-    document.querySelector("#loan").innerHTML = toCurrency(kaufpreis - remainingCapital)
-
-    computeProfitability({loanAmount, rate, interestRate, sondertilgung, sumTaxNotarMakler})
-}
-</script>
-
 # 2. Make sure you have a SCHUFA Score, that is not too bad
 
 This is especially true if you are a foreigner and do not have a German bank account, or barely use it. N26 can fuck things up and somehow not transmit any data to SCHUFA. Not having a SCHUFA Score is even worse than having a poor score, as some banks will simply not proceed at all with you, not even studying your case, since they can't get any score at all. [You can ask SCHUFA to provide you with the data they have about you by invoking the GDPR](https://myhelpbuddy.com/how-to-get-your-schufa-score-for-free/).
@@ -338,13 +113,139 @@ The next month, you will pay:
 
 Depending on which bank you go with, they might require that you sign up for a Risikolebensversicherung: an insurance that would pay a lump sump agreed on (which decreases over the years), in the event of death. It can covers multiple people, if you're not buying alone. The Deutsche Bank is one of the banks that require such an insurance. The cost varies depending on how much money is covered, but expect to pay between 15 and 40 euros per month.
 
+# 7. Kaufvertrag (Purchase contract)
 
+While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.
 
-## Simulation: Tilgungsplan
+If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.
 
-<div><input step=".01" type="number" value="400000" id="loan_amount"/> <label for="loan_amount">Loan</label></div>
+The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.
+
+Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).
+
+A few days ahead of the notary meeting, the notary will ask you a bunch of papers from your financing bank, so that they can start writing the draft of the Grundschuldbestellungsurkunde (mortgage deed). Forward that request to your mortgage broker if you have one.
+
+The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.
+
+# 8. Payments
+
+A few days later, you will receive various invoices from the Notar (Notarkosten at least, maybe the Grundbucheintrag too).
+
+**Another few days later, the Notar will ask you to pay the apartment before a given due date.** What you'll most likely do is, transfer your equity capital to some temporary bank account provided by your financing bank. Then, the bank will pay the seller. The bank might ask you to transfer all of the equity capital you said you had, minus what you paid to the Notar already, and then ask you to pay the remaining future invoices (Grunderwerbsteuer at least) from that temporary bank account.
+
+# Conclusion: timeline of events
+
+<figure class="center"><img alt="All the events and when then take place" src="{static}/images/buying_an_apartment_in_berlin.png" /></figure>
+
+# Simulation
+
+## Loan needed
+
+<style>
+    table { border-collapse: collapse; margin: auto; }
+    table.right { text-align: right }
+    table.stripes tbody tr:nth-child(even) { background: #DDD; }
+    thead { background: gray }
+    thead.sticky { position: sticky; top: 0; }
+    th,td { border: 1px solid black; }
+    tr.red { background: red }
+    tr.green { background: green }
+    tr.purple { background: purple }
+    input:invalid { outline: 1px solid red; }
+    .results {
+        margin: 5px 0;
+        text-align: center;
+        padding: 10px;
+        background: rgba(252, 3, 3, 0.5);
+    }
+    .bold { font-weight: bold; }
+</style>
+<div><input id="maklerprovisionfrei" type="checkbox" /><label for="maklerprovisionfrei">No broker commission</label></div>
+<table style="border: 1px solid black">
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Expenditure</th>
+    <th>Capital</th>
+</tr>
+</thead>
+<tbody>
+<tr class="green">
+    <td><strong>Equity capital</strong></td>
+    <td></td>
+    <td><input step=".01" value="20000" id="capital" type="number" placeholder="Money on your bank account" /></td>
+</tr>
+<tr class="red">
+    <td><strong>Repair costs</strong></td>
+    <td><input step=".01" id="repair" type="number" placeholder="New kitchen, etc" /></td>
+    <td></td>
+</tr>
+<tr class="green">
+    <td><strong>Sum capital - repair</strong></td>
+    <td></td>
+    <td id="capitalMinusRepair"></td>
+</tr>
+<tr class="red">
+    <td>Tax (Grunderwerbsteuer 6%)</td>
+    <td id="grunderwerbsteuer"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td>Notar (Notarkosten 1,5%)</td>
+    <td id="notar"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td>Notar (Grundbucheintrag 0,5%)</td>
+    <td id="grundbucheintrag"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td>Broker commision (usually 3,57%)</td>
+    <td id="maklerprovision"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td><strong>Sum Tax + Notar + Broker commision</strong></td>
+    <td id="sumTaxNotarMakler"></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td><strong>Purchase price</strong></td>
+    <td><input step=".01" id="kaufpreis" type="number" value="100000" /></td>
+    <td></td>
+</tr>
+<tr class="red">
+    <td><strong>Total price (Purchase price + Tax + Notar + Broker commision)</strong></td>
+    <td id="totalPrice"></td>
+    <td></td>
+</tr>
+<tr class="green">
+    <td><strong>Remaining capital for the apartement alone</strong></td>
+    <td></td>
+    <td id="remainingCapital"></td>
+</tr>
+<tr class="purple">
+    <td><strong>Loan needed</strong></td>
+    <td></td>
+    <td id="loan"></td>
+</tr>
+<tbody>
+</table>
+
+## Profitability comparator
+
+<div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
+<div><input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /> <label for="rent_increase">Expected rent increase per year in euros</label></div>
+<div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
+<div><input step=".01" id="grundsteuer" type="number" placeholder="Grundsteuer" value="30"/> <label for="grundsteuer">Expected Grundsteuer per month</label></div>
 <div><input step=".01" type="number" placeholder="2" value="2" id="interests"/> <label for="interests">Interests rate (%)</label></div>
 <div><input step=".01" type="number" placeholder="2000" value="2000" id="rate"/> <label for="rate">Monatliche Rate</label></div>
+
+<div id="profitability" class="results"></div>
+
+## Tilgungsplan
+
 <div><input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/> <label for="sondertilgung">Sondertilgung (one payment every 12 months, after 1 year)</label></div>
 
 <div id="summary" class="results"></div>
@@ -368,20 +269,147 @@ Depending on which bank you go with, they might require that you sign up for a R
 </table>
 
 <script>
+function computeProfitability({loanAmount, rate, interestRate, sumTaxNotarMakler}) {
+    const rent = +(document.querySelector('input#rent').value || 0)
+    const rent_increase = +(document.querySelector('input#rent_increase').value || 0)
+    const hausgeld = +(document.querySelector('input#hausgeld').value || 0)
+    const grundsteuer = +(document.querySelector('input#grundsteuer').value || 0)
+
+    const profitabilityDiv = document.querySelector('#profitability')
+
+    let sumPaidInOldApartment = 0
+    let sumPaidInNewApartment = sumTaxNotarMakler
+
+    let remainingDebt = loanAmount
+    let currentMonth = 0
+    const rows = []
+    const rowZero = document.createElement('tr')
+
+    const rowZeromonthNumber = document.createElement('td')
+    rowZeromonthNumber.innerHTML = currentMonth
+    const rowZeroAccruedRents = document.createElement('td')
+    rowZeroAccruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+    const rowZeroNewApartmentCosts = document.createElement('td')
+    rowZeroNewApartmentCosts.innerHTML = toCurrency(sumPaidInNewApartment)
+
+    rowZero.appendChild(rowZeromonthNumber)
+    rowZero.appendChild(rowZeroAccruedRents)
+    rowZero.appendChild(rowZeroNewApartmentCosts)
+
+    rows.push(rowZero)
+    let currentRent = rent
+    while(sumPaidInOldApartment < sumPaidInNewApartment) {
+        currentMonth++
+        if (currentMonth > 12 && (currentMonth - 1) % 12 === 0) {
+            currentRent = roundToTwo(currentRent + rent_increase)
+        }
+        if (currentMonth > 12 * 50) {
+            // No need to process profitability beyond 50, abort...
+            profitabilityDiv.innerHTML = `Your investment becomes profitable in more than 50 years...`
+            return
+        }
+        const paidInterest = roundToTwo((remainingDebt * interestRate) / 12)
+        const paidDebt = Math.min((rate - paidInterest), remainingDebt)
+        remainingDebt = Math.max(remainingDebt - paidDebt)
+
+        sumPaidInOldApartment += currentRent
+
+        const row = document.createElement('tr')
+
+        const rowMonthNumber = document.createElement('td')
+        rowMonthNumber.innerHTML = currentMonth
+        const accruedRents = document.createElement('td')
+        accruedRents.innerHTML = toCurrency(sumPaidInOldApartment)
+        const rowNewApartmentCosts = document.createElement('td')
+        rowNewApartmentCosts.innerHTML = `${toCurrency(sumPaidInNewApartment)} + ${toCurrency(paidInterest)} + ${toCurrency(hausgeld)} + ${toCurrency(grundsteuer)}`
+
+        row.appendChild(rowMonthNumber)
+        row.appendChild(accruedRents)
+        row.appendChild(rowNewApartmentCosts)
+
+        rows.push(row)
+
+        sumPaidInNewApartment += paidInterest + hausgeld + grundsteuer
+        rowNewApartmentCosts.innerHTML += ` = ${toCurrency(sumPaidInNewApartment)}`
+    }
+    profitabilityDiv.innerHTML = `<p>With a monthly payment of ${toCurrency(rate)}, an interest rate of ${interestRate * 100}%, and a Tilgungssatz of ${roundToTwo((((rate * 12) - (loanAmount*interestRate))/loanAmount)*100)}%...</p><details>
+        <summary class="bold">Your investment becomes profitable on the ${currentMonth}th month (year ${roundToTwo(currentMonth/12)})</summary>
+        <table id="profitability_table">
+            <thead>
+            <tr>
+                <th>Month</th>
+                <th>Accrued rents</th>
+                <th>Tax + Notar + Broker +<br />Accrued Interests + Hausgeld + Grundsteuer</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </details>`
+
+    const profitabilityTbody = document.querySelector('#profitability_table tbody')
+    profitabilityTbody.append(...rows)
+
+    let sumPaidInOldApartmentAfterTenYears = 0
+    currentRent = rent
+    for (let month = 1; month <= 120; month++) {
+        if (month > 12 && (month - 1) % 12 === 0) {
+            currentRent = roundToTwo(currentRent + rent_increase)
+        }
+        sumPaidInOldApartmentAfterTenYears += currentRent
+    }
+    return {sumPaidInOldApartmentAfterTenYears,hausgeld,grundsteuer}
+}
+
+function roundToTwo(num) {
+  return +(Math.round(num + "e+2") + "e-2");
+}
+
+function toCurrency(num) {
+return `${roundToTwo(num).toLocaleString()} €`
+}
+
+const multiply = (a,b) => (a*b)
+
+function computeLoanTable({rate, interestRate, sondertilgung}) {
+    const capital = +(document.querySelector('input#capital').value || 0)
+    const repair = +(document.querySelector('input#repair').value || 0)
+    const kaufpreis = +(document.querySelector('input#kaufpreis').value || 0)
+    const maklerprovisionfrei = document.querySelector('input#maklerprovisionfrei').checked
+    const capitalMinusRepair = capital - repair
+    document.querySelector('#capitalMinusRepair').innerHTML = toCurrency(capitalMinusRepair)
+    const tax = roundToTwo(multiply(kaufpreis, 0.06))
+    document.querySelector("#grunderwerbsteuer").innerHTML = toCurrency(tax)
+    const notar = roundToTwo(multiply(kaufpreis, 0.015))
+    document.querySelector("#notar").innerHTML = toCurrency(notar)
+    const grundbucheintrag = roundToTwo(multiply(kaufpreis, 0.005))
+    document.querySelector('#grundbucheintrag').innerHTML = toCurrency(grundbucheintrag)
+    const makler = maklerprovisionfrei ? 0 : roundToTwo(multiply(kaufpreis,0.0357))
+    document.querySelector("#maklerprovision").innerHTML = toCurrency(makler)
+    const sumTaxNotarMakler = roundToTwo(tax + notar + grundbucheintrag + makler)
+    document.querySelector("#sumTaxNotarMakler").innerHTML = toCurrency(sumTaxNotarMakler)
+    const totalPrice = kaufpreis + sumTaxNotarMakler
+    document.querySelector("#totalPrice").innerHTML = toCurrency(totalPrice)
+    const remainingCapital = capitalMinusRepair - sumTaxNotarMakler
+    document.querySelector("#remainingCapital").innerHTML = toCurrency(remainingCapital)
+    const loanAmount = roundToTwo(kaufpreis - remainingCapital)
+    document.querySelector("#loan").innerHTML = toCurrency(loanAmount)
+
+    const {sumPaidInOldApartmentAfterTenYears,hausgeld,grundsteuer} = computeProfitability({loanAmount, rate, interestRate, sondertilgung, sumTaxNotarMakler})
+    return [loanAmount, capital + loanAmount, {sumPaidInOldApartmentAfterTenYears,hausgeld,grundsteuer}]
+}
+
 function INTERESTS_FOR(remainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths = 0, stopAfterMonth, currentMonth = 1) {
   if (remainingDebt === 0 || currentMonth > stopAfterMonth) return [0,0,remainingDebt]
   const paidInterest = roundToTwo((remainingDebt * interestPercent) / 12)
-  const paidDebt = Math.min((monthlyPayment - paidInterest), remainingDebt)
   const paidAnticipatedPayment = currentMonth > 12 && sondertilgungEveryXMonths > 0 && (currentMonth - 1) % sondertilgungEveryXMonths === 0 ? sondertilgung : 0
-  const newRemainingDebt = Math.max(remainingDebt - paidDebt - paidAnticipatedPayment)
+  const paidDebt = Math.min((monthlyPayment - paidInterest) + paidAnticipatedPayment, remainingDebt)
+  const newRemainingDebt = Math.max(remainingDebt - paidDebt)
   const [totalDebtPaid, totalInterestsPaid, debtLeftToPay] = INTERESTS_FOR(newRemainingDebt, monthlyPayment, interestPercent, sondertilgung, sondertilgungEveryXMonths, stopAfterMonth, currentMonth + 1)
   return [totalDebtPaid + paidDebt, totalInterestsPaid + paidInterest, debtLeftToPay]
 };
 
-
-
 function computeAll() {
-    const loanAmount = +(document.querySelector('#loan_amount').value || 0)
     const rate = +(document.querySelector('#rate').value || 0)
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
     const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
@@ -389,7 +417,7 @@ function computeAll() {
     const tBody = document.querySelector('#tilgungsplan tbody')
     tBody.innerHTML = null
 
-    computeLoanTable({loanAmount,
+    const [loanAmount, capitalAndLoan, {sumPaidInOldApartmentAfterTenYears,hausgeld,grundsteuer}] = computeLoanTable({
         rate,
         interestRate,
         sondertilgung})
@@ -401,12 +429,15 @@ function computeAll() {
         sondertilgung,
         12,
         120)
+
+    const totalPriceWithInterests = totalInterestsPaid + capitalAndLoan + (120 * (hausgeld+grundsteuer))
     document.querySelector('#summary').innerHTML = `After 10 years, you would have...
-        <ul>
+        <ul class="bold">
           <li>Paid ${toCurrency(totalInterestsPaid)} in interests</li>
           <li>Paid ${toCurrency(totalDebtPaid)} in debt back</li>
           <li>${toCurrency(debtLeftToPay)} still to pay</li>
         </ul>
+        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent <span class="bold">${toCurrency(totalPriceWithInterests)}</span> (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer). You'd need to sell your apartment at least <span class="bold">${toCurrency(totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears)}</span> to be even with the sum you'd have paid in rent (${toCurrency(sumPaidInOldApartmentAfterTenYears)}) 
     `
 
     let remainingDebt = loanAmount
@@ -479,30 +510,6 @@ computeAll(); // first loading
 document.querySelectorAll('input').forEach(i => i.addEventListener('input', computeAll))
 
 </script>
-
-# 7. Kaufvertrag (Purchase contract)
-
-While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.
-
-If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.
-
-The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.
-
-Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).
-
-A few days ahead of the notary meeting, the notary will ask you a bunch of papers from your financing bank, so that they can start writing the draft of the Grundschuldbestellungsurkunde (mortgage deed). Forward that request to your mortgage broker if you have one.
-
-The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.
-
-# 8. Payments
-
-A few days later, you will receive various invoices from the Notar (Notarkosten at least, maybe the Grundbucheintrag too).
-
-**Another few days later, the Notar will ask you to pay the apartment before a given due date.** What you'll most likely do is, transfer your equity capital to some temporary bank account provided by your financing bank. Then, the bank will pay the seller. The bank might ask you to transfer all of the equity capital you said you had, minus what you paid to the Notar already, and then ask you to pay the remaining future invoices (Grunderwerbsteuer at least) from that temporary bank account.
-
-# Conclusion: timeline of events
-
-<figure class="center"><img alt="All the events and when then take place" src="{static}/images/buying_an_apartment_in_berlin.png" /></figure>
 
 # Great how-to articles about buying in Berlin
 
