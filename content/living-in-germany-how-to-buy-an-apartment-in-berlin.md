@@ -90,6 +90,7 @@ Most banks in Germany will want to secure their investement with a mortage deed 
 - "Sollzinssatz" is the interest rate.
 - "Monatliche Rate" is what you pay each month out of your bank account: this is the sum of the interests and the repayment
 - "Tilgungssatz" (also called "Sparrate") is the repayment rate
+- "Bereitstellungszinsfreie Zeit" and "Bereitstellungszins" refer to the amount of time the loan can sit unused at the bank, after which you must pay fees (interests). Usually, a loan must be disbursed within 2 or 3 months, afterwards interests are charged.
 
 In Germany, the most common type of loan is with a fixed-interest period (usually 10 or 15 years) after which you can either renegociate a new interest, pay the whole remaining debt back, or continue the loan with another bank (and another interest rate, most likely).
 
@@ -109,6 +110,14 @@ The next month, you will pay:
 - In interests: (0.02 \* (400,000 - 1333.33)) / 12 = 664.44 euros
 - In debt: 2,000 - 664.44 euros = 1335.56 euros
 
+### A note on Deutsche Bank
+
+Deutsche Bank will typically open up multiple bank accounts, when you sign a loan with them:
+
+- A Kreditkonto (whose IBAN ends in 00), for you to transfer your equity capital and pay the invoices related to the purchase (notary, etc).
+- A "përsonliches Konto" (whose IBAN ends in 05), which you can optionaly open and use to pay the monthly loan repayments and/or the Lebensversicherung (see below), if you ask them. You can also get one Girocard (EC card) for free.
+- Another account dedicated to Sondertilgung (whose IBAN ends in 87).
+
 ## Lebensversicherung/Risikolebensversicherung
 
 Depending on which bank you go with, they might require that you sign up for a Risikolebensversicherung: an insurance that would pay a lump sump agreed on (which decreases over the years), in the event of death. It can covers multiple people, if you're not buying alone. The Deutsche Bank is one of the banks that require such an insurance. The cost varies depending on how much money is covered, but expect to pay between 15 and 40 euros per month.
@@ -119,7 +128,7 @@ While you are reviewing the loan offer, you should start thinking about the Kauf
 
 If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.
 
-The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.
+The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via [DeepL](https://www.deepl.com/translator) if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract. Note that this may impact how the Gunderwebsteuer (the 6% tax) is paid: they might ask that each owner pays the tax pro-rata to what each owns, with two separate payments.
 
 Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).
 
