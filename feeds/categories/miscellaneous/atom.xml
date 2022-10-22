@@ -197,6 +197,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;div id="profitability" class="results"&gt;&lt;/div&gt;
 
 &lt;h2 id="tilgungsplan"&gt;Tilgungsplan&lt;/h2&gt;
+&lt;div&gt;&lt;input type="date" id="kauf_datum"/&gt; &lt;label for="kauf_datum"&gt;Purchase date&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/&gt; &lt;label for="sondertilgung"&gt;Sondertilgung (one payment every 12 months, after 1 year)&lt;/label&gt;&lt;/div&gt;
 
 &lt;div id="summary" class="results"&gt;&lt;/div&gt;
@@ -364,6 +365,11 @@ function computeAll() {
     const rate = +(document.querySelector('#rate').value || 0)
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
     const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
+    let kaufDatum = document.querySelector('#kauf_datum').value
+    if (!kaufDatum) {
+        kaufDatum = new Date()
+        document.querySelector('#kauf_datum').value = `${kaufDatum.getFullYear()}-${String(kaufDatum.getMonth() + 1).padStart(2, '0')}-${String(kaufDatum.getDate()).padStart(2, '0')}`
+    }
 
     const tBody = document.querySelector('#tilgungsplan tbody')
     tBody.innerHTML = null
@@ -393,7 +399,7 @@ function computeAll() {
 
     let remainingDebt = loanAmount
     let interestsPaid = 0
-    let currentRowDate = new Date()
+    let currentRowDate = new Date(kaufDatum)
     let totalPaid = 0
     for (let currentMonth = 0; true; currentMonth++) {
         if (currentMonth &gt; 12 * 50) {
@@ -417,7 +423,7 @@ function computeAll() {
 
         dateTd.innerHTML = currentRowDate.toLocaleDateString()
         currentRowDate.setMonth(currentRowDate.getMonth() + 1);
-        currentRowDate.setDate(1);
+        currentRowDate.setDate(15);
         monthTd.innerHTML = currentMonth
 
         const interestsToPay = roundToTwo(currentMonth === 0 ? 0 : multiply(remainingDebt, interestRate) / 12)
