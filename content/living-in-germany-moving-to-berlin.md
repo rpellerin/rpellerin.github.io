@@ -126,4 +126,5 @@ That's it!
 - [The German habits internationals say they can't shake off](https://www.thelocal.de/20200121/the-german-habits-internationals-say-they-cant-shake-off)
 - [5 key things you need to know about German working culture](https://www.thelocal.de/20200120/5-key-things-you-need-to-know-about-the-german-workplace)
 - [Awesome Berlin](https://marlonbernardes.github.io/awesome-berlin/)
+- [Simple Germany](https://www.simplegermany.com/)
 - [33 Awesome Things To Do in Berlin in Winter - YouTube](https://www.youtube.com/watch?v=W-nDCrIk5yM)
