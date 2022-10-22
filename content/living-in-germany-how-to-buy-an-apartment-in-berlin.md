@@ -255,6 +255,7 @@ A few days later, you will receive various invoices from the Notar (Notarkosten 
 
 ## Tilgungsplan
 
+<div><input type="date" id="kauf_datum"/> <label for="kauf_datum">Purchase date</label></div>
 <div><input step=".01" type="number" placeholder="0" value="0" id="sondertilgung"/> <label for="sondertilgung">Sondertilgung (one payment every 12 months, after 1 year)</label></div>
 
 <div id="summary" class="results"></div>
@@ -422,6 +423,11 @@ function computeAll() {
     const rate = +(document.querySelector('#rate').value || 0)
     const interestRate = +(document.querySelector('#interests').value || 0) / 100
     const sondertilgung = +(document.querySelector('#sondertilgung').value || 0)
+    let kaufDatum = document.querySelector('#kauf_datum').value
+    if (!kaufDatum) {
+        kaufDatum = new Date()
+        document.querySelector('#kauf_datum').value = `${kaufDatum.getFullYear()}-${String(kaufDatum.getMonth() + 1).padStart(2, '0')}-${String(kaufDatum.getDate()).padStart(2, '0')}`
+    }
 
     const tBody = document.querySelector('#tilgungsplan tbody')
     tBody.innerHTML = null
@@ -451,7 +457,7 @@ function computeAll() {
 
     let remainingDebt = loanAmount
     let interestsPaid = 0
-    let currentRowDate = new Date()
+    let currentRowDate = new Date(kaufDatum)
     let totalPaid = 0
     for (let currentMonth = 0; true; currentMonth++) {
         if (currentMonth > 12 * 50) {
@@ -475,7 +481,7 @@ function computeAll() {
 
         dateTd.innerHTML = currentRowDate.toLocaleDateString()
         currentRowDate.setMonth(currentRowDate.getMonth() + 1);
-        currentRowDate.setDate(1);
+        currentRowDate.setDate(15);
         monthTd.innerHTML = currentMonth
 
         const interestsToPay = roundToTwo(currentMonth === 0 ? 0 : multiply(remainingDebt, interestRate) / 12)
