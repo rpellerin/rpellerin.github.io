@@ -54,6 +54,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;"Sollzinssatz" is the interest rate.&lt;/li&gt;
 &lt;li&gt;"Monatliche Rate" is what you pay each month out of your bank account: this is the sum of the interests and the repayment&lt;/li&gt;
 &lt;li&gt;"Tilgungssatz" (also called "Sparrate") is the repayment rate&lt;/li&gt;
+&lt;li&gt;"Bereitstellungszinsfreie Zeit" and "Bereitstellungszins" refer to the amount of time the loan can sit unused at the bank, after which you must pay fees (interests). Usually, a loan must be disbursed within 2 or 3 months, afterwards interests are charged.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In Germany, the most common type of loan is with a fixed-interest period (usually 10 or 15 years) after which you can either renegociate a new interest, pay the whole remaining debt back, or continue the loan with another bank (and another interest rate, most likely).&lt;/p&gt;
 &lt;p&gt;Almost all banks allow exceptional repayments (Sondertilgung) every year, up to 5% of the loan. For instance, the Deutsche Bank allow you those Sondertilgung after the first 12 months in the loan, up to 5% of the loan per calendar year.&lt;/p&gt;
@@ -69,12 +70,19 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;li&gt;In interests: (0.02 * (400,000 - 1333.33)) / 12 = 664.44 euros&lt;/li&gt;
 &lt;li&gt;In debt: 2,000 - 664.44 euros = 1335.56 euros&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id="a-note-on-deutsche-bank"&gt;A note on Deutsche Bank&lt;/h3&gt;
+&lt;p&gt;Deutsche Bank will typically open up multiple bank accounts, when you sign a loan with them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Kreditkonto (whose IBAN ends in 00), for you to transfer your equity capital and pay the invoices related to the purchase (notary, etc).&lt;/li&gt;
+&lt;li&gt;A "përsonliches Konto" (whose IBAN ends in 05), which you can optionaly open and use to pay the monthly loan repayments and/or the Lebensversicherung (see below), if you ask them. You can also get one Girocard (EC card) for free.&lt;/li&gt;
+&lt;li&gt;Another account dedicated to Sondertilgung (whose IBAN ends in 87).&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="lebensversicherungrisikolebensversicherung"&gt;Lebensversicherung/Risikolebensversicherung&lt;/h2&gt;
 &lt;p&gt;Depending on which bank you go with, they might require that you sign up for a Risikolebensversicherung: an insurance that would pay a lump sump agreed on (which decreases over the years), in the event of death. It can covers multiple people, if you're not buying alone. The Deutsche Bank is one of the banks that require such an insurance. The cost varies depending on how much money is covered, but expect to pay between 15 and 40 euros per month.&lt;/p&gt;
 &lt;h1 id="7-kaufvertrag-purchase-contract"&gt;7. Kaufvertrag (Purchase contract)&lt;/h1&gt;
 &lt;p&gt;While you are reviewing the loan offer, you should start thinking about the Kaufvertrag. If the seller gives you the freedom to pick the notary of your choice, choose one who will also edit a copy of the contract in English.&lt;/p&gt;
 &lt;p&gt;If you German is not excellent, the notary will probably require that a translator is present during the meeting. Your mortgage broker might be able to take the job. A sworn translator is not always required, as long as the notary is convinced you will understand 100%. Put your translator and the notary in contact.&lt;/p&gt;
-&lt;p&gt;The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via &lt;a href="https://www.deepl.com/translator"&gt;DeepL&lt;/a&gt; if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract.&lt;/p&gt;
+&lt;p&gt;The notary will typically send the first draft of the contract over email after a few days. Review it thoroughly. Have it translated via &lt;a href="https://www.deepl.com/translator"&gt;DeepL&lt;/a&gt; if need be. If you buy with somebody, you might want to officially state in the contract how much each of you owns of the apartment. Tell that to the notary, so that it gets written in the contract. Note that this may impact how the Gunderwebsteuer (the 6% tax) is paid: they might ask that each owner pays the tax pro-rata to what each owns, with two separate payments.&lt;/p&gt;
 &lt;p&gt;Your notary appointment cannot take place before 2 weeks after the last draft of the contract has been edited (legal requirement).&lt;/p&gt;
 &lt;p&gt;A few days ahead of the notary meeting, the notary will ask you a bunch of papers from your financing bank, so that they can start writing the draft of the Grundschuldbestellungsurkunde (mortgage deed). Forward that request to your mortgage broker if you have one.&lt;/p&gt;
 &lt;p&gt;The actual meeting is pretty boring: the notary will read EXACTLY AS WRITTEN first the Kaufvertrag, in the presence of the seller and your translator, and then the Grundschuldbestellungsurkunde only with you and your translator. That's all. Nothing more, nothing less. Expect 2 hours.&lt;/p&gt;
