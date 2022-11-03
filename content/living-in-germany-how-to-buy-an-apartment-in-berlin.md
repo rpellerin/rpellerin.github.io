@@ -60,7 +60,7 @@ The PDF I mentioned in the introduction has some great pieces of advice as to wh
 - New owners, old owners, what the WEG (Wohnungseigentümergemeinschaft - homeowner association) is made of.
 - Which walls can be torn down
 - How freely you can change the windows, doors, etc
-- Presence of asbestos (very often found in vinyl tiles or PVC flooring laid out before 1993, like **extremely common**)
+- Presence of asbestos (very often found in vinyl tiles (PVC) flooring laid out before 1993, like **extremely common**)
 
 # 5. You found one you like? It's in your price range? Reserve it!
 
