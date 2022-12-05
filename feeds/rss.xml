@@ -4864,10 +4864,6 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLS9S-RWXlfOfL8I4LC54_AWqU-IWgsngH"&gt;LE MOMENT MEURICE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLtScWTSuZmZUcSpgFBy9eWH7-ZAljq6iE"&gt;L'ABC&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.monkeyuser.com/feed.xml"&gt;MonkeyUser&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id="misc"&gt;Misc&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://rss.allocine.fr/ac/cine/cettesemaine"&gt;Les sorties de la semaine&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 18 Dec 2016 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-12-18:/my-rss-subscriptions.html</guid><category>About me</category><category>news</category><category>rss</category><category>feed</category></item><item><title>How To Modify PDF Files</title><link>//romainpellerin.eu/how-to-modify-pdf-files.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gs&lt;/code&gt; is likely already installed.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdftk&lt;/code&gt; can be installed using &lt;code&gt;sudo aptitude install pdftk&lt;/code&gt;. &lt;code&gt;pdftk&lt;/code&gt; &lt;a href="http://askubuntu.com/questions/809800/whats-the-difference-between-gs-and-pdftk-in-merge-pdf-files"&gt;is not recommended because of its old and outdated PDF engine&lt;/a&gt;.&lt;/li&gt;
