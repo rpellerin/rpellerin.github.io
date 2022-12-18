@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, carrelage, bricolage" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Une vidéo tuto sur la pose de carrelage, réalisée lors de la rénovation de ma cuisine" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Comment poser du carrelage sur un sol en PVC (Vinyl) ? - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Une vidéo tuto sur la pose de carrelage, réalisée lors de la rénovation de ma cuisine" />
+
+        <title>Comment poser du carrelage sur un sol en PVC (Vinyl) ? - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2022-12-18T23:54:00+01:00">Sun 18 December 2022</time>        </p>
+    <h1>Comment poser du carrelage sur un sol en PVC (Vinyl) ?</h1>
+    <div class="grey">
+        <p class="italic">Une vidéo tuto sur la pose de carrelage, réalisée lors de la rénovation de ma cuisine</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 168 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/carrelage.html">carrelage</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/bricolage.html">bricolage</a></p>    </div>
+</header>
+<article>
+    <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/zeI_LrrwhiU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h1 id="materiel">MATÉRIEL</h1>
+<ul>
+<li>Un mètre à mesurer</li>
+<li>Règle métallique de 2 m de long</li>
+<li>Niveau à bulle</li>
+<li>Aspirateur</li>
+<li>Grand seau (20 L)</li>
+<li>Visseuse puissante</li>
+<li>Malaxeur pour la colle (à utiliser avec la visseuse)</li>
+<li>Meuleuse et disque de diamant pour carrelage</li>
+<li>Lunettes de protection</li>
+<li>Gants</li>
+<li>Cristaux de soude</li>
+<li>Serpillère</li>
+<li>Croisillons en T de 5 mm, croisillons auto nivelants, croisillons de 2,5 mm pour le dessous des plinthes</li>
+<li>Rouleau poils mi-longs et perche pour le primaire d'accrochage</li>
+<li>Truelle</li>
+<li>Spatule fine (3-4 cm de largeur) pour aplanir la colle au bords des carreaux</li>
+<li>Cutter</li>
+<li>Carrelette suffisamment grande</li>
+<li>Grosse éponge avec manche</li>
+<li>Taloche à joint (le dessous doit être en caoutchouc)</li>
+<li>Mastic pour reboucher les trous</li>
+<li>Primaire d'accrochage monocomposant</li>
+<li>Mortier-colle (de type C2 ou C2S1 - ne pas prendre de prise rapide !) - types de colle expliqués <a href="https://www.youtube.com/watch?v=kuEwnMrb_EA">ici</a></li>
+<li>Carrelage et plinthes (prévoir 10% de perte)</li>
+<li>Joint</li>
+</ul>
+<h1 id="liens-utiles">LIENS UTILES</h1>
+<ul>
+<li><a href="https://bricolage.linternaute.com/forum/affich-34007-comment-poser-du-carrelage-sur-du-lino">https://bricolage.linternaute.com/forum/affich-34007-comment-poser-du-carrelage-sur-du-lino</a></li>
+<li><a href="https://carrelage.ooreka.fr/qr/voir/80665/comment-poser-du-carrelage-sur-du-lino">https://carrelage.ooreka.fr/qr/voir/80665/comment-poser-du-carrelage-sur-du-lino</a></li>
+<li><a href="https://www.cotemaison.fr/cuisine/cuisine-remplacer-un-sol-pvc-par-un-carrelage_19356.html">https://www.cotemaison.fr/cuisine/cuisine-remplacer-un-sol-pvc-par-un-carrelage_19356.html</a></li>
+<li><a href="https://www.fr.weber/pose-du-carrelage/poser-du-carrelage-sur-un-ancien-revetement-de-sol-interieur">https://www.fr.weber/pose-du-carrelage/poser-du-carrelage-sur-un-ancien-revetement-de-sol-interieur</a></li>
+<li><a href="https://www.fr.weber/poser-un-carrelage-sur-un-ancien-carrelage-au-sol">https://www.fr.weber/poser-un-carrelage-sur-un-ancien-carrelage-au-sol</a></li>
+<li><a href="https://www.fr.weber/preparation-et-finition-des-sols/poser-un-nouveau-revetement-de-sol-sur-lancien">https://www.fr.weber/preparation-et-finition-des-sols/poser-un-nouveau-revetement-de-sol-sur-lancien</a></li>
+<li><a href="https://www.fr.weber/weberprim-universel-le-primaire-rapide-tous-supports">https://www.fr.weber/weberprim-universel-le-primaire-rapide-tous-supports</a></li>
+<li><a href="https://www.leroymerlin.fr/campus/sol-parquet-et-carrelage/comment-poser-des-plinthes-en-carrelage.html">https://www.leroymerlin.fr/campus/sol-parquet-et-carrelage/comment-poser-des-plinthes-en-carrelage.html</a></li>
+<li><a href="https://www.youtube.com/watch?v=61DpebDYTNM">https://www.youtube.com/watch?v=61DpebDYTNM</a></li>
+<li><a href="https://www.youtube.com/watch?v=6OZ3t0nWX0E">https://www.youtube.com/watch?v=6OZ3t0nWX0E</a></li>
+<li><a href="https://www.youtube.com/watch?v=9esHDkWyQNg">https://www.youtube.com/watch?v=9esHDkWyQNg</a></li>
+<li><a href="https://www.youtube.com/watch?v=DXW2J4JtseM">https://www.youtube.com/watch?v=DXW2J4JtseM</a></li>
+<li><a href="https://www.youtube.com/watch?v=EBdLnI17atM">https://www.youtube.com/watch?v=EBdLnI17atM</a></li>
+<li><a href="https://www.youtube.com/watch?v=eO7YkiKW3jQ">https://www.youtube.com/watch?v=eO7YkiKW3jQ</a></li>
+<li><a href="https://www.youtube.com/watch?v=h64EjPyf6ys">https://www.youtube.com/watch?v=h64EjPyf6ys</a></li>
+<li><a href="https://www.youtube.com/watch?v=INGyJutlXuc">https://www.youtube.com/watch?v=INGyJutlXuc</a></li>
+<li><a href="https://www.youtube.com/watch?v=ioiLhD16Thk">https://www.youtube.com/watch?v=ioiLhD16Thk</a></li>
+<li><a href="https://www.youtube.com/watch?v=pdyOHggDFlY">https://www.youtube.com/watch?v=pdyOHggDFlY</a></li>
+<li><a href="https://www.youtube.com/watch?v=qS5Ve0LPWYI">https://www.youtube.com/watch?v=qS5Ve0LPWYI</a></li>
+<li><a href="https://www.youtube.com/watch?v=uDDJqexOjEI">https://www.youtube.com/watch?v=uDDJqexOjEI</a></li>
+<li><a href="https://www.youtube.com/watch?v=y5LGtCKQR3w">https://www.youtube.com/watch?v=y5LGtCKQR3w</a></li>
+<li><a href="https://www.youtube.com/watch?v=yAXMN8BUJQc">https://www.youtube.com/watch?v=yAXMN8BUJQc</a></li>
+<li><a href="https://www.youtube.com/watch?v=Yqa_imdSJ4Q">https://www.youtube.com/watch?v=Yqa_imdSJ4Q</a></li>
+<li><a href="https://www.youtube.com/watch?v=YrH26kd-j4c">https://www.youtube.com/watch?v=YrH26kd-j4c</a></li>
+<li><a href="https://www.youtube.com/watch?v=zqp9tNVDCUs">https://www.youtube.com/watch?v=zqp9tNVDCUs</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 18 December 2022</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
