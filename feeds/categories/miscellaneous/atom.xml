@@ -245,6 +245,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;/table&gt;
 
 &lt;h2 id="profitability-comparator"&gt;Profitability comparator&lt;/h2&gt;
+&lt;p&gt;This tool does not take into account the earnings you would have made off savings/stocks if you had not spent that money as down payment.&lt;/p&gt;
 &lt;div&gt;&lt;input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /&gt; &lt;label for="rent"&gt;Current rent (Warmmiete)&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /&gt; &lt;label for="rent_increase"&gt;Expected rent increase per year in euros&lt;/label&gt;&lt;/div&gt;
 &lt;div&gt;&lt;input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /&gt; &lt;label for="hausgeld"&gt;Hausgeld in the new apartment&lt;/label&gt;&lt;/div&gt;
