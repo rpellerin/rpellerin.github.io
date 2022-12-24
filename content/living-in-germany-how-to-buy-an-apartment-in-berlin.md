@@ -245,6 +245,8 @@ A few days later, you will receive various invoices from the Notar (Notarkosten 
 
 ## Profitability comparator
 
+This tool does not take into account the earnings you would have made off savings/stocks if you had not spent that money as down payment.
+
 <div><input step=".01" id="rent" type="number" placeholder="Rent + Nebenkosten" value="1000" /> <label for="rent">Current rent (Warmmiete)</label></div>
 <div><input step="1" id="rent_increase" type="number" placeholder="Rent increase per year (euros)" value="50" /> <label for="rent_increase">Expected rent increase per year in euros</label></div>
 <div><input step=".01" id="hausgeld" type="number" placeholder="Hausgeld" value="100" /> <label for="hausgeld">Hausgeld in the new apartment</label></div>
