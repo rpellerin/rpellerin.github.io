@@ -50,7 +50,9 @@ Make sure to [book a slot for registration ASAP](https://service.berlin.de/diens
 - Registration Form filled in (can also be found at the _Bürgeramt_): _[Anmeldung bei einer Meldebehörde](http://www.berlin.de/formularserver/formular.php?402608)_
 - EU ID or passport
 - _Mietvertrag_ (lease)
-- _Wohnungsgeberbestätigung_ filled out by landlord
+- _[Wohnungsgeberbestätigung](https://serviceportal.hannover-stadt.de/downloads/datei/MTIxNTstOy92YXIvd3d3L2h0bWwvaGFubm92ZXIvbWVkaWVuL2Rva3VtZW50ZS93b2hudW5nc2dlYmVyYmVzdGFldGlndW5nLnBkZg%3D%3D)_ filled out by landlord, or yourself if you own the place
+
+If you are married or in a civil partnership, and moving together from one place to another, you can fill one registration form for two people and show up together at the same appointment. Otherwise, make 2 appoitments et one form per person.
 
 Also note that you are required to notify the _Bürgeramt_ when you leave (_Abmelden_).
 
