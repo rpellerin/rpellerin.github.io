@@ -56,7 +56,7 @@ If you are married or in a civil partnership, and moving together from one place
 
 Also note that you are required to notify the _Bürgeramt_ when you leave (_Abmelden_).
 
-More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/) and [there](https://allaboutberlin.com/guides/anmeldung-in-english-berlin).
+More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/), [here](https://www.simplegermany.com/anmeldung-germany/) and [there](https://allaboutberlin.com/guides/anmeldung-in-english-berlin).
 
 ## Finding a long-term flat
 
