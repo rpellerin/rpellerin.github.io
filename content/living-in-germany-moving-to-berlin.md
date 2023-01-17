@@ -58,6 +58,10 @@ Also note that you are required to notify the _Bürgeramt_ when you leave (_Abme
 
 More on the topic: [here](https://www.settle-in-berlin.com/anmeldung/), [here](https://www.simplegermany.com/anmeldung-germany/) and [there](https://allaboutberlin.com/guides/anmeldung-in-english-berlin).
 
+## Register for the TV tax (Rundfunkbeitrag)
+
+[Here](https://www.rundfunkbeitrag.de/buergerinnen_und_buerger/formulare/index_ger.html).
+
 ## Finding a long-term flat
 
 [Apartment hunting](https://docs.google.com/document/d/1jw-geK3X5fxCMfJMeF90eGQVAwktOvN42i5RctUnc2k/edit#heading=h.4rxwb3gjrtlm) is no different than [in Paris]({filename}/living-in-paris-looking-for-an-apartment-in-paris.md). Except that here, almost all landlords will ask for a German-specific document: your **[SCHUFA](https://mag.n26.com/how-to-get-your-schufa-score-in-germany-bb60295a7e1a)** (or credit score in English).
