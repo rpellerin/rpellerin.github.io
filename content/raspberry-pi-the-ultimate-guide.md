@@ -53,7 +53,7 @@ To sum up, few requirements, but big advantages. Let's get started!
 
     `bs=4M` can be used but it's more error prone, yet it's safer. There won't be any feedback during `dd` so wait till it finishes (might be long).
 
-7.  You're done. For more information, see the [official website](http://www.raspberrypi.org/documentation/installation/installing-images/linux.md). Now [enable SSH](https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/) by creating an empty file named `ssh` in `/boot`. Then, unmount the SD card and eject it.
+7.  You're done. For more information, see the [official website](http://www.raspberrypi.org/documentation/installation/installing-images/linux.md). Now [enable SSH](https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/) by creating an empty file named `ssh` in `/boot`. Add a default user with `echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" > /boot/userconf.txt`. Then, unmount the SD card and eject it.
 
 ## First boot
 
