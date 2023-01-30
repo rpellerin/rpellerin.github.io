@@ -950,7 +950,7 @@ dpkg-reconfigure exim4-config
 &lt;span class="c1"&gt;# Root and postmaster mail recipient: write one of your email addresses or leave blank&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code&gt;update-exim4.conf&lt;/code&gt; should look like this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/exim4/update-exim4.conf.conf&lt;/code&gt; should look like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dc_eximconfig_configtype=&amp;#39;satellite&amp;#39;
 dc_other_hostnames=&amp;#39;&amp;#39;
 dc_local_interfaces=&amp;#39;127.0.0.1 ; ::1&amp;#39;
@@ -981,12 +981,11 @@ dc_localdelivery=&amp;#39;mail_spool&amp;#39;
 pipi: root
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Any email intended for user1 will be sent to the corresponding email address. &lt;strong&gt;Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;Any email intended for root will be sent to the corresponding email address. &lt;strong&gt;Do not add addresses using the same domain you chose while configuring exim4 ("System mail name") as the emails won't be sent out.&lt;/strong&gt;&lt;br&gt;
 You can also edit &lt;em&gt;/etc/email-addresses&lt;/em&gt;: this file contains addresses used for &lt;em&gt;from&lt;/em&gt;, &lt;em&gt;reply-to&lt;/em&gt; and &lt;em&gt;sender addresses&lt;/em&gt; fields.&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;newaliases &lt;span class="c1"&gt;# To apply changes brought to aliases&lt;/span&gt;
 update-exim4.conf
-&lt;span class="c1"&gt;# /etc/init.d/exim4 restart&lt;/span&gt;
 systemctl restart exim4
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;This is a test.&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;test message&amp;quot;&lt;/span&gt; anotherme@somewhere.com &lt;span class="c1"&gt;# Try sending an email&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;This is a test.&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;test message for root&amp;quot;&lt;/span&gt; root &lt;span class="c1"&gt;# Try sending an email&lt;/span&gt;

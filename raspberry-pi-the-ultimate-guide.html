@@ -518,7 +518,7 @@ dpkg-reconfigure exim4-config
 <span class="c1"># Root and postmaster mail recipient: write one of your email addresses or leave blank</span>
 </code></pre></div>
 
-<p><code>update-exim4.conf</code> should look like this:</p>
+<p><code>/etc/exim4/update-exim4.conf.conf</code> should look like this:</p>
 <div class="highlight"><pre><span></span><code>dc_eximconfig_configtype=&#39;satellite&#39;
 dc_other_hostnames=&#39;&#39;
 dc_local_interfaces=&#39;127.0.0.1 ; ::1&#39;
@@ -549,12 +549,11 @@ dc_localdelivery=&#39;mail_spool&#39;
 pipi: root
 </code></pre></div>
 
-<p>Any email intended for user1 will be sent to the corresponding email address. <strong>Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.</strong><br>
+<p>Any email intended for root will be sent to the corresponding email address. <strong>Do not add addresses using the same domain you chose while configuring exim4 ("System mail name") as the emails won't be sent out.</strong><br>
 You can also edit <em>/etc/email-addresses</em>: this file contains addresses used for <em>from</em>, <em>reply-to</em> and <em>sender addresses</em> fields.</p>
 <p>Then:</p>
 <div class="highlight"><pre><span></span><code>newaliases <span class="c1"># To apply changes brought to aliases</span>
 update-exim4.conf
-<span class="c1"># /etc/init.d/exim4 restart</span>
 systemctl restart exim4
 <span class="nb">echo</span> <span class="s2">&quot;This is a test.&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;test message&quot;</span> anotherme@somewhere.com <span class="c1"># Try sending an email</span>
 <span class="nb">echo</span> <span class="s2">&quot;This is a test.&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;test message for root&quot;</span> root <span class="c1"># Try sending an email</span>
