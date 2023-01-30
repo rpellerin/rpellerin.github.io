@@ -226,9 +226,9 @@ Edit `/etc/fstab` that way:
 
     :::text
     proc            /proc           proc    defaults          0       0
-    /dev/mmcblk0p1  /boot           vfat    defaults          0       2
-    /dev/sda1       /               ext4    defaults,noatime  0       1
-    /dev/sda2       none            swap    sw                0       0
+    PARTUUID=123    /boot           vfat    defaults          0       2
+    PARTUUID=456    /               ext4    defaults,noatime  0       1
+    PARTUUID=789    none            swap    sw                0       0
 
 Then:
 
