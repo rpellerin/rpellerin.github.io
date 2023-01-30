@@ -5334,7 +5334,7 @@ sudo sync &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sync
 &lt;p&gt;&lt;code&gt;bs=4M&lt;/code&gt; can be used but it's more error prone, yet it's safer. There won't be any feedback during &lt;code&gt;dd&lt;/code&gt; so wait till it finishes (might be long).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Then, unmount the SD card and eject it.&lt;/p&gt;
+&lt;p&gt;You're done. For more information, see the &lt;a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md"&gt;official website&lt;/a&gt;. Now &lt;a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/"&gt;enable SSH&lt;/a&gt; by creating an empty file named &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot&lt;/code&gt;. Add a default user with &lt;code&gt;echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" &amp;gt; /boot/userconf&lt;/code&gt;. Then, unmount the SD card and eject it.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="first-boot"&gt;First boot&lt;/h2&gt;

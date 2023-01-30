@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5817 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5832 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -138,7 +138,7 @@ sudo sync <span class="o">&amp;&amp;</span> sync
 <p><code>bs=4M</code> can be used but it's more error prone, yet it's safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
 </li>
 <li>
-<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Then, unmount the SD card and eject it.</p>
+<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Add a default user with <code>echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" &gt; /boot/userconf</code>. Then, unmount the SD card and eject it.</p>
 </li>
 </ol>
 <h2 id="first-boot">First boot</h2>
