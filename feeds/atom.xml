@@ -5505,9 +5505,9 @@ sed -e &lt;span class="s2"&gt;&amp;quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&am
 
 &lt;p&gt;Edit &lt;code&gt;/etc/fstab&lt;/code&gt; that way:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;proc            /proc           proc    defaults          0       0
-/dev/mmcblk0p1  /boot           vfat    defaults          0       2
-/dev/sda1       /               ext4    defaults,noatime  0       1
-/dev/sda2       none            swap    sw                0       0
+PARTUUID=123    /boot           vfat    defaults          0       2
+PARTUUID=456    /               ext4    defaults,noatime  0       1
+PARTUUID=789    none            swap    sw                0       0
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then:&lt;/p&gt;

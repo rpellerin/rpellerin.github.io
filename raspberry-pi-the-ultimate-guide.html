@@ -309,9 +309,9 @@ sed -e <span class="s2">&quot;s|root=/dev/mmcblk0p2|root=/dev/sda1|&quot;</span>
 
 <p>Edit <code>/etc/fstab</code> that way:</p>
 <div class="highlight"><pre><span></span><code>proc            /proc           proc    defaults          0       0
-/dev/mmcblk0p1  /boot           vfat    defaults          0       2
-/dev/sda1       /               ext4    defaults,noatime  0       1
-/dev/sda2       none            swap    sw                0       0
+PARTUUID=123    /boot           vfat    defaults          0       2
+PARTUUID=456    /               ext4    defaults,noatime  0       1
+PARTUUID=789    none            swap    sw                0       0
 </code></pre></div>
 
 <p>Then:</p>
