@@ -470,7 +470,7 @@ Normally, Exim4 comes pre-installed with Debian. If not, do `apt install exim4`.
     # Split configuration into small files: no
     # Root and postmaster mail recipient: write one of your email addresses or leave blank
 
-`update-exim4.conf` should look like this:
+`/etc/exim4/update-exim4.conf.conf` should look like this:
 
     :::text
     dc_eximconfig_configtype='satellite'
@@ -507,7 +507,7 @@ Now add these lines in _/etc/aliases_ (changes the lines according to your needs
     root: <your email address>
     pipi: root
 
-Any email intended for user1 will be sent to the corresponding email address. **Do not add addresses using the same domain you chose while configuring exim4 as the emails won't be sent out.**  
+Any email intended for root will be sent to the corresponding email address. **Do not add addresses using the same domain you chose while configuring exim4 ("System mail name") as the emails won't be sent out.**  
 You can also edit _/etc/email-addresses_: this file contains addresses used for _from_, _reply-to_ and _sender addresses_ fields.
 
 Then:
@@ -515,7 +515,6 @@ Then:
     :::bash
     newaliases # To apply changes brought to aliases
     update-exim4.conf
-    # /etc/init.d/exim4 restart
     systemctl restart exim4
     echo "This is a test." | mail -s "test message" anotherme@somewhere.com # Try sending an email
     echo "This is a test." | mail -s "test message for root" root # Try sending an email
