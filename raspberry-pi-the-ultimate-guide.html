@@ -138,7 +138,7 @@ sudo sync <span class="o">&amp;&amp;</span> sync
 <p><code>bs=4M</code> can be used but it's more error prone, yet it's safer. There won't be any feedback during <code>dd</code> so wait till it finishes (might be long).</p>
 </li>
 <li>
-<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Add a default user with <code>echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" &gt; /boot/userconf</code>. Then, unmount the SD card and eject it.</p>
+<p>You're done. For more information, see the <a href="http://www.raspberrypi.org/documentation/installation/installing-images/linux.md">official website</a>. Now <a href="https://www.raspberrypi.org/blog/a-security-update-for-raspbian-pixel/">enable SSH</a> by creating an empty file named <code>ssh</code> in <code>/boot</code>. Add a default user with <code>echo "pi:$(echo 'raspberry' | openssl passwd -6 -stdin)" &gt; /boot/userconf.txt</code>. Then, unmount the SD card and eject it.</p>
 </li>
 </ol>
 <h2 id="first-boot">First boot</h2>
