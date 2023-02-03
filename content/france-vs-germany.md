@@ -20,3 +20,4 @@ Summary: What each country does better than the other
 - Big cities are much safer
 - Cyclists are respected by drivers
 - Cycling lanes are found everywhere outside of cities
+- Saunas
