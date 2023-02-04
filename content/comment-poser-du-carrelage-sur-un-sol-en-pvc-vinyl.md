@@ -25,6 +25,7 @@ Summary: Une vidéo tuto sur la pose de carrelage, réalisée lors de la rénova
 - Croisillons en T de 5 mm, croisillons auto nivelants, croisillons de 2,5 mm pour le dessous des plinthes
 - Rouleau poils mi-longs et perche pour le primaire d'accrochage
 - Truelle
+- Truelle dentée avec dents de 10 ou 12mm
 - Spatule fine (3-4 cm de largeur) pour aplanir la colle au bords des carreaux
 - Cutter
 - Carrelette suffisamment grande
