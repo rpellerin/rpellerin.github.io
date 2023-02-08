@@ -14,7 +14,7 @@ Two options: ride a Deutsche Bahn train, any day of the week, almost any hour. O
 
 # With a bike
 
-Brocken is located in the german state called "Saxony-Anhalt", where riding taking a bike on a train is free (information found [here](https://www.abellio.de/tickets-und-tarife) and [here](https://www.bahn.de/service/individuelle-reise/bahn_und_fahrrad/rad-nahverkehr/bahn_und_bike_sanhalt)). Therefore, when bringing a bike on a Deutsche Bahn train, just book a bike ticket only for the part Berlin-Genthin. In other words, in the DB Navigator mobile app, just get a VBB Fahrrad ticket for the overall network of VBB (3.6 euros).
+Brocken is located in the german state called "Saxony-Anhalt", where taking a bike on a train is free (information found [here](https://www.abellio.de/tickets-und-tarife) and [here](https://www.bahn.de/service/individuelle-reise/bahn_und_fahrrad/rad-nahverkehr/bahn_und_bike_sanhalt)). Therefore, when bringing a bike on a Deutsche Bahn train, just book a bike ticket only for the part Berlin-Genthin. In other words, in the DB Navigator mobile app, just get a VBB Fahrrad ticket for the overall network of VBB (3.6 euros).
 
 If riding a Harz-Berlin Express train, you must book a 3-euro bike ticket. I could not find where to book them online, so do it at a train station.
 
