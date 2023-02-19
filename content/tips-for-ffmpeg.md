@@ -35,7 +35,12 @@ Summary: A few tips with FFMPEG
     :::bash
     ffmpeg -i input.mp4 -c copy -map 0 -segment_time 00:00:30 -f segment -reset_timestamps 1 output%03d.mp4
 
-# Add embedded subtitles
+# [Add optional subtitles](https://www.bannerbear.com/blog/how-to-add-subtitles-to-a-video-file-using-ffmpeg/)
+
+    :::bash
+    ffmpeg -i input.mp4 -i subtitle.eng.srt -i subtitle.deu.srt -map 0 -map 1 -map 2 -c copy -c:s mov_text -metadata:s:s:0 language=eng -metadata:s:s:1 language=deu output_eng_deu.mp4
+
+# Add embedded subtitles (burned-in subtitles)
 
     :::bash
     sudo apt install subtitlecomposer
