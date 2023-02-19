@@ -89,7 +89,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 801 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 828 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -116,7 +116,11 @@ chmod +x ./video-crossfade
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -c copy -map <span class="m">0</span> -segment_time <span class="m">00</span>:00:30 -f segment -reset_timestamps <span class="m">1</span> output%03d.mp4
 </code></pre></div>
 
-<h1 id="add-embedded-subtitles">Add embedded subtitles</h1>
+<h1 id="add-optional-subtitles"><a href="https://www.bannerbear.com/blog/how-to-add-subtitles-to-a-video-file-using-ffmpeg/">Add optional subtitles</a></h1>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -i subtitle.eng.srt -i subtitle.deu.srt -map <span class="m">0</span> -map <span class="m">1</span> -map <span class="m">2</span> -c copy -c:s mov_text -metadata:s:s:0 <span class="nv">language</span><span class="o">=</span>eng -metadata:s:s:1 <span class="nv">language</span><span class="o">=</span>deu output_eng_deu.mp4
+</code></pre></div>
+
+<h1 id="add-embedded-subtitles-burned-in-subtitles">Add embedded subtitles (burned-in subtitles)</h1>
 <div class="highlight"><pre><span></span><code>sudo apt install subtitlecomposer
 </code></pre></div>
 
