@@ -1,0 +1,12 @@
+Title: SUVs
+Date: 2023-02-22 15:30
+Category: What's bad about
+Tags: suv, cars
+Slug: suvs
+Authors: Romain Pellerin
+Summary: Facts on SUVs
+
+- [Modifier le trafic routier : une nécessité pour améliorer la qualité de l’air](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/modifier-trafic-routier-necessite-ameliorer-qualite-lair)
+- [Les SUV polluent davantage que les berlines : jusqu'à plus de 200 g/km d’émissions de CO2](https://www.futura-sciences.com/tech/breves/voiture-suv-polluent-davantage-berlines-jusqua-plus-200-g-km-emissions-co2-4521/)
+- [Les SUV 2 à 3 fois plus dangereux pour les piétons](https://www.autoplus.fr/pratique/securite-routiere/les-suv-2-a-3-fois-plus-dangereux-pour-les-pietons-347595.html)
+- [Le SUV, un format de véhicule cible de toutes les critiques](https://anticiper.org/transition/le-suv-cible-de-toutes-les-critiques.php) ([backup here]({static}/extra/suvs.pdf))
