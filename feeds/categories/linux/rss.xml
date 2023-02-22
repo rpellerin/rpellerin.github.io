@@ -222,7 +222,7 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
             const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
-                const floating = (parseFloat("0." + regex[2], 10)\*100*fps)/100
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
                 tempResult = \`${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames\`
             }
             else {
