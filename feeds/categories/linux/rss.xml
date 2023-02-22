@@ -217,8 +217,8 @@ And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).filter(function(beat) { return beat \&gt; 0 }).map(function(beat) {
-            let tempResult = (beat\*60)/value
+        const result = BEATS.concat(value).filter(function(beat) { return beat &gt; 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
             const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
