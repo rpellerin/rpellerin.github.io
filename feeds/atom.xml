@@ -2944,10 +2944,10 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
             if (regex) {
                 const integer = regex[1]
                 const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
-                tempResult = \`${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames\`
+                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
             }
             else {
-                tempResult = \`${tempResult} seconds and 0 frames\`
+                tempResult = `${tempResult} seconds and 0 frames`
             }
             pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
