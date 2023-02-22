@@ -41,8 +41,8 @@ To find the BPM of a song, use any of the following links:
         const pre = document.getElementById('results')
         pre.innerHTML = ""
         BEATS = [...new Array(+value)].map(function(_,i) { return i })
-        const result = BEATS.concat(value).filter(function(beat) { return beat \> 0 }).map(function(beat) {
-            let tempResult = (beat\*60)/value
+        const result = BEATS.concat(value).filter(function(beat) { return beat > 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
             const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
             if (regex) {
                 const integer = regex[1]
