@@ -97,7 +97,7 @@
     <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.</p>
 <p>Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.</p>
 <p>First, check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
-<div class="highlight"><pre><span></span><code>lslbk
+<div class="highlight"><pre><span></span><code>lsblk
 <span class="c1"># └─sda6                  8:6    0 464,6G  0 part</span>
 <span class="c1">#   └─sda6_crypt        253:0    0 464,5G  0 crypt</span>
 <span class="c1">#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /</span>
