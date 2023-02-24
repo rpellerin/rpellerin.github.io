@@ -62,7 +62,8 @@ Now, boot your Linux from a USB stick and open a terminal:
     # Format to make it usable
     mkswap /dev/mapper/vgubuntu-swap_1
 
-Now, deactive the volume group: `vgchange -a n`
+Now, deactive the volume group: `vgchange -a n` or `vgchange -a n sda6_crypt`.
+
 And finally: `cryptsetup close crypt; reboot`
 
 After rebooting, check the sizes using `lslbk`, `swapon -s` and `free -h`. That's it!
