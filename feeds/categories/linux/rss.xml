@@ -50,8 +50,8 @@ lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
 mkswap /dev/mapper/vgubuntu-swap_1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt;
-And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt; or &lt;code&gt;vgchange -a n sda6_crypt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;After rebooting, check the sizes using &lt;code&gt;lslbk&lt;/code&gt;, &lt;code&gt;swapon -s&lt;/code&gt; and &lt;code&gt;free -h&lt;/code&gt;. That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 29 Jul 2022 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-07-29:/how-to-resize-an-encrypted-swap-partition-lvm.html</guid><category>Linux</category><category>swap</category><category>lvm</category><category>linux</category></item><item><title>Docker</title><link>//romainpellerin.eu/docker.html</link><description>&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, Docker has always been a mystery to me. Mostly because I never took time to dive into it. For the past year, I was lucky enough to have David Gageot as my manager at Doctolib. As far as I know, he was one of the early contributors to it, and remains to this day one of the main contributors. Docker has no secrets for him. Here is a video starring David himself, a year after Docker was released to the public:&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d3bUoz_G2VU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;

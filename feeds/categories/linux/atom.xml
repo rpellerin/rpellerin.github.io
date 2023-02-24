@@ -50,8 +50,8 @@ lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
 mkswap /dev/mapper/vgubuntu-swap_1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt;
-And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt; or &lt;code&gt;vgchange -a n sda6_crypt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;After rebooting, check the sizes using &lt;code&gt;lslbk&lt;/code&gt;, &lt;code&gt;swapon -s&lt;/code&gt; and &lt;code&gt;free -h&lt;/code&gt;. That's it!&lt;/p&gt;</content><category term="Linux"></category><category term="swap"></category><category term="lvm"></category><category term="linux"></category></entry><entry><title>Docker</title><link href="//romainpellerin.eu/docker.html" rel="alternate"></link><published>2022-07-05T12:30:00+02:00</published><updated>2022-07-05T12:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-05:/docker.html</id><summary type="html">&lt;p&gt;My cheatsheet for Docker&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, Docker has always been a mystery to me. Mostly because I never took time to dive into it. For the past year, I was lucky enough to have David Gageot as my manager at Doctolib. As far as I know, he was one of the early contributors to it, and remains to this day one of the main contributors. Docker has no secrets for him. Here is a video starring David himself, a year after Docker was released to the public:&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d3bUoz_G2VU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
