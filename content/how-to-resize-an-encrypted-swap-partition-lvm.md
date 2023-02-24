@@ -13,7 +13,7 @@ Before increasing the size, I needed to decrease the size of its neighboring roo
 First, check what your LVM disk currently looks like, running `lsblk`:
 
     :::bash
-    lslbk
+    lsblk
     # └─sda6                  8:6    0 464,6G  0 part
     #   └─sda6_crypt        253:0    0 464,5G  0 crypt
     #     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /
