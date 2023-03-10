@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 22 Feb 2023 15:30:00 +0100</lastBuildDate><item><title>SUVs</title><link>//romainpellerin.eu/suvs.html</link><description>&lt;ul&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 10 Mar 2023 11:30:00 +0100</lastBuildDate><item><title>SUVs</title><link>//romainpellerin.eu/suvs.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/modifier-trafic-routier-necessite-ameliorer-qualite-lair"&gt;Modifier le trafic routier : une nécessité pour améliorer la qualité de l’air&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.futura-sciences.com/tech/breves/voiture-suv-polluent-davantage-berlines-jusqua-plus-200-g-km-emissions-co2-4521/"&gt;Les SUV polluent davantage que les berlines : jusqu'à plus de 200 g/km d’émissions de CO2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.autoplus.fr/pratique/securite-routiere/les-suv-2-a-3-fois-plus-dangereux-pour-les-pietons-347595.html"&gt;Les SUV 2 à 3 fois plus dangereux pour les piétons&lt;/a&gt;&lt;/li&gt;
@@ -1153,15 +1153,16 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;li&gt;&lt;a href="https://www.letapebyletourdefrance.com/"&gt;L'Étape du Tour de France&lt;/a&gt;: in France and other countries, every year&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 02 May 2021 23:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-05-02:/cycling-events.html</guid><category>Bikes</category><category>bike</category><category>cycling</category><category>berlin</category></item><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.berrybase.de/kingston-2-5-sata-ssd-a400-240gb"&gt;Kingston 2,5" SATA SSD A400 240GB&lt;/a&gt; (&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;a full blog article here&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://storage.jamesachambers.com/popular/"&gt;Crucial BX500&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1653853#p1653853"&gt;HP S600 120GB SSD&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;Kingston A400&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other SSDs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="sata-to-usb-30-adapters"&gt;SATA to USB 3.0 adapters&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;The &lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt; seems to be the preferred adapters among all the existing ones when it comes to Raspberry Pis.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.berrybase.de/usb-3.0-adapterkabel/konverter-fuer-2-5-sata-festplatten-ssds"&gt;USB 3.0 Adapterkabel / Konverter für 2,5" SATA Festplatten &amp;amp; SSDs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;StarTech 2.5" SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other adapters&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 10 Jan 2021 17:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>Building A Cheap Weather Station</title><link>//romainpellerin.eu/building-a-cheap-weather-station.html</link><description>&lt;p&gt;Hi there! Long time no talk, uh?&lt;/p&gt;
