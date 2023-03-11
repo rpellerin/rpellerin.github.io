@@ -47,6 +47,7 @@ Summary: What I think about most social media
 - [15 Months of Fresh Hell Inside Facebook](https://www.wired.com/story/facebook-mark-zuckerberg-15-months-of-fresh-hell/)
 - [Facebook moderators break their NDAs to expose desperate working conditions - The Verge](https://www.theverge.com/2019/6/19/18681845/facebook-moderator-interviews-video-trauma-ptsd-cognizant-tampa)
 - [Stop Using Facebook](https://www.stopusingfacebook.co/)
+- [Smartphones and social media are destroying children’s mental health](https://www.ft.com/content/0e2f6f8e-bb03-4fa7-8864-f48f576167d2)
 
 # 2018 Facebook Cambridge Analytica data scandal
 

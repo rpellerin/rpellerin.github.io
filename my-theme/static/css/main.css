@@ -25,6 +25,10 @@ img {
   height: auto;
 }
 
+video {
+  max-width: 100%;
+}
+
 abbr {
   border-bottom: 2px dotted #777;
 }
