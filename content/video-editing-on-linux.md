@@ -104,7 +104,7 @@ There's a built-in effect for that. Make sure to tick "fade to/from dark".
 ## Iris out
 
 <video autoplay loop controls>
-    <source src="./videos/kdenlive/fade-out.mp4" type="video/mp4">
+    <source src="./videos/kdenlive/iris-out.mp4" type="video/mp4">
 </video>
 
 ## Rewind video (VHS style)
