@@ -277,7 +277,7 @@ mkswap /dev/mapper/vgubuntu-swap_1
 
 &lt;h2 id="iris-out"&gt;Iris out&lt;/h2&gt;
 &lt;video autoplay loop controls&gt;
-    &lt;source src="./videos/kdenlive/fade-out.mp4" type="video/mp4"&gt;
+    &lt;source src="./videos/kdenlive/iris-out.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
 &lt;h2 id="rewind-video-vhs-style"&gt;Rewind video (VHS style)&lt;/h2&gt;
