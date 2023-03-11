@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 29 Jul 2022 19:00:00 +0200</lastBuildDate><item><title>How to resize an encrypted SWAP partition (LVM)</title><link>//romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html</link><description>&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 11 Mar 2023 16:30:00 +0100</lastBuildDate><item><title>How to resize an encrypted SWAP partition (LVM)</title><link>//romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html</link><description>&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
 &lt;p&gt;Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.&lt;/p&gt;
 &lt;p&gt;First, check what your LVM disk currently looks like, running &lt;code&gt;lsblk&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk
@@ -184,18 +184,43 @@ mkswap /dev/mapper/vgubuntu-swap_1
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git diff -D --no-index /dirA /dirB
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 10 Dec 2018 23:20:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-12-10:/how-to-find-differences-between-two-directories-on-linux.html</guid><category>Linux</category><category>linux</category><category>shell</category><category>diff</category></item><item><title>Video Editing on Linux</title><link>//romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;This is a reminder for myself. I thought it could be useful to other people too, that's why I put it online.&lt;/p&gt;
+&lt;p&gt;Hope this helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 10 Dec 2018 23:20:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-12-10:/how-to-find-differences-between-two-directories-on-linux.html</guid><category>Linux</category><category>linux</category><category>shell</category><category>diff</category></item><item><title>Video Editing on Linux</title><link>//romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My smartphone&lt;/li&gt;
+&lt;li&gt;A GoPro&lt;/li&gt;
+&lt;li&gt;An Insta360 One X2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, I like to make video montages. But because it usually does not happen more than twice a year, I regularly forget how to make a great movie. So this article acts as a reminder for myself. I thought it could be useful to other people too, that's why I put it online.&lt;/p&gt;
+&lt;h1 id="overall-process"&gt;Overall process&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Record in 1080p, at 25 FPS, unless you want to go fancy and do 50 FPS and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 givess 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.&lt;/li&gt;
-&lt;li&gt;Download &lt;a href="https://kdenlive.org/en/download/"&gt;Kdenlive&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Using VLC, &lt;code&gt;Tools&lt;/code&gt; &amp;gt; &lt;code&gt;Codec information&lt;/code&gt;, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.&lt;/li&gt;
-&lt;li&gt;When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in &lt;code&gt;Project&lt;/code&gt; &amp;gt; &lt;code&gt;Project Settings&lt;/code&gt; but &lt;strong&gt;it is not advised as it will shift clips randomly&lt;/strong&gt; (I experienced it). There, also enable &lt;code&gt;Proxy clips&lt;/code&gt; for videos larger than 1000 pixels.&lt;/li&gt;
-&lt;li&gt;In Kdenlive settings, under &lt;code&gt;Playback&lt;/code&gt;, make sure GPU acceleration is disabled, cause it's buggy.&lt;/li&gt;
+&lt;li&gt;Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://kdenlive.org/en/download/"&gt;Kdenlive&lt;/a&gt; for the video montage.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extract regular videos out of 360 videos using the desktop application (&lt;a href="https://www.insta360.com/download/insta360-onex2"&gt;Insta360 STUDIO&lt;/a&gt;) from Insta360, not the mobile one, as you get better quality. Export with the following settings:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;When doing slow-motion: disable "Motion blur"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on&lt;/li&gt;
+&lt;li&gt;"Chromatic Calibration" always on&lt;/li&gt;
+&lt;li&gt;25FPS when exporting&lt;/li&gt;
+&lt;li&gt;25Mbps when exporting&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HEVC (H265) when exporting. Export in H264 only if you intend to add GPS overlays (see bullet point below).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, use &lt;a href="https://www.garmin.com/en-US/p/573412"&gt;Garmin VIRB Edit&lt;/a&gt;. Note that, at the time of writing, this app only accepts H264 videos.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Using VLC, &lt;code&gt;Tools&lt;/code&gt; &amp;gt; &lt;code&gt;Codec information&lt;/code&gt;, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).&lt;/li&gt;
+&lt;li&gt;When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in &lt;code&gt;Project&lt;/code&gt; &amp;gt; &lt;code&gt;Project Settings&lt;/code&gt; but &lt;strong&gt;it is not advised as it will shift clips randomly for example when changing the FPS&lt;/strong&gt; (I experienced it).&lt;/li&gt;
+&lt;li&gt;In Kdenlive settings, under &lt;code&gt;Playback&lt;/code&gt;, make sure GPU acceleration is disabled, cause it's buggy. Also enable &lt;code&gt;Proxy clips&lt;/code&gt; for videos larger than 1000 pixels.&lt;/li&gt;
 &lt;li&gt;Remove the audio track from clips, where audio does not matter.&lt;/li&gt;
 &lt;li&gt;You can "lock" audio or video tracks, when you absolutely do not want to misclick and inadvertently move clips.&lt;/li&gt;
-&lt;li&gt;When rendering, export in H264 or HEVC (smaller file size). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (&lt;code&gt;preset=slower&lt;/code&gt;), and keep the default quality setting, don't tick "Custom Quality" (&lt;code&gt;crf=28&lt;/code&gt;). Use 4 threads and parallel processing.&lt;/li&gt;
+&lt;li&gt;When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (&lt;code&gt;preset=slower&lt;/code&gt;), and keep the default quality setting, don't tick "Custom Quality" (&lt;code&gt;crf=28&lt;/code&gt;). Use 4 threads and parallel processing.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead a number of frames.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:04 seconds and 10 frames, Kdenlive-wise.&lt;/p&gt;
+&lt;h1 id="songs-and-beats-per-minute"&gt;Songs and beats per minute&lt;/h1&gt;
+&lt;p&gt;I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead a number of frames.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:02 seconds and 10 frames, Kdenlive-wise.&lt;/p&gt;
 &lt;p&gt;To find the BPM of a song, use any of the following links:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;&lt;/li&gt;
@@ -237,6 +262,30 @@ mkswap /dev/mapper/vgubuntu-swap_1
         inputChange()
     }
 &lt;/script&gt;
+
+&lt;h1 id="fancy-effects-in-kdenlive"&gt;Fancy effects in Kdenlive&lt;/h1&gt;
+&lt;h2 id="fade-inout"&gt;Fade-in/out&lt;/h2&gt;
+&lt;p&gt;There's a built-in effect for that. Make sure to tick "fade to/from dark".&lt;/p&gt;
+&lt;video autoplay loop controls&gt;
+    &lt;source src="./videos/kdenlive/fade-out.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="split-screen"&gt;Split screen&lt;/h2&gt;
+&lt;video autoplay loop controls&gt;
+    &lt;source src="./videos/kdenlive/split-screen.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="iris-out"&gt;Iris out&lt;/h2&gt;
+&lt;video autoplay loop controls&gt;
+    &lt;source src="./videos/kdenlive/fade-out.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="rewind-video-vhs-style"&gt;Rewind video (VHS style)&lt;/h2&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id="old-film"&gt;Old film&lt;/h2&gt;
+&lt;p&gt;Use the "Old film" effect.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>Linux</category><category>video</category><category>linux</category></item><item><title>Casting To Chromecast On Linux</title><link>//romainpellerin.eu/casting-to-chromecast-on-linux.html</link><description>&lt;p&gt;Several options exist when it comes to casting media content from Linux to a Chromecast.&lt;/p&gt;
 &lt;h1 id="casting-the-full-desktop"&gt;Casting the full desktop&lt;/h1&gt;

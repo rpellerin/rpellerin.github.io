@@ -84,28 +84,53 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time>        </p>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last Update: <time datetime="2023-03-11T16:30:00+01:00">Sat 11 March 2023</time>        </p>
     <h1>Video Editing on Linux</h1>
     <div class="grey">
         <p class="italic">How to edit videos on Linux</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 585 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 914 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <p>This is a reminder for myself. I thought it could be useful to other people too, that's why I put it online.</p>
+    <p>When I go on holidays or do sports, I usually film with three different devices:</p>
+<ul>
+<li>My smartphone</li>
+<li>A GoPro</li>
+<li>An Insta360 One X2</li>
+</ul>
+<p>Then, I like to make video montages. But because it usually does not happen more than twice a year, I regularly forget how to make a great movie. So this article acts as a reminder for myself. I thought it could be useful to other people too, that's why I put it online.</p>
+<h1 id="overall-process">Overall process</h1>
 <ol>
-<li>Record in 1080p, at 25 FPS, unless you want to go fancy and do 50 FPS and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 givess 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.</li>
-<li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a>.</li>
-<li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues.</li>
-<li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size. This can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly</strong> (I experienced it). There, also enable <code>Proxy clips</code> for videos larger than 1000 pixels.</li>
-<li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy.</li>
+<li>Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.</li>
+<li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a> for the video montage.</li>
+<li>
+<p>Extract regular videos out of 360 videos using the desktop application (<a href="https://www.insta360.com/download/insta360-onex2">Insta360 STUDIO</a>) from Insta360, not the mobile one, as you get better quality. Export with the following settings:</p>
+</li>
+<li>
+<p>When doing slow-motion: disable "Motion blur"</p>
+</li>
+<li>I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on</li>
+<li>"Chromatic Calibration" always on</li>
+<li>25FPS when exporting</li>
+<li>25Mbps when exporting</li>
+<li>
+<p>HEVC (H265) when exporting. Export in H264 only if you intend to add GPS overlays (see bullet point below).</p>
+</li>
+<li>
+<p>You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, use <a href="https://www.garmin.com/en-US/p/573412">Garmin VIRB Edit</a>. Note that, at the time of writing, this app only accepts H264 videos.</p>
+</li>
+<li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).</li>
+<li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly for example when changing the FPS</strong> (I experienced it).</li>
+<li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy. Also enable <code>Proxy clips</code> for videos larger than 1000 pixels.</li>
 <li>Remove the audio track from clips, where audio does not matter.</li>
 <li>You can "lock" audio or video tracks, when you absolutely do not want to misclick and inadvertently move clips.</li>
-<li>When rendering, export in H264 or HEVC (smaller file size). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (<code>preset=slower</code>), and keep the default quality setting, don't tick "Custom Quality" (<code>crf=28</code>). Use 4 threads and parallel processing.</li>
+<li>When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (<code>preset=slower</code>), and keep the default quality setting, don't tick "Custom Quality" (<code>crf=28</code>). Use 4 threads and parallel processing.</li>
 </ol>
-<p><strong>Do not forget that Kdenlive does not use milliseconds but instead a number of frames.</strong> That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:04 seconds and 10 frames, Kdenlive-wise.</p>
+<h1 id="songs-and-beats-per-minute">Songs and beats per minute</h1>
+<p>I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.</p>
+<p><strong>Do not forget that Kdenlive does not use milliseconds but instead a number of frames.</strong> That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:02 seconds and 10 frames, Kdenlive-wise.</p>
 <p>To find the BPM of a song, use any of the following links:</p>
 <ul>
 <li><a href="http://www.beatsperminuteonline.com/">Tap BPM - Online Beats Per Minute Calculator and Counter</a></li>
@@ -148,10 +173,34 @@
     }
 </script>
 
+<h1 id="fancy-effects-in-kdenlive">Fancy effects in Kdenlive</h1>
+<h2 id="fade-inout">Fade-in/out</h2>
+<p>There's a built-in effect for that. Make sure to tick "fade to/from dark".</p>
+<video autoplay loop controls>
+    <source src="./videos/kdenlive/fade-out.mp4" type="video/mp4">
+</video>
+
+<h2 id="split-screen">Split screen</h2>
+<video autoplay loop controls>
+    <source src="./videos/kdenlive/split-screen.mp4" type="video/mp4">
+</video>
+
+<h2 id="iris-out">Iris out</h2>
+<video autoplay loop controls>
+    <source src="./videos/kdenlive/fade-out.mp4" type="video/mp4">
+</video>
+
+<h2 id="rewind-video-vhs-style">Rewind video (VHS style)</h2>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="old-film">Old film</h2>
+<p>Use the "Old film" effect.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen></iframe>
+
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Sun 13 May 2018</footer>
+    Last update: Sat 11 March 2023</footer>
 
         </div> <!-- WRAPPER -->
     </body>
