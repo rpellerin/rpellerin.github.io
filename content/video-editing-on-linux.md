@@ -5,7 +5,7 @@ Category: Linux
 Tags: video, linux
 Slug: video-editing-on-linux
 Authors: Romain Pellerin
-Summary: How to edit videos on Linux
+Summary: How to edit videos on Linux with Kdenlive
 
 When I go on holidays or do sports, I usually film with three different devices:
 
