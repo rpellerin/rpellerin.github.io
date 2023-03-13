@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 10 Mar 2023 11:30:00 +0100</lastBuildDate><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 13 Mar 2023 18:30:00 +0100</lastBuildDate><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
+&lt;h1 id="basic-knowledge-required"&gt;Basic knowledge required&lt;/h1&gt;
+&lt;p&gt;Physics courses in high school took place like forever ago, I basically remembered nothing. So I had to dig it up a little bit and study basics again (Ohm's law for instance 😅).&lt;/p&gt;
+&lt;h2 id="raspberry-pi"&gt;Raspberry Pi&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;It has 2 pins that output 5V, 2 pins that output 3.3V, a few "ground" pins, and the rest are GPIO pins, that can output 3.3V and are controllable.&lt;/li&gt;
+&lt;li&gt;The Raspberry Pi can only supply a small current (about 60mA). The LEDs will want to draw more, and if allowed to they will burn out the Raspberry Pi. That's why we'll need to use a resistor. As a rule of thumb, any resistor equal or greater than 50Ω (Ohm) should suffice for one or more LEDs in series plugged on a 3.3V GPIO pin. More on that down below.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="multimeter"&gt;Multimeter&lt;/h2&gt;
+&lt;p&gt;A tool to measure various things. The "A" (Ampere meter) plug acts as a closed circuit, so never put the test leads into the home sockets! The "V" (Voltmeter) plug acts as an open circuit.&lt;/p&gt;
+&lt;h2 id="leds"&gt;LEDS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The anode is the long leg of a LED, where you connect the +. The cathode is the -.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extracts from &lt;a href="https://electronics.stackexchange.com/questions/10962/what-is-forward-and-reverse-voltage-when-working-with-diodes"&gt;stackoverflow.com&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The &lt;strong&gt;forward voltage&lt;/strong&gt; is the voltage drop across the diode if the voltage at the anode is more positive than the voltage at the cathode (if you connect + to the anode).&lt;br&gt;
+You will be using this value to calculate the power dissipation of the diode and the voltage after the diode.&lt;br&gt;
+The &lt;strong&gt;reverse voltage&lt;/strong&gt; is the voltage drop across the diode if the voltage at the cathode is more positive than the voltage at the anode (if you connect + to the cathode).&lt;br&gt;
+This is usually much higher than the forward voltage. As with forward voltage, a current will flow if the connected voltage exceeds this value.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To paraphrase the last sentence, the forward voltage (&lt;em&gt;tension de seuil&lt;/em&gt; in French) is the minimum amount of volts needed to light up a LED. If you connect the anode to the - and supply more volts than the reverse voltage, you'll burn the LED out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"Forward voltage" and "voltage drop", two pieces of information usually found in LED specs, are &lt;a href="https://forum.arduino.cc/t/forward-voltage-vs-voltage-drop/634711"&gt;almost interchangeable words&lt;/a&gt;. The "voltage drop" is the "forward voltage" at the specified current (amperage, &lt;em&gt;intensité&lt;/em&gt; in French). If you increase the current (amperage), you'll increase the "voltage drop". That voltage drop varies depending on the current (amperage) and on the color of the LED, higher voltage = higher current (amperage). See the image further down below.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Other extracts from &lt;a href="https://electronics.stackexchange.com/questions/256336/does-led-brightness-change-with-voltage"&gt;stackoverflow&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;With an LED it's the amount of current flowing through it that determines how bright it is. Increasing the voltage increases the current, yes, but the region where that happens without the current getting too much is very small.&lt;br&gt;
+So we control the current instead of the voltage, and take the forward voltage as a fixed value. By either including a resistor in the circuit to fill the gap between the supply voltage and the forward voltage, limiting the current in the process [...]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure class="center"&gt;&lt;img alt="LED: amperage and voltage" src="//romainpellerin.eu/images/led.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extracts from &lt;a href="https://www.ledsupply.com/blog/wiring-leds-correctly-series-parallel-circuits-explained/"&gt;LEDsupply.com&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Running a series circuit helps to provide the same amount of current to each LED. This means each LED in the circuit will be the same brightness and will not allow a single LED to hog more current than another.&lt;br&gt;
+“The total voltage of the circuit is the sum of the voltages across each LED”. This means you have to supply, at minimum, the sum of the forward voltages of each LED.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So if my series circuit, connected to the GPIO pins of my Raspberry Pi, supplies 3.3V, and I plug in 2 LEDS whose forward voltage is 1.5V, there will be 3V "consummed" and 0.3V "remaining".&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extracts from &lt;a href="http://www.learningaboutelectronics.com/"&gt;LearningaboutElectronics.com&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Continuous Forward Current specification of an LED serves to tell you the maximum current that an LED can be fed continuously without being damaged or destroyed.&lt;br&gt;
+The Peak Forward Current, IF(peak), specification of an LED serves to tell you the maximum current that an LED can be fed without being damaged or destroyed. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="resistor-needed"&gt;Resistor needed&lt;/h3&gt;
+&lt;p&gt;As seen above, with 2 LEDs in series, each with a forward voltage of 1.5V for 20mA, plugged on a GPIO pin supplying 3.3V, we need a resistor as follow:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;I = V/R
+IF = (VS - VF) / R
+# IF = forward current, VS = supplied voltage, VF = forward voltage
+0.020 = (3.3 - 1.5 - 1.5) / R
+R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that, if we shift our target amps from 20 to say 40mA to allow the LEDs to draw more current, their forward voltage will increase. Check the specs to know how much. &lt;strong&gt;Never aim higher than 60mA, as it's the maximum the Raspberry Pi can deliver.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Now if we have just one LED and aim for maximum current (60mA):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;R = (3.3 - 1.5) / 0.060 = 30 Ω
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;That's why in the beginning of the article I wrote that 50 Ω is safe for almost all scenarios. 1.5V is among the lowest voltage values drawn by LEDs, since infrared LEDs are those that need the least. For a different color (blue for instance), the computation would most likely look like this, depending on the actual specs of course:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;R = (3.3 - 2.5) / 0.060 = 13.3 Ω
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id="others-who-did-it-before-me"&gt;Others who did it before me&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://community.element14.com/products/raspberry-pi/raspberrypi_projects/b/blog/posts/testing-pi-noir-with-ir-leds"&gt;Testing Pi NoIR with IR LEDs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 13 Mar 2023 18:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-13:/raspberry-pi-noir-camera-module-and-ir-leds.html</guid><category>Computers</category><category>raspberry pi</category><category>camera</category></item><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/kingston-2-5-sata-ssd-a400-240gb"&gt;Kingston 2,5" SATA SSD A400 240GB&lt;/a&gt; (&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;a full blog article here&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;

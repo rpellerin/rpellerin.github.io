@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, raspberry pi, camera" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // If user has enabed Do Not Track, Google Analytics is not loaded.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-39228475-3', 'auto');
+            ga('send', 'pageview');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Raspberry Pi NoIR camera module and IR LEDs - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs" />
+
+        <title>Raspberry Pi NoIR camera module and IR LEDs - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-03-13T18:30:00+01:00">Mon 13 March 2023</time>        </p>
+    <h1>Raspberry Pi NoIR camera module and IR LEDs</h1>
+    <div class="grey">
+        <p class="italic">Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 933 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/camera.html">camera</a></p>    </div>
+</header>
+<article>
+    <p>Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest <a href="https://www.raspberrypi.com/products/camera-module-3/">camera module v3</a>, in its NoIR (no infrared filter) edition.</p>
+<h1 id="basic-knowledge-required">Basic knowledge required</h1>
+<p>Physics courses in high school took place like forever ago, I basically remembered nothing. So I had to dig it up a little bit and study basics again (Ohm's law for instance 😅).</p>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<ul>
+<li>It has 2 pins that output 5V, 2 pins that output 3.3V, a few "ground" pins, and the rest are GPIO pins, that can output 3.3V and are controllable.</li>
+<li>The Raspberry Pi can only supply a small current (about 60mA). The LEDs will want to draw more, and if allowed to they will burn out the Raspberry Pi. That's why we'll need to use a resistor. As a rule of thumb, any resistor equal or greater than 50Ω (Ohm) should suffice for one or more LEDs in series plugged on a 3.3V GPIO pin. More on that down below.</li>
+</ul>
+<h2 id="multimeter">Multimeter</h2>
+<p>A tool to measure various things. The "A" (Ampere meter) plug acts as a closed circuit, so never put the test leads into the home sockets! The "V" (Voltmeter) plug acts as an open circuit.</p>
+<h2 id="leds">LEDS</h2>
+<ul>
+<li>The anode is the long leg of a LED, where you connect the +. The cathode is the -.</li>
+<li>
+<p>Extracts from <a href="https://electronics.stackexchange.com/questions/10962/what-is-forward-and-reverse-voltage-when-working-with-diodes">stackoverflow.com</a>:</p>
+<blockquote>
+<p>The <strong>forward voltage</strong> is the voltage drop across the diode if the voltage at the anode is more positive than the voltage at the cathode (if you connect + to the anode).<br>
+You will be using this value to calculate the power dissipation of the diode and the voltage after the diode.<br>
+The <strong>reverse voltage</strong> is the voltage drop across the diode if the voltage at the cathode is more positive than the voltage at the anode (if you connect + to the cathode).<br>
+This is usually much higher than the forward voltage. As with forward voltage, a current will flow if the connected voltage exceeds this value.</p>
+</blockquote>
+</li>
+<li>
+<p>To paraphrase the last sentence, the forward voltage (<em>tension de seuil</em> in French) is the minimum amount of volts needed to light up a LED. If you connect the anode to the - and supply more volts than the reverse voltage, you'll burn the LED out.</p>
+</li>
+<li>
+<p>"Forward voltage" and "voltage drop", two pieces of information usually found in LED specs, are <a href="https://forum.arduino.cc/t/forward-voltage-vs-voltage-drop/634711">almost interchangeable words</a>. The "voltage drop" is the "forward voltage" at the specified current (amperage, <em>intensité</em> in French). If you increase the current (amperage), you'll increase the "voltage drop". That voltage drop varies depending on the current (amperage) and on the color of the LED, higher voltage = higher current (amperage). See the image further down below.</p>
+</li>
+<li>
+<p>Other extracts from <a href="https://electronics.stackexchange.com/questions/256336/does-led-brightness-change-with-voltage">stackoverflow</a>:</p>
+<blockquote>
+<p>With an LED it's the amount of current flowing through it that determines how bright it is. Increasing the voltage increases the current, yes, but the region where that happens without the current getting too much is very small.<br>
+So we control the current instead of the voltage, and take the forward voltage as a fixed value. By either including a resistor in the circuit to fill the gap between the supply voltage and the forward voltage, limiting the current in the process [...]</p>
+</blockquote>
+<p><figure class="center"><img alt="LED: amperage and voltage" src="//romainpellerin.eu/images/led.png" /></figure></p>
+</li>
+<li>
+<p>Extracts from <a href="https://www.ledsupply.com/blog/wiring-leds-correctly-series-parallel-circuits-explained/">LEDsupply.com</a>:</p>
+<blockquote>
+<p>Running a series circuit helps to provide the same amount of current to each LED. This means each LED in the circuit will be the same brightness and will not allow a single LED to hog more current than another.<br>
+“The total voltage of the circuit is the sum of the voltages across each LED”. This means you have to supply, at minimum, the sum of the forward voltages of each LED.</p>
+</blockquote>
+<p>So if my series circuit, connected to the GPIO pins of my Raspberry Pi, supplies 3.3V, and I plug in 2 LEDS whose forward voltage is 1.5V, there will be 3V "consummed" and 0.3V "remaining".</p>
+</li>
+<li>
+<p>Extracts from <a href="http://www.learningaboutelectronics.com/">LearningaboutElectronics.com</a>:</p>
+<blockquote>
+<p>The Continuous Forward Current specification of an LED serves to tell you the maximum current that an LED can be fed continuously without being damaged or destroyed.<br>
+The Peak Forward Current, IF(peak), specification of an LED serves to tell you the maximum current that an LED can be fed without being damaged or destroyed. </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="resistor-needed">Resistor needed</h3>
+<p>As seen above, with 2 LEDs in series, each with a forward voltage of 1.5V for 20mA, plugged on a GPIO pin supplying 3.3V, we need a resistor as follow:</p>
+<div class="highlight"><pre><span></span><code>I = V/R
+IF = (VS - VF) / R
+# IF = forward current, VS = supplied voltage, VF = forward voltage
+0.020 = (3.3 - 1.5 - 1.5) / R
+R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
+</code></pre></div>
+
+<p>Note that, if we shift our target amps from 20 to say 40mA to allow the LEDs to draw more current, their forward voltage will increase. Check the specs to know how much. <strong>Never aim higher than 60mA, as it's the maximum the Raspberry Pi can deliver.</strong></p>
+<p>Now if we have just one LED and aim for maximum current (60mA):</p>
+<div class="highlight"><pre><span></span><code>R = (3.3 - 1.5) / 0.060 = 30 Ω
+</code></pre></div>
+
+<p>That's why in the beginning of the article I wrote that 50 Ω is safe for almost all scenarios. 1.5V is among the lowest voltage values drawn by LEDs, since infrared LEDs are those that need the least. For a different color (blue for instance), the computation would most likely look like this, depending on the actual specs of course:</p>
+<div class="highlight"><pre><span></span><code>R = (3.3 - 2.5) / 0.060 = 13.3 Ω
+</code></pre></div>
+
+<h1 id="others-who-did-it-before-me">Others who did it before me</h1>
+<ul>
+<li><a href="https://community.element14.com/products/raspberry-pi/raspberrypi_projects/b/blog/posts/testing-pi-noir-with-ir-leds">Testing Pi NoIR with IR LEDs</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 13 March 2023</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
