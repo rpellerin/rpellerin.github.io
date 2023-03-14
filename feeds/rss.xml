@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 13 Mar 2023 18:30:00 +0100</lastBuildDate><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 14 Mar 2023 23:00:00 +0100</lastBuildDate><item><title>Motorizing an IKEA Skarsta Standing Desk</title><link>//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html</link><description>&lt;p&gt;&lt;strong&gt;THIS IS A DRAFT ARTICLE&lt;/strong&gt;. Still WIP...&lt;/p&gt;
+&lt;h1 id="hardware"&gt;Hardware&lt;/h1&gt;
+&lt;h2 id="dc-12v-gear-motor"&gt;DC 12V Gear Motor&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Not just a regular DC motor. See &lt;a href="https://electronics.stackexchange.com/questions/97477/difference-between-a-dc-motor-and-gear-motor"&gt;the difference between a regular DC motor and a DC gear motor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Torque must be equal or greater than 2Nm (20.4 kg.cm) (info found &lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;here&lt;/a&gt;). Look at the stall torque, not the rated torque.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://de.aliexpress.com/item/32968002582.html?s...&amp;amp;gatewayAdapt=glo2deu"&gt;This one, in its 72 RPM edition looks good enough&lt;/a&gt;. Alternatively, &lt;a href="https://www.pololu.com/product/4745"&gt;this one should work too&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a"&gt;Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;This one on Amazon seems to do the job&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="6mm-hex-key-or-hex-shaft"&gt;6mm Hex key or Hex shaft&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;This one on Obi.de&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.&lt;/p&gt;
+&lt;h2 id="switch-3-positions-reverse-polarity"&gt;Switch 3 positions reverse polarity???&lt;/h2&gt;
+&lt;p&gt;Unsure...&lt;/p&gt;
+&lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/aenniw/ARDUINO/tree/master/skarsta"&gt;https://github.com/aenniw/ARDUINO/tree/master/skarsta&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard"&gt;https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/"&gt;https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html"&gt;https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 14 Mar 2023 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</guid><category>Miscellaneous</category><category>hacking</category><category>standing desk</category><category>diy</category></item><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
 &lt;h1 id="basic-knowledge-required"&gt;Basic knowledge required&lt;/h1&gt;
 &lt;p&gt;Physics courses in high school took place like forever ago, I basically remembered nothing. So I had to dig it up a little bit and study basics again (Ohm's law for instance 😅).&lt;/p&gt;
 &lt;h2 id="raspberry-pi"&gt;Raspberry Pi&lt;/h2&gt;

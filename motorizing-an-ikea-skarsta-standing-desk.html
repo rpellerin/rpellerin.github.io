@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Romain Pellerin" />
-        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, hacking, standing desk, diy" />
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
@@ -61,12 +61,12 @@
         <!-- Social media -->
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@romainpellerin" />
-        <meta name="description" content="Romain Pellerin's Blog: archives for March 2023" />
+        <meta name="description" content="Tutorial about how I motorized my IKEA Starska standing desk" />
         <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Posts for March 2023 - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="Romain Pellerin's Blog: archives for March 2023" />
+        <meta property="og:title" name="twitter:title" content="Motorizing an IKEA Skarsta Standing Desk - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Tutorial about how I motorized my IKEA Starska standing desk" />
 
-        <title>Posts for March 2023 - Romain Pellerin's Blog</title>
+        <title>Motorizing an IKEA Skarsta Standing Desk - Romain Pellerin's Blog</title>
 
         <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
         <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
@@ -74,7 +74,6 @@
     <body>
         <div id="wrapper">
 
-<header>
 <nav class="flexbox-row">
     <a class="center" href="//romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
@@ -83,22 +82,44 @@
     <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
-</nav></header>
-<h1>Posts for March 2023</h1>
-
-
-    <section>
-        <ol>
-                    <li class="no-bullet-point">
-                        <a href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="bookmark" title="Permalink to Motorizing an IKEA Skarsta Standing Desk">Motorizing an IKEA Skarsta Standing Desk</a>
-<time class="grey italic small" datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time>                        <p class="grey italic indent">Tutorial about how I motorized my IKEA Starska standing desk</p>
-                    </li>
-                    <li class="no-bullet-point">
-                        <a href="//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html" rel="bookmark" title="Permalink to Raspberry Pi NoIR camera module and IR LEDs">Raspberry Pi NoIR camera module and IR LEDs</a>
-<time class="grey italic small" datetime="2023-03-13T18:30:00+01:00">Mon 13 March 2023</time>                        <p class="grey italic indent">Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs</p>
-                    </li>
-        </ol>
-    </section>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time>        </p>
+    <h1>Motorizing an IKEA Skarsta Standing Desk</h1>
+    <div class="grey">
+        <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 128 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
+</header>
+<article>
+    <p><strong>THIS IS A DRAFT ARTICLE</strong>. Still WIP...</p>
+<h1 id="hardware">Hardware</h1>
+<h2 id="dc-12v-gear-motor">DC 12V Gear Motor</h2>
+<ul>
+<li>Not just a regular DC motor. See <a href="https://electronics.stackexchange.com/questions/97477/difference-between-a-dc-motor-and-gear-motor">the difference between a regular DC motor and a DC gear motor</a></li>
+<li>Torque must be equal or greater than 2Nm (20.4 kg.cm) (info found <a href="http://cesarmoya.com/blog/motorizing-standup-desk/">here</a>). Look at the stall torque, not the rated torque.</li>
+</ul>
+<p><a href="https://de.aliexpress.com/item/32968002582.html?s...&amp;gatewayAdapt=glo2deu">This one, in its 72 RPM edition looks good enough</a>. Alternatively, <a href="https://www.pololu.com/product/4745">this one should work too</a>.</p>
+<h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a">Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A</h2>
+<p><a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD">This one on Amazon seems to do the job</a>.</p>
+<h2 id="6mm-hex-key-or-hex-shaft">6mm Hex key or Hex shaft</h2>
+<p><a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075">This one on Obi.de</a>.</p>
+<p>Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.</p>
+<h2 id="switch-3-positions-reverse-polarity">Switch 3 positions reverse polarity???</h2>
+<p>Unsure...</p>
+<h1 id="other-tutorials">Other tutorials</h1>
+<ul>
+<li><a href="http://cesarmoya.com/blog/motorizing-standup-desk/">http://cesarmoya.com/blog/motorizing-standup-desk/</a></li>
+<li><a href="https://github.com/aenniw/ARDUINO/tree/master/skarsta">https://github.com/aenniw/ARDUINO/tree/master/skarsta</a></li>
+<li><a href="https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard">https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard</a></li>
+<li><a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/">https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/</a></li>
+<li><a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html">https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 14 March 2023</footer>
 
         </div> <!-- WRAPPER -->
     </body>
