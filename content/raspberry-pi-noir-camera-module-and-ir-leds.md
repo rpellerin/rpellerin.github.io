@@ -1,5 +1,6 @@
 Title: Raspberry Pi NoIR camera module and IR LEDs
 Date: 2023-03-13 18:30
+Modified: 2023-03-16 00:45
 Category: Computers
 Tags: raspberry pi, camera
 Slug: raspberry-pi-noir-camera-module-and-ir-leds
@@ -75,6 +76,22 @@ That's why in the beginning of the article I wrote that 50 Ω is safe for almost
 
     :::text
     R = (3.3 - 2.5) / 0.060 = 13.3 Ω
+
+# What I ended up doing
+
+In the end, I bought two [1.5V 5mm IR LEDs](https://www.reichelt.de/de/en/ir-led-black-40-5-mm-sfh-4546-p146652.html) and a [6.8 Ohm resistor](https://www.reichelt.de/de/en/carbon-film-resistor-1-4-w-5-6-8-ohms-1-4w-6-8-p1452.html), that I soldered all together. The result is pretty nice, and it's working like a charm. By connecting it to a regular GPIO pin, I can programmatically turn it on and off.
+
+<figure class="center">
+<img src="{static}/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" />
+<figcaption>Before soldering</figcaption>
+</figure>
+
+<figure class="center">
+<img src="{static}/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" />
+<figcaption>After soldering</figcaption>
+</figure>
+
+Note that the LEDs I bought have a wavelength of 940 nm. I believe the camera with embedded LEDs I had before was 850 nm. 850 nm is visible by the human eye (dim red) while 940 is not at all. 940 also appears less bright on video than 850, from my experience, in pitch dark.
 
 # Others who did it before me
 
