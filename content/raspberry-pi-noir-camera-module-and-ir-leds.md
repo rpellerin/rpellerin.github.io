@@ -23,7 +23,7 @@ A tool to measure various things. The "A" (Ampere meter) plug acts as a closed c
 
 ## LEDS
 
-- The anode is the long leg of a LED (or on the side where the diode has a flat), where you connect the +. The cathode is the -.
+- The anode is the long leg of a LED, where you connect the +. The cathode is the - (on the side where the diode has a flat).
 - Extracts from [stackoverflow.com](https://electronics.stackexchange.com/questions/10962/what-is-forward-and-reverse-voltage-when-working-with-diodes):
 
     > The **forward voltage** is the voltage drop across the diode if the voltage at the anode is more positive than the voltage at the cathode (if you connect + to the anode).  
