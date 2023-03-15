@@ -84,12 +84,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-03-13T18:30:00+01:00">Mon 13 March 2023</time>        </p>
+<time datetime="2023-03-13T18:30:00+01:00">Mon 13 March 2023</time> - Last Update: <time datetime="2023-03-16T00:45:00+01:00">Thu 16 March 2023</time>        </p>
     <h1>Raspberry Pi NoIR camera module and IR LEDs</h1>
     <div class="grey">
         <p class="italic">Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 942 words.">5 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1054 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/camera.html">camera</a></p>    </div>
 </header>
@@ -164,13 +164,26 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 <div class="highlight"><pre><span></span><code>R = (3.3 - 2.5) / 0.060 = 13.3 Ω
 </code></pre></div>
 
+<h1 id="what-i-ended-up-doing">What I ended up doing</h1>
+<p>In the end, I bought two <a href="https://www.reichelt.de/de/en/ir-led-black-40-5-mm-sfh-4546-p146652.html">1.5V 5mm IR LEDs</a> and a <a href="https://www.reichelt.de/de/en/carbon-film-resistor-1-4-w-5-6-8-ohms-1-4w-6-8-p1452.html">6.8 Ohm resistor</a>, that I soldered all together. The result is pretty nice, and it's working like a charm. By connecting it to a regular GPIO pin, I can programmatically turn it on and off.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" />
+<figcaption>Before soldering</figcaption>
+</figure>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" />
+<figcaption>After soldering</figcaption>
+</figure>
+
+<p>Note that the LEDs I bought have a wavelength of 940 nm. I believe the camera with embedded LEDs I had before was 850 nm. 850 nm is visible by the human eye (dim red) while 940 is not at all. 940 also appears less bright on video than 850, from my experience, in pitch dark.</p>
 <h1 id="others-who-did-it-before-me">Others who did it before me</h1>
 <ul>
 <li><a href="https://community.element14.com/products/raspberry-pi/raspberrypi_projects/b/blog/posts/testing-pi-noir-with-ir-leds">Testing Pi NoIR with IR LEDs</a></li>
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Mon 13 March 2023</footer>
+    Last update: Thu 16 March 2023</footer>
 
         </div> <!-- WRAPPER -->
     </body>
