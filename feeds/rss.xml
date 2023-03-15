@@ -33,7 +33,7 @@
 &lt;p&gt;A tool to measure various things. The "A" (Ampere meter) plug acts as a closed circuit, so never put the test leads into the home sockets! The "V" (Voltmeter) plug acts as an open circuit.&lt;/p&gt;
 &lt;h2 id="leds"&gt;LEDS&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The anode is the long leg of a LED (or on the side where the diode has a flat), where you connect the +. The cathode is the -.&lt;/li&gt;
+&lt;li&gt;The anode is the long leg of a LED, where you connect the +. The cathode is the - (on the side where the diode has a flat).&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Extracts from &lt;a href="https://electronics.stackexchange.com/questions/10962/what-is-forward-and-reverse-voltage-when-working-with-diodes"&gt;stackoverflow.com&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
