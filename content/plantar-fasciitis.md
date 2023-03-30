@@ -1,5 +1,6 @@
 Title: Plantar Fasciitis
 Date: 2022-04-26 00:30
+Modified: 2023-03-31 00:50
 Category: About me
 Tags: plantar fasciitis, health, running
 Slug: plantar-fasciitis
@@ -13,7 +14,7 @@ Alright alright alright. April the 3rd, 2022, I ran my first official half-marat
 <figcaption>Me, about to cross the finish line</figcaption>
 </figure>
 
-Of course, a race wouldn't be a race without a propre injury, would it? Well, let's be honest, it's not that bad of an injury, but still. I got... "Plantar fasciitis" (in French: _aponévrosite plantaire_ or _fasciapathie plantaire_ or _fasciite plantaire_)! To be fair, it started a week prior to the race. I overtrained (I guess). Indeed, I ran 17 kilometers exactly one week before. The next day the pain came. Not too strong, but strong enough for me to call it a discomfort. A ran the race nonethless.
+Of course, a race wouldn't be a race without a propre injury, would it? Well, let's be honest, it's not that bad of an injury, but still. I got... "Plantar fasciitis" (in French: _aponévrosite plantaire_ or _fasciapathie plantaire_ or _fasciite plantaire_)! To be fair, it started a week prior to the race. I overtrained (I guess). Indeed, I ran 17 kilometers exactly one week before. The next day the pain came. Not too strong, but strong enough for me to call it a discomfort. I ran the race nonethless.
 
 A [random Google search](https://www.mayoclinic.org/diseases-conditions/plantar-fasciitis/symptoms-causes/syc-20354846) tells me that it's
 
@@ -24,3 +25,9 @@ Easy enough, I can understand that.
 As the article describes it, you feel the pain mostly in the morning near the heel, right out of bed, and after a few minutes of walking, it starts to fade away, and eventually vanishes, until the next day.
 
 Out of all the websites that I read (not many in all fairness), the best and easiest treatment is to go easy on exercising for at least a few weeks. I am currently at the end of my first "week off", I'll keep monitoring my pain and see how long it takes to completely heal. I only cycle these days, no more running until the pain is gone. I don't want it to become a chronic pain. Stretching a few times per day is also advised. Wearing a splint at night to hold the whole thing might also be considered. As to me, I'll keep resting for the time being and see how it goes. 🤞
+
+## UPDATE: 31-03-2023
+
+Dang it's been a year!!! So many things happened! First of all, I ran again more than 10 kms for the first time since the half-marathon... 2 days ago 😅. Why? you ask. I'm glad you asked! That thing took forever to heal... more than 9 months. I think last Christmas I could still feel it from time to time. So what happened? July or August last year, I went to the doctor, cause I was still feeling the pain EVERY MORNING. She confirmed my own diagnosis, I have a plantar fasciitis. Good news, in a way. She advises rest (of course), insoles and physiotherapie. Perfect, let's do this! 6 sessions of physiotherapie later, no changes (or very slight but not because of the therapy). The physiotherapist clearly was not seeing many patients with that sort of injury, she did her best to come up with creative exercises but I am pretty sure that did little. Next, insoles. To be honest, I'm not sure how much this helped. I got them in August or September, I would have assumed that if they worked, I should have seen a rapid improvement - that did not happen. Like I said, until Christmas I was feeling moderate/litte plain quite often. Anyway, during that whole year I basically stopped running, or 3 or 4 kms once or twice... lol. Then, since January this yearb, I pretty much never felt the pain again, at least never in the morning. Every once in a while I would feel some tickling in the foot randomly, just as a reminder that something had happened, but no pain per se, and that would only last a few seconds when walking. And now, as I'm writing these lines, I can't remember the last time I felt any kind of pain in this foot because of this injury! 🎉
+
+If you are reading this because you're injured, you're not alone 💪. Give it some time, go easy on running, maybe get insoles, use a massage ball if you have one, do some calf and foot stretching in a staircase, while standing on the edge of a step when facing the stairs (slowly let your heels drop down, repeat a few times). That should do!
