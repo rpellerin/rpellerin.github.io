@@ -23,7 +23,7 @@
 &lt;h2 id="fuses"&gt;Fuses&lt;/h2&gt;
 &lt;p&gt;Do I need some?&lt;/p&gt;
 &lt;h1 id="a-v2-of-my-project-would-be"&gt;A V2 of my project would be...&lt;/h1&gt;
-&lt;p&gt;With a &lt;a href="https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver"&gt;different motor driver&lt;/a&gt;, than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and hardcoded value for high and low positions, I don't need to have multiple programmable positions, nor an OLED screen.&lt;/p&gt;
+&lt;p&gt;With a &lt;a href="https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver"&gt;different motor driver&lt;/a&gt;, than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and hardcoded value for high and low positions, I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky as it either require an ultrasonic sensor or optical endstop to know the position of the desk. Otherwise, one can hardcode everything but then must be very careful with the first initial position of the desk.&lt;/p&gt;
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
