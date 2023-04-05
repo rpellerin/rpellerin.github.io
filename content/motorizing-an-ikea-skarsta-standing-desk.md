@@ -43,6 +43,14 @@ I'm going with the [MD10-POT from Cytron](https://www.cytron.io/p-10-amp-7v-30v-
 
 [To connect the motor with the wrench of the table](https://www.amazon.de/dp/B07PW4GKBM).
 
+## Fuses
+
+Do I need some?
+
+# A V2 of my project would be...
+
+With a [different motor driver](https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver), than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and hardcoded value for high and low positions, I don't need to have multiple programmable positions, nor an OLED screen.
+
 # Other tutorials
 
 - [http://cesarmoya.com/blog/motorizing-standup-desk/](http://cesarmoya.com/blog/motorizing-standup-desk/): says 2Nm is needed for torque
