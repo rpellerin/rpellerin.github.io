@@ -89,12 +89,13 @@
     <div class="grey">
         <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 128 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 319 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
 </header>
 <article>
     <p><strong>THIS IS A DRAFT ARTICLE</strong>. Still WIP...</p>
+<p><a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor">Basic knowledge about DC motors here</a>.</p>
 <h1 id="hardware">Hardware</h1>
 <h2 id="dc-12v-gear-motor">DC 12V Gear Motor</h2>
 <ul>
@@ -107,15 +108,20 @@
 <h2 id="6mm-hex-key-or-hex-shaft">6mm Hex key or Hex shaft</h2>
 <p><a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075">This one on Obi.de</a>.</p>
 <p>Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.</p>
-<h2 id="switch-3-positions-reverse-polarity">Switch 3 positions reverse polarity???</h2>
-<p>Unsure...</p>
+<h2 id="dc-motor-driver">DC motor driver</h2>
+<p>I'm going with the <a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver">MD10-POT from Cytron</a>, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.</p>
+<p><strong>Careful</strong>: this is a regenerative motor driver (<a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code">as described at the bottom here</a>), meaning that when you stop powering the motor but it keeps spinning become coming to a stop (i.e. it's braking), the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.</p>
+<h2 id="dc-connecter-barrel-plug-adapter-25mm-x-55mm">DC Connecter Barrel Plug Adapter 2.5mm x 5.5mm</h2>
+<p><a href="https://www.amazon.de/dp/B09TB4D8ZT">To connect the DC power supply with the motor driver</a>.</p>
+<h2 id="shaft-coupling">Shaft coupling</h2>
+<p><a href="https://www.amazon.de/dp/B07PW4GKBM">To connect the motor with the wrench of the table</a>.</p>
 <h1 id="other-tutorials">Other tutorials</h1>
 <ul>
-<li><a href="http://cesarmoya.com/blog/motorizing-standup-desk/">http://cesarmoya.com/blog/motorizing-standup-desk/</a></li>
+<li><a href="http://cesarmoya.com/blog/motorizing-standup-desk/">http://cesarmoya.com/blog/motorizing-standup-desk/</a>: says 2Nm is needed for torque</li>
 <li><a href="https://github.com/aenniw/ARDUINO/tree/master/skarsta">https://github.com/aenniw/ARDUINO/tree/master/skarsta</a></li>
 <li><a href="https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard">https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard</a></li>
-<li><a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/">https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/</a></li>
-<li><a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html">https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html</a></li>
+<li><a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/">https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/</a>: they use an optional endstop to count how many rotations the motor does, thanks to some flag put on the shaft</li>
+<li><a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html">https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html</a>: says 2Nm is needed for torque</li>
 </ul>
 </article>
 <footer class="grey italic small">

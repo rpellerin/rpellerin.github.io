@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Miscellaneous</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/miscellaneous/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2023-03-14T23:00:00+01:00</updated><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2023-03-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;THIS IS A DRAFT ARTICLE&lt;/strong&gt;. Still WIP...&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor"&gt;Basic knowledge about DC motors here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="hardware"&gt;Hardware&lt;/h1&gt;
 &lt;h2 id="dc-12v-gear-motor"&gt;DC 12V Gear Motor&lt;/h2&gt;
 &lt;ul&gt;
@@ -12,15 +13,20 @@
 &lt;h2 id="6mm-hex-key-or-hex-shaft"&gt;6mm Hex key or Hex shaft&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;This one on Obi.de&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.&lt;/p&gt;
-&lt;h2 id="switch-3-positions-reverse-polarity"&gt;Switch 3 positions reverse polarity???&lt;/h2&gt;
-&lt;p&gt;Unsure...&lt;/p&gt;
+&lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
+&lt;p&gt;I'm going with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor but it keeps spinning become coming to a stop (i.e. it's braking), the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.&lt;/p&gt;
+&lt;h2 id="dc-connecter-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connecter Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;To connect the DC power supply with the motor driver&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="shaft-coupling"&gt;Shaft coupling&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B07PW4GKBM"&gt;To connect the motor with the wrench of the table&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/aenniw/ARDUINO/tree/master/skarsta"&gt;https://github.com/aenniw/ARDUINO/tree/master/skarsta&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard"&gt;https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/"&gt;https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html"&gt;https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/"&gt;https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/&lt;/a&gt;: they use an optional endstop to count how many rotations the motor does, thanks to some flag put on the shaft&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html"&gt;https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="hacking"></category><category term="standing desk"></category><category term="diy"></category></entry><entry><title>France vs Germany</title><link href="//romainpellerin.eu/france-vs-germany.html" rel="alternate"></link><published>2023-02-01T12:00:00+01:00</published><updated>2023-02-01T12:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-02-01:/france-vs-germany.html</id><summary type="html">&lt;p&gt;What each country does better than the other&lt;/p&gt;</summary><content type="html">&lt;h1 id="france-is-better-at"&gt;France is better at...&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Pensions&lt;/strong&gt; are much higher (2/3 of your last payrol in France on average, compared to 1/3 in Germany)&lt;/li&gt;

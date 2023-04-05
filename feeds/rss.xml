@@ -12,6 +12,7 @@
 
 &lt;p&gt;&lt;em&gt;And my number of followers never took off anyway... HAHAHA&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 31 Mar 2023 01:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-31:/twitter-we-are-breaking-up.html</guid><category>What's bad about</category><category>social media</category><category>twitter</category></item><item><title>Motorizing an IKEA Skarsta Standing Desk</title><link>//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html</link><description>&lt;p&gt;&lt;strong&gt;THIS IS A DRAFT ARTICLE&lt;/strong&gt;. Still WIP...&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor"&gt;Basic knowledge about DC motors here&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="hardware"&gt;Hardware&lt;/h1&gt;
 &lt;h2 id="dc-12v-gear-motor"&gt;DC 12V Gear Motor&lt;/h2&gt;
 &lt;ul&gt;
@@ -24,15 +25,20 @@
 &lt;h2 id="6mm-hex-key-or-hex-shaft"&gt;6mm Hex key or Hex shaft&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;This one on Obi.de&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.&lt;/p&gt;
-&lt;h2 id="switch-3-positions-reverse-polarity"&gt;Switch 3 positions reverse polarity???&lt;/h2&gt;
-&lt;p&gt;Unsure...&lt;/p&gt;
+&lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
+&lt;p&gt;I'm going with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor but it keeps spinning become coming to a stop (i.e. it's braking), the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.&lt;/p&gt;
+&lt;h2 id="dc-connecter-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connecter Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;To connect the DC power supply with the motor driver&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="shaft-coupling"&gt;Shaft coupling&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B07PW4GKBM"&gt;To connect the motor with the wrench of the table&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/aenniw/ARDUINO/tree/master/skarsta"&gt;https://github.com/aenniw/ARDUINO/tree/master/skarsta&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard"&gt;https://github.com/flosommerfeld/ESP8266-IKEA-Skarsta-Trotten-Web-Dashboard&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/"&gt;https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html"&gt;https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/"&gt;https://www.instructables.com/Motorizing-an-IKEA-SKARSTA-Table/&lt;/a&gt;: they use an optional endstop to count how many rotations the motor does, thanks to some flag put on the shaft&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html"&gt;https://hackcorrelation.blogspot.com/2015/09/ikea-skarsta-sitstanding-desk-hack.html&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 14 Mar 2023 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</guid><category>Miscellaneous</category><category>hacking</category><category>standing desk</category><category>diy</category></item><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
 &lt;h1 id="basic-knowledge-required"&gt;Basic knowledge required&lt;/h1&gt;
 &lt;p&gt;Physics courses in high school took place like forever ago, I basically remembered nothing. So I had to dig it up a little bit and study basics again (Ohm's law for instance 😅).&lt;/p&gt;
