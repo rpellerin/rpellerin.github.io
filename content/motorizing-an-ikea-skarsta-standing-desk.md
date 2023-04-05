@@ -33,7 +33,7 @@ Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for 
 
 I'm going with the [MD10-POT from Cytron](https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver), that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.
 
-**Careful**: this is a regenerative motor driver ([as described at the bottom here](https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code)), meaning that when you stop powering the motor but it keeps spinning become coming to a stop (i.e. it's braking), the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.
+**Careful**: this is a regenerative motor driver ([as described at the bottom here](https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code)), meaning that when you stop powering the motor, it keeps spinning a bit before coming to a stop (due to inertia, while it's "braking"), and as a result the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.
 
 ## DC Connecter Barrel Plug Adapter 2.5mm x 5.5mm
 
@@ -51,7 +51,15 @@ Do I need some?
 
 With a [different motor driver](https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver), than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and auto-raise feature based on how long it takes to raise/lower it. I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky, for the following reasons (copy/pasted from [https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino](https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino)):
 
-    > If you activate auto-raise, and your desk was already at the maximum height, then - depending on your desk - on the IKEA SKARSTA it will hit a stopping point and the MOTORS WILL STALL for the amount of seconds that you recorded. In other words, if you recorded 30 seconds to raise, and your desk is already at the top position (or close), and you still enable auto-raise, you risk damaging your motors as a full power will be sent to them but they will be blocked. When using auto-raise and auto-lower you must ALWAYS be present and watching the desk, ready to cancel the operation if the motors stall for any reason.
+    > If you activate auto-raise, and your desk was already at the maximum height, 
+    > then - depending on your desk - on the IKEA SKARSTA it will hit a stopping 
+    > point and the MOTORS WILL STALL for the amount of seconds that you recorded. 
+    > In other words, if you recorded 30 seconds to raise, and your desk is 
+    > already at the top position (or close), and you still enable auto-raise, you 
+    > risk damaging your motors as a full power will be sent to them but they will 
+    > be blocked. When using auto-raise and auto-lower you must ALWAYS be present 
+    > and watching the desk, ready to cancel the operation if the motors stall for 
+    > any reason.
 
 # Other tutorials
 
