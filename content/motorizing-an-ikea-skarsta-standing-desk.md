@@ -49,7 +49,7 @@ Do I need some?
 
 # A V2 of my project would be...
 
-With a [different motor driver](https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver), than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and hardcoded value for high and low positions, I don't need to have multiple programmable positions, nor an OLED screen.
+With a [different motor driver](https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver), than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and hardcoded value for high and low positions, I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky as it either require an ultrasonic sensor or optical endstop to know the position of the desk. Otherwise, one can hardcode everything but then must be very careful with the first initial position of the desk.
 
 # Other tutorials
 
