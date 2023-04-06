@@ -12,7 +12,7 @@
 &lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;This one on Amazon seems to do the job&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="6mm-hex-key-or-hex-shaft"&gt;6mm Hex key or Hex shaft&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;This one on Obi.de&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.&lt;/p&gt;
+&lt;p&gt;Maybe also buy a shaft coupler 7mm-9mm, if the motor takes in a 10mm shaft for instance. The hex shaft of the desk is 6, so you must at least buy an adapter for 7mm+.&lt;/p&gt;
 &lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
 &lt;p&gt;I'm going with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor, it keeps spinning a bit before coming to a stop (due to inertia, while it's "braking"), and as a result the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.&lt;/p&gt;
