@@ -27,7 +27,7 @@ Summary: Tutorial about how I motorized my IKEA Starska standing desk
 
 [This one on Obi.de](https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075).
 
-Maybe also buy a shaft coupler 6mm-10mm, if the motor takes in a 10mm shaft for instance.
+Maybe also buy a shaft coupler 7mm-9mm, if the motor takes in a 10mm shaft for instance. The hex shaft of the desk is 6, so you must at least buy an adapter for 7mm+.
 
 ## DC motor driver
 
