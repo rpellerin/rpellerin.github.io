@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2023-04-02T23:10:00+02:00</updated><entry><title>Twitter, we are breaking up</title><link href="//romainpellerin.eu/twitter-we-are-breaking-up.html" rel="alternate"></link><published>2023-03-31T01:30:00+02:00</published><updated>2023-03-31T01:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-31:/twitter-we-are-breaking-up.html</id><summary type="html">&lt;p&gt;After 11.5 years spent on Twitter, it's time to move on&lt;/p&gt;</summary><content type="html">&lt;figure class="center"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2023-04-29T14:00:00+02:00</updated><entry><title>Twitter, we are breaking up</title><link href="//romainpellerin.eu/twitter-we-are-breaking-up.html" rel="alternate"></link><published>2023-03-31T01:30:00+02:00</published><updated>2023-03-31T01:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-31:/twitter-we-are-breaking-up.html</id><summary type="html">&lt;p&gt;After 11.5 years spent on Twitter, it's time to move on&lt;/p&gt;</summary><content type="html">&lt;figure class="center"&gt;
 &lt;img src="//romainpellerin.eu/images/twitter-we-are-breaking-up/last-tweet.png" alt="A screenshot of my last tweet on Twitter" /&gt;
 &lt;figcaption&gt;My very last tweet on Twitter.&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -11,42 +11,152 @@
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;And my number of followers never took off anyway... HAHAHA&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2023-03-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;THIS IS A DRAFT ARTICLE&lt;/strong&gt;. Still WIP...&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor"&gt;Basic knowledge about DC motors here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2023-04-29T14:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!&lt;/p&gt;
+&lt;p&gt;After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!&lt;/p&gt;
+&lt;video controls&gt;
+  &lt;source src="./videos/motorizing-an-ikea-skarsta-standing-desk.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;p&gt;That's far from perfect, I already have ideas about how to improve it, but for now that'll do... Down below is the shopping list for this project and the steps to build it. I hope this helps!&lt;/p&gt;
 &lt;h1 id="hardware"&gt;Hardware&lt;/h1&gt;
-&lt;h2 id="dc-12v-gear-motor"&gt;DC 12V Gear Motor&lt;/h2&gt;
+&lt;h2 id="dc-12v-gear-motor-37d-mm"&gt;DC 12V Gear Motor (37D mm)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Not just a regular DC motor. See &lt;a href="https://electronics.stackexchange.com/questions/97477/difference-between-a-dc-motor-and-gear-motor"&gt;the difference between a regular DC motor and a DC gear motor&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Torque must be equal or greater than 2Nm (20.4 kg.cm) (info found &lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;here&lt;/a&gt;). Look at the stall torque, not the rated torque.&lt;/li&gt;
+&lt;li&gt;The diameter must be 37 mm, so that it fits perfectly under the IKEA Starska standing desk&lt;/li&gt;
+&lt;li&gt;Torque must be equal to or greater than 2Nm (20.4 kg.cm) (info found &lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;here&lt;/a&gt;). Look at the stall torque, not the rated torque.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href="https://de.aliexpress.com/item/32968002582.html?s...&amp;amp;gatewayAdapt=glo2deu"&gt;This one, in its 72 RPM edition looks good enough&lt;/a&gt;. Alternatively, &lt;a href="https://www.pololu.com/product/4745"&gt;this one should work too&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a"&gt;Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;This one on Amazon seems to do the job&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="6mm-hex-key-or-hex-shaft"&gt;6mm Hex key or Hex shaft&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;This one on Obi.de&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Maybe also buy a &lt;a href="https://www.amazon.de/dp/B07HKJL1XC"&gt;7mm shaft coupler&lt;/a&gt;, if the motor takes in a 6mm shaft for instance. The hex shaft of the desk is 6, so you must at least buy an adapter for 7mm+.&lt;/p&gt;
-&lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
-&lt;p&gt;I'm going with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor code writing.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor, it keeps spinning a bit before coming to a stop (due to inertia, while it's "braking"), and as a result the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. In my case it should be ok as the desk is heavy and won't allow the motor to keep spinning.&lt;/p&gt;
-&lt;h2 id="dc-connecter-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connecter Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;To connect the DC power supply with the motor driver&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="shaft-coupling"&gt;Shaft coupling&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.amazon.de/dp/B07PW4GKBM"&gt;To connect the motor with the wrench of the table&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id="fuses"&gt;Fuses&lt;/h2&gt;
-&lt;p&gt;Do I need some?&lt;/p&gt;
-&lt;h1 id="a-v2-of-my-project-would-be"&gt;A V2 of my project would be...&lt;/h1&gt;
-&lt;p&gt;With a &lt;a href="https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver"&gt;different motor driver&lt;/a&gt;, than has Over Current and Under Voltage protections, such as the MD13S from Cytron. Also with an Arduino and auto-raise feature based on how long it takes to raise/lower it. I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky, for the following reasons (copy/pasted from &lt;a href="https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino"&gt;https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino&lt;/a&gt;):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;If&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;activate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;raise&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;desk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;was&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;already&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;maximum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;height&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;depending&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;desk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;on&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;IKEA&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SKARSTA&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;hit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;stopping&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;point&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;MOTORS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WILL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;STALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;amount&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;recorded&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;In&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;other&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;words&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;recorded&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;seconds&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;raise&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;desk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;already&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;top&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;position&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;still&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;raise&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;risk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;damaging&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;your&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;motors&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;full&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;power&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;sent&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;them&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;but&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;blocked&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;When&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;using&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;raise&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;lower&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;must&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ALWAYS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;present&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;watching&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;desk&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ready&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;cancel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;operation&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;motors&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;stall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
-&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;any&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;reason&lt;/span&gt;.&lt;span class="w"&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor.jpg" alt="A picture of the motor" /&gt;
+&lt;figcaption&gt;The motor I bought from Aliexpress&lt;/figcaption&gt;
+&lt;/figure&gt;
 
+&lt;p&gt;&lt;a href="https://de.aliexpress.com/item/32968002582.html?s...&amp;amp;gatewayAdapt=glo2deu"&gt;I bought this one, the 12V 72 RPM edition, that draws 3 amps ("stall current")&lt;/a&gt;. According to the specs, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up!&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" /&gt;
+&lt;figcaption&gt;Specs of the motor&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Alternatively, &lt;a href="https://www.pololu.com/product/4745"&gt;this other motor looks like a viable option too&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="aluminum-l-bracket-for-37d-metal-gearmotors"&gt;Aluminum L-Bracket for 37D Metal Gearmotors&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/l-bracket-for-37d-motors.jpg" alt="A picture of a pair of L-Brackets for motors" /&gt;
+&lt;figcaption&gt;The L-Bracket pair I got (only 1 is necessary for this project though)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We will use this to secure the motor to the desk. &lt;a href="https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors"&gt;I got it from The PiHut&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a"&gt;Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/acdc-power-adapter.jpg" alt="A picture of a power adapter" /&gt;
+&lt;figcaption&gt;The adaper I got from Amazon&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;I got this one from Amazon&lt;/a&gt;, works like a charm!&lt;/p&gt;
+&lt;h2 id="6mm-hex-key"&gt;6mm hex key&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/6mm-hex-key.jpg" alt="A picture of an hex key" /&gt;
+&lt;figcaption&gt;The 6mm hex key I got&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;I got this one Obi.de&lt;/a&gt; and I had to cut off the bent part of it. This will replace the original crank provided with the desk.&lt;/p&gt;
+&lt;h2 id="7mm-shaft-coupler"&gt;7mm shaft coupler&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/7mm-shaft-coupler.jpg" alt="A picture of a shaft coupler" /&gt;
+&lt;figcaption&gt;The 7mm shaft coupler I got&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This will connect the motor to the hex key in the desk. Get a &lt;a href="https://www.amazon.de/dp/B07HKJL1XC"&gt;7mm shaft coupler&lt;/a&gt;, since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger.&lt;/p&gt;
+&lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-motor-driver.jpg" alt="A picture of a DC motor driver" /&gt;
+&lt;figcaption&gt;The DC motor driver I got from Cytron.io&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This will control the motor. I went with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor any code writing.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor, it keeps spinning a bit before coming to a stop (due to inertia, while it's "braking"), and as a result the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. For this project it is ok though as the desk is heavy and won't allow the motor to keep spinning when the power is cut.&lt;/p&gt;
+&lt;p&gt;Learn more about &lt;a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor"&gt;controlling a DC motor here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="dc-connector-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connector Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-connector-barrel-plug-adapter.jpg" alt="A picture of a DC connector barrel plug adapter" /&gt;
+&lt;figcaption&gt;The one I got&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is used to connect the DC power supply with the motor driver, &lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;I got this one from Amazon&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="misc"&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Duct tape&lt;/li&gt;
+&lt;li&gt;A grinder, to cut off the bent part of the hex key&lt;/li&gt;
+&lt;li&gt;Electrical wire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="how-to-build-it"&gt;How to build it&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Cut off the bent part of the hex key with a grinder. We need a straight hex key.&lt;/li&gt;
+&lt;li&gt;Replace the original crank with the hex key, mounted with the shaft coupler.&lt;/li&gt;
+&lt;li&gt;Position the L-bracket with the motor at the end of the hex key and mark the final position with a pen.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Screw the L-bracket to the desk using a drill (slow speed)&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" /&gt;
+  &lt;figcaption&gt;The L-bracket is now attached to the desk&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Secure the motor to the L-bracket&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" /&gt;
+  &lt;figcaption&gt;The motor is now attached to the L-bracket&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Attach the power supply to the desk with a self-adhesive velcro, or just tape:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" /&gt;
+  &lt;figcaption&gt;Self-adhesive velcro&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6b.jpg" alt="A picture of velcro under the desk" /&gt;
+  &lt;figcaption&gt;Velcro stuck to the desk&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" /&gt;
+  &lt;figcaption&gt;The power supply wrapped in velcro&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect the motor to the DC motor driver using wires, and tape the junctions for improved safety&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" /&gt;
+  &lt;figcaption&gt;Put tape around the connections&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Connect the power supply to the DC motor driver (pay attention to polarity) using the barrel and wrap it in tape for improved safety&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" /&gt;
+  &lt;figcaption&gt;The barrel, connecting the DC motor driver and power supply, wrapped in tape&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;And last, tape everything under the desk, make sure nothing is hanging. I protected some parts (soldered points) of the motor driver board with tape. I placed the switch button near the edge of the desk to reach it easily. A better design would be to put everything in a small plastic box.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;
+  &lt;img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" /&gt;
+  &lt;figcaption&gt;The end result&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="a-v2-of-my-project-would-be"&gt;A V2 of my project would be...&lt;/h1&gt;
+&lt;p&gt;With a &lt;a href="https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver"&gt;different motor driver&lt;/a&gt;, that has "Over Current" and "Under Voltage" protections, such as the MD13S from Cytron. Also with an Arduino and auto-raise feature based on how long it takes to raise/lower it. I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky, for the following reasons (copy/pasted from &lt;a href="https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino"&gt;https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino&lt;/a&gt;):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you activate auto-raise, and your desk was already at the maximum height,
+then - depending on your desk - on the IKEA SKARSTA it will hit a stopping
+point and the MOTORS WILL STALL for the amount of seconds that you recorded.
+In other words, if you recorded 30 seconds to raise, and your desk is
+already at the top position (or close), and you still enable auto-raise, you
+risk damaging your motors as a full power will be sent to them but they will
+be blocked. When using auto-raise and auto-lower you must ALWAYS be present
+and watching the desk, ready to cancel the operation if the motors stall for
+any reason.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And finally, a nicer design, where everything is not taped underneath but put in a plastic box.&lt;/p&gt;
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
@@ -3136,17 +3246,17 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;h1 id="fancy-effects-in-kdenlive"&gt;Fancy effects in Kdenlive&lt;/h1&gt;
 &lt;h2 id="fade-inout"&gt;Fade-in/out&lt;/h2&gt;
 &lt;p&gt;There's a built-in effect for that. Make sure to tick "fade to/from dark".&lt;/p&gt;
-&lt;video autoplay loop controls&gt;
+&lt;video controls&gt;
     &lt;source src="./videos/kdenlive/fade-out.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
 &lt;h2 id="split-screen"&gt;Split screen&lt;/h2&gt;
-&lt;video autoplay loop controls&gt;
+&lt;video controls&gt;
     &lt;source src="./videos/kdenlive/split-screen.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
 &lt;h2 id="iris-out"&gt;Iris out&lt;/h2&gt;
-&lt;video autoplay loop controls&gt;
+&lt;video controls&gt;
     &lt;source src="./videos/kdenlive/iris-out.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
