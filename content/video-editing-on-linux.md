@@ -91,19 +91,19 @@ To find the BPM of a song, use any of the following links:
 
 There's a built-in effect for that. Make sure to tick "fade to/from dark".
 
-<video autoplay loop controls>
+<video controls>
     <source src="./videos/kdenlive/fade-out.mp4" type="video/mp4">
 </video>
 
 ## Split screen
 
-<video autoplay loop controls>
+<video controls>
     <source src="./videos/kdenlive/split-screen.mp4" type="video/mp4">
 </video>
 
 ## Iris out
 
-<video autoplay loop controls>
+<video controls>
     <source src="./videos/kdenlive/iris-out.mp4" type="video/mp4">
 </video>
 
