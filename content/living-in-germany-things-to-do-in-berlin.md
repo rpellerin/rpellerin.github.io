@@ -55,3 +55,4 @@ Before diving into the list of things to do, make sure to get yourself a bike to
 - Go to one of the numerous flea markets that take place on the weekends
 - Mall of Berlin = there is a slide inside!
 - Potsdam (outside of Berlin)
+- Klunkerkranich
