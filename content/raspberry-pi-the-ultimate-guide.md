@@ -562,7 +562,7 @@ Official tutorial: [https://docs.nextcloud.com/server/latest/admin_manual/instal
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enabled/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         <VirtualHost *:443>
@@ -700,6 +700,7 @@ Now get a browser-trusted certificate from [Let's Encrypt](https://letsencrypt.o
     # Set up NAT/PAT rules in your router so that ports 80 and 443 are reachable from the Internet. Then:
     certbot --apache
     # Now uncomment SSLEngine on in default-ssl.conf
+    # Also, your router must accept connections on port 80 for the renewal to work.
     certbot renew --dry-run # Try renewal
     # It should be programmed to regularily renew the certificate automatically.
     # Check with `systemctl list-timers`.

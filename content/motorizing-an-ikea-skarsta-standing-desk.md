@@ -30,7 +30,7 @@ That's far from perfect, I already have ideas about how to improve it, but for n
 <figcaption>The motor I bought from Aliexpress</figcaption>
 </figure>
 
-[I bought this one, the 12V 72 RPM edition, that draws 3 amps ("stall current")](https://de.aliexpress.com/item/32968002582.html?s...&gatewayAdapt=glo2deu). According to the specs, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up!
+I bought and tried these 2, [the 12V 72 RPM edition, that draws 3 amps ("stall current"), and the 12V 136 RPM one](https://de.aliexpress.com/item/32968002582.html). According to the specs of the 72 RPM one, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up easily! As to the 136 RPM, it works well too, up to 30 Kg, but it gets real close to stalling. Without much weight (a laptop and a monitor), it raises the desk at about 100 rotations per minute.
 
 <figure class="center">
 <img class="zoomable" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" />
