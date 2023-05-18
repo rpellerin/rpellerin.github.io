@@ -82,7 +82,7 @@
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5832 words.">29 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5847 words.">29 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -586,7 +586,7 @@ runq<span class="p">;</span> exim -qff <span class="c1"># Flush all email queues
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enabled/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         <VirtualHost *:443>
@@ -719,6 +719,7 @@ ln -s /snap/bin/certbot /usr/bin/certbot
 <span class="c1"># Set up NAT/PAT rules in your router so that ports 80 and 443 are reachable from the Internet. Then:</span>
 certbot --apache
 <span class="c1"># Now uncomment SSLEngine on in default-ssl.conf</span>
+<span class="c1"># Also, your router must accept connections on port 80 for the renewal to work.</span>
 certbot renew --dry-run <span class="c1"># Try renewal</span>
 <span class="c1"># It should be programmed to regularily renew the certificate automatically.</span>
 <span class="c1"># Check with `systemctl list-timers`.</span>

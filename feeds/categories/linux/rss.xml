@@ -1074,7 +1074,7 @@ runq&lt;span class="p"&gt;;&lt;/span&gt; exim -qff &lt;span class="c1"&gt;# Flus
         a2enmod http2
         a2enconf php7.3-fpm # Check the generated conf file in /etc/apache2/conf-enabled, if not needed remove the file or disable the conf
 
-1.  Keep reading the instructions. When editing `/etc/apache2/sites-enables/default-ssl.conf`, add these lines in the virtual host:
+1.  Keep reading the instructions. When editing `/etc/apache2/sites-enabled/default-ssl.conf`, add these lines in the virtual host:
 
         :::text
         &lt;VirtualHost *:443&gt;
@@ -1207,6 +1207,7 @@ ln -s /snap/bin/certbot /usr/bin/certbot
 &lt;span class="c1"&gt;# Set up NAT/PAT rules in your router so that ports 80 and 443 are reachable from the Internet. Then:&lt;/span&gt;
 certbot --apache
 &lt;span class="c1"&gt;# Now uncomment SSLEngine on in default-ssl.conf&lt;/span&gt;
+&lt;span class="c1"&gt;# Also, your router must accept connections on port 80 for the renewal to work.&lt;/span&gt;
 certbot renew --dry-run &lt;span class="c1"&gt;# Try renewal&lt;/span&gt;
 &lt;span class="c1"&gt;# It should be programmed to regularily renew the certificate automatically.&lt;/span&gt;
 &lt;span class="c1"&gt;# Check with `systemctl list-timers`.&lt;/span&gt;
