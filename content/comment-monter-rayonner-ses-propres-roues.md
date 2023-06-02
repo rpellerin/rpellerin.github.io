@@ -11,3 +11,7 @@ Je cherchais récemment à vérifier la tension des mes rayons, et éventuelleme
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p8msYQEqSIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Ne pas oublier de réaligner les rayons plats avec une pince, pour qu'ils soient le plus aérodynamiques possible.
+
+# Liens
+
+- [Comment régler le dérailleur avant Shimano 105](https://www.reddit.com/r/BikeMechanics/comments/gkqiwl/figured_out_the_shimano_linkage_derailleur_design/)
