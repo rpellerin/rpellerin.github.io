@@ -17,14 +17,14 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Stranger Things
 - Lupin
 - Tribes of Europa
-- Ted Lasso
 - Formula 1: Drive to Survive
 - Squid Game
-- Paper Girls
 - Tales of the Walking Dead
 
 # Ended or Canceled TV series
 
+- Paper Girls
+- Ted Lasso
 - La Casa de Papel
 - Altered Carbon
 - The Walking Dead: World Beyond
