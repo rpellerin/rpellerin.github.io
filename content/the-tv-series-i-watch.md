@@ -20,6 +20,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Formula 1: Drive to Survive
 - Squid Game
 - Tales of the Walking Dead
+- Tour de France: Unchained
 
 # Ended or Canceled TV series
 
