@@ -50,6 +50,14 @@ After asking Mavic directly over the phone (because no information available onl
 - Rear wheel right side (cassette side): 90kgs, +/- 10kg
 - Rear wheel left side, and front wheel: 80kgs, +/- 10kg
 
+### State out of the factory
+
+They're not the best wheels out there for sure. Check out the default truness, both the radial trueness (_saut_ in French) and lateral trueness (_voilage_ in French) are off.
+
+<video controls>
+  <source src="./videos/mavic-aksium-factory.mp4" type="video/mp4">
+</video>
+
 ### Spokes
 
 - Front wheel: 283-mm long, 2mm diameter (as measured by me)
