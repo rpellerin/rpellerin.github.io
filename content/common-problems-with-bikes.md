@@ -1,7 +1,7 @@
 Title: Common Problems With Bikes
 Date: 2023-06-21 15:30
 Category: Bikes
-Tags: bike
+Tags: bike, wheel
 Slug: common-problems-with-bikes
 Authors: Romain Pellerin
 Summary: Common problems and usual solutions
@@ -28,5 +28,36 @@ My wheels are the entry-level ones from Mavic, the Aksium. It looks like the ent
 - Look for clincher wheels, not tubular
 - Careful with the freehub compatibility, for me it needs to be compatible with Shimano HG-L (cause I have 11 speeds)
 
+# How to true a wheel and fix spoke tension
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p8msYQEqSIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Don't forget to re-align bladed spokes for best aerodynamics.
+
+As to the tension, [this website](http://cr.lavalnord.pagesperso-orange.fr/Fiches%20Techniques%20,%20voilage%20roues,%20rayons.htm) recommends:
+
+- 90 to 110 daN (daN = decaNewtons) for a front wheel
+- 90 to 110 daN for a rear wheel right side (cassette side)
+- the tensions of the spokes on the right side (cassette side) is round about 70% higher than the tension on the left side, (NB: **if the spokes are the same**)
+
+## Mavic Aksium
+
+- [Product page](https://www.mavic.com/fr-fr/aksium-rr0988.html).
+- [Technical page](https://technicalmanual.mavic.com/tech-mavic/technical_manual/data/mavic_tech.php?display=product&macronu=29666)
+
+After asking Mavic directly over the phone (because no information available online), they recommend the following:
+
+- Rear wheel right side (cassette side): 90kgs, +/- 10kg
+- Rear wheel left side, and front wheel: 80kgs, +/- 10kg
+
+### Spokes
+
+- Front wheel: 283-mm long, 2mm diameter (as measured by me)
+- Rear wheel right side (cassette side): 283-mm long, 2mm diameter (as measured by me)
+- Rear wheel left side: 301-mm long, 1.2x3.0mm blades (as measured by me)
+
+# Adjust front Shimano 105 derailleur
+
+[Link to Reddit](https://www.reddit.com/r/BikeMechanics/comments/gkqiwl/figured_out_the_shimano_linkage_derailleur_design/).
 
 That's it!
