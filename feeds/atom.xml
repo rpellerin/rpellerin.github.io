@@ -33,12 +33,17 @@
 &lt;li&gt;Rear wheel right side (cassette side): 90kgs, +/- 10kg&lt;/li&gt;
 &lt;li&gt;Rear wheel left side, and front wheel: 80kgs, +/- 10kg&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="state-out-of-the-factory"&gt;State out of the factory&lt;/h3&gt;
+&lt;h3 id="state-out-of-the-factory-for-a-rear-wheel-mavic-aksium"&gt;State out of the factory for a rear wheel Mavic Aksium&lt;/h3&gt;
 &lt;p&gt;They're not the best wheels out there for sure. Check out the default truness, both the radial trueness (&lt;em&gt;saut&lt;/em&gt; in French) and lateral trueness (&lt;em&gt;voilage&lt;/em&gt; in French) are off.&lt;/p&gt;
 &lt;video controls&gt;
   &lt;source src="./videos/mavic-aksium-factory.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
+&lt;p&gt;The average tension was as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Right side (cassette-side): 46.7, measured with a calibrated Unior 1752/2 tension meter&lt;/li&gt;
+&lt;li&gt;Left side: 51, measured with a calibrated Unior 1752/2 tension meter&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="spokes"&gt;Spokes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Front wheel: 283-mm long, 2mm diameter (as measured by me)&lt;/li&gt;
