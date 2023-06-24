@@ -50,13 +50,18 @@ After asking Mavic directly over the phone (because no information available onl
 - Rear wheel right side (cassette side): 90kgs, +/- 10kg
 - Rear wheel left side, and front wheel: 80kgs, +/- 10kg
 
-### State out of the factory
+### State out of the factory for a rear wheel Mavic Aksium
 
 They're not the best wheels out there for sure. Check out the default truness, both the radial trueness (_saut_ in French) and lateral trueness (_voilage_ in French) are off.
 
 <video controls>
   <source src="./videos/mavic-aksium-factory.mp4" type="video/mp4">
 </video>
+
+The average tension was as follows:
+
+- Right side (cassette-side): 46.7, measured with a calibrated Unior 1752/2 tension meter
+- Left side: 51, measured with a calibrated Unior 1752/2 tension meter
 
 ### Spokes
 
