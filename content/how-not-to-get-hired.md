@@ -93,3 +93,4 @@ Good luck!
 - [Interviewing for a Technical Position Doesn’t Have to Be Scary](https://css-tricks.com/interviewing-for-a-technical-position-doesnt-have-to-be-scary/)
 - [Ask an expert: How do you interview an engineer?](https://increment.com/teams/ask-an-expert-how-do-you-interview-an-engineer/)
 - [Mais… pourquoi vous mettez des barres de compétences sur le CV ?](https://www.mathieupassenaud.fr/barres-cv/)
+- [Preparing for the Systems Design and Coding Interview](https://blog.pragmaticengineer.com/preparing-for-the-systems-design-and-coding-interviews/)
