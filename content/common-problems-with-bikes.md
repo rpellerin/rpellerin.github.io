@@ -20,7 +20,7 @@ This one is pretty hard to identify at first. For me, gradually over some rides 
 
 Turns out this is a very common problem with wheels. Can't be fixed, all you gotta do is replace the whole wheel (or rim if you like to build wheels).
 
-My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21?
+My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21 or 32? In their OXIC version? Supposedly it breaks better, with the right blue pads from DT Swiss.
 
 ## Tips for buying wheels
 
@@ -42,7 +42,7 @@ As to the tension, [this website](http://cr.lavalnord.pagesperso-orange.fr/Fiche
 
 ## Mavic Aksium
 
-- [Product page](https://www.mavic.com/fr-fr/aksium-rr0988.html).
+- [Product page](https://www.mavic.com/fr-fr/aksium-rr0988.html)
 - [Technical page](https://technicalmanual.mavic.com/tech-mavic/technical_manual/data/mavic_tech.php?display=product&macronu=29666)
 
 After asking Mavic directly over the phone (because no information available online), they recommend the following:
@@ -61,7 +61,7 @@ They're not the best wheels out there for sure. Check out the default truness, b
 The average tension was as follows:
 
 - Right side (cassette-side): 46.7, measured with a calibrated Unior 1752/2 tension meter
-- Left side: 51, measured with a calibrated Unior 1752/2 tension meter
+- Left side: 51.05, measured with a calibrated Unior 1752/2 tension meter
 
 ### Spokes
 
