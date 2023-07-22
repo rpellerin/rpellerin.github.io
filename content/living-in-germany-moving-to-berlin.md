@@ -31,6 +31,8 @@ Also, I suggest you start selling the furniture you don't want to keep as soon a
 
 ## Finding a short-term flat
 
+[Useful PDF]({static}/extra/Flats_Handout 2019v5.pdf)
+
 - [https://wunderflats.de](https://wunderflats.de) - registration is almost always possible, this is the website I recommend
 - [https://www.thehomelike.com](https://www.thehomelike.com)
 - [https://www.crocodilian.de](https://www.crocodilian.de)
