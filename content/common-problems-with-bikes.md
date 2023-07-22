@@ -6,6 +6,10 @@ Slug: common-problems-with-bikes
 Authors: Romain Pellerin
 Summary: Common problems and usual solutions
 
+# Servicing a bike
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/2eXWwQ3Jcyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Broken derailleur cable
 
 Recently my rear derailleur cable broke in the middle of a ride. Good thing it was on a Saturday morning, and a bike shop was only a few kilometers away.
