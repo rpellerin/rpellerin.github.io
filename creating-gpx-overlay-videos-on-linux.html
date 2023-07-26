@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, video, linux, gps, gpx, kdenlive" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A tutorial about adding GPX data on top of videos (speed, heart rate, etc)" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Creating GPX overlay videos on Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A tutorial about adding GPX data on top of videos (speed, heart rate, etc)" />
+
+        <title>Creating GPX overlay videos on Linux - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time>        </p>
+    <h1>Creating GPX overlay videos on Linux</h1>
+    <div class="grey">
+        <p class="italic">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 578 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
+</header>
+<article>
+    <p>Just because I found <a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/">this article</a> so good but a bit too long, I'm creating my own.</p>
+<p>Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).</p>
+<p>I found salvation in <a href="https://github.com/time4tea/gopro-dashboard-overlay">gopro-dashboard-overlay</a>! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!</p>
+<p>So here is my TL;DR tutorial on how to use it:</p>
+<h1 id="1-install-the-project">1. Install the project</h1>
+<div class="highlight"><pre><span></span><code>git clone git@github.com:time4tea/gopro-dashboard-overlay.git
+<span class="nb">cd</span> gopro-dashboard-overlay
+python3 -m venv .env
+<span class="nb">source</span> .env/bin/activate
+pip install gopro-overlay
+sudo apt install apt install fonts-roboto
+</code></pre></div>
+
+<h1 id="2-setup">2. Setup</h1>
+<div class="highlight"><pre><span></span><code>mkdir ~/.gopro-graphics/
+vim ~/.gopro-graphics/ffmpeg-profiles.json
+</code></pre></div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;vp9&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vp9&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-pix_fmt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;yuva420p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;png&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout.xml
+</code></pre></div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;layout&gt;</span>
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;20&quot;</span> <span class="na">y=</span><span class="s">&quot;20&quot;</span> <span class="na">name=</span><span class="s">&quot;date_and_time&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;datetime&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;0&quot;</span> <span class="na">format=</span><span class="s">&quot;%H:%M:%S&quot;</span> <span class="na">size=</span><span class="s">&quot;32&quot;</span> <span class="na">align=</span><span class="s">&quot;left&quot;</span><span class="nt">/&gt;</span>
+        <span class="cm">&lt;!-- &lt;component type=&quot;text&quot; x=&quot;0&quot; y=&quot;36&quot; size=&quot;32&quot;&gt;Distance (km): &lt;/component&gt;</span>
+<span class="cm">        &lt;component type=&quot;metric&quot; x=&quot;215&quot; y=&quot;36&quot; metric=&quot;odo&quot; units=&quot;km&quot; size=&quot;32&quot; dp=&quot;2&quot; /&gt; --&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;20&quot;</span> <span class="na">y=</span><span class="s">&quot;976&quot;</span> <span class="na">name=</span><span class="s">&quot;big_kph&quot;</span><span class="nt">&gt;</span>
+        <span class="cm">&lt;!-- 1080 - 20 (margin) - 64 (altitude) - 20 (margin) = y 976 --&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-160&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;160&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric_unit&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-176&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">size=</span><span class="s">&quot;16&quot;</span><span class="nt">&gt;</span>km/h<span class="nt">&lt;/component&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;20&quot;</span> <span class="na">y=</span><span class="s">&quot;1060&quot;</span> <span class="na">name=</span><span class="s">&quot;altitude&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">file=</span><span class="s">&quot;mountain.png&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric_unit&quot;</span> <span class="na">x=</span><span class="s">&quot;70&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">metric=</span><span class="s">&quot;alt&quot;</span> <span class="na">units=</span><span class="s">&quot;alt&quot;</span> <span class="na">size=</span><span class="s">&quot;16&quot;</span><span class="nt">&gt;</span>Altitude ({:~C})<span class="nt">&lt;/component&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;70&quot;</span> <span class="na">y=</span><span class="s">&quot;-46&quot;</span> <span class="na">metric=</span><span class="s">&quot;alt&quot;</span> <span class="na">units=</span><span class="s">&quot;alt&quot;</span> <span class="na">dp=</span><span class="s">&quot;1&quot;</span> <span class="na">size=</span><span class="s">&quot;46&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;270&quot;</span> <span class="na">y=</span><span class="s">&quot;1060&quot;</span> <span class="na">name=</span><span class="s">&quot;gradient&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">file=</span><span class="s">&quot;slope-triangle.png&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">x=</span><span class="s">&quot;70&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">size=</span><span class="s">&quot;16&quot;</span><span class="nt">&gt;</span>Slope (%)<span class="nt">&lt;/component&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;70&quot;</span> <span class="na">y=</span><span class="s">&quot;-46&quot;</span> <span class="na">metric=</span><span class="s">&quot;gradient&quot;</span> <span class="na">dp=</span><span class="s">&quot;1&quot;</span> <span class="na">size=</span><span class="s">&quot;46&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;chart&quot;</span> <span class="na">name=</span><span class="s">&quot;gradient_chart&quot;</span> <span class="na">x=</span><span class="s">&quot;450&quot;</span> <span class="na">y=</span><span class="s">&quot;996&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;1900&quot;</span> <span class="na">y=</span><span class="s">&quot;980&quot;</span> <span class="na">name=</span><span class="s">&quot;temperature&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;-64&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">file=</span><span class="s">&quot;thermometer.png&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;-70&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span> <span class="na">metric=</span><span class="s">&quot;temp&quot;</span> <span class="na">units=</span><span class="s">&quot;temp&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;1900&quot;</span> <span class="na">y=</span><span class="s">&quot;1060&quot;</span> <span class="na">name=</span><span class="s">&quot;heartbeat&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;-64&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">file=</span><span class="s">&quot;heartbeat.png&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;-70&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">metric=</span><span class="s">&quot;hr&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;moving_map&quot;</span> <span class="na">name=</span><span class="s">&quot;moving_map&quot;</span> <span class="na">x=</span><span class="s">&quot;1644&quot;</span> <span class="na">y=</span><span class="s">&quot;20&quot;</span> <span class="na">size=</span><span class="s">&quot;256&quot;</span> <span class="na">zoom=</span><span class="s">&quot;16&quot;</span> <span class="na">corner_radius=</span><span class="s">&quot;35&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;journey_map&quot;</span> <span class="na">name=</span><span class="s">&quot;journey_map&quot;</span> <span class="na">x=</span><span class="s">&quot;1644&quot;</span> <span class="na">y=</span><span class="s">&quot;296&quot;</span> <span class="na">size=</span><span class="s">&quot;256&quot;</span> <span class="na">corner_radius=</span><span class="s">&quot;35&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div>
+
+<h1 id="3-generate-a-transparent-video-with-the-data-only">3. Generate a transparent video with the data only</h1>
+<div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.webm
+</code></pre></div>
+
+<p>It's going to take some hours. Encoding with VP9 in a .webm container is actually slower than with PNG in .mov container, but the file size is like 100 times smaller. Another way to speed up the processing is to further reduce the final file framerate (30 by default, here in the XML we set it to 5).</p>
+<p>That's the kind of result you can expect:</p>
+<video controls>
+  <source src="./videos/gpx-overlay.webm" type="video/webm">
+</video>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/gpx-overlay.png" alt="A screenshot of the video" />
+<figcaption>A screenshot of the video, in case you can't play it</figcaption>
+</figure>
+
+<p>All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using <a href="//romainpellerin.eu/video-editing-on-linux.html">Kdenlive on Linux</a>..</p>
+<p>That's it!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 26 July 2023</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
