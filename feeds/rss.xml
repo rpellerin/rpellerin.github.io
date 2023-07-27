@@ -92,6 +92,11 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;figcaption&gt;A screenshot of the video, in case you can't play it&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;p&gt;And the final result, merged with GoPro footage:&lt;/p&gt;
+&lt;video controls&gt;
+  &lt;source src="./videos/gpx-overlay-merged.webm" type="video/webm"&gt;
+&lt;/video&gt;
+
 &lt;p&gt;All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using &lt;a href="//romainpellerin.eu/video-editing-on-linux.html"&gt;Kdenlive on Linux&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 26 Jul 2023 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</guid><category>Linux</category><category>video</category><category>linux</category><category>gps</category><category>gpx</category><category>kdenlive</category></item><item><title>Common Problems With Bikes</title><link>//romainpellerin.eu/common-problems-with-bikes.html</link><description>&lt;h1 id="servicing-a-bike"&gt;Servicing a bike&lt;/h1&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/2eXWwQ3Jcyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;

@@ -92,6 +92,11 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;figcaption&gt;A screenshot of the video, in case you can't play it&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;p&gt;And the final result, merged with GoPro footage:&lt;/p&gt;
+&lt;video controls&gt;
+  &lt;source src="./videos/gpx-overlay-merged.webm" type="video/webm"&gt;
+&lt;/video&gt;
+
 &lt;p&gt;All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using &lt;a href="//romainpellerin.eu/video-editing-on-linux.html"&gt;Kdenlive on Linux&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;That's it!&lt;/p&gt;</content><category term="Linux"></category><category term="video"></category><category term="linux"></category><category term="gps"></category><category term="gpx"></category><category term="kdenlive"></category></entry><entry><title>Common Problems With Bikes</title><link href="//romainpellerin.eu/common-problems-with-bikes.html" rel="alternate"></link><published>2023-06-21T15:30:00+02:00</published><updated>2023-06-21T15:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-06-21:/common-problems-with-bikes.html</id><summary type="html">&lt;p&gt;Common problems and usual solutions&lt;/p&gt;</summary><content type="html">&lt;h1 id="servicing-a-bike"&gt;Servicing a bike&lt;/h1&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/2eXWwQ3Jcyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
