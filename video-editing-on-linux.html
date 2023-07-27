@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last Update: <time datetime="2023-03-11T16:30:00+01:00">Sat 11 March 2023</time>        </p>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last Update: <time datetime="2023-07-27T23:20:00+02:00">Thu 27 July 2023</time>        </p>
     <h1>Video Editing on Linux</h1>
     <div class="grey">
         <p class="italic">How to edit videos on Linux with Kdenlive</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 914 words.">5 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1041 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -100,29 +100,49 @@
 <li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a> for the video montage.</li>
 <li>
 <p>Extract regular videos out of 360 videos using the desktop application (<a href="https://www.insta360.com/download/insta360-onex2">Insta360 STUDIO</a>) from Insta360, not the mobile one, as you get better quality. Export with the following settings:</p>
-</li>
-<li>
-<p>When doing slow-motion: disable "Motion blur"</p>
-</li>
+<ul>
+<li>Disable "Lock Direction"</li>
+<li>When doing slow-motion: disable "Motion blur"</li>
 <li>I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on</li>
 <li>"Chromatic Calibration" always on</li>
 <li>25FPS when exporting</li>
 <li>25Mbps when exporting</li>
-<li>
-<p>HEVC (H265) when exporting. Export in H264 only if you intend to add GPS overlays (see bullet point below).</p>
+<li>HEVC (H265) when exporting</li>
+</ul>
+<p>Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.</p>
 </li>
 <li>
-<p>You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, use <a href="https://www.garmin.com/en-US/p/573412">Garmin VIRB Edit</a>. Note that, at the time of writing, this app only accepts H264 videos.</p>
+<p>You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to <a href="//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html">this article that I wrote</a></p>
 </li>
 <li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).</li>
 <li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly for example when changing the FPS</strong> (I experienced it).</li>
 <li>In Kdenlive settings, under <code>Playback</code>, make sure GPU acceleration is disabled, cause it's buggy. Also enable <code>Proxy clips</code> for videos larger than 1000 pixels.</li>
-<li>Remove the audio track from clips, where audio does not matter.</li>
+<li>
+<p>You probably want to import your video clips in a chronological order. Here is how to rename videos to match their creation date:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Insta360 videos</span>
+$ <span class="k">for</span> f <span class="k">in</span> *.mp4<span class="p">;</span> <span class="k">do</span> mv -n <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> cut -c <span class="m">5</span>-19<span class="k">)</span>.mp4<span class="p">;</span> <span class="k">done</span>
+renamed <span class="s1">&#39;VID_20230708_154459_00_001.mp4&#39;</span> -&gt; <span class="s1">&#39;20230708_154459.mp4&#39;</span>
+
+<span class="c1"># GoPro videos and smartphone photos</span>
+$ <span class="k">for</span> f <span class="k">in</span> *.MP4<span class="p">;</span> <span class="k">do</span> mv -n <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="k">$(</span>exiftool -T -createdate -d <span class="s2">&quot;%Y%m%d_%H%M%S&quot;</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="k">)</span>.MP4<span class="p">;</span> <span class="k">done</span>
+renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#39;20230709_091946.MP4&#39;</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Remove the audio track from clips after importing them in Kdenlive, where audio does not matter. Or lower the volume by some decibels.</p>
+</li>
 <li>You can "lock" audio or video tracks, when you absolutely do not want to misclick and inadvertently move clips.</li>
 <li>When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (<code>preset=slower</code>), and keep the default quality setting, don't tick "Custom Quality" (<code>crf=28</code>). Use 4 threads and parallel processing.</li>
 </ol>
-<h1 id="songs-and-beats-per-minute">Songs and beats per minute</h1>
+<h1 id="transitions-songs-music-sync-and-beats-per-minute">Transitions, songs, music sync and beats per minute</h1>
 <p>I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.</p>
+<p>For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because <a href="https://en.wikipedia.org/wiki/Persistence_of_vision">the persistence of vision</a>.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
+<figcaption>Here the transition happens 1 frame before the next music beat</figcaption>
+</figure>
+
 <p><strong>Do not forget that Kdenlive does not use milliseconds but instead a number of frames.</strong> That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:02 seconds and 10 frames, Kdenlive-wise.</p>
 <p>To find the BPM of a song, use any of the following links:</p>
 <ul>
@@ -193,7 +213,7 @@
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 11 March 2023</footer>
+    Last update: Thu 27 July 2023</footer>
 
         </div> <!-- WRAPPER -->
     </body>
