@@ -111,6 +111,12 @@ That's the kind of result you can expect:
 <figcaption>A screenshot of the video, in case you can't play it</figcaption>
 </figure>
 
+And the final result, merged with GoPro footage:
+
+<video controls>
+  <source src="./videos/gpx-overlay-merged.webm" type="video/webm">
+</video>
+
 All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using [Kdenlive on Linux]({filename}/video-editing-on-linux.md)..
 
 That's it!
