@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, cycling, bike, vegetarian, food, diet" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Because nutrition is complex, here's an article about basics and a couple of recipes" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Cycling and Being Vegetarian - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Because nutrition is complex, here's an article about basics and a couple of recipes" />
+
+        <title>Cycling and Being Vegetarian - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/cycling-and-being-vegetarian.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-08-06T20:00:00+02:00">Sun 06 August 2023</time>        </p>
+    <h1>Cycling and Being Vegetarian</h1>
+    <div class="grey">
+        <p class="italic">Because nutrition is complex, here's an article about basics and a couple of recipes</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 871 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/cycling.html">cycling</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/vegetarian.html">vegetarian</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/food.html">food</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diet.html">diet</a></p>    </div>
+</header>
+<article>
+    <p>Let's face it: nutrition is not an easy topic. And it gets even harder when you're vegetarian and you like to exercise a little more than the average person.</p>
+<p>I've read many articles, some good, some bad, but at the end of the day what I really want and need is a list of recipes for:</p>
+<ul>
+<li>My everyday life, to remain fit, healthy, and maximize muscle recovery after my weekend rides.</li>
+<li>Races: I'm never so sure what to eat on the days leading up to the race, during the race, and after.</li>
+</ul>
+<p>So here goes. This article will cover some basics and give a couple of recipes.</p>
+<h1 id="basics">Basics</h1>
+<p>Any cyclist (or athlete really) needs proteins and nutrients to perform well on the bike but also promote recovery.</p>
+<h2 id="first-vocabulary">First, vocabulary</h2>
+<ul>
+<li>Grains are the seeds of grasses. Examples include: wheat, corn, oats, and rice</li>
+<li>Pulses are the seeds of legumes. Examples include: beans, peas, lentils, soybeans, peanuts, and chickpeas.</li>
+<li>Nuts are the seeds of trees. Examples include: walnuts, hazelnuts, and pecans.</li>
+</ul>
+<h2 id="proteins">Proteins</h2>
+<p>As a vegetarian, proteins can be found in:</p>
+<ul>
+<li>Dairy foods</li>
+<li>Eggs</li>
+<li>Nuts</li>
+<li>Seeds</li>
+<li>Beans</li>
+<li>Lentils</li>
+<li>Soya products (tofu, tempeh)</li>
+<li>Wholegrains (such as bread, oats, pasta, rice and millet)</li>
+<li>Quinoa</li>
+</ul>
+<p>Only chia seeds, soya and quinoa have all 8 essential amino acids. (<a href="https://www.chemicalforums.com/index.php?topic=83121.0">are there 8 or 9 essential amino acids?</a>)</p>
+<p>The solution is to combine different sources of proteins:</p>
+<ul>
+<li>grains with <a href="https://pulses.org/what-are-pulses/visual-guide-to-pulses">pulses</a> (<em>céréales et légumineuses</em>): rice/whole wheat pasta and black beans/kidney beans, rice and lentils</li>
+<li>grains with dairy: muesli and milk, porridge (rolled oats (<em>flocons d'avoine</em>) and milk) - apparently (raw overnight oats are healthier than cooked oats)[https://simplyoatmeal.com/benefits-of-overnight-oats-vs-cooked-oats/]</li>
+<li>soya with vegetables: tofu and vegetable stir-fry</li>
+<li>grains or pulses with nuts</li>
+<li>dairy or eggs with vegetables</li>
+</ul>
+<h2 id="iron">Iron</h2>
+<blockquote>
+<p>The type of iron found in plants is less easy for your body to absorb than is the iron found in meat. However, you can increase the amount absorbed by eating a vitamin C-rich food (i.e. fruit, vegetables) at the same time as iron-rich foods. -- (<a href="https://www.cyclingweekly.com/fitness/nutrition/cyclists-guide-following-vegetarian-diet-302982">source</a>)</p>
+</blockquote>
+<p>Good plant sources of iron include:</p>
+<ul>
+<li>Wholegrains</li>
+<li>Quinoa</li>
+<li>Nuts</li>
+<li>Seeds</li>
+<li>Beans</li>
+<li>Lentils</li>
+<li>Leafy green vegetables: spinach, broccoli, etc</li>
+<li>Dried fruit</li>
+<li>Egg yolk</li>
+</ul>
+<p>Good sources of vitamin C are:</p>
+<ul>
+<li>Cooked broccoli</li>
+<li>Brussels sprouts</li>
+<li>Kale (<em>chou frisé</em>)</li>
+<li>Raw spinach</li>
+<li>Kiwis</li>
+<li>Oranges</li>
+<li>Strawberries</li>
+<li>Lemons</li>
+</ul>
+<p><a href="https://und.edu/student-life/dining/_files/docs/fact-sheets/iron.pdf">Vinegar also helps with iron absorption.</a></p>
+<h2 id="omega-3">Omega-3</h2>
+<p>Oomega-3 fats are found in three different forms: DHA, EPA and ALA. ALA is most abundant in plant-based sources, but DHA and EPA are difficult to obtain on a vegetarian diet.</p>
+<p>Also, omega-3 rich food is also usually rich in omega-6. It is recommended to preserve a balance omega-6/omega-3 pretty low, around 4:1.</p>
+<p>Sources of omega-3 fats are:</p>
+<ul>
+<li>Flax seeds (<em>graines de lin</em>) (great omega-6/omega-3 ratio: 1:4)</li>
+<li>Chia seeds (omega-6/omega-3 ratio: 1:3) - <a href="https://www.medichecks.com/blogs/news/omega-6-3-experiment-part-2-the-results">ground seeds are better than whole seeds when it comes to omega-3 availability</a></li>
+<li>Walnuts (4:1)</li>
+<li>Kidney Beans (1:2)</li>
+<li>Pumpkin seeds (100:1)</li>
+</ul>
+<p>These provide alpha linoleic acid (ALA), which is converted to EPA and DHA in the body, but only at a limited rate. A good way to get more EPA and DHA is through Algal oil. <a href="https://www.medicalnewstoday.com/articles/323144#fish-and-seafood-sources">Seaweed, nori, spirulina, and chlorella are different forms of algae containing DHA and EPA.</a></p>
+<p><a href="https://www.vegansociety.com/resources/nutrition-and-health/nutrients/omega-3-and-omega-6-fats">More on fats and omega-3 here</a>.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/omega-3-omega-6.webp" alt="An image showing omega 3 and 6 sources" />
+<figcaption><a href="https://www.medichecks.com/blogs/news/omega-6-3-experiment-part-1">Omega 3 and 6 sources</a></figcaption>
+</figure>
+
+<h2 id="b12">B12</h2>
+<p>As a vegetarian, B12 is normally never an issue.</p>
+<h1 id="some-ideas-of-recipes">Some ideas of recipes</h1>
+<h2 id="everyday-life">Everyday life</h2>
+<h3 id="very-often">Very often</h3>
+<ul>
+<li>1 tablespoon a day of chia seeds or flax seeds for omega-3, in a salad, in a dairy product, or in anything really</li>
+<li>Any combination of grains with pulses such as pasta (whole wheat) or rice with lentils or beans</li>
+<li>Quinoa</li>
+<li>Leafy greens: Kale, Spinach, Broccoli, Iceberg lettuce, etc</li>
+<li>Nuts: cashews, or walnuts being the best of all. In a salad or yogurt. Nuts are calorically dense, so limit to a small handful per day.</li>
+</ul>
+<h3 id="often">Often</h3>
+<ul>
+<li>Eggs</li>
+<li>Tofu</li>
+<li>Dairy products (avoid cheese as there's a lot of fat): yogurts or Skyr, with rolled oats or muesli, and flex seeds</li>
+<li>Other pulses: chickpeas, green peas</li>
+<li>Tomatoes: vitamin C and antioxidant</li>
+</ul>
+<h3 id="things-to-eat-rarely">Things to eat rarely</h3>
+<ul>
+<li>White pasta (prefer whole wheat pasta, as it contains less carbs (carbohydrates, <em>glucides</em>) and a lot more nutrients)</li>
+<li>Processed protein sources such as seitan: unhealthy fats</li>
+<li>Cookings oils (<a href="https://www.healthline.com/nutrition/optimize-omega-6-omega-3-ratio">olive oil is mostly ok though and has other advantages</a>)</li>
+</ul>
+<h2 id="races-2-hours-or-cyclosportive">Races (&gt; 2 hours, or cyclosportive)</h2>
+<h3 id="days-before-2-3-days">Days before (2-3 days)</h3>
+<p><a href="https://www.cyclingweekly.com/fitness/nutrition/do-cyclists-really-need-to-carb-load-before-a-big-ride-284707">Carb loading</a>! Porridge, bread, potatoes, rice, pasta. On the night prior to the race, prefer whole wheat pasta as its more nutritious, but in the morning before the race, prefer white pasta, as you'll need more energy and you'll want it available faster.</p>
+<h3 id="on-the-d-day">On the D-Day</h3>
+<p>For breakfast, my go-to recipe is porridge (overnight soaked rolled oats with cow's milk) or muesli mix served with Skyr and a sliced banana, one or two fried eggs, and some white pasta. Make sure to eat at least 3 hours before the start.</p>
+<p>During the race, energy bars, gels, some dried fruits and bananas should do. Do drink clean water but also water with added electrolytes.</p>
+<p>Replenish your carbohydrates stocks after the race with pasta, but also protein-rich food.</p>
+<h1 id="good-online-resources">Good online resources</h1>
+<ul>
+<li><a href="https://www.cyclingweekly.com/fitness/nutrition/cyclists-guide-following-vegetarian-diet-302982">A cyclist's guide to following a vegetarian diet</a> (French translation <a href="https://www.velo101.com/entrainements/nutrition/suivre-un-regime-vegetarien-ou-vegetalien-en-etant-cycliste-le-guide-complet/">here</a>)</li>
+<li><a href="https://www.britishcycling.org.uk/knowledge/nutrition/get-started/article/izn20150310-Intermediate-Cycling-on-a-vegetarian-or-vegan-diet-0">Cycling on a vegetarian or vegan diet</a></li>
+<li><a href="https://www.bikeradar.com/advice/nutrition/how-to-stay-at-peak-cycling-performance-on-a-vegetarian-diet/">How to stay at peak cycling performance on a vegetarian diet</a></li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 06 August 2023</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
