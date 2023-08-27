@@ -13,6 +13,11 @@ Summary: A few tips with FFMPEG
 `-af` is an alias for `-filter:a` (audio stream).  
 `-vf` is an alias for `-filter:v` (video stream).
 
+# Turn a portrait video into a landscape one, adding a blurred background of the video
+
+    :::bash
+    ffmpeg -i input.mp4 -vf 'split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2' output.mp4
+
 # Cross fade a video for seamless loops
 
     :::bash
@@ -86,12 +91,12 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
 
 Two options mostly.
 
-1. Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.
+1.  Process all the input and then precisely cut the re-encoded output at the requested time, the rest of the input that came out before is discarded. It is very slow because it has to process the beginning of the input even though it is discarded.
 
         :::bash
         ffmpeg -i input.mp4 -ss 00:00:13 -t 00:09:00 output.mp4
 
-2. Seek in input (fast but imprecise, [can only cut at key frames](https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding)) and do not re-encode to preserve quality:
+2.  Seek in input (fast but imprecise, [can only cut at key frames](https://www.quora.com/What-is-the-difference-between-an-I-Frame-and-a-Keyframe-in-video-encoding)) and do not re-encode to preserve quality:
 
         :::bash
         ffmpeg -ss 00:00:13 -i input.mp4 -t 00:09:00 -c copy -avoid_negative_ts make_zero output.mp4
@@ -181,7 +186,7 @@ If one of the two videos is not correctly synced with the other one, you can del
     :::bash
     ffmpeg -i output.mp4 -i yo.mp3 -map 0:0 -map 1 -vcodec copy -acodec copy output2.mp4
 
-# [(Down) Scaling a video from 1080p to 720p](https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg)
+# [(Down) Scaling a video from 1080p to 720p](<https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg>)
 
     :::bash
     ffmpeg -i input.mp4 -vf scale=1280:-1 -acodec copy output.mp4
