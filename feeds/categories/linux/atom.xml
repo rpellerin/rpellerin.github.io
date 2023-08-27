@@ -1928,6 +1928,10 @@ apt dist-upgrade
 &lt;code&gt;-vcodec&lt;/code&gt; is an alias for &lt;code&gt;-c:v&lt;/code&gt; which is an alias for &lt;code&gt;-codec:v&lt;/code&gt; (video stream).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;-af&lt;/code&gt; is an alias for &lt;code&gt;-filter:a&lt;/code&gt; (audio stream).&lt;br&gt;
 &lt;code&gt;-vf&lt;/code&gt; is an alias for &lt;code&gt;-filter:v&lt;/code&gt; (video stream).&lt;/p&gt;
+&lt;h1 id="turn-a-portrait-video-into-a-landscape-one-adding-a-blurred-background-of-the-video"&gt;Turn a portrait video into a landscape one, adding a blurred background of the video&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ffmpeg -i input.mp4 -vf &lt;span class="s1"&gt;&amp;#39;split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2&amp;#39;&lt;/span&gt; output.mp4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h1 id="cross-fade-a-video-for-seamless-loops"&gt;Cross fade a video for seamless loops&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
 chmod +x ./video-crossfade

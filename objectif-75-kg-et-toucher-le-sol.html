@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, weight, flexibility" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Nouveaux objectifs pour cette fin d'année 2023" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Objectif 75 kg et toucher le sol - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Nouveaux objectifs pour cette fin d'année 2023" />
+
+        <title>Objectif 75 kg et toucher le sol - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-08-27T18:00:00+02:00">Sun 27 August 2023</time>        </p>
+    <h1>Objectif 75 kg et toucher le sol</h1>
+    <div class="grey">
+        <p class="italic">Nouveaux objectifs pour cette fin d'année 2023</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1343 words.">7 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/weight.html">weight</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/flexibility.html">flexibility</a></p>    </div>
+</header>
+<article>
+    <p>Les choses sont dites : voilà mes 2 objectifs fixés pour cette fin d'année 2023. 4 mois pour les atteindre. De nombreuses heures passées sur Youtube. Cet article en est un synthèse.</p>
+<p>Je pèse actuellement un peu moins de 80 kg (j'étais à 80 il y a quelques semaines) pour 1m87 et j'ai donc pour objectif d'atteindre 75 kg de manière stable d'ici à la fin de l'année. De manière stable, c'est-à-dire idéalement dès fin Octobre, et être capable de converser ce poids pendant les mois de Novembre et Décember sans trop d'efforts ni faire attention à ce que je mange. Pourquoi ? Pour m'améliorer à la course à pied mais surtout au vélo, et particulièrement en montagne. Aussi pour essayer de redessiner un peu ce qu'il y a devant mes abdos, mais ça c'est du bonus !</p>
+<p>Concernant ma flexibilité, mon focus sera porté sur mes jambes et notamment ma partie postérieure. Mon exercice de réference sera celui où l'on se penche en avant, en étant debout sur ses jambes tendues, en essayant de toucher le sol avec ses mains. Je pars de loin, très loin : aujourd'hui j'arrive à descendre mes mains à 22cm du sol maximum, pas plus bas. Le but est donc d'atteindre zéro d'ici à la fin de l'année. Pas forcément les mains à plat au sol, mais au moins toucher le sol du bout des doigts. Pourquoi ? Pareil, pour les performances sportives, parait-il que cela aide. Mais aussi car je me suis rendu compte que j'étais raide comme un piquet. 😁</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/flexibility.jpg" alt="Quelqu'un qui se penche vers l'avant" />
+<figcaption>Mon objectif n'est pas mettre les mains au sol, juste toucher du bout des doigts</figcaption>
+</figure>
+
+<h1 id="comment">Comment</h1>
+<h2 id="pour-le-poids">Pour le poids</h2>
+<p>Sur le papier c'est plutôt simple, rééquilibrage alimentaire (adieu les chips et le pesto 3 fois par semaine), réduire un peu les quantités (pour atteindre un léger déficit calorique de 25% maximum), et augmenter légèrement le dose de sport hebdomadaire.</p>
+<h3 id="alimentation">Alimentation</h3>
+<p>Rééquilibrer son alimentation passe par comprendre et connaitre ce que l'on mange. Pour la plupart des produits autres que fruits et légumes que l'on mange, il est écrit au dos la quantité de kilocalories et macro-nutriments (protéines/glucides/lipides). Pour perdre du poids, tout en évitant de perdre trop de masse musculaire (<a href="https://www.valdemarne.fr/newsletters/sport-sante-et-preparation-physique/est-il-possible-de-perdre-du-poids-en-conservant-sa-masse-musculaire">les muscles sont des réserves d'énergie utilisées par le corps en priorité lorsque de l'on est en déficit calorique, avant d'aller chercher dans le gras</a>), il est important d'augmenter son apport en protéines, et de réduire son apport en lipides au minimum vital (j'ai lu quelque part 0.8g par kilo de masse sèche par jour - quelqu'un pesant 80kg et ayant 20% de graisse, donc 64 kg sec, devra manger 64 kg * 0.8 = 51g de lipides par jour). Un bon objectif d'apport en protéines par jour peut être 1.8g/kg de masse sèche (115g par jour pour une personne de 80kg avec 20% de graisse). À savoir que l'<a href="https://www.anses.fr/fr/content/les-prot%C3%A9ines">apport de base recommandé en France pour une personne est de 0.83g/kg</a>.</p>
+<p>Deux vidéos Youtube en particulier m'ont beaucoup aidé sur le sujet :</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/XpXr87nGIpg?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_b351LPn9XU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>La deuxième vidéo m'a permis de calculer ma consommation calorique quotidienne approximative (en prenant en compte le sport) et donc d'en déduire quels grammages viser pour chaque macro-nutriment, pour ce rééquilibrage alimentaire et ce déficit calorique d'environ 25%.</p>
+<p>Sur une base de 0.8g de lipides/kg sec et par jour, et 1.8g de protéines/kg sec et par jour, voici ce que je vise:</p>
+<table>
+<thead>
+<tr>
+<th>Macronutriments</th>
+<th>g</th>
+<th>kcal</th>
+<th>% total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protéines</td>
+<td>115</td>
+<td>461</td>
+<td>26%</td>
+</tr>
+<tr>
+<td>Glucides</td>
+<td>207</td>
+<td>828</td>
+<td>47%</td>
+</tr>
+<tr>
+<td>Lipides</td>
+<td>51</td>
+<td>461</td>
+<td>26%</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>-</td>
+<td>1750</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p>Ensuite c'est simple, il suffit de peser, noter et compter tout ce que l'on mange, en partant de l'étiquette du produit que l'on mange, ou si l'information est manquante en allant voir sur <a href="https://www.les-calories.com/">les-calories.com</a>. Voilà par exemple mon dernier repas :</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/kcal.png" alt="Tableau des valeurs nutritionelles de mon dernier repas" />
+<figcaption>Pas mal équilibré non ?</figcaption>
+</figure>
+
+<p>Ici par exemple, sur l'étiquette du Quinoa il était noté que 100g contenait 351 kcal, 14.8g de protéines, 58.5g de glucides, et 5g de lipides.</p>
+<p>Pour finir, il est important de noter qu'en étant <a href="//romainpellerin.eu/cycling-and-being-vegetarian.html">végétarien</a> il peut être difficile de réussir à ingérer autant de protéines par jour. Une manière simple et efficace pour y remédier pourra être d'utiliser des compléments alimentaires, comme la Whey, bien connue des adeptes de la musculation, trouvable dans n'importe quel Décathlon.</p>
+<h3 id="sport">Sport</h3>
+<p>Pour le sport, pas dur, je faisais déjà du sport intensif en moyenne 2 à 3 fois par semaine (vélo de route + course à pied), sans compter les trajets quotidiens à vélo en ville ni mes marches à pied de 30 min quasi-quotidiennes. J'ai simplement décidé de rajouter une ou deux activités supplémentaires par semaine : soit un séance de musculation (30min max) du haut du corps (bras ou perctoraux, là où ça ne risque pas de nuire à ma recherche de souplesse donc), soit une session de yoga ou de mobilité/étirements. J'ai aussi rendu ma marche quotidienne non optionnelle. Ça devrait suffire...</p>
+<hr>
+<p>Enfin, pour suivre l'évolution de mon poids, nouvelle habitude, une pesée chaque matin après un passage aux toilettes mais avant de se réhydrater, pour avoir des conditions le plus similaires possible chaque jour.</p>
+<h2 id="pour-la-flexibilite">Pour la flexibilité</h2>
+<p>Pour ce second objectif, vu que je pars de loin, je m'attends à voir des résultats assez rapidement, avant que ma progression ne commence à ralentir. Pour travailler ma flexibilité, je vais donc miser sur :</p>
+<ul>
+<li>une session une fois par semaine de yoga (au moins 30 minutes), remplaçable par une session de mobilité et étirements</li>
+<li>une routine quotidienne de moins de 10 minutes de mobilité et étirements</li>
+</ul>
+<p>Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au risque de se blesser, seulement atteindre une sensation d'incomfort. <a href="https://www.youtube.com/watch?v=dNCyC4gV_34">L'idéal est de ne pas faire durer chaque répétition plus de 30 secondes. 2 à 3 répétitions par exercice par séance d'étirement donne de bons résultats. Il faut aussi faire un mélange d'exercices statiques (sans mouvement) + passifs (sans contraction musculaire) et d'exercices dynamiques (avec mouvement) + actifs (muscle opposés solicités pour étirer).</a></p>
+<figure class="center">
+<img src="https://pilates.com.sg/wp-content/uploads/2018/04/5se_artL_active-vs-passive-stretching.jpg" alt="Image montrant les différences entre statique, passif, dynamique et actif" />
+<figcaption>Différences entre statique, passif, dynamique et actif</figcaption>
+</figure>
+
+<p>Pour ma routine quotidienne donc, pareil, beaucoup d'heures passées sur Youtube. La conclusion de ces recherches est la suivante :</p>
+<ol>
+<li><a href="https://www.youtube.com/shorts/1rVdbHYz3C0">Correction de la posture de la colonne vertébrale</a> : 10 reps</li>
+<li>Debout, se pencher en avant, en respirant lentement : à chaque respiration, essayer de descendre un peu plus bas. 2 reps, 30 secondes chacune. Cela permet d'étirer les muscles ischio-jambiers. Exercice alternatif : assis, une jambe tendue, l'autre pliée avec le pied contre la cuisse opposée. On essaie d'atteindre chaque pied en alternant les jambes.</li>
+<li>Assis en tailleur, droit droit incliné vers l'avant, pieds joints, on appuie légèrement graduellement sur les cuisses pour ramener les genoux le plus bas possible. 2 reps, 30 secondes chacune. Version dynamique en appuyant par à-coups sur les cuisses, et non progressivement, mais lentement quand même.</li>
+<li>Allongé sur le dos, croiser la cheville droite sur la cuisse gauche. Attraper la cuisse gauche derrière le genou, la tête posée sur le sol et tirer la vers jambe vers le buste progressivement. 2 reps de 30 secondes pour chaque jambe.</li>
+<li>Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.</li>
+<li>Le classique <a href="https://www.youtube.com/watch?v=rvrY8tWBT-U">étirement du psoas</a>, 2 reps de 30 secondes par jambes</li>
+</ol>
+<p><a href="https://m.media-amazon.com/images/I/61YIShGEJGL._AC_UF1000,1000_QL80_.jpg">La routine de Bob Anderson</a> est une alternative classique à ma routine quotidienne, assez répandue.</p>
+<p>Pour aller plus loin sur le sujet, quelques liens :</p>
+<ul>
+<li><a href="https://www.3bikes.fr/2021/05/05/le-travail-de-la-mobilite-pour-etre-plus-performant-et-eviter-les-blessures/">Le travail de la mobilité pour être plus performant et éviter les blessures</a></li>
+<li>Aucun étirement pré activité physique (course à pied, vélo, etc), seulement des échauffements. Quant aux étirements post-exercice, ils ne sont pas forcément utiles, cela dépends des gens : <a href="https://www.youtube.com/watch?v=m6fuqkM0UX4">Quand faut il s'étirer ? kiné</a>. À 3'10, la vidéo parle des étirements statiques (afin de réduire des douleurs) vs exercices de mobilité dynamiques (pour gagner en amplitude de mouvement).</li>
+</ul>
+<hr>
+<p>RDV dans 4 mois 😉</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 27 August 2023</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

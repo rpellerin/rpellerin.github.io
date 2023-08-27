@@ -82,7 +82,7 @@
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 828 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 849 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -91,6 +91,10 @@
 <code>-vcodec</code> is an alias for <code>-c:v</code> which is an alias for <code>-codec:v</code> (video stream).</p>
 <p><code>-af</code> is an alias for <code>-filter:a</code> (audio stream).<br>
 <code>-vf</code> is an alias for <code>-filter:v</code> (video stream).</p>
+<h1 id="turn-a-portrait-video-into-a-landscape-one-adding-a-blurred-background-of-the-video">Turn a portrait video into a landscape one, adding a blurred background of the video</h1>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf <span class="s1">&#39;split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2&#39;</span> output.mp4
+</code></pre></div>
+
 <h1 id="cross-fade-a-video-for-seamless-loops">Cross fade a video for seamless loops</h1>
 <div class="highlight"><pre><span></span><code>curl -o ./video-crossfade -O https://raw.githubusercontent.com/joeyhoer/video-crossfade/master/video-crossfade.sh
 chmod +x ./video-crossfade
