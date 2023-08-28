@@ -70,7 +70,7 @@ Pour ce second objectif, vu que je pars de loin, je m'attends à voir des résul
 - une session une fois par semaine de yoga (au moins 30 minutes), remplaçable par une session de mobilité et étirements
 - une routine quotidienne de moins de 10 minutes de mobilité et étirements
 
-Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au risque de se blesser, seulement atteindre une sensation d'incomfort. [L'idéal est de ne pas faire durer chaque répétition plus de 30 secondes. 2 à 3 répétitions par exercice par séance d'étirement donne de bons résultats. Il faut aussi faire un mélange d'exercices statiques (sans mouvement) + passifs (sans contraction musculaire) et d'exercices dynamiques (avec mouvement) + actifs (muscle opposés solicités pour étirer).](https://www.youtube.com/watch?v=dNCyC4gV_34)
+Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au risque de se blesser, seulement atteindre une sensation d'incomfort. [L'idéal est de ne pas faire durer chaque répétition plus de 30 secondes. 2, 3 ou 4 répétitions par exercice par séance d'étirement donne de bons résultats. Il faut aussi faire un mélange d'exercices statiques (sans mouvement) + passifs (sans contraction musculaire) et d'exercices dynamiques (avec mouvement) + actifs (muscle opposés solicités pour étirer).](https://www.youtube.com/watch?v=dNCyC4gV_34)
 
 <figure class="center">
 <img src="https://pilates.com.sg/wp-content/uploads/2018/04/5se_artL_active-vs-passive-stretching.jpg" alt="Image montrant les différences entre statique, passif, dynamique et actif" />
@@ -86,13 +86,24 @@ Pour ma routine quotidienne donc, pareil, beaucoup d'heures passées sur Youtube
 1. Allongé sur le dos, croiser la cheville droite sur la cuisse gauche. Attraper la cuisse gauche derrière le genou, la tête posée sur le sol et tirer la vers jambe vers le buste progressivement. 2 reps de 30 secondes pour chaque jambe.
 1. Debout, se pencher en avant, en respirant lentement : à chaque respiration, essayer de descendre un peu plus bas. 2 reps, 30 secondes chacune. Cela permet d'étirer les muscles ischio-jambiers. Exercice alternatif : [assis, une jambe tendue, l'autre pliée avec le pied contre la cuisse opposée](https://youtu.be/sSdsH7F32Jo?si=yukuwAumg7e_lMhs&t=128). On essaie d'atteindre chaque pied en alternant les jambes.
 1. Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.
-1. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), en partant d'une position de chevalier au sol, un genoux en sol, et en s'avançant vers l'avant, dos droit. 2 reps de 30 secondes par jambes
+1. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), en partant d'une position de chevalier au sol, un genoux en sol, le pied à l'arrière posé à l'envers, et en s'avançant vers l'avant, dos droit. 2 reps de 30 secondes par jambes
 1. Allongé au sol à côté d'un mur, caler les fesses contre le sol et le mur, jambes en l'air le plus droit possible contre le mur à la verticale. Plier les genoux si trop difficile. 30 secondes.
 1. On peut rajouter en bonus si on a le temps un squat de 30 secondes, les pieds à plat si possible, le plus bas possible, les mains liées bien en avant pour faire contre poids.
 
 [La routine de Bob Anderson](https://m.media-amazon.com/images/I/61YIShGEJGL._AC_UF1000,1000_QL80_.jpg) est une alternative classique à ma routine quotidienne, assez répandue.
 
-Pour aller plus loin sur le sujet, quelques liens :
+D'autres routines que j'aime bien :
+
+- [Beginner stretching routine! For TikTok](https://www.youtube.com/watch?v=iQc4lLYljbk)
+- [What stretches to do in 10 minutes. Follow along.](https://www.youtube.com/watch?v=eQHmKJh20_c)
+- [Souplesse & Mobilité à Suivre en 15min ✔️ (Tout le corps sans matériel)](https://www.youtube.com/watch?v=zNhqYaa79jY)
+- [Comment TOUCHER SES PIEDS? ( routine COMPLÈTE expliquée )](https://www.youtube.com/watch?v=TeqzyDnawTI)
+- [Comment Corriger Sa Posture En 10 Minutes ! (POUR TOUJOURS)](https://www.youtube.com/watch?v=PX1mLdKFD_w)
+- [FIX Tight Hamstrings in Just 3 Steps](https://www.youtube.com/watch?v=ui3ToKZtKIs)
+- Une routine qui travaille la mobilité : [DEBLOQUE ta MOBILITE en 5 minutes avec cette ROUTINE ultra COMPLETE.](https://www.youtube.com/watch?v=oMg6WYXb49M)
+- Une routine pour travailler ses splits : [Comment Devenir Souple TRÈS Vite ✔️ (j'ai essayé...)](https://www.youtube.com/watch?v=0PSyHeb298g)
+
+Pour aller plus loin sur le sujet de la souplesse, quelques liens :
 
 - [Le travail de la mobilité pour être plus performant et éviter les blessures](https://www.3bikes.fr/2021/05/05/le-travail-de-la-mobilite-pour-etre-plus-performant-et-eviter-les-blessures/)
 - Aucun étirement pré activité physique (course à pied, vélo, etc), seulement des échauffements. Quant aux étirements post-exercice, ils ne sont pas forcément utiles, cela dépends des gens : [Quand faut il s'étirer ? kiné](https://www.youtube.com/watch?v=m6fuqkM0UX4). À 3'10, la vidéo parle des étirements statiques (afin de réduire des douleurs) vs exercices de mobilité dynamiques (pour gagner en amplitude de mouvement).
