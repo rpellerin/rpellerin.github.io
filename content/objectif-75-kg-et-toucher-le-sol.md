@@ -79,12 +79,16 @@ Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au r
 
 Pour ma routine quotidienne donc, pareil, beaucoup d'heures passées sur Youtube. La conclusion de ces recherches est la suivante :
 
-1. [Correction de la posture de la colonne vertébrale](https://www.youtube.com/shorts/1rVdbHYz3C0) : 10 reps
-2. Debout, se pencher en avant, en respirant lentement : à chaque respiration, essayer de descendre un peu plus bas. 2 reps, 30 secondes chacune. Cela permet d'étirer les muscles ischio-jambiers. Exercice alternatif : assis, une jambe tendue, l'autre pliée avec le pied contre la cuisse opposée. On essaie d'atteindre chaque pied en alternant les jambes.
-3. Assis en tailleur, droit droit incliné vers l'avant, pieds joints, on appuie légèrement graduellement sur les cuisses pour ramener les genoux le plus bas possible. 2 reps, 30 secondes chacune. Version dynamique en appuyant par à-coups sur les cuisses, et non progressivement, mais lentement quand même.
-4. Allongé sur le dos, croiser la cheville droite sur la cuisse gauche. Attraper la cuisse gauche derrière le genou, la tête posée sur le sol et tirer la vers jambe vers le buste progressivement. 2 reps de 30 secondes pour chaque jambe.
-5. Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.
-6. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), 2 reps de 30 secondes par jambes
+1. Relaxation de la nuque, 5 rotations lentes de la tête en la faisant pencher dans un sens, 5 dans l'autre.
+1. [Correction de la posture de la colonne vertébrale contre un mur](https://www.youtube.com/shorts/1rVdbHYz3C0) : 10 reps
+1. Allongé sur le dos, jambes en tailleur, pieds joints, laisser les jambes tomber sur le côté sans forcer, 30 secondes.
+1. Assis en tailleur, droit droit incliné vers l'avant, pieds joints tenus par les mains, on appuie légèrement graduellement sur les mollets avec les avant-bras pour ramener les genoux le plus bas possible. 2 reps, 30 secondes chacune. Version dynamique en appuyant par à-coups sur les cuisses, et non progressivement, mais lentement quand même.
+1. Allongé sur le dos, croiser la cheville droite sur la cuisse gauche. Attraper la cuisse gauche derrière le genou, la tête posée sur le sol et tirer la vers jambe vers le buste progressivement. 2 reps de 30 secondes pour chaque jambe.
+1. Debout, se pencher en avant, en respirant lentement : à chaque respiration, essayer de descendre un peu plus bas. 2 reps, 30 secondes chacune. Cela permet d'étirer les muscles ischio-jambiers. Exercice alternatif : [assis, une jambe tendue, l'autre pliée avec le pied contre la cuisse opposée](https://youtu.be/sSdsH7F32Jo?si=yukuwAumg7e_lMhs&t=128). On essaie d'atteindre chaque pied en alternant les jambes.
+1. Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.
+1. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), en partant d'une position de chevalier au sol, un genoux en sol, et en s'avançant vers l'avant, dos droit. 2 reps de 30 secondes par jambes
+1. Allongé au sol à côté d'un mur, caler les fesses contre le sol et le mur, jambes en l'air le plus droit possible contre le mur à la verticale. Plier les genoux si trop difficile. 30 secondes.
+1. On peut rajouter en bonus si on a le temps un squat de 30 secondes, les pieds à plat si possible, le plus bas possible, les mains liées bien en avant pour faire contre poids.
 
 [La routine de Bob Anderson](https://m.media-amazon.com/images/I/61YIShGEJGL._AC_UF1000,1000_QL80_.jpg) est une alternative classique à ma routine quotidienne, assez répandue.
 
