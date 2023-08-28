@@ -68,7 +68,7 @@ Enfin, pour suivre l'évolution de mon poids, nouvelle habitude, une pesée chaq
 Pour ce second objectif, vu que je pars de loin, je m'attends à voir des résultats assez rapidement, avant que ma progression ne commence à ralentir. Pour travailler ma flexibilité, je vais donc miser sur :
 
 - une session une fois par semaine de yoga (au moins 30 minutes), remplaçable par une session de mobilité et étirements
-- une routine quotidienne de moins de 10 minutes de mobilité et étirements
+- une routine quotidienne de moins de 15 minutes de mobilité et étirements
 
 Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au risque de se blesser, seulement atteindre une sensation d'incomfort. [L'idéal est de ne pas faire durer chaque répétition plus de 30 secondes. 2, 3 ou 4 répétitions par exercice par séance d'étirement donne de bons résultats. Il faut aussi faire un mélange d'exercices statiques (sans mouvement) + passifs (sans contraction musculaire) et d'exercices dynamiques (avec mouvement) + actifs (muscle opposés solicités pour étirer).](https://www.youtube.com/watch?v=dNCyC4gV_34)
 
