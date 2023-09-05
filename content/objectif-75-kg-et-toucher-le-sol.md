@@ -33,6 +33,8 @@ Deux vidéos Youtube en particulier m'ont beaucoup aidé sur le sujet :
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_b351LPn9XU?rel=0" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/wq_qdRA0C9Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
 La deuxième vidéo m'a permis de calculer ma consommation calorique quotidienne approximative (en prenant en compte le sport) et donc d'en déduire quels grammages viser pour chaque macro-nutriment, pour ce rééquilibrage alimentaire et ce déficit calorique d'environ 25%.
 
 Sur une base de 0.8g de lipides/kg sec et par jour, et 1.8g de protéines/kg sec et par jour, voici ce que je vise:
@@ -88,6 +90,7 @@ Pour ma routine quotidienne donc, pareil, beaucoup d'heures passées sur Youtube
 1. Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.
 1. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), en partant d'une position de chevalier au sol, un genoux en sol, le pied à l'arrière posé à l'envers, et en s'avançant vers l'avant, dos droit. 2 reps de 30 secondes par jambes
 1. Allongé au sol à côté d'un mur, caler les fesses contre le sol et le mur, jambes en l'air le plus droit possible contre le mur à la verticale. Plier les genoux si trop difficile. 30 secondes.
+1. Optionnel, en cas de fasciite plantaire: [Exercice maison pour guérir la Fasciite plantaire / Aponévrosite plantaire](https://www.youtube.com/watch?v=dQmn1sP70PI&t=55)
 1. On peut rajouter en bonus si on a le temps un squat de 30 secondes, les pieds à plat si possible, le plus bas possible, les mains liées bien en avant pour faire contre poids.
 
 [La routine de Bob Anderson](https://m.media-amazon.com/images/I/61YIShGEJGL._AC_UF1000,1000_QL80_.jpg) est une alternative classique à ma routine quotidienne, assez répandue.
