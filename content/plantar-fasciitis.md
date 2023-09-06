@@ -28,9 +28,16 @@ Out of all the websites that I read (not many in all fairness), the best and eas
 
 Here are some French online resources about it:
 
+- [La FASCIITE PLANTAIRE, finissons-en ! - EXPLICATIONS ET TRAITEMENT](https://www.youtube.com/watch?v=t8Zg-iy5Uck)
+- [Aponévrosite Plantaire (fasciite plantaire) : traitement kiné et exercices](https://www.youtube.com/watch?v=0mhGsu3icLg)
 - [Comment j'ai traité RAPIDEMENT mon APONÉVROSITE plantaire ?](https://www.youtube.com/watch?v=agLuZLFzcqg&t=500)
 - [Je devine TON Histoire en regardant tes PIEDS ( fasciite plantaire / épine calcanéenne/pieds plat)](https://www.youtube.com/watch?v=LB_Bw5K2QKA)
 - [Visite chez le physio : ou en est ma douleur au pied ?](https://www.youtube.com/watch?v=G1e3TTKQDIQ)
+- [COMMENT TRAITER L'APONÉVROSITE PLANTAIRE ?](https://www.youtube.com/watch?v=S52UVKkDI5w)
+- [Fasciite plantaire chronique (6 mois et plus) – Différents traitements à envisager](https://podformance.com/fasciite-plantaire-chronique-6-mois-et-plus-differents-traitements-a-envisager/)
+- [3 exercices pour soulager l'aponévrosite plantaire](https://www.youtube.com/watch?v=QuVv1IGD1Hc)
+- [Massage de l'aponévrose plantaire - Fasciite plantaire](https://www.youtube.com/watch?v=aJt6U5kMaJ4)
+- [Comment soigner l'aponévrosite plantaire ? Running et Sport](https://www.youtube.com/watch?v=DnmRzukeUJI)
 
 ## UPDATE: 31-03-2023
 

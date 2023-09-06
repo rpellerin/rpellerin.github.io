@@ -103,6 +103,7 @@ D'autres routines que j'aime bien :
 - [Comment TOUCHER SES PIEDS? ( routine COMPLÈTE expliquée )](https://www.youtube.com/watch?v=TeqzyDnawTI)
 - [Comment Corriger Sa Posture En 10 Minutes ! (POUR TOUJOURS)](https://www.youtube.com/watch?v=PX1mLdKFD_w)
 - [FIX Tight Hamstrings in Just 3 Steps](https://www.youtube.com/watch?v=ui3ToKZtKIs)
+- Une routine axée sur la course à pied : [5' par jour d'exercices de mobilité = moins de blessures ET plus de performance](https://www.youtube.com/watch?v=80EvnW-GSHo)
 - Une routine qui travaille la mobilité : [DEBLOQUE ta MOBILITE en 5 minutes avec cette ROUTINE ultra COMPLETE.](https://www.youtube.com/watch?v=oMg6WYXb49M)
 - Une routine pour travailler ses splits : [Comment Devenir Souple TRÈS Vite ✔️ (j'ai essayé...)](https://www.youtube.com/watch?v=0PSyHeb298g)
 
