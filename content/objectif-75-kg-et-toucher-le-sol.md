@@ -37,6 +37,8 @@ Deux vidéos Youtube en particulier m'ont beaucoup aidé sur le sujet :
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/M4K0s792wAU?rel=0" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d8V9ZaSq9Oc?rel=0" frameborder="0" allowfullscreen></iframe>
+
 La deuxième vidéo m'a permis de calculer ma consommation calorique quotidienne approximative (en prenant en compte le sport) et donc d'en déduire quels grammages viser pour chaque macro-nutriment, pour ce rééquilibrage alimentaire et ce déficit calorique d'environ 25%.
 
 Sur une base de 0.8g de lipides/kg sec et par jour, et 1.8g de protéines/kg sec et par jour, voici ce que je vise:
