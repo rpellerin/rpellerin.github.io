@@ -22,7 +22,7 @@ So here is my TL;DR tutorial on how to use it:
     python3 -m venv .env
     source .env/bin/activate
     pip install gopro-overlay
-    sudo apt install apt install fonts-roboto
+    sudo apt install fonts-roboto
 
 # 2. Setup
 
