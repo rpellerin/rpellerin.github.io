@@ -9,7 +9,7 @@
 python3 -m venv .env
 &lt;span class="nb"&gt;source&lt;/span&gt; .env/bin/activate
 pip install gopro-overlay
-sudo apt install apt install fonts-roboto
+sudo apt install fonts-roboto
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id="2-setup"&gt;2. Setup&lt;/h1&gt;
