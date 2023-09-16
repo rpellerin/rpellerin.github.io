@@ -38,9 +38,13 @@ Then:
         "input": [],
         "output": ["-vcodec", "vp9", "-pix_fmt", "yuva420p", "-r", "5"]
       },
+      "mp4": {
+        "input": [],
+        "output": ["-vcodec", "libx264", "-r", "25"]
+      },
       "png": {
         "input": [],
-         "output": ["-vcodec", "png"]
+        "output": ["-vcodec", "png"]
       }
     }
 
@@ -93,7 +97,30 @@ Then:
         <component type="journey_map" name="journey_map" x="1644" y="296" size="256" corner_radius="35"/>
     </layout>
 
-# 3. Generate a transparent video with the data only
+Then:
+
+    :::bash
+    vim ~/Documents/my-layout-portrait.xml
+
+Then:
+
+    :::xml
+    <layout>
+        <composite x="1060" y="1816" name="big_kph">
+            <!-- 1920 - 20 (margin) - 64 (altitude) - 20 (margin) = y 1816 -->
+            <component type="metric" x="0" y="-160" metric="speed" units="speed" dp="0" size="160" align="right" />
+            <component type="metric_unit" x="0" y="-192" metric="speed" units="speed" size="32" align="right">km/h</component>
+        </composite>
+
+        <composite x="1060" y="1900" name="heartbeat">
+            <component type="icon" x="-64" y="-64" file="heartbeat.png" size="64"/>
+            <component type="metric" x="-70" y="-64" metric="hr" dp="0" size="64" align="right"/>
+        </composite>
+    </layout>
+
+# 3. Generate a video
+
+## A transparent video with the data only
 
     :::bash
     .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph ~/Downloads/output.webm
@@ -118,5 +145,12 @@ And the final result, merged with GoPro footage:
 </video>
 
 All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using [Kdenlive on Linux]({filename}/video-editing-on-linux.md)..
+
+## The final video right away (footage + overlay)
+
+Make sure the input video has the correct mtime (modified time). Check with `stat file.mp4` or `ls -la file.mp4`. If it's a Insta360 video, and the filename matches `YYYYMMDD_HHMMSS_sss.mp4`, you can update it with this script: [https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py](https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py)
+
+    :::bash
+    .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx  --profile mp4 --layout-xml ~/Documents/my-layout-portrait.xml --overlay-size 1080x1920 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph --video-time-start file-modified some-video.mp4  ~/Downloads/output.mp4
 
 That's it!
