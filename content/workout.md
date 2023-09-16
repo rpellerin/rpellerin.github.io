@@ -13,7 +13,7 @@ For instance, to build muscle, one should reach muscle failure after 6 to 12 rep
 
 <figure class="center">
 <img alt="How many reps to build strength/muscle/endurance" src="{static}/images/workout-reps.jpg" />
-<figcaption>Source: https://www.missionpossiblefitness.com.au/blog/44-method-behind-the-madness-prescribing-rep-ranges/</figcaption>
+<figcaption>Source: <a href="https://www.missionpossiblefitness.com.au/blog/44-method-behind-the-madness-prescribing-rep-ranges/">https://www.missionpossiblefitness.com.au/blog/44-method-behind-the-madness-prescribing-rep-ranges/</a></figcaption>
 </figure>
 
 More on the topic in these videos (in French), from 5'30 on:
@@ -23,6 +23,10 @@ More on the topic in these videos (in French), from 5'30 on:
 And from 4' on:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8U6mHtWTs6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# How many sets?
+
+[3-6 sets seems to be recommended quite often for hypertrophy.](https://www.mensjournal.com/health-fitness/rep-range-builds-most-muscle)
 
 # How much rest time between sets?
 

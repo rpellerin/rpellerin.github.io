@@ -46,6 +46,8 @@ Sur une base de 0.8g de lipides/kg sec et par jour, et 1.8g de protéines/kg sec
 | Lipides         | 51  | 461  | 26%     |
 | Total           | -   | 1750 | 100%    |
 
+(et c'est là que je me rend compte que je mangeais de base vraiment pas assez de protéines)
+
 Ensuite c'est simple, il suffit de peser, noter et compter tout ce que l'on mange, en partant de l'étiquette du produit que l'on mange, ou si l'information est manquante en allant voir sur [les-calories.com](https://www.les-calories.com/). Voilà par exemple mon dernier repas :
 
 <figure class="center">
@@ -55,7 +57,9 @@ Ensuite c'est simple, il suffit de peser, noter et compter tout ce que l'on mang
 
 Ici par exemple, sur l'étiquette du Quinoa il était noté que 100g contenait 351 kcal, 14.8g de protéines, 58.5g de glucides, et 5g de lipides.
 
-Pour finir, il est important de noter qu'en étant [végétarien]({filename}/cycling-and-being-vegetarian.md) il peut être difficile de réussir à ingérer autant de protéines par jour. Une manière simple et efficace pour y remédier pourra être d'utiliser des compléments alimentaires, comme la Whey, bien connue des adeptes de la musculation, trouvable dans n'importe quel Décathlon.
+Pour finir, il est important de noter qu'en étant [végétarien]({filename}/cycling-and-being-vegetarian.md) il peut être difficile de réussir à ingérer autant de protéines par jour. Une manière simple et efficace pour y remédier pourra être d'utiliser des compléments alimentaires, comme la Whey, bien connue des adeptes de la musculation, trouvable dans n'importe quel Décathlon, solution pour laquelle j'ai optée.
+
+Puisque je vais augmenter mon apport en protéines, autant favoriser leur assimilation. Apporter trop de protéines d'un coup dans un repas ne sera pas bénéfique car le corps ne pourra pas tout utiliser. Il est intéressant donc de rajouter une ou deux collations par jour, 30 à 60 minutes avant le déjeuner et le diner. Si ça tombe sur une journée avec séance de musculation, la collation se fera juste après la séance. Associer à 30g de Whey un fruit, pour éviter que les protéines ne soient transformées en sucres (comme expliqué dans [cette vidéo](https://www.youtube.com/watch?v=wq_qdRA0C9Q) à 7'26).
 
 ### Sport
 
