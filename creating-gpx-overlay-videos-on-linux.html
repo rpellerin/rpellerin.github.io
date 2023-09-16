@@ -82,7 +82,7 @@
     <div class="grey">
         <p class="italic">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 584 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 730 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
 </header>
@@ -111,9 +111,13 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 <span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vp9&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-pix_fmt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;yuva420p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;mp4&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;libx264&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;25&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;png&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"></span>
-<span class="w">     </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-vcodec&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;png&quot;</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
@@ -165,7 +169,27 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 <span class="nt">&lt;/layout&gt;</span>
 </code></pre></div>
 
-<h1 id="3-generate-a-transparent-video-with-the-data-only">3. Generate a transparent video with the data only</h1>
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout-portrait.xml
+</code></pre></div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;layout&gt;</span>
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;1060&quot;</span> <span class="na">y=</span><span class="s">&quot;1816&quot;</span> <span class="na">name=</span><span class="s">&quot;big_kph&quot;</span><span class="nt">&gt;</span>
+        <span class="cm">&lt;!-- 1920 - 20 (margin) - 64 (altitude) - 20 (margin) = y 1816 --&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-160&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;160&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric_unit&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-192&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">size=</span><span class="s">&quot;32&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>km/h<span class="nt">&lt;/component&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;1060&quot;</span> <span class="na">y=</span><span class="s">&quot;1900&quot;</span> <span class="na">name=</span><span class="s">&quot;heartbeat&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;-64&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">file=</span><span class="s">&quot;heartbeat.png&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">x=</span><span class="s">&quot;-70&quot;</span> <span class="na">y=</span><span class="s">&quot;-64&quot;</span> <span class="na">metric=</span><span class="s">&quot;hr&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;64&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div>
+
+<h1 id="3-generate-a-video">3. Generate a video</h1>
+<h2 id="a-transparent-video-with-the-data-only">A transparent video with the data only</h2>
 <div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.webm
 </code></pre></div>
 
@@ -186,6 +210,11 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 </video>
 
 <p>All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using <a href="//romainpellerin.eu/video-editing-on-linux.html">Kdenlive on Linux</a>..</p>
+<h2 id="the-final-video-right-away-footage-overlay">The final video right away (footage + overlay)</h2>
+<p>Make sure the input video has the correct mtime (modified time). Check with <code>stat file.mp4</code> or <code>ls -la file.mp4</code>. If it's a Insta360 video, and the filename matches <code>YYYYMMDD_HHMMSS_sss.mp4</code>, you can update it with this script: <a href="https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py">https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py</a></p>
+<div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx  --profile mp4 --layout-xml ~/Documents/my-layout-portrait.xml --overlay-size 1080x1920 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph --video-time-start file-modified some-video.mp4  ~/Downloads/output.mp4
+</code></pre></div>
+
 <p>That's it!</p>
 </article>
 <footer class="grey italic small">
