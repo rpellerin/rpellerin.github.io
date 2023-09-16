@@ -59,7 +59,7 @@ Pour finir, il est important de noter qu'en étant [végétarien]({filename}/cyc
 
 ### Sport
 
-Pour le sport, pas dur, je faisais déjà du sport intensif en moyenne 2 à 3 fois par semaine (vélo de route + course à pied), sans compter les trajets quotidiens à vélo en ville ni mes marches à pied de 30 min quasi-quotidiennes. J'ai simplement décidé de rajouter une ou deux activités supplémentaires par semaine : soit un séance de musculation (30min max) du haut du corps (bras ou perctoraux, là où ça ne risque pas de nuire à ma recherche de souplesse donc), soit une session de yoga ou de mobilité/étirements. J'ai aussi rendu ma marche quotidienne non optionnelle. Ça devrait suffire...
+Pour le sport, pas dur, je faisais déjà du sport intensif en moyenne 2 à 3 fois par semaine (vélo de route + course à pied), sans compter les trajets quotidiens à vélo en ville ni mes marches à pied de 30 min quasi-quotidiennes. J'ai simplement décidé de rajouter une ou deux activités supplémentaires par semaine : soit [une séance de musculation]({filename}/workout.md) (30min max) du haut du corps (bras ou perctoraux, là où ça ne risque pas de nuire à ma recherche de souplesse donc), soit une session de yoga ou de mobilité/étirements. J'ai aussi rendu ma marche quotidienne non optionnelle. Ça devrait suffire...
 
 ---
 
@@ -70,7 +70,7 @@ Enfin, pour suivre l'évolution de mon poids, nouvelle habitude, une pesée chaq
 Pour ce second objectif, vu que je pars de loin, je m'attends à voir des résultats assez rapidement, avant que ma progression ne commence à ralentir. Pour travailler ma flexibilité, je vais donc miser sur :
 
 - une session une fois par semaine de yoga (au moins 30 minutes), remplaçable par une session de mobilité et étirements
-- une routine quotidienne de moins de 15 minutes de mobilité et étirements
+- une routine quotidienne de moins de 20 minutes de mobilité et étirements
 
 Bon à savoir : lorsqu'on s'étire, il ne faut jamais atteindre la douleur, au risque de se blesser, seulement atteindre une sensation d'incomfort. [L'idéal est de ne pas faire durer chaque répétition plus de 30 secondes. 2, 3 ou 4 répétitions par exercice par séance d'étirement donne de bons résultats. Il faut aussi faire un mélange d'exercices statiques (sans mouvement) + passifs (sans contraction musculaire) et d'exercices dynamiques (avec mouvement) + actifs (muscle opposés solicités pour étirer).](https://www.youtube.com/watch?v=dNCyC4gV_34)
 

@@ -16,9 +16,17 @@ For instance, to build muscle, one should reach muscle failure after 6 to 12 rep
 <figcaption>Source: https://www.missionpossiblefitness.com.au/blog/44-method-behind-the-madness-prescribing-rep-ranges/</figcaption>
 </figure>
 
-More on the topic in this video (in French), from 5'30 on:
+More on the topic in these videos (in French), from 5'30 on:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/UgoItZgNuAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+And from 4' on:
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8U6mHtWTs6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# How much rest time between sets?
+
+Hard to find reliable data, and it seems there is no consensus. But for hypertrophy, [30-60 seconds](https://pubmed.ncbi.nlm.nih.gov/19691365/) is often cited.
 
 # Other resources and videos
 
@@ -27,7 +35,5 @@ More on the topic in this video (in French), from 5'30 on:
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/m2LfqLLjWE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/XM8-SyMFrRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8U6mHtWTs6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [My very own workout plan, from 2016, back when I was in South Korea.]({static}/extra/WORKOUT.pdf)
