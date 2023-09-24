@@ -6,7 +6,7 @@ Slug: objectif-75-kg-et-toucher-le-sol
 Authors: Romain Pellerin
 Summary: Nouveaux objectifs pour cette fin d'année 2023
 
-Les choses sont dites : voilà mes 2 objectifs fixés pour cette fin d'année 2023. 4 mois pour les atteindre. De nombreuses heures passées sur Youtube. Cet article en est un synthèse.
+Les choses sont dites : voilà mes 2 objectifs fixés pour cette fin d'année 2023. 4 mois pour les atteindre. De nombreuses heures passées sur Youtube. Cet article en est une synthèse.
 
 Je pèse actuellement un peu moins de 80 kg (j'étais à 80 il y a quelques semaines) pour 1m87 et j'ai donc pour objectif d'atteindre 75 kg de manière stable d'ici à la fin de l'année. De manière stable, c'est-à-dire idéalement dès fin Octobre, et être capable de converser ce poids pendant les mois de Novembre et Décember sans trop d'efforts ni faire attention à ce que je mange. Pourquoi ? Pour m'améliorer à la course à pied mais surtout au vélo, et particulièrement en montagne. Aussi pour essayer de redessiner un peu ce qu'il y a devant mes abdos, mais ça c'est du bonus !
 
