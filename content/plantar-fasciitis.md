@@ -26,7 +26,9 @@ As the article describes it, you feel the pain mostly in the morning near the he
 
 Out of all the websites that I read (not many in all fairness), the best and easiest treatment is to go easy on exercising for at least a few weeks. I am currently at the end of my first "week off", I'll keep monitoring my pain and see how long it takes to completely heal. I only cycle these days, no more running until the pain is gone. I don't want it to become a chronic pain. Stretching a few times per day is also advised. Wearing a splint at night to hold the whole thing might also be considered. As to me, I'll keep resting for the time being and see how it goes. 🤞
 
-Here are some French online resources about it:
+Here is a simple exercice to do at home to help the healing process: [Exercice maison pour guérir la Fasciite plantaire / Aponévrosite plantaire](https://www.youtube.com/watch?v=dQmn1sP70PI&t=55)
+
+Here are some additional French online resources about it:
 
 - [La FASCIITE PLANTAIRE, finissons-en ! - EXPLICATIONS ET TRAITEMENT](https://www.youtube.com/watch?v=t8Zg-iy5Uck)
 - [Aponévrosite Plantaire (fasciite plantaire) : traitement kiné et exercices](https://www.youtube.com/watch?v=0mhGsu3icLg)
