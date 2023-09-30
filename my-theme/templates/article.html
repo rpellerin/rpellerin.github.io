@@ -11,7 +11,7 @@
     <img src="images/{{ article.image }}" alt="Header picture" id="header-picture" />
     {% endif %}
     <p id="back-line" class="small grey"><span>
-        {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last Update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
+        {% if not HIDE_DATE %}<time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% if article.modified %} - Last update: <time datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>{% endif %}{% endif %}
         </p>
     <h1>{{ article.title }}</h1>
     <div class="grey">
