@@ -9,10 +9,10 @@ articles = glob.glob('content/*.md')
 def replace_date(file, datetime):
     with open(file, 'r') as file_descriptor:
         file_content = file_descriptor.read()
-        text, counter = re.subn(r'Modified: .*', f'Modified: {datetime}', file_content, re.IGNORECASE)
+        text, counter = re.subn(r'^Modified: \d{4}-\d{2}-\d{2} \d{2}:\d{2}$', f'Modified: {datetime}', file_content, flags=re.MULTILINE)
         if counter == 0:
             # No Modified: line was found, let's add one
-            text, counter = re.subn(r'(Date: \d{4}-\d{2}-\d{2} \d{2}:\d{2})', rf"\1\nModified: {datetime}", file_content, re.IGNORECASE)
+            text, counter = re.subn(r'^(Date: \d{4}-\d{2}-\d{2} \d{2}:\d{2})$', rf'\1\nModified: {datetime}', file_content, flags=re.MULTILINE)
             if counter == 0:
                 print(f'Could not update the Modified date from {file}')
                 return
