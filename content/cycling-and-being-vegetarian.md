@@ -1,6 +1,6 @@
 Title: Cycling and Being Vegetarian
 Date: 2023-08-06 20:00
-Category: About me
+Category: Sports
 Tags: cycling, bike, vegetarian, food, diet
 Slug: cycling-and-being-vegetarian
 Authors: Romain Pellerin
