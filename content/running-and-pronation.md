@@ -6,7 +6,7 @@ Slug: running-and-pronation
 Authors: Romain Pellerin
 Summary: Find out about your pronation and get the right shoes
 
-So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category, based on the study of the wear of my shoes.
+So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category/neutral, based on the study of the wear of my shoes.
 
 Being pronated means that, while standing (not moving), one's foot naturally leans inward (towards the other leg). Being supinated is the opposite, one's foot leans outward.
 
