@@ -10,6 +10,8 @@ Image: things-to-do-in-berlin.jpg
 
 Before diving into the list of things to do, make sure to get yourself a bike to see the city, as it's the cheapest and oftentimes the fastest means of transportation. Nextbike and "Call a bike" bikes are my favorite ones. Register yourself through these apps in no time and start exploring the city!
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/PPZiMBcDz7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Museums
 
 - Check out the Museum island!
