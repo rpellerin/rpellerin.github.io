@@ -504,7 +504,7 @@ If your SMTP server uses port 465 with SSL, you'll need to edit _/etc/exim4/exim
 Now add these lines in _/etc/aliases_ (changes the lines according to your needs):
 
     :::text
-    root: <your email address>
+    root: <your email address>, <another email address comma-separated if needed>
     pipi: root
 
 Any email intended for root will be sent to the corresponding email address. **Do not add addresses using the same domain you chose while configuring exim4 ("System mail name") as the emails won't be sent out.**  
