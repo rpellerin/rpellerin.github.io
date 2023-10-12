@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 10 Oct 2023 00:21:00 +0200</lastBuildDate><item><title>Running and Pronation</title><link>//romainpellerin.eu/running-and-pronation.html</link><description>&lt;p&gt;So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category/neutral, based on the study of the wear of my shoes.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 13 Oct 2023 00:31:00 +0200</lastBuildDate><item><title>Running and Pronation</title><link>//romainpellerin.eu/running-and-pronation.html</link><description>&lt;p&gt;So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category/neutral, based on the study of the wear of my shoes.&lt;/p&gt;
 &lt;p&gt;Being pronated means that, while standing (not moving), one's foot naturally leans inward (towards the other leg). Being supinated is the opposite, one's foot leans outward.&lt;/p&gt;
 &lt;p&gt;This also means that pronated runners tend to have the outmost part of their feet land slightly first when running, then feet roll progressively towards the inside (towards the other leg) until the full body weight is on one foot.&lt;/p&gt;
 &lt;p&gt;Here are two videos to help you figure out which category you fall in:&lt;/p&gt;
@@ -1716,6 +1716,8 @@ document.querySelectorAll('input').forEach(i =&gt; i.addEventListener('input', c
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/GVJRZqI6h2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/RilwnjDwTOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 07 Nov 2021 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-11-07:/climate-change.html</guid><category>What's bad about</category><category>climate</category></item><item><title>Living in Germany: Things To Do In Berlin</title><link>//romainpellerin.eu/living-in-germany-things-to-do-in-berlin.html</link><description>&lt;p&gt;Before diving into the list of things to do, make sure to get yourself a bike to see the city, as it's the cheapest and oftentimes the fastest means of transportation. Nextbike and "Call a bike" bikes are my favorite ones. Register yourself through these apps in no time and start exploring the city!&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/PPZiMBcDz7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
 &lt;h1 id="museums"&gt;Museums&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Check out the Museum island!&lt;/li&gt;
@@ -6600,7 +6602,7 @@ dc_localdelivery=&amp;#39;mail_spool&amp;#39;
 
 &lt;p&gt;&lt;a href="http://www.gossamer-threads.com/lists/exim/users/96817"&gt;More information&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Now add these lines in &lt;em&gt;/etc/aliases&lt;/em&gt; (changes the lines according to your needs):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;root: &amp;lt;your email address&amp;gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;root: &amp;lt;your email address&amp;gt;, &amp;lt;another email address comma-separated if needed&amp;gt;
 pipi: root
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
