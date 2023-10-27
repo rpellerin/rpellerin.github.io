@@ -17,6 +17,10 @@ Summary: A bunch of links in favor of lesser comsumption of meat and dairy produ
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/90rDcZM2vL8?rel=0" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/X4pM6cqE3ZU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+The video above says at 6'45, that meat brings nothing to the body that cannot be found elsewhere, except for "better" iron. Iron coming from meat is better absorbed by the body, but too much iron might be linked to accrued cancer risks.
+
 # Related topics
 
 - [Phil Libin Hasn’t Eaten Since Sunday](https://backchannel.com/inside-one-founders-personal-fast-club-dea3a3592123)
