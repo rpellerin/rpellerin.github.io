@@ -30,9 +30,10 @@ Here is a simple exercice to do at home to help the healing process: [Exercice m
 
 Here are some additional French online resources about it:
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/4pNBatSoBKU?rel=0&amp;start=218" frameborder="0" allowfullscreen></iframe>
+
 - [La FASCIITE PLANTAIRE, finissons-en ! - EXPLICATIONS ET TRAITEMENT](https://www.youtube.com/watch?v=t8Zg-iy5Uck)
 - [Aponévrosite Plantaire (fasciite plantaire) : traitement kiné et exercices](https://www.youtube.com/watch?v=0mhGsu3icLg)
-- [TENDINITE : LE MEILLEUR TRAITEMENT C'EST LE RENFORCEMENT ( et je 'explique pourquoi)](https://www.youtube.com/watch?v=4pNBatSoBKU)
 - [Comment j'ai traité RAPIDEMENT mon APONÉVROSITE plantaire ?](https://www.youtube.com/watch?v=agLuZLFzcqg&t=500)
 - [Je devine TON Histoire en regardant tes PIEDS ( fasciite plantaire / épine calcanéenne/pieds plat)](https://www.youtube.com/watch?v=LB_Bw5K2QKA)
 - [Visite chez le physio : ou en est ma douleur au pied ?](https://www.youtube.com/watch?v=G1e3TTKQDIQ)
