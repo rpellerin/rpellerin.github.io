@@ -22,6 +22,7 @@ Here is a list of all the websites I subscribed to. Those are very interesting a
 - [Infrequently Noted](https://infrequently.org/feed/)
 - [Mozilla Hacks – the Web developer blog](https://hacks.mozilla.org/feed/)
 - [Overreacted](https://overreacted.io/rss.xml)
+- [blog.cavelab.dev](https://blog.cavelab.dev/index.xml)
 
 # Germany
 
