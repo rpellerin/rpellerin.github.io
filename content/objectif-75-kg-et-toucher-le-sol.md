@@ -99,7 +99,7 @@ Pour ma routine quotidienne donc, pareil, beaucoup d'heures passées sur Youtube
 1. Debout, un pied devant l’autre, la jambe avant fléchie et la jambe arrière tendue. Pousser le talon de la jambe arrière dans le sol, garder le buste droit (les mains sur la taille). Cet exercice peut être fait face à un mur comme support. 2 reps de 30 secondes chacune par jambe. Permet de travailler les mollets.
 1. Le classique [étirement du psoas](https://www.youtube.com/watch?v=rvrY8tWBT-U), en partant d'une position de chevalier au sol, un genoux en sol, le pied à l'arrière posé à l'envers, et en s'avançant vers l'avant, dos droit. 2 reps de 30 secondes par jambes
 1. Allongé au sol à côté d'un mur, caler les fesses contre le sol et le mur, jambes en l'air le plus droit possible contre le mur à la verticale. Plier les genoux si trop difficile. 30 secondes.
-1. Optionnel, en cas de fasciite plantaire: [aller voir cet article]({filename}/plantar-fasciitis.md) (6 * 30 reps sur un pied (protocole de Stanish) avec du poids, en portant des altères par exemple). Idéalement il faudrait faire ces exercices plusieurs fois par jour pour vraiment accélérer la guérison.
+1. Optionnel, en cas de fasciite plantaire: [aller voir cet article]({filename}/plantar-fasciitis.md) (6 \* 30 reps sur un pied (protocole de Stanish) avec du poids, en portant des altères par exemple). Idéalement il faudrait faire ces exercices plusieurs fois par jour pour vraiment accélérer la guérison.
 1. On peut rajouter en bonus si on a le temps un squat de 30 secondes, les pieds à plat si possible, le plus bas possible, les mains liées bien en avant pour faire contre poids.
 
 [La routine de Bob Anderson](https://m.media-amazon.com/images/I/61YIShGEJGL._AC_UF1000,1000_QL80_.jpg) est une alternative classique à ma routine quotidienne, assez répandue.
@@ -124,3 +124,18 @@ Pour aller plus loin sur le sujet de la souplesse, quelques liens :
 ---
 
 RDV dans 4 mois 😉
+
+# Mise à jour : 2023-11-01
+
+Ça y est je viens de toucher le sol, il y a quelques minutes !!! Et pas qu'une fois ! Techniquement, on était encore le 31 Octobre ! Bon, de la pointe de doigts certes mais c'était mon objectif !
+
+Depuis deux mois, après une progression rapide les premiers jours, j'ai été de moins en moins assidu, au point de ne m'étirer presque plus qu'une fois par semaine. Alors il y a plusieurs jours, je me suis repris en main, étirements tous les jours, et depuis 2 jours, 3 fois par jours ! Et là, miracle, progression de ouf ! Jusqu'à aujourd'hui : après 10 minutes passées à descrendre progressivement, j'y suis arrivé, j'ai touché le sol ! Allez, on continue comme ça, objectif pour fin décembre : ne plus mettre 10 minutes à toucher le sol, mais quelques minutes, idéalement presque réussir à froid ? Ça s'annonce pas simple :D
+
+Concernant le poids, le graphe parle de lui-même... 🎉
+
+<figure class="center">
+<img src="{static}/images/poids-aout-octobre-2023.png" alt="Courbe de poids" />
+<figcaption>Évolution de mon poids de fin Août à fin Octobre 2023</figcaption>
+</figure>
+
+Maintenant, on stabilise ça jusqu'à fin décembre, et on essaye de moins compter les calories !
