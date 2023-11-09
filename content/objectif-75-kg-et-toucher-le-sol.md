@@ -33,12 +33,6 @@ Deux vidéos Youtube en particulier m'ont beaucoup aidé sur le sujet :
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_b351LPn9XU?rel=0" frameborder="0" allowfullscreen></iframe>
 
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/wq_qdRA0C9Q?rel=0" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/M4K0s792wAU?rel=0" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d8V9ZaSq9Oc?rel=0" frameborder="0" allowfullscreen></iframe>
-
 La deuxième vidéo m'a permis de calculer ma consommation calorique quotidienne approximative (en prenant en compte le sport) et donc d'en déduire quels grammages viser pour chaque macro-nutriment, pour ce rééquilibrage alimentaire et ce déficit calorique d'environ 25%.
 
 Sur une base de 0.8g de lipides/kg sec et par jour, et 1.8g de protéines/kg sec et par jour, voici ce que je vise:
@@ -64,6 +58,14 @@ Ici par exemple, sur l'étiquette du Quinoa il était noté que 100g contenait 3
 Pour finir, il est important de noter qu'en étant [végétarien]({filename}/cycling-and-being-vegetarian.md) il peut être difficile de réussir à ingérer autant de protéines par jour. Une manière simple et efficace pour y remédier pourra être d'utiliser des compléments alimentaires, comme la Whey, bien connue des adeptes de la musculation, trouvable dans n'importe quel Décathlon, solution pour laquelle j'ai optée.
 
 Puisque je vais augmenter mon apport en protéines, autant favoriser leur assimilation. Apporter trop de protéines d'un coup dans un repas ne sera pas bénéfique car le corps ne pourra pas tout utiliser. Il est intéressant donc de rajouter une ou deux collations par jour, 30 à 60 minutes avant le déjeuner et le diner. Si ça tombe sur une journée avec séance de musculation, la collation se fera juste après la séance. Associer à 30g de Whey un fruit, pour éviter que les protéines ne soient transformées en sucres (comme expliqué dans [cette vidéo](https://www.youtube.com/watch?v=wq_qdRA0C9Q) à 7'26).
+
+Voilà d'autres vidéos sur le sujet, tout aussi intéressantes :
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/wq_qdRA0C9Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/M4K0s792wAU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d8V9ZaSq9Oc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ### Sport
 
