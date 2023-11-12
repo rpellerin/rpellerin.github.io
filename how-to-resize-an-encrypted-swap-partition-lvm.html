@@ -77,7 +77,7 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time> - Last update: <time datetime="2023-02-24T16:43:00+01:00">Fri 24 February 2023</time>        </p>
+<time datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time> - Last update: <time datetime="2023-11-13T00:06:00+01:00">Mon 13 November 2023</time>        </p>
     <h1>How to resize an encrypted SWAP partition (LVM)</h1>
     <div class="grey">
         <p class="italic">A few commands to resize a SWAP partition</p>
@@ -140,10 +140,10 @@ mkswap /dev/mapper/vgubuntu-swap_1
 
 <p>Now, deactive the volume group: <code>vgchange -a n</code> or <code>vgchange -a n sda6_crypt</code>.</p>
 <p>And finally: <code>cryptsetup close crypt; reboot</code></p>
-<p>After rebooting, check the sizes using <code>lslbk</code>, <code>swapon -s</code> and <code>free -h</code>. That's it!</p>
+<p>After rebooting, check the sizes using <code>lsblk</code>, <code>swapon -s</code> and <code>free -h</code>. That's it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Fri 24 February 2023</footer>
+    Last update: Mon 13 November 2023</footer>
 
         </div> <!-- WRAPPER -->
     </body>
