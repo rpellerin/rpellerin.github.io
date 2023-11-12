@@ -20,6 +20,8 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Squid Game
 - Tales of the Walking Dead
 - Tour de France: Unchained
+- The Walking Dead: Dead City
+- The Walking Dead: Daryl Dixon
 
 # Ended or Canceled TV series
 
