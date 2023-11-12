@@ -66,4 +66,4 @@ Now, deactive the volume group: `vgchange -a n` or `vgchange -a n sda6_crypt`.
 
 And finally: `cryptsetup close crypt; reboot`
 
-After rebooting, check the sizes using `lslbk`, `swapon -s` and `free -h`. That's it!
+After rebooting, check the sizes using `lsblk`, `swapon -s` and `free -h`. That's it!
