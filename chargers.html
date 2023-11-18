@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, charger, computer, laptop, smartphone, android" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Everything you ever wanted to know about chargers" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Chargers - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Everything you ever wanted to know about chargers" />
+
+        <title>Chargers - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2023-11-17T20:00:00+01:00">Fri 17 November 2023</time>        </p>
+    <h1>Chargers</h1>
+    <div class="grey">
+        <p class="italic">Everything you ever wanted to know about chargers</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 615 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/charger.html">charger</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/computer.html">computer</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/laptop.html">laptop</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/smartphone.html">smartphone</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/android.html">android</a></p>    </div>
+</header>
+<article>
+    <p>The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.</p>
+<h1 id="usb-1x-usb-2x-usb-3x-usb4">USB 1.x, USB 2.x, USB 3.x, USB4</h1>
+<p>From <a href="https://en.wikipedia.org/wiki/USB">Wikipedia</a>, these are specifications of "an industry standard that allows data exchange and delivery of power between many various types of electronics".</p>
+<p>USB 3 is notoriously known for its blue port. "USB4 mandates the exclusive use of the Type-C connector and USB Power Delivery (USB-PD) specification", says <a href="https://en.wikipedia.org/wiki/USB4">Wikipedia</a>.</p>
+<h1 id="usb-c-1-usb-c-2">USB-C 1 &amp; USB-C 2</h1>
+<p>Two different revisions of the "new" USB-C connector. The revision 2 comes with newer capabilities (for instance enhanced power delivery). <a href="https://en.wikipedia.org/wiki/USB-C#USB_Type-C_cable_and_connector_specifications">See Wikipedia</a> for more information.</p>
+<h1 id="pd-power-delivery">PD (Power Delivery)</h1>
+<p>The <a href="https://www.usb.org/usb-charger-pd">official page</a> says it best:</p>
+<blockquote>
+<p>USB has evolved from a data interface capable of supplying limited power to a primary provider of power with a data interface. Today many devices charge or get their power from USB. USB has become a ubiquitous power socket for many small devices such as cell phones, tablets, portable speakers and other hand-held devices. Users need USB to fulfil their requirements not only in terms of data but also to provide power to, or charge, their devices simply, often without the need to load a driver, in order to carry out “traditional” USB functions.</p>
+<p>The USB Power Delivery (USB PD) Specification enables the maximum functionality of USB by providing more flexible power delivery along with data over a single cable. Its aim is to operate with and build on the existing USB ecosystem.</p>
+<p>Announced in 2021, the USB PD Revision 3.1 specification is a major update to enable delivering up to 240W of power over full featured USB Type-C® cable and connector. Prior to this update, USB PD was limited to 100W using a solution based on 20V using USB Type-C cables rated at 5A. The USB Type-C specification has also been updated to Release 2.1 to define 240W cable requirements, and with the updated USB PD protocol and power supply definition, this extends the applicability of USB power delivery to a large number of applications where 100W wasn't adequate.</p>
+</blockquote>
+<p>In other words, it's a capability to deliver more power through USB, so as to charge devices.</p>
+<h1 id="pps-programmable-power-supply">PPS (Programmable Power Supply)</h1>
+<p>From <a href="https://en.wikipedia.org/wiki/USB_hardware#USB_Power_Delivery">Wikipedia</a>:</p>
+<blockquote>
+<p>The USB Power Delivery specification revision 3.0 defines an optional Programmable Power Supply (PPS) protocol that allows granular control over VBUS power, allowing a range of 3.3 to 21 V in 20 mV steps to facilitate constant-current or constant-voltage charging.</p>
+</blockquote>
+<h1 id="iq3-poweriq-30-piq-30">iQ3 / PowerIQ 3.0 / PIQ 3.0</h1>
+<p>From <a href="https://www.reddit.com/r/anker/comments/c16oci/power_iq30_vs_pd/">Reddit</a>:</p>
+<blockquote>
+<p>PowerIQ 3.0 is Anker's version of Quick Charge 4+</p>
+</blockquote>
+<p>Also from <a href="https://www.reddit.com/r/anker/comments/wk8r7k/anker_power_iq_40_means_usb_pd_31_with_pps/">another Reddit page</a>:</p>
+<blockquote>
+<p>Power IQ 4.0 means that the device supports USB power delivery 3.1 and all Power IQ 4.0 devices include PPS.</p>
+</blockquote>
+<h1 id="quick-charge-qc">Quick Charge (QC)</h1>
+<p>From <a href="https://en.wikipedia.org/wiki/Quick_Charge">Wikipedia</a>:</p>
+<blockquote>
+<p>Quick Charge (QC) is a proprietary battery charging protocol developed by Qualcomm, used for managing power delivered over USB, mainly by communicating to the power supply and negotiating a voltage. Quick Charge is supported by devices such as mobile phones which run on Qualcomm SoCs, and by some chargers; both device and charger must support QC, otherwise QC charging is not attained.</p>
+</blockquote>
+<h1 id="gan-gan-2-ganprime">GaN, GaN 2, GaNPrime</h1>
+<p>Different generations of Gallium Nitride chargers from Anker, from oldest to newest. Those chargers are generally smaller and cooler (less heat) than other non-GaN chargers. More info on <a href="https://www.reddit.com/r/UsbCHardware/comments/134k7b7/what_is_the_difference_of_gan_charger_generations/">Reddit</a>. Other brands manufacture GaN chargers, not just Anker.</p>
+<h1 id="what-do-buy">What do buy</h1>
+<p><a href="https://amzn.eu/d/78cPjLm">Anker USB C Charger (Nano II 65W) USB-C 65W Pod 3-Port PPS Fast Charger, Compact USB-C Power Supply</a> seems to be a good option, price-wise and feature-wise.</p>
+<hr>
+<p>That's it!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 17 November 2023</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
