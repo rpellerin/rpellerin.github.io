@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 18 Nov 2023 03:25:00 +0100</lastBuildDate><item><title>Chargers</title><link>//romainpellerin.eu/chargers.html</link><description>&lt;p&gt;The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 18 Nov 2023 03:30:00 +0100</lastBuildDate><item><title>Chargers</title><link>//romainpellerin.eu/chargers.html</link><description>&lt;p&gt;The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.&lt;/p&gt;
 &lt;h1 id="usb-1x-usb-2x-usb-3x-usb4"&gt;USB 1.x, USB 2.x, USB 3.x, USB4&lt;/h1&gt;
 &lt;p&gt;From &lt;a href="https://en.wikipedia.org/wiki/USB"&gt;Wikipedia&lt;/a&gt;, these are specifications of "an industry standard that allows data exchange and delivery of power between many various types of electronics".&lt;/p&gt;
 &lt;p&gt;USB 3 is notoriously known for its blue port. "USB4 mandates the exclusive use of the Type-C connector and USB Power Delivery (USB-PD) specification", says &lt;a href="https://en.wikipedia.org/wiki/USB4"&gt;Wikipedia&lt;/a&gt;.&lt;/p&gt;
@@ -18,7 +18,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;The USB Power Delivery specification revision 3.0 defines an optional Programmable Power Supply (PPS) protocol that allows granular control over VBUS power, allowing a range of 3.3 to 21 V in 20 mV steps to facilitate constant-current or constant-voltage charging.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id="iq3-poweriq-30-piq-30"&gt;iQ3 / PowerIQ 3.0 / PIQ 3.0&lt;/h1&gt;
+&lt;h1 id="iq3-poweriq-30-piq-30-or-version-4"&gt;iQ3 / PowerIQ 3.0 / PIQ 3.0 (or version 4...)&lt;/h1&gt;
 &lt;p&gt;From &lt;a href="https://www.reddit.com/r/anker/comments/c16oci/power_iq30_vs_pd/"&gt;Reddit&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;PowerIQ 3.0 is Anker's version of Quick Charge 4+&lt;/p&gt;
