@@ -36,7 +36,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/USB_hardware#USB_Power_Delivery):
 
 > The USB Power Delivery specification revision 3.0 defines an optional Programmable Power Supply (PPS) protocol that allows granular control over VBUS power, allowing a range of 3.3 to 21 V in 20 mV steps to facilitate constant-current or constant-voltage charging.
 
-# iQ3 / PowerIQ 3.0 / PIQ 3.0
+# iQ3 / PowerIQ 3.0 / PIQ 3.0 (or version 4...)
 
 From [Reddit](https://www.reddit.com/r/anker/comments/c16oci/power_iq30_vs_pd/):
 
