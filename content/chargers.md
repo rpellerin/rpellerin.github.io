@@ -60,6 +60,8 @@ Different generations of Gallium Nitride chargers from Anker, from oldest to new
 
 [Anker USB C Charger (Nano II 65W) USB-C 65W Pod 3-Port PPS Fast Charger, Compact USB-C Power Supply](https://amzn.eu/d/78cPjLm) seems to be a good option, price-wise and feature-wise.
 
+For some extra euros, one can get PowerIQ 4: [Anker USB C Charger, 735 (GaNPrime 65W) Fast and Compact 3-Port](https://amzn.eu/d/hWFc1K2)
+
 ---
 
 That's it!
