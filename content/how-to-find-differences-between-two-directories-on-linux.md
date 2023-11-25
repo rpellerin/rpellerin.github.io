@@ -27,8 +27,8 @@ Also works with `diff`.
 Compares filenames and content. **Slow**.
 
     :::bash
-    /usr/bin/diff <(find /dirA -type f -printf "%f " -exec md5sum '{}' \; | cut -d '/' -f1 | sort) \
-        <(find /dirB -type f -printf "%f " -exec md5sum '{}' \; | cut -d '/' -f1 | sort)
+    /usr/bin/diff <(find /dirA -type f -printf "%p " -exec md5sum '{}' \; | cut -d '/' -f1 | sort) \
+        <(find /dirB -type f -printf "%p " -exec md5sum '{}' \; | cut -d '/' -f1 | sort)
 
 # `git`
 
