@@ -143,7 +143,7 @@ Two options mostly.
 
     :::bash
     find . -type f -iname "*.MP4" -exec ffmpeg -i '{}' -c copy -bsf:v h264_mp4toannexb -f mpegts '{}.ts' \;
-    ffmpeg -i "concat:$(ls *.ts | tr '\n' '|' | head -c -1)" -c copy -bsf:a aac_adtstoasc output.mp4
+    ffmpeg -i "concat:$(find . -type f -iname "*.ts" | sort | tr '\n' '|' | head -c -1)" -c copy -avoid_negative_ts make_zero -bsf:a aac_adtstoasc output.mp4
 
 # Fade out last 2 seconds of audio track
 
@@ -194,7 +194,7 @@ If one of the two videos is not correctly synced with the other one, you can del
 # Concat MTS files to MP4
 
     :::bash
-    ffmpeg -i "concat:$(ls *.MTS | tr '\n' '|' | head -c -1)" -vcodec copy -acodec aac -ab 512k -cutoff 22050 -sn output.mp4
+    ffmpeg -i "concat:$(find . -type f -iname "*.ts" | sort | tr '\n' '|' | head -c -1)" -vcodec copy -acodec aac -ab 512k -cutoff 22050 -sn output.mp4
 
 # [Reduce the size of a video](https://unix.stackexchange.com/a/337359/194594)
 
