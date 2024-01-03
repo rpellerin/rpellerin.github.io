@@ -151,3 +151,4 @@ Replenish your carbohydrates stocks after the race with pasta, but also protein-
 - [A cyclist's guide to following a vegetarian diet](https://www.cyclingweekly.com/fitness/nutrition/cyclists-guide-following-vegetarian-diet-302982) (French translation [here](https://www.velo101.com/entrainements/nutrition/suivre-un-regime-vegetarien-ou-vegetalien-en-etant-cycliste-le-guide-complet/))
 - [Cycling on a vegetarian or vegan diet](https://www.britishcycling.org.uk/knowledge/nutrition/get-started/article/izn20150310-Intermediate-Cycling-on-a-vegetarian-or-vegan-diet-0)
 - [How to stay at peak cycling performance on a vegetarian diet](https://www.bikeradar.com/advice/nutrition/how-to-stay-at-peak-cycling-performance-on-a-vegetarian-diet/)
+- [Les 9 Aliments Incontournables à Toujours avoir dans vos placards !](https://www.youtube.com/watch?v=tdmfV5GiBEs)
