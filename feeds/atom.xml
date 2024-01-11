@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-01-04T00:47:00+01:00</updated><entry><title>Life Hacks: a collection of links</title><link href="//romainpellerin.eu/life-hacks-a-collection-of-links.html" rel="alternate"></link><published>2023-12-20T15:46:00+01:00</published><updated>2023-12-20T15:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-12-20:/life-hacks-a-collection-of-links.html</id><summary type="html">&lt;p&gt;Some links on life hacks&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-01-11T15:37:00+01:00</updated><entry><title>Life Hacks: a collection of links</title><link href="//romainpellerin.eu/life-hacks-a-collection-of-links.html" rel="alternate"></link><published>2023-12-20T15:46:00+01:00</published><updated>2023-12-20T15:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-12-20:/life-hacks-a-collection-of-links.html</id><summary type="html">&lt;p&gt;Some links on life hacks&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.linkedin.com/posts/colby-kultgen_7-things-you-wont-give-a-fck-about-in-5-activity-7097185302728888321-ZVPV"&gt;7 things you won't give a f*ck about in 5 years&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.linkedin.com/posts/colby-kultgen_avoid-these-time-traps-at-all-costs-activity-7100809297214799874-e_K3"&gt;Avoid these time traps at all costs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="Misc"></category><category term="life"></category><category term="hacks"></category></entry><entry><title>Chargers</title><link href="//romainpellerin.eu/chargers.html" rel="alternate"></link><published>2023-11-17T20:00:00+01:00</published><updated>2023-11-18T03:30:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-11-17:/chargers.html</id><summary type="html">&lt;p&gt;Everything you ever wanted to know about chargers&lt;/p&gt;</summary><content type="html">&lt;p&gt;The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.&lt;/p&gt;
@@ -10101,11 +10101,10 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/ansi2html/1.0.7"&gt;Git diff to HTML&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/"&gt;Little Things I Like to Do with Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Rnh5QK__pLA"&gt;DevFest Nantes 2018 - Git Dammit !&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Linux"></category><category term="presentation"></category><category term="talk"></category><category term="git"></category></entry><entry><title>The TV series I watch</title><link href="//romainpellerin.eu/the-tv-series-i-watch.html" rel="alternate"></link><published>2015-06-02T01:00:00+02:00</published><updated>2023-11-13T00:26:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-02:/the-tv-series-i-watch.html</id><summary type="html">&lt;p&gt;Some of the best TV series in the last decade&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Linux"></category><category term="presentation"></category><category term="talk"></category><category term="git"></category></entry><entry><title>The TV series I watch</title><link href="//romainpellerin.eu/the-tv-series-i-watch.html" rel="alternate"></link><published>2015-06-02T01:00:00+02:00</published><updated>2024-01-11T15:37:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-02:/the-tv-series-i-watch.html</id><summary type="html">&lt;p&gt;Some of the best TV series in the last decade&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).&lt;/p&gt;
 &lt;h1 id="shows-still-running"&gt;Shows still running&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Black Mirror&lt;/li&gt;
-&lt;li&gt;Fear The Walking Dead&lt;/li&gt;
 &lt;li&gt;Stranger Things&lt;/li&gt;
 &lt;li&gt;Lupin&lt;/li&gt;
 &lt;li&gt;Tribes of Europa&lt;/li&gt;
@@ -10119,11 +10118,12 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;h1 id="ended-or-canceled-tv-series"&gt;Ended or Canceled TV series&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;The Walking Dead&lt;/li&gt;
+&lt;li&gt;Fear The Walking Dead&lt;/li&gt;
+&lt;li&gt;The Walking Dead: World Beyond&lt;/li&gt;
 &lt;li&gt;Paper Girls&lt;/li&gt;
 &lt;li&gt;Ted Lasso&lt;/li&gt;
 &lt;li&gt;La Casa de Papel&lt;/li&gt;
 &lt;li&gt;Altered Carbon&lt;/li&gt;
-&lt;li&gt;The Walking Dead: World Beyond&lt;/li&gt;
 &lt;li&gt;Vikings&lt;/li&gt;
 &lt;li&gt;Mr. Robot&lt;/li&gt;
 &lt;li&gt;Game of Thrones&lt;/li&gt;
