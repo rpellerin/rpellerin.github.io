@@ -12,7 +12,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 # Shows still running
 
 - Black Mirror
-- Fear The Walking Dead
 - Stranger Things
 - Lupin
 - Tribes of Europa
@@ -26,11 +25,12 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 # Ended or Canceled TV series
 
 - The Walking Dead
+- Fear The Walking Dead
+- The Walking Dead: World Beyond
 - Paper Girls
 - Ted Lasso
 - La Casa de Papel
 - Altered Carbon
-- The Walking Dead: World Beyond
 - Vikings
 - Mr. Robot
 - Game of Thrones
