@@ -141,3 +141,14 @@ Concernant le poids, le graphe parle de lui-même... 🎉
 </figure>
 
 Maintenant, on stabilise ça jusqu'à fin décembre, et on essaye de moins compter les calories !
+
+# Mise à jour : 2024-01-13
+
+Annnd it's a wrap! Ça y est, les 4 mois sont passés. Où en suis-je ? Y suis-je parvenu ? Ai-je maintenu mes 75 kgs ? Est-ce que je touche toujours le sol avec mes doigts ? OUI et OUI ! 🎉
+
+<figure class="center">
+<img src="{static}/images/poids-aout-2023-janvier-2024.png" alt="Courbe de poids" />
+<figcaption>Évolution de mon poids de fin Août à début 2024</figcaption>
+</figure>
+
+Indéniablement, le mois de décembre aura fait quelques dégats, mais rien d'irréparable ! On continue tout ça sur 2024 maintenant ! :)
