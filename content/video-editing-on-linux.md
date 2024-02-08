@@ -54,7 +54,7 @@ Then, I like to make video montages. But because it usually does not happen more
 
 I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.
 
-For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because [the persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision).
+For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of [the persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision).
 
 <figure class="center">
 <img src="{static}/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
