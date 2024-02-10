@@ -54,7 +54,7 @@ Then, I like to make video montages. But because it usually does not happen more
 
 I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.
 
-For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of [the persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision).
+For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of [the persistence of vision](https://en.wikipedia.org/wiki/Persistence_of_vision). I read [on Reddit](https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/) that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 25FPS, would mean 2 frames.
 
 <figure class="center">
 <img src="{static}/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
