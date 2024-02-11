@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-02-10T16:00:00+01:00">Sat 10 February 2024</time>        </p>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-02-11T20:31:00+01:00">Sun 11 February 2024</time>        </p>
     <h1>Video Editing on Linux</h1>
     <div class="grey">
         <p class="italic">How to edit videos on Linux with Kdenlive</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1073 words.">5 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1150 words.">6 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -133,7 +133,7 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
 <p>Remove the audio track from clips after importing them in Kdenlive, where audio does not matter. Or lower the volume by some decibels.</p>
 </li>
 <li>You can "lock" audio or video tracks, when you absolutely do not want to misclick and inadvertently move clips.</li>
-<li>When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (<code>preset=slower</code>), and keep the default quality setting, don't tick "Custom Quality" (<code>crf=28</code>). Use 4 threads and parallel processing.</li>
+<li>When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (<code>preset=slower</code>), and keep the default quality setting, don't tick "Custom Quality" (keep <code>crf=28</code>). However, if the video is short enough and you can afford the extra rendering time, you should go for the "slowest" preset. It will take longer but the overall quality will be better. Also, if the video is short, you may go for a custom quality. I find 75% (<code>crf=23</code>) very good, without increasing the file size too much. Lastly, use 4 threads but do not use parallel processing, as it is still experimental and not stable enough (in 2024 at least).</li>
 </ol>
 <h1 id="transitions-songs-music-sync-and-beats-per-minute">Transitions, songs, music sync and beats per minute</h1>
 <p>I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.</p>
@@ -213,7 +213,7 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 10 February 2024</footer>
+    Last update: Sun 11 February 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
