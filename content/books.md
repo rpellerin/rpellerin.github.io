@@ -56,6 +56,10 @@ Summary: Books I have read
 
 - **Ascender** (comic books), by *Jeff Lemire* and *Dustin Nguyen*
 
+# 2023/2024
+
+- **Hyperion**, by *Dan Simmon*
+
 # To read
 
 - [7 romans de science-fiction déprimants et géniaux à lire avant la fin du monde](https://www.numerama.com/pop-culture/531136-7-romans-de-science-fiction-deprimants-et-geniaux-a-lire-avant-la-fin-du-monde.html)
