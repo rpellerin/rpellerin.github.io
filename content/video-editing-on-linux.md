@@ -132,10 +132,32 @@ There's a built-in effect for that. Make sure to tick "fade to/from dark".
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen></iframe>
 
+## Text reveal behind an object
+
+<video controls>
+    <source src="./videos/kdenlive/text-reveal-behind-an-object.mp4" type="video/mp4">
+</video>
+
+## Blend a video with a solid color
+
+<video controls>
+    <source src="./videos/kdenlive/blend-video-and-color.mp4" type="video/mp4">
+</video>
+
+## Cinematoscope aspect ratio
+
+<video controls>
+    <source src="./videos/kdenlive/cinematoscope-aspect-ratio.mp4" type="video/mp4">
+</video>
+
 ## Old film
 
 Use the "Old film" effect.
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+## How to place a video inside text
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nM6q7FJSenE?rel=0" frameborder="0" allowfullscreen></iframe>
 
 That's about it!
