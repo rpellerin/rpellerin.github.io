@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-02-11T20:31:00+01:00</updated><entry><title>Creating GPX overlay videos on Linux</title><link href="//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2023-09-16T23:36:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-02-14T00:21:00+01:00</updated><entry><title>Creating GPX overlay videos on Linux</title><link href="//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2023-09-16T23:36:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -312,7 +312,7 @@ mkswap /dev/mapper/vgubuntu-swap_1
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git diff -D --no-index /dirA /dirB
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Hope this helps.&lt;/p&gt;</content><category term="Linux"></category><category term="linux"></category><category term="shell"></category><category term="diff"></category></entry><entry><title>Video Editing on Linux</title><link href="//romainpellerin.eu/video-editing-on-linux.html" rel="alternate"></link><published>2018-05-13T17:30:00+02:00</published><updated>2024-02-11T20:31:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</id><summary type="html">&lt;p&gt;How to edit videos on Linux with Kdenlive&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
+&lt;p&gt;Hope this helps.&lt;/p&gt;</content><category term="Linux"></category><category term="linux"></category><category term="shell"></category><category term="diff"></category></entry><entry><title>Video Editing on Linux</title><link href="//romainpellerin.eu/video-editing-on-linux.html" rel="alternate"></link><published>2018-05-13T17:30:00+02:00</published><updated>2024-02-14T00:21:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</id><summary type="html">&lt;p&gt;How to edit videos on Linux with Kdenlive&lt;/p&gt;</summary><content type="html">&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;My smartphone&lt;/li&gt;
 &lt;li&gt;A GoPro&lt;/li&gt;
@@ -431,9 +431,27 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
 &lt;h2 id="rewind-video-vhs-style"&gt;Rewind video (VHS style)&lt;/h2&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
+&lt;h2 id="text-reveal-behind-an-object"&gt;Text reveal behind an object&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/text-reveal-behind-an-object.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="blend-a-video-with-a-solid-color"&gt;Blend a video with a solid color&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/blend-video-and-color.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="cinematoscope-aspect-ratio"&gt;Cinematoscope aspect ratio&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/cinematoscope-aspect-ratio.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
 &lt;h2 id="old-film"&gt;Old film&lt;/h2&gt;
 &lt;p&gt;Use the "Old film" effect.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id="how-to-place-a-video-inside-text"&gt;How to place a video inside text&lt;/h2&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nM6q7FJSenE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That's about it!&lt;/p&gt;</content><category term="Linux"></category><category term="video"></category><category term="linux"></category></entry><entry><title>Casting To Chromecast On Linux</title><link href="//romainpellerin.eu/casting-to-chromecast-on-linux.html" rel="alternate"></link><published>2017-08-18T15:50:00+02:00</published><updated>2022-09-24T12:11:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-08-18:/casting-to-chromecast-on-linux.html</id><summary type="html">&lt;p&gt;How to cast media files to Chromecast from Linux&lt;/p&gt;</summary><content type="html">&lt;p&gt;Several options exist when it comes to casting media content from Linux to a Chromecast.&lt;/p&gt;
 &lt;h1 id="casting-the-full-desktop"&gt;Casting the full desktop&lt;/h1&gt;

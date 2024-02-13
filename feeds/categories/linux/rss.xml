@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 11 Feb 2024 20:31:00 +0100</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 14 Feb 2024 00:21:00 +0100</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -431,9 +431,27 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
 &lt;h2 id="rewind-video-vhs-style"&gt;Rewind video (VHS style)&lt;/h2&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
+&lt;h2 id="text-reveal-behind-an-object"&gt;Text reveal behind an object&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/text-reveal-behind-an-object.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="blend-a-video-with-a-solid-color"&gt;Blend a video with a solid color&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/blend-video-and-color.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="cinematoscope-aspect-ratio"&gt;Cinematoscope aspect ratio&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/cinematoscope-aspect-ratio.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
 &lt;h2 id="old-film"&gt;Old film&lt;/h2&gt;
 &lt;p&gt;Use the "Old film" effect.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id="how-to-place-a-video-inside-text"&gt;How to place a video inside text&lt;/h2&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nM6q7FJSenE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>Linux</category><category>video</category><category>linux</category></item><item><title>Casting To Chromecast On Linux</title><link>//romainpellerin.eu/casting-to-chromecast-on-linux.html</link><description>&lt;p&gt;Several options exist when it comes to casting media content from Linux to a Chromecast.&lt;/p&gt;
 &lt;h1 id="casting-the-full-desktop"&gt;Casting the full desktop&lt;/h1&gt;
