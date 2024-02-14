@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, ski, bike, video" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="My tips to make the best sports video" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="The Ultimate Sports Video - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="My tips to make the best sports video" />
+
+        <title>The Ultimate Sports Video - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-02-14T23:30:00+01:00">Wed 14 February 2024</time>        </p>
+    <h1>The Ultimate Sports Video</h1>
+    <div class="grey">
+        <p class="italic">My tips to make the best sports video</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 449 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/sports.html">Sports</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ski.html">ski</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
+</header>
+<article>
+    <p>I'm on a mission. A quest. A quest to make great sports videos.</p>
+<p>I watch Youtube a lot. Too much. Loads of ski and bike videos. And very often, I stumble upon videos which leave me speechless. Well edited, nice shots, action-oriented, upbeat music, you name it.</p>
+<p>Recently, it was these three:</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/IgXoOQlyiso?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/A3WtqSJ1ww0?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qgMqrFiPI_g?rel=0" frameborder="0" allowfullscreen></iframe>
+
+<p>So I thought I'd just start collecting ideas about what makes a great video, great!</p>
+<h1 id="ski-videos">Ski videos</h1>
+<p>Here my conclusion is that it all depends on the music. I would recommend to pick the music before starting any editing. I find songs of alternating fast phases and slow phases the best, as you can sort of tell a story. When the rythm is fast and energetic, you can cram in as much action as you want. When it's more relaxed, it's easy to switch to contemplative scenes, landscapes, etc.</p>
+<p>Regarding the shots now.</p>
+<ul>
+<li>Avoid shooting in shadow, prefer under sunrays. Likewise, avoid cloudy weather. Foggy weather on the flip side can be nice for a change, for one or two scenes.</li>
+<li>Target people, ideally one person, instead of a group, when skiing. A group is fine on a chairlift, or when everyone has come to a stop.</li>
+<li>Avoid filming people's back. Prefer skiiing by their side (close to them, or at a distance), or ahead of them. It's better to see people's faces.</li>
+<li>Most of the time, film people closely. I find shots where the suject is getting closer and then farther away pretty cool, when there's movement. Likewise, overtaking someone at high speed (or being overtaken) makes really nice shots. But if you're to maintain the same distance, remain close as much as possible.</li>
+<li>Fast-paced skiing scenes are better than slow ones :) except if the subject ends up falling 😁</li>
+<li>Don't forget to record landscapes, mountains, sunsets, etc. Film while being on a chairlift. These scenes are nice for moments when the music slows down.</li>
+<li>Shoot when the sun is out and at sunset/sunrise, when it's very low in the sky. Alternating between different times of the day helps tell a story in a video. For instance, sunsets are nice to end a video.</li>
+<li>Record at 50FPS at times, when the scene has potential to be slowed down. When editing the video, consider speeding up some landscape shots too (or shots of crowds, cities, etc).</li>
+<li>Carving shots make an impression! For these shots, it's fine to film a subject from behind.</li>
+</ul>
+<h1 id="cycling-videos">Cycling videos</h1>
+<p>So far, I have not given these types of videos much thought. I'll make sure to come back here and update this article when I do so.</p>
+<hr>
+<p>Oh and by the way... Here's my latest attempt at making a cool video 😎:</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/N0WoxVaDKcQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 14 February 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
