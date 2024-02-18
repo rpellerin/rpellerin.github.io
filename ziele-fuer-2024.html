@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, goals, running, bike" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Dieses Jahr ist mein Jahr" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Ziele für 2024 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Dieses Jahr ist mein Jahr" />
+
+        <title>Ziele für 2024 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-02-18T15:00:00+01:00">Sun 18 February 2024</time>        </p>
+    <h1>Ziele für 2024</h1>
+    <div class="grey">
+        <p class="italic">Dieses Jahr ist mein Jahr</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 405 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/about-me.html">About me</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/goals.html">goals</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/bike.html">bike</a></p>    </div>
+</header>
+<article>
+    <p>Hier ist er! Mein ester Artikel auf Deutsch. Für ein sehr besonderes Jahr.</p>
+<p>In die letzte Jahre habe ich mich auf Renrad fahren konzentriert. Seit letzes Jahr mache ich mehr: Laufen, Schwimmen, Gewichtheben.</p>
+<p>Dieses Jahr, ich will ein Läufer werden. Und ich will auch mein Deutsch verbessern. 😁 Sooo hier ist mein Plan, und meine 3 Ziele für 2024:</p>
+<ol>
+<li>Erreichen dem Niveau B2 auf Deutsch 😱</li>
+<li>Beenden ein Marathon 😱</li>
+<li>Ein Sixpack zu bekommen 😂 (ich bin seriös!)</li>
+</ol>
+<hr>
+<p>Last year in August, <a href="//romainpellerin.eu/objectif-75-kg-et-toucher-le-sol.html">I set 2 goals for myself</a>:</p>
+<ul>
+<li>Lose weight down to 75kg while losing mostly fat and trying to gain muscle (body recomposition): ✅</li>
+<li>Improve my flexibility and reach my toes with my fingers: ✅</li>
+</ul>
+<p>This year, I'm aiming bigger. 2 months ago, to work towards these goals, I created weekly goals for myself. After trialing them for many weeks, I've been able to identify what works for me and what's unrealistic, and correct some of them. Here they are:</p>
+<ul>
+<li>🏊 Swim 1k (just so that I don't drown in my next triathlon)</li>
+<li>🏃 Run 15k (I expect to do more every week, but I don't want to pressure myself with some high number)</li>
+<li>🦶 <a href="//romainpellerin.eu/plantar-fasciitis.html">Fascia stretching</a> and <a href="https://www.youtube.com/watch?v=jSO1-3Obt7Y">muscle strengthening</a> twice</li>
+<li>🧘 Fingers to toes twice (flexibility)</li>
+<li>
+<p>🏋️ Workout:</p>
+<ul>
+<li>Abs twice</li>
+<li>Pecs once</li>
+<li>Biceps + triceps once</li>
+<li>Shoulders once</li>
+</ul>
+</li>
+<li>
+<p>🇩🇪 30 minutes of German everyday</p>
+</li>
+</ul>
+<p>Last year, I wrote in <a href="//romainpellerin.eu/objectif-75-kg-et-toucher-le-sol.html">my August article</a> about my daily routine. This thing never really worked for me. It stuck for a month or two and then I gradually gave up, it was too demanding, 20+ minutes per day, on top of everything else. So this year I'm ditching it. Instead, I'll focus on fixing up my fascia and strengthening my muscles. I'll try to keep working on my flexibility though, but I don't want nor need it to be a goal.</p>
+<h1 id="running-milestones-for-2024">Running milestones for 2024</h1>
+<p>This year, I'll be taking part in multiple competitions:</p>
+<ul>
+<li>A half-marathon</li>
+<li>The <a href="https://berliner-firmenlauf.de/">Berliner Firmenlauf</a>: 5.5kms</li>
+<li>The <a href="https://berlin-laeuft.de/s25berlin/">25 kilometers of Berlin</a></li>
+<li>A small triathlon, where the running part is only 5km-long</li>
+<li>And finally, to wrap up the year, a full marathon!</li>
+</ul>
+<p>Having these regular milestones should make this goal a little more achievable and less frightening.</p>
+<p>I'll try and keep this article updated as I make progress towards these goals. :) Bis nächtes Mal!</p>
+<p>PS: I'll try to write auf Deutsch from now on too, from time to time. Emphasize on <strong>try</strong> :D</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 18 February 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
