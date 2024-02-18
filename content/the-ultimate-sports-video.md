@@ -22,7 +22,7 @@ So I thought I'd just start collecting ideas about what makes a great video, gre
 
 # Ski videos
 
-Here my conclusion is that it all depends on the music. I would recommend to pick the music before starting any editing. I find songs of alternating fast phases and slow phases the best, as you can sort of tell a story. When the rythm is fast and energetic, you can cram in as much action as you want. When it's more relaxed, it's easy to switch to contemplative scenes, landscapes, etc.
+Here my conclusion is that it all depends on the music. I would recommend to pick the music before starting any editing. I find songs of alternating fast phases and slow phases the best, as you can sort of tell a story. When the rythm is fast and energetic, you can cram in as much action as you want. When it's more relaxed, it's easy to switch to contemplative scenes, landscapes, etc. Here is [a music creator on Youtube](https://www.youtube.com/@AlexGrohlMusic), who makes great background music for sports-oriented videos. [Here's another channel](https://www.youtube.com/@EuphoriaAudioMusic).
 
 Regarding the shots now.
 
