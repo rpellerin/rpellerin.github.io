@@ -48,4 +48,6 @@ Below is the last minute of the video above:
   <source src="./videos/abs-routine.webm" type="video/webm">
 </video>
 
+<figure class="center"><img alt="The 8-min abs workout steps from the video above" src="{static}/images/abs-workout.jpg" /></figure>
+
 [My very own workout plan, from 2016, back when I was in South Korea.]({static}/extra/WORKOUT.pdf)
