@@ -20,9 +20,11 @@ Here are two videos to help you figure out which category you fall in:
 
 These days I'm looking into buying a new pair of shoes. Apparently, Asics' Gel-Kayano model is a popular one among pronated runners, supposedly their top pair of shoes. I'll update this article with some feedback about them if I end up buying them...
 
-Finally, here's a video on how to properly run:
+Finally, here are videoson how to properly run:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/7L-OC7zOn_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9wWDA1qn50w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 2024-02-25: Update on shoes
 
