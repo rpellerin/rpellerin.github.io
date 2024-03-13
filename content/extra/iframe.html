@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      iframe {
+        flex: 1 0 auto;
+        width: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="iframe URL" name="url" /><button>
+        Refresh
+      </button>
+    </div>
+    <iframe src=""> </iframe>
+    <script>
+      const iframe = document.querySelector("iframe");
+      document.querySelector("input").addEventListener("input", function (e) {
+        iframe.src = e.target.value;
+      });
+      document.querySelector("button").addEventListener("click", function (e) {
+        const currentSrc = iframe.src;
+        iframe.src = "";
+        setTimeout(() => {
+          iframe.src = currentSrc;
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
