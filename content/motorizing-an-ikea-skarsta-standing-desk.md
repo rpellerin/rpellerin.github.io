@@ -182,9 +182,9 @@ For this V2, we're gonna reuse most of the what we used for the V1, but we'll al
 
 - [Arduino Uno R4 Minima - 18 euros](https://store.arduino.cc/products/uno-r4-minima)
 - [2 push buttons - 7.99 euros for 7 buttons](https://www.amazon.de/dp/B0825RCZJS): one to raise the desk, one to lower it
-- [2 10K-Ohm resistors](https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage?c=168), for the buttons ([despite the Arduino having an internal pullup resistor that can be used](https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale), [it's not reliable](https://forum.arduino.cc/t/resistor-why/108705/2) [enough](https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493)). Prefer metal film over carbon, supposedly they're more robust.
-- [Pololu TB6612FNG motor driver](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
-- [A  200\*120\*55mm junction box](https://www.amazon.de/dp/B0983NSV6F)
+- [2 10K-Ohm resistors - 0.05 euros each](https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage?c=168), for the buttons ([despite the Arduino having an internal pullup resistor that can be used](https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale), [it's not reliable](https://forum.arduino.cc/t/resistor-why/108705/2) [enough](https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493)). Prefer metal film over carbon, supposedly they're more robust.
+- [Pololu TB6612FNG motor driver - 4.20 euros](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
+- [A  200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
 
 The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.
 
