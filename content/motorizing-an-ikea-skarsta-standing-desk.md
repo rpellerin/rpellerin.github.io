@@ -7,6 +7,8 @@ Slug: motorizing-an-ikea-skarsta-standing-desk
 Authors: Romain Pellerin
 Summary: Tutorial about how I motorized my IKEA Starska standing desk
 
+**UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!**
+
 I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!
 
 After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!
@@ -173,6 +175,24 @@ With a [different motor driver](https://www.cytron.io/c-motor-and-motor-driver/c
 > any reason.
 
 And finally, a nicer design, where everything is not taped underneath but put in a plastic box.
+
+# Upgrade 2024: version 2!
+
+For this V2, we're gonna reuse most of the what we used for the V1, but we'll also need additionally:
+
+- [Arduino Uno R4 Minima - 18 euros](https://store.arduino.cc/products/uno-r4-minima)
+- [2 push buttons - 7.99 euros for 7 buttons](https://www.amazon.de/dp/B0825RCZJS): one to raise the desk, one to lower it
+- [2 10K-Ohm resistors](https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage?c=168), for the buttons ([despite the Arduino having an internal pullup resistor that can be used](https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale), [it's not reliable](https://forum.arduino.cc/t/resistor-why/108705/2) [enough](https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493)). Prefer metal film over carbon, supposedly they're more robust.
+- [Pololu TB6612FNG motor driver](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
+- [A  200\*120\*55mm junction box](https://www.amazon.de/dp/B0983NSV6F)
+
+The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.
+
+## A few words on the motor driver
+
+A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is [that the L298N motor driver is old and obsolete](https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638), one of its flaws is the 5V drop. People often suggest using modern motor drivers from [Pololu](https://www.pololu.com/), and the [TB6612FNG](https://www.pololu.com/product/713) seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.
+
+Why not L298N?
 
 # Other tutorials
 
