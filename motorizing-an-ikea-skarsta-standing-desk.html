@@ -77,17 +77,18 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2023-05-18T16:50:00+02:00">Thu 18 May 2023</time>        </p>
+<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-03-22T00:40:00+01:00">Fri 22 March 2024</time>        </p>
     <h1>Motorizing an IKEA Skarsta Standing Desk</h1>
     <div class="grey">
         <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1173 words.">6 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1398 words.">7 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
 </header>
 <article>
-    <p>I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!</p>
+    <p><strong>UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!</strong></p>
+<p>I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!</p>
 <p>After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!</p>
 <video controls>
   <source src="./videos/motorizing-an-ikea-skarsta-standing-desk.mp4" type="video/mp4">
@@ -233,6 +234,19 @@ and watching the desk, ready to cancel the operation if the motors stall for
 any reason.</p>
 </blockquote>
 <p>And finally, a nicer design, where everything is not taped underneath but put in a plastic box.</p>
+<h1 id="upgrade-2024-version-2">Upgrade 2024: version 2!</h1>
+<p>For this V2, we're gonna reuse most of the what we used for the V1, but we'll also need additionally:</p>
+<ul>
+<li><a href="https://store.arduino.cc/products/uno-r4-minima">Arduino Uno R4 Minima - 18 euros</a></li>
+<li><a href="https://www.amazon.de/dp/B0825RCZJS">2 push buttons - 7.99 euros for 7 buttons</a>: one to raise the desk, one to lower it</li>
+<li><a href="https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage?c=168">2 10K-Ohm resistors</a>, for the buttons (<a href="https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale">despite the Arduino having an internal pullup resistor that can be used</a>, <a href="https://forum.arduino.cc/t/resistor-why/108705/2">it's not reliable</a> <a href="https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493">enough</a>). Prefer metal film over carbon, supposedly they're more robust.</li>
+<li><a href="https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber">Pololu TB6612FNG motor driver</a></li>
+<li><a href="https://www.amazon.de/dp/B0983NSV6F">A  200*120*55mm junction box</a></li>
+</ul>
+<p>The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.</p>
+<h2 id="a-few-words-on-the-motor-driver">A few words on the motor driver</h2>
+<p>A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is <a href="https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638">that the L298N motor driver is old and obsolete</a>, one of its flaws is the 5V drop. People often suggest using modern motor drivers from <a href="https://www.pololu.com/">Pololu</a>, and the <a href="https://www.pololu.com/product/713">TB6612FNG</a> seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.</p>
+<p>Why not L298N?</p>
 <h1 id="other-tutorials">Other tutorials</h1>
 <ul>
 <li><a href="http://cesarmoya.com/blog/motorizing-standup-desk/">http://cesarmoya.com/blog/motorizing-standup-desk/</a>: says 2Nm is needed for torque</li>
@@ -243,7 +257,7 @@ any reason.</p>
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Thu 18 May 2023</footer>
+    Last update: Fri 22 March 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
