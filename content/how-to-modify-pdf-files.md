@@ -89,6 +89,11 @@ Make sure your image has a resolution of 1050x1485 pixels. Then:
     :::bash
     convert input.jpg -density 50 -units pixelspercentimeter output.pdf
 
+Or, for a 2100x2970 pixel image:
+
+    :::bash
+    convert input.jpg -density 100 -units pixelspercentimeter output.pdf
+
 If the image is of a different resolution, [use this](https://unix.stackexchange.com/a/20057):
 
     :::bash

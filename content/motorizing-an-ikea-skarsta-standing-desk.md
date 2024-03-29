@@ -112,53 +112,53 @@ This is used to connect the DC power supply with the motor driver, [I got this o
 1. Position the L-bracket with the motor at the end of the hex key and mark the final position with a pen.
 1. Screw the L-bracket to the desk using a drill (slow speed)
 
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" />
-      <figcaption>The L-bracket is now attached to the desk</figcaption>
-    </figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" />
+  <figcaption>The L-bracket is now attached to the desk</figcaption>
+</figure>
 
 1. Secure the motor to the L-bracket
 
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" />
-      <figcaption>The motor is now attached to the L-bracket</figcaption>
-    </figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" />
+  <figcaption>The motor is now attached to the L-bracket</figcaption>
+</figure>
 
 1. Attach the power supply to the desk with a self-adhesive velcro, or just tape:
 
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" />
-      <figcaption>Self-adhesive velcro</figcaption>
-    </figure>
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6b.jpg" alt="A picture of velcro under the desk" />
-      <figcaption>Velcro stuck to the desk</figcaption>
-    </figure>
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" />
-      <figcaption>The power supply wrapped in velcro</figcaption>
-    </figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" />
+  <figcaption>Self-adhesive velcro</figcaption>
+</figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6b.jpg" alt="A picture of velcro under the desk" />
+  <figcaption>Velcro stuck to the desk</figcaption>
+</figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" />
+  <figcaption>The power supply wrapped in velcro</figcaption>
+</figure>
 
 1. Connect the motor to the DC motor driver using wires, and tape the junctions for improved safety
 
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" />
-      <figcaption>Put tape around the connections</figcaption>
-    </figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" />
+  <figcaption>Put tape around the connections</figcaption>
+</figure>
 
 1. Connect the power supply to the DC motor driver (pay attention to polarity) using the barrel and wrap it in tape for improved safety
 
-    <figure class="center">
-      <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" />
-      <figcaption>The barrel, connecting the DC motor driver and power supply, wrapped in tape</figcaption>
-    </figure>
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" />
+  <figcaption>The barrel, connecting the DC motor driver and power supply, wrapped in tape</figcaption>
+</figure>
 
 1. And last, tape everything under the desk, make sure nothing is hanging. I protected some parts (soldered points) of the motor driver board with tape. I placed the switch button near the edge of the desk to reach it easily. A better design would be to put everything in a small plastic box.
 
-    <figure class="center">
-      <img class="zoomable big" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" />
-      <figcaption>The end result</figcaption>
-    </figure>
+<figure class="center">
+  <img class="zoomable big" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" />
+  <figcaption>The end result</figcaption>
+</figure>
 
 # A V2 of my project would be...
 
@@ -185,15 +185,58 @@ For this V2, we're gonna reuse most of the what we used for the V1, but we'll al
 - [2 10K-Ohm resistors - 0.05 euros each](https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage), for the buttons ([despite the Arduino having an internal pullup resistor that can be used](https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale), [it's not reliable](https://forum.arduino.cc/t/resistor-why/108705/2) [enough](https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493)). Prefer metal film over carbon, supposedly they're more robust.
 - [Pololu TB6612FNG motor driver - 4.20 euros](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
 - [HC-SR04 distance sensor - 1.49 euros](https://www.berrybase.de/hc-sr04-ultraschall-sensor)
-- [A  200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
+- [A 200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
 
 The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.
+
+For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:
+
+    :::text
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0069", GROUP="plugdev", MODE="0666"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0369", GROUP="plugdev", MODE="0666"
+
+in `/etc/udev/rules.d/99-arduino-uno-r4.rules`. Then `sudo udevadm control --reload-rules && sudo udevadm trigger`.
+
+Now, here's the Arduino code:
+
+    :::c++
+    int trigPin = 4;    // Trigger
+    int echoPin = 7;    // Echo
+    long duration, cm;
+
+    void setup() {
+      Serial.begin (9600);
+      pinMode(trigPin, OUTPUT);
+      pinMode(echoPin, INPUT);
+    }
+
+    void loop() {
+      // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
+      // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+      digitalWrite(trigPin, LOW);
+      delayMicroseconds(5);
+      digitalWrite(trigPin, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(trigPin, LOW);
+
+      // Read the signal from the sensor: a HIGH pulse whose
+      // duration is the time (in microseconds) from the sending
+      // of the ping to the reception of its echo off of an object.
+      pinMode(echoPin, INPUT);
+      duration = pulseIn(echoPin, HIGH);
+
+      cm = (duration / 2) * 0.0343; // Convert the time into a distance
+
+      Serial.println(String(cm) + " cm");
+
+      delay(100);
+    }
 
 ## A few words on the motor driver
 
 A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is [that the L298N motor driver is old and obsolete](https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638), one of its flaws is the 5V drop. People often suggest using modern motor drivers from [Pololu](https://www.pololu.com/), and the [TB6612FNG](https://www.pololu.com/product/713) seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.
 
-Why not L298N?
+To set up the TB6612FNG, I followed [this tutorial](https://adam-meyer.com/arduino/TB6612FNG). However, I could not get the Arduino powered up through the VCC and GND pins of the motor driver, so I plugged the Arduino directly on the power supply, through its VIN and GND pins.
 
 # Other tutorials
 
