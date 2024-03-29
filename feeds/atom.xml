@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-03-22T12:24:00+01:00</updated><entry><title>La Maison Individuelle</title><link href="//romainpellerin.eu/la-maison-individuelle.html" rel="alternate"></link><published>2024-02-28T12:00:00+01:00</published><updated>2024-02-28T12:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-02-28:/la-maison-individuelle.html</id><summary type="html">&lt;p&gt;Des vidéos sur la maison individuelle&lt;/p&gt;</summary><content type="html">&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/cGLV1eX9Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-03-30T00:08:00+01:00</updated><entry><title>La Maison Individuelle</title><link href="//romainpellerin.eu/la-maison-individuelle.html" rel="alternate"></link><published>2024-02-28T12:00:00+01:00</published><updated>2024-02-28T12:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-02-28:/la-maison-individuelle.html</id><summary type="html">&lt;p&gt;Des vidéos sur la maison individuelle&lt;/p&gt;</summary><content type="html">&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/cGLV1eX9Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9HJ4rc_Gxmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -593,7 +593,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;And my number of followers never took off anyway... HAHAHA&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2024-03-22T12:24:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2024-03-30T00:08:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!&lt;/p&gt;
 &lt;p&gt;After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!&lt;/p&gt;
 &lt;video controls&gt;
@@ -675,23 +675,25 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;li&gt;Cut off the bent part of the hex key with a grinder. We need a straight hex key.&lt;/li&gt;
 &lt;li&gt;Replace the original crank with the hex key, mounted with the shaft coupler.&lt;/li&gt;
 &lt;li&gt;Position the L-bracket with the motor at the end of the hex key and mark the final position with a pen.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Screw the L-bracket to the desk using a drill (slow speed)&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;li&gt;Screw the L-bracket to the desk using a drill (slow speed)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" /&gt;
   &lt;figcaption&gt;The L-bracket is now attached to the desk&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Secure the motor to the L-bracket&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Secure the motor to the L-bracket&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" /&gt;
   &lt;figcaption&gt;The motor is now attached to the L-bracket&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Attach the power supply to the desk with a self-adhesive velcro, or just tape:&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Attach the power supply to the desk with a self-adhesive velcro, or just tape:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" /&gt;
   &lt;figcaption&gt;Self-adhesive velcro&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -702,30 +704,32 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" /&gt;
   &lt;figcaption&gt;The power supply wrapped in velcro&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Connect the motor to the DC motor driver using wires, and tape the junctions for improved safety&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Connect the motor to the DC motor driver using wires, and tape the junctions for improved safety&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" /&gt;
   &lt;figcaption&gt;Put tape around the connections&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Connect the power supply to the DC motor driver (pay attention to polarity) using the barrel and wrap it in tape for improved safety&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Connect the power supply to the DC motor driver (pay attention to polarity) using the barrel and wrap it in tape for improved safety&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" /&gt;
   &lt;figcaption&gt;The barrel, connecting the DC motor driver and power supply, wrapped in tape&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;And last, tape everything under the desk, make sure nothing is hanging. I protected some parts (soldered points) of the motor driver board with tape. I placed the switch button near the edge of the desk to reach it easily. A better design would be to put everything in a small plastic box.&lt;/p&gt;
-&lt;p&gt;&lt;figure class="center"&gt;
+&lt;/figure&gt;
+
+&lt;ol&gt;
+&lt;li&gt;And last, tape everything under the desk, make sure nothing is hanging. I protected some parts (soldered points) of the motor driver board with tape. I placed the switch button near the edge of the desk to reach it easily. A better design would be to put everything in a small plastic box.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class="center"&gt;
   &lt;img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" /&gt;
   &lt;figcaption&gt;The end result&lt;/figcaption&gt;
-&lt;/figure&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/figure&gt;
+
 &lt;h1 id="a-v2-of-my-project-would-be"&gt;A V2 of my project would be...&lt;/h1&gt;
 &lt;p&gt;With a &lt;a href="https://www.cytron.io/c-motor-and-motor-driver/c-motor-driver/c-dc-motor-driver"&gt;different motor driver&lt;/a&gt;, that has "Over Current" and "Under Voltage" protections, such as the MD13S from Cytron. Also with an Arduino and auto-raise feature based on how long it takes to raise/lower it. I don't need to have multiple programmable positions, nor an OLED screen. An auto-raise/lower feature can be tricky, for the following reasons (copy/pasted from &lt;a href="https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino"&gt;https://github.com/cesar-moya/arduino-power-desktop/blob/master/MotorControl/MotorControl.ino&lt;/a&gt;):&lt;/p&gt;
 &lt;blockquote&gt;
@@ -748,12 +752,52 @@ any reason.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/metallschichtwiderstand-10-0-kohm-1/4w-1-0207-axial-durchsteckmontage"&gt;2 10K-Ohm resistors - 0.05 euros each&lt;/a&gt;, for the buttons (&lt;a href="https://docs.arduino.cc/built-in-examples/digital/InputPullupSeriale"&gt;despite the Arduino having an internal pullup resistor that can be used&lt;/a&gt;, &lt;a href="https://forum.arduino.cc/t/resistor-why/108705/2"&gt;it's not reliable&lt;/a&gt; &lt;a href="https://forum.arduino.cc/t/push-buttons-and-resistors-why-and-how/584493"&gt;enough&lt;/a&gt;). Prefer metal film over carbon, supposedly they're more robust.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber"&gt;Pololu TB6612FNG motor driver - 4.20 euros&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/hc-sr04-ultraschall-sensor"&gt;HC-SR04 distance sensor - 1.49 euros&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0983NSV6F"&gt;A  200*120*55mm junction box - 12.34 euros&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0983NSV6F"&gt;A 200*120*55mm junction box - 12.34 euros&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.&lt;/p&gt;
+&lt;p&gt;For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, ATTRS{idProduct}==&amp;quot;0069&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;, MODE=&amp;quot;0666&amp;quot;
+SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, ATTRS{idProduct}==&amp;quot;0369&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;, MODE=&amp;quot;0666&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;in &lt;code&gt;/etc/udev/rules.d/99-arduino-uno-r4.rules&lt;/code&gt;. Then &lt;code&gt;sudo udevadm control --reload-rules &amp;amp;&amp;amp; sudo udevadm trigger&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, here's the Arduino code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;trigPin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// Trigger&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;echoPin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;// Echo&lt;/span&gt;
+&lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;begin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;9600&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;echoPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;INPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// The sensor is triggered by a HIGH pulse of 10 or more microseconds.&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// Give a short LOW pulse beforehand to ensure a clean HIGH pulse:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delayMicroseconds&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delayMicroseconds&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// Read the signal from the sensor: a HIGH pulse whose&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// duration is the time (in microseconds) from the sending&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;// of the ping to the reception of its echo off of an object.&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;echoPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;INPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;pulseIn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;echoPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.0343&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Convert the time into a distance&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot; cm&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h2 id="a-few-words-on-the-motor-driver"&gt;A few words on the motor driver&lt;/h2&gt;
 &lt;p&gt;A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is &lt;a href="https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638"&gt;that the L298N motor driver is old and obsolete&lt;/a&gt;, one of its flaws is the 5V drop. People often suggest using modern motor drivers from &lt;a href="https://www.pololu.com/"&gt;Pololu&lt;/a&gt;, and the &lt;a href="https://www.pololu.com/product/713"&gt;TB6612FNG&lt;/a&gt; seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.&lt;/p&gt;
-&lt;p&gt;Why not L298N?&lt;/p&gt;
+&lt;p&gt;To set up the TB6612FNG, I followed &lt;a href="https://adam-meyer.com/arduino/TB6612FNG"&gt;this tutorial&lt;/a&gt;. However, I could not get the Arduino powered up through the VCC and GND pins of the motor driver, so I plugged the Arduino directly on the power supply, through its VIN and GND pins.&lt;/p&gt;
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
@@ -5958,7 +6002,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLS9S-RWXlfOfL8I4LC54_AWqU-IWgsngH"&gt;LE MOMENT MEURICE&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/feeds/videos.xml?playlist_id=PLtScWTSuZmZUcSpgFBy9eWH7-ZAljq6iE"&gt;L'ABC&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.monkeyuser.com/feed.xml"&gt;MonkeyUser&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="About me"></category><category term="news"></category><category term="rss"></category><category term="feed"></category></entry><entry><title>How To Modify PDF Files</title><link href="//romainpellerin.eu/how-to-modify-pdf-files.html" rel="alternate"></link><published>2016-12-10T00:30:00+01:00</published><updated>2022-09-29T00:17:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</id><summary type="html">&lt;p&gt;On to extract/edit/merge pages from one or several PDF files&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="About me"></category><category term="news"></category><category term="rss"></category><category term="feed"></category></entry><entry><title>How To Modify PDF Files</title><link href="//romainpellerin.eu/how-to-modify-pdf-files.html" rel="alternate"></link><published>2016-12-10T00:30:00+01:00</published><updated>2024-03-30T00:08:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-12-10:/how-to-modify-pdf-files.html</id><summary type="html">&lt;p&gt;On to extract/edit/merge pages from one or several PDF files&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;gs&lt;/code&gt; is likely already installed.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdftk&lt;/code&gt; can be installed using &lt;code&gt;sudo aptitude install pdftk&lt;/code&gt;. &lt;code&gt;pdftk&lt;/code&gt; &lt;a href="http://askubuntu.com/questions/809800/whats-the-difference-between-gs-and-pdftk-in-merge-pdf-files"&gt;is not recommended because of its old and outdated PDF engine&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdfjam&lt;/code&gt; is part of the LaTeX distribution (&lt;code&gt;sudo aptitude install texlive-full&lt;/code&gt;). However, &lt;code&gt;pdfjam&lt;/code&gt; &lt;a href="https://blog.dbrgn.ch/2013/8/14/merge-multiple-pdfs/"&gt;is not recommended&lt;/a&gt; either because hyperlinks are not preserved.&lt;/li&gt;
@@ -6025,6 +6069,10 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;h2 id="set-the-pdf-size-to-a4-210-x-297-mm"&gt;Set the PDF size to A4 (210 x 297 mm)&lt;/h2&gt;
 &lt;p&gt;Make sure your image has a resolution of 1050x1485 pixels. Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.jpg -density &lt;span class="m"&gt;50&lt;/span&gt; -units pixelspercentimeter output.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or, for a 2100x2970 pixel image:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.jpg -density &lt;span class="m"&gt;100&lt;/span&gt; -units pixelspercentimeter output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If the image is of a different resolution, &lt;a href="https://unix.stackexchange.com/a/20057"&gt;use this&lt;/a&gt;:&lt;/p&gt;

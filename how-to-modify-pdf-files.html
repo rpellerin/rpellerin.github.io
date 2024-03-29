@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-12-10T00:30:00+01:00">Sat 10 December 2016</time> - Last update: <time datetime="2022-09-29T00:17:00+02:00">Thu 29 September 2022</time>        </p>
+<time datetime="2016-12-10T00:30:00+01:00">Sat 10 December 2016</time> - Last update: <time datetime="2024-03-30T00:08:00+01:00">Sat 30 March 2024</time>        </p>
     <h1>How To Modify PDF Files</h1>
     <div class="grey">
         <p class="italic">On to extract/edit/merge pages from one or several PDF files</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 383 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 396 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/pdf.html">pdf</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -156,6 +156,10 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 <div class="highlight"><pre><span></span><code>convert input.jpg -density <span class="m">50</span> -units pixelspercentimeter output.pdf
 </code></pre></div>
 
+<p>Or, for a 2100x2970 pixel image:</p>
+<div class="highlight"><pre><span></span><code>convert input.jpg -density <span class="m">100</span> -units pixelspercentimeter output.pdf
+</code></pre></div>
+
 <p>If the image is of a different resolution, <a href="https://unix.stackexchange.com/a/20057">use this</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">i</span><span class="o">=</span><span class="m">100</span><span class="p">;</span> convert input.png -compress jpeg -quality <span class="m">70</span> <span class="se">\</span>
   -density <span class="si">${</span><span class="nv">i</span><span class="si">}</span>x<span class="si">${</span><span class="nv">i</span><span class="si">}</span> -units pixelspercentimeter <span class="se">\</span>
@@ -166,7 +170,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 <p><a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309">Source</a></p>
 </article>
 <footer class="grey italic small">
-    Last update: Thu 29 September 2022</footer>
+    Last update: Sat 30 March 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
