@@ -26,9 +26,9 @@ Finally, here are videoson how to properly run:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9wWDA1qn50w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-# 2024-02-25: Update on shoes
+# 2024-03-30: Update on the shoes I bought
 
-So I bought the Asics Gel Kayano 30, and I've got to say I'm very satisfied with them (more than 300 kms so far).
+So I bought the Asics Gel Kayano 30, and I've got to say I'm very satisfied with them (more than 200 kms so far).
 
 # 2024-03-30: Update on shoes I'll be considering in the future
 
