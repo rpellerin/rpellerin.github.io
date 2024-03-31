@@ -30,13 +30,13 @@ Finally, here are videoson how to properly run:
 
 So I bought the Asics Gel Kayano 30, and I've got to say I'm very satisfied with them (more than 200 kms so far).
 
-# 2024-03-30: Update on shoes I'll be considering in the future
+# 2024-03-30: Update on shoes I'll be considering in the future, for race days
 
 Tip for myself: always get a half size to full size up pair of shoes, as feet expand while running.
 
-- Saucony endorphin pro 3: it's got a carbon plate. Good for race days.
+- Saucony endorphin pro 3: it's got a carbon plate. Good for race days. [Here's a good review.](https://www.youtube.com/watch?v=NDstCaUmOZ4)
 - Saucony endorphin speed 3. [Apparently they're considerably not as good as the pro 3 for racing](https://www.reddit.com/r/RunningShoeGeeks/comments/15y5uuy/endorphin_speed_3_vs_endorphin_pro_3/).
-- Asics metaspeed sky+: it also has a carbon plate. For race days. Here's a [breakdown on Asics Speed Line.](https://www.reddit.com/r/RunningShoeGeeks/comments/ucpefv/can_someone_break_down_the_asics_speed_line/)
+- Asics metaspeed sky+: it also has a carbon plate. For race days. Here's a [breakdown on Asics Speed Line.](https://www.reddit.com/r/RunningShoeGeeks/comments/ucpefv/can_someone_break_down_the_asics_speed_line/). Asics says the Sky+ are for stride runners, while the Metaspeed Edge+ are for cadence runners (runners who mostly increase speed by increasing their cadence, as opposed to their stride length).
 - Asics magic speed 3: carbon plate too. People say [it lacks superfoam](https://www.reddit.com/r/RunningShoeGeeks/comments/1adrkuz/asics_magic_speed_3_appreciation_thread/), that's why it is not a very popular racing pair of shoes. Comments often say the metaspeed sky+ is like the magic speed 3 on steroids.
 - I should also probably consider a non-stability pair of shoes for training, like the Asics Nimbus 30, which are their top neutral shoes, while the Kayano are their top stability shoes. Having a rotation of shoes is healthier, supposedly.
 - Nike Air Zoom Alphafly NEXT%: apparently the best racing shoe made by Nike. Kelvin Kiptum broke the official marathon world record in 2023 wearing the Alphafly 3.
