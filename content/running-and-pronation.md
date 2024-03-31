@@ -32,6 +32,8 @@ So I bought the Asics Gel Kayano 30, and I've got to say I'm very satisfied with
 
 # 2024-03-30: Update on shoes I'll be considering in the future
 
+Tip for myself: always get a half size to full size up pair of shoes, as feet expand while running.
+
 - Saucony endorphin pro 3: it's got a carbon plate. Good for race days.
 - Saucony endorphin speed 3. [Apparently they're considerably not as good as the pro 3 for racing](https://www.reddit.com/r/RunningShoeGeeks/comments/15y5uuy/endorphin_speed_3_vs_endorphin_pro_3/).
 - Asics metaspeed sky+: it also has a carbon plate. For race days. Here's a [breakdown on Asics Speed Line.](https://www.reddit.com/r/RunningShoeGeeks/comments/ucpefv/can_someone_break_down_the_asics_speed_line/)
