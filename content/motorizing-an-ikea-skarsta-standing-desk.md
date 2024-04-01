@@ -186,6 +186,7 @@ For this V2, we're gonna reuse most of the what we used for the V1, but we'll al
 - [Pololu TB6612FNG motor driver - 4.20 euros](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
 - [HC-SR04 distance sensor - 1.49 euros](https://www.berrybase.de/hc-sr04-ultraschall-sensor)
 - [A 200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
+- [2.54mm screw terminal blocks / screwshield](https://www.amazon.de/dp/B0CBWTZNM5)
 
 The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.
 
@@ -200,19 +201,42 @@ in `/etc/udev/rules.d/99-arduino-uno-r4.rules`. Then `sudo udevadm control --rel
 Now, here's the Arduino code:
 
     :::c++
-    int trigPin = 4;    // Trigger
+    // Distance sensor
+    int trigPin = 5;    // Trigger
     int echoPin = 7;    // Echo
     long duration, cm;
 
+    // Motor driver
+    int STBY = 10; //standby
+    int AIN1 = 3;
+    int AIN2 = 4;
+    int PWMA = 6;
+
+    int RAISE_DESK_BUTTON = 12;
+    int LOWER_DESK_BUTTON = 13;
+
     void setup() {
       Serial.begin (9600);
+      pinMode(STBY, OUTPUT);
+
       pinMode(trigPin, OUTPUT);
       pinMode(echoPin, INPUT);
+
+      pinMode(RAISE_DESK_BUTTON, INPUT_PULLUP);
+      pinMode(LOWER_DESK_BUTTON, INPUT);
     }
 
     void loop() {
-      // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
-      // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+      byte raiseDeskButtonState = digitalRead(RAISE_DESK_BUTTON);
+
+      if (raiseDeskButtonState == LOW) {
+          Serial.println("Raise Button is pressed");
+      }
+      else {
+          Serial.println("Raise Button is not pressed");
+      }
+      //The sensor is triggered by a HIGH pulse of 10 or more microseconds.
+      //Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
       digitalWrite(trigPin, LOW);
       delayMicroseconds(5);
       digitalWrite(trigPin, HIGH);
