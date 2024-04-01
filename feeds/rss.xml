@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 02 Apr 2024 00:07:00 +0200</lastBuildDate><item><title>La Maison Individuelle</title><link>//romainpellerin.eu/la-maison-individuelle.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/cGLV1eX9Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 02 Apr 2024 00:19:00 +0200</lastBuildDate><item><title>La Maison Individuelle</title><link>//romainpellerin.eu/la-maison-individuelle.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/cGLV1eX9Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9HJ4rc_Gxmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -765,6 +765,7 @@ any reason.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber"&gt;Pololu TB6612FNG motor driver - 4.20 euros&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/hc-sr04-ultraschall-sensor"&gt;HC-SR04 distance sensor - 1.49 euros&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0983NSV6F"&gt;A 200*120*55mm junction box - 12.34 euros&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0CBWTZNM5"&gt;2.54mm screw terminal blocks / screwshield&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.&lt;/p&gt;
 &lt;p&gt;For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:&lt;/p&gt;
