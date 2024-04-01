@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-03-30T00:08:00+01:00">Sat 30 March 2024</time>        </p>
+<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-04-02T00:07:00+02:00">Tue 02 April 2024</time>        </p>
     <h1>Motorizing an IKEA Skarsta Standing Desk</h1>
     <div class="grey">
         <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1623 words.">8 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1680 words.">8 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
 </header>
@@ -256,19 +256,42 @@ SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}
 
 <p>in <code>/etc/udev/rules.d/99-arduino-uno-r4.rules</code>. Then <code>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger</code>.</p>
 <p>Now, here's the Arduino code:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">trigPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">    </span><span class="c1">// Trigger</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Distance sensor</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">trigPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">    </span><span class="c1">// Trigger</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">echoPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">    </span><span class="c1">// Echo</span>
 <span class="kt">long</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">cm</span><span class="p">;</span><span class="w"></span>
 
+<span class="c1">// Motor driver</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">STBY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">//standby</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">AIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">AIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">PWMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">RAISE_DESK_BUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">LOWER_DESK_BUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"></span>
+
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">STBY</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+
 <span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LOWER_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// The sensor is triggered by a HIGH pulse of 10 or more microseconds.</span>
-<span class="w">  </span><span class="c1">// Give a short LOW pulse beforehand to ensure a clean HIGH pulse:</span>
+<span class="w">  </span><span class="n">byte</span><span class="w"> </span><span class="n">raiseDeskButtonState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">raiseDeskButtonState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise Button is pressed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise Button is not pressed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//The sensor is triggered by a HIGH pulse of 10 or more microseconds.</span>
+<span class="w">  </span><span class="c1">//Give a short LOW pulse beforehand to ensure a clean HIGH pulse:</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
@@ -302,7 +325,7 @@ SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 30 March 2024</footer>
+    Last update: Tue 02 April 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
