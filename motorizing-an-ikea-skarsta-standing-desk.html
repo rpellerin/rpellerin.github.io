@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-04-02T00:19:00+02:00">Tue 02 April 2024</time>        </p>
+<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-04-02T17:40:00+02:00">Tue 02 April 2024</time>        </p>
     <h1>Motorizing an IKEA Skarsta Standing Desk</h1>
     <div class="grey">
         <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1686 words.">8 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1740 words.">9 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
 </header>
@@ -249,7 +249,7 @@ any reason.</p>
 <li><a href="https://www.amazon.de/dp/B0983NSV6F">A 200*120*55mm junction box - 12.34 euros</a></li>
 <li><a href="https://www.amazon.de/dp/B0CBWTZNM5">2.54mm screw terminal blocks / screwshield</a></li>
 </ul>
-<p>The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.</p>
+<p>No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts <a href="https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/">voltage ranging from 6 to 24V</a>. Initially I wanted to power the Arduino through the 5V output pin of the motor driver, which would be power directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V.</p>
 <p>For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:</p>
 <div class="highlight"><pre><span></span><code>SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}==&quot;0069&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0666&quot;
 SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}==&quot;0369&quot;, GROUP=&quot;plugdev&quot;, MODE=&quot;0666&quot;
