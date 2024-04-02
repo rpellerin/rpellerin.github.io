@@ -188,7 +188,7 @@ For this V2, we're gonna reuse most of the what we used for the V1, but we'll al
 - [A 200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
 - [2.54mm screw terminal blocks / screwshield](https://www.amazon.de/dp/B0CBWTZNM5)
 
-The Arduino will be powered directly to its VIN pin through the 5V output pin of the motor driver. The power supply will supply directly the motor driver.
+No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts [voltage ranging from 6 to 24V](https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/). Initially I wanted to power the Arduino through the 5V output pin of the motor driver, which would be power directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V.
 
 For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:
 
