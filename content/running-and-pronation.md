@@ -57,3 +57,4 @@ Tip for myself: always get a half size to full size up pair of shoes, as feet ex
 - [Le pire et le meilleur coureur de Marathon dans une seule Vidéo ! Indispensable !!](https://www.youtube.com/watch?v=tT1ZQLQ_qLQ)
 - [Le guide indispensables des 48 heures avant votre Marathon pour reussir la course idéale](https://www.youtube.com/watch?v=2Nenxk8hM8s)
 - [Il est encore temps d'éviter ces erreurs... MARATHON DE PARIS 2024](https://www.youtube.com/watch?v=xESIO-LcBJI)
+- [Plaques carbones inutiles, le fameux 180 pas par minute : Blaise Dubois démonte des mythes !](https://www.youtube.com/watch?v=lRtEr1NMnew)
