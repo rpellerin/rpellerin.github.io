@@ -61,3 +61,4 @@ Tip for myself: always get a half size to full size up pair of shoes, as feet ex
 ## Other
 
 - [Plaques carbones inutiles, le fameux 180 pas par minute : Blaise Dubois démonte des mythes !](https://www.youtube.com/watch?v=lRtEr1NMnew): best podcast episode ever!!!
+- [Comment j'ai modifié ma technique : de foulée terrestre à plus aérien](https://www.youtube.com/watch?v=ATv0jdgXQLA)
