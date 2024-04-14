@@ -20,7 +20,7 @@ Here are two videos to help you figure out which category you fall in:
 
 These days I'm looking into buying a new pair of shoes. Apparently, Asics' Gel-Kayano model is a popular one among pronated runners, supposedly their top pair of shoes. I'll update this article with some feedback about them if I end up buying them...
 
-Finally, here are videoson how to properly run:
+Finally, here are videos on how to properly run:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/7L-OC7zOn_Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -45,20 +45,7 @@ Tip for myself: always get a half size to full size up pair of shoes, as feet ex
 - Nike ZoomX Vaporfly NEXT%: their second best racing shoe.
 - Nike Air Zoom Tempo NEXT%: their best training shoe.
 
-# Online French resources on running
-
-- [Podcast RMC Running](https://rmc.bfmtv.com/podcasts/rmc-running/)
-- [RunWise](https://www.youtube.com/@RunWise_)
-- [Run Academy TV](https://www.youtube.com/@michelarmandy)
-
-## What do ahead of the race and during
-
-- [Marathon , que faire la dernière semaine ?](https://www.youtube.com/watch?v=qxr-mcilVB0)
-- [Le pire et le meilleur coureur de Marathon dans une seule Vidéo ! Indispensable !!](https://www.youtube.com/watch?v=tT1ZQLQ_qLQ)
-- [Le guide indispensables des 48 heures avant votre Marathon pour reussir la course idéale](https://www.youtube.com/watch?v=2Nenxk8hM8s)
-- [Il est encore temps d'éviter ces erreurs... MARATHON DE PARIS 2024](https://www.youtube.com/watch?v=xESIO-LcBJI)
-
-## Other
+# Online resources about running, shoes and strides
 
 - [Plaques carbones inutiles, le fameux 180 pas par minute : Blaise Dubois démonte des mythes !](https://www.youtube.com/watch?v=lRtEr1NMnew): best podcast episode ever!!!
 - [Comment j'ai modifié ma technique : de foulée terrestre à plus aérien](https://www.youtube.com/watch?v=ATv0jdgXQLA)

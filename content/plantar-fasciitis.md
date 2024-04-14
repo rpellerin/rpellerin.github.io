@@ -57,3 +57,7 @@ Just ran 22 kms today!!! 🎉 No pain, felt great!
 ## UPDATE: 2023-10-01
 
 Since April, quite a lot happened. First of all, soon after running these 22 kms, I took up running again more consisently. Over the following few weeks, my foot became sore again at times. For very short amounts of time, occasionally, and rarely in the heel but rather random places **in** the foot. Mild short pain. I've been monitoring this closely. Nothing unbearable at all. It just happens randomly throughout the day, seating or walking, and does not last. On a scale from 0 to 10, it's usually around 2. Let's see how this goes... I just started muscle strengthening in an attempt to fix this for good.
+
+## UPDATE: 2024-04-14
+
+I think I'm 100% healed. In November last year, I bought the Asics Gel-Kayano 30 shoes (they're stability shoes) and increased my running frequency significantly. I'm averaging 25 kms per week these days. No more pain at all, not in the morning, not thoughout the day. I still "feel" traces of that injury though, as if my foot remained a bit weaker than my other foot. I guess it'll stay like that for life, or at least many years. But no more pain at all. Just ran Berlin's half marathon last week, felt great, I even PR'd: 1:41:51!
