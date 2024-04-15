@@ -44,8 +44,3 @@ Tip for myself: always get a half size to full size up pair of shoes, as feet ex
 - Nike Air Zoom Alphafly NEXT%: apparently the best racing shoe made by Nike. Kelvin Kiptum broke the official marathon world record in 2023 wearing the Alphafly 3.
 - Nike ZoomX Vaporfly NEXT%: their second best racing shoe.
 - Nike Air Zoom Tempo NEXT%: their best training shoe.
-
-# Online resources about running, shoes and strides
-
-- [Plaques carbones inutiles, le fameux 180 pas par minute : Blaise Dubois démonte des mythes !](https://www.youtube.com/watch?v=lRtEr1NMnew): best podcast episode ever!!!
-- [Comment j'ai modifié ma technique : de foulée terrestre à plus aérien](https://www.youtube.com/watch?v=ATv0jdgXQLA)

@@ -7,6 +7,15 @@ Authors: Romain Pellerin
 Summary: Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"
 Image: lessons-learned-apres-4-ans-de-running/header.jpg
 
+<style>
+        img[style*="float:right"] {
+                margin: 0 0 0 5px;
+        }
+        img[style*="float:left"] {
+                margin: 0 5px 0 0;
+        }
+</style>
+
 J'ai pour ainsi dire jamais aimé courir pour courir... jusqu'à ce que le COVID-19 soit.
 
 # 2020
@@ -19,7 +28,7 @@ Mon nouvel intérêt n'aura qu'à moitié pris. Sur 2020, seulement 18 runs enre
 
 <img src="{static}/images/lessons-learned-apres-4-ans-de-running/premier-10km.png" alt="Mon premier 10km" style="float:right" />
 
-Mais il semblerait que l'hiver pointant le bout de son nez aura suffit à me re-motiver un peu. 31 décembre 2020, [j'enregistre mon premier 10 km ever, en 1 heures 7 minutes](https://www.strava.com/activities/4545027845). Pas mal ! En tout, sur cette première année de course 2020, mon volume total aura été de... 68.5 kms 😂. Vélo: 4,272 kms.
+Mais il semblerait que l'hiver pointant le bout de son nez aura suffit à me re-motiver un peu. 31 décembre 2020, [j'enregistre mon premier 10 km ever, en 1 heures 7 minutes](https://www.strava.com/activities/4545027845). Pas mal ! En tout, sur cette première année de course 2020, mon volume total aura été de... 68.5 kms 😂. Vélo : 4,272 kms.
 
 # 2021
 
@@ -84,7 +93,7 @@ Bilan de 2023 :
 
 L'année commence sur les chapeaux de roues. Augmentation progressive de mon volume hebdomadaire, avec certaines semaines atteignant les 40 kms.
 
-Tout d'abord, je décide de suivre un vrai plan d'entraînement. Fini l'improvisation, je m'inscris sur [Campus](https://www.campus.coach/), avec comme premier objectif de l'année le semi marathon de Berlin en Avril. Je découvre le fractionné et les sorties seuils. Rapidement, je rajoute 2 autres gros objectifs : [un 25 kms en Mai, et un full marathon en fin d'année]({filename}/ziele-fuer-2024.md) ! 😱
+Tout d'abord, je décide de suivre un vrai plan d'entraînement. Fini l'improvisation, je m'inscris sur [Campus](https://www.campus.coach/), avec comme premier objectif de l'année le semi marathon de Berlin en Avril. Je découvre le fractionné et les sorties seuil. Rapidement, je rajoute 2 autres gros objectifs : [un 25 kms en Mai, et un full marathon en fin d'année]({filename}/ziele-fuer-2024.md) ! 😱
 
 Février : vacances de ski. Quelques jours après, blessure lors d'une sortie longue de 11 kms en endurance fondamentale 😬. Pied gauche (encore !). Cette fois-ci, quelque chose de nouveau : une sorte de douleur à l'intérieur du pied vers l'avant, avant les orteils. La douleur apparait dès que je marche ou coure après quelques minutes, et est très prononcée dès que j'essaie de lever les orteils vers le haut. Je coupe la course à pied 3 jours, la douleur disparaît à 100%. Je reprends la course...
 
@@ -138,7 +147,7 @@ Veille de course, pour éviter tout stress, je prépare tout, j'accroche le doss
 <figcaption>Dossard accroché, affaires prêtes.</figcaption>
 </figure>
 
-Finalement... le 7 avril 2024 arrive. Réveil 2 heures avant le début de course après une nuit un peu courte, petit déjeuner léger (40g de pâtes pesto déjà cuites la veille au soir, 2 ou 3 barres, une banane et un café). Avant de partir, je me note au marqueur dans la main quelques infos qui me seront utiles quand la lucidité viendra à manquer 😅.
+Finalement... le 7 avril 2024 arrive. Réveil 2 heures avant le début de course après une nuit un peu courte, petit déjeuner léger (40g de pâtes pesto déjà cuites la veille au soir, 2 ou 3 barres, une banane et un café). Avant de partir, je me note au marqueur dans la main quelques infos qui me seront utiles avant la course, mais aussi quand la lucidité viendra à manquer 😅.
 
 <figure class="center">
 <img src="{static}/images/lessons-learned-apres-4-ans-de-running/notes-main.jpg" alt="Quelques notes dans ma main" />
@@ -151,39 +160,41 @@ Je me remémore 2 ou 3 astuces données par Michel, notamment :
 - S'échauffer en courant un peu avant le départ, et sauter sur place dans son sas pour garder le rythme cardiaque élevé juste avant le départ
 - Ne pas partir trop vite, respecter son allure prévue dès le début
 - Si positionné dans un sas plus rapide que son objectif, partir en fin de sas. Ce n'était pas mon cas, je devais donc me positionner en début de sas, chose que j'ai réussi à faire.
-- Quand maintenir un bon pace deviendra dur en fin de course, se fixer des mini objectifs sur un km. "Allez, encore un km à ce pace". Et arriver en fin de km, se dire la même chose jusqu'au km d'après. Et répéter jusqu'à l'arrivée.
+- Quand maintenir un bon pace deviendra dur en fin de course, se fixer des mini objectifs sur un km. "Allez, encore un km à ce pace". Et arrivé en fin de km, se dire la même chose jusqu'au km d'après. Et répéter jusqu'à l'arrivée.
 
-Arrivé dans mon sas, je paramètre ma montre sur "objectif de pace sur distance". Je mets 4'50" sur 21.4 kms, car oui, quand je franchirai la ligne, ma montre affichera à coup sûr plus de 21.0975 kms. Voulant courir à 4'50", rythme de ma montre, c'est ce que je devais faire. Ça se traduirait sûrement par du 4'52" au temps officiel. Et puis... [c'est le départ !](https://www.strava.com/activities/11127929422)
+Arrivé dans mon sas, je paramètre ma montre sur "objectif de pace sur distance". Je mets 4'50" sur 21.4 kms, car oui, quand je franchirai la ligne, ma montre affichera à coup sûr plus de 21.0975 kms. Voulant courir à 4'50", rythme de ma montre, c'est ce que je devais faire. Ça se traduirait sûrement par du 4'52" au temps officiel.
+
+Et puis... [c'est le départ !](https://www.strava.com/activities/11127929422)
 
 ![En pleine course]({static}/images/lessons-learned-apres-4-ans-de-running/race1.jpg)
+
+<img src="{static}/images/lessons-learned-apres-4-ans-de-running/pace.png" alt="Paces lors du semi marathon de Berlin en 2024" style="float:left" />
+
+Globalement, la course se passe très bien. Je respecte à la lettre les 4'50". Je fais tous les ravitos prévus, même un de plus au km 5, car il fait chaud. Manque de pot, ils ne servent pas de l'eau claire mais un energy drink de Maurten. Pas aussi désaltérant, tant pis.
+
+Arrivé au km 10, je tente une accélération. Ça fonctionne. Hormis sur 2 splits, je fais maintenant chaque km sous les 4'50". La coeur restera haut tout du long de la course, avec une moyenne à 183 bpm. La course se passe extrêmement bien jusqu'au km 17, où là ça commence à vraiment devenir difficile. On est dans des rues que je connais par coeur, je visualise le chemin restant jusqu'à l'arrivée. Ça semble interminable, alors on débranche le cerveau. J'aperçois un ravito, je l'avais pas prévu dans mon plan, mais j'ai soif. Je décide d'attraper un gobelet, mais comme d'habitude pas sur les premières tables, trop bondées. J'attends les dernières tables, je saisis ce qu'on me tend, meeerde c'est une banane, pas de l'eau, shit ! 🍌💩
+
+Beaucoup de gens, les rues deviennes plus étroites à mesure qu'on approche de la fin. Un mec me tape dans le pied alors qu'on essaie tous les 2 de dépasser quelqu'un. Je vacille, manque de tomber mais ça passe. Eye contact, le mec s'excuse, tout va bien. Une espagnole se met à mon niveau, haletante, poussant des cris à chaque expiration, comme sur un court de tennis. Je me dit que ça va être long de supporter ça, mais elle est plus rapide que moi et finit par me distancer. Sprint final dans le dernier kilomètre (km 21 couru à 4'24" !), au loin j'aperçois la porte de Brandebourg. Au détour d'un virage, ma copine me hurle dessus pour m'encourager, je mets 2 secondes à comprendre. Plus que 200m, 100m... je me répète "aucun regret, donne tout !", je traverse la porte de Brandebourg, 50m... on fait le fier pour la photo finish, "lève les bras, ça fera stylé !"... et c'est fini ! **Résultat : 1:41:51.** PR 🎉.
+
 ![Finish line]({static}/images/lessons-learned-apres-4-ans-de-running/race2.jpg)
 
-Globalement, la course se passe très bien. Je respecte à la lettre les 4'50", c'en est presque chirurgical.
+<figure class="center">
+<img src="{static}/images/lessons-learned-apres-4-ans-de-running/semi-marathon-2024.png" alt="Semi marathon de Berlin en 2024" />
+<figcaption>Semi de Berlin 2024 sur Strava.</figcaption>
+</figure>
 
-![Pace]({static}/images/lessons-learned-apres-4-ans-de-running/pace.png)
+Pendant les jours qui ont précédé ce semi, j'ai fait beaucoup de recherches sur la course à pied, les chaussures, la foulée. J'ai découvert [la clinique du coureur](https://lacliniqueducoureur.com/), et j'ai notamment écouté l'un des meilleurs podcasts ever sur la course : [Plaques carbones inutiles, le fameux 180 pas par minute : Blaise Dubois démonte des mythes !](https://www.youtube.com/watch?v=lRtEr1NMnew). Ce que j'en retiens ? Deux choses principalement.
 
-<img src="{static}/images/lessons-learned-apres-4-ans-de-running/semi-marathon-2024.png" alt="Semi marathon de Berlin en 2024" style="float:left" />
+- **Chaussures plus légères = meilleures performances**, consensus scientifique sur ça.
+- **Le volume kilométrique est la clé du succès d'une préparation**, c'est le plus gros facteur. Mais il faut être progressif, on ne se met pas à courir 100 kms par semaine du jour au lendemain. Changer son volume soudainement = blessure presque garantie. 80% du volume couru sur une semaine devrait d'ailleurs l'être en endurance fondamentale. Les 20% restants seront des séances dites "de qualité", où l'on travaillera des allures, du seuil, fera du fractionné, etc.
 
-Arrivé au km 11, je tente une accélération. Ça fonctionne. Hormis sur 2 splits, je fais maintenant chaque km sous les 4'50". La coeur restera haut tout du long de la course, avec une moyenne à 183 bpm. Sprint final dans le dernier km (km 21 couru à 4'24" !) et on finit en beauté en passant la porte de Brandebourg. Résultat : 1:41:51. PR 🎉.
+Par contre, peu ou pas de consensus sur le type de foulée, la longueur, le nombre de pas exact, le meilleur type de chaussures (maximaliste ou minimaliste), les plaques carbones, etc. Mais plutôt des observations, des tendances et des conseils. Par exemple, les chaussures maximalistes ont tendances à changer notre bio-mécanique (donc notre foulée), favorisant une attaque talon. Les chaussures minimalistes peuvent aider à prévenir les blessures sur le long terme, lorsqu'on est habitué à courir en minimaliste. Mais on ne passe pas de maximaliste à minimaliste du jour au lendemain, sinon blessure ! La clinique du coureur propose d'ailleurs un indice de minimalisme pour les chaussures les plus courantes, sur leur site. Courir tous les jours peut aussi aider à prévenir les blessures, à l'inverse de quelques fois par semaine.
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'allure spécifique dans les 30 derniers pour cents d'une préparation, et de ne pas axer aveuglement sa préparation que sur la VMA](https://www.youtube.com/watch?v=RasKAZiq5AA&t=801s), car c'est une indicateur loin d'être parfait. Enfin, [je me suis intéressé un peu à ma foulée, et comment essayer de l'améliorer](https://www.youtube.com/watch?v=ATv0jdgXQLA)
 
-<!-- Découverte la clinique du coureur. Pas de maximaliste. Plus léger = mieux. Plus gros learnings: volume, [travailler l'allure spécifique dans les 30 derniers pour cents d'une préparation](https://youtu.be/RasKAZiq5AA?si=pRQyCbK_IKzyk4Dl&t=801). -->
+**BREF**. Ça fait que 3 mois et demi que l'année est commencée, et j'ai déjà appris tellement de choses. Kms so far : 327. ✌
 
-# Bonus: Marathon pace chart
+# Bonus : Marathon pace chart
 
 <input type="text" id="fastest_pace" placeholder="Fastest pace" value="4:40"/>
 <input type="text" id="slowest_pace" placeholder="Slowest pace" value="5:30"/>
