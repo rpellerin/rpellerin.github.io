@@ -77,17 +77,17 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-04-02T17:40:00+02:00">Tue 02 April 2024</time>        </p>
+<time datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time> - Last update: <time datetime="2024-04-22T00:02:00+02:00">Mon 22 April 2024</time>        </p>
     <h1>Motorizing an IKEA Skarsta Standing Desk</h1>
     <div class="grey">
         <p class="italic">Tutorial about how I motorized my IKEA Starska standing desk</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1740 words.">9 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2170 words.">11 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/hacking.html">hacking</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/standing-desk.html">standing desk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/diy.html">diy</a></p>    </div>
 </header>
 <article>
-    <p><strong>UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!</strong></p>
+    <p><strong>UPDATE 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!</strong></p>
 <p>I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!</p>
 <p>After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!</p>
 <video controls>
@@ -256,60 +256,174 @@ SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}
 </code></pre></div>
 
 <p>in <code>/etc/udev/rules.d/99-arduino-uno-r4.rules</code>. Then <code>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger</code>.</p>
+<figure class="center">
+<img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" />
+<figcaption>Schematic of the whole wiring</figcaption>
+</figure>
+
 <p>Now, here's the Arduino code:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Distance sensor</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">trigPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">    </span><span class="c1">// Trigger</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">echoPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">    </span><span class="c1">// Echo</span>
-<span class="kt">long</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">cm</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Distance sensor pins</span>
+<span class="cp">#define TRIGGER_PIN 5</span>
+<span class="cp">#define ECHO_PIN 7</span>
 
-<span class="c1">// Motor driver</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">STBY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">//standby</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">AIN1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">AIN2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">PWMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Motor driver pins</span>
+<span class="cp">#define STBY_PIN 10</span>
+<span class="cp">#define AIN1_PIN 3</span>
+<span class="cp">#define AIN2_PIN 4</span>
+<span class="cp">#define PWMA_PIN 6</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="n">RAISE_DESK_BUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">LOWER_DESK_BUTTON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Buttons</span>
+<span class="cp">#define LOWER_DESK_BUTTON 13</span>
+<span class="cp">#define RAISE_DESK_BUTTON 12</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="w"> </span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">STBY</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Moving states</span>
+<span class="cp">#define LOWER_DIRECTION 0</span>
+<span class="cp">#define RAISE_DIRECTION 1</span>
+<span class="cp">#define IDLE -1</span>
 
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Settings</span>
+<span class="cp">#define MIN_HEIGHT 66.3</span>
+<span class="cp">#define MAX_HEIGHT 108.5</span>
+<span class="cp">#define LOWER_TIME_OUT_AFTER_MS 43000</span>
+<span class="cp">#define RAISE_TIME_OUT_AFTER_MS 59000</span>
+<span class="cp">#define LOOP_DELAY 100</span>
+<span class="cp">#define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.0</span>
 
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LOWER_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1">// Distance sensor variables</span>
+<span class="kt">long</span><span class="w"> </span><span class="n">duration</span><span class="p">;</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">deltaWithLastKnownCm</span><span class="w"> </span><span class="p">,</span><span class="n">cm</span><span class="p">,</span><span class="w"> </span><span class="n">lastKnownCm</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">byte</span><span class="w"> </span><span class="n">raiseDeskButtonState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Moving state variables</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">movingDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// in milliseconds</span>
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">raiseDeskButtonState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOW</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise Button is pressed&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise Button is not pressed&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">readHeight</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="c1">//The sensor is triggered by a HIGH pulse of 10 or more microseconds.</span>
 <span class="w">  </span><span class="c1">//Give a short LOW pulse beforehand to ensure a clean HIGH pulse:</span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIGGER_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIGGER_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">trigPin</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIGGER_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">  </span><span class="c1">// Read the signal from the sensor: a HIGH pulse whose</span>
 <span class="w">  </span><span class="c1">// duration is the time (in microseconds) from the sending</span>
 <span class="w">  </span><span class="c1">// of the ping to the reception of its echo off of an object.</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">echoPin</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">  </span><span class="n">cm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">duration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.0343</span><span class="p">;</span><span class="w"> </span><span class="c1">// Convert the time into a distance</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">duration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.0343</span><span class="p">;</span><span class="w"> </span><span class="c1">// Convert the time into a distance</span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; cm&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">// Enable logs</span>
 
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Distance sensor</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIGGER_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Buttons</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LOWER_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Motor</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">STBY_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">PWMA_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN1_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">AIN2_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// while (!Serial); // While the serial stream is not open, do nothing. FOR DEBUGGING ONLY, when the logs from line 73 are needed.</span>
+<span class="w">  </span><span class="n">lastKnownCm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readHeight</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Serial.println(&quot;SETUP!!! Height: &quot; + String(cm) + &quot; cm; Lastknowncm: &quot; + lastKnownCm + &quot; cm&quot;);</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">LOOP_DELAY</span><span class="p">);</span><span class="w"> </span><span class="c1">// Needed, otherwise the very next reading of height won&#39;t work, we&#39;d have to wait the second call to loop()...</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">cm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readHeight</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">deltaWithLastKnownCm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">cm</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lastKnownCm</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sometimes we get odd random readings, wildly different from the previous one. We must ignore those.</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">((</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;Height: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; cm; Delta with last reading: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">deltaWithLastKnownCm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; cm&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">boolean</span><span class="w"> </span><span class="n">isMoving</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movingDirection</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isMoving</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LOOP_DELAY</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Moving time: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; seconds&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">movingDirection</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">RAISE_DIRECTION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cm</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">MAX_HEIGHT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">deltaWithLastKnownCm</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">IGNORE_DELTA_IN_CM_GREATHER_THAN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Too high!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">RAISE_TIME_OUT_AFTER_MS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise timed out!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">movingDirection</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOWER_DIRECTION</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cm</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">MIN_HEIGHT</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">deltaWithLastKnownCm</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">IGNORE_DELTA_IN_CM_GREATHER_THAN</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Too low!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">LOWER_TIME_OUT_AFTER_MS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Lower timed out!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LOWER_DESK_BUTTON</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Lower Button is pressed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isMoving</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">      </span><span class="k">while</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LOWER_DESK_BUTTON</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do nothing and wait till the button is released</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="n">move</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="n">LOWER_DIRECTION</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="n">LOOP_DELAY</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Delaying a bit more, to allow the desk to keep lowering slightly even if min height was reached</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Raise Button is pressed&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isMoving</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">stop</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">      </span><span class="k">while</span><span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">RAISE_DESK_BUTTON</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">HIGH</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do nothing and wait till the button is released</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="n">move</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="n">RAISE_DIRECTION</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">delay</span><span class="p">(</span><span class="n">LOOP_DELAY</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Delaying a bit more, to allow the desk to keep raising slightly even if max height was reached</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="n">LOOP_DELAY</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">direction</span><span class="p">){</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;move() called&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">movingDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">boolean</span><span class="w"> </span><span class="n">inPin1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LOW</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">boolean</span><span class="w"> </span><span class="n">inPin2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">direction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">LOWER_DIRECTION</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">inPin1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HIGH</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">inPin2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LOW</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">AIN1_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">inPin1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">AIN2_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">inPin2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">STBY_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// disable standby, powering the motor driver</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">PWMA_PIN</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"> </span><span class="c1">// 255 is full speed</span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;stop() called&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">movingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">movingDirection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IDLE</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">STBY_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span><span class="w"> </span><span class="c1">// Waiting a bit, so that a long press of a button won&#39;t stop and move it again immediately</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
@@ -326,7 +440,7 @@ SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;2341&quot;, ATTRS{idProduct}
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 02 April 2024</footer>
+    Last update: Mon 22 April 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
