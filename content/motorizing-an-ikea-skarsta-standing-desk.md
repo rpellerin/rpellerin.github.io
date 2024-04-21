@@ -7,7 +7,7 @@ Slug: motorizing-an-ikea-skarsta-standing-desk
 Authors: Romain Pellerin
 Summary: Tutorial about how I motorized my IKEA Starska standing desk
 
-**UPDATE March 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!**
+**UPDATE 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!**
 
 I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!
 
@@ -198,62 +198,176 @@ For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:
 
 in `/etc/udev/rules.d/99-arduino-uno-r4.rules`. Then `sudo udevadm control --reload-rules && sudo udevadm trigger`.
 
+<figure class="center">
+<img class="zoomable big" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" />
+<figcaption>Schematic of the whole wiring</figcaption>
+</figure>
+
 Now, here's the Arduino code:
 
     :::c++
-    // Distance sensor
-    int trigPin = 5;    // Trigger
-    int echoPin = 7;    // Echo
-    long duration, cm;
+    // Distance sensor pins
+    #define TRIGGER_PIN 5
+    #define ECHO_PIN 7
 
-    // Motor driver
-    int STBY = 10; //standby
-    int AIN1 = 3;
-    int AIN2 = 4;
-    int PWMA = 6;
+    // Motor driver pins
+    #define STBY_PIN 10
+    #define AIN1_PIN 3
+    #define AIN2_PIN 4
+    #define PWMA_PIN 6
 
-    int RAISE_DESK_BUTTON = 12;
-    int LOWER_DESK_BUTTON = 13;
+    // Buttons
+    #define LOWER_DESK_BUTTON 13
+    #define RAISE_DESK_BUTTON 12
 
-    void setup() {
-      Serial.begin (9600);
-      pinMode(STBY, OUTPUT);
+    // Moving states
+    #define LOWER_DIRECTION 0
+    #define RAISE_DIRECTION 1
+    #define IDLE -1
 
-      pinMode(trigPin, OUTPUT);
-      pinMode(echoPin, INPUT);
+    // Settings
+    #define MIN_HEIGHT 66.3
+    #define MAX_HEIGHT 108.5
+    #define LOWER_TIME_OUT_AFTER_MS 43000
+    #define RAISE_TIME_OUT_AFTER_MS 59000
+    #define LOOP_DELAY 100
+    #define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.0
 
-      pinMode(RAISE_DESK_BUTTON, INPUT_PULLUP);
-      pinMode(LOWER_DESK_BUTTON, INPUT);
-    }
+    // Distance sensor variables
+    long duration;
+    float deltaWithLastKnownCm ,cm, lastKnownCm;
 
-    void loop() {
-      byte raiseDeskButtonState = digitalRead(RAISE_DESK_BUTTON);
+    // Moving state variables
+    int movingDirection = IDLE;
+    int movingStartedAt = 0; // in milliseconds
 
-      if (raiseDeskButtonState == LOW) {
-          Serial.println("Raise Button is pressed");
-      }
-      else {
-          Serial.println("Raise Button is not pressed");
-      }
+    float readHeight() {
       //The sensor is triggered by a HIGH pulse of 10 or more microseconds.
       //Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
-      digitalWrite(trigPin, LOW);
+      digitalWrite(TRIGGER_PIN, LOW);
       delayMicroseconds(5);
-      digitalWrite(trigPin, HIGH);
+      digitalWrite(TRIGGER_PIN, HIGH);
       delayMicroseconds(10);
-      digitalWrite(trigPin, LOW);
+      digitalWrite(TRIGGER_PIN, LOW);
 
       // Read the signal from the sensor: a HIGH pulse whose
       // duration is the time (in microseconds) from the sending
       // of the ping to the reception of its echo off of an object.
-      pinMode(echoPin, INPUT);
-      duration = pulseIn(echoPin, HIGH);
+      pinMode(ECHO_PIN, INPUT);
+      duration = pulseIn(ECHO_PIN, HIGH);
 
-      cm = (duration / 2) * 0.0343; // Convert the time into a distance
+      return (float)(duration / 2) * 0.0343; // Convert the time into a distance
+    }
 
-      Serial.println(String(cm) + " cm");
+    void setup() {
+      Serial.begin(9600); // Enable logs
 
-      delay(100);
+      // Distance sensor
+      pinMode(TRIGGER_PIN, OUTPUT);
+      pinMode(ECHO_PIN, INPUT);
+
+      // Buttons
+      pinMode(LOWER_DESK_BUTTON, INPUT);
+      pinMode(RAISE_DESK_BUTTON, INPUT);
+
+      // Motor
+      pinMode(STBY_PIN, OUTPUT);
+      pinMode(PWMA_PIN, OUTPUT);
+      pinMode(AIN1_PIN, OUTPUT);
+      pinMode(AIN2_PIN, OUTPUT);
+
+      // while (!Serial); // While the serial stream is not open, do nothing. FOR DEBUGGING ONLY, when the logs from line 73 are needed.
+      lastKnownCm = readHeight();
+      // Serial.println("SETUP!!! Height: " + String(cm) + " cm; Lastknowncm: " + lastKnownCm + " cm");
+      delay(LOOP_DELAY); // Needed, otherwise the very next reading of height won't work, we'd have to wait the second call to loop()...
+    }
+
+    void loop() {
+      cm = readHeight();
+      deltaWithLastKnownCm = abs(cm - lastKnownCm); // Sometimes we get odd random readings, wildly different from the previous one. We must ignore those.
+      Serial.println((String) "Height: " + cm + " cm; Delta with last reading: " + deltaWithLastKnownCm + " cm");
+
+      boolean isMoving = movingDirection != IDLE;
+
+      if (isMoving) {
+        movingStartedAt = movingStartedAt + LOOP_DELAY;
+        Serial.println("Moving time: " + String(movingStartedAt / 1000) + " seconds");
+        if (movingDirection == RAISE_DIRECTION) {
+          if (cm >= MAX_HEIGHT && deltaWithLastKnownCm < IGNORE_DELTA_IN_CM_GREATHER_THAN) {
+            Serial.println("Too high!");
+            return stop();
+          }
+          if (movingStartedAt > RAISE_TIME_OUT_AFTER_MS) {
+            Serial.println("Raise timed out!");
+            return stop();
+          }
+        }
+        if (movingDirection == LOWER_DIRECTION) {
+          if (cm <= MIN_HEIGHT && deltaWithLastKnownCm < IGNORE_DELTA_IN_CM_GREATHER_THAN) {
+            Serial.println("Too low!");
+            return stop();
+          }
+          if (movingStartedAt > LOWER_TIME_OUT_AFTER_MS) {
+            Serial.println("Lower timed out!");
+            return stop();
+          }
+        }
+      }
+
+      if (digitalRead(LOWER_DESK_BUTTON) == HIGH) {
+          Serial.println("Lower Button is pressed");
+          if (isMoving) {
+            return stop();
+          }
+
+          while(digitalRead(LOWER_DESK_BUTTON) == HIGH) {
+            // Do nothing and wait till the button is released
+            delay(20);
+          }
+          move(255, LOWER_DIRECTION);
+          delay(LOOP_DELAY * 2); // Delaying a bit more, to allow the desk to keep lowering slightly even if min height was reached
+      }
+      else if (digitalRead(RAISE_DESK_BUTTON) == HIGH) {
+          Serial.println("Raise Button is pressed");
+          if (isMoving) {
+            return stop();
+          }
+
+          while(digitalRead(RAISE_DESK_BUTTON) == HIGH) {
+            // Do nothing and wait till the button is released
+            delay(20);
+          }
+          move(255, RAISE_DIRECTION);
+          delay(LOOP_DELAY * 2); // Delaying a bit more, to allow the desk to keep raising slightly even if max height was reached
+      }
+
+      delay(LOOP_DELAY);
+    }
+
+    void move(int speed, int direction){
+      Serial.println("move() called");
+      movingDirection = direction;
+
+      boolean inPin1 = LOW;
+      boolean inPin2 = HIGH;
+
+      if(direction == LOWER_DIRECTION){
+        inPin1 = HIGH;
+        inPin2 = LOW;
+      }
+
+      digitalWrite(AIN1_PIN, inPin1);
+      digitalWrite(AIN2_PIN, inPin2);
+      digitalWrite(STBY_PIN, HIGH); // disable standby, powering the motor driver
+      analogWrite(PWMA_PIN, 255); // 255 is full speed
+    }
+
+    void stop(){
+      Serial.println("stop() called");
+      movingStartedAt = 0;
+      movingDirection = IDLE;
+      digitalWrite(STBY_PIN, LOW);
+      delay(1500); // Waiting a bit, so that a long press of a button won't stop and move it again immediately
     }
 
 ## A few words on the motor driver
