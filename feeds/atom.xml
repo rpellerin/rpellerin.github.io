@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-04-22T15:42:00+02:00</updated><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-04-22T15:42:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;style&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-04-23T00:19:00+02:00</updated><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-04-22T15:42:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;style&gt;
         img[style*="float:right"] {
                 margin: 0 0 0 5px;
         }
@@ -826,7 +826,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;And my number of followers never took off anyway... HAHAHA&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2024-04-22T00:02:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;UPDATE 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I might keep the account and not delete it, just so that my handle does not get stolen. But I already emptied it of any content.&lt;/p&gt;</content><category term="What's bad about"></category><category term="social media"></category><category term="twitter"></category></entry><entry><title>Motorizing an IKEA Skarsta Standing Desk</title><link href="//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="alternate"></link><published>2023-03-14T23:00:00+01:00</published><updated>2024-04-23T00:19:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-03-14:/motorizing-an-ikea-skarsta-standing-desk.html</id><summary type="html">&lt;p&gt;Tutorial about how I motorized my IKEA Starska standing desk&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;UPDATE 2024: after dreaming about it for about a year, the V2 of this project finally came to be. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!&lt;/p&gt;
 &lt;p&gt;After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!&lt;/p&gt;
 &lt;video controls&gt;
@@ -847,6 +847,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;/figure&gt;
 
 &lt;p&gt;I bought and tried these 2, &lt;a href="https://de.aliexpress.com/item/32968002582.html"&gt;the 12V 72 RPM edition, that draws 3 amps ("stall current"), and the 12V 136 RPM one&lt;/a&gt;. According to the specs of the 72 RPM one, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up easily! As to the 136 RPM, it works well too, up to 30 Kg, but it gets real close to stalling. Without much weight (a laptop and a monitor), it raises the desk at about 100 rotations per minute.&lt;/p&gt;
+&lt;p&gt;9.36 euros&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" /&gt;
 &lt;figcaption&gt;Specs of the motor&lt;/figcaption&gt;
@@ -859,28 +860,28 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;figcaption&gt;The L-Bracket pair I got (only 1 is necessary for this project though)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;We will use this to secure the motor to the desk. &lt;a href="https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors"&gt;I got it from The PiHut&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We will use this to secure the motor to the desk. &lt;a href="https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors"&gt;I got it from The PiHut&lt;/a&gt;. £8.25&lt;/p&gt;
 &lt;h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a"&gt;Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/acdc-power-adapter.jpg" alt="A picture of a power adapter" /&gt;
 &lt;figcaption&gt;The adaper I got from Amazon&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;I got this one from Amazon&lt;/a&gt;, works like a charm!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;I got this one from Amazon&lt;/a&gt;, works like a charm! 14.99 euros.&lt;/p&gt;
 &lt;h2 id="6mm-hex-key"&gt;6mm hex key&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/6mm-hex-key.jpg" alt="A picture of an hex key" /&gt;
 &lt;figcaption&gt;The 6mm hex key I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;I got this one Obi.de&lt;/a&gt; and I had to cut off the bent part of it. This will replace the original crank provided with the desk.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;I got this one Obi.de&lt;/a&gt; and I had to cut off the bent part of it. This will replace the original crank provided with the desk. 4.49 euros.&lt;/p&gt;
 &lt;h2 id="7mm-shaft-coupler"&gt;7mm shaft coupler&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/7mm-shaft-coupler.jpg" alt="A picture of a shaft coupler" /&gt;
 &lt;figcaption&gt;The 7mm shaft coupler I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;This will connect the motor to the hex key in the desk. Get a &lt;a href="https://www.amazon.de/dp/B07HKJL1XC"&gt;7mm shaft coupler&lt;/a&gt;, since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger.&lt;/p&gt;
+&lt;p&gt;This will connect the motor to the hex key in the desk. Get a &lt;a href="https://www.amazon.de/dp/B07HKJL1XC"&gt;7mm shaft coupler&lt;/a&gt;, since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger. 8.27 euros.&lt;/p&gt;
 &lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-motor-driver.jpg" alt="A picture of a DC motor driver" /&gt;
@@ -890,13 +891,14 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;p&gt;This will control the motor. I went with the &lt;a href="https://www.cytron.io/p-10-amp-7v-30v-potentiometer-and-switch-control-dc-motor-driver"&gt;MD10-POT from Cytron&lt;/a&gt;, that comes with a potentiometer (adjust speed) and switch (2 directions and stop), and that does not require any Arduino nor any code writing.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Careful&lt;/strong&gt;: this is a regenerative motor driver (&lt;a href="https://www.cytron.io/tutorial/md10-pot-controlling-dc-motor-without-writing-code"&gt;as described at the bottom here&lt;/a&gt;), meaning that when you stop powering the motor, it keeps spinning a bit before coming to a stop (due to inertia, while it's "braking"), and as a result the current flows back to the power source. As a consequence this driver should be used with a battery, not a switching power supply, because a battery can be charged but with a switching power supply the current has nowhere to go. For this project it is ok though as the desk is heavy and won't allow the motor to keep spinning when the power is cut.&lt;/p&gt;
 &lt;p&gt;Learn more about &lt;a href="https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor"&gt;controlling a DC motor here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I bought mine on &lt;a href="https://botland.de/motortreiber-module/13450-cytron-md10-pot-dc-30v-10a-motortreiber-schalter-potentiometer-5904422377274.html"&gt;Botland.de&lt;/a&gt;. 12.48 euros.&lt;/p&gt;
 &lt;h2 id="dc-connector-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connector Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-connector-barrel-plug-adapter.jpg" alt="A picture of a DC connector barrel plug adapter" /&gt;
 &lt;figcaption&gt;The one I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;This is used to connect the DC power supply with the motor driver, &lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;I got this one from Amazon&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is used to connect the DC power supply with the motor driver, &lt;a href="https://www.amazon.de/dp/B09TB4D8ZT"&gt;I got two from Amazon&lt;/a&gt;. 4.99 euros.&lt;/p&gt;
 &lt;h2 id="misc"&gt;Misc&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Duct tape&lt;/li&gt;
@@ -978,6 +980,12 @@ any reason.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;And finally, a nicer design, where everything is not taped underneath but put in a plastic box.&lt;/p&gt;
 &lt;h1 id="upgrade-2024-version-2"&gt;Upgrade 2024: version 2!&lt;/h1&gt;
+&lt;p&gt;To upgrade the desk, I wanted to make it smarter. I was tired of having to manually stop the desk at the desired height. I wanted to simply press a button, and it would raise/lower itself to the desired pre-defined position automatically, alone, while I'd be gone pooring myself some coffee 😁.&lt;/p&gt;
+&lt;p&gt;To achieve this, I decided to implement the following logic:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hardcode the maximum and minimum desired height in the code, based on my very own height and chair 😄. The current desk height could be measured with a sensor.&lt;/li&gt;
+&lt;li&gt;BUT, if anything was in the way of the sensor (like a foot!), the measures would be off. To prevent the desk from raising too high for instance, I needed another safeguard: a maximum run time (time during which the motor is either raising or lowering the desk). Actually two values, cause the motor is quicker at lowering the desk than raising it.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;For this V2, we're gonna reuse most of the what we used for the V1, but we'll also need additionally:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/arduino-uno-r4-minima"&gt;Arduino Uno R4 Minima - 19.9 euros&lt;/a&gt;&lt;/li&gt;
@@ -986,20 +994,52 @@ any reason.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber"&gt;Pololu TB6612FNG motor driver - 4.20 euros&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/hc-sr04-ultraschall-sensor"&gt;HC-SR04 distance sensor - 1.49 euros&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0983NSV6F"&gt;A 200*120*55mm junction box - 12.34 euros&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0CBWTZNM5"&gt;2.54mm screw terminal blocks / screwshield&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B0CBWTZNM5"&gt;2.54mm screw terminal blocks / screwshield - 7.59 euros&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tape and wires:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B07K8PVKBP"&gt;male-female&lt;/a&gt;: 4.49 euros&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B07KKJ69DV"&gt;male-male&lt;/a&gt;: 4.49 euros&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B07KYHBVR7"&gt;female-female&lt;/a&gt;: 4.49 euros&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.de/dp/B09NSN458Y"&gt;2-male-to-1-female&lt;/a&gt;: 11.98 euros&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts &lt;a href="https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/"&gt;voltage ranging from 6 to 24V&lt;/a&gt;. Initially I wanted to power the Arduino through the 5V output pin of the motor driver, which would be power directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V.&lt;/p&gt;
-&lt;p&gt;For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts &lt;a href="https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/"&gt;voltage ranging from 6 to 24V&lt;/a&gt;. See why just below.&lt;/p&gt;
+&lt;h2 id="a-few-words-on-the-motor-driver"&gt;A few words on the motor driver&lt;/h2&gt;
+&lt;p&gt;A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is &lt;a href="https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638"&gt;that the L298N motor driver is old and obsolete&lt;/a&gt;, one of its flaws is the 5V drop. People often suggest using modern motor drivers from &lt;a href="https://www.pololu.com/"&gt;Pololu&lt;/a&gt;, and the &lt;a href="https://www.pololu.com/product/713"&gt;TB6612FNG&lt;/a&gt; seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.&lt;/p&gt;
+&lt;p&gt;To set up the TB6612FNG, I followed &lt;a href="https://adam-meyer.com/arduino/TB6612FNG"&gt;this tutorial&lt;/a&gt;. Like in the tutorial, I initially wanted to power the Arduino through the 5V output pin of the motor driver (VCC), which would be powered directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V. So I plugged the Arduino directly on the power supply, through its VIN and GND pins.&lt;/p&gt;
+&lt;h2 id="arduino-ide"&gt;Arduino IDE&lt;/h2&gt;
+&lt;p&gt;For the Arduino IDE to work on a desktop Linux distro with a R4 Minima board, I had to write:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, ATTRS{idProduct}==&amp;quot;0069&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;, MODE=&amp;quot;0666&amp;quot;
 SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, ATTRS{idProduct}==&amp;quot;0369&amp;quot;, GROUP=&amp;quot;plugdev&amp;quot;, MODE=&amp;quot;0666&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;in &lt;code&gt;/etc/udev/rules.d/99-arduino-uno-r4.rules&lt;/code&gt;. Then &lt;code&gt;sudo udevadm control --reload-rules &amp;amp;&amp;amp; sudo udevadm trigger&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="soldering"&gt;Soldering&lt;/h2&gt;
+&lt;p&gt;As you can see further below in the schematic, a bit of soldering is required, specifically if you want to avoid using a breadboard, when connecting 3 wires together, for instance.&lt;/p&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/standing-desk-soldering.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="schematic-and-photos"&gt;Schematic and photos&lt;/h2&gt;
 &lt;figure class="center"&gt;
 &lt;img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" /&gt;
 &lt;figcaption&gt;Schematic of the whole wiring&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/distance-sensor.jpg" alt="A photo of the distance sensor" /&gt;
+  &lt;figcaption&gt;The distance sensor, outside of the box&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/v2.jpg" alt="A picture of all the components inside the box" /&gt;
+  &lt;figcaption&gt;Inside the box&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The box is attached to the desk with 2 screws, that can be seen in the photo above, sticking out in the box. The screws are directly screwed in the desk.&lt;/p&gt;
+&lt;h2 id="code"&gt;Code&lt;/h2&gt;
 &lt;p&gt;Now, here's the Arduino code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;// Distance sensor pins&lt;/span&gt;
 &lt;span class="cp"&gt;#define TRIGGER_PIN 5&lt;/span&gt;
@@ -1166,9 +1206,11 @@ SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, 
 &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2 id="a-few-words-on-the-motor-driver"&gt;A few words on the motor driver&lt;/h2&gt;
-&lt;p&gt;A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is &lt;a href="https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638"&gt;that the L298N motor driver is old and obsolete&lt;/a&gt;, one of its flaws is the 5V drop. People often suggest using modern motor drivers from &lt;a href="https://www.pololu.com/"&gt;Pololu&lt;/a&gt;, and the &lt;a href="https://www.pololu.com/product/713"&gt;TB6612FNG&lt;/a&gt; seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.&lt;/p&gt;
-&lt;p&gt;To set up the TB6612FNG, I followed &lt;a href="https://adam-meyer.com/arduino/TB6612FNG"&gt;this tutorial&lt;/a&gt;. However, I could not get the Arduino powered up through the VCC and GND pins of the motor driver, so I plugged the Arduino directly on the power supply, through its VIN and GND pins.&lt;/p&gt;
+&lt;h2 id="result-the-v2-in-action"&gt;Result: the V2 in action!&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/motorizing-an-ikea-skarsta-standing-desk-v2.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
 &lt;h1 id="other-tutorials"&gt;Other tutorials&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;http://cesarmoya.com/blog/motorizing-standup-desk/&lt;/a&gt;: says 2Nm is needed for torque&lt;/li&gt;
