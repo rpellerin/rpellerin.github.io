@@ -240,7 +240,7 @@ As you can see further below in the schematic, a bit of soldering is required, s
 
 <figure class="center">
   <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/distance-sensor.jpg" alt="A photo of the distance sensor" />
-  <figcaption>The distance sensor, outside of the box</figcaption>
+  <figcaption>The distance sensor, outside the box</figcaption>
 </figure>
 
 <figure class="center">
