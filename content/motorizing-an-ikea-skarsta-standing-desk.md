@@ -7,7 +7,7 @@ Slug: motorizing-an-ikea-skarsta-standing-desk
 Authors: Romain Pellerin
 Summary: Tutorial about how I motorized my IKEA Starska standing desk
 
-**UPDATE 2024: the V2 of this project is finally coming together. Scroll all the way down to read about it!**
+**UPDATE 2024: after dreaming about it for about a year, the V2 of this project finally came to be. Scroll all the way down to read about it!**
 
 I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!
 
@@ -34,6 +34,8 @@ That's far from perfect, I already have ideas about how to improve it, but for n
 
 I bought and tried these 2, [the 12V 72 RPM edition, that draws 3 amps ("stall current"), and the 12V 136 RPM one](https://de.aliexpress.com/item/32968002582.html). According to the specs of the 72 RPM one, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up easily! As to the 136 RPM, it works well too, up to 30 Kg, but it gets real close to stalling. Without much weight (a laptop and a monitor), it raises the desk at about 100 rotations per minute.
 
+9.36 euros
+
 <figure class="center">
 <img class="zoomable" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" />
 <figcaption>Specs of the motor</figcaption>
@@ -48,7 +50,7 @@ Alternatively, [this other motor looks like a viable option too](https://www.pol
 <figcaption>The L-Bracket pair I got (only 1 is necessary for this project though)</figcaption>
 </figure>
 
-We will use this to secure the motor to the desk. [I got it from The PiHut](https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors).
+We will use this to secure the motor to the desk. [I got it from The PiHut](https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors). £8.25
 
 ## Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A
 
@@ -57,7 +59,7 @@ We will use this to secure the motor to the desk. [I got it from The PiHut](http
 <figcaption>The adaper I got from Amazon</figcaption>
 </figure>
 
-[I got this one from Amazon](https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD), works like a charm!
+[I got this one from Amazon](https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD), works like a charm! 14.99 euros.
 
 ## 6mm hex key
 
@@ -66,7 +68,7 @@ We will use this to secure the motor to the desk. [I got it from The PiHut](http
 <figcaption>The 6mm hex key I got</figcaption>
 </figure>
 
-[I got this one Obi.de](https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075) and I had to cut off the bent part of it. This will replace the original crank provided with the desk.
+[I got this one Obi.de](https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075) and I had to cut off the bent part of it. This will replace the original crank provided with the desk. 4.49 euros.
 
 ## 7mm shaft coupler
 
@@ -75,7 +77,7 @@ We will use this to secure the motor to the desk. [I got it from The PiHut](http
 <figcaption>The 7mm shaft coupler I got</figcaption>
 </figure>
 
-This will connect the motor to the hex key in the desk. Get a [7mm shaft coupler](https://www.amazon.de/dp/B07HKJL1XC), since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger.
+This will connect the motor to the hex key in the desk. Get a [7mm shaft coupler](https://www.amazon.de/dp/B07HKJL1XC), since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger. 8.27 euros.
 
 ## DC motor driver
 
@@ -90,6 +92,8 @@ This will control the motor. I went with the [MD10-POT from Cytron](https://www.
 
 Learn more about [controlling a DC motor here](https://www.cytron.io/tutorial/5-easiest-ways-control-dc-motor).
 
+I bought mine on [Botland.de](https://botland.de/motortreiber-module/13450-cytron-md10-pot-dc-30v-10a-motortreiber-schalter-potentiometer-5904422377274.html). 12.48 euros.
+
 ## DC Connector Barrel Plug Adapter 2.5mm x 5.5mm
 
 <figure class="center">
@@ -97,7 +101,7 @@ Learn more about [controlling a DC motor here](https://www.cytron.io/tutorial/5-
 <figcaption>The one I got</figcaption>
 </figure>
 
-This is used to connect the DC power supply with the motor driver, [I got this one from Amazon](https://www.amazon.de/dp/B09TB4D8ZT).
+This is used to connect the DC power supply with the motor driver, [I got two from Amazon](https://www.amazon.de/dp/B09TB4D8ZT). 4.99 euros.
 
 ## Misc
 
@@ -178,6 +182,13 @@ And finally, a nicer design, where everything is not taped underneath but put in
 
 # Upgrade 2024: version 2!
 
+To upgrade the desk, I wanted to make it smarter. I was tired of having to manually stop the desk at the desired height. I wanted to simply press a button, and it would raise/lower itself to the desired pre-defined position automatically, alone, while I'd be gone pooring myself some coffee 😁.
+
+To achieve this, I decided to implement the following logic:
+
+- Hardcode the maximum and minimum desired height in the code, based on my very own height and chair 😄. The current desk height could be measured with a sensor.
+- BUT, if anything was in the way of the sensor (like a foot!), the measures would be off. To prevent the desk from raising too high for instance, I needed another safeguard: a maximum run time (time during which the motor is either raising or lowering the desk). Actually two values, cause the motor is quicker at lowering the desk than raising it.
+
 For this V2, we're gonna reuse most of the what we used for the V1, but we'll also need additionally:
 
 - [Arduino Uno R4 Minima - 19.9 euros](https://www.berrybase.de/arduino-uno-r4-minima)
@@ -186,11 +197,25 @@ For this V2, we're gonna reuse most of the what we used for the V1, but we'll al
 - [Pololu TB6612FNG motor driver - 4.20 euros](https://www.berrybase.de/pololu-tb6612fng-dualer-motortreiber)
 - [HC-SR04 distance sensor - 1.49 euros](https://www.berrybase.de/hc-sr04-ultraschall-sensor)
 - [A 200\*120\*55mm junction box - 12.34 euros](https://www.amazon.de/dp/B0983NSV6F)
-- [2.54mm screw terminal blocks / screwshield](https://www.amazon.de/dp/B0CBWTZNM5)
+- [2.54mm screw terminal blocks / screwshield - 7.59 euros](https://www.amazon.de/dp/B0CBWTZNM5)
+- Tape and wires:
 
-No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts [voltage ranging from 6 to 24V](https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/). Initially I wanted to power the Arduino through the 5V output pin of the motor driver, which would be power directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V.
+      - [male-female](https://www.amazon.de/dp/B07K8PVKBP): 4.49 euros
+      - [male-male](https://www.amazon.de/dp/B07KKJ69DV): 4.49 euros
+      - [female-female](https://www.amazon.de/dp/B07KYHBVR7): 4.49 euros
+      - [2-male-to-1-female](https://www.amazon.de/dp/B09NSN458Y): 11.98 euros
 
-For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:
+No need for a buck converter, we'll plug the Arduino Uno R4 minima directly to the 12V power supply through its VIN pin, which accepts [voltage ranging from 6 to 24V](https://docs.arduino.cc/tutorials/uno-r4-minima/cheat-sheet/). See why just below.
+
+## A few words on the motor driver
+
+A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is [that the L298N motor driver is old and obsolete](https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638), one of its flaws is the 5V drop. People often suggest using modern motor drivers from [Pololu](https://www.pololu.com/), and the [TB6612FNG](https://www.pololu.com/product/713) seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.
+
+To set up the TB6612FNG, I followed [this tutorial](https://adam-meyer.com/arduino/TB6612FNG). Like in the tutorial, I initially wanted to power the Arduino through the 5V output pin of the motor driver (VCC), which would be powered directly by the 12V power supply, but I could not get this to work. Measuring voltage between the GRD and VCC pins of the motor driver never showed anything beyond 3V. So I plugged the Arduino directly on the power supply, through its VIN and GND pins.
+
+## Arduino IDE
+
+For the Arduino IDE to work on a desktop Linux distro with a R4 Minima board, I had to write:
 
     :::text
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0069", GROUP="plugdev", MODE="0666"
@@ -198,10 +223,34 @@ For the Arduino IDE to work on a desktop with a R4 Minima board, I had to write:
 
 in `/etc/udev/rules.d/99-arduino-uno-r4.rules`. Then `sudo udevadm control --reload-rules && sudo udevadm trigger`.
 
+## Soldering
+
+As you can see further below in the schematic, a bit of soldering is required, specifically if you want to avoid using a breadboard, when connecting 3 wires together, for instance.
+
+<video controls>
+    <source src="./videos/standing-desk-soldering.mp4" type="video/mp4">
+</video>
+
+## Schematic and photos
+
 <figure class="center">
 <img class="zoomable big" src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" />
 <figcaption>Schematic of the whole wiring</figcaption>
 </figure>
+
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/distance-sensor.jpg" alt="A photo of the distance sensor" />
+  <figcaption>The distance sensor, outside of the box</figcaption>
+</figure>
+
+<figure class="center">
+  <img src="{static}/images/motorizing-an-ikea-skarsta-standing-desk/v2.jpg" alt="A picture of all the components inside the box" />
+  <figcaption>Inside the box</figcaption>
+</figure>
+
+The box is attached to the desk with 2 screws, that can be seen in the photo above, sticking out in the box. The screws are directly screwed in the desk.
+
+## Code
 
 Now, here's the Arduino code:
 
@@ -370,11 +419,11 @@ Now, here's the Arduino code:
       delay(1500); // Waiting a bit, so that a long press of a button won't stop and move it again immediately
     }
 
-## A few words on the motor driver
+## Result: the V2 in action!
 
-A lot of online tutorials recommend using the classic L298N for Arduino projects. Hower, a lot of people report issues with it on the Arduino forum. A common reply is [that the L298N motor driver is old and obsolete](https://forum.arduino.cc/t/l298n-is-a-mess-helppp/903638), one of its flaws is the 5V drop. People often suggest using modern motor drivers from [Pololu](https://www.pololu.com/), and the [TB6612FNG](https://www.pololu.com/product/713) seemed like a good affordable option, even if it supports 2 motors and I'm only using it for one.
-
-To set up the TB6612FNG, I followed [this tutorial](https://adam-meyer.com/arduino/TB6612FNG). However, I could not get the Arduino powered up through the VCC and GND pins of the motor driver, so I plugged the Arduino directly on the power supply, through its VIN and GND pins.
+<video controls>
+    <source src="./videos/motorizing-an-ikea-skarsta-standing-desk-v2.mp4" type="video/mp4">
+</video>
 
 # Other tutorials
 
