@@ -14,6 +14,21 @@ Image: lessons-learned-apres-4-ans-de-running/header.jpg
         img[style*="float:left"] {
                 margin: 0 5px 0 0;
         }
+        input[pattern]:invalid {
+                background-color: lightpink;
+        }
+        table {
+                border-collapse: collapse;
+        }
+        thead {
+                background-color: #2c5e77;
+                color: #fff;
+        }
+        th, td {
+                border: 1px solid rgb(160 160 160);
+                padding: 8px 10px;
+        }
+
 </style>
 
 J'ai pour ainsi dire jamais aimé courir pour courir... jusqu'à ce que le COVID-19 soit.
@@ -196,9 +211,16 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 
 # Bonus : Marathon pace chart
 
-<input type="text" id="fastest_pace" placeholder="Fastest pace" value="4:40"/>
-<input type="text" id="slowest_pace" placeholder="Slowest pace" value="5:30"/>
-<pre id="results"></pre>
+<input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="fastest_pace" placeholder="Fastest pace" value="4:40"/>
+<input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="slowest_pace" placeholder="Slowest pace" value="5:30"/>
+
+<div class="distance monitor-change"><input data-kms="42.195" id="marathon" type="checkbox" checked /><label for="marathon">Marathon</label></div>
+<div class="distance monitor-change"><input data-kms="25" id="km25" type="checkbox" /><label for="km25">25 kms</label></div>
+<div class="distance monitor-change"><input data-kms="21.0975" id="half_marathon" type="checkbox" /><label for="half_marathon">Half-marathon</label></div>
+<div class="distance monitor-change"><input data-kms="10" id="km10" type="checkbox" /><label for="km10">10 kms</label></div>
+<div class="distance monitor-change"><input data-kms="5" id="km5" type="checkbox" /><label for="km5">5 kms</label></div>
+
+<table id="results"></table>
 <script>
     const fastestPace = document.querySelector('input#fastest_pace')
     const slowestPace = document.querySelector('input#slowest_pace')
@@ -229,17 +251,32 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
         const minInSeconds = paceToSeconds(min)
 
         const pre = document.getElementById('results')
-        pre.innerHTML = ""
+        let newTable = "<thead><tr><th>Pace</th>"
+
+        const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
+                const input = div.querySelector('input[type="checkbox"]')
+                const checked = input.checked
+                const kms = Number(input.dataset.kms)
+                const label = div.querySelector('label').innerText
+                return {checked, kms, label}
+        }).filter(({checked})=>checked);
+
+        newTable += `${distances.map(({kms, label}) => `<th>${label}</th>`).join("")}</tr></thead><tbody>`
+
         const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
         const result = paces.map(function(paceInSeconds) {
-                const pace = secondsToTime(paceInSeconds, true)
-                const time = secondsToTime(Math.ceil(paceInSeconds * 42.195))
-                const timeHalf = secondsToTime(Math.ceil(paceInSeconds * 21.0975))
-                pre.innerHTML += `Pace ${pace}\t= ${time} (marathon)\t= ${timeHalf} (half marathon)\n`
+            const pace = secondsToTime(paceInSeconds, true)
+            const row = distances.map(({kms}) => `<td>${secondsToTime(Math.ceil(paceInSeconds * kms))}</td>`).join("")
+
+            newTable += `<tr><th>${pace}</th>${row}</tr>`
         })
+
+        newTable += "</tbody>"
+        pre.innerHTML = newTable
     }
-    fastestPace.oninput=inputChange
-    slowestPace.oninput=inputChange
+    document.querySelectorAll('.monitor-change').forEach(el => {
+        el.oninput = inputChange
+    })
     if (fastestPace.value || slowestPace.value) {
         inputChange()
     }
