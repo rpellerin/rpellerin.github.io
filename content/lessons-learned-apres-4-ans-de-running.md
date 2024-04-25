@@ -216,20 +216,24 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 
 # Bonus : Marathon pace chart
 
-<input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="fastest_pace" placeholder="Fastest pace" value="4:40"/>
-<input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="slowest_pace" placeholder="Slowest pace" value="5:30"/>
+<input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:40"/>
+<input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:30"/>
 
-<div class="distance monitor-change"><input data-kms="42.195" id="marathon" type="checkbox" checked /><label for="marathon">Marathon</label></div>
-<div class="distance monitor-change"><input data-kms="25" id="km25" type="checkbox" /><label for="km25">25 kms</label></div>
-<div class="distance monitor-change"><input data-kms="21.0975" id="half_marathon" type="checkbox" /><label for="half_marathon">Half-marathon</label></div>
-<div class="distance monitor-change"><input data-kms="10" id="km10" type="checkbox" /><label for="km10">10 kms</label></div>
-<div class="distance monitor-change"><input data-kms="5" id="km5" type="checkbox" /><label for="km5">5 kms</label></div>
+<div class="distance"><input data-kms="42.195" id="marathon" type="checkbox" checked /><label for="marathon">Marathon</label></div>
+<div class="distance"><input data-kms="25" id="km25" type="checkbox" /><label for="km25">25 kms</label></div>
+<div class="distance"><input data-kms="21.0975" id="half_marathon" type="checkbox" /><label for="half_marathon">Half-marathon</label></div>
+<div class="distance"><input data-kms="10" id="km10" type="checkbox" /><label for="km10">10 kms</label></div>
+<div class="distance"><input data-kms="5" id="km5" type="checkbox" /><label for="km5">5 kms</label></div>
+<div class="distance"><input data-kms="custom" type="checkbox" /><input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/></div>
 
 <table id="results"></table>
 <script>
     const fastestPace = document.querySelector('input#fastest_pace')
     const slowestPace = document.querySelector('input#slowest_pace')
     function inputChange() {
+        const custom = document.querySelector('input#custom')
+        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
+
         const min = fastestPace.value;
         const max = slowestPace.value;
 
@@ -256,30 +260,32 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
         const minInSeconds = paceToSeconds(min)
 
         const pre = document.getElementById('results')
-        let newTable = "<thead><tr><th>Pace</th>"
+        let newTable = "<thead><tr><th>Pace</th><th>Speed</th>"
 
         const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
                 const input = div.querySelector('input[type="checkbox"]')
                 const checked = input.checked
                 const kms = Number(input.dataset.kms)
-                const label = div.querySelector('label').innerText
+                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
                 return {checked, kms, label}
         }).filter(({checked})=>checked);
 
         newTable += `${distances.map(({kms, label}) => `<th>${label}</th>`).join("")}</tr></thead><tbody>`
 
+        const roundTo1 = num => Math.round((num + Number.EPSILON) * 10) / 10
         const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
         const result = paces.map(function(paceInSeconds) {
             const pace = secondsToTime(paceInSeconds, true)
+            const speed = roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
             const row = distances.map(({kms}) => `<td>${secondsToTime(Math.ceil(paceInSeconds * kms))}</td>`).join("")
 
-            newTable += `<tr><th>${pace}</th>${row}</tr>`
+            newTable += `<tr><th>${pace}</th><th>${speed} km/h</th>${row}</tr>`
         })
 
         newTable += "</tbody>"
         pre.innerHTML = newTable
     }
-    document.querySelectorAll('.monitor-change').forEach(el => {
+    document.querySelectorAll('input').forEach(el => {
         el.oninput = inputChange
     })
     if (fastestPace.value || slowestPace.value) {
