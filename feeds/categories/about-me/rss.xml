@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - About me</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 25 Apr 2024 11:10:00 +0200</lastBuildDate><item><title>Lessons learned après 4 ans de running</title><link>//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html</link><description>&lt;style&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - About me</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 25 Apr 2024 16:44:00 +0200</lastBuildDate><item><title>Lessons learned après 4 ans de running</title><link>//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html</link><description>&lt;style&gt;
         img[style*="float:right"] {
                 margin: 0 0 0 5px;
         }
@@ -153,19 +153,23 @@
 &lt;p&gt;J'ai aussi pu voir dans &lt;a href="https://www.youtube.com/watch?v=RasKAZiq5AA&amp;amp;t=801s"&gt;une autre vidéo qu'il est important de travailler l'allure spécifique dans les 30 derniers pour cents d'une préparation, et de ne pas axer aveuglement sa préparation que sur la VMA&lt;/a&gt;, car c'est une indicateur loin d'être parfait. Enfin, &lt;a href="https://www.youtube.com/watch?v=ATv0jdgXQLA"&gt;je me suis intéressé un peu à ma foulée, et comment essayer de l'améliorer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;BREF&lt;/strong&gt;. Ça fait que 3 mois et demi que l'année est commencée, et j'ai déjà appris tellement de choses. Kms so far : 327. ✌&lt;/p&gt;
 &lt;h1 id="bonus-marathon-pace-chart"&gt;Bonus : Marathon pace chart&lt;/h1&gt;
-&lt;p&gt;&lt;input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="fastest_pace" placeholder="Fastest pace" value="4:40"/&gt;
-&lt;input pattern="\d{1,2}:\d{2}" type="text" class="monitor-change" id="slowest_pace" placeholder="Slowest pace" value="5:30"/&gt;&lt;/p&gt;
-&lt;div class="distance monitor-change"&gt;&lt;input data-kms="42.195" id="marathon" type="checkbox" checked /&gt;&lt;label for="marathon"&gt;Marathon&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance monitor-change"&gt;&lt;input data-kms="25" id="km25" type="checkbox" /&gt;&lt;label for="km25"&gt;25 kms&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance monitor-change"&gt;&lt;input data-kms="21.0975" id="half_marathon" type="checkbox" /&gt;&lt;label for="half_marathon"&gt;Half-marathon&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance monitor-change"&gt;&lt;input data-kms="10" id="km10" type="checkbox" /&gt;&lt;label for="km10"&gt;10 kms&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance monitor-change"&gt;&lt;input data-kms="5" id="km5" type="checkbox" /&gt;&lt;label for="km5"&gt;5 kms&lt;/label&gt;&lt;/div&gt;
+&lt;p&gt;&lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:40"/&gt;
+&lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:30"/&gt;&lt;/p&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="42.195" id="marathon" type="checkbox" checked /&gt;&lt;label for="marathon"&gt;Marathon&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="25" id="km25" type="checkbox" /&gt;&lt;label for="km25"&gt;25 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="21.0975" id="half_marathon" type="checkbox" /&gt;&lt;label for="half_marathon"&gt;Half-marathon&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="10" id="km10" type="checkbox" /&gt;&lt;label for="km10"&gt;10 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="5" id="km5" type="checkbox" /&gt;&lt;label for="km5"&gt;5 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="custom" type="checkbox" /&gt;&lt;input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/&gt;&lt;/div&gt;
 
 &lt;table id="results"&gt;&lt;/table&gt;
 &lt;script&gt;
     const fastestPace = document.querySelector('input#fastest_pace')
     const slowestPace = document.querySelector('input#slowest_pace')
     function inputChange() {
+        const custom = document.querySelector('input#custom')
+        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
+
         const min = fastestPace.value;
         const max = slowestPace.value;
 
@@ -192,30 +196,32 @@
         const minInSeconds = paceToSeconds(min)
 
         const pre = document.getElementById('results')
-        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;"
+        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
 
         const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
                 const input = div.querySelector('input[type="checkbox"]')
                 const checked = input.checked
                 const kms = Number(input.dataset.kms)
-                const label = div.querySelector('label').innerText
+                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
                 return {checked, kms, label}
         }).filter(({checked})=&gt;checked);
 
         newTable += `${distances.map(({kms, label}) =&gt; `&lt;th&gt;${label}&lt;/th&gt;`).join("")}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`
 
+        const roundTo1 = num =&gt; Math.round((num + Number.EPSILON) * 10) / 10
         const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
         const result = paces.map(function(paceInSeconds) {
             const pace = secondsToTime(paceInSeconds, true)
+            const speed = roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
             const row = distances.map(({kms}) =&gt; `&lt;td&gt;${secondsToTime(Math.ceil(paceInSeconds * kms))}&lt;/td&gt;`).join("")
 
-            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;${row}&lt;/tr&gt;`
+            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;&lt;th&gt;${speed} km/h&lt;/th&gt;${row}&lt;/tr&gt;`
         })
 
         newTable += "&lt;/tbody&gt;"
         pre.innerHTML = newTable
     }
-    document.querySelectorAll('.monitor-change').forEach(el =&gt; {
+    document.querySelectorAll('input').forEach(el =&gt; {
         el.oninput = inputChange
     })
     if (fastestPace.value || slowestPace.value) {
