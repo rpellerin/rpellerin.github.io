@@ -43,6 +43,7 @@ Here are some additional French online resources about it:
 - [Massage de l'aponévrose plantaire - Fasciite plantaire](https://www.youtube.com/watch?v=aJt6U5kMaJ4)
 - [Comment soigner l'aponévrosite plantaire ? Running et Sport](https://www.youtube.com/watch?v=DnmRzukeUJI)
 - [SOIGNE 🥰 ta TENDINITE d’Achille et ton APONEVROSITE plantaire 😱grâce à ces EXERCICES de KINE.](https://www.youtube.com/watch?v=ZFXEbn-66Sc)
+- [PLANTAR FASCITIS / curing it naturally without inserts](https://www.youtube.com/watch?v=Yjga6azmvhg)
 
 ## UPDATE: 2023-03-31
 
