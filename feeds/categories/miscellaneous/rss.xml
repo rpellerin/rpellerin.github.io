@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Miscellaneous</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 23 Apr 2024 00:23:00 +0200</lastBuildDate><item><title>Motorizing an IKEA Skarsta Standing Desk</title><link>//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE 2024: after dreaming about it for about a year, the V2 of this project finally came to be. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Miscellaneous</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 03 May 2024 10:10:00 +0200</lastBuildDate><item><title>Motorizing an IKEA Skarsta Standing Desk</title><link>//romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE 2024: after dreaming about it for about a year, the V2 of this project finally came to be. Scroll all the way down to read about it!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I got really tired of turning the crank of my IKEA Starska standing desk multiple times a day. Not only this is tedious, but also I can't keep on typing or using my mouse while doing so. And if I'm in a meeting, I look stupid. So I decided to motorize it. I know IKEA already sells an electrical version of it with a motor, but it's 200 euros more expensive and I already had one desk. Plus I like challenges!&lt;/p&gt;
 &lt;p&gt;After hours of googling and reading various blog posts (see the bottom of this page for links), after days spent waiting for all my orders to arrive, after minutes of tinkering, I finally got a working prototype!&lt;/p&gt;
 &lt;video controls&gt;
@@ -234,12 +234,12 @@ SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, 
 &lt;span class="cp"&gt;#define IDLE -1&lt;/span&gt;
 
 &lt;span class="c1"&gt;// Settings&lt;/span&gt;
-&lt;span class="cp"&gt;#define MIN_HEIGHT 66.3&lt;/span&gt;
-&lt;span class="cp"&gt;#define MAX_HEIGHT 108.5&lt;/span&gt;
+&lt;span class="cp"&gt;#define MIN_HEIGHT 66.5&lt;/span&gt;
+&lt;span class="cp"&gt;#define MAX_HEIGHT 106.5&lt;/span&gt;
 &lt;span class="cp"&gt;#define LOWER_TIME_OUT_AFTER_MS 43000&lt;/span&gt;
 &lt;span class="cp"&gt;#define RAISE_TIME_OUT_AFTER_MS 59000&lt;/span&gt;
 &lt;span class="cp"&gt;#define LOOP_DELAY 100&lt;/span&gt;
-&lt;span class="cp"&gt;#define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.0&lt;/span&gt;
+&lt;span class="cp"&gt;#define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.5&lt;/span&gt;
 
 &lt;span class="c1"&gt;// Distance sensor variables&lt;/span&gt;
 &lt;span class="kt"&gt;long&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;duration&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -294,6 +294,7 @@ SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;readHeight&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;deltaWithLastKnownCm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lastKnownCm&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// Sometimes we get odd random readings, wildly different from the previous one. We must ignore those.&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Serial&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Height: &amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot; cm; Delta with last reading: &amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;deltaWithLastKnownCm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot; cm&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;lastKnownCm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cm&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;boolean&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;isMoving&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;movingDirection&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;IDLE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 
