@@ -275,8 +275,8 @@ Now, here's the Arduino code:
     #define IDLE -1
 
     // Settings
-    #define MIN_HEIGHT 66.5
-    #define MAX_HEIGHT 106.5
+    #define MIN_HEIGHT 66.4
+    #define MAX_HEIGHT 106.0
     #define LOWER_TIME_OUT_AFTER_MS 43000
     #define RAISE_TIME_OUT_AFTER_MS 59000
     #define LOOP_DELAY 100
