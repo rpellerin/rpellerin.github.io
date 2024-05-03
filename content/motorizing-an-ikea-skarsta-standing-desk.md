@@ -275,12 +275,12 @@ Now, here's the Arduino code:
     #define IDLE -1
 
     // Settings
-    #define MIN_HEIGHT 66.3
-    #define MAX_HEIGHT 108.5
+    #define MIN_HEIGHT 66.5
+    #define MAX_HEIGHT 106.5
     #define LOWER_TIME_OUT_AFTER_MS 43000
     #define RAISE_TIME_OUT_AFTER_MS 59000
     #define LOOP_DELAY 100
-    #define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.0
+    #define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.5
 
     // Distance sensor variables
     long duration;
@@ -335,6 +335,7 @@ Now, here's the Arduino code:
       cm = readHeight();
       deltaWithLastKnownCm = abs(cm - lastKnownCm); // Sometimes we get odd random readings, wildly different from the previous one. We must ignore those.
       Serial.println((String) "Height: " + cm + " cm; Delta with last reading: " + deltaWithLastKnownCm + " cm");
+      lastKnownCm = cm;
 
       boolean isMoving = movingDirection != IDLE;
 
