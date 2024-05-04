@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-05-03T10:34:00+02:00</updated><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-04-26T00:06:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;style&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-05-04T15:52:00+02:00</updated><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-05-04T15:52:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;style&gt;
         img[style*="float:right"] {
                 margin: 0 0 0 5px;
         }
@@ -189,16 +189,18 @@
 &lt;div&gt;
 &lt;label for="todo_items"&gt;TODO items:&lt;/label&gt;&lt;br /&gt;
 &lt;textarea id="todo_items" name="todo_items" rows="5" cols="50"&gt;
-Charger montre
 Couper ongles
-Préparer le petit déjeuner le samedi soir
-Noter dans la main le dimanche matin:
+Se faire une belle moustache
+Samedi : shake-out run avec 1km à allure
+Samedi : charger montre
+Samedi soir : préparer le petit déjeuner
+Dimanche matin : noter dans la main
   Warm up
   - 5 min = eat
   Montre en mode pace sur distance un peu plus longue
   4.5 eat
   9.5 eat + accelerer
-Prendre casquette, lunettes, HRM chest strap
+Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;/textarea&gt;
 &lt;/div&gt;
 
