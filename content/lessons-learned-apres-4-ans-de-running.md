@@ -254,16 +254,18 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 <div>
 <label for="todo_items">TODO items:</label><br />
 <textarea id="todo_items" name="todo_items" rows="5" cols="50">
-Charger montre
 Couper ongles
-Préparer le petit déjeuner le samedi soir
-Noter dans la main le dimanche matin:
+Se faire une belle moustache
+Samedi : shake-out run avec 1km à allure
+Samedi : charger montre
+Samedi soir : préparer le petit déjeuner
+Dimanche matin : noter dans la main
   Warm up
   - 5 min = eat
   Montre en mode pace sur distance un peu plus longue
   4.5 eat
   9.5 eat + accelerer
-Prendre casquette, lunettes, HRM chest strap
+Dimanche matin : prendre casquette, lunettes, HRM chest strap
 </textarea>
 </div>
 
