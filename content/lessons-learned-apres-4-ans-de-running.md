@@ -259,6 +259,7 @@ Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Samedi : shake-out run avec 1km à allure
 Samedi : charger montre
+Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : noter dans la main
   Warm up
