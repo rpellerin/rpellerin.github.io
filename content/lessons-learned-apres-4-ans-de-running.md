@@ -256,6 +256,7 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 <textarea id="todo_items" name="todo_items" rows="5" cols="50">
 Couper ongles
 Se faire une belle moustache
+Prévoir le trajet pour se rendre à la course
 Samedi : shake-out run avec 1km à allure
 Samedi : charger montre
 Samedi soir : préparer le petit déjeuner
