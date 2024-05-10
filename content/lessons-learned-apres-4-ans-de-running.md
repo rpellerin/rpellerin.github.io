@@ -1,35 +1,11 @@
 Title: Lessons learned après 4 ans de running
 Date: 2024-04-15 01:51
-Category: About me
+Category: Running
 Tags: running
 Slug: lessons-learned-apres-4-ans-de-running
 Authors: Romain Pellerin
 Summary: Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"
 Image: lessons-learned-apres-4-ans-de-running/header.jpg
-
-<style>
-        img[style*="float:right"] {
-                margin: 0 0 0 5px;
-        }
-        img[style*="float:left"] {
-                margin: 0 5px 0 0;
-        }
-        input[pattern]:invalid {
-                background-color: lightpink;
-        }
-        table {
-                border-collapse: collapse;
-        }
-        thead {
-                background-color: #2c5e77;
-                color: #fff;
-        }
-        th, td {
-                border: 1px solid rgb(160 160 160);
-                padding: 8px 10px;
-        }
-
-</style>
 
 J'ai pour ainsi dire jamais aimé courir pour courir... jusqu'à ce que le COVID-19 soit.
 
@@ -226,7 +202,7 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 <div class="distance"><input data-kms="5" id="km5" type="checkbox" /><label for="km5">5 kms</label></div>
 <div class="distance"><input data-kms="custom" type="checkbox" /><input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/></div>
 
-<table id="results"></table>
+<table class="collapse" id="results"></table>
 
 # Bonus 2 : Race sheet
 

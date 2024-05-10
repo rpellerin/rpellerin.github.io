@@ -1,6 +1,6 @@
 Title: Shin Splints
 Date: 2021-06-13 21:30
-Category: Sports
+Category: Running
 Tags: shin splints, health, running
 Slug: shin-splints
 Authors: Romain Pellerin

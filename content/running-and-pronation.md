@@ -1,6 +1,6 @@
 Title: Running and Pronation
 Date: 2023-10-01 02:00
-Category: Sports
+Category: Running
 Tags: running, pronation
 Slug: running-and-pronation
 Authors: Romain Pellerin

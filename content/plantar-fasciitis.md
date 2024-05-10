@@ -1,7 +1,7 @@
 Title: Plantar Fasciitis
 Date: 2022-04-26 00:30
 Modified: 2023-04-02 23:10
-Category: Sports
+Category: Running
 Tags: plantar fasciitis, health, running
 Slug: plantar-fasciitis
 Authors: Romain Pellerin
