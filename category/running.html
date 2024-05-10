@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Romain Pellerin's Blog: posts in the category 'Running'" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Posts in the category 'Running' - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Romain Pellerin's Blog: posts in the category 'Running'" />
+
+        <title>Posts in the category 'Running' - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<header>
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav></header>
+<h1>Posts in the category 'Running'</h1>
+
+    <p>Feeds for this category:
+        <a class="center" href="//romainpellerin.eu/feeds/categories/running/rss.xml">RSS</a> and
+        <a class="center" href="//romainpellerin.eu/feeds/categories/running/atom.xml">Atom</a>
+    </p>
+    <br />
+
+    <section>
+        <ol>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/spring-2024.html" rel="bookmark" title="Permalink to Spring 2024">Spring 2024</a>
+<time class="grey italic small" datetime="2024-05-10T19:00:00+02:00">Fri 10 May 2024</time>                        <p class="grey italic indent">A handful of useful commands about hacking</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="bookmark" title="Permalink to Lessons learned après 4 ans de running">Lessons learned après 4 ans de running</a>
+<time class="grey italic small" datetime="2024-04-15T01:51:00+02:00">Mon 15 April 2024</time>                        <p class="grey italic indent">Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/running-and-pronation.html" rel="bookmark" title="Permalink to Running and Pronation">Running and Pronation</a>
+<time class="grey italic small" datetime="2023-10-01T02:00:00+02:00">Sun 01 October 2023</time>                        <p class="grey italic indent">Find out about your pronation and get the right shoes</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/plantar-fasciitis.html" rel="bookmark" title="Permalink to Plantar Fasciitis">Plantar Fasciitis</a>
+<time class="grey italic small" datetime="2022-04-26T00:30:00+02:00">Tue 26 April 2022</time>                        <p class="grey italic indent">Yay, another injury after too much runnning. Let's see how I heal this time...</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="//romainpellerin.eu/shin-splints.html" rel="bookmark" title="Permalink to Shin Splints">Shin Splints</a>
+<time class="grey italic small" datetime="2021-06-13T21:30:00+02:00">Sun 13 June 2021</time>                        <p class="grey italic indent">I got that... and healed. Here is the truth about my healing... haha!</p>
+                    </li>
+        </ol>
+    </section>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

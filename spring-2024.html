@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, running" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="A handful of useful commands about hacking" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Spring 2024 - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="A handful of useful commands about hacking" />
+
+        <title>Spring 2024 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/spring-2024/spring-2024.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-05-10T19:00:00+02:00">Fri 10 May 2024</time>        </p>
+    <h1>Spring 2024</h1>
+    <div class="grey">
+        <p class="italic">A handful of useful commands about hacking</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1288 words.">6 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/running.html">Running</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/running.html">running</a></p>    </div>
+</header>
+<article>
+    <p>We're not even 2 months into spring, yet it's been a hell of a spring so far!</p>
+<p>First of all, just a little over a month ago, I was running the <a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html">Berlin half-marathon</a> in 01:41:51, my best time ever! I ran it wearing my Asics Gel-Kayano 30. And even though I broke a personal record, I remember the last 3 or 4 kms being really hard. I was not wearing any HRM chest strap, so the numbers are probably slightly off, but my Strava reports an average heart rate of 183 bpm throughout the race, with a peak at 198 bpm in the last kilometers. Needless to say, I was not in my best form. And clearly the shoes did not help.</p>
+<p>After that race, I had 2 other races planned in the coming weeks:</p>
+<ul>
+<li>In April, the <a href="https://berliner-firmenlauf.de/">Berliner Firmenlauf (~5.5 kms)</a></li>
+<li>In May, the oldest running race of Berlin, the <a href="https://berlin-laeuft.de/s25berlin/">S25 Berlin (25 kms)</a></li>
+</ul>
+<p>So shortly after the half-marathon, I decided two things:</p>
+<ol>
+<li>I needed better shoes, specifically I needed race shoes</li>
+<li>I wanted to get more accurate heart rate numbers</li>
+</ol>
+<p>I was really keen on buying the newly released Asics Metaspeed Sky Paris, but unfortunately they had been sold out almost since the day they were released. So I ended up buying the Saucony Endorphin Pro 4.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/spring-2024/saucony-endorphin-pro-4.jpg" alt="My Saucony shoes" />
+<figcaption>My new shoes. Pro tip: <a href="https://www.youtube.com/watch?v=5LqoqwA7CFs">tie the Marathon knot</a></figcaption>
+</figure>
+
+<p>I had been owning a Wahoo Tickr (HRM) for a while. Actually, it was my second one. But like the first, this one had recently started showing signs of wear, <a href="https://www.reddit.com/r/wahoofitness/comments/10u872d/tickr_showing_low_heart_rate/">specifically I'd see drops in the middle of a ride/run, it would show very low readings</a>. That's why I was never wearing it while running. Consequently, I decided it was time to give Garmin HRMs a try, and I bought the Garmin HRM-dual chest strap.</p>
+<h1 id="berliner-firmenlauf-55-kms">Berliner Firmenlauf (~5.5 kms)</h1>
+<p>This race is a "company race", a race for which companies pay a hefty price so that their employees can take part. It is short (around 5.5 kms). There are many amateur runners, and very few competitive ones. The organizers claim there will be starting waves but on the race day, we all started together, in one giant disorganized mass, slow and fast runners all mixed together, with big groups of colleagues trying to stick together (understandably).</p>
+<video controls>
+    <source src="./videos/spring-2024/berliner-firmenlauf-start.mp4" type="video/mp4">
+</video>
+
+<p>Nonetheless, I had decided I would give it my best, and aim for under 4' per kilometer. When the starting gun went off, I quickly picked up the pace and started zigzagging between looads of people, sometimes running on the sidewalk. It was the first time I was wearing my Saucony on a race, and they felt like magic. It made my run so effortless! <a href="https://www.strava.com/activities/11256038770/overview">I managed to survive a pace of 3'55"/km for more than 5 kms, and finished first out of the 62 participants of my company.</a></p>
+<video controls>
+    <source src="./videos/spring-2024/berliner-firmenlauf-ziel.mp4" type="video/mp4">
+</video>
+
+<p><img src="//romainpellerin.eu/images/spring-2024/berliner-firmenlauf-strava.png" alt="Screenshot of Strava" style="float:right" /></p>
+<p><strong>Result: 20'45" (chip time) over 5.5 kms (official distance), 5.3 kms according to Strava.</strong> Overall, 190 out of 13,170 participants.</p>
+<div style="clear:both"></div>
+
+<p><img src="//romainpellerin.eu/images/spring-2024/watch-prediction-5k.jpg" alt="Watch prediction" style="float:left" /></p>
+<p>Prior to the race, my watch was giving me an estimate of 18'56" for 5 kms. I hit 19'29", according to Strava. Close enough!</p>
+<div style="clear:both"></div>
+
+<h1 id="s25-berlin-25-kms">S25 Berlin (25 kms)</h1>
+<p>The Berliner Firmenlauf was only the amuse-bouche. The real challenge for me was coming in May, in the form of a 25-km race: S25 Berlin.</p>
+<p>However, I did not fear this race much, unlike the half-marathon in April. I took it a lot less seriously. I knew I would be able to perform at least as well as I did in the half-marathon, thanks to the new shoes and my constant training. Let's say that the Berliner Firmenlauf had boosted my confidence quite significantly, and my general form was peaking in the days leading up to the race.</p>
+<p><img src="//romainpellerin.eu/images/spring-2024/watch-prediction-21k.jpg" alt="Watch prediction" style="float:right" /></p>
+<p>My Garmin race prediction for a half-marathon was 1:31:40 the night before the race. Again, it will turn out to be quite optimistic, but it still gives a rough idea of one's progression since the last race, if compared with the previous prediction.</p>
+<p>So, like I said, the pressure was much lower for this race. The week before, I was able to sleep just fine. Only the night before was a little more... agitated 😁 but that's expected. I guess going from race to race over a short amount of time also helps relax.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/spring-2024/s25-prep.jpg" alt="My running gear" />
+<figcaption>Ready for race day!</figcaption>
+</figure>
+
+<p>Nutrition-wise, I had decided for 1 pre-race gel, and 4 during the race, roughly spaced by 5 kms.</p>
+<p>Race day. 2 hours before, I ate 3 energy bars, 40 grams of pasta and pesto, half a banana and drank some coffee, then I took off. I showed up there almost 40 minutes before the race. Dropped my bag off, one last pitstop in the bathroom, and I'm entering my block (2nd block out of 4) 5 minutes before the start, after having warmed up. BANG! the gun goes off. I don't forget to smile for the photos and off we go!</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/spring-2024/s25-start.jpg" alt="Photo on the starting line" />
+<figcaption>💪</figcaption>
+</figure>
+
+<p>The race went overall very well. I was wearing my Garmin HRM chest strap. My heart averaged in the 160s all the time, which was great, but also a sign that I was not pushing hard enough 😅.</p>
+<p><img src="//romainpellerin.eu/images/spring-2024/s25-strava.png" alt="Screenshot of Strava" style="float:left" /></p>
+<p>I had set up my watch to do a negative split, through the feature PacePro Plan: 4'40" in the first half, 4'38" in the second half was the plan. I ended up running faster than this, as my Strava tells. I broke 2 records on that day: <strong>01:38:19 for the half-marathon (official time, <a href="https://www.strava.com/activities/11336742799">Strava reports 01:36:40</a>), and my longest distance ever run, 25 kms in 01:55:26 (official chip time)!</strong></p>
+<p>Entering the stadium after a long tunnel was breathtaking! I remember the feeling, running on the track, in the very stadium that welcomed the olympics of 1936 almost gave me goosebumps. What a race!</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/spring-2024/s25-race.jpg" alt="Photo minutes before crossing the finish line" />
+<figcaption>Minutes before the finish line, I still had way too much energy 😂</figcaption>
+</figure>
+
+<p>With hindsight, here are some lessons learned through that race:</p>
+<ul>
+<li>With preparation and planning comes confidence and reduced stress. I now always make a race sheet, days ahead of races, writing down my goal pace, nutrition plan, and things to do.</li>
+<li>I carb load only on Thursday and Friday, not on Saturday. I eat normally on that day, I simply avoid fibers and prefer for instance white pasta. Also, the week before the race, I take magnesium and potassium supplementation (<a href="https://www.doppelherz.de/produkte/doppelherz-aktiv-magnesium-kalium-brausetabletten">Doppelherz Magnesium + Kalium Sport</a>). Not sure if that helps at all or not... but the placebo effect is real.</li>
+<li>🚽-wise, one of my greatest fears is a sudden need to go to the bathroom during a race. I've been trying a new "protocol" for the half-marathon and the S25 Berlin races, that worked out nicely. While carb loading the days before, I've tried changing my number 2 schedule so that on Friday I go twice. On Saturday, I again eat normally (no more carb loading) and therefore only go once on Saturday in the evening. Then comes Sunday morning. Normally, no need to go at all! But as I'm alway stressed about that, I've always managed to unload myself of a few unneeded grams, minutes before the race 😆.</li>
+<li>Sleep-wise, I still need to improve. On any day of the year, it's almost impossible for me to get into bed before midnight. I'd like to change that on the long term, so that I can get more sleep on race days. Factoring in stress and everything, I usually never fall asleep before 2am on race days, and oftentimes wake up naturally way before my alarm clock.</li>
+<li>My breakfast was a little too light, I was almost hungry before starting the race. Next time I should aim for a full banana and maybe a fourth energy bar.</li>
+</ul>
+<p>Coming up next: the Berlin triathlon, in June!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Fri 10 May 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
