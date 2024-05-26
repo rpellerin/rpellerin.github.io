@@ -60,6 +60,10 @@ Summary: Books I have read
 
 - **Hyperion**, by *Dan Simmon*
 
+# 2024
+
+- **The Culture Map**, by Erin Meyer
+
 # To read
 
 - [7 romans de science-fiction déprimants et géniaux à lire avant la fin du monde](https://www.numerama.com/pop-culture/531136-7-romans-de-science-fiction-deprimants-et-geniaux-a-lire-avant-la-fin-du-monde.html)
