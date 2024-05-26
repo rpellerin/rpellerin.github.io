@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-05-10T19:28:00+02:00</updated><entry><title>Spring 2024</title><link href="//romainpellerin.eu/spring-2024.html" rel="alternate"></link><published>2024-05-10T19:00:00+02:00</published><updated>2024-05-10T19:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-05-10:/spring-2024.html</id><summary type="html">&lt;p&gt;Epic tales from my running races&lt;/p&gt;</summary><content type="html">&lt;p&gt;We're not even 2 months into spring, yet it's been a hell of a spring so far!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-05-26T13:46:00+02:00</updated><entry><title>Spring 2024</title><link href="//romainpellerin.eu/spring-2024.html" rel="alternate"></link><published>2024-05-10T19:00:00+02:00</published><updated>2024-05-10T19:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-05-10:/spring-2024.html</id><summary type="html">&lt;p&gt;Epic tales from my running races&lt;/p&gt;</summary><content type="html">&lt;p&gt;We're not even 2 months into spring, yet it's been a hell of a spring so far!&lt;/p&gt;
 &lt;p&gt;First of all, just a little over a month ago, I was running the &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;Berlin half-marathon&lt;/a&gt; in 01:41:51, my best time ever! I ran it wearing my Asics Gel-Kayano 30. And even though I broke a personal record, I remember the last 3 or 4 kms being really hard. I was not wearing any HRM chest strap, so the numbers are probably slightly off, but my Strava reports an average heart rate of 183 bpm throughout the race, with a peak at 198 bpm in the last kilometers. Needless to say, I was not in my best form. And clearly the shoes did not help.&lt;/p&gt;
 &lt;p&gt;After that race, I had 2 other races planned in the coming weeks:&lt;/p&gt;
 &lt;ul&gt;
@@ -5862,7 +5862,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/les-differences-france-etats-unis-part-ii/"&gt;Les différences France / Etats-Unis, Part II&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://gaelleinlosangeles.com/to-do-list/"&gt;To-Do List&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.eexit.net/usa-preparer-son-stage-pour-les-etats-unis/"&gt;USA: Préparer son stage pour les États-Unis&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="housing"></category><category term="usa"></category><category term="living"></category></entry><entry><title>Books</title><link href="//romainpellerin.eu/books.html" rel="alternate"></link><published>2017-01-26T16:50:00+01:00</published><updated>2024-02-11T20:33:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-26:/books.html</id><summary type="html">&lt;p&gt;Books I have read&lt;/p&gt;</summary><content type="html">&lt;h1 id="june-2012-july-2019"&gt;June 2012 - July 2019&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="housing"></category><category term="usa"></category><category term="living"></category></entry><entry><title>Books</title><link href="//romainpellerin.eu/books.html" rel="alternate"></link><published>2017-01-26T16:50:00+01:00</published><updated>2024-05-26T13:46:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-26:/books.html</id><summary type="html">&lt;p&gt;Books I have read&lt;/p&gt;</summary><content type="html">&lt;h1 id="june-2012-july-2019"&gt;June 2012 - July 2019&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;The Walking Dead&lt;/strong&gt; (comic books), &lt;em&gt;by Robert Kirkman&lt;/em&gt; and &lt;em&gt;Charlie Adlard&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -5914,6 +5914,10 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;h1 id="20232024"&gt;2023/2024&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Hyperion&lt;/strong&gt;, by &lt;em&gt;Dan Simmon&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="2024"&gt;2024&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Culture Map&lt;/strong&gt;, by Erin Meyer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="to-read"&gt;To read&lt;/h1&gt;
 &lt;ul&gt;
