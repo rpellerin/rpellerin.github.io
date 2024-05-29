@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, germany, tk, die techniker" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Things to know and do before traveling outside Europe" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Traveling Outside Europe as a Resident in Germany - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Things to know and do before traveling outside Europe" />
+
+        <title>Traveling Outside Europe as a Resident in Germany - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-05-29T17:00:00+02:00">Wed 29 May 2024</time>        </p>
+    <h1>Traveling Outside Europe as a Resident in Germany</h1>
+    <div class="grey">
+        <p class="italic">Things to know and do before traveling outside Europe</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 397 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/tk.html">tk</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/die-techniker.html">die techniker</a></p>    </div>
+</header>
+<article>
+    <p>As a resident in Germany, you must have (by law!) a health insurance, even if unemployed. With this insurance comes a European Health Insurance Card (EHIC), that grants you insurance in any European country plus a few (Iceland, Liechtenstein, Norway, Switzerland and the United Kingdom) "<em>under the same conditions and at the same cost (free in some countries) as people insured in that country</em>" (<a href="https://ec.europa.eu/social/main.jsp?catId=559">source</a>).</p>
+<h1 id="but-what-happens-when-traveling-outside-europe">But what happens when traveling outside Europe?</h1>
+<p>You're basically on your own, and it very much depends on the country you're in. Some will charge crazy amounts for any treatment or care (hello USA!), some are cheap. Also, what if you need repatriation?</p>
+<p>Because you want to travel stress-free, I recommend taking out a private health insurance for trips abroad. For example, I am insured with <a href="https://www.tk.de/">TK</a> and they offer <a href="https://www.tk.de/service/app/2037704/envivas/reise.app">two options</a>, depending on how long the trips are. For trips under 60 days, the options are:</p>
+<h2 id="travelplus-travelxn-via-envivas">TravelPlus (TravelXN), via Envivas</h2>
+<p>It's a yearly subscription of <strong>11.9 euros</strong> that you pay until you cancel it (you can cancel this anytime). And you're covered!</p>
+<h2 id="tk-tarif-traveller-also-via-envivas">TK-Tarif Traveller, also via Envivas</h2>
+<p>It's a free contract (no charges), and it stops being free the day you need treatment abroad (but you won't pay more than 24 euros per year). It's a 3-year contract, that cannot be terminated earlier. Also, it's considered as an optional deductible tariff, meaning TK will let the Finanzamt (tax office) know that you signed up for this. The value of this "monetary benefit" is 11.90, and you'll have to state this in your Steuererklärung (tax declaration) and probably pay some tax off it every year (a couple of euros).</p>
+<blockquote>
+<p>Der TK-Tarif Traveller ist ein Selbstbehalt-Wahltarif und enthält als Prämie eine private Auslandsreise-Krankenversicherung der Envivas Krankenversicherung AG für unbegrenzt viele Privat- und Geschäftsreisen bis zu einer Dauer von 60 Tagen. [...] Die Techniker ist gesetzlich verpflichtet, den geldwerten Vorteil des Reiseschutzes von jährlich 11,90 Euro zur Versteuerung an die Finanzbehörden zu melden.</p>
+</blockquote>
+<h1 id="conclusion">Conclusion</h1>
+<p>I would recommend the first option, as it's very cheap, you can terminate the contract anytime, and it has nothing to do with your Steuererklärung. I would also only recommend taking out a private health insurance for trips abroad depending on your destination, how far from home it is, how expensive treatements in this country are... For the USA for instance, it's a no brainer, totally worth taking this out.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Wed 29 May 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
