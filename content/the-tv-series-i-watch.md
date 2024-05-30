@@ -27,6 +27,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - The Walking Dead
 - Fear The Walking Dead
 - The Walking Dead: World Beyond
+- The Walking Dead: The Ones Who Live
 - Paper Girls
 - Ted Lasso
 - La Casa de Papel
