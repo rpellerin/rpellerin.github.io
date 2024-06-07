@@ -1,6 +1,6 @@
 Title: Life Hacks: a collection of links
 Date: 2023-12-20 15:46
-Category: Misc
+Category: Miscellaneous
 Tags: life, hacks
 Slug: life-hacks-a-collection-of-links
 Authors: Romain Pellerin
