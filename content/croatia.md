@@ -7,7 +7,7 @@ Authors: Romain Pellerin
 Summary: Travel tips for Croatia
 Image: croatia/croatia.jpg
 
-I went this year for the first time of my life to Croatia. It is a beautiful country, that luckily for me recently changed its currency and adopted the euro. Unfortunately, this change came with major price hikes, confirmed by locals. Some items saw their prices double! Of course, the inflaration that is currently hitting the Euro area did not help.
+I went this year for the first time of my life to Croatia. It is a beautiful country, that luckily for me recently changed its currency and adopted the euro. Unfortunately, this change came with major price hikes, confirmed by locals. Some items saw their prices double! Of course, the inflation that is currently hitting the Euro area did not help.
 
 Croatia is a very touristy country. I got to visit multiple places, some are traps for tourists, abandonned by locals, others maintain a good balance. Many cruise ships stop in Croatia for a few hours, so it's not uncommon to see waves of tourists fill the streets of any city in minutes. We've been told many times that July and August are hell months, there's just too many tourists, it becomes a nightmare. I went in May and it was already decently crowded.
 
