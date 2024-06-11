@@ -27,3 +27,7 @@ It's a free contract (no charges), and it stops being free the day you need trea
 # Conclusion
 
 I would recommend the first option, as it's very cheap, you can terminate the contract anytime, and it has nothing to do with your Steuererklärung. I would also only recommend taking out a private health insurance for trips abroad depending on your destination, how far from home it is, how expensive treatements in this country are... For the USA for instance, it's a no brainer, totally worth taking this out.
+
+# Online resources
+
+- [Does my German health insurance cover me if I get sick abroad?](https://www.thelocal.de/20240611/does-my-german-health-insurance-cover-me-if-i-get-sick-abroad)
