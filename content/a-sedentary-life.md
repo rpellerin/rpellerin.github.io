@@ -16,3 +16,4 @@ I might talk about it some day... meanwhile here are a few links.
 - [Les conséquences de la sédentarité et de l'inactivité physique - 36.9°](https://www.youtube.com/watch?v=hk1ZlXMuG5Q)
 - [Sédentarité et inactivité physique quelles conséquences ? | RTS](https://www.youtube.com/watch?v=eVvgNe7hG6I)
 - [À vos marques, prêts, bougez - Le sport c’est la santé Documentaire | ARTE](https://www.youtube.com/watch?v=nsb0dJJ9tzU)
+- [Sport : le meilleur des remèdes - État de santé - Élizabeth Martichoux - LCP Assemblée nationale](https://www.youtube.com/watch?v=KzP4Fnt4n7k)
