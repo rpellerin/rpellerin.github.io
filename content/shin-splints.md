@@ -18,6 +18,6 @@ As I had a minor form of it (again, I guess, not sure, I did not see any doctor 
 
 After these 3 first days, some googling and a lot of Youtube searching, I applied ice on my tibia 1 or 2 times a day, for a few days. In addition to that, I lightly wrapped (strapped) my leg in a gym plastic band several hours a day, something similar to a resistance band, so as to keep my flesh tight. Not too much of course, I did not want to block the blood flow. Also I did no running and very little walking on these days. The first two or three days I did not notice any improvement, and then all of a sudden, the pain when walking greatly decreased. It took another 2 or 3 days plus some proper good paced road cycling towards the end of the recovery period, for the pain to finally completely go away.
 
-What I am writing here is no medical advise at all, I am just sharing my personal experience. Maybe what I did was good, maybe not, maybe I would have healed faster or slower should I have done things differenlty differently, I have no clue.
+What I am writing here is no medical advise at all, I am just sharing my personal experience. Maybe what I did was good, maybe not, maybe I would have healed faster or slower should I have done things differenlty, I have no clue.
 
 Anyway, as I am writing this, I still have not tried running again, as I injured myself only 20 days ago, but the pain is 100% gone and I walk normaly again. Hopefully the next time I try running I'll be fine... and hopefully you'll find this article helpful. :)
