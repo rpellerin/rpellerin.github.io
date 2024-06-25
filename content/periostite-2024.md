@@ -31,7 +31,7 @@ Mes symptômes sont plutôt ceux classiques d'une périostite, même s'ils diff�
 - Douleur sur le coté intérieur du tibia de la jambe droite, sur une bande d'une dizaine de centimètres, plutôt vers le bas, qui parfois irradie dans tout le tibia, même du coté extérieur du tibia, et me donne une sensation de faiblesse dans la jambe lors de l'appui au sol.
 - Parfois ça passe pendant la course, si j'accélère. Parfois, ça empire pendant la course.
 - Je sens une légère douleur en descendant les escaliers.
-- Les symptômes sont différents de ma périostite de 2021, qui avait touché le tibia de la jambe gauche. À l'époque, la douleur avait été fulgurante et était apparue immédiatement en fin de sortie (une sortie de 21 kms 😨), rendant la marche impossible pendant une semaine. Avaient suivi 10 jours sans aucune activité sportive sauf du vélo, et puis disparition soudaine et complète de la douleur, sans qu'elle ne revienne jamais.
+- Les symptômes sont différents de ma [périostite de 2021]({filename}/shin-splints.md), qui avait touché le tibia de la jambe gauche. À l'époque, la douleur avait été fulgurante et était apparue immédiatement en fin de sortie (une sortie de 21 kms 😨), rendant la marche impossible pendant une semaine. Avaient suivi 10 jours sans aucune activité sportive sauf du vélo, et puis disparition soudaine et complète de la douleur, sans qu'elle ne revienne jamais.
 
 # Causes ?
 
