@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:36:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 19:16:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périoriste.&lt;/p&gt;
@@ -7932,7 +7932,6 @@ push &amp;quot;route-ipv6 2000::/3&amp;quot;
 push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
-push &amp;quot;dhcp-option DNS fd42:42:42:42::1&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
 comp-lzo
