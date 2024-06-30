@@ -162,8 +162,8 @@ To sum up, few requirements, but big advantages. Let's get started!
 
         :::bash
         su # Type the root password here
-        deluser --remove-home pi
-        visudo # Make sure there's no reference to pi user
+        /usr/sbin/deluser --remove-home --remove-home --remove-all-files pi
+        EDITOR=vim /usr/sbin/visudo # Make sure there's no reference to pi user
 
 ## Moving `/root` onto an external hard disk drive, not encrypted, with additional encrypted DATA partition
 
@@ -832,7 +832,7 @@ Edit `firewall.sh` that way:
 # OpenVPN 2.4.7
 
     :::bash
-    su
+    su - # The hyphen to get $PATH updated, so as to include /usr/sbin
     apt update && apt install openvpn
 
 Read the [official documentation](https://openvpn.net/community-resources/how-to/) ([here, short tutorial for easy-rsa3](https://community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto)).
@@ -842,6 +842,7 @@ Read the [official documentation](https://openvpn.net/community-resources/how-to
     cd /etc/openvpn/easy-rsa
     cp vars.example vars
     echo "set_var EASYRSA_KEY_SIZE       2048" >> vars # No need to source this file
+    echo "set_var EASYRSA_CERT_EXPIRE    3650" >> vars
     # Edit also EASYRSA_REQ_COUNTRY, PROVINCE, CITY, ORG, and EMAIL
 
 From now on, I highly recommend you read _/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md_ and [https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md) in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).
@@ -850,7 +851,7 @@ Then:
 
     :::bash
     ./easyrsa init-pki
-    ./easyrsa build-ca # Add a strong password which will be used to sign other certificates. Leave unchanged the default Common Name.
+    ./easyrsa build-ca # Add a CA password. Add a different strong PEM passphrase which will be used to sign other certificates. Leave unchanged the default Common Name.
     ./easyrsa gen-req server nopass # Do not add a password for the server; use 'server' as the Common Name (CN)
     ./easyrsa sign-req server server
     ./easyrsa gen-req client # Use 'client' as CN; add a passphrase that you will need later when you try to connect to your VPN server
@@ -860,27 +861,31 @@ Once the certificates and private keys are generated for the server and a client
 
     :::bash
     ./easyrsa gen-dh
-    cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
+    cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf /etc/openvpn/
     cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
     cd /etc/openvpn
-    openvpn --genkey --secret ta.key
-    gunzip server.conf.gz
+    openvpn --genkey secret ta.key
     vim server.conf
 
 You should edit _server.conf_ like this:
 
     :::text
     port 1194
-    proto udp
+    proto udp6
     dev tun
     ca /etc/openvpn/easy-rsa/pki/ca.crt
     cert /etc/openvpn/easy-rsa/pki/issued/server.crt
     key /etc/openvpn/easy-rsa/pki/private/server.key
     dh /etc/openvpn/easy-rsa/pki/dh.pem
+    topology subnet
+    server-ipv6 fd42:42:42:42::/112
+    # Add the following line only if you intend to access the network 192.168.1.0/24,
+    # to which the server must be connected.
     push "route 192.168.1.0 255.255.255.0"
-    push "redirect-gateway def1 bypass-dhcp"
-    push "dhcp-option DNS 208.67.222.222"
-    push "dhcp-option DNS 208.67.220.220"
+    push "route-ipv6 2000::/3"
+    push "redirect-gateway def1 bypass-dhcp ipv6"
+    push "dhcp-option DNS 8.8.8.8"
+    push "dhcp-option DNS 8.8.4.4"
     tls-auth /etc/openvpn/ta.key 0
     cipher AES-256-CBC
     comp-lzo
@@ -893,7 +898,9 @@ You should edit _server.conf_ like this:
     script-security 3
     client-connect "/etc/openvpn/notifyconnect.sh"
 
-Keep the rest as-is. Now create `/etc/openvpn/notifyconnect.sh`:
+Keep the rest as-is. Some parts of this configuration were copied from [openvpn-install](https://github.com/angristan/openvpn-install/blob/master/openvpn-install.sh).
+
+Now create `/etc/openvpn/notifyconnect.sh`:
 
     :::bash
     #!/bin/bash
@@ -951,6 +958,7 @@ On your Pi, uncomment the following line in _/etc/sysctl.conf_:
 
     :::text
     net.ipv4.ip_forward=1
+    net.ipv6.conf.all.forwarding=1
 
 Apply changes:
 
@@ -966,9 +974,34 @@ There's a [known bug](http://serverfault.com/questions/355520/after-reboot-debia
 Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in `firewall.sh` (the lines are there already, uncomment them):
 
     :::bash
-    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+    iptables -t nat -I POSTROUTING 1 -o eth0 -j MASQUERADE
+    ip6tables -t nat -I POSTROUTING 1 -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
     iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
     iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+If you prefer not to use any firewall, replace the content of `firewall.sh` with:
+
+    :::bash
+    #!/bin/sh
+
+    # OpenVPN
+    fw_start () {
+    iptables -t nat -I POSTROUTING 1 -o eth0 -j MASQUERADE
+    ip6tables -t nat -I POSTROUTING 1 -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
+    }
+
+    case "$1" in
+    start|restart)
+     fw_start
+     ;;
+    *)
+     echo "Usage: $0 {start}"
+     exit 1
+     ;;
+    esac
+    exit 0
+
+*Make sure to replace `eth0` with the right value (check using `ip a`).* You'll find it using: `ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1`
 
 Finally, do the following on your server:
 
