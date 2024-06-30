@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 17:55:00 +0200</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:32:00 +0200</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -1530,15 +1530,15 @@ cert /etc/openvpn/easy-rsa/pki/issued/server.crt
 key /etc/openvpn/easy-rsa/pki/private/server.key
 dh /etc/openvpn/easy-rsa/pki/dh.pem
 topology subnet
-
-# Generated from https://unique-local-ipv6.com/
-server-ipv6 fd53:f764:7bf7::/48
-
+server-ipv6 fd42:42:42:42::/112
+# Add the following line only if you intend to access the network 192.168.1.0/24,
+# to which the server must be connected.
 push &amp;quot;route 192.168.1.0 255.255.255.0&amp;quot;
 push &amp;quot;route-ipv6 2000::/3&amp;quot;
 push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
+push &amp;quot;dhcp-option DNS fd42:42:42:42::1&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
 comp-lzo
@@ -1552,7 +1552,8 @@ script-security 3
 client-connect &amp;quot;/etc/openvpn/notifyconnect.sh&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Keep the rest as-is. Now create &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Keep the rest as-is. Some parts of this configuration were copied from &lt;a href="https://github.com/angristan/openvpn-install/blob/master/openvpn-install.sh"&gt;openvpn-install&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now create &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;On `date`&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;OpenVPN client connection&amp;quot;&lt;/span&gt; root@localhost &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
 sleep &lt;span class="m"&gt;1&lt;/span&gt;
@@ -1627,6 +1628,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 &lt;span class="c1"&gt;# OpenVPN&lt;/span&gt;
 fw_start &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 &lt;span class="o"&gt;}&lt;/span&gt;
 
 &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
@@ -1641,7 +1643,7 @@ start&lt;span class="p"&gt;|&lt;/span&gt;restart&lt;span class="o"&gt;)&lt;/span
 &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Make sure to replace &lt;code&gt;eth0&lt;/code&gt; with the right value (check using &lt;code&gt;ip a&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Make sure to replace &lt;code&gt;eth0&lt;/code&gt; with the right value (check using &lt;code&gt;ip a&lt;/code&gt;).&lt;/em&gt; You'll find it using: &lt;code&gt;ip -4 route ls | grep default | grep -Po '(?&amp;lt;=dev )(\S+)' | head -1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Finally, do the following on your server:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
 su

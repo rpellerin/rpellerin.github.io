@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2024-06-30T17:55:00+02:00">Sun 30 June 2024</time>        </p>
+<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2024-06-30T18:32:00+02:00">Sun 30 June 2024</time>        </p>
     <h1>Raspberry Pi: The Ultimate Guide</h1>
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 5952 words.">30 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6014 words.">30 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -872,15 +872,15 @@ cert /etc/openvpn/easy-rsa/pki/issued/server.crt
 key /etc/openvpn/easy-rsa/pki/private/server.key
 dh /etc/openvpn/easy-rsa/pki/dh.pem
 topology subnet
-
-# Generated from https://unique-local-ipv6.com/
-server-ipv6 fd53:f764:7bf7::/48
-
+server-ipv6 fd42:42:42:42::/112
+# Add the following line only if you intend to access the network 192.168.1.0/24,
+# to which the server must be connected.
 push &quot;route 192.168.1.0 255.255.255.0&quot;
 push &quot;route-ipv6 2000::/3&quot;
 push &quot;redirect-gateway def1 bypass-dhcp ipv6&quot;
 push &quot;dhcp-option DNS 208.67.222.222&quot;
 push &quot;dhcp-option DNS 208.67.220.220&quot;
+push &quot;dhcp-option DNS fd42:42:42:42::1&quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
 comp-lzo
@@ -894,7 +894,8 @@ script-security 3
 client-connect &quot;/etc/openvpn/notifyconnect.sh&quot;
 </code></pre></div>
 
-<p>Keep the rest as-is. Now create <code>/etc/openvpn/notifyconnect.sh</code>:</p>
+<p>Keep the rest as-is. Some parts of this configuration were copied from <a href="https://github.com/angristan/openvpn-install/blob/master/openvpn-install.sh">openvpn-install</a>.</p>
+<p>Now create <code>/etc/openvpn/notifyconnect.sh</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">echo</span> <span class="s2">&quot;On `date`&quot;</span> <span class="p">|</span> mail -s <span class="s2">&quot;OpenVPN client connection&quot;</span> root@localhost <span class="m">2</span>&gt;/dev/null
 sleep <span class="m">1</span>
@@ -969,6 +970,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 <span class="c1"># OpenVPN</span>
 fw_start <span class="o">()</span> <span class="o">{</span>
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING <span class="m">1</span> -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="k">in</span>
@@ -983,7 +985,7 @@ start<span class="p">|</span>restart<span class="o">)</span>
 <span class="nb">exit</span> <span class="m">0</span>
 </code></pre></div>
 
-<p><em>Make sure to replace <code>eth0</code> with the right value (check using <code>ip a</code>).</em></p>
+<p><em>Make sure to replace <code>eth0</code> with the right value (check using <code>ip a</code>).</em> You'll find it using: <code>ip -4 route ls | grep default | grep -Po '(?&lt;=dev )(\S+)' | head -1</code></p>
 <p>Finally, do the following on your server:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> /etc/openvpn
 su

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-06-30T17:55:00+02:00</updated><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-06-25T10:55:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-06-30T18:32:00+02:00</updated><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-06-25T10:55:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périoriste.&lt;/p&gt;
@@ -7139,7 +7139,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FaANpurG3yE"&gt;Comment la Corée du Nord est devenue une menace ?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=229q6nHMlaE"&gt;Destination Corée du Sud ! - Échappées belles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ew3efxDfBwk"&gt;Corée du Sud : Voyage vers le futur - Echappées belles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Travels"></category><category term="travel"></category><category term="korea"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="//romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2024-06-30T17:55:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Travels"></category><category term="travel"></category><category term="korea"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="//romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2024-06-30T18:32:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.&lt;/p&gt;
 &lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.&lt;/p&gt;
@@ -7924,15 +7924,15 @@ cert /etc/openvpn/easy-rsa/pki/issued/server.crt
 key /etc/openvpn/easy-rsa/pki/private/server.key
 dh /etc/openvpn/easy-rsa/pki/dh.pem
 topology subnet
-
-# Generated from https://unique-local-ipv6.com/
-server-ipv6 fd53:f764:7bf7::/48
-
+server-ipv6 fd42:42:42:42::/112
+# Add the following line only if you intend to access the network 192.168.1.0/24,
+# to which the server must be connected.
 push &amp;quot;route 192.168.1.0 255.255.255.0&amp;quot;
 push &amp;quot;route-ipv6 2000::/3&amp;quot;
 push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
+push &amp;quot;dhcp-option DNS fd42:42:42:42::1&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
 cipher AES-256-CBC
 comp-lzo
@@ -7946,7 +7946,8 @@ script-security 3
 client-connect &amp;quot;/etc/openvpn/notifyconnect.sh&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Keep the rest as-is. Now create &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Keep the rest as-is. Some parts of this configuration were copied from &lt;a href="https://github.com/angristan/openvpn-install/blob/master/openvpn-install.sh"&gt;openvpn-install&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now create &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;On `date`&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; mail -s &lt;span class="s2"&gt;&amp;quot;OpenVPN client connection&amp;quot;&lt;/span&gt; root@localhost &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
 sleep &lt;span class="m"&gt;1&lt;/span&gt;
@@ -8021,6 +8022,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 &lt;span class="c1"&gt;# OpenVPN&lt;/span&gt;
 fw_start &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 &lt;span class="o"&gt;}&lt;/span&gt;
 
 &lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
@@ -8035,7 +8037,7 @@ start&lt;span class="p"&gt;|&lt;/span&gt;restart&lt;span class="o"&gt;)&lt;/span
 &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;em&gt;Make sure to replace &lt;code&gt;eth0&lt;/code&gt; with the right value (check using &lt;code&gt;ip a&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Make sure to replace &lt;code&gt;eth0&lt;/code&gt; with the right value (check using &lt;code&gt;ip a&lt;/code&gt;).&lt;/em&gt; You'll find it using: &lt;code&gt;ip -4 route ls | grep default | grep -Po '(?&amp;lt;=dev )(\S+)' | head -1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Finally, do the following on your server:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
 su
