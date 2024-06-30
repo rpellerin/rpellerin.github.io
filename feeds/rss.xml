@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 25 Jun 2024 10:57:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 17:55:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périoriste.&lt;/p&gt;
@@ -7295,8 +7295,8 @@ apt install rsync
 &lt;li&gt;
 &lt;p&gt;Now, it's time to delete the &lt;em&gt;pi&lt;/em&gt; user. Log in as your new user (in my case it's &lt;em&gt;pipi&lt;/em&gt;) and then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su &lt;span class="c1"&gt;# Type the root password here&lt;/span&gt;
-deluser --remove-home pi
-visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi user&lt;/span&gt;
+/usr/sbin/deluser --remove-home --remove-home --remove-all-files pi
+&lt;span class="nv"&gt;EDITOR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;vim /usr/sbin/visudo &lt;span class="c1"&gt;# Make sure there&amp;#39;s no reference to pi user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/li&gt;
@@ -7883,7 +7883,7 @@ systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; firewall
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id="openvpn-247"&gt;OpenVPN 2.4.7&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su - &lt;span class="c1"&gt;# The hyphen to get $PATH updated, so as to include /usr/sbin&lt;/span&gt;
 apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install openvpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -7892,13 +7892,14 @@ apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; apt install ope
 &lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn/easy-rsa
 cp vars.example vars
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;set_var EASYRSA_KEY_SIZE       2048&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; vars &lt;span class="c1"&gt;# No need to source this file&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;set_var EASYRSA_CERT_EXPIRE    3650&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; vars
 &lt;span class="c1"&gt;# Edit also EASYRSA_REQ_COUNTRY, PROVINCE, CITY, ORG, and EMAIL&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;From now on, I highly recommend you read &lt;em&gt;/etc/openvpn/easy-rsa/doc/EasyRSA-Readme.md&lt;/em&gt; and &lt;a href="https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md"&gt;https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md&lt;/a&gt; in order to continue setting up OpenVPN. As explained, you need to create a PKI to get three distinct things: your CA, a certificate and private key for the server and another couple of this kind for clients. Normally you should generate the pair for clients on your personnal computer, however it's not necessary in our case (who cares about security anyway?).&lt;/p&gt;
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./easyrsa init-pki
-./easyrsa build-ca &lt;span class="c1"&gt;# Add a strong password which will be used to sign other certificates. Leave unchanged the default Common Name.&lt;/span&gt;
+./easyrsa build-ca &lt;span class="c1"&gt;# Add a CA password. Add a different strong PEM passphrase which will be used to sign other certificates. Leave unchanged the default Common Name.&lt;/span&gt;
 ./easyrsa gen-req server nopass &lt;span class="c1"&gt;# Do not add a password for the server; use &amp;#39;server&amp;#39; as the Common Name (CN)&lt;/span&gt;
 ./easyrsa sign-req server server
 ./easyrsa gen-req client &lt;span class="c1"&gt;# Use &amp;#39;client&amp;#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server&lt;/span&gt;
@@ -7907,24 +7908,29 @@ cp vars.example vars
 
 &lt;p&gt;Once the certificates and private keys are generated for the server and a client at least, do the following on your Pi and then go back to reading OpenVPN's documentation:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./easyrsa gen-dh
-cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
+cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf /etc/openvpn/
 cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
 &lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
-openvpn --genkey --secret ta.key
-gunzip server.conf.gz
+openvpn --genkey secret ta.key
 vim server.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You should edit &lt;em&gt;server.conf&lt;/em&gt; like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;port 1194
-proto udp
+proto udp6
 dev tun
 ca /etc/openvpn/easy-rsa/pki/ca.crt
 cert /etc/openvpn/easy-rsa/pki/issued/server.crt
 key /etc/openvpn/easy-rsa/pki/private/server.key
 dh /etc/openvpn/easy-rsa/pki/dh.pem
+topology subnet
+
+# Generated from https://unique-local-ipv6.com/
+server-ipv6 fd53:f764:7bf7::/48
+
 push &amp;quot;route 192.168.1.0 255.255.255.0&amp;quot;
-push &amp;quot;redirect-gateway def1 bypass-dhcp&amp;quot;
+push &amp;quot;route-ipv6 2000::/3&amp;quot;
+push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.222.222&amp;quot;
 push &amp;quot;dhcp-option DNS 208.67.220.220&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
@@ -7991,6 +7997,7 @@ cat /etc/openvpn/ta.key &amp;gt;&amp;gt; client.ovpn
 &lt;p&gt;Copy that &lt;em&gt;client.ovpn&lt;/em&gt; file on your client.&lt;/p&gt;
 &lt;p&gt;On your Pi, uncomment the following line in &lt;em&gt;/etc/sysctl.conf&lt;/em&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Apply changes:&lt;/p&gt;
@@ -8008,6 +8015,27 @@ iptables -A FORWARD -s &lt;span class="m"&gt;10&lt;/span&gt;.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;p&gt;If you prefer not to use any firewall, replace the content of &lt;code&gt;firewall.sh&lt;/code&gt; with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="c1"&gt;# OpenVPN&lt;/span&gt;
+fw_start &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt;
+start&lt;span class="p"&gt;|&lt;/span&gt;restart&lt;span class="o"&gt;)&lt;/span&gt;
+ fw_start
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+*&lt;span class="o"&gt;)&lt;/span&gt;
+ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Usage: &lt;/span&gt;&lt;span class="nv"&gt;$0&lt;/span&gt;&lt;span class="s2"&gt; {start}&amp;quot;&lt;/span&gt;
+ &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+ &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+&lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Make sure to replace &lt;code&gt;eth0&lt;/code&gt; with the right value (check using &lt;code&gt;ip a&lt;/code&gt;).&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Finally, do the following on your server:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/openvpn
 su
