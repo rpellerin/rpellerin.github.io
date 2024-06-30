@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:32:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:36:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périoriste.&lt;/p&gt;
@@ -8011,7 +8011,8 @@ sysctl -p
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in &lt;code&gt;firewall.sh&lt;/code&gt; (the lines are there already, uncomment them):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;iptables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 iptables -A FORWARD -s &lt;span class="m"&gt;10&lt;/span&gt;.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -8021,7 +8022,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 &lt;span class="c1"&gt;# OpenVPN&lt;/span&gt;
 fw_start &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -o eth0 -j MASQUERADE
 ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 &lt;span class="o"&gt;}&lt;/span&gt;
 

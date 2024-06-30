@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2024-06-30T18:32:00+02:00">Sun 30 June 2024</time>        </p>
+<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2024-06-30T18:36:00+02:00">Sun 30 June 2024</time>        </p>
     <h1>Raspberry Pi: The Ultimate Guide</h1>
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6014 words.">30 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6028 words.">30 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -959,7 +959,8 @@ sysctl -p
 </code></pre></div>
 
 <p>Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in <code>firewall.sh</code> (the lines are there already, uncomment them):</p>
-<div class="highlight"><pre><span></span><code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+<div class="highlight"><pre><span></span><code>iptables -t nat -I POSTROUTING <span class="m">1</span> -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING <span class="m">1</span> -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 iptables -A FORWARD -s <span class="m">10</span>.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 </code></pre></div>
@@ -969,7 +970,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 <span class="c1"># OpenVPN</span>
 fw_start <span class="o">()</span> <span class="o">{</span>
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -I POSTROUTING <span class="m">1</span> -o eth0 -j MASQUERADE
 ip6tables -t nat -I POSTROUTING <span class="m">1</span> -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 <span class="o">}</span>
 

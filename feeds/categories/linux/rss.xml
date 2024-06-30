@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:32:00 +0200</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 30 Jun 2024 18:36:00 +0200</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -1617,7 +1617,8 @@ sysctl -p
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Don't forget to set up a port forward rule to forward UDP port 1194 from your gateway/router to the machine running the OpenVPN server. In addition, allow incomings UDP connections on port 1194 and these rules, in &lt;code&gt;firewall.sh&lt;/code&gt; (the lines are there already, uncomment them):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;iptables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -o eth0 -j MASQUERADE
+ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 iptables -A FORWARD -s &lt;span class="m"&gt;10&lt;/span&gt;.8.0.0/24 -j ACCEPT
 iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1627,7 +1628,7 @@ iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
 
 &lt;span class="c1"&gt;# OpenVPN&lt;/span&gt;
 fw_start &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -o eth0 -j MASQUERADE
 ip6tables -t nat -I POSTROUTING &lt;span class="m"&gt;1&lt;/span&gt; -s fd42:42:42:42::/112 -o eth0 -j MASQUERADE
 &lt;span class="o"&gt;}&lt;/span&gt;
 
