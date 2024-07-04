@@ -6,6 +6,22 @@ Slug: documentaries-to-watch
 Authors: Romain Pellerin
 Summary: Educational videos on various topics
 
+# Homos en France
+
+Seen on France 2.
+
+- [https://archive.org/details/homos-en-france-france-2-2023-05-16-21-12-1080p-5398k](https://archive.org/details/homos-en-france-france-2-2023-05-16-21-12-1080p-5398k)
+
+Life-changing documentary, that will change your views and opinions on the matter. Must watch, for anyone, regardless of their sexual orientation.
+
+# Mark Cavendish: Never Enough
+
+See on Netflix.
+
+- [https://www.netflix.com/us-en/title/81568626](https://www.netflix.com/us-en/title/81568626)
+
+Dare I say the best professional road cycling documentary ever? Probably.
+
 # Antivax - Les Marchands de doute
 
 Seen on Arte.
@@ -47,10 +63,6 @@ Seen on Arte.
 
 - [https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4](https://peertube.cipherbliss.com/w/8c730c33-dc00-4d3a-8c5c-7ec11f4d8da4)
 - [https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48](https://tube.fede.re/w/0f7ff800-5633-4b54-8506-7c65b233bd48)
-
-# Urbanisme : La fin de la maison individuelle
-
-- [https://www.youtube.com/watch?v=_-gsCVB99u8](https://www.youtube.com/watch?v=_-gsCVB99u8)
 
 # Vers des transports durables - Des métropoles en mouvement
 
