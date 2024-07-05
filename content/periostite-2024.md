@@ -12,7 +12,7 @@ Dans la famille des blessures en course à pied, je voudrais la périostite... d
 
 Tout commence il y a un peu plus de 2 mois, juste après mon [semi-marathon de début Avril]({filename}/lessons-learned-apres-4-ans-de-running.md). Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.
 
-Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périoriste.
+Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.
 
 24 avril, course de 5 kms courrue à fond (3'55"/km). Presque pas de douleur pendant la course.
 
@@ -26,7 +26,7 @@ Jusqu'au vendredi 21 juin, où lors d'une sortie de 45 mins en endurance fondame
 
 # Symptômes
 
-Mes symptômes sont plutôt ceux classiques d'une périostite, même s'ils diffèrent pas mal de ma première périoriste à l'autre jambe.
+Mes symptômes sont plutôt ceux classiques d'une périostite, même s'ils diffèrent pas mal de ma première périostite à l'autre jambe.
 
 - Douleur sur le coté intérieur du tibia de la jambe droite, sur une bande d'une dizaine de centimètres, plutôt vers le bas, qui parfois irradie dans tout le tibia, même du coté extérieur du tibia, et me donne une sensation de faiblesse dans la jambe lors de l'appui au sol.
 - Parfois ça passe pendant la course, si j'accélère. Parfois, ça empire pendant la course.
