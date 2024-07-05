@@ -20,7 +20,7 @@ Ensuite, début Mai, [S25 de Berlin, course de 25 kms]({filename}/spring-2024.md
 
 Après S25, pareil, pas de pause, je reprends les entrainements dès le mardi suivant, soit 48h après 😱. Encore une erreur... sachant que je venais de battre mes PR coup sur coup (au semi, aux 5 et aux 25 kms). À partir de là, la douleur ne me quitte plus lors de mes sorties, survient même parfois en marchant ou en descendant des escaliers, et empire.
 
-Fin-mai, je coupe la course à pied 2 semaines complètes. Je ne sens plus rien, aucune douleur. Le premier weekend de Juin arrive et avec lui le triathlon de Berlin. Tout se passe bien mais la douleur fait ensuite son retour dans les jours suivant, graduellement, un peu plus forte à chaque sortie.
+Fin-mai, je coupe la course à pied 2 semaines complètes. Je ne sens plus rien, aucune douleur. Le premier weekend de Juin arrive et avec lui le triathlon de Berlin. Tout se passe bien lors de la course, je reprends par la suite les entrainements. Mais la douleur fait ensuite son retour dans les jours suivant, graduellement, un peu plus forte à chaque sortie.
 
 Jusqu'au vendredi 21 juin, où lors d'une sortie de 45 mins en endurance fondamentale, j'atteinds un seuil de douleur de 7 ou 8 sur 10, du jamais vu. Jusqu'alors je n'avais jamais dépassé 5 ou 6. Je décide de stoper ma sortie au bout de 27 minutes seulement, et commence une pause de 3 semaines.
 
