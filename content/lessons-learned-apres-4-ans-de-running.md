@@ -101,6 +101,7 @@ Je commence à passer des heures à n'en plus finir sur Youtube, à regarder ple
 
 Je me documente notamment sur comment bien gérer une course, toujours en ayant en tête le semi de Berlin, prévu pour Avril :
 
+- [Les Mystères de la Performance en Course à Pied Enfin Révélés ! Un vrai guide de ce qu'il faut faire](https://www.youtube.com/watch?v=NcsLdBeuwfw)
 - [Marathon , que faire la dernière semaine ?](https://www.youtube.com/watch?v=qxr-mcilVB0)
 - [Le pire et le meilleur coureur de Marathon dans une seule Vidéo ! Indispensable !!](https://www.youtube.com/watch?v=tT1ZQLQ_qLQ)
 - [Le guide indispensables des 48 heures avant votre Marathon pour reussir la course idéale](https://www.youtube.com/watch?v=2Nenxk8hM8s)
