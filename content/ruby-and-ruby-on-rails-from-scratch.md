@@ -63,9 +63,10 @@ Update the version in `Gemfile` and `.ruby-version`. Then run:
 
 ```bash
 cd $HOME/.rbenv/plugins/ruby-build && git pull && cd -
-rbenv install
+rbenv install && rbenv rehash
 gem install bundler
 bundle
+rbenv global "$(cat .ruby-version)"
 ```
 
 # Stuff to know
