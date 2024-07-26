@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Code</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 24 Sep 2022 12:11:00 +0200</lastBuildDate><item><title>Keys to efficient i18n</title><link>//romainpellerin.eu/keys-to-efficient-i18n.html</link><description>&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Code</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 26 Jul 2024 17:26:00 +0200</lastBuildDate><item><title>Kotlin</title><link>//romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="idea"&gt;IDEA&lt;/h1&gt;
+&lt;p&gt;Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.&lt;/p&gt;
+&lt;p&gt;Kotlin is included in each IntelliJ IDEA release.&lt;/p&gt;
+&lt;h1 id="setup"&gt;Setup&lt;/h1&gt;
+&lt;h2 id="install-java"&gt;Install Java&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
+sudo apt install openjdk-21-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="install-kotlin"&gt;Install Kotlin&lt;/h2&gt;
+&lt;p&gt;In most scenarios, installing Kotlin is not necessary. Only Java is.&lt;/p&gt;
+&lt;h2 id="springboot"&gt;Springboot&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jul 2024 15:10:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-26:/kotlin.html</guid><category>Code</category><category>kotlin</category><category>java</category><category>code</category></item><item><title>Keys to efficient i18n</title><link>//romainpellerin.eu/keys-to-efficient-i18n.html</link><description>&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to English as a default language/locale.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;As Doctolib is not present in any English speaking country, we don't have region-specific locales such as en-GB or en-US, nor do we have multiple French, German or Italian locales. We therefore in the rest of this article use the terms&lt;/em&gt; &lt;strong&gt;&lt;em&gt;locale&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;and&lt;/em&gt; &lt;strong&gt;&lt;em&gt;language&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;interchangeably. Localization (formatting of dates, currency, the change of language) and translation in Ruby on Rails are the same process. Only in the front end does localization require extra setting of some packages like &lt;a href="https://momentjs.com/"&gt;Moment.js&lt;/a&gt; or &lt;a href="https://day.js.org/"&gt;Day.js&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It was not an easy move. But we did it for multiple reasons:&lt;/p&gt;
@@ -490,9 +501,10 @@ bundle install &lt;span class="c1"&gt;# or simply `bundle`&lt;/span&gt;
 &lt;h1 id="upgrade-ruby-version"&gt;Upgrade Ruby version&lt;/h1&gt;
 &lt;p&gt;Update the version in &lt;code&gt;Gemfile&lt;/code&gt; and &lt;code&gt;.ruby-version&lt;/code&gt;. Then run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.rbenv/plugins/ruby-build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git pull &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; -
-rbenv install
+rbenv install &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rbenv rehash
 gem install bundler
 bundle
+rbenv global &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat .ruby-version&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id="stuff-to-know"&gt;Stuff to know&lt;/h1&gt;

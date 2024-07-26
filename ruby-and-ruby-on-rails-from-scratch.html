@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-03-16T23:50:00+01:00">Fri 16 March 2018</time> - Last update: <time datetime="2022-09-24T12:11:00+02:00">Sat 24 September 2022</time>        </p>
+<time datetime="2018-03-16T23:50:00+01:00">Fri 16 March 2018</time> - Last update: <time datetime="2024-07-26T17:26:00+02:00">Fri 26 July 2024</time>        </p>
     <h1>Ruby and Ruby on Rails from scratch</h1>
     <div class="grey">
         <p class="italic">How to learn Ruby and Rails</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 574 words.">3 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 581 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/ruby.html">ruby</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/rails.html">rails</a></p>    </div>
 </header>
@@ -136,9 +136,10 @@ bundle install <span class="c1"># or simply `bundle`</span>
 <h1 id="upgrade-ruby-version">Upgrade Ruby version</h1>
 <p>Update the version in <code>Gemfile</code> and <code>.ruby-version</code>. Then run:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$HOME</span>/.rbenv/plugins/ruby-build <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> <span class="nb">cd</span> -
-rbenv install
+rbenv install <span class="o">&amp;&amp;</span> rbenv rehash
 gem install bundler
 bundle
+rbenv global <span class="s2">&quot;</span><span class="k">$(</span>cat .ruby-version<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 
 <h1 id="stuff-to-know">Stuff to know</h1>
@@ -200,7 +201,7 @@ bundle
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 24 September 2022</footer>
+    Last update: Fri 26 July 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>

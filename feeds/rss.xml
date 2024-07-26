@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 06 Jul 2024 17:36:00 +0200</lastBuildDate><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 26 Jul 2024 17:26:00 +0200</lastBuildDate><item><title>Kotlin</title><link>//romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="idea"&gt;IDEA&lt;/h1&gt;
+&lt;p&gt;Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.&lt;/p&gt;
+&lt;p&gt;Kotlin is included in each IntelliJ IDEA release.&lt;/p&gt;
+&lt;h1 id="setup"&gt;Setup&lt;/h1&gt;
+&lt;h2 id="install-java"&gt;Install Java&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
+sudo apt install openjdk-21-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id="install-kotlin"&gt;Install Kotlin&lt;/h2&gt;
+&lt;p&gt;In most scenarios, installing Kotlin is not necessary. Only Java is.&lt;/p&gt;
+&lt;h2 id="springboot"&gt;Springboot&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jul 2024 15:10:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-26:/kotlin.html</guid><category>Code</category><category>kotlin</category><category>java</category><category>code</category></item><item><title>Périostite 2024</title><link>//romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.&lt;/p&gt;
@@ -4953,9 +4964,10 @@ bundle install &lt;span class="c1"&gt;# or simply `bundle`&lt;/span&gt;
 &lt;h1 id="upgrade-ruby-version"&gt;Upgrade Ruby version&lt;/h1&gt;
 &lt;p&gt;Update the version in &lt;code&gt;Gemfile&lt;/code&gt; and &lt;code&gt;.ruby-version&lt;/code&gt;. Then run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.rbenv/plugins/ruby-build &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; git pull &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; -
-rbenv install
+rbenv install &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; rbenv rehash
 gem install bundler
 bundle
+rbenv global &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat .ruby-version&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id="stuff-to-know"&gt;Stuff to know&lt;/h1&gt;
