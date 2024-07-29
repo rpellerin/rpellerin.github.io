@@ -8,7 +8,7 @@ Authors: Romain Pellerin
 Summary: My advice about the USA
 Image: usa.jpg
 
-*Update: this article was updated in 2018, following recent trips to the USA*.
+_Update: this article was updated in 2018 and 2024, following recent trips to the USA_.
 
 In 2016, I went to the US for the first time of my life. Here is a list of things I did and tips I gathered.
 
@@ -35,7 +35,14 @@ Now let's move on to my advice.
 
 # Things to do in NYC
 
+<figure class="center">
+<img src="{static}/images/manhattanhenge.jpg" alt="Sunset in New York" />
+<figcaption><strong>Manhattanhenge</strong>. Find the right spot, for the best picture. Happens only twice a year.</figcaption>
+</figure>
+
 CityPass is a must for most travellers, it gives access to 6 major places, with incredible value.
+
+_Edit 2024: they updated their offers. There are now 3 different bundles, with increasing prices: 3 attractions (C3 - $104), 5 attractions (CityPASS - $146), or 10 (C·All $229)._
 
 I've been to NYC a couple of times. Here is a list of activities I did there (or did not but I would have loved to do).
 
@@ -45,24 +52,25 @@ The following fews places are doable in a single day, in the following optimized
 
 - Little Italy, Chinatown and Soho: [you can go for a free tour](http://www.freetoursbyfoot.com/new-york-tours/walking-tours/soho-little-italy-chinatown/) or do it by yourself. These neighborhoods are very close to one another, you can visit them in 2 hours.
 - Washington Square Park
-- Flat Iron & Madison Square (there are cute squirrels)
+- Flat Iron & Madison Square (there are cute squirrels) & the video portal to Dublin
 - Empire State Building (up to the 86th floor)
 - Grand central: the train station
 - Rockefeller Center (late afternoon/early evening, to enjoy the sunset)
 
 The rest is more time-consuming:
 
-- Statue of Liberty and Ellis Island: take the ferry, there are tours which include both places for $18 (if my memory serves well). Dedicate half a day to that. The line to the boat from Battery Park can take up to an hour and a half.
+- Statue of Liberty and Ellis Island: take the ferry, there are tours which include both locations for $18 (if my memory serves well). Dedicate half a day to that. The line to the boat from Battery Park can take up to an hour and a half. If you book it early enough (at least 3 months), you can also visit the crown of the statue.
 - Charging Bull, in Wall Street: I recommend you do it after coming back from Ellis Island, in the evening. It's less crowded.
+- Edge, Hudson Yards
 - The MoMA (Museum of Modern Art)
 - The MET (Metropolitan Museum of Art)
 - Central park (don't miss out the Balto statue)
 - The American Museum of Natural History
 - The 9/11 Memorial Museum (it can take up to 3-4 hours, and at the very least 2 hours):
-    
-    - First, go down to the lowest floor, then make a left and head towards to room under the North Tower: it's the best part of the museum. It easily takes an hour, maybe an hour and a half to go through it.
-    - Then, do the rest of the museum.
-    - Don't forget about the 11-min film called "Rebirth", under the South Tower.
+
+  - First, go down to the lowest floor, then make a left and head towards to room under the North Tower: it's the best part of the museum. It easily takes an hour, maybe an hour and a half to go through it.
+  - Then, do the rest of the museum.
+  - Don't forget about the 11-min film called "Rebirth", under the South Tower.
 
 - Coney Island
 - St. Mark's Place, in East Village
@@ -71,14 +79,38 @@ The rest is more time-consuming:
 The following places offer a great view at any time of the day. If you want to enjoy them as much as you can, my advice is to get there at around 7pm and stay for about 2 hours. This way you'll get the view at night also.
 
 - Times Square: don't forget to say hi to the [Naked Cowboy](https://en.wikipedia.org/wiki/Naked_Cowboy)
-- The Brooklyn Bridge, the Pier 1 and the Brooklyn Heights Promenade.
+- The Brooklyn Bridge, the Brooklyn Heights Promenade and the piers below
+- Dumbo - Manhattan Bridge View
 - One World Trade Center
+- Check out the Bean Sculpture a few blocks away
+- The High Line (careful, it closes at 10pm)
 
 ## At night
 
-- Broadway (the district referred to as, not the street): many theaters along Broadway Street and Times Square
-- The High Line
+- Broadway (the district referred to as, not the street): many theaters along Broadway Street and Times Square. Go watch a musical if you can!
 - Greenwich Village: it was the center of the folk music scene in the early 1960s. MacDougal Street was the Main Street of Greenwich Village. The most popular folksingers played in clubs on MacDougal.
+
+## Going to and from airports
+
+### LaGuardia
+
+The LaGuardia Link Q70 bus line is fare free. Otherwise, they are other paid buses one can ride.
+
+### EWR - Newark Liberty International Airport
+
+This one is tricky, there are many many options. Here are two, the most convenient + fastest one, and the cheapest one (from my experience!):
+
+- **Convenient+fast**: in 30 mins and for a little less than $20 and a single ticket, go to/leave from New York Penn Station and arrive directly at the aiport by riding the NJ TRANSIT train to Newark Liberty International Airport Station, then switch to AirTrain (using the same ticket), that will take you to your terminal.
+- **Cheapest**: in just under 60 minutes, go to/leave from New York Penn Station riding the NJ TRANSIT train to Newark Penn Station ($6), then get on the bus 62 (less than $2) to your terminal.
+
+## Paying for public transport in NYC
+
+You can basically buy a MetroCard, pay directly with your phone/credit card by tapping it, or get OMNI. All 3 options are essentially the same, with subtle differences worth knowing if you want to save a few dollars:
+
+- [Everything you need to know about fares in New York ](https://new.mta.info/fares#:~:text=With%20OMNY%20or%20a%20pay,subway%2C%20or%20bus%20to%20bus)
+- [Metro card vs OMNY for visitors](https://www.reddit.com/r/AskNYC/comments/124cij4/metro_card_vs_omny_for_visitors/)
+
+My best advice remains: ride a Citibike!! (it's not cheap though 😂 - $19 per Day Pass)
 
 # Things to do in Philadelphia
 
@@ -152,8 +184,8 @@ Check the Go Miami Card out, it might be worth buying one. It's more or less lik
 - Watch [Las Vegas in 24 hours](https://www.youtube.com/watch?v=mfve-4wuUz8)
 - Really funny slot machines:
 
-    - Bamboo Panda in the Mirage Hotel
-    - Aladin and the Magic Lamp at Casino Royale
+  - Bamboo Panda in the Mirage Hotel
+  - Aladin and the Magic Lamp at Casino Royale
 
 - Encore Beach Club is a nice place to go to
 - Omnia, in Caesar's palace, is a great nightclub
