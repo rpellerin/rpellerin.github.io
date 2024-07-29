@@ -106,6 +106,7 @@ Je me documente notamment sur comment bien gérer une course, toujours en ayant 
 - [Le pire et le meilleur coureur de Marathon dans une seule Vidéo ! Indispensable !!](https://www.youtube.com/watch?v=tT1ZQLQ_qLQ)
 - [Le guide indispensables des 48 heures avant votre Marathon pour reussir la course idéale](https://www.youtube.com/watch?v=2Nenxk8hM8s)
 - [Il est encore temps d'éviter ces erreurs... MARATHON DE PARIS 2024](https://www.youtube.com/watch?v=xESIO-LcBJI)
+- [On débunke 10 idées reçues sur le running avec Blaise Dubois ! - DLTDC x La Clinique du Coureur](https://www.youtube.com/watch?v=iUMqQKBvUIQ)
 
 <img src="{static}/images/lessons-learned-apres-4-ans-de-running/semi-2024-test.png" alt="Sortie test en vue du semi de Berlin 2024" style="float:left" />
 
