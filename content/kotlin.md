@@ -22,6 +22,8 @@ Kotlin is included in each IntelliJ IDEA release.
 
 Install the `SonarLint` plugin for code quality checks.
 
+To add git blame annotations, add the plugin [GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox).
+
 # Setup
 
 ## Install Java
