@@ -45,7 +45,3 @@ In most scenarios, installing Kotlin is not necessary. Only Java is.
 
 [Using the Maven Wrapper in a project is also an alternative.](https://maven.apache.org/wrapper/) Yet it does not hurt to install Maven globally on the system, it won't conflict.
 
-## Coding style
-
-Read [https://github.com/spotify/fmt-maven-plugin](https://github.com/spotify/fmt-maven-plugin).
-
