@@ -278,7 +278,7 @@ Now, here's the Arduino code:
     #define MIN_HEIGHT 66.4
     #define MAX_HEIGHT 106.0
     #define LOWER_TIME_OUT_AFTER_MS 43000
-    #define RAISE_TIME_OUT_AFTER_MS 59000
+    #define RAISE_TIME_OUT_AFTER_MS 63000
     #define LOOP_DELAY 100
     #define IGNORE_DELTA_IN_CM_GREATHER_THAN 1.5
 
@@ -291,8 +291,8 @@ Now, here's the Arduino code:
     int movingStartedAt = 0; // in milliseconds
 
     float readHeight() {
-      //The sensor is triggered by a HIGH pulse of 10 or more microseconds.
-      //Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+      // The sensor is triggered by a HIGH pulse of 10 or more microseconds.
+      // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
       digitalWrite(TRIGGER_PIN, LOW);
       delayMicroseconds(5);
       digitalWrite(TRIGGER_PIN, HIGH);
