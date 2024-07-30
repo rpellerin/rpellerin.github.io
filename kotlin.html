@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-07-26T15:10:00+02:00">Fri 26 July 2024</time>        </p>
+<time datetime="2024-07-26T15:10:00+02:00">Fri 26 July 2024</time> - Last update: <time datetime="2024-07-30T14:00:00+02:00">Tue 30 July 2024</time>        </p>
     <h1>Kotlin</h1>
     <div class="grey">
         <p class="italic">Cheatsheet for beginners - such as myself!</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 62 words.">Less than 1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 213 words.">1 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/kotlin.html">kotlin</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/java.html">java</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a></p>    </div>
 </header>
@@ -90,6 +90,11 @@
     <h1 id="idea">IDEA</h1>
 <p>Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.</p>
 <p>Kotlin is included in each IntelliJ IDEA release.</p>
+<h2 id="setup-intellij">Setup IntelliJ</h2>
+<p><code>IntelliJ Idea &gt; Settings &gt; Build, Execution, Deployment &gt; Build Tools &gt; Maven &gt; Importing</code>. Check the 2 checkboxes "Sources" and "Documentation".</p>
+<p><code>Intellij Idea &gt; Settings &gt; Editor &gt; General &gt; Auto Import</code>, check <code>Optimize imports on the fly</code> for both Java and Kotlin.</p>
+<p><code>Intellij Idea &gt; Settings &gt; Editor &gt; Tools &gt; Actions on Save</code>, check <code>Reformat code</code>, <code>Optimize imports</code>, <code>Rearrange code</code> and <code>Run code cleanup</code>.</p>
+<p>Install the <code>SonarLint</code> plugin for code quality checks.</p>
 <h1 id="setup">Setup</h1>
 <h2 id="install-java">Install Java</h2>
 <div class="highlight"><pre><span></span><code>sudo apt update
@@ -98,10 +103,18 @@ sudo apt install openjdk-21-jdk
 
 <h2 id="install-kotlin">Install Kotlin</h2>
 <p>In most scenarios, installing Kotlin is not necessary. Only Java is.</p>
-<h2 id="springboot">Springboot</h2>
+<h2 id="install-maven">Install Maven</h2>
+<p><a href="https://stackoverflow.com/questions/66399278/having-maven-plugins-in-intellij-idea-without-maven-installation-in-computer">Installing Maven, our build tool, is not required, as IntelliJ comes with a bundled version of Maven. However, installing your own version might come in handy, to be able to run Maven from the command line.</a></p>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install maven
+</code></pre></div>
+
+<p><a href="https://maven.apache.org/wrapper/">Using the Maven Wrapper in a project is also an alternative.</a> Yet it does not hurt to install Maven globally on the system, it won't conflict.</p>
+<h2 id="coding-style">Coding style</h2>
+<p>Read <a href="https://github.com/spotify/fmt-maven-plugin">https://github.com/spotify/fmt-maven-plugin</a>.</p>
 </article>
 <footer class="grey italic small">
-    Last update: Fri 26 July 2024</footer>
+    Last update: Tue 30 July 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
