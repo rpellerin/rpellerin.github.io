@@ -18,7 +18,7 @@ Recently, it was these three:
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qgMqrFiPI_g?rel=0" frameborder="0" allowfullscreen></iframe>
 
-So I thought I'd just start collecting ideas about what makes a great video, great!
+So I thought I'd just start collecting ideas about what makes a great video great!
 
 # Ski videos
 
