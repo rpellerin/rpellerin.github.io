@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, running, training" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Building my own plan is the best way to learn" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Running: Building My Own Training Plan - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Building my own plan is the best way to learn" />
+
+        <title>Running: Building My Own Training Plan - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/running-training-plan.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-08-03T16:00:00+02:00">Sat 03 August 2024</time>        </p>
+    <h1>Running: Building My Own Training Plan</h1>
+    <div class="grey">
+        <p class="italic">Building my own plan is the best way to learn</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1088 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/sports.html">Sports</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/training.html">training</a></p>    </div>
+</header>
+<article>
+    <h1 id="goal">Goal</h1>
+<p>W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app <a href="https://www.campus.coach/">Campus Coach</a> for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.</p>
+<p>Anyways, it was not perfect, so I decided to look for an alternative. And I found <a href="https://www.decathlon-pacer.com/">Kiprun Pacer</a>, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.</p>
+<p>So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.</p>
+<p>I'll start with Kiprun Pacer until October, and then from January until April 2025 I'll be using Campus Coach.</p>
+<h1 id="aug-oct-2024-kiprun-pacer">Aug-Oct 2024: Kiprun Pacer</h1>
+<p>I set up my plan with the following parameters:</p>
+<ul>
+<li>I intend to do 4 sessions per week</li>
+<li>The race is on October 27th, 2024. It sets the plan duration to 13 weeks.</li>
+<li>I do not want to skip the evaluation phase</li>
+<li>Goal finish time: 3h29'00"</li>
+</ul>
+<p>Like Campus Coach, the app also asks you for your personal records, to fine tune the training even more.</p>
+<p>For what it's worth, I just completed today my <a href="https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie">MAS test</a> and the result is: 16.95 km/h! It's commonly said that a marathon is usually run between 75% and 80% of one's MAS. 75% of 16.95 km/h = 12.71 km/h. In othr words, a pace of 4'44"/km, or a finish time around 3h19". So my goal of 3h29'00" for a first marathon sounds realistic.</p>
+<h2 id="pros">Pros</h2>
+<ul>
+<li>The app plans each week, i.e. it assigns a fixed day for each session, as opposed to simply telling you to do the sessions in the week the way you want. I need that sort of thing, otherwise I tend to poorly schedule my runs throughout a week. To do that, the app first asks you how many days a week you want to train, and which ones.</li>
+<li>Sessions can be postponed/rescheduled</li>
+<li>The app lets you set a goal finish time before you start any plan, and will adjust all the sessions towards that goal, love it 😍</li>
+<li>After a run, if you have connected your Garmin account to it, the app detects that the run was one from your training plan, and automatically "ticks it off". It then asks you a couple of optional questions, like "did you take pleasure in the run?", "how hard was it?", etc.</li>
+<li>
+<p>All the weeks in one's training plan are categorized. For my 13-week plan, those weeks fell in the following categories, in this order:</p>
+</li>
+<li>
+<p>Evalutation (MAS (Maximal Aerobic Speed) test) week - 1 week</p>
+</li>
+<li>Ramping up - 4 weeks</li>
+<li>Specific pace - 5 weeks</li>
+<li>Sharpening - 3 weeks</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>The sharpening (i.e taper) phase of my 13-week plan was <strong>a bit long and way too brutal</strong>. The decrease in kilometers is too big and too sudden. Week 10: 77.48 kms. Week 11: 42.09 kms. Week 12: 36.19 kms. Week 13 (race week): 15.13 kms.</li>
+</ul>
+<h1 id="jan-mar-2025-campus-coach-paid-version">Jan-Mar 2025: Campus Coach (paid version)</h1>
+<h2 id="pros_1">Pros</h2>
+<ul>
+<li>There is a dedicated section in the app where to see your progress over time, and your expected progress to come. That's very motivating!</li>
+</ul>
+<h2 id="cons_1">Cons</h2>
+<ul>
+<li>The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time, and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.</li>
+<li>After a run, even if the app is connected to your Garmin account, you have to manually "validate the session", i.e. match your run in Garmin with a session in your plan in the app. A couple of more clicks, avoidable. Then it asks questions, like the Kiprun app, only less.</li>
+</ul>
+<h1 id="conclusion-how-training-plans-are-built">Conclusion: how training plans are built</h1>
+<p>So far, here are some bullet points on my learnings on how to build training plans yourself.</p>
+<ul>
+<li>
+<p>If one trains 4 times a week, then most weeks should look something like this:</p>
+</li>
+<li>
+<p>One easy jog, wihout speeding up at all, to build up one's endurance (<em>endurance fondamentale</em> in French)</p>
+</li>
+<li>One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace</li>
+<li>
+<p>One quality session, with fast segments.</p>
+<ul>
+<li>During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS.</li>
+<li>Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments will be longer but run slower, at marathon pace.</li>
+</ul>
+</li>
+<li>
+<p>One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration).</p>
+</li>
+<li>
+<p>One week out of 4 or 5 should be a recovery week, where the number of kilometers run is reduced, but also the number of fast segments.</p>
+</li>
+<li>The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.</li>
+<li>The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)</li>
+</ul>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.nolio.io/">Nolio, a website to build your training plans or collaborate with a coach</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=ZDdZ3TqJkd8">Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢</a></li>
+<li>https://www.youtube.com/watch?v=I3KcGSAfw0Q</li>
+<li>https://www.running-addict.fr/category/plans-dentrainement/</li>
+<li>https://www.runnek.fr/blog/construire-plan-entrainement-efficace-course-pied/</li>
+<li>https://www.conseils-courseapied.com/entrainement/planification.html</li>
+<li>https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/</li>
+<li>https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 03 August 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
