@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 04 Aug 2024 17:48:00 +0200</lastBuildDate><item><title>Running: Building My Own Training Plan</title><link>//romainpellerin.eu/running-building-my-own-training-plan.html</link><description>&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 05 Aug 2024 01:14:00 +0200</lastBuildDate><item><title>Running: Building My Own Training Plan</title><link>//romainpellerin.eu/running-building-my-own-training-plan.html</link><description>&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app &lt;a href="https://www.campus.coach/"&gt;Campus Coach&lt;/a&gt; for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.&lt;/p&gt;
 &lt;p&gt;Anyways, it was not perfect, so I decided to look for an alternative. And I found &lt;a href="https://www.decathlon-pacer.com/"&gt;Kiprun Pacer&lt;/a&gt;, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.&lt;/p&gt;
 &lt;p&gt;So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.&lt;/p&gt;
@@ -74,8 +74,8 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.nolio.io/"&gt;Nolio, a website to build your training plans or collaborate with a coach&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ZDdZ3TqJkd8"&gt;Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;https://www.youtube.com/watch?v=I3KcGSAfw0Q&lt;/li&gt;
-&lt;li&gt;https://www.youtube.com/watch?v=0hQsqivvRaI&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=0hQsqivvRaI"&gt;CAMPUS coach : pourquoi je ne suis pas convaincu...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I3KcGSAfw0Q"&gt;J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;https://www.running-addict.fr/category/plans-dentrainement/&lt;/li&gt;
 &lt;li&gt;https://www.runnek.fr/blog/construire-plan-entrainement-efficace-course-pied/&lt;/li&gt;
 &lt;li&gt;https://www.conseils-courseapied.com/entrainement/planification.html&lt;/li&gt;
@@ -1221,7 +1221,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;p&gt;This one is pretty hard to identify at first. For me, gradually over some rides I started noticing like a rubbing noise. The noice would be there regardless of me pedaling or not (can be hard to hear when not pedaling because of the freewheel).&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Rim cracks" src="//romainpellerin.eu/images/rim-cracks.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Turns out this is a very common problem with wheels. Can't be fixed, all you gotta do is replace the whole wheel (or rim if you like to build wheels).&lt;/p&gt;
-&lt;p&gt;My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21 or 32? In their OXIC version? Supposedly it breaks better, with the right blue pads from DT Swiss.&lt;/p&gt;
+&lt;p&gt;My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21 or 32? In their OXIC version? Supposedly it brakes better, with the right blue pads from DT Swiss.&lt;/p&gt;
 &lt;h2 id="tips-for-buying-wheels"&gt;Tips for buying wheels&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;"Centerlock" is a disc brake technology&lt;/li&gt;
