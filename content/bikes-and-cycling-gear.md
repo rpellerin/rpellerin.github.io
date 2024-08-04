@@ -122,8 +122,8 @@ th, td { border: 1px solid black; }
 
 ## Puncture proof tires
 
-- Continental Grand Prix 4-Season
-- Schwalbe marathon plus (very heavy though)
+- Continental Grand Prix 5000 (folding tires, clincher type) ([why](https://www.reddit.com/r/cycling/comments/fz64s6/looking_for_new_tires_should_i_get_gp5000_or_gp/), and [why](https://road.cc/content/forum/270993-continental-gp5000-or-4-season-all-year-riding)) for road bikes
+- Schwalbe marathon plus (very heavy though) for commute bikes
 
 ## [Bike computers](https://www.telegraph.co.uk/health-fitness/body/best-gps-cycle-computers/)
 
