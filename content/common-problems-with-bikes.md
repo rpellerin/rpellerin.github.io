@@ -24,7 +24,7 @@ This one is pretty hard to identify at first. For me, gradually over some rides 
 
 Turns out this is a very common problem with wheels. Can't be fixed, all you gotta do is replace the whole wheel (or rim if you like to build wheels).
 
-My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21 or 32? In their OXIC version? Supposedly it breaks better, with the right blue pads from DT Swiss.
+My wheels are the entry-level ones from Mavic, the Aksium. It looks like the entry-level wheels from DT Swiss (P1800 spline) are better made. Or maybe I should get the mid-level DT Swiss PR 1400 DICUT 21 or 32? In their OXIC version? Supposedly it brakes better, with the right blue pads from DT Swiss.
 
 ## Tips for buying wheels
 

@@ -81,8 +81,8 @@ So far, here are some bullet points on my learnings on how to build training pla
 
 - [Nolio, a website to build your training plans or collaborate with a coach](https://www.nolio.io/).
 - [Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢](https://www.youtube.com/watch?v=ZDdZ3TqJkd8)
-- https://www.youtube.com/watch?v=I3KcGSAfw0Q
-- https://www.youtube.com/watch?v=0hQsqivvRaI
+- [CAMPUS coach : pourquoi je ne suis pas convaincu...](https://www.youtube.com/watch?v=0hQsqivvRaI)
+- [J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)](https://www.youtube.com/watch?v=I3KcGSAfw0Q)
 - https://www.running-addict.fr/category/plans-dentrainement/
 - https://www.runnek.fr/blog/construire-plan-entrainement-efficace-course-pied/
 - https://www.conseils-courseapied.com/entrainement/planification.html
