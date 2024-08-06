@@ -66,7 +66,7 @@ So far, here are some bullet points on my learnings on how to build training pla
 
   - Development/ramp up: some general training, and exercises to improve one's MAS
   - Specific pace: specifically running at the goal pace, for long stretches, longer and longer over the weeks
-  - Sharpening: shorter runs, less intensity, less load, but same number of runs
+  - Sharpening: less intensity, less load (-30% to -50% less kms), but same number of runs
 
 - Depending on how long before the plan the person has not trained, a phase to get back into shape might be required before these 3 phases.
 - If one trains 4 times a week, then most weeks should look something like this:
