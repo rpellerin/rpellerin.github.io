@@ -62,6 +62,13 @@ For what it's worth, I just completed today my [MAS test](https://fr.wikipedia.o
 
 So far, here are some bullet points on my learnings on how to build training plans yourself.
 
+- Any marathon plan should be at least 12-week long, with the following phases:
+
+  - Development/ramp up: some general training, and exercises to improve one's MAS
+  - Specific pace: specifically running at the goal pace, for long stretches, longer and longer over the weeks
+  - Sharpening: shorter runs, less intensity, less load, but same number of runs
+
+- Depending on how long before the plan the person has not trained, a phase to get back into shape might be required before these 3 phases.
 - If one trains 4 times a week, then most weeks should look something like this:
 
   - One easy jog, wihout speeding up at all, to build up one's endurance (_endurance fondamentale_ in French)
@@ -84,7 +91,6 @@ So far, here are some bullet points on my learnings on how to build training pla
 - [CAMPUS coach : pourquoi je ne suis pas convaincu...](https://www.youtube.com/watch?v=0hQsqivvRaI)
 - [J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)](https://www.youtube.com/watch?v=I3KcGSAfw0Q)
 - https://www.running-addict.fr/category/plans-dentrainement/
-- https://www.runnek.fr/blog/construire-plan-entrainement-efficace-course-pied/
 - https://www.conseils-courseapied.com/entrainement/planification.html
 - https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/
 - https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/
