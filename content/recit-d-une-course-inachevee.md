@@ -41,11 +41,11 @@ Je suis loin du centre de Berlin, rentrer s'annonce compliqué. Je décide de me
   <source src="./videos/velocity-2024.mp4" type="video/mp4">
 </video>
 
-Après coup, je ne sais toujours pas pourquoi j'ai crevé autant. Était-ce la météo dégeulasse qui a charié de la merde en masse ? Y avait-il eu une manifestation/fête récente et du coup y avait-il du verre sur le sol ? Je sais pas...
+Après avoir tout démonté ensuite à la maison, j'ai crevé à l'avant et à l'arrière à cause de morceaux de verre. Il semblerait qu'à l'arrière les 2 crevaisons étaient dus au même morceau, que je n'ai pas senti au doigt lors de ma rapide inspection sur le bord de la route, avant de remonter la nouvelle chambre. Dommage. Étonnant quand même, du verre dans Grunewald, une forêt...
 
 # Leçons tirées
 
-Bon déjà, les pneus. Alors ok, peut-être que j'ai juste eu VRAIMENT pas de chance, peut-être que des nouveaux pneus n'auraient rien changé, mais quand même. Même si les miens étaient encore bons (les témoins d'usure étaient bien visibles et ok), les pneus avaient plus de 10,000 kms. J'ai hésité à les changer avant la course, j'ai vraiment failli le faire, puis je me suis dit que ça allait le faire. Oups. En 2022 pour l'Étape du Tour, j'avais changé les pneus. J'aurais du faire pareil là. D'ailleurs, c'est ces mêmes pneus de 2022 avec lesquelles j'ai roulé hier. À l'avenir, je changerai mes pneus avant chaque course. Je garderai les anciens en backup s'ils sont encore bons, on va pas gaspiller non plus.
+Bon déjà, les pneus. Alors ok, peut-être que j'ai juste eu VRAIMENT pas de chance, peut-être que des nouveaux pneus n'auraient rien changé, mais quand même. Même si les miens étaient encore bons (les témoins d'usure étaient visibles et ok, même si pas tout neufs), les pneus avaient plus de 10,000 kms. J'ai hésité à les changer avant la course, j'ai vraiment failli le faire, puis je me suis dit que ça allait le faire. Oups. En 2022 pour l'Étape du Tour, j'avais changé les pneus. J'aurais du faire pareil là. D'ailleurs, c'est ces mêmes pneus de 2022 avec lesquelles j'ai roulé hier. À l'avenir, je changerai mes pneus avant chaque course. Je garderai les anciens en backup s'ils sont encore bons, on va pas gaspiller non plus.
 
 Deuxième leçon : toujours avoir 2 chambres à air de rechange en course. Pareil, pour l'Étape du Tour j'en avais 2 à chaque fois. Là je sais pas pourquoi, j'y ai même pas pensé, je suis parti qu'avec une.
 
