@@ -84,13 +84,93 @@ So far, here are some bullet points on my learnings on how to build training pla
 - The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.
 - The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)
 
-# Resources
+# Bonus: MAS and zones
 
-- [Nolio, a website to build your training plans or collaborate with a coach](https://www.nolio.io/).
+There are multiple scales that exist out there, here are the common ones.
+
+<input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/>
+<input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/>
+
+[Find your estimated finish time there]({filename}/lessons-learned-apres-4-ans-de-running.md#bonus-marathon-pace-chart).
+
+<div id="pace"></div>
+<div id="result"></div>
+
+# Online training plans
+
+- [Plans d'entraînement course à pied](https://www.running-addict.fr/category/plans-dentrainement/)
+- [Construire vos propres plans d'entrainement 10 km, semi marathon et marathon](https://www.conseils-courseapied.com/entrainement/planification.html)
+- [Programmes d'entraînement - Course à pied - La Clinique Du Coureur](https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/)
+- [Construire son plan d’entraînement course à pied sans se tromper](https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/)
+
+# Reviews of online training plans
+
 - [Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢](https://www.youtube.com/watch?v=ZDdZ3TqJkd8)
 - [CAMPUS coach : pourquoi je ne suis pas convaincu...](https://www.youtube.com/watch?v=0hQsqivvRaI)
 - [J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)](https://www.youtube.com/watch?v=I3KcGSAfw0Q)
-- https://www.running-addict.fr/category/plans-dentrainement/
-- https://www.conseils-courseapied.com/entrainement/planification.html
-- https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/
-- https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/
+
+# Useful links
+
+- [Nolio, a website to build your training plans or collaborate with a coach](https://www.nolio.io/).
+
+<script>
+  const masInput = document.querySelector('input#mas')
+  const maxHrInput = document.querySelector('input#maxhr')
+  const secondsToTime = (v, showInPace = false) => {
+            let minutes = Math.floor(v / 60)
+            const seconds = String(v % 60).padStart(2, '0')
+            if (minutes > 59) {
+                    const hours = Math.floor(minutes / 60)
+                    minutes = String(minutes % 60).padStart(2, '0')
+                    return `${hours}:${minutes}:${seconds}`
+            }
+            minutes = String(minutes).padStart(2, '0')
+            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
+    }
+
+  const zones = [
+    [
+      {percentHr: [75], percentMas: [60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [75,85], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [85,92], percentMas: [70,80], zone: 3, name: 'Allure marathon/tempo'},
+      {percentHr: [92,96], percentMas: [80,88], zone: 4, name: 'Allures semi->10km'},
+      {percentHr: [96,100], percentMas: [88,100], zone: 5, name: 'VMA/allure 5km'},
+    ],
+    [
+      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1)'},
+      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2)'},
+      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2'},
+    ]
+  ]
+
+  function inputChange() {
+    document.querySelector('#result').innerHTML = ""
+    zones.forEach((zones,index,array) => {
+        let newTable = "<table class=\"collapse\"><thead><tr><th>Zone</th><th>Name</th><th>% MAS</th><th>% HR</th><th>Pace</th></tr></thead><tbody>"
+
+        const hueStep = (120 / (zones.length - 1))
+        zones.map(({percentMas,zone,percentHr,name},index,array) => {
+          const hue = 120 - (index * hueStep)
+          const color = `hsl(${hue}, 100%, 50%)`
+          const speeds = percentMas.map(speed => (masInput.value * speed / 100).toFixed(2))
+          const paces = speeds.map(speed => secondsToTime(Math.floor(3600/speed), true))
+          const hrs = maxHrInput.value ? percentHr.map(hr => Math.round(maxHrInput.value * hr / 100)) : []
+          newTable += `<tr style="background-color: ${color}"><td>${zone}</td><td>${name}</td>`
+          newTable += `<td>${percentMas.length === 1 ? '<=&nbsp;' : ''}${percentMas.join('&nbsp;-&nbsp;')}%<br />${speeds.join('&nbsp;-&nbsp;')}&nbsp;km/h</td>`
+          newTable += `<td>${percentHr.length === 1 ? '<=&nbsp;' : ''}${percentHr.length > 0 ? `${percentHr.join('&nbsp;-&nbsp;')}%` : ''}${hrs.length > 0 ? `<br />${hrs.join('&nbsp;-&nbsp;')}&nbsp;bpm` : ''}</td>`
+          newTable += `<td>${paces.join('&nbsp;-&nbsp;')}</td>`
+          newTable += `</tr>`
+        })
+
+        newTable += "</tbody></table>"
+        document.querySelector('#result').innerHTML += newTable
+        if (index + 1 < array.length) document.querySelector('#result').innerHTML += '<br />'
+    })
+  }
+
+  masInput.oninput = inputChange
+  maxHrInput.oninput = inputChange
+  if (masInput.value) {
+      inputChange()
+  }
+</script>

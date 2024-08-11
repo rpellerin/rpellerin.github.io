@@ -305,7 +305,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         const difference = differenceBetweenPaces(min, max) + 1
         const minInSeconds = paceToSeconds(min)
 
-        const pre = document.getElementById('results')
+        const table = document.getElementById('results')
         let newTable = "<thead><tr><th>Pace</th><th>Speed</th>"
 
         const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
@@ -328,7 +328,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         })
 
         newTable += "</tbody>"
-        pre.innerHTML = newTable
+        table.innerHTML = newTable
 
 
         //////////////////////// RACE SHEET ////////////////////////
