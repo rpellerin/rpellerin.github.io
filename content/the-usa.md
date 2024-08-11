@@ -62,7 +62,7 @@ The rest is more time-consuming:
 - Statue of Liberty and Ellis Island: take the ferry, there are tours which include both locations for $18 (if my memory serves well). Dedicate half a day to that. The line to the boat from Battery Park can take up to an hour and a half. If you book it early enough (at least 3 months), you can also visit the crown of the statue.
 - Charging Bull, in Wall Street: I recommend you do it after coming back from Ellis Island, in the evening. It's less crowded.
 - Edge, Hudson Yards
-- The MoMA (Museum of Modern Art)
+- The MoMA (Museum of Modern Art): at least 3 hours, the best floors are the 4th and the 5th
 - The MET (Metropolitan Museum of Art)
 - Central park (don't miss out the Balto statue)
 - The American Museum of Natural History
