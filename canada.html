@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, canada, travel" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@romainpellerin" />
+        <meta name="description" content="Recommendations about Canada and places to visit" />
+        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" name="twitter:title" content="Canada - Romain Pellerin's Blog" />
+        <meta property="og:description" name="twitter:description" content="Recommendations about Canada and places to visit" />
+
+        <title>Canada - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/canada/montreal-skyline.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-08-11T13:30:00+02:00">Sun 11 August 2024</time>        </p>
+    <h1>Canada</h1>
+    <div class="grey">
+        <p class="italic">Recommendations about Canada and places to visit</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1296 words.">6 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/canada.html">canada</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/travel.html">travel</a></p>    </div>
+</header>
+<article>
+    <p>I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!</p>
+<p>Alright, as I did in previous articles, here is a list of things to know about Canada before you get there, and then my very own recommendations on places to visit, based on my experience only.</p>
+<h1 id="things-to-know">Things to know</h1>
+<ul>
+<li>Like in the US, at a red traffic light, you can legally turn right if no car is coming from the left side, unless there's a sign saying "No right turn on red".</li>
+<li>One can pass cars on any lane, on multi-lane roads.</li>
+<li>Overall, most rules on the road are the same as in the US. Cars are generally much bigger than in Europe, but slightly smaller than in the US on average. You'll still see the occasional F150 or RAM truck.</li>
+<li>People have a tendency to drive 10 to 20km/h faster than the speed limit, and apparently <a href="https://www.reddit.com/r/montreal/comments/1kho9m/how_fast_is_too_fast_on_a_quebec_highway/">cops are fine with that</a>.</li>
+<li>Don't stick to cities, Canada is meant to be explored through its vibrant nature.</li>
+<li>Like in the US, expect great customer service.</li>
+</ul>
+<h1 id="montreal">Montréal</h1>
+<p>Great city! People are extremely relaxed and chill. You won't hear any honking. Drivers, cyclists and pedestrians are very respectful of one another. Not much traffic, and no one is speeding. There are plenty of bike lanes. The city is beautiful, especially the Plateau-Mont Royal neighborhood.</p>
+<p>You'll find plenty of water fountains in the city, mostly in parks.</p>
+<p>Through traffic is blocked off in many neighborhoods, making the city rather quiet. In summer, they also close down many streets, giving them back to pedestrians and cyclists only. The city is pretty green, you'll see many many trees and parks.</p>
+<p>Bixi is a great way to get around, it's their bicycle sharing system. It's pretty expensive though, and there is no day pass. Bixi is very popular among the locals.</p>
+<p>In Montreal, buildings and houses are not very high, usually 2 to 3 floors, expect for downtown (the business center).</p>
+<p>I've been told that anyone is allowed to enter any restaurant and use their washroom even if they are not customers/not eating. But I could not verify this information online.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/montreal-mont-royal.jpg" alt="The Montréal Skyline as seen from Mont Royal" />
+<figcaption>The Montréal Skyline as seen from Mont Royal</figcaption>
+</figure>
+
+<p>There is not so much to do in Montreal, 3 full days should be enough to see it all. Here are a few things to do:</p>
+<ul>
+<li>La Banquise (994 Rue Rachel E): go eat a poutine!</li>
+<li>Mont Royal: great to run or cycle all the way to the top!</li>
+<li>From May to October, Piknic Électronik at Parc Jean-Drapeau, on the weekend, really nice!</li>
+<li>F1 race track "Circuit Gilles Villeneuve" (I did not get to see it): one can cycle there most days of the year</li>
+<li>The Vieux Port and its piers</li>
+<li>Notre-Dame Basilica of Montreal</li>
+<li>La Fontaine Park</li>
+<li>Saint Denis Street and Ave Mont-Royal (closed in summer) are nice to explore, they have fancy shops</li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/montreal-rue-saint-denis.jpg" alt="Rue Saint-Denis" />
+<figcaption>Rue Saint-Denis in Montréal</figcaption>
+</figure>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/montreal-basilique.jpg" alt="Inside Notre-Dame Basilica of Montreal" />
+<figcaption>Notre-Dame Basilica of Montreal</figcaption>
+</figure>
+
+<h1 id="quebec-the-province-and-the-city">Québec (the province and the city)</h1>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/quebec-fairmont.jpg" alt="Fairmont Le Château Frontenac" />
+<figcaption>Fairmont Le Château Frontenac</figcaption>
+</figure>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/quebec-chutes-montmorency.jpg" alt="Montmorency Falls" />
+<figcaption>Montmorency Falls, its bridge, the zipline and the stairs</figcaption>
+</figure>
+
+<ul>
+<li>Québec city: go walk on the Dufferin Terrace, see the Rue de Petit Champlain (I missed this!), explore the surroundings of The Citadelle of Québec and then head out to visit the Montmorency Falls by riding a local bus. 6 hours is enough to see it all (Montmorency Falls included).</li>
+<li>Parc Oméga: a park that one can enter only with a car. You'll see many different species of animals: bears, mooses, buffalos, wolves, etc. Quite fun to do, if I'm honest. You can bring carrots and feed some animals (not all of them). You can also buy the carrots there. Plan at least 4 hours.</li>
+</ul>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/parc-omega.jpg" alt="Parc Oméga" />
+<figcaption>People feeding deers</figcaption>
+</figure>
+
+<h1 id="algonquin-provincial-park">Algonquin Provincial Park</h1>
+<p>To me, the highlight of the trip! We spent 3 nights camping in this park: two nights at the Rock Lake Campground, and one night alone on Rose Island, that we reached after a little less than an hour of canoeing (rental canoes). Wonderful!</p>
+<p>Staying overnight in the Algonquin Park requires a permit than can easily be bought online. Same for the campground, it's easy to book a spot online. When you show up, there is no reception or whatever, you just go to your designated spot.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/canada-bears.jpg" alt="A sign that warns about bears" />
+<figcaption>When entering the campground, you are greeted by signs than say you might encounter bears. 😱</figcaption>
+</figure>
+
+<p>Along the shores of Rock Lake or on its islands, a few (8 I think) areas have been designated for campers to set camp. If campsites are unoccupied, you may stop and spend one or multiple nights.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/rose-island-algonquin.jpg" alt="A view on the lake from Rose Island" />
+<figcaption>Our campsite on Rose Island</figcaption>
+</figure>
+
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/canada-campsites.jpg" alt="A typical backcountry campsite layout" />
+<figcaption>A typical backcountry campsite. Hanging food up a tree in a closed bag is required, to keep bears away.</figcaption>
+</figure>
+
+<p>In the park, there are many many trails for all levels. Some of them will offer great viewpoints.</p>
+<h1 id="niagara-falls">Niagara Falls</h1>
+<p>Before going, I had been told multiple times that it was overrated. Truth is, it's not! The city they built next to it is non sense though, that I'll admit. But the falls themselves, and the little boat trip to the core of the falls are 100% worth it.</p>
+<p>The are actually two falls: the American falls, with bolders at their bottom, and the Canadian ones, nicknamed the Horseshoe Falls, due to their shape. The boat trip will take you to both but will stay longer at the Canadian ones, the most impressive ones to be fair.</p>
+<p>There are two boats companies that operate those tours, one from the Canadian side (you'll get a red poncho), the other from the US side (people get a blue poncho). They take turns and go one after the other. A trip lasts about 15 minutes.</p>
+<p>One can cross the US-Canada border through a bridge, on foot or in a car, with a valid Visa or ESTA of course.</p>
+<p>Like I wrote above, the city of Niagara Falls is a joke, I guess they tried to build a copy of Las Vegas here. At night, it's buzzing with thousands of people roaming the streets. There are many attractions to do, like a roller coaster on top of a Burger King, a go-kart track, a ferris wheel, a haunted house, and many many others. All of that is really only located on two streets: Clifton Hill and Victoria Ave. It's fun though!</p>
+<p>To observe both waterfalls from a high point of view, they built the Skylon Tower. With hindsight, I would probably have liked to do it. But most tourists (like us!) enjoy the falls from the sidewalk along Niagara River Parkway for free, there is a long promenade that offers an amazing view. And at night, both falls are lit up in color illuminations. The light show lasts until late in the night.</p>
+<figure class="center">
+<img src="//romainpellerin.eu/images/canada/niagara-falls.jpg" alt="The Niagara Falls at night" />
+<figcaption>The light show on the Horseshoe Falls, early evening</figcaption>
+</figure>
+
+<p>In summer, there are fireworks every night launched near the Canadian falls.</p>
+<h1 id="toronto">Toronto</h1>
+<p>There is absolutely nothing to see in Toronto. We stayed half a day there and I have a feeling I've seen most landmarks. Riding their "Bike Share Toronto" bikes made it easier and faster of course.</p>
+<ul>
+<li>We went to the bottom of the CN Tower. Probably the view from up there is nice.</li>
+<li>Go check out the Toronto Sign for a nice souvenir photo</li>
+<li>Yonge-Dundas Square, the Times Square of Toronto</li>
+<li>Go explore the Distillery District (and do yourself a favor and get an ice cream 😋 from <a href="https://maps.app.goo.gl/Xx7EwnLyDnyknJhz5">Scooped by Demetres</a>)</li>
+</ul>
+<p>Of course they are plenty of activities to do, like museums or the aquarium, but nothing out of the ordinary, nothing at the scale of The Louvre nor MoMa.</p>
+<hr>
+<p>Canada was awesome, go see it for yourself! 😃</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 11 August 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
