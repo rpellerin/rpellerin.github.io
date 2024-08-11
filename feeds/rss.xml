@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 11 Aug 2024 13:43:00 +0200</lastBuildDate><item><title>Canada</title><link>//romainpellerin.eu/canada.html</link><description>&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 11 Aug 2024 18:50:00 +0200</lastBuildDate><item><title>Canada</title><link>//romainpellerin.eu/canada.html</link><description>&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
 &lt;p&gt;Alright, as I did in previous articles, here is a list of things to know about Canada before you get there, and then my very own recommendations on places to visit, based on my experience only.&lt;/p&gt;
 &lt;h1 id="things-to-know"&gt;Things to know&lt;/h1&gt;
 &lt;ul&gt;
@@ -218,17 +218,92 @@
 &lt;li&gt;The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.&lt;/li&gt;
 &lt;li&gt;The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="resources"&gt;Resources&lt;/h1&gt;
+&lt;h1 id="bonus-mas-and-zones"&gt;Bonus: MAS and zones&lt;/h1&gt;
+&lt;p&gt;There are multiple scales that exist out there, here are the common ones.&lt;/p&gt;
+&lt;p&gt;&lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/&gt;
+&lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html#bonus-marathon-pace-chart"&gt;Find your estimated finish time there&lt;/a&gt;.&lt;/p&gt;
+&lt;div id="pace"&gt;&lt;/div&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+
+&lt;h1 id="online-training-plans"&gt;Online training plans&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.nolio.io/"&gt;Nolio, a website to build your training plans or collaborate with a coach&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.running-addict.fr/category/plans-dentrainement/"&gt;Plans d'entraînement course à pied&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.conseils-courseapied.com/entrainement/planification.html"&gt;Construire vos propres plans d'entrainement 10 km, semi marathon et marathon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/"&gt;Programmes d'entraînement - Course à pied - La Clinique Du Coureur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/"&gt;Construire son plan d’entraînement course à pied sans se tromper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="reviews-of-online-training-plans"&gt;Reviews of online training plans&lt;/h1&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ZDdZ3TqJkd8"&gt;Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=0hQsqivvRaI"&gt;CAMPUS coach : pourquoi je ne suis pas convaincu...&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I3KcGSAfw0Q"&gt;J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;https://www.running-addict.fr/category/plans-dentrainement/&lt;/li&gt;
-&lt;li&gt;https://www.conseils-courseapied.com/entrainement/planification.html&lt;/li&gt;
-&lt;li&gt;https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/&lt;/li&gt;
-&lt;li&gt;https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 03 Aug 2024 16:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-08-03:/running-building-my-own-training-plan.html</guid><category>Sports</category><category>running</category><category>training</category></item><item><title>eSIMs for international travel</title><link>//romainpellerin.eu/esims-for-international-travel.html</link><description>&lt;p&gt;&lt;a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_en.htm"&gt;While data roaming has now become essentially "free" for most Europeans&lt;/a&gt;, traveling outside Europe and surfing the internet can be quite expensive. But since the recent massive adoption of eSIMs on our smartphones, some comparies launched a brand new type of business: eSIMs for travels, that give you only data (no phone calls, no SMS). These come extremely handy when only web browsing is needed. With apps like WhatsApp, who still uses the basic phone and text features of our phones anyways?&lt;/p&gt;
+&lt;/ul&gt;
+&lt;h1 id="useful-links"&gt;Useful links&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.nolio.io/"&gt;Nolio, a website to build your training plans or collaborate with a coach&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+  const masInput = document.querySelector('input#mas')
+  const maxHrInput = document.querySelector('input#maxhr')
+  const secondsToTime = (v, showInPace = false) =&gt; {
+            let minutes = Math.floor(v / 60)
+            const seconds = String(v % 60).padStart(2, '0')
+            if (minutes &gt; 59) {
+                    const hours = Math.floor(minutes / 60)
+                    minutes = String(minutes % 60).padStart(2, '0')
+                    return `${hours}:${minutes}:${seconds}`
+            }
+            minutes = String(minutes).padStart(2, '0')
+            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
+    }
+
+  const zones = [
+    [
+      {percentHr: [75], percentMas: [60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [75,85], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [85,92], percentMas: [70,80], zone: 3, name: 'Allure marathon/tempo'},
+      {percentHr: [92,96], percentMas: [80,88], zone: 4, name: 'Allures semi-&gt;10km'},
+      {percentHr: [96,100], percentMas: [88,100], zone: 5, name: 'VMA/allure 5km'},
+    ],
+    [
+      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1)'},
+      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2)'},
+      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2'},
+    ]
+  ]
+
+  function inputChange() {
+    document.querySelector('#result').innerHTML = ""
+    zones.forEach((zones,index,array) =&gt; {
+        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HR&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
+
+        const hueStep = (120 / (zones.length - 1))
+        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
+          const hue = 120 - (index * hueStep)
+          const color = `hsl(${hue}, 100%, 50%)`
+          const speeds = percentMas.map(speed =&gt; (masInput.value * speed / 100).toFixed(2))
+          const paces = speeds.map(speed =&gt; secondsToTime(Math.floor(3600/speed), true))
+          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
+          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+          newTable += `&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
+        document.querySelector('#result').innerHTML += newTable
+        if (index + 1 &lt; array.length) document.querySelector('#result').innerHTML += '&lt;br /&gt;'
+    })
+  }
+
+  masInput.oninput = inputChange
+  maxHrInput.oninput = inputChange
+  if (masInput.value) {
+      inputChange()
+  }
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 03 Aug 2024 16:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-08-03:/running-building-my-own-training-plan.html</guid><category>Sports</category><category>running</category><category>training</category></item><item><title>eSIMs for international travel</title><link>//romainpellerin.eu/esims-for-international-travel.html</link><description>&lt;p&gt;&lt;a href="https://europa.eu/youreurope/citizens/consumers/internet-telecoms/mobile-roaming-costs/index_en.htm"&gt;While data roaming has now become essentially "free" for most Europeans&lt;/a&gt;, traveling outside Europe and surfing the internet can be quite expensive. But since the recent massive adoption of eSIMs on our smartphones, some comparies launched a brand new type of business: eSIMs for travels, that give you only data (no phone calls, no SMS). These come extremely handy when only web browsing is needed. With apps like WhatsApp, who still uses the basic phone and text features of our phones anyways?&lt;/p&gt;
 &lt;p&gt;As I was recently traveling outside Europe, I did my fair share of googling and compiled here a list of websites and companies of interest.&lt;/p&gt;
 &lt;h1 id="big-players"&gt;Big players&lt;/h1&gt;
 &lt;p&gt;Among the many comparies out there, some names will pop out more often than others. &lt;strong&gt;Airalo&lt;/strong&gt;, &lt;strong&gt;Sparks&lt;/strong&gt;, &lt;strong&gt;Airhub&lt;/strong&gt; and &lt;strong&gt;Jetpac&lt;/strong&gt; are some of these big names with great reviews.&lt;/p&gt;
@@ -689,7 +764,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         const difference = differenceBetweenPaces(min, max) + 1
         const minInSeconds = paceToSeconds(min)
 
-        const pre = document.getElementById('results')
+        const table = document.getElementById('results')
         let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
 
         const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
@@ -712,7 +787,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         })
 
         newTable += "&lt;/tbody&gt;"
-        pre.innerHTML = newTable
+        table.innerHTML = newTable
 
 
         //////////////////////// RACE SHEET ////////////////////////

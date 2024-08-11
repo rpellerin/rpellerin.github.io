@@ -78,7 +78,7 @@
 </nav><header class="article-header center">
     <img src="images/lessons-learned-apres-4-ans-de-running/header.jpg" alt="Header picture" id="header-picture" />
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-04-15T01:51:00+02:00">Mon 15 April 2024</time> - Last update: <time datetime="2024-07-29T12:10:00+02:00">Mon 29 July 2024</time>        </p>
+<time datetime="2024-04-15T01:51:00+02:00">Mon 15 April 2024</time> - Last update: <time datetime="2024-08-11T18:50:00+02:00">Sun 11 August 2024</time>        </p>
     <h1>Lessons learned après 4 ans de running</h1>
     <div class="grey">
         <p class="italic">Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"</p>
@@ -328,7 +328,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         const difference = differenceBetweenPaces(min, max) + 1
         const minInSeconds = paceToSeconds(min)
 
-        const pre = document.getElementById('results')
+        const table = document.getElementById('results')
         let newTable = "<thead><tr><th>Pace</th><th>Speed</th>"
 
         const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
@@ -351,7 +351,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         })
 
         newTable += "</tbody>"
-        pre.innerHTML = newTable
+        table.innerHTML = newTable
 
 
         //////////////////////// RACE SHEET ////////////////////////
@@ -458,7 +458,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 </script>
 </article>
 <footer class="grey italic small">
-    Last update: Mon 29 July 2024</footer>
+    Last update: Sun 11 August 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
