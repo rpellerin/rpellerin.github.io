@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time> - Last update: <time datetime="2024-01-02T19:17:00+01:00">Tue 02 January 2024</time>        </p>
+<time datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time> - Last update: <time datetime="2024-08-13T23:30:00+02:00">Tue 13 August 2024</time>        </p>
     <h1>Tips For FFMPEG</h1>
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 863 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 874 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -141,6 +141,8 @@ ffmpeg -v warning -i input.mp4 -i <span class="nv">$palette</span> -lavfi <span 
 
 <h1 id="create-a-gif-from-images-01jpg-02jpg-03jpg-etc">Create a GIF from images (01.jpg, 02.jpg, 03.jpg, etc...)</h1>
 <div class="highlight"><pre><span></span><code>ffmpeg -f image2 -framerate <span class="m">1</span> -i %02d.jpg output.gif
+<span class="c1"># Or with ImageMagick</span>
+convert -delay <span class="m">80</span> *.jpg -loop <span class="m">0</span> output.gif
 </code></pre></div>
 
 <h1 id="crop-an-ogv-video">Crop an OGV video</h1>
@@ -258,7 +260,7 @@ ffmpeg -i input.mp4 -vcodec libx264 -crf <span class="m">24</span> -r <span clas
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 02 January 2024</footer>
+    Last update: Tue 13 August 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
