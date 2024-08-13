@@ -33,9 +33,15 @@ For what it's worth, I just completed today my [MAS test](https://fr.wikipedia.o
 ## Pros
 
 - The app plans each week, i.e. it assigns a fixed day for each session, as opposed to simply telling you to do the sessions in the week the way you want. I need that sort of thing, otherwise I tend to poorly schedule my runs throughout a week. To do that, the app first asks you how many days a week you want to train, and which ones.
-- Sessions can be postponed/rescheduled
+- Sessions can be postponed/rescheduled (moved to an earlier date too)
 - The app lets you set a goal finish time before you start any plan, and will adjust all the sessions towards that goal, love it 😍
-- After a run, if you have connected your Garmin account to it, the app detects that the run was one from your training plan, and automatically "ticks it off". It then asks you a couple of optional questions, like "did you take pleasure in the run?", "how hard was it?", etc.
+- After a run, if you have connected your Garmin account to it, the app detects that the run was one from your training plan, and automatically "ticks it off". It then asks you a couple of optional questions, like "did you take pleasure in the run?", "how hard was it?", etc. These questions are used to quantify how well you are recovering/the load you're taking. **Then, if the app determines some sessions were too hard, it automatically suggests to lower the difficulty of upcoming sessions.** By far my favorite feature of the app! 😍
+
+<figure class="center">
+<img src="{static}/images/kiprun-pacer.gif" alt="A screeshot of the app" />
+<figcaption>The app suggests that I delete the next session, and make the following one easier</figcaption>
+</figure>
+
 - All the weeks in one's training plan are categorized. For my 13-week plan, those weeks fell in the following categories, in this order:
 
   - Evalutation (MAS (Maximal Aerobic Speed) test) week - 1 week

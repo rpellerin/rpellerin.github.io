@@ -75,6 +75,8 @@ In subtitlecomposer, import the video, add subtitles, and export the file as `fi
 
     :::bash
     ffmpeg -f image2 -framerate 1 -i %02d.jpg output.gif
+    # Or with ImageMagick
+    convert -delay 80 *.jpg -loop 0 output.gif
 
 # Crop an OGV video
 
