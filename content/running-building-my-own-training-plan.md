@@ -80,11 +80,13 @@ So far, here are some bullet points on my learnings on how to build training pla
 - If one trains 4 times a week, then most weeks should look something like this:
 
   - One easy jog, wihout speeding up at all, to build up one's endurance (_endurance fondamentale_ in French)
-  - One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace
+  - One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog.
   - One quality session, with fast segments.
 
     - During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS.
     - Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments will be longer but run slower, at marathon pace.
+
+    Make sure to give your body 48 hours after such a session to recover. The next day, no running, or an easy jog.
 
   - One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration).
 
