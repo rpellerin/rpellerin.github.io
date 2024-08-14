@@ -67,6 +67,8 @@ Voilà d'autres vidéos sur le sujet, tout aussi intéressantes :
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d8V9ZaSq9Oc?rel=0" frameborder="0" allowfullscreen></iframe>
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qyqJpQU8f-Y?rel=0" frameborder="0" allowfullscreen></iframe>
+
 ### Sport
 
 Pour le sport, pas dur, je faisais déjà du sport intensif en moyenne 2 à 3 fois par semaine (vélo de route + course à pied), sans compter les trajets quotidiens à vélo en ville ni mes marches à pied de 30 min quasi-quotidiennes. J'ai simplement décidé de rajouter une ou deux activités supplémentaires par semaine : soit [une séance de musculation]({filename}/workout.md) (30min max) du haut du corps (bras ou perctoraux, là où ça ne risque pas de nuire à ma recherche de souplesse donc), soit une session de yoga ou de mobilité/étirements. J'ai aussi rendu ma marche quotidienne non optionnelle. Ça devrait suffire...
