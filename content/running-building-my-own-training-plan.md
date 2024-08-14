@@ -52,6 +52,7 @@ For what it's worth, I just completed today my [MAS test](https://fr.wikipedia.o
 
 ## Cons
 
+- MAS sessions are extremely difficult, right off the bat, as early as week 2. As soon as the app knows your MAS (_VMA_ in French), it will schedule some sessions that aim at improving it. So those sessions are meant to be run at that speed. And the distances keep on increasing week over week. Super hard!!! Maybe too hard.
 - The sharpening (i.e taper) phase of my 13-week plan was **a bit long and way too brutal**. The decrease in kilometers is too big and too sudden. Week 10: 77.48 kms. Week 11: 42.09 kms. Week 12: 36.19 kms. Week 13 (race week): 15.13 kms.
 
 # Jan-Mar 2025: Campus Coach (paid version)
