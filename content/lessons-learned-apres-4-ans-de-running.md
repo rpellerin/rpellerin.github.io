@@ -98,6 +98,7 @@ Je commence à passer des heures à n'en plus finir sur Youtube, à regarder ple
 1. [Running Addict](https://www.youtube.com/@RunningAddict) (ceux derrière Campus.coach)
 1. [RunWise](https://www.youtube.com/@RunWise_)
 1. [Podcast RMC Running](https://rmc.bfmtv.com/podcasts/rmc-running/)
+1. [Dans la tête d'un coureur](https://www.danslateteduncoureur.fr/)
 
 Je me documente notamment sur comment bien gérer une course, toujours en ayant en tête le semi de Berlin, prévu pour Avril :
 
