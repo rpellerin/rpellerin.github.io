@@ -30,12 +30,14 @@ Like Campus Coach, the app also asks you for your personal records, to fine tune
 
 For what it's worth, I just completed today my [MAS test](https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie) and the result is: 16.95 km/h! It's commonly said that a marathon is usually run between 75% and 80% of one's MAS. 75% of 16.95 km/h = 12.71 km/h. In othr words, a pace of 4'44"/km, or a finish time around 3h19". So my goal of 3h29'00" for a first marathon sounds realistic.
 
+In the plan that the app crafts, their "endurance active" zone ranges from 65% to 70% of one's MAS, their "endurance fondamentale" is at 60%.
+
 ## Pros
 
 - The app plans each week, i.e. it assigns a fixed day for each session, as opposed to simply telling you to do the sessions in the week the way you want. I need that sort of thing, otherwise I tend to poorly schedule my runs throughout a week. To do that, the app first asks you how many days a week you want to train, and which ones.
 - Sessions can be postponed/rescheduled (moved to an earlier date too)
 - The app lets you set a goal finish time before you start any plan, and will adjust all the sessions towards that goal, love it 😍
-- The sessions are mainly built based on distances, as opposed to time. Like, "_5 times (500 meters at some pace, then 200 meters at some other pace)_¨. I like that better than say, "_5 times (2 minutes at some pace, then 1 minute at some other pace)_". Campus Coach uses exclusively time durations, not distances. Sure, if you follow the paces precisely, the end result is the same, but still. It's just my personal opinion.
+- The sessions are mainly built based on distances, as opposed to time. Like, "*5 times (500 meters at some pace, then 200 meters at some other pace)*¨. I like that better than say, "_5 times (2 minutes at some pace, then 1 minute at some other pace)_". Campus Coach uses exclusively time durations, not distances. Sure, if you follow the paces precisely, the end result is the same, but still. It's just my personal opinion.
 - After a run, if you have connected your Garmin account to it, the app detects that the run was one from your training plan, and automatically "ticks it off". It then asks you a couple of optional questions, like "did you take pleasure in the run?", "how hard was it?", etc. These questions are used to quantify how well you are recovering/the load you're taking. **Then, if the app determines some sessions were too hard, it automatically suggests to lower the difficulty of upcoming sessions.** By far my favorite feature of the app! 😍 Conversely, when you rate multiple runs in a row as easy, the app will suggest some changes to make the following few runs more difficult.
 
 <figure class="center">
@@ -70,6 +72,8 @@ For what it's worth, I just completed today my [MAS test](https://fr.wikipedia.o
 
 So far, here are some bullet points on my learnings on how to build training plans yourself.
 
+The paces must always be calculated based on the MAS, not on the HR. Why? Because the heart rate will vary throughout the session and will not go back to a lower number after a fast segment, for instance. Also, it very much depends on how rested one is, weather/temperature, the time of the day, coffee/food, etc. So MAS is a much better indicator to base off paces.
+
 - Any marathon plan should be at least 12-week long, with the following phases:
 
   - Development/ramp up: some general training, and exercises to improve one's MAS
@@ -80,19 +84,29 @@ So far, here are some bullet points on my learnings on how to build training pla
 - If one trains 4 times a week, then most weeks should look something like this:
 
   - One easy jog, wihout speeding up at all, to build up one's endurance (_endurance fondamentale_ in French)
-  - One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog.
-  - One quality session, with fast segments.
+  - One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog. Of course starting with slow warm-up and cool-down phases.
+  - One quality session, with fast segments (intervals/_fractionné_).
 
     - During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS.
     - Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments will be longer but run slower, at marathon pace.
 
     Make sure to give your body 48 hours after such a session to recover. The next day, no running, or an easy jog.
 
+    Generally, there are 4 types of quality sessions, depending on what one aims at improving:
+
+    - "Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too straining. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.
+    - "Capacité aérobie"/résistance: 85-90% MAS.
+    - Seuil (anaérobie): 85-88% MAS.
+    - Endurance: < 85% MAS.
+
+    ([source](https://www.youtube.com/watch?v=kZ899mjIGeo))
+
   - One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration).
 
-- One week out of 4 or 5 should be a recovery week, where the number of kilometers run is reduced, but also the number of fast segments.
+- One week out of 4 or 5 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments.
 - The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.
 - The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)
+- ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.
 
 # Bonus: MAS and zones
 
@@ -101,9 +115,13 @@ There are multiple scales that exist out there, here are the common ones.
 <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/>
 <input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/>
 
+<div>
+<input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/>
+<span id="random_percent_result"></span>
+</div>
+
 [Find your estimated finish time there]({filename}/lessons-learned-apres-4-ans-de-running.md#bonus-marathon-pace-chart).
 
-<div id="pace"></div>
 <div id="result"></div>
 
 # Online training plans
@@ -112,6 +130,7 @@ There are multiple scales that exist out there, here are the common ones.
 - [Construire vos propres plans d'entrainement 10 km, semi marathon et marathon](https://www.conseils-courseapied.com/entrainement/planification.html)
 - [Programmes d'entraînement - Course à pied - La Clinique Du Coureur](https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/)
 - [Construire son plan d’entraînement course à pied sans se tromper](https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/)
+- [#30 - Préparation Marathon : 12 semaines pour être au top! - Dans la Tête d'un Coureur](https://www.youtube.com/watch?v=-mrCT0LQq2U)
 
 # Reviews of online training plans
 
@@ -126,6 +145,7 @@ There are multiple scales that exist out there, here are the common ones.
 <script>
   const masInput = document.querySelector('input#mas')
   const maxHrInput = document.querySelector('input#maxhr')
+  const randomPercent = document.querySelector('input#random_percent')
   const secondsToTime = (v, showInPace = false) => {
             let minutes = Math.floor(v / 60)
             const seconds = String(v % 60).padStart(2, '0')
@@ -154,7 +174,19 @@ There are multiple scales that exist out there, here are the common ones.
   ]
 
   function inputChange() {
+    if (!masInput.value) return
+
     document.querySelector('#result').innerHTML = ""
+    let randomPercentResult
+    if (randomPercent.value) {
+      const speed = (randomPercent.value * masInput.value / 100).toFixed(2)
+      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)}`
+    }
+    else {
+      randomPercentResult = ""
+    }
+    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
+
     zones.forEach((zones,index,array) => {
         let newTable = "<table class=\"collapse\"><thead><tr><th>Zone</th><th>Name</th><th>% MAS</th><th>% HR</th><th>Pace</th></tr></thead><tbody>"
 
@@ -180,7 +212,6 @@ There are multiple scales that exist out there, here are the common ones.
 
   masInput.oninput = inputChange
   maxHrInput.oninput = inputChange
-  if (masInput.value) {
-      inputChange()
-  }
+  randomPercent.oninput = inputChange
+  inputChange()
 </script>
