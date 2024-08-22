@@ -1,5 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-18T01:06:00+02:00</updated><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-08-04T16:40:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-23T00:12:00+02:00</updated><entry><title>Running: Building My Own Training Plan</title><link href="//romainpellerin.eu/running-building-my-own-training-plan.html" rel="alternate"></link><published>2024-08-03T16:00:00+02:00</published><updated>2024-08-23T00:12:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-03:/running-building-my-own-training-plan.html</id><summary type="html">&lt;p&gt;Building my own plan is the best way to learn&lt;/p&gt;</summary><content type="html">&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
+&lt;p&gt;W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app &lt;a href="https://www.campus.coach/"&gt;Campus Coach&lt;/a&gt; for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.&lt;/p&gt;
+&lt;p&gt;Anyways, it was not perfect, so I decided to look for an alternative. And I found &lt;a href="https://www.decathlon-pacer.com/"&gt;Kiprun Pacer&lt;/a&gt;, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.&lt;/p&gt;
+&lt;p&gt;So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.&lt;/p&gt;
+&lt;p&gt;I'll start with Kiprun Pacer until October, and then from January until April 2025 I'll be using Campus Coach.&lt;/p&gt;
+&lt;h1 id="aug-oct-2024-kiprun-pacer"&gt;Aug-Oct 2024: Kiprun Pacer&lt;/h1&gt;
+&lt;p&gt;I set up my plan with the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I intend to do 4 sessions per week&lt;/li&gt;
+&lt;li&gt;The race is on October 27th, 2024. It sets the plan duration to 13 weeks.&lt;/li&gt;
+&lt;li&gt;I do not want to skip the evaluation phase&lt;/li&gt;
+&lt;li&gt;Goal finish time: 3h29'00"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Like Campus Coach, the app also asks you for your personal records, to fine tune the training even more.&lt;/p&gt;
+&lt;p&gt;For what it's worth, I just completed today my &lt;a href="https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie"&gt;MAS test&lt;/a&gt; and the result is: 16.95 km/h! It's commonly said that a marathon is usually run between 70% and 80% of one's MAS. 75% of 16.95 km/h = 12.71 km/h. In other words, a pace of 4'44"/km, or a finish time around 3h19". So my goal of 3h29'00" for a first marathon sounds realistic.&lt;/p&gt;
+&lt;p&gt;In the plan that the app crafts, their "endurance active" zone ranges from 65% to 70% of one's MAS, their "endurance fondamentale" is at 60%.&lt;/p&gt;
+&lt;h2 id="pros"&gt;Pros&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The app plans each week, i.e. it assigns a fixed day for each session, as opposed to simply telling you to do the sessions in the week the way you want. I need that sort of thing, otherwise I tend to poorly schedule my runs throughout a week. To do that, the app first asks you how many days a week you want to train, and which ones.&lt;/li&gt;
+&lt;li&gt;Sessions can be postponed/rescheduled (moved to an earlier date too)&lt;/li&gt;
+&lt;li&gt;The app lets you set a goal finish time before you start any plan, and will adjust all the sessions towards that goal, love it 😍&lt;/li&gt;
+&lt;li&gt;The sessions are mainly built based on distances, as opposed to time. Like, "&lt;em&gt;5 times (500 meters at some pace, then 200 meters at some other pace)&lt;/em&gt;¨. I like that better than say, "&lt;em&gt;5 times (2 minutes at some pace, then 1 minute at some other pace)&lt;/em&gt;". Campus Coach uses exclusively time durations, not distances. Sure, if you follow the paces precisely, the end result is the same, but still. It's just my personal opinion.&lt;/li&gt;
+&lt;li&gt;After a run, if you have connected your Garmin account to it, the app detects that the run was one from your training plan, and automatically "ticks it off". It then asks you a couple of optional questions, like "did you take pleasure in the run?", "how hard was it?", etc. These questions are used to quantify how well you are recovering/the load you're taking. &lt;strong&gt;Then, if the app determines some sessions were too hard, it automatically suggests to lower the difficulty of upcoming sessions.&lt;/strong&gt; By far my favorite feature of the app! 😍 Conversely, when you rate multiple runs in a row as easy, the app will suggest some changes to make the following few runs more difficult.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="center"&gt;
+&lt;img src="//romainpellerin.eu/images/kiprun-pacer.gif" alt="A screeshot of the app" /&gt;
+&lt;figcaption&gt;The app suggests that I delete the next session, and make the following one easier&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;All the weeks in one's training plan are categorized. For my 13-week plan, those weeks fell in the following categories, in this order:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Evalutation (MAS (Maximal Aerobic Speed) test) week - 1 week&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Ramping up - 4 weeks&lt;/li&gt;
+&lt;li&gt;Specific pace - 5 weeks&lt;/li&gt;
+&lt;li&gt;Sharpening - 3 weeks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cons"&gt;Cons&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MAS sessions are extremely difficult, right off the bat, as early as week 2. As soon as the app knows your MAS (&lt;em&gt;VMA&lt;/em&gt; in French), it will schedule some sessions that aim at improving it. So those sessions are meant to be run at that speed. And the distances keep on increasing week over week. Super hard!!! Maybe too hard.&lt;/li&gt;
+&lt;li&gt;The sharpening (i.e taper) phase of my 13-week plan was &lt;strong&gt;a bit long and way too brutal&lt;/strong&gt;. The decrease in kilometers is too big and too sudden. Week 10: 77.48 kms. Week 11: 42.09 kms. Week 12: 36.19 kms. Week 13 (race week): 15.13 kms.&lt;/li&gt;
+&lt;li&gt;The sessions are built based on your MAS and your goal finish time. On one hand, it's nice to be working towards that goal, on the other hand if both values are not compatible (low MAS + ambitious goal, or high MAS + "easy" goal like 5 hours), the app won't complain and you'll end up with too slow and too fast runs. Fortunately for me, both my MAS and goal time are compatible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="jan-mar-2025-campus-coach-paid-version"&gt;Jan-Mar 2025: Campus Coach (paid version)&lt;/h1&gt;
+&lt;h2 id="pros_1"&gt;Pros&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;There is a dedicated section in the app where to see your progress over time, and your expected progress to come. That's very motivating!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cons_1"&gt;Cons&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time, and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.&lt;/li&gt;
+&lt;li&gt;After a run, even if the app is connected to your Garmin account, you have to manually "validate the session", i.e. match your run in Garmin with a session in your plan in the app. A couple of more clicks, avoidable. Then it asks questions, like the Kiprun app, only less.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="conclusion-how-training-plans-are-built"&gt;Conclusion: how training plans are built&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Extremely important notice: &lt;a href="https://youtu.be/-mrCT0LQq2U?si=iLoyI7-YCrAYIo8y&amp;amp;t=2141"&gt;sleep, hydration and nutrition will be paramount during your training!&lt;/a&gt;&lt;/strong&gt; Now, onto the plan...&lt;/p&gt;
+&lt;p&gt;So far, here are some bullet points on my learnings on how to build training plans yourself.&lt;/p&gt;
+&lt;p&gt;The paces must always be calculated based on the MAS, not on the HR. Why? Because the heart rate will vary throughout the session and will not go back to a lower number after a fast segment, for instance. Also, it very much depends on how rested one is, weather/temperature, the time of the day, coffee/food, etc. So MAS is a much better indicator to base off paces.&lt;/p&gt;
+&lt;p&gt;Any marathon plan should be at least 12-week long, with the following phases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Development/ramp up: some general training, and exercises to improve one's MAS&lt;/li&gt;
+&lt;li&gt;Specific pace: specifically running at the goal pace, for long stretches, longer and longer over the weeks&lt;/li&gt;
+&lt;li&gt;Sharpening: less intensity, less load (-30% to -50% less kms), but same number of runs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Overall, the plan should &lt;a href="https://youtu.be/ZDdZ3TqJkd8?si=_uPlHUk2Cbxyl5-m&amp;amp;t=364"&gt;follow the HVLIT phylosophy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Depending on how long before the plan the person has not trained, a phase to get back into shape might be required before these 3 phases.&lt;/p&gt;
+&lt;p&gt;If one trains 4 times a week (like myself!), then most weeks should look something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One easy jog, wihout speeding up at all, to build up one's endurance (&lt;em&gt;endurance fondamentale&lt;/em&gt; in French)&lt;/li&gt;
+&lt;li&gt;One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog. Of course starting with slow warm-up and cool-down phases.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/-mrCT0LQq2U?si=_RrQrvajQm_Bw_rZ&amp;amp;t=1407"&gt;One quality session, with fast segments (intervals/&lt;em&gt;fractionné&lt;/em&gt;)&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS. 10km-pace, on distances from 800 meters to 1200 . Repeated 4 to 8 times, with recovery phases in between. VMA-pace, 200 meters to 600, up to 10 repetitions.&lt;/li&gt;
+&lt;li&gt;Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments will be longer but run slower, at marathon pace or threshold pace. These segments will be 1000 to 5000-meter long, again, repeated multiple times throughout the session, spaced by recovery phases.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make sure to give your body 48 hours after such a session to recover. The next day, no running, or an easy jog.&lt;/p&gt;
+&lt;p&gt;Generally, there are 4 types of quality sessions, depending on what one aims at improving:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;"Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too straining. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.&lt;/li&gt;
+&lt;li&gt;"Capacité aérobie"/résistance: 85-90% MAS.&lt;/li&gt;
+&lt;li&gt;Seuil (anaérobie): 85-88% MAS.&lt;/li&gt;
+&lt;li&gt;Endurance: &amp;lt; 85% MAS.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(&lt;a href="https://www.youtube.com/watch?v=kZ899mjIGeo"&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One week out of ~4 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments. Except for those recovery weeks, the number of kms per week should gradually increased throughout the weeks, until the taper phase.&lt;/p&gt;
+&lt;p&gt;The taper (a.k.a. sharpening phase, &lt;em&gt;affûtage&lt;/em&gt; in French) should be ~2-week long (race week included!) for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. &lt;a href="https://youtu.be/-mrCT0LQq2U?si=pd1ReGjaxUThV0QX&amp;amp;t=2234"&gt;The weekly total distance run in each of these 2 weeks (race included), should be equal to ~50% of your average weekly distance in the past few weeks.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/mu7celO4IEE?si=7Viajf1ABnUdRizv&amp;amp;t=435"&gt;It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/ZDdZ3TqJkd8?si=l0ahZnY20OIUiNG7&amp;amp;t=320"&gt;The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury).&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.&lt;/p&gt;
+&lt;p&gt;Before quality sessions, after warming up, it can be valuable to add 10 minutes or more, of &lt;a href="https://lacliniqueducoureur.com/coureurs/je-debute-la-course/affine-ta-biomecanique/affine-ta-biomecanique/"&gt;running drills&lt;/a&gt;, to improve one's technique but also help some specific muscles warm up.&lt;/p&gt;
+&lt;p&gt;Finally, after the race, allow your body one full week off, no running at all, maybe some swimming or low intensity cycling. The second week after the race, you may start again slow jogs. But really, take it easy!&lt;/p&gt;
+&lt;h1 id="bonus-mas-hr-and-zones"&gt;Bonus: MAS, HR and zones&lt;/h1&gt;
+&lt;p&gt;There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.&lt;/p&gt;
+&lt;p&gt;The first table is greatly inspired by &lt;a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel"&gt;this one&lt;/a&gt;, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, &lt;code&gt;(percent of MAS plus 5 to 10) = percent of your HRmax&lt;/code&gt; (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula &lt;code&gt;percent of MAS + 5 = percent of HRmax&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.&lt;/p&gt;
+&lt;p&gt;The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.&lt;/p&gt;
+&lt;p&gt;&lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/&gt;
+&lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/&gt;
+&lt;span id="random_percent_result"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html#bonus-marathon-pace-chart"&gt;Find your estimated finish time there&lt;/a&gt;.&lt;/p&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
+
+&lt;p&gt;In &lt;a href="https://youtu.be/ZDdZ3TqJkd8?si=xaLYJuto38SN-edj&amp;amp;t=471"&gt;other sources&lt;/a&gt;, I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
+&lt;h1 id="online-training-plans-and-how-to-build-yours"&gt;Online training plans and how to build yours&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.running-addict.fr/category/plans-dentrainement/"&gt;Plans d'entraînement course à pied&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.conseils-courseapied.com/entrainement/planification.html"&gt;Construire vos propres plans d'entrainement 10 km, semi marathon et marathon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lacliniqueducoureur.com/coureurs/programmes-de-course-a-pied/"&gt;Programmes d'entraînement - Course à pied - La Clinique Du Coureur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.running-addict.fr/conseil-running/plan-entrainement-course-a-pied/"&gt;Construire son plan d’entraînement course à pied sans se tromper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=-mrCT0LQq2U"&gt;#30 - Préparation Marathon : 12 semaines pour être au top! - Dans la Tête d'un Coureur&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="reviews-of-online-training-plans"&gt;Reviews of online training plans&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ZDdZ3TqJkd8"&gt;Decathlon Pacer: Une appli quasi parfaite avec un GROS défaut 😢&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=0hQsqivvRaI"&gt;CAMPUS coach : pourquoi je ne suis pas convaincu...&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=I3KcGSAfw0Q"&gt;J'ai acheté 3 plans marathon à 3 coachs différents (et c'est pas fou 😓)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="useful-links"&gt;Useful links&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.nolio.io/"&gt;Nolio, a website to build your training plans or collaborate with a coach&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+  const masInput = document.querySelector('input#mas')
+  const maxHrInput = document.querySelector('input#maxhr')
+  const randomPercent = document.querySelector('input#random_percent')
+  const secondsToTime = (v, showInPace = false) =&gt; {
+            let minutes = Math.floor(v / 60)
+            const seconds = String(v % 60).padStart(2, '0')
+            if (minutes &gt; 59) {
+                    const hours = Math.floor(minutes / 60)
+                    minutes = String(minutes % 60).padStart(2, '0')
+                    return `${hours}:${minutes}:${seconds}`
+            }
+            minutes = String(minutes).padStart(2, '0')
+            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
+    }
+
+  const zones = [
+    [
+      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
+      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
+      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
+    ],
+    [
+      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
+      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
+      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
+    ]
+  ]
+
+  function inputChange() {
+    if (!masInput.value) return
+
+    document.querySelector('#result').innerHTML = ""
+    let randomPercentResult
+    if (randomPercent.value) {
+      const speed = (randomPercent.value * masInput.value / 100).toFixed(2)
+      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
+    }
+    else {
+      randomPercentResult = ""
+    }
+    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
+
+    zones.forEach((zones,index,array) =&gt; {
+        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
+
+        const hueStep = (120 / (zones.length - 1))
+        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
+          const hue = 120 - (index * hueStep)
+          const color = `hsl(${hue}, 100%, 50%)`
+          const speeds = percentMas.map(speed =&gt; (masInput.value * speed / 100).toFixed(2))
+          const paces = speeds.map(speed =&gt; secondsToTime(Math.floor(3600/speed), true))
+          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
+          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+          newTable += `&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
+        document.querySelector('#result').innerHTML += newTable
+        if (index + 1 &lt; array.length) document.querySelector('#result').innerHTML += '&lt;br /&gt;'
+    })
+  }
+
+  masInput.oninput = inputChange
+  maxHrInput.oninput = inputChange
+  randomPercent.oninput = inputChange
+  inputChange()
+&lt;/script&gt;</content><category term="Running"></category><category term="running"></category><category term="training"></category><category term="marathon"></category></entry><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-08-04T16:40:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.&lt;/p&gt;
