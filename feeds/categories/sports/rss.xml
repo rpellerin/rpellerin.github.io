@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Sports</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 21 Aug 2024 13:46:00 +0200</lastBuildDate><item><title>Running: Building My Own Training Plan</title><link>//romainpellerin.eu/running-building-my-own-training-plan.html</link><description>&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Sports</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 22 Aug 2024 19:17:00 +0200</lastBuildDate><item><title>Running: Building My Own Training Plan</title><link>//romainpellerin.eu/running-building-my-own-training-plan.html</link><description>&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app &lt;a href="https://www.campus.coach/"&gt;Campus Coach&lt;/a&gt; for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.&lt;/p&gt;
 &lt;p&gt;Anyways, it was not perfect, so I decided to look for an alternative. And I found &lt;a href="https://www.decathlon-pacer.com/"&gt;Kiprun Pacer&lt;/a&gt;, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.&lt;/p&gt;
 &lt;p&gt;So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.&lt;/p&gt;
@@ -100,12 +100,15 @@
 &lt;li&gt;
 &lt;p&gt;One week out of 4 or 5 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.&lt;/li&gt;
+&lt;li&gt;The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.&lt;/li&gt;
 &lt;li&gt;The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)&lt;/li&gt;
 &lt;li&gt;ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.&lt;/li&gt;
+&lt;li&gt;Before quality sessions, after warming up, it can be valuable to add 10 minutes or more, of &lt;a href="https://lacliniqueducoureur.com/coureurs/je-debute-la-course/affine-ta-biomecanique/affine-ta-biomecanique/"&gt;running drills&lt;/a&gt;, to improve one's technique but also help some specific muscles warm up.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="bonus-mas-and-zones"&gt;Bonus: MAS and zones&lt;/h1&gt;
-&lt;p&gt;There are multiple scales that exist out there, here are the common ones.&lt;/p&gt;
+&lt;h1 id="bonus-mas-hr-and-zones"&gt;Bonus: MAS, HR and zones&lt;/h1&gt;
+&lt;p&gt;There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.&lt;/p&gt;
+&lt;p&gt;The first table is greatly inspired by &lt;a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel"&gt;this one&lt;/a&gt;, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, &lt;code&gt;(percent of MAS plus 5 to 10) = percent of your HRmax&lt;/code&gt; (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula &lt;code&gt;percent of MAS + 5 = percent of HRmax&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.&lt;/p&gt;
 &lt;p&gt;&lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/&gt;
 &lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/&gt;&lt;/p&gt;
 &lt;div&gt;
@@ -152,11 +155,11 @@
 
   const zones = [
     [
-      {percentHr: [75], percentMas: [60], zone: 1, name: 'Endurance fondamentale'},
-      {percentHr: [75,85], percentMas: [60,70], zone: 2, name: 'Endurance active'},
-      {percentHr: [85,92], percentMas: [70,80], zone: 3, name: 'Allure marathon/tempo'},
-      {percentHr: [92,96], percentMas: [80,88], zone: 4, name: 'Allures semi-&gt;10km'},
-      {percentHr: [96,100], percentMas: [88,100], zone: 5, name: 'VMA/allure 5km'},
+      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
+      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi-&gt;10km, allure tempo, allure "au seuil" [anaérobie]'},
+      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km-&gt;VMA'},
     ],
     [
       {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1)'},
@@ -172,7 +175,7 @@
     let randomPercentResult
     if (randomPercent.value) {
       const speed = (randomPercent.value * masInput.value / 100).toFixed(2)
-      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)}`
+      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
     }
     else {
       randomPercentResult = ""
@@ -180,7 +183,7 @@
     document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
 
     zones.forEach((zones,index,array) =&gt; {
-        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HR&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
+        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
 
         const hueStep = (120 / (zones.length - 1))
         zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
