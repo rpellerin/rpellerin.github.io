@@ -129,7 +129,7 @@ In recent years, many pace charts started using the "heart rate reserve" as thei
 
 <div id="result"></div>
 
-# Online training plans
+# Online training plans and how to build yours
 
 - [Plans d'entraînement course à pied](https://www.running-addict.fr/category/plans-dentrainement/)
 - [Construire vos propres plans d'entrainement 10 km, semi marathon et marathon](https://www.conseils-courseapied.com/entrainement/planification.html)
