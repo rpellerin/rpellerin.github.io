@@ -104,13 +104,18 @@ The paces must always be calculated based on the MAS, not on the HR. Why? Becaus
   - One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration).
 
 - One week out of 4 or 5 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments.
-- The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins.
+- The taper (a.k.a. sharpening phase) should be 2 to 3 week long for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.
 - The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury)
 - ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.
+- Before quality sessions, after warming up, it can be valuable to add 10 minutes or more, of [running drills](https://lacliniqueducoureur.com/coureurs/je-debute-la-course/affine-ta-biomecanique/affine-ta-biomecanique/), to improve one's technique but also help some specific muscles warm up.
 
-# Bonus: MAS and zones
+# Bonus: MAS, HR and zones
 
-There are multiple scales that exist out there, here are the common ones.
+There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.
+
+The first table is greatly inspired by [this one](https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel), even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, `(percent of MAS plus 5 to 10) = percent of your HRmax` (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula `percent of MAS + 5 = percent of HRmax`.
+
+In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.
 
 <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/>
 <input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/>
@@ -160,11 +165,11 @@ There are multiple scales that exist out there, here are the common ones.
 
   const zones = [
     [
-      {percentHr: [75], percentMas: [60], zone: 1, name: 'Endurance fondamentale'},
-      {percentHr: [75,85], percentMas: [60,70], zone: 2, name: 'Endurance active'},
-      {percentHr: [85,92], percentMas: [70,80], zone: 3, name: 'Allure marathon/tempo'},
-      {percentHr: [92,96], percentMas: [80,88], zone: 4, name: 'Allures semi->10km'},
-      {percentHr: [96,100], percentMas: [88,100], zone: 5, name: 'VMA/allure 5km'},
+      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
+      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi->10km, allure tempo, allure "au seuil" [anaérobie]'},
+      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km->VMA'},
     ],
     [
       {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1)'},
@@ -180,7 +185,7 @@ There are multiple scales that exist out there, here are the common ones.
     let randomPercentResult
     if (randomPercent.value) {
       const speed = (randomPercent.value * masInput.value / 100).toFixed(2)
-      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)}`
+      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
     }
     else {
       randomPercentResult = ""
@@ -188,7 +193,7 @@ There are multiple scales that exist out there, here are the common ones.
     document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
 
     zones.forEach((zones,index,array) => {
-        let newTable = "<table class=\"collapse\"><thead><tr><th>Zone</th><th>Name</th><th>% MAS</th><th>% HR</th><th>Pace</th></tr></thead><tbody>"
+        let newTable = "<table class=\"collapse\"><thead><tr><th>Zone</th><th>Name(s)</th><th>% MAS</th><th>% HRmax</th><th>Pace</th></tr></thead><tbody>"
 
         const hueStep = (120 / (zones.length - 1))
         zones.map(({percentMas,zone,percentHr,name},index,array) => {
