@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 23 Aug 2024 14:33:00 +0200</lastBuildDate><item><title>Canada</title><link>//romainpellerin.eu/canada.html</link><description>&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 23 Aug 2024 17:18:00 +0200</lastBuildDate><item><title>Canada</title><link>//romainpellerin.eu/canada.html</link><description>&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
 &lt;p&gt;Alright, as I did in previous articles, here is a list of things to know about Canada before you get there, and then my very own recommendations on places to visit, based on my experience only.&lt;/p&gt;
 &lt;h1 id="things-to-know"&gt;Things to know&lt;/h1&gt;
 &lt;ul&gt;
@@ -227,7 +227,7 @@
 &lt;/ol&gt;
 &lt;p&gt;One week out of ~4 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments. Except for those recovery weeks, the number of kms per week should gradually increased throughout the weeks, until the taper phase.&lt;/p&gt;
 &lt;p&gt;The taper (a.k.a. sharpening phase, &lt;em&gt;affûtage&lt;/em&gt; in French) should be ~2-week long (race week included!) for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. &lt;a href="https://youtu.be/-mrCT0LQq2U?t=2234"&gt;The weekly total distance run in each of these 2 weeks (race included), should be equal to ~50% of your average weekly distance in the past few weeks.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://youtu.be/mu7celO4IEE?t=435"&gt;It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/mu7celO4IEE?t=435"&gt;It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water) but on your own, to make sure the pace is fine and can be held for 21 kms without any issue.&lt;/a&gt;. If you do want to take part in an actual race, aim for 5 weeks ahead of the marathon.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=320"&gt;The percent of "quality kms" in a plan (kilometers run at a fast pace, beyond VT1/&lt;em&gt;SV1&lt;/em&gt; in French) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury).&lt;/a&gt; (&lt;a href="https://youtu.be/I3KcGSAfw0Q?t=526"&gt;other source&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.&lt;/p&gt;
 &lt;p&gt;Before quality sessions, after warming up, it can be valuable to add 10 minutes or more, of &lt;a href="https://lacliniqueducoureur.com/coureurs/je-debute-la-course/affine-ta-biomecanique/affine-ta-biomecanique/"&gt;running drills&lt;/a&gt;, to improve one's technique but also help some specific muscles warm up.&lt;/p&gt;
@@ -715,10 +715,10 @@ sudo apt install maven
 &lt;/div&gt;
 &lt;div&gt;&lt;label for="race_title"&gt;Race title (optional):&lt;/label&gt; &lt;input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /&gt;&lt;/div&gt;
 &lt;div&gt;&lt;label for="race_date"&gt;Race date:&lt;/label&gt; &lt;input type="date" id="race_date" name="race_date" /&gt;&lt;/div&gt;
-&lt;div&gt;&lt;label for="pace_goal"&gt;Pace goal:&lt;/label&gt; &lt;input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:40"/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;label for="pace_goal"&gt;Pace goal on the watch:&lt;/label&gt; &lt;input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:40"/&gt;&lt;/div&gt;
 &lt;div&gt;&lt;label for="bib_number_pickup_date"&gt;Bib number pickup date and time:&lt;/label&gt; &lt;input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /&gt;&lt;/div&gt;
 &lt;div&gt;
-&lt;label for="nutrition_plan"&gt;&lt;a href="https://www.maurten.com/fuelguide/"&gt;Nutrition plan&lt;/a&gt; (50g+ of carbohydrates per hour is the recommendation):&lt;/label&gt;&lt;br /&gt;
+&lt;label for="nutrition_plan"&gt;&lt;a href="https://www.maurten.com/fuelguide/"&gt;Nutrition plan&lt;/a&gt; (50g+ of carbohydrates per hour is the recommendation, or better, &lt;a href="https://youtu.be/mu7celO4IEE?t=237"&gt;your body weight = 75 kgs→eat 75 grams&lt;/a&gt;):&lt;/label&gt;&lt;br /&gt;
 &lt;textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50"&gt;
 1x Gel Caf 100 - 5 mins avant course
 1x Gel 100     - au KM 4.5 (eau à 5.5)
@@ -747,11 +747,12 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 
 &lt;div id="race_sheet" style="border: 1px solid gray; padding: 10px;"&gt;
         &lt;h2 style="text-align:center"&gt;Unknown race - unknown date&lt;/h2&gt;
-        &lt;p style="text-align:center;font-style:italic" id="race_sheet_title"&gt;&lt;/p&gt;
-        &lt;h3&gt;Pace goal = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
+        &lt;p style="text-align:center;font-style:italic" id="race_sheet_subtitle"&gt;&lt;/p&gt;
+        &lt;h3&gt;Pace goal on the watch = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
         &lt;ul&gt;
-                &lt;li&gt;Projected finish time: &lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/li&gt;
-                &lt;li&gt;Speed: &lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/li&gt;
+                &lt;li&gt;Projected finish time with no margin of error (100% accurate GPS): &lt;strong&gt;&lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+                &lt;li&gt;Projected finish time with margin of error: &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;Speed: &lt;strong&gt;&lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/strong&gt;&lt;/li&gt;
         &lt;/ul&gt;
         &lt;h3&gt;Nutrition&lt;/h3&gt;
         &lt;ul id="race_sheet_nutrition"&gt;
@@ -837,16 +838,20 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         const raceDistance = document.querySelector('#race_sheet_distance').value
         const customRaceDistanceSelected = raceDistance === 'custom'
         raceCustomDistance.style = customRaceDistanceSelected ? '' : 'display:none';
-        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), `Race ${raceCustomDistance.value} kms`] : preDefinedDistances[raceDistance]
+        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), "Race"] : preDefinedDistances[raceDistance]
 
-        // Sheet title
+        // Sheet title and subtitle
         const dateValue = document.querySelector('#race_date').value
         const date = dateValue ? new Date(dateValue).toDateString() : 'unknown date'
-        document.querySelector('#race_sheet h2').innerText = `${label} - ${date}`
+        const title = document.querySelector('#race_title').value?.trim()
+        let sheetTitle = label
+        if (title) {
+                sheetTitle += ` - ${title}`
+        }
+        document.querySelector('#race_sheet h2').innerText = `${sheetTitle} - ${date}`
 
-        // Race title
-        const title = document.querySelector('#race_title').value
-        document.querySelector('#race_sheet_title').innerHTML = title.trim()
+        // Race distance
+        document.querySelector('#race_sheet_subtitle').innerHTML = `${kms} kms`
 
         // Pace goal
         const paceGoal = document.querySelector('#pace_goal').value
@@ -854,7 +859,11 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
                 const paceInSeconds = paceToSeconds(paceGoal)
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds, true)
-                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerText = paceInSecondsToFinishTime(paceInSeconds, kms)
+                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
+                const marginOfErrorInPercent = 1.3
+                const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
+                const kmsWithError = (kms*marginOfError).toFixed(3)
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `&lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt; (${kmsWithError} kms) (error = ${marginOfErrorInPercent}%)`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 
