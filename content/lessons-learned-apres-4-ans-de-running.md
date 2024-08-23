@@ -220,10 +220,10 @@ J'ai aussi pu voir dans [une autre vidéo qu'il est important de travailler l'al
 </div>
 <div><label for="race_title">Race title (optional):</label> <input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /></div>
 <div><label for="race_date">Race date:</label> <input type="date" id="race_date" name="race_date" /></div>
-<div><label for="pace_goal">Pace goal:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:40"/></div>
+<div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:40"/></div>
 <div><label for="bib_number_pickup_date">Bib number pickup date and time:</label> <input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /></div>
 <div>
-<label for="nutrition_plan"><a href="https://www.maurten.com/fuelguide/">Nutrition plan</a> (50g+ of carbohydrates per hour is the recommendation):</label><br />
+<label for="nutrition_plan"><a href="https://www.maurten.com/fuelguide/">Nutrition plan</a> (50g+ of carbohydrates per hour is the recommendation, or better, <a href="https://youtu.be/mu7celO4IEE?t=237">your body weight = 75 kgs→eat 75 grams</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
 1x Gel Caf 100 - 5 mins avant course
 1x Gel 100     - au KM 4.5 (eau à 5.5)
@@ -252,11 +252,12 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 
 <div id="race_sheet" style="border: 1px solid gray; padding: 10px;">
         <h2 style="text-align:center">Unknown race - unknown date</h2>
-        <p style="text-align:center;font-style:italic" id="race_sheet_title"></p>
-        <h3>Pace goal = <span id="race_pace_goal">?</span></h3>
+        <p style="text-align:center;font-style:italic" id="race_sheet_subtitle"></p>
+        <h3>Pace goal on the watch = <span id="race_pace_goal">?</span></h3>
         <ul>
-                <li>Projected finish time: <span id="race_pace_goal_finish_time">?</span></li>
-                <li>Speed: <span id="race_pace_goal_speed">/</span> km/h</li>
+                <li>Projected finish time with no margin of error (100% accurate GPS): <strong><span id="race_pace_goal_finish_time">?</span></strong></li>
+                <li>Projected finish time with margin of error: <span id="race_pace_goal_finish_time_margin_error">?</span></li>
+                <li>Speed: <strong><span id="race_pace_goal_speed">/</span> km/h</strong></li>
         </ul>
         <h3>Nutrition</h3>
         <ul id="race_sheet_nutrition">
@@ -343,16 +344,20 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
         const raceDistance = document.querySelector('#race_sheet_distance').value
         const customRaceDistanceSelected = raceDistance === 'custom'
         raceCustomDistance.style = customRaceDistanceSelected ? '' : 'display:none';
-        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), `Race ${raceCustomDistance.value} kms`] : preDefinedDistances[raceDistance]
+        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), "Race"] : preDefinedDistances[raceDistance]
 
-        // Sheet title
+        // Sheet title and subtitle
         const dateValue = document.querySelector('#race_date').value
         const date = dateValue ? new Date(dateValue).toDateString() : 'unknown date'
-        document.querySelector('#race_sheet h2').innerText = `${label} - ${date}`
+        const title = document.querySelector('#race_title').value?.trim()
+        let sheetTitle = label
+        if (title) {
+                sheetTitle += ` - ${title}`
+        }
+        document.querySelector('#race_sheet h2').innerText = `${sheetTitle} - ${date}`
 
-        // Race title
-        const title = document.querySelector('#race_title').value
-        document.querySelector('#race_sheet_title').innerHTML = title.trim()
+        // Race distance
+        document.querySelector('#race_sheet_subtitle').innerHTML = `${kms} kms`
 
         // Pace goal
         const paceGoal = document.querySelector('#pace_goal').value
@@ -360,7 +365,11 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
                 const paceInSeconds = paceToSeconds(paceGoal)
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds, true)
-                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerText = paceInSecondsToFinishTime(paceInSeconds, kms)
+                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
+                const marginOfErrorInPercent = 1.3
+                const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
+                const kmsWithError = (kms*marginOfError).toFixed(3)
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `<strong>${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}</strong> (${kmsWithError} kms) (error = ${marginOfErrorInPercent}%)`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 

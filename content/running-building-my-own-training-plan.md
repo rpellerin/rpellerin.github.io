@@ -111,7 +111,7 @@ One week out of ~4 should be a recovery week, where the number of kilometers is 
 
 The taper (a.k.a. sharpening phase, _affûtage_ in French) should be ~2-week long (race week included!) for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. [The weekly total distance run in each of these 2 weeks (race included), should be equal to ~50% of your average weekly distance in the past few weeks.](https://youtu.be/-mrCT0LQq2U?t=2234)
 
-[It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.](https://youtu.be/mu7celO4IEE?t=435)
+[It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water) but on your own, to make sure the pace is fine and can be held for 21 kms without any issue.](https://youtu.be/mu7celO4IEE?t=435). If you do want to take part in an actual race, aim for 5 weeks ahead of the marathon.
 
 [The percent of "quality kms" in a plan (kilometers run at a fast pace, beyond VT1/_SV1_ in French) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury).](https://youtu.be/ZDdZ3TqJkd8?t=320) ([other source](https://youtu.be/I3KcGSAfw0Q?t=526))
 
