@@ -71,7 +71,7 @@ In the plan that the app crafts, their "endurance active" zone ranges from 65% t
 
 # Conclusion: how training plans are built
 
-**Extremely important notice: [sleep, hydration and nutrition will be paramount during your training!](https://youtu.be/-mrCT0LQq2U?si=iLoyI7-YCrAYIo8y&t=2141)** Now, onto the plan...
+**Extremely important notice: [sleep, hydration and nutrition will be paramount during your training!](https://youtu.be/-mrCT0LQq2U?t=2141)** Now, onto the plan...
 
 So far, here are some bullet points on my learnings on how to build training plans yourself.
 
@@ -83,39 +83,37 @@ Any marathon plan should be at least 12-week long, with the following phases:
 - Specific pace: specifically running at the goal pace, for long stretches, longer and longer over the weeks
 - Sharpening: less intensity, less load (-30% to -50% less kms), but same number of runs
 
-Overall, the plan should [follow the HVLIT phylosophy](https://youtu.be/ZDdZ3TqJkd8?si=_uPlHUk2Cbxyl5-m&t=364).
+Overall, the plan should [follow the HVLIT phylosophy](https://youtu.be/ZDdZ3TqJkd8?t=364).
 
 Depending on how long before the plan the person has not trained, a phase to get back into shape might be required before these 3 phases.
 
-If one trains 4 times a week (like myself!), then most weeks should look something like this:
+If one trains 4 times a week (like myself!), then most weeks should look something like this, in this order (#2 and #3 can be swapped):
 
-- One easy jog, wihout speeding up at all, to build up one's endurance (_endurance fondamentale_ in French)
-- One run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog. Of course starting with slow warm-up and cool-down phases.
-- [One quality session, with fast segments (intervals/_fractionné_)](https://youtu.be/-mrCT0LQq2U?si=_RrQrvajQm_Bw_rZ&t=1407).
+1.  One easy jog, wihout speeding up at all, to build up one's endurance (_endurance fondamentale_ in French). Optionally, add some _[lignes droites](https://run-motion.com/lignes-droites-accelerations-running/)_ [at the very end of the session, from time to time](https://youtu.be/0hQsqivvRaI?t=787).
+2.  One relatively long run specifically targetting the marathon pace (a.k.a. specific pace), with long stretches at the pace. Optionally, when tired, this run can also be swapped with an easy jog. Of course starting with slow warm-up and cool-down phases. Alternatively, [this one can also be a progressive run](https://youtu.be/0hQsqivvRaI?t=943).
+3.  [One quality session, relatively short in distance, with fast segments (intervals/_fractionné_)](https://youtu.be/-mrCT0LQq2U?t=1407).
 
-      - During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS. 10km-pace, on distances from 800 meters to 1200 . Repeated 4 to 8 times, with recovery phases in between. VMA-pace, 200 meters to 600, up to 10 repetitions.
-      - Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments will be longer but run slower, at marathon pace or threshold pace. These segments will be 1000 to 5000-meter long, again, repeated multiple times throughout the session, spaced by recovery phases.
+    - During the ramp up phase, these segments are meant to be run faster than the targeted marathon pace, aimed at improving one's MAS. 10km-pace, on distances from 800 meters to 1200 . Repeated 4 to 8 times, with recovery phases in between. MAS-pace, 200 meters to 600, up to 10 repetitions.
+    - Later in the training plan, during the specific pace phase (as one gets closer to race day), those segments may be swapped with longer and slower ones, at marathon pace or threshold pace. These segments will be 1000 to 5000-meter long, again, repeated multiple times throughout the session, spaced by recovery phases.
 
-      Make sure to give your body 48 hours after such a session to recover. The next day, no running, or an easy jog.
+    Make sure to give your body 48 hours after such a session to recover. The next day, no running, or an easy jog.
 
-      Generally, there are 4 types of quality sessions, depending on what one aims at improving:
+    [Generally, there are 4 types of quality sessions, depending on what one aims at improving](https://youtu.be/kZ899mjIGeo?t=498):
 
-      - "Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too straining. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.
-      - "Capacité aérobie"/résistance: 85-90% MAS.
-      - Seuil (anaérobie): 85-88% MAS.
-      - Endurance: < 85% MAS.
+    - "Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too straining. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.
+    - "Capacité aérobie"/résistance: 85-90% MAS.
+    - Seuil (anaérobie): 85-88% MAS.
+    - Endurance: < 85% MAS.
 
-      ([source](https://www.youtube.com/watch?v=kZ899mjIGeo))
-
-- One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.
+4.  One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.
 
 One week out of ~4 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments. Except for those recovery weeks, the number of kms per week should gradually increased throughout the weeks, until the taper phase.
 
-The taper (a.k.a. sharpening phase, _affûtage_ in French) should be ~2-week long (race week included!) for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. [The weekly total distance run in each of these 2 weeks (race included), should be equal to ~50% of your average weekly distance in the past few weeks.](https://youtu.be/-mrCT0LQq2U?si=pd1ReGjaxUThV0QX&t=2234)
+The taper (a.k.a. sharpening phase, _affûtage_ in French) should be ~2-week long (race week included!) for a marathon but gradual and not sudden. The peak in terms of weekly kilometers should happen the 4th week before the race, so just before the taper begins. [The weekly total distance run in each of these 2 weeks (race included), should be equal to ~50% of your average weekly distance in the past few weeks.](https://youtu.be/-mrCT0LQq2U?t=2234)
 
-[It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.](https://youtu.be/mu7celO4IEE?si=7Viajf1ABnUdRizv&t=435)
+[It is a great idea to run a half-marathon 3 or 4 weeks before the marathon, at the goal marathon pace, in race conditions (with gels and water), to make sure the pace is fine and can be held for 21 kms without any issue.](https://youtu.be/mu7celO4IEE?t=435)
 
-[The percent of "quality kms" in a plan (kilometers run at a fast pace) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury).](https://youtu.be/ZDdZ3TqJkd8?si=l0ahZnY20OIUiNG7&t=320)
+[The percent of "quality kms" in a plan (kilometers run at a fast pace, beyond VT1/_SV1_ in French) should not exceed 25% on any week (otherwise, greater risk of fatigue and injury).](https://youtu.be/ZDdZ3TqJkd8?t=320) ([other source](https://youtu.be/I3KcGSAfw0Q?t=526))
 
 ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.
 
@@ -145,7 +143,7 @@ The second table, on ventilatory thresholds, is a mashup of multiple articles I'
 
 <div id="result"></div>
 
-In [other sources](https://youtu.be/ZDdZ3TqJkd8?si=xaLYJuto38SN-edj&t=471), I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.
+In [other sources](https://youtu.be/ZDdZ3TqJkd8?t=471), I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.
 
 # Online training plans and how to build yours
 
