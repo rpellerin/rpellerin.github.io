@@ -100,7 +100,7 @@ If one trains 4 times a week (like myself!), then most weeks should look somethi
 
     [Generally, there are 4 types of quality sessions, depending on what one aims at improving](https://youtu.be/kZ899mjIGeo?t=498):
 
-    - "Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too straining. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.
+    - "Puissance aérobie": when you want to improve your MAS. Run at 95 to 105% of your MAS. A classic session is 10 x 400m (with 1 min recovery between each). An alternative is 10 x 200m (30 sec recovery). Or 6 x 1000m (R=200m). Recovery means jogging (slow run), some walking is acceptable if too strenuous. For non professional athletes, how you run during the recovery does not matter so much. The duration in time or distance does matter though.
     - "Capacité aérobie"/résistance: 85-90% MAS.
     - Seuil (anaérobie): 85-88% MAS.
     - Endurance: < 85% MAS.
