@@ -1,5 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-23T17:18:00+02:00</updated><entry><title>Running: Building My Own Training Plan</title><link href="//romainpellerin.eu/running-building-my-own-training-plan.html" rel="alternate"></link><published>2024-08-03T16:00:00+02:00</published><updated>2024-08-23T17:18:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-03:/running-building-my-own-training-plan.html</id><summary type="html">&lt;p&gt;Building my own plan is the best way to learn&lt;/p&gt;</summary><content type="html">&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-24T13:26:00+02:00</updated><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-08-24T13:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;h1 id="mas-hr-and-zones"&gt;MAS, HR and zones&lt;/h1&gt;
+&lt;p&gt;(MAS is &lt;em&gt;VMA&lt;/em&gt; in French)&lt;/p&gt;
+&lt;p&gt;There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.&lt;/p&gt;
+&lt;p&gt;The first table is greatly inspired by &lt;a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel"&gt;this one&lt;/a&gt;, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, &lt;code&gt;(percent of MAS plus 5 to 10) = percent of your HRmax&lt;/code&gt; (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula &lt;code&gt;percent of MAS + 5 = percent of HRmax&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.&lt;/p&gt;
+&lt;p&gt;The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.&lt;/p&gt;
+&lt;p&gt;&lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/&gt;
+&lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/&gt;&lt;/p&gt;
+&lt;div&gt;
+&lt;input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/&gt;
+&lt;span id="random_percent_result"&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div id="zones_result"&gt;&lt;/div&gt;
+
+&lt;p&gt;In &lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=471"&gt;other sources&lt;/a&gt;, I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
+&lt;h1 id="marathon-pace-chart"&gt;Marathon pace chart&lt;/h1&gt;
+&lt;div id="pace_chart_info"&gt;
+&lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:25"/&gt;
+&lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:42"/&gt;
+
+&lt;div class="distance"&gt;&lt;input data-kms="42.195" id="marathon" type="checkbox" checked /&gt;&lt;label for="marathon"&gt;Marathon&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="25" id="km25" type="checkbox" /&gt;&lt;label for="km25"&gt;25 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="21.0975" id="half_marathon" type="checkbox" /&gt;&lt;label for="half_marathon"&gt;Half-marathon&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="10" id="km10" type="checkbox" /&gt;&lt;label for="km10"&gt;10 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="5" id="km5" type="checkbox" /&gt;&lt;label for="km5"&gt;5 kms&lt;/label&gt;&lt;/div&gt;
+&lt;div class="distance"&gt;&lt;input data-kms="custom" type="checkbox" /&gt;&lt;input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;table class="collapse" id="pace_chart_results"&gt;&lt;/table&gt;
+
+&lt;h1 id="race-sheet"&gt;Race sheet&lt;/h1&gt;
+&lt;div id="race_sheet_info"&gt;
+&lt;div&gt;
+        &lt;label for="race_sheet_distance"&gt;Distance:&lt;/label&gt;
+        &lt;select name="race_sheet_distance" id="race_sheet_distance"&gt;
+                &lt;option value="marathon"&gt;Marathon&lt;/option&gt;
+                &lt;option value="half_marathon"&gt;Half-marathon&lt;/option&gt;
+                &lt;option value="custom"&gt;Custom distance&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type="number" step="0.1" id="race_sheet_custom_distance" placeholder="Custom distance" value="10"/&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;label for="race_title"&gt;Race title (optional):&lt;/label&gt; &lt;input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /&gt;&lt;/div&gt;
+&lt;div&gt;&lt;label for="race_date"&gt;Race date:&lt;/label&gt; &lt;input type="date" id="race_date" name="race_date" /&gt;&lt;/div&gt;
+&lt;div&gt;&lt;label for="pace_goal"&gt;Pace goal on the watch:&lt;/label&gt; &lt;input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:54"/&gt;&lt;/div&gt;
+&lt;div&gt;&lt;label for="bib_number_pickup_date"&gt;Bib number pickup date and time:&lt;/label&gt; &lt;input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;label for="nutrition_plan"&gt;&lt;a href="https://www.maurten.com/fuelguide/"&gt;Nutrition plan&lt;/a&gt; (50g+ of carbohydrates per hour is the recommendation, or better, &lt;a href="https://youtu.be/mu7celO4IEE?t=237"&gt;your body weight = 75 kgs→eat 75 grams&lt;/a&gt;):&lt;/label&gt;&lt;br /&gt;
+&lt;textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50"&gt;
+1x Gel Caf 100 - 5 mins avant course
+1x Gel 100     - au KM 4.5 (eau à 5.5)
+1x Gel 100     - au KM 9 (eau à 10)
+&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;label for="todo_items"&gt;TODO items:&lt;/label&gt;&lt;br /&gt;
+&lt;textarea id="todo_items" name="todo_items" rows="5" cols="50"&gt;
+Couper ongles
+Se faire une belle moustache
+Prévoir le trajet pour se rendre à la course
+Samedi : shake-out run avec 1km à allure
+Samedi : charger montre
+Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
+Samedi soir : préparer le petit déjeuner
+Dimanche matin : noter dans la main
+  Warm up
+  - 5 min = eat
+  Montre en mode pace sur distance un peu plus longue
+  4.5 eat
+  9.5 eat + accelerer
+Dimanche matin : prendre casquette, lunettes, HRM chest strap
+&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="race_sheet" style="border: 1px solid gray; padding: 10px;"&gt;
+        &lt;h2 style="text-align:center"&gt;Unknown race - unknown date&lt;/h2&gt;
+        &lt;p style="text-align:center;font-style:italic" id="race_sheet_subtitle"&gt;&lt;/p&gt;
+        &lt;h3&gt;Pace goal on the watch = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
+        &lt;ul&gt;
+                &lt;li&gt;Projected finish time with no margin of error (100% accurate GPS): &lt;strong&gt;&lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+                &lt;li&gt;Projected finish time with margin of error &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;Speed: &lt;strong&gt;&lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;h3&gt;Nutrition&lt;/h3&gt;
+        &lt;ul id="race_sheet_nutrition"&gt;
+        &lt;/ul&gt;
+        &lt;h3&gt;TODO until the race&lt;/h3&gt;
+        &lt;ul id="race_todo" style="list-style-type:none;"&gt;
+                &lt;li id="race_bib_pickup_date_li"&gt;&lt;input type="checkbox"&gt;Bib number pickup: &lt;span id="race_bib_pickup_date"&gt;Sat 4 Mai&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;button onclick="printSheet()"&gt;Print the sheet&lt;/button&gt;&lt;/p&gt;
+&lt;script&gt;
+    const matchFormat = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
+    const paceToSeconds = v =&gt; {
+            const [, minutes, seconds] = matchFormat(v)
+            return Number(minutes) * 60 + Number(seconds)
+    }
+    const differenceBetweenPaces = (min, max) =&gt; paceToSeconds(max) - paceToSeconds(min)
+    const secondsToTime = (v, showInPace = false) =&gt; {
+            let minutes = Math.floor(v / 60)
+            const seconds = String(v % 60).padStart(2, '0')
+            if (minutes &gt; 59) {
+                    const hours = Math.floor(minutes / 60)
+                    minutes = String(minutes % 60).padStart(2, '0')
+                    return `${hours}:${minutes}:${seconds}`
+            }
+            minutes = String(minutes).padStart(2, '0')
+            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
+    }
+    const roundTo1 = num =&gt; Math.round((num + Number.EPSILON) * 10) / 10
+    const paceInSecondsToSpeed = paceInSeconds =&gt; roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
+    const speedInKmhTimesPercent = (kmh, percent) =&gt; (percent * kmh / 100).toFixed(2)
+    const paceInSecondsToFinishTime = (paceInSeconds, kms) =&gt; secondsToTime(Math.ceil(paceInSeconds * kms))
+
+    const fastestPace = document.querySelector('input#fastest_pace')
+    const slowestPace = document.querySelector('input#slowest_pace')
+    const custom = document.querySelector('input#custom')
+
+    function paceChartInputChange() {
+        //////////////////////// PACE CHART ////////////////////////
+
+        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
+
+        const min = fastestPace.value;
+        const max = slowestPace.value;
+
+        if (!matchFormat(min) || !matchFormat(max) || differenceBetweenPaces(min, max) &lt; 0) return
+        const difference = differenceBetweenPaces(min, max) + 1
+        const minInSeconds = paceToSeconds(min)
+
+        const table = document.getElementById('pace_chart_results')
+        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
+
+        const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
+                const input = div.querySelector('input[type="checkbox"]')
+                const checked = input.checked
+                const kms = Number(input.dataset.kms)
+                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
+                return {checked, kms, label}
+        }).filter(({checked})=&gt;checked);
+
+        newTable += `${distances.map(({kms, label}) =&gt; `&lt;th&gt;${label}&lt;/th&gt;`).join("")}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`
+
+        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
+        const result = paces.map(function(paceInSeconds) {
+            const pace = secondsToTime(paceInSeconds, true)
+            const speed = paceInSecondsToSpeed(paceInSeconds)
+            const row = distances.map(({kms}) =&gt; `&lt;td&gt;${paceInSecondsToFinishTime(paceInSeconds, kms)}&lt;/td&gt;`).join("")
+
+            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;&lt;th&gt;${speed} km/h&lt;/th&gt;${row}&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;"
+        table.innerHTML = newTable
+
+    }
+
+    function raceSheetInputChange() {
+        //////////////////////// RACE SHEET ////////////////////////
+
+        const preDefinedDistances = {
+                'marathon': [42.195, 'Marathon'],
+                'half_marathon': [21.0975, 'Half-marathon']
+        }
+
+        const raceCustomDistance = document.querySelector('#race_sheet_custom_distance')
+        const raceDistance = document.querySelector('#race_sheet_distance').value
+        const customRaceDistanceSelected = raceDistance === 'custom'
+        raceCustomDistance.style = customRaceDistanceSelected ? '' : 'display:none';
+        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), "Race"] : preDefinedDistances[raceDistance]
+
+        // Sheet title and subtitle
+        const dateValue = document.querySelector('#race_date').value
+        const date = dateValue ? new Date(dateValue).toDateString() : 'unknown date'
+        const title = document.querySelector('#race_title').value?.trim()
+        let sheetTitle = label
+        if (title) {
+                sheetTitle += ` - ${title}`
+        }
+        document.querySelector('#race_sheet h2').innerText = `${sheetTitle} - ${date}`
+
+        // Race distance
+        document.querySelector('#race_sheet_subtitle').innerHTML = `${kms} kms`
+
+        // Pace goal
+        const paceGoal = document.querySelector('#pace_goal').value
+        if (matchFormat(paceGoal)) {
+                const paceInSeconds = paceToSeconds(paceGoal)
+
+                document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds, true)
+                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
+                const marginOfErrorInPercent = 1.3
+                const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
+                const kmsWithError = (kms*marginOfError).toFixed(3)
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `(${kmsWithError} kms, error = ${marginOfErrorInPercent}%): &lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt;`
+                document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
+        }
+
+        // Nutrition
+        const nutritionItems = document.querySelector('#nutrition_plan').value.split("\n").map(e =&gt; e.trim()).filter(Boolean)
+        const raceNutritionList = document.querySelector('#race_sheet_nutrition')
+        raceNutritionList.innerHTML = ''
+        nutritionItems.forEach(line =&gt; {
+                const li = document.createElement('li')
+                li.innerText = line
+                raceNutritionList.appendChild(li)
+        })
+
+        // TODO list
+        const todoItems = document.querySelector('#todo_items').value.split("\n").map(e =&gt; e.trimEnd()).filter(Boolean)
+        const raceTodoList = document.querySelector('#race_todo')
+        Array.from(raceTodoList.children).forEach(li =&gt; {
+                if (!li.matches('#race_bib_pickup_date_li')) {
+                        li.remove();
+                }
+        })
+        let parentLi, currentUl = raceTodoList, rootUl = raceTodoList
+        todoItems.forEach(line =&gt; {
+                const li = document.createElement('li')
+
+                if (line.startsWith(' ') &amp;&amp; parentLi) {
+                        if (currentUl === rootUl) {
+                                currentUl = document.createElement('ul')
+                                parentLi.appendChild(currentUl)
+                        }
+                }
+                else {
+                        currentUl = rootUl
+                }
+
+                li.innerHTML = `&lt;input type="checkbox"&gt;${line}`
+                currentUl.appendChild(li)
+                parentLi = li
+        })
+
+        // Bib pickup date
+        const bibNumberPickupDateValue = document.querySelector('#bib_number_pickup_date').value
+        const bibNumberPickupDate = bibNumberPickupDateValue ? new Date(bibNumberPickupDateValue) : 'unknown date'
+        document.querySelector('#race_bib_pickup_date').innerText =
+                typeof bibNumberPickupDate === 'string'
+                ? bibNumberPickupDate
+                : `${bibNumberPickupDate.toDateString()}, ${bibNumberPickupDate.toLocaleTimeString()}`
+    }
+
+
+
+    document.querySelectorAll('#pace_chart_info input').forEach(el =&gt; {
+        el.oninput = paceChartInputChange
+    })
+
+    document.querySelectorAll('#race_sheet_info input, #race_sheet_info select, #race_sheet_info textarea').forEach(el =&gt; {
+        el.oninput = raceSheetInputChange
+    })
+
+    if (fastestPace.value || slowestPace.value) {
+        paceChartInputChange()
+    }
+    raceSheetInputChange()
+
+    window.printSheet = () =&gt; {
+        const elem = document.querySelector('#race_sheet');
+        const printWindow = window.open('', 'PRINT', 'height=600,width=800');
+        printWindow.document.write('&lt;html&gt;&lt;head&gt;&lt;title&gt;Race sheet&lt;/title&gt;');
+        printWindow.document.write('&lt;/head&gt;&lt;body&gt;');
+        printWindow.document.write(elem.innerHTML);
+        printWindow.document.write('&lt;/body&gt;&lt;/html&gt;');
+
+        printWindow.print();
+        printWindow.close();
+
+        return true;
+    }
+
+  // Zones / MAS
+  const masInput = document.querySelector('input#mas')
+  const maxHrInput = document.querySelector('input#maxhr')
+  const randomPercent = document.querySelector('input#random_percent')
+
+  const zones = [
+    [
+      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
+      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
+      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
+    ],
+    [
+      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
+      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
+      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
+    ]
+  ]
+
+  function MASzonesInputChange() {
+    if (!masInput.value) return
+
+    document.querySelector('#zones_result').innerHTML = ""
+    let randomPercentResult
+    if (randomPercent.value) {
+      const speed = speedInKmhTimesPercent(masInput.value, randomPercent.value)
+      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
+    }
+    else {
+      randomPercentResult = ""
+    }
+    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
+
+    zones.forEach((zones,index,array) =&gt; {
+        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
+
+        const hueStep = (120 / (zones.length - 1))
+        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
+          const hue = 120 - (index * hueStep)
+          const color = `hsl(${hue}, 100%, 50%)`
+          const speeds = percentMas.map(percent =&gt; speedInKmhTimesPercent(masInput.value, percent))
+          const paces = speeds.map(speed =&gt; secondsToTime(Math.floor(3600/speed), true))
+          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
+          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+          newTable += `&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
+        document.querySelector('#zones_result').innerHTML += newTable
+    })
+  }
+
+  masInput.oninput = MASzonesInputChange
+  maxHrInput.oninput = MASzonesInputChange
+  randomPercent.oninput = MASzonesInputChange
+  MASzonesInputChange()
+&lt;/script&gt;</content><category term="Running"></category><category term="running"></category><category term="training"></category><category term="marathon"></category></entry><entry><title>Running: Building My Own Training Plan</title><link href="//romainpellerin.eu/running-building-my-own-training-plan.html" rel="alternate"></link><published>2024-08-03T16:00:00+02:00</published><updated>2024-08-24T13:26:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-03:/running-building-my-own-training-plan.html</id><summary type="html">&lt;p&gt;Building my own plan is the best way to learn&lt;/p&gt;</summary><content type="html">&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app &lt;a href="https://www.campus.coach/"&gt;Campus Coach&lt;/a&gt; for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.&lt;/p&gt;
 &lt;p&gt;Anyways, it was not perfect, so I decided to look for an alternative. And I found &lt;a href="https://www.decathlon-pacer.com/"&gt;Kiprun Pacer&lt;/a&gt;, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.&lt;/p&gt;
 &lt;p&gt;So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.&lt;/p&gt;
@@ -97,22 +432,6 @@
 &lt;p&gt;ALL SESSIONS must start with a warm-up phase (55-60% MAS) from 20 to 30mins, and end with a 10-min cool-down phase (max 70-75% MAS), except if the session itself was an endurance one, run within 60-70% of your MAS.&lt;/p&gt;
 &lt;p&gt;Before quality sessions, after warming up, it can be valuable to add 10 minutes or more, of &lt;a href="https://lacliniqueducoureur.com/coureurs/je-debute-la-course/affine-ta-biomecanique/affine-ta-biomecanique/"&gt;running drills&lt;/a&gt;, to improve one's technique but also help some specific muscles warm up.&lt;/p&gt;
 &lt;p&gt;Finally, after the race, allow your body one full week off, no running at all, maybe some swimming or low intensity cycling. The second week after the race, you may start again slow jogs. But really, take it easy!&lt;/p&gt;
-&lt;h1 id="bonus-mas-hr-and-zones"&gt;Bonus: MAS, HR and zones&lt;/h1&gt;
-&lt;p&gt;There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.&lt;/p&gt;
-&lt;p&gt;The first table is greatly inspired by &lt;a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel"&gt;this one&lt;/a&gt;, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, &lt;code&gt;(percent of MAS plus 5 to 10) = percent of your HRmax&lt;/code&gt; (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula &lt;code&gt;percent of MAS + 5 = percent of HRmax&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.&lt;/p&gt;
-&lt;p&gt;The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.&lt;/p&gt;
-&lt;p&gt;&lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/&gt;
-&lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/&gt;&lt;/p&gt;
-&lt;div&gt;
-&lt;input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/&gt;
-&lt;span id="random_percent_result"&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html#bonus-marathon-pace-chart"&gt;Find your estimated finish time there&lt;/a&gt;.&lt;/p&gt;
-&lt;div id="result"&gt;&lt;/div&gt;
-
-&lt;p&gt;In &lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=471"&gt;other sources&lt;/a&gt;, I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
 &lt;h1 id="online-training-plans-and-how-to-build-yours"&gt;Online training plans and how to build yours&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.running-addict.fr/category/plans-dentrainement/"&gt;Plans d'entraînement course à pied&lt;/a&gt;&lt;/li&gt;
@@ -130,80 +449,7 @@
 &lt;h1 id="useful-links"&gt;Useful links&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.nolio.io/"&gt;Nolio, a website to build your training plans or collaborate with a coach&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;script&gt;
-  const masInput = document.querySelector('input#mas')
-  const maxHrInput = document.querySelector('input#maxhr')
-  const randomPercent = document.querySelector('input#random_percent')
-  const secondsToTime = (v, showInPace = false) =&gt; {
-            let minutes = Math.floor(v / 60)
-            const seconds = String(v % 60).padStart(2, '0')
-            if (minutes &gt; 59) {
-                    const hours = Math.floor(minutes / 60)
-                    minutes = String(minutes % 60).padStart(2, '0')
-                    return `${hours}:${minutes}:${seconds}`
-            }
-            minutes = String(minutes).padStart(2, '0')
-            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
-    }
-
-  const zones = [
-    [
-      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
-      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
-      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
-      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
-      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
-    ],
-    [
-      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
-      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
-      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
-    ]
-  ]
-
-  function inputChange() {
-    if (!masInput.value) return
-
-    document.querySelector('#result').innerHTML = ""
-    let randomPercentResult
-    if (randomPercent.value) {
-      const speed = (randomPercent.value * masInput.value / 100).toFixed(2)
-      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
-    }
-    else {
-      randomPercentResult = ""
-    }
-    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
-
-    zones.forEach((zones,index,array) =&gt; {
-        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
-
-        const hueStep = (120 / (zones.length - 1))
-        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
-          const hue = 120 - (index * hueStep)
-          const color = `hsl(${hue}, 100%, 50%)`
-          const speeds = percentMas.map(speed =&gt; (masInput.value * speed / 100).toFixed(2))
-          const paces = speeds.map(speed =&gt; secondsToTime(Math.floor(3600/speed), true))
-          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
-          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
-          newTable += `&lt;/tr&gt;`
-        })
-
-        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
-        document.querySelector('#result').innerHTML += newTable
-        if (index + 1 &lt; array.length) document.querySelector('#result').innerHTML += '&lt;br /&gt;'
-    })
-  }
-
-  masInput.oninput = inputChange
-  maxHrInput.oninput = inputChange
-  randomPercent.oninput = inputChange
-  inputChange()
-&lt;/script&gt;</content><category term="Running"></category><category term="running"></category><category term="training"></category><category term="marathon"></category></entry><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-08-04T16:40:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Running"></category><category term="running"></category><category term="training"></category><category term="marathon"></category></entry><entry><title>Périostite 2024</title><link href="//romainpellerin.eu/periostite-2024.html" rel="alternate"></link><published>2024-06-24T18:00:00+02:00</published><updated>2024-08-04T16:40:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-24:/periostite-2024.html</id><summary type="html">&lt;p&gt;Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite&lt;/p&gt;</summary><content type="html">&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.&lt;/p&gt;
@@ -310,7 +556,7 @@
 &lt;li&gt;Sleep-wise, I still need to improve. On any day of the year, it's almost impossible for me to get into bed before midnight. I'd like to change that on the long term, so that I can get more sleep on race days. Factoring in stress and everything, I usually never fall asleep before 2am on race days, and oftentimes wake up naturally way before my alarm clock.&lt;/li&gt;
 &lt;li&gt;My breakfast was a little too light, I was almost hungry before starting the race. Next time I should aim for a full banana and maybe a fourth energy bar.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Coming up next: the Berlin triathlon, in June!&lt;/p&gt;</content><category term="Running"></category><category term="running"></category></entry><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-08-23T17:18:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai pour ainsi dire jamais aimé courir pour courir... jusqu'à ce que le COVID-19 soit.&lt;/p&gt;
+&lt;p&gt;Coming up next: the Berlin triathlon, in June!&lt;/p&gt;</content><category term="Running"></category><category term="running"></category></entry><entry><title>Lessons learned après 4 ans de running</title><link href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="alternate"></link><published>2024-04-15T01:51:00+02:00</published><updated>2024-08-24T13:26:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-04-15:/lessons-learned-apres-4-ans-de-running.html</id><summary type="html">&lt;p&gt;Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"&lt;/p&gt;</summary><content type="html">&lt;p&gt;J'ai pour ainsi dire jamais aimé courir pour courir... jusqu'à ce que le COVID-19 soit.&lt;/p&gt;
 &lt;h1 id="2020"&gt;2020&lt;/h1&gt;
 &lt;p&gt;&lt;img src="//romainpellerin.eu/images/lessons-learned-apres-4-ans-de-running/premier-run.png" alt="Mon premier run" style="float:left" /&gt;&lt;/p&gt;
 &lt;p&gt;Pas manqué, 30 mars 2020, &lt;a href="https://www.strava.com/activities/3235667415"&gt;premier run ever enregistré sur mon Strava&lt;/a&gt;. Pas ouf... Mais il faut bien un début à tout.&lt;/p&gt;
@@ -441,253 +687,7 @@
 &lt;p&gt;Tous ces bullet points sont résumés en 1 minute, dans &lt;a href="https://www.youtube.com/watch?v=_KGDiaxj4ew&amp;amp;t=4194s"&gt;cette vidéo&lt;/a&gt;, à partir de 1:09:54.&lt;/p&gt;
 &lt;p&gt;Par contre, peu ou pas de consensus sur le type de foulée, la longueur, le nombre de pas exact, le meilleur type de chaussures (maximaliste ou minimaliste), les plaques carbones, etc. Mais plutôt des observations, des tendances et des conseils. Par exemple, les chaussures maximalistes ont tendance à changer notre bio-mécanique (donc notre foulée), favorisant une attaque talon. Les chaussures minimalistes peuvent aider à prévenir les blessures sur le long terme, lorsqu'on est habitué à courir en minimaliste. Mais on ne passe pas de maximaliste à minimaliste du jour au lendemain, sinon blessure ! La clinique du coureur propose d'ailleurs un indice de minimalisme pour les chaussures les plus courantes, sur leur site. Courir tous les jours peut aussi aider à prévenir les blessures, à l'inverse de quelques fois par semaine.&lt;/p&gt;
 &lt;p&gt;J'ai aussi pu voir dans &lt;a href="https://www.youtube.com/watch?v=RasKAZiq5AA&amp;amp;t=801s"&gt;une autre vidéo qu'il est important de travailler l'allure spécifique dans les 30 derniers pour cents d'une préparation, et de ne pas axer aveuglement sa préparation que sur la VMA&lt;/a&gt;, car c'est une indicateur loin d'être parfait. Enfin, &lt;a href="https://www.youtube.com/watch?v=ATv0jdgXQLA"&gt;je me suis intéressé un peu à ma foulée, et comment essayer de l'améliorer&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;BREF&lt;/strong&gt;. Ça fait que 3 mois et demi que l'année est commencée, et j'ai déjà appris tellement de choses. Kms so far : 327. ✌&lt;/p&gt;
-&lt;h1 id="bonus-marathon-pace-chart"&gt;Bonus : Marathon pace chart&lt;/h1&gt;
-&lt;p&gt;&lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:40"/&gt;
-&lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:30"/&gt;&lt;/p&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="42.195" id="marathon" type="checkbox" checked /&gt;&lt;label for="marathon"&gt;Marathon&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="25" id="km25" type="checkbox" /&gt;&lt;label for="km25"&gt;25 kms&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="21.0975" id="half_marathon" type="checkbox" /&gt;&lt;label for="half_marathon"&gt;Half-marathon&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="10" id="km10" type="checkbox" /&gt;&lt;label for="km10"&gt;10 kms&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="5" id="km5" type="checkbox" /&gt;&lt;label for="km5"&gt;5 kms&lt;/label&gt;&lt;/div&gt;
-&lt;div class="distance"&gt;&lt;input data-kms="custom" type="checkbox" /&gt;&lt;input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/&gt;&lt;/div&gt;
-
-&lt;table class="collapse" id="results"&gt;&lt;/table&gt;
-
-&lt;h1 id="bonus-2-race-sheet"&gt;Bonus 2 : Race sheet&lt;/h1&gt;
-&lt;div&gt;
-        &lt;label for="race_sheet_distance"&gt;Distance:&lt;/label&gt;
-        &lt;select name="race_sheet_distance" id="race_sheet_distance"&gt;
-                &lt;option value="marathon"&gt;Marathon&lt;/option&gt;
-                &lt;option value="half_marathon"&gt;Half-marathon&lt;/option&gt;
-                &lt;option value="custom"&gt;Custom distance&lt;/option&gt;
-        &lt;/select&gt;
-        &lt;input type="number" step="0.1" id="race_sheet_custom_distance" placeholder="Custom distance" value="10"/&gt;
-&lt;/div&gt;
-&lt;div&gt;&lt;label for="race_title"&gt;Race title (optional):&lt;/label&gt; &lt;input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /&gt;&lt;/div&gt;
-&lt;div&gt;&lt;label for="race_date"&gt;Race date:&lt;/label&gt; &lt;input type="date" id="race_date" name="race_date" /&gt;&lt;/div&gt;
-&lt;div&gt;&lt;label for="pace_goal"&gt;Pace goal on the watch:&lt;/label&gt; &lt;input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:40"/&gt;&lt;/div&gt;
-&lt;div&gt;&lt;label for="bib_number_pickup_date"&gt;Bib number pickup date and time:&lt;/label&gt; &lt;input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /&gt;&lt;/div&gt;
-&lt;div&gt;
-&lt;label for="nutrition_plan"&gt;&lt;a href="https://www.maurten.com/fuelguide/"&gt;Nutrition plan&lt;/a&gt; (50g+ of carbohydrates per hour is the recommendation, or better, &lt;a href="https://youtu.be/mu7celO4IEE?t=237"&gt;your body weight = 75 kgs→eat 75 grams&lt;/a&gt;):&lt;/label&gt;&lt;br /&gt;
-&lt;textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50"&gt;
-1x Gel Caf 100 - 5 mins avant course
-1x Gel 100     - au KM 4.5 (eau à 5.5)
-1x Gel 100     - au KM 9 (eau à 10)
-&lt;/textarea&gt;
-&lt;/div&gt;
-&lt;div&gt;
-&lt;label for="todo_items"&gt;TODO items:&lt;/label&gt;&lt;br /&gt;
-&lt;textarea id="todo_items" name="todo_items" rows="5" cols="50"&gt;
-Couper ongles
-Se faire une belle moustache
-Prévoir le trajet pour se rendre à la course
-Samedi : shake-out run avec 1km à allure
-Samedi : charger montre
-Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
-Samedi soir : préparer le petit déjeuner
-Dimanche matin : noter dans la main
-  Warm up
-  - 5 min = eat
-  Montre en mode pace sur distance un peu plus longue
-  4.5 eat
-  9.5 eat + accelerer
-Dimanche matin : prendre casquette, lunettes, HRM chest strap
-&lt;/textarea&gt;
-&lt;/div&gt;
-
-&lt;div id="race_sheet" style="border: 1px solid gray; padding: 10px;"&gt;
-        &lt;h2 style="text-align:center"&gt;Unknown race - unknown date&lt;/h2&gt;
-        &lt;p style="text-align:center;font-style:italic" id="race_sheet_subtitle"&gt;&lt;/p&gt;
-        &lt;h3&gt;Pace goal on the watch = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
-        &lt;ul&gt;
-                &lt;li&gt;Projected finish time with no margin of error (100% accurate GPS): &lt;strong&gt;&lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-                &lt;li&gt;Projected finish time with margin of error: &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
-                &lt;li&gt;Speed: &lt;strong&gt;&lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;h3&gt;Nutrition&lt;/h3&gt;
-        &lt;ul id="race_sheet_nutrition"&gt;
-        &lt;/ul&gt;
-        &lt;h3&gt;TODO until the race&lt;/h3&gt;
-        &lt;ul id="race_todo" style="list-style-type:none;"&gt;
-                &lt;li id="race_bib_pickup_date_li"&gt;&lt;input type="checkbox"&gt;Bib number pickup: &lt;span id="race_bib_pickup_date"&gt;Sat 4 Mai&lt;/span&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;button onclick="printSheet()"&gt;Print the sheet&lt;/button&gt;&lt;/p&gt;
-&lt;script&gt;
-    const matchFormat = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
-    const paceToSeconds = v =&gt; {
-            const [, minutes, seconds] = matchFormat(v)
-            return Number(minutes) * 60 + Number(seconds)
-    }
-    const differenceBetweenPaces = (min, max) =&gt; paceToSeconds(max) - paceToSeconds(min)
-    const secondsToTime = (v, showInPace = false) =&gt; {
-            let minutes = Math.floor(v / 60)
-            const seconds = String(v % 60).padStart(2, '0')
-            if (minutes &gt; 59) {
-                    const hours = Math.floor(minutes / 60)
-                    minutes = String(minutes % 60).padStart(2, '0')
-                    return `${hours}:${minutes}:${seconds}`
-            }
-            minutes = String(minutes).padStart(2, '0')
-            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
-    }
-    const roundTo1 = num =&gt; Math.round((num + Number.EPSILON) * 10) / 10
-    const paceInSecondsToSpeed = paceInSeconds =&gt; roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
-    const paceInSecondsToFinishTime = (paceInSeconds, kms) =&gt; secondsToTime(Math.ceil(paceInSeconds * kms))
-
-    const fastestPace = document.querySelector('input#fastest_pace')
-    const slowestPace = document.querySelector('input#slowest_pace')
-    const custom = document.querySelector('input#custom')
-
-    function inputChange() {
-        //////////////////////// PACE CHART ////////////////////////
-
-        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
-
-        const min = fastestPace.value;
-        const max = slowestPace.value;
-
-        if (!matchFormat(min) || !matchFormat(max) || differenceBetweenPaces(min, max) &lt; 0) return
-        const difference = differenceBetweenPaces(min, max) + 1
-        const minInSeconds = paceToSeconds(min)
-
-        const table = document.getElementById('results')
-        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
-
-        const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
-                const input = div.querySelector('input[type="checkbox"]')
-                const checked = input.checked
-                const kms = Number(input.dataset.kms)
-                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
-                return {checked, kms, label}
-        }).filter(({checked})=&gt;checked);
-
-        newTable += `${distances.map(({kms, label}) =&gt; `&lt;th&gt;${label}&lt;/th&gt;`).join("")}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`
-
-        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
-        const result = paces.map(function(paceInSeconds) {
-            const pace = secondsToTime(paceInSeconds, true)
-            const speed = paceInSecondsToSpeed(paceInSeconds)
-            const row = distances.map(({kms}) =&gt; `&lt;td&gt;${paceInSecondsToFinishTime(paceInSeconds, kms)}&lt;/td&gt;`).join("")
-
-            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;&lt;th&gt;${speed} km/h&lt;/th&gt;${row}&lt;/tr&gt;`
-        })
-
-        newTable += "&lt;/tbody&gt;"
-        table.innerHTML = newTable
-
-
-        //////////////////////// RACE SHEET ////////////////////////
-
-        const preDefinedDistances = {
-                'marathon': [42.195, 'Marathon'],
-                'half_marathon': [21.0975, 'Half-marathon']
-        }
-
-        const raceCustomDistance = document.querySelector('#race_sheet_custom_distance')
-        const raceDistance = document.querySelector('#race_sheet_distance').value
-        const customRaceDistanceSelected = raceDistance === 'custom'
-        raceCustomDistance.style = customRaceDistanceSelected ? '' : 'display:none';
-        const [kms, label] = customRaceDistanceSelected ? [Number(raceCustomDistance.value), "Race"] : preDefinedDistances[raceDistance]
-
-        // Sheet title and subtitle
-        const dateValue = document.querySelector('#race_date').value
-        const date = dateValue ? new Date(dateValue).toDateString() : 'unknown date'
-        const title = document.querySelector('#race_title').value?.trim()
-        let sheetTitle = label
-        if (title) {
-                sheetTitle += ` - ${title}`
-        }
-        document.querySelector('#race_sheet h2').innerText = `${sheetTitle} - ${date}`
-
-        // Race distance
-        document.querySelector('#race_sheet_subtitle').innerHTML = `${kms} kms`
-
-        // Pace goal
-        const paceGoal = document.querySelector('#pace_goal').value
-        if (matchFormat(paceGoal)) {
-                const paceInSeconds = paceToSeconds(paceGoal)
-
-                document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds, true)
-                document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
-                const marginOfErrorInPercent = 1.3
-                const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
-                const kmsWithError = (kms*marginOfError).toFixed(3)
-                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `&lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt; (${kmsWithError} kms) (error = ${marginOfErrorInPercent}%)`
-                document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
-        }
-
-        // Nutrition
-        const nutritionItems = document.querySelector('#nutrition_plan').value.split("\n").map(e =&gt; e.trim()).filter(Boolean)
-        const raceNutritionList = document.querySelector('#race_sheet_nutrition')
-        raceNutritionList.innerHTML = ''
-        nutritionItems.forEach(line =&gt; {
-                const li = document.createElement('li')
-                li.innerText = line
-                raceNutritionList.appendChild(li)
-        })
-
-        // TODO list
-        const todoItems = document.querySelector('#todo_items').value.split("\n").map(e =&gt; e.trimEnd()).filter(Boolean)
-        const raceTodoList = document.querySelector('#race_todo')
-        Array.from(raceTodoList.children).forEach(li =&gt; {
-                if (!li.matches('#race_bib_pickup_date_li')) {
-                        li.remove();
-                }
-        })
-        let parentLi, currentUl = raceTodoList, rootUl = raceTodoList
-        todoItems.forEach(line =&gt; {
-                const li = document.createElement('li')
-
-                if (line.startsWith(' ') &amp;&amp; parentLi) {
-                        if (currentUl === rootUl) {
-                                currentUl = document.createElement('ul')
-                                parentLi.appendChild(currentUl)
-                        }
-                }
-                else {
-                        currentUl = rootUl
-                }
-
-                li.innerHTML = `&lt;input type="checkbox"&gt;${line}`
-                currentUl.appendChild(li)
-                parentLi = li
-        })
-
-        // Bib pickup date
-        const bibNumberPickupDateValue = document.querySelector('#bib_number_pickup_date').value
-        const bibNumberPickupDate = bibNumberPickupDateValue ? new Date(bibNumberPickupDateValue) : 'unknown date'
-        document.querySelector('#race_bib_pickup_date').innerText =
-                typeof bibNumberPickupDate === 'string'
-                ? bibNumberPickupDate
-                : `${bibNumberPickupDate.toDateString()}, ${bibNumberPickupDate.toLocaleTimeString()}`
-    }
-
-
-
-    document.querySelectorAll('input, select, textarea').forEach(el =&gt; {
-        el.oninput = inputChange
-    })
-    if (fastestPace.value || slowestPace.value) {
-        inputChange()
-    }
-
-    window.printSheet = () =&gt; {
-        const elem = document.querySelector('#race_sheet');
-        const printWindow = window.open('', 'PRINT', 'height=600,width=800');
-        printWindow.document.write('&lt;html&gt;&lt;head&gt;&lt;title&gt;Race sheet&lt;/title&gt;');
-        printWindow.document.write('&lt;/head&gt;&lt;body&gt;');
-        printWindow.document.write(elem.innerHTML);
-        printWindow.document.write('&lt;/body&gt;&lt;/html&gt;');
-
-        printWindow.print();
-        printWindow.close();
-
-        return true;
-    }
-
-&lt;/script&gt;</content><category term="Running"></category><category term="running"></category></entry><entry><title>Running and Pronation</title><link href="//romainpellerin.eu/running-and-pronation.html" rel="alternate"></link><published>2023-10-01T02:00:00+02:00</published><updated>2024-05-10T19:28:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-10-01:/running-and-pronation.html</id><summary type="html">&lt;p&gt;Find out about your pronation and get the right shoes&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category/neutral, based on the study of the wear of my shoes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BREF&lt;/strong&gt;. Ça fait que 3 mois et demi que l'année est commencée, et j'ai déjà appris tellement de choses. Kms so far : 327. ✌&lt;/p&gt;</content><category term="Running"></category><category term="running"></category></entry><entry><title>Running and Pronation</title><link href="//romainpellerin.eu/running-and-pronation.html" rel="alternate"></link><published>2023-10-01T02:00:00+02:00</published><updated>2024-05-10T19:28:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-10-01:/running-and-pronation.html</id><summary type="html">&lt;p&gt;Find out about your pronation and get the right shoes&lt;/p&gt;</summary><content type="html">&lt;p&gt;So I've been a """runner""" for quite some time now and I'm just discovering what pronation is. Apparently most people are pronated, some are supinated, and very few are normal (or neutral). I fall in the first category/neutral, based on the study of the wear of my shoes.&lt;/p&gt;
 &lt;p&gt;Being pronated means that, while standing (not moving), one's foot naturally leans inward (towards the other leg). Being supinated is the opposite, one's foot leans outward.&lt;/p&gt;
 &lt;p&gt;This also means that pronated runners tend to have the outmost part of their feet land slightly first when running, then feet roll progressively towards the inside (towards the other leg) until the full body weight is on one foot.&lt;/p&gt;
 &lt;p&gt;Here are two videos to help you figure out which category you fall in:&lt;/p&gt;
