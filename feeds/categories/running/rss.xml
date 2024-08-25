@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 24 Aug 2024 13:26:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;h1 id="mas-hr-and-zones"&gt;MAS, HR and zones&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 25 Aug 2024 02:34:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+    const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
+    const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
+    const paceToSeconds = (v, separator = 'COLON') =&gt; {
+            const [, minutes, seconds] = separator === 'COLON' ? matchPaceFormatWithColon(v) : matchPaceFormatWithQuotes(v)
+            return Number(minutes) * 60 + Number(seconds)
+    }
+    const differenceBetweenPaces = (min, max) =&gt; paceToSeconds(max) - paceToSeconds(min)
+    const secondsToTime = (v) =&gt; {
+            let minutes = Math.floor(v / 60)
+            let hours = 0
+            const seconds = String(v % 60).padStart(2, '0')
+            if (minutes &gt; 59) {
+                    hours = Math.floor(minutes / 60)
+                    minutes = String(minutes % 60).padStart(2, '0')
+            }
+            minutes = String(minutes)
+            const result = [String(hours), minutes, seconds]
+            result.valueWithQuotes = hours ? `${hours}h${minutes}'${seconds}"` : `${minutes}'${seconds}"`
+            result.valueWithColon = hours ? `${hours}:${minutes}:${seconds}` : `${minutes}:${seconds}`
+            return result
+    }
+    const roundTo1 = num =&gt; Math.round((num + Number.EPSILON) * 10) / 10
+    const paceInSecondsToSpeed = paceInSeconds =&gt; roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
+    const speedInKmhTimesPercent = (kmh, percent) =&gt; (percent * kmh / 100).toFixed(2)
+    const paceInSecondsToFinishTime = (paceInSeconds, kms) =&gt; secondsToTime(Math.ceil(paceInSeconds * kms)).valueWithColon
+    const secondsAtPaceToMeters = (seconds, paceInSeconds) =&gt; Math.floor((seconds * 1000) / paceInSeconds)
+    const metersAtPaceToSeconds = (meters, paceInSeconds) =&gt; Math.ceil((meters * paceInSeconds) / 1000)
+    const speedToSecondsForOneKilometer = speed =&gt; Math.ceil(3600/speed)
+&lt;/script&gt;
+
+&lt;h1 id="mas-hr-and-zones"&gt;MAS, HR and zones&lt;/h1&gt;
 &lt;p&gt;(MAS is &lt;em&gt;VMA&lt;/em&gt; in French)&lt;/p&gt;
 &lt;p&gt;There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.&lt;/p&gt;
 &lt;p&gt;The first table is greatly inspired by &lt;a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel"&gt;this one&lt;/a&gt;, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, &lt;code&gt;(percent of MAS plus 5 to 10) = percent of your HRmax&lt;/code&gt; (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula &lt;code&gt;percent of MAS + 5 = percent of HRmax&lt;/code&gt;.&lt;/p&gt;
@@ -14,8 +45,239 @@
 
 &lt;div id="zones_result"&gt;&lt;/div&gt;
 
-&lt;p&gt;In &lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=471"&gt;other sources&lt;/a&gt;, I've found slightly different values for SV1 and SV2. But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
-&lt;h1 id="marathon-pace-chart"&gt;Marathon pace chart&lt;/h1&gt;
+&lt;p&gt;In &lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=471"&gt;other sources&lt;/a&gt;, I've found slightly different values for SV1 (&lt;em&gt;VT1&lt;/em&gt; in English) and SV2 (&lt;em&gt;VT2&lt;/em&gt; in English). But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
+&lt;script&gt;
+  const masInput = document.querySelector('input#mas')
+  const maxHrInput = document.querySelector('input#maxhr')
+  const randomPercent = document.querySelector('input#random_percent')
+
+  const zones = [
+    [
+      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
+      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
+      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
+      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
+      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
+    ],
+    [
+      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
+      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
+      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
+    ]
+  ]
+
+  function MASzonesInputChange() {
+    if (!masInput.value) return
+
+    document.querySelector('#zones_result').innerHTML = ""
+    let randomPercentResult
+    if (randomPercent.value) {
+      const speed = speedInKmhTimesPercent(masInput.value, randomPercent.value)
+      randomPercentResult = `= ${secondsToTime(speedToSecondsForOneKilometer(speed)).valueWithQuotes} (${speed} km/h)`
+    }
+    else {
+      randomPercentResult = ""
+    }
+    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
+
+    zones.forEach((zones,index,array) =&gt; {
+        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
+
+        const hueStep = (120 / (zones.length - 1))
+        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
+          const hue = 120 - (index * hueStep)
+          const color = `hsl(${hue}, 100%, 50%)`
+          const speeds = percentMas.map(percent =&gt; speedInKmhTimesPercent(masInput.value, percent))
+          const paces = speeds.map(speed =&gt; secondsToTime(speedToSecondsForOneKilometer(speed)).valueWithQuotes)
+          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
+          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
+          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
+          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+          newTable += `&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
+        document.querySelector('#zones_result').innerHTML += newTable
+    })
+  }
+
+  masInput.oninput = MASzonesInputChange
+  maxHrInput.oninput = MASzonesInputChange
+  randomPercent.oninput = MASzonesInputChange
+  MASzonesInputChange()
+&lt;/script&gt;
+
+&lt;h2 id="session-parser"&gt;Session parser&lt;/h2&gt;
+&lt;p&gt;To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (above VT2), the MAS value your entered at the top of this page will be used.&lt;/p&gt;
+&lt;div style="display: flex"&gt;
+&lt;textarea style="flex: 1 0 0" id="session_parser" rows="10" cols="0"&gt;
+30min warm-up 5'53" working towards 5'03"
+3000m 3'55"
+10min cool-down 5'53"
+45min 5'26" working towards 5'03"
+20min warm-up 5'53" working towards 5'26"
+8x (400m / 1min24 3'32" + 200m recovery 5'53")
+10min cool-down 5'53"
+6km 5'53" working towards 5'26"
+4km 4'57"
+&lt;/textarea&gt;
+
+&lt;textarea style="flex: 1 0 0; background-color: #ddd" id="session_parser_results" rows="10" cols="0" readonly&gt;&lt;/textarea&gt;
+
+&lt;/div&gt;
+
+&lt;div id="session_parser_zones_results"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    const sessionParserTextarea = document.querySelector('textarea#session_parser')
+    const sessionParserResults = document.querySelector('#session_parser_results')
+
+    const regexWithMultiplicator = /^(?&lt;multiplicator&gt;\d+)\s?x\s?\((?&lt;rest&gt;.*?)\)$/
+    const regexWorkingTowards = /(?&lt;paceA&gt;\d{1,2}'\d{2}")\s?working towards\s?(?&lt;paceB&gt;\d{1,2}'\d{2}")/g
+
+    // ([a-z-]+ )? is for recovery/warm-up/cool-down terms
+    const regexFindMeters = /(?&lt;meters&gt;\d{2,5})\s?m (?:\/ \dmin\d{1,2} )?([a-z-]+ )?(?&lt;pace&gt;\d{1,2}'\d{2}")/g
+    const regexFindKiloMeters = /(?&lt;kilometers&gt;\d{1,2}(\.\d{1,3})?)\s?km ([a-z-]+ )?(?&lt;pace&gt;\d{1,2}'\d{2}")/g
+    const regexMinsSecsToDistance = /(?&lt;mins&gt;\d{1,3})\s?mins?(?&lt;secs&gt;\d{1,2})? ([a-z-]+ )?(?&lt;pace&gt;\d{1,2}'\d{2}")/g
+
+    function sessionParserInputChange() {
+        const zone1 = [] // % MAS &lt;= 75
+        const zone2 = [] // % MAS &lt;= 85
+        const zone3 = [] // % MAS &gt; 85
+
+        const vt1Speed = speedInKmhTimesPercent(masInput.value, 75)
+        const vt2Speed = speedInKmhTimesPercent(masInput.value, 85)
+        const vt1PaceInSeconds = speedToSecondsForOneKilometer(vt1Speed)
+        const vt2PaceInSeconds = speedToSecondsForOneKilometer(vt2Speed)
+
+        const lines = sessionParserTextarea.value.split("\n")
+        const results = lines.map(l =&gt; l.trim()).filter(l =&gt; l.length &gt; 0).map(line =&gt; {
+                let lineToParse = line
+                let multiplicator = 1
+
+                let result = lineToParse.match(regexWithMultiplicator)
+                if (result) {
+                        multiplicator *= result.groups.multiplicator
+                        lineToParse = result.groups.rest
+                }
+
+                // Let's replace the "working towards" with their average pace
+                result = lineToParse.matchAll(regexWorkingTowards)
+                for (const match of result) {
+                        const {paceA, paceB} = match.groups
+                        const toReplace = match[0]
+                        let averagePace = Math.ceil((paceToSeconds(paceA, 'QUOTE') + paceToSeconds(paceB, 'QUOTE')) / 2)
+                        averagePace = secondsToTime(averagePace).valueWithQuotes
+                        lineToParse = lineToParse.replace(toReplace, averagePace)
+                }
+
+                // Let's replace `400m 4'57"` with `4000@4'57"`
+                result = lineToParse.matchAll(regexFindMeters)
+                for (const match of result) {
+                        const {meters, pace} = match.groups
+                        const toReplace = match[0]
+                        const metersAtPace = `${meters}@${pace}`
+                        lineToParse = lineToParse.replace(toReplace, metersAtPace)
+                }
+                // Let's replace `4km 4'57"` with `4000@4'57"`
+                result = lineToParse.matchAll(regexFindKiloMeters)
+                for (const match of result) {
+                        const {kilometers, pace} = match.groups
+                        const toReplace = match[0]
+                        const metersAtPace = `${Number(kilometers)*1000}@${pace}`
+                        lineToParse = lineToParse.replace(toReplace, metersAtPace)
+                }
+                // Let's replace `10min cool-down 5'53" with 1700@5'53"` with `1700@5'53"`
+                result = lineToParse.matchAll(regexMinsSecsToDistance)
+                for (const match of result) {
+                        const {mins, secs, pace} = match.groups
+                        const toReplace = match[0]
+                        const paceInSeconds = paceToSeconds(pace, "QUOTES")
+                        const meters = secondsAtPaceToMeters((Number(mins) * 60) + Number(secs ?? "0"), paceInSeconds)
+                        const metersAtPace = `${meters}@${pace}`
+                        lineToParse = lineToParse.replace(toReplace, metersAtPace)
+                }
+
+                let segments
+                if (lineToParse.includes('+')) {
+                        segments = lineToParse.split(/\s?\+\s?/)
+                }
+                else {
+                        segments = [lineToParse]
+                }
+                if (!segments.every(segment =&gt; segment.match(/^\d+@\d{1,2}'\d{2}"$/))) {
+                        return "Line could not be parsed"
+                }
+
+                segments = segments.map(segment =&gt; {
+                        let [meters, pace] = segment.split('@')
+                        meters *= multiplicator
+                        const paceInSeconds = paceToSeconds(pace, "QUOTES")
+                        if (paceInSeconds &gt;= vt1PaceInSeconds) zone1.push(meters)
+                        else if (paceInSeconds &gt;= vt2PaceInSeconds) zone2.push(meters)
+                        else zone3.push(meters)
+
+                        return `${meters}@${pace}`
+                })
+                return segments.join(" + ")
+        })
+
+        sessionParserResults.innerHTML = results.filter(l =&gt; l.length &gt; 0).join("\n")
+
+        const metersInZone1 = zone1.reduce((acc, item) =&gt; acc + item, 0)
+        const metersInZone2 = zone2.reduce((acc, item) =&gt; acc + item, 0)
+        const metersInZone3 = zone3.reduce((acc, item) =&gt; acc + item, 0)
+        const zonesResults = document.querySelector('#session_parser_zones_results')
+        zonesResults.innerHTML = `Zone 1: ${metersInZone1/1000}kms&lt;br /&gt;Zone 2 (faster than ${secondsToTime(vt1PaceInSeconds).valueWithQuotes}): ${metersInZone2/1000}kms&lt;br /&gt;Zone 3 (faster than ${secondsToTime(vt2PaceInSeconds).valueWithQuotes}): ${metersInZone3/1000}kms&lt;br /&gt;&lt;button id="sessionCopy"&gt;Copy&lt;/button&gt;`
+
+        const copyContent = async () =&gt; {
+                try {
+                        // Fo google spreadsheet, columns "quality kms in zone 2" and "quality kms in zone 3"
+                        await navigator.clipboard.writeText(`${metersInZone2/1000}\t${metersInZone3/1000}`);
+                        console.log('Content copied to clipboard');
+                } catch (err) {
+                        console.error('Failed to copy: ', err);
+                }
+        }
+        document.querySelector('button#sessionCopy').onclick = copyContent
+    }
+    sessionParserTextarea.oninput = sessionParserInputChange
+    masInput.oninput = sessionParserInputChange
+    sessionParserInputChange()
+&lt;/script&gt;
+
+&lt;h1 id="time-and-distance-converter"&gt;Time and distance converter&lt;/h1&gt;
+&lt;div id="time_and_distance_converter"&gt;
+&lt;div&gt;Pace: &lt;input pattern="\d{1,2}:\d{2}" type="text" id="time_and_distance_converter_pace" placeholder="Pace" value="4:25"/&gt;&lt;/div&gt;
+&lt;div&gt;What distance will I cover if I run for &lt;input type="number" step="1" id="time_to_distance_mins" value="30"/&gt; minutes and &lt;input type="number" step="1" id="time_to_distance_secs" value="0"/&gt; seconds? &lt;strong id="time_to_distance_results"&gt;&lt;/strong&gt;&lt;/div&gt;
+&lt;div&gt;How much time do I need to run &lt;input type="number" step="1" id="distance_to_time" value="30"/&gt; meters? &lt;strong id="distance_to_time_results"&gt;&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function timeAndDistanceConverterInputChange() {
+        const pace = document.querySelector('input#time_and_distance_converter_pace').value
+        if (!matchPaceFormatWithColon(pace)) return
+
+        const paceInSeconds = paceToSeconds(pace)
+
+        let timeInSecondsToConvert = Number(document.querySelector('input#time_to_distance_secs').value ?? '0')
+        const timeInMinutesToConvert = Number(document.querySelector('input#time_to_distance_mins').value ?? '0')
+        timeInSecondsToConvert += (timeInMinutesToConvert * 60)
+        const timeConvertedInDistance = secondsAtPaceToMeters(timeInSecondsToConvert, paceInSeconds)
+        document.querySelector('#time_to_distance_results').innerText = `${timeConvertedInDistance}m`
+
+        const metersToConvert = Number(document.querySelector('input#distance_to_time').value ?? '0')
+        const [hours, minutes, seconds] = secondsToTime(metersAtPaceToSeconds(metersToConvert, paceInSeconds))
+        document.querySelector('#distance_to_time_results').innerText = hours ? `${hours}hrs ${minutes}mins ${seconds}secs` : `${minutes}mins ${seconds}secs`
+    }
+    document.querySelectorAll('#time_and_distance_converter input').forEach(el =&gt; {
+        el.oninput = timeAndDistanceConverterInputChange
+    })
+    timeAndDistanceConverterInputChange()
+&lt;/script&gt;
+
+&lt;h1 id="pace-chart"&gt;Pace chart&lt;/h1&gt;
 &lt;div id="pace_chart_info"&gt;
 &lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:25"/&gt;
 &lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:42"/&gt;
@@ -29,6 +291,55 @@
 &lt;/div&gt;
 
 &lt;table class="collapse" id="pace_chart_results"&gt;&lt;/table&gt;
+
+&lt;script&gt;
+    const fastestPace = document.querySelector('input#fastest_pace')
+    const slowestPace = document.querySelector('input#slowest_pace')
+    const custom = document.querySelector('input#custom')
+
+    function paceChartInputChange() {
+        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
+
+        const min = fastestPace.value;
+        const max = slowestPace.value;
+
+        if (!matchPaceFormatWithColon(min) || !matchPaceFormatWithColon(max) || differenceBetweenPaces(min, max) &lt; 0) return
+        const difference = differenceBetweenPaces(min, max) + 1
+        const minInSeconds = paceToSeconds(min)
+
+        const table = document.getElementById('pace_chart_results')
+        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
+
+        const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
+                const input = div.querySelector('input[type="checkbox"]')
+                const checked = input.checked
+                const kms = Number(input.dataset.kms)
+                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
+                return {checked, kms, label}
+        }).filter(({checked})=&gt;checked);
+
+        newTable += `${distances.map(({kms, label}) =&gt; `&lt;th&gt;${label}&lt;/th&gt;`).join("")}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`
+
+        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
+        const result = paces.map(function(paceInSeconds) {
+            const pace = secondsToTime(paceInSeconds).valueWithQuotes
+            const speed = paceInSecondsToSpeed(paceInSeconds)
+            const row = distances.map(({kms}) =&gt; `&lt;td&gt;${paceInSecondsToFinishTime(paceInSeconds, kms)}&lt;/td&gt;`).join("")
+
+            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;&lt;th&gt;${speed} km/h&lt;/th&gt;${row}&lt;/tr&gt;`
+        })
+
+        newTable += "&lt;/tbody&gt;"
+        table.innerHTML = newTable
+    }
+
+    document.querySelectorAll('#pace_chart_info input').forEach(el =&gt; {
+        el.oninput = paceChartInputChange
+    })
+    if (fastestPace.value || slowestPace.value) {
+        paceChartInputChange()
+    }
+&lt;/script&gt;
 
 &lt;h1 id="race-sheet"&gt;Race sheet&lt;/h1&gt;
 &lt;div id="race_sheet_info"&gt;
@@ -93,74 +404,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;/div&gt;
 &lt;p&gt;&lt;button onclick="printSheet()"&gt;Print the sheet&lt;/button&gt;&lt;/p&gt;
 &lt;script&gt;
-    const matchFormat = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
-    const paceToSeconds = v =&gt; {
-            const [, minutes, seconds] = matchFormat(v)
-            return Number(minutes) * 60 + Number(seconds)
-    }
-    const differenceBetweenPaces = (min, max) =&gt; paceToSeconds(max) - paceToSeconds(min)
-    const secondsToTime = (v, showInPace = false) =&gt; {
-            let minutes = Math.floor(v / 60)
-            const seconds = String(v % 60).padStart(2, '0')
-            if (minutes &gt; 59) {
-                    const hours = Math.floor(minutes / 60)
-                    minutes = String(minutes % 60).padStart(2, '0')
-                    return `${hours}:${minutes}:${seconds}`
-            }
-            minutes = String(minutes).padStart(2, '0')
-            return `${minutes}${showInPace ? "'" : ':'}${seconds}${showInPace ? '"' : ''}`
-    }
-    const roundTo1 = num =&gt; Math.round((num + Number.EPSILON) * 10) / 10
-    const paceInSecondsToSpeed = paceInSeconds =&gt; roundTo1(3600.0/paceInSeconds) // .toFixed(1) is less precise
-    const speedInKmhTimesPercent = (kmh, percent) =&gt; (percent * kmh / 100).toFixed(2)
-    const paceInSecondsToFinishTime = (paceInSeconds, kms) =&gt; secondsToTime(Math.ceil(paceInSeconds * kms))
-
-    const fastestPace = document.querySelector('input#fastest_pace')
-    const slowestPace = document.querySelector('input#slowest_pace')
-    const custom = document.querySelector('input#custom')
-
-    function paceChartInputChange() {
-        //////////////////////// PACE CHART ////////////////////////
-
-        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
-
-        const min = fastestPace.value;
-        const max = slowestPace.value;
-
-        if (!matchFormat(min) || !matchFormat(max) || differenceBetweenPaces(min, max) &lt; 0) return
-        const difference = differenceBetweenPaces(min, max) + 1
-        const minInSeconds = paceToSeconds(min)
-
-        const table = document.getElementById('pace_chart_results')
-        let newTable = "&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;th&gt;Speed&lt;/th&gt;"
-
-        const distances = Array.from(document.querySelectorAll('.distance')).map(div =&gt; {
-                const input = div.querySelector('input[type="checkbox"]')
-                const checked = input.checked
-                const kms = Number(input.dataset.kms)
-                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
-                return {checked, kms, label}
-        }).filter(({checked})=&gt;checked);
-
-        newTable += `${distances.map(({kms, label}) =&gt; `&lt;th&gt;${label}&lt;/th&gt;`).join("")}&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;`
-
-        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
-        const result = paces.map(function(paceInSeconds) {
-            const pace = secondsToTime(paceInSeconds, true)
-            const speed = paceInSecondsToSpeed(paceInSeconds)
-            const row = distances.map(({kms}) =&gt; `&lt;td&gt;${paceInSecondsToFinishTime(paceInSeconds, kms)}&lt;/td&gt;`).join("")
-
-            newTable += `&lt;tr&gt;&lt;th&gt;${pace}&lt;/th&gt;&lt;th&gt;${speed} km/h&lt;/th&gt;${row}&lt;/tr&gt;`
-        })
-
-        newTable += "&lt;/tbody&gt;"
-        table.innerHTML = newTable
-
-    }
-
     function raceSheetInputChange() {
-        //////////////////////// RACE SHEET ////////////////////////
-
         const preDefinedDistances = {
                 'marathon': [42.195, 'Marathon'],
                 'half_marathon': [21.0975, 'Half-marathon']
@@ -187,10 +431,10 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 
         // Pace goal
         const paceGoal = document.querySelector('#pace_goal').value
-        if (matchFormat(paceGoal)) {
+        if (matchPaceFormatWithColon(paceGoal)) {
                 const paceInSeconds = paceToSeconds(paceGoal)
 
-                document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds, true)
+                document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds).valueWithQuotes
                 document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
                 const marginOfErrorInPercent = 1.3
                 const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
@@ -245,19 +489,9 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
                 : `${bibNumberPickupDate.toDateString()}, ${bibNumberPickupDate.toLocaleTimeString()}`
     }
 
-
-
-    document.querySelectorAll('#pace_chart_info input').forEach(el =&gt; {
-        el.oninput = paceChartInputChange
-    })
-
     document.querySelectorAll('#race_sheet_info input, #race_sheet_info select, #race_sheet_info textarea').forEach(el =&gt; {
         el.oninput = raceSheetInputChange
     })
-
-    if (fastestPace.value || slowestPace.value) {
-        paceChartInputChange()
-    }
     raceSheetInputChange()
 
     window.printSheet = () =&gt; {
@@ -273,67 +507,6 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 
         return true;
     }
-
-  // Zones / MAS
-  const masInput = document.querySelector('input#mas')
-  const maxHrInput = document.querySelector('input#maxhr')
-  const randomPercent = document.querySelector('input#random_percent')
-
-  const zones = [
-    [
-      {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
-      {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
-      {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
-      {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
-      {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
-    ],
-    [
-      {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
-      {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
-      {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
-    ]
-  ]
-
-  function MASzonesInputChange() {
-    if (!masInput.value) return
-
-    document.querySelector('#zones_result').innerHTML = ""
-    let randomPercentResult
-    if (randomPercent.value) {
-      const speed = speedInKmhTimesPercent(masInput.value, randomPercent.value)
-      randomPercentResult = `= ${secondsToTime(Math.floor(3600/speed), true)} (${speed} km/h)`
-    }
-    else {
-      randomPercentResult = ""
-    }
-    document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
-
-    zones.forEach((zones,index,array) =&gt; {
-        let newTable = "&lt;table class=\"collapse\"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Zone&lt;/th&gt;&lt;th&gt;Name(s)&lt;/th&gt;&lt;th&gt;% MAS&lt;/th&gt;&lt;th&gt;% HRmax&lt;/th&gt;&lt;th&gt;Pace&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;"
-
-        const hueStep = (120 / (zones.length - 1))
-        zones.map(({percentMas,zone,percentHr,name},index,array) =&gt; {
-          const hue = 120 - (index * hueStep)
-          const color = `hsl(${hue}, 100%, 50%)`
-          const speeds = percentMas.map(percent =&gt; speedInKmhTimesPercent(masInput.value, percent))
-          const paces = speeds.map(speed =&gt; secondsToTime(Math.floor(3600/speed), true))
-          const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
-          newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
-          newTable += `&lt;/tr&gt;`
-        })
-
-        newTable += "&lt;/tbody&gt;&lt;/table&gt;"
-        document.querySelector('#zones_result').innerHTML += newTable
-    })
-  }
-
-  masInput.oninput = MASzonesInputChange
-  maxHrInput.oninput = MASzonesInputChange
-  randomPercent.oninput = MASzonesInputChange
-  MASzonesInputChange()
 &lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 24 Aug 2024 13:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-08-24:/running-calculators.html</guid><category>Running</category><category>running</category><category>training</category><category>marathon</category></item><item><title>Running: Building My Own Training Plan</title><link>//romainpellerin.eu/running-building-my-own-training-plan.html</link><description>&lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app &lt;a href="https://www.campus.coach/"&gt;Campus Coach&lt;/a&gt; for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.&lt;/p&gt;
 &lt;p&gt;Anyways, it was not perfect, so I decided to look for an alternative. And I found &lt;a href="https://www.decathlon-pacer.com/"&gt;Kiprun Pacer&lt;/a&gt;, from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.&lt;/p&gt;
