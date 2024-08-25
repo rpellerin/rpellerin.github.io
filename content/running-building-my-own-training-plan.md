@@ -105,7 +105,7 @@ If one trains 4 times a week (like myself!), then most weeks should look somethi
     - Seuil (anaérobie): 85-88% MAS.
     - Endurance: < 85% MAS.
 
-4.  One long jog, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.
+4.  [One long jog](https://www.youtube.com/watch?v=twjKBvbX4nM), usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.
 
 One week out of ~4 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments. Except for those recovery weeks, the number of kms per week should gradually increased throughout the weeks, until the taper phase.
 
