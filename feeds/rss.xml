@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 25 Aug 2024 02:34:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 25 Aug 2024 20:07:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -698,7 +698,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;li&gt;The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time, and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.&lt;/li&gt;
 &lt;li&gt;After a run, even if the app is connected to your Garmin account, you have to manually "validate the session", i.e. match your run in Garmin with a session in your plan in the app. A couple of more clicks, avoidable. Then it asks questions, like the Kiprun app, only less.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id="conclusion-how-training-plans-are-built"&gt;Conclusion: how training plans are built&lt;/h1&gt;
+&lt;h1 id="conclusion-how-training-plans-for-a-marathon-are-built"&gt;Conclusion: how training plans for a marathon are built&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Extremely important notice: &lt;a href="https://youtu.be/-mrCT0LQq2U?t=2141"&gt;sleep, hydration and nutrition will be paramount during your training!&lt;/a&gt;&lt;/strong&gt; Now, onto the plan...&lt;/p&gt;
 &lt;p&gt;So far, here are some bullet points on my learnings on how to build training plans yourself.&lt;/p&gt;
 &lt;p&gt;The paces must always be calculated based on the MAS, not on the HR. Why? Because the heart rate will vary throughout the session and will not go back to a lower number after a fast segment, for instance. Also, it very much depends on how rested one is, weather/temperature, the time of the day, coffee/food, etc. So MAS is a much better indicator to base off paces.&lt;/p&gt;
