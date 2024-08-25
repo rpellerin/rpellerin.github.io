@@ -69,7 +69,7 @@ In the plan that the app crafts, their "endurance active" zone ranges from 65% t
 - The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time, and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.
 - After a run, even if the app is connected to your Garmin account, you have to manually "validate the session", i.e. match your run in Garmin with a session in your plan in the app. A couple of more clicks, avoidable. Then it asks questions, like the Kiprun app, only less.
 
-# Conclusion: how training plans are built
+# Conclusion: how training plans for a marathon are built
 
 **Extremely important notice: [sleep, hydration and nutrition will be paramount during your training!](https://youtu.be/-mrCT0LQq2U?t=2141)** Now, onto the plan...
 
