@@ -15,6 +15,8 @@ Summary: My checklist of things to take for a triathlon
 - A transponder, worn at the ankle
 - A belt to carry gels and display the bib number
 
+To read: [A few tips for setting up a garmin watch for a triathlon](https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/)
+
 # For swimming
 
 - Swimming cap
