@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-25T20:35:00+02:00</updated><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-08-25T02:34:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-26T19:55:00+02:00</updated><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-08-25T02:34:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -857,7 +857,7 @@ sudo apt install maven
 &lt;p&gt;&lt;img alt="Plitvice Lakes" src="//romainpellerin.eu/images/croatia/plitvice.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The Plitvice Lakes National Park is a marvel! It's a park made of multiple clear blue lakes, on different levels (different heights), waterfalls, full of thriving life. You'll see fish, snakes, birds, ducks, frogs... The color of these lakes is out of this world. And they take every measure to preserve the park and protect it. There are multiple trails one can follow, with some segments taken on boat or bus. 100% recommended.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;That's it!&lt;/p&gt;</content><category term="Travels"></category><category term="croatia"></category><category term="travel"></category></entry><entry><title>Triathlon: Checklist</title><link href="//romainpellerin.eu/triathlon-checklist.html" rel="alternate"></link><published>2024-06-02T20:00:00+02:00</published><updated>2024-06-02T20:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-02:/triathlon-checklist.html</id><summary type="html">&lt;p&gt;My checklist of things to take for a triathlon&lt;/p&gt;</summary><content type="html">&lt;h1 id="overall"&gt;Overall&lt;/h1&gt;
+&lt;p&gt;That's it!&lt;/p&gt;</content><category term="Travels"></category><category term="croatia"></category><category term="travel"></category></entry><entry><title>Triathlon: Checklist</title><link href="//romainpellerin.eu/triathlon-checklist.html" rel="alternate"></link><published>2024-06-02T20:00:00+02:00</published><updated>2024-08-26T19:55:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-02:/triathlon-checklist.html</id><summary type="html">&lt;p&gt;My checklist of things to take for a triathlon&lt;/p&gt;</summary><content type="html">&lt;h1 id="overall"&gt;Overall&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Trisuit&lt;/li&gt;
 &lt;li&gt;Sport socks&lt;/li&gt;
@@ -866,6 +866,7 @@ sudo apt install maven
 &lt;li&gt;A transponder, worn at the ankle&lt;/li&gt;
 &lt;li&gt;A belt to carry gels and display the bib number&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;To read: &lt;a href="https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/"&gt;A few tips for setting up a garmin watch for a triathlon&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id="for-swimming"&gt;For swimming&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Swimming cap&lt;/li&gt;
