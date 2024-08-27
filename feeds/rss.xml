@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 26 Aug 2024 19:55:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 28 Aug 2024 00:55:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -730,7 +730,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=twjKBvbX4nM"&gt;One long jog&lt;/a&gt;, usually on Sunday, with some bits at the targeted marathon pace. At the beginning of a training plan, 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=twjKBvbX4nM"&gt;One long jog&lt;/a&gt;, usually on Sunday, with one or multiple segments at the targeted marathon pace. At the beginning of a training plan, a long jog means 1 hour or so, at the end of a plan, around 2 hours, maximum 2 and a half (a good rule of thumb is, two third of the targeted race duration). The longest of all should be 4 weeks ahead of the race (week W-5), to give your body enough time in the following weeks to recover. Some people do the Sunday long jog without any segment at marathon pace, same "slow"/easy pace all along. I prefer with segments at marathon pace. &lt;a href="https://youtu.be/47PPEm2A1zQ?t=1231"&gt;The segments (2, 3 or more) become longer over the weeks, separated with one minute at easy pace. Always start with a warm-up phase and end with a cool down phase, at an easy pace.&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;One week out of ~4 should be a recovery week, where the number of kilometers is reduced, but also the number of fast segments. Except for those recovery weeks, the number of kms per week should gradually increased throughout the weeks, until the taper phase.&lt;/p&gt;
