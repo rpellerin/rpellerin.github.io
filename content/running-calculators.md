@@ -117,9 +117,9 @@ In [other sources](https://youtu.be/ZDdZ3TqJkd8?t=471), I've found slightly diff
     })
   }
 
-  masInput.oninput = MASzonesInputChange
-  maxHrInput.oninput = MASzonesInputChange
-  randomPercent.oninput = MASzonesInputChange
+  masInput.addEventListener('input', MASzonesInputChange)
+  maxHrInput.addEventListener('input', MASzonesInputChange)
+  randomPercent.addEventListener('input', MASzonesInputChange)
   MASzonesInputChange()
 </script>
 
@@ -259,8 +259,8 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
         }
         document.querySelector('button#sessionCopy').onclick = copyContent
     }
-    sessionParserTextarea.oninput = sessionParserInputChange
-    masInput.oninput = sessionParserInputChange
+    sessionParserTextarea.addEventListener('input', sessionParserInputChange)
+    masInput.addEventListener('input', sessionParserInputChange)
     sessionParserInputChange()
 </script>
 
@@ -290,7 +290,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
         document.querySelector('#distance_to_time_results').innerText = hours ? `${hours}hrs ${minutes}mins ${seconds}secs` : `${minutes}mins ${seconds}secs`
     }
     document.querySelectorAll('#time_and_distance_converter input').forEach(el => {
-        el.oninput = timeAndDistanceConverterInputChange
+        el.addEventListener('input', timeAndDistanceConverterInputChange)
     })
     timeAndDistanceConverterInputChange()
 </script>
@@ -353,7 +353,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
     }
 
     document.querySelectorAll('#pace_chart_info input').forEach(el => {
-        el.oninput = paceChartInputChange
+        el.addEventListener('input', paceChartInputChange)
     })
     if (fastestPace.value || slowestPace.value) {
         paceChartInputChange()
@@ -511,7 +511,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
     }
 
     document.querySelectorAll('#race_sheet_info input, #race_sheet_info select, #race_sheet_info textarea').forEach(el => {
-        el.oninput = raceSheetInputChange
+        el.addEventListener('input', raceSheetInputChange)
     })
     raceSheetInputChange()
 
