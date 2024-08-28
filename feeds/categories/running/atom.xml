@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-28T00:55:00+02:00</updated><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-08-25T02:34:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Running</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/running/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-08-28T13:32:00+02:00</updated><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-08-28T13:32:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -102,9 +102,9 @@
     })
   }
 
-  masInput.oninput = MASzonesInputChange
-  maxHrInput.oninput = MASzonesInputChange
-  randomPercent.oninput = MASzonesInputChange
+  masInput.addEventListener('input', MASzonesInputChange)
+  maxHrInput.addEventListener('input', MASzonesInputChange)
+  randomPercent.addEventListener('input', MASzonesInputChange)
   MASzonesInputChange()
 &lt;/script&gt;
 
@@ -242,8 +242,8 @@
         }
         document.querySelector('button#sessionCopy').onclick = copyContent
     }
-    sessionParserTextarea.oninput = sessionParserInputChange
-    masInput.oninput = sessionParserInputChange
+    sessionParserTextarea.addEventListener('input', sessionParserInputChange)
+    masInput.addEventListener('input', sessionParserInputChange)
     sessionParserInputChange()
 &lt;/script&gt;
 
@@ -272,7 +272,7 @@
         document.querySelector('#distance_to_time_results').innerText = hours ? `${hours}hrs ${minutes}mins ${seconds}secs` : `${minutes}mins ${seconds}secs`
     }
     document.querySelectorAll('#time_and_distance_converter input').forEach(el =&gt; {
-        el.oninput = timeAndDistanceConverterInputChange
+        el.addEventListener('input', timeAndDistanceConverterInputChange)
     })
     timeAndDistanceConverterInputChange()
 &lt;/script&gt;
@@ -334,7 +334,7 @@
     }
 
     document.querySelectorAll('#pace_chart_info input').forEach(el =&gt; {
-        el.oninput = paceChartInputChange
+        el.addEventListener('input', paceChartInputChange)
     })
     if (fastestPace.value || slowestPace.value) {
         paceChartInputChange()
@@ -490,7 +490,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
     }
 
     document.querySelectorAll('#race_sheet_info input, #race_sheet_info select, #race_sheet_info textarea').forEach(el =&gt; {
-        el.oninput = raceSheetInputChange
+        el.addEventListener('input', raceSheetInputChange)
     })
     raceSheetInputChange()
 
