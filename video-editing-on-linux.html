@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-02-14T00:21:00+01:00">Wed 14 February 2024</time>        </p>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-09-01T22:29:00+02:00">Sun 01 September 2024</time>        </p>
     <h1>Video Editing on Linux</h1>
     <div class="grey">
         <p class="italic">How to edit videos on Linux with Kdenlive</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1172 words.">6 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1190 words.">6 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -171,10 +171,12 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
             if (regex) {
                 const integer = regex[1]
                 const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
-                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
             }
             else {
-                tempResult = `${tempResult} seconds and 0 frames`
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
             }
             pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
@@ -231,7 +233,7 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Wed 14 February 2024</footer>
+    Last update: Sun 01 September 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 28 Aug 2024 13:32:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 01 Sep 2024 22:29:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -5266,10 +5266,12 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
             if (regex) {
                 const integer = regex[1]
                 const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
-                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
             }
             else {
-                tempResult = `${tempResult} seconds and 0 frames`
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
             }
             pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
