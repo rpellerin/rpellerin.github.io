@@ -91,10 +91,12 @@ To find the BPM of a song, use any of the following links:
             if (regex) {
                 const integer = regex[1]
                 const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
-                tempResult = `${parseInt(integer, 10)} seconds and ${Math.round(floating)} frames`
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
             }
             else {
-                tempResult = `${tempResult} seconds and 0 frames`
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
             }
             pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
         })
