@@ -14,7 +14,7 @@ Tout commence il y a un peu plus de 2 mois, juste après mon [semi-marathon de d
 
 Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.
 
-24 avril, course de 5 kms courrue à fond (3'55"/km). Presque pas de douleur pendant la course.
+24 avril, course de 5 kms courue à fond (3'55"/km). Presque pas de douleur pendant la course.
 
 Ensuite, début Mai, [S25 de Berlin, course de 25 kms]({filename}/spring-2024.md). Entre le semi et les 25, la douleur a été présente, peu, et uniquement lors de mes sorties, mais elle a progressé. Pendant les 25 kms, je courrais à un bon rythme, autour de 4'35"/km, et étonnemment je n'ai presque rien senti pendant la course, sauf au début.
 
@@ -22,7 +22,7 @@ Après S25, pareil, pas de pause, je reprends les entrainements dès le mardi su
 
 Fin-mai, je coupe la course à pied 2 semaines complètes. Je ne sens plus rien, aucune douleur. Le premier weekend de Juin arrive et avec lui le triathlon de Berlin. Tout se passe bien lors de la course, je reprends par la suite les entrainements. Mais la douleur fait ensuite son retour dans les jours suivant, graduellement, un peu plus forte à chaque sortie.
 
-Jusqu'au vendredi 21 juin, où lors d'une sortie de 45 mins en endurance fondamentale, j'atteinds un seuil de douleur de 7 ou 8 sur 10, du jamais vu. Jusqu'alors je n'avais jamais dépassé 5 ou 6. Je décide de stoper ma sortie au bout de 27 minutes seulement, et commence une pause de 3 semaines.
+Jusqu'au vendredi 21 juin, où lors d'une sortie de 45 mins en endurance fondamentale, j'atteinds un seuil de douleur de 7 ou 8 sur 10, du jamais vu. Jusqu'alors je n'avais jamais dépassé 5 ou 6. Je décide de stopper ma sortie au bout de 27 minutes seulement, et commence une pause de 3 semaines.
 
 # Symptômes
 
