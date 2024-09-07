@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 07 Sep 2024 19:02:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 07 Sep 2024 19:03:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -626,7 +626,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
 &lt;p&gt;Tout commence il y a un peu plus de 2 mois, juste après mon &lt;a href="//romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html"&gt;semi-marathon de début Avril&lt;/a&gt;. Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.&lt;/p&gt;
 &lt;p&gt;Après la course, j'enchaine directement et commence un entrainement "marathon" dans l'application Campus Coach. Pas de pause, j'ai repris la course dès le mercredi suivant, soit 72h après la course. Surêment là une erreur, et un facteur dans cette nouvelle périostite.&lt;/p&gt;
-&lt;p&gt;24 avril, course de 5 kms courrue à fond (3'55"/km). Presque pas de douleur pendant la course.&lt;/p&gt;
+&lt;p&gt;24 avril, course de 5 kms courue à fond (3'55"/km). Presque pas de douleur pendant la course.&lt;/p&gt;
 &lt;p&gt;Ensuite, début Mai, &lt;a href="//romainpellerin.eu/spring-2024.html"&gt;S25 de Berlin, course de 25 kms&lt;/a&gt;. Entre le semi et les 25, la douleur a été présente, peu, et uniquement lors de mes sorties, mais elle a progressé. Pendant les 25 kms, je courrais à un bon rythme, autour de 4'35"/km, et étonnemment je n'ai presque rien senti pendant la course, sauf au début.&lt;/p&gt;
 &lt;p&gt;Après S25, pareil, pas de pause, je reprends les entrainements dès le mardi suivant, soit 48h après 😱. Encore une erreur... sachant que je venais de battre mes PR coup sur coup (au semi, aux 5 et aux 25 kms). À partir de là, la douleur ne me quitte plus lors de mes sorties, survient même parfois en marchant ou en descendant des escaliers, et empire.&lt;/p&gt;
 &lt;p&gt;Fin-mai, je coupe la course à pied 2 semaines complètes. Je ne sens plus rien, aucune douleur. Le premier weekend de Juin arrive et avec lui le triathlon de Berlin. Tout se passe bien lors de la course, je reprends par la suite les entrainements. Mais la douleur fait ensuite son retour dans les jours suivant, graduellement, un peu plus forte à chaque sortie.&lt;/p&gt;
