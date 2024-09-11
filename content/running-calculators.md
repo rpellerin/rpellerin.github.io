@@ -390,6 +390,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 Couper ongles
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
+Prévoir des vieux vêtements chauds d'avant course, to give away
 Samedi : shake-out run avec 1km à allure
 Samedi : charger montre
 Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
