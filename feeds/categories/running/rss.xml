@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 11 Sep 2024 21:09:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 12 Sep 2024 14:36:00 +0200</lastBuildDate><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -377,10 +377,8 @@ Samedi : accrocher bib number au dossard et tout préparer pour être prêt à p
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : noter dans la main
   Warm up
-  - 5 min = eat
   Montre en mode pace sur distance un peu plus longue
-  4.5 eat
-  9.5 eat + accelerer
+  Water/Feeding station/WC: Km 5, 10, etc
 Dimanche matin : prendre casquette, lunettes, HRM chest strap
 &lt;/textarea&gt;
 &lt;/div&gt;
