@@ -392,16 +392,14 @@ Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
 Samedi : shake-out run avec 1km à allure
-Samedi : charger montre
+Samedi : charger montre et la reboot
 Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : noter dans la main
   Warm up
-  - 5 min = eat
   Montre en mode pace sur distance un peu plus longue
-  4.5 eat
-  9.5 eat + accelerer
-Dimanche matin : prendre casquette, lunettes, HRM chest strap
+  Water/Feeding station/WC: Km 5, 10, etc
+Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 </textarea>
 </div>
 </div>
