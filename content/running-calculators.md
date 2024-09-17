@@ -50,7 +50,7 @@ In recent years, many pace charts started using the "heart rate reserve" as thei
 The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.
 
 <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/>
-<input type="number" step="1" id="maxhr" placeholder="Max HR" value="199"/>
+<input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/>
 
 <div>
 <input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/>
