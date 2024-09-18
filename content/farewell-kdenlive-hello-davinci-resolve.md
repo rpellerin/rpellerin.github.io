@@ -46,10 +46,8 @@ To avoid getting too big of a file, I pick a custom bitrate of 10000 Kb/s for th
 
 Leave `Frame reordering` ticked, as well as the rest of the settings.
 
-# Some acronyms and vocabulary
+# Some acronyms
 
 - _CST_: Color Space Transform
 - _DWG_: DaVinci Wide Gamut
 - _ACES_: Academy Color Encoding System (an alternative to DWG)
-- _EOTF_: Electro-optical Transfer Function
-- Nit: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.
