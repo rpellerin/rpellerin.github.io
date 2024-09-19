@@ -50,3 +50,17 @@ Lundi 16, je décide de couper mon entrainement complétement pour une moins une
 Voili voilou. Encore une fois, mon obstination m'aura couté une blessure que j'aurais pu éviter, si seulement je n'avais pas fait ce 25 km dimanche. J'aurai aussi pu prendre le lundi 9 off pour laisser mon corps récupérer à 100% de ma course... bref, toujours les mêmes erreurs. Sauter une ou deux séances la semaine dernière aurait eu beaucoup moins de conséquences que la semaine off qui m'attend (une semaine si j'ai de la chance, je mise plutôt sur 2 voire 3), sachant que je suis à 6 semaines de mon premier marathon ever. Fuck.
 
 Je mettrai à jour cet article une fois que je serai rétabli. ✌
+
+# Update Jeudi 19 Septembre
+
+Ça fait 4 jours depuis ma course de 25 kms. Depuis :
+
+- 1000mg paracétamol pour les 2 premières nuits, rien les deux nuits suivantes
+- Je marche mieux que dimanche, et à peine mieux que lundi. Mais mardi mercredi et jeudi, pas d'amélioration. Je boite énormément.
+- Je soupçonne un arrachement osseux, si c'était une simple entorse je pense que la douleur aurait diminué. Enfin j'en sais rien...
+- Je pense aussi avoir "plusieurs" types d'entorse, ou plutôt avoir plusieurs ligaments âbimés. Voire même les tendons du long et court fibulaire, car j'ai mal en appuyant sur ces 2 muscles. Bref j'ai bien mal dans tout le pied globalement, pas que d'un côté.
+- Niveau gonflement, je l'ai remarqué lundi, pas vraiment fait attention dimanche. Aucune amélioration depuis lundi j'ai l'impression, toujours gonflé. J'ai glacé quelques fois, pas d'amélioration ni sur le gonflement ni sur la douleur.
+- D'ailleurs la douleur n'est pas toujours la même. Parfois dans la journée j'ai à peine mal en marchant, parfois hyper mal. Au repos, des fois je ressens rien, des fois je suis à 3/10 en douleur, assis.
+- J'ai strappé 2 ou 3 fois, pas vu de changement non plus.
+- Je crois que je vais aller passer une radio pour être fixé sur l'arrachement osseux ou non.
+- Ça pue pour le marathon dans 5 semaines et demi...
