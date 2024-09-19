@@ -112,7 +112,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;/video&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/gpx-overlay.png" alt="A screenshot of the video" /&gt;
+&lt;img src="////romainpellerin.eu/images/gpx-overlay.png" alt="A screenshot of the video" /&gt;
 &lt;figcaption&gt;A screenshot of the video, in case you can't play it&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -121,7 +121,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
   &lt;source src="./videos/gpx-overlay-merged.webm" type="video/webm"&gt;
 &lt;/video&gt;
 
-&lt;p&gt;All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using &lt;a href="//romainpellerin.eu/video-editing-on-linux.html"&gt;Kdenlive on Linux&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;Kdenlive on Linux&lt;/a&gt;..&lt;/p&gt;
 &lt;h2 id="the-final-video-right-away-footage-overlay"&gt;The final video right away (footage + overlay)&lt;/h2&gt;
 &lt;p&gt;Make sure the input video has the correct mtime (modified time). Check with &lt;code&gt;stat file.mp4&lt;/code&gt; or &lt;code&gt;ls -la file.mp4&lt;/code&gt;. If it's a Insta360 video, and the filename matches &lt;code&gt;YYYYMMDD_HHMMSS_sss.mp4&lt;/code&gt;, you can update it with this script: &lt;a href="https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py"&gt;https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx  --profile mp4 --layout-xml ~/Documents/my-layout-portrait.xml --overlay-size 1080x1920 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max &lt;span class="m"&gt;120&lt;/span&gt; --gps-speed-max-units kph --video-time-start file-modified some-video.mp4  ~/Downloads/output.mp4
@@ -207,7 +207,7 @@ mkswap /dev/mapper/vgubuntu-swap_1
 &lt;p&gt;In this article, I explain how I managed to build a very cheap weather station to monitor the temperature and humidity of my apartment as well as the pressure through automated reporting to Google Spreadsheets. Why Google Spreadsheets? Because it allows me to create nice graphs that I can publish, or in other words, access through a public link.&lt;/p&gt;
 &lt;p&gt;Then I can build a simple HTML web page to display those graphs from Google Spreadsheet, like this:&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/weather-station.png" alt="My weather station webpage" /&gt;
+&lt;img src="////romainpellerin.eu/images/weather-station.png" alt="My weather station webpage" /&gt;
 &lt;figcaption&gt;My weather station webpage&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -218,7 +218,7 @@ mkswap /dev/mapper/vgubuntu-swap_1
 &lt;li&gt;A Google Form that you link to a spreadsheet. It's so much easier than using the Google Spreadsheet API. Your Raspberry PI will POST a form with the values and they'll automatically end up in the sheet.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" /&gt;
+&lt;img src="////romainpellerin.eu/images/bme280.jpg" alt="The BME280 module plugged to the Raspberry Pi" /&gt;
 &lt;figcaption&gt;The BME280 module plugged to the Raspberry Pi.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -337,7 +337,7 @@ mkswap /dev/mapper/vgubuntu-swap_1
 &lt;p&gt;Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to &lt;a href="//romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html"&gt;this article that I wrote&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to &lt;a href="////romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html"&gt;this article that I wrote&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Using VLC, &lt;code&gt;Tools&lt;/code&gt; &amp;gt; &lt;code&gt;Codec information&lt;/code&gt;, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).&lt;/li&gt;
 &lt;li&gt;When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in &lt;code&gt;Project&lt;/code&gt; &amp;gt; &lt;code&gt;Project Settings&lt;/code&gt; but &lt;strong&gt;it is not advised as it will shift clips randomly for example when changing the FPS&lt;/strong&gt; (I experienced it).&lt;/li&gt;
@@ -364,7 +364,7 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
 &lt;p&gt;I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.&lt;/p&gt;
 &lt;p&gt;For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of &lt;a href="https://en.wikipedia.org/wiki/Persistence_of_vision"&gt;the persistence of vision&lt;/a&gt;. I read &lt;a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/"&gt;on Reddit&lt;/a&gt; that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 25FPS, would mean 2 frames.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" /&gt;
+&lt;img src="////romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" /&gt;
 &lt;figcaption&gt;Here the transition happens 1 frame before the next music beat&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -459,7 +459,7 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
 &lt;h1 id="casting-the-full-desktop"&gt;Casting the full desktop&lt;/h1&gt;
 &lt;p&gt;You can use Google Chrome (audio is not supported).&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img alt="Casting from Chrome" src="//romainpellerin.eu/images/chromecast-chrome.png" /&gt;
+&lt;img alt="Casting from Chrome" src="////romainpellerin.eu/images/chromecast-chrome.png" /&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Alternatively, you can use Firefox with &lt;a href="https://hensm.github.io/fx_cast/"&gt;fx_cast&lt;/a&gt;.&lt;/p&gt;
@@ -747,7 +747,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The last three commands are just shortcuts meant to make the world a better place... or just developers happier.&lt;/p&gt;
-&lt;p&gt;That's it! I hope it was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 19 Oct 2016 03:35:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-10-19:/using-vim-with-ssh.html</guid><category>Linux</category><category>ssh</category><category>vim</category><category>terminal</category><category>vi</category></item><item><title>Raspberry Pi: The Ultimate Guide</title><link>//romainpellerin.eu/raspberry-pi-the-ultimate-guide.html</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="//romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That's it! I hope it was helpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 19 Oct 2016 03:35:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-10-19:/using-vim-with-ssh.html</guid><category>Linux</category><category>ssh</category><category>vim</category><category>terminal</category><category>vi</category></item><item><title>Raspberry Pi: The Ultimate Guide</title><link>//romainpellerin.eu/raspberry-pi-the-ultimate-guide.html</link><description>&lt;p&gt;&lt;em&gt;&lt;a href="////romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.&lt;/p&gt;
 &lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.&lt;/p&gt;
@@ -1901,7 +1901,7 @@ mount -t iso9660 /dev/sdb1 /mnt/iso
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If at some point a message says that proprietary firmware files are needed, it's time to go back to the other computer and USB stick. Otherwise, skip this step.&lt;/p&gt;
-&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="////romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;img alt="Picture" src="////romainpellerin.eu/images/debian_firmware.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Note: this is doable with only one USB stick. But it is much harder.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Download the mentioned file(s) from the &lt;a href="https://packages.debian.org/jessie/"&gt;Debian repository&lt;/a&gt;. In my case, I needed these ones: &lt;a href="https://packages.debian.org/stretch/all/firmware-misc-nonfree/download"&gt;https://packages.debian.org/stretch/all/firmware-misc-nonfree/download&lt;/a&gt; and &lt;a href="https://packages.debian.org/stretch/all/firmware-realtek/download"&gt;https://packages.debian.org/stretch/all/firmware-realtek/download&lt;/a&gt;.&lt;/li&gt;
@@ -1924,11 +1924,11 @@ mount -t iso9660 /dev/sdc1 /mnt/iso &lt;span class="c1"&gt;# Might not be requir
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;When reaching the partitioning step, choose "&lt;em&gt;Guided using LVM encrypted&lt;/em&gt;". You should eventually obtain something like this:&lt;/p&gt;
-&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="////romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;img alt="Picture" src="////romainpellerin.eu/images/debian_partitions.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;When reaching the "&lt;em&gt;Software Selection&lt;/em&gt;", choose &lt;a href="http://forums.debian.net/viewtopic.php?f=17&amp;amp;t=125037#p595087"&gt;only XFCE as a desktop manager&lt;/a&gt;, in combinaison with the &lt;a href="http://comments.gmane.org/gmane.linux.debian.user/455520"&gt;print server&lt;/a&gt; and utilities. Do not use the Debian desktop environment. It is shitty as f*ck.&lt;/p&gt;
-&lt;p&gt;&lt;a href="//romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;img alt="Picture" src="//romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="////romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;img alt="Picture" src="////romainpellerin.eu/images/debian_selection.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Merely follow instructions until completion of the installation.&lt;/p&gt;
@@ -1961,7 +1961,7 @@ apt dist-upgrade
 &lt;li&gt;&lt;code&gt;vim&lt;/code&gt; as my main text editor. I use it for most things involving programming (except for Android, I have to admit, as Android Studio does the job really well).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;For example, this is my current terminal (actually containing 3 terminals):&lt;/p&gt;
-&lt;p&gt;&lt;a href="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;img alt="Screenshot" src="//romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="////romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;img alt="Screenshot" src="////romainpellerin.eu/images/copy-pasting-tmux-vim-screenshot.png"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(the top-right terminal is of no use, I just opened it to show how clever zsh coupled with Prezto is).&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id="the-problem"&gt;The problem&lt;/h1&gt;
 &lt;p&gt;I guess most beginners with Tmux and Vim (especially Vim) stumble upon one problem (and the number of questions on StackOverflow asserts it): how to properly copy-paste? I had that problem too. I'll answer to these questions simply.&lt;/p&gt;

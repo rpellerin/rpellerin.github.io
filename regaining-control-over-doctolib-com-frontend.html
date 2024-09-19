@@ -115,7 +115,7 @@
 <p>Over time, RxJS usage grew and the library was soon imported into every file and used for just about anything and everything: app state management, tiny component states, forms, buttons, AJAX requests, etc.</p>
 <p><strong>Why is this legacy now?</strong> Well, first of all, RxJS is not entirely legacy but the way it’s being used at Doctolib is. This is mostly because it has been used for everything, although <a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html">its use cases are normally meant to be very specific and restricted</a>. RxJS also makes unit testing difficult because Observables need to be mocked-up. <a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html">Reactive programming is not known by many</a>, as indicated on the graph below, therefore it does not help shorten new joiners’ ramp-up time — quite the opposite, to be honest. Our aim is to restrain its use cases to what it was originally intended to be used for: event-based computations and asynchronous sequences of data.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/rxjs-graph.png" alt="Graph showing RxJS popularity" />
+<img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/rxjs-graph.png" alt="Graph showing RxJS popularity" />
 <figcaption>RxJS ranks last among the “other” JavaScript libraries in 2018 <a target="_blank" href="https://2018.stateofjs.com/front-end-frameworks/other-libraries/">[Source]</a>.</figcaption>
 </figure>
 
@@ -133,7 +133,7 @@
 <p><strong><em>Optimizing</em></strong> is done progressively, after our bi-annual meetings, through special tasks we call <strong>Tech Tasks</strong>. These tasks are differentiated from regular feature tasks by their very own nature: they are purely technical tasks whose goal is to improve platform stability, security, and performance as well as to reduce technical debt. People usually pick the ones they like best when they work on Tech Tasks (Fridays are Tech Tasks days for most feature teams). However, a few big and/or complex tasks do get assigned during our bi-annual meeting in order to make sure that they will eventually be carried out. These big tasks are prioritized by the solution architects and engineering managers on a regular basis to ensure they fit into the roadmap.</p>
 <p>Finally, <strong><em>monitoring</em></strong> is done throughout. It is a never-ending process. At the end of every meeting, we set KPIs to “track” and then we immediately create dashboards to track usage of “legacy” through these KPIs. One person is in charge of creating these graphs, usually the same person who called a meeting in the first place. Basically, this translates to metrics we expect to drop.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/recompact.png" alt="Recompact monitoring graphs" />
+<img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/recompact.png" alt="Recompact monitoring graphs" />
 <figcaption>3 out of the many graphs we use to monitor recompact usage</figcaption>
 </figure>
 
@@ -142,7 +142,7 @@
 
 <p>We also create less-specific dashboards which list the “general” legacy functions and libraries we aim at reducing or killing altogether.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/general-legacy.png" alt="Other monitoring graphs" />
+<img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/general-legacy.png" alt="Other monitoring graphs" />
 <figcaption>Everything that is considered legacy is shown on this graph</figcaption>
 </figure>
 
@@ -158,13 +158,13 @@
 <h1 id="long-term-vision">Long-term vision</h1>
 <p>Deprecating these few React functions, recompact, a significant part of our RxJS usage, jQuery, and CoffeeScript is a major first step. By doing so we can ease new joiners’ onboarding, keep up with the latest JavaScript standards, and reduce our technical debt. It also belongs to a bigger picture. Creating these dashboards opens the door to more monitoring, which ultimately means more control. A recent concrete example is the bundle size dashboard, which we introduced a few weeks ago.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/bundle-sizes.png" alt="Bundle sizes graphs" />
+<img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/bundle-sizes.png" alt="Bundle sizes graphs" />
 <figcaption>This dashboards tracks our bundles sizes over time</figcaption>
 </figure>
 
 <p>Not only does it store the sizes over time but it also reports on Github Pull Requests. <a href="https://www.npmjs.com/package/bundlesize">A handy npm package called bundlesize</a> checks that every build does not exceed thresholds defined in our package.json file.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/github-pr-checks.png" alt="Checks on Github pull requests" />
+<img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/github-pr-checks.png" alt="Checks on Github pull requests" />
 <figcaption>Checks on a Github Pull Request</figcaption>
 </figure>
 

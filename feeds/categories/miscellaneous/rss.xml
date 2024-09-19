@@ -18,49 +18,49 @@
 &lt;li&gt;Torque must be equal to or greater than 2Nm (20.4 kg.cm) (info found &lt;a href="http://cesarmoya.com/blog/motorizing-standup-desk/"&gt;here&lt;/a&gt;). Look at the stall torque, not the rated torque.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor.jpg" alt="A picture of the motor" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor.jpg" alt="A picture of the motor" /&gt;
 &lt;figcaption&gt;The motor I bought from Aliexpress&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I bought and tried these 2, &lt;a href="https://de.aliexpress.com/item/32968002582.html"&gt;the 12V 72 RPM edition, that draws 3 amps ("stall current"), and the 12V 136 RPM one&lt;/a&gt;. According to the specs of the 72 RPM one, the stall torque is greater than 30 Kg.cm and it works perfectly! I can put weight on the desk (I tried more than 30 Kg) and it still raises the desk up easily! As to the 136 RPM, it works well too, up to 30 Kg, but it gets real close to stalling. Without much weight (a laptop and a monitor), it raises the desk at about 100 rotations per minute.&lt;/p&gt;
 &lt;p&gt;9.36 euros&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/motor-specs.jpg" alt="A table showing the specs of the motor" /&gt;
 &lt;figcaption&gt;Specs of the motor&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Alternatively, &lt;a href="https://www.pololu.com/product/4745"&gt;this other motor looks like a viable option too&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="aluminum-l-bracket-for-37d-metal-gearmotors"&gt;Aluminum L-Bracket for 37D Metal Gearmotors&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/l-bracket-for-37d-motors.jpg" alt="A picture of a pair of L-Brackets for motors" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/l-bracket-for-37d-motors.jpg" alt="A picture of a pair of L-Brackets for motors" /&gt;
 &lt;figcaption&gt;The L-Bracket pair I got (only 1 is necessary for this project though)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;We will use this to secure the motor to the desk. &lt;a href="https://thepihut.com/products/pololu-stamped-aluminum-l-bracket-pair-for-37d-metal-gearmotors"&gt;I got it from The PiHut&lt;/a&gt;. £8.25&lt;/p&gt;
 &lt;h2 id="power-adapter-input-ac-110-240v-output-dc-12v-5a"&gt;Power adapter INPUT AC 110-240V / OUTPUT DC 12V 5A&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/acdc-power-adapter.jpg" alt="A picture of a power adapter" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/acdc-power-adapter.jpg" alt="A picture of a power adapter" /&gt;
 &lt;figcaption&gt;The adaper I got from Amazon&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;a href="https://www.amazon.de/12V-voltage-transformer-power-adapter/dp/B07L5GP7SD"&gt;I got this one from Amazon&lt;/a&gt;, works like a charm! 14.99 euros.&lt;/p&gt;
 &lt;h2 id="6mm-hex-key"&gt;6mm hex key&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/6mm-hex-key.jpg" alt="A picture of an hex key" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/6mm-hex-key.jpg" alt="A picture of an hex key" /&gt;
 &lt;figcaption&gt;The 6mm hex key I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;a href="https://www.obi.de/schluessel-abzieher/lux-sechskant-schluessel-comfort-6-mm/p/3471075"&gt;I got this one Obi.de&lt;/a&gt; and I had to cut off the bent part of it. This will replace the original crank provided with the desk. 4.49 euros.&lt;/p&gt;
 &lt;h2 id="7mm-shaft-coupler"&gt;7mm shaft coupler&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/7mm-shaft-coupler.jpg" alt="A picture of a shaft coupler" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/7mm-shaft-coupler.jpg" alt="A picture of a shaft coupler" /&gt;
 &lt;figcaption&gt;The 7mm shaft coupler I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;This will connect the motor to the hex key in the desk. Get a &lt;a href="https://www.amazon.de/dp/B07HKJL1XC"&gt;7mm shaft coupler&lt;/a&gt;, since the motor comes with a 6mm D-shaped shaft. The hex shaft for the desk is 6mm too, so the shaft coupler must be 1mm larger. 8.27 euros.&lt;/p&gt;
 &lt;h2 id="dc-motor-driver"&gt;DC motor driver&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-motor-driver.jpg" alt="A picture of a DC motor driver" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-motor-driver.jpg" alt="A picture of a DC motor driver" /&gt;
 &lt;figcaption&gt;The DC motor driver I got from Cytron.io&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -70,7 +70,7 @@
 &lt;p&gt;I bought mine on &lt;a href="https://botland.de/motortreiber-module/13450-cytron-md10-pot-dc-30v-10a-motortreiber-schalter-potentiometer-5904422377274.html"&gt;Botland.de&lt;/a&gt;. 12.48 euros.&lt;/p&gt;
 &lt;h2 id="dc-connector-barrel-plug-adapter-25mm-x-55mm"&gt;DC Connector Barrel Plug Adapter 2.5mm x 5.5mm&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-connector-barrel-plug-adapter.jpg" alt="A picture of a DC connector barrel plug adapter" /&gt;
+&lt;img class="zoomable" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/dc-connector-barrel-plug-adapter.jpg" alt="A picture of a DC connector barrel plug adapter" /&gt;
 &lt;figcaption&gt;The one I got&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -89,7 +89,7 @@
 &lt;li&gt;Screw the L-bracket to the desk using a drill (slow speed)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-4.jpg" alt="A picture the L-bracket attached to the desk" /&gt;
   &lt;figcaption&gt;The L-bracket is now attached to the desk&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -97,7 +97,7 @@
 &lt;li&gt;Secure the motor to the L-bracket&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-5.jpg" alt="A picture of the motor attached to the L-bracket" /&gt;
   &lt;figcaption&gt;The motor is now attached to the L-bracket&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -105,15 +105,15 @@
 &lt;li&gt;Attach the power supply to the desk with a self-adhesive velcro, or just tape:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6a.jpg" alt="A piece of self-adhesive velcro" /&gt;
   &lt;figcaption&gt;Self-adhesive velcro&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6b.jpg" alt="A picture of velcro under the desk" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6b.jpg" alt="A picture of velcro under the desk" /&gt;
   &lt;figcaption&gt;Velcro stuck to the desk&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-6c.jpg" alt="A picture showing the power supply wrapped in velcro and attached to the desk" /&gt;
   &lt;figcaption&gt;The power supply wrapped in velcro&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -121,7 +121,7 @@
 &lt;li&gt;Connect the motor to the DC motor driver using wires, and tape the junctions for improved safety&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-7a.jpg" alt="A picture showing the taped junctions between the motor and the wires" /&gt;
   &lt;figcaption&gt;Put tape around the connections&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -129,7 +129,7 @@
 &lt;li&gt;Connect the power supply to the DC motor driver (pay attention to polarity) using the barrel and wrap it in tape for improved safety&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-8.jpg" alt="A picture showing the power supply connected to the DC motor driver using the barel" /&gt;
   &lt;figcaption&gt;The barrel, connecting the DC motor driver and power supply, wrapped in tape&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -137,7 +137,7 @@
 &lt;li&gt;And last, tape everything under the desk, make sure nothing is hanging. I protected some parts (soldered points) of the motor driver board with tape. I placed the switch button near the edge of the desk to reach it easily. A better design would be to put everything in a small plastic box.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class="center"&gt;
-  &lt;img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" /&gt;
+  &lt;img class="zoomable big" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/step-9.jpg" alt="A picture showing the end result" /&gt;
   &lt;figcaption&gt;The end result&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -200,17 +200,17 @@ SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, 
 
 &lt;h2 id="schematic-and-photos"&gt;Schematic and photos&lt;/h2&gt;
 &lt;figure class="center"&gt;
-&lt;img class="zoomable big" src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" /&gt;
+&lt;img class="zoomable big" src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/standing-desk_bb.png" alt="Fritzing schematic" /&gt;
 &lt;figcaption&gt;Schematic of the whole wiring&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/distance-sensor.jpg" alt="A photo of the distance sensor" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/distance-sensor.jpg" alt="A photo of the distance sensor" /&gt;
   &lt;figcaption&gt;The distance sensor, outside the box&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-  &lt;img src="//romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/v2.jpg" alt="A picture of all the components inside the box" /&gt;
+  &lt;img src="////romainpellerin.eu/images/motorizing-an-ikea-skarsta-standing-desk/v2.jpg" alt="A picture of all the components inside the box" /&gt;
   &lt;figcaption&gt;Inside the box&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -468,7 +468,7 @@ SUBSYSTEMS==&amp;quot;usb&amp;quot;, ATTRS{idVendor}==&amp;quot;2341&amp;quot;, 
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Yqa_imdSJ4Q"&gt;https://www.youtube.com/watch?v=Yqa_imdSJ4Q&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=YrH26kd-j4c"&gt;https://www.youtube.com/watch?v=YrH26kd-j4c&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=zqp9tNVDCUs"&gt;https://www.youtube.com/watch?v=zqp9tNVDCUs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 18 Dec 2022 23:54:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-12-18:/comment-poser-du-carrelage-sur-un-sol-en-pvc-vinyl.html</guid><category>Miscellaneous</category><category>carrelage</category><category>bricolage</category></item><item><title>Living in Germany: How to buy an apartment in Berlin</title><link>//romainpellerin.eu/living-in-germany-how-to-buy-an-apartment-in-berlin.html</link><description>&lt;p&gt;There's already plenty of resources online. Specifically, there is &lt;a href="//romainpellerin.eu/extra/Buying_an_Apartment_in_Germany.pdf"&gt;this unique priceless PDF&lt;/a&gt; that I found on &lt;a href="https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/"&gt;Reddit&lt;/a&gt;, which covers pretty much everything in detail.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 18 Dec 2022 23:54:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2022-12-18:/comment-poser-du-carrelage-sur-un-sol-en-pvc-vinyl.html</guid><category>Miscellaneous</category><category>carrelage</category><category>bricolage</category></item><item><title>Living in Germany: How to buy an apartment in Berlin</title><link>//romainpellerin.eu/living-in-germany-how-to-buy-an-apartment-in-berlin.html</link><description>&lt;p&gt;There's already plenty of resources online. Specifically, there is &lt;a href="////romainpellerin.eu/extra/Buying_an_Apartment_in_Germany.pdf"&gt;this unique priceless PDF&lt;/a&gt; that I found on &lt;a href="https://www.reddit.com/r/berlin/comments/n5c5jl/how_to_buy_an_apartment_in_germany_focuses_on/"&gt;Reddit&lt;/a&gt;, which covers pretty much everything in detail.&lt;/p&gt;
 &lt;p&gt;For French speakers, here is a short video that explains in 10 minutes the steps to buy an apartment in Germany.&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/8lN4lKSqFSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -560,7 +560,7 @@ But with 2., you'll also save a shit ton of time and hassle. Mortgage brokers ar
 &lt;p&gt;A few days later, you will receive various invoices from the Notar (Notarkosten at least, maybe the Grundbucheintrag too).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Another few days later, the Notar will ask you to pay the apartment before a given due date.&lt;/strong&gt; What you'll most likely do is, transfer your equity capital to some temporary bank account provided by your financing bank. Then, the bank will pay the seller. The bank might ask you to transfer all of the equity capital you said you had, minus what you paid to the Notar already, and then ask you to pay the remaining future invoices (Grunderwerbsteuer at least) from that temporary bank account.&lt;/p&gt;
 &lt;h1 id="conclusion-timeline-of-events"&gt;Conclusion: timeline of events&lt;/h1&gt;
-&lt;figure class="center"&gt;&lt;img alt="All the events and when then take place" src="//romainpellerin.eu/images/buying_an_apartment_in_berlin.png" /&gt;&lt;/figure&gt;
+&lt;figure class="center"&gt;&lt;img alt="All the events and when then take place" src="////romainpellerin.eu/images/buying_an_apartment_in_berlin.png" /&gt;&lt;/figure&gt;
 
 &lt;h1 id="simulation"&gt;Simulation&lt;/h1&gt;
 &lt;h2 id="loan-needed"&gt;Loan needed&lt;/h2&gt;
@@ -1129,7 +1129,7 @@ People were stupid.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href="http://www.plantes-depolluantes.com/_plantes/chlorophytum.php"&gt;Chlorophytum&lt;/a&gt;&lt;/strong&gt; (comosum? no sure about its species)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="aglaonema"&gt;Aglaonema&lt;/h1&gt;
-&lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /&gt;&lt;figcaption&gt;Aglaonema Silver Bay, the big one on the left.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure class="center"&gt;&lt;img src="////romainpellerin.eu/images/air-purifying-houseplants/aglaonema.jpg" alt="Aglaonema Silver Bay" /&gt;&lt;figcaption&gt;Aglaonema Silver Bay, the big one on the left.&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;h2 id="temperature"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;Between 15°C and 25°C. Cannot tolerate below 13.&lt;/p&gt;
@@ -1151,7 +1151,7 @@ People were stupid.&lt;/p&gt;
 &lt;h2 id="repotting_1"&gt;Repotting&lt;/h2&gt;
 &lt;p&gt;Repotting is from March to May, every 2 to 3 years. Every other year, replace the upper layer of the soil, do not repot.&lt;/p&gt;
 &lt;h1 id="spathiphyllum"&gt;Spathiphyllum&lt;/h1&gt;
-&lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /&gt;&lt;figcaption&gt;From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure class="center"&gt;&lt;img src="////romainpellerin.eu/images/air-purifying-houseplants/dracaena-dieffenbachia-spathiphyllum-anthurium.jpg" alt="Dracaena, Dieffenbachia Spathiphyllum and Anthurium" /&gt;&lt;figcaption&gt;From left to right: Dracaena Marginata, Dieffenbachia, Spathiphyllum and Anthurium&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;h2 id="temperature_2"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;Between 15°C and 25°C. Below 10 could damage it seriously. Best between 20 and 22.&lt;/p&gt;
@@ -1165,7 +1165,7 @@ People were stupid.&lt;/p&gt;
 &lt;p&gt;Avoid dry air as well as fresh air flows. Keep it away from heaters.&lt;/p&gt;
 &lt;p&gt;To foster blossoming, deprive the plant of water for a few days.&lt;/p&gt;
 &lt;h1 id="chlorophytum"&gt;Chlorophytum&lt;/h1&gt;
-&lt;figure class="center"&gt;&lt;img src="//romainpellerin.eu/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /&gt;&lt;figcaption&gt;Chlorophytum&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure class="center"&gt;&lt;img src="////romainpellerin.eu/images/air-purifying-houseplants/chlorophytum.jpg" alt="Chlorophytum" /&gt;&lt;figcaption&gt;Chlorophytum&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;h2 id="temperature_3"&gt;Temperature&lt;/h2&gt;
 &lt;p&gt;10 to 20°C. Don't go below 5.&lt;/p&gt;
@@ -1291,14 +1291,14 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://twitter.com/paldama/status/1109017746883387392"&gt;Beware of scammers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 02 Sep 2017 22:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-09-02:/living-in-paris-looking-for-an-apartment-in-paris.html</guid><category>Miscellaneous</category><category>apartement</category><category>paris</category><category>housing</category></item><item><title>Emotions</title><link>//romainpellerin.eu/emotions.html</link><description>&lt;figure class="center"&gt;
-&lt;img alt="Emotions" src="//romainpellerin.eu/images/emotions.jpg" /&gt;
+&lt;img alt="Emotions" src="////romainpellerin.eu/images/emotions.jpg" /&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;em&gt;Source: &lt;a href="https://twitter.com/eliistender10/status/883582636567998464"&gt;https://twitter.com/eliistender10/status/883582636567998464&lt;/a&gt; (comments say the true source is &lt;a href="http://www.dictionaryofobscuresorrows.com/"&gt;http://www.dictionaryofobscuresorrows.com/&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 18 Aug 2017 00:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-08-18:/emotions.html</guid><category>Miscellaneous</category><category>emotions</category></item><item><title>Fasting</title><link>//romainpellerin.eu/fasting.html</link><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Fc_L22P69Mk"&gt;Le Jeûne : Une Recette Miracle ? ARTE HD Documentaire 2017&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=XMNWcYGAe6c"&gt;Le jeûne thérapeutique et le jeûne du bien-être&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 26 Jun 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-06-26:/fasting.html</guid><category>Miscellaneous</category><category>diet</category><category>fasting</category></item><item><title>Managing One's Time</title><link>//romainpellerin.eu/managing-ones-time.html</link><description>&lt;figure class="center"&gt;
-&lt;a href="//romainpellerin.eu/images/managing-time.png"&gt;&lt;img src="//romainpellerin.eu/images/managing-time.png" alt="Managing time" /&gt;&lt;/a&gt;
+&lt;a href="////romainpellerin.eu/images/managing-time.png"&gt;&lt;img src="////romainpellerin.eu/images/managing-time.png" alt="Managing time" /&gt;&lt;/a&gt;
 &lt;figcaption&gt;Managing one's time: 6 laws to know&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1406,12 +1406,12 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;p&gt;One noticeable difference with the French Alps is that ski runs are quite short, at most 15 minutes. At the end of the day, you've spent 1/3 of your time on a chairlift.&lt;/p&gt;
 &lt;p&gt;All in all, it was a great sojourn! We hit the road again on Monday afternoon, headed back to home.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 15 Feb 2017 20:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-02-15:/living-in-the-usa-skiing.html</guid><category>Miscellaneous</category><category>usa</category><category>ski</category></item><item><title>Living In The USA</title><link>//romainpellerin.eu/living-in-the-usa.html</link><description>&lt;p&gt;&lt;strong&gt;Friday, January 27, 2017&lt;/strong&gt;: I took off from Paris CDG, headed to San Francisco, California. I traveled with WOW Air and had a 2-hour layover in Iceland. We flew over Greenland and Northern Canada. Stunning landscapes!&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/living-usa/greenland.jpg" alt="Greenland" /&gt;
+&lt;img src="////romainpellerin.eu/images/living-usa/greenland.jpg" alt="Greenland" /&gt;
 &lt;figcaption&gt;Greenland&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/living-usa/nothern_canada.jpg" alt="Northern Canada" /&gt;
+&lt;img src="////romainpellerin.eu/images/living-usa/nothern_canada.jpg" alt="Northern Canada" /&gt;
 &lt;figcaption&gt;Northern Canada&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1476,7 +1476,7 @@ Some agencies or landlords ask you to hand in these documents during the viewing
 &lt;h1 id="bedding"&gt;Bedding&lt;/h1&gt;
 &lt;p&gt;However, my "landlord" could not provide me with bed sheets. He however suggested that I go to ROSS to get some, since they are fairly cheap there. I had a hard time figuring out how bed sheet sizes work in the US. I learned the hard way that they go by weird names: King, Queen, Full to name a few.&lt;/p&gt;
 &lt;figure class="center"&gt;
-    &lt;img src="//romainpellerin.eu/images/living-usa/mattress-size.png" alt="Mattress sizes" /&gt;
+    &lt;img src="////romainpellerin.eu/images/living-usa/mattress-size.png" alt="Mattress sizes" /&gt;
     &lt;figcaption&gt;Taken from &lt;a href="https://www.mattresscloseouts.com/mattresses/mattresses-by-size/queen.html"&gt;this website&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -1581,7 +1581,7 @@ tlmgr update --list
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In the following lines, I will give some pieces of advice regarding LaTeX and how to use it properly but I will assume you already have some knowledge about it. My purpose is not to write a tutorial about LaTeX at all. These are mainly reminders for myself.&lt;/p&gt;
-&lt;p&gt;You can find some examples of CVs, cover letters, reports and slideshows on &lt;a href="https://github.com/rpellerin/LaTeX-templates"&gt;my GitHub account&lt;/a&gt;. For advice about CVs, &lt;a href="//romainpellerin.eu/how-not-to-get-hired.html"&gt;see my article "How Not To Get Hired"&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can find some examples of CVs, cover letters, reports and slideshows on &lt;a href="https://github.com/rpellerin/LaTeX-templates"&gt;my GitHub account&lt;/a&gt;. For advice about CVs, &lt;a href="////romainpellerin.eu/how-not-to-get-hired.html"&gt;see my article "How Not To Get Hired"&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id="the-commands-input-and-include"&gt;The commands &lt;code&gt;\input{}&lt;/code&gt; and &lt;code&gt;\include{}&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;\input{}&lt;/code&gt; doesn't do &lt;code&gt;\newpage&lt;/code&gt;, unlike &lt;code&gt;\include{}&lt;/code&gt;. &lt;a href="http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include"&gt;More info&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="splitting-files"&gt;Splitting files&lt;/h3&gt;
@@ -1667,7 +1667,7 @@ java -version &lt;span class="c1"&gt;# Make sure it worked&lt;/span&gt;
 &lt;li&gt;&lt;a href="https://github.com/ZuzooVn/machine-learning-for-software-engineers"&gt;A complete daily plan for studying to become a machine learning engineer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://ahogrammer.com/2016/11/15/deep-learning-enables-you-to-hide-screen-when-your-boss-is-approaching/"&gt;Deep Learning Enables You to Hide Screen when Your Boss is Approaching&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 28 Nov 2015 13:14:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2015-11-28:/machine-learning-and-ai.html</guid><category>Miscellaneous</category><category>ai</category><category>machine learning</category><category>learning</category><category>artificial intelligence</category></item><item><title>Android, iOS: What Alternatives?</title><link>//romainpellerin.eu/android-ios-what-alternatives.html</link><description>&lt;p&gt;As 2015 is slowly coming to an end, let's try to shape the state of the global smartphone market share.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Market share" src="//romainpellerin.eu/images/chart-ww-smartphone-os-market-share.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Market share" src="////romainpellerin.eu/images/chart-ww-smartphone-os-market-share.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="http://www.idc.com/prodserv/smartphone-os-market-share.jsp"&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It makes no doubt that &lt;strong&gt;the world is ruled by two main OSes: Android and iOS&lt;/strong&gt;. But as you may have heard, those operating systems are powered by two giants, Google and Apple, and in many cases, this can lead to privacy issues. In addition, iOS is proprietary softare and Android tends to be more and more opaque as well. So, what other alternatives do we have? How can we regain control over software we use?&lt;/p&gt;
 &lt;p&gt;Since a few years, two other operating systems offering good alternatives, have been in intense development. One is made by Mozilla, called "&lt;em&gt;Firefox OS&lt;/em&gt;", the other one is powered by Canonical (the company behind Ubuntu), called "&lt;em&gt;Ubuntu for devices&lt;/em&gt;". Those two OSes are really different in the way they work.&lt;/p&gt;
@@ -1829,9 +1829,9 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;h1 id="use-the-right-tools"&gt;Use the right tools&lt;/h1&gt;
 &lt;h2 id="gnulinux"&gt;GNU/Linux&lt;/h2&gt;
 &lt;p&gt;Or at least a Unix-like system. The terminal should be your best friend, be familiar with it. It's a lot more powerful than user interfaces. Unless you want to be a web designer, you must know how GNU/Linux works. Why? Because almost ALL servers rely on Unix systems. Another argument would be privacy, but that's another topic.&lt;/p&gt;
-&lt;p&gt;There are plenty of user-friendly distributions, like Ubuntu or Xubuntu (my favorite one). As Windows users, you will hardly notice any difference, except for software compatibility. But hey, there are alternatives. And yes, you can keep Winodws on a separate partition for video games. I also &lt;a href="//romainpellerin.eu/mastering-gnu-linux.html"&gt;wrote an article about GNU/Linux&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are plenty of user-friendly distributions, like Ubuntu or Xubuntu (my favorite one). As Windows users, you will hardly notice any difference, except for software compatibility. But hey, there are alternatives. And yes, you can keep Winodws on a separate partition for video games. I also &lt;a href="////romainpellerin.eu/mastering-gnu-linux.html"&gt;wrote an article about GNU/Linux&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="git"&gt;Git&lt;/h2&gt;
-&lt;p&gt;I've seen sooo many people sending each other source code via emails, or worse, Google Drive! What a pain in the ass! A lot of tools exist, such as Subversion, Mercurial, or Git. Obviously, Git is my favorite one (one of the reason is because it's Linus Torvalds himself who wrote it). And it's also more powerful than any other tool. For more information, checkout &lt;a href="//romainpellerin.eu/git.html"&gt;my talk about Git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I've seen sooo many people sending each other source code via emails, or worse, Google Drive! What a pain in the ass! A lot of tools exist, such as Subversion, Mercurial, or Git. Obviously, Git is my favorite one (one of the reason is because it's Linus Torvalds himself who wrote it). And it's also more powerful than any other tool. For more information, checkout &lt;a href="////romainpellerin.eu/git.html"&gt;my talk about Git&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="show-the-world-what-youve-done"&gt;Show the world what you've done&lt;/h1&gt;
 &lt;p&gt;Every programmers should have public Git repositories. Github is a good platform for exposing your source code publicly, for free. I've heard a lot of recruiters asking for source code to browse, in order to see what you do, how good your code is (or is not), what kind of personal projects you have. They want to make sure you'll write good code if they hire you. Having many projects available on the Internet is also a proof that you're passionate about Computer Science. That's a huuuuge plus!&lt;/p&gt;
 &lt;p&gt;Github. Recruiters love it. Literally.&lt;/p&gt;
@@ -1846,14 +1846,14 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;p&gt;&lt;a href="https://github.com/pusher/atom-pair"&gt;Pair programming&lt;/a&gt; is an incredible way to learn from your friends (or teach them) as well.&lt;/p&gt;
 &lt;h2 id="data-structures-and-memory-management"&gt;Data structures and Memory management&lt;/h2&gt;
 &lt;p&gt;Know the basic data structures, such a hash tables, primitives, etc. Those are the very basics of every programming language. You can't avoid them.&lt;/p&gt;
-&lt;p&gt;You use Java everyday? Then you should know everything about Java memory management. Where are stored primitive types and objects? Stack? Heap? Doing C++? Where are stored lvalues, rvalues? And so on... A brief explanation about memory is in &lt;a href="//romainpellerin.eu/understanding-the-memory.html"&gt;one of my articles&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You use Java everyday? Then you should know everything about Java memory management. Where are stored primitive types and objects? Stack? Heap? Doing C++? Where are stored lvalues, rvalues? And so on... A brief explanation about memory is in &lt;a href="////romainpellerin.eu/understanding-the-memory.html"&gt;one of my articles&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This kind of advice applies to every language you claim to know.&lt;/p&gt;
 &lt;h2 id="sorting-algorithms"&gt;Sorting algorithms&lt;/h2&gt;
 &lt;p&gt;Know them. At least bubble, merge, quick sort, etc. Here is &lt;a href="http://www.sorting-algorithms.com/"&gt;a great website&lt;/a&gt;. Half the time, recruiters will ask you something about array sorting or things like that. And most of all, know their complexities!&lt;/p&gt;
 &lt;h1 id="backup-every-little-thing-that-is-on-your-computerservers"&gt;Backup every little thing that is on your computer/servers&lt;/h1&gt;
 &lt;p&gt;Consider everyday as the day your PC is gonna die. Projects should go to Github (or alternatives) if they are not confidential, personnal files to external hard drives (backed-up as well, so use at least two hard drives) or to the Cloud (I personally installed ownCloud on one of my servers). Once again, backup everything. Losing a whole hard drive disk is such a terrible thing, you can't predict nor prevent it. Be prepared. And for sure, you're gonna experience it, sooner or later.&lt;/p&gt;
 &lt;h1 id="english-english-everywhere"&gt;English, English everywhere&lt;/h1&gt;
-&lt;p&gt;Programming languages use English words, manuals are mostly written in English, almost everything in the Computer Science World is in English. So you'll have to get used to it. Be fluent. Set-up your devices to be in English. Same thing for your computer(s). Watch talks given in English. You will have to write English documentation, even though your company is not English. I wish every software engineer was bilingual, it would make things way easier. And guess what, &lt;a href="//romainpellerin.eu/learning-a-foreign-language.html"&gt;learning a foreign language is not that hard!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Programming languages use English words, manuals are mostly written in English, almost everything in the Computer Science World is in English. So you'll have to get used to it. Be fluent. Set-up your devices to be in English. Same thing for your computer(s). Watch talks given in English. You will have to write English documentation, even though your company is not English. I wish every software engineer was bilingual, it would make things way easier. And guess what, &lt;a href="////romainpellerin.eu/learning-a-foreign-language.html"&gt;learning a foreign language is not that hard!&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id="know-how-to-use-search-engines"&gt;Know how to use search engines&lt;/h1&gt;
 &lt;p&gt;People whom repeatedly ask you simple things are such a pain! We have the entire world at our fingertips, thanks to the Internet. And we have Google. So please, Google everything! Google is smarter than us (or at least, he knows much more things). But first, learn (by yourself) how to use it. For instance, don't type whole sentences, use keywords.&lt;/p&gt;
 &lt;h1 id="teach"&gt;Teach&lt;/h1&gt;

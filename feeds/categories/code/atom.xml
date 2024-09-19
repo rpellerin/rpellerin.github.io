@@ -87,7 +87,7 @@ sudo apt install maven
 &lt;h1 id="keeping-phrase-up-to-date"&gt;Keeping Phrase up-to-date&lt;/h1&gt;
 &lt;p&gt;We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" /&gt;
+&lt;img src="////romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" /&gt;
 &lt;figcaption&gt;The Phrase web editor tells you how many unverified translations you have&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -161,7 +161,7 @@ sudo apt install maven
 &lt;h1 id="preventing-the-insertion-of-hidden-characters-whose-behavior-might-be-unexpected"&gt;Preventing the insertion of hidden characters whose behavior might be unexpected&lt;/h1&gt;
 &lt;p&gt;Have you ever seen this warning message on GitHub?&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" /&gt;
+&lt;img src="////romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" /&gt;
 &lt;figcaption&gt;GitHub warning you about bidirectional Unicode text&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -169,7 +169,7 @@ sudo apt install maven
 &lt;p&gt;To prevent this from happening again and again, we've added a test. This way, whenever we pull the latest translations from Phrase and open a Pull Request to merge them, we can know right away if something is wrong with any translation.&lt;/p&gt;
 &lt;p&gt;Here, a screenshot of the test. It's a screenshot as one would not be able to see the hidden Unicode characters otherwise.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" /&gt;
+&lt;img src="////romainpellerin.eu/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" /&gt;
 &lt;figcaption&gt;A test making sure our translation files do not contain special hidden Unicode characters&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -239,7 +239,7 @@ sudo apt install maven
 &lt;hr&gt;
 &lt;p&gt;&lt;em&gt;If you want more technical news, follow our journey through our &lt;a href="https://doctolib.engineering/engineering-news-ruby-rails-react/"&gt;docto-tech-life newsletter&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;And if you want to join us in scaling a high traffic website and transforming the healthcare system, we are hiring talented developers to grow our tech and product team in France, Germany and Italy, feel free to have a look at the &lt;a href="https://about.doctolib.com/jobs?department=Engineering"&gt;open positions&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="localization"></category><category term="internationalization"></category><category term="i18n"></category><category term="l10n"></category></entry><entry><title>Waving Goodbye to Internet Explorer 11 in 2021</title><link href="//romainpellerin.eu/waving-goodbye-to-internet-explorer-11-in-2021.html" rel="alternate"></link><published>2021-06-01T23:30:00+02:00</published><updated>2022-09-24T12:11:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2021-06-01:/waving-goodbye-to-internet-explorer-11-in-2021.html</id><summary type="html">&lt;p&gt;Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/doctolib/waving-goodbye-to-internet-explorer-11-in-2021-b01a8c5c9864"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Two years ago, we published "&lt;a href="//romainpellerin.eu/supporting-internet-explorer-11-in-2019.html"&gt;Supporting Internet Explorer 11 in 2019&lt;/a&gt;". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (&lt;a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date"&gt;and we're not the only ones&lt;/a&gt; 🤫)&lt;/p&gt;
+&lt;p&gt;Two years ago, we published "&lt;a href="////romainpellerin.eu/supporting-internet-explorer-11-in-2019.html"&gt;Supporting Internet Explorer 11 in 2019&lt;/a&gt;". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (&lt;a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date"&gt;and we're not the only ones&lt;/a&gt; 🤫)&lt;/p&gt;
 &lt;h1 id="motivations"&gt;Motivations&lt;/h1&gt;
 &lt;p&gt;Back in 2019, a major motivation for us to stop supporting old browsers on the website healthcare professionals use to access our service was that we had two different pipelines to bundle JavaScript code: one was through Webpack and &lt;a href="https://babeljs.io/"&gt;Babel&lt;/a&gt;, the other one through the &lt;a href="https://guides.rubyonrails.org/asset_pipeline.html"&gt;Ruby on Rails asset pipeline&lt;/a&gt; (also known as Sprockets). The good news is, last year we managed to get rid of Sprockets. Now, all of our JavaScript files go through Webpack. Therefore, we do not need to write ES5-compliant code anymore, we can write modern JavaScript everywhere in our mono-repository. However we still have to instruct Babel to transpile some packages that do not come pre-transpiled. And let's be honest, monitoring breaking changes as library authors release new versions is no fun at all.&lt;/p&gt;
 &lt;p&gt;Our other motivations were:&lt;/p&gt;
@@ -251,7 +251,7 @@ sudo apt install maven
 &lt;h1 id="browser-upgrade-campaign-reborn"&gt;Browser Upgrade Campaign: reborn&lt;/h1&gt;
 &lt;p&gt;Admittedly, our previous attempt at having our customers upgrade their browsers was a failure. We are trying to get it right this time. The timeline we laid out was as follows:&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" /&gt;
+&lt;img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" /&gt;
 &lt;figcaption&gt;Timeline of our new project to reduce the use of outdated browsers, over 2021&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -265,7 +265,7 @@ sudo apt install maven
 &lt;/ul&gt;
 &lt;p&gt;Preventing the use of non supported browsers internally was an easy win. All it took was good communication and the flip of a switch. After that, any Doctolib employee trying to use an outdated browser would be welcomed by the following page:&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/page.png" alt="A screenshot of the page preventing the use of Doctolib" /&gt;
+&lt;img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/page.png" alt="A screenshot of the page preventing the use of Doctolib" /&gt;
 &lt;figcaption&gt;The page preventing people from using an outdated browser&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -278,14 +278,14 @@ sudo apt install maven
 &lt;p&gt;In the meantime, we compiled a big list of user accounts that were using multiple browsers, both supported and non supported ones. Every day, we'd pick a bunch of them and enable a feature switch on their account, that would prevent them from logging in with a non supported browser. Once again, we daily monitored our support, making sure everything was going as smoothly as possible.&lt;/p&gt;
 &lt;p&gt;And it finally happened for good this time: the curve went down and eventually reached zero.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/graph.png" alt="A graph showing the use of Internet Explorer over time" /&gt;
+&lt;img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/graph.png" alt="A graph showing the use of Internet Explorer over time" /&gt;
 &lt;figcaption&gt;Use of Internet Explorer among healthcare professionals on Doctolib&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;After the feature switch had been flipped for all of our users seamlessly, we removed the feature switch and hardcoded these browsers' name and versions directly in the codebase, to make sure no one would ever use them again.&lt;/p&gt;
 &lt;p&gt;This project is, as I am writing this article, coming to an end. Interestingly enough, in two years' time, our browser market share changed a lot, Internet Explorer slowing fading out into oblivion... and Microsoft Edge taking off!&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/market-share.png" alt="Browser market share over time" /&gt;
+&lt;img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/market-share.png" alt="Browser market share over time" /&gt;
 &lt;figcaption&gt;Browser market share on Doctolib pro&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -298,13 +298,13 @@ sudo apt install maven
 &lt;p&gt;Moreover, most public healthcare institutions (hospitals, for example) manage their computers like they do in schools or governments. All regular users are not administrators, they only have restricted permissions. They can’t install software or decide which browser they use. Upgrade-wise, their IT departments tend to update the OS and browsers every 1 to 2 years. Privacy is also a much bigger concern for most of them, so they usually favor Firefox over Chrome, and sometimes IE 11 or Edge for compatibility reasons. Last but not least, they’re big on Firefox Extended Support Release (ESR) versions (for a reason, &lt;a href="https://www.mozilla.org/en-US/firefox/organizations/"&gt;it comes with long term support&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;In light of this, here’s what Doctolib’s browser market share looked like in March 2019.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/browsers-share.png" alt="Historical browser market share for Doctolib customers week by week" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/browsers-share.png" alt="Historical browser market share for Doctolib customers week by week" /&gt;
 &lt;figcaption&gt;Historical browser market share for Doctolib customers week by week&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The graph shows unique browser connections per week. As one can see, Internet Explorer 11 users represent on average between 2.5 and 3.5% of all users. Among our Chrome and Firefox users, some users rely on outdated versions, sometimes more than 4-year-old versions. Same goes for Safari, with pretty stable curves not showing any signs of decline.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/safari.png" alt="Historical Safari browser market share for Doctolib customers day by day up until March 2019" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/safari.png" alt="Historical Safari browser market share for Doctolib customers day by day up until March 2019" /&gt;
 &lt;figcaption&gt;Historical Safari browser market share for Doctolib customers day by day up until March 2019&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -353,14 +353,14 @@ sudo apt install maven
 &lt;p&gt;How did we set this in motion?&lt;/p&gt;
 &lt;p&gt;The whole plan is based on displaying a banner at the right time, to the right users, progressively over time. The banner explains that the browser is no longer supported and gives links to Chrome or Firefox upgrade help pages. The banner can be hidden for 5 days before appearing again.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/red-banner.png" alt="The top red banner we display on outdated browsers" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/red-banner.png" alt="The top red banner we display on outdated browsers" /&gt;
 &lt;figcaption&gt;The top red banner we display on outdated browsers&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;We started off with Safari. Why is that? Users who run Safari most likely run Mac and thus use their own device, meaning they’re admin. Public healthcare centers or hospitals never run Apple devices in France or Germany. Plus Safari users are less than 10% of our users, so we thought it’d be quick to have these users upgrade to a newer version of Safari, or switch to Chrome or Firefox. Over the month of April, once or twice a week we increased the minimum supported version of Safari until we reached 12 (the latest stable version at the time of writing). Every few days, a new batch of users would be shown the banner. First, Safari 6 users would see the banner, then three days later Safari 7 users would also, and so on, until all users of Safari 11 or below saw the banner.&lt;/p&gt;
 &lt;p&gt;Over time, we could see the number of users for these unsupported versions significantly decreasing, while seeing Safari 12 slowly but surely rising. It did not work as well as expected though, some users probably don’t care too much about seeing a banner that can be closed anyway.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/safari-2.png" alt="Usage of unsupported Safari versions among Doctolib customers" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/safari-2.png" alt="Usage of unsupported Safari versions among Doctolib customers" /&gt;
 &lt;figcaption&gt;Usage of unsupported Safari versions among Doctolib customers&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -369,12 +369,12 @@ sudo apt install maven
 &lt;p&gt;All along we closely monitored our usage share of web browsers through dashboards and eventually saw usage of all unwanted browsers go downwards, as we expected them to, although not as fast as we predicted.&lt;/p&gt;
 &lt;p&gt;As it turned out, having our customers working in hospitals upgrade their browsers was much harder than we thought. People and organizations need time to adapt. It’s also our mission as a tech company providing an online service to educate our customers and explain why upgrading software is important.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/ie.png" alt="Usage of IE among Doctolib customers" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/ie.png" alt="Usage of IE among Doctolib customers" /&gt;
 &lt;figcaption&gt;Usage of IE among Doctolib customers&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/firefox.png" alt="Usage of ESR Firefox versions among Doctolib customers" /&gt;
+&lt;img src="////romainpellerin.eu/images/supporting-internet-explorer-11-in-2019/firefox.png" alt="Usage of ESR Firefox versions among Doctolib customers" /&gt;
 &lt;figcaption&gt;Usage of ESR Firefox versions among Doctolib customers&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -409,7 +409,7 @@ sudo apt install maven
 &lt;p&gt;Over time, RxJS usage grew and the library was soon imported into every file and used for just about anything and everything: app state management, tiny component states, forms, buttons, AJAX requests, etc.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Why is this legacy now?&lt;/strong&gt; Well, first of all, RxJS is not entirely legacy but the way it’s being used at Doctolib is. This is mostly because it has been used for everything, although &lt;a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html"&gt;its use cases are normally meant to be very specific and restricted&lt;/a&gt;. RxJS also makes unit testing difficult because Observables need to be mocked-up. &lt;a href="https://xgrommx.github.io/rx-book/content/guidelines/when/index.html"&gt;Reactive programming is not known by many&lt;/a&gt;, as indicated on the graph below, therefore it does not help shorten new joiners’ ramp-up time — quite the opposite, to be honest. Our aim is to restrain its use cases to what it was originally intended to be used for: event-based computations and asynchronous sequences of data.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/rxjs-graph.png" alt="Graph showing RxJS popularity" /&gt;
+&lt;img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/rxjs-graph.png" alt="Graph showing RxJS popularity" /&gt;
 &lt;figcaption&gt;RxJS ranks last among the “other” JavaScript libraries in 2018 &lt;a target="_blank" href="https://2018.stateofjs.com/front-end-frameworks/other-libraries/"&gt;[Source]&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -427,7 +427,7 @@ sudo apt install maven
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Optimizing&lt;/em&gt;&lt;/strong&gt; is done progressively, after our bi-annual meetings, through special tasks we call &lt;strong&gt;Tech Tasks&lt;/strong&gt;. These tasks are differentiated from regular feature tasks by their very own nature: they are purely technical tasks whose goal is to improve platform stability, security, and performance as well as to reduce technical debt. People usually pick the ones they like best when they work on Tech Tasks (Fridays are Tech Tasks days for most feature teams). However, a few big and/or complex tasks do get assigned during our bi-annual meeting in order to make sure that they will eventually be carried out. These big tasks are prioritized by the solution architects and engineering managers on a regular basis to ensure they fit into the roadmap.&lt;/p&gt;
 &lt;p&gt;Finally, &lt;strong&gt;&lt;em&gt;monitoring&lt;/em&gt;&lt;/strong&gt; is done throughout. It is a never-ending process. At the end of every meeting, we set KPIs to “track” and then we immediately create dashboards to track usage of “legacy” through these KPIs. One person is in charge of creating these graphs, usually the same person who called a meeting in the first place. Basically, this translates to metrics we expect to drop.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/recompact.png" alt="Recompact monitoring graphs" /&gt;
+&lt;img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/recompact.png" alt="Recompact monitoring graphs" /&gt;
 &lt;figcaption&gt;3 out of the many graphs we use to monitor recompact usage&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -436,7 +436,7 @@ sudo apt install maven
 
 &lt;p&gt;We also create less-specific dashboards which list the “general” legacy functions and libraries we aim at reducing or killing altogether.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/general-legacy.png" alt="Other monitoring graphs" /&gt;
+&lt;img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/general-legacy.png" alt="Other monitoring graphs" /&gt;
 &lt;figcaption&gt;Everything that is considered legacy is shown on this graph&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -452,19 +452,19 @@ sudo apt install maven
 &lt;h1 id="long-term-vision"&gt;Long-term vision&lt;/h1&gt;
 &lt;p&gt;Deprecating these few React functions, recompact, a significant part of our RxJS usage, jQuery, and CoffeeScript is a major first step. By doing so we can ease new joiners’ onboarding, keep up with the latest JavaScript standards, and reduce our technical debt. It also belongs to a bigger picture. Creating these dashboards opens the door to more monitoring, which ultimately means more control. A recent concrete example is the bundle size dashboard, which we introduced a few weeks ago.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/bundle-sizes.png" alt="Bundle sizes graphs" /&gt;
+&lt;img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/bundle-sizes.png" alt="Bundle sizes graphs" /&gt;
 &lt;figcaption&gt;This dashboards tracks our bundles sizes over time&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Not only does it store the sizes over time but it also reports on Github Pull Requests. &lt;a href="https://www.npmjs.com/package/bundlesize"&gt;A handy npm package called bundlesize&lt;/a&gt; checks that every build does not exceed thresholds defined in our package.json file.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/github-pr-checks.png" alt="Checks on Github pull requests" /&gt;
+&lt;img src="////romainpellerin.eu/images/regaining-control-over-doctolib-com-frontend/github-pr-checks.png" alt="Checks on Github pull requests" /&gt;
 &lt;figcaption&gt;Checks on a Github Pull Request&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;In addition to more monitoring, we’ll keep collecting feedback on a regular basis from all of the software engineers, calling for more meetings when needed. We will specifically be paying attention to new joiners, how they feel about the frontend stack and how we can make their onboarding even easier. We don’t want to be held back by legacy code. Instead, we want to be able to experiment with new technologies when relevant, adopt the latest JavaScript standards, and keep up with React.&lt;/p&gt;
 &lt;p&gt;There is still much to do on the frontend. A Single-Page-Application is much more than just a website. It’s software that runs in a browser. Hundreds of different browser versions actually, operating at various speeds, with unreliable network connectivity. It has to be as good as any software program. The time when servers were the unique focus point has come and gone; frontend requires a different kind of attention, not less.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/@romain.pellerin/regaining-control-over-doctolib-com-frontend-9ec8cc41037f"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="code"></category><category term="javascript"></category><category term="frontend"></category></entry><entry><title>Ruby and Ruby on Rails from scratch</title><link href="//romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html" rel="alternate"></link><published>2018-03-16T23:50:00+01:00</published><updated>2024-07-26T17:26:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-03-16:/ruby-and-ruby-on-rails-from-scratch.html</id><summary type="html">&lt;p&gt;How to learn Ruby and Rails&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I started learning a new language: Ruby! Coming from a JavaScript world, &lt;a href="http://frontendgods.com/getting-started-with-ruby-for/"&gt;this article&lt;/a&gt; helped me a lot (&lt;a href="//romainpellerin.eu/extra/javascript-to-ruby.html"&gt;backed-up here, should it ever vanish from the Internet&lt;/a&gt;). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/@romain.pellerin/regaining-control-over-doctolib-com-frontend-9ec8cc41037f"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content><category term="Code"></category><category term="code"></category><category term="javascript"></category><category term="frontend"></category></entry><entry><title>Ruby and Ruby on Rails from scratch</title><link href="//romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html" rel="alternate"></link><published>2018-03-16T23:50:00+01:00</published><updated>2024-07-26T17:26:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2018-03-16:/ruby-and-ruby-on-rails-from-scratch.html</id><summary type="html">&lt;p&gt;How to learn Ruby and Rails&lt;/p&gt;</summary><content type="html">&lt;p&gt;Today I started learning a new language: Ruby! Coming from a JavaScript world, &lt;a href="http://frontendgods.com/getting-started-with-ruby-for/"&gt;this article&lt;/a&gt; helped me a lot (&lt;a href="////romainpellerin.eu/extra/javascript-to-ruby.html"&gt;backed-up here, should it ever vanish from the Internet&lt;/a&gt;). In this article, I sum up everything I've learned so far. It's a sort of memo for myself.&lt;/p&gt;
 &lt;h1 id="learning-resources"&gt;Learning resources&lt;/h1&gt;
 &lt;h2 id="ruby"&gt;Ruby&lt;/h2&gt;
 &lt;ul&gt;
@@ -654,8 +654,8 @@ rbenv global &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Bonus point if the project uses as many Github badges (meaning CI services) as I referenced on &lt;a href="//romainpellerin.eu/open-source.html"&gt;this article&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reminder for myself&lt;/strong&gt;: check out &lt;a href="//romainpellerin.eu/carrying-out-a-web-project.html"&gt;this article&lt;/a&gt;&lt;/p&gt;</content><category term="Code"></category><category term="web"></category><category term="javascript"></category><category term="css"></category><category term="html"></category></entry><entry><title>Open Source</title><link href="//romainpellerin.eu/open-source.html" rel="alternate"></link><published>2017-03-07T21:50:00+01:00</published><updated>2019-11-01T02:15:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-03-07:/open-source.html</id><summary type="html">&lt;p&gt;Resources for open source projects&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are a bunch of links for open source project maintainers/creators:&lt;/p&gt;
+&lt;p&gt;Bonus point if the project uses as many Github badges (meaning CI services) as I referenced on &lt;a href="////romainpellerin.eu/open-source.html"&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Reminder for myself&lt;/strong&gt;: check out &lt;a href="////romainpellerin.eu/carrying-out-a-web-project.html"&gt;this article&lt;/a&gt;&lt;/p&gt;</content><category term="Code"></category><category term="web"></category><category term="javascript"></category><category term="css"></category><category term="html"></category></entry><entry><title>Open Source</title><link href="//romainpellerin.eu/open-source.html" rel="alternate"></link><published>2017-03-07T21:50:00+01:00</published><updated>2019-11-01T02:15:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-03-07:/open-source.html</id><summary type="html">&lt;p&gt;Resources for open source projects&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are a bunch of links for open source project maintainers/creators:&lt;/p&gt;
 &lt;h1 id="documentation"&gt;Documentation&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.sphinx-doc.org/en/master/"&gt;Sphinx&lt;/a&gt;&lt;/li&gt;
@@ -1519,7 +1519,7 @@ Content-Type: application/json
 &lt;hr&gt;
 &lt;p&gt;At this point, our API is able to do the four basic operations we needed (&lt;a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete"&gt;CRUD&lt;/a&gt;, remember?), on any kind of entity, easily, thanks to a pretty format, JSON. End-points are semantic and hierarchically ordered. Everything is perfect.&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
-&lt;img src="//romainpellerin.eu/images/api-unicorn.gif" alt="A gif showing a unicorn" style="width: 150px; height: auto" /&gt;
+&lt;img src="////romainpellerin.eu/images/api-unicorn.gif" alt="A gif showing a unicorn" style="width: 150px; height: auto" /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;But... (there's always a &lt;em&gt;but&lt;/em&gt;).&lt;/p&gt;
@@ -1798,7 +1798,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;h1 id="purpose"&gt;Purpose&lt;/h1&gt;
 &lt;p&gt;Continuous integration is an entire concept that tries to ease software development by making things much easier and more flexible. Like agile methodology, it's been getting more and more popular since the beginning of the 2000's. Nowadays, it tends to be widely adopted in any kind of software company.&lt;/p&gt;
 &lt;h2 id="effortless-automation"&gt;Effortless automation&lt;/h2&gt;
-&lt;p&gt;Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like &lt;a href="//romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html"&gt;Quentin Adam&lt;/a&gt; is used to saying,&lt;/p&gt;
+&lt;p&gt;Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like &lt;a href="////romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html"&gt;Quentin Adam&lt;/a&gt; is used to saying,&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;&lt;a href="https://twitter.com/waxzce/status/639078610230476800"&gt;Hosting has to become a commodity.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1819,7 +1819,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;p&gt;Let's now see how to get started with continuous integration, easily.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id="how"&gt;How&lt;/h1&gt;
-&lt;p&gt;Now, you might have understood that you &lt;strong&gt;have to use Git&lt;/strong&gt;. And if you stil don't know why, you read read my article &lt;a href="//romainpellerin.eu/git.html"&gt;about Git&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, you might have understood that you &lt;strong&gt;have to use Git&lt;/strong&gt;. And if you stil don't know why, you read read my article &lt;a href="////romainpellerin.eu/git.html"&gt;about Git&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In my opinion, the most important thing with continuous integration is... your Git workflow. You have to remain consistent from the beginning of a project to its end. Everyone involved has to be careful and focused at each step. Working within a big team is not something easy. Everyone has different schedules, information doesn't spread that well. That's why having a robust and error-proof Git workflow matters.&lt;/p&gt;
 &lt;p&gt;At The Smiths, we identified &lt;strong&gt;four main components&lt;/strong&gt; that we wanted as &lt;strong&gt;core parts of our Continuous Integration process&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -1839,7 +1839,7 @@ npm install -S express &lt;span class="c1"&gt;# Locally, added as a dependency&l
 &lt;h2 id="a-successful-git-workflow"&gt;A Successful Git Workflow&lt;/h2&gt;
 &lt;p&gt;This part is clearly the most important, as it’s being used every single day by everyone. In general, it’s likely the most important aspect about continuous integration, to which we had paid a lot of attention.&lt;/p&gt;
 &lt;p&gt;After some research, we came across a very popular Git workflow, the branching model.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Git workflow" src="//romainpellerin.eu/images/continuous-integration-git-workflow.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Git workflow" src="////romainpellerin.eu/images/continuous-integration-git-workflow.png"&gt;&lt;/p&gt;
 &lt;p&gt;This picture has been taken from &lt;em&gt;&lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;A successful Git branching model, by Vincent Driessen&lt;/a&gt;&lt;/em&gt; (&lt;a href="https://twitter.com/nvie/status/644601079985008640"&gt;thanks to him&lt;/a&gt;). Overall, it’s the best Git workflow we’ve ever encountered. &lt;strong&gt;So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.&lt;/strong&gt; It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.&lt;/p&gt;
 &lt;p&gt;Now, let's move onto &lt;strong&gt;our workflow&lt;/strong&gt; that we daily use, with Github:&lt;/p&gt;
 &lt;h3 id="our-git-workflow"&gt;Our Git workflow&lt;/h3&gt;
@@ -1935,13 +1935,13 @@ git branch -d feature-x
 &lt;p&gt;The one we picked is called &lt;strong&gt;Scrum&lt;/strong&gt;. Again, I won't explain it here but will instead expose the workflow we adopted, derived from it. For a better comprehension, I recommend you read the &lt;a href="https://en.wikipedia.org/wiki/Scrum_(software_development)"&gt;Wikipedia page&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Basically, at the very beginning of the project, the CTO would meet client and discuss with them. As a result, he would obtain detailed specifications from them. Then, all together, we would brainstorm and define Milestones, which are fundamentally the most important steps to a final product. For instance, from scratch, we would aim at developing a MVP (which is a working product, see the picture below), then progressively add features, grouping features under Milestones. As a reminder, "Milestones" is a feature of GitHub. Each Milestone would last a week, tops. In Scrum, Milestones are called &lt;em&gt;Sprints&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Starting with an MVP is the right way to go. The client is always satisfied as they would get a working copy of the product being-developed, at each stage, continuously getting improved. They would not have to wait for weeks or months before being able to test anything.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="MVP" src="//romainpellerin.eu/images/continuous-integration-mvp.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="MVP" src="////romainpellerin.eu/images/continuous-integration-mvp.png"&gt;&lt;/p&gt;
 &lt;div style="text-align: center"&gt;*Courtesy of [Henrik Kniberg](https://twitter.com/henrikkniberg/status/685474589539983360)*&lt;/div&gt;
 
 &lt;p&gt;Then, each developer would get assigned or choose a few features from the first Milestone until completion. Every morning, we would gather for a 10-minute stand-up meeting, during which everyone would say what they did the previous day and what is left to do, especially regarding the current day. Standing forces us to speak concisely and don't waste each other's time, since it is not as comfortable as being sat down.&lt;/p&gt;
 &lt;p&gt;At the end of the Milestone's week, we would merge all the Pull requests resulting from the features, then review all together all the work done, conduct tests and create issues on GitHub to be resolved before starting the next Milestone. Eventually, we would readjust the remaining Milestones when needed.&lt;/p&gt;
 &lt;p&gt;This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="SCRUM" src="//romainpellerin.eu/images/continuous-integration-scrum.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SCRUM" src="////romainpellerin.eu/images/continuous-integration-scrum.png"&gt;&lt;/p&gt;
 &lt;p&gt;Sometimes, the part "Bug fixing" would require extra-time. In such a case, we would extend that part onto the next week, only assigning one person, so that the rest of the team could stick strictly to the rule "a Milestone per week". But that rarely happened fortunately.&lt;/p&gt;
 &lt;h2 id="mix-them-all"&gt;Mix them all&lt;/h2&gt;
 &lt;p&gt;As a brief conclusion, when thinking back at all the parts of our workflow, one can see that it's an entire whole in which GitHub plays a key-role. Being organized, knowing everyone's role and keeping in mind goals to reach are important as well, just like the tools we decided to go with. Furthermore, being able to release intermediate versions, quickly, allowed us to give constant feedback to the client, which is reassuring.&lt;/p&gt;

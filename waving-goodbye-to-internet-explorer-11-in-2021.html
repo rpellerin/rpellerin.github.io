@@ -89,7 +89,7 @@
 </header>
 <article>
     <p><em>Originally published on <a href="https://medium.com/doctolib/waving-goodbye-to-internet-explorer-11-in-2021-b01a8c5c9864">Medium</a>.</em></p>
-<p>Two years ago, we published "<a href="//romainpellerin.eu/supporting-internet-explorer-11-in-2019.html">Supporting Internet Explorer 11 in 2019</a>". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (<a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date">and we're not the only ones</a> 🤫)</p>
+<p>Two years ago, we published "<a href="////romainpellerin.eu/supporting-internet-explorer-11-in-2019.html">Supporting Internet Explorer 11 in 2019</a>". This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer... (<a href="https://www.theverge.com/2021/5/19/22443997/microsoft-internet-explorer-end-of-support-date">and we're not the only ones</a> 🤫)</p>
 <h1 id="motivations">Motivations</h1>
 <p>Back in 2019, a major motivation for us to stop supporting old browsers on the website healthcare professionals use to access our service was that we had two different pipelines to bundle JavaScript code: one was through Webpack and <a href="https://babeljs.io/">Babel</a>, the other one through the <a href="https://guides.rubyonrails.org/asset_pipeline.html">Ruby on Rails asset pipeline</a> (also known as Sprockets). The good news is, last year we managed to get rid of Sprockets. Now, all of our JavaScript files go through Webpack. Therefore, we do not need to write ES5-compliant code anymore, we can write modern JavaScript everywhere in our mono-repository. However we still have to instruct Babel to transpile some packages that do not come pre-transpiled. And let's be honest, monitoring breaking changes as library authors release new versions is no fun at all.</p>
 <p>Our other motivations were:</p>
@@ -101,7 +101,7 @@
 <h1 id="browser-upgrade-campaign-reborn">Browser Upgrade Campaign: reborn</h1>
 <p>Admittedly, our previous attempt at having our customers upgrade their browsers was a failure. We are trying to get it right this time. The timeline we laid out was as follows:</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" />
+<img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/timeline.png" alt="The image of the timeline" />
 <figcaption>Timeline of our new project to reduce the use of outdated browsers, over 2021</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@
 </ul>
 <p>Preventing the use of non supported browsers internally was an easy win. All it took was good communication and the flip of a switch. After that, any Doctolib employee trying to use an outdated browser would be welcomed by the following page:</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/page.png" alt="A screenshot of the page preventing the use of Doctolib" />
+<img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/page.png" alt="A screenshot of the page preventing the use of Doctolib" />
 <figcaption>The page preventing people from using an outdated browser</figcaption>
 </figure>
 
@@ -128,14 +128,14 @@
 <p>In the meantime, we compiled a big list of user accounts that were using multiple browsers, both supported and non supported ones. Every day, we'd pick a bunch of them and enable a feature switch on their account, that would prevent them from logging in with a non supported browser. Once again, we daily monitored our support, making sure everything was going as smoothly as possible.</p>
 <p>And it finally happened for good this time: the curve went down and eventually reached zero.</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/graph.png" alt="A graph showing the use of Internet Explorer over time" />
+<img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/graph.png" alt="A graph showing the use of Internet Explorer over time" />
 <figcaption>Use of Internet Explorer among healthcare professionals on Doctolib</figcaption>
 </figure>
 
 <p>After the feature switch had been flipped for all of our users seamlessly, we removed the feature switch and hardcoded these browsers' name and versions directly in the codebase, to make sure no one would ever use them again.</p>
 <p>This project is, as I am writing this article, coming to an end. Interestingly enough, in two years' time, our browser market share changed a lot, Internet Explorer slowing fading out into oblivion... and Microsoft Edge taking off!</p>
 <figure class="center">
-<img src="//romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/market-share.png" alt="Browser market share over time" />
+<img src="////romainpellerin.eu/images/waving-goodbye-to-internet-explorer-11-in-2021/market-share.png" alt="Browser market share over time" />
 <figcaption>Browser market share on Doctolib pro</figcaption>
 </figure>
 

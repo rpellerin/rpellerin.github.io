@@ -79,7 +79,7 @@
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/"&gt;As of 2024, HR is not supported on Linux. 10-bit is partially supported but not enabled by default.&lt;/a&gt; &lt;a href="https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux"&gt;Here is how to turn on 10-bit on Linux.&lt;/a&gt; Of course the GPU needs to support it.&lt;/p&gt;
 &lt;p&gt;On Linux, playing a HDR video in VLC will show a washed-out video, &lt;a href="https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jnbxar8/"&gt;but using MPV the colors will be "translated" into SDR and the video will look very nice&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="monitors-and-tv-support-for-hdr"&gt;Monitors and TV support for HDR&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</content><category term="Computers"></category><category term="video"></category><category term="colors"></category></entry><entry><title>Farewell Kdenlive, Hello Davinci Resolve</title><link href="//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve.html" rel="alternate"></link><published>2024-09-18T20:00:00+02:00</published><updated>2024-09-18T21:02:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve.html</id><summary type="html">&lt;p&gt;I'm switching from Kdenlive to Davinci Resolve, here's why and a few tips&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been &lt;a href="//romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for Davinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</content><category term="Computers"></category><category term="video"></category><category term="colors"></category></entry><entry><title>Farewell Kdenlive, Hello Davinci Resolve</title><link href="//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve.html" rel="alternate"></link><published>2024-09-18T20:00:00+02:00</published><updated>2024-09-18T21:02:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve.html</id><summary type="html">&lt;p&gt;I'm switching from Kdenlive to Davinci Resolve, here's why and a few tips&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for Davinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in Davinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;
@@ -196,7 +196,7 @@ This is usually much higher than the forward voltage. As with forward voltage, a
 &lt;p&gt;With an LED it's the amount of current flowing through it that determines how bright it is. Increasing the voltage increases the current, yes, but the region where that happens without the current getting too much is very small.&lt;br&gt;
 So we control the current instead of the voltage, and take the forward voltage as a fixed value. By either including a resistor in the circuit to fill the gap between the supply voltage and the forward voltage, limiting the current in the process [...]&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;figure class="center"&gt;&lt;img alt="LED: amperage and voltage" src="//romainpellerin.eu/images/led.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;&lt;img alt="LED: amperage and voltage" src="////romainpellerin.eu/images/led.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Extracts from &lt;a href="https://www.ledsupply.com/blog/wiring-leds-correctly-series-parallel-circuits-explained/"&gt;LEDsupply.com&lt;/a&gt;:&lt;/p&gt;
@@ -235,12 +235,12 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 &lt;h1 id="what-i-ended-up-doing"&gt;What I ended up doing&lt;/h1&gt;
 &lt;p&gt;In the end, I bought two &lt;a href="https://www.reichelt.de/de/en/ir-led-black-40-5-mm-sfh-4546-p146652.html"&gt;1.5V 5mm IR LEDs&lt;/a&gt; and a &lt;a href="https://www.reichelt.de/de/en/carbon-film-resistor-1-4-w-5-6-8-ohms-1-4w-6-8-p1452.html"&gt;6.8 Ohm resistor&lt;/a&gt;, that I soldered all together. The result is pretty nice, and it's working like a charm. By connecting it to a regular GPIO pin, I can programmatically turn it on and off.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" /&gt;
+&lt;img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" /&gt;
 &lt;figcaption&gt;Before soldering&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" /&gt;
+&lt;img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" /&gt;
 &lt;figcaption&gt;After soldering&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -300,7 +300,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;h1 id="live-streaming-on-youtube"&gt;Live streaming on Youtube&lt;/h1&gt;
 &lt;p&gt;This is fairly easy and cool to do! Head out to &lt;a href="https://studio.youtube.com/channel/UC/livestreaming"&gt;https://studio.youtube.com/channel/UC/livestreaming&lt;/a&gt; and retrieve a "Stream key".&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
-&lt;img src="//romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" /&gt;
+&lt;img src="////romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Then:&lt;/p&gt;
@@ -321,7 +321,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;&lt;code&gt;-use_wallclock_as_timestamps&lt;/code&gt; makes a warning message about no timestamps disappear. &lt;code&gt;-thread_queue_size 1024&lt;/code&gt; makes another warning message disappear.&lt;/p&gt;
 &lt;p&gt;With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
-&lt;a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"&gt;&lt;img src="//romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /&gt;&lt;/a&gt;
+&lt;a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"&gt;&lt;img src="////romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;h1 id="daytime-timelapse"&gt;Daytime timelapse&lt;/h1&gt;
@@ -446,65 +446,65 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;/ul&gt;
 &lt;p&gt;All I needed was a power brick (AC/DC converter) meeting the above-mentionned requirements and a cord with the same connector. I decided not to reuse the cord from my original charger. Fortunately, my roommate had an old charger with the matching connector, so I decided to go with that one.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connectors.jpg" alt="Connectors" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connectors.jpg" alt="Connectors" /&gt;
 &lt;figcaption&gt;My connector (top) and my roommate's one (bottom)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Here is the replacement charger I bought for $20, with the exact same specs as mine:&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/power-block.jpg" alt="Power brick" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/power-block.jpg" alt="Power brick" /&gt;
 &lt;figcaption&gt;My replacement power brick&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;So, as I said, I used my roommate's charger cord to get a connector suited for my laptop. I made sure to cut near the block so that the cord remained long enough.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/cut-cord.jpg" alt="Cutting the cord" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/cut-cord.jpg" alt="Cutting the cord" /&gt;
 &lt;figcaption&gt;Cutting the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Then, I split the end in two to separate the two wires.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/split-cord1.jpg" alt="Splitting the cord" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/split-cord1.jpg" alt="Splitting the cord" /&gt;
 &lt;figcaption&gt;Splitting the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I identified each wire using a multimeter. Since my laptop expects the center of the barrel plug to be the positive contact and the barrel to be negative, I needed to know that to correctly assemble the two parts of my to-be charger.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/multimeter1.jpg" alt="Identifying wires" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/multimeter1.jpg" alt="Identifying wires" /&gt;
 &lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I put adhesive tape on the negative one to remember it.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/split-cord2.jpg" alt="Adhesive tape on negative wire" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/split-cord2.jpg" alt="Adhesive tape on negative wire" /&gt;
 &lt;figcaption&gt;Adhesive tape on negative wire&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Then, I cut the connector from the new charger I had just bought. Inside the cord, the two wires were of different colors, one was red and the other blue. Using the multimeter and the connector I had just cut, I identified the negative and positive wires.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/multimeter2.jpg" alt="Identifying wires" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/multimeter2.jpg" alt="Identifying wires" /&gt;
 &lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;This way, I figured out the blue wire was connected to the barrel and the red one to the center. Since the charger had the same polarity as mine, I knew that the blue wire was negative. Consequently, that wire had to be connected to the wire with adhesive tape.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/two-cords.jpg" alt="Both cords ready to be connected" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/two-cords.jpg" alt="Both cords ready to be connected" /&gt;
 &lt;figcaption&gt;Both cords ready to be connected&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I twisted the wires to connect them and insulated them with electrical tape.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting1.jpg" alt="Twisting the wires" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting1.jpg" alt="Twisting the wires" /&gt;
 &lt;figcaption&gt;Twisting the wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting2.jpg" alt="Insulating the wires" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting2.jpg" alt="Insulating the wires" /&gt;
 &lt;figcaption&gt;Insulating the wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/repair-laptop-charger/connecting3.jpg" alt="Insulating the cord" /&gt;
+&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting3.jpg" alt="Insulating the cord" /&gt;
 &lt;figcaption&gt;Insulating the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -596,7 +596,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;strong&gt;Stack&lt;/strong&gt;: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. &lt;strong&gt;Stack values only exist within the scope of the function they are created in.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class="center"&gt;
-&lt;img src="//romainpellerin.eu/images/memory-stack.jpg" alt="The stack" /&gt;
+&lt;img src="////romainpellerin.eu/images/memory-stack.jpg" alt="The stack" /&gt;
 &lt;figcaption&gt;Image taken from &lt;a href="http://www.linuxjournal.com/article/6391"&gt;http://www.linuxjournal.com/article/6391&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -670,7 +670,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 
 &lt;p&gt;To delete what is on the heap, you need to use the &lt;code&gt;delete&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img alt="Pointers and addresses" src="//romainpellerin.eu/images/memory_cpp_example.png" /&gt;
+&lt;img alt="Pointers and addresses" src="////romainpellerin.eu/images/memory_cpp_example.png" /&gt;
 &lt;/figure&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
