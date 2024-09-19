@@ -57,7 +57,7 @@ Je mettrai à jour cet article une fois que je serai rétabli. ✌
 
 - 1000mg paracétamol pour les 2 premières nuits, rien les deux nuits suivantes
 - Je marche mieux que dimanche, et à peine mieux que lundi. Mais mardi mercredi et jeudi, pas d'amélioration. Je boite énormément.
-- Je soupçonne un arrachement osseux, si c'était une simple entorse je pense que la douleur aurait diminué. Enfin j'en sais rien...
+- Je soupçonne un arrachement osseux, si c'était une simple entorse je pense que la douleur aurait diminué. Enfin j'en sais rien... Quoiqu'un arrachement osseux c'est plus probable lors d'un choc ? Genre une mauvaise réception suite à un saut ? En course à pied je serais étonné. Bref.
 - Je pense aussi avoir "plusieurs" types d'entorse, ou plutôt avoir plusieurs ligaments âbimés. Voire même les tendons du long et court fibulaire, car j'ai mal en appuyant sur ces 2 muscles. Bref j'ai bien mal dans tout le pied globalement, pas que d'un côté.
 - Niveau gonflement, je l'ai remarqué lundi, pas vraiment fait attention dimanche. Aucune amélioration depuis lundi j'ai l'impression, toujours gonflé. J'ai glacé quelques fois, pas d'amélioration ni sur le gonflement ni sur la douleur.
 - D'ailleurs la douleur n'est pas toujours la même. Parfois dans la journée j'ai à peine mal en marchant, parfois hyper mal. Au repos, des fois je ressens rien, des fois je suis à 3/10 en douleur, assis.
