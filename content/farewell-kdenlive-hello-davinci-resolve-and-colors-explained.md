@@ -14,23 +14,30 @@ Up until now, I've not been able to properly "downgrade" a HDR footage into a SD
 
 Below you'll find my settings.
 
+# General settings
+
+When working with non mixed footage, that is only HDR or only SDR, I would recommend turning on [the option `Use Mac Display Color Profile for viewers`](https://youtu.be/RBctM2c4GQI?t=369) in the settings of DaVinci.
+
 # Project settings
 
 - Resolution: 3840 x 2160 (4K)
 - FPS: 25
 - In `Color Management`:
 
-      - `Color science`: `DaVinci YRGB Color Managed`
+      - `Color science`: [`DaVinci YRGB Color Managed`](https://youtu.be/CTAzjAReZvs?t=638). I'm not sure what the difference is with non color managed, but I think I understood that when it's not color managed, [DaVinci assumes nothing and does not perform automatic conversation from RAW footage to timeline color space](https://youtu.be/CTAzjAReZvs?t=182). But for my use cases, Color Managed is perfect and just works.
       - Untick `Automatic color management`
       - `Color processing mode`: `HDR DaVinci Wide Gamut Intermediate`
       - `Output color space`: `Rec.2100 HLG` (just like the videos shot natively with my Google Pixel)
 
-When dealing with non-HDR footage, everything should be Rec.709. Gamma must be 2.4. Don't bother with Rec.709-A (Mac specific). For the color processing mode, keep "DaVinci Wide Gamut Intermediate".
+When dealing with non-HDR footage, everything should be Rec.709. [Gamma should be 2.4, even for web deliverables](https://youtu.be/_nhlHD4wiDU?t=256). [Don't bother with Rec.709-A (Mac specific).](https://youtu.be/1QlnhlO6Gu8?t=1388) For the color processing mode, keep "DaVinci Wide Gamut Intermediate".
+
+A general rule of thumb is "2.2 is aimed to people looking at the screen on a bright lighted room, 2.4 is for dim light room, 2.6 for pitch dark room like movie theater". ([_source_](https://www.reddit.com/r/colorists/comments/176b1fb/comment/k4l1imm/))
 
 More on color management and gamma:
 
 - [PRO Explains where you may be going wrong in just 10 minutes!](https://www.youtube.com/watch?v=8geDbNpH5cI)
 - [Quicktime Gamma Shift Bug – What Is It and How to Combat It](https://www.cined.com/quicktime-gamma-shift-bug-what-is-it-and-how-to-combat-it/): by default, what you see in DaVinci won't be what you see in QuickTime. Use VLC. Or change some settings, but read the article first to know which ones.
+- [Quicktime Color Management: why so many ISSUES?!](https://www.youtube.com/watch?v=1QlnhlO6Gu8): another video on the Quicktime Gamma bug
 - [Can someone explain what Rec 709 as a gamma tag means?](https://www.reddit.com/r/colorists/comments/1c8c25i/can_someone_explain_what_rec_709_as_a_gamma_tag/)
 
 # Export settings
@@ -63,9 +70,12 @@ Now let's study colors...
 
 - _CST_: Color Space Transform
 - _DWG_: DaVinci Wide Gamut
-- _ACES_: Academy Color Encoding System (an alternative to DWG)
-- **Nit**: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.
-- **EOTF**: Electro-optical Transfer Function
+- _RCM_: Resolve Color Management. A system designed to provide consistent color accuracy across different devices and formats. [This is a synonym for DaVinci Wide Gamut.](https://youtu.be/_EJ7lA0bSzo?t=248)
+- _ACES_: Academy Color Encoding System (an alternative to DWG). [It is an industry standard color space, that works on multiple applications, unlike DWG that is DaVinci-exclusive.](https://youtu.be/AAeZKZ5feGA?t=428)
+- _Nit_: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.
+- _EOTF_: Electro-optical Transfer
+- _LUT_: Look-Up Table
+- _Display-referred color grading/workflow_: [grading manually based on what you observe on screen, without any knowledge about the input color space](https://youtu.be/CTAzjAReZvs?t=26). [The opposite is known as _scene-referred workflow_ (or _color managed workflow_).](https://youtu.be/_EJ7lA0bSzo?t=1180)
 
 # 8-bit vs 10-bit
 
