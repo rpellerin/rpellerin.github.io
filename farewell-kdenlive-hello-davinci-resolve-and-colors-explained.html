@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-09-18T20:00:00+02:00">Wed 18 September 2024</time>        </p>
+<time datetime="2024-09-18T20:00:00+02:00">Wed 18 September 2024</time> - Last update: <time datetime="2024-09-21T00:38:00+02:00">Sat 21 September 2024</time>        </p>
     <h1>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</h1>
     <div class="grey">
         <p class="italic">I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2091 words.">10 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2303 words.">12 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/kdenlive.html">kdenlive</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/davinci-resolve.html">davinci resolve</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -91,6 +91,8 @@
 <p>Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). <a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/">You cannot easily mix SDR and HDR footage in the same project.</a></p>
 <p>Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.</p>
 <p>Below you'll find my settings.</p>
+<h1 id="general-settings">General settings</h1>
+<p>When working with non mixed footage, that is only HDR or only SDR, I would recommend turning on <a href="https://youtu.be/RBctM2c4GQI?t=369">the option <code>Use Mac Display Color Profile for viewers</code></a> in the settings of DaVinci.</p>
 <h1 id="project-settings">Project settings</h1>
 <ul>
 <li>Resolution: 3840 x 2160 (4K)</li>
@@ -98,18 +100,20 @@
 <li>
 <p>In <code>Color Management</code>:</p>
 <ul>
-<li><code>Color science</code>: <code>DaVinci YRGB Color Managed</code></li>
+<li><code>Color science</code>: <a href="https://youtu.be/CTAzjAReZvs?t=638"><code>DaVinci YRGB Color Managed</code></a>. I'm not sure what the difference is with non color managed, but I think I understood that when it's not color managed, <a href="https://youtu.be/CTAzjAReZvs?t=182">DaVinci assumes nothing and does not perform automatic conversation from RAW footage to timeline color space</a>. But for my use cases, Color Managed is perfect and just works.</li>
 <li>Untick <code>Automatic color management</code></li>
 <li><code>Color processing mode</code>: <code>HDR DaVinci Wide Gamut Intermediate</code></li>
 <li><code>Output color space</code>: <code>Rec.2100 HLG</code> (just like the videos shot natively with my Google Pixel)</li>
 </ul>
 </li>
 </ul>
-<p>When dealing with non-HDR footage, everything should be Rec.709. Gamma must be 2.4. Don't bother with Rec.709-A (Mac specific). For the color processing mode, keep "DaVinci Wide Gamut Intermediate".</p>
+<p>When dealing with non-HDR footage, everything should be Rec.709. <a href="https://youtu.be/_nhlHD4wiDU?t=256">Gamma should be 2.4, even for web deliverables</a>. <a href="https://youtu.be/1QlnhlO6Gu8?t=1388">Don't bother with Rec.709-A (Mac specific).</a> For the color processing mode, keep "DaVinci Wide Gamut Intermediate".</p>
+<p>A general rule of thumb is "2.2 is aimed to people looking at the screen on a bright lighted room, 2.4 is for dim light room, 2.6 for pitch dark room like movie theater". (<a href="https://www.reddit.com/r/colorists/comments/176b1fb/comment/k4l1imm/"><em>source</em></a>)</p>
 <p>More on color management and gamma:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=8geDbNpH5cI">PRO Explains where you may be going wrong in just 10 minutes!</a></li>
 <li><a href="https://www.cined.com/quicktime-gamma-shift-bug-what-is-it-and-how-to-combat-it/">Quicktime Gamma Shift Bug – What Is It and How to Combat It</a>: by default, what you see in DaVinci won't be what you see in QuickTime. Use VLC. Or change some settings, but read the article first to know which ones.</li>
+<li><a href="https://www.youtube.com/watch?v=1QlnhlO6Gu8">Quicktime Color Management: why so many ISSUES?!</a>: another video on the Quicktime Gamma bug</li>
 <li><a href="https://www.reddit.com/r/colorists/comments/1c8c25i/can_someone_explain_what_rec_709_as_a_gamma_tag/">Can someone explain what Rec 709 as a gamma tag means?</a></li>
 </ul>
 <h1 id="export-settings">Export settings</h1>
@@ -132,9 +136,12 @@
 <ul>
 <li><em>CST</em>: Color Space Transform</li>
 <li><em>DWG</em>: DaVinci Wide Gamut</li>
-<li><em>ACES</em>: Academy Color Encoding System (an alternative to DWG)</li>
-<li><strong>Nit</strong>: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.</li>
-<li><strong>EOTF</strong>: Electro-optical Transfer Function</li>
+<li><em>RCM</em>: Resolve Color Management. A system designed to provide consistent color accuracy across different devices and formats. <a href="https://youtu.be/_EJ7lA0bSzo?t=248">This is a synonym for DaVinci Wide Gamut.</a></li>
+<li><em>ACES</em>: Academy Color Encoding System (an alternative to DWG). <a href="https://youtu.be/AAeZKZ5feGA?t=428">It is an industry standard color space, that works on multiple applications, unlike DWG that is DaVinci-exclusive.</a></li>
+<li><em>Nit</em>: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.</li>
+<li><em>EOTF</em>: Electro-optical Transfer</li>
+<li><em>LUT</em>: Look-Up Table</li>
+<li><em>Display-referred color grading/workflow</em>: <a href="https://youtu.be/CTAzjAReZvs?t=26">grading manually based on what you observe on screen, without any knowledge about the input color space</a>. <a href="https://youtu.be/_EJ7lA0bSzo?t=1180">The opposite is known as <em>scene-referred workflow</em> (or <em>color managed workflow</em>).</a></li>
 </ul>
 <h1 id="8-bit-vs-10-bit">8-bit vs 10-bit</h1>
 <p><img alt="Banding in a 8-bit image" src="https://www.everlearn.nl/wp-content/uploads/2016/11/color-banding.png?_gl=1*1802gmv*_up*MQ..*_ga*NjI1MjM4NDQ0LjE3MjY2NzU4MzI.*_ga_ZR0WD7KF8X*MTcyNjY3NTgzMS4xLjAuMTcyNjY3NTgzMS4wLjAuMA.."></p>
@@ -214,7 +221,7 @@
 <p><a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/">Unless a monitor is labeled HDR1000, it is not true HDR.</a> <a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/">This other Reddit thread more or less says the same.</a></p>
 </article>
 <footer class="grey italic small">
-    Last update: Wed 18 September 2024</footer>
+    Last update: Sat 21 September 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
