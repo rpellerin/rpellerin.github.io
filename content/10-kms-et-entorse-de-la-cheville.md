@@ -64,3 +64,7 @@ Je mettrai à jour cet article une fois que je serai rétabli. ✌
 - J'ai strappé 2 ou 3 fois, pas vu de changement non plus.
 - Je crois que je vais aller passer une radio pour être fixé sur l'arrachement osseux ou non.
 - Ça pue pour le marathon dans 5 semaines et demi...
+
+# Update Samedi 21 Septembre
+
+Radio passée hier soir, aucune fracture, ni de stress, ni classique. Pas d'arrachement osseux. On m'a conseillé de passer une IRM la semaine pro si la douleur ne diminue pas. Ils m'ont mis une bonne dose de Voltaren, ce qui a entre temps bien fait diminuer la douleur. Je marche mieux aujourd'hui mais boite encore, et je ne peux toujours pas me mettre sur la pointe des pieds, en équilibre sur le pied droit uniquement, hyper douloureux et j'ai l'impression de ne pas avoir la force nécessaire. Les 2 pieds au sol, je peux. Affaire à suivre la semaine pro...
