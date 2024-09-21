@@ -93,7 +93,7 @@ Now let's study colors...
 
 ---
 
-Some monitor or TV are "10-bit like" but not truly 10-bit, there are in fact ["8 bit + FRC"](https://www.benq.com/en-us/knowledge-center/knowledge/10-bit-vs-8-bit-frc-monitor-color-difference.html).
+Some monitor or TV are "10-bit like" but not truly 10-bit, they are in fact ["8 bit + FRC"](https://www.benq.com/en-us/knowledge-center/knowledge/10-bit-vs-8-bit-frc-monitor-color-difference.html).
 
 # SDR vs HDR
 
