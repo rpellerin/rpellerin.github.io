@@ -147,6 +147,16 @@ Two options mostly.
     find . -type f -iname "*.MP4" -exec ffmpeg -i '{}' -c copy -bsf:v h264_mp4toannexb -f mpegts '{}.ts' \;
     ffmpeg -i "concat:$(find . -type f -iname "*.ts" | sort | tr '\n' '|' | head -c -1)" -c copy -avoid_negative_ts make_zero -bsf:a aac_adtstoasc output.mp4
 
+# Converting a HDR video into a SDR one
+
+    :::bash
+    ffmpeg -i input.mkv \
+    -vf zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p \
+    -c:v libx265 -crf 18 -preset slower \
+    output.mkv
+
+[source](https://web.archive.org/web/20190722004804/https://stevens.li/guides/video/converting-hdr-to-sdr-with-ffmpeg/)
+
 # Fade out last 2 seconds of audio track
 
     :::bash
