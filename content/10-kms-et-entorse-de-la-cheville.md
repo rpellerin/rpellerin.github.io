@@ -68,3 +68,7 @@ Je mettrai à jour cet article une fois que je serai rétabli. ✌
 # Update Samedi 21 Septembre
 
 Radio passée hier soir, aucune fracture, ni de stress, ni classique. Pas d'arrachement osseux. On m'a conseillé de passer une IRM la semaine pro si la douleur ne diminue pas. Ils m'ont mis une bonne dose de Voltaren, ce qui a entre temps bien fait diminuer la douleur. Je marche mieux aujourd'hui mais boite encore, et je ne peux toujours pas me mettre sur la pointe des pieds, en équilibre sur le pied droit uniquement, hyper douloureux et j'ai l'impression de ne pas avoir la force nécessaire. Les 2 pieds au sol, je peux. Affaire à suivre la semaine pro...
+
+# Update Dimanche 22 Septembre
+
+Après une nuit de 12 heures, beaucoup beaucoup moins de douleurs, et marche presque normale, léger boitement. Ça a dégonflé un peu aussi. Je n'arrive pas encore à me dresser sur le pied droit seul, sur la pointe des pieds, de tout mon poids, mais j'y arrive avec l'aide du pied gauche mieux qu'hier ! Toujours impossible par contre de me "propulser en avant", comme si je courrais. Bref, du mieux, je crois que je vais pouvoir échapper à l'IRM. Vendredi il y a 2 jours j'avais perdu l'espoir de courir le marathon fin Octobre, aujourd'hui je reprends espoir, j'estime à 75% mes chances de le courir. ✌
