@@ -82,3 +82,7 @@ Autre nouveauté : depuis aujourd'hui, j'arrive à me dresser sur la pointe du p
 À noter, ce qui m'a bien aidé dans les derniers jours : élever ma jambe droite le plus souvent possible, même pendant les heures de travail, le but étant d'avoir la cheville plus haute que le coeur. Ça aide à faire dégonfler et partir la douleur après avoir marché un peu trop longtemps. D'ailleurs, ma cheville a bien dégonflé et est presque revenue à la normale.
 
 L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanche à allure faible, on verra. Pédaler ne me fait plus mal du tout, j'irai peut-être faire un tour de vélo aussi dimanche, ça peut que aider, et surtout ça m'aidera à maintenir ma forme. 80% de chances de courir le 27 Octobre ?
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nMovK1uMlb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/V5S1KtdShMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

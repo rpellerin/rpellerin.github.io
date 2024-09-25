@@ -21,7 +21,7 @@ When working with non mixed footage, that is only HDR or only SDR, I would recom
 # Project settings
 
 - Resolution: 3840 x 2160 (4K)
-- FPS: 25
+- FPS: 24 (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode)
 - In `Color Management`:
 
       - `Color science`: [`DaVinci YRGB Color Managed`](https://youtu.be/CTAzjAReZvs?t=638). I'm not sure what the difference is with non color managed, but I think I understood that when it's not color managed, [DaVinci assumes nothing and does not perform automatic conversation from RAW footage to timeline color space](https://youtu.be/CTAzjAReZvs?t=182). But for my use cases, Color Managed is perfect and just works.
@@ -51,7 +51,7 @@ In DaVinci Resolve, when selecting MP4 as the format, and H.265 as the code, you
 
 Then, export in 4K (3840 x 2160). If the project resolution is lower, the image will be upscaled, which will degrade the quality.
 
-Make sure the output FPS is the same as the project/timeline FPS, that is 25 FPS.
+Make sure the output FPS is the same as the project/timeline FPS, that is 24 FPS.
 
 To avoid getting too big of a file, I pick a custom bitrate of 10000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, [it is recommended to input a bigger number](https://youtu.be/oOGZ0PfDSxM?t=351). See [Youtube's official recommendations](https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate).
 
