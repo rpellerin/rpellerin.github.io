@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 25 Sep 2024 15:05:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 26 Sep 2024 00:15:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;
@@ -8,7 +8,7 @@
 &lt;h1 id="project-settings"&gt;Project settings&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Resolution: 3840 x 2160 (4K)&lt;/li&gt;
-&lt;li&gt;FPS: 25&lt;/li&gt;
+&lt;li&gt;FPS: 24 (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode)&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;In &lt;code&gt;Color Management&lt;/code&gt;:&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;code&gt;Network Optimization&lt;/code&gt;: &lt;a href="https://forum.blackmagicdesign.com/viewtopic.php?f=21&amp;amp;t=190400"&gt;this is the equivalent of &lt;code&gt;-movflags +faststart&lt;/code&gt; for &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/a&gt;. This does not change the quality of the file, nor its size, and makes playback over a network faster, so you might as well tick it.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Then, export in 4K (3840 x 2160). If the project resolution is lower, the image will be upscaled, which will degrade the quality.&lt;/p&gt;
-&lt;p&gt;Make sure the output FPS is the same as the project/timeline FPS, that is 25 FPS.&lt;/p&gt;
+&lt;p&gt;Make sure the output FPS is the same as the project/timeline FPS, that is 24 FPS.&lt;/p&gt;
 &lt;p&gt;To avoid getting too big of a file, I pick a custom bitrate of 10000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, &lt;a href="https://youtu.be/oOGZ0PfDSxM?t=351"&gt;it is recommended to input a bigger number&lt;/a&gt;. See &lt;a href="https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate"&gt;Youtube's official recommendations&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://forum.blackmagicdesign.com/viewtopic.php?p=1080855#p1080855"&gt;Do not tick "Optimize for speed".&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Encoding Profile&lt;/code&gt;: &lt;code&gt;Main10&lt;/code&gt; (no need to pick 4:2:2 as Google Pixel videos are in 4:2:0).&lt;/p&gt;
@@ -181,7 +181,10 @@
 &lt;p&gt;Premier jour où je n'ai pas mal du tout à la cheville en me levant... jusqu'à ce que j'essaye de la solliciter un peu. Je ne boite plus !!! Toujours une douleur en marchant, sur le côté droit de la cheville et au dessus du pied, mais pas suffisante/handicapante au point de me faire boiter. D'ailleurs, cette douleur sur le dessus du pied est étrange. Peut-être que c'est la douleur à droite qui irradie ? Aussi, j'ai toujours bien bien mal aux tendons du long et court fibulaires et aux muscles eux-mêmes, lorsque je croise les jambes et pose mon tibia droit sur le genou de la jambe gauche.&lt;/p&gt;
 &lt;p&gt;Autre nouveauté : depuis aujourd'hui, j'arrive à me dresser sur la pointe du pied droit seul !! J'ai même essayé de trottiner dans l'appart, je peux ! C'était impossible jusqu'à hier.&lt;/p&gt;
 &lt;p&gt;À noter, ce qui m'a bien aidé dans les derniers jours : élever ma jambe droite le plus souvent possible, même pendant les heures de travail, le but étant d'avoir la cheville plus haute que le coeur. Ça aide à faire dégonfler et partir la douleur après avoir marché un peu trop longtemps. D'ailleurs, ma cheville a bien dégonflé et est presque revenue à la normale.&lt;/p&gt;
-&lt;p&gt;L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanche à allure faible, on verra. Pédaler ne me fait plus mal du tout, j'irai peut-être faire un tour de vélo aussi dimanche, ça peut que aider, et surtout ça m'aidera à maintenir ma forme. 80% de chances de courir le 27 Octobre ?&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 17 Sep 2024 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-17:/10-kms-et-entorse-de-la-cheville.html</guid><category>Running</category><category>entorse</category><category>cheville</category><category>running</category></item><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
+&lt;p&gt;L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanche à allure faible, on verra. Pédaler ne me fait plus mal du tout, j'irai peut-être faire un tour de vélo aussi dimanche, ça peut que aider, et surtout ça m'aidera à maintenir ma forme. 80% de chances de courir le 27 Octobre ?&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nMovK1uMlb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/V5S1KtdShMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 17 Sep 2024 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-17:/10-kms-et-entorse-de-la-cheville.html</guid><category>Running</category><category>entorse</category><category>cheville</category><category>running</category></item><item><title>Running Calculators</title><link>//romainpellerin.eu/running-calculators.html</link><description>&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -5366,7 +5369,8 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="https://chown.me/blog/my-recent-journey-with-2FA.html"&gt;My recent journey with 2FA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1"&gt;The Definitive Guide to password-store&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592"&gt;Using pass in a team&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 31 Jul 2018 00:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</guid><category>Computers</category><category>password</category><category>security</category></item><item><title>Video Editing on Linux</title><link>//romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 31 Jul 2018 00:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</guid><category>Computers</category><category>password</category><category>security</category></item><item><title>Video Editing on Linux</title><link>//romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with &lt;a href="////romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html"&gt;DaVinci Resolve&lt;/a&gt;, shoot in 4K and 24 FPS (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;My smartphone&lt;/li&gt;
 &lt;li&gt;A GoPro&lt;/li&gt;
@@ -5375,7 +5379,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;p&gt;Then, I like to make video montages. But because it usually does not happen more than twice a year, I regularly forget how to make a great movie. So this article acts as a reminder for myself. I thought it could be useful to other people too, that's why I put it online.&lt;/p&gt;
 &lt;h1 id="overall-process"&gt;Overall process&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.&lt;/li&gt;
+&lt;li&gt;Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software. (&lt;strong&gt;update september 2024: I now record in 24fps on all my devices&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;Download &lt;a href="https://kdenlive.org/en/download/"&gt;Kdenlive&lt;/a&gt; for the video montage.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Extract regular videos out of 360 videos using the desktop application (&lt;a href="https://www.insta360.com/download/insta360-onex2"&gt;Insta360 STUDIO&lt;/a&gt;) from Insta360, not the mobile one, as you get better quality. Export with the following settings:&lt;/p&gt;
@@ -5384,9 +5388,10 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;When doing slow-motion: disable "Motion blur"&lt;/li&gt;
 &lt;li&gt;I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on&lt;/li&gt;
 &lt;li&gt;"Chromatic Calibration" always on&lt;/li&gt;
-&lt;li&gt;25FPS when exporting&lt;/li&gt;
+&lt;li&gt;25FPS when exporting (&lt;strong&gt;update september 2024: 24FPS&lt;/strong&gt;)&lt;/li&gt;
 &lt;li&gt;25Mbps when exporting&lt;/li&gt;
 &lt;li&gt;HEVC (H265) when exporting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;update september 2024: check Dolby Vision, to export in Rec.2020 HLG, otherwise you'll get Rec.709&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.&lt;/p&gt;
 &lt;/li&gt;

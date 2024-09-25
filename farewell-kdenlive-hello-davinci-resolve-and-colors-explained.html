@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-09-18T20:00:00+02:00">Wed 18 September 2024</time> - Last update: <time datetime="2024-09-21T13:59:00+02:00">Sat 21 September 2024</time>        </p>
+<time datetime="2024-09-18T20:00:00+02:00">Wed 18 September 2024</time> - Last update: <time datetime="2024-09-26T00:15:00+02:00">Thu 26 September 2024</time>        </p>
     <h1>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</h1>
     <div class="grey">
         <p class="italic">I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2303 words.">12 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2321 words.">12 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/kdenlive.html">kdenlive</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/davinci-resolve.html">davinci resolve</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -96,7 +96,7 @@
 <h1 id="project-settings">Project settings</h1>
 <ul>
 <li>Resolution: 3840 x 2160 (4K)</li>
-<li>FPS: 25</li>
+<li>FPS: 24 (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode)</li>
 <li>
 <p>In <code>Color Management</code>:</p>
 <ul>
@@ -124,7 +124,7 @@
 <li><code>Network Optimization</code>: <a href="https://forum.blackmagicdesign.com/viewtopic.php?f=21&amp;t=190400">this is the equivalent of <code>-movflags +faststart</code> for <code>ffmpeg</code></a>. This does not change the quality of the file, nor its size, and makes playback over a network faster, so you might as well tick it.</li>
 </ul>
 <p>Then, export in 4K (3840 x 2160). If the project resolution is lower, the image will be upscaled, which will degrade the quality.</p>
-<p>Make sure the output FPS is the same as the project/timeline FPS, that is 25 FPS.</p>
+<p>Make sure the output FPS is the same as the project/timeline FPS, that is 24 FPS.</p>
 <p>To avoid getting too big of a file, I pick a custom bitrate of 10000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, <a href="https://youtu.be/oOGZ0PfDSxM?t=351">it is recommended to input a bigger number</a>. See <a href="https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate">Youtube's official recommendations</a>.</p>
 <p><a href="https://forum.blackmagicdesign.com/viewtopic.php?p=1080855#p1080855">Do not tick "Optimize for speed".</a></p>
 <p><code>Encoding Profile</code>: <code>Main10</code> (no need to pick 4:2:2 as Google Pixel videos are in 4:2:0).</p>
@@ -221,7 +221,7 @@
 <p><a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/">Unless a monitor is labeled HDR1000, it is not true HDR.</a> <a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/">This other Reddit thread more or less says the same.</a></p>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 21 September 2024</footer>
+    Last update: Thu 26 September 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>

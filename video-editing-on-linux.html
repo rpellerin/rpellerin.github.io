@@ -77,17 +77,18 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-09-01T22:29:00+02:00">Sun 01 September 2024</time>        </p>
+<time datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time> - Last update: <time datetime="2024-09-26T00:15:00+02:00">Thu 26 September 2024</time>        </p>
     <h1>Video Editing on Linux</h1>
     <div class="grey">
         <p class="italic">How to edit videos on Linux with Kdenlive</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1190 words.">6 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1258 words.">6 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <p>When I go on holidays or do sports, I usually film with three different devices:</p>
+    <p><strong>UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with <a href="////romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html">DaVinci Resolve</a>, shoot in 4K and 24 FPS (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode).</strong></p>
+<p>When I go on holidays or do sports, I usually film with three different devices:</p>
 <ul>
 <li>My smartphone</li>
 <li>A GoPro</li>
@@ -96,7 +97,7 @@
 <p>Then, I like to make video montages. But because it usually does not happen more than twice a year, I regularly forget how to make a great movie. So this article acts as a reminder for myself. I thought it could be useful to other people too, that's why I put it online.</p>
 <h1 id="overall-process">Overall process</h1>
 <ol>
-<li>Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software.</li>
+<li>Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software. (<strong>update september 2024: I now record in 24fps on all my devices</strong>)</li>
 <li>Download <a href="https://kdenlive.org/en/download/">Kdenlive</a> for the video montage.</li>
 <li>
 <p>Extract regular videos out of 360 videos using the desktop application (<a href="https://www.insta360.com/download/insta360-onex2">Insta360 STUDIO</a>) from Insta360, not the mobile one, as you get better quality. Export with the following settings:</p>
@@ -105,9 +106,10 @@
 <li>When doing slow-motion: disable "Motion blur"</li>
 <li>I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on</li>
 <li>"Chromatic Calibration" always on</li>
-<li>25FPS when exporting</li>
+<li>25FPS when exporting (<strong>update september 2024: 24FPS</strong>)</li>
 <li>25Mbps when exporting</li>
 <li>HEVC (H265) when exporting</li>
+<li><strong>update september 2024: check Dolby Vision, to export in Rec.2020 HLG, otherwise you'll get Rec.709</strong></li>
 </ul>
 <p>Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.</p>
 </li>
@@ -233,7 +235,7 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
 <p>That's about it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Sun 01 September 2024</footer>
+    Last update: Thu 26 September 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
