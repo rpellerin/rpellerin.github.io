@@ -72,3 +72,13 @@ Radio passée hier soir, aucune fracture, ni de stress, ni classique. Pas d'arra
 # Update Dimanche 22 Septembre
 
 Après une nuit de 12 heures, beaucoup beaucoup moins de douleurs, et marche presque normale, léger boitement. Ça a dégonflé un peu aussi. Je n'arrive pas encore à me dresser sur le pied droit seul, sur la pointe des pieds, de tout mon poids, mais j'y arrive avec l'aide du pied gauche mieux qu'hier ! Toujours impossible par contre de me "propulser en avant", comme si je courrais. Bref, du mieux, je crois que je vais pouvoir échapper à l'IRM. Vendredi il y a 2 jours j'avais perdu l'espoir de courir le marathon fin Octobre, aujourd'hui je reprends espoir, j'estime à 75% mes chances de le courir. ✌
+
+# Update Mercredi 25 Septembre
+
+Premier jour où je n'ai pas mal du tout à la cheville en me levant... jusqu'à ce que j'essaye de la solliciter un peu. Je ne boite plus !!! Toujours une douleur en marchant, sur le côté droit de la cheville et au dessus du pied, mais pas suffisante/handicapante au point de me faire boiter. D'ailleurs, cette douleur sur le dessus du pied est étrange. Peut-être que c'est la douleur à droite qui irradie ? Aussi, j'ai toujours bien bien mal aux tendons du long et court fibulaires et aux muscles eux-mêmes, lorsque je croise les jambes et pose mon tibia droit sur le genou de la jambe gauche.
+
+Autre nouveauté : depuis aujourd'hui, j'arrive à me dresser sur la pointe du pied droit seul !! J'ai même essayé de trottiner dans l'appart, je peux ! C'était impossible jusqu'à hier.
+
+À noter, ce qui m'a bien aidé dans les derniers jours : élever ma jambe droite le plus souvent possible, même pendant les heures de travail, le but étant d'avoir la cheville plus haute que le coeur. Ça aide à faire dégonfler et partir la douleur après avoir marché un peu trop longtemps. D'ailleurs, ma cheville a bien dégonflé et est presque revenue à la normale.
+
+L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanche à allure faible, on verra. Pédaler ne me fait plus mal du tout, j'irai peut-être faire un tour de vélo aussi dimanche, ça peut que aider, et surtout ça m'aidera à maintenir ma forme. 80% de chances de courir le 27 Octobre ?
