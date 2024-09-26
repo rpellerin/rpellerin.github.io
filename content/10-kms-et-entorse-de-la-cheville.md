@@ -86,3 +86,7 @@ L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanc
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nMovK1uMlb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/V5S1KtdShMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/KgF2h1P7_SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/GaxZiRYvMBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
