@@ -9,15 +9,15 @@ Image: running-training-plan.jpg
 
 # Goal
 
-W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app [Campus Coach](https://www.campus.coach/) for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build but after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time and adjust it over time as progress is made.
+W-13 until my first marathon ever. Time to start an actual training plan. Since the beginning of 2024, I was using the app [Campus Coach](https://www.campus.coach/) for that. It's pretty good but far from perfect. It's also subscription-based, 15 euros per month (they do have a freemium version but it's too limited). They ask you many questions to customize the plan they build. However, after it's been created, I found it not flexible enough. For instance, it's not possible to postpone a session. Also, one cannot set a goal finish time for a race, instead the app will give an estimated finish time (based on their estimated MAS) and adjust it over time as progress is made.
 
 Anyways, it was not perfect, so I decided to look for an alternative. And I found [Kiprun Pacer](https://www.decathlon-pacer.com/), from Decathlon. Pretty different approach, it lets you drive your training more, and the sessions suggested are quite different. For instance, one can set their goal finish time. Also, it's free.
 
-So I thought I'd fully explore and use these 2 apps to the fullest one after the other, for 2 races, hence 2 training plans and compare them. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.
+So I thought I'd fully compare these 2 apps. Ultimately as I do so, my goal is to understand how plans are created, what to adjust to make them truly personalized, so that I can build my own plans in the future, without any app, paid or free. I want my plans to be flexibile, I want them to adjust to my week schedule changes, not the other way around.
 
-I'll start with Kiprun Pacer until October, and then from January until April 2025 I'll be using Campus Coach.
+Since I've used Campus Coach for quite some time until August, I'll start using Kiprun Pacer from now on.
 
-# Aug-Oct 2024: Kiprun Pacer
+# Kiprun Pacer
 
 I set up my plan with the following parameters:
 
@@ -58,7 +58,7 @@ In the plan that the app crafts, their "endurance active" zone ranges from 65% t
 - The sharpening (i.e taper) phase of my 13-week plan was **a bit long and way too brutal**. The decrease in kilometers is too big and too sudden. Week 10: 77.48 kms. Week 11: 42.09 kms. Week 12: 36.19 kms. Week 13 (race week): 15.13 kms.
 - The sessions are built based on your MAS and your goal finish time. On one hand, it's nice to be working towards that goal, on the other hand if both values are not compatible (low MAS + ambitious goal, or high MAS + "easy" goal like 5 hours), the app won't complain and you'll end up with too slow and too fast runs. Fortunately for me, both my MAS and goal time are compatible.
 
-# Jan-Mar 2025: Campus Coach (paid version)
+# Campus Coach (paid version)
 
 ## Pros
 
@@ -66,7 +66,8 @@ In the plan that the app crafts, their "endurance active" zone ranges from 65% t
 
 ## Cons
 
-- The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time, and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.
+- The app does not let you set a goal finish time at the beginning of a plan. Instead it gives you an estimated time (based on their estimated MAS), and adjusts it as you make progress. The runs at specific pace are set to the ideal pace for you according to the app, not your goal pace. That sucks.
+- They estimate your MAS, they don't have you do a real test to know a value. Not sure how, maybe they estimate based on your records that the app asks you about, and your recent runs.
 - After a run, even if the app is connected to your Garmin account, you have to manually "validate the session", i.e. match your run in Garmin with a session in your plan in the app. A couple of more clicks, avoidable. Then it asks questions, like the Kiprun app, only less.
 
 # Conclusion: how training plans for a marathon are built

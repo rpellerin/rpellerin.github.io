@@ -90,3 +90,9 @@ L'espoir continue de revenir, j'envisage peut être un mini run (1km?) ce dimanc
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/KgF2h1P7_SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/GaxZiRYvMBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Update Vendredi 27 Septembre
+
+3ième jour sans boiter et presque aucune douleur aujourd'hui. C'est encore un peu gonflé. Toujours une légère douleur de fond, persistante, sur le dessus du pied. Je peux marcher et trottiner, sans douleur supplémentaire. En terme de mobilité, j'ai bien perdu à droite. Pied au sol, je peux facilement avancer mon genou de la jambe gauche vers l'avant, en flexion, par contre à droite je parcours à peine la moitié de la distance de gauche. Je vais travailler ça dans les prochains jours, et ainsi que ma propriocéption. J'ai aussi toujours cette douleur aux muscles fibulaires de droite, quand je pose la jambe sur le genou gauche. Chiant.
+
+Bien sûr je n'ai pas sû résister et attendre dimanche, je suis sorti courir 2 kms aujourd'hui, à faible allure. En courant, absolument aucune douleur. Une fois rentré par contre, la douleur s'est reveillée et a atteint un bon 3/10, presque uniquement sur le côté droit de la cheville vers la malléole. À voir si c'est temporaire juste ce soir, ou si ça perdure demain. Ça me refait douter pour le marathon. Dimanche, je ferai pas le fou, et selon la douleur (ou non) au réveil, je retenterai l'expérience d'aller courir 2 kms.
