@@ -391,10 +391,12 @@ Couper ongles
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
-Samedi : shake-out run avec 1km à allure
+Si je dors à l'hôtel, emmener mon propre dîner pour samedi soir (pâtes) et petit-déj du dimanche
+Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
 Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
+Dimanche matin : petit-déj AU MOINS 2h avant la course
 Dimanche matin : noter dans la main
   Warm up
   Montre en mode pace sur distance un peu plus longue
