@@ -112,3 +112,19 @@ C'est décidé, à partir de mercredi dans 2 jours je reprends mon programme, av
 Ce qui est sûr à 99%, c'est que je prendrai le départ de mon premier marathon ce 27 octobre. La grande inconnue qui me fait peur, c'est est-ce que ma cheville tiendra les 42 kms sans me faire mal, sans réveiller la douleur ? Comme ce fût le cas il y a 2 semaines, lors de ma sortie longue de 25 kms (courue à 5'28"/km en moyenne, donc plus lentement que mon pace marathon). C'est là que mon entorse qui était en voie de guérison s'est aggravée, au point de ne plus pouvoir marcher la semaine suivante. D'ici là, maxi renforcement musculaire, j'élève ma jambe aussi souvent que possible (un mini gonflement persiste, mais vraiment minime), exercices d'équilibre et de propriocéption tous les jours. Et de la marche aussi. Et gros focus sur le sommeil, on vise 8h toutes les nuits. On y croit 💪. Let's go!!! Si pas de nouvelle ici, c'est que tout va bien.
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CjwobnRKk-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# Update Jeudi 3 Octobre
+
+Tout va bien ! Hier reprise du programme d'entraînement, aucune douleur pendant la sortie, en rentrant légère douleur mais disparue aujourd'hui, après une nuit de 10h. D'ailleurs cet après-midi, 8.75 kms courus en endurance fondamentale avec quelques accélérations autour de 4'00"/km, aucune douleur. En rentrant, aucune douleur non plus. Demain, séance VMA prévue. La semaine dernière je m'étais dit que je sauterais les séances VMA mais j'ai finalement bien envie de les faire au vu de la vitesse à laquelle je récupère, dans l'espoir d'améliorer mes performances. L'occasion aussi de tester les nouvelles chaussures à haute vitesse. Bien sûr je couperai si douleur.
+
+Ah et d'ailleurs la douleur aux fibulaires a complétement disparu. J'essaie tous les jours de faire mes exercices. La mobilité revient petit à petit, notamment la flexion vers avant, dans l'axe. Comparé à la jambe gauche, mon genou avance de 4-5 cm de moins, mais ça s'améliore tous les jours.
+
+En bref, les exercices que je fais :
+
+- Flexion genou vers l'avant, jambe gauche jusqu'à toucher le mur, jambe droite en essayant aussi mais pour le moment il manque quelques cms.
+- [Avec un élastique, pivoter le pied vers l'extérieur en résistance, pour faire travailler les fibulaires](https://www.youtube.com/watch?v=V5S1KtdShMM&t=450s)
+- Protocole de Stanish pour faire travailler les mollets
+- Des sauts sur un pied avec stabilisation pour travailler l'équilibre
+- [Faire la pendule avec le pied gauche, en appui sur le pied droit](https://www.youtube.com/watch?v=GaxZiRYvMBY&t=149s)
+
+Ça s'annonce très bon pour le 27 !
