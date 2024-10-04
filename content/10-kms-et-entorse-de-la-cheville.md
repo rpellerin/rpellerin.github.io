@@ -128,3 +128,15 @@ En bref, les exercices que je fais :
 - [Faire la pendule avec le pied gauche, en appui sur le pied droit](https://www.youtube.com/watch?v=GaxZiRYvMBY&t=149s)
 
 Ça s'annonce très bon pour le 27 !
+
+# Update Vendredi 4 Octobre
+
+La séance VMA est passée crême, même si c'était la plus dure que j'ai jamais faite ! Aucune douleur. Limite j'ai des douleurs naissantes dans la jambe gauche (l'autre donc), vers le tibia. Super 😆 !
+
+![Screenshot sur Strava]({static}/images/intervals.png)
+
+J'ai découvert ce soir un nouveau protocole, hyper récent, pour évaluer l'abilité de quelqu'un à retourner au sport après une entorse : [Ankle-GO](https://anklego.com/). Pas sûr que je fasse le test mais hyper intéressant.
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vA9aKCbLcs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Dimanche, tous les voyants sont verts pour tenter les 31 kms.
