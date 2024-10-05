@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 05 Oct 2024 00:43:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 05 Oct 2024 14:43:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;
@@ -613,7 +613,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
         &lt;h3&gt;Pace goal on the watch = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
         &lt;ul&gt;
                 &lt;li&gt;Projected finish time with no margin of error (100% accurate GPS): &lt;strong&gt;&lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-                &lt;li&gt;Projected finish time with margin of error &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;Projected finish time with a &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
                 &lt;li&gt;Speed: &lt;strong&gt;&lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/strong&gt;&lt;/li&gt;
         &lt;/ul&gt;
         &lt;h3&gt;Nutrition&lt;/h3&gt;
@@ -658,10 +658,10 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds).valueWithQuotes
                 document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
-                const marginOfErrorInPercent = 1.3
+                const marginOfErrorInPercent = 1.5
                 const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
                 const kmsWithError = (kms*marginOfError).toFixed(3)
-                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `(${kmsWithError} kms, error = ${marginOfErrorInPercent}%): &lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt;`
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `${marginOfErrorInPercent}% margin of error (${kmsWithError} kms): &lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt;`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 

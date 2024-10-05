@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 05 Oct 2024 00:43:00 +0200</lastBuildDate><item><title>10 kms et Entorse de la cheville</title><link>//romainpellerin.eu/10-kms-et-entorse-de-la-cheville.html</link><description>&lt;p&gt;Et bien voilà, deuxième grosse blessure de 2024. Après &lt;a href="////romainpellerin.eu/periostite-2024.html"&gt;une périostite tenace&lt;/a&gt;, qui aura duré de début avril à fin août (il y a quelques semaines donc!), me voilà avec une nouvelle blessure à la jambe droite (encore!) : entorse de la cheville.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 05 Oct 2024 14:43:00 +0200</lastBuildDate><item><title>10 kms et Entorse de la cheville</title><link>//romainpellerin.eu/10-kms-et-entorse-de-la-cheville.html</link><description>&lt;p&gt;Et bien voilà, deuxième grosse blessure de 2024. Après &lt;a href="////romainpellerin.eu/periostite-2024.html"&gt;une périostite tenace&lt;/a&gt;, qui aura duré de début avril à fin août (il y a quelques semaines donc!), me voilà avec une nouvelle blessure à la jambe droite (encore!) : entorse de la cheville.&lt;/p&gt;
 &lt;p&gt;Dimanche il y a 9 jours, le 8 Septembre donc, je participais à une course de 10 kms, le Tierparklauf de Berlin. Première course de 10 kms pour moi. Je visais sub 40 minutes tout en sachant que c'était très ambitieux.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="////romainpellerin.eu/images/entorse-de-la-cheville/race-predictor.jpg" alt="Prédictions de Garmin" /&gt;
@@ -482,7 +482,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
         &lt;h3&gt;Pace goal on the watch = &lt;span id="race_pace_goal"&gt;?&lt;/span&gt;&lt;/h3&gt;
         &lt;ul&gt;
                 &lt;li&gt;Projected finish time with no margin of error (100% accurate GPS): &lt;strong&gt;&lt;span id="race_pace_goal_finish_time"&gt;?&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-                &lt;li&gt;Projected finish time with margin of error &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
+                &lt;li&gt;Projected finish time with a &lt;span id="race_pace_goal_finish_time_margin_error"&gt;?&lt;/span&gt;&lt;/li&gt;
                 &lt;li&gt;Speed: &lt;strong&gt;&lt;span id="race_pace_goal_speed"&gt;/&lt;/span&gt; km/h&lt;/strong&gt;&lt;/li&gt;
         &lt;/ul&gt;
         &lt;h3&gt;Nutrition&lt;/h3&gt;
@@ -527,10 +527,10 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds).valueWithQuotes
                 document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
-                const marginOfErrorInPercent = 1.3
+                const marginOfErrorInPercent = 1.5
                 const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
                 const kmsWithError = (kms*marginOfError).toFixed(3)
-                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `(${kmsWithError} kms, error = ${marginOfErrorInPercent}%): &lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt;`
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `${marginOfErrorInPercent}% margin of error (${kmsWithError} kms): &lt;strong&gt;${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}&lt;/strong&gt;`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 

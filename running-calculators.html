@@ -77,12 +77,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-08-24T13:00:00+02:00">Sat 24 August 2024</time> - Last update: <time datetime="2024-10-02T19:55:00+02:00">Wed 02 October 2024</time>        </p>
+<time datetime="2024-08-24T13:00:00+02:00">Sat 24 August 2024</time> - Last update: <time datetime="2024-10-05T14:43:00+02:00">Sat 05 October 2024</time>        </p>
     <h1>Running Calculators</h1>
     <div class="grey">
         <p class="italic">A bunch of calculators for runners</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2122 words.">11 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2121 words.">11 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/running.html">Running</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/training.html">training</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/marathon.html">marathon</a></p>    </div>
 </header>
@@ -480,7 +480,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
         <h3>Pace goal on the watch = <span id="race_pace_goal">?</span></h3>
         <ul>
                 <li>Projected finish time with no margin of error (100% accurate GPS): <strong><span id="race_pace_goal_finish_time">?</span></strong></li>
-                <li>Projected finish time with margin of error <span id="race_pace_goal_finish_time_margin_error">?</span></li>
+                <li>Projected finish time with a <span id="race_pace_goal_finish_time_margin_error">?</span></li>
                 <li>Speed: <strong><span id="race_pace_goal_speed">/</span> km/h</strong></li>
         </ul>
         <h3>Nutrition</h3>
@@ -525,10 +525,10 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds).valueWithQuotes
                 document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
-                const marginOfErrorInPercent = 1.3
+                const marginOfErrorInPercent = 1.5
                 const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
                 const kmsWithError = (kms*marginOfError).toFixed(3)
-                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `(${kmsWithError} kms, error = ${marginOfErrorInPercent}%): <strong>${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}</strong>`
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `${marginOfErrorInPercent}% margin of error (${kmsWithError} kms): <strong>${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}</strong>`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 
@@ -599,7 +599,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 </script>
 </article>
 <footer class="grey italic small">
-    Last update: Wed 02 October 2024</footer>
+    Last update: Sat 05 October 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
