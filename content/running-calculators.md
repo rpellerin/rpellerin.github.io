@@ -412,7 +412,7 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
         <h3>Pace goal on the watch = <span id="race_pace_goal">?</span></h3>
         <ul>
                 <li>Projected finish time with no margin of error (100% accurate GPS): <strong><span id="race_pace_goal_finish_time">?</span></strong></li>
-                <li>Projected finish time with margin of error <span id="race_pace_goal_finish_time_margin_error">?</span></li>
+                <li>Projected finish time with a <span id="race_pace_goal_finish_time_margin_error">?</span></li>
                 <li>Speed: <strong><span id="race_pace_goal_speed">/</span> km/h</strong></li>
         </ul>
         <h3>Nutrition</h3>
@@ -458,10 +458,10 @@ Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
 
                 document.querySelector('#race_sheet #race_pace_goal').innerText = secondsToTime(paceInSeconds).valueWithQuotes
                 document.querySelector('#race_sheet #race_pace_goal_finish_time').innerHTML = paceInSecondsToFinishTime(paceInSeconds, kms)
-                const marginOfErrorInPercent = 1.3
+                const marginOfErrorInPercent = 1.5
                 const marginOfError = ((marginOfErrorInPercent + 100) / 100).toFixed(3)
                 const kmsWithError = (kms*marginOfError).toFixed(3)
-                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `(${kmsWithError} kms, error = ${marginOfErrorInPercent}%): <strong>${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}</strong>`
+                document.querySelector('#race_pace_goal_finish_time_margin_error').innerHTML = `${marginOfErrorInPercent}% margin of error (${kmsWithError} kms): <strong>${paceInSecondsToFinishTime(paceInSeconds, kmsWithError)}</strong>`
                 document.querySelector('#race_sheet #race_pace_goal_speed').innerText = paceInSecondsToSpeed(paceInSeconds)
         }
 
