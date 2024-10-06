@@ -140,3 +140,7 @@ J'ai découvert ce soir un nouveau protocole, hyper récent, pour évaluer l'abi
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vA9aKCbLcs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Dimanche, tous les voyants sont verts pour tenter les 31 kms.
+
+# Update Dimanche 6 Octobre
+
+Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!
