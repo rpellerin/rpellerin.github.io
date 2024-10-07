@@ -41,7 +41,7 @@ Summary: A bunch of calculators for runners
 
 (MAS is _VMA_ in French)
 
-There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones. Here are two scales that I personnally use. They work for me, they might not for you.
+[There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones.](https://youtu.be/4QhT_6YgOuI?t=1861) Here are two scales that I personnally use. They work for me, they might not for you.
 
 The first table is greatly inspired by [this one](https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel), even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, `(percent of MAS plus 5 to 10) = percent of your HRmax` (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula `percent of MAS + 5 = percent of HRmax`.
 
