@@ -391,7 +391,7 @@ Couper ongles
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
-Si je dors à l'hôtel, emmener mon propre dîner pour samedi soir (pâtes) et petit-déj du dimanche
+Si je dors à l'hôtel, emmener un sharpie + mon propre dîner pour samedi soir (pâtes) et petit-déj du dimanche
 Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
 Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
