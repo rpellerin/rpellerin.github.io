@@ -47,7 +47,7 @@ Other commands exist such as `pdfseparate` and `pdfunite`. They are very good bu
     pdftk input.pdf burst
     # OR
     file=input.pdf
-    pages=$(pdfinfo "$file" | grep "Pages" | awk '{print $2}') 
+    pages=$(pdfinfo "$file" | grep "Pages" | awk '{print $2}')
     echo "Detect $pages in $file";
     filename="${file%.*}";
     for i in $(seq -w 1 "$pages"); do
@@ -57,6 +57,11 @@ Other commands exist such as `pdfseparate` and `pdfunite`. They are very good bu
 # Editing one page
 
 Use Gimp (import with 300-dpi setting).
+
+# Add a watermark to multiple PDF files
+
+    :::bash
+    mkdir -p out; for f in *.pdf; do convert -density 150 "$f" -pointsize 60 -draw "gravity center fill #FF000080 rotate -20 text 0,12 'Copy for XYZ' " -draw "gravity South fill #FF000080 rotate -20 text 0,12 'Copy for XYZ' " -draw "gravity North fill #FF000080 rotate -20 text 0,12 'Copy for XYZ' "  -quality 80 "out/$f"; done
 
 # Merging several PDF files
 
