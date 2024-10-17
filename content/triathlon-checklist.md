@@ -8,7 +8,7 @@ Summary: My checklist of things to take for a triathlon
 
 # Overall
 
-- Trisuit
+- Trisuit (my favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1)
 - Sport socks
 - Smartwatch (charged!)
 - Gels
