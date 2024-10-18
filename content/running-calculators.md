@@ -379,9 +379,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 <div>
 <label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (50g+ of carbohydrates per hour is the recommendation, or better, <a href="https://youtu.be/mu7celO4IEE?t=237">your body weight = 75 kgs→eat 75 grams</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
-1x Gel Caf 100 - 5 mins avant course
-1x Gel 100     - au KM 4.5 (eau à 5.5)
-1x Gel 100     - au KM 9 (eau à 10)
+1x Gel 100 toutes les 20 mins
 </textarea>
 </div>
 <div>
