@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-10-18T13:11:00+02:00</updated><entry><title>Barefoot Shoes</title><link href="//romainpellerin.eu/barefoot-shoes.html" rel="alternate"></link><published>2024-10-18T00:00:00+02:00</published><updated>2024-10-18T00:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-10-18:/barefoot-shoes.html</id><summary type="html">&lt;p&gt;A list of barefoot shoes to consider&lt;/p&gt;</summary><content type="html">&lt;p&gt;Tiny article here to say that I'm buying barefoot shoes (a.k.a minimalist shoes) for everyday use! Why? To strength my feet while walking, apparently on the long term these shoes help prevent running injuries. I'll start rotating my shoes, between my classic sneakers and these new barefoot shoes. Running-wise, I'll stick to big cushioned shoes for now.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="//romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>//romainpellerin.eu/</id><updated>2024-10-18T13:28:00+02:00</updated><entry><title>Barefoot Shoes</title><link href="//romainpellerin.eu/barefoot-shoes.html" rel="alternate"></link><published>2024-10-18T00:00:00+02:00</published><updated>2024-10-18T00:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-10-18:/barefoot-shoes.html</id><summary type="html">&lt;p&gt;A list of barefoot shoes to consider&lt;/p&gt;</summary><content type="html">&lt;p&gt;Tiny article here to say that I'm buying barefoot shoes (a.k.a minimalist shoes) for everyday use! Why? To strength my feet while walking, apparently on the long term these shoes help prevent running injuries. I'll start rotating my shoes, between my classic sneakers and these new barefoot shoes. Running-wise, I'll stick to big cushioned shoes for now.&lt;/p&gt;
 &lt;p&gt;After hours spent researching the web, here a list of shoes I considered/am considering for the future, in no particular order:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.feelgrounds.com/collections/shoes"&gt;Feelgrounds&lt;/a&gt;&lt;/li&gt;
@@ -236,7 +236,7 @@
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-10-18T13:11:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="//romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-10-18T13:28:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -596,9 +596,7 @@
 &lt;div&gt;
 &lt;label for="nutrition_plan"&gt;&lt;a href="https://www.youtube.com/watch?v=COrTo5DUvuo"&gt;Nutrition&lt;/a&gt; &lt;a href="https://www.maurten.com/fuelguide/"&gt;plan&lt;/a&gt; (50g+ of carbohydrates per hour is the recommendation, or better, &lt;a href="https://youtu.be/mu7celO4IEE?t=237"&gt;your body weight = 75 kgs→eat 75 grams&lt;/a&gt;):&lt;/label&gt;&lt;br /&gt;
 &lt;textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50"&gt;
-1x Gel Caf 100 - 5 mins avant course
-1x Gel 100     - au KM 4.5 (eau à 5.5)
-1x Gel 100     - au KM 9 (eau à 10)
+1x Gel 100 toutes les 20 mins
 &lt;/textarea&gt;
 &lt;/div&gt;
 &lt;div&gt;
