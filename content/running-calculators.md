@@ -377,7 +377,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 <div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:54"/></div>
 <div><label for="bib_number_pickup_date">Bib number pickup date and time:</label> <input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /></div>
 <div>
-<label for="nutrition_plan"><a href="https://www.maurten.com/fuelguide/">Nutrition plan</a> (50g+ of carbohydrates per hour is the recommendation, or better, <a href="https://youtu.be/mu7celO4IEE?t=237">your body weight = 75 kgs→eat 75 grams</a>):</label><br />
+<label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (50g+ of carbohydrates per hour is the recommendation, or better, <a href="https://youtu.be/mu7celO4IEE?t=237">your body weight = 75 kgs→eat 75 grams</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
 1x Gel Caf 100 - 5 mins avant course
 1x Gel 100     - au KM 4.5 (eau à 5.5)
