@@ -13,3 +13,8 @@ I just wanted to write this here for the record. So it'll be a short article. It
 I'm not worried about the right leg, I feel nothing while walking/sitting, and barely feels it while running. It's the left leg that worries me a little, but it all seems to be muscle-related, nothing to do with bones or tendons (I think!). Possible reasons? The 11 days off running I took to allow my ankle to recover... then I basically went all-in again to catch up on my training plan. Also, that session on the 4th of October was truly hard and intense, probably the hardest I ever did. And with still fairly new shoes (the Asics METASPEED SKY PARIS). So you know... nothing new really.
 
 I have not lost hope regarding the marathon in 10 days. Two Sundays ago I ran 31 kms with that pain, it remained constant throughout the run and was bearable. And again last Sunday, 25 kms, constant and bearable, not increasing. It should work the same over 42 kms. Then I'll take all of November completely off, hoping to start fresh again in December, injury free for good this time.
+
+# Things to do to help recover
+
+- [Massage the lower leg with a massage roller as often as possible, foot/toes towards one's self, so as to extend the calf muscles, and after that, classic calf stretching. Do this ideally on a rest day.](https://sebmena.fr/2019/09/13/reeducation-du-soleaire/)
+- [Stanish Protocol, focused on the descent (when lowering the heel, nice and slowly). Raise yourself on two feet, then lower yourself only on the leg that is injured, as low as possible.](https://sebmena.fr/2019/09/26/tendons-dachille-et-soleaires-la-suite/)
