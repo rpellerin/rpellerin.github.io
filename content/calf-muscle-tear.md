@@ -18,3 +18,15 @@ I have not lost hope regarding the marathon in 10 days. Two Sundays ago I ran 31
 
 - [Massage the lower leg with a massage roller as often as possible, foot/toes towards one's self, so as to extend the calf muscles, and after that, classic calf stretching. Do this ideally on a rest day.](https://sebmena.fr/2019/09/13/reeducation-du-soleaire/)
 - [Stanish Protocol, focused on the descent (when lowering the heel, nice and slowly). Raise yourself on two feet, then lower yourself only on the leg that is injured, as low as possible.](https://sebmena.fr/2019/09/26/tendons-dachille-et-soleaires-la-suite/)
+
+# UPDATE: 2024-10-22
+
+Ran 13 kms today, from slow to marathon pace. There is definitely some improvement. My right leg is 100% fine again, no more pain. The left one, it's a different story. The painful spot I had in the back of the calf, just at the beginning of the Achilles tendon is gone, but the pain in the inner side of the calf remains (I still believe it comes from the soleus muscle). Oddly enough, the pain originated at the spot lower in the leg today. The pain started at 2/10, increased to 4/10, around km 6 or 7 I had a burst of pain, a flare, as if my soleus was being stabbed. Very brief. After that, the pain dropped to 1 or 2/10 until the end of the run, barely noticeable, and definitely manageable.
+
+Things I did recently that may have helped:
+
+- I did not run at all in the previous 3 days
+- I bought a massage gun last weekend
+- Today I wore compression socks that are tighter than the ones I usually wear
+
+I'm confident for Sunday 🤞.

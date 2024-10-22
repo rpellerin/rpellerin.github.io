@@ -61,4 +61,8 @@ Since April, quite a lot happened. First of all, soon after running these 22 kms
 
 ## UPDATE: 2024-04-14
 
-I think I'm 100% healed. In November last year, I bought the Asics Gel-Kayano 30 shoes (they're stability shoes) and increased my running frequency significantly. I'm averaging 25 kms per week these days. No more pain at all, not in the morning, not thoughout the day. I still "feel" traces of that injury though, as if my foot remained a bit weaker than my other foot. I guess it'll stay like that for life, or at least many years. But no more pain at all. Just ran Berlin's half marathon last week, felt great, I even PR'd: 1:41:51!
+I think I'm 100% healed. Since the beginning of 2024. In November last year, I bought the Asics Gel-Kayano 30 shoes (they're stability shoes) and increased my running frequency significantly. I'm averaging 25 kms per week these days. No more pain at all, not in the morning, not thoughout the day. I still "feel" traces of that injury though, as if my foot remained a bit weaker than my other foot. I guess it'll stay like that for life, or at least many years. But no more pain at all. Just ran Berlin's half marathon last week, felt great, I even PR'd: 1:41:51!
+
+## UPDATE: 2024-10-22
+
+Those "traces" I was mentioning just above, they're gone. Completely. Since many months ago, can't remember when exactly. So all in all, this injury took 2 years to FULLY heal.
