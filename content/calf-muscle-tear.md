@@ -18,6 +18,7 @@ I have not lost hope regarding the marathon in 10 days. Two Sundays ago I ran 31
 
 - [Massage the lower leg with a massage roller as often as possible, foot/toes towards one's self, so as to extend the calf muscles, and after that, classic calf stretching. Do this ideally on a rest day.](https://sebmena.fr/2019/09/13/reeducation-du-soleaire/)
 - [Stanish Protocol, focused on the descent (when lowering the heel, nice and slowly). Raise yourself on two feet, then lower yourself only on the leg that is injured, as low as possible.](https://sebmena.fr/2019/09/26/tendons-dachille-et-soleaires-la-suite/)
+- [PEACE & LOVE : nouvel acronyme de traitement des lésions traumatiques](https://lacliniqueducoureur.com/coureurs/blogue/archives/peace-love-nouvel-acronyme-de-traitement-des-lesions-traumatiques/)
 
 # UPDATE: 2024-10-22
 
