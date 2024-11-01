@@ -164,7 +164,7 @@ Au km 6, après plusieurs côtes dans "la nouvelle ville" de Dresden, le parcour
 
 Le reste du parcours était relativement plat. Strava m'indique que nous avons eu 171m de dénivelé positif. Nous sommes restés avec les semi-marathoniens jusqu'au km 17.5. Jusque-là c'était relativement dense, et tout d'un coup presque plus personne. Je trouve un français juste devant, encouragé par sa famille sur le côté - c'est comme ça que je j'ai su qu'il était français. Après s'être salués, nous courons ensemble 1 ou 2 kilomètres, dans le silence, sans parler. Puis petit à petit il me distance. Il devait courir 2 ou 3 secondes de moins que moi au kilomètre. Je finirai la course 32 secondes après lui.
 
-Après avoir parcouru 21 kilomètres, on fait une deuxième boucle pas tout à fait similaire à la première, jusqu'à l'arrivée. Le reste du parcours est sympa, hormis quelques kilomètres courus dans des petites rues où il s'agissait de faire demi-tour au bout et revenir sur nos pas. Les derniers kilomètres sont chouettes et se font à longer le bord de l'Elbe puis traversent la vieille ville, avec de passer la ligne d'arrivée exactement devant notre hôtel.
+Après avoir parcouru 21 kilomètres, on fait une deuxième boucle pas tout à fait similaire à la première, jusqu'à l'arrivée. Le reste du parcours est sympa, hormis quelques kilomètres courus dans des petites rues où il s'agissait de faire demi-tour au bout et revenir sur nos pas. Les derniers kilomètres sont chouettes et se font à longer le bord de l'Elbe puis traversent la vieille ville, avant de passer la ligne d'arrivée exactement devant notre hôtel.
 
 # Douleurs pendant la course
 
