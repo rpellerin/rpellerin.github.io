@@ -396,10 +396,10 @@ Samedi : accrocher bib number au dossard et tout préparer pour être prêt à p
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : petit-déj AU MOINS 2h avant la course
 Dimanche matin : noter dans la main
-  Warm up
-  Montre en mode pace sur distance un peu plus longue
+  Montre en mode pace sur distance 42.75kms
   Water/Feeding station/WC: Km 5, 10, etc
-Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons
+Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons et bouteille d'eau pour boire avant le départ
+Dimanche matin : warm up de 2km avant départ
 </textarea>
 </div>
 </div>
