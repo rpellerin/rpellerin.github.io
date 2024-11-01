@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="{% if not description %}{% set description = DESCRIPTION %}{% endif %}{{ description }}" />
-        <meta property="og:image" name="twitter:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="{% if not title %}{% set title = SITENAME %}{% endif %}{{ title }}" />
-        <meta property="og:description" name="twitter:description" content="{{ description }}" />
+        <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="{% if not title %}{% set title = SITENAME %}{% endif %}{{ title }}" />
+        <meta property="og:description" content="{{ description }}" />
 
         <title>{{ title }}</title>
 
