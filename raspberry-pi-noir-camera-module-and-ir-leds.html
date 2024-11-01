@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Raspberry Pi NoIR camera module and IR LEDs - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Raspberry Pi NoIR camera module and IR LEDs - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs" />
 
         <title>Raspberry Pi NoIR camera module and IR LEDs - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -84,7 +82,7 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1054 words.">5 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/camera.html">camera</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/camera.html">camera</a></p>    </div>
 </header>
 <article>
     <p>Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest <a href="https://www.raspberrypi.com/products/camera-module-3/">camera module v3</a>, in its NoIR (no infrared filter) edition.</p>
@@ -121,7 +119,7 @@ This is usually much higher than the forward voltage. As with forward voltage, a
 <p>With an LED it's the amount of current flowing through it that determines how bright it is. Increasing the voltage increases the current, yes, but the region where that happens without the current getting too much is very small.<br>
 So we control the current instead of the voltage, and take the forward voltage as a fixed value. By either including a resistor in the circuit to fill the gap between the supply voltage and the forward voltage, limiting the current in the process [...]</p>
 </blockquote>
-<p><figure class="center"><img alt="LED: amperage and voltage" src="////romainpellerin.eu/images/led.png" /></figure></p>
+<p><figure class="center"><img alt="LED: amperage and voltage" src="https://romainpellerin.eu/images/led.png" /></figure></p>
 </li>
 <li>
 <p>Extracts from <a href="https://www.ledsupply.com/blog/wiring-leds-correctly-series-parallel-circuits-explained/">LEDsupply.com</a>:</p>
@@ -160,12 +158,12 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 <h1 id="what-i-ended-up-doing">What I ended up doing</h1>
 <p>In the end, I bought two <a href="https://www.reichelt.de/de/en/ir-led-black-40-5-mm-sfh-4546-p146652.html">1.5V 5mm IR LEDs</a> and a <a href="https://www.reichelt.de/de/en/carbon-film-resistor-1-4-w-5-6-8-ohms-1-4w-6-8-p1452.html">6.8 Ohm resistor</a>, that I soldered all together. The result is pretty nice, and it's working like a charm. By connecting it to a regular GPIO pin, I can programmatically turn it on and off.</p>
 <figure class="center">
-<img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" />
+<img src="https://romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" />
 <figcaption>Before soldering</figcaption>
 </figure>
 
 <figure class="center">
-<img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" />
+<img src="https://romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" />
 <figcaption>After soldering</figcaption>
 </figure>
 

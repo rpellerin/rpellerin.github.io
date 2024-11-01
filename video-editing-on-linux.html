@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="How to edit videos on Linux with Kdenlive" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Video Editing on Linux - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="How to edit videos on Linux with Kdenlive" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Video Editing on Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" content="How to edit videos on Linux with Kdenlive" />
 
         <title>Video Editing on Linux - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -84,10 +82,10 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1258 words.">6 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
-    <p><strong>UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with <a href="////romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html">DaVinci Resolve</a>, shoot in 4K and 24 FPS (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode).</strong></p>
+    <p><strong>UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with <a href="https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html">DaVinci Resolve</a>, shoot in 4K and 24 FPS (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode).</strong></p>
 <p>When I go on holidays or do sports, I usually film with three different devices:</p>
 <ul>
 <li>My smartphone</li>
@@ -114,7 +112,7 @@
 <p>Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.</p>
 </li>
 <li>
-<p>You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to <a href="////romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html">this article that I wrote</a></p>
+<p>You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to <a href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html">this article that I wrote</a></p>
 </li>
 <li>Using VLC, <code>Tools</code> &gt; <code>Codec information</code>, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).</li>
 <li>When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in <code>Project</code> &gt; <code>Project Settings</code> but <strong>it is not advised as it will shift clips randomly for example when changing the FPS</strong> (I experienced it).</li>
@@ -141,7 +139,7 @@ renamed <span class="s1">&#39;GX010697.MP4&#39;</span> -&gt; <span class="s1">&#
 <p>I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.</p>
 <p>For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of <a href="https://en.wikipedia.org/wiki/Persistence_of_vision">the persistence of vision</a>. I read <a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/">on Reddit</a> that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 25FPS, would mean 2 frames.</p>
 <figure class="center">
-<img src="////romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
+<img src="https://romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
 <figcaption>Here the transition happens 1 frame before the next music beat</figcaption>
 </figure>
 

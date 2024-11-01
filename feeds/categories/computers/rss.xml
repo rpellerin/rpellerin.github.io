@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>//romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 26 Sep 2024 00:15:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>//romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="////romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Computers</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 26 Sep 2024 00:15:00 +0200</lastBuildDate><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;
@@ -130,14 +130,14 @@
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/"&gt;As of 2024, HR is not supported on Linux. 10-bit is partially supported but not enabled by default.&lt;/a&gt; &lt;a href="https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux"&gt;Here is how to turn on 10-bit on Linux.&lt;/a&gt; Of course the GPU needs to support it.&lt;/p&gt;
 &lt;p&gt;On Linux, playing a HDR video in VLC will show a washed-out video, &lt;a href="https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jnbxar8/"&gt;but using MPV the colors will be "translated" into SDR and the video will look very nice&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="monitors-and-tv-support-for-hdr"&gt;Monitors and TV support for HDR&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Sep 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</guid><category>Computers</category><category>kdenlive</category><category>davinci resolve</category><category>video</category></item><item><title>Airtags for Android</title><link>//romainpellerin.eu/airtags-for-android.html</link><description>&lt;p&gt;Years after Apple launched the Airtags, Android is finally getting its long awaited counterpart, in the form of Google's "Find My Device" network.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Sep 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</guid><category>Computers</category><category>kdenlive</category><category>davinci resolve</category><category>video</category></item><item><title>Airtags for Android</title><link>https://romainpellerin.eu/airtags-for-android.html</link><description>&lt;p&gt;Years after Apple launched the Airtags, Android is finally getting its long awaited counterpart, in the form of Google's "Find My Device" network.&lt;/p&gt;
 &lt;p&gt;Yet, before this new standard, many companies had released their tags with their own networks, that would only work with their own app. Needless to say, the density of their networks is limited hence hindering their finding capabilities. Now that Google has released its network, these same companies are also launching new products that work with it. So essentially this means that besides the official AirTags from Apple, most other products either work exclusively with Apple, exclusively with Google, or exclusively with their prorietary apps. Here's a short article about what tags work with Google's network.&lt;/p&gt;
 &lt;h1 id="chipolo-one-point"&gt;Chipolo ONE Point&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://chipolo.net/en/products/chipolo-one-point"&gt;Currently priced at 34 euros&lt;/a&gt;, discount codes can easily be found on Reddit. They do not support UWB (Ultra WideBand) but I'm not sure it's a big deal... Is this precision-finding feature really useful for my usages? I intend to track my luggage, not my keys...&lt;/p&gt;
 &lt;h1 id="pebblebee-clip-for-android"&gt;Pebblebee Clip for Android&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://pebblebee.com/products/clip-for-android"&gt;Same price range, currently at 33.95 euros&lt;/a&gt;. They seem to be super similar to the Chipolo one. Again, no support for UWB.&lt;/p&gt;
 &lt;h1 id="moto-tag"&gt;Moto Tag&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.motorola.com/us/moto-tag"&gt;They were just announced but they haven't been released yet.&lt;/a&gt; They will be the first tags to support USW. I might give them a chance in the future, after reviews start popping up on the Web.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 28 Jul 2024 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-28:/airtags-for-android.html</guid><category>Computers</category><category>android</category><category>google</category><category>airtag</category></item><item><title>Chargers</title><link>//romainpellerin.eu/chargers.html</link><description>&lt;p&gt;The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.motorola.com/us/moto-tag"&gt;They were just announced but they haven't been released yet.&lt;/a&gt; They will be the first tags to support USW. I might give them a chance in the future, after reviews start popping up on the Web.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 28 Jul 2024 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-28:/airtags-for-android.html</guid><category>Computers</category><category>android</category><category>google</category><category>airtag</category></item><item><title>Chargers</title><link>https://romainpellerin.eu/chargers.html</link><description>&lt;p&gt;The year is 2023 and chargers have gotten incredibly complex and powerful. As I was browsing the web, trying to get my hands on a good one that would allow me to charge any device, I though it deserved an article and some explanations.&lt;/p&gt;
 &lt;h1 id="usb-1x-usb-2x-usb-3x-usb4"&gt;USB 1.x, USB 2.x, USB 3.x, USB4&lt;/h1&gt;
 &lt;p&gt;From &lt;a href="https://en.wikipedia.org/wiki/USB"&gt;Wikipedia&lt;/a&gt;, these are specifications of "an industry standard that allows data exchange and delivery of power between many various types of electronics".&lt;/p&gt;
 &lt;p&gt;USB 3 is notoriously known for its blue port. "USB4 mandates the exclusive use of the Type-C connector and USB Power Delivery (USB-PD) specification", says &lt;a href="https://en.wikipedia.org/wiki/USB4"&gt;Wikipedia&lt;/a&gt;.&lt;/p&gt;
@@ -177,7 +177,7 @@
 &lt;p&gt;For some extra euros, one can get PowerIQ 4: &lt;a href="https://amzn.eu/d/hWFc1K2"&gt;Anker USB C Charger, 735 (GaNPrime 65W) Fast and Compact 3-Port&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ugreen is another great brand I would have considered.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 17 Nov 2023 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-11-17:/chargers.html</guid><category>Computers</category><category>charger</category><category>computer</category><category>laptop</category><category>smartphone</category><category>android</category></item><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>//romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
+&lt;p&gt;That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 17 Nov 2023 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-11-17:/chargers.html</guid><category>Computers</category><category>charger</category><category>computer</category><category>laptop</category><category>smartphone</category><category>android</category></item><item><title>Raspberry Pi NoIR camera module and IR LEDs</title><link>https://romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html</link><description>&lt;p&gt;Lately I've been looking into adding infrared LEDs to my Raspberry Pi, as I just purchased the latest &lt;a href="https://www.raspberrypi.com/products/camera-module-3/"&gt;camera module v3&lt;/a&gt;, in its NoIR (no infrared filter) edition.&lt;/p&gt;
 &lt;h1 id="basic-knowledge-required"&gt;Basic knowledge required&lt;/h1&gt;
 &lt;p&gt;Physics courses in high school took place like forever ago, I basically remembered nothing. So I had to dig it up a little bit and study basics again (Ohm's law for instance 😅).&lt;/p&gt;
 &lt;h2 id="raspberry-pi"&gt;Raspberry Pi&lt;/h2&gt;
@@ -211,7 +211,7 @@ This is usually much higher than the forward voltage. As with forward voltage, a
 &lt;p&gt;With an LED it's the amount of current flowing through it that determines how bright it is. Increasing the voltage increases the current, yes, but the region where that happens without the current getting too much is very small.&lt;br&gt;
 So we control the current instead of the voltage, and take the forward voltage as a fixed value. By either including a resistor in the circuit to fill the gap between the supply voltage and the forward voltage, limiting the current in the process [...]&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;figure class="center"&gt;&lt;img alt="LED: amperage and voltage" src="////romainpellerin.eu/images/led.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class="center"&gt;&lt;img alt="LED: amperage and voltage" src="https://romainpellerin.eu/images/led.png" /&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Extracts from &lt;a href="https://www.ledsupply.com/blog/wiring-leds-correctly-series-parallel-circuits-explained/"&gt;LEDsupply.com&lt;/a&gt;:&lt;/p&gt;
@@ -250,12 +250,12 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 &lt;h1 id="what-i-ended-up-doing"&gt;What I ended up doing&lt;/h1&gt;
 &lt;p&gt;In the end, I bought two &lt;a href="https://www.reichelt.de/de/en/ir-led-black-40-5-mm-sfh-4546-p146652.html"&gt;1.5V 5mm IR LEDs&lt;/a&gt; and a &lt;a href="https://www.reichelt.de/de/en/carbon-film-resistor-1-4-w-5-6-8-ohms-1-4w-6-8-p1452.html"&gt;6.8 Ohm resistor&lt;/a&gt;, that I soldered all together. The result is pretty nice, and it's working like a charm. By connecting it to a regular GPIO pin, I can programmatically turn it on and off.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" /&gt;
+&lt;img src="https://romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor.jpg" alt="A Raspberry Pi with two LEDs and a resistor" /&gt;
 &lt;figcaption&gt;Before soldering&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" /&gt;
+&lt;img src="https://romainpellerin.eu/images/raspberry-pi-noir-camera-module-and-ir-leds/ir-led-and-resistor-soldered.jpg" alt="Two LEDs and a resistor soldered" /&gt;
 &lt;figcaption&gt;After soldering&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -263,7 +263,7 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 &lt;h1 id="others-who-did-it-before-me"&gt;Others who did it before me&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://community.element14.com/products/raspberry-pi/raspberrypi_projects/b/blog/posts/testing-pi-noir-with-ir-leds"&gt;Testing Pi NoIR with IR LEDs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 13 Mar 2023 18:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-13:/raspberry-pi-noir-camera-module-and-ir-leds.html</guid><category>Computers</category><category>raspberry pi</category><category>camera</category></item><item><title>Raspberry Pi and SSD</title><link>//romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 13 Mar 2023 18:30:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2023-03-13:/raspberry-pi-noir-camera-module-and-ir-leds.html</guid><category>Computers</category><category>raspberry pi</category><category>camera</category></item><item><title>Raspberry Pi and SSD</title><link>https://romainpellerin.eu/raspberry-pi-and-ssd.html</link><description>&lt;h1 id="ssds"&gt;SSDs&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.berrybase.de/kingston-2-5-sata-ssd-a400-240gb"&gt;Kingston 2,5" SATA SSD A400 240GB&lt;/a&gt; (&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;a full blog article here&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.amazon.com/Samsung-250GB-2-5-inch-Solid-State/dp/B078WQJXNF"&gt;Samsung EVO 860 250GB&lt;/a&gt;&lt;/li&gt;
@@ -277,7 +277,7 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 &lt;li&gt;&lt;a href="https://www.amazon.com/dp/B0716JKJ68"&gt;ELUTENG 2.5 Inch SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jamesachambers.com/raspberry-pi-cheap-ssd-upgrade-30/"&gt;StarTech 2.5" SATA to USB 3.0 adapter&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1503165&amp;amp;sid=ff8ab32436d61094b18ea26dd70618e4#p1503165"&gt;Other adapters&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 10 Jan 2021 17:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>How To Check The Integrity Of A Backup Folder</title><link>//romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html</link><description>&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 10 Jan 2021 17:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2021-01-10:/raspberry-pi-and-ssd.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>How To Check The Integrity Of A Backup Folder</title><link>https://romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html</link><description>&lt;p&gt;Recently, I made a backup copy of a folder that I copied over several devices. In the end, I wanted to make sure the various copies did not alter any of the files. Here's how to proceed:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;ORIGINAL FOLDER&amp;gt;
 find . -type f &lt;span class="p"&gt;|&lt;/span&gt; sort &lt;span class="p"&gt;|&lt;/span&gt; &amp;gt; /tmp/original.files
 &lt;span class="nb"&gt;cd&lt;/span&gt; &amp;lt;BACKUP FOLDER&amp;gt;
@@ -293,7 +293,7 @@ cat /tmp/common.files &lt;span class="p"&gt;|&lt;/span&gt; xargs -d&lt;span clas
 md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED for each file&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Hope that helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 27 Aug 2020 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-08-27:/how-to-check-the-integrity-of-a-backup-folder.html</guid><category>Computers</category><category>linux</category><category>md5sum</category><category>git</category></item><item><title>Playing With A Raspberry Pi Camera</title><link>//romainpellerin.eu/playing-with-a-raspberry-pi-camera.html</link><description>&lt;p&gt;Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.&lt;/p&gt;
+&lt;p&gt;Hope that helps.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 27 Aug 2020 23:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-08-27:/how-to-check-the-integrity-of-a-backup-folder.html</guid><category>Computers</category><category>linux</category><category>md5sum</category><category>git</category></item><item><title>Playing With A Raspberry Pi Camera</title><link>https://romainpellerin.eu/playing-with-a-raspberry-pi-camera.html</link><description>&lt;p&gt;Recently I've been playing with my old Raspberry Pi and a camera module (version 2) I bought a while ago. It turns out the camera is quite powerful and allowed me to create various types of videos or pictures. Here's what I've been able to do.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 1: In this article, I am using two commands that are meant to take photos or videos, natively installed on Rapsbian: &lt;code&gt;raspistill&lt;/code&gt; and &lt;code&gt;raspivid&lt;/code&gt;. For a complete user manual, follow &lt;a href="https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119415572.app2"&gt;this link&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note 2: Don't forget to adjust the focus by rotating the lens (clockwise to focus on distant objects, anti-clockwise for close objects).&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id="a-timelapse-of-the-sky-at-night"&gt;A timelapse of the sky at night&lt;/h1&gt;
@@ -315,7 +315,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;h1 id="live-streaming-on-youtube"&gt;Live streaming on Youtube&lt;/h1&gt;
 &lt;p&gt;This is fairly easy and cool to do! Head out to &lt;a href="https://studio.youtube.com/channel/UC/livestreaming"&gt;https://studio.youtube.com/channel/UC/livestreaming&lt;/a&gt; and retrieve a "Stream key".&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
-&lt;img src="////romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" /&gt;
+&lt;img src="https://romainpellerin.eu/images/raspberry-pi-camera-youtube.png" alt="Youtube UI" /&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Then:&lt;/p&gt;
@@ -336,7 +336,7 @@ md5sum --check /tmp/original.md5sum &lt;span class="c1"&gt;# Shows OK or FAILED 
 &lt;p&gt;&lt;code&gt;-use_wallclock_as_timestamps&lt;/code&gt; makes a warning message about no timestamps disappear. &lt;code&gt;-thread_queue_size 1024&lt;/code&gt; makes another warning message disappear.&lt;/p&gt;
 &lt;p&gt;With a height of 720 pixels, close to the full width of the sensor is used. If instead we had used 1920x1080, the image would be slightly cropped.&lt;/p&gt;
 &lt;div style="text-align: center"&gt;
-&lt;a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"&gt;&lt;img src="////romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /&gt;&lt;/a&gt;
+&lt;a href="https://picamera.readthedocs.io/en/release-1.12/fov.html" target="_blank"&gt;&lt;img src="https://romainpellerin.eu/images/raspberry-pi-camera-resolutions.png" alt="Supported resolutions" /&gt;&lt;/a&gt;
 &lt;/div&gt;
 
 &lt;h1 id="daytime-timelapse"&gt;Daytime timelapse&lt;/h1&gt;
@@ -356,7 +356,7 @@ date
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/9GTVajBlVuM?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;That's it for today!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 01 Jun 2020 02:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-06-01:/playing-with-a-raspberry-pi-camera.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>On Storing Passwords In A Safe Way</title><link>//romainpellerin.eu/on-storing-passwords-in-a-safe-way.html</link><description>&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
+&lt;p&gt;That's it for today!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 01 Jun 2020 02:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2020-06-01:/playing-with-a-raspberry-pi-camera.html</guid><category>Computers</category><category>raspberry pi</category></item><item><title>On Storing Passwords In A Safe Way</title><link>https://romainpellerin.eu/on-storing-passwords-in-a-safe-way.html</link><description>&lt;p&gt;It's been a while since I last wrote here... Let's fix this with a new article on an important topic.&lt;/p&gt;
 &lt;h1 id="storing-passwords"&gt;Storing passwords&lt;/h1&gt;
 &lt;p&gt;For a very long time I have stored my passwords within Firefox, synced "in the Cloud" through my Firefox account. This solution offers four main advantages:&lt;/p&gt;
 &lt;ul&gt;
@@ -443,13 +443,13 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="https://chown.me/blog/my-recent-journey-with-2FA.html"&gt;My recent journey with 2FA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1"&gt;The Definitive Guide to password-store&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://medium.com/@davidpiegza/using-pass-in-a-team-1aa7adf36592"&gt;Using pass in a team&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 31 Jul 2018 00:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</guid><category>Computers</category><category>password</category><category>security</category></item><item><title>Domain Names</title><link>//romainpellerin.eu/domain-names.html</link><description>&lt;p&gt;Short article, kind of a bookmark for myself. I usually buy my domain names from OVH but they're far from being cheap. Today, I was told the following three websites offer much cheaper domain names. What's more, they have a greater choice.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 31 Jul 2018 00:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-07-31:/on-storing-passwords-in-a-safe-way.html</guid><category>Computers</category><category>password</category><category>security</category></item><item><title>Domain Names</title><link>https://romainpellerin.eu/domain-names.html</link><description>&lt;p&gt;Short article, kind of a bookmark for myself. I usually buy my domain names from OVH but they're far from being cheap. Today, I was told the following three websites offer much cheaper domain names. What's more, they have a greater choice.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://porkbun.com/"&gt;porkbun.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.namecheap.com/"&gt;www.namecheap.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.internetbs.net/"&gt;www.internetbs.net&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://domainr.com/"&gt;domainr.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 23 Mar 2018 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-03-23:/domain-names.html</guid><category>Computers</category><category>dns</category><category>domain</category></item><item><title>How To Repair A Laptop Charger</title><link>//romainpellerin.eu/how-to-repair-a-laptop-charger.html</link><description>&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 23 Mar 2018 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-03-23:/domain-names.html</guid><category>Computers</category><category>dns</category><category>domain</category></item><item><title>How To Repair A Laptop Charger</title><link>https://romainpellerin.eu/how-to-repair-a-laptop-charger.html</link><description>&lt;p&gt;A few months ago, my laptop charger started to malfunction. It had to be in a certain position to charge the battery and supply power the my laptop. Recently, this had become really annoying. It was getting worse and worse, so bad that sometimes my laptop would shut down abruptly without any kind of warning as the battery was empty.&lt;/p&gt;
 &lt;p&gt;Therefore, I decided to replace the defective charger. I searched the Internet, looking for the same charger, with no luck. All I found were cheap chargers selled by some weird Chinese sellers with poor reviews on Ebay and Amazon.&lt;/p&gt;
 &lt;p&gt;In the end, since I could not find the right replacement charger with the same connector and the right specifications, I decided to make my own! Here is how.&lt;/p&gt;
 &lt;h1 id="how-to-make-your-own-laptop-charger"&gt;How to make your own laptop charger&lt;/h1&gt;
@@ -461,69 +461,69 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;/ul&gt;
 &lt;p&gt;All I needed was a power brick (AC/DC converter) meeting the above-mentionned requirements and a cord with the same connector. I decided not to reuse the cord from my original charger. Fortunately, my roommate had an old charger with the matching connector, so I decided to go with that one.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connectors.jpg" alt="Connectors" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/connectors.jpg" alt="Connectors" /&gt;
 &lt;figcaption&gt;My connector (top) and my roommate's one (bottom)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Here is the replacement charger I bought for $20, with the exact same specs as mine:&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/power-block.jpg" alt="Power brick" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/power-block.jpg" alt="Power brick" /&gt;
 &lt;figcaption&gt;My replacement power brick&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;So, as I said, I used my roommate's charger cord to get a connector suited for my laptop. I made sure to cut near the block so that the cord remained long enough.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/cut-cord.jpg" alt="Cutting the cord" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/cut-cord.jpg" alt="Cutting the cord" /&gt;
 &lt;figcaption&gt;Cutting the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Then, I split the end in two to separate the two wires.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/split-cord1.jpg" alt="Splitting the cord" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/split-cord1.jpg" alt="Splitting the cord" /&gt;
 &lt;figcaption&gt;Splitting the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I identified each wire using a multimeter. Since my laptop expects the center of the barrel plug to be the positive contact and the barrel to be negative, I needed to know that to correctly assemble the two parts of my to-be charger.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/multimeter1.jpg" alt="Identifying wires" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/multimeter1.jpg" alt="Identifying wires" /&gt;
 &lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I put adhesive tape on the negative one to remember it.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/split-cord2.jpg" alt="Adhesive tape on negative wire" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/split-cord2.jpg" alt="Adhesive tape on negative wire" /&gt;
 &lt;figcaption&gt;Adhesive tape on negative wire&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Then, I cut the connector from the new charger I had just bought. Inside the cord, the two wires were of different colors, one was red and the other blue. Using the multimeter and the connector I had just cut, I identified the negative and positive wires.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/multimeter2.jpg" alt="Identifying wires" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/multimeter2.jpg" alt="Identifying wires" /&gt;
 &lt;figcaption&gt;Identifying wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;This way, I figured out the blue wire was connected to the barrel and the red one to the center. Since the charger had the same polarity as mine, I knew that the blue wire was negative. Consequently, that wire had to be connected to the wire with adhesive tape.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/two-cords.jpg" alt="Both cords ready to be connected" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/two-cords.jpg" alt="Both cords ready to be connected" /&gt;
 &lt;figcaption&gt;Both cords ready to be connected&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;I twisted the wires to connect them and insulated them with electrical tape.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting1.jpg" alt="Twisting the wires" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/connecting1.jpg" alt="Twisting the wires" /&gt;
 &lt;figcaption&gt;Twisting the wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting2.jpg" alt="Insulating the wires" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/connecting2.jpg" alt="Insulating the wires" /&gt;
 &lt;figcaption&gt;Insulating the wires&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/repair-laptop-charger/connecting3.jpg" alt="Insulating the cord" /&gt;
+&lt;img src="https://romainpellerin.eu/images/repair-laptop-charger/connecting3.jpg" alt="Insulating the cord" /&gt;
 &lt;figcaption&gt;Insulating the cord&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;That's all! Now I have a new functionning charger perfectly suited to my laptop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 02 May 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-05-02:/how-to-repair-a-laptop-charger.html</guid><category>Computers</category><category>laptop</category><category>charger</category></item><item><title>Fonts, Typefaces And The History Of UTF-8</title><link>//romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html</link><description>&lt;p&gt;First, let's start with the basics. &lt;a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"&gt;&lt;strong&gt;What's the difference between a font and a typeface?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;That's all! Now I have a new functionning charger perfectly suited to my laptop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Tue, 02 May 2017 21:50:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2017-05-02:/how-to-repair-a-laptop-charger.html</guid><category>Computers</category><category>laptop</category><category>charger</category></item><item><title>Fonts, Typefaces And The History Of UTF-8</title><link>https://romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html</link><description>&lt;p&gt;First, let's start with the basics. &lt;a href="http://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface"&gt;&lt;strong&gt;What's the difference between a font and a typeface?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Briefly, a fond is what we use whereas a typeface is what we see. But still, it's a bit more complex. I'll sum up the original article right below.&lt;/p&gt;
 &lt;p&gt;In the past, analog printing was done using metal letters rolled in ink and pressed down onto a piece of paper: that was the page layout. For a given typeface (for example Garamond), there were thousands of physical metal blocks, each with the character it was meant to represent, in relief (the type face), existing in different size (10 point, 12, etc.) and different weights (bold, light, medium). Basically, a font is just a subset of a typeface. For example, bolded Garamond in 12 point was considered a different font than normal Garamond in 8 point. But nowadays, both terms can be used interchangeably. However, just in case you would need to know, a reminder could be:&lt;/p&gt;
 &lt;p&gt;"&lt;em&gt;The difference between a font and a typeface is the same as that between songs and an album. The former makes up the latter.&lt;/em&gt;"&lt;/p&gt;
@@ -600,7 +600,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;a href="http://sametmax.com/la-maison-des-horreurs-de-lencoding/"&gt;La maison des horreurs de l’encoding&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://reedbeta.com/blog/programmers-intro-to-unicode/"&gt;A Programmer’s Introduction to Unicode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://slides.com/benoitaverty/unicode-pour-les-nuls#/"&gt;Unicode pour les nuls&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 19:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</guid><category>Computers</category><category>font</category><category>typeface</category><category>utf8</category><category>unicode</category></item><item><title>Understanding The Memory</title><link>//romainpellerin.eu/understanding-the-memory.html</link><description>&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 04 Feb 2016 19:00:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-02-04:/fonts-typefaces-and-the-history-of-utf-8.html</guid><category>Computers</category><category>font</category><category>typeface</category><category>utf8</category><category>unicode</category></item><item><title>Understanding The Memory</title><link>https://romainpellerin.eu/understanding-the-memory.html</link><description>&lt;p&gt;Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.&lt;/p&gt;
 &lt;p&gt;Nows, let's have a look at memory and let's try to understand how it works.&lt;/p&gt;
 &lt;h1 id="processes-and-threads"&gt;Processes and threads&lt;/h1&gt;
 &lt;p&gt;Basically, when a program is launched, the operating system grants it a certain space in memory. The allocated memory contains &lt;strong&gt;four main areas&lt;/strong&gt;:&lt;/p&gt;
@@ -611,7 +611,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 &lt;li&gt;&lt;strong&gt;Stack&lt;/strong&gt;: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. &lt;strong&gt;Stack values only exist within the scope of the function they are created in.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class="center"&gt;
-&lt;img src="////romainpellerin.eu/images/memory-stack.jpg" alt="The stack" /&gt;
+&lt;img src="https://romainpellerin.eu/images/memory-stack.jpg" alt="The stack" /&gt;
 &lt;figcaption&gt;Image taken from &lt;a href="http://www.linuxjournal.com/article/6391"&gt;http://www.linuxjournal.com/article/6391&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -685,7 +685,7 @@ find .password-store/ -type f -iname &lt;span class="s2"&gt;&amp;quot;*.otp.gpg&
 
 &lt;p&gt;To delete what is on the heap, you need to use the &lt;code&gt;delete&lt;/code&gt; keyword.&lt;/p&gt;
 &lt;figure class="center"&gt;
-&lt;img alt="Pointers and addresses" src="////romainpellerin.eu/images/memory_cpp_example.png" /&gt;
+&lt;img alt="Pointers and addresses" src="https://romainpellerin.eu/images/memory_cpp_example.png" /&gt;
 &lt;/figure&gt;
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;

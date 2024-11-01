@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="Understanding how memory works" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Understanding The Memory - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="Understanding how memory works" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Understanding The Memory - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Understanding how memory works" />
 
         <title>Understanding The Memory - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -84,7 +82,7 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 804 words.">4 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/computer.html">computer</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/memory.html">memory</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/computer.html">computer</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/memory.html">memory</a></p>    </div>
 </header>
 <article>
     <p>Understanding memory management can be a bit difficult for beginners. However, it's still one of the most important things every developer should know. You'll need to know how it works to write memory-efficient code, to avoid stack overflows. This is especially true when developing for mobile platforms that have very limited memory. Today's cheapest smartphones have an average of 512MB memory. Android will kill any app that consumes too much memory with even warning you. So be careful beforing allocating too many objects.</p>
@@ -98,7 +96,7 @@
 <li><strong>Stack</strong>: it's a LIFO structure. It basically contains all variables being declared inside functions. Every time you enter in a function, a stack frame is created for it. Every time you pass arguments by values to these functions, the arguments are copied to the stack. If you pass references or pointers, their content (an address) is also copied in order to be passed to the function. All the variables on the stack live only inside the function. When the function returns, they are destroyed and the corresponding allocated memory is freed. <strong>Stack values only exist within the scope of the function they are created in.</strong></li>
 </ul>
 <figure class="center">
-<img src="////romainpellerin.eu/images/memory-stack.jpg" alt="The stack" />
+<img src="https://romainpellerin.eu/images/memory-stack.jpg" alt="The stack" />
 <figcaption>Image taken from <a href="http://www.linuxjournal.com/article/6391">http://www.linuxjournal.com/article/6391</a></figcaption>
 </figure>
 
@@ -172,7 +170,7 @@
 
 <p>To delete what is on the heap, you need to use the <code>delete</code> keyword.</p>
 <figure class="center">
-<img alt="Pointers and addresses" src="////romainpellerin.eu/images/memory_cpp_example.png" />
+<img alt="Pointers and addresses" src="https://romainpellerin.eu/images/memory_cpp_example.png" />
 </figure>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/CSVRA4_xOkw?rel=0" frameborder="0" allowfullscreen></iframe>

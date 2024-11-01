@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="A tutorial about adding GPX data on top of videos (speed, heart rate, etc)" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Creating GPX overlay videos on Linux - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="A tutorial about adding GPX data on top of videos (speed, heart rate, etc)" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Creating GPX overlay videos on Linux - Romain Pellerin's Blog" />
+        <meta property="og:description" content="A tutorial about adding GPX data on top of videos (speed, heart rate, etc)" />
 
         <title>Creating GPX overlay videos on Linux - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -84,7 +82,7 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 730 words.">4 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
 </header>
 <article>
     <p>Just because I found <a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/">this article</a> so good but a bit too long, I'm creating my own.</p>
@@ -200,7 +198,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 </video>
 
 <figure class="center">
-<img src="////romainpellerin.eu/images/gpx-overlay.png" alt="A screenshot of the video" />
+<img src="https://romainpellerin.eu/images/gpx-overlay.png" alt="A screenshot of the video" />
 <figcaption>A screenshot of the video, in case you can't play it</figcaption>
 </figure>
 
@@ -209,7 +207,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
   <source src="./videos/gpx-overlay-merged.webm" type="video/webm">
 </video>
 
-<p>All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using <a href="////romainpellerin.eu/video-editing-on-linux.html">Kdenlive on Linux</a>..</p>
+<p>All that's left now, is merge this video with an actual footage, sync it, and voilà! I recommend using <a href="https://romainpellerin.eu/video-editing-on-linux.html">Kdenlive on Linux</a>..</p>
 <h2 id="the-final-video-right-away-footage-overlay">The final video right away (footage + overlay)</h2>
 <p>Make sure the input video has the correct mtime (modified time). Check with <code>stat file.mp4</code> or <code>ls -la file.mp4</code>. If it's a Insta360 video, and the filename matches <code>YYYYMMDD_HHMMSS_sss.mp4</code>, you can update it with this script: <a href="https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py">https://github.com/rpellerin/dotfiles/blob/master/scripts/updateModifyTimeInsta360File.py</a></p>
 <div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx  --profile mp4 --layout-xml ~/Documents/my-layout-portrait.xml --overlay-size 1080x1920 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph --video-time-start file-modified some-video.mp4  ~/Downloads/output.mp4

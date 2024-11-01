@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="Why you should embrace continuous integration and how" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Continuous Integration - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="Why you should embrace continuous integration and how" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Continuous Integration - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Why you should embrace continuous integration and how" />
 
         <title>Continuous Integration - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -84,7 +82,7 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 3148 words.">16 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/workflow.html">workflow</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/git.html">git</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/workflow.html">workflow</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/git.html">git</a></p>    </div>
 </header>
 <article>
     <p>After having experienced software development in many languages, from desktop programs to mobile applications and web sites, comes a moment when I felt compelled to standardize my software development process. In the last couple of months, we, at <a href="http://www.wearesmiths.com/">The Smiths</a>, tried to define our workflow more formally by integrating continuous integration. How to properly "synchronize" a team made of many developers, "spread all around the world", in different time zones? How to make sure there is no bottleneck at any level, during the development? First, let’s have a look at the definition.</p>
@@ -96,7 +94,7 @@
 <h1 id="purpose">Purpose</h1>
 <p>Continuous integration is an entire concept that tries to ease software development by making things much easier and more flexible. Like agile methodology, it's been getting more and more popular since the beginning of the 2000's. Nowadays, it tends to be widely adopted in any kind of software company.</p>
 <h2 id="effortless-automation">Effortless automation</h2>
-<p>Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like <a href="////romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html">Quentin Adam</a> is used to saying,</p>
+<p>Continuous integration is mostly about automation. By this, I mean being able to deploy flawlessly, many times a day. Like <a href="https://romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html">Quentin Adam</a> is used to saying,</p>
 <blockquote>
 <p><em><a href="https://twitter.com/waxzce/status/639078610230476800">Hosting has to become a commodity.</a></em></p>
 </blockquote>
@@ -117,7 +115,7 @@
 <p>Let's now see how to get started with continuous integration, easily.</p>
 <hr>
 <h1 id="how">How</h1>
-<p>Now, you might have understood that you <strong>have to use Git</strong>. And if you stil don't know why, you read read my article <a href="////romainpellerin.eu/git.html">about Git</a>.</p>
+<p>Now, you might have understood that you <strong>have to use Git</strong>. And if you stil don't know why, you read read my article <a href="https://romainpellerin.eu/git.html">about Git</a>.</p>
 <p>In my opinion, the most important thing with continuous integration is... your Git workflow. You have to remain consistent from the beginning of a project to its end. Everyone involved has to be careful and focused at each step. Working within a big team is not something easy. Everyone has different schedules, information doesn't spread that well. That's why having a robust and error-proof Git workflow matters.</p>
 <p>At The Smiths, we identified <strong>four main components</strong> that we wanted as <strong>core parts of our Continuous Integration process</strong>:</p>
 <ul>
@@ -137,7 +135,7 @@
 <h2 id="a-successful-git-workflow">A Successful Git Workflow</h2>
 <p>This part is clearly the most important, as it’s being used every single day by everyone. In general, it’s likely the most important aspect about continuous integration, to which we had paid a lot of attention.</p>
 <p>After some research, we came across a very popular Git workflow, the branching model.</p>
-<p><img alt="Git workflow" src="////romainpellerin.eu/images/continuous-integration-git-workflow.png"></p>
+<p><img alt="Git workflow" src="https://romainpellerin.eu/images/continuous-integration-git-workflow.png"></p>
 <p>This picture has been taken from <em><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model, by Vincent Driessen</a></em> (<a href="https://twitter.com/nvie/status/644601079985008640">thanks to him</a>). Overall, it’s the best Git workflow we’ve ever encountered. <strong>So we adopted it, with some specificities: we made a few minor changes to that original branching workflow, in order to better suit our needs.</strong> It can be applied to any kind of software project. I also need to mention that we use GitHub, the most famous web-based Git repository hosting service, because it offers some great features, such as Pull requests, a bug tracker (issues), etc. Moreover, as most of our code has been open sourced (except our clients’ core apps), it’s not a problem at all. By the way, it also gives us a greater visibility, it’s like giving away our widgets to the Titanium community thanks to GitHub.</p>
 <p>Now, let's move onto <strong>our workflow</strong> that we daily use, with Github:</p>
 <h3 id="our-git-workflow">Our Git workflow</h3>
@@ -233,13 +231,13 @@ git branch -d feature-x
 <p>The one we picked is called <strong>Scrum</strong>. Again, I won't explain it here but will instead expose the workflow we adopted, derived from it. For a better comprehension, I recommend you read the <a href="https://en.wikipedia.org/wiki/Scrum_(software_development)">Wikipedia page</a>.</p>
 <p>Basically, at the very beginning of the project, the CTO would meet client and discuss with them. As a result, he would obtain detailed specifications from them. Then, all together, we would brainstorm and define Milestones, which are fundamentally the most important steps to a final product. For instance, from scratch, we would aim at developing a MVP (which is a working product, see the picture below), then progressively add features, grouping features under Milestones. As a reminder, "Milestones" is a feature of GitHub. Each Milestone would last a week, tops. In Scrum, Milestones are called <em>Sprints</em>.</p>
 <p>Starting with an MVP is the right way to go. The client is always satisfied as they would get a working copy of the product being-developed, at each stage, continuously getting improved. They would not have to wait for weeks or months before being able to test anything.</p>
-<p><img alt="MVP" src="////romainpellerin.eu/images/continuous-integration-mvp.png"></p>
+<p><img alt="MVP" src="https://romainpellerin.eu/images/continuous-integration-mvp.png"></p>
 <div style="text-align: center">*Courtesy of [Henrik Kniberg](https://twitter.com/henrikkniberg/status/685474589539983360)*</div>
 
 <p>Then, each developer would get assigned or choose a few features from the first Milestone until completion. Every morning, we would gather for a 10-minute stand-up meeting, during which everyone would say what they did the previous day and what is left to do, especially regarding the current day. Standing forces us to speak concisely and don't waste each other's time, since it is not as comfortable as being sat down.</p>
 <p>At the end of the Milestone's week, we would merge all the Pull requests resulting from the features, then review all together all the work done, conduct tests and create issues on GitHub to be resolved before starting the next Milestone. Eventually, we would readjust the remaining Milestones when needed.</p>
 <p>This would go on until completion of the final Milestone, which is supposed to bring all the features originally requested by the client.</p>
-<p><img alt="SCRUM" src="////romainpellerin.eu/images/continuous-integration-scrum.png"></p>
+<p><img alt="SCRUM" src="https://romainpellerin.eu/images/continuous-integration-scrum.png"></p>
 <p>Sometimes, the part "Bug fixing" would require extra-time. In such a case, we would extend that part onto the next week, only assigning one person, so that the rest of the team could stick strictly to the rule "a Milestone per week". But that rarely happened fortunately.</p>
 <h2 id="mix-them-all">Mix them all</h2>
 <p>As a brief conclusion, when thinking back at all the parts of our workflow, one can see that it's an entire whole in which GitHub plays a key-role. Being organized, knowing everyone's role and keeping in mind goals to reach are important as well, just like the tools we decided to go with. Furthermore, being able to release intermediate versions, quickly, allowed us to give constant feedback to the client, which is reassuring.</p>

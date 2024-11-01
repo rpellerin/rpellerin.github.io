@@ -7,8 +7,8 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
-        <link rel="stylesheet" href="//romainpellerin.eu/theme/css/main.css" type="text/css" />
-        <link rel="shortcut icon" href="//romainpellerin.eu/favicon.ico" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
 
         <script>
         function _dntEnabled(dnt, userAgent) {
@@ -52,12 +52,10 @@
         </script>
 
         <!-- Social media -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@romainpellerin" />
         <meta name="description" content="2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…" />
-        <meta property="og:image" name="twitter:image" content="//romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
-        <meta property="og:title" name="twitter:title" content="Keys to efficient i18n - Romain Pellerin's Blog" />
-        <meta property="og:description" name="twitter:description" content="2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-1x.jpg" />
+        <meta property="og:title" content="Keys to efficient i18n - Romain Pellerin's Blog" />
+        <meta property="og:description" content="2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…" />
 
         <title>Keys to efficient i18n - Romain Pellerin's Blog</title>
 
@@ -68,11 +66,11 @@
         <div id="wrapper">
 
 <nav class="flexbox-row">
-    <a class="center" href="//romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <span class="center">|| Blog:</span>
-    <a class="center" href="//romainpellerin.eu/archives.html">Archives (all posts)</a>
-    <a class="center" href="//romainpellerin.eu/categories.html">Categories</a>
-    <a class="center" href="//romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
@@ -85,7 +83,7 @@
         <p class="small">
             &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 2830 words.">14 min read</span>
         </p>
-<p class="small">Category: <a title="Go to the category" href="//romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="//romainpellerin.eu/tag/localization.html">localization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/internationalization.html">internationalization</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/i18n.html">i18n</a>, <a title="Go to the tag" href="//romainpellerin.eu/tag/l10n.html">l10n</a></p>    </div>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/localization.html">localization</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/internationalization.html">internationalization</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/i18n.html">i18n</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/l10n.html">l10n</a></p>    </div>
 </header>
 <article>
     <p><em>Originally published on <a href="https://romainpellerin.medium.com/keys-to-efficient-i18n-ec38fd461d7d">Medium</a>.</em></p>
@@ -153,7 +151,7 @@
 <h1 id="keeping-phrase-up-to-date">Keeping Phrase up-to-date</h1>
 <p>We strive to keep the number of unverified translations as low as possible, because any unverified translation is a translation that is not in production.</p>
 <figure class="center">
-<img src="////romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
+<img src="https://romainpellerin.eu/images/keys-to-efficient-i18n/phrase-editor.png" alt="A screenshot of the Phrase editor" />
 <figcaption>The Phrase web editor tells you how many unverified translations you have</figcaption>
 </figure>
 
@@ -227,7 +225,7 @@
 <h1 id="preventing-the-insertion-of-hidden-characters-whose-behavior-might-be-unexpected">Preventing the insertion of hidden characters whose behavior might be unexpected</h1>
 <p>Have you ever seen this warning message on GitHub?</p>
 <figure class="center">
-<img src="////romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
+<img src="https://romainpellerin.eu/images/keys-to-efficient-i18n/github-warning.png" alt="A warning message on GitHub" />
 <figcaption>GitHub warning you about bidirectional Unicode text</figcaption>
 </figure>
 
@@ -235,7 +233,7 @@
 <p>To prevent this from happening again and again, we've added a test. This way, whenever we pull the latest translations from Phrase and open a Pull Request to merge them, we can know right away if something is wrong with any translation.</p>
 <p>Here, a screenshot of the test. It's a screenshot as one would not be able to see the hidden Unicode characters otherwise.</p>
 <figure class="center">
-<img src="////romainpellerin.eu/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" />
+<img src="https://romainpellerin.eu/images/keys-to-efficient-i18n/test-screenshot.png" alt="A screenshot of a Ruby test" />
 <figcaption>A test making sure our translation files do not contain special hidden Unicode characters</figcaption>
 </figure>
 
