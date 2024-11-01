@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-02T00:45:00+01:00</updated><entry><title>Mon premier marathon : récit d'une course parfaite</title><link href="https://romainpellerin.eu/mon-premier-marathon-recit-d-une-course-parfaite.html" rel="alternate"></link><published>2024-11-01T23:00:00+01:00</published><updated>2024-11-02T00:45:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-01:/mon-premier-marathon-recit-d-une-course-parfaite.html</id><summary type="html">&lt;p&gt;Tout sur le déroulé de mon premier marathon&lt;/p&gt;</summary><content type="html">&lt;p&gt;ÇA Y EST JE L'AI FAIT ! Marathonien ! Dingue, je réalise toujours pas. Après des mois de préparation, plusieurs blessures et plusieurs articles de blog, c'est fait ! Qui plus est, j'ai atteint mon objectif : moins de 3 heures 30 ! Allez, je vous raconte.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-02T00:57:00+01:00</updated><entry><title>Mon premier marathon : récit d'une course parfaite</title><link href="https://romainpellerin.eu/mon-premier-marathon-recit-d-une-course-parfaite.html" rel="alternate"></link><published>2024-11-01T23:00:00+01:00</published><updated>2024-11-02T00:45:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-01:/mon-premier-marathon-recit-d-une-course-parfaite.html</id><summary type="html">&lt;p&gt;Tout sur le déroulé de mon premier marathon&lt;/p&gt;</summary><content type="html">&lt;p&gt;ÇA Y EST JE L'AI FAIT ! Marathonien ! Dingue, je réalise toujours pas. Après des mois de préparation, plusieurs blessures et plusieurs articles de blog, c'est fait ! Qui plus est, j'ai atteint mon objectif : moins de 3 heures 30 ! Allez, je vous raconte.&lt;/p&gt;
 &lt;h1 id="motivation"&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;Tout commence réellement il y a un an et demi. Un ami d'enfance (coucou Robin !) passe de fumeur gamer à coureur à pied du jour au lendemain avec comme objectif un marathon en 2025. Moi qui courrais péniblement entre 200 et 300 kilomètres par an depuis 2020 sans objectif aucun, voilà qui me donne des idées. Mais à cette époque, je ne jure encore que par le vélo. Mon premier triathlon n'a toujours pas eu lieu, et le semi de Berlin couru en 2h00'22" l'année précédente n'a déclenché aucune passion. Plutôt l'inverse, je me souviens franchir la ligne d'arrivée, après 21 kilomètres, et me dire qu'il me serait absolument impossible de faire un kilomètre de plus.&lt;/p&gt;
 &lt;p&gt;Le triathlon arrive en Juin et se passe plutôt bien, performance en course correcte dans l'absolu pour quelqu'un qui court peu mais franchement nulle comparée à mon niveau en vélo : allure de 5'09"/km, sur une distance de 4.25 kilomètres. Alors ok, je viens de nager et faire 20 kilomètres de vélo, mais soyons honnête c'est pas grand chose. Je savais que je pouvais faire beaucoup mieux.&lt;/p&gt;
@@ -406,7 +406,7 @@
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-11-01T23:15:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-11-02T00:57:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -776,15 +776,15 @@ Couper ongles
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
-Si je dors à l'hôtel, emmener un sharpie + mon propre dîner pour samedi soir (pâtes) et petit-déj du dimanche
+Si je dors à l'hôtel, emmener un sharpie + repas pour samedi midi et soir (riz, pâtes pesto, patates, Speisequark) et petit-déj du dimanche (müsli/flocons d'avoine avec lait de soja, pâtes pesto, banane)
 Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
-Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
+Samedi : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : petit-déj AU MOINS 2h avant la course
-Dimanche matin : noter dans la main
+Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
-  Water/Feeding station/WC: Km 5, 10, etc
+  Water stations/WC: Km 5, 10, etc
 Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons et bouteille d'eau pour boire avant le départ
 Dimanche matin : warm up de 2km avant départ
 &lt;/textarea&gt;
