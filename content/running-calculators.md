@@ -389,15 +389,15 @@ Couper ongles
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
-Si je dors à l'hôtel, emmener un sharpie + mon propre dîner pour samedi soir (pâtes) et petit-déj du dimanche
+Si je dors à l'hôtel, emmener un sharpie + repas pour samedi midi et soir (riz, pâtes pesto, patates, Speisequark) et petit-déj du dimanche (müsli/flocons d'avoine avec lait de soja, pâtes pesto, banane)
 Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
-Samedi : accrocher bib number au dossard et tout préparer pour être prêt à partir le dimanche matin
+Samedi : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
 Dimanche matin : petit-déj AU MOINS 2h avant la course
-Dimanche matin : noter dans la main
+Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
-  Water/Feeding station/WC: Km 5, 10, etc
+  Water stations/WC: Km 5, 10, etc
 Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons et bouteille d'eau pour boire avant le départ
 Dimanche matin : warm up de 2km avant départ
 </textarea>
