@@ -1,5 +1,9 @@
 {% set title = article.title + ' - ' + SITENAME %}
 {% set description = article.summary|striptags %}
+{% set relative_url = article.url %}
+{% if article.image %}
+{%    set image = 'images/' + article.image %}
+{% endif %}
 {% extends "base.html" %}
 
 {% block additional_tags %}{% for tag in article.tags %}, {{ tag.name }}{% endfor %}{% endblock %}

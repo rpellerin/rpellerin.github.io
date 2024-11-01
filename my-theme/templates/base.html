@@ -53,9 +53,12 @@
 
         <!-- Social media -->
         <meta name="description" content="{% if not description %}{% set description = DESCRIPTION %}{% endif %}{{ description }}" />
-        <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/romain_pellerin-1x.jpg" />
+        <meta property="og:image" content="{% if not image %}{% set image = THEME_STATIC_DIR + '/img/romain_pellerin-4x.jpg' %}{% endif %}{{ SITEURL }}/{{ image }}" />
         <meta property="og:title" content="{% if not title %}{% set title = SITENAME %}{% endif %}{{ title }}" />
         <meta property="og:description" content="{{ description }}" />
+        {% if relative_url %}
+        <meta property="og:url" content="{{ SITEURL }}/{{ relative_url }}" />
+        {% endif %}
 
         <title>{{ title }}</title>
 
