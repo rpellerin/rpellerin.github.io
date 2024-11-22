@@ -106,9 +106,29 @@ In [other sources](https://youtu.be/ZDdZ3TqJkd8?t=471), I've found slightly diff
           const paces = speeds.map(speed => secondsToTime(speedToSecondsForOneKilometer(speed)).valueWithQuotes)
           const hrs = maxHrInput.value ? percentHr.map(hr => Math.round(maxHrInput.value * hr / 100)) : []
           newTable += `<tr style="background-color: ${color}"><td>${zone}</td><td>${name}</td>`
-          newTable += `<td>${percentMas.length === 1 ? '<=&nbsp;' : ''}${percentMas.join('&nbsp;-&nbsp;')}%<br />${speeds.join('&nbsp;-&nbsp;')}&nbsp;km/h</td>`
-          newTable += `<td>${percentHr.length === 1 ? '<=&nbsp;' : ''}${percentHr.length > 0 ? `${percentHr.join('&nbsp;-&nbsp;')}%` : ''}${hrs.length > 0 ? `<br />${hrs.join('&nbsp;-&nbsp;')}&nbsp;bpm` : ''}</td>`
-          newTable += `<td>${paces.join('&nbsp;-&nbsp;')}</td>`
+
+          // % MAS
+          let masRow = ''
+          if (percentMas.length === 1) {
+                masRow = `<span style="white-space: nowrap;"><= ${percentMas[0]}% (${speeds[0] ?? '?'} km/h)</span>`
+          }
+          else {
+                masRow = percentMas.map((mas,i) => `<span style="white-space: nowrap;">${mas}% (${speeds[i] ?? '?'} km/h)</span>`).join('<br />⬇️<br />')
+          }
+          newTable += `<td class="center">${masRow}</td>`
+
+          // % HRmax
+          let hrRow = ''
+          if (percentHr.length === 1) {
+                hrRow = `<span style="white-space: nowrap;"><= ${percentHr[0]}% (${hrs[0] ?? '?'} bpm)</span>`
+          }
+          else {
+                hrRow = percentHr.map((hr,i) => `<span style="white-space: nowrap;">${hr}% (${hrs[i] ?? '?'} bpm)</span>`).join('<br />⬇️<br />')
+          }
+          newTable += `<td class="center">${hrRow}</td>`
+
+          // Paces
+          newTable += `<td class="center">${paces.join('<br />⬇️<br />')}</td>`
           newTable += `</tr>`
         })
 
