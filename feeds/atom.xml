@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-14T23:00:00+01:00</updated><entry><title>On Accepting Change At Work</title><link href="https://romainpellerin.eu/on-accepting-change-at-work.html" rel="alternate"></link><published>2024-11-14T23:00:00+01:00</published><updated>2024-11-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-14:/on-accepting-change-at-work.html</id><summary type="html">&lt;p&gt;Change is hard to accept sometimes. My views on the topic.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just needed to write some thoughts "down" as a reminder for myself in the future.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-22T14:18:00+01:00</updated><entry><title>On Accepting Change At Work</title><link href="https://romainpellerin.eu/on-accepting-change-at-work.html" rel="alternate"></link><published>2024-11-14T23:00:00+01:00</published><updated>2024-11-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-14:/on-accepting-change-at-work.html</id><summary type="html">&lt;p&gt;Change is hard to accept sometimes. My views on the topic.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just needed to write some thoughts "down" as a reminder for myself in the future.&lt;/p&gt;
 &lt;p&gt;Accepting change is hard. Crazy hard. It's so easy to pick a side and remain stubborn about it. Look at politics for instance. But the thing is, most things are not binary. There is a scale of options or opinions that are possible, not just two. Like a former manager of mine used to say, "the truth lies somewhere in between".&lt;/p&gt;
 &lt;p&gt;I'd like to mention a few examples to give context, from work:&lt;/p&gt;
 &lt;ul&gt;
@@ -415,7 +415,7 @@
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-11-02T00:57:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2024-11-22T14:18:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -507,9 +507,29 @@
           const paces = speeds.map(speed =&gt; secondsToTime(speedToSecondsForOneKilometer(speed)).valueWithQuotes)
           const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
           newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+
+          // % MAS
+          let masRow = ''
+          if (percentMas.length === 1) {
+                masRow = `&lt;span style="white-space: nowrap;"&gt;&lt;= ${percentMas[0]}% (${speeds[0] ?? '?'} km/h)&lt;/span&gt;`
+          }
+          else {
+                masRow = percentMas.map((mas,i) =&gt; `&lt;span style="white-space: nowrap;"&gt;${mas}% (${speeds[i] ?? '?'} km/h)&lt;/span&gt;`).join('&lt;br /&gt;⬇️&lt;br /&gt;')
+          }
+          newTable += `&lt;td class="center"&gt;${masRow}&lt;/td&gt;`
+
+          // % HRmax
+          let hrRow = ''
+          if (percentHr.length === 1) {
+                hrRow = `&lt;span style="white-space: nowrap;"&gt;&lt;= ${percentHr[0]}% (${hrs[0] ?? '?'} bpm)&lt;/span&gt;`
+          }
+          else {
+                hrRow = percentHr.map((hr,i) =&gt; `&lt;span style="white-space: nowrap;"&gt;${hr}% (${hrs[i] ?? '?'} bpm)&lt;/span&gt;`).join('&lt;br /&gt;⬇️&lt;br /&gt;')
+          }
+          newTable += `&lt;td class="center"&gt;${hrRow}&lt;/td&gt;`
+
+          // Paces
+          newTable += `&lt;td class="center"&gt;${paces.join('&lt;br /&gt;⬇️&lt;br /&gt;')}&lt;/td&gt;`
           newTable += `&lt;/tr&gt;`
         })
 

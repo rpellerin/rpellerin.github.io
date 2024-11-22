@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 03 Nov 2024 00:10:00 +0100</lastBuildDate><item><title>Mon premier marathon : récit d'une course parfaite</title><link>https://romainpellerin.eu/mon-premier-marathon-recit-d-une-course-parfaite.html</link><description>&lt;p&gt;ÇA Y EST JE L'AI FAIT ! Marathonien ! Dingue, je réalise toujours pas. Après des mois de préparation, plusieurs blessures et plusieurs articles de blog, c'est fait ! Qui plus est, j'ai atteint mon objectif : moins de 3 heures 30 ! Allez, je vous raconte.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Running</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 22 Nov 2024 14:18:00 +0100</lastBuildDate><item><title>Mon premier marathon : récit d'une course parfaite</title><link>https://romainpellerin.eu/mon-premier-marathon-recit-d-une-course-parfaite.html</link><description>&lt;p&gt;ÇA Y EST JE L'AI FAIT ! Marathonien ! Dingue, je réalise toujours pas. Après des mois de préparation, plusieurs blessures et plusieurs articles de blog, c'est fait ! Qui plus est, j'ai atteint mon objectif : moins de 3 heures 30 ! Allez, je vous raconte.&lt;/p&gt;
 &lt;h1 id="motivation"&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;Tout commence réellement il y a un an et demi. Un ami d'enfance (coucou Robin !) passe de fumeur sédentaire à coureur à pied du jour au lendemain avec comme objectif un marathon en 2025. Moi qui courrais péniblement entre 200 et 300 kilomètres par an depuis 2020 sans objectif aucun, voilà qui me donne des idées. Mais à cette époque, je ne jure encore que par le vélo. Mon premier triathlon n'a toujours pas eu lieu, et le semi de Berlin couru en 2h00'22" l'année précédente n'a déclenché aucune passion. Plutôt l'inverse, je me souviens franchir la ligne d'arrivée, après 21 kilomètres, et me dire qu'il me serait absolument impossible de faire un kilomètre de plus.&lt;/p&gt;
 &lt;p&gt;Le triathlon arrive en Juin et se passe plutôt bien, performance en course correcte dans l'absolu pour quelqu'un qui court peu mais franchement nulle comparée à mon niveau en vélo : allure de 5'09"/km, sur une distance de 4.25 kilomètres. Alors ok, je viens de nager et faire 20 kilomètres de vélo, mais soyons honnête c'est pas grand chose. Je savais que je pouvais faire beaucoup mieux.&lt;/p&gt;
@@ -356,9 +356,29 @@
           const paces = speeds.map(speed =&gt; secondsToTime(speedToSecondsForOneKilometer(speed)).valueWithQuotes)
           const hrs = maxHrInput.value ? percentHr.map(hr =&gt; Math.round(maxHrInput.value * hr / 100)) : []
           newTable += `&lt;tr style="background-color: ${color}"&gt;&lt;td&gt;${zone}&lt;/td&gt;&lt;td&gt;${name}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentMas.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentMas.join('&amp;nbsp;-&amp;nbsp;')}%&lt;br /&gt;${speeds.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;km/h&lt;/td&gt;`
-          newTable += `&lt;td&gt;${percentHr.length === 1 ? '&lt;=&amp;nbsp;' : ''}${percentHr.length &gt; 0 ? `${percentHr.join('&amp;nbsp;-&amp;nbsp;')}%` : ''}${hrs.length &gt; 0 ? `&lt;br /&gt;${hrs.join('&amp;nbsp;-&amp;nbsp;')}&amp;nbsp;bpm` : ''}&lt;/td&gt;`
-          newTable += `&lt;td&gt;${paces.join('&amp;nbsp;-&amp;nbsp;')}&lt;/td&gt;`
+
+          // % MAS
+          let masRow = ''
+          if (percentMas.length === 1) {
+                masRow = `&lt;span style="white-space: nowrap;"&gt;&lt;= ${percentMas[0]}% (${speeds[0] ?? '?'} km/h)&lt;/span&gt;`
+          }
+          else {
+                masRow = percentMas.map((mas,i) =&gt; `&lt;span style="white-space: nowrap;"&gt;${mas}% (${speeds[i] ?? '?'} km/h)&lt;/span&gt;`).join('&lt;br /&gt;⬇️&lt;br /&gt;')
+          }
+          newTable += `&lt;td class="center"&gt;${masRow}&lt;/td&gt;`
+
+          // % HRmax
+          let hrRow = ''
+          if (percentHr.length === 1) {
+                hrRow = `&lt;span style="white-space: nowrap;"&gt;&lt;= ${percentHr[0]}% (${hrs[0] ?? '?'} bpm)&lt;/span&gt;`
+          }
+          else {
+                hrRow = percentHr.map((hr,i) =&gt; `&lt;span style="white-space: nowrap;"&gt;${hr}% (${hrs[i] ?? '?'} bpm)&lt;/span&gt;`).join('&lt;br /&gt;⬇️&lt;br /&gt;')
+          }
+          newTable += `&lt;td class="center"&gt;${hrRow}&lt;/td&gt;`
+
+          // Paces
+          newTable += `&lt;td class="center"&gt;${paces.join('&lt;br /&gt;⬇️&lt;br /&gt;')}&lt;/td&gt;`
           newTable += `&lt;/tr&gt;`
         })
 
