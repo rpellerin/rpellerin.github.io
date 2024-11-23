@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-22T14:18:00+01:00</updated><entry><title>On Accepting Change At Work</title><link href="https://romainpellerin.eu/on-accepting-change-at-work.html" rel="alternate"></link><published>2024-11-14T23:00:00+01:00</published><updated>2024-11-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-14:/on-accepting-change-at-work.html</id><summary type="html">&lt;p&gt;Change is hard to accept sometimes. My views on the topic.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just needed to write some thoughts "down" as a reminder for myself in the future.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2024-11-23T16:47:00+01:00</updated><entry><title>On Accepting Change At Work</title><link href="https://romainpellerin.eu/on-accepting-change-at-work.html" rel="alternate"></link><published>2024-11-14T23:00:00+01:00</published><updated>2024-11-14T23:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-11-14:/on-accepting-change-at-work.html</id><summary type="html">&lt;p&gt;Change is hard to accept sometimes. My views on the topic.&lt;/p&gt;</summary><content type="html">&lt;p&gt;I just needed to write some thoughts "down" as a reminder for myself in the future.&lt;/p&gt;
 &lt;p&gt;Accepting change is hard. Crazy hard. It's so easy to pick a side and remain stubborn about it. Look at politics for instance. But the thing is, most things are not binary. There is a scale of options or opinions that are possible, not just two. Like a former manager of mine used to say, "the truth lies somewhere in between".&lt;/p&gt;
 &lt;p&gt;I'd like to mention a few examples to give context, from work:&lt;/p&gt;
 &lt;ul&gt;
@@ -2721,17 +2721,35 @@ R = (3.3 - 1.5 - 1.5) / 0.020 = 15 Ω
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Yqa_imdSJ4Q"&gt;https://www.youtube.com/watch?v=Yqa_imdSJ4Q&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=YrH26kd-j4c"&gt;https://www.youtube.com/watch?v=YrH26kd-j4c&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=zqp9tNVDCUs"&gt;https://www.youtube.com/watch?v=zqp9tNVDCUs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="carrelage"></category><category term="bricolage"></category></entry><entry><title>How to resize an encrypted SWAP partition (LVM)</title><link href="https://romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html" rel="alternate"></link><published>2022-07-29T19:00:00+02:00</published><updated>2023-11-13T00:06:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-29:/how-to-resize-an-encrypted-swap-partition-lvm.html</id><summary type="html">&lt;p&gt;A few commands to resize a SWAP partition&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
-&lt;p&gt;Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.&lt;/p&gt;
-&lt;p&gt;First, check what your LVM disk currently looks like, running &lt;code&gt;lsblk&lt;/code&gt;:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk
-&lt;span class="c1"&gt;# └─sda6                  8:6    0 464,6G  0 part&lt;/span&gt;
-&lt;span class="c1"&gt;#   └─sda6_crypt        253:0    0 464,5G  0 crypt&lt;/span&gt;
-&lt;span class="c1"&gt;#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /&lt;/span&gt;
-&lt;span class="c1"&gt;#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]&lt;/span&gt;
+&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="carrelage"></category><category term="bricolage"></category></entry><entry><title>How to resize an encrypted SWAP partition (LVM)</title><link href="https://romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html" rel="alternate"></link><published>2022-07-29T19:00:00+02:00</published><updated>2024-11-23T16:47:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-29:/how-to-resize-an-encrypted-swap-partition-lvm.html</id><summary type="html">&lt;p&gt;A few commands to resize a SWAP partition&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I am afraid &lt;a href="https://askubuntu.com/a/1412311"&gt;this page&lt;/a&gt; might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.&lt;/p&gt;
+&lt;p&gt;Before doing anything, check what swap you have: &lt;code&gt;swapon -s&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Scroll all the way down if you do not currently have any SWAP partition nor SWAP file, and need to add one.&lt;/p&gt;
+&lt;h1 id="creating-a-new-swap-file-of-8g"&gt;Creating a new SWAP file of 8G&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/swapfile.img &lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1024&lt;/span&gt; &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;8M
+mkswap /swapfile.img
+
+&lt;span class="c1"&gt;# Add this line to `/etc/fstab` and reboot&lt;/span&gt;
+/swapfile.img none swap sw &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;For me, &lt;code&gt;sda6&lt;/code&gt; was &lt;code&gt;nvme0n1p3&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id="increasing-the-size-of-a-swap-partition"&gt;Increasing the size of a SWAP partition&lt;/h1&gt;
+&lt;p&gt;Before increasing the size, you need to decrease the size of its neighboring root volume, as the sum of both LVM volumes myst be equal to the capacity of the disk. Here, we add another 15G to the existing SWAP partition.&lt;/p&gt;
+&lt;p&gt;First, open a terminal and check what your LVM disk currently looks like, running &lt;code&gt;lsblk&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk
+&lt;span class="c1"&gt;# sda                      8:0    0 238,5G  0 disk&lt;/span&gt;
+&lt;span class="c1"&gt;# ├─sda1                   8:1    0   512M  0 part  /boot/efi&lt;/span&gt;
+&lt;span class="c1"&gt;# ├─sda2                   8:2    0   1,7G  0 part  /boot&lt;/span&gt;
+&lt;span class="c1"&gt;# └─sda3                   8:3    0 236,3G  0 part&lt;/span&gt;
+&lt;span class="c1"&gt;#   └─sda3_crypt         253:0    0 236,3G  0 crypt&lt;/span&gt;
+&lt;span class="c1"&gt;#     ├─vgxubuntu-root   253:1    0 234,4G  0 lvm   /var/snap/firefox/common/host-hunspell&lt;/span&gt;
+&lt;span class="c1"&gt;#     │                                             /var/snap&lt;/span&gt;
+&lt;span class="c1"&gt;#     │                                             /snap&lt;/span&gt;
+&lt;span class="c1"&gt;#     │                                             /var/snap/firefox/common/host-hunspell&lt;/span&gt;
+&lt;span class="c1"&gt;#     │                                             /&lt;/span&gt;
+&lt;span class="c1"&gt;#     └─vgxubuntu-swap_1 253:2    0   1,9G  0 lvm   [SWAP]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here, it's &lt;code&gt;└─sda3_crypt&lt;/code&gt;. And we have a swap partition of 1.9G.&lt;/p&gt;
 &lt;p&gt;Now, boot your Linux from a USB stick and open a terminal:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo su
 &lt;span class="c1"&gt;# `sudo`    =&amp;gt; Execute a command as another user.&lt;/span&gt;
@@ -2754,7 +2772,7 @@ lsblk
     &lt;span class="c1"&gt;#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Shrink logical root volume AND filesystem&lt;/span&gt;
-lvresize --verbose --resizefs -L -7G /dev/mapper/vgubuntu-root
+lvresize --verbose --resizefs -L -15G /dev/mapper/vgubuntu-root
     &lt;span class="c1"&gt;# `lvresize` &amp;lt;volume&amp;gt; =&amp;gt; resize a logical volume&lt;/span&gt;
     &lt;span class="c1"&gt;#   --verbose  =&amp;gt; Give more info.&lt;/span&gt;
     &lt;span class="c1"&gt;#   --resizefs =&amp;gt; Resize filesystem AND LV with fsadm(8).&lt;/span&gt;
@@ -2767,14 +2785,40 @@ e2fsck -f /dev/mapper/vgubuntu-root
     &lt;span class="c1"&gt;#   -f =&amp;gt; Force checking even if the file system seems clean.&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Increase swapsize&lt;/span&gt;
-lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+lvresize --verbose -L +15G /dev/mapper/vgubuntu-swap_1
 &lt;span class="c1"&gt;# Format to make it usable&lt;/span&gt;
 mkswap /dev/mapper/vgubuntu-swap_1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt; or &lt;code&gt;vgchange -a n sda6_crypt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now, deactive the volume group: &lt;code&gt;vgchange -a n&lt;/code&gt; or &lt;code&gt;vgchange -a n ubuntu-vg&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;And finally: &lt;code&gt;cryptsetup close crypt; reboot&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;After rebooting, check the sizes using &lt;code&gt;lsblk&lt;/code&gt;, &lt;code&gt;swapon -s&lt;/code&gt; and &lt;code&gt;free -h&lt;/code&gt;. That's it!&lt;/p&gt;</content><category term="Linux"></category><category term="swap"></category><category term="lvm"></category><category term="linux"></category></entry><entry><title>Docker</title><link href="https://romainpellerin.eu/docker.html" rel="alternate"></link><published>2022-07-05T12:30:00+02:00</published><updated>2022-07-15T11:53:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-05:/docker.html</id><summary type="html">&lt;p&gt;My cheatsheet for Docker&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;After rebooting, check the sizes using &lt;code&gt;lsblk&lt;/code&gt;, &lt;code&gt;swapon -s&lt;/code&gt; and &lt;code&gt;free -h&lt;/code&gt;. That's it!&lt;/p&gt;
+&lt;h1 id="adding-a-new-swap-partition"&gt;Adding a new SWAP partition&lt;/h1&gt;
+&lt;p&gt;The steps are the same: reboot on a USB stick, &lt;code&gt;sudo su&lt;/code&gt; and &lt;code&gt;cryptsetup open /dev/sda6 crypt&lt;/code&gt;. Then:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lvresize --verbose --resizefs -L -16G /dev/mapper/ubuntu--vg-ubuntu--lv
+e2fsck -f /dev/mapper/ubuntu--vg-ubuntu--lv
+lvdisplay &lt;span class="c1"&gt;# Check all is fine, and find the VG name, needed for the next command&lt;/span&gt;
+lvcreate -n swap -L 16G ubuntu-vg
+mkswap /dev/mapper/ubuntu--vg-swap
+lsblk &lt;span class="c1"&gt;# Check all looks ok. At this point, the last line should read `└─ubuntu--vg-swap 252:2    0   16G  0 lvm`&lt;/span&gt;
+
+&lt;span class="c1"&gt;# The next steps are the same as for editing an existing SWAP partition&lt;/span&gt;
+vgchange -a n
+cryptsetup close crypt&lt;span class="p"&gt;;&lt;/span&gt; reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, edit &lt;code&gt;/etc/fstab&lt;/code&gt; by adding this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/dev/mapper/vgxubuntu-swap_1 none swap sw &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
+swapon -a &lt;span class="c1"&gt;# Enable it&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Verify it works&lt;/span&gt;
+free -m
+&lt;span class="c1"&gt;# or&lt;/span&gt;
+swapon -s
+cat /proc/swaps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Reboot. All should work.&lt;/p&gt;</content><category term="Linux"></category><category term="swap"></category><category term="lvm"></category><category term="linux"></category></entry><entry><title>Docker</title><link href="https://romainpellerin.eu/docker.html" rel="alternate"></link><published>2022-07-05T12:30:00+02:00</published><updated>2022-07-15T11:53:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2022-07-05:/docker.html</id><summary type="html">&lt;p&gt;My cheatsheet for Docker&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;WIP ARTICLE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, Docker has always been a mystery to me. Mostly because I never took time to dive into it. For the past year, I was lucky enough to have David Gageot as my manager at Doctolib. As far as I know, he was one of the early contributors to it, and remains to this day one of the main contributors. Docker has no secrets for him. Here is a video starring David himself, a year after Docker was released to the public:&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/d3bUoz_G2VU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 

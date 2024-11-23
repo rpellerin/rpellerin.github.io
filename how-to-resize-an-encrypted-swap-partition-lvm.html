@@ -76,27 +76,45 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time> - Last update: <time datetime="2023-11-13T00:06:00+01:00">Mon 13 November 2023</time>        </p>
+<time datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time> - Last update: <time datetime="2024-11-23T16:47:00+01:00">Sat 23 November 2024</time>        </p>
     <h1>How to resize an encrypted SWAP partition (LVM)</h1>
     <div class="grey">
         <p class="italic">A few commands to resize a SWAP partition</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 410 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 654 words.">3 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/swap.html">swap</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/lvm.html">lvm</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
 <article>
     <p>Just because I am afraid <a href="https://askubuntu.com/a/1412311">this page</a> might some day get deleted, I am copy pasting here the answer, which was very useful to me, when I needed to increase the size of the SWAP partition of my freshly installed Xubuntu 22.04, after I selected the "encrypted LVM partition" option in the install wizard. I am adding some commands and missing bits of information too.</p>
-<p>Before increasing the size, I needed to decrease the size of its neighboring root volume, as the sum of both LVM volumes was equal to the capacity of my disk. Here I add another 7G to my SWAP partition.</p>
-<p>First, check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
-<div class="highlight"><pre><span></span><code>lsblk
-<span class="c1"># └─sda6                  8:6    0 464,6G  0 part</span>
-<span class="c1">#   └─sda6_crypt        253:0    0 464,5G  0 crypt</span>
-<span class="c1">#     ├─vgubuntu-root   253:1    0 463,6G  0 lvm   /</span>
-<span class="c1">#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]</span>
+<p>Before doing anything, check what swap you have: <code>swapon -s</code>.</p>
+<p>Scroll all the way down if you do not currently have any SWAP partition nor SWAP file, and need to add one.</p>
+<h1 id="creating-a-new-swap-file-of-8g">Creating a new SWAP file of 8G</h1>
+<div class="highlight"><pre><span></span><code>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/swapfile.img <span class="nv">bs</span><span class="o">=</span><span class="m">1024</span> <span class="nv">count</span><span class="o">=</span>8M
+mkswap /swapfile.img
+
+<span class="c1"># Add this line to `/etc/fstab` and reboot</span>
+/swapfile.img none swap sw <span class="m">0</span> <span class="m">0</span>
 </code></pre></div>
 
-<p>For me, <code>sda6</code> was <code>nvme0n1p3</code>.</p>
+<h1 id="increasing-the-size-of-a-swap-partition">Increasing the size of a SWAP partition</h1>
+<p>Before increasing the size, you need to decrease the size of its neighboring root volume, as the sum of both LVM volumes myst be equal to the capacity of the disk. Here, we add another 15G to the existing SWAP partition.</p>
+<p>First, open a terminal and check what your LVM disk currently looks like, running <code>lsblk</code>:</p>
+<div class="highlight"><pre><span></span><code>lsblk
+<span class="c1"># sda                      8:0    0 238,5G  0 disk</span>
+<span class="c1"># ├─sda1                   8:1    0   512M  0 part  /boot/efi</span>
+<span class="c1"># ├─sda2                   8:2    0   1,7G  0 part  /boot</span>
+<span class="c1"># └─sda3                   8:3    0 236,3G  0 part</span>
+<span class="c1">#   └─sda3_crypt         253:0    0 236,3G  0 crypt</span>
+<span class="c1">#     ├─vgxubuntu-root   253:1    0 234,4G  0 lvm   /var/snap/firefox/common/host-hunspell</span>
+<span class="c1">#     │                                             /var/snap</span>
+<span class="c1">#     │                                             /snap</span>
+<span class="c1">#     │                                             /var/snap/firefox/common/host-hunspell</span>
+<span class="c1">#     │                                             /</span>
+<span class="c1">#     └─vgxubuntu-swap_1 253:2    0   1,9G  0 lvm   [SWAP]</span>
+</code></pre></div>
+
+<p>Here, it's <code>└─sda3_crypt</code>. And we have a swap partition of 1.9G.</p>
 <p>Now, boot your Linux from a USB stick and open a terminal:</p>
 <div class="highlight"><pre><span></span><code>sudo su
 <span class="c1"># `sudo`    =&gt; Execute a command as another user.</span>
@@ -119,7 +137,7 @@ lsblk
     <span class="c1">#     └─vgubuntu-swap_1 253:2    0   980M  0 lvm   [SWAP]</span>
 
 <span class="c1"># Shrink logical root volume AND filesystem</span>
-lvresize --verbose --resizefs -L -7G /dev/mapper/vgubuntu-root
+lvresize --verbose --resizefs -L -15G /dev/mapper/vgubuntu-root
     <span class="c1"># `lvresize` &lt;volume&gt; =&gt; resize a logical volume</span>
     <span class="c1">#   --verbose  =&gt; Give more info.</span>
     <span class="c1">#   --resizefs =&gt; Resize filesystem AND LV with fsadm(8).</span>
@@ -132,17 +150,43 @@ e2fsck -f /dev/mapper/vgubuntu-root
     <span class="c1">#   -f =&gt; Force checking even if the file system seems clean.</span>
 
 <span class="c1"># Increase swapsize</span>
-lvresize --verbose -L +7G /dev/mapper/vgubuntu-swap_1
+lvresize --verbose -L +15G /dev/mapper/vgubuntu-swap_1
 <span class="c1"># Format to make it usable</span>
 mkswap /dev/mapper/vgubuntu-swap_1
 </code></pre></div>
 
-<p>Now, deactive the volume group: <code>vgchange -a n</code> or <code>vgchange -a n sda6_crypt</code>.</p>
+<p>Now, deactive the volume group: <code>vgchange -a n</code> or <code>vgchange -a n ubuntu-vg</code>.</p>
 <p>And finally: <code>cryptsetup close crypt; reboot</code></p>
 <p>After rebooting, check the sizes using <code>lsblk</code>, <code>swapon -s</code> and <code>free -h</code>. That's it!</p>
+<h1 id="adding-a-new-swap-partition">Adding a new SWAP partition</h1>
+<p>The steps are the same: reboot on a USB stick, <code>sudo su</code> and <code>cryptsetup open /dev/sda6 crypt</code>. Then:</p>
+<div class="highlight"><pre><span></span><code>lvresize --verbose --resizefs -L -16G /dev/mapper/ubuntu--vg-ubuntu--lv
+e2fsck -f /dev/mapper/ubuntu--vg-ubuntu--lv
+lvdisplay <span class="c1"># Check all is fine, and find the VG name, needed for the next command</span>
+lvcreate -n swap -L 16G ubuntu-vg
+mkswap /dev/mapper/ubuntu--vg-swap
+lsblk <span class="c1"># Check all looks ok. At this point, the last line should read `└─ubuntu--vg-swap 252:2    0   16G  0 lvm`</span>
+
+<span class="c1"># The next steps are the same as for editing an existing SWAP partition</span>
+vgchange -a n
+cryptsetup close crypt<span class="p">;</span> reboot
+</code></pre></div>
+
+<p>Now, edit <code>/etc/fstab</code> by adding this:</p>
+<div class="highlight"><pre><span></span><code>/dev/mapper/vgxubuntu-swap_1 none swap sw <span class="m">0</span> <span class="m">0</span>
+swapon -a <span class="c1"># Enable it</span>
+
+<span class="c1"># Verify it works</span>
+free -m
+<span class="c1"># or</span>
+swapon -s
+cat /proc/swaps
+</code></pre></div>
+
+<p>Reboot. All should work.</p>
 </article>
 <footer class="grey italic small">
-    Last update: Mon 13 November 2023</footer>
+    Last update: Sat 23 November 2024</footer>
 
         </div> <!-- WRAPPER -->
     </body>
