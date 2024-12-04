@@ -31,3 +31,7 @@ Things I did recently that may have helped:
 - Today I wore compression socks that are tighter than the ones I usually wear
 
 I'm confident for Sunday 🤞.
+
+# UPDATE: 2024-12-04
+
+More than a month after my first marathon ever, I thought this deserved an update. I'll keep it short: the marathon went amazingly well, no pain at all during the race, or very mild, but barely noticeable. I still felt it in the following days, a little stronger. After the race, I stopped running for 3 weeks (to be exact, I actually ran once per week, slowly and short distances). That was enough for my calf to heal completely. I haven't felt anything now for 2+ weeks. 🎉 Since the end of November, I am gradually increasing the distances again, and slowly getting back to 3 or 4 easy jogs a week. So happy!!!
