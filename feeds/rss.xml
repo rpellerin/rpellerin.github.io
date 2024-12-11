@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 05 Dec 2024 00:00:00 +0100</lastBuildDate><item><title>The Way I Work: 2024 edition</title><link>https://romainpellerin.eu/the-way-i-work-2024-edition.html</link><description>&lt;p&gt;I wrote &lt;a href="https://romainpellerin.eu/the-way-i-work.html"&gt;the original article&lt;/a&gt; almost 6 years ago. This deserves a small update. Most of what's in the original article remains true. I'll only add/update some parts below.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 11 Dec 2024 16:26:00 +0100</lastBuildDate><item><title>The Way I Work: 2024 edition</title><link>https://romainpellerin.eu/the-way-i-work-2024-edition.html</link><description>&lt;p&gt;I wrote &lt;a href="https://romainpellerin.eu/the-way-i-work.html"&gt;the original article&lt;/a&gt; almost 6 years ago. This deserves a small update. Most of what's in the original article remains true. I'll only add/update some parts below.&lt;/p&gt;
 &lt;h1 id="work-todo-list"&gt;Work TODO list&lt;/h1&gt;
 &lt;p&gt;This has not changed much. Except that nowadays, I keep my TODO list in Asana instead of a simple text file, because it's backed up on a server and the UI is slightly nicer.&lt;/p&gt;
 &lt;p&gt;I still have my items sorted by priority, from most pressing to least. I've stopped using the 3 groups I used to use (to do today, this month, some day...). I just keep "one list". For coding tasks that I want to do "some day", I simply create JIRA tickets and add them to the backlog.&lt;/p&gt;
@@ -5423,7 +5423,7 @@ People were stupid.&lt;/p&gt;
 
 &lt;h1 id="comm-find"&gt;&lt;code&gt;comm&lt;/code&gt; + &lt;code&gt;find&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;Only compares filenames. &lt;strong&gt;Fast&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;comm -3 &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&amp;gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;comm -3 &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Also works with &lt;code&gt;diff&lt;/code&gt;.&lt;/p&gt;
