@@ -18,7 +18,7 @@ Compares filenames and lines. **Very slow**.
 Only compares filenames. **Fast**.
 
     :::bash
-    comm -3 <(find /dirA -type f -printf "%f\n"|sort) <(find /dirB -type f -printf "%f\n"|sort)>>
+    comm -3 <(find /dirA -type f -printf "%f\n"|sort) <(find /dirB -type f -printf "%f\n"|sort)
 
 Also works with `diff`.
 
