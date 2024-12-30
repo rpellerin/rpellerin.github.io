@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, winter, berlin, germany" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="How to make the most out of winter in Berlin" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="My Recipe To Survive Winter In Berlin - Romain Pellerin's Blog" />
+        <meta property="og:description" content="How to make the most out of winter in Berlin" />
+        <meta property="og:url" content="https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html" />
+
+        <title>My Recipe To Survive Winter In Berlin - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2024-12-30T18:00:00+01:00">Mon 30 December 2024</time>        </p>
+    <h1>My Recipe To Survive Winter In Berlin</h1>
+    <div class="grey">
+        <p class="italic">How to make the most out of winter in Berlin</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 574 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/winter.html">winter</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/berlin.html">berlin</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/germany.html">germany</a></p>    </div>
+</header>
+<article>
+    <p>Making it through winter in Berlin is no easy feat. Here's how I do it 😁.</p>
+<h1 id="christmas-markets">Christmas markets 🎄</h1>
+<p><a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin">Wikipedia says there are over 80 Christmas markets in Berlin</a>. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/rathaus.jpg" alt="Two photos of the market at Rathaus" />
+<figcaption>Christmas Market at Berlin City Hall</figcaption>
+</figure>
+
+<p>My personal favorite ones:</p>
+<ul>
+<li><a href="https://www.berlin.de/en/christmas-markets/5096971-3230598-christmas-market-at-berlin-town-hall.en.html">Christmas Market at Berlin City Hall</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/3235772-3230598-christmas-market-at-gendarmenmarkt.en.html">Christmas Market on Gendarmenmarkt (Bebelplatz)</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/8360550-3230598-christmas-market-at-the-humboldt-forum.en.html">Christmas Market at the Humboldt Forum</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/3240314-3230598-christmas-market-charlottenburg-palace.en.html">Christmas Market at Charlottenburg Palace</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/3240367-3230598-lucia-christmas-market-at-kulturbrauerei.en.html">Lucia Christmas Market at Kulturbrauerei</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/5983209-3230598-medieval-christmas-market-at-the-raw-com.en.html">Medieval Christmas Market at the RAW Compound</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/5703554-3230598-heissa-holzmarkt.en.html">Heissa Holzmarkt</a></li>
+<li><a href="https://www.berlin.de/en/christmas-markets/3240274-3230598-christmas-market-at-kaiser-wilhelm-memor.en.html">Christmas Market on Breitscheidplatz</a></li>
+</ul>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/lucia1.jpg" alt="The Lucia market" />
+<figcaption>Lucia Christmas Market at Kulturbrauerei</figcaption>
+</figure>
+
+<p>They usually open from late November till Christmas. A few will remain open until the first week of January. <a href="https://www.berlin.de/en/christmas-markets/">Here is a map with all of them</a> (as of December 2024, the page currently lists 97 markets in Berlin only).</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/lucia2.jpg" alt="The Lucia market" />
+<figcaption>Lucia Christmas Market at Kulturbrauerei</figcaption>
+</figure>
+
+<p>They are mostly filled with food and drink stalls (try Glühwein 🍷), something like 80% of all stalls. The 20% remaining is decoration, handmade wooden items (famously coming from the Erzgebirge region) and clothing.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/potsdamer-platz.jpg" alt="Potsdamer Platz" />
+<figcaption>Potsdamer Platz</figcaption>
+</figure>
+
+<p>I googled it, apparently <a href="https://www.thetimes.com/travel/destinations/europe-travel/best-christmas-markets-holidays-rff27td28">Germany is the country with the most Christmas markets in the world</a>. And Gemini (Google's AI) as well as <a href="https://www.travelawaits.com/3003548/european-cities-ranked-by-the-number-of-christmas-markets/">this website</a> cite Berlin as the city with the most Christmas markets in the world. Needless to say, December is a festive and joyful month to be in Berlin.</p>
+<h1 id="new-years-eve">New Year's Eve 🎆</h1>
+<p>Some like it very much, some hate it. One thing is for sure, New Year's Eve is nothing short of unique in Berlin, greatly due to the fact that the city turns into a giant firework! During the last 3 days of the year, supermarkets are allowed to sell fairly big fireworks to everyone. So on the 31th, when the sun sets until the early morning lights, you'll hear and see fireworks explosions everywhere, on every corner and every street! Take part, or flee!</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/fireworks.jpg" alt="A photo showing a shop selling fireworks" />
+<figcaption>A shop selling fireworks</figcaption>
+</figure>
+
+<h1 id="saunas">Saunas 🧖</h1>
+<p>Ok, so past December, Christmas markets are gone. What now? Well friend, saunas!</p>
+<p>Again, another thing germans excel at! It would be almost impossible to count the number of saunas in Berlin, since they are virtually everywhere! <a href="https://www.berlin.de/hotels/mit-sauna/">Hotels</a>, <a href="https://urbansportsclub.com/en/sports/sauna/berlin">gyms</a>, <a href="https://www.vabali.de/en/berlin/">dedicated wellness establishments</a>, <a href="https://www.berlinerbaeder.de/saunen/">public swimming pools</a>, they're everywhere!</p>
+<p>In Winter, I'm a big sauna goer. My personal record: over 7 days, I went to saunas 5 times, in 4 different places.</p>
+<h1 id="skiing-and-sledding">Skiing and sledding ❄️</h1>
+<p>Another winter activity: skiing! Not so much doable in Berlin, but easily reachable from Berlin by train or plane. Austria, France, and Switzerland are never far away, and Germany even has a few ski resorts, Garmisch-Partenkirchen being my favorite!</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/dbQCVTTu9ts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Admittedly, Berlin is flat and not very high above sea level, but it still snows decent amounts every year, usually in January and February, sometimes as early as November. <a href="https://www.berlin.de/en/sports-leisure/sledding-hills/">There are a few spots in Berlin with small "hills" where sledding is possible!</a></p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/tiergarten.jpg" alt="Tiergarten under snow" />
+<figcaption>Tiergarten</figcaption>
+</figure>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/brandenburger-tor.jpg" alt="Brandenburger Tor under snow" />
+<figcaption>Brandenburger Tor</figcaption>
+</figure>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/volkspark-friedrichshain.png" alt="People having fun and sledding at Volkspark Friedrichshain" />
+<figcaption>Volkspark Friedrichshain</figcaption>
+</figure>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/my-recipe-to-survive-winter-in-berlin/liepnitzsee.jpg" alt="Frozen lake with snow" />
+<figcaption>Cycling on Liepnitzsee while the lake is frozen</figcaption>
+</figure>
+
+<h1 id="indoor-activities">Indoor activities 🏠</h1>
+<p>Last but not least, cocooning and other indoor activities. Winter is a good time to do some minor repairs at home, build furniture, change one's interior decor, etc. Winter is also great for movies, binge watching TV series, and even clubbing! I usually pause or keep my clubbing to a minimum in summer, since I'm always outside running or cycling... but comes winter, I'm a different person 😜.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 30 December 2024</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
