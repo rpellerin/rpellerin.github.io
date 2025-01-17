@@ -49,7 +49,7 @@ In recent years, many pace charts started using the "heart rate reserve" as thei
 
 The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.
 
-<input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="16.95"/>
+<input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.34"/>
 <input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/>
 
 <div>
@@ -287,7 +287,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 # Time and distance converter
 
 <div id="time_and_distance_converter">
-<div>Pace: <input pattern="\d{1,2}:\d{2}" type="text" id="time_and_distance_converter_pace" placeholder="Pace" value="4:25"/></div>
+<div>Pace: <input pattern="\d{1,2}:\d{2}" type="text" id="time_and_distance_converter_pace" placeholder="Pace" value="4:10"/></div>
 <div>What distance will I cover if I run for <input type="number" step="1" id="time_to_distance_mins" value="30"/> minutes and <input type="number" step="1" id="time_to_distance_secs" value="0"/> seconds? <strong id="time_to_distance_results"></strong></div>
 <div>How much time do I need to run <input type="number" step="1" id="distance_to_time" value="30"/> meters? <strong id="distance_to_time_results"></strong></div>
 </div>
