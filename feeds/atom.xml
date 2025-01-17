@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-01-17T14:17:00+01:00</updated><entry><title>My Recipe To Survive Winter In Berlin</title><link href="https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html" rel="alternate"></link><published>2024-12-30T18:00:00+01:00</published><updated>2024-12-30T18:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-12-30:/my-recipe-to-survive-winter-in-berlin.html</id><summary type="html">&lt;p&gt;How to make the most out of winter in Berlin&lt;/p&gt;</summary><content type="html">&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-01-17T14:22:00+01:00</updated><entry><title>My Recipe To Survive Winter In Berlin</title><link href="https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html" rel="alternate"></link><published>2024-12-30T18:00:00+01:00</published><updated>2024-12-30T18:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-12-30:/my-recipe-to-survive-winter-in-berlin.html</id><summary type="html">&lt;p&gt;How to make the most out of winter in Berlin&lt;/p&gt;</summary><content type="html">&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
 &lt;h1 id="christmas-markets"&gt;Christmas markets 🎄&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin"&gt;Wikipedia says there are over 80 Christmas markets in Berlin&lt;/a&gt;. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -549,7 +549,7 @@
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2025-01-17T14:17:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2025-01-17T14:22:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;script&gt;
     const matchPaceFormatWithColon = v =&gt; v &amp;&amp; v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v =&gt; v &amp;&amp; v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') =&gt; {
@@ -849,7 +849,7 @@
 
 &lt;h1 id="pace-chart"&gt;Pace chart&lt;/h1&gt;
 &lt;div id="pace_chart_info"&gt;
-&lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:25"/&gt;
+&lt;input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:10"/&gt;
 &lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:42"/&gt;
 
 &lt;div class="distance"&gt;&lt;input data-kms="42.195" id="marathon" type="checkbox" checked /&gt;&lt;label for="marathon"&gt;Marathon&lt;/label&gt;&lt;/div&gt;
