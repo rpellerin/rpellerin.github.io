@@ -21,6 +21,7 @@ Summary: Things to know if you intend to carry your dismantled bike on a Deutsch
 
 ## Misc
 
+- [https://www.adfc.de/artikel/neue-bedingungen-zur-fahrradmitnahme-in-der-bahn](https://www.adfc.de/artikel/neue-bedingungen-zur-fahrradmitnahme-in-der-bahn)
 - [https://nationaler-radverkehrsplan.de/de/aktuell/nachrichten/neue-bedingungen-zur-fahrradmitnahme-der-bahn](https://nationaler-radverkehrsplan.de/de/aktuell/nachrichten/neue-bedingungen-zur-fahrradmitnahme-der-bahn)
 
 # English resources
