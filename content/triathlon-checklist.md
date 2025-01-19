@@ -49,10 +49,11 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" /> Low cut socks, that you'll wear for both the cycling and running legs
 - <input type="checkbox" /> A triathlon belt to carry gels and display the bib number, to be worn until the end of the race
 - <input type="checkbox" /> Gels: have some in the belt, some on the bike. Aim for your weight in grams of carbs per hour: you weight 75 kgs, you take 75 grams per hour.
-- <input type="checkbox" /> Anti puncture liquid for tubes / sealant
-- <input type="checkbox" /> 2 CO2 cannisters, to store in the saddle bag
+- <input type="checkbox" /> Anti puncture liquid for tubes / sealant: Interesting readings: [1](https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/) and [2](https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/)
+- <input type="checkbox" /> 2 CO2 cannisters with inflator, to store in the saddle bag
 - <input type="checkbox" /> 2 or 3 spare tubes, in the saddle bag too
 - <input type="checkbox" /> Glueless patches, in the saddle bag too
+- <input type="checkbox" /> Tire levers and multi tool, in the saddle bag too
 - <input type="checkbox" /> A mini pump, attached to the bike frame
 
 ## 🏃 For running
