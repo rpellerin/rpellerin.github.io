@@ -21,7 +21,9 @@ So here is my TL;DR tutorial on how to use it:
     cd gopro-dashboard-overlay
     python3 -m venv .env
     source .env/bin/activate
-    pip install gopro-overlay
+    sudo apt install pkg-config libcairo2-dev
+    pip3 install -r requirements.txt
+    pip3 install gopro-overlay
     sudo apt install fonts-roboto
 
 # 2. Setup
