@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 11 Dec 2024 16:26:00 +0100</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 20 Jan 2025 23:55:00 +0100</lastBuildDate><item><title>Creating GPX overlay videos on Linux</title><link>https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html</link><description>&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -8,7 +8,9 @@
 &lt;span class="nb"&gt;cd&lt;/span&gt; gopro-dashboard-overlay
 python3 -m venv .env
 &lt;span class="nb"&gt;source&lt;/span&gt; .env/bin/activate
-pip install gopro-overlay
+sudo apt install pkg-config libcairo2-dev
+pip3 install -r requirements.txt
+pip3 install gopro-overlay
 sudo apt install fonts-roboto
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 

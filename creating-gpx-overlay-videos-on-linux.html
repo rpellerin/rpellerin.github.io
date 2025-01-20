@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2023-09-16T23:36:00+02:00">Sat 16 September 2023</time>        </p>
+<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2025-01-20T23:55:00+01:00">Mon 20 January 2025</time>        </p>
     <h1>Creating GPX overlay videos on Linux</h1>
     <div class="grey">
         <p class="italic">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 730 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 739 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
 </header>
@@ -95,7 +95,9 @@
 <span class="nb">cd</span> gopro-dashboard-overlay
 python3 -m venv .env
 <span class="nb">source</span> .env/bin/activate
-pip install gopro-overlay
+sudo apt install pkg-config libcairo2-dev
+pip3 install -r requirements.txt
+pip3 install gopro-overlay
 sudo apt install fonts-roboto
 </code></pre></div>
 
@@ -217,7 +219,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 <p>That's it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 16 September 2023</footer>
+    Last update: Mon 20 January 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
