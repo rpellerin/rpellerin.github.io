@@ -53,7 +53,7 @@ Then:
 Then:
 
     :::bash
-    vim ~/Documents/my-layout.xml
+    vim ~/Documents/my-layout-1920x1080.xml
 
 Then:
 
@@ -102,7 +102,7 @@ Then:
 Then:
 
     :::bash
-    vim ~/Documents/my-layout-portrait.xml
+    vim ~/Documents/my-layout-portrait-1080x1920.xml
 
 Then:
 
@@ -120,14 +120,58 @@ Then:
         </composite>
     </layout>
 
+Then:
+
+    :::bash
+    vim ~/Documents/my-layout-4k-3840x2160-ski.xml
+
+Then:
+
+    :::xml
+    <layout>
+        <!-- LAYOUT SIZE = 3840x2160 -->
+        <!-- <composite x="40" y="40" name="date_and_time">
+            <component type="datetime" x="0" y="0" format="%H:%M:%S" size="64" align="left"/>
+        </composite> -->
+
+        <composite x="40" y="1952" name="big_kph">
+            <!-- 2160 - 40 (margin) - 128 (altitude) - 40 (margin) = y 1952 -->
+            <component type="metric_unit" outline_width="4" x="0" y="-352" metric="speed" units="speed" size="32">km/h</component>
+            <component type="metric" outline_width="4" x="0" y="-320" metric="speed" units="speed" dp="0" size="320" />
+        </composite>
+
+        <composite x="40" y="2120" name="altitude">
+            <!-- 2160 - 40 (margin) = y 2120 -->
+            <component type="icon" x="0" y="-128" file="mountain.png" size="128"/>
+            <component type="metric_unit" outline_width="4" x="140" y="-128" metric="alt" units="alt" size="32">Altitude ({:~C})</component>
+            <component type="metric" outline_width="4" x="140" y="-92" metric="alt" units="alt" dp="1" size="92" />
+        </composite>
+
+        <composite x="540" y="2120" name="gradient">
+            <component type="icon" x="0" y="-128" file="slope-triangle.png" size="128"/>
+            <component type="text" outline_width="4" x="140" y="-128" size="32">Slope (%)</component>
+            <component type="metric" outline_width="4" x="140" y="-92" metric="gradient" dp="0" size="92" />
+        </composite>
+
+        <composite x="3800" y="2120" name="heartbeat">
+            <component type="icon" x="-128" y="-128" file="heartbeat.png" size="128"/>
+            <component type="metric" outline_width="4" x="-140" y="-128" metric="hr" dp="0" size="128" align="right"/>
+        </composite>
+    </layout>
+
 # 3. Generate a video
 
 ## A transparent video with the data only
 
     :::bash
-    .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph ~/Downloads/output.webm
+    .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout-1920x1080.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph ~/Downloads/output.webm
 
 It's going to take some hours. Encoding with VP9 in a .webm container is actually slower than with PNG in .mov container, but the file size is like 100 times smaller. Another way to speed up the processing is to further reduce the final file framerate (30 by default, here in the XML we set it to 5).
+
+**Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.** In this case, exporting in .mov, using the default built-in `mov` profile:
+
+    :::bash
+    .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ski-ride.gpx  --profile mov --layout-xml ~/Documents/my-layout-4k-3840x2160-ski --overlay-size 3840x2160 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph ~/Downloads/output.mov
 
 That's the kind of result you can expect:
 
