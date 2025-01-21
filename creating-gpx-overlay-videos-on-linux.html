@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2025-01-20T23:55:00+01:00">Mon 20 January 2025</time>        </p>
+<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2025-01-22T00:33:00+01:00">Wed 22 January 2025</time>        </p>
     <h1>Creating GPX overlay videos on Linux</h1>
     <div class="grey">
         <p class="italic">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 739 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 942 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
 </header>
@@ -124,7 +124,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 </code></pre></div>
 
 <p>Then:</p>
-<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout.xml
+<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout-1920x1080.xml
 </code></pre></div>
 
 <p>Then:</p>
@@ -171,7 +171,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 </code></pre></div>
 
 <p>Then:</p>
-<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout-portrait.xml
+<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout-portrait-1080x1920.xml
 </code></pre></div>
 
 <p>Then:</p>
@@ -189,12 +189,53 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 <span class="nt">&lt;/layout&gt;</span>
 </code></pre></div>
 
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code>vim ~/Documents/my-layout-4k-3840x2160-ski.xml
+</code></pre></div>
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;layout&gt;</span>
+    <span class="cm">&lt;!-- LAYOUT SIZE = 3840x2160 --&gt;</span>
+    <span class="cm">&lt;!-- &lt;composite x=&quot;40&quot; y=&quot;40&quot; name=&quot;date_and_time&quot;&gt;</span>
+<span class="cm">        &lt;component type=&quot;datetime&quot; x=&quot;0&quot; y=&quot;0&quot; format=&quot;%H:%M:%S&quot; size=&quot;64&quot; align=&quot;left&quot;/&gt;</span>
+<span class="cm">    &lt;/composite&gt; --&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;40&quot;</span> <span class="na">y=</span><span class="s">&quot;1952&quot;</span> <span class="na">name=</span><span class="s">&quot;big_kph&quot;</span><span class="nt">&gt;</span>
+        <span class="cm">&lt;!-- 2160 - 40 (margin) - 128 (altitude) - 40 (margin) = y 1952 --&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric_unit&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-352&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">size=</span><span class="s">&quot;32&quot;</span><span class="nt">&gt;</span>km/h<span class="nt">&lt;/component&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-320&quot;</span> <span class="na">metric=</span><span class="s">&quot;speed&quot;</span> <span class="na">units=</span><span class="s">&quot;speed&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;320&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;40&quot;</span> <span class="na">y=</span><span class="s">&quot;2120&quot;</span> <span class="na">name=</span><span class="s">&quot;altitude&quot;</span><span class="nt">&gt;</span>
+        <span class="cm">&lt;!-- 2160 - 40 (margin) = y 2120 --&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">file=</span><span class="s">&quot;mountain.png&quot;</span> <span class="na">size=</span><span class="s">&quot;128&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric_unit&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;140&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">metric=</span><span class="s">&quot;alt&quot;</span> <span class="na">units=</span><span class="s">&quot;alt&quot;</span> <span class="na">size=</span><span class="s">&quot;32&quot;</span><span class="nt">&gt;</span>Altitude ({:~C})<span class="nt">&lt;/component&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;140&quot;</span> <span class="na">y=</span><span class="s">&quot;-92&quot;</span> <span class="na">metric=</span><span class="s">&quot;alt&quot;</span> <span class="na">units=</span><span class="s">&quot;alt&quot;</span> <span class="na">dp=</span><span class="s">&quot;1&quot;</span> <span class="na">size=</span><span class="s">&quot;92&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;540&quot;</span> <span class="na">y=</span><span class="s">&quot;2120&quot;</span> <span class="na">name=</span><span class="s">&quot;gradient&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;0&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">file=</span><span class="s">&quot;slope-triangle.png&quot;</span> <span class="na">size=</span><span class="s">&quot;128&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;140&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">size=</span><span class="s">&quot;32&quot;</span><span class="nt">&gt;</span>Slope (%)<span class="nt">&lt;/component&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;140&quot;</span> <span class="na">y=</span><span class="s">&quot;-92&quot;</span> <span class="na">metric=</span><span class="s">&quot;gradient&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;92&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+
+    <span class="nt">&lt;composite</span> <span class="na">x=</span><span class="s">&quot;3800&quot;</span> <span class="na">y=</span><span class="s">&quot;2120&quot;</span> <span class="na">name=</span><span class="s">&quot;heartbeat&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;icon&quot;</span> <span class="na">x=</span><span class="s">&quot;-128&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">file=</span><span class="s">&quot;heartbeat.png&quot;</span> <span class="na">size=</span><span class="s">&quot;128&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;component</span> <span class="na">type=</span><span class="s">&quot;metric&quot;</span> <span class="na">outline_width=</span><span class="s">&quot;4&quot;</span> <span class="na">x=</span><span class="s">&quot;-140&quot;</span> <span class="na">y=</span><span class="s">&quot;-128&quot;</span> <span class="na">metric=</span><span class="s">&quot;hr&quot;</span> <span class="na">dp=</span><span class="s">&quot;0&quot;</span> <span class="na">size=</span><span class="s">&quot;128&quot;</span> <span class="na">align=</span><span class="s">&quot;right&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/composite&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div>
+
 <h1 id="3-generate-a-video">3. Generate a video</h1>
 <h2 id="a-transparent-video-with-the-data-only">A transparent video with the data only</h2>
-<div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.webm
+<div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx --profile vp9 --layout-xml ~/Documents/my-layout-1920x1080.xml --overlay-size 1920x1080 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.webm
 </code></pre></div>
 
 <p>It's going to take some hours. Encoding with VP9 in a .webm container is actually slower than with PNG in .mov container, but the file size is like 100 times smaller. Another way to speed up the processing is to further reduce the final file framerate (30 by default, here in the XML we set it to 5).</p>
+<p><strong>Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.</strong> In this case, exporting in .mov, using the default built-in <code>mov</code> profile:</p>
+<div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ski-ride.gpx  --profile mov --layout-xml ~/Documents/my-layout-4k-3840x2160-ski --overlay-size 3840x2160 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.mov
+</code></pre></div>
+
 <p>That's the kind of result you can expect:</p>
 <video controls>
   <source src="./videos/gpx-overlay.webm" type="video/webm">
@@ -219,7 +260,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 <p>That's it!</p>
 </article>
 <footer class="grey italic small">
-    Last update: Mon 20 January 2025</footer>
+    Last update: Wed 22 January 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
