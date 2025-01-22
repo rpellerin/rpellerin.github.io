@@ -168,7 +168,7 @@ Then:
 
 It's going to take some hours. Encoding with VP9 in a .webm container is actually slower than with PNG in .mov container, but the file size is like 100 times smaller. Another way to speed up the processing is to further reduce the final file framerate (30 by default, here in the XML we set it to 5).
 
-**Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.** In this case, exporting in .mov, using the default built-in `mov` profile:
+**Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.** I kept getting "Media offline" errors, after importing. In this case, exporting in .mov, using the default built-in `mov` profile solves the issue:
 
     :::bash
     .env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ski-ride.gpx  --profile mov --layout-xml ~/Documents/my-layout-4k-3840x2160-ski --overlay-size 3840x2160 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max 120 --gps-speed-max-units kph ~/Downloads/output.mov
