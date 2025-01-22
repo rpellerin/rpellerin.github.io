@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2025-01-22T00:33:00+01:00">Wed 22 January 2025</time>        </p>
+<time datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time> - Last update: <time datetime="2025-01-22T11:46:00+01:00">Wed 22 January 2025</time>        </p>
     <h1>Creating GPX overlay videos on Linux</h1>
     <div class="grey">
         <p class="italic">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 942 words.">5 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 953 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gps.html">gps</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/gpx.html">gpx</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/kdenlive.html">kdenlive</a></p>    </div>
 </header>
@@ -232,7 +232,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 </code></pre></div>
 
 <p>It's going to take some hours. Encoding with VP9 in a .webm container is actually slower than with PNG in .mov container, but the file size is like 100 times smaller. Another way to speed up the processing is to further reduce the final file framerate (30 by default, here in the XML we set it to 5).</p>
-<p><strong>Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.</strong> In this case, exporting in .mov, using the default built-in <code>mov</code> profile:</p>
+<p><strong>Although Kdenlive works fine with VP9 files with a framerate set to 5, Davinci Resolve 19 does not.</strong> I kept getting "Media offline" errors, after importing. In this case, exporting in .mov, using the default built-in <code>mov</code> profile solves the issue:</p>
 <div class="highlight"><pre><span></span><code>.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ski-ride.gpx  --profile mov --layout-xml ~/Documents/my-layout-4k-3840x2160-ski --overlay-size 3840x2160 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max <span class="m">120</span> --gps-speed-max-units kph ~/Downloads/output.mov
 </code></pre></div>
 
