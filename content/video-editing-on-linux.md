@@ -7,7 +7,7 @@ Slug: video-editing-on-linux
 Authors: Romain Pellerin
 Summary: How to edit videos on Linux with Kdenlive
 
-**UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with [DaVinci Resolve]({filename}/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.md), shoot in 4K and 24 FPS (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode).**
+**UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with [DaVinci Resolve]({filename}/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.md), shoot in 4K and 30 FPS.**
 
 When I go on holidays or do sports, I usually film with three different devices:
 
@@ -19,7 +19,7 @@ Then, I like to make video montages. But because it usually does not happen more
 
 # Overall process
 
-1.  Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software. (**update september 2024: I now record in 24fps on all my devices**)
+1.  Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software. (**update september 2024: I now record in 30fps on all my devices**)
 1.  Download [Kdenlive](https://kdenlive.org/en/download/) for the video montage.
 1.  Extract regular videos out of 360 videos using the desktop application ([Insta360 STUDIO](https://www.insta360.com/download/insta360-onex2)) from Insta360, not the mobile one, as you get better quality. Export with the following settings:
 
@@ -27,7 +27,7 @@ Then, I like to make video montages. But because it usually does not happen more
     - When doing slow-motion: disable "Motion blur"
     - I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on
     - "Chromatic Calibration" always on
-    - 25FPS when exporting (**update september 2024: 24FPS**)
+    - 25FPS when exporting (**update september 2024: 30FPS**)
     - 25Mbps when exporting
     - HEVC (H265) when exporting
     - **update september 2024: check Dolby Vision, to export in Rec.2020 HLG, otherwise you'll get Rec.709**

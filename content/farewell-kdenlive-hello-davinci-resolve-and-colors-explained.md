@@ -21,7 +21,7 @@ When working with non mixed footage, that is only HDR or only SDR, I would recom
 # Project settings
 
 - Resolution: 3840 x 2160 (4K)
-- FPS: 24 (because my Google Pixel does not support 25fps, and my Insta360 does not support 5.7K@30fps in HDR mode)
+- FPS: 30 (or 29.97, depending on the camera)
 - In `Color Management`:
 
       - `Color science`: [`DaVinci YRGB Color Managed`](https://youtu.be/CTAzjAReZvs?t=638). I'm not sure what the difference is with non color managed, but I think I understood that when it's not color managed, [DaVinci assumes nothing and does not perform automatic conversation from RAW footage to timeline color space](https://youtu.be/CTAzjAReZvs?t=182). But for my use cases, Color Managed is perfect and just works.
@@ -51,9 +51,9 @@ In DaVinci Resolve, when selecting MP4 as the format, and H.265 as the code, you
 
 Then, export in 4K (3840 x 2160). If the project resolution is lower, the image will be upscaled, which will degrade the quality.
 
-Make sure the output FPS is the same as the project/timeline FPS, that is 24 FPS.
+Make sure the output FPS is the same as the project/timeline FPS, that is 30 or 29.97 FPS.
 
-To avoid getting too big of a file, I pick a custom bitrate of 10000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, [it is recommended to input a bigger number](https://youtu.be/oOGZ0PfDSxM?t=351). See [Youtube's official recommendations](https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate).
+To avoid getting too big of a file, I pick a custom bitrate of 25000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, [it is recommended to input a bigger number](https://youtu.be/oOGZ0PfDSxM?t=351). See [Youtube's official recommendations](https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate). Usually, 50000 Kbps for a 4K video is good enough.
 
 [Do not tick "Optimize for speed".](https://forum.blackmagicdesign.com/viewtopic.php?p=1080855#p1080855)
 
@@ -186,7 +186,7 @@ Rec2020 (or Rec.2020) is an abbreviation for "_ITU-R Recommendation BT.2020_".
 
 # Linux support for 10-bit and/or HDR
 
-[As of 2024, HR is not supported on Linux. 10-bit is partially supported but not enabled by default.](https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/) [Here is how to turn on 10-bit on Linux.](https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux) Of course the GPU needs to support it.
+[As of 2024, HDR is not supported on Linux. 10-bit is partially supported but not enabled by default.](https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/) [Here is how to turn on 10-bit on Linux.](https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux) Of course the GPU needs to support it.
 
 On Linux, playing a HDR video in VLC will show a washed-out video, [but using MPV the colors will be "translated" into SDR and the video will look very nice](https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jnbxar8/).
 
