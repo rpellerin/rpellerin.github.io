@@ -14,6 +14,8 @@ So after two years of ramp-up, I have now reached a stage at which I'm into impr
 
 What on Earth is that? Well it stands for **Functional Threshold Power**. Basically it's the most accurate metric about how fit and how well a person is performing that one can use to establish training zones. It is the maximum mean power (aka MMP) one can sustain for one hour, measured in watts (absolute value or watts per kilogram). Known as CP60, for *Critical Power 60*. In other words, the best average power that can be held during a full hour.
 
+In running, [this is similar to the second ventilatory threshold (_SV2_ in French)](https://youtu.be/k8oADrC5Q1w?t=526).
+
 ## How to measure it
 
 With a specialized sports doctor in a laboratory or with a power meter (in the pedals for instance).
@@ -32,7 +34,9 @@ As far as I know, only in a laboratory, on a stationary bike or while running.
 
 It stands for **Maximal Aerobic Power** (in French "PMA", for *Puissance Maximale Aérobie*).
 
-It is the power in watts reached when at VO2 max (when the body is consuming the maximum of 02 it can).
+It is the minimum power in watts reached when at VO2 max (when the body is consuming the maximum of 02 it can).
+
+In running, this is called MAS (Maximal Aerobic Speed, _VMA_ in French).
 
 ## How to measure it
 
