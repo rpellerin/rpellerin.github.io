@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 02 Feb 2025 22:47:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 02 Feb 2025 22:50:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
 &lt;h1 id="christmas-markets"&gt;Christmas markets 🎄&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin"&gt;Wikipedia says there are over 80 Christmas markets in Berlin&lt;/a&gt;. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -596,7 +596,7 @@
 &lt;div id="zones_result"&gt;&lt;/div&gt;
 
 &lt;p&gt;In &lt;a href="https://youtu.be/k8oADrC5Q1w?t=456"&gt;other&lt;/a&gt; &lt;a href="https://youtu.be/ZDdZ3TqJkd8?t=471"&gt;sources&lt;/a&gt;, I've found slightly different values for SV1 (&lt;em&gt;VT1&lt;/em&gt; in English) and SV2 (&lt;em&gt;VT2&lt;/em&gt; in English). But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.&lt;/p&gt;
-&lt;p&gt;VT1/SV1 is often associated with zone 2. &lt;a href="https://youtu.be/k8oADrC5Q1w?t=555"&gt;It's slightly slower than marathon pace.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;VT1/SV1 is &lt;a href="https://youtu.be/k8oADrC5Q1w?t=555"&gt;slightly slower than marathon pace.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;When people refer to "threshold" only, without telling 1 or 2, then mean the second one (VT2/SV2). &lt;a href="https://youtu.be/k8oADrC5Q1w?t=570"&gt;It's an effort than can be sustained up to an hour.&lt;/a&gt; &lt;a href="https://youtu.be/k8oADrC5Q1w?t=526"&gt;It's the same as FTP in cycling.&lt;/a&gt;&lt;/p&gt;
 &lt;script&gt;
   const masInput = document.querySelector('input#mas')
