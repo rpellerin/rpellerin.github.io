@@ -76,3 +76,7 @@ On a 7+ hour flight, they served us two meals, fairly light if I'm honest (and l
 # Air Canada
 
 Only flew with them on sub 2 hour flights (NYC -> Montreal, Toronto -> NYC). On one flight, the plane was small (4 seats per row, 2 on each side). It was a Embraer 175. Looked quite outdated. We got a snack (a drink and a cookie). Nice staff. Could not figure out where to plug the earphones lol. They did not bother me with my overly big backpack (Decathlon Travel 100, 60 liters) when boarding. Very big offering of movies (even Apple TV was available).
+
+# SWISS (Swiss International Air Lines)
+
+Decent company. One regular carry-on + one small hand luggage included in the economy fare by default, for free. [They also will transport ski equipment for free!](https://www.swiss.com/de/en/customer-support/faq/sports-equipment) Food and drinnks are paid, but got one bottle of water and a small chocolate bar for free. Would definitely and happily fly with them again!
