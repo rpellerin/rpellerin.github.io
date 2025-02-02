@@ -61,7 +61,7 @@ The second table, on ventilatory thresholds, is a mashup of multiple articles I'
 
 In [other](https://youtu.be/k8oADrC5Q1w?t=456) [sources](https://youtu.be/ZDdZ3TqJkd8?t=471), I've found slightly different values for SV1 (_VT1_ in English) and SV2 (_VT2_ in English). But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.
 
-VT1/SV1 is often associated with zone 2. [It's slightly slower than marathon pace.](https://youtu.be/k8oADrC5Q1w?t=555)
+VT1/SV1 is [slightly slower than marathon pace.](https://youtu.be/k8oADrC5Q1w?t=555)
 
 When people refer to "threshold" only, without telling 1 or 2, then mean the second one (VT2/SV2). [It's an effort than can be sustained up to an hour.](https://youtu.be/k8oADrC5Q1w?t=570) [It's the same as FTP in cycling.](https://youtu.be/k8oADrC5Q1w?t=526)
 
