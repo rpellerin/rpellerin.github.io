@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time> - Last update: <time datetime="2024-09-21T17:02:00+02:00">Sat 21 September 2024</time>        </p>
+<time datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time> - Last update: <time datetime="2025-02-04T21:49:00+01:00">Tue 04 February 2025</time>        </p>
     <h1>Tips For FFMPEG</h1>
     <div class="grey">
         <p class="italic">A few tips with FFMPEG</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 898 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 939 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/ffmpeg.html">ffmpeg</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a></p>    </div>
 </header>
@@ -116,6 +116,11 @@ chmod +x ./video-crossfade
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -i subtitle.eng.srt -i subtitle.deu.srt -map <span class="m">0</span> -map <span class="m">1</span> -map <span class="m">2</span> -c copy -c:s mov_text -metadata:s:s:0 <span class="nv">language</span><span class="o">=</span>eng -metadata:s:s:1 <span class="nv">language</span><span class="o">=</span>deu output_eng_deu.mp4
 </code></pre></div>
 
+<p>For .mkv files:</p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mkv -f srt -i input.srt -map <span class="m">0</span>:0 -map <span class="m">0</span>:1 -map <span class="m">1</span>:0 -c:v copy -c:a copy -c:s text output.mkv
+</code></pre></div>
+
+<p><a href="https://ffmpeg.org/pipermail/ffmpeg-user/2015-December/029668.html">Swap <code>-c:s text</code> with <code>-c:s srt</code> if <code>input.srt</code> does not contain any HTML tag.</a>, otherwise stick to <code>text</code>.</p>
 <h1 id="add-embedded-subtitles-burned-in-subtitles">Add embedded subtitles (burned-in subtitles)</h1>
 <div class="highlight"><pre><span></span><code>sudo apt install subtitlecomposer
 </code></pre></div>
@@ -267,7 +272,7 @@ ffmpeg -i input.mp4 -vcodec libx264 -crf <span class="m">24</span> -r <span clas
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 21 September 2024</footer>
+    Last update: Tue 04 February 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>

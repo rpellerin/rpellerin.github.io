@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 03 Feb 2025 00:43:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 04 Feb 2025 21:49:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
 &lt;h1 id="christmas-markets"&gt;Christmas markets 🎄&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin"&gt;Wikipedia says there are over 80 Christmas markets in Berlin&lt;/a&gt;. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -9742,6 +9742,11 @@ chmod +x ./video-crossfade
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ffmpeg -i input.mp4 -i subtitle.eng.srt -i subtitle.deu.srt -map &lt;span class="m"&gt;0&lt;/span&gt; -map &lt;span class="m"&gt;1&lt;/span&gt; -map &lt;span class="m"&gt;2&lt;/span&gt; -c copy -c:s mov_text -metadata:s:s:0 &lt;span class="nv"&gt;language&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;eng -metadata:s:s:1 &lt;span class="nv"&gt;language&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;deu output_eng_deu.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+&lt;p&gt;For .mkv files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ffmpeg -i input.mkv -f srt -i input.srt -map &lt;span class="m"&gt;0&lt;/span&gt;:0 -map &lt;span class="m"&gt;0&lt;/span&gt;:1 -map &lt;span class="m"&gt;1&lt;/span&gt;:0 -c:v copy -c:a copy -c:s text output.mkv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href="https://ffmpeg.org/pipermail/ffmpeg-user/2015-December/029668.html"&gt;Swap &lt;code&gt;-c:s text&lt;/code&gt; with &lt;code&gt;-c:s srt&lt;/code&gt; if &lt;code&gt;input.srt&lt;/code&gt; does not contain any HTML tag.&lt;/a&gt;, otherwise stick to &lt;code&gt;text&lt;/code&gt;.&lt;/p&gt;
 &lt;h1 id="add-embedded-subtitles-burned-in-subtitles"&gt;Add embedded subtitles (burned-in subtitles)&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install subtitlecomposer
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
