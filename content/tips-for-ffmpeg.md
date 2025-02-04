@@ -45,6 +45,13 @@ Summary: A few tips with FFMPEG
     :::bash
     ffmpeg -i input.mp4 -i subtitle.eng.srt -i subtitle.deu.srt -map 0 -map 1 -map 2 -c copy -c:s mov_text -metadata:s:s:0 language=eng -metadata:s:s:1 language=deu output_eng_deu.mp4
 
+For .mkv files:
+
+    :::bash
+    ffmpeg -i input.mkv -f srt -i input.srt -map 0:0 -map 0:1 -map 1:0 -c:v copy -c:a copy -c:s text output.mkv
+
+[Swap `-c:s text` with `-c:s srt` if `input.srt` does not contain any HTML tag.](https://ffmpeg.org/pipermail/ffmpeg-user/2015-December/029668.html), otherwise stick to `text`.
+
 # Add embedded subtitles (burned-in subtitles)
 
     :::bash
