@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Code</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 30 Jul 2024 17:54:00 +0200</lastBuildDate><item><title>Kotlin</title><link>https://romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="idea"&gt;IDEA&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Code</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 05 Feb 2025 16:15:00 +0100</lastBuildDate><item><title>Kotlin</title><link>https://romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="idea"&gt;IDEA&lt;/h1&gt;
 &lt;p&gt;Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.&lt;/p&gt;
 &lt;p&gt;Kotlin is included in each IntelliJ IDEA release.&lt;/p&gt;
 &lt;h2 id="setup-intellij"&gt;Setup IntelliJ&lt;/h2&gt;
@@ -1140,6 +1140,7 @@ npm install babel-loader@5.x --save-dev
 &lt;p&gt;Plugins are like function definitions (a set of custom rules). Configs are like actual calls to thoses functions (pre-defined configuration of rules - like whether they're enabled or not, and how they are configured).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id="how-to-start-a-new-javascript-project"&gt;How to start a new JavaScript project?&lt;/h1&gt;
+&lt;p&gt;*/!\ UPDATE 2025: &lt;a href="https://2ality.com/2025/02/typescript-esm-packages.html"&gt;Tutorial: publishing ESM-based npm packages with TypeScript&lt;/a&gt; /!*&lt;/p&gt;
 &lt;p&gt;If it is a simple project or a NPM package, I recommend having two distinct folders: &lt;code&gt;src&lt;/code&gt; for sources and &lt;code&gt;dist&lt;/code&gt; for builds.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
