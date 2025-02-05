@@ -21,6 +21,8 @@ When I started using, I got confused by two different things: [shareable configs
 
 # How to start a new JavaScript project?
 
+**⚠️ UPDATE 2025: [Tutorial: publishing ESM-based npm packages with TypeScript](https://2ality.com/2025/02/typescript-esm-packages.html) ⚠️**
+
 If it is a simple project or a NPM package, I recommend having two distinct folders: `src` for sources and `dist` for builds.
 
 1. Now, do:
