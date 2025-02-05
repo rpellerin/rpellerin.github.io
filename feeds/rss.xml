@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 05 Feb 2025 16:15:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 05 Feb 2025 16:17:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
 &lt;h1 id="christmas-markets"&gt;Christmas markets 🎄&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin"&gt;Wikipedia says there are over 80 Christmas markets in Berlin&lt;/a&gt;. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -11330,7 +11330,7 @@ make clean &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make production
 &lt;p&gt;Plugins are like function definitions (a set of custom rules). Configs are like actual calls to thoses functions (pre-defined configuration of rules - like whether they're enabled or not, and how they are configured).&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id="how-to-start-a-new-javascript-project"&gt;How to start a new JavaScript project?&lt;/h1&gt;
-&lt;p&gt;*/!\ UPDATE 2025: &lt;a href="https://2ality.com/2025/02/typescript-esm-packages.html"&gt;Tutorial: publishing ESM-based npm packages with TypeScript&lt;/a&gt; /!*&lt;/p&gt;
+&lt;p&gt;*&lt;em&gt;/!\ UPDATE 2025: &lt;a href="https://2ality.com/2025/02/typescript-esm-packages.html"&gt;Tutorial: publishing ESM-based npm packages with TypeScript&lt;/a&gt; /!*&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;If it is a simple project or a NPM package, I recommend having two distinct folders: &lt;code&gt;src&lt;/code&gt; for sources and &lt;code&gt;dist&lt;/code&gt; for builds.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
