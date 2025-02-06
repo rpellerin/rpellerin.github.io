@@ -62,3 +62,9 @@ Wear the same cycling glasses. Keep the aero calf sleeves on. Stock up on gels a
 
 - <input type="checkbox" /> [Race running shoes]({filename}/running-and-pronation.md)
 - <input type="checkbox" /> A cap (optional)
+
+# Videos
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qcy1s4raoEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
