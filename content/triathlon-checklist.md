@@ -30,9 +30,9 @@ Make sure to ride a few times with the new gear.
 
 ## 🏊 For swimming
 
-- <input type="checkbox" /> Swimming cap (usually provided by the organization)
+- <input type="checkbox" /> Swimming cap (usually provided by the organization). Some recommend two caps, as as to "wedge" the goggles between the two.
 - <input type="checkbox" /> Swimming goggles
-- <input type="checkbox" /> Wetsuit (optional - sometimes allowed, sometimes forbidden, sometimes mandatory)
+- <input type="checkbox" /> Wetsuit (optional - sometimes allowed, sometimes forbidden, sometimes mandatory). Made for triathlon, not diving.
 
 ## For the transition swim -> bike
 
