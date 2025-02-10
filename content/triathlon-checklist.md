@@ -61,7 +61,7 @@ Make sure to ride a few times with the new gear.
 
 Wear the same cycling glasses. Keep the aero calf sleeves on. Stock up on gels again during the bike -> run transition, again aim for your weight in grams of carbs per hour.
 
-- <input type="checkbox" /> [Race running shoes]({filename}/running-and-pronation.md)
+- <input type="checkbox" /> [Race running shoes]({filename}/running-and-pronation.md) (with elastic laces?)
 - <input type="checkbox" /> A cap (optional)
 
 # Videos
