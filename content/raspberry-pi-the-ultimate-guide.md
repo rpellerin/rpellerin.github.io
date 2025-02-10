@@ -869,6 +869,8 @@ Once the certificates and private keys are generated for the server and a client
 
 You should edit _server.conf_ like this:
 
+(note from 2025: `cipher` and its value as it is below seem deprecated, `data-ciphers` and `AES-256-GCM` seem to be the replacements. Anyways, check the documentation)
+
     :::text
     port 1194
     proto udp6
