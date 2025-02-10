@@ -46,7 +46,7 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" /> Glasses
 - <input type="checkbox" /> Bike shoes
 - <input type="checkbox" /> Fingerless gloves
-- <input type="checkbox" /> Water bottles, already on the bike. One filled with only water, the other with isotonic powder and water.
+- <input type="checkbox" /> Water bottles, already on the bike. One filled with only water, the other with isotonic powder and water. A third one? Pick up from aid stations?
 - <input type="checkbox" /> Low cut socks, that you'll wear for both the cycling and running legs
 - <input type="checkbox" /> A triathlon belt to carry gels and display the bib number, to be worn until the end of the race
 - <input type="checkbox" /> Gels: have some in the belt, some on the bike. Aim for your weight in grams of carbs per hour: you weight 75 kgs, you take 75 grams per hour.
