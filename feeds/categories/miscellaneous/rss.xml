@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Miscellaneous</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 19 Jan 2025 14:25:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Miscellaneous</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 24 Feb 2025 18:28:00 +0100</lastBuildDate><item><title>My Recipe To Survive Winter In Berlin</title><link>https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html</link><description>&lt;p&gt;Making it through winter in Berlin is no easy feat. Here's how I do it 😁.&lt;/p&gt;
 &lt;h1 id="christmas-markets"&gt;Christmas markets 🎄&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Christmas_markets_in_Berlin"&gt;Wikipedia says there are over 80 Christmas markets in Berlin&lt;/a&gt;. Granted, they're not all equally big nor interesting, but I'd say at least 15 of them are big, popular, and worth a visit!&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -932,13 +932,19 @@ function computeAll() {
         120)
 
     const totalPriceWithInterests = totalInterestsPaid + capitalAndLoan + (120 * (hausgeld+grundsteuer))
+
+    const moneyLostComparedToRenting = totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears
+    const howMuchResell = moneyLostComparedToRenting &lt;= 0.0 ? `You would not even need to resell your apartment, you'd have saved ${toCurrency(Math.abs(moneyLostComparedToRenting))} compared to renting.` : `You'd need to resell your apartment at least &lt;span class="bold"&gt;${toCurrency(moneyLostComparedToRenting)}&lt;/span&gt; to be even with the sum you'd have paid in rent.`
+
     document.querySelector('#summary').innerHTML = `After 10 years, you would have...
         &lt;ul class="bold"&gt;
           &lt;li&gt;Paid ${toCurrency(totalInterestsPaid)} in interests&lt;/li&gt;
           &lt;li&gt;Paid ${toCurrency(totalDebtPaid)} in debt back&lt;/li&gt;
           &lt;li&gt;${toCurrency(debtLeftToPay)} still to pay&lt;/li&gt;
         &lt;/ul&gt;
-        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent &lt;span class="bold"&gt;${toCurrency(totalPriceWithInterests)}&lt;/span&gt; (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer). You'd need to sell your apartment at least &lt;span class="bold"&gt;${toCurrency(totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears)}&lt;/span&gt; to be even with the sum you'd have paid in rent (${toCurrency(sumPaidInOldApartmentAfterTenYears)}) 
+        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent &lt;span class="bold"&gt;${toCurrency(totalPriceWithInterests)}&lt;/span&gt; (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer).
+        ${howMuchResell}&lt;br /&gt;&lt;br /&gt;
+        If you were still renting your old apartment, you would have spent ${toCurrency(sumPaidInOldApartmentAfterTenYears)}.
     `
 
     let remainingDebt = loanAmount

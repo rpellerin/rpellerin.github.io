@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2022-04-24T19:00:00+02:00">Sun 24 April 2022</time> - Last update: <time datetime="2022-12-24T02:22:00+01:00">Sat 24 December 2022</time>        </p>
+<time datetime="2022-04-24T19:00:00+02:00">Sun 24 April 2022</time> - Last update: <time datetime="2025-02-24T18:28:00+01:00">Mon 24 February 2025</time>        </p>
     <h1>Living in Germany: How to buy an apartment in Berlin</h1>
     <div class="grey">
         <p class="italic">Some tips and tricks about buying real estate in Berlin</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 3207 words.">16 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 3220 words.">16 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/berlin.html">berlin</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/apartment.html">apartment</a></p>    </div>
 </header>
@@ -477,13 +477,19 @@ function computeAll() {
         120)
 
     const totalPriceWithInterests = totalInterestsPaid + capitalAndLoan + (120 * (hausgeld+grundsteuer))
+
+    const moneyLostComparedToRenting = totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears
+    const howMuchResell = moneyLostComparedToRenting <= 0.0 ? `You would not even need to resell your apartment, you'd have saved ${toCurrency(Math.abs(moneyLostComparedToRenting))} compared to renting.` : `You'd need to resell your apartment at least <span class="bold">${toCurrency(moneyLostComparedToRenting)}</span> to be even with the sum you'd have paid in rent.`
+
     document.querySelector('#summary').innerHTML = `After 10 years, you would have...
         <ul class="bold">
           <li>Paid ${toCurrency(totalInterestsPaid)} in interests</li>
           <li>Paid ${toCurrency(totalDebtPaid)} in debt back</li>
           <li>${toCurrency(debtLeftToPay)} still to pay</li>
         </ul>
-        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent <span class="bold">${toCurrency(totalPriceWithInterests)}</span> (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer). You'd need to sell your apartment at least <span class="bold">${toCurrency(totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears)}</span> to be even with the sum you'd have paid in rent (${toCurrency(sumPaidInOldApartmentAfterTenYears)}) 
+        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent <span class="bold">${toCurrency(totalPriceWithInterests)}</span> (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer).
+        ${howMuchResell}<br /><br />
+        If you were still renting your old apartment, you would have spent ${toCurrency(sumPaidInOldApartmentAfterTenYears)}.
     `
 
     let remainingDebt = loanAmount
@@ -579,7 +585,7 @@ document.querySelectorAll('input').forEach(i => i.addEventListener('input', comp
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Sat 24 December 2022</footer>
+    Last update: Mon 24 February 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
