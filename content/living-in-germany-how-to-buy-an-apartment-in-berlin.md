@@ -449,13 +449,19 @@ function computeAll() {
         120)
 
     const totalPriceWithInterests = totalInterestsPaid + capitalAndLoan + (120 * (hausgeld+grundsteuer))
+
+    const moneyLostComparedToRenting = totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears
+    const howMuchResell = moneyLostComparedToRenting <= 0.0 ? `You would not even need to resell your apartment, you'd have saved ${toCurrency(Math.abs(moneyLostComparedToRenting))} compared to renting.` : `You'd need to resell your apartment at least <span class="bold">${toCurrency(moneyLostComparedToRenting)}</span> to be even with the sum you'd have paid in rent.`
+
     document.querySelector('#summary').innerHTML = `After 10 years, you would have...
         <ul class="bold">
           <li>Paid ${toCurrency(totalInterestsPaid)} in interests</li>
           <li>Paid ${toCurrency(totalDebtPaid)} in debt back</li>
           <li>${toCurrency(debtLeftToPay)} still to pay</li>
         </ul>
-        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent <span class="bold">${toCurrency(totalPriceWithInterests)}</span> (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer). You'd need to sell your apartment at least <span class="bold">${toCurrency(totalPriceWithInterests - sumPaidInOldApartmentAfterTenYears)}</span> to be even with the sum you'd have paid in rent (${toCurrency(sumPaidInOldApartmentAfterTenYears)}) 
+        If you were to repay the whole remaining debt at once after 10 years, in total you'd have spent <span class="bold">${toCurrency(totalPriceWithInterests)}</span> (your own equity capital + loan + interests + Grunderwerbsteuer + Notar + Grundbucheintrag + Broker commission + accrued Hausgeld and Grunsteuer).
+        ${howMuchResell}<br /><br />
+        If you were still renting your old apartment, you would have spent ${toCurrency(sumPaidInOldApartmentAfterTenYears)}.
     `
 
     let remainingDebt = loanAmount

@@ -82,4 +82,4 @@ In 2019, I was still occasionally smoking, and barely doing any sport, beside th
 
 # Conclusion
 
-Quite some changes since 2019, but some things remain. I guess we humans never stop experimenting, always seeking better ways to be more efficient. [Moving away from Paris]({filename}/living-in-germany-moving-to-berlin.md) most definitely did play a major role in reducing stress levels for me, as well as [commuting by bike]({filename}/living-in-paris-riding-a-bike-in-paris.me) and doing more sports in general.
+Quite some changes since 2019, but some things remain. I guess we humans never stop experimenting, always seeking better ways to be more efficient. [Moving away from Paris]({filename}/living-in-germany-moving-to-berlin.md) most definitely did play a major role in reducing stress levels for me, as well as [commuting by bike]({filename}/living-in-paris-riding-a-bike-in-paris.md) and doing more sports in general.
