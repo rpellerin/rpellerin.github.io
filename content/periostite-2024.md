@@ -8,6 +8,8 @@ Summary: Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur l
 
 Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊
 
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/M-LFEtmLnnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 # Timeline
 
 Tout commence il y a un peu plus de 2 mois, juste après mon [semi-marathon de début Avril]({filename}/lessons-learned-apres-4-ans-de-running.md). Mon premier souvenir ? Avoir eu mal dans les jours après le semi-marathon. Je ne crois pas avoir eu mal pendant la course, mais je n'en suis pas sûr.
