@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike, wheels" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Everything I know about DT Swiss wheels in 2025" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="DT Swiss wheels: buying guide - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Everything I know about DT Swiss wheels in 2025" />
+        <meta property="og:url" content="https://romainpellerin.eu/dt-swiss-wheels-buying-guide.html" />
+
+        <title>DT Swiss wheels: buying guide - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-03-01T01:14:00+01:00">Sat 01 March 2025</time>        </p>
+    <h1>DT Swiss wheels: buying guide</h1>
+    <div class="grey">
+        <p class="italic">Everything I know about DT Swiss wheels in 2025</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1014 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/bikes.html">Bikes</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/wheels.html">wheels</a></p>    </div>
+</header>
+<article>
+    <p>I've had my bike for 5 years now, with the same factory wheels: a pair of Mavic Aksium. They are fairly good wheels, but they're entry-level and I've decided it was time for an upgrade.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/o6_r-LdFUmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>For some reason, I've set my mind on DT Swiss. Don't ask why 😁. Also, I'm not yet ready for carbon wheels. They're pricey and they do not work well with rim brakes (which I use), especially in the wet.</p>
+<p>I want wheels with a rim depth that is both suitable for flat terrain and mountains. In a few years, I might invest in wheels for flat/triathlon/time trial only (50mm+).</p>
+<p>So here's my 2025 buying guide for DT Swiss wheels. Spoiler alert: I'm lazy, I've used Google Gemini a LOT, so some information might be incorrect.</p>
+<h1 id="lines-of-wheels-for-road-bikes">Lines of wheels for road bikes</h1>
+<p>First things first, each model starts with a line name, and then contains a number. Like, "ARC 1100 DICUT".</p>
+<blockquote>
+<p>Lower numbers typically signify higher-end wheels with premium components (like higher end hubs).</p>
+<p>[source: Google Gemini]</p>
+</blockquote>
+<p>Now, the lines. They are essentially three of interest to me: <strong>Aero</strong>, <strong>Performance</strong> and <strong>Endurance</strong>. The rest is for gravel, track, cross road or ebikes.</p>
+<p><strong>Aero</strong> (<strong>ARC/AR/A</strong>) is out of my league: they're almost all carbon (in <em>ARC</em>, <em>C</em> stands for <em>Carbon</em>), except the <a href="https://www.dtswiss.com/en/wheels/wheels-road/aero/ar-1600-spline">AR 1600 SPLINE</a> and the <a href="https://www.dtswiss.com/en/wheels/wheels-road/aero/a-1800-spline">A 1800 SPLINE</a>. But they're both entry-level wheels, and for disc brakes. And even if I was considering the other carbon wheels for rim brakes, they are too expensive for me at this point. I don't want to spend more than 1,000 euros for the pair.</p>
+<p><strong>Performance</strong> (<strong>PRC/PR/P</strong>): this is the one that I'm the most interested in. Here, they're all made of aluminum, expect the "PRC 1400 SPLINE" wheelset. The 1600 and 1800 ones are considered entry-level, so all that's left of interest to me are the "PR 1400 DICUT OXiC". They come in 2 variants: 32mm rim height, or 21. I'd go with 32.</p>
+<p><strong>Endurance</strong> (<strong>ERC/ER/E</strong>): those are only for disc brakes. Also, they prioritize comfort, stability, and durability on long rides and are compatible with wider tires, unlike the performance line. As a result, they're usually heavier than the performance ones. Not what I'm looking for.</p>
+<h1 id="additional-indicators">Additional Indicators</h1>
+<ul>
+<li>"C" indicates a carbon rim (like in "ARC 1100 DICUT")</li>
+<li>"OXiC" indicates a ceramic rim braking surface, see below</li>
+<li>"DB" indicates disc brake compatibility (like in "ARC 1100 DICUT DB")</li>
+<li>DICUT/SPLINE indicates specific wheel technologies and spoke types, see below</li>
+</ul>
+<h2 id="oxic">OXiC</h2>
+<blockquote>
+<p>OXiC is a special ceramic coating that DT Swiss applies to the rims of some of their wheels. It's not just for looks (though it does give a cool matte black finish!) - it has some serious performance benefits:</p>
+<ul>
+<li><strong>Super Braking Power:</strong> OXiC makes rim brakes work incredibly well, even when the rims are wet. This means you get consistent and reliable stopping power in all kinds of weather.</li>
+<li><strong>Tough as Nails:</strong> The ceramic coating is really hard, so it resists wear and tear much better than a regular aluminum rim. This makes the wheels last longer.</li>
+</ul>
+<p>Think of it like a super-durable, high-performance brake pad for your rims. It's a technology that makes DT Swiss wheels with rim brakes perform better and last longer.</p>
+<p>You'll usually see OXiC on their higher-end aluminum wheels, like the PR 1400 DICUT OXiC series.</p>
+</blockquote>
+<p>Do I need special brake pads for OXiC wheels?</p>
+<blockquote>
+<p>Yes, you absolutely need special brake pads for DT Swiss wheels with the OXiC ceramic coating. Standard brake pads designed for regular aluminum rims will wear down the OXiC coating prematurely and won't provide optimal braking performance.</p>
+<p>DT Swiss recommends using brake pads specifically designed for ceramic coated rims. These pads are made from a softer compound that's gentler on the OXiC coating while still providing excellent braking power. Using the correct brake pads is crucial for maximizing the lifespan of your OXiC wheels and ensuring safe, reliable braking.</p>
+<p>[source: Google Gemini]</p>
+</blockquote>
+<p><a href="https://www.dtswiss.com/en/wheels/wheels-technology/oxic-technology">Here is some additional information from DT Swiss themselves.</a></p>
+<h2 id="splinespline">SPLINE/SPLINE</h2>
+<blockquote>
+<p>SPLINE:</p>
+<ul>
+<li>This refers to a system-wide approach to wheel design. It emphasizes the integration of all wheel components (rims, hubs, spokes) for optimized performance.</li>
+<li>SPLINE wheels are designed for a broad range of cycling disciplines, prioritizing a balance of performance, reliability, and durability.</li>
+<li>It signifies the use of DT Swiss's engineering principles and technologies across various wheel levels.</li>
+<li>It uses standard straight pull spokes.</li>
+</ul>
+<p>DICUT:</p>
+<ul>
+<li>This designates DT Swiss's high-end, performance-oriented wheel line.</li>
+<li>DICUT wheels are specifically engineered for maximum aerodynamic efficiency and performance.</li>
+<li>They often incorporate advanced technologies, such as optimized rim profiles and high-quality hub components.</li>
+<li>DICUT wheels use custom "Nailhead" spokes.</li>
+<li>DICUT is generally found on the highest end wheels.</li>
+</ul>
+<p>Key Differences:</p>
+<ul>
+<li>Performance Focus: DICUT wheels are more focused on top-tier performance, especially aerodynamics, while SPLINE wheels aim for a broader balance of performance and reliability.</li>
+<li>Spoke type: Dicut wheels use a specific "nail head" spoke, where spline uses standard straight pull spokes.</li>
+<li>Target Audience: DICUT wheels are typically geared towards competitive cyclists and those seeking the highest performance, whereas SPLINE wheels cater to a wider range of riders.</li>
+</ul>
+<p>In essence, you can think of SPLINE as a foundation of quality engineering, and DICUT as a specialized, high-performance subset within that foundation.</p>
+<p>[source: Google Gemini]</p>
+</blockquote>
+<h1 id="my-choice-pr-1400-dicut-oxic-32">My choice: PR 1400 DICUT OXiC 32</h1>
+<p>So this is it. More of a default choice for lack of options, really. I found them at a very good price online: <a href="https://www.bike24.com/p2312070.html">DT Swiss PR 1400 DICUT 32 OXiC - Wheelset - Clincher - RW Double Crossed - QR - black</a> for 799,99 € (discount of 30% - RRP was 1.149,80 €).</p>
+<blockquote>
+<p>"QR" stands for Quick Release. "RW Double Crossed" refers to the spoke lacing pattern on the rear wheel (RW). Double Crossed means that each spoke on the rear wheel crosses over two other spokes before reaching the rim. This is a common and strong lacing pattern for rear wheels, offering a good balance of strength, stiffness, and power transfer. It's particularly useful on the drive side of the rear wheel, where the forces are higher</p>
+<p>[source: Google Gemini]</p>
+</blockquote>
+<p>Let's go!! 🚴🚀</p>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 01 March 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2025-02-11T00:58:00+01:00">Tue 11 February 2025</time>        </p>
+<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2025-03-01T01:15:00+01:00">Sat 01 March 2025</time>        </p>
     <h1>Raspberry Pi: The Ultimate Guide</h1>
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6049 words.">30 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6054 words.">30 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -848,7 +848,7 @@ cp vars.example vars
 <div class="highlight"><pre><span></span><code>./easyrsa init-pki
 ./easyrsa build-ca <span class="c1"># Add a CA password. Add a different strong PEM passphrase which will be used to sign other certificates. Leave unchanged the default Common Name.</span>
 ./easyrsa gen-req server nopass <span class="c1"># Do not add a password for the server; use &#39;server&#39; as the Common Name (CN)</span>
-./easyrsa sign-req server server
+./easyrsa sign-req server server <span class="c1"># ./easyrsa sign-req &lt;type&gt; &lt;name&gt;</span>
 ./easyrsa gen-req client <span class="c1"># Use &#39;client&#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server</span>
 ./easyrsa sign-req client client
 </code></pre></div>
@@ -1208,7 +1208,7 @@ systemctl start fail2ban
 </ul>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 11 February 2025</footer>
+    Last update: Sat 01 March 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
