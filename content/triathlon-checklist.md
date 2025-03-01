@@ -16,7 +16,7 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" /> New rim tape
 - <input type="checkbox" /> New shift cables
 - <input type="checkbox" /> New chain
-- <input type="checkbox" /> [New cassette?](https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/) [New chainring?](https://www.youtube.com/watch?v=8LqTmvuf6tw)
+- <input type="checkbox" /> [New cassette with the same number of speeds and teeth (me: 11-32)](<(https://www.bike24.com/p2271410.html)>) ([when to replace](https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/)). [New chainring?](https://www.youtube.com/watch?v=8LqTmvuf6tw)
 
 # 🧳 Things to bring on race day
 
