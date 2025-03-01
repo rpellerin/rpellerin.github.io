@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike, running, swimming" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Everything one needs to set up a home trainer" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Training For Triathlons - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Everything one needs to set up a home trainer" />
+        <meta property="og:url" content="https://romainpellerin.eu/training-for-triathlons.html" />
+
+        <title>Training For Triathlons - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-03-01T21:33:00+01:00">Sat 01 March 2025</time>        </p>
+    <h1>Training For Triathlons</h1>
+    <div class="grey">
+        <p class="italic">Everything one needs to set up a home trainer</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 324 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/bikes.html">Bikes</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/swimming.html">swimming</a></p>    </div>
+</header>
+<article>
+    <p>2025 is the year I'll do my first half Ironman! Big year. Big ambition.</p>
+<p>Up until now, the longest triathlon I ever participated in was <a href="https://www.berlin-triathlon.de/">a sprint-distance one in Berlin</a>, in the last 2 years. Needless to say, I'm still a total noob about triathlon.</p>
+<p>So I need to learn fast and train hard!</p>
+<p>This article acts as my shopping list but also my diary, as I learn new things about triathlon. This article will serve anyone else with similar intentions. I'll keep updating this article over the next few months.</p>
+<h1 id="tri-bike-vs-road-bike-with-aero-bars">Tri bike vs road bike with aero bars</h1>
+<p>I've had aero bars on my road bike since last Summer. I bought them when I signed up for the Ironman. Initially, I was not planning on buying a tri bike. I simply wanted to adapt my road bike to a triathlon bike. Below are 3 of the best videos I found on the topic.</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vXtWrvSdvfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qSgK-5kC2KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/-OjxK7dbT9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>But now, as I am writing these lines, I am leaning towards buying a tri bike. Nothing is decided yet at this point, but I'm seriously considering it.</p>
+<h1 id="gear-for-training">Gear for training</h1>
+<p>For this first half Ironman, I need to increase my weekly volume of cycling. Especially in winter, when the days are short and often rainy. I've used that excuse way too many times to remain indoors. So here is my shopping list, to bring my training to the next level:</p>
+<ul>
+<li><a href="https://www.bike24.com/p2287842.html">Wahoo Kickr Core</a>: 489.99 euros.</li>
+<li><a href="https://www.canyon.com/en-de/road-bikes/triathlon-bikes/speedmax/cf/speedmax-cf-7-di2-ar1600/4304.html?dwvar_4304_pv_rahmenfarbe=R073_P06">A tri bike</a>: 3,999 euros. For races. And when not racing, for the home trainer. Still undecided about that...</li>
+<li><a href="https://www.bike24.com/p2759128.html">The same cassette as the one on the tri bike</a>: 49.99 euros. To put on the Wahoo Kickr Core.</li>
+<li><a href="https://www.decathlon.de/p/fahrradschutz-rollentrainer/_/R-p-1022">A sweat net</a>: 12.99 euros.</li>
+<li>A subscription to Swift (paid) or MyWhoosh (free)</li>
+</ul>
+<h2 id="inexpensive-things-you-might-already-have-at-home">Inexpensive things you might already have at home</h2>
+<ul>
+<li>A yoga mat to put under the home trainer, so as to avoid noise and sweat stains on the floor</li>
+<li>A fan</li>
+<li>A small towel</li>
+</ul>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 01 March 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
