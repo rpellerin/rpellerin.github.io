@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 01 Mar 2025 21:34:00 +0100</lastBuildDate><item><title>Training For Triathlons</title><link>https://romainpellerin.eu/training-for-triathlons.html</link><description>&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 03 Mar 2025 23:16:00 +0100</lastBuildDate><item><title>Training For Triathlons</title><link>https://romainpellerin.eu/training-for-triathlons.html</link><description>&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
 &lt;p&gt;Up until now, the longest triathlon I ever participated in was &lt;a href="https://www.berlin-triathlon.de/"&gt;a sprint-distance one in Berlin&lt;/a&gt;, in the last 2 years. Needless to say, I'm still a total noob about triathlon.&lt;/p&gt;
 &lt;p&gt;So I need to learn fast and train hard!&lt;/p&gt;
 &lt;p&gt;This article acts as my shopping list but also my diary, as I learn new things about triathlon. This article will serve anyone else with similar intentions. I'll keep updating this article over the next few months.&lt;/p&gt;
@@ -9330,7 +9330,7 @@ cp vars.example vars
 &lt;p&gt;Then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./easyrsa init-pki
 ./easyrsa build-ca &lt;span class="c1"&gt;# Add a CA password. Add a different strong PEM passphrase which will be used to sign other certificates. Leave unchanged the default Common Name.&lt;/span&gt;
-./easyrsa gen-req server nopass &lt;span class="c1"&gt;# Do not add a password for the server; use &amp;#39;server&amp;#39; as the Common Name (CN)&lt;/span&gt;
+./easyrsa gen-req server nopass &lt;span class="c1"&gt;# ./easyrsa gen-req &amp;lt;name&amp;gt; Do not add a password for the server; use &amp;#39;server&amp;#39; as the Common Name (CN)&lt;/span&gt;
 ./easyrsa sign-req server server &lt;span class="c1"&gt;# ./easyrsa sign-req &amp;lt;type&amp;gt; &amp;lt;name&amp;gt;&lt;/span&gt;
 ./easyrsa gen-req client &lt;span class="c1"&gt;# Use &amp;#39;client&amp;#39; as CN; add a passphrase that you will need later when you try to connect to your VPN server&lt;/span&gt;
 ./easyrsa sign-req client client
