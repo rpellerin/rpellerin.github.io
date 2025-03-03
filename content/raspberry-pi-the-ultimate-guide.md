@@ -852,7 +852,7 @@ Then:
     :::bash
     ./easyrsa init-pki
     ./easyrsa build-ca # Add a CA password. Add a different strong PEM passphrase which will be used to sign other certificates. Leave unchanged the default Common Name.
-    ./easyrsa gen-req server nopass # Do not add a password for the server; use 'server' as the Common Name (CN)
+    ./easyrsa gen-req server nopass # ./easyrsa gen-req <name> Do not add a password for the server; use 'server' as the Common Name (CN)
     ./easyrsa sign-req server server # ./easyrsa sign-req <type> <name>
     ./easyrsa gen-req client # Use 'client' as CN; add a passphrase that you will need later when you try to connect to your VPN server
     ./easyrsa sign-req client client
