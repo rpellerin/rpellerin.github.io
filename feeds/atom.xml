@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-03T23:16:00+01:00</updated><entry><title>Training For Triathlons</title><link href="https://romainpellerin.eu/training-for-triathlons.html" rel="alternate"></link><published>2025-03-01T21:33:00+01:00</published><updated>2025-03-01T21:33:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-03-01:/training-for-triathlons.html</id><summary type="html">&lt;p&gt;Everything one needs to set up a home trainer&lt;/p&gt;</summary><content type="html">&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-03T23:58:00+01:00</updated><entry><title>Training For Triathlons</title><link href="https://romainpellerin.eu/training-for-triathlons.html" rel="alternate"></link><published>2025-03-01T21:33:00+01:00</published><updated>2025-03-01T21:33:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-03-01:/training-for-triathlons.html</id><summary type="html">&lt;p&gt;Everything one needs to set up a home trainer&lt;/p&gt;</summary><content type="html">&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
 &lt;p&gt;Up until now, the longest triathlon I ever participated in was &lt;a href="https://www.berlin-triathlon.de/"&gt;a sprint-distance one in Berlin&lt;/a&gt;, in the last 2 years. Needless to say, I'm still a total noob about triathlon.&lt;/p&gt;
 &lt;p&gt;So I need to learn fast and train hard!&lt;/p&gt;
 &lt;p&gt;This article acts as my shopping list but also my diary, as I learn new things about triathlon. This article will serve anyone else with similar intentions. I'll keep updating this article over the next few months.&lt;/p&gt;
@@ -8569,7 +8569,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FaANpurG3yE"&gt;Comment la Corée du Nord est devenue une menace ?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=229q6nHMlaE"&gt;Destination Corée du Sud ! - Échappées belles&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=ew3efxDfBwk"&gt;Corée du Sud : Voyage vers le futur - Echappées belles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Travels"></category><category term="travel"></category><category term="korea"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="https://romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2025-03-03T23:16:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="https://romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Travels"></category><category term="travel"></category><category term="korea"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="https://romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2025-03-03T23:58:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="https://romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.&lt;/p&gt;
 &lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.&lt;/p&gt;
@@ -9346,7 +9346,6 @@ vim server.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You should edit &lt;em&gt;server.conf&lt;/em&gt; like this:&lt;/p&gt;
-&lt;p&gt;(note from 2025: &lt;code&gt;cipher&lt;/code&gt; and its value as it is below seem deprecated, &lt;code&gt;data-ciphers&lt;/code&gt; and &lt;code&gt;AES-256-GCM&lt;/code&gt; seem to be the replacements. Anyways, check the documentation)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;port 1194
 proto udp6
 dev tun
@@ -9364,8 +9363,6 @@ push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 8.8.8.8&amp;quot;
 push &amp;quot;dhcp-option DNS 8.8.4.4&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
-cipher AES-256-CBC
-comp-lzo
 max-clients 2
 user nobody
 group nogroup
@@ -9400,8 +9397,6 @@ mute-replay-warnings
 #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
 #tls-auth /etc/openvpn/ta.key 1
 remote-cert-tls server
-cipher AES-256-CBC
-comp-lzo
 mute 20
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -9474,8 +9469,9 @@ start&lt;span class="p"&gt;|&lt;/span&gt;restart&lt;span class="o"&gt;)&lt;/span
 su
 mv client.conf client.conf.old
 shred -u client.ovpn
+chown nobody:nogroup ta.key
 systemctl restart openvpn
-tail -f /var/log/openvpn/openvpn.log
+tail -f /var/log/openvpn/openvpn-status.log
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At next boot, the server will run automatically. We needed to rename the &lt;em&gt;client.ovpn&lt;/em&gt; because the initscript will scan this directory for &lt;em&gt;.conf&lt;/em&gt; files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:&lt;/p&gt;
@@ -9489,7 +9485,7 @@ shred -u /etc/openvpn/easy-rsa/pki/issued/client.crt
 sudo openvpn --config client.ovpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. &lt;a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/"&gt;Here is why&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On the server, if you are using &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt; and emails are not sent out when a client connects, add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. &lt;a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/"&gt;Here is why&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="optional-use-several-ports"&gt;Optional: use several ports&lt;/h2&gt;
 &lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit &lt;code&gt;firewall.sh&lt;/code&gt;, change the first line and add the second one:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;68 1194 53&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DCHP, OpenVPN, OpenVPN (other port)&lt;/span&gt;

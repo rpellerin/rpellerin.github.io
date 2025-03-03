@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-03T23:16:00+01:00</updated><entry><title>Creating GPX overlay videos on Linux</title><link href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2025-01-22T11:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-03T23:58:00+01:00</updated><entry><title>Creating GPX overlay videos on Linux</title><link href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2025-01-22T11:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;
@@ -840,7 +840,7 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The last three commands are just shortcuts meant to make the world a better place... or just developers happier.&lt;/p&gt;
-&lt;p&gt;That's it! I hope it was helpful.&lt;/p&gt;</content><category term="Linux"></category><category term="ssh"></category><category term="vim"></category><category term="terminal"></category><category term="vi"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="https://romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2025-03-03T23:16:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="https://romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That's it! I hope it was helpful.&lt;/p&gt;</content><category term="Linux"></category><category term="ssh"></category><category term="vim"></category><category term="terminal"></category><category term="vi"></category></entry><entry><title>Raspberry Pi: The Ultimate Guide</title><link href="https://romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="alternate"></link><published>2016-07-10T05:11:00+02:00</published><updated>2025-03-03T23:58:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2016-07-10:/raspberry-pi-the-ultimate-guide.html</id><summary type="html">&lt;p&gt;A complete tutorial about how to create a home server using a Raspberry Pi&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;&lt;a href="https://romainpellerin.eu/extra/raspberry-pi-as-a-home-server-PDF.zip"&gt;Here is an old document I created a while ago. I keep it here for legacy purposes.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I'll keep this article as short as possible (no explanation where things are self-explanatory or obvious), mainly due to the fact that the article will be quite lengthy. I'll give instructions about how to setup a Raspberry Pi as well as how to install stuff. This blog post might change in a near future.&lt;/p&gt;
 &lt;h1 id="goal"&gt;Goal&lt;/h1&gt;
 &lt;p&gt;I decided to built a cheap home server to host websites, have a VPN server hosted in France, have a Nextcloud instance, and so forth. A Raspberry Pi, which costs less than $5 a year (electricity consumption) was the perfect solution. As I'm not that often in France, I needed to be able to operate it remotely. I also wanted plenty of storage, a SD card would not be sufficient. I had to plug a hard disk drive. Furthermore, I wanted it to be encrypted, just in case a malicious person tries to read my hard disk drive.&lt;/p&gt;
@@ -1617,7 +1617,6 @@ vim server.conf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;You should edit &lt;em&gt;server.conf&lt;/em&gt; like this:&lt;/p&gt;
-&lt;p&gt;(note from 2025: &lt;code&gt;cipher&lt;/code&gt; and its value as it is below seem deprecated, &lt;code&gt;data-ciphers&lt;/code&gt; and &lt;code&gt;AES-256-GCM&lt;/code&gt; seem to be the replacements. Anyways, check the documentation)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;port 1194
 proto udp6
 dev tun
@@ -1635,8 +1634,6 @@ push &amp;quot;redirect-gateway def1 bypass-dhcp ipv6&amp;quot;
 push &amp;quot;dhcp-option DNS 8.8.8.8&amp;quot;
 push &amp;quot;dhcp-option DNS 8.8.4.4&amp;quot;
 tls-auth /etc/openvpn/ta.key 0
-cipher AES-256-CBC
-comp-lzo
 max-clients 2
 user nobody
 group nogroup
@@ -1671,8 +1668,6 @@ mute-replay-warnings
 #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
 #tls-auth /etc/openvpn/ta.key 1
 remote-cert-tls server
-cipher AES-256-CBC
-comp-lzo
 mute 20
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -1745,8 +1740,9 @@ start&lt;span class="p"&gt;|&lt;/span&gt;restart&lt;span class="o"&gt;)&lt;/span
 su
 mv client.conf client.conf.old
 shred -u client.ovpn
+chown nobody:nogroup ta.key
 systemctl restart openvpn
-tail -f /var/log/openvpn/openvpn.log
+tail -f /var/log/openvpn/openvpn-status.log
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;At next boot, the server will run automatically. We needed to rename the &lt;em&gt;client.ovpn&lt;/em&gt; because the initscript will scan this directory for &lt;em&gt;.conf&lt;/em&gt; files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:&lt;/p&gt;
@@ -1760,7 +1756,7 @@ shred -u /etc/openvpn/easy-rsa/pki/issued/client.crt
 sudo openvpn --config client.ovpn
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. &lt;a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/"&gt;Here is why&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On the server, if you are using &lt;code&gt;/etc/openvpn/notifyconnect.sh&lt;/code&gt; and emails are not sent out when a client connects, add &lt;code&gt;CAP_SYS_RESOURCE&lt;/code&gt; to &lt;code&gt;CapabilityBoundingSet&lt;/code&gt; in &lt;code&gt;/lib/systemd/system/openvpn@.service&lt;/code&gt;. &lt;a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/"&gt;Here is why&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="optional-use-several-ports"&gt;Optional: use several ports&lt;/h2&gt;
 &lt;p&gt;You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit &lt;code&gt;firewall.sh&lt;/code&gt;, change the first line and add the second one:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;UDP_SERVICES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;68 1194 53&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# DCHP, OpenVPN, OpenVPN (other port)&lt;/span&gt;

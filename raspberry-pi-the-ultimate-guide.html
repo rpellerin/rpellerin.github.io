@@ -76,12 +76,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2025-03-03T23:16:00+01:00">Mon 03 March 2025</time>        </p>
+<time datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time> - Last update: <time datetime="2025-03-03T23:58:00+01:00">Mon 03 March 2025</time>        </p>
     <h1>Raspberry Pi: The Ultimate Guide</h1>
     <div class="grey">
         <p class="italic">A complete tutorial about how to create a home server using a Raspberry Pi</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6057 words.">30 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 6047 words.">30 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/talk.html">talk</a></p>    </div>
 </header>
@@ -863,7 +863,6 @@ vim server.conf
 </code></pre></div>
 
 <p>You should edit <em>server.conf</em> like this:</p>
-<p>(note from 2025: <code>cipher</code> and its value as it is below seem deprecated, <code>data-ciphers</code> and <code>AES-256-GCM</code> seem to be the replacements. Anyways, check the documentation)</p>
 <div class="highlight"><pre><span></span><code>port 1194
 proto udp6
 dev tun
@@ -881,8 +880,6 @@ push &quot;redirect-gateway def1 bypass-dhcp ipv6&quot;
 push &quot;dhcp-option DNS 8.8.8.8&quot;
 push &quot;dhcp-option DNS 8.8.4.4&quot;
 tls-auth /etc/openvpn/ta.key 0
-cipher AES-256-CBC
-comp-lzo
 max-clients 2
 user nobody
 group nogroup
@@ -917,8 +914,6 @@ mute-replay-warnings
 #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
 #tls-auth /etc/openvpn/ta.key 1
 remote-cert-tls server
-cipher AES-256-CBC
-comp-lzo
 mute 20
 </code></pre></div>
 
@@ -991,8 +986,9 @@ start<span class="p">|</span>restart<span class="o">)</span>
 su
 mv client.conf client.conf.old
 shred -u client.ovpn
+chown nobody:nogroup ta.key
 systemctl restart openvpn
-tail -f /var/log/openvpn/openvpn.log
+tail -f /var/log/openvpn/openvpn-status.log
 </code></pre></div>
 
 <p>At next boot, the server will run automatically. We needed to rename the <em>client.ovpn</em> because the initscript will scan this directory for <em>.conf</em> files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:</p>
@@ -1006,7 +1002,7 @@ shred -u /etc/openvpn/easy-rsa/pki/issued/client.crt
 sudo openvpn --config client.ovpn
 </code></pre></div>
 
-<p>Add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. <a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/">Here is why</a>.</p>
+<p>On the server, if you are using <code>/etc/openvpn/notifyconnect.sh</code> and emails are not sent out when a client connects, add <code>CAP_SYS_RESOURCE</code> to <code>CapabilityBoundingSet</code> in <code>/lib/systemd/system/openvpn@.service</code>. <a href="https://alexaf.gitlab.io/posts/broken_vpn_notifications/">Here is why</a>.</p>
 <h2 id="optional-use-several-ports">Optional: use several ports</h2>
 <p>You might want to make your VPN server available on several ports. If so, open the ports you wish to use on your router and add the corresponding iptables rules. You may edit <code>firewall.sh</code>, change the first line and add the second one:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">UDP_SERVICES</span><span class="o">=</span><span class="s2">&quot;68 1194 53&quot;</span> <span class="c1"># DCHP, OpenVPN, OpenVPN (other port)</span>
