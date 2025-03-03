@@ -869,8 +869,6 @@ Once the certificates and private keys are generated for the server and a client
 
 You should edit _server.conf_ like this:
 
-(note from 2025: `cipher` and its value as it is below seem deprecated, `data-ciphers` and `AES-256-GCM` seem to be the replacements. Anyways, check the documentation)
-
     :::text
     port 1194
     proto udp6
@@ -889,8 +887,6 @@ You should edit _server.conf_ like this:
     push "dhcp-option DNS 8.8.8.8"
     push "dhcp-option DNS 8.8.4.4"
     tls-auth /etc/openvpn/ta.key 0
-    cipher AES-256-CBC
-    comp-lzo
     max-clients 2
     user nobody
     group nogroup
@@ -929,8 +925,6 @@ Now, edit _client.conf_:
     #key /etc/openvpn/easy-rsa/easyrsa3/pki/private/client.key
     #tls-auth /etc/openvpn/ta.key 1
     remote-cert-tls server
-    cipher AES-256-CBC
-    comp-lzo
     mute 20
 
 Ultimately do:
@@ -1003,7 +997,7 @@ If you prefer not to use any firewall, replace the content of `firewall.sh` with
     esac
     exit 0
 
-*Make sure to replace `eth0` with the right value (check using `ip a`).* You'll find it using: `ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1`
+_Make sure to replace `eth0` with the right value (check using `ip a`)._ You'll find it using: `ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1`
 
 Finally, do the following on your server:
 
@@ -1012,8 +1006,9 @@ Finally, do the following on your server:
     su
     mv client.conf client.conf.old
     shred -u client.ovpn
+    chown nobody:nogroup ta.key
     systemctl restart openvpn
-    tail -f /var/log/openvpn/openvpn.log
+    tail -f /var/log/openvpn/openvpn-status.log
 
 At next boot, the server will run automatically. We needed to rename the _client.ovpn_ because the initscript will scan this directory for _.conf_ files and start up a separate OpenVPN deamon for each file found. It is recommended to delete client's files:
 
@@ -1028,7 +1023,7 @@ Now on your client:
     sudo apt update && sudo apt install resolvconf
     sudo openvpn --config client.ovpn
 
-Add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`. [Here is why](https://alexaf.gitlab.io/posts/broken_vpn_notifications/).
+On the server, if you are using `/etc/openvpn/notifyconnect.sh` and emails are not sent out when a client connects, add `CAP_SYS_RESOURCE` to `CapabilityBoundingSet` in `/lib/systemd/system/openvpn@.service`. [Here is why](https://alexaf.gitlab.io/posts/broken_vpn_notifications/).
 
 ## Optional: use several ports
 
