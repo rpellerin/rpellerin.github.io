@@ -1,63 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Sports</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/sports/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-01T21:34:00+01:00</updated><entry><title>Triathlon: Checklist</title><link href="https://romainpellerin.eu/triathlon-checklist.html" rel="alternate"></link><published>2024-06-02T20:00:00+02:00</published><updated>2025-03-01T21:34:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-02:/triathlon-checklist.html</id><summary type="html">&lt;p&gt;My checklist of things to take for a triathlon&lt;/p&gt;</summary><content type="html">&lt;h1 id="to-change-on-the-bike-weeks-ahead-of-the-race"&gt;📅 To change on the bike weeks ahead of the race&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Sports</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/sports/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-04T18:07:00+01:00</updated><entry><title>Triathlon: Checklist</title><link href="https://romainpellerin.eu/triathlon-checklist.html" rel="alternate"></link><published>2024-06-02T20:00:00+02:00</published><updated>2025-03-04T18:07:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-06-02:/triathlon-checklist.html</id><summary type="html">&lt;p&gt;My checklist of things to take for a triathlon&lt;/p&gt;</summary><content type="html">&lt;h1 id="to-change-on-the-bike-weeks-ahead-of-the-race"&gt;📅 To change on the bike weeks ahead of the race&lt;/h1&gt;
 &lt;p&gt;Make sure to ride a few times with the new gear.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New cleats&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New brake pads&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New tires&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New rim tape&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New shift cables&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; New chain&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; &lt;a href="(https://www.bike24.com/p2271410.html)"&gt;New cassette with the same number of speeds and teeth (me: 11-32)&lt;/a&gt; (&lt;a href="https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/"&gt;when to replace&lt;/a&gt;). &lt;a href="https://www.youtube.com/watch?v=8LqTmvuf6tw"&gt;New chainring?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New cleats &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;&lt;a href="https://road.shimano.com/us/stories/what-shimano-road-cleat-is-right-for-you"&gt;Yellow Shimano SPD-SL cleats&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New brake pads &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Classic pads, or &lt;a href="https://amzn.eu/d/27LHebO"&gt;OXiC-specific ones&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New tires &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Continental Grand Prix 5000 (&lt;a href="https://www.reddit.com/r/cycling/comments/1735wma/continental_gp_5000_s_tr_or_gp_5000/"&gt;not the S TR version&lt;/a&gt; nor &lt;a href="https://www.reddit.com/r/cycling/comments/15msva0/tubeless_conti_gp_5000_s_vs_as_whats_the/"&gt;the AS TR version&lt;/a&gt;)&lt;br /&gt;Size 25-622 (ETRTO)&lt;br /&gt;&lt;a href="https://amzn.eu/d/jcn4Tni"&gt;Amazon&lt;/a&gt; &lt;a href="https://www.bike24.com/p2305160.html"&gt;Bike24&lt;/a&gt;.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New shift cables&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New chain &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Shimano CN-HG701-11 (116 links)&lt;br /&gt;CN-HG601-11 is standard for 105,&lt;br /&gt;but CN-HG701-11 is slightly better performance-wise.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New cassette &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Optional&lt;br /&gt;Shimano 105 CS-R7000 11-speed, 11-32&lt;br /&gt;&lt;a href="https://www.bike24.com/p2271410.html"&gt;Bike24&lt;/a&gt;&lt;br /&gt;&lt;a href="https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/"&gt;When to replace&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;New chainring &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Optional. &lt;a href="https://www.youtube.com/watch?v=8LqTmvuf6tw"&gt;When to replace?&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="things-to-bring-on-race-day"&gt;🧳 Things to bring on race day&lt;/h1&gt;
-&lt;h2 id="things-youll-need-the-whole-race"&gt;📝 Things you'll need the whole race&lt;/h2&gt;
+&lt;h2 id="things-youll-wear-the-whole-race"&gt;📝 Things you'll wear the whole race&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Trisuit (my favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1)&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Smartwatch (charged!). &lt;a href="https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/"&gt;Here are a few tips for setting up a garmin watch for a triathlon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; A transponder, worn at the ankle (provided by the organization)&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; &lt;a href="https://www.garmin.com/fr-FR/p/770963"&gt;A waterproof HRM chest strap&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Aero calf sleeves, to &lt;a href="https://www.reddit.com/r/triathlon/comments/1766z7k/aero_calf_sleeves_best_ones/"&gt;be a little faster on the bike&lt;/a&gt;. Also serves as compression sleeves when running. To be worn the whole time, &lt;a href="https://www.reddit.com/r/triathlon/comments/10drh2b/do_triathletes_swim_with_compression_calf_sleeves/"&gt;under the wetsuit first&lt;/a&gt;. If no wetsuit allowed, to be worn only from the cycling leg onward.&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Trisuit &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;My favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A charged smartwatch &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;&lt;a href="https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/"&gt;Here are a few tips for setting up a garmin watch for a triathlon&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A transponder worn at the ankle &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Provided by the organization&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A waterproof HRM chest strap &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;&lt;a href="https://www.garmin.com/fr-FR/p/770963"&gt;Garmin HRM-Pro Plus&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Aero calf sleeves &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To be &lt;a href="https://www.reddit.com/r/triathlon/comments/1766z7k/aero_calf_sleeves_best_ones/"&gt;a little faster on the bike&lt;/a&gt;.&lt;br /&gt;Also serves as compression sleeves when running.&lt;br /&gt;To be worn the whole time, &lt;a href="https://www.reddit.com/r/triathlon/comments/10drh2b/do_triathletes_swim_with_compression_calf_sleeves/"&gt;under the wetsuit first&lt;/a&gt;.&lt;br /&gt;If no wetsuit allowed, to be worn only from the cycling leg onward.&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-swimming"&gt;🏊 For swimming&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Swimming cap (usually provided by the organization). Some recommend two caps, as as to "wedge" the goggles between the two.&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Swimming goggles&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Wetsuit (optional - sometimes allowed, sometimes forbidden, sometimes mandatory). Made for triathlon, not diving.&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Swimming cap &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Usually provided by the organization.&lt;br /&gt;Some recommend two caps so as to "wedge" the goggles between them.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Swimming goggles&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Wetsuit &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Optional: sometimes allowed, sometimes forbidden, sometimes mandatory.&lt;br /&gt;Made for triathlon, not diving.&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="for-the-transition-swim-bike"&gt;For the transition swim -&amp;gt; bike&lt;/h2&gt;
+&lt;h2 id="for-the-transition-swim-bike"&gt;For the transition swim ➡️ bike&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; A small towel, to dry your feet and remove the dust/dirt&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A small towel &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To dry your feet and remove the dirt&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-cycling"&gt;🚴 For cycling&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Race bike (make it lightweight! remove unnecessary equipment)&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Bike computer (optional)&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Helmet&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Glasses&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Bike shoes&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Fingerless gloves&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Water bottles, already on the bike. One filled with only water, the other with isotonic powder and water. A third one? Pick up from aid stations?&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Low cut socks, that you'll wear for both the cycling and running legs&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; A triathlon belt to carry gels and display the bib number, to be worn until the end of the race&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Gels: have some in the belt, some on the bike. Aim for your weight in grams of carbs per hour: you weight 75 kgs, you take 75 grams per hour.&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Anti puncture liquid for tubes / sealant: Interesting readings: &lt;a href="https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/"&gt;1&lt;/a&gt; and &lt;a href="https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/"&gt;2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; 2 CO2 cannisters with inflator, to store in the saddle bag&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; 2 or 3 spare tubes, in the saddle bag too&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Glueless patches, in the saddle bag too&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; Tire levers and multi tool, in the saddle bag too&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; A mini pump, attached to the bike frame&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Road bike with aero bars, or tri bike &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Make it lightweight: remove unnecessary equipment, such as lights&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Bike computer&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Helmet&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Glasses&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Bike shoes&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Fingerless gloves&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Water bottles &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Already on the bike.&lt;br /&gt;One filled with only water, the other with isotonic powder and water.&lt;br /&gt;A third one? Pick up from aid stations?&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Low cut socks &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To be worn for both the cycling and running legs&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A triathlon belt &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To carry gels and display the bib number, to be worn until the end of the race&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Gels &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Have some in the belt, some on the bike.&lt;br /&gt;Aim for your weight in grams of carbs per hour:&lt;br /&gt;you weight 75 kgs, you take 75 grams per hour.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Anti puncture liquid for tubes / sealant: Interesting readings: &lt;a href="https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/"&gt;1&lt;/a&gt; and &lt;a href="https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/"&gt;2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;2 CO2 cannisters with inflator, to store in the saddle bag&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;2 or 3 spare tubes, in the saddle bag too&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Glueless patches, in the saddle bag too&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Tire levers and multi tool, in the saddle bag too&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A mini pump, attached to the bike frame&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-running"&gt;🏃 For running&lt;/h2&gt;
-&lt;p&gt;Wear the same cycling glasses. Keep the aero calf sleeves on. Stock up on gels again during the bike -&amp;gt; run transition, again aim for your weight in grams of carbs per hour.&lt;/p&gt;
+&lt;p&gt;Wear the same cycling glasses. Keep the aero calf sleeves on. Stock up on gels again during the bike-to-run transition, again aim for your weight in grams of carbs per hour.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; &lt;a href="https://romainpellerin.eu/running-and-pronation.html"&gt;Race running shoes&lt;/a&gt; (with elastic laces?)&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt; A cap (optional)&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;&lt;a href="https://romainpellerin.eu/running-and-pronation.html"&gt;Race running shoes&lt;/a&gt; (with elastic laces?)&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A cap (optional)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="videos"&gt;Videos&lt;/h1&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qcy1s4raoEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Sports"></category><category term="triathlon"></category><category term="swim"></category><category term="bike"></category><category term="running"></category></entry><entry><title>The Ultimate Sports Video</title><link href="https://romainpellerin.eu/the-ultimate-sports-video.html" rel="alternate"></link><published>2024-02-14T23:30:00+01:00</published><updated>2024-08-04T00:01:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-02-14:/the-ultimate-sports-video.html</id><summary type="html">&lt;p&gt;My tips to make the best sports video&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm on a mission. A quest. A quest to make great sports videos.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;style&gt;
+article h1 {
+    font-size: 1.5rem;
+}
+
+article h2 {
+    font-size: 1.3rem;
+}
+
+ul {
+    list-style: none;
+    padding: 5px 10px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
+
+li details {
+    display: inline-block;
+    vertical-align: top;
+    color: #666666;
+}
+
+li details summary {
+    font-style: italic;
+}
+&lt;/style&gt;</content><category term="Sports"></category><category term="triathlon"></category><category term="swim"></category><category term="bike"></category><category term="running"></category></entry><entry><title>The Ultimate Sports Video</title><link href="https://romainpellerin.eu/the-ultimate-sports-video.html" rel="alternate"></link><published>2024-02-14T23:30:00+01:00</published><updated>2024-08-04T00:01:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-02-14:/the-ultimate-sports-video.html</id><summary type="html">&lt;p&gt;My tips to make the best sports video&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm on a mission. A quest. A quest to make great sports videos.&lt;/p&gt;
 &lt;p&gt;I watch Youtube a lot. Too much. Loads of ski and bike videos. And very often, I stumble upon videos which leave me speechless. Well edited, nice shots, action-oriented, upbeat music, you name it.&lt;/p&gt;
 &lt;p&gt;Recently, it was these three:&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/IgXoOQlyiso?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
