@@ -148,6 +148,9 @@ article {
 nav {
   margin: 5px 0 40px 0;
 } /* nav-blog.html */
+@media print {
+  nav { display: none !important; }
+}
 p:not(:last-child) {
   margin-bottom: 5px;
 }
