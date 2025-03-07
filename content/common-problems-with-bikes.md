@@ -73,6 +73,22 @@ The average tension was as follows:
 - Rear wheel right side (cassette side): 283-mm long, 2mm diameter (as measured by me)
 - Rear wheel left side: 301-mm long, 1.2x3.0mm blades (as measured by me)
 
+## DT Swiss PR 1400 DICUT OXiC
+
+- [Product page](https://www.dtswiss.com/en/wheels/wheels-road/performance/pr-1400-dicut-oxic)
+- Technical pages: [front](https://www.dtswiss.com/en/support/product-support?matnr=WPR1400AAQXKA07121) and [rear](https://www.dtswiss.com/en/support/product-support?matnr=WPR1400HRQJKA10990)
+
+### State out of the factory for a rear wheel Mavic Aksium
+
+The average tension on the front wheel is as follows:
+
+- Both sides: 40.5, measured with a calibrated Unior 1752/2 tension meter
+
+The average tension on the rear wheel is as follows:
+
+- Right side (cassette-side): 42.5, measured with a calibrated Unior 1752/2 tension meter
+- Left side: 32.5, measured with a calibrated Unior 1752/2 tension meter
+
 # Adjust front Shimano 105 derailleur
 
 [Link to Reddit](https://www.reddit.com/r/BikeMechanics/comments/gkqiwl/figured_out_the_shimano_linkage_derailleur_design/).

@@ -1,4 +1,4 @@
-Title: Favorite Movies 
+Title: Favorite Movies
 Date: 2017-02-10 00:50
 Category: About me
 Tags: movies
@@ -10,10 +10,10 @@ Just like I started listing [the books I read]({filename}/books.md), I want to l
 
 For the moment, the list is unordered. I'll certainly re-order that at some point, when it gets confusing and messy.
 
-- La La Land: *great actors, excellent OST*
+- La La Land: _great actors, excellent OST_
 - Whiplash
 - Birdman
-- Begin Again: *great OST*
+- Begin Again: _great OST_
 - About time
 - Dead Poets Society
 - Good Will Hunting
@@ -23,7 +23,7 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Avatar
 - Star Wars movies
 - Blue Valentine
-- Drive: *great OST*
+- Drive: _great OST_
 - The Great Gatsby
 - The Shawshank Redemption
 - Hannibal movies with Hopkins (chronological order for the story): Hannibal Rising, Red Dragon, The Silence of the Lambs, and Hannibal
@@ -56,7 +56,8 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - The Notebook
 - The Artist
 - Matrix movies
-- San Junipero (an episode from the TV series *Black Mirror*)
-- Hang the DJ (an episode from the TV series *Black Mirror*)
+- San Junipero (an episode from the TV series _Black Mirror_)
+- Hang the DJ (an episode from the TV series _Black Mirror_)
 - Togo (the Disney movie from 2019)
 - When Harry Met Sally...
+- Balto (animated movie)
