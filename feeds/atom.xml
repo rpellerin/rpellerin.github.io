@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-05T00:31:00+01:00</updated><entry><title>Training For Triathlons</title><link href="https://romainpellerin.eu/training-for-triathlons.html" rel="alternate"></link><published>2025-03-01T21:33:00+01:00</published><updated>2025-03-01T21:33:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-03-01:/training-for-triathlons.html</id><summary type="html">&lt;p&gt;Everything one needs to set up a home trainer&lt;/p&gt;</summary><content type="html">&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-03-08T00:49:00+01:00</updated><entry><title>Training For Triathlons</title><link href="https://romainpellerin.eu/training-for-triathlons.html" rel="alternate"></link><published>2025-03-01T21:33:00+01:00</published><updated>2025-03-01T21:33:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-03-01:/training-for-triathlons.html</id><summary type="html">&lt;p&gt;Everything one needs to set up a home trainer&lt;/p&gt;</summary><content type="html">&lt;p&gt;2025 is the year I'll do my first half Ironman! Big year. Big ambition.&lt;/p&gt;
 &lt;p&gt;Up until now, the longest triathlon I ever participated in was &lt;a href="https://www.berlin-triathlon.de/"&gt;a sprint-distance one in Berlin&lt;/a&gt;, in the last 2 years. Needless to say, I'm still a total noob about triathlon.&lt;/p&gt;
 &lt;p&gt;So I need to learn fast and train hard!&lt;/p&gt;
 &lt;p&gt;This article acts as my shopping list but also my diary, as I learn new things about triathlon. This article will serve anyone else with similar intentions. I'll keep updating this article over the next few months.&lt;/p&gt;
@@ -2434,7 +2434,7 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;.env/bin/gopro-dashboard.py --use-gpx-only --gpx ~/Downloads/some-ride.gpx  --profile mp4 --layout-xml ~/Documents/my-layout-portrait.xml --overlay-size 1080x1920 --units-speed kph --units-altitude meter --units-distance km --units-temperature degC --gps-speed-max &lt;span class="m"&gt;120&lt;/span&gt; --gps-speed-max-units kph --video-time-start file-modified some-video.mp4  ~/Downloads/output.mp4
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;That's it!&lt;/p&gt;</content><category term="Linux"></category><category term="video"></category><category term="linux"></category><category term="gps"></category><category term="gpx"></category><category term="kdenlive"></category></entry><entry><title>Common Problems With Bikes</title><link href="https://romainpellerin.eu/common-problems-with-bikes.html" rel="alternate"></link><published>2023-06-21T15:30:00+02:00</published><updated>2024-08-05T01:14:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-06-21:/common-problems-with-bikes.html</id><summary type="html">&lt;p&gt;Common problems and usual solutions&lt;/p&gt;</summary><content type="html">&lt;h1 id="servicing-a-bike"&gt;Servicing a bike&lt;/h1&gt;
+&lt;p&gt;That's it!&lt;/p&gt;</content><category term="Linux"></category><category term="video"></category><category term="linux"></category><category term="gps"></category><category term="gpx"></category><category term="kdenlive"></category></entry><entry><title>Common Problems With Bikes</title><link href="https://romainpellerin.eu/common-problems-with-bikes.html" rel="alternate"></link><published>2023-06-21T15:30:00+02:00</published><updated>2025-03-08T00:49:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-06-21:/common-problems-with-bikes.html</id><summary type="html">&lt;p&gt;Common problems and usual solutions&lt;/p&gt;</summary><content type="html">&lt;h1 id="servicing-a-bike"&gt;Servicing a bike&lt;/h1&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/2eXWwQ3Jcyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1 id="broken-derailleur-cable"&gt;Broken derailleur cable&lt;/h1&gt;
@@ -2487,6 +2487,21 @@ vim ~/.gopro-graphics/ffmpeg-profiles.json
 &lt;li&gt;Front wheel: 283-mm long, 2mm diameter (as measured by me)&lt;/li&gt;
 &lt;li&gt;Rear wheel right side (cassette side): 283-mm long, 2mm diameter (as measured by me)&lt;/li&gt;
 &lt;li&gt;Rear wheel left side: 301-mm long, 1.2x3.0mm blades (as measured by me)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="dt-swiss-pr-1400-dicut-oxic"&gt;DT Swiss PR 1400 DICUT OXiC&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.dtswiss.com/en/wheels/wheels-road/performance/pr-1400-dicut-oxic"&gt;Product page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Technical pages: &lt;a href="https://www.dtswiss.com/en/support/product-support?matnr=WPR1400AAQXKA07121"&gt;front&lt;/a&gt; and &lt;a href="https://www.dtswiss.com/en/support/product-support?matnr=WPR1400HRQJKA10990"&gt;rear&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="state-out-of-the-factory-for-a-rear-wheel-mavic-aksium_1"&gt;State out of the factory for a rear wheel Mavic Aksium&lt;/h3&gt;
+&lt;p&gt;The average tension on the front wheel is as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Both sides: 40.5, measured with a calibrated Unior 1752/2 tension meter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The average tension on the rear wheel is as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Right side (cassette-side): 42.5, measured with a calibrated Unior 1752/2 tension meter&lt;/li&gt;
+&lt;li&gt;Left side: 32.5, measured with a calibrated Unior 1752/2 tension meter&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id="adjust-front-shimano-105-derailleur"&gt;Adjust front Shimano 105 derailleur&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/BikeMechanics/comments/gkqiwl/figured_out_the_shimano_linkage_derailleur_design/"&gt;Link to Reddit&lt;/a&gt;.&lt;/p&gt;
@@ -7146,7 +7161,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;/ul&gt;
 &lt;p&gt;I was introduced to key people soon enough (co-workers mostly) so that on the first day of my internship I already felt comfortable. Likewise, I got to see my workplace before the beginning of my internship.&lt;/p&gt;
 &lt;p&gt;Finally, I received help and support regarding paperwork and all the stuff I had to do (getting a Social Security Number for instance).&lt;/p&gt;
-&lt;p&gt;That's it. Of course I am grateful to my boss and would like to thank him. Hopefully, I'll do as well as he did, should I get the chance some day.&lt;/p&gt;</content><category term="Jobs"></category><category term="intern"></category></entry><entry><title>Favorite Movies</title><link href="https://romainpellerin.eu/favorite-movies.html" rel="alternate"></link><published>2017-02-10T00:50:00+01:00</published><updated>2025-02-22T00:09:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-02-10:/favorite-movies.html</id><summary type="html">&lt;p&gt;My all time favorite movies. Or some of them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just like I started listing &lt;a href="https://romainpellerin.eu/books.html"&gt;the books I read&lt;/a&gt;, I want to list some of my favorite movies. So here is a first attempt to list them. Of course, I probably forgot lots of them, so I'll keep updating this article occasionally.&lt;/p&gt;
+&lt;p&gt;That's it. Of course I am grateful to my boss and would like to thank him. Hopefully, I'll do as well as he did, should I get the chance some day.&lt;/p&gt;</content><category term="Jobs"></category><category term="intern"></category></entry><entry><title>Favorite Movies</title><link href="https://romainpellerin.eu/favorite-movies.html" rel="alternate"></link><published>2017-02-10T00:50:00+01:00</published><updated>2025-03-08T00:49:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-02-10:/favorite-movies.html</id><summary type="html">&lt;p&gt;My all time favorite movies. Or some of them.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just like I started listing &lt;a href="https://romainpellerin.eu/books.html"&gt;the books I read&lt;/a&gt;, I want to list some of my favorite movies. So here is a first attempt to list them. Of course, I probably forgot lots of them, so I'll keep updating this article occasionally.&lt;/p&gt;
 &lt;p&gt;For the moment, the list is unordered. I'll certainly re-order that at some point, when it gets confusing and messy.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;La La Land: &lt;em&gt;great actors, excellent OST&lt;/em&gt;&lt;/li&gt;
@@ -7199,6 +7214,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;Hang the DJ (an episode from the TV series &lt;em&gt;Black Mirror&lt;/em&gt;)&lt;/li&gt;
 &lt;li&gt;Togo (the Disney movie from 2019)&lt;/li&gt;
 &lt;li&gt;When Harry Met Sally...&lt;/li&gt;
+&lt;li&gt;Balto (animated movie)&lt;/li&gt;
 &lt;/ul&gt;</content><category term="About me"></category><category term="movies"></category></entry><entry><title>My Travel List</title><link href="https://romainpellerin.eu/my-travel-list.html" rel="alternate"></link><published>2017-01-31T16:55:00+01:00</published><updated>2022-09-23T00:04:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2017-01-31:/my-travel-list.html</id><summary type="html">&lt;p&gt;Places I want to visit.&lt;/p&gt;</summary><content type="html">&lt;h1 id="usa"&gt;USA&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Dallas&lt;/li&gt;
