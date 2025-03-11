@@ -43,7 +43,7 @@ Make sure to ride a few times with the new gear.
 
 Keep the aero calf sleeves on as well as the HRM strap.
 
-- <input type="checkbox" />Road bike with aero bars, or tri bike <details><summary>more info</summary>Make it lightweight<br />Remove unnecessary equipment, such as lights</details>
+- <input type="checkbox" />Road bike with aero bars, or tri bike <details><summary>more info</summary>Make it lightweight<br />Remove unnecessary equipment, such as lights<br />To buy a second hand bike: [Buycycle](https://buycycle.com/) or [Biked](https://biked.com/)<br />To get a discount from Canyon, go to a Canyon shop and do a test ride.<br />You'll get the bike guard for free (19.9 euros) via a code over email.</details>
 - <input type="checkbox" />Bike computer
 - <input type="checkbox" />Helmet
 - <input type="checkbox" />Glasses <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
