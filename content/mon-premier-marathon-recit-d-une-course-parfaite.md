@@ -115,7 +115,7 @@ Et le dimanche matin, entre 8h30 et 9h, soit plus d'une heure trente avant le d�
 
 Avec tout ça, j'étais calé, aucun doute.
 
-# Le sujet tabou 💩
+# [Le sujet tabou 💩](https://youtu.be/O_j5XGhNH8o?t=380)
 
 Parlons-en. Le sujet dont personne ne parle mais dont tout le monde a peur. 🙈
 
