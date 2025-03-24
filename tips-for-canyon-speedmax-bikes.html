@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike, cycling" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Some tips for these triathlon bikes" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Tips for Canyon Speedmax Bikes - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Some tips for these triathlon bikes" />
+        <meta property="og:url" content="https://romainpellerin.eu/tips-for-canyon-speedmax-bikes.html" />
+
+        <title>Tips for Canyon Speedmax Bikes - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-03-24T23:00:00+01:00">Mon 24 March 2025</time>        </p>
+    <h1>Tips for Canyon Speedmax Bikes</h1>
+    <div class="grey">
+        <p class="italic">Some tips for these triathlon bikes</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 283 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/bikes.html">Bikes</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/cycling.html">cycling</a></p>    </div>
+</header>
+<article>
+    <ul>
+<li>
+<p>The small plastic part between the two screws for the bottle holder is the cable holder. It prevents the brake line from rattling inside the frame. It should be left as it is, no need to cover it.</p>
+<p><img alt="" src="https://preview.redd.it/minor-tech-questions-speedmax-cf-7-v0-8o0w44yxhfgd1.jpg?width=1080&amp;crop=smart&amp;auto=webp&amp;s=22f793fe81d21c71620f9a3f134f8abe81d961f0"></p>
+</li>
+<li>
+<p>The wheel tightening lever can be left on one of the wheels (front one is my recommendation, if it falls you'll most likely hear it). Just push hard enough until it clicks.</p>
+</li>
+<li>The bike comes with tubes installed, not tubeless.</li>
+<li>
+<p>The 4 rubber plugs: 3 should go to the back of the seat post, one underneath the handlebar in the middle.</p>
+<p><img alt="" src="https://romainpellerin.eu/images/canyon-speedmax/rubber-plugs.jpg"></p>
+</li>
+<li>
+<p>The Shimano Adjustment Gauge (made of cardboard) for RD-D7100/R7150 RX820 is meant to set the correct distance between the rear derailleur's guide pulley and the largest cog on the cassette.</p>
+</li>
+<li>
+<p>Shimanoo tools TL-EW300 and TL-EW02: they are needed to connect/disconnect Di2 cables (at the cockpit/aero bars, or at the rear derailleur).</p>
+<p><img alt="" src="https://romainpellerin.eu/images/canyon-speedmax/tl-ew300.jpg">
+  <img alt="" src="https://romainpellerin.eu/images/canyon-speedmax/tl-ew02.jpg"></p>
+</li>
+<li>
+<p>The chain comes pre-greased with standard grease, no need to degrease+grease again. I asked Canyon's support about this:</p>
+<blockquote>
+<p>Your bike should be ready to ride right out of the box, as Canyon typically preps the bike with the necessary lubricants and greases. However, it’s always a good idea to check the chain and drivetrain.</p>
+<p>If the chain feels overly greasy or has excess lubrication on it, you can wipe it down with a clean cloth, but there should be no need to degrease and re-grease unless you want to ensure it's in perfect condition.</p>
+<p>As long as you haven’t encountered any issues with shifting or the bike seems properly set up, you're good to go! Always double-check the brakes, tire pressure, and overall setup before riding.</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://www.reddit.com/r/CanyonBikes/comments/1ej0e6m/minor_tech_questions_speedmax_cf_7/">Reddit source for some of these questions</a>.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 24 March 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
