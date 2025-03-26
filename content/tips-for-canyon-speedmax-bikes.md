@@ -6,13 +6,18 @@ Slug: tips-for-canyon-speedmax-bikes
 Authors: Romain Pellerin
 Summary: Some tips for these triathlon bikes
 
+- The [official Canyon cockpit mount](https://www.canyon.com/en-de/gear/accessories/bike-tech/cockpit-and-handlebar-mounts/canyon-cockpit-mount/9102035.html) cannot be mounted on the Speedmax, as it needs to be screwed in two holes. The only hole present in the cockpit is for [the hydration system](https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-speedmax-hydration-system/10014133.html). A bike computer mount is also already present on the hydration system. Therefore, without the hydration system installed, a generic bike computer mount can be installed on the aero bars instead:
+
+      - [Time Trial/Tri Bar Mount from Garmin](https://www.garmin.com/de-DE/p/107165)
+      - [ZIPP QuickView TT Computer Mount for Garmin Edge](https://www.bike24.com/p274637.html)
+
 - The small plastic part between the two screws for the bottle holder is the cable holder. It prevents the brake line from rattling inside the frame. It should be left as it is, no need to cover it.
 
       ![](https://preview.redd.it/minor-tech-questions-speedmax-cf-7-v0-8o0w44yxhfgd1.jpg?width=1080&crop=smart&auto=webp&s=22f793fe81d21c71620f9a3f134f8abe81d961f0)
 
 - The wheel tightening lever can be left on one of the wheels (front one is my recommendation, if it falls you'll most likely hear it). Just push hard enough until it clicks.
 - The bike comes with tubes installed, not tubeless.
-- The 4 rubber plugs: 3 should go to the back of the seat post, one underneath the handlebar in the middle.
+- The 4 rubber plugs: 3 should go to the back of the seat post. One is spare, it can go underneath the handlebar in the middle, there's the hole for the hydration system that can be filled. Canyon said this hole does not necessarily have to be sealed though. Canyon also suggests to use the plugs for the holes of the bottle cages, if unused.
 
       ![]({static}/images/canyon-speedmax/rubber-plugs.jpg)
 
