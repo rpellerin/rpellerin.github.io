@@ -13,19 +13,19 @@ Summary: Some tips for these triathlon bikes
 
 - The small plastic part between the two screws for the bottle holder is the cable holder. It prevents the brake line from rattling inside the frame. It should be left as it is, no need to cover it.
 
-      ![](https://preview.redd.it/minor-tech-questions-speedmax-cf-7-v0-8o0w44yxhfgd1.jpg?width=1080&crop=smart&auto=webp&s=22f793fe81d21c71620f9a3f134f8abe81d961f0)
+      ![Photo of the frame](https://preview.redd.it/minor-tech-questions-speedmax-cf-7-v0-8o0w44yxhfgd1.jpg?width=1080&crop=smart&auto=webp&s=22f793fe81d21c71620f9a3f134f8abe81d961f0)
 
 - The wheel tightening lever can be left on one of the wheels (front one is my recommendation, if it falls you'll most likely hear it). Just push hard enough until it clicks.
 - The bike comes with tubes installed, not tubeless.
 - The 4 rubber plugs: 3 should go to the back of the seat post. One is spare, it can go underneath the handlebar in the middle, there's the hole for the hydration system that can be filled. Canyon said this hole does not necessarily have to be sealed though. Canyon also suggests to use the plugs for the holes of the bottle cages, if unused.
 
-      ![]({static}/images/canyon-speedmax/rubber-plugs.jpg)
+      ![The 4 rubber plugs]({static}/images/canyon-speedmax/rubber-plugs.jpg)
 
 - The Shimano Adjustment Gauge (made of cardboard) for RD-D7100/R7150 RX820 is meant to set the correct distance between the rear derailleur's guide pulley and the largest cog on the cassette.
 - Shimanoo tools TL-EW300 and TL-EW02: they are needed to connect/disconnect Di2 cables (at the cockpit/aero bars, or at the rear derailleur).
 
-      ![]({static}/images/canyon-speedmax/tl-ew300.jpg)
-      ![]({static}/images/canyon-speedmax/tl-ew02.jpg)
+      ![Photo of the TL-EW300 tool]({static}/images/canyon-speedmax/tl-ew300.jpg)
+      ![Photo of the TL-EW02 tool]({static}/images/canyon-speedmax/tl-ew02.jpg)
 
 - The chain comes pre-greased with standard grease, no need to degrease+grease again. I asked Canyon's support about this:
 
