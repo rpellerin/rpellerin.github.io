@@ -27,7 +27,7 @@ Summary: Some tips for these triathlon bikes
       ![Photo of the TL-EW300 tool]({static}/images/canyon-speedmax/tl-ew300.jpg)
       ![Photo of the TL-EW02 tool]({static}/images/canyon-speedmax/tl-ew02.jpg)
 
-- The T6 Torx screwdriver was not needed during assembly. It might be required to service the bike and change some parts, I don't know. Canyon's support was not more knowledgeable about it.
+- The T6 Torx screwdriver was not needed during assembly. It might be required to service the bike and change some parts, I don't know. Canyon's support was not more knowledgeable about it, they only mentioned "to tweak some small screws securing Di2 junction boxes or electronic shifting cable covers or other compatible screws".
 
       ![Photo of the T6 tool]({static}/images/canyon-speedmax/t6-tool.jpg)
 
