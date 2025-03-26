@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, berlin, germany, health" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Some tips and useful things to know about health insurance companies in Germany" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Healthcare Insurances In Germany - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Some tips and useful things to know about health insurance companies in Germany" />
+        <meta property="og:url" content="https://romainpellerin.eu/healthcare-insurances-in-germany.html" />
+
+        <title>Healthcare Insurances In Germany - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-03-27T00:00:00+01:00">Thu 27 March 2025</time>        </p>
+    <h1>Healthcare Insurances In Germany</h1>
+    <div class="grey">
+        <p class="italic">Some tips and useful things to know about health insurance companies in Germany</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 291 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/miscellaneous.html">Miscellaneous</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/berlin.html">berlin</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/germany.html">germany</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/health.html">health</a></p>    </div>
+</header>
+<article>
+    <p>Most health insurance companies in Germany offer the following things. I took me many years to discover them. Hopefully this will be useful to some.</p>
+<h1 id="they-reward-physical-activity-and-preventive-healthcare">They reward physical activity and preventive healthcare</h1>
+<p>Most insurances offer bonus plans, through which people get "points" for being active but also by taking preventive health actions, such as going once a year to the dentist for a check-up, getting vaccinated, following online nutrition courses, etc. All it takes is "uploading" proofs of these actions (can be as simple as filling out a form with the date of the medical appointment).</p>
+<p>Regarding the "being active" part, some insurance can connect to fitness platforms like Garmin, sync your activies and give you points for doing X steps per day, cycling a few kilometers a week, etc. As an example, TK has a program called <a href="https://www.tk.de/en/support-faq/faq-easy-access-to-health-care/access-doctors-and-abroad/tk-fit-frequently-asked-questions/tk-fit-en-benefits-2136732">TK-Fit</a>, which is part of ther bonus plan.</p>
+<p>Once you accumulate enough points, you can either "cash them out" or get total or partial refunds for things that are remotely health-related, such as a gym membership or a smartwatch. As an example, <a href="https://www.tk.de/techniker/gesundheit-foerdern/tk-bonusprogramm/tk-gesundheitsdividende-leistungskatalog-2029142">this is what you can get a (partial or full) refund for, from TK</a>.</p>
+<p><a href="https://www.reddit.com/r/Finanzen/comments/1ilo6sq/tkk_bonusprogramm/?tl=en">Here is some feedback from TK clients.</a></p>
+<h1 id="opting-out-of-premiums">Opting out of premiums</h1>
+<p>Another way of saving money is by opting out of premiums (= options) one does not need, like homeopathy. Again, <a href="https://www.reddit.com/r/de/comments/17qi5id/techniker_krankenkasse_ermöglicht_optout_aus/?tl=en">here is some feedback from TK clients.</a> In most cases, should one still need a type of care they opted out of, they of course would get it and the insurance would pay for most of the costs The only difference is that a part of the costs would have to be paid for by the patient, as opposed to being fully covered by the insurance.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 27 March 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
