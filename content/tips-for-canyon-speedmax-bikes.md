@@ -27,6 +27,10 @@ Summary: Some tips for these triathlon bikes
       ![Photo of the TL-EW300 tool]({static}/images/canyon-speedmax/tl-ew300.jpg)
       ![Photo of the TL-EW02 tool]({static}/images/canyon-speedmax/tl-ew02.jpg)
 
+- The T6 Torx screwdriver was not needed during assembly. It might be required to service the bike and change some parts, I don't know. Canyon's support was not more knowledgeable about it.
+
+      ![Photo of the T6 tool]({static}/images/canyon-speedmax/t6-tool.jpg)
+
 - The chain comes pre-greased with standard grease, no need to degrease+grease again. I asked Canyon's support about this:
 
       > Your bike should be ready to ride right out of the box, as Canyon typically preps the bike with the necessary lubricants and greases. However, it’s always a good idea to check the chain and drivetrain.
