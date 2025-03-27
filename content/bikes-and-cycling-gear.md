@@ -6,11 +6,11 @@ Slug: bikes-and-cycling-gear
 Authors: Romain Pellerin
 Summary: A list of bikes and cycling gear
 
-In this article, I maintain a list of good bikes and cycling gear that I am considering buying some day.
+Here is a list of good bikes and cycling gear that I am considering buying some day.
 
 First, some vocabulary to know about frames:
 
-- AL or AL usually means an Aluminum frame
+- AL usually means an Aluminum frame
 - CF means a Carbon Fiber frame
 - SL means Super Light
 - SLX stands for Super Light Extreme
@@ -76,27 +76,27 @@ th, td { border: 1px solid black; }
 
 - [Canyon Endurace CF 7.0](https://www.canyon.com/en-de/road-bikes/endurance-bikes/endurace/endurace-cf-7.0/2508.html?dwvar_2508_pv_rahmenfarbe=RD%2FWH)
 
-    - [https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/](https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/)
-    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc) (2018): good
-    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0) (2019): not so good
-    - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0) (2020): good
-    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/)
-    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/)
+  - [https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/](https://www.bikeradar.com/reviews/bikes/road-bikes/canyon-endurace-al-7-2020review/)
+  - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0-disc) (2018): good
+  - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-al-7-0) (2019): not so good
+  - [https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0](https://www.cyclingweekly.com/reviews/road-bikes/canyon-endurace-disc-7-0) (2020): good
+  - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-1000/)
+  - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/)
 
 - [CUBE ATTAIN GTC Pro 105 - Carbon Roadbike - 2019](https://www.bike24.com/p2188261.html?menu=1000,173,157)
 
-    - Geometry is not as aggressive as the other two
-    - [https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race](https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race): review is on a model with disc brakes and Ultegra Shimano, which qualifies it as a comfort-oriented bike
-    - [https://www.youtube.com/watch?v=9UCbv6FzJSM](https://www.youtube.com/watch?v=9UCbv6FzJSM) (oct 2018): good comfy bike
-    - [https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760](https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760)
+  - Geometry is not as aggressive as the other two
+  - [https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race](https://www.cyclingweekly.com/reviews/road-bikes/cube-attain-gtc-race): review is on a model with disc brakes and Ultegra Shimano, which qualifies it as a comfort-oriented bike
+  - [https://www.youtube.com/watch?v=9UCbv6FzJSM](https://www.youtube.com/watch?v=9UCbv6FzJSM) (oct 2018): good comfy bike
+  - [https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760](https://road.cc/content/buyers-guide/your-complete-guide-cubes-road-bike-range-252760)
 
 - [FOCUS IZALCO RACE 9.7 105 Roadbike](https://www.bike24.com/p2347326.html?menu=1000,173,157)
 
-    - On the [official Focus website](https://www.focus-bikes.com/de_en/186026-izalco-race-9-7), the wheels are different (though they are the same on [this archive page](https://www.focus-bikes.com/de_en/95693-izalco-race-9-7)) as well as the weight (8.65, 8.1 on [bike24](https://www.bike24.com/p2347326.html?menu=1000,173,157))
-    - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/): positive review
-    - [https://www.cyclingweekly.com/group-tests/focus-bikes-352805](https://www.cyclingweekly.com/group-tests/focus-bikes-352805) (oct 2019): _The Focus Izalco Race aims to take a speedy, racing chassis to the masses._
-    - [https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/](https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/) (nov 2018): excellent appart from the wheels but they have changed since 2018
-    - [https://road.cc/content/review/235885-focus-izalco-race-carbon-sora](https://road.cc/content/review/235885-focus-izalco-race-carbon-sora) (jan 2018): excellent review on a different model
+  - On the [official Focus website](https://www.focus-bikes.com/de_en/186026-izalco-race-9-7), the wheels are different (though they are the same on [this archive page](https://www.focus-bikes.com/de_en/95693-izalco-race-9-7)) as well as the weight (8.65, 8.1 on [bike24](https://www.bike24.com/p2347326.html?menu=1000,173,157))
+  - [https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/](https://www.bikeradar.com/advice/buyers-guides/best-road-bike-under-2000/): positive review
+  - [https://www.cyclingweekly.com/group-tests/focus-bikes-352805](https://www.cyclingweekly.com/group-tests/focus-bikes-352805) (oct 2019): _The Focus Izalco Race aims to take a speedy, racing chassis to the masses._
+  - [https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/](https://www.bikeradar.com/reviews/bikes/road-bikes/focus-izalco-race-review/) (nov 2018): excellent appart from the wheels but they have changed since 2018
+  - [https://road.cc/content/review/235885-focus-izalco-race-carbon-sora](https://road.cc/content/review/235885-focus-izalco-race-carbon-sora) (jan 2018): excellent review on a different model
 
 #### More references
 
