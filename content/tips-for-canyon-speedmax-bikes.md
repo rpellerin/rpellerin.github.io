@@ -22,6 +22,7 @@ Summary: Some tips for these triathlon bikes
       ![The 4 rubber plugs]({static}/images/canyon-speedmax/rubber-plugs.jpg)
 
 - The Shimano Adjustment Gauge (made of cardboard) for RD-D7100/R7150 RX820 is meant to set the correct distance between the rear derailleur's guide pulley and the largest cog on the cassette.
+- The two wedges that say "Inner Dia. 20.5-22.5" are [spart parts of the DURA-ACE Dual Control Lever (ST-R9180)](https://si.shimano.com/de/pdfs/ev/ST-R9180-4089/EV-ST-R9180-4089A.pdf), that [go between the brakes and the handlebar](https://www.reddit.com/r/triathlon/comments/1idyomy/brakeshift_lever_part_needed/). They are of no use when assembling the bike. Canyon was not able to tell me what to use them for.
 - Shimanoo tools TL-EW300 and TL-EW02: they are needed to connect/disconnect Di2 cables (at the cockpit/aero bars, or at the rear derailleur).
 
       ![Photo of the TL-EW300 tool]({static}/images/canyon-speedmax/tl-ew300.jpg)
