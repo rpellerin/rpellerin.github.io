@@ -30,7 +30,7 @@ Public announcements are given in English on the train line that connects Tamper
 
 To get to the city center from the airport, ride the I or P train for about half an hour. You'll find the train station undeground, underneath the airport.
 
-I was told that the sea shore and all lakes are completely frozen from December until April every year. Frozen to the point that people do activities on lakes, such as skiing, riding snowmobiles or four wheelers, ice skating, walking their dog, sledding, biking, and even kiteboarding (true story!). I also witnessed a smallplow that was making a road on the ice for bikes to ride.
+I was told that the sea shore and all lakes are completely frozen from December until April every year. Frozen to the point that people do activities on lakes, such as skiing, riding snowmobiles or four wheelers, ice skating, walking their dog, sledding, biking, and even kiteboarding (true story!). I also witnessed a snowplow that was making a road on the ice for bikes to ride.
 
 <figure class="center">
 <img src="{static}/images/finland/gmaps.gif" alt="Frozen lake" />
