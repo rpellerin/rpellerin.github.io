@@ -409,12 +409,12 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 <div>
 <label for="todo_items">TODO items:</label><br />
 <textarea id="todo_items" name="todo_items" rows="5" cols="50">
-Couper ongles
+Couper ongles une semaine avant course
 Se faire une belle moustache
 Prévoir le trajet pour se rendre à la course
 Prévoir des vieux vêtements chauds d'avant course, to give away
-Si je dors à l'hôtel, emmener un sharpie + repas pour samedi midi et soir (riz, pâtes pesto, patates, Speisequark) et petit-déj du dimanche (müsli/flocons d'avoine avec lait de soja, pâtes pesto, banane)
-Recharge glucidique à partir du jeudi
+Si je dors à l'hôtel, emmener un sharpie + repas pour samedi midi et soir (riz, pâtes pesto rosso, patates, Speisequark) et petit-déj du dimanche (müsli/flocons d'avoine avec lait de soja, pâtes pesto rosso, banane)
+Recharge glucidique à partir du jeudi, boire du maltodextrine en continu
 Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
 Samedi : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
