@@ -424,6 +424,7 @@ Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
   Water stations: Km 5, 10, etc
   WC: Km 5, 10, etc
+Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud des lacets
 Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
 Dimanche matin : warm up de 2km avant départ
 </textarea>
