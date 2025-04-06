@@ -64,6 +64,10 @@ Summary: Books I have read
 
 - **The Culture Map**, by Erin Meyer
 
+# 2024/2025
+
+- **Be Useful: Seven Tools for Life**, by Arnold Schwarzenegger
+
 # To read
 
 - [7 romans de science-fiction déprimants et géniaux à lire avant la fin du monde](https://www.numerama.com/pop-culture/531136-7-romans-de-science-fiction-deprimants-et-geniaux-a-lire-avant-la-fin-du-monde.html)
