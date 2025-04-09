@@ -419,7 +419,7 @@ Samedi : shake-out run avec 1km à allure ~24h avant la course (donc le matin)
 Samedi : charger montre et la reboot
 Samedi : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner
-Dimanche matin : petit-déj AU MOINS 2h avant la course
+Dimanche matin : petit-déj AU MOINS 1.5h avant la course
 Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
   Water stations: Km 5, 10, etc
