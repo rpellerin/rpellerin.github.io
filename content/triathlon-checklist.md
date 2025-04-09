@@ -6,6 +6,17 @@ Slug: triathlon-checklist
 Authors: Romain Pellerin
 Summary: My checklist of things to take for a triathlon
 
+# 💧 Hydration strategy on the bike
+
+That's something that needs to be figured weeks in advance, in case additional equipment is required. Multiple things to consider:
+
+- Grabbing bidons from volunteers at aid stations can be tricky, [bidons are hard to grab even at low speed](https://www.instagram.com/reel/DIDstmxttmD).
+- [Aero bidons](https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-fuel-aero-bottle/9102280.html) are not necessarily a good idea since you cannot swap the bidons with standard bidons during the ride, if you run out of water. I believe they're only appropriate for olympic distance triathlons or shorter.
+- Bidons can be stored in the frame (2 bidons maximum), between the aero bars (usually 1, sometimes 2 bidons) or behind the saddle (2 bidons maximum, maybe 3?).
+- [Fully integrated hydration systems](https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-speedmax-hydration-system/10014133.html) exist but the aero gain is very marginal, and those systems are expensive. Also, they need to be refilled, they cannot be swapped during the race like bidons.
+
+Considering that it's hard to predict how much water one will drink, it's best to ensure to be able to swap empty bottles with new ones. Also, because of the difficulty of grabbing bottles, it's probably best to carry all the water/isotonic drink one will need. Therefore, my recommendation would be to store two standards bidons in the frame, and one optional additional bottle behind the saddle for a 70.3. For a full IronMan, I'd probably consider 4 in total (2 in the frame, 2 behind the saddle). Trading empty bottles for full ones will always remain an option in case of hot weather.
+
 # 📅 To change on the bike weeks ahead of the race
 
 Make sure to ride a few times with the new gear.
@@ -37,7 +48,7 @@ Make sure to ride a few times with the new gear.
 ## For the transition swim ➡️ bike
 
 - <input type="checkbox" />A small towel <details><summary>more info</summary>To dry your feet and remove the dirt</details>
-- <input type="checkbox" />Two bottles with pure water and isotonic
+- <input type="checkbox" />Two bidons with pure water and isotonic
 
 ## 🚴 For cycling
 
@@ -49,7 +60,7 @@ Keep the aero calf sleeves on as well as the HRM strap.
 - <input type="checkbox" />Glasses <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />Bike shoes <details><summary>more info</summary>Some leave them attached to the pedals, ahead of the race, ready to go</details>
 - <input type="checkbox" />Fingerless gloves
-- <input type="checkbox" />Water bottles <details><summary>more info</summary>Already on the bike.<br />One filled with only water, the other with isotonic powder and water.<br />A third one? Pick up from aid stations?</details>
+- <input type="checkbox" />Water bidons <details><summary>more info</summary>Already on the bike.<br />One filled with only water, the other with isotonic powder and water.<br />A third one? Pick up from aid stations?</details>
 - <input type="checkbox" />Low cut socks <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number, to be worn until the end of the race</details>
 - <input type="checkbox" />Gels <details><summary>more info</summary>Have some in the belt, some on the bike.<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
@@ -62,7 +73,7 @@ Keep the aero calf sleeves on as well as the HRM strap.
 
 ## For the transition bike ➡️ running
 
-- <input type="checkbox" />Two bottles with pure water and isotonic
+- <input type="checkbox" />Two additional bidons with pure water and isotonic
 
 ## 🏃 For running
 
