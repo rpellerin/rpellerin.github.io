@@ -196,7 +196,7 @@ And finally, the last 2 kilometers. I told myself to go all in, but I couldn't, 
 <figcaption>Last turn before the finish line</figcaption>
 </figure>
 
-And finally, the very last turn. Km 42. 195 meters to go!!! I saw someone taking photos. I did put on my best face for the photo 😆. Last few meters... I raised my arms up in the air aaaaaannnd we were done!!!
+And finally, the very last turn. Km 42. 195 meters to go!!! I did put on my best face for the photo 😆. Last few meters... I raised my arms up in the air aaaaaannnd we were done!!!
 
 <figure class="center">
 <img src="{static}/images/marathon-de-paris-2025/finish-line.jpg" alt="Me running" />
