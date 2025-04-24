@@ -76,43 +76,94 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2024-07-26T15:10:00+02:00">Fri 26 July 2024</time> - Last update: <time datetime="2024-07-30T17:54:00+02:00">Tue 30 July 2024</time>        </p>
+<time datetime="2024-07-26T15:10:00+02:00">Fri 26 July 2024</time> - Last update: <time datetime="2025-04-24T15:57:00+02:00">Thu 24 April 2025</time>        </p>
     <h1>Kotlin</h1>
     <div class="grey">
         <p class="italic">Cheatsheet for beginners - such as myself!</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 218 words.">1 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1027 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/kotlin.html">kotlin</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/java.html">java</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a></p>    </div>
 </header>
 <article>
-    <h1 id="idea">IDEA</h1>
-<p>Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.</p>
-<p>Kotlin is included in each IntelliJ IDEA release.</p>
-<h2 id="setup-intellij">Setup IntelliJ</h2>
-<p><code>IntelliJ Idea &gt; Settings &gt; Build, Execution, Deployment &gt; Build Tools &gt; Maven &gt; Importing</code>. Check the 2 checkboxes "Sources" and "Documentation".</p>
-<p><code>Intellij Idea &gt; Settings &gt; Editor &gt; General &gt; Auto Import</code>, check <code>Optimize imports on the fly</code> for both Java and Kotlin.</p>
-<p><code>Intellij Idea &gt; Settings &gt; Editor &gt; Tools &gt; Actions on Save</code>, check <code>Reformat code</code>, <code>Optimize imports</code>, <code>Rearrange code</code> and <code>Run code cleanup</code>.</p>
-<p>Install the <code>SonarLint</code> plugin for code quality checks.</p>
-<p>To add git blame annotations, add the plugin <a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox">GitToolBox</a>.</p>
-<h1 id="setup">Setup</h1>
-<h2 id="install-java">Install Java</h2>
+    <h1 id="setup">Setup</h1>
+<h2 id="install-kotlin">Install Kotlin</h2>
+<p>Installing Kotlin is not necessary. Only Java is. IntelliJ Ultimate Edition (paid) or Community Edition (free) both come with the Kotlin plugin bundled and enabled by default.</p>
+<h2 id="install-java-required">Install Java (required)</h2>
 <div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-21-jdk <span class="c1"># or newer, check with `apt search openjdk`</span>
 </code></pre></div>
 
-<h2 id="install-kotlin">Install Kotlin</h2>
-<p>In most scenarios, installing Kotlin is not necessary. Only Java is.</p>
-<h2 id="install-maven">Install Maven</h2>
-<p><a href="https://stackoverflow.com/questions/66399278/having-maven-plugins-in-intellij-idea-without-maven-installation-in-computer">Installing Maven, our build tool, is not required, as IntelliJ comes with a bundled version of Maven. However, installing your own version might come in handy, to be able to run Maven from the command line.</a></p>
+<h2 id="install-apache-maven">Install Apache Maven</h2>
+<p><a href="https://stackoverflow.com/questions/66399278/having-maven-plugins-in-intellij-idea-without-maven-installation-in-computer">Installing Maven, a popular build tool, is not required, as IntelliJ comes with a bundled version of Maven.</a> However, installing your own version might come in handy, to be able to run Maven from the command line outside IntelliJ, or to run a specific version of Maven. <strong>It does not hurt to install Maven globally on the system, it won't conflict with IntelliJ's Maven, but it is not recommended.</strong></p>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install maven
 </code></pre></div>
 
-<p><a href="https://maven.apache.org/wrapper/">Using the Maven Wrapper in a project is also an alternative.</a> Yet it does not hurt to install Maven globally on the system, it won't conflict.</p>
+<h3 id="maven-wrapper">Maven Wrapper</h3>
+<p>A better alternative to installing Maven system-wide is to <a href="https://maven.apache.org/wrapper/">use the Maven Wrapper in a project.</a> It is usually a file named <code>mvnw</code>. <strong>Its primary purpose is to ensure that anyone building the project uses the exact same version of Apache Maven, without needing to install Maven manually beforehand.</strong></p>
+<p>It comes with <code>.mvn/wrapper/maven-wrapper.properties</code>, a configuration file specifying which version of Maven should be used and where to download it from (usually Maven Central).</p>
+<p>Instead of running <code>mvn &lt;goal&gt;</code> (which uses the globally installed Maven, if any), users run <code>./mvnw &lt;goal&gt;</code>.</p>
+<h1 id="intellij-idea-ultimate">IntelliJ IDEA Ultimate</h1>
+<p>Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.</p>
+<p>Kotlin is included in all IntelliJ IDEA versions and releases.</p>
+<h2 id="install">Install</h2>
+<ol>
+<li><a href="https://www.jetbrains.com/toolbox-app/">Download Jetbrains' Toolbox App</a></li>
+<li>Extract <code>jetbrains-toolbox</code> from the archive and move it under <code>~/.local/bin</code></li>
+<li>Launch it. From there you can install IntelliJ Ultimate.</li>
+</ol>
+<h2 id="setup-intellij">Setup IntelliJ</h2>
+<ul>
+<li><code>Settings &gt; Build, Execution, Deployment &gt; Build Tools &gt; Maven &gt; Importing &gt; Automatically download</code>. Check the 3 checkboxes "Sources", "Documentation" and "Annotations".</li>
+<li><code>Settings &gt; Editor &gt; General &gt; Auto Import</code>, check <code>Add unambiguous imports on the fly</code> and <code>Optimize imports on the fly</code>.</li>
+<li><code>Settings &gt; Editor &gt; Tools &gt; Actions on Save</code>, check <code>Reformat code</code>, <code>Optimize imports</code>, <code>Rearrange code</code> and <code>Run code cleanup</code>.</li>
+</ul>
+<h2 id="plugins">Plugins</h2>
+<p><code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code>:</p>
+<ul>
+<li><code>SonarQube for IDE</code> for code quality checks</li>
+<li><code>GitHub Copilot</code></li>
+<li><code>[GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox)</code> for git blame on lines</li>
+</ul>
+<h2 id="common-shortcuts-as-of-april-2025">Common shortcuts (as of April 2025)</h2>
+<ol>
+<li><strong><code>Alt+Enter</code></strong>: Show Intention Actions &amp; Quick Fixes. This is arguably the most crucial shortcut. It offers context-aware suggestions, from fixing errors and warnings to importing classes, generating code, and applying quick refactorings.</li>
+<li><strong><code>Double Shift</code></strong>: Search Everywhere. Quickly find files, classes, symbols, actions, settings, or even Git commits anywhere in your project or the IDE itself.</li>
+<li><strong><code>Alt+J</code></strong>: Equivalent of <code>Ctrl+D</code> in VS Code ("Add Selection for Next Occurrence").</li>
+<li><strong><code>Ctrl+Shift+A</code></strong>: Find Action. If you know the name of an action (like "Reformat Code" or "Toggle Case") but not the shortcut, use this to find and execute it. It also shows the shortcut if one exists.</li>
+<li><strong><code>Ctrl+B</code> or <code>Ctrl+Click</code></strong>: Go to Declaration or Usages. Navigate to the source declaration of a variable, method, or class. If used on the declaration itself, it finds usages.</li>
+<li><strong><code>Alt+F7</code></strong>: Find Usages. Shows all places where the symbol under the caret is used throughout the project in the Find tool window.</li>
+<li><strong><code>Ctrl+Alt+L</code></strong>: Reformat Code. Automatically formats the current file or selected code block according to your project's code style settings.</li>
+<li><strong><code>Ctrl+/</code></strong>: Comment/Uncomment with Line Comment. Quickly comment or uncomment the current line or selected block using single-line comments (<code>//</code>).</li>
+<li><strong><code>Ctrl+Shift+/</code></strong>: Comment/Uncomment with Block Comment. Comment or uncomment the selected block using block comments (<code>/* ... */</code>).</li>
+<li><strong><code>Ctrl+W</code> / <code>Ctrl+Shift+W</code></strong>: Extend / Shrink Selection. Intelligently selects increasingly larger logical blocks of code (or shrinks the selection). Very useful for selecting statements, methods, or classes without using the mouse.</li>
+<li><strong><code>Ctrl+D</code></strong>: Duplicate Line or Selection. Copies the current line (or selected block) and pastes it immediately below.</li>
+<li><strong><code>Ctrl+Y</code></strong>: Delete Line. Deletes the entire line where the caret is positioned.</li>
+<li><strong><code>Shift+F6</code></strong>: Rename Refactoring. Safely rename variables, methods, classes, files, etc., updating all usages across the project.</li>
+<li><strong><code>Ctrl+Alt+M</code></strong>: Extract Method Refactoring. Turns a selected block of code into a new method.</li>
+<li><strong><code>Ctrl+Alt+V</code></strong>: Extract Variable Refactoring. Creates a new variable from a selected expression.</li>
+<li><strong><code>Ctrl+E</code></strong>: Recent Files. Shows a popup list of recently opened files for quick navigation. Press <code>Ctrl+E</code> again to see only recently <em>changed</em> files.</li>
+<li><strong><code>Ctrl+N</code></strong>: Go to Class. Quickly navigate to any class definition by typing its name (CamelHumps matching works).</li>
+<li><strong><code>Ctrl+Shift+N</code></strong>: Go to File. Quickly navigate to any file (not just classes) by typing its name.</li>
+<li><strong><code>Shift+F10</code></strong>: Run. Executes the current run/debug configuration.</li>
+<li><strong><code>Shift+F9</code></strong>: Debug. Starts debugging the current run/debug configuration.</li>
+<li><strong><code>Alt+1</code></strong>: Toggle Project Tool Window. Shows or hides the Project view panel, typically used for navigating the file tree. <code>Esc</code> usually returns focus to the editor from a tool window.</li>
+</ol>
+<p><strong>Note:</strong> These shortcuts are based on the default Linux keymap in IntelliJ IDEA. You can customize these shortcuts in <code>Settings</code> &gt; <code>Keymap</code>. Some shortcuts might conflict with global OS shortcuts (especially on certain Linux distributions); IntelliJ usually warns you about this and provides options to resolve conflicts.</p>
+<h3 id="github-copilot-shortcuts">GitHub Copilot shortcuts</h3>
+<ol>
+<li><strong><code>Tab</code></strong>: Accept the current inline suggestion. This is the primary way to insert the code Copilot suggests.</li>
+<li><strong><code>Esc</code></strong>: Dismiss the current inline suggestion. Use this if you don't want the suggestion and want to keep typing.</li>
+<li><strong><code>Alt+]</code></strong>: Show the next inline suggestion. Cycles forward through alternative suggestions if Copilot has more than one.</li>
+<li><strong><code>Alt+[</code></strong>: Show the previous inline suggestion. Cycles backward through alternative suggestions.</li>
+<li><strong><code>Alt+\</code></strong>: Trigger inline suggestion manually. If Copilot hasn't automatically shown a suggestion, or you dismissed one, this asks Copilot to provide one based on the current context. <em>Note: This shortcut might conflict with other IntelliJ or OS shortcuts and may need rebinding.</em></li>
+<li><strong><code>Ctrl+Right Arrow</code></strong>: Accept the next word of the suggestion. Useful for accepting suggestions incrementally.</li>
+<li><strong><code>Ctrl+Enter</code></strong> (or sometimes <strong><code>Alt+Enter</code></strong> - check your keymap): Open GitHub Copilot panel/tool window. Shows multiple suggestions (often up to 10) in a separate panel for comparison. <em>Note: <code>Alt+Enter</code> is the default for IntelliJ's "Show Intention Actions", so <code>Ctrl+Enter</code> might be the more likely default for this specific Copilot action, but it's best to verify in your Keymap settings under the action typically named <code>Open GitHub Copilot</code> or similar.</em></li>
+</ol>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 30 July 2024</footer>
+    Last update: Thu 24 April 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>

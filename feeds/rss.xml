@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 23 Apr 2025 23:20:00 +0200</lastBuildDate><item><title>Marathon de Paris 2025: Race Report</title><link>https://romainpellerin.eu/marathon-de-paris-2025-race-report.html</link><description>&lt;p&gt;Another race in the books! 🎉 Alright, let me tell you all about it.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 24 Apr 2025 15:57:00 +0200</lastBuildDate><item><title>Marathon de Paris 2025: Race Report</title><link>https://romainpellerin.eu/marathon-de-paris-2025-race-report.html</link><description>&lt;p&gt;Another race in the books! 🎉 Alright, let me tell you all about it.&lt;/p&gt;
 &lt;h1 id="goals"&gt;Goals&lt;/h1&gt;
 &lt;p&gt;It's always best to have multiple goals going into a race, just in case something goes wrong and the main goal becomes unreachable. So here were mine:&lt;/p&gt;
 &lt;ul&gt;
@@ -1699,30 +1699,81 @@ Dimanche matin : warm up de 2kms avant départ
 &lt;h1 id="pebblebee-clip-for-android"&gt;Pebblebee Clip for Android&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://pebblebee.com/products/clip-for-android"&gt;Same price range, currently at 33.95 euros&lt;/a&gt;. They seem to be super similar to the Chipolo one. Again, no support for UWB.&lt;/p&gt;
 &lt;h1 id="moto-tag"&gt;Moto Tag&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.motorola.com/us/moto-tag"&gt;They were just announced but they haven't been released yet.&lt;/a&gt; They will be the first tags to support USW. I might give them a chance in the future, after reviews start popping up on the Web.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 28 Jul 2024 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-28:/airtags-for-android.html</guid><category>Computers</category><category>android</category><category>google</category><category>airtag</category></item><item><title>Kotlin</title><link>https://romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="idea"&gt;IDEA&lt;/h1&gt;
-&lt;p&gt;Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.&lt;/p&gt;
-&lt;p&gt;Kotlin is included in each IntelliJ IDEA release.&lt;/p&gt;
-&lt;h2 id="setup-intellij"&gt;Setup IntelliJ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;IntelliJ Idea &amp;gt; Settings &amp;gt; Build, Execution, Deployment &amp;gt; Build Tools &amp;gt; Maven &amp;gt; Importing&lt;/code&gt;. Check the 2 checkboxes "Sources" and "Documentation".&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Intellij Idea &amp;gt; Settings &amp;gt; Editor &amp;gt; General &amp;gt; Auto Import&lt;/code&gt;, check &lt;code&gt;Optimize imports on the fly&lt;/code&gt; for both Java and Kotlin.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Intellij Idea &amp;gt; Settings &amp;gt; Editor &amp;gt; Tools &amp;gt; Actions on Save&lt;/code&gt;, check &lt;code&gt;Reformat code&lt;/code&gt;, &lt;code&gt;Optimize imports&lt;/code&gt;, &lt;code&gt;Rearrange code&lt;/code&gt; and &lt;code&gt;Run code cleanup&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Install the &lt;code&gt;SonarLint&lt;/code&gt; plugin for code quality checks.&lt;/p&gt;
-&lt;p&gt;To add git blame annotations, add the plugin &lt;a href="https://plugins.jetbrains.com/plugin/7499-gittoolbox"&gt;GitToolBox&lt;/a&gt;.&lt;/p&gt;
-&lt;h1 id="setup"&gt;Setup&lt;/h1&gt;
-&lt;h2 id="install-java"&gt;Install Java&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.motorola.com/us/moto-tag"&gt;They were just announced but they haven't been released yet.&lt;/a&gt; They will be the first tags to support USW. I might give them a chance in the future, after reviews start popping up on the Web.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 28 Jul 2024 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-28:/airtags-for-android.html</guid><category>Computers</category><category>android</category><category>google</category><category>airtag</category></item><item><title>Kotlin</title><link>https://romainpellerin.eu/kotlin.html</link><description>&lt;h1 id="setup"&gt;Setup&lt;/h1&gt;
+&lt;h2 id="install-kotlin"&gt;Install Kotlin&lt;/h2&gt;
+&lt;p&gt;Installing Kotlin is not necessary. Only Java is. IntelliJ Ultimate Edition (paid) or Community Edition (free) both come with the Kotlin plugin bundled and enabled by default.&lt;/p&gt;
+&lt;h2 id="install-java-required"&gt;Install Java (required)&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-21-jdk &lt;span class="c1"&gt;# or newer, check with `apt search openjdk`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h2 id="install-kotlin"&gt;Install Kotlin&lt;/h2&gt;
-&lt;p&gt;In most scenarios, installing Kotlin is not necessary. Only Java is.&lt;/p&gt;
-&lt;h2 id="install-maven"&gt;Install Maven&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/66399278/having-maven-plugins-in-intellij-idea-without-maven-installation-in-computer"&gt;Installing Maven, our build tool, is not required, as IntelliJ comes with a bundled version of Maven. However, installing your own version might come in handy, to be able to run Maven from the command line.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="install-apache-maven"&gt;Install Apache Maven&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/66399278/having-maven-plugins-in-intellij-idea-without-maven-installation-in-computer"&gt;Installing Maven, a popular build tool, is not required, as IntelliJ comes with a bundled version of Maven.&lt;/a&gt; However, installing your own version might come in handy, to be able to run Maven from the command line outside IntelliJ, or to run a specific version of Maven. &lt;strong&gt;It does not hurt to install Maven globally on the system, it won't conflict with IntelliJ's Maven, but it is not recommended.&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update
 sudo apt install maven
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href="https://maven.apache.org/wrapper/"&gt;Using the Maven Wrapper in a project is also an alternative.&lt;/a&gt; Yet it does not hurt to install Maven globally on the system, it won't conflict.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jul 2024 15:10:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-26:/kotlin.html</guid><category>Code</category><category>kotlin</category><category>java</category><category>code</category></item><item><title>Périostite 2024</title><link>https://romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
+&lt;h3 id="maven-wrapper"&gt;Maven Wrapper&lt;/h3&gt;
+&lt;p&gt;A better alternative to installing Maven system-wide is to &lt;a href="https://maven.apache.org/wrapper/"&gt;use the Maven Wrapper in a project.&lt;/a&gt; It is usually a file named &lt;code&gt;mvnw&lt;/code&gt;. &lt;strong&gt;Its primary purpose is to ensure that anyone building the project uses the exact same version of Apache Maven, without needing to install Maven manually beforehand.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It comes with &lt;code&gt;.mvn/wrapper/maven-wrapper.properties&lt;/code&gt;, a configuration file specifying which version of Maven should be used and where to download it from (usually Maven Central).&lt;/p&gt;
+&lt;p&gt;Instead of running &lt;code&gt;mvn &amp;lt;goal&amp;gt;&lt;/code&gt; (which uses the globally installed Maven, if any), users run &lt;code&gt;./mvnw &amp;lt;goal&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id="intellij-idea-ultimate"&gt;IntelliJ IDEA Ultimate&lt;/h1&gt;
+&lt;p&gt;Although technically any IDE with the right extensions will do, it's recommended to use IntelliJ IDEA Ultimate. There is also the Community Edition that is completely free to use.&lt;/p&gt;
+&lt;p&gt;Kotlin is included in all IntelliJ IDEA versions and releases.&lt;/p&gt;
+&lt;h2 id="install"&gt;Install&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.jetbrains.com/toolbox-app/"&gt;Download Jetbrains' Toolbox App&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Extract &lt;code&gt;jetbrains-toolbox&lt;/code&gt; from the archive and move it under &lt;code&gt;~/.local/bin&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Launch it. From there you can install IntelliJ Ultimate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="setup-intellij"&gt;Setup IntelliJ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Settings &amp;gt; Build, Execution, Deployment &amp;gt; Build Tools &amp;gt; Maven &amp;gt; Importing &amp;gt; Automatically download&lt;/code&gt;. Check the 3 checkboxes "Sources", "Documentation" and "Annotations".&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Settings &amp;gt; Editor &amp;gt; General &amp;gt; Auto Import&lt;/code&gt;, check &lt;code&gt;Add unambiguous imports on the fly&lt;/code&gt; and &lt;code&gt;Optimize imports on the fly&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Settings &amp;gt; Editor &amp;gt; Tools &amp;gt; Actions on Save&lt;/code&gt;, check &lt;code&gt;Reformat code&lt;/code&gt;, &lt;code&gt;Optimize imports&lt;/code&gt;, &lt;code&gt;Rearrange code&lt;/code&gt; and &lt;code&gt;Run code cleanup&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="plugins"&gt;Plugins&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;File&lt;/code&gt; &amp;gt; &lt;code&gt;Settings&lt;/code&gt; &amp;gt; &lt;code&gt;Plugins&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SonarQube for IDE&lt;/code&gt; for code quality checks&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GitHub Copilot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox)&lt;/code&gt; for git blame on lines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="common-shortcuts-as-of-april-2025"&gt;Common shortcuts (as of April 2025)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+Enter&lt;/code&gt;&lt;/strong&gt;: Show Intention Actions &amp;amp; Quick Fixes. This is arguably the most crucial shortcut. It offers context-aware suggestions, from fixing errors and warnings to importing classes, generating code, and applying quick refactorings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Double Shift&lt;/code&gt;&lt;/strong&gt;: Search Everywhere. Quickly find files, classes, symbols, actions, settings, or even Git commits anywhere in your project or the IDE itself.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+J&lt;/code&gt;&lt;/strong&gt;: Equivalent of &lt;code&gt;Ctrl+D&lt;/code&gt; in VS Code ("Add Selection for Next Occurrence").&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Shift+A&lt;/code&gt;&lt;/strong&gt;: Find Action. If you know the name of an action (like "Reformat Code" or "Toggle Case") but not the shortcut, use this to find and execute it. It also shows the shortcut if one exists.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+B&lt;/code&gt; or &lt;code&gt;Ctrl+Click&lt;/code&gt;&lt;/strong&gt;: Go to Declaration or Usages. Navigate to the source declaration of a variable, method, or class. If used on the declaration itself, it finds usages.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+F7&lt;/code&gt;&lt;/strong&gt;: Find Usages. Shows all places where the symbol under the caret is used throughout the project in the Find tool window.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Alt+L&lt;/code&gt;&lt;/strong&gt;: Reformat Code. Automatically formats the current file or selected code block according to your project's code style settings.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+/&lt;/code&gt;&lt;/strong&gt;: Comment/Uncomment with Line Comment. Quickly comment or uncomment the current line or selected block using single-line comments (&lt;code&gt;//&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Shift+/&lt;/code&gt;&lt;/strong&gt;: Comment/Uncomment with Block Comment. Comment or uncomment the selected block using block comments (&lt;code&gt;/* ... */&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+W&lt;/code&gt; / &lt;code&gt;Ctrl+Shift+W&lt;/code&gt;&lt;/strong&gt;: Extend / Shrink Selection. Intelligently selects increasingly larger logical blocks of code (or shrinks the selection). Very useful for selecting statements, methods, or classes without using the mouse.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt;: Duplicate Line or Selection. Copies the current line (or selected block) and pastes it immediately below.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Y&lt;/code&gt;&lt;/strong&gt;: Delete Line. Deletes the entire line where the caret is positioned.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Shift+F6&lt;/code&gt;&lt;/strong&gt;: Rename Refactoring. Safely rename variables, methods, classes, files, etc., updating all usages across the project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Alt+M&lt;/code&gt;&lt;/strong&gt;: Extract Method Refactoring. Turns a selected block of code into a new method.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Alt+V&lt;/code&gt;&lt;/strong&gt;: Extract Variable Refactoring. Creates a new variable from a selected expression.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+E&lt;/code&gt;&lt;/strong&gt;: Recent Files. Shows a popup list of recently opened files for quick navigation. Press &lt;code&gt;Ctrl+E&lt;/code&gt; again to see only recently &lt;em&gt;changed&lt;/em&gt; files.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+N&lt;/code&gt;&lt;/strong&gt;: Go to Class. Quickly navigate to any class definition by typing its name (CamelHumps matching works).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Shift+N&lt;/code&gt;&lt;/strong&gt;: Go to File. Quickly navigate to any file (not just classes) by typing its name.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Shift+F10&lt;/code&gt;&lt;/strong&gt;: Run. Executes the current run/debug configuration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Shift+F9&lt;/code&gt;&lt;/strong&gt;: Debug. Starts debugging the current run/debug configuration.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+1&lt;/code&gt;&lt;/strong&gt;: Toggle Project Tool Window. Shows or hides the Project view panel, typically used for navigating the file tree. &lt;code&gt;Esc&lt;/code&gt; usually returns focus to the editor from a tool window.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; These shortcuts are based on the default Linux keymap in IntelliJ IDEA. You can customize these shortcuts in &lt;code&gt;Settings&lt;/code&gt; &amp;gt; &lt;code&gt;Keymap&lt;/code&gt;. Some shortcuts might conflict with global OS shortcuts (especially on certain Linux distributions); IntelliJ usually warns you about this and provides options to resolve conflicts.&lt;/p&gt;
+&lt;h3 id="github-copilot-shortcuts"&gt;GitHub Copilot shortcuts&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Tab&lt;/code&gt;&lt;/strong&gt;: Accept the current inline suggestion. This is the primary way to insert the code Copilot suggests.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Esc&lt;/code&gt;&lt;/strong&gt;: Dismiss the current inline suggestion. Use this if you don't want the suggestion and want to keep typing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+]&lt;/code&gt;&lt;/strong&gt;: Show the next inline suggestion. Cycles forward through alternative suggestions if Copilot has more than one.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+[&lt;/code&gt;&lt;/strong&gt;: Show the previous inline suggestion. Cycles backward through alternative suggestions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Alt+\&lt;/code&gt;&lt;/strong&gt;: Trigger inline suggestion manually. If Copilot hasn't automatically shown a suggestion, or you dismissed one, this asks Copilot to provide one based on the current context. &lt;em&gt;Note: This shortcut might conflict with other IntelliJ or OS shortcuts and may need rebinding.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Right Arrow&lt;/code&gt;&lt;/strong&gt;: Accept the next word of the suggestion. Useful for accepting suggestions incrementally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;Ctrl+Enter&lt;/code&gt;&lt;/strong&gt; (or sometimes &lt;strong&gt;&lt;code&gt;Alt+Enter&lt;/code&gt;&lt;/strong&gt; - check your keymap): Open GitHub Copilot panel/tool window. Shows multiple suggestions (often up to 10) in a separate panel for comparison. &lt;em&gt;Note: &lt;code&gt;Alt+Enter&lt;/code&gt; is the default for IntelliJ's "Show Intention Actions", so &lt;code&gt;Ctrl+Enter&lt;/code&gt; might be the more likely default for this specific Copilot action, but it's best to verify in your Keymap settings under the action typically named &lt;code&gt;Open GitHub Copilot&lt;/code&gt; or similar.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 26 Jul 2024 15:10:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-07-26:/kotlin.html</guid><category>Code</category><category>kotlin</category><category>java</category><category>code</category></item><item><title>Périostite 2024</title><link>https://romainpellerin.eu/periostite-2024.html</link><description>&lt;p&gt;Dans la famille des blessures en course à pied, je voudrais la périostite... déjà eue côté gauche ? Côté droit alors. 😊&lt;/p&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/M-LFEtmLnnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1 id="timeline"&gt;Timeline&lt;/h1&gt;
