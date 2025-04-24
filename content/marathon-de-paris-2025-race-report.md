@@ -47,6 +47,11 @@ The plan created by Kiprun comprised of 4 sessions a week. Most weeks looked lik
 
 In addition to the 4 sessions per week scheduled by the app, I added a fifth session every week. A short (< 60 mins) and slow (not faster than 5'20"/km) jog, run with barefoot/minimalist shoes (Altra Escalante Racer 2), aimed at strengthening my legs and feet without risking injury.
 
+<figure class="center">
+<img src="{static}/images/marathon-de-paris-2025/90kms.jpg" alt="Screenshot of the weekly kms on Strava" />
+<figcaption>Weekly kms until 3 weeks away from race day</figcaption>
+</figure>
+
 So a typical week would look like:
 
 - Monday: jog, sometimes with active (i.e. faster) segments
