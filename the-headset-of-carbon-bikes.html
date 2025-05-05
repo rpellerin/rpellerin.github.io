@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, bike, cycling" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Some tips for your carbon steerer tube" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="The Headset of Carbon Bikes - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Some tips for your carbon steerer tube" />
+        <meta property="og:url" content="https://romainpellerin.eu/the-headset-of-carbon-bikes.html" />
+
+        <title>The Headset of Carbon Bikes - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">Archives (all posts)</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-05-05T23:30:00+02:00">Mon 05 May 2025</time>        </p>
+    <h1>The Headset of Carbon Bikes</h1>
+    <div class="grey">
+        <p class="italic">Some tips for your carbon steerer tube</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 335 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/bikes.html">Bikes</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/bike.html">bike</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/cycling.html">cycling</a></p>    </div>
+</header>
+<article>
+    <p>Installing a headset on a carbon road bike can be tricky. Or simply fixing some play and re-aligning the handlebar. So here are some useful tricks that I recently learned while removing play on my own carbon bike.</p>
+<p>First things first, pretty much everything is summed up in this video below:</p>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_R9XwPMw2WA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Now, a couple of things to consider:</p>
+<ul>
+<li>A steerer tube means <em>pivot de fourche</em> in French (that one is a reminder for my future self)</li>
+<li>The headset bearings are preloaded (adjusted) by tightening a top cap bolt that pulls upwards on an anchor inside the steerer tube (either a star nut for metal steerers or an expansion/compression plug for carbon steerers). This is what prevents play.</li>
+<li>In addition to helping preload the headset bearings, a compression plug serves to counter the tension from the stem bolts on the steerer tube. In other words, it "reinforces" the carbon steerer tube against the stem's clamping force.</li>
+<li>When uninstalling a headset, start by unscrewing the top cap, then the 2 stem bolts, and finally the compression plug, that is hidden inside the steerer tube</li>
+<li>When reinstalling everything, start by tightening the compression plug, then the top cap on top of it, and finally the 2 stem bolts.</li>
+<li>
+<p>The max torque to apply to each bolt is usually written on the components themselves. If not, manufacturers usually provide online documentation. For my 2019 Cube Attain GTC Pro, they are not written on the components, but I found <a href="https://file.cube.eu/azwesc1xfg346/media/d4/dd/c4/1658483844/Torque_Settings.pdf?ts=1658483844">this PDF</a>. It does not 100% match my bike but here are the forces I've applied:</p>
+<ul>
+<li><strong>Compression plug: 6 Nm.</strong> When asking Gemini, it recommends 5 to 8 Nm. In the PDF above-mentioned, under Others &gt; Aheadset - Conical clamp I see 7-8 Nm.</li>
+<li><strong>Top cap: 6 Nm.</strong> In the PDF, there is no mention of that.</li>
+<li><strong>Stem bolts: 5.5 Nm.</strong> Gemini recommends 4 to 6 Nm. In the PDF, under Stem &gt; Syntace &gt; Fork I get a few numbers, but 8 Nm is the smallest maximum torque.</li>
+</ul>
+</li>
+</ul>
+<p>That's it!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Mon 05 May 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

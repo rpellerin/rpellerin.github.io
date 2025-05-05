@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Bikes</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 03 Apr 2025 15:27:00 +0200</lastBuildDate><item><title>Tips for Canyon Speedmax Bikes</title><link>https://romainpellerin.eu/tips-for-canyon-speedmax-bikes.html</link><description>&lt;ul&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Bikes</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 05 May 2025 23:30:00 +0200</lastBuildDate><item><title>The Headset of Carbon Bikes</title><link>https://romainpellerin.eu/the-headset-of-carbon-bikes.html</link><description>&lt;p&gt;Installing a headset on a carbon road bike can be tricky. Or simply fixing some play and re-aligning the handlebar. So here are some useful tricks that I recently learned while removing play on my own carbon bike.&lt;/p&gt;
+&lt;p&gt;First things first, pretty much everything is summed up in this video below:&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/_R9XwPMw2WA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Now, a couple of things to consider:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A steerer tube means &lt;em&gt;pivot de fourche&lt;/em&gt; in French (that one is a reminder for my future self)&lt;/li&gt;
+&lt;li&gt;The headset bearings are preloaded (adjusted) by tightening a top cap bolt that pulls upwards on an anchor inside the steerer tube (either a star nut for metal steerers or an expansion/compression plug for carbon steerers). This is what prevents play.&lt;/li&gt;
+&lt;li&gt;In addition to helping preload the headset bearings, a compression plug serves to counter the tension from the stem bolts on the steerer tube. In other words, it "reinforces" the carbon steerer tube against the stem's clamping force.&lt;/li&gt;
+&lt;li&gt;When uninstalling a headset, start by unscrewing the top cap, then the 2 stem bolts, and finally the compression plug, that is hidden inside the steerer tube&lt;/li&gt;
+&lt;li&gt;When reinstalling everything, start by tightening the compression plug, then the top cap on top of it, and finally the 2 stem bolts.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The max torque to apply to each bolt is usually written on the components themselves. If not, manufacturers usually provide online documentation. For my 2019 Cube Attain GTC Pro, they are not written on the components, but I found &lt;a href="https://file.cube.eu/azwesc1xfg346/media/d4/dd/c4/1658483844/Torque_Settings.pdf?ts=1658483844"&gt;this PDF&lt;/a&gt;. It does not 100% match my bike but here are the forces I've applied:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Compression plug: 6 Nm.&lt;/strong&gt; When asking Gemini, it recommends 5 to 8 Nm. In the PDF above-mentioned, under Others &amp;gt; Aheadset - Conical clamp I see 7-8 Nm.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Top cap: 6 Nm.&lt;/strong&gt; In the PDF, there is no mention of that.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stem bolts: 5.5 Nm.&lt;/strong&gt; Gemini recommends 4 to 6 Nm. In the PDF, under Stem &amp;gt; Syntace &amp;gt; Fork I get a few numbers, but 8 Nm is the smallest maximum torque.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 05 May 2025 23:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-05-05:/the-headset-of-carbon-bikes.html</guid><category>Bikes</category><category>bike</category><category>cycling</category></item><item><title>Tips for Canyon Speedmax Bikes</title><link>https://romainpellerin.eu/tips-for-canyon-speedmax-bikes.html</link><description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The &lt;a href="https://www.canyon.com/en-de/gear/accessories/bike-tech/cockpit-and-handlebar-mounts/canyon-cockpit-mount/9102035.html"&gt;official Canyon cockpit mount&lt;/a&gt; cannot be mounted on the Speedmax, as it needs to be screwed in two holes. The only hole present in the cockpit is for &lt;a href="https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-speedmax-hydration-system/10014133.html"&gt;the hydration system&lt;/a&gt;. A bike computer mount is also already present on the hydration system. Therefore, without the hydration system installed, a generic bike computer mount can be installed on the aero bars instead:&lt;/p&gt;
 &lt;ul&gt;
