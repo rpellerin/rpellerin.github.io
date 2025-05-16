@@ -1,5 +1,5 @@
 {% set articles = dates %}
-{% set h1 = "Posts for "+(period | reverse | join(' ')) %}
+{% set h1 = "Articles from "+(period | reverse | join(' ')) %}
 {% set description = SITENAME + ': archives for '+(period | reverse | join(' ')) %}
 {% extends "archives.html" %}
 

@@ -1,5 +1,5 @@
 AUTHOR = 'Romain Pellerin'
-DESCRIPTION = 'Romain Pellerin\'s personal website: blog posts, guitar tabs, contact information.'
+DESCRIPTION = 'Romain Pellerin\'s personal website: blog articles, guitar tabs, contact information.'
 SITENAME = 'Romain Pellerin\'s Blog'
 SITEURL = ''
 

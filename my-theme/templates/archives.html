@@ -1,4 +1,4 @@
-{% if not h1 %}{% set h1 = 'All posts' %}{% endif %}
+{% if not h1 %}{% set h1 = 'All articles' %}{% endif %}
 {% if not title %}{% set title = h1 + ' - ' + SITENAME%}{% endif %}
 {% if not description %}{% set description = SITENAME + ': computer science, travels, etc.' %}{% endif %}
 {% extends "base.html" %}
@@ -33,6 +33,6 @@
     </section>
     {% endblock list %}
 {% else %}
-    No posts found.
+    No articles found.
 {% endif %}
 {% endblock content %}
