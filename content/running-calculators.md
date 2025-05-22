@@ -6,7 +6,23 @@ Slug: running-calculators
 Authors: Romain Pellerin
 Summary: A bunch of calculators for runners
 
+<style>
+div#menu {
+  text-align: center
+}
+
+div#menu a {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  background: orange;
+  margin: 3px;
+  text-decoration: none;
+}
+</style>
+
 <script>
+    /* THIS BLOCK OF JS CODE MUST REMAIN AT THE TOP OF THE ARTICLE */
     const matchPaceFormatWithColon = v => v && v.match(/^(\d{1,2}):(\d{2})$/);
     const matchPaceFormatWithQuotes = v => v && v.match(/^(\d{1,2})'(\d{2})"$/);
     const paceToSeconds = (v, separator = 'COLON') => {
@@ -35,54 +51,143 @@ Summary: A bunch of calculators for runners
     const secondsAtPaceToMeters = (seconds, paceInSeconds) => Math.floor((seconds * 1000) / paceInSeconds)
     const metersAtPaceToSeconds = (meters, paceInSeconds) => Math.ceil((meters * paceInSeconds) / 1000)
     const speedToSecondsForOneKilometer = speed => Math.ceil(3600/speed)
+
+    function createHeadingMenu() {
+        const menu = document.querySelector('div#menu');
+        if (!menu) return;
+
+        const headings = document.querySelectorAll('h1[id]');
+        if (headings.length === 0) return;
+
+        headings.forEach(heading => {
+                const listItem = document.createElement('a');
+
+                listItem.setAttribute('href', '#' + heading.id);
+                listItem.textContent = heading.textContent;
+
+                menu.appendChild(listItem);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", createHeadingMenu)
 </script>
 
-# MAS, HR and zones
+<div id="menu"></div>
 
-(MAS is _VMA_ in French)
+# Running pace to finish times
 
-[There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones.](https://youtu.be/4QhT_6YgOuI?t=1861) Here are two scales that I personnally use. They work for me, they might not for you.
+<div id="pace_chart_info">
+From <input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="3:52"/>
+to <input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="4:05"/>
 
-The first table is greatly inspired by [this one](https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel), even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, `(percent of MAS plus 5 to 10) = percent of your HRmax` (more or less). So I changed the HRmax values in the first table below and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula `percent of MAS + 5 = percent of HRmax`.
+<div class="distance"><input data-kms="42.195" id="marathon" type="checkbox" checked /><label for="marathon">Marathon</label></div>
+<div class="distance"><input data-kms="25" id="km25" type="checkbox" /><label for="km25">25 kms</label></div>
+<div class="distance"><input data-kms="21.0975" id="half_marathon" type="checkbox" /><label for="half_marathon">Half-marathon</label></div>
+<div class="distance"><input data-kms="10" id="km10" type="checkbox" /><label for="km10">10 kms</label></div>
+<div class="distance"><input data-kms="5" id="km5" type="checkbox" checked /><label for="km5">5 kms</label></div>
+<div class="distance"><input data-kms="custom" type="checkbox" /><input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/> kms</div>
+</div>
 
-In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during the sleep? Therefore, I'm quite reluctant to use this for now.
+<table class="collapse" id="pace_chart_results"></table>
 
-The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.
+<script>
+    const fastestPace = document.querySelector('input#fastest_pace')
+    const slowestPace = document.querySelector('input#slowest_pace')
+    const custom = document.querySelector('input#custom')
 
-<input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.34"/>
-<input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/>
+    function paceChartInputChange() {
+        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
+
+        const min = fastestPace.value;
+        const max = slowestPace.value;
+
+        if (!matchPaceFormatWithColon(min) || !matchPaceFormatWithColon(max) || differenceBetweenPaces(min, max) < 0) return
+        const difference = differenceBetweenPaces(min, max) + 1
+        const minInSeconds = paceToSeconds(min)
+
+        const table = document.getElementById('pace_chart_results')
+        let newTable = "<thead><tr><th>Pace</th><th>Speed</th>"
+
+        const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
+                const input = div.querySelector('input[type="checkbox"]')
+                const checked = input.checked
+                const kms = Number(input.dataset.kms)
+                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
+                return {checked, kms, label}
+        }).filter(({checked})=>checked);
+
+        newTable += `${distances.map(({kms, label}) => `<th>${label}</th>`).join("")}</tr></thead><tbody>`
+
+        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
+        const result = paces.map(function(paceInSeconds) {
+            const pace = secondsToTime(paceInSeconds).valueWithQuotes + "/km"
+            const speed = paceInSecondsToSpeed(paceInSeconds)
+            const row = distances.map(({kms}) => `<td>${paceInSecondsToFinishTime(paceInSeconds, kms)}</td>`).join("")
+
+            newTable += `<tr><th>${pace}</th><th>${speed} km/h</th>${row}</tr>`
+        })
+
+        newTable += "</tbody>"
+        table.innerHTML = newTable
+    }
+
+    document.querySelectorAll('#pace_chart_info input').forEach(el => {
+        el.addEventListener('input', paceChartInputChange)
+    })
+    if (fastestPace.value || slowestPace.value) {
+        paceChartInputChange()
+    }
+</script>
+
+# Zones
+
+([MAS](https://en.wikipedia.org/wiki/VVO2max) is _[VMA](https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie)_ in French)
+
+MAS speed (km/h): <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.34"/>
+Max HR: <input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/>
 
 <div>
-<input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="65"/>
+Percentage: <input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="100"/>%
 <span id="random_percent_result"></span>
 </div>
 
 <div id="zones_result"></div>
 
-In [other](https://youtu.be/k8oADrC5Q1w?t=456) [sources](https://youtu.be/ZDdZ3TqJkd8?t=471), I've found slightly different values for SV1 (_VT1_ in English) and SV2 (_VT2_ in English). But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.
+<details><summary>more info</summary>
+<a href="https://youtu.be/4QhT_6YgOuI?t=1861">There are multiple scales that exist out there, but none of them will have exactly the same values nor the same zones.</a> Here are two scales that I personnally use. They work for me, they might not for you.
+<br /><br />
+The first table is greatly inspired by <a href="https://www.facebook.com/lorblanchet/posts/pfbid032J13PKC2rDPA84weL5dXZ9G8GpznZBVwgrqZszF6opB121oEpwqKZ7hjNQ2NCehel">this one</a>, even though I found the given HRmax values way too high, compared to the MAS values. Generally, based on what I read on the internet but also my observations, for any pace, "(percent of MAS plus 5 to 10) = percent of your HRmax" (more or less). So I changed the HRmax values in the first table above and adjusted them to what I observed with my very own heart, at those paces. Most other scales on the internet seem to agree and use the formula "percent of MAS + 5 = percent of HRmax".
+<br /><br />
+In recent years, many pace charts started using the "heart rate reserve" as their basis, instead of HRmax. I have not dug the topic enough, so I'm not using that (so far). "Heart rate reserve" basically means HRmax - resting heart rate. Not everyone agrees on how the "resting heart rate" should be measured. Lowest value in the night? Lowest value in the day, while sitting and doing nothing? Average value measured during sleep? Therefore, I'm quite reluctant to use this for now.
+<br /><br />
+The second table, on ventilatory thresholds, is a mashup of multiple articles I've read. I simplified the values to make it easier to understand.
+<br /><br />
+In <a href="https://youtu.be/k8oADrC5Q1w?t=456">other</a> <a href="https://youtu.be/ZDdZ3TqJkd8?t=471">sources</a>, I've found slightly different values for SV1 (<i>VT1</i> in English) and SV2 (<i>VT2</i> in English). But these values are athlete-dependant anyways. It's never an exact value. And it's different for everyone.
+<br /><br />
+VT1/SV1 is <a href="https://youtu.be/k8oADrC5Q1w?t=555">slightly slower than marathon pace.</a>
+<br /><br />
+When people refer to "threshold" only, without specifying 1 or 2, they mean the second one (VT2/SV2). <a href="https://youtu.be/k8oADrC5Q1w?t=570">It's an effort than can be sustained up to an hour.</a> <a href="https://youtu.be/k8oADrC5Q1w?t=526">It's the same as FTP in cycling.</a>
 
-VT1/SV1 is [slightly slower than marathon pace.](https://youtu.be/k8oADrC5Q1w?t=555)
-
-When people refer to "threshold" only, without telling 1 or 2, then mean the second one (VT2/SV2). [It's an effort than can be sustained up to an hour.](https://youtu.be/k8oADrC5Q1w?t=570) [It's the same as FTP in cycling.](https://youtu.be/k8oADrC5Q1w?t=526)
+</details>
 
 <script>
   const masInput = document.querySelector('input#mas')
   const maxHrInput = document.querySelector('input#maxhr')
   const randomPercent = document.querySelector('input#random_percent')
 
-  const zones = [
-    [
+  const allZones = [
+    {title: "Classic 5 zones", zones: [
       {percentHr: [70], percentMas: [50,60], zone: 1, name: 'Endurance fondamentale'},
       {percentHr: [70,75], percentMas: [60,70], zone: 2, name: 'Endurance active'},
       {percentHr: [75,85], percentMas: [70,80], zone: 3, name: 'Allure marathon'},
       {percentHr: [85,95], percentMas: [80,90], zone: 4, name: 'Allures semi→10km, allure tempo, allure "au seuil" [anaérobie]'},
       {percentHr: [95,100], percentMas: [90,100], zone: 5, name: 'Allures 5km→VMA'},
-    ],
-    [
+    ]},
+    {title: "Zones based on ventilatory thresholds", zones: [
       {percentHr: [80], percentMas: [75], zone: 1, name: 'Sous le seuil aérobie / seuil ventilatoire 1 (SV1) = endurance fondamentale'},
       {percentHr: [80,90], percentMas: [75,85], zone: 2, name: 'Entre le seuil aérobie (SV1) et anaérobie (SV2) = allures marathon→semi'},
       {percentHr: [90,100], percentMas: [85,100], zone: 3, name: 'Au delà de SV2 = allures 10km→VMA'},
-    ]
+    ]}
   ]
 
   function MASzonesInputChange() {
@@ -99,8 +204,8 @@ When people refer to "threshold" only, without telling 1 or 2, then mean the sec
     }
     document.querySelector('span#random_percent_result').innerHTML = randomPercentResult
 
-    zones.forEach((zones,index,array) => {
-        let newTable = "<table class=\"collapse\"><thead><tr><th>Zone</th><th>Name(s)</th><th>% MAS</th><th>% HRmax</th><th>Pace</th></tr></thead><tbody>"
+    allZones.forEach(({title, zones }) => {
+        let newTable = `<h2>${title}</h2><table class=\"collapse\"><thead><tr><th>Zone</th><th>Name(s)</th><th>% MAS</th><th>% HRmax</th><th>Pace</th></tr></thead><tbody>`
 
         const hueStep = (120 / (zones.length - 1))
         zones.map(({percentMas,zone,percentHr,name},index,array) => {
@@ -147,9 +252,9 @@ When people refer to "threshold" only, without telling 1 or 2, then mean the sec
   MASzonesInputChange()
 </script>
 
-## Session parser
+## Session parser - zones distribution
 
-To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (above VT2), the MAS value your entered at the top of this page will be used.
+To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (above VT2), the MAS value your entered at the top of this section will be used.
 
 <div style="display: flex">
 <textarea style="flex: 1 0 0" id="session_parser" rows="10" cols="0">
@@ -319,71 +424,6 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
     timeAndDistanceConverterInputChange()
 </script>
 
-# Pace chart
-
-<div id="pace_chart_info">
-<input pattern="\d{1,2}:\d{2}" type="text" id="fastest_pace" placeholder="Fastest pace" value="4:10"/>
-<input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slowest pace" value="5:42"/>
-
-<div class="distance"><input data-kms="42.195" id="marathon" type="checkbox" checked /><label for="marathon">Marathon</label></div>
-<div class="distance"><input data-kms="25" id="km25" type="checkbox" /><label for="km25">25 kms</label></div>
-<div class="distance"><input data-kms="21.0975" id="half_marathon" type="checkbox" /><label for="half_marathon">Half-marathon</label></div>
-<div class="distance"><input data-kms="10" id="km10" type="checkbox" /><label for="km10">10 kms</label></div>
-<div class="distance"><input data-kms="5" id="km5" type="checkbox" /><label for="km5">5 kms</label></div>
-<div class="distance"><input data-kms="custom" type="checkbox" /><input type="number" step="0.1" id="custom" placeholder="Custom distance" value="3.5"/></div>
-</div>
-
-<table class="collapse" id="pace_chart_results"></table>
-
-<script>
-    const fastestPace = document.querySelector('input#fastest_pace')
-    const slowestPace = document.querySelector('input#slowest_pace')
-    const custom = document.querySelector('input#custom')
-
-    function paceChartInputChange() {
-        custom.parentElement.querySelector('[data-kms]').dataset.kms = custom.value
-
-        const min = fastestPace.value;
-        const max = slowestPace.value;
-
-        if (!matchPaceFormatWithColon(min) || !matchPaceFormatWithColon(max) || differenceBetweenPaces(min, max) < 0) return
-        const difference = differenceBetweenPaces(min, max) + 1
-        const minInSeconds = paceToSeconds(min)
-
-        const table = document.getElementById('pace_chart_results')
-        let newTable = "<thead><tr><th>Pace</th><th>Speed</th>"
-
-        const distances = Array.from(document.querySelectorAll('.distance')).map(div => {
-                const input = div.querySelector('input[type="checkbox"]')
-                const checked = input.checked
-                const kms = Number(input.dataset.kms)
-                const label = div.querySelector('label')?.innerText ?? `${kms} kms`
-                return {checked, kms, label}
-        }).filter(({checked})=>checked);
-
-        newTable += `${distances.map(({kms, label}) => `<th>${label}</th>`).join("")}</tr></thead><tbody>`
-
-        const paces = [...new Array(+difference)].map(function(_,i) { return i + minInSeconds })
-        const result = paces.map(function(paceInSeconds) {
-            const pace = secondsToTime(paceInSeconds).valueWithQuotes
-            const speed = paceInSecondsToSpeed(paceInSeconds)
-            const row = distances.map(({kms}) => `<td>${paceInSecondsToFinishTime(paceInSeconds, kms)}</td>`).join("")
-
-            newTable += `<tr><th>${pace}</th><th>${speed} km/h</th>${row}</tr>`
-        })
-
-        newTable += "</tbody>"
-        table.innerHTML = newTable
-    }
-
-    document.querySelectorAll('#pace_chart_info input').forEach(el => {
-        el.addEventListener('input', paceChartInputChange)
-    })
-    if (fastestPace.value || slowestPace.value) {
-        paceChartInputChange()
-    }
-</script>
-
 # Race sheet
 
 <div id="race_sheet_info">
@@ -398,10 +438,10 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 </div>
 <div><label for="race_title">Race title (optional):</label> <input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /></div>
 <div><label for="race_date">Race date:</label> <input type="date" id="race_date" name="race_date" /></div>
-<div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:54"/></div>
+<div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:30"/></div>
 <div><label for="bib_number_pickup_date">Bib number pickup date and time:</label> <input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /></div>
 <div>
-<label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (50g+ of carbohydrates per hour is the recommendation, or better, <a href="https://youtu.be/mu7celO4IEE?t=237">your body weight = 75 kgs→eat 75 grams</a>):</label><br />
+<label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (<a href="https://youtu.be/mu7celO4IEE?t=237">your body weight in grams/hour = 75 kgs→eat 75 grams each hour</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
 1x Gel 100 ~15 mins avant course
 1x Gel 100 toutes les 20 mins
