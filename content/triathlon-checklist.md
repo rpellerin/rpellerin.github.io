@@ -86,11 +86,13 @@ Wear the same cycling glasses. Keep the aero calf sleeves and low cut socks on. 
 - <input type="checkbox" />Race running shoes with elastic laces <details><summary>more info</summary>Asics Metaspeed Sky Paris</details>
 - <input type="checkbox" />A cap <details><summary>more info</summary>For style, or sun</details>
 
-# Videos
+# Videos and links
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qcy1s4raoEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [https://www.racepaceapp.com/triathlon-checklist](https://www.racepaceapp.com/triathlon-checklist)
 
 <style>
 article h1 {
