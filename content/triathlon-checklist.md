@@ -31,13 +31,17 @@ Make sure to ride a few times with the new gear.
 
 # 🧳 Things to bring on race day
 
+## 📝 Things for before the race
+
+- <input type="checkbox" />Flip-flops <details><summary>more info</summary>To wear before the start of the race in the morning,<br />while preparing everything in the transition area.<br />Better than walking around barefoot.<br />Easy to hand back to people accompanying you.</details>
+
 ## 📝 Things you'll wear the whole race
 
 - <input type="checkbox" />Trisuit <details><summary>more info</summary>My favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1</details>
 - <input type="checkbox" />A charged smartwatch <details><summary>more info</summary>[Here are a few tips for setting up a garmin watch for a triathlon](https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/)</details>
 - <input type="checkbox" />A transponder worn at the ankle <details><summary>more info</summary>Provided by the organization</details>
 - <input type="checkbox" />A waterproof HRM chest strap <details><summary>more info</summary>[Garmin HRM-Pro Plus](https://www.garmin.com/fr-FR/p/770963)</details>
-- <input type="checkbox" />Aero calf sleeves <details><summary>more info</summary>To be [a little faster on the bike](https://www.reddit.com/r/triathlon/comments/1766z7k/aero_calf_sleeves_best_ones/).<br />Also serves as compression sleeves when running.<br />To be worn the whole time, [under the wetsuit first](https://www.reddit.com/r/triathlon/comments/10drh2b/do_triathletes_swim_with_compression_calf_sleeves/).<br />If no wetsuit allowed, to be worn only from the cycling leg onward.</details>
+- <input type="checkbox" />Aero calf sleeves <details><summary>more info</summary>To be [a little faster on the bike](https://www.reddit.com/r/triathlon/comments/1766z7k/aero_calf_sleeves_best_ones/).<br /><a href="https://www.compressport.com/fr/manchon-de-compression-mollet/2023-r2-aero-white-black-7630102591323.html">Some will also serve as compression sleeves when running.</a><br />To be worn the whole time, [under the wetsuit first](https://www.reddit.com/r/triathlon/comments/10drh2b/do_triathletes_swim_with_compression_calf_sleeves/).<br />If no wetsuit allowed, to be worn only from the cycling leg onward.</details>
 
 ## 🏊 For swimming
 
