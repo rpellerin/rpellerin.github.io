@@ -15,7 +15,7 @@ That's something that needs to be figured weeks in advance, in case additional e
 - Bidons can be stored in the frame (2 bidons maximum), between the aero bars (usually 1, sometimes 2 bidons) or behind the saddle (2 bidons maximum, maybe 3?).
 - [Fully integrated hydration systems](https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-speedmax-hydration-system/10014133.html) exist but the aero gain is very marginal, and those systems are expensive. Also, they need to be refilled, they cannot be swapped during the race like bidons.
 
-Considering that it's hard to predict how much water one will drink, it's best to ensure to be able to swap empty bottles with new ones. Also, because of the difficulty of grabbing bottles, it's probably best to carry all the water/isotonic drink one will need. Therefore, my recommendation would be to store two standards bidons in the frame, and one optional additional bottle behind the saddle for a 70.3. For a full IronMan, I'd probably consider 4 in total (2 in the frame, 2 behind the saddle). Trading empty bottles for full ones will always remain an option in case of hot weather.
+Considering that it's hard to predict how much water one will drink, it's best to ensure to be able to swap empty bottles with new ones. Also, because of the difficulty of grabbing bottles, it's probably best to carry all the water/energy drinks one will need. Therefore, my recommendation would be to store two standards bidons in the frame, and one additional bottle behind the saddle for a 70.3. For a full IronMan, I'd probably consider 4 in total (2 in the frame, 2 behind the saddle). Trading empty bottles for full ones will always remain an option in case of hot weather.
 
 # 📅 To change on the bike weeks ahead of the race
 
@@ -35,7 +35,7 @@ Make sure to ride a few times with the new gear.
 
 - <input type="checkbox" />Flip-flops <details><summary>more info</summary>To wear before the start of the race in the morning,<br />while preparing everything in the transition area.<br />Better than walking around barefoot.<br />Easy to hand back to people accompanying you.</details>
 
-## 📝 Things you'll wear the whole race
+## 🩱 Things you'll wear the whole race
 
 - <input type="checkbox" />Trisuit <details><summary>more info</summary>My favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1</details>
 - <input type="checkbox" />A charged smartwatch <details><summary>more info</summary>[Here are a few tips for setting up a garmin watch for a triathlon](https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/)</details>
@@ -52,7 +52,6 @@ Make sure to ride a few times with the new gear.
 ## For the transition swim ➡️ bike
 
 - <input type="checkbox" />A small towel <details><summary>more info</summary>To dry your feet and remove the dirt</details>
-- <input type="checkbox" />Two bidons with pure water and isotonic
 
 ## 🚴 For cycling
 
@@ -60,24 +59,26 @@ Keep the aero calf sleeves on as well as the HRM strap.
 
 - <input type="checkbox" />Road bike with aero bars, or tri bike <details><summary>more info</summary>Make it lightweight<br />Remove unnecessary equipment, such as lights<br />To buy a second hand bike: [Buycycle](https://buycycle.com/) or [Biked](https://biked.com/)<br />To get a discount from Canyon, go to a Canyon shop and do a test ride.<br />You'll get the bike guard for free (19.9 euros) via a code over email.</details>
 - <input type="checkbox" />Bike computer
+- <input type="checkbox" />Di2 battery charged
 - <input type="checkbox" />Helmet
 - <input type="checkbox" />Glasses <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />Bike shoes <details><summary>more info</summary>Some leave them attached to the pedals, ahead of the race, ready to go</details>
 - <input type="checkbox" />Fingerless gloves
-- <input type="checkbox" />Water bidons <details><summary>more info</summary>Already on the bike.<br />One filled with only water, the other with isotonic powder and water.<br />A third one? Pick up from aid stations?</details>
+- <input type="checkbox" />3 water bottles (bidons) <details><summary>more info</summary>Already on the bike before the swim.<br />Two filled with only water,<br />the third with energy/isotonic powder and water.<br />On a 70.3, do not get more from aid stations.</details>
+- <input type="checkbox" />Energy/isotonic powder to put in one bidon ahead of the race
 - <input type="checkbox" />Low cut socks <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
-- <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number, to be worn until the end of the race</details>
-- <input type="checkbox" />Gels <details><summary>more info</summary>Have some in the belt, some on the bike.<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
+- <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number<br />To be worn until the end of the race.<br />Bib number in the back while cycling.<br />Bib number on the belly while running.</details>
+- <input type="checkbox" />Energy bars/Gels <details><summary>more info</summary>Have some in the belt, some on the bike.<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
 - <input type="checkbox" />Anti puncture liquid for tubes / sealant <details><summary>more info</summary>Interesting readings: [here](https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/) and [there](https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/)</details>
 - <input type="checkbox" />2 CO2 cannisters with inflator <details><summary>more info</summary>To store in the saddle bag</details>
 - <input type="checkbox" />2 or 3 spare tubes <details><summary>more info</summary>To store in the saddle bag</details>
 - <input type="checkbox" />Glueless patches <details><summary>more info</summary>To store in the saddle bag</details>
 - <input type="checkbox" />Tire levers and multi tool <details><summary>more info</summary>To store in the saddle bag</details>
-- <input type="checkbox" />A mini pump <details><summary>more info</summary>Attached to the bike frame</details>
+- <input type="checkbox" />A mini pump <details><summary>more info</summary>Attached to the bike frame / in the jersey</details>
 
 ## For the transition bike ➡️ running
 
-- <input type="checkbox" />Two additional bidons with pure water and isotonic
+- <input type="checkbox" />One additional bidon with energy/isotonic powder and water, to drink before running
 
 ## 🏃 For running
 
@@ -92,7 +93,7 @@ Wear the same cycling glasses. Keep the aero calf sleeves and low cut socks on. 
 
 <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [https://www.racepaceapp.com/triathlon-checklist](https://www.racepaceapp.com/triathlon-checklist)
+[https://www.racepaceapp.com/triathlon-checklist](https://www.racepaceapp.com/triathlon-checklist)
 
 <style>
 article h1 {
@@ -103,20 +104,20 @@ article h2 {
     font-size: 1.3rem;
 }
 
-ul {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul {
     list-style: none;
     padding: 5px 10px;
     background-color: #EEEEEE;
     border-radius: 10px;
 }
 
-li details {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul li details {
     display: inline-block;
     vertical-align: top;
     color: #666666;
 }
 
-li details summary {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul li details summary {
     font-style: italic;
 }
 </style>
