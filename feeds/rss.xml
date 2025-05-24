@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 23 May 2025 13:22:00 +0200</lastBuildDate><item><title>Comment Changer Une Guidoline</title><link>https://romainpellerin.eu/comment-changer-une-guidoline.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/i8UKt3D9_yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 24 May 2025 23:20:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
+  &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h1 id="vertical-format"&gt;Vertical format&lt;/h1&gt;
+&lt;p&gt;Tick "Use vertical resolution".&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"&gt;&lt;/p&gt;
+&lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
+&lt;p&gt;Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/2.png"&gt;&lt;/p&gt;
+&lt;h1 id="create-a-compound-video"&gt;Create a compound video&lt;/h1&gt;
+&lt;p&gt;Select all of your video elements in the Media Pool, and group them in a new timeline. Later, we will apply video effects on the entire compound video.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/3.png"&gt;&lt;/p&gt;
+&lt;h1 id="for-each-clip-of-the-compound-video"&gt;For each clip of the compound video&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Sync the duration of each clip with the background song. Ideally, clip transitions should occur one frame before the next music beat, not earlier. Videos on social media are watched on a phone, so the distance "phone to ears" is short, no need to compensate like you'd do for videos meant for TV, where two frames ahead of the beat is often better for transitions.&lt;/li&gt;
+&lt;li&gt;No need to mute each individual clip, as the compound video will be muted in the timeline.&lt;/li&gt;
+&lt;li&gt;For static images: apply zoom-in effects and changes in the position, to add dynamism. You'll find these in the "Video" tab. Use 2 keyframes (red dots in the screenshot): one on the first frame, one on the last&lt;/li&gt;
+&lt;li&gt;For videos: zoom-in and position effects should be used too. Changing the position throughout the clip can help shift the focus from one element to another, from one person to something, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/4.png"&gt;&lt;/p&gt;
+&lt;h1 id="final-cut-in-the-main-timeline"&gt;Final cut in the main timeline&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your compound video to the timeline, and mute its audio track.&lt;/li&gt;
+&lt;li&gt;Add your background song to the timeline.&lt;/li&gt;
+&lt;li&gt;In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add effects on the compound video:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;"Camera Shake": play around vith the values but make it subtle, not too shaky&lt;/li&gt;
+&lt;li&gt;"Film Damage": same, make it subtle. Disable the Scratch effect.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/5.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/6.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/7.png"&gt;&lt;/p&gt;
+&lt;p&gt;That's it! Ready to export.&lt;/p&gt;
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 24 May 2025 23:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</guid><category>Computers</category><category>davinci resolve</category><category>running</category></item><item><title>Comment Changer Une Guidoline</title><link>https://romainpellerin.eu/comment-changer-une-guidoline.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/i8UKt3D9_yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1 id="tips"&gt;Tips&lt;/h1&gt;
 &lt;ul&gt;

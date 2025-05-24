@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Computers</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/computers/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-02-02T23:41:00+01:00</updated><entry><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link href="https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html" rel="alternate"></link><published>2024-09-18T20:00:00+02:00</published><updated>2025-02-02T23:41:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</id><summary type="html">&lt;p&gt;I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Computers</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/computers/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-05-24T23:20:00+02:00</updated><entry><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html" rel="alternate"></link><published>2025-05-24T23:20:00+02:00</published><updated>2025-05-24T23:20:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</id><summary type="html">&lt;p&gt;How to create a nice short video about a running event using Davinci Resolve&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
+  &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h1 id="vertical-format"&gt;Vertical format&lt;/h1&gt;
+&lt;p&gt;Tick "Use vertical resolution".&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"&gt;&lt;/p&gt;
+&lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
+&lt;p&gt;Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/2.png"&gt;&lt;/p&gt;
+&lt;h1 id="create-a-compound-video"&gt;Create a compound video&lt;/h1&gt;
+&lt;p&gt;Select all of your video elements in the Media Pool, and group them in a new timeline. Later, we will apply video effects on the entire compound video.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/3.png"&gt;&lt;/p&gt;
+&lt;h1 id="for-each-clip-of-the-compound-video"&gt;For each clip of the compound video&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Sync the duration of each clip with the background song. Ideally, clip transitions should occur one frame before the next music beat, not earlier. Videos on social media are watched on a phone, so the distance "phone to ears" is short, no need to compensate like you'd do for videos meant for TV, where two frames ahead of the beat is often better for transitions.&lt;/li&gt;
+&lt;li&gt;No need to mute each individual clip, as the compound video will be muted in the timeline.&lt;/li&gt;
+&lt;li&gt;For static images: apply zoom-in effects and changes in the position, to add dynamism. You'll find these in the "Video" tab. Use 2 keyframes (red dots in the screenshot): one on the first frame, one on the last&lt;/li&gt;
+&lt;li&gt;For videos: zoom-in and position effects should be used too. Changing the position throughout the clip can help shift the focus from one element to another, from one person to something, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/4.png"&gt;&lt;/p&gt;
+&lt;h1 id="final-cut-in-the-main-timeline"&gt;Final cut in the main timeline&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your compound video to the timeline, and mute its audio track.&lt;/li&gt;
+&lt;li&gt;Add your background song to the timeline.&lt;/li&gt;
+&lt;li&gt;In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add effects on the compound video:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;"Camera Shake": play around vith the values but make it subtle, not too shaky&lt;/li&gt;
+&lt;li&gt;"Film Damage": same, make it subtle. Disable the Scratch effect.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/5.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/6.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/7.png"&gt;&lt;/p&gt;
+&lt;p&gt;That's it! Ready to export.&lt;/p&gt;
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</content><category term="Computers"></category><category term="davinci resolve"></category><category term="running"></category></entry><entry><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link href="https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html" rel="alternate"></link><published>2024-09-18T20:00:00+02:00</published><updated>2025-02-02T23:41:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</id><summary type="html">&lt;p&gt;I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;

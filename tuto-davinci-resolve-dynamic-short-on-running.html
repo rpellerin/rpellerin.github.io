@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, davinci resolve, running" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled()) {
+            // Analytics here
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="How to create a nice short video about a running event using Davinci Resolve" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Tuto Davinci Resolve: Dynamic Short on Running - Romain Pellerin's Blog" />
+        <meta property="og:description" content="How to create a nice short video about a running event using Davinci Resolve" />
+        <meta property="og:url" content="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html" />
+
+        <title>Tuto Davinci Resolve: Dynamic Short on Running - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+    <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <span class="center">|| Blog:</span>
+    <a class="center" href="https://romainpellerin.eu/archives.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-05-24T23:20:00+02:00">Sat 24 May 2025</time>        </p>
+    <h1>Tuto Davinci Resolve: Dynamic Short on Running</h1>
+    <div class="grey">
+        <p class="italic">How to create a nice short video about a running event using Davinci Resolve</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 303 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/computers.html">Computers</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/davinci-resolve.html">davinci resolve</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/running.html">running</a></p>    </div>
+</header>
+<article>
+    <video controls>
+  <source src="./videos/paris-marathon-2025.mp4" type="video/mp4">
+</video>
+
+<h1 id="vertical-format">Vertical format</h1>
+<p>Tick "Use vertical resolution".</p>
+<p><img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"></p>
+<h1 id="color-management">Color management</h1>
+<p>Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.</p>
+<p><img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/2.png"></p>
+<h1 id="create-a-compound-video">Create a compound video</h1>
+<p>Select all of your video elements in the Media Pool, and group them in a new timeline. Later, we will apply video effects on the entire compound video.</p>
+<p><img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/3.png"></p>
+<h1 id="for-each-clip-of-the-compound-video">For each clip of the compound video</h1>
+<ul>
+<li>Sync the duration of each clip with the background song. Ideally, clip transitions should occur one frame before the next music beat, not earlier. Videos on social media are watched on a phone, so the distance "phone to ears" is short, no need to compensate like you'd do for videos meant for TV, where two frames ahead of the beat is often better for transitions.</li>
+<li>No need to mute each individual clip, as the compound video will be muted in the timeline.</li>
+<li>For static images: apply zoom-in effects and changes in the position, to add dynamism. You'll find these in the "Video" tab. Use 2 keyframes (red dots in the screenshot): one on the first frame, one on the last</li>
+<li>For videos: zoom-in and position effects should be used too. Changing the position throughout the clip can help shift the focus from one element to another, from one person to something, etc.</li>
+</ul>
+<p><img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/4.png"></p>
+<h1 id="final-cut-in-the-main-timeline">Final cut in the main timeline</h1>
+<ol>
+<li>Add your compound video to the timeline, and mute its audio track.</li>
+<li>Add your background song to the timeline.</li>
+<li>In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".</li>
+<li>
+<p>Add effects on the compound video:</p>
+<ol>
+<li>"Camera Shake": play around vith the values but make it subtle, not too shaky</li>
+<li>"Film Damage": same, make it subtle. Disable the Scratch effect.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/5.png">
+<img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/6.png">
+<img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/7.png"></p>
+<p>That's it! Ready to export.</p>
+<style>
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+</style>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 24 May 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
