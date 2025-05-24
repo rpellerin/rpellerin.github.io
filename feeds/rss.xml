@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 24 May 2025 23:20:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 25 May 2025 01:04:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
   &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -2000,7 +2000,7 @@ sudo apt install maven
 &lt;li&gt;Bidons can be stored in the frame (2 bidons maximum), between the aero bars (usually 1, sometimes 2 bidons) or behind the saddle (2 bidons maximum, maybe 3?).&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.canyon.com/en-de/gear/accessories/bike-accessories/cycling-water-bottle/canyon-speedmax-hydration-system/10014133.html"&gt;Fully integrated hydration systems&lt;/a&gt; exist but the aero gain is very marginal, and those systems are expensive. Also, they need to be refilled, they cannot be swapped during the race like bidons.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Considering that it's hard to predict how much water one will drink, it's best to ensure to be able to swap empty bottles with new ones. Also, because of the difficulty of grabbing bottles, it's probably best to carry all the water/isotonic drink one will need. Therefore, my recommendation would be to store two standards bidons in the frame, and one optional additional bottle behind the saddle for a 70.3. For a full IronMan, I'd probably consider 4 in total (2 in the frame, 2 behind the saddle). Trading empty bottles for full ones will always remain an option in case of hot weather.&lt;/p&gt;
+&lt;p&gt;Considering that it's hard to predict how much water one will drink, it's best to ensure to be able to swap empty bottles with new ones. Also, because of the difficulty of grabbing bottles, it's probably best to carry all the water/energy drinks one will need. Therefore, my recommendation would be to store two standards bidons in the frame, and one additional bottle behind the saddle for a 70.3. For a full IronMan, I'd probably consider 4 in total (2 in the frame, 2 behind the saddle). Trading empty bottles for full ones will always remain an option in case of hot weather.&lt;/p&gt;
 &lt;h1 id="to-change-on-the-bike-weeks-ahead-of-the-race"&gt;📅 To change on the bike weeks ahead of the race&lt;/h1&gt;
 &lt;p&gt;Make sure to ride a few times with the new gear.&lt;/p&gt;
 &lt;ul&gt;
@@ -2017,7 +2017,7 @@ sudo apt install maven
 &lt;ul&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Flip-flops &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To wear before the start of the race in the morning,&lt;br /&gt;while preparing everything in the transition area.&lt;br /&gt;Better than walking around barefoot.&lt;br /&gt;Easy to hand back to people accompanying you.&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="things-youll-wear-the-whole-race"&gt;📝 Things you'll wear the whole race&lt;/h2&gt;
+&lt;h2 id="things-youll-wear-the-whole-race"&gt;🩱 Things you'll wear the whole race&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Trisuit &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;My favorite ones: Z3r0d Racer and Zoot's Ultra Tri P1&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;A charged smartwatch &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;&lt;a href="https://www.reddit.com/r/triathlon/comments/doqkn5/a_few_tips_for_setting_up_a_garmin_watch_for_a/"&gt;Here are a few tips for setting up a garmin watch for a triathlon&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
@@ -2034,31 +2034,32 @@ sudo apt install maven
 &lt;h2 id="for-the-transition-swim-bike"&gt;For the transition swim ➡️ bike&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;A small towel &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To dry your feet and remove the dirt&lt;/details&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;Two bidons with pure water and isotonic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-cycling"&gt;🚴 For cycling&lt;/h2&gt;
 &lt;p&gt;Keep the aero calf sleeves on as well as the HRM strap.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Road bike with aero bars, or tri bike &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Make it lightweight&lt;br /&gt;Remove unnecessary equipment, such as lights&lt;br /&gt;To buy a second hand bike: &lt;a href="https://buycycle.com/"&gt;Buycycle&lt;/a&gt; or &lt;a href="https://biked.com/"&gt;Biked&lt;/a&gt;&lt;br /&gt;To get a discount from Canyon, go to a Canyon shop and do a test ride.&lt;br /&gt;You'll get the bike guard for free (19.9 euros) via a code over email.&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Bike computer&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Di2 battery charged&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Helmet&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Glasses &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To be worn for both the cycling and running legs&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Bike shoes &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Some leave them attached to the pedals, ahead of the race, ready to go&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Fingerless gloves&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;Water bidons &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Already on the bike.&lt;br /&gt;One filled with only water, the other with isotonic powder and water.&lt;br /&gt;A third one? Pick up from aid stations?&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;3 water bottles (bidons) &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Already on the bike before the swim.&lt;br /&gt;Two filled with only water,&lt;br /&gt;the third with energy/isotonic powder and water.&lt;br /&gt;On a 70.3, do not get more from aid stations.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Energy/isotonic powder to put in one bidon ahead of the race&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Low cut socks &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To be worn for both the cycling and running legs&lt;/details&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;A triathlon belt &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To carry gels and display the bib number, to be worn until the end of the race&lt;/details&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;Gels &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Have some in the belt, some on the bike.&lt;br /&gt;Aim for your weight in grams of carbs per hour:&lt;br /&gt;you weight 75 kgs, you take 75 grams per hour.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A triathlon belt &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To carry gels and display the bib number&lt;br /&gt;To be worn until the end of the race.&lt;br /&gt;Bib number in the back while cycling.&lt;br /&gt;Bib number on the belly while running.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;Energy bars/Gels &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Have some in the belt, some on the bike.&lt;br /&gt;Aim for your weight in grams of carbs per hour:&lt;br /&gt;you weight 75 kgs, you take 75 grams per hour.&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Anti puncture liquid for tubes / sealant &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Interesting readings: &lt;a href="https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/"&gt;here&lt;/a&gt; and &lt;a href="https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/"&gt;there&lt;/a&gt;&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;2 CO2 cannisters with inflator &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To store in the saddle bag&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;2 or 3 spare tubes &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To store in the saddle bag&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Glueless patches &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To store in the saddle bag&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Tire levers and multi tool &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To store in the saddle bag&lt;/details&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;A mini pump &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Attached to the bike frame&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;A mini pump &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Attached to the bike frame / in the jersey&lt;/details&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-the-transition-bike-running"&gt;For the transition bike ➡️ running&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;Two additional bidons with pure water and isotonic&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;One additional bidon with energy/isotonic powder and water, to drink before running&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="for-running"&gt;🏃 For running&lt;/h2&gt;
 &lt;p&gt;Wear the same cycling glasses. Keep the aero calf sleeves and low cut socks on. Stock up on gels again during the bike-to-run transition, again aim for your weight in grams of carbs per hour.&lt;/p&gt;
@@ -2071,9 +2072,7 @@ sudo apt install maven
 
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/p5KLCtdhOUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.racepaceapp.com/triathlon-checklist"&gt;https://www.racepaceapp.com/triathlon-checklist&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://www.racepaceapp.com/triathlon-checklist"&gt;https://www.racepaceapp.com/triathlon-checklist&lt;/a&gt;&lt;/p&gt;
 &lt;style&gt;
 article h1 {
     font-size: 1.5rem;
@@ -2083,20 +2082,20 @@ article h2 {
     font-size: 1.3rem;
 }
 
-ul {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul {
     list-style: none;
     padding: 5px 10px;
     background-color: #EEEEEE;
     border-radius: 10px;
 }
 
-li details {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul li details {
     display: inline-block;
     vertical-align: top;
     color: #666666;
 }
 
-li details summary {
+#to-change-on-the-bike-weeks-ahead-of-the-race ~ ul li details summary {
     font-style: italic;
 }
 &lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 02 Jun 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-06-02:/triathlon-checklist.html</guid><category>Sports</category><category>triathlon</category><category>swim</category><category>bike</category><category>running</category></item><item><title>Traveling Outside Europe as a Resident in Germany</title><link>https://romainpellerin.eu/traveling-outside-europe-as-a-resident-in-germany.html</link><description>&lt;p&gt;As a resident in Germany, you must have (by law!) a health insurance, even if unemployed. With this insurance comes a European Health Insurance Card (EHIC), that grants you insurance in any European country plus a few (Iceland, Liechtenstein, Norway, Switzerland and the United Kingdom) "&lt;em&gt;under the same conditions and at the same cost (free in some countries) as people insured in that country&lt;/em&gt;" (&lt;a href="https://ec.europa.eu/social/main.jsp?catId=559"&gt;source&lt;/a&gt;).&lt;/p&gt;
