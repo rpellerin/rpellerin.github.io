@@ -84,7 +84,7 @@ Keep the aero calf sleeves on as well as the HRM strap.
 
 Wear the same cycling glasses. Keep the aero calf sleeves and low cut socks on. Stock up on gels again during the bike-to-run transition, again aim for your weight in grams of carbs per hour.
 
-- <input type="checkbox" />Race running shoes with elastic laces <details><summary>more info</summary>Asics Metaspeed Sky Paris</details>
+- <input type="checkbox" />Race running shoes with elastic laces <details><summary>more info</summary>Asics Metaspeed Sky Paris<br />Orca's Speed laces</details>
 - <input type="checkbox" />A cap <details><summary>more info</summary>For style, or sun</details>
 
 # Videos and links
