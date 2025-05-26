@@ -34,6 +34,7 @@ Make sure to ride a few times with the new gear.
 ## 📝 Things for before the race
 
 - <input type="checkbox" />Flip-flops <details><summary>more info</summary>To wear before the start of the race in the morning,<br />while preparing everything in the transition area.<br />Better than walking around barefoot.<br />Easy to hand back to people accompanying you.</details>
+- <input type="checkbox" />One bottle of water
 
 ## 🩱 Things you'll wear the whole race
 
@@ -45,7 +46,7 @@ Make sure to ride a few times with the new gear.
 
 ## 🏊 For swimming
 
-- <input type="checkbox" />Swimming cap <details><summary>more info</summary>Usually provided by the organization.<br />Some recommend two caps so as to "wedge" the goggles between them.</details>
+- <input type="checkbox" />Swimming cap (x2) <details><summary>more info</summary>Usually provided by the organization.<br />Some recommend two caps so as to "wedge" the goggles between them.</details>
 - <input type="checkbox" />Swimming goggles
 - <input type="checkbox" />Wetsuit <details><summary>more info</summary>Optional: sometimes allowed, sometimes forbidden, sometimes mandatory.<br />Made for triathlon, not diving.</details>
 
@@ -86,6 +87,7 @@ Wear the same cycling glasses. Keep the aero calf sleeves and low cut socks on. 
 
 - <input type="checkbox" />Race running shoes with elastic laces <details><summary>more info</summary>Asics Metaspeed Sky Paris<br />Orca's Speed laces</details>
 - <input type="checkbox" />A cap <details><summary>more info</summary>For style, or sun</details>
+- <input type="checkbox" />Maurten gels
 
 # Videos and links
 
