@@ -29,12 +29,22 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" />New cassette <details><summary>more info</summary>Optional<br />Shimano 105 CS-R7000 11-speed, 11-32<br />[Bike24](https://www.bike24.com/p2271410.html)<br />[When to replace](https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/)</details>
 - <input type="checkbox" />New chainring <details><summary>more info</summary>Optional: [when to replace?](https://www.youtube.com/watch?v=8LqTmvuf6tw)</details>
 
+**Yet, come to the race weekend with allen keys and other appropriate tools, just in case.**
+
+# ❓ Things you might want to clarify on Saturday during the briefing meeting
+
+- <input type="checkbox" />Can you access T1 and T2 bags Sunday morning?
+- <input type="checkbox" />Can you leave your bike shoes on the bike after the bike leg?
+- <input type="checkbox" />Where to store your after-race clothes? In the white bag?
+- <input type="checkbox" />What food is provided? What brand of gels?
+
 # 🧳 Things to bring on race day
 
-## 📝 Things for before the race
+## 📝 Things for the race day morning
 
 - <input type="checkbox" />Flip-flops <details><summary>more info</summary>To wear before the start of the race in the morning,<br />while preparing everything in the transition area.<br />Better than walking around barefoot.<br />Easy to hand back to people accompanying you.</details>
 - <input type="checkbox" />One bottle of water
+- <input type="checkbox" />Sunscreen to apply before putting the wetsuit on
 
 ## 🩱 Things you'll wear the whole race
 
@@ -50,13 +60,14 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" />Swimming goggles
 - <input type="checkbox" />Wetsuit <details><summary>more info</summary>Optional: sometimes allowed, sometimes forbidden, sometimes mandatory.<br />Made for triathlon, not diving.</details>
 
-## For the transition swim ➡️ bike
+## For the transition swim ➡️ bike (blue bag 🔵)
 
 - <input type="checkbox" />A small towel <details><summary>more info</summary>To dry your feet and remove the dirt</details>
+- <input type="checkbox" />Energy bars
 
 ## 🚴 For cycling
 
-Keep the aero calf sleeves on as well as the HRM strap.
+Keep the aero calf sleeves on as well as the HRM strap. Store energy bars and gels in your trisuit pockets. Don't store any spare tube or a mini-pump, it would suck to drop it mid-race or forget about it during the T2 transition and start running with it.
 
 - <input type="checkbox" />Road bike with aero bars, or tri bike <details><summary>more info</summary>Make it lightweight<br />Remove unnecessary equipment, such as lights<br />To buy a second hand bike: [Buycycle](https://buycycle.com/) or [Biked](https://biked.com/)<br />To get a discount from Canyon, go to a Canyon shop and do a test ride.<br />You'll get the bike guard for free (19.9 euros) via a code over email.</details>
 - <input type="checkbox" />Bike computer
@@ -64,20 +75,19 @@ Keep the aero calf sleeves on as well as the HRM strap.
 - <input type="checkbox" />Helmet
 - <input type="checkbox" />Glasses <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />Bike shoes <details><summary>more info</summary>Some leave them attached to the pedals, ahead of the race, ready to go</details>
+- <input type="checkbox" />Low cut running socks <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />Fingerless gloves
 - <input type="checkbox" />3 water bottles (bidons) <details><summary>more info</summary>Already on the bike before the swim.<br />Two filled with only water,<br />the third with energy/isotonic powder and water.<br />On a 70.3, do not get more from aid stations.</details>
 - <input type="checkbox" />Energy/isotonic powder to put in one bidon ahead of the race
-- <input type="checkbox" />Low cut socks <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number<br />To be worn until the end of the race.<br />Bib number in the back while cycling.<br />Bib number on the belly while running.</details>
-- <input type="checkbox" />Energy bars/Gels <details><summary>more info</summary>Have some in the belt, some on the bike.<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
-- <input type="checkbox" />Anti puncture liquid for tubes / sealant <details><summary>more info</summary>Interesting readings: [here](https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/) and [there](https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/)</details>
-- <input type="checkbox" />2 CO2 cannisters with inflator <details><summary>more info</summary>To store in the saddle bag</details>
-- <input type="checkbox" />2 or 3 spare tubes <details><summary>more info</summary>To store in the saddle bag</details>
-- <input type="checkbox" />Glueless patches <details><summary>more info</summary>To store in the saddle bag</details>
-- <input type="checkbox" />Tire levers and multi tool <details><summary>more info</summary>To store in the saddle bag</details>
-- <input type="checkbox" />A mini pump <details><summary>more info</summary>Attached to the bike frame / in the jersey</details>
+- <input type="checkbox" />Energy bars/Gels <details><summary>more info</summary>Have some in the trisuit, some on the bike (glued?).<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
+- <input type="checkbox" />2 CO2 cannisters with inflator, and tire levers <details><summary>more info</summary>To store in the frame</details>
+- <input type="checkbox" />2 spare tubes and a multi tool<details><summary>more info</summary>To store in the bottom bracket box</details>
+- <input type="checkbox" />A mini pump (optional) <details><summary>more info</summary>Taped to the bike frame</details>
+- <input type="checkbox" />Glueless patches (optional)
+- <input type="checkbox" />Anti puncture liquid for tubes / sealant (optional) <details><summary>more info</summary>Interesting readings: [here](https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/) and [there](https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/)</details>
 
-## For the transition bike ➡️ running
+## For the transition bike ➡️ running (red bag 🔴)
 
 - <input type="checkbox" />One additional bidon with energy/isotonic powder and water, to drink before running
 
