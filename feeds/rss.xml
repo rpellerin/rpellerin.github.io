@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 27 May 2025 17:01:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 27 May 2025 23:26:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
   &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -2057,7 +2057,7 @@ sudo apt install maven
 &lt;li&gt;&lt;input type="checkbox" /&gt;Bike shoes &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Some leave them attached to the pedals, ahead of the race, ready to go&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Low cut running socks &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To be worn for both the cycling and running legs&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Fingerless gloves&lt;/li&gt;
-&lt;li&gt;&lt;input type="checkbox" /&gt;3 water bottles (bidons) &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Already on the bike before the swim.&lt;br /&gt;Two filled with only water,&lt;br /&gt;the third with energy/isotonic powder and water.&lt;br /&gt;On a 70.3, do not get more from aid stations.&lt;/details&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input type="checkbox" /&gt;3 water bottles (bidons) &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Already on the bike before the swim.&lt;br /&gt;One filled with only water,&lt;br /&gt;two with energy/isotonic powder and water.&lt;br /&gt;On a 70.3, do not get more from aid stations.&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Energy/isotonic powder to put in one bidon ahead of the race&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;A triathlon belt &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;To carry gels and display the bib number&lt;br /&gt;To be worn until the end of the race.&lt;br /&gt;Bib number in the back while cycling.&lt;br /&gt;Bib number on the belly while running.&lt;/details&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type="checkbox" /&gt;Energy bars/Gels &lt;details&gt;&lt;summary&gt;more info&lt;/summary&gt;Have some in the trisuit, some on the bike (glued?).&lt;br /&gt;Aim for your weight in grams of carbs per hour:&lt;br /&gt;you weight 75 kgs, you take 75 grams per hour.&lt;/details&gt;&lt;/li&gt;
