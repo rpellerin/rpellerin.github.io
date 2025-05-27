@@ -77,7 +77,7 @@ Keep the aero calf sleeves on as well as the HRM strap. Store energy bars and ge
 - <input type="checkbox" />Bike shoes <details><summary>more info</summary>Some leave them attached to the pedals, ahead of the race, ready to go</details>
 - <input type="checkbox" />Low cut running socks <details><summary>more info</summary>To be worn for both the cycling and running legs</details>
 - <input type="checkbox" />Fingerless gloves
-- <input type="checkbox" />3 water bottles (bidons) <details><summary>more info</summary>Already on the bike before the swim.<br />Two filled with only water,<br />the third with energy/isotonic powder and water.<br />On a 70.3, do not get more from aid stations.</details>
+- <input type="checkbox" />3 water bottles (bidons) <details><summary>more info</summary>Already on the bike before the swim.<br />One filled with only water,<br />two with energy/isotonic powder and water.<br />On a 70.3, do not get more from aid stations.</details>
 - <input type="checkbox" />Energy/isotonic powder to put in one bidon ahead of the race
 - <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number<br />To be worn until the end of the race.<br />Bib number in the back while cycling.<br />Bib number on the belly while running.</details>
 - <input type="checkbox" />Energy bars/Gels <details><summary>more info</summary>Have some in the trisuit, some on the bike (glued?).<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
