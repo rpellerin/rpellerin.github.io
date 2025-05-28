@@ -28,8 +28,13 @@ Make sure to ride a few times with the new gear.
 - <input type="checkbox" />New chain <details><summary>more info</summary>Optional<br />Shimano CN-HG701-11 (116 links)<br />CN-HG601-11 is standard for 105,<br />but CN-HG701-11 is slightly better performance-wise.</details>
 - <input type="checkbox" />New cassette <details><summary>more info</summary>Optional<br />Shimano 105 CS-R7000 11-speed, 11-32<br />[Bike24](https://www.bike24.com/p2271410.html)<br />[When to replace](https://www.reddit.com/r/cycling/comments/b5to2b/time_to_replace_my_crank_set_and_cassette_pics/)</details>
 - <input type="checkbox" />New chainring <details><summary>more info</summary>Optional: [when to replace?](https://www.youtube.com/watch?v=8LqTmvuf6tw)</details>
+- <input type="checkbox" />New rim tape
 
-**Yet, come to the race weekend with allen keys and other appropriate tools, just in case.**
+# 🔜 Things to bring on the race weekend
+
+- <input type="checkbox" />Allen keys and other appropriate tools
+- <input type="checkbox" />Duct tape <details><summary>more info</summary>In case you need to tape things</details>
+- <input type="checkbox" />Rubber band <details><summary>more info</summary>To hold the rear mounted bottle to the holder</details>
 
 # ❓ Things you might want to clarify on Saturday during the briefing meeting
 
@@ -82,7 +87,7 @@ Keep the aero calf sleeves on as well as the HRM strap. Store energy bars and ge
 - <input type="checkbox" />A triathlon belt <details><summary>more info</summary>To carry gels and display the bib number<br />To be worn until the end of the race.<br />Bib number in the back while cycling.<br />Bib number on the belly while running.</details>
 - <input type="checkbox" />Energy bars/Gels <details><summary>more info</summary>Have some in the trisuit, some on the bike (glued?).<br />Aim for your weight in grams of carbs per hour:<br />you weight 75 kgs, you take 75 grams per hour.</details>
 - <input type="checkbox" />2 CO2 cannisters with inflator, and tire levers <details><summary>more info</summary>To store in the frame</details>
-- <input type="checkbox" />2 spare tubes and a multi tool<details><summary>more info</summary>To store in the bottom bracket box</details>
+- <input type="checkbox" />2 spare tubes and a multi tool <details><summary>more info</summary>To store in the bottom bracket box</details>
 - <input type="checkbox" />A mini pump (optional) <details><summary>more info</summary>Taped to the bike frame</details>
 - <input type="checkbox" />Glueless patches (optional)
 - <input type="checkbox" />Anti puncture liquid for tubes / sealant (optional) <details><summary>more info</summary>Interesting readings: [here](https://www.reddit.com/r/triathlon/comments/3t0g71/puncture_in_race/) and [there](https://www.reddit.com/r/IronmanTriathlon/comments/p1hohl/comment/h8e6c9n/)</details>
