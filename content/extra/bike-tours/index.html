@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A better Komoot</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <style>
+      /* Set the map container height */
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      /* Make the GPX track itself clickable */
+      .leaflet-interactive {
+        cursor: pointer;
+        transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity change */
+      }
+      /* Style for the GPX track to create a white border effect */
+      .gpx-track {
+        filter: drop-shadow(1.5px 1.5px 0 #fff)
+          drop-shadow(-1.5px -1.5px 0 #fff) drop-shadow(1.5px -1.5px 0 #fff)
+          drop-shadow(-1.5px 1.5px 0 #fff);
+      }
+      /* Ensure JS-applied transform is smooth */
+      #track-cards-container a {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="overflow-hidden">
+    <div class="flex h-screen font-sans">
+      <!-- Left Column: Map -->
+      <div class="w-1/2 h-screen">
+        <div id="map"></div>
+      </div>
+
+      <!-- Right Column: Tracks List -->
+      <div class="w-1/2 h-screen overflow-y-auto p-4 md:p-8 bg-gray-50">
+        <!-- Header -->
+        <header class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
+            A better Komoot
+          </h1>
+          <p class="text-gray-600 mt-2">
+            A collection of beautiful rides in and around Berlin.
+          </p>
+        </header>
+
+        <!-- Toggle Switch -->
+        <div class="flex items-center justify-end mb-6">
+          <label for="map-toggle" class="mr-3 text-sm font-medium text-gray-900"
+            >Show the maps</label
+          >
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="map-toggle" class="sr-only peer" />
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+            ></div>
+          </label>
+        </div>
+
+        <!-- Track Cards Section -->
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold text-gray-800">Available Rides</h2>
+            <p id="file-info" class="text-sm text-gray-500 font-semibold">
+              Loading tracks...
+            </p>
+          </div>
+          <div
+            id="track-cards-container"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          >
+            <!-- Track cards will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- Leaflet-GPX Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Initialize the map and set its view
+        const map = L.map("map").setView([52.52, 13.405], 9); // Initial view
+        let gpxLayers = [];
+
+        // 2. Add OpenStreetMap tile layer
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // 3. UI element references
+        const fileInfo = document.getElementById("file-info");
+        const trackCardsContainer = document.getElementById(
+          "track-cards-container"
+        );
+        const mapToggle = document.getElementById("map-toggle");
+
+        // 4. Function to generate a random hex color
+        function getRandomColor() {
+          const letters = "0123456789ABCDEF";
+          let color = "#";
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+
+        // 5. Function to fit map bounds to all layers
+        function fitMapToAllLayers() {
+          if (gpxLayers.length === 0) return;
+          const allBounds = new L.LatLngBounds();
+          gpxLayers.forEach((layer) => allBounds.extend(layer.getBounds()));
+          if (allBounds.isValid()) {
+            map.fitBounds(allBounds, { padding: [50, 50] }); // Add padding
+          }
+        }
+
+        // 6. Function to fetch Komoot image URLs via a CORS proxy
+        async function fetchKomootImageUrls(komootUrl) {
+          const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(
+            komootUrl
+          )}`;
+          try {
+            const response = await fetch(proxyUrl);
+            if (!response.ok) throw new Error("Failed to fetch from proxy");
+            const text = await response.text();
+            const doc = new DOMParser().parseFromString(text, "text/html");
+            const metaTags = doc.querySelectorAll('meta[property="og:image"]');
+
+            let photoUrl = "https://placehold.co/600x400/eee/ccc?text=No+Photo";
+            let mapUrl = "https://placehold.co/600x400/eee/ccc?text=No+Map";
+
+            if (metaTags.length > 0) {
+              photoUrl = metaTags[0].getAttribute("content"); // Default to the first image
+            }
+
+            const mapMeta = Array.from(metaTags).find((meta) =>
+              meta
+                .getAttribute("content")
+                .startsWith("https://tourpic-vector.maps.komoot.net")
+            );
+
+            if (mapMeta) {
+              mapUrl = mapMeta.getAttribute("content");
+            }
+
+            return { photoUrl, mapUrl };
+          } catch (error) {
+            console.error("Failed to fetch Komoot image for", komootUrl, error);
+            return {
+              photoUrl: "https://placehold.co/600x400/eee/ccc?text=Image+Error",
+              mapUrl: "https://placehold.co/600x400/eee/ccc?text=Map+Error",
+            };
+          }
+        }
+
+        // 7. Function to render a single track card and return the element
+        function renderTrackCard(data, showMaps) {
+          const { trackName, komootUrl, photoUrl, mapUrl, trackColor } = data;
+          const imageUrl = showMaps ? mapUrl : photoUrl;
+          const cardLink = document.createElement("a");
+          cardLink.href = komootUrl;
+          cardLink.target = "_blank";
+          cardLink.rel = "noopener noreferrer";
+          cardLink.className =
+            "block bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 group";
+
+          cardLink.innerHTML = `
+                <div class="overflow-hidden">
+                    <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">
+                </div>
+                <div class="p-4 border-t-4" style="border-color: ${trackColor};">
+                    <h3 class="font-bold text-gray-800 text-base truncate">${trackName}</h3>
+                </div>
+            `;
+          trackCardsContainer.appendChild(cardLink);
+          return cardLink; // Return the created element
+        }
+
+        // 8. Function to render an error card
+        function renderErrorCard(trackName) {
+          const cardHtml = `
+                <div class="block bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="w-full h-40 bg-gray-200 flex items-center justify-center">
+                        <p class="text-red-500 font-semibold">Failed to load</p>
+                    </div>
+                    <div class="p-4 border-t-4 border-red-500">
+                        <h3 class="font-bold text-gray-500 text-base truncate">${trackName}</h3>
+                    </div>
+                </div>
+            `;
+          trackCardsContainer.insertAdjacentHTML("beforeend", cardHtml);
+        }
+
+        // 9. Main function to initialize the application
+        async function initializeApp() {
+          let rides = [];
+          try {
+            const response = await fetch("rides.json");
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            rides = await response.json();
+          } catch (e) {
+            fileInfo.textContent = "Error loading rides.json";
+            console.error("Could not load rides.json", e);
+            return;
+          }
+
+          if (rides.length === 0) {
+            fileInfo.textContent = "No tracks to display.";
+            return;
+          }
+
+          // Step 1: Fetch all data required for tracks and cards
+          const ridePromises = rides.map(async (rideData) => {
+            const [gpxFile, trackName, komootUrl] = rideData;
+            try {
+              const [gpxResponse, imageUrls] = await Promise.all([
+                fetch(gpxFile),
+                fetchKomootImageUrls(komootUrl),
+              ]);
+              if (!gpxResponse.ok)
+                throw new Error(`GPX fetch failed: ${gpxResponse.status}`);
+              const gpxData = await gpxResponse.text();
+              return {
+                gpxData,
+                trackName,
+                komootUrl,
+                photoUrl: imageUrls.photoUrl,
+                mapUrl: imageUrls.mapUrl,
+                trackColor: getRandomColor(),
+                layer: null,
+                card: null,
+              };
+            } catch (error) {
+              console.error(`Failed to process ride: ${trackName}`, error);
+              renderErrorCard(trackName);
+              return null;
+            }
+          });
+
+          const results = (await Promise.all(ridePromises)).filter(
+            (r) => r !== null
+          );
+
+          const showMapsInitially = mapToggle.checked;
+
+          // Step 2: Create map layers and card elements, storing references
+          results.forEach((data) => {
+            data.layer = new L.GPX(data.gpxData, {
+              async: true,
+              marker_options: {
+                startIconUrl: null,
+                endIconUrl: null,
+                shadowUrl: null,
+              },
+              polyline_options: {
+                color: data.trackColor,
+                weight: 5,
+                opacity: 1,
+                className: "gpx-track",
+              },
+            });
+            data.card = renderTrackCard(data, showMapsInitially);
+          });
+
+          const highlight = (targetData) => {
+            results.forEach((d) => {
+              if (d === targetData) {
+                d.layer.setStyle({ opacity: 1 });
+                d.layer.bringToFront();
+                d.card.classList.add("scale-105", "shadow-xl");
+              } else {
+                d.layer.setStyle({ opacity: 0.2 });
+                d.card.classList.remove("scale-105", "shadow-xl");
+              }
+            });
+          };
+
+          const unhighlightAll = () => {
+            results.forEach((d) => {
+              d.layer.setStyle({ opacity: 1 });
+              d.card.classList.remove("scale-105", "shadow-xl");
+            });
+          };
+
+          // Step 3: Bind events and add layers to the map
+          results.forEach((data) => {
+            const { layer, card, trackName, komootUrl } = data;
+
+            card.addEventListener("mouseenter", () => highlight(data));
+            card.addEventListener("mouseleave", unhighlightAll);
+
+            layer
+              .on("loaded", (e) => {
+                gpxLayers.push(layer);
+                e.target.bindTooltip(trackName, {
+                  sticky: true,
+                  className: "font-bold",
+                });
+                fitMapToAllLayers();
+              })
+              .on("click", () => window.open(komootUrl, "_blank"))
+              .on("mouseover", () => highlight(data))
+              .on("mouseout", unhighlightAll)
+              .addTo(map);
+          });
+
+          // Step 4: Add toggle listener
+          mapToggle.addEventListener("change", function () {
+            const showMaps = this.checked;
+            results.forEach((data) => {
+              const imgElement = data.card.querySelector("img");
+              imgElement.src = showMaps ? data.mapUrl : data.photoUrl;
+            });
+          });
+
+          fileInfo.textContent = `Displaying ${results.length} of ${rides.length} tracks.`;
+        }
+
+        initializeApp();
+      });
+    </script>
+  </body>
+</html>
