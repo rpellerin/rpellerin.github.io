@@ -41,23 +41,62 @@
     </style>
   </head>
   <body class="overflow-hidden">
-    <div class="flex h-screen font-sans">
+    <div class="flex flex-col md:flex-row h-screen font-sans">
       <!-- Left Column: Map -->
-      <div class="w-1/2 h-screen">
+      <div class="w-full h-1/2 md:w-1/2 md:h-screen">
         <div id="map"></div>
       </div>
 
       <!-- Right Column: Tracks List -->
-      <div class="w-1/2 h-screen overflow-y-auto p-4 md:p-8 bg-gray-50">
+      <div
+        class="w-full h-1/2 md:w-1/2 md:h-screen overflow-y-auto p-4 md:p-8 bg-gray-50"
+      >
         <!-- Header -->
-        <header class="text-center mb-8">
+        <header class="text-center mb-4">
           <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
             A better Komoot
           </h1>
-          <p class="text-gray-600 mt-2">
-            A collection of beautiful rides in and around Berlin.
-          </p>
+          <p class="text-gray-600 mt-2">A collection of beautiful rides.</p>
         </header>
+
+        <!-- Region Selector -->
+        <div class="flex justify-center space-x-4 mb-6">
+          <div>
+            <input
+              type="radio"
+              id="berlin"
+              name="region"
+              value="berlin"
+              class="hidden peer"
+              checked
+            />
+            <label
+              for="berlin"
+              class="inline-flex items-center justify-between w-full px-4 py-2 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100"
+            >
+              <div class="block">
+                <div class="w-full text-lg font-semibold">Berlin</div>
+              </div>
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="allgaeu"
+              name="region"
+              value="allgaeu"
+              class="hidden peer"
+            />
+            <label
+              for="allgaeu"
+              class="inline-flex items-center justify-between w-full px-4 py-2 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100"
+            >
+              <div class="block">
+                <div class="w-full text-lg font-semibold">Allgäu</div>
+              </div>
+            </label>
+          </div>
+        </div>
 
         <!-- Toggle Switch -->
         <div class="flex items-center justify-end mb-6">
@@ -82,7 +121,7 @@
           </div>
           <div
             id="track-cards-container"
-            class="grid grid-cols-1 lg:grid-cols-2 gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6"
           >
             <!-- Track cards will be dynamically inserted here -->
           </div>
@@ -105,6 +144,7 @@
         // 1. Initialize the map and set its view
         const map = L.map("map").setView([52.52, 13.405], 9); // Initial view
         let gpxLayers = [];
+        let allRideData = [];
 
         // 2. Add OpenStreetMap tile layer
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -118,15 +158,45 @@
           "track-cards-container"
         );
         const mapToggle = document.getElementById("map-toggle");
+        const regionRadios = document.querySelectorAll('input[name="region"]');
 
-        // 4. Function to generate a random hex color
+        // 4. Function to generate a random hex color with good contrast
         function getRandomColor() {
-          const letters = "0123456789ABCDEF";
-          let color = "#";
-          for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
+          // Using HSL color space to control brightness and saturation
+          // Hue: 0-360 (any color)
+          // Saturation: 70-100% (vivid colors)
+          // Lightness: 30-60% (avoiding very dark or very bright colors)
+          const h = Math.random();
+          const s = 0.7 + Math.random() * 0.3;
+          const l = 0.3 + Math.random() * 0.3;
+
+          let r, g, b;
+
+          if (s === 0) {
+            r = g = b = l; // achromatic
+          } else {
+            const hue2rgb = (p, q, t) => {
+              if (t < 0) t += 1;
+              if (t > 1) t -= 1;
+              if (t < 1 / 6) return p + (q - p) * 6 * t;
+              if (t < 1 / 2) return q;
+              if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+              return p;
+            };
+
+            const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            const p = 2 * l - q;
+            r = hue2rgb(p, q, h + 1 / 3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1 / 3);
           }
-          return color;
+
+          const toHex = (x) => {
+            const hex = Math.round(x * 255).toString(16);
+            return hex.length === 1 ? "0" + hex : hex;
+          };
+
+          return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
         }
 
         // 5. Function to fit map bounds to all layers
@@ -216,27 +286,39 @@
           trackCardsContainer.insertAdjacentHTML("beforeend", cardHtml);
         }
 
-        // 9. Main function to initialize the application
-        async function initializeApp() {
+        // 9. Main function to load rides for a given region
+        async function loadRidesForRegion() {
+          // Clear previous state
+          trackCardsContainer.innerHTML = "";
+          gpxLayers.forEach((layer) => map.removeLayer(layer));
+          gpxLayers = [];
+          allRideData = [];
+          fileInfo.textContent = "Loading tracks...";
+
+          const selectedRegion = document.querySelector(
+            'input[name="region"]:checked'
+          ).value;
+          const jsonPath = `${selectedRegion}_rides.json`;
+
           let rides = [];
           try {
-            const response = await fetch("rides.json");
+            const response = await fetch(jsonPath);
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
             rides = await response.json();
           } catch (e) {
-            fileInfo.textContent = "Error loading rides.json";
-            console.error("Could not load rides.json", e);
+            fileInfo.textContent = `Error loading ${jsonPath}`;
+            console.error(`Could not load ${jsonPath}`, e);
             return;
           }
 
           if (rides.length === 0) {
-            fileInfo.textContent = "No tracks to display.";
+            fileInfo.textContent = "No tracks to display for this region.";
             return;
           }
 
-          // Step 1: Fetch all data required for tracks and cards
+          // Fetch all data required for tracks and cards
           const ridePromises = rides.map(async (rideData) => {
             const [gpxFile, trackName, komootUrl] = rideData;
             try {
@@ -264,14 +346,14 @@
             }
           });
 
-          const results = (await Promise.all(ridePromises)).filter(
+          allRideData = (await Promise.all(ridePromises)).filter(
             (r) => r !== null
           );
 
           const showMapsInitially = mapToggle.checked;
 
-          // Step 2: Create map layers and card elements, storing references
-          results.forEach((data) => {
+          // Create map layers and card elements, storing references
+          allRideData.forEach((data) => {
             data.layer = new L.GPX(data.gpxData, {
               async: true,
               marker_options: {
@@ -290,7 +372,7 @@
           });
 
           const highlight = (targetData) => {
-            results.forEach((d) => {
+            allRideData.forEach((d) => {
               if (d === targetData) {
                 d.layer.setStyle({ opacity: 1 });
                 d.layer.bringToFront();
@@ -303,14 +385,14 @@
           };
 
           const unhighlightAll = () => {
-            results.forEach((d) => {
+            allRideData.forEach((d) => {
               d.layer.setStyle({ opacity: 1 });
               d.card.classList.remove("scale-105", "shadow-xl");
             });
           };
 
-          // Step 3: Bind events and add layers to the map
-          results.forEach((data) => {
+          // Bind events and add layers to the map
+          allRideData.forEach((data) => {
             const { layer, card, trackName, komootUrl } = data;
 
             card.addEventListener("mouseenter", () => highlight(data));
@@ -331,19 +413,23 @@
               .addTo(map);
           });
 
-          // Step 4: Add toggle listener
-          mapToggle.addEventListener("change", function () {
-            const showMaps = this.checked;
-            results.forEach((data) => {
-              const imgElement = data.card.querySelector("img");
-              imgElement.src = showMaps ? data.mapUrl : data.photoUrl;
-            });
-          });
-
-          fileInfo.textContent = `Displaying ${results.length} of ${rides.length} tracks.`;
+          fileInfo.textContent = `Displaying ${allRideData.length} of ${rides.length} tracks.`;
         }
 
-        initializeApp();
+        // Add listeners
+        regionRadios.forEach((radio) =>
+          radio.addEventListener("change", loadRidesForRegion)
+        );
+        mapToggle.addEventListener("change", function () {
+          const showMaps = this.checked;
+          allRideData.forEach((data) => {
+            const imgElement = data.card.querySelector("img");
+            imgElement.src = showMaps ? data.mapUrl : data.photoUrl;
+          });
+        });
+
+        // Initial Load
+        loadRidesForRegion();
       });
     </script>
   </body>

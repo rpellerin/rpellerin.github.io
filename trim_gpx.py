@@ -10,11 +10,12 @@ from geopy.distance import geodesic
 
 def trim_gpx(input_file, output_file, start_trim_meters, end_trim_meters):
     """
-    Trims a specified distance from the start and end of a GPX track.
+    Trims a specified distance from the start and end of a GPX track
+    and removes all timestamp information from the file.
 
     Args:
         input_file (str): The path to the input GPX file.
-        output_file (str): The path to save the trimmed GPX file.
+        output_file (str): The path to save the processed GPX file.
         start_trim_meters (float): The distance to trim from the beginning.
         end_trim_meters (float): The distance to trim from the end.
     """
@@ -28,6 +29,28 @@ def trim_gpx(input_file, output_file, start_trim_meters, end_trim_meters):
         print(f"An error occurred while parsing the GPX file: {e}")
         sys.exit(1)
 
+    # --- Remove all timestamp information ---
+    gpx.time = None
+    if gpx.metadata_extensions:
+        # For simplicity, clear all metadata extensions.
+        # A more complex approach could parse and remove only time-related extensions.
+        gpx.metadata_extensions = []
+
+    for track in gpx.tracks:
+        track.extensions = []
+        for segment in track.segments:
+            segment.extensions = []
+            for point in segment.points:
+                point.time = None
+                point.extensions = []
+
+    for waypoint in gpx.waypoints:
+        waypoint.time = None
+
+    for route in gpx.routes:
+        for point in route.points:
+            point.time = None
+    # ----------------------------------------
 
     for track in gpx.tracks:
         for segment in track.segments:
@@ -71,7 +94,8 @@ def trim_gpx(input_file, output_file, start_trim_meters, end_trim_meters):
                 segment.points = points[start_index:end_index]
 
     with open(output_file, 'w') as gpx_file:
-        gpx_file.write(gpx.to_xml())
+        # Use 'gpx_1_1' to ensure compatibility and avoid issues with missing time
+        gpx_file.write(gpx.to_xml(version='1.1'))
 
 if __name__ == '__main__':
     # --- Check for command-line argument ---
@@ -87,10 +111,13 @@ if __name__ == '__main__':
     file_name_part, file_extension = os.path.splitext(input_gpx_file)
     output_gpx_file = f"{file_name_part}_trimmed{file_extension}"
 
-    # Generate a random integer between 500 and 1000
+    # Generate a random integer between 500 and 1000 meters for trimming
     trim_start_distance_meters = random.randint(500, 1000)
     trim_end_distance_meters = random.randint(500, 1000)
     # ---------------------
 
     trim_gpx(input_gpx_file, output_gpx_file, trim_start_distance_meters, trim_end_distance_meters)
     print(f"Successfully trimmed '{input_gpx_file}' and saved to '{output_gpx_file}'")
+    print(f" - Trimmed start by: {trim_start_distance_meters} meters")
+    print(f" - Trimmed end by:   {trim_end_distance_meters} meters")
+    print(f" - Removed all timestamps.")
