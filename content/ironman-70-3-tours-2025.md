@@ -80,7 +80,7 @@ We arrived at [the campsite](https://www.olela.fr/campings/camping-mignardiere) 
 
 ## Friday
 
-The next day, we went to the Expo in the morning to collect our bib numbers and the transition bags. The place was HUGE. It was located at the Exhibition center. We checked the merch out, got our bib numbers, took a bunch of photos, and went back home. The afternoon, we did a "small" recce of the bike route, 70kms out of the 87kms. The weather on that weekend was abnormaly hot and dry. 32 degrees Celsius. Damn hot. That recce ride did not go unnoticed.
+The next day, we went to the Expo in the morning to collect our bib numbers and the transition bags. The place was HUGE. It was located at the Exhibition center. We checked the merch out, got our bib numbers, took a bunch of photos, and went back home. The afternoon, full body shave! Afterwards, we did a "small" recce of the bike route, 70kms out of the 87kms. The weather on that weekend was abnormaly hot and dry. 32 degrees Celsius. Damn hot. That recce ride did not go unnoticed.
 
 <figure class="center">
 <img src="{static}/images/ironman-70-3-tours-2025/welcome-to-tours.jpg" alt="Photo of us four" />
