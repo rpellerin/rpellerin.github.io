@@ -145,6 +145,7 @@
         const map = L.map("map").setView([52.52, 13.405], 9); // Initial view
         let gpxLayers = [];
         let allRideData = [];
+        const rideDataCache = {}; // Cache for fetched ride data
 
         // 2. Add OpenStreetMap tile layer
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -288,24 +289,39 @@
 
         // 9. Main function to load rides for a given region
         async function loadRidesForRegion() {
-          // Clear previous state
+          // Clear previous state from UI
           trackCardsContainer.innerHTML = "";
           gpxLayers.forEach((layer) => map.removeLayer(layer));
           gpxLayers = [];
-          allRideData = [];
           fileInfo.textContent = "Loading tracks...";
 
           const selectedRegion = document.querySelector(
             'input[name="region"]:checked'
           ).value;
+
+          // Check cache first
+          if (rideDataCache[selectedRegion]) {
+            allRideData = rideDataCache[selectedRegion];
+            const showMaps = mapToggle.checked;
+            allRideData.forEach((data) => {
+              const card = renderTrackCard(data, showMaps);
+              data.card = card; // Re-assign the new card element
+              data.layer.addTo(map);
+              gpxLayers.push(data.layer);
+            });
+            bindEventsToData(allRideData);
+            fitMapToAllLayers();
+            fileInfo.textContent = `Displaying ${allRideData.length} cached tracks.`;
+            return;
+          }
+
           const jsonPath = `${selectedRegion}_rides.json`;
 
           let rides = [];
           try {
             const response = await fetch(jsonPath);
-            if (!response.ok) {
+            if (!response.ok)
               throw new Error(`HTTP error! status: ${response.status}`);
-            }
             rides = await response.json();
           } catch (e) {
             fileInfo.textContent = `Error loading ${jsonPath}`;
@@ -349,6 +365,7 @@
           allRideData = (await Promise.all(ridePromises)).filter(
             (r) => r !== null
           );
+          rideDataCache[selectedRegion] = allRideData; // Cache the processed data
 
           const showMapsInitially = mapToggle.checked;
 
@@ -371,8 +388,13 @@
             data.card = renderTrackCard(data, showMapsInitially);
           });
 
+          bindEventsToData(allRideData);
+          fileInfo.textContent = `Displaying ${allRideData.length} of ${rides.length} tracks.`;
+        }
+
+        function bindEventsToData(dataArray) {
           const highlight = (targetData) => {
-            allRideData.forEach((d) => {
+            dataArray.forEach((d) => {
               if (d === targetData) {
                 d.layer.setStyle({ opacity: 1 });
                 d.layer.bringToFront();
@@ -385,22 +407,19 @@
           };
 
           const unhighlightAll = () => {
-            allRideData.forEach((d) => {
+            dataArray.forEach((d) => {
               d.layer.setStyle({ opacity: 1 });
               d.card.classList.remove("scale-105", "shadow-xl");
             });
           };
 
-          // Bind events and add layers to the map
-          allRideData.forEach((data) => {
+          dataArray.forEach((data) => {
             const { layer, card, trackName, komootUrl } = data;
-
             card.addEventListener("mouseenter", () => highlight(data));
             card.addEventListener("mouseleave", unhighlightAll);
-
             layer
               .on("loaded", (e) => {
-                gpxLayers.push(layer);
+                if (!gpxLayers.includes(layer)) gpxLayers.push(layer);
                 e.target.bindTooltip(trackName, {
                   sticky: true,
                   className: "font-bold",
@@ -412,8 +431,6 @@
               .on("mouseout", unhighlightAll)
               .addTo(map);
           });
-
-          fileInfo.textContent = `Displaying ${allRideData.length} of ${rides.length} tracks.`;
         }
 
         // Add listeners
