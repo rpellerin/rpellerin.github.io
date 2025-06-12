@@ -210,43 +210,66 @@
           }
         }
 
-        // 6. Function to fetch Komoot image URLs
+        // 6. Function to fetch Komoot image URLs with proxy fallback
         async function fetchKomootImageUrls(komootUrl) {
-          const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(
-            komootUrl
-          )}`;
-          try {
-            const response = await fetch(proxyUrl);
-            if (!response.ok) throw new Error("Failed to fetch from proxy");
-            const text = await response.text();
-            const doc = new DOMParser().parseFromString(text, "text/html");
-            const metaTags = doc.querySelectorAll('meta[property="og:image"]');
+          const encodedUrl = encodeURIComponent(komootUrl);
+          const proxies = [
+            komootUrl,
+            `https://corsproxy.io/?${encodedUrl}`,
+            `https://api.codetabs.com/v1/proxy/?quest=${encodedUrl}`,
+            `https://thingproxy.freeboard.io/fetch/${komootUrl}`,
+            `https://cors.eu.org/${komootUrl}`,
+          ];
 
-            let photoUrl = "https://placehold.co/600x400/eee/ccc?text=No+Photo";
-            let mapUrl = "https://placehold.co/600x400/eee/ccc?text=No+Map";
+          for (const proxyUrl of proxies) {
+            try {
+              const response = await fetch(proxyUrl);
+              if (!response.ok) {
+                console.warn(
+                  `${proxyUrl} failed with status ${response.status}. Trying next...`
+                );
+                continue;
+              }
+              const text = await response.text();
+              const doc = new DOMParser().parseFromString(text, "text/html");
+              const metaTags = doc.querySelectorAll(
+                'meta[property="og:image"]'
+              );
 
-            if (metaTags.length > 0) {
-              photoUrl = metaTags[0].getAttribute("content"); // Default to the first image
+              // If the proxy returns content but no images, it's not useful. Try the next one.
+              if (metaTags.length === 0) {
+                console.warn(
+                  `${proxyUrl} returned content with no images. Trying next...`
+                );
+                continue;
+              }
+
+              let photoUrl = metaTags[0].getAttribute("content");
+              let mapUrl = "https://placehold.co/600x400/eee/ccc?text=No+Map";
+
+              const mapMeta = Array.from(metaTags).find((meta) =>
+                meta
+                  .getAttribute("content")
+                  .startsWith("https://tourpic-vector.maps.komoot.net")
+              );
+              if (mapMeta) {
+                mapUrl = mapMeta.getAttribute("content");
+              }
+              console.log(`Successfully fetched images using ${proxyUrl}`);
+              return { photoUrl, mapUrl };
+            } catch (error) {
+              console.warn(
+                `Proxy ${proxyUrl} threw an error. Trying next...`,
+                error
+              );
             }
-
-            const mapMeta = Array.from(metaTags).find((meta) =>
-              meta
-                .getAttribute("content")
-                .startsWith("https://tourpic-vector.maps.komoot.net")
-            );
-
-            if (mapMeta) {
-              mapUrl = mapMeta.getAttribute("content");
-            }
-
-            return { photoUrl, mapUrl };
-          } catch (error) {
-            console.error("Failed to fetch Komoot image for", komootUrl, error);
-            return {
-              photoUrl: "https://placehold.co/600x400/eee/ccc?text=Image+Error",
-              mapUrl: "https://placehold.co/600x400/eee/ccc?text=Map+Error",
-            };
           }
+
+          console.error("Failed to fetch Komoot image for", komootUrl);
+          return {
+            photoUrl: "https://placehold.co/600x400/eee/ccc?text=Image+Error",
+            mapUrl: "https://placehold.co/600x400/eee/ccc?text=Map+Error",
+          };
         }
 
         // 7. Card Rendering and Updating Functions
