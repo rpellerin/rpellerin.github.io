@@ -56,7 +56,9 @@
           <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
             A better Komoot
           </h1>
-          <p class="text-gray-600 mt-2">A collection of beautiful rides.</p>
+          <p class="text-gray-600 mt-2">
+            A collection of beautiful rides hand curated by Romain ❤️
+          </p>
         </header>
 
         <!-- Region Selector -->
@@ -98,27 +100,28 @@
           </div>
         </div>
 
-        <!-- Toggle Switch -->
-        <div class="flex items-center justify-end mb-6">
-          <label for="map-toggle" class="mr-3 text-sm font-medium text-gray-900"
-            >Show the maps</label
-          >
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" id="map-toggle" class="sr-only peer" />
-            <div
-              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-            ></div>
-          </label>
+        <!-- Toggle Switch and File Info -->
+        <div class="flex items-center justify-between mb-6">
+          <p id="file-info" class="text-sm text-gray-500 font-semibold">
+            Loading tracks...
+          </p>
+          <div class="flex items-center">
+            <label
+              for="map-toggle"
+              class="mr-3 text-sm font-medium text-gray-900"
+              >Show the maps</label
+            >
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="map-toggle" class="sr-only peer" />
+              <div
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
+              ></div>
+            </label>
+          </div>
         </div>
 
         <!-- Track Cards Section -->
         <div>
-          <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-bold text-gray-800">Available Rides</h2>
-            <p id="file-info" class="text-sm text-gray-500 font-semibold">
-              Loading tracks...
-            </p>
-          </div>
           <div
             id="track-cards-container"
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6"
@@ -143,9 +146,18 @@
       document.addEventListener("DOMContentLoaded", function () {
         // 1. Initialize the map and set its view
         const map = L.map("map").setView([52.52, 13.405], 9); // Initial view
+
+        // Used to store which layers to remove from the map, when switching regions.
+        // Also used to fit the map to the rides, so as to show them all on the map.
         let gpxLayers = [];
+
+        // Used to toggle between the ride photos and ride maps in the cards
         let currentlyDisplayedRides = [];
-        const rideDataCache = {}; // Cache for fetched ride data
+
+        let currentlyDisplayedRegion = "";
+
+        // Cache for fetched ride data
+        const rideDataCache = {};
 
         // 2. Add OpenStreetMap tile layer
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -272,30 +284,15 @@
         }
 
         // 7. Card Rendering and Updating Functions
-        // Updated to include a placeholder for distance
-        function renderInitialTrackCard(trackName, komootUrl, trackColor) {
-          const cardLink = document.createElement("a");
-          cardLink.href = komootUrl;
-          cardLink.target = "_blank";
-          cardLink.rel = "noopener noreferrer";
-          cardLink.className =
-            "block bg-white rounded-lg shadow-lg overflow-hidden transform group";
-
-          cardLink.innerHTML = `
-                <div class="image-container overflow-hidden">
-                    <div class="w-full h-40 bg-gray-200 animate-pulse"></div>
-                </div>
-                <div class="p-4 border-t-4" style="border-color: ${trackColor};">
-                    <h3 class="font-bold text-gray-800 text-base flex justify-between items-center">
-                        <span class="track-title truncate pr-2" style="flex-grow: 1; min-width: 0;">${trackName}</span>
-                        <span class="track-distance text-sm font-normal text-gray-600"></span>
-                    </h3>
-                </div>
-            `;
-          return cardLink;
-        }
-
-        function recreateCardFromCachedData(data, showMaps) {
+        /** * Creates a track card element. Can render a loading skeleton or a complete card.
+         * @param {object} data - The ride data object.
+         * @param {object} [options={}] - Options for rendering.
+         * @param {boolean} [options.isLoading=false] - If true, renders a skeleton loader.
+         * @param {boolean} [options.showMaps=false] - If true, shows the map image.
+         * @returns {HTMLElement} The created card link element.
+         */
+        function renderTrackCard(data, options = {}) {
+          const { isLoading = false, showMaps = false } = options;
           const {
             trackName,
             komootUrl,
@@ -304,26 +301,38 @@
             trackColor,
             distanceKm,
           } = data;
-          const imageUrl = showMaps ? mapUrl : photoUrl;
+
           const cardLink = document.createElement("a");
           cardLink.href = komootUrl;
           cardLink.target = "_blank";
           cardLink.rel = "noopener noreferrer";
-          cardLink.className =
-            "block bg-white rounded-lg shadow-lg overflow-hidden transform group hover:scale-105 transition-transform duration-300";
+
+          let imageContainerHTML = "";
+          if (isLoading) {
+            cardLink.className =
+              "block bg-white rounded-lg shadow-lg overflow-hidden transform group";
+            imageContainerHTML = `<div class="w-full h-40 bg-gray-200 animate-pulse"></div>`;
+          } else {
+            cardLink.className =
+              "block bg-white rounded-lg shadow-lg overflow-hidden transform group hover:scale-105 transition-transform duration-300";
+            const imageUrl = showMaps && mapUrl ? mapUrl : photoUrl;
+            imageContainerHTML = `<img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">`;
+          }
+
+          const distanceHTML = distanceKm ? `${distanceKm}&nbsp;km` : "";
 
           cardLink.innerHTML = `
-                <div class="image-container overflow-hidden">
-                    <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">
-                </div>
-                <div class="p-4 border-t-4" style="border-color: ${trackColor};">
-                    <h3 class="font-bold text-gray-800 text-base flex justify-between items-center">
-                        <span class="track-title truncate pr-2" style="flex-grow: 1; min-width: 0;">${trackName}</span>
-                        <span class="track-distance text-sm font-normal text-gray-600"></span>
-                    </h3>
-                </div>
-            `;
-          trackCardsContainer.appendChild(cardLink);
+               <div class="image-container overflow-hidden">
+                   ${imageContainerHTML}
+               </div>
+               <div class="p-4 border-t-4" style="border-color: ${trackColor};">
+                   <h3 class="font-bold text-gray-800 text-base flex justify-between items-center">
+                       <span class="track-title truncate pr-2" style="flex-grow: 1; min-width: 0;">${trackName}</span>
+                       <span class="track-distance text-sm font-normal text-gray-600">${distanceHTML}</span>
+                   </h3>
+               </div>
+           `;
+
           return cardLink;
         }
 
@@ -338,8 +347,8 @@
             "duration-300"
           );
           imageContainer.innerHTML = `
-                <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">
-            `;
+                 <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">
+             `;
         }
 
         // New function to update the card with distance
@@ -356,10 +365,10 @@
           const borderContainer = card.querySelector(".p-4");
 
           imageContainer.innerHTML = `
-                <div class="w-full h-40 bg-gray-200 flex items-center justify-center">
-                    <p class="text-red-500 font-semibold">Failed to load</p>
-                </div>
-            `;
+                 <div class="w-full h-40 bg-gray-200 flex items-center justify-center">
+                     <p class="text-red-500 font-semibold">Failed to load</p>
+                 </div>
+             `;
           if (titleSpan) {
             // Check if titleSpan exists
             titleSpan.classList.remove("text-gray-800");
@@ -375,11 +384,12 @@
           // General cleanup
           gpxLayers.forEach((layer) => map.removeLayer(layer));
           gpxLayers = [];
-          currentlyDisplayedRides = [];
 
           const selectedRegion = document.querySelector(
             'input[name="region"]:checked'
           ).value;
+          console.log(`Clicked on region ${selectedRegion}`);
+          currentlyDisplayedRegion = selectedRegion;
 
           // Check cache first
           if (rideDataCache[selectedRegion]) {
@@ -389,12 +399,18 @@
             fileInfo.textContent = `Displaying ${currentlyDisplayedRides.length} cached tracks.`;
 
             currentlyDisplayedRides.forEach((data) => {
-              // Re-create card from cached data, including distance if available
-              const card = recreateCardFromCachedData(data, mapToggle.checked);
+              // Re-create card from cached data using the new unified function
+              const card = renderTrackCard(data, {
+                showMaps: mapToggle.checked,
+              });
+              trackCardsContainer.appendChild(card);
               data.card = card; // re-assign DOM element
-              data.layer.addTo(map);
-              gpxLayers.push(data.layer);
-              bindIndividualEvents(data);
+
+              bindIndividualEventsAndAddToMap(
+                data,
+                currentlyDisplayedRides,
+                selectedRegion
+              );
             });
 
             fitMapToAllLayers();
@@ -427,20 +443,37 @@
 
           fileInfo.textContent = `Loading ${rides.length} tracks...`;
 
-          // Process rides concurrently using Promise.all (reverted change)
+          // We make a copy because if another region is selected while this one is loading,
+          // we don't want to add loaded rides to currentlyDisplayedRides.
+          const ridesForRegion = currentlyDisplayedRides;
+
+          // Process rides concurrently using Promise.all
           const dataPromises = rides.map((rideData) =>
-            downloadGpxAndImageAndRender(rideData)
+            downloadGpxAndImageAndRender(
+              rideData,
+              ridesForRegion,
+              selectedRegion
+            )
           );
 
-          const resolvedData = await Promise.all(dataPromises);
-          currentlyDisplayedRides = resolvedData.filter(Boolean); // Update currentlyDisplayedRides after all promises resolve
-          rideDataCache[selectedRegion] = currentlyDisplayedRides; // Cache all processed data
+          const resolvedData = (await Promise.all(dataPromises)).filter(
+            Boolean
+          );
+          rideDataCache[selectedRegion] = resolvedData; // Cache all processed data
           console.log("Region data cached:", selectedRegion);
-          fileInfo.textContent = `Displaying ${currentlyDisplayedRides.length} of ${rides.length} tracks.`;
+          if (selectedRegion === currentlyDisplayedRegion) {
+            currentlyDisplayedRides = resolvedData;
+            // The region might have changed if the user clicked an another region while one was loading
+            fileInfo.textContent = `Displaying ${resolvedData.length} of ${rides.length} tracks.`;
+          }
         }
 
         // 9. Process a single ride (fetch, render, update)
-        async function downloadGpxAndImageAndRender(rideData) {
+        async function downloadGpxAndImageAndRender(
+          rideData,
+          ridesArray,
+          selectedRegion
+        ) {
           const [gpxFile, trackName, komootUrl] = rideData;
 
           const data = {
@@ -456,12 +489,8 @@
           };
 
           try {
-            // Render initial card immediately
-            data.card = renderInitialTrackCard(
-              data.trackName,
-              data.komootUrl,
-              data.trackColor
-            );
+            // Render initial skeleton card immediately using the new unified function
+            data.card = renderTrackCard(data, { isLoading: true });
             trackCardsContainer.appendChild(data.card);
 
             // Fetch GPX data
@@ -486,16 +515,18 @@
               },
             });
 
-            // Add to global array and bind events
-            // Note: We don't push to currentlyDisplayedRides here, it's done after successful processing in loadRidesForRegion
-            bindIndividualEvents(data);
+            // We add the ride data to the array as soon as `data.card` and `data.layer` are available,
+            // so that the highlight feature when hovering the card or trace works as soon as possible.
+            ridesArray.push(data);
+
+            bindIndividualEventsAndAddToMap(data, ridesArray, selectedRegion);
 
             // Fetch image data in the background
             const imageUrls = await fetchKomootImageUrls(komootUrl);
             data.photoUrl = imageUrls.photoUrl;
             data.mapUrl = imageUrls.mapUrl;
 
-            // Update the card with the image (and implicitly, the distance when loaded)
+            // Update the card with the image
             updateCardWithImage(data, mapToggle.checked);
 
             return data; // Return the fully populated data object for caching
@@ -508,12 +539,16 @@
           }
         }
 
-        // 10. Function to bind events to a single card and map layer
-        function bindIndividualEvents(data) {
+        // 10. Function to bind events to a single card and map layer, and add the layer to the map
+        function bindIndividualEventsAndAddToMap(
+          data,
+          allRides,
+          selectedRegion
+        ) {
           const { layer, card, trackName, komootUrl } = data;
 
           const highlight = () => {
-            currentlyDisplayedRides.forEach((d) => {
+            allRides.forEach((d) => {
               if (d.layer) {
                 // Ensure layer exists before styling
                 if (d === data) {
@@ -528,7 +563,7 @@
           };
 
           const unhighlightAll = () => {
-            currentlyDisplayedRides.forEach((d) => {
+            allRides.forEach((d) => {
               if (d.layer) {
                 // Ensure layer exists before styling
                 d.layer.setStyle({ opacity: 1 });
@@ -540,15 +575,15 @@
           card.addEventListener("mouseenter", highlight);
           card.addEventListener("mouseleave", unhighlightAll);
 
-          layer
+          const readyLayer = layer
             .on("loaded", (e) => {
               // Calculate and display distance
               const distanceMeters = e.target.get_distance();
-              const distanceKm = (distanceMeters / 1000).toFixed(1);
+              const distanceKm = Math.round(distanceMeters / 1000);
               data.distanceKm = distanceKm; // Store in data object
               updateCardWithDistance(card, distanceKm); // Update the card's display
 
-              if (!gpxLayers.includes(layer)) gpxLayers.push(layer);
+              // if (!gpxLayers.includes(layer)) gpxLayers.push(layer);
               e.target.bindTooltip(trackName, {
                 sticky: true,
                 className: "font-bold",
@@ -557,8 +592,14 @@
             })
             .on("click", () => window.open(komootUrl, "_blank"))
             .on("mouseover", highlight)
-            .on("mouseout", unhighlightAll)
-            .addTo(map);
+            .on("mouseout", unhighlightAll);
+
+          // The selected region might have changed since we started loading this ride.
+          // We need to check whether it is still the same before showing it on the map.
+          if (currentlyDisplayedRegion === selectedRegion) {
+            gpxLayers.push(layer);
+            readyLayer.addTo(map);
+          }
         }
 
         // 11. Add listeners for UI controls
