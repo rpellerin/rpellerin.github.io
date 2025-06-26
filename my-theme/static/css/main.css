@@ -250,16 +250,17 @@ iframe {
 }
 
 .flexbox-row {
-  /* blog nav bar and blog menu in index */
+  /* blog nav bar and blog menu in index + all other pages */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.flexbox-row > * {
+/* blog menu in index only */
+nav.flexbox-row:not(:first-child) > * {
   flex: 1 1 auto;
-} /* won't touch the left and right borders */
+} /* so that the links won't touch the left and right borders, because links are growing beyond their content size */
 
 /***************************/
 /* IDs or specific or mess */
@@ -312,12 +313,6 @@ header.article-header h1 {
   header.article-header h1 {
     font-size: 3.5rem;
   }
-}
-
-@media screen and (min-width: 580px) {
-  nav.flexbox-row > * {
-    flex: 0 1 auto;
-  } /* will touch the borders */
 }
 
 #back-line {

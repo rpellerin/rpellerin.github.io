@@ -1,6 +1,7 @@
 <nav class="flexbox-row">
-    <a class="center" href="{{ SITEURL }}/">Homepage</a>
-    <span class="center">|| Blog:</span>
+    {% if output_file != 'index.html' %}
+        <a class="center" href="{{ SITEURL }}/">Homepage</a>
+    {% endif %}
     <a class="center" href="{{ SITEURL }}/archives.html">All articles</a>
     <a class="center" href="{{ SITEURL }}/categories.html">Categories</a>
     <a class="center" href="{{ SITEURL }}/tags.html">Tags</a>

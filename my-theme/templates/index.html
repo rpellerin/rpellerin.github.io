@@ -59,13 +59,7 @@
     <section>
     <h2 class="right-underlined">BLOG</h2>
 
-    <div class="flexbox-row">
-        <a class="center" href="{{ SITEURL }}/archives.html">All articles</a>
-        <a class="center" href="{{ SITEURL }}/categories.html">Categories</a>
-        <a class="center" href="{{ SITEURL }}/tags.html">Tags</a>
-        <a class="center" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS feed</a>
-        <a class="center" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom feed</a>
-    </div>
+    {% include 'nav-blog.html' %}
 
     {% if articles %}
         <h3>Latest articles</h3>
@@ -74,20 +68,6 @@
             <li><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a> {% if not HIDE_DATE %}<time class="small grey italic" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>{% endif %}<br /><p class="grey italic indent">{{ article.content|striptags|truncate(350) }}</p></li>
             {% endfor %}
         </ol>
-        <h3>Highlighted articles</h3>
-        <div id="article-list">
-            <ul>
-                {% for category, articles in categories %}
-                    {% if (category == 'What\'s bad about') or (category == 'Travels')%}
-                        <li><strong><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></strong>:
-                        {% for art in articles %}
-                            <a href="{{ SITEURL }}/{{ art.url}}" rel="bookmark" title="Permalink to {{ art.title|striptags }}">{{ art.title }}</a>{% if not loop.last %},{% endif %}
-                        {% endfor %}
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
     {% else %}
         No articles found.
     {% endif %}

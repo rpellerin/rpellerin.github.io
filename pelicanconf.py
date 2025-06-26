@@ -55,7 +55,6 @@ STATIC_PATHS = ['extra', 'images', 'videos', 'guitar']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/privacy-policy.html': {'path': 'privacy-policy.html'},
-    'extra/redirect-to-archives.html': {'path': 'posts/index.html'},
     'extra/CNAME': {'path': 'CNAME'}
 }
 
