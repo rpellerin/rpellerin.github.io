@@ -6,7 +6,7 @@
 <header>
     {% include 'nav-blog.html' %}
 </header>
-<h1>{{ h1 }}</h1>
+<h1>{{ h1 }}{% if articles and not no_article_count %} ({{ articles|count }}){% endif %}</h1>
 {% if articles %}
     {% block period %}
         {% if output_file == 'archives.html' %}
