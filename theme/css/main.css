@@ -119,9 +119,11 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 20px 0;
   line-height: 1; /* = font-size */
+  font-family: "Playfair Display", 'Times New Roman', Times, serif;
 }
 
 h1 {

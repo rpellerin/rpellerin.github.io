@@ -7,9 +7,12 @@
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
         <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
-
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
         <script>
         function _dntEnabled(dnt, userAgent) {
             'use strict';
@@ -47,7 +50,11 @@
             return dntStatus === 'Enabled' ? true : false;
         }
         if (!_dntEnabled()) {
-            // Analytics here
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
         }
         </script>
 
@@ -75,7 +82,7 @@
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav></header>
-<h1>Articles tagged 'infrastructure'</h1>
+<h1>Articles tagged 'infrastructure' (1)</h1>
 
 
     <section>
