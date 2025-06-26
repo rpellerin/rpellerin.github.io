@@ -49,7 +49,7 @@
             }
             return dntStatus === 'Enabled' ? true : false;
         }
-        if (!_dntEnabled()) {
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
