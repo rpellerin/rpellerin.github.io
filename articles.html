@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Romain Pellerin's Blog: computer science, travels, etc." />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="All articles - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Romain Pellerin's Blog: computer science, travels, etc." />
+
+        <title>All articles - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<header>
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav></header>
+<h1>All articles (176)</h1>
+            <p>
+            Browse articles by year: <a href="https://romainpellerin.eu/articles/2015/index.html">2015</a> (18), <a href="https://romainpellerin.eu/articles/2016/index.html">2016</a> (19), <a href="https://romainpellerin.eu/articles/2017/index.html">2017</a> (32), <a href="https://romainpellerin.eu/articles/2018/index.html">2018</a> (18), <a href="https://romainpellerin.eu/articles/2019/index.html">2019</a> (16), <a href="https://romainpellerin.eu/articles/2020/index.html">2020</a> (7), <a href="https://romainpellerin.eu/articles/2021/index.html">2021</a> (10), <a href="https://romainpellerin.eu/articles/2022/index.html">2022</a> (9), <a href="https://romainpellerin.eu/articles/2023/index.html">2023</a> (12), <a href="https://romainpellerin.eu/articles/2024/index.html">2024</a> (24), <a href="https://romainpellerin.eu/articles/2025/index.html">2025</a> (11)            </p>
+            <br />
+
+
+    <section>
+        <ol>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/ironman-70-3-tours-2025.html" rel="bookmark" title="Permalink to IRONMAN 70.3 Tours 2025">IRONMAN 70.3 Tours 2025</a>
+<time class="grey italic small" datetime="2025-06-11T00:36:00+02:00">Wed 11 June 2025</time>                        <p class="grey italic indent">I just crossed the finish line of my first ever IRONMAN 70.3, what a race!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html" rel="bookmark" title="Permalink to Tuto Davinci Resolve: Dynamic Short on Running">Tuto Davinci Resolve: Dynamic Short on Running</a>
+<time class="grey italic small" datetime="2025-05-24T23:20:00+02:00">Sat 24 May 2025</time>                        <p class="grey italic indent">How to create a nice short video about a running event using Davinci Resolve</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/comment-changer-une-guidoline.html" rel="bookmark" title="Permalink to Comment Changer Une Guidoline">Comment Changer Une Guidoline</a>
+<time class="grey italic small" datetime="2025-05-16T11:00:00+02:00">Fri 16 May 2025</time>                        <p class="grey italic indent">Une vidéo qui explique bien comment faire</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-headset-of-carbon-bikes.html" rel="bookmark" title="Permalink to The Headset of Carbon Bikes">The Headset of Carbon Bikes</a>
+<time class="grey italic small" datetime="2025-05-05T23:30:00+02:00">Mon 05 May 2025</time>                        <p class="grey italic indent">Some tips for your carbon steerer tube</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/marathon-de-paris-2025-race-report.html" rel="bookmark" title="Permalink to Marathon de Paris 2025: Race Report">Marathon de Paris 2025: Race Report</a>
+<time class="grey italic small" datetime="2025-04-23T00:30:00+02:00">Wed 23 April 2025</time>                        <p class="grey italic indent">What a great race! Here's my story.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/rental-cars.html" rel="bookmark" title="Permalink to Rental Cars">Rental Cars</a>
+<time class="grey italic small" datetime="2025-04-09T09:20:00+02:00">Wed 09 April 2025</time>                        <p class="grey italic indent">Some tips about rental cars, how to get deals, things to know</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/healthcare-insurances-in-germany.html" rel="bookmark" title="Permalink to Healthcare Insurances In Germany">Healthcare Insurances In Germany</a>
+<time class="grey italic small" datetime="2025-03-27T00:00:00+01:00">Thu 27 March 2025</time>                        <p class="grey italic indent">Some tips and useful things to know about health insurance companies in Germany</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/last-three-weeks-leading-to-the-paris-marathon.html" rel="bookmark" title="Permalink to Last Three Weeks Leading To The Paris Marathon">Last Three Weeks Leading To The Paris Marathon</a>
+<time class="grey italic small" datetime="2025-03-26T13:00:00+01:00">Wed 26 March 2025</time>                        <p class="grey italic indent">How I feel, what I'm doing</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/tips-for-canyon-speedmax-bikes.html" rel="bookmark" title="Permalink to Tips for Canyon Speedmax Bikes">Tips for Canyon Speedmax Bikes</a>
+<time class="grey italic small" datetime="2025-03-24T23:00:00+01:00">Mon 24 March 2025</time>                        <p class="grey italic indent">Some tips for these triathlon bikes</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/training-for-triathlons.html" rel="bookmark" title="Permalink to Training For Triathlons">Training For Triathlons</a>
+<time class="grey italic small" datetime="2025-03-01T21:33:00+01:00">Sat 01 March 2025</time>                        <p class="grey italic indent">Everything one needs to set up a home trainer</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/dt-swiss-wheels-buying-guide.html" rel="bookmark" title="Permalink to DT Swiss wheels: buying guide">DT Swiss wheels: buying guide</a>
+<time class="grey italic small" datetime="2025-03-01T01:14:00+01:00">Sat 01 March 2025</time>                        <p class="grey italic indent">Everything I know about DT Swiss wheels in 2025</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/my-recipe-to-survive-winter-in-berlin.html" rel="bookmark" title="Permalink to My Recipe To Survive Winter In Berlin">My Recipe To Survive Winter In Berlin</a>
+<time class="grey italic small" datetime="2024-12-30T18:00:00+01:00">Mon 30 December 2024</time>                        <p class="grey italic indent">How to make the most out of winter in Berlin</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-way-i-work-2024-edition.html" rel="bookmark" title="Permalink to The Way I Work: 2024 edition">The Way I Work: 2024 edition</a>
+<time class="grey italic small" datetime="2024-11-28T23:20:00+01:00">Thu 28 November 2024</time>                        <p class="grey italic indent">An update to an article from 2019</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/on-accepting-change-at-work.html" rel="bookmark" title="Permalink to On Accepting Change At Work">On Accepting Change At Work</a>
+<time class="grey italic small" datetime="2024-11-14T23:00:00+01:00">Thu 14 November 2024</time>                        <p class="grey italic indent">Change is hard to accept sometimes. My views on the topic.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/mon-premier-marathon-recit-d-une-course-parfaite.html" rel="bookmark" title="Permalink to Mon premier marathon : récit d'une course parfaite">Mon premier marathon : récit d'une course parfaite</a>
+<time class="grey italic small" datetime="2024-11-01T23:00:00+01:00">Fri 01 November 2024</time>                        <p class="grey italic indent">Tout sur le déroulé de mon premier marathon</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/barefoot-shoes.html" rel="bookmark" title="Permalink to Barefoot Shoes">Barefoot Shoes</a>
+<time class="grey italic small" datetime="2024-10-18T00:00:00+02:00">Fri 18 October 2024</time>                        <p class="grey italic indent">A list of barefoot shoes to consider</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/calf-muscle-tear.html" rel="bookmark" title="Permalink to Calf Muscle Tear">Calf Muscle Tear</a>
+<time class="grey italic small" datetime="2024-10-17T19:37:00+02:00">Thu 17 October 2024</time>                        <p class="grey italic indent">Something new, yay!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html" rel="bookmark" title="Permalink to Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.">Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</a>
+<time class="grey italic small" datetime="2024-09-18T20:00:00+02:00">Wed 18 September 2024</time>                        <p class="grey italic indent">I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/10-kms-et-entorse-de-la-cheville.html" rel="bookmark" title="Permalink to 10 kms et Entorse de la cheville">10 kms et Entorse de la cheville</a>
+<time class="grey italic small" datetime="2024-09-17T19:00:00+02:00">Tue 17 September 2024</time>                        <p class="grey italic indent">Allez encore une autre blessure... que j'aurais pu éviter bien sûr</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/running-calculators.html" rel="bookmark" title="Permalink to Running Calculators">Running Calculators</a>
+<time class="grey italic small" datetime="2024-08-24T13:00:00+02:00">Sat 24 August 2024</time>                        <p class="grey italic indent">A bunch of calculators for runners</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/canada.html" rel="bookmark" title="Permalink to Canada">Canada</a>
+<time class="grey italic small" datetime="2024-08-11T13:30:00+02:00">Sun 11 August 2024</time>                        <p class="grey italic indent">Recommendations about Canada and places to visit</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/recit-d-une-course-inachevee.html" rel="bookmark" title="Permalink to Récit d'une course inachevée">Récit d'une course inachevée</a>
+<time class="grey italic small" datetime="2024-08-05T18:00:00+02:00">Mon 05 August 2024</time>                        <p class="grey italic indent">Une course de vélo qui finit en DNF</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/running-building-my-own-training-plan.html" rel="bookmark" title="Permalink to Running: Building My Own Training Plan">Running: Building My Own Training Plan</a>
+<time class="grey italic small" datetime="2024-08-03T16:00:00+02:00">Sat 03 August 2024</time>                        <p class="grey italic indent">Building my own plan is the best way to learn</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/esims-for-international-travel.html" rel="bookmark" title="Permalink to eSIMs for international travel">eSIMs for international travel</a>
+<time class="grey italic small" datetime="2024-07-30T17:30:00+02:00">Tue 30 July 2024</time>                        <p class="grey italic indent">Traveling abroad? Need the Internet?</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/airtags-for-android.html" rel="bookmark" title="Permalink to Airtags for Android">Airtags for Android</a>
+<time class="grey italic small" datetime="2024-07-28T18:00:00+02:00">Sun 28 July 2024</time>                        <p class="grey italic indent">All about the equivalent of Apple's airtags for Android</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/kotlin.html" rel="bookmark" title="Permalink to Kotlin">Kotlin</a>
+<time class="grey italic small" datetime="2024-07-26T15:10:00+02:00">Fri 26 July 2024</time>                        <p class="grey italic indent">Cheatsheet for beginners - such as myself!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/periostite-2024.html" rel="bookmark" title="Permalink to Périostite 2024">Périostite 2024</a>
+<time class="grey italic small" datetime="2024-06-24T18:00:00+02:00">Mon 24 June 2024</time>                        <p class="grey italic indent">Après l'édition 2021 sur la jambe gauche, voici l'édition 2024 sur la jambe droite</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/croatia.html" rel="bookmark" title="Permalink to Croatia">Croatia</a>
+<time class="grey italic small" datetime="2024-06-07T02:00:00+02:00">Fri 07 June 2024</time>                        <p class="grey italic indent">Travel tips for Croatia</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/triathlon-checklist.html" rel="bookmark" title="Permalink to Triathlon: Checklist">Triathlon: Checklist</a>
+<time class="grey italic small" datetime="2024-06-02T20:00:00+02:00">Sun 02 June 2024</time>                        <p class="grey italic indent">My checklist of things to take for a triathlon</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/traveling-outside-europe-as-a-resident-in-germany.html" rel="bookmark" title="Permalink to Traveling Outside Europe as a Resident in Germany">Traveling Outside Europe as a Resident in Germany</a>
+<time class="grey italic small" datetime="2024-05-29T17:00:00+02:00">Wed 29 May 2024</time>                        <p class="grey italic indent">Things to know and do before traveling outside Europe</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/spring-2024.html" rel="bookmark" title="Permalink to Spring 2024">Spring 2024</a>
+<time class="grey italic small" datetime="2024-05-10T19:00:00+02:00">Fri 10 May 2024</time>                        <p class="grey italic indent">Epic tales from my running races</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/lessons-learned-apres-4-ans-de-running.html" rel="bookmark" title="Permalink to Lessons learned après 4 ans de running">Lessons learned après 4 ans de running</a>
+<time class="grey italic small" datetime="2024-04-15T01:51:00+02:00">Mon 15 April 2024</time>                        <p class="grey italic indent">Résumé des 4 dernières années, de "j'aime pas courir" à "sign me up for a marathon"</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/la-maison-individuelle.html" rel="bookmark" title="Permalink to La Maison Individuelle">La Maison Individuelle</a>
+<time class="grey italic small" datetime="2024-02-28T12:00:00+01:00">Wed 28 February 2024</time>                        <p class="grey italic indent">Des vidéos sur la maison individuelle</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/ziele-fuer-2024.html" rel="bookmark" title="Permalink to Ziele für 2024">Ziele für 2024</a>
+<time class="grey italic small" datetime="2024-02-18T15:00:00+01:00">Sun 18 February 2024</time>                        <p class="grey italic indent">Dieses Jahr ist mein Jahr</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-ultimate-sports-video.html" rel="bookmark" title="Permalink to The Ultimate Sports Video">The Ultimate Sports Video</a>
+<time class="grey italic small" datetime="2024-02-14T23:30:00+01:00">Wed 14 February 2024</time>                        <p class="grey italic indent">My tips to make the best sports video</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/life-hacks-a-collection-of-links.html" rel="bookmark" title="Permalink to Life Hacks: a collection of links">Life Hacks: a collection of links</a>
+<time class="grey italic small" datetime="2023-12-20T15:46:00+01:00">Wed 20 December 2023</time>                        <p class="grey italic indent">Some links on life hacks</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/chargers.html" rel="bookmark" title="Permalink to Chargers">Chargers</a>
+<time class="grey italic small" datetime="2023-11-17T20:00:00+01:00">Fri 17 November 2023</time>                        <p class="grey italic indent">Everything you ever wanted to know about chargers</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/running-and-pronation.html" rel="bookmark" title="Permalink to Running and Pronation">Running and Pronation</a>
+<time class="grey italic small" datetime="2023-10-01T02:00:00+02:00">Sun 01 October 2023</time>                        <p class="grey italic indent">Find out about your pronation and get the right shoes</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/objectif-75-kg-et-toucher-le-sol.html" rel="bookmark" title="Permalink to Objectif 75 kg et toucher le sol">Objectif 75 kg et toucher le sol</a>
+<time class="grey italic small" datetime="2023-08-27T18:00:00+02:00">Sun 27 August 2023</time>                        <p class="grey italic indent">Nouveaux objectifs pour cette fin d'année 2023</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/cycling-and-being-vegetarian.html" rel="bookmark" title="Permalink to Cycling and Being Vegetarian">Cycling and Being Vegetarian</a>
+<time class="grey italic small" datetime="2023-08-06T20:00:00+02:00">Sun 06 August 2023</time>                        <p class="grey italic indent">Because nutrition is complex, here's an article about basics and a couple of recipes</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="bookmark" title="Permalink to Creating GPX overlay videos on Linux">Creating GPX overlay videos on Linux</a>
+<time class="grey italic small" datetime="2023-07-26T17:30:00+02:00">Wed 26 July 2023</time>                        <p class="grey italic indent">A tutorial about adding GPX data on top of videos (speed, heart rate, etc)</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/common-problems-with-bikes.html" rel="bookmark" title="Permalink to Common Problems With Bikes">Common Problems With Bikes</a>
+<time class="grey italic small" datetime="2023-06-21T15:30:00+02:00">Wed 21 June 2023</time>                        <p class="grey italic indent">Common problems and usual solutions</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/twitter-we-are-breaking-up.html" rel="bookmark" title="Permalink to Twitter, we are breaking up">Twitter, we are breaking up</a>
+<time class="grey italic small" datetime="2023-03-31T01:30:00+02:00">Fri 31 March 2023</time>                        <p class="grey italic indent">After 11.5 years spent on Twitter, it's time to move on</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/motorizing-an-ikea-skarsta-standing-desk.html" rel="bookmark" title="Permalink to Motorizing an IKEA Skarsta Standing Desk">Motorizing an IKEA Skarsta Standing Desk</a>
+<time class="grey italic small" datetime="2023-03-14T23:00:00+01:00">Tue 14 March 2023</time>                        <p class="grey italic indent">Tutorial about how I motorized my IKEA Starska standing desk</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/raspberry-pi-noir-camera-module-and-ir-leds.html" rel="bookmark" title="Permalink to Raspberry Pi NoIR camera module and IR LEDs">Raspberry Pi NoIR camera module and IR LEDs</a>
+<time class="grey italic small" datetime="2023-03-13T18:30:00+01:00">Mon 13 March 2023</time>                        <p class="grey italic indent">Seeing in the dark with the Raspberry Pi camera modules and some infrared LEDs</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/suvs.html" rel="bookmark" title="Permalink to SUVs">SUVs</a>
+<time class="grey italic small" datetime="2023-02-22T15:30:00+01:00">Wed 22 February 2023</time>                        <p class="grey italic indent">Facts on SUVs</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/france-vs-germany.html" rel="bookmark" title="Permalink to France vs Germany">France vs Germany</a>
+<time class="grey italic small" datetime="2023-02-01T12:00:00+01:00">Wed 01 February 2023</time>                        <p class="grey italic indent">What each country does better than the other</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/comment-poser-du-carrelage-sur-un-sol-en-pvc-vinyl.html" rel="bookmark" title="Permalink to Comment poser du carrelage sur un sol en PVC (Vinyl) ?">Comment poser du carrelage sur un sol en PVC (Vinyl) ?</a>
+<time class="grey italic small" datetime="2022-12-18T23:54:00+01:00">Sun 18 December 2022</time>                        <p class="grey italic indent">Une vidéo tuto sur la pose de carrelage, réalisée lors de la rénovation de ma cuisine</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-resize-an-encrypted-swap-partition-lvm.html" rel="bookmark" title="Permalink to How to resize an encrypted SWAP partition (LVM)">How to resize an encrypted SWAP partition (LVM)</a>
+<time class="grey italic small" datetime="2022-07-29T19:00:00+02:00">Fri 29 July 2022</time>                        <p class="grey italic indent">A few commands to resize a SWAP partition</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/docker.html" rel="bookmark" title="Permalink to Docker">Docker</a>
+<time class="grey italic small" datetime="2022-07-05T12:30:00+02:00">Tue 05 July 2022</time>                        <p class="grey italic indent">My cheatsheet for Docker</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/ftp-vo2-max-map-max-hr-what-are-those.html" rel="bookmark" title="Permalink to FTP, VO2 max, MAP, max HR: what are those?">FTP, VO2 max, MAP, max HR: what are those?</a>
+<time class="grey italic small" datetime="2022-07-03T23:20:00+02:00">Sun 03 July 2022</time>                        <p class="grey italic indent">These are the questions every cyclist asked themself once</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-from-berlin-to-brocken-over-a-weekend.html" rel="bookmark" title="Permalink to Living in Germany: From Berlin to Brocken Over a Weekend">Living in Germany: From Berlin to Brocken Over a Weekend</a>
+<time class="grey italic small" datetime="2022-05-08T23:15:00+02:00">Sun 08 May 2022</time>                        <p class="grey italic indent">Tips for cyclists willing to go to Brocken in the Harz from Berlin</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/plantar-fasciitis.html" rel="bookmark" title="Permalink to Plantar Fasciitis">Plantar Fasciitis</a>
+<time class="grey italic small" datetime="2022-04-26T00:30:00+02:00">Tue 26 April 2022</time>                        <p class="grey italic indent">Yay, another injury after too much runnning. Let's see how I heal this time...</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-how-to-buy-an-apartment-in-berlin.html" rel="bookmark" title="Permalink to Living in Germany: How to buy an apartment in Berlin">Living in Germany: How to buy an apartment in Berlin</a>
+<time class="grey italic small" datetime="2022-04-24T19:00:00+02:00">Sun 24 April 2022</time>                        <p class="grey italic indent">Some tips and tricks about buying real estate in Berlin</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/documentaries-to-watch.html" rel="bookmark" title="Permalink to Documentaries To Watch">Documentaries To Watch</a>
+<time class="grey italic small" datetime="2022-03-12T13:40:00+01:00">Sat 12 March 2022</time>                        <p class="grey italic indent">Educational videos on various topics</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/gas-stoves-suck.html" rel="bookmark" title="Permalink to Gas Stoves suck">Gas Stoves suck</a>
+<time class="grey italic small" datetime="2022-01-14T12:00:00+01:00">Fri 14 January 2022</time>                        <p class="grey italic indent">Fuck "Cooking with Gas"</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/keys-to-efficient-i18n.html" rel="bookmark" title="Permalink to Keys to efficient i18n">Keys to efficient i18n</a>
+<time class="grey italic small" datetime="2021-12-16T12:00:00+01:00">Thu 16 December 2021</time>                        <p class="grey italic indent">2021 marked a big milestone for the Doctolib engineering teams. Our 8-year-old codebase and products finally switched from French to…</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/things-to-do-in-prague.html" rel="bookmark" title="Permalink to Things To Do In Prague">Things To Do In Prague</a>
+<time class="grey italic small" datetime="2021-11-10T23:45:00+01:00">Wed 10 November 2021</time>                        <p class="grey italic indent">Ideas for a weekend in Prague</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/climate-change.html" rel="bookmark" title="Permalink to Climate Change">Climate Change</a>
+<time class="grey italic small" datetime="2021-11-07T20:00:00+01:00">Sun 07 November 2021</time>                        <p class="grey italic indent">Resources on climate change</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-things-to-do-in-berlin.html" rel="bookmark" title="Permalink to Living in Germany: Things To Do In Berlin">Living in Germany: Things To Do In Berlin</a>
+<time class="grey italic small" datetime="2021-09-24T22:30:00+02:00">Fri 24 September 2021</time>                        <p class="grey italic indent">The ultimate travel guide for Berlin</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/est-ce-que-je-vais-me-faire-vacciner.html" rel="bookmark" title="Permalink to Est-ce que je vais me faire vacciner ?">Est-ce que je vais me faire vacciner ?</a>
+<time class="grey italic small" datetime="2021-07-19T12:30:00+02:00">Mon 19 July 2021</time>                        <p class="grey italic indent">Une vidéo sur pourquoi il n'y a aucune raison de ne pas se faire vacciner</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/shin-splints.html" rel="bookmark" title="Permalink to Shin Splints">Shin Splints</a>
+<time class="grey italic small" datetime="2021-06-13T21:30:00+02:00">Sun 13 June 2021</time>                        <p class="grey italic indent">I got that... and healed. Here is the truth about my healing... haha!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/waving-goodbye-to-internet-explorer-11-in-2021.html" rel="bookmark" title="Permalink to Waving Goodbye to Internet Explorer 11 in 2021">Waving Goodbye to Internet Explorer 11 in 2021</a>
+<time class="grey italic small" datetime="2021-06-01T23:30:00+02:00">Tue 01 June 2021</time>                        <p class="grey italic indent">Two years ago, we published “Supporting Internet Explorer 11 in 2019”. This year, we are bidding farewell to it. But hold on a minute! What happened between then and now? Let me tell you the story of a difficult break up between Doctolib and Internet Explorer…</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-fahrraeder-und-deutsche-bahn.html" rel="bookmark" title="Permalink to Living in Germany: Fahrräder und Deutsche Bahn">Living in Germany: Fahrräder und Deutsche Bahn</a>
+<time class="grey italic small" datetime="2021-05-05T23:30:00+02:00">Wed 05 May 2021</time>                        <p class="grey italic indent">Things to know if you intend to carry your dismantled bike on a Deutsche Bahn train</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/cycling-events.html" rel="bookmark" title="Permalink to Cycling Events">Cycling Events</a>
+<time class="grey italic small" datetime="2021-05-02T23:30:00+02:00">Sun 02 May 2021</time>                        <p class="grey italic indent">Some cycling events I know of, and would like to participate in</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/raspberry-pi-and-ssd.html" rel="bookmark" title="Permalink to Raspberry Pi and SSD">Raspberry Pi and SSD</a>
+<time class="grey italic small" datetime="2021-01-10T17:50:00+01:00">Sun 10 January 2021</time>                        <p class="grey italic indent">Resources on Raspberry Pis and SSDs</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/building-a-cheap-weather-station.html" rel="bookmark" title="Permalink to Building A Cheap Weather Station">Building A Cheap Weather Station</a>
+<time class="grey italic small" datetime="2020-12-13T23:50:00+01:00">Sun 13 December 2020</time>                        <p class="grey italic indent">How to build a cheap weather station with a Raspberry Pi and the BME280 module</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/le-bon-sens.html" rel="bookmark" title="Permalink to Le Bon Sens">Le Bon Sens</a>
+<time class="grey italic small" datetime="2020-09-21T13:00:00+02:00">Mon 21 September 2020</time>                        <p class="grey italic indent">Ce que je pense du bon sens</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-check-the-integrity-of-a-backup-folder.html" rel="bookmark" title="Permalink to How To Check The Integrity Of A Backup Folder">How To Check The Integrity Of A Backup Folder</a>
+<time class="grey italic small" datetime="2020-08-27T23:50:00+02:00">Thu 27 August 2020</time>                        <p class="grey italic indent">Checking the md5sum of files copied across two folders</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/playing-with-a-raspberry-pi-camera.html" rel="bookmark" title="Permalink to Playing With A Raspberry Pi Camera">Playing With A Raspberry Pi Camera</a>
+<time class="grey italic small" datetime="2020-06-01T02:50:00+02:00">Mon 01 June 2020</time>                        <p class="grey italic indent">What's possible with a Raspberry Pi camera</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/bikes-and-cycling-gear.html" rel="bookmark" title="Permalink to Bikes And Cycling Gear">Bikes And Cycling Gear</a>
+<time class="grey italic small" datetime="2020-04-20T01:30:00+02:00">Mon 20 April 2020</time>                        <p class="grey italic indent">A list of bikes and cycling gear</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-a-doctolibers-journey-to-berlin.html" rel="bookmark" title="Permalink to Living in Germany: A Doctoliber's Journey To Berlin">Living in Germany: A Doctoliber's Journey To Berlin</a>
+<time class="grey italic small" datetime="2020-02-13T17:00:00+01:00">Thu 13 February 2020</time>                        <p class="grey italic indent">About my professional relocation</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-germany-moving-to-berlin.html" rel="bookmark" title="Permalink to Living in Germany: Moving To Berlin">Living in Germany: Moving To Berlin</a>
+<time class="grey italic small" datetime="2020-01-12T18:00:00+01:00">Sun 12 January 2020</time>                        <p class="grey italic indent">Everything one has to go through when relocating to Berlin -- alternatve title: All the shit I went trough</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/comment-repeindre-un-velo.html" rel="bookmark" title="Permalink to Comment repeindre un vélo ?">Comment repeindre un vélo ?</a>
+<time class="grey italic small" datetime="2019-12-29T17:00:00+01:00">Sun 29 December 2019</time>                        <p class="grey italic indent">Conseils pour repeindre son vélo efficacement</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/italy.html" rel="bookmark" title="Permalink to Italy">Italy</a>
+<time class="grey italic small" datetime="2019-10-13T22:00:00+02:00">Sun 13 October 2019</time>                        <p class="grey italic indent">What I know about Italy</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-paris-nuit-blanche-parisienne-2019.html" rel="bookmark" title="Permalink to Living In Paris: Nuit Blanche Parisienne 2019">Living In Paris: Nuit Blanche Parisienne 2019</a>
+<time class="grey italic small" datetime="2019-10-06T22:00:00+02:00">Sun 06 October 2019</time>                        <p class="grey italic indent">Un peu de vélo sur le périphérique parisien à l'occasion de la nuit blanche 2019</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-paris-la-bible-du-velotafeur.html" rel="bookmark" title="Permalink to Living In Paris: La Bible Du Vélotafeur">Living In Paris: La Bible Du Vélotafeur</a>
+<time class="grey italic small" datetime="2019-09-03T23:30:00+02:00">Tue 03 September 2019</time>                        <p class="grey italic indent">Vélo + taf = vélotaf <3</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/i-was-born-in-2100.html" rel="bookmark" title="Permalink to I Was Born In 2100">I Was Born In 2100</a>
+<time class="grey italic small" datetime="2019-08-05T23:50:00+02:00">Mon 05 August 2019</time>                        <p class="grey italic indent">A Short Essay</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/supporting-internet-explorer-11-in-2019.html" rel="bookmark" title="Permalink to Supporting Internet Explorer 11 in 2019">Supporting Internet Explorer 11 in 2019</a>
+<time class="grey italic small" datetime="2019-07-15T14:30:00+02:00">Mon 15 July 2019</time>                        <p class="grey italic indent">Following the recent publication of A Conspiracy To Kill IE6, we at Doctolib thought we’d in turn unveil our plan to stop supporting not only Internet Explorer 11 but also other outdated desktop…</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/workout.html" rel="bookmark" title="Permalink to Workout">Workout</a>
+<time class="grey italic small" datetime="2019-07-06T16:50:00+02:00">Sat 06 July 2019</time>                        <p class="grey italic indent">Videos</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/from-a-second-hand-regular-black-bike-to-a-fully-customized-singlespeed-bike.html" rel="bookmark" title="Permalink to From a second hand regular black bike to a fully customized singlespeed bike">From a second hand regular black bike to a fully customized singlespeed bike</a>
+<time class="grey italic small" datetime="2019-06-24T23:50:00+02:00">Mon 24 June 2019</time>                        <p class="grey italic indent">Customizing my bike</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/music.html" rel="bookmark" title="Permalink to Music">Music</a>
+<time class="grey italic small" datetime="2019-06-18T22:40:00+02:00">Tue 18 June 2019</time>                        <p class="grey italic indent">Stuff about music</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/a-good-manager.html" rel="bookmark" title="Permalink to A Good Manager">A Good Manager</a>
+<time class="grey italic small" datetime="2019-05-14T14:30:00+02:00">Tue 14 May 2019</time>                        <p class="grey italic indent">Who I think a good manager should be</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/regaining-control-over-doctolib-com-frontend.html" rel="bookmark" title="Permalink to Regaining control over Doctolib.com frontend">Regaining control over Doctolib.com frontend</a>
+<time class="grey italic small" datetime="2019-05-14T14:30:00+02:00">Tue 14 May 2019</time>                        <p class="grey italic indent">Doctolib has been growing rapidly over the past 5 years, as has our code base. We have been able to deliver numerous features in a timely manner, but oftentimes at the expense of code legibility and…</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/spain.html" rel="bookmark" title="Permalink to Spain">Spain</a>
+<time class="grey italic small" datetime="2019-05-08T23:50:00+02:00">Wed 08 May 2019</time>                        <p class="grey italic indent">What I know about Spain</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/hope.html" rel="bookmark" title="Permalink to Hope">Hope</a>
+<time class="grey italic small" datetime="2019-04-17T12:00:00+02:00">Wed 17 April 2019</time>                        <p class="grey italic indent">Sparkles of hope</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/pollution-urbaine.html" rel="bookmark" title="Permalink to Pollution Urbaine">Pollution Urbaine</a>
+<time class="grey italic small" datetime="2019-03-12T23:17:00+01:00">Tue 12 March 2019</time>                        <p class="grey italic indent">Divers éléments de vérité sur l'état de l'air que nous respirons, notamment à Paris</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-paris-riding-a-bike-in-paris.html" rel="bookmark" title="Permalink to Living In Paris: Riding A Bike In Paris">Living In Paris: Riding A Bike In Paris</a>
+<time class="grey italic small" datetime="2019-03-07T22:50:00+01:00">Thu 07 March 2019</time>                        <p class="grey italic indent">I just bought a bike. Here's to a whole new life!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-way-i-work.html" rel="bookmark" title="Permalink to The Way I Work">The Way I Work</a>
+<time class="grey italic small" datetime="2019-02-17T23:20:00+01:00">Sun 17 February 2019</time>                        <p class="grey italic indent">My daily routine to focus and remain productive</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/things-to-do-in-paris.html" rel="bookmark" title="Permalink to Things To Do In Paris">Things To Do In Paris</a>
+<time class="grey italic small" datetime="2018-12-11T23:20:00+01:00">Tue 11 December 2018</time>                        <p class="grey italic indent">The list of things to do in Paris I usually share with friends</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-find-differences-between-two-directories-on-linux.html" rel="bookmark" title="Permalink to How To Find Differences Between Two Directories On Linux">How To Find Differences Between Two Directories On Linux</a>
+<time class="grey italic small" datetime="2018-12-10T23:20:00+01:00">Mon 10 December 2018</time>                        <p class="grey italic indent">Different ways to diff two folders</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/germany.html" rel="bookmark" title="Permalink to Germany">Germany</a>
+<time class="grey italic small" datetime="2018-11-12T23:50:00+01:00">Mon 12 November 2018</time>                        <p class="grey italic indent">What I know about Germany</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/portugal.html" rel="bookmark" title="Permalink to Portugal">Portugal</a>
+<time class="grey italic small" datetime="2018-11-07T23:50:00+01:00">Wed 07 November 2018</time>                        <p class="grey italic indent">My advice about Portugal</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/damn-world.html" rel="bookmark" title="Permalink to Damn World">Damn World</a>
+<time class="grey italic small" datetime="2018-08-01T23:20:00+02:00">Wed 01 August 2018</time>                        <p class="grey italic indent">Everything wrong with this world</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/on-storing-passwords-in-a-safe-way.html" rel="bookmark" title="Permalink to On Storing Passwords In A Safe Way">On Storing Passwords In A Safe Way</a>
+<time class="grey italic small" datetime="2018-07-31T00:20:00+02:00">Tue 31 July 2018</time>                        <p class="grey italic indent">My journey towards increased security</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/video-editing-on-linux.html" rel="bookmark" title="Permalink to Video Editing on Linux">Video Editing on Linux</a>
+<time class="grey italic small" datetime="2018-05-13T17:30:00+02:00">Sun 13 May 2018</time>                        <p class="grey italic indent">How to edit videos on Linux with Kdenlive</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/finland.html" rel="bookmark" title="Permalink to Finland">Finland</a>
+<time class="grey italic small" datetime="2018-04-26T23:40:00+02:00">Thu 26 April 2018</time>                        <p class="grey italic indent">Finland, land of lakes and forests</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/domain-names.html" rel="bookmark" title="Permalink to Domain Names">Domain Names</a>
+<time class="grey italic small" datetime="2018-03-23T20:00:00+01:00">Fri 23 March 2018</time>                        <p class="grey italic indent">Where to buy domain names</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-netherlands.html" rel="bookmark" title="Permalink to The Netherlands">The Netherlands</a>
+<time class="grey italic small" datetime="2018-03-21T23:20:00+01:00">Wed 21 March 2018</time>                        <p class="grey italic indent">What's so great about the Netherlands</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/ruby-and-ruby-on-rails-from-scratch.html" rel="bookmark" title="Permalink to Ruby and Ruby on Rails from scratch">Ruby and Ruby on Rails from scratch</a>
+<time class="grey italic small" datetime="2018-03-16T23:50:00+01:00">Fri 16 March 2018</time>                        <p class="grey italic indent">How to learn Ruby and Rails</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/ireland.html" rel="bookmark" title="Permalink to Ireland">Ireland</a>
+<time class="grey italic small" datetime="2018-03-02T23:50:00+01:00">Fri 02 March 2018</time>                        <p class="grey italic indent">My advice about Ireland</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/belgium.html" rel="bookmark" title="Permalink to Belgium">Belgium</a>
+<time class="grey italic small" datetime="2018-03-02T23:00:00+01:00">Fri 02 March 2018</time>                        <p class="grey italic indent">What I know about Belgium and my recommendations</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-happy-life.html" rel="bookmark" title="Permalink to The Happy Life">The Happy Life</a>
+<time class="grey italic small" datetime="2018-01-26T20:30:00+01:00">Fri 26 January 2018</time>                        <p class="grey italic indent">How to live a happy life</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/scary-future.html" rel="bookmark" title="Permalink to Scary Future">Scary Future</a>
+<time class="grey italic small" datetime="2018-01-24T20:50:00+01:00">Wed 24 January 2018</time>                        <p class="grey italic indent">Technologies that make the future scary</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/remote-working.html" rel="bookmark" title="Permalink to Remote Working">Remote Working</a>
+<time class="grey italic small" datetime="2018-01-22T22:20:00+01:00">Mon 22 January 2018</time>                        <p class="grey italic indent">Resources on remote working</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/hiring-interviews.html" rel="bookmark" title="Permalink to Hiring Interviews">Hiring Interviews</a>
+<time class="grey italic small" datetime="2018-01-03T22:50:00+01:00">Wed 03 January 2018</time>                        <p class="grey italic indent">What to ask during a hiring interview</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/disabling-voicemail.html" rel="bookmark" title="Permalink to Disabling Voicemail">Disabling Voicemail</a>
+<time class="grey italic small" datetime="2018-01-03T22:00:00+01:00">Wed 03 January 2018</time>                        <p class="grey italic indent">How to disable your voicemail</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/open-offices.html" rel="bookmark" title="Permalink to Open Offices">Open Offices</a>
+<time class="grey italic small" datetime="2017-11-04T13:40:00+01:00">Sat 04 November 2017</time>                        <p class="grey italic indent">Open offices are a pain in the ass</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/slack.html" rel="bookmark" title="Permalink to Slack">Slack</a>
+<time class="grey italic small" datetime="2017-11-04T13:40:00+01:00">Sat 04 November 2017</time>                        <p class="grey italic indent">Slack is evil</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/a-sedentary-life.html" rel="bookmark" title="Permalink to A Sedentary Life">A Sedentary Life</a>
+<time class="grey italic small" datetime="2017-10-04T23:40:00+02:00">Wed 04 October 2017</time>                        <p class="grey italic indent">Sitting is the new smoking</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-paris-air-purifying-houseplants.html" rel="bookmark" title="Permalink to Living In Paris: Air Purifying Houseplants">Living In Paris: Air Purifying Houseplants</a>
+<time class="grey italic small" datetime="2017-09-28T12:50:00+02:00">Thu 28 September 2017</time>                        <p class="grey italic indent">How to purify air using houseplants... or how to pretend you breath purified air.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/millennials.html" rel="bookmark" title="Permalink to Millennials">Millennials</a>
+<time class="grey italic small" datetime="2017-09-02T23:50:00+02:00">Sat 02 September 2017</time>                        <p class="grey italic indent">An inspirational video about millennials</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-paris-looking-for-an-apartment-in-paris.html" rel="bookmark" title="Permalink to Living In Paris: Looking For An Apartment In Paris">Living In Paris: Looking For An Apartment In Paris</a>
+<time class="grey italic small" datetime="2017-09-02T22:50:00+02:00">Sat 02 September 2017</time>                        <p class="grey italic indent">My advice for apartment seekers in Paris</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/casting-to-chromecast-on-linux.html" rel="bookmark" title="Permalink to Casting To Chromecast On Linux">Casting To Chromecast On Linux</a>
+<time class="grey italic small" datetime="2017-08-18T15:50:00+02:00">Fri 18 August 2017</time>                        <p class="grey italic indent">How to cast media files to Chromecast from Linux</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-reinstall-deleted-packages-on-linux.html" rel="bookmark" title="Permalink to How To Reinstall Deleted Packages On Linux">How To Reinstall Deleted Packages On Linux</a>
+<time class="grey italic small" datetime="2017-08-18T15:30:00+02:00">Fri 18 August 2017</time>                        <p class="grey italic indent">A few commands to repair and reinstall deleted packages on Linux</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/emotions.html" rel="bookmark" title="Permalink to Emotions">Emotions</a>
+<time class="grey italic small" datetime="2017-08-18T00:50:00+02:00">Fri 18 August 2017</time>                        <p class="grey italic indent">Weird emotions</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/fasting.html" rel="bookmark" title="Permalink to Fasting">Fasting</a>
+<time class="grey italic small" datetime="2017-06-26T21:50:00+02:00">Mon 26 June 2017</time>                        <p class="grey italic indent">Why fasting is good for you</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/a-web-project-in-2017.html" rel="bookmark" title="Permalink to A Web Project in 2017">A Web Project in 2017</a>
+<time class="grey italic small" datetime="2017-05-10T21:50:00+02:00">Wed 10 May 2017</time>                        <p class="grey italic indent">Random stuff about a project I will probably never carry out</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/managing-ones-time.html" rel="bookmark" title="Permalink to Managing One's Time">Managing One's Time</a>
+<time class="grey italic small" datetime="2017-05-03T20:50:00+02:00">Wed 03 May 2017</time>                        <p class="grey italic indent">6 laws about time</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-repair-a-laptop-charger.html" rel="bookmark" title="Permalink to How To Repair A Laptop Charger">How To Repair A Laptop Charger</a>
+<time class="grey italic small" datetime="2017-05-02T21:50:00+02:00">Tue 02 May 2017</time>                        <p class="grey italic indent">How I replaced my defective laptop charger</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/open-source.html" rel="bookmark" title="Permalink to Open Source">Open Source</a>
+<time class="grey italic small" datetime="2017-03-07T21:50:00+01:00">Tue 07 March 2017</time>                        <p class="grey italic indent">Resources for open source projects</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-the-usa-visa-insurance-ssn-and-taxes.html" rel="bookmark" title="Permalink to Living In The USA: Visa, Insurance, SSN, and Taxes">Living In The USA: Visa, Insurance, SSN, and Taxes</a>
+<time class="grey italic small" datetime="2017-02-19T01:50:00+01:00">Sun 19 February 2017</time>                        <p class="grey italic indent">Everything one needs to know before applying for a visa in the US</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-the-usa-skiing.html" rel="bookmark" title="Permalink to Living In The USA: Skiing">Living In The USA: Skiing</a>
+<time class="grey italic small" datetime="2017-02-15T20:50:00+01:00">Wed 15 February 2017</time>                        <p class="grey italic indent">Two days spent skiing in the US!</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-welcome-an-intern.html" rel="bookmark" title="Permalink to How To Welcome An Intern">How To Welcome An Intern</a>
+<time class="grey italic small" datetime="2017-02-10T23:50:00+01:00">Fri 10 February 2017</time>                        <p class="grey italic indent">Internships are great opportunities to learn. Let's make both parties - the intern and the company - happy by applying a few rules of thumb.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/favorite-movies.html" rel="bookmark" title="Permalink to Favorite Movies">Favorite Movies</a>
+<time class="grey italic small" datetime="2017-02-10T00:50:00+01:00">Fri 10 February 2017</time>                        <p class="grey italic indent">My all time favorite movies. Or some of them.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/my-travel-list.html" rel="bookmark" title="Permalink to My Travel List">My Travel List</a>
+<time class="grey italic small" datetime="2017-01-31T16:55:00+01:00">Tue 31 January 2017</time>                        <p class="grey italic indent">Places I want to visit.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/living-in-the-usa.html" rel="bookmark" title="Permalink to Living In The USA">Living In The USA</a>
+<time class="grey italic small" datetime="2017-01-30T16:55:00+01:00">Mon 30 January 2017</time>                        <p class="grey italic indent">My life in the USA since I moved there in January 2017.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/books.html" rel="bookmark" title="Permalink to Books">Books</a>
+<time class="grey italic small" datetime="2017-01-26T16:50:00+01:00">Thu 26 January 2017</time>                        <p class="grey italic indent">Books I have read</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/meat-and-dairy-products.html" rel="bookmark" title="Permalink to Meat and Dairy Products">Meat and Dairy Products</a>
+<time class="grey italic small" datetime="2017-01-19T01:50:00+01:00">Thu 19 January 2017</time>                        <p class="grey italic indent">A bunch of links in favor of lesser comsumption of meat and dairy products.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/vim-tricks.html" rel="bookmark" title="Permalink to Vim Tricks">Vim Tricks</a>
+<time class="grey italic small" datetime="2017-01-18T22:50:00+01:00">Wed 18 January 2017</time>                        <p class="grey italic indent">A few tricks for Vim that I have learned over all my years of using this incredible tool.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/tv-sucks.html" rel="bookmark" title="Permalink to TV Sucks">TV Sucks</a>
+<time class="grey italic small" datetime="2017-01-16T02:50:00+01:00">Mon 16 January 2017</time>                        <p class="grey italic indent">What I think of television</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/social-media-are-not-worth-your-time.html" rel="bookmark" title="Permalink to Social Media Are Not Worth Your Time">Social Media Are Not Worth Your Time</a>
+<time class="grey italic small" datetime="2017-01-11T19:00:00+01:00">Wed 11 January 2017</time>                        <p class="grey italic indent">What I think about most social media</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/hong-kong.html" rel="bookmark" title="Permalink to Hong-Kong">Hong-Kong</a>
+<time class="grey italic small" datetime="2017-01-10T15:48:00+01:00">Tue 10 January 2017</time>                        <p class="grey italic indent">My advice about traveling to Hong-Kong</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/england.html" rel="bookmark" title="Permalink to England">England</a>
+<time class="grey italic small" datetime="2017-01-10T01:01:00+01:00">Tue 10 January 2017</time>                        <p class="grey italic indent">What to do and see in England</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-usa.html" rel="bookmark" title="Permalink to The USA">The USA</a>
+<time class="grey italic small" datetime="2017-01-10T01:00:00+01:00">Tue 10 January 2017</time>                        <p class="grey italic indent">My advice about the USA</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/political-notes.html" rel="bookmark" title="Permalink to Political Notes">Political Notes</a>
+<time class="grey italic small" datetime="2017-01-10T00:50:00+01:00">Tue 10 January 2017</time>                        <p class="grey italic indent">Thoughts about politics</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/airlines.html" rel="bookmark" title="Permalink to Airlines">Airlines</a>
+<time class="grey italic small" datetime="2017-01-05T12:50:00+01:00">Thu 05 January 2017</time>                        <p class="grey italic indent">Recommendations and advice for travelers</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/architectures.html" rel="bookmark" title="Permalink to Architectures">Architectures</a>
+<time class="grey italic small" datetime="2017-01-05T11:00:00+01:00">Thu 05 January 2017</time>                        <p class="grey italic indent">A bunch of resources about architectures</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/japan.html" rel="bookmark" title="Permalink to Japan">Japan</a>
+<time class="grey italic small" datetime="2017-01-04T01:00:00+01:00">Wed 04 January 2017</time>                        <p class="grey italic indent">My trip to Japan</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/travels-tips-and-tricks.html" rel="bookmark" title="Permalink to Travels: tips and tricks">Travels: tips and tricks</a>
+<time class="grey italic small" datetime="2016-12-26T23:35:00+01:00">Mon 26 December 2016</time>                        <p class="grey italic indent">Recommendations and advice for travelers</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/my-rss-subscriptions.html" rel="bookmark" title="Permalink to My RSS Subscriptions">My RSS Subscriptions</a>
+<time class="grey italic small" datetime="2016-12-18T23:00:00+01:00">Sun 18 December 2016</time>                        <p class="grey italic indent">The RSS feeds I subscribed to.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-modify-pdf-files.html" rel="bookmark" title="Permalink to How To Modify PDF Files">How To Modify PDF Files</a>
+<time class="grey italic small" datetime="2016-12-10T00:30:00+01:00">Sat 10 December 2016</time>                        <p class="grey italic indent">On to extract/edit/merge pages from one or several PDF files</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/google-independence.html" rel="bookmark" title="Permalink to Google Independence">Google Independence</a>
+<time class="grey italic small" datetime="2016-12-05T03:00:00+01:00">Mon 05 December 2016</time>                        <p class="grey italic indent">Resources to be Google-independent</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/fixing-my-life.html" rel="bookmark" title="Permalink to Fixing My Life">Fixing My Life</a>
+<time class="grey italic small" datetime="2016-11-05T19:20:00+01:00">Sat 05 November 2016</time>                        <p class="grey italic indent">How I fixed my life</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/my-dream-laptop.html" rel="bookmark" title="Permalink to My Dream Laptop">My Dream Laptop</a>
+<time class="grey italic small" datetime="2016-11-04T01:50:00+01:00">Fri 04 November 2016</time>                        <p class="grey italic indent">The specs of my dream laptop</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/using-vim-with-ssh.html" rel="bookmark" title="Permalink to Using Vim with SSH">Using Vim with SSH</a>
+<time class="grey italic small" datetime="2016-10-19T03:35:00+02:00">Wed 19 October 2016</time>                        <p class="grey italic indent">How to edit and compile files on a remote server</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/south-korea.html" rel="bookmark" title="Permalink to South Korea">South Korea</a>
+<time class="grey italic small" datetime="2016-09-14T00:35:00+02:00">Wed 14 September 2016</time>                        <p class="grey italic indent">My exchange program in South Korea</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/raspberry-pi-the-ultimate-guide.html" rel="bookmark" title="Permalink to Raspberry Pi: The Ultimate Guide">Raspberry Pi: The Ultimate Guide</a>
+<time class="grey italic small" datetime="2016-07-10T05:11:00+02:00">Sun 10 July 2016</time>                        <p class="grey italic indent">A complete tutorial about how to create a home server using a Raspberry Pi</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/migrating-from-xubuntu-to-debian.html" rel="bookmark" title="Permalink to Migrating From Xubuntu To Debian">Migrating From Xubuntu To Debian</a>
+<time class="grey italic small" datetime="2016-05-21T02:00:00+02:00">Sat 21 May 2016</time>                        <p class="grey italic indent">How to install Debian 8</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/copy-pasting-in-tmux-and-vim.html" rel="bookmark" title="Permalink to Copy Pasting In Tmux And Vim">Copy Pasting In Tmux And Vim</a>
+<time class="grey italic small" datetime="2016-04-06T16:30:00+02:00">Wed 06 April 2016</time>                        <p class="grey italic indent">How to copy and paste with Tmux and Vim</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/tips-for-ffmpeg.html" rel="bookmark" title="Permalink to Tips For FFMPEG">Tips For FFMPEG</a>
+<time class="grey italic small" datetime="2016-02-21T21:30:00+01:00">Sun 21 February 2016</time>                        <p class="grey italic indent">A few tips with FFMPEG</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/fonts-typefaces-and-the-history-of-utf-8.html" rel="bookmark" title="Permalink to Fonts, Typefaces And The History Of UTF-8">Fonts, Typefaces And The History Of UTF-8</a>
+<time class="grey italic small" datetime="2016-02-04T19:00:00+01:00">Thu 04 February 2016</time>                        <p class="grey italic indent">Everything about character encodings, fonts and typefaces</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/yes-privacy-matters.html" rel="bookmark" title="Permalink to Yes, Privacy Matters">Yes, Privacy Matters</a>
+<time class="grey italic small" datetime="2016-02-04T01:40:00+01:00">Thu 04 February 2016</time>                        <p class="grey italic indent">Regarding privacy, get the right tools and build a powerful computer, with a Linux-based OS</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/mastering-gnu-linux.html" rel="bookmark" title="Permalink to Mastering GNU/Linux">Mastering GNU/Linux</a>
+<time class="grey italic small" datetime="2016-02-02T00:50:00+01:00">Tue 02 February 2016</time>                        <p class="grey italic indent">Everything you have ever wanted to know about GNU/Linux</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-art-of-writing.html" rel="bookmark" title="Permalink to The Art Of Writing">The Art Of Writing</a>
+<time class="grey italic small" datetime="2016-01-27T18:15:00+01:00">Wed 27 January 2016</time>                        <p class="grey italic indent">How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/learning-a-foreign-language.html" rel="bookmark" title="Permalink to Learning A Foreign Language">Learning A Foreign Language</a>
+<time class="grey italic small" datetime="2016-01-21T17:20:00+01:00">Thu 21 January 2016</time>                        <p class="grey italic indent">My process I went through to learn a foreign language, English. And some tips.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/hacking.html" rel="bookmark" title="Permalink to Hacking">Hacking</a>
+<time class="grey italic small" datetime="2016-01-18T23:00:00+01:00">Mon 18 January 2016</time>                        <p class="grey italic indent">A handful of useful commands about hacking</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/react.html" rel="bookmark" title="Permalink to React">React</a>
+<time class="grey italic small" datetime="2016-01-08T01:00:00+01:00">Fri 08 January 2016</time>                        <p class="grey italic indent">A quick introduction to React.js</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/carrying-out-a-web-project.html" rel="bookmark" title="Permalink to Carrying Out A Web Project">Carrying Out A Web Project</a>
+<time class="grey italic small" datetime="2015-12-03T00:40:00+01:00">Thu 03 December 2015</time>                        <p class="grey italic indent">Resources for web projects</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/embracing-java.html" rel="bookmark" title="Permalink to Embracing Java">Embracing Java</a>
+<time class="grey italic small" datetime="2015-12-03T00:35:00+01:00">Thu 03 December 2015</time>                        <p class="grey italic indent">Java is cool! Here are some useful resources.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/developing-for-android.html" rel="bookmark" title="Permalink to Developing For Android">Developing For Android</a>
+<time class="grey italic small" datetime="2015-12-02T16:30:00+01:00">Wed 02 December 2015</time>                        <p class="grey italic indent">Resources for Android development</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/machine-learning-and-ai.html" rel="bookmark" title="Permalink to Machine Learning And AI">Machine Learning And AI</a>
+<time class="grey italic small" datetime="2015-11-28T13:14:00+01:00">Sat 28 November 2015</time>                        <p class="grey italic indent">Resources about machine learning and AI</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/android-ios-what-alternatives.html" rel="bookmark" title="Permalink to Android, iOS: What Alternatives?">Android, iOS: What Alternatives?</a>
+<time class="grey italic small" datetime="2015-11-26T15:00:00+01:00">Thu 26 November 2015</time>                        <p class="grey italic indent">What alternatives do we have to Android and iOS? How to install Firefox OS and Ubuntu for devices.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/resources-for-databases.html" rel="bookmark" title="Permalink to Resources For Databases">Resources For Databases</a>
+<time class="grey italic small" datetime="2015-10-29T11:30:00+01:00">Thu 29 October 2015</time>                        <p class="grey italic indent">Useful links when working with databases</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/introduction-to-functional-programming.html" rel="bookmark" title="Permalink to Introduction To Functional Programming">Introduction To Functional Programming</a>
+<time class="grey italic small" datetime="2015-10-21T23:30:00+02:00">Wed 21 October 2015</time>                        <p class="grey italic indent">What is functional programming, some resources and how to start painlessly</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/javascript.html" rel="bookmark" title="Permalink to JavaScript">JavaScript</a>
+<time class="grey italic small" datetime="2015-10-21T23:00:00+02:00">Wed 21 October 2015</time>                        <p class="grey italic indent">Why Javascript is the new hotness</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/documentation.html" rel="bookmark" title="Permalink to Documentation">Documentation</a>
+<time class="grey italic small" datetime="2015-09-25T12:00:00+02:00">Fri 25 September 2015</time>                        <p class="grey italic indent">Resources related to documentation</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/designing-an-efficient-rest-api.html" rel="bookmark" title="Permalink to Designing An Efficient REST API">Designing An Efficient REST API</a>
+<time class="grey italic small" datetime="2015-09-24T18:00:00+02:00">Thu 24 September 2015</time>                        <p class="grey italic indent">How to write beautiful and efficient REST APIs</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/continuous-integration.html" rel="bookmark" title="Permalink to Continuous Integration">Continuous Integration</a>
+<time class="grey italic small" datetime="2015-09-18T11:29:00+02:00">Fri 18 September 2015</time>                        <p class="grey italic indent">Why you should embrace continuous integration and how</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/understanding-the-memory.html" rel="bookmark" title="Permalink to Understanding The Memory">Understanding The Memory</a>
+<time class="grey italic small" datetime="2015-06-26T01:11:00+02:00">Fri 26 June 2015</time>                        <p class="grey italic indent">Understanding how memory works</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-to-give-a-good-presentation.html" rel="bookmark" title="Permalink to How To Give A Good Presentation">How To Give A Good Presentation</a>
+<time class="grey italic small" datetime="2015-06-16T01:49:00+02:00">Tue 16 June 2015</time>                        <p class="grey italic indent">Some piece of advice about how to give good presentations</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/git.html" rel="bookmark" title="Permalink to Git">Git</a>
+<time class="grey italic small" datetime="2015-06-03T00:01:00+02:00">Wed 03 June 2015</time>                        <p class="grey italic indent">All about Git</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-tv-series-i-watch.html" rel="bookmark" title="Permalink to The TV series I watch">The TV series I watch</a>
+<time class="grey italic small" datetime="2015-06-02T01:00:00+02:00">Tue 02 June 2015</time>                        <p class="grey italic indent">Some of the best TV series in the last decade</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/i-want-to-be-a-more-efficient-developer.html" rel="bookmark" title="Permalink to I Want To Be A More Efficient Developer">I Want To Be A More Efficient Developer</a>
+<time class="grey italic small" datetime="2015-05-25T17:17:00+02:00">Mon 25 May 2015</time>                        <p class="grey italic indent">A few tips for Software Engineers and a brief sum-up about an excellent talk from Quentin Adam</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/learn-a-programming-language-quickly.html" rel="bookmark" title="Permalink to (Re)Learn A Programming Language Quickly">(Re)Learn A Programming Language Quickly</a>
+<time class="grey italic small" datetime="2015-05-22T17:17:00+02:00">Fri 22 May 2015</time>                        <p class="grey italic indent">Need to (re)learn a programming language in less than 10 minutes? Here is how to do it.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/how-not-to-get-hired.html" rel="bookmark" title="Permalink to How Not To Get Hired">How Not To Get Hired</a>
+<time class="grey italic small" datetime="2015-05-22T13:33:00+02:00">Fri 22 May 2015</time>                        <p class="grey italic indent">Some tips for interviews... You're applying for internships or jobs but you really don't want to get hired? Here are some do's.</p>
+                    </li>
+        </ol>
+    </section>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

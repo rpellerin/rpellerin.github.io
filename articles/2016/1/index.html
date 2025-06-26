@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Romain Pellerin's Blog: archives for January 2016" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Articles from January 2016 - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Romain Pellerin's Blog: archives for January 2016" />
+
+        <title>Articles from January 2016 - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<header>
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav></header>
+<h1>Articles from January 2016 (4)</h1>
+
+
+    <section>
+        <ol>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/the-art-of-writing.html" rel="bookmark" title="Permalink to The Art Of Writing">The Art Of Writing</a>
+<time class="grey italic small" datetime="2016-01-27T18:15:00+01:00">Wed 27 January 2016</time>                        <p class="grey italic indent">How to write reports, CVs, cover letter, the proper way, with the most perfectly suited tool, LaTeX.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/learning-a-foreign-language.html" rel="bookmark" title="Permalink to Learning A Foreign Language">Learning A Foreign Language</a>
+<time class="grey italic small" datetime="2016-01-21T17:20:00+01:00">Thu 21 January 2016</time>                        <p class="grey italic indent">My process I went through to learn a foreign language, English. And some tips.</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/hacking.html" rel="bookmark" title="Permalink to Hacking">Hacking</a>
+<time class="grey italic small" datetime="2016-01-18T23:00:00+01:00">Mon 18 January 2016</time>                        <p class="grey italic indent">A handful of useful commands about hacking</p>
+                    </li>
+                    <li class="no-bullet-point">
+                        <a href="https://romainpellerin.eu/react.html" rel="bookmark" title="Permalink to React">React</a>
+<time class="grey italic small" datetime="2016-01-08T01:00:00+01:00">Fri 08 January 2016</time>                        <p class="grey italic indent">A quick introduction to React.js</p>
+                    </li>
+        </ol>
+    </section>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
