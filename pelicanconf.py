@@ -10,8 +10,9 @@ TIMEZONE = 'Europe/Berlin'
 DEFAULT_LANG = 'en'
 LOCALE = 'en_US.utf8'
 
-YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
-MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%-m}/index.html'
+YEAR_ARCHIVE_SAVE_AS = 'articles/{date:%Y}/index.html'
+MONTH_ARCHIVE_SAVE_AS = 'articles/{date:%Y}/{date:%-m}/index.html'
+ARCHIVES_SAVE_AS = 'articles.html'
 
 # Feeds
 FEED_DOMAIN = '//romainpellerin.eu'

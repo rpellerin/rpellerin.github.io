@@ -6,7 +6,7 @@
 {% block period %}
     {% if (period|length) == 1 %}{# if we are displaying a year #}
         <p>
-            Browse articles by month: {% for month, list in dates|groupby('date.month') %}<a href="{{ SITEURL }}/posts/{{ period[0] }}/{{ month }}/index.html">{{ list[0].date.strftime("%B") }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}<br />
+            Browse articles by month: {% for month, list in dates|groupby('date.month') %}<a href="{{ SITEURL }}/articles/{{ period[0] }}/{{ month }}/index.html">{{ list[0].date.strftime("%B") }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}<br />
         </p>
         <br />
     {% endif %}

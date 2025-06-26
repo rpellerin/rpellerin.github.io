@@ -9,9 +9,9 @@
 <h1>{{ h1 }}{% if articles and not no_article_count %} ({{ articles|count }}){% endif %}</h1>
 {% if articles %}
     {% block period %}
-        {% if output_file == 'archives.html' %}
+        {% if output_file == 'articles.html' %}
             <p>
-            Browse articles by year: {% for year, list in articles|groupby('date.year') %}<a href="{{ SITEURL }}/posts/{{ year }}/index.html">{{ year }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}
+            Browse articles by year: {% for year, list in articles|groupby('date.year') %}<a href="{{ SITEURL }}/articles/{{ year }}/index.html">{{ year }}</a> ({{ list|count }}){% if not loop.last %}, {% endif %}{% endfor %}
             </p>
             <br />
         {% endif %}
