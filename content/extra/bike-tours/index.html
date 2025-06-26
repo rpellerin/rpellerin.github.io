@@ -416,10 +416,13 @@
           ).value;
           console.log(`Clicked on region ${selectedRegion}`);
           currentlyDisplayedRegion = selectedRegion;
+          currentlyDisplayedRides = [];
 
           // Check cache first
           if (rideDataCache[selectedRegion]) {
-            console.log("Loading from cache:", selectedRegion);
+            console.log(
+              `Loading from cache: ${selectedRegion} (${rideDataCache[selectedRegion].length} tracks)`
+            );
             currentlyDisplayedRides = rideDataCache[selectedRegion];
             trackCardsContainer.innerHTML = "";
             fileInfo.textContent = `Displaying ${currentlyDisplayedRides.length} cached tracks.`;
@@ -486,7 +489,9 @@
             Boolean
           );
           rideDataCache[selectedRegion] = resolvedData; // Cache all processed data
-          console.log("Region data cached:", selectedRegion);
+          console.log(
+            `Region data cached: ${selectedRegion} (${resolvedData.length} tracks)`
+          );
           if (selectedRegion === currentlyDisplayedRegion) {
             currentlyDisplayedRides = resolvedData;
             // The region might have changed if the user clicked an another region while one was loading
