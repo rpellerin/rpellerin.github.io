@@ -62,4 +62,4 @@ This article applies to most Speedmax bikes, but is based on the [Canyon Speedma
 
 Although the max torque values if often written on the components, here is a value that is not:
 
-- The maximal torque for the 4 bolts that attach the handlebar to the Profile Design aerobars: 5 Nm max if M5 Diameter, 8 Nm if M6 Diameter.
+- The maximal torque for the 4 bolts that attach the handlebar to the Profile Design aerobars: 5 Nm max if M5 Diameter, 8 Nm if M6 Diameter (as I was told by the Canyon support)
