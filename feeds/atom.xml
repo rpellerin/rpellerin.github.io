@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-07-03T17:33:00+02:00</updated><entry><title>IRONMAN 70.3 Tours 2025</title><link href="https://romainpellerin.eu/ironman-70-3-tours-2025.html" rel="alternate"></link><published>2025-06-11T00:36:00+02:00</published><updated>2025-06-13T00:54:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-06-11:/ironman-70-3-tours-2025.html</id><summary type="html">&lt;p&gt;I just crossed the finish line of my first ever IRONMAN 70.3, what a race!&lt;/p&gt;</summary><content type="html">&lt;h1 id="training"&gt;Training&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-07-27T23:42:00+02:00</updated><entry><title>IRONMAN 70.3 Tours 2025</title><link href="https://romainpellerin.eu/ironman-70-3-tours-2025.html" rel="alternate"></link><published>2025-06-11T00:36:00+02:00</published><updated>2025-06-13T00:54:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-06-11:/ironman-70-3-tours-2025.html</id><summary type="html">&lt;p&gt;I just crossed the finish line of my first ever IRONMAN 70.3, what a race!&lt;/p&gt;</summary><content type="html">&lt;h1 id="training"&gt;Training&lt;/h1&gt;
 &lt;p&gt;On April 13, 2025, I took part in &lt;a href="https://romainpellerin.eu/marathon-de-paris-2025-race-report.html"&gt;the Paris Marathon&lt;/a&gt;. My first IRONMAN 70.3 was scheduled for exactly seven weeks later, which left very little time for specific training. The Paris Marathon was my main objective for the first half of 2025. So, in December of last year, I laid out a plan as follows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Full focus on marathon training: a 13-week training plan starting in January, with five runs a week.&lt;/li&gt;
@@ -13270,7 +13270,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/ansi2html/1.0.7"&gt;Git diff to HTML&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/"&gt;Little Things I Like to Do with Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=Rnh5QK__pLA"&gt;DevFest Nantes 2018 - Git Dammit !&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Linux"></category><category term="presentation"></category><category term="talk"></category><category term="git"></category></entry><entry><title>The TV series I watch</title><link href="https://romainpellerin.eu/the-tv-series-i-watch.html" rel="alternate"></link><published>2015-06-02T01:00:00+02:00</published><updated>2024-05-30T19:50:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-02:/the-tv-series-i-watch.html</id><summary type="html">&lt;p&gt;Some of the best TV series in the last decade&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Linux"></category><category term="presentation"></category><category term="talk"></category><category term="git"></category></entry><entry><title>The TV series I watch</title><link href="https://romainpellerin.eu/the-tv-series-i-watch.html" rel="alternate"></link><published>2015-06-02T01:00:00+02:00</published><updated>2025-07-27T23:42:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2015-06-02:/the-tv-series-i-watch.html</id><summary type="html">&lt;p&gt;Some of the best TV series in the last decade&lt;/p&gt;</summary><content type="html">&lt;p&gt;The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).&lt;/p&gt;
 &lt;h1 id="shows-still-running"&gt;Shows still running&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Black Mirror&lt;/li&gt;
@@ -13280,7 +13280,6 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;li&gt;Formula 1: Drive to Survive&lt;/li&gt;
 &lt;li&gt;Squid Game&lt;/li&gt;
 &lt;li&gt;Tales of the Walking Dead&lt;/li&gt;
-&lt;li&gt;Tour de France: Unchained&lt;/li&gt;
 &lt;li&gt;The Walking Dead: Dead City&lt;/li&gt;
 &lt;li&gt;The Walking Dead: Daryl Dixon&lt;/li&gt;
 &lt;/ul&gt;
@@ -13290,6 +13289,7 @@ I hope this article was helpful. It's a good start with Continuous Integration. 
 &lt;li&gt;Fear The Walking Dead&lt;/li&gt;
 &lt;li&gt;The Walking Dead: World Beyond&lt;/li&gt;
 &lt;li&gt;The Walking Dead: The Ones Who Live&lt;/li&gt;
+&lt;li&gt;Tour de France: Unchained&lt;/li&gt;
 &lt;li&gt;Paper Girls&lt;/li&gt;
 &lt;li&gt;Ted Lasso&lt;/li&gt;
 &lt;li&gt;La Casa de Papel&lt;/li&gt;
