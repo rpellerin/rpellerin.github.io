@@ -18,7 +18,6 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Formula 1: Drive to Survive
 - Squid Game
 - Tales of the Walking Dead
-- Tour de France: Unchained
 - The Walking Dead: Dead City
 - The Walking Dead: Daryl Dixon
 
@@ -28,6 +27,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 - Fear The Walking Dead
 - The Walking Dead: World Beyond
 - The Walking Dead: The Ones Who Live
+- Tour de France: Unchained
 - Paper Girls
 - Ted Lasso
 - La Casa de Papel
