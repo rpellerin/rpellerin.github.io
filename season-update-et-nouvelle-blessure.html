@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, running, blessure" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="News à l'approche de la fin de saison sportive 2025" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Season Update et Nouvelle Blessure - Romain Pellerin's Blog" />
+        <meta property="og:description" content="News à l'approche de la fin de saison sportive 2025" />
+        <meta property="og:url" content="https://romainpellerin.eu/season-update-et-nouvelle-blessure.html" />
+
+        <title>Season Update et Nouvelle Blessure - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-08-05T18:00:00+02:00">Tue 05 August 2025</time>        </p>
+    <h1>Season Update et Nouvelle Blessure</h1>
+    <div class="grey">
+        <p class="italic">News à l'approche de la fin de saison sportive 2025</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 665 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/running.html">Running</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/blessure.html">blessure</a></p>    </div>
+</header>
+<article>
+    <h1 id="les-7-derniers-mois">Les 7 derniers mois</h1>
+<p>Ce début d'année était plutôt chargé, trop peut-être même. Voici les événements auxquels j'ai participé ainsi que mes temps.</p>
+<ul>
+<li><strong>Marathon de Paris</strong> (13 Avril) : 3h12'42". Mon record à date, malgré un parcours un peu vallonné.</li>
+<li><strong>Berliner Firmenlauf</strong> (21 Mai) : 5.5 km courus en 20 minutes et 21 secondes (officiel), 5.32 km en 20'33" soit 3'52"/km (Strava). Encore un record.</li>
+<li><strong>IRONMAN 70.3 de Tours, France</strong> (1 Juin) : 5h00'58" sur un parcous très roulant. Premier 70.3 ever, donc un record of course.</li>
+<li><strong>L'Étape du Tour de France</strong> (20 Juillet) : 131 km de vélo, 4500 mètres de dénivelé positif, temps de 7h09'47".</li>
+</ul>
+<h1 id="nouvelle-blessure">Nouvelle blessure</h1>
+<p><a href="https://romainpellerin.eu/marathon-de-paris-2025-race-report.html">Ma prépa marathon de Paris s'était passée à merveille, la course aussi.</a>. Cependant, dans les quelques semaines précédant la course, une légère douleur était apparue dans le pied gauche. Rien de bien grave, à peine sentie pendant la prépa, voire pas du tout pendant le marathon. Cependant, elle n'a jamais vraiment disparu, et est réapparue plus forte lors de la reprise de mon entraînement en vue de l'IRONMAN, début Mai. Elle m'a même empêché de m'entraîner comme je voulais, j'ai dû annuler quelques séances à cause de la douleur.</p>
+<p>C'est une douleur dans le pied gauche, vers l'extérieur et un peu sur le dessus sous la cheville. Rien de visible à l'oeil nul (pas de gonflement ou de changement de couleur). Mes symptômes me font penser à une <a href="https://la-clinique-du-pied.fr/cheville/pathologie-cheville/tendinite-chronique-des-peroniers">tendinite/tendinopathie péronière</a> (tendinopathie des tendons fibulaires). Et <strong>non</strong> du <a href="https://lacliniqueducoureur.com/coureurs/blogue/archives/tendinopathie-ou-dysfonction-du-tendon-tibial-posterieur-une-pathologie-pas-comme-les-autres-partie-12/">tendon tibial postérieur</a>, qui lui est dans l'intérieur du pied. Ma douleur est ressentie le matin au lever lors des premiers pas, puis globalement à chaque fois que je me lève après de longues minutes assis. Si je me mets sur la pointe des pieds 2 ou 3 fois d'affilé pendant quelques secondes (et donc contracte mes muscles assez fortement), la douleur disparait presque immédiatement ensuite lors de la marche. Lorsque je commence à courir, je la sens assez fortement aussi, puis elle disparait avec les kilomètres en général, ou du moins se stabilise à 1 ou 2/10.</p>
+<p>Lors de l'IRONMAN, la douleur ne m'a pas gênée, bien que j'ai l'ai sentie (environ à 2/10). C'est une douleur qui disparait au fur-et-à-mesure de l'effort, plus le corps est chaud. Après l'IRONMAN, j'ai coupé la course à pied 2 semaines. La douleur a complétement disparue lors de la marche.</p>
+<p>Mi-juin, j'ai voulu attaquer la prépa marathon pour Berlin, et au bout d'une semaine à peine, la douleur était de nouveau là. D'abord, uniquement en début de run. Puis au fil des jours, présente lors de la marche après de l'inactivité. Juin et Juillet n'auront été qu'une succession de pauses puis reprises de la course à pied après plusieurs jours, dès lors que la douleur devenait trop forte pendant le run ou trop présente en dehors des runs. Gros coup sur la motivation. Sans compter sur l'été de merde qu'on se tape, temps gris, beaucoup de pluie, rarement au dessus de 22 degrés. Motivation dans les choux pour ce marathon.</p>
+<p>J'ai essayé <a href="https://www.youtube.com/watch?v=yGcqJWBFRRc">ces exercices</a> quelques jours, sans grand succès. J'ai aussi fait un peu de <a href="https://romainpellerin.eu/calf-muscle-tear.html#:~:text=Stanish Protocol">protocole de Stanish</a> ou <a href="https://www.youtube.com/watch?v=HvQ2gpLdsx4">ces autres exercices</a> sans plus de succès.</p>
+<h1 id="marathon-de-berlin">Marathon de Berlin</h1>
+<p>J'ai sauté au moins la moitié des séances prévues pour ma prépa. Mon test VMA effectué en Juin a été une catastrophe. J'ai jamais dépassé les 60 km par semaine pour l'instant, et j'ai plusieurs semaines où le compteur est resté à zéro. Je n'ai presque fait aucune séance de fractionné. Bref, rien ne va.</p>
+<p>Mon objectif pour Berlin, au lendemain de celui de Paris, était sub-3 heures. Je m'étais senti à l'aise à Paris, et Berlin est beaucoup plus plat que Paris. Ça signifiait quand même gagner près de 20 secondes au kilomètre, mais je m'en sentais capable. Cependant, au vu de mon entraînement so far, si j'arrive à battre mon temps de Paris ne serait-ce que de quelques secondes, ce sera un miracle. Rendez-vous dans 47 jours pour le verdict...</p>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 05 August 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
