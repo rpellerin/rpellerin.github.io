@@ -1,10 +1,12 @@
 Title: Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.
 Date: 2024-09-18 20:00
-Category: Computers
+Category: Video editing
 Tags: kdenlive, davinci resolve, video
 Slug: farewell-kdenlive-hello-davinci-resolve-and-colors-explained
 Authors: Romain Pellerin
 Summary: I'm switching from Kdenlive to DaVinci Resolve, here's why and a few tips
+
+**UPDATE JUNE 2025: this article is partially obsolete. See [My Ultimate Video Edition Tutorial]({filename}/my-ultimate-video-editing-tutorial.md) for a more recent one.**
 
 I've been [a long time fan of Kdenlive]({filename}/video-editing-on-linux.md), but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).
 

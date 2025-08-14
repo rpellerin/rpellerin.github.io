@@ -1,7 +1,7 @@
 Title: Video Editing on Linux
 Date: 2018-05-13 17:30
 Modified: 2023-07-27 23:20
-Category: Linux
+Category: Video editing
 Tags: video, linux
 Slug: video-editing-on-linux
 Authors: Romain Pellerin

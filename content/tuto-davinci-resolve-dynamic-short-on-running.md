@@ -1,6 +1,6 @@
 Title: Tuto Davinci Resolve: Dynamic Short on Running
 Date: 2025-05-24 23:20
-Category: Computers
+Category: Video editing
 Tags: davinci resolve, running
 Slug: tuto-davinci-resolve-dynamic-short-on-running
 Authors: Romain Pellerin
@@ -12,7 +12,7 @@ Summary: How to create a nice short video about a running event using Davinci Re
 
 # Vertical format
 
-Tick "Use vertical resolution".
+Tick "Use vertical resolution". Prefer 4K instead of 1080p, unlike in the screenshot below.
 
 ![Screenshot of Davinci Resolve]({static}/images/tuto-davinci-resolve-short-running/1.png)
 
