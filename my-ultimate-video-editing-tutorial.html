@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, video, editing, davinci resolve" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Everything to edit awesome videos" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="My Ultimate Video Edition Tutorial - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Everything to edit awesome videos" />
+        <meta property="og:url" content="https://romainpellerin.eu/my-ultimate-video-editing-tutorial.html" />
+
+        <title>My Ultimate Video Edition Tutorial - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-08-14T14:20:00+02:00">Thu 14 August 2025</time>        </p>
+    <h1>My Ultimate Video Edition Tutorial</h1>
+    <div class="grey">
+        <p class="italic">Everything to edit awesome videos</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 521 words.">3 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/video-editing.html">Video editing</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/video.html">video</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/editing.html">editing</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/davinci-resolve.html">davinci resolve</a></p>    </div>
+</header>
+<article>
+    <h1 id="camera-setup">Camera setup</h1>
+<ul>
+<li><strong>30 fps</strong> (or 60 fps for slow-mo). Cause it's the most widely available format, and my Pixel phone still does not support 25fps.</li>
+<li><strong>HEVC/H265</strong></li>
+<li><strong>SDR (Rec709)</strong>. Why not HDR? Support for HDR is still very limited. Most external monitors still do not render HDR properly, same for social media (Strava, Instagram)</li>
+<li><strong>4K (Ultra HD)</strong></li>
+</ul>
+<h1 id="story-telling">Story telling</h1>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/kioBTrOEFUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vHfVI_4unYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1 id="software">Software</h1>
+<p>Davinci Resolve.</p>
+<h2 id="settings">Settings</h2>
+<h3 id="master-settings">Master settings</h3>
+<ul>
+<li><strong>29.97</strong> or <strong>30 fps</strong>, depending on what your device produced. Pixel phones actually produce 29.97fps.</li>
+<li><strong>4K (3840x2160)</strong>. You can tick "Use vertical resolution" when producing for social media.</li>
+</ul>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/ultimate-video-tutorial/master-settings.png" alt="Screenshot of Davinci Resolve" />
+<figcaption>Master settings</figcaption>
+</figure>
+
+<h3 id="color-management">Color management</h3>
+<p><a href="https://www.youtube.com/watch?v=c4AVwVdKTHc">"DaVinci YRGB Color Managed" with "Automatic color management" ticked is the easiest and best choice, unless you know what you're doing.</a> Also, go with SDR and Rec.709, as HDR is not yet widely supported.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/ultimate-video-tutorial/color-management.png" alt="Screenshot of Davinci Resolve" />
+<figcaption>Color management</figcaption>
+</figure>
+
+<h1 id="how-to-sync-clips-on-music-beats">How to sync clips on music beats</h1>
+<p>I like to sync the audio track with the video, so I try my best to change scenes on the beat.</p>
+<p>For transitions, I recommend that the new clip starts 1 or 2 frames before the next music beat, because of <a href="https://en.wikipedia.org/wiki/Persistence_of_vision">the persistence of vision</a>. I read <a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/">on Reddit</a> that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 30FPS, would mean 3 frames. 1 or 2 frames is usually enough though, in my experience.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" />
+<figcaption>Here the transition happens 1 frame before the next music beat</figcaption>
+</figure>
+
+<p>To determine how long a clip should last, based on the music, I use this website: <a href="http://www.beatsperminuteonline.com/">Tap BPM - Online Beats Per Minute Calculator and Counter</a>. Once I know the "speed" of a song (how many beats per minute), I use the calculator below to determine clip lengths.</p>
+<h2 id="beats-calculator">Beats calculator</h2>
+<p><input type="text" id="beats" placeholder="Beats per minute here"/>
+<input type="text" id="fps" placeholder="Desired frames per second here"/></p>
+<pre id="results"></pre>
+<script>
+    let BEATS = [1,2,3,4,6,8]
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).filter(function(beat) { return beat > 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
+            }
+            else {
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
+        })
+    }
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
+    }
+</script>
+
+<h1 id="titles">Titles</h1>
+<p>I like to use the font "<a href="https://fonts.google.com/specimen/Playfair+Display">PlayFair Display</a>" with a glowing effect, in two colors mostly: beige (#FFEBAF) and red (#FF2600).</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/ultimate-video-tutorial/titles-davinci.png" alt="Screenshot of Davinci Resolve" />
+<figcaption>Titles in Davinci</figcaption>
+</figure>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow1.png" alt="Screenshot of Davinci Resolve" />
+<figcaption>Glow settings</figcaption>
+</figure>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow2.png" alt="Screenshot of Davinci Resolve" />
+<figcaption>Glow settings</figcaption>
+</figure>
+
+<h1 id="color-grading">Color grading</h1>
+<iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Zq_MU02oYo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1 id="output">Output</h1>
+<ul>
+<li>FPS: keep the same setting as defined in the project settings</li>
+<li><strong>HEVC/H265</strong>: for size reasons</li>
+<li><strong>MP4</strong> as a container</li>
+<li><strong>SDR (Rec709)</strong></li>
+<li><strong>4K (Ultra HD)</strong></li>
+<li><strong>10MBps</strong> for storing on external hard disk drives, <strong>50MBps</strong> for the file to upload to Youtube or social media.</li>
+</ul>
+<h1 id="example-of-a-recent-project-of-mine">Example of a recent project of mine</h1>
+<video controls>
+  <source src="./videos/ultimate-video-tutorial.mp4" type="video/mp4">
+</video>
+
+<style>
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+</style>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 14 August 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

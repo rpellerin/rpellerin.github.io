@@ -1,5 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Wed, 13 Aug 2025 14:45:00 +0200</lastBuildDate><item><title>Season Update et Nouvelle Blessure</title><link>https://romainpellerin.eu/season-update-et-nouvelle-blessure.html</link><description>&lt;h1 id="les-7-derniers-mois"&gt;Les 7 derniers mois&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 14 Aug 2025 14:20:00 +0200</lastBuildDate><item><title>My Ultimate Video Edition Tutorial</title><link>https://romainpellerin.eu/my-ultimate-video-editing-tutorial.html</link><description>&lt;h1 id="camera-setup"&gt;Camera setup&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;30 fps&lt;/strong&gt; (or 60 fps for slow-mo). Cause it's the most widely available format, and my Pixel phone still does not support 25fps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HEVC/H265&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDR (Rec709)&lt;/strong&gt;. Why not HDR? Support for HDR is still very limited. Most external monitors still do not render HDR properly, same for social media (Strava, Instagram)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (Ultra HD)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="story-telling"&gt;Story telling&lt;/h1&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/kioBTrOEFUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vHfVI_4unYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1 id="software"&gt;Software&lt;/h1&gt;
+&lt;p&gt;Davinci Resolve.&lt;/p&gt;
+&lt;h2 id="settings"&gt;Settings&lt;/h2&gt;
+&lt;h3 id="master-settings"&gt;Master settings&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;29.97&lt;/strong&gt; or &lt;strong&gt;30 fps&lt;/strong&gt;, depending on what your device produced. Pixel phones actually produce 29.97fps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (3840x2160)&lt;/strong&gt;. You can tick "Use vertical resolution" when producing for social media.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/master-settings.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Master settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="color-management"&gt;Color management&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=c4AVwVdKTHc"&gt;"DaVinci YRGB Color Managed" with "Automatic color management" ticked is the easiest and best choice, unless you know what you're doing.&lt;/a&gt; Also, go with SDR and Rec.709, as HDR is not yet widely supported.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/color-management.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Color management&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="how-to-sync-clips-on-music-beats"&gt;How to sync clips on music beats&lt;/h1&gt;
+&lt;p&gt;I like to sync the audio track with the video, so I try my best to change scenes on the beat.&lt;/p&gt;
+&lt;p&gt;For transitions, I recommend that the new clip starts 1 or 2 frames before the next music beat, because of &lt;a href="https://en.wikipedia.org/wiki/Persistence_of_vision"&gt;the persistence of vision&lt;/a&gt;. I read &lt;a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/"&gt;on Reddit&lt;/a&gt; that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 30FPS, would mean 3 frames. 1 or 2 frames is usually enough though, in my experience.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" /&gt;
+&lt;figcaption&gt;Here the transition happens 1 frame before the next music beat&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To determine how long a clip should last, based on the music, I use this website: &lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;. Once I know the "speed" of a song (how many beats per minute), I use the calculator below to determine clip lengths.&lt;/p&gt;
+&lt;h2 id="beats-calculator"&gt;Beats calculator&lt;/h2&gt;
+&lt;p&gt;&lt;input type="text" id="beats" placeholder="Beats per minute here"/&gt;
+&lt;input type="text" id="fps" placeholder="Desired frames per second here"/&gt;&lt;/p&gt;
+&lt;pre id="results"&gt;&lt;/pre&gt;
+&lt;script&gt;
+    let BEATS = [1,2,3,4,6,8]
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).filter(function(beat) { return beat &gt; 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
+            }
+            else {
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
+        })
+    }
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
+    }
+&lt;/script&gt;
+
+&lt;h1 id="titles"&gt;Titles&lt;/h1&gt;
+&lt;p&gt;I like to use the font "&lt;a href="https://fonts.google.com/specimen/Playfair+Display"&gt;PlayFair Display&lt;/a&gt;" with a glowing effect, in two colors mostly: beige (#FFEBAF) and red (#FF2600).&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/titles-davinci.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Titles in Davinci&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow1.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Glow settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow2.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Glow settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="color-grading"&gt;Color grading&lt;/h1&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Zq_MU02oYo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1 id="output"&gt;Output&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;FPS: keep the same setting as defined in the project settings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HEVC/H265&lt;/strong&gt;: for size reasons&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MP4&lt;/strong&gt; as a container&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDR (Rec709)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (Ultra HD)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;10MBps&lt;/strong&gt; for storing on external hard disk drives, &lt;strong&gt;50MBps&lt;/strong&gt; for the file to upload to Youtube or social media.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="example-of-a-recent-project-of-mine"&gt;Example of a recent project of mine&lt;/h1&gt;
+&lt;video controls&gt;
+  &lt;source src="./videos/ultimate-video-tutorial.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 14 Aug 2025 14:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-08-14:/my-ultimate-video-editing-tutorial.html</guid><category>Video editing</category><category>video</category><category>editing</category><category>davinci resolve</category></item><item><title>Season Update et Nouvelle Blessure</title><link>https://romainpellerin.eu/season-update-et-nouvelle-blessure.html</link><description>&lt;h1 id="les-7-derniers-mois"&gt;Les 7 derniers mois&lt;/h1&gt;
 &lt;p&gt;Ce début d'année était plutôt chargé, trop peut-être même. Voici les événements auxquels j'ai participé ainsi que mes temps.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Marathon de Paris&lt;/strong&gt; (13 Avril) : 3h12'42". Mon record à date, malgré un parcours un peu vallonné.&lt;/li&gt;
@@ -228,7 +347,7 @@
 &lt;/video&gt;
 
 &lt;h1 id="vertical-format"&gt;Vertical format&lt;/h1&gt;
-&lt;p&gt;Tick "Use vertical resolution".&lt;/p&gt;
+&lt;p&gt;Tick "Use vertical resolution". Prefer 4K instead of 1080p, unlike in the screenshot below.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"&gt;&lt;/p&gt;
 &lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
 &lt;p&gt;Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.&lt;/p&gt;
@@ -267,7 +386,7 @@ video {
   margin: auto;
   width: 50%;
 }
-&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 24 May 2025 23:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</guid><category>Computers</category><category>davinci resolve</category><category>running</category></item><item><title>Comment Changer Une Guidoline</title><link>https://romainpellerin.eu/comment-changer-une-guidoline.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/i8UKt3D9_yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 24 May 2025 23:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</guid><category>Video editing</category><category>davinci resolve</category><category>running</category></item><item><title>Comment Changer Une Guidoline</title><link>https://romainpellerin.eu/comment-changer-une-guidoline.html</link><description>&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/i8UKt3D9_yA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1 id="tips"&gt;Tips&lt;/h1&gt;
 &lt;ul&gt;
@@ -1003,7 +1122,8 @@ video {
 &lt;/ul&gt;
 &lt;p&gt;I'm confident for Sunday 🤞.&lt;/p&gt;
 &lt;h1 id="update-2024-12-04"&gt;UPDATE: 2024-12-04&lt;/h1&gt;
-&lt;p&gt;More than a month after my first marathon ever, I thought this deserved an update. I'll keep it short: the marathon went amazingly well, no pain at all during the race, or very mild, but barely noticeable. I still felt it in the following days, a little stronger. After the race, I stopped running for 3 weeks (to be exact, I actually ran once a week, slowly and short distances). That was enough for my calf to heal completely. I haven't felt anything now for 2+ weeks. 🎉 Since the end of November, I am gradually increasing the distances again, and slowly getting back to 3 or 4 easy jogs a week. So happy!!!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 17 Oct 2024 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-10-17:/calf-muscle-tear.html</guid><category>Running</category><category>running</category><category>injury</category></item><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+&lt;p&gt;More than a month after my first marathon ever, I thought this deserved an update. I'll keep it short: the marathon went amazingly well, no pain at all during the race, or very mild, but barely noticeable. I still felt it in the following days, a little stronger. After the race, I stopped running for 3 weeks (to be exact, I actually ran once a week, slowly and short distances). That was enough for my calf to heal completely. I haven't felt anything now for 2+ weeks. 🎉 Since the end of November, I am gradually increasing the distances again, and slowly getting back to 3 or 4 easy jogs a week. So happy!!!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 17 Oct 2024 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-10-17:/calf-muscle-tear.html</guid><category>Running</category><category>running</category><category>injury</category></item><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE JUNE 2025: this article is partially obsolete. See &lt;a href="https://romainpellerin.eu/my-ultimate-video-editing-tutorial.html"&gt;My Ultimate Video Edition Tutorial&lt;/a&gt; for a more recent one.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
 &lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
 &lt;p&gt;Below you'll find my settings.&lt;/p&gt;
@@ -1134,7 +1254,7 @@ video {
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/"&gt;As of 2024, HDR is not supported on Linux. 10-bit is partially supported but not enabled by default.&lt;/a&gt; &lt;a href="https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux"&gt;Here is how to turn on 10-bit on Linux.&lt;/a&gt; Of course the GPU needs to support it.&lt;/p&gt;
 &lt;p&gt;On Linux, playing a HDR video in VLC will show a washed-out video, &lt;a href="https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jnbxar8/"&gt;but using MPV the colors will be "translated" into SDR and the video will look very nice&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id="monitors-and-tv-support-for-hdr"&gt;Monitors and TV support for HDR&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Sep 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</guid><category>Computers</category><category>kdenlive</category><category>davinci resolve</category><category>video</category></item><item><title>10 kms et Entorse de la cheville</title><link>https://romainpellerin.eu/10-kms-et-entorse-de-la-cheville.html</link><description>&lt;p&gt;Et bien voilà, deuxième grosse blessure de 2024. Après &lt;a href="https://romainpellerin.eu/periostite-2024.html"&gt;une périostite tenace&lt;/a&gt;, qui aura duré de début avril à fin août (il y a quelques semaines donc!), me voilà avec une nouvelle blessure à la jambe droite (encore!) : entorse de la cheville.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Sep 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</guid><category>Video editing</category><category>kdenlive</category><category>davinci resolve</category><category>video</category></item><item><title>10 kms et Entorse de la cheville</title><link>https://romainpellerin.eu/10-kms-et-entorse-de-la-cheville.html</link><description>&lt;p&gt;Et bien voilà, deuxième grosse blessure de 2024. Après &lt;a href="https://romainpellerin.eu/periostite-2024.html"&gt;une périostite tenace&lt;/a&gt;, qui aura duré de début avril à fin août (il y a quelques semaines donc!), me voilà avec une nouvelle blessure à la jambe droite (encore!) : entorse de la cheville.&lt;/p&gt;
 &lt;p&gt;Dimanche il y a 9 jours, le 8 Septembre donc, je participais à une course de 10 kms, le Tierparklauf de Berlin. Première course de 10 kms pour moi. Je visais sub 40 minutes tout en sachant que c'était très ambitieux.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="https://romainpellerin.eu/images/entorse-de-la-cheville/race-predictor.jpg" alt="Prédictions de Garmin" /&gt;
@@ -6923,7 +7043,7 @@ renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp
 &lt;h2 id="how-to-place-a-video-inside-text"&gt;How to place a video inside text&lt;/h2&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nM6q7FJSenE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>Linux</category><category>video</category><category>linux</category></item><item><title>Finland</title><link>https://romainpellerin.eu/finland.html</link><description>&lt;p&gt;Late March this year, I went to Finland for 3 days over the weekend. As a first-timer, I was not expecting so much snow and ice this late in Winter. We had two sunny days, slightly above 0 degrees celsius. The third day was all snowy.&lt;/p&gt;
+&lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>Video editing</category><category>video</category><category>linux</category></item><item><title>Finland</title><link>https://romainpellerin.eu/finland.html</link><description>&lt;p&gt;Late March this year, I went to Finland for 3 days over the weekend. As a first-timer, I was not expecting so much snow and ice this late in Winter. We had two sunny days, slightly above 0 degrees celsius. The third day was all snowy.&lt;/p&gt;
 &lt;p&gt;I got to visit Helsinki and Tampere, the two major cities of the country. I found these two cities incredibly empty, in terms of population. The country has only 5.5 million inhabitants. The artichecture is rather different than that we have in France, yet familiar. The cities were pretty small. I wished I could have gone out of cities to explore the countryside. Next time probably.&lt;/p&gt;
 &lt;h1 id="a-few-fun-facts-and-pro-tips"&gt;A few fun facts and pro tips&lt;/h1&gt;
 &lt;p&gt;A weekend was more than enough to spot major differences between Finland... and the rest of the world.&lt;/p&gt;

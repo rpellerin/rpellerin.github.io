@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Video editing</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 14 Aug 2025 14:20:00 +0200</lastBuildDate><item><title>My Ultimate Video Edition Tutorial</title><link>https://romainpellerin.eu/my-ultimate-video-editing-tutorial.html</link><description>&lt;h1 id="camera-setup"&gt;Camera setup&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;30 fps&lt;/strong&gt; (or 60 fps for slow-mo). Cause it's the most widely available format, and my Pixel phone still does not support 25fps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HEVC/H265&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDR (Rec709)&lt;/strong&gt;. Why not HDR? Support for HDR is still very limited. Most external monitors still do not render HDR properly, same for social media (Strava, Instagram)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (Ultra HD)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="story-telling"&gt;Story telling&lt;/h1&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/kioBTrOEFUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/vHfVI_4unYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1 id="software"&gt;Software&lt;/h1&gt;
+&lt;p&gt;Davinci Resolve.&lt;/p&gt;
+&lt;h2 id="settings"&gt;Settings&lt;/h2&gt;
+&lt;h3 id="master-settings"&gt;Master settings&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;29.97&lt;/strong&gt; or &lt;strong&gt;30 fps&lt;/strong&gt;, depending on what your device produced. Pixel phones actually produce 29.97fps.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (3840x2160)&lt;/strong&gt;. You can tick "Use vertical resolution" when producing for social media.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/master-settings.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Master settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="color-management"&gt;Color management&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=c4AVwVdKTHc"&gt;"DaVinci YRGB Color Managed" with "Automatic color management" ticked is the easiest and best choice, unless you know what you're doing.&lt;/a&gt; Also, go with SDR and Rec.709, as HDR is not yet widely supported.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/color-management.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Color management&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="how-to-sync-clips-on-music-beats"&gt;How to sync clips on music beats&lt;/h1&gt;
+&lt;p&gt;I like to sync the audio track with the video, so I try my best to change scenes on the beat.&lt;/p&gt;
+&lt;p&gt;For transitions, I recommend that the new clip starts 1 or 2 frames before the next music beat, because of &lt;a href="https://en.wikipedia.org/wiki/Persistence_of_vision"&gt;the persistence of vision&lt;/a&gt;. I read &lt;a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/"&gt;on Reddit&lt;/a&gt; that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 30FPS, would mean 3 frames. 1 or 2 frames is usually enough though, in my experience.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" /&gt;
+&lt;figcaption&gt;Here the transition happens 1 frame before the next music beat&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To determine how long a clip should last, based on the music, I use this website: &lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;. Once I know the "speed" of a song (how many beats per minute), I use the calculator below to determine clip lengths.&lt;/p&gt;
+&lt;h2 id="beats-calculator"&gt;Beats calculator&lt;/h2&gt;
+&lt;p&gt;&lt;input type="text" id="beats" placeholder="Beats per minute here"/&gt;
+&lt;input type="text" id="fps" placeholder="Desired frames per second here"/&gt;&lt;/p&gt;
+&lt;pre id="results"&gt;&lt;/pre&gt;
+&lt;script&gt;
+    let BEATS = [1,2,3,4,6,8]
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).filter(function(beat) { return beat &gt; 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
+            }
+            else {
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
+        })
+    }
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
+    }
+&lt;/script&gt;
+
+&lt;h1 id="titles"&gt;Titles&lt;/h1&gt;
+&lt;p&gt;I like to use the font "&lt;a href="https://fonts.google.com/specimen/Playfair+Display"&gt;PlayFair Display&lt;/a&gt;" with a glowing effect, in two colors mostly: beige (#FFEBAF) and red (#FF2600).&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/titles-davinci.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Titles in Davinci&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow1.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Glow settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/ultimate-video-tutorial/title-glow2.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Glow settings&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="color-grading"&gt;Color grading&lt;/h1&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/Zq_MU02oYo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1 id="output"&gt;Output&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;FPS: keep the same setting as defined in the project settings&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HEVC/H265&lt;/strong&gt;: for size reasons&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MP4&lt;/strong&gt; as a container&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDR (Rec709)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4K (Ultra HD)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;10MBps&lt;/strong&gt; for storing on external hard disk drives, &lt;strong&gt;50MBps&lt;/strong&gt; for the file to upload to Youtube or social media.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="example-of-a-recent-project-of-mine"&gt;Example of a recent project of mine&lt;/h1&gt;
+&lt;video controls&gt;
+  &lt;source src="./videos/ultimate-video-tutorial.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 14 Aug 2025 14:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-08-14:/my-ultimate-video-editing-tutorial.html</guid><category>Video editing</category><category>video</category><category>editing</category><category>davinci resolve</category></item><item><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html</link><description>&lt;video controls&gt;
+  &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h1 id="vertical-format"&gt;Vertical format&lt;/h1&gt;
+&lt;p&gt;Tick "Use vertical resolution". Prefer 4K instead of 1080p, unlike in the screenshot below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"&gt;&lt;/p&gt;
+&lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
+&lt;p&gt;Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/2.png"&gt;&lt;/p&gt;
+&lt;h1 id="create-a-compound-video"&gt;Create a compound video&lt;/h1&gt;
+&lt;p&gt;Select all of your video elements in the Media Pool, and group them in a new timeline. Later, we will apply video effects on the entire compound video.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/3.png"&gt;&lt;/p&gt;
+&lt;h1 id="for-each-clip-of-the-compound-video"&gt;For each clip of the compound video&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Sync the duration of each clip with the background song. Ideally, clip transitions should occur one frame before the next music beat, not earlier. Videos on social media are watched on a phone, so the distance "phone to ears" is short, no need to compensate like you'd do for videos meant for TV, where two frames ahead of the beat is often better for transitions.&lt;/li&gt;
+&lt;li&gt;No need to mute each individual clip, as the compound video will be muted in the timeline.&lt;/li&gt;
+&lt;li&gt;For static images: apply zoom-in effects and changes in the position, to add dynamism. You'll find these in the "Video" tab. Use 2 keyframes (red dots in the screenshot): one on the first frame, one on the last&lt;/li&gt;
+&lt;li&gt;For videos: zoom-in and position effects should be used too. Changing the position throughout the clip can help shift the focus from one element to another, from one person to something, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/4.png"&gt;&lt;/p&gt;
+&lt;h1 id="final-cut-in-the-main-timeline"&gt;Final cut in the main timeline&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Add your compound video to the timeline, and mute its audio track.&lt;/li&gt;
+&lt;li&gt;Add your background song to the timeline.&lt;/li&gt;
+&lt;li&gt;In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add effects on the compound video:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;"Camera Shake": play around vith the values but make it subtle, not too shaky&lt;/li&gt;
+&lt;li&gt;"Film Damage": same, make it subtle. Disable the Scratch effect.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/5.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/6.png"&gt;
+&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/7.png"&gt;&lt;/p&gt;
+&lt;p&gt;That's it! Ready to export.&lt;/p&gt;
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sat, 24 May 2025 23:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</guid><category>Video editing</category><category>davinci resolve</category><category>running</category></item><item><title>Farewell Kdenlive, Hello DaVinci Resolve. And colors explained.</title><link>https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE JUNE 2025: this article is partially obsolete. See &lt;a href="https://romainpellerin.eu/my-ultimate-video-editing-tutorial.html"&gt;My Ultimate Video Edition Tutorial&lt;/a&gt; for a more recent one.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I've been &lt;a href="https://romainpellerin.eu/video-editing-on-linux.html"&gt;a long time fan of Kdenlive&lt;/a&gt;, but now has come a time for change. Kdenlive is great but it's got limitations. Transitions are pretty basic, for example. Also, 10-Bit and/or HDR is not (fully) supported. Overall, the program is not as polished as a professional-grade one. That's why I decided to change and find a better video editing application. And I've settled for DaVinci Resolve, the free version (more than enough for my needs).&lt;/p&gt;
+&lt;p&gt;Before starting any new project, make sure that all cameras have similar settings: resolution, framerate, and more importantly, HDR or not! (pick Rec.2020 for HDR, and Rec.709 for SDR). &lt;a href="https://www.reddit.com/r/VideoEditing/comments/jqqixz/hdr_and_sdr_mixed_into_same_project/"&gt;You cannot easily mix SDR and HDR footage in the same project.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Up until now, I've not been able to properly "downgrade" a HDR footage into a SDR project in DaVinci Resolve. But I've been sort of successful with the opposite (importing SDR footage into a HDR project and using the "Color Space Transform" effect, from Rec.709 to Rec.2100 HLG). The output colors are different but close enough.&lt;/p&gt;
+&lt;p&gt;Below you'll find my settings.&lt;/p&gt;
+&lt;h1 id="general-settings"&gt;General settings&lt;/h1&gt;
+&lt;p&gt;When working with non mixed footage, that is only HDR or only SDR, I would recommend turning on &lt;a href="https://youtu.be/RBctM2c4GQI?t=369"&gt;the option &lt;code&gt;Use Mac Display Color Profile for viewers&lt;/code&gt;&lt;/a&gt; in the settings of DaVinci.&lt;/p&gt;
+&lt;h1 id="project-settings"&gt;Project settings&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Resolution: 3840 x 2160 (4K)&lt;/li&gt;
+&lt;li&gt;FPS: 30 (or 29.97, depending on the camera)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;code&gt;Color Management&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Color science&lt;/code&gt;: &lt;a href="https://youtu.be/CTAzjAReZvs?t=638"&gt;&lt;code&gt;DaVinci YRGB Color Managed&lt;/code&gt;&lt;/a&gt;. I'm not sure what the difference is with non color managed, but I think I understood that when it's not color managed, &lt;a href="https://youtu.be/CTAzjAReZvs?t=182"&gt;DaVinci assumes nothing and does not perform automatic conversation from RAW footage to timeline color space&lt;/a&gt;. But for my use cases, Color Managed is perfect and just works.&lt;/li&gt;
+&lt;li&gt;Untick &lt;code&gt;Automatic color management&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Color processing mode&lt;/code&gt;: &lt;code&gt;HDR DaVinci Wide Gamut Intermediate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Output color space&lt;/code&gt;: &lt;code&gt;Rec.2100 HLG&lt;/code&gt; (just like the videos shot natively with my Google Pixel)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When dealing with non-HDR footage, everything should be Rec.709. &lt;a href="https://youtu.be/_nhlHD4wiDU?t=256"&gt;Gamma should be 2.4, even for web deliverables&lt;/a&gt;. &lt;a href="https://youtu.be/1QlnhlO6Gu8?t=1388"&gt;Don't bother with Rec.709-A (Mac specific).&lt;/a&gt; For the color processing mode, keep "DaVinci Wide Gamut Intermediate".&lt;/p&gt;
+&lt;p&gt;A general rule of thumb is "2.2 is aimed to people looking at the screen on a bright lighted room, 2.4 is for dim light room, 2.6 for pitch dark room like movie theater". (&lt;a href="https://www.reddit.com/r/colorists/comments/176b1fb/comment/k4l1imm/"&gt;&lt;em&gt;source&lt;/em&gt;&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;More on color management and gamma:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=8geDbNpH5cI"&gt;PRO Explains where you may be going wrong in just 10 minutes!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cined.com/quicktime-gamma-shift-bug-what-is-it-and-how-to-combat-it/"&gt;Quicktime Gamma Shift Bug – What Is It and How to Combat It&lt;/a&gt;: by default, what you see in DaVinci won't be what you see in QuickTime. Use VLC. Or change some settings, but read the article first to know which ones.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=1QlnhlO6Gu8"&gt;Quicktime Color Management: why so many ISSUES?!&lt;/a&gt;: another video on the Quicktime Gamma bug&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.reddit.com/r/colorists/comments/1c8c25i/can_someone_explain_what_rec_709_as_a_gamma_tag/"&gt;Can someone explain what Rec 709 as a gamma tag means?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="export-settings"&gt;Export settings&lt;/h1&gt;
+&lt;p&gt;2024 is also the year I'll be switching my default filming resolution from 1080p to 4k, since apparently &lt;a href="https://www.reddit.com/r/videography/comments/xxprwo/best_settings_to_upload_to_youtube_vmaf_analysis/"&gt;Youtube deteriorates less the quality with 4k videos&lt;/a&gt; (the conclusion of the thread is that the best export settings are H265, 4k, 60mbit for 24-30fps or 120mbit for 60fps).&lt;/p&gt;
+&lt;p&gt;In DaVinci Resolve, when selecting MP4 as the format, and H.265 as the code, you get two options below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Use hardware acceleration if available&lt;/code&gt;: that goes without saying, tick it&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Network Optimization&lt;/code&gt;: &lt;a href="https://forum.blackmagicdesign.com/viewtopic.php?f=21&amp;amp;t=190400"&gt;this is the equivalent of &lt;code&gt;-movflags +faststart&lt;/code&gt; for &lt;code&gt;ffmpeg&lt;/code&gt;&lt;/a&gt;. This does not change the quality of the file, nor its size, and makes playback over a network faster, so you might as well tick it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, export in 4K (3840 x 2160). If the project resolution is lower, the image will be upscaled, which will degrade the quality.&lt;/p&gt;
+&lt;p&gt;Make sure the output FPS is the same as the project/timeline FPS, that is 30 or 29.97 FPS.&lt;/p&gt;
+&lt;p&gt;To avoid getting too big of a file, I pick a custom bitrate of 25000 Kb/s for the file I will keep backed up. But for the file uploaded to Youtube, &lt;a href="https://youtu.be/oOGZ0PfDSxM?t=351"&gt;it is recommended to input a bigger number&lt;/a&gt;. See &lt;a href="https://support.google.com/youtube/answer/1722171#zippy=%2Cbitrate"&gt;Youtube's official recommendations&lt;/a&gt;. Usually, 50000 Kbps for a 4K video is good enough.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://forum.blackmagicdesign.com/viewtopic.php?p=1080855#p1080855"&gt;Do not tick "Optimize for speed".&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Encoding Profile&lt;/code&gt;: &lt;code&gt;Main10&lt;/code&gt; (no need to pick 4:2:2 as Google Pixel videos are in 4:2:0).&lt;/p&gt;
+&lt;p&gt;Leave &lt;code&gt;Frame reordering&lt;/code&gt; ticked, as well as the rest of the settings.&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Now let's study colors...&lt;/p&gt;
+&lt;h1 id="some-acronyms-and-vocabulary"&gt;Some acronyms and vocabulary&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;CST&lt;/em&gt;: Color Space Transform&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;DWG&lt;/em&gt;: DaVinci Wide Gamut&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;RCM&lt;/em&gt;: Resolve Color Management. A system designed to provide consistent color accuracy across different devices and formats. &lt;a href="https://youtu.be/_EJ7lA0bSzo?t=248"&gt;This is a synonym for DaVinci Wide Gamut.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ACES&lt;/em&gt;: Academy Color Encoding System (an alternative to DWG). &lt;a href="https://youtu.be/AAeZKZ5feGA?t=428"&gt;It is an industry standard color space, that works on multiple applications, unlike DWG that is DaVinci-exclusive.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Nit&lt;/em&gt;: a unit of luminance, officially name "Candela per square metre". In other words, a unit of measurement used to quantify the brightness of electronic displays. Other units that measure other aspects of light are Lumen and Lux.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;EOTF&lt;/em&gt;: Electro-optical Transfer&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;LUT&lt;/em&gt;: Look-Up Table&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Display-referred color grading/workflow&lt;/em&gt;: &lt;a href="https://youtu.be/CTAzjAReZvs?t=26"&gt;grading manually based on what you observe on screen, without any knowledge about the input color space&lt;/a&gt;. &lt;a href="https://youtu.be/_EJ7lA0bSzo?t=1180"&gt;The opposite is known as &lt;em&gt;scene-referred workflow&lt;/em&gt; (or &lt;em&gt;color managed workflow&lt;/em&gt;).&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="8-bit-vs-10-bit"&gt;8-bit vs 10-bit&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Banding in a 8-bit image" src="https://www.everlearn.nl/wp-content/uploads/2016/11/color-banding.png?_gl=1*1802gmv*_up*MQ..*_ga*NjI1MjM4NDQ0LjE3MjY2NzU4MzI.*_ga_ZR0WD7KF8X*MTcyNjY3NTgzMS4xLjAuMTcyNjY3NTgzMS4wLjAuMA.."&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/4kTV/comments/tm3doe/hdr_vs_sdr_vs_10_bit_vs_8_bit/"&gt;Source&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;First of all, 10 bit HDR is not one thing, they are two things. That's why sometimes you see 10 bit SDR as well. One refers to the color range (8-bit vs 10 bit), and the other refers to the dynamic range (SDR vs HDR).&lt;/p&gt;
+&lt;p&gt;8 bits or 10 bits? Most of our lives, we've been watching the world in 8-bit color. When you break down what 8-bit color is, it refers to the number of gradations in each of the primary colors. When you hear 8-bit, that means there are 256 discrete possible gradations. That is 256 levels of red, 256 levels of green, and 256 levels of blue, since red, green and blue are the basic colors of each pixel on your TV set. When your TV combines these three colors in all their 256 possible gradations you end up with 256 x 256 x 256 = 16,777,216 (16.7 million) colors! That should be sufficient for most video, right? Well, not when you're doing professional photography or filming.&lt;/p&gt;
+&lt;p&gt;There are times when you might have seen an effect called banding on your TV set. These are areas where the gradients are not as smooth in transitioning between subtle color differences. Instead, they look like bands of similar looking colors. This may be apparent in some blue sky scenes when looking at the horizon, or when there is a slow fade to black transition between scenes. Of course, this depends on how your TV processes the colors, then type of input you use, the player you're using to decode the video, or how the content you're watching is encoded.&lt;/p&gt;
+&lt;p&gt;So, here's where 10-bit color comes to the rescue. With 10 bit color, you get 1024 gradations for each of the primary colors, resulting in a whooping 1,073,741,824 colors. That's over 1 billion colors! That oughta get rid of those bands and give you smoother gradients.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;Some monitor or TV are "10-bit like" but not truly 10-bit, they are in fact &lt;a href="https://www.benq.com/en-us/knowledge-center/knowledge/10-bit-vs-8-bit-frc-monitor-color-difference.html"&gt;"8 bit + FRC"&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="sdr-vs-hdr"&gt;SDR vs HDR&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/4kTV/comments/tm3doe/hdr_vs_sdr_vs_10_bit_vs_8_bit/"&gt;Source&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HDR or SDR? Most of our lives, we've been watching the world in SDR, or Standard Dynamic Range. Now, with newer TVs, we get this feature called HDR, or High Dynamic Range. This refers to how bright or how dark your pixels on your TV are capable of representing luminosity in the video. Instead of just adding artificial contrast to the image, HDR actually controls the individual luminosity for each pixel. This effect looks even nicer on OLED TVs which causes the image to look more realistic. Light bulbs in the background of a dark scene appear as if they are really there and the difference between dark and bright spots is less likely to be washed out.&lt;/p&gt;
+&lt;p&gt;One of the limitations of older TV sets all this time, was the brightness bleeding effect of bright objects next to dark ones on the same scene. If your TV supports HDR, you can have a bright white object shining at maximum brightness, and it will not affect how a dark object in the next pixel looks like. HDR, therefore, preserves details in scenes where the contrast ratio of the monitor could otherwise be a hindrance.&lt;/p&gt;
+&lt;p&gt;For those unfamiliar with photography, dynamic range is measured in stops, comparable to the aperture of a camera. Pictures on a typical SDR display would have a dynamic range of about 6 stops. HDR information, but on the other side, has the potential to almost triple this dynamic range, with a total of 17.6 stops.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;It is commonly admitted that "&lt;a href="https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jndhhje/"&gt;HDR is a combination of three things&lt;/a&gt;" (although &lt;a href="https://www.reddit.com/r/4kTV/comments/tm3doe/comment/i1zjkln/"&gt;technically HDR has nothing to do with 8 or 10 bits&lt;/a&gt;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;More than 8 (usually 10) bits per subpixel&lt;/li&gt;
+&lt;li&gt;Displays with a higher than usual peak brightness and contrast ratio (usually oled, or an lcd with full array local dimming)&lt;/li&gt;
+&lt;li&gt;All the required metadata to make proper use of the above&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/gopro/comments/xe0wfx/comment/ioe0u1z/"&gt;Source&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HDR refers to the dynamic range. How much the camera can capture from complete white to complete dark. It's also intertwined with the gamuts of the camera. You need a wider gamut and 10+ bit color depth to get a somewhat pleasing HDR effect to look good.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="hdr10-vs-dolby-vision-vs-hdr10-vs-hlg"&gt;HDR10 vs Dolby Vision vs HDR10+ (vs HLG)&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/4kTV/comments/tm3doe/hdr_vs_sdr_vs_10_bit_vs_8_bit/"&gt;Source&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are two popular HDR standards, Dolby Vision and HDR10. Since HDR10 is open source, it has been much more widely adopted than Dolby Vision. Both HDR formats use metadata in the video stream to determine how bright pixels should light up in the display. With HDR10, a fixed metadata range is declared at the start of the stream, and it remains for the entire length of the video, whereas Dolby Vision is capable of dynamic metadata from one scene to the next. There is an upgrade to HDR10 called HDR10+ which adds dynamic metadata just like Dolby Vision. Overall, you can think of HDR as the ability of the video stream to adjust your contrast and brightness levels on your TV set for each pixel separately, as opposed to your brightness and contrast menus which affect the entire picture at once.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/HDR10"&gt;Competing formats to HDR10 are Dolby Vision and HDR10+ (which do provide dynamic metadata, allowing to preserve the creative intents on each display and on a scene by scene or frame by frame basis), and also HLG (which provides some degree of backward compatibility with SDR).&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/HDR10%2B"&gt;HDR10+ and Dolby Vision do not use the same dynamic metadata.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="transfer-functions-gamma-24-vs-hdr-pg-vs-hdr-hlg"&gt;Transfer functions: Gamma 2.4 vs HDR PG vs HDR HLG&lt;/h1&gt;
+&lt;p&gt;PQ is for "Perceptual Quantize", the standard is known as ST.2084. HLG is for "Hybrid Log-Gamma".&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Rec._2100#Transfer_functions"&gt;Both were introduced with Rec2100&lt;/a&gt; (see next section). Prior to Rec2100, Rec709 and Rec2020 were using &lt;a href="https://en.wikipedia.org/wiki/ITU-R_BT.1886"&gt;Gamma 2.4 (known as ITU-R BT.1886)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As written in the section above, HLG is opposed to HDR10, Dolby Vision and HDR10+.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://lightillusion.com/what_is_hdr.html"&gt;This page&lt;/a&gt; says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PQ HDR defines HDR10, HDR10+, and Dolby Vision, as all use the same target colour space - Rec2020 Gamut, with the same PQ EOTF. Consequently, calibration for all is basically identical. HLG based HDR is different.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The rest of the page is extremely detailed and full of information.&lt;/p&gt;
+&lt;p&gt;Some things to remember:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PQ gives absolute values for light output&lt;/li&gt;
+&lt;li&gt;HLG gives relative values&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of the often overlooked potential issues with PQ based HDR for home viewing is that because the standard is absolute there is no way to increase the display's light output to overcome surrounding room light levels - the peak brightness cannot be increased, and neither can the fixed gamma (EOTF) curve.&lt;/p&gt;
+&lt;p&gt;As mentioned above, with PQ based HDR the Average Picture Level (APL) will approximately match that of regular SDR (standard dynamic range) imagery. The result is that in less than ideal viewing environments, where the surrounding room brightness level is relatively high, the bulk of the PQ HDR image will appear very dark, with shadow detail potentially becoming very difficult to see. This is still true with a diffuse white target of 200 nits, rather than the original 100 nits diffuse white.&lt;/p&gt;
+&lt;p&gt;But, having said that, HLG based HDR has its own issues if the peak luma of the display is below approx. 1000 nits, as the average picture level of the HDR image will appear dimmer than the equivalent SDR image.&lt;/p&gt;
+&lt;p&gt;HDR10 uses Static metadata, while Dolby Vision and HDR10+ use Dynamic.&lt;/p&gt;
+&lt;p&gt;And non-PQ based HDR, such as HLG, has no need for metadata. One of the major differences in using a relative based HDR standard, rather than absolute.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I've read on other websites that Dolby Vision also works with HLG, not just PQ.&lt;/p&gt;
+&lt;h1 id="rec709-vs-rec2020-vs-rec2100"&gt;Rec709 vs Rec2020 vs Rec2100&lt;/h1&gt;
+&lt;p&gt;Those are color gamuts (a set of displayable colors).&lt;/p&gt;
+&lt;p&gt;Rec709 is generally for SDR.&lt;/p&gt;
+&lt;p&gt;Rec2020 and Rec2100 are commonly used for HDR. Rec2020 can also be used for SDR. They are both refered to as Wide Color Gamuts (WCG).&lt;/p&gt;
+&lt;p&gt;Rec2020 (or Rec.2020) is an abbreviation for "&lt;em&gt;ITU-R Recommendation BT.2020&lt;/em&gt;".&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Rec._2100#System_colorimetry"&gt;Rec. 2100 uses the same color primaries as Rec. 2020 which is a Wide Color Gamut&lt;/a&gt; (meaning &lt;a href="https://en.wikipedia.org/wiki/Gamut#Wide_color_gamut"&gt;a color gamut wider than that of BT.709&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/IXYKhZdGF6s?t=109"&gt;Rec709 is recommendations for HD. Rec2020 for UHD (Ultra HD). Rec2100 for HDR.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="422-vs-420"&gt;4:2:2 vs 4:2:0&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Chroma_subsampling"&gt;Chroma Subsampling, on Wikipedia.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/4kTV/comments/tm3doe/comment/i21n8df/"&gt;Short explanation on Reddit here.&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="linux-support-for-10-bit-andor-hdr"&gt;Linux support for 10-bit and/or HDR&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/buying_a_monitor_for_hdr10bit_pointless_on_linux/"&gt;As of 2024, HDR is not supported on Linux. 10-bit is partially supported but not enabled by default.&lt;/a&gt; &lt;a href="https://linuxreviews.org/HOWTO_enable_10-bit_color_on_Linux"&gt;Here is how to turn on 10-bit on Linux.&lt;/a&gt; Of course the GPU needs to support it.&lt;/p&gt;
+&lt;p&gt;On Linux, playing a HDR video in VLC will show a washed-out video, &lt;a href="https://www.reddit.com/r/linuxquestions/comments/143p9mz/comment/jnbxar8/"&gt;but using MPV the colors will be "translated" into SDR and the video will look very nice&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="monitors-and-tv-support-for-hdr"&gt;Monitors and TV support for HDR&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.reddit.com/r/linux_gaming/comments/mk2q0j/comment/gte1gj1/"&gt;Unless a monitor is labeled HDR1000, it is not true HDR.&lt;/a&gt; &lt;a href="https://www.reddit.com/r/Monitors/comments/12cl67z/how_to_know_if_a_monitor_has_real_hdr/"&gt;This other Reddit thread more or less says the same.&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Wed, 18 Sep 2024 20:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2024-09-18:/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html</guid><category>Video editing</category><category>kdenlive</category><category>davinci resolve</category><category>video</category></item><item><title>Video Editing on Linux</title><link>https://romainpellerin.eu/video-editing-on-linux.html</link><description>&lt;p&gt;&lt;strong&gt;UPDATE SEPTEMBER 2024: this article is obsolete. I now edit with &lt;a href="https://romainpellerin.eu/farewell-kdenlive-hello-davinci-resolve-and-colors-explained.html"&gt;DaVinci Resolve&lt;/a&gt;, shoot in 4K and 30 FPS.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When I go on holidays or do sports, I usually film with three different devices:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;My smartphone&lt;/li&gt;
+&lt;li&gt;A GoPro&lt;/li&gt;
+&lt;li&gt;An Insta360 One X2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then, I like to make video montages. But because it usually does not happen more than twice a year, I regularly forget how to make a great movie. So this article acts as a reminder for myself. I thought it could be useful to other people too, that's why I put it online.&lt;/p&gt;
+&lt;h1 id="overall-process"&gt;Overall process&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Record in 1080p, at 25FPS, unless you want to go fancy and do 100 FPS (for decent slow-mo) and/or 4k. Why 25 and not 24 or 30? Because 24 is not always 24, sometimes it's actually 23.976, and 30 is sometimes 29.97, depending on the camera you are using. You're never so sure. 30FPS on the GoPro is 29.97, but 30FPS on the Insta360 One X2 gives 30 when exported from the mobile app, 29.97 from the desktop app. While 25 is always 25, on any camera, any software. (&lt;strong&gt;update september 2024: I now record in 30fps on all my devices&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://kdenlive.org/en/download/"&gt;Kdenlive&lt;/a&gt; for the video montage.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extract regular videos out of 360 videos using the desktop application (&lt;a href="https://www.insta360.com/download/insta360-onex2"&gt;Insta360 STUDIO&lt;/a&gt;) from Insta360, not the mobile one, as you get better quality. Export with the following settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Disable "Lock Direction"&lt;/li&gt;
+&lt;li&gt;When doing slow-motion: disable "Motion blur"&lt;/li&gt;
+&lt;li&gt;I find the "Optical Flow stitching" better than "Dynamic Stitching", so I always keep this one on&lt;/li&gt;
+&lt;li&gt;"Chromatic Calibration" always on&lt;/li&gt;
+&lt;li&gt;25FPS when exporting (&lt;strong&gt;update september 2024: 30FPS&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;25Mbps when exporting&lt;/li&gt;
+&lt;li&gt;HEVC (H265) when exporting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;update september 2024: check Dolby Vision, to export in Rec.2020 HLG, otherwise you'll get Rec.709&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Careful, after exporting, the first frame (or first 2 frames) might not match the angle/level of zoom you picked. Remove these frames in Kdenlive when importing, if necessary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can overlay GPS data (from a Garmin device for instance) on top of a video to show nice stats such as the speed, the altitude, etc. To do so, refer to &lt;a href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html"&gt;this article that I wrote&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Using VLC, &lt;code&gt;Tools&lt;/code&gt; &amp;gt; &lt;code&gt;Codec information&lt;/code&gt;, check the framerate. All videos must have the same frame rate otherwise you might encounter issues in Kdenlive (Kdenlive will usually reencode your input video if the framerate is variable for instance).&lt;/li&gt;
+&lt;li&gt;When creating a new project in Kdenlive, make sure to use the very same frame rate and frame size as the input videos, so in my case 25FPS and 1080p. Pick BT.709 as the color range, or best BT.2020 if available. FPS, frame size, color range, all of that can be changed later in &lt;code&gt;Project&lt;/code&gt; &amp;gt; &lt;code&gt;Project Settings&lt;/code&gt; but &lt;strong&gt;it is not advised as it will shift clips randomly for example when changing the FPS&lt;/strong&gt; (I experienced it).&lt;/li&gt;
+&lt;li&gt;In Kdenlive settings, under &lt;code&gt;Playback&lt;/code&gt;, make sure GPU acceleration is disabled, cause it's buggy. Also enable &lt;code&gt;Proxy clips&lt;/code&gt; for videos larger than 1000 pixels.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You probably want to import your video clips in a chronological order. Here is how to rename videos to match their creation date:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Insta360 videos&lt;/span&gt;
+$ &lt;span class="k"&gt;for&lt;/span&gt; f &lt;span class="k"&gt;in&lt;/span&gt; *.mp4&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; mv -n &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; cut -c &lt;span class="m"&gt;5&lt;/span&gt;-19&lt;span class="k"&gt;)&lt;/span&gt;.mp4&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+renamed &lt;span class="s1"&gt;&amp;#39;VID_20230708_154459_00_001.mp4&amp;#39;&lt;/span&gt; -&amp;gt; &lt;span class="s1"&gt;&amp;#39;20230708_154459.mp4&amp;#39;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# GoPro videos and smartphone photos&lt;/span&gt;
+$ &lt;span class="k"&gt;for&lt;/span&gt; f &lt;span class="k"&gt;in&lt;/span&gt; *.MP4&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; mv -n &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;exiftool -T -createdate -d &lt;span class="s2"&gt;&amp;quot;%Y%m%d_%H%M%S&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;.MP4&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;done&lt;/span&gt;
+renamed &lt;span class="s1"&gt;&amp;#39;GX010697.MP4&amp;#39;&lt;/span&gt; -&amp;gt; &lt;span class="s1"&gt;&amp;#39;20230709_091946.MP4&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Remove the audio track from clips after importing them in Kdenlive, where audio does not matter. Or lower the volume by some decibels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;You can "lock" audio or video tracks, when you absolutely do not want to misclick and inadvertently move clips.&lt;/li&gt;
+&lt;li&gt;When rendering, export in HEVC (smaller file size than H264). In the end, Youtube will re-encode any uploaded video to further cut down its size, and the visual quality will be more or less the same. Exporting in VP9 results in a file slightly bigger than HEVC, with the same quality. AV1 is supposedly the shit, better quality and smaller. Yet, in 2021, Kdenlive shows it but I cannot select it, it's grayed out. So I recommend HEVC, with the second slowest encoder speed (&lt;code&gt;preset=slower&lt;/code&gt;), and keep the default quality setting, don't tick "Custom Quality" (keep &lt;code&gt;crf=28&lt;/code&gt;). However, if the video is short enough and you can afford the extra rendering time, you should go for the "slowest" preset. It will take longer but the overall quality will be better. Also, if the video is short, you may go for a custom quality. I find 75% (&lt;code&gt;crf=23&lt;/code&gt;) very good, without increasing the file size too much. Lastly, use 4 threads but do not use parallel processing, as it is still experimental and not stable enough (in 2024 at least).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id="transitions-songs-music-sync-and-beats-per-minute"&gt;Transitions, songs, music sync and beats per minute&lt;/h1&gt;
+&lt;p&gt;I like to sync the audio track with the video, so I try my best to change scenes on the beat. Also, I very often correct the volume of the audio tracks (usually reducing the songs' volume and increasing the original sound from the videos), through the built-in "Volume (keyframable)" effect.&lt;/p&gt;
+&lt;p&gt;For transitions, I recommend that the new clip starts one or 2 frames before the next music beat, because of &lt;a href="https://en.wikipedia.org/wiki/Persistence_of_vision"&gt;the persistence of vision&lt;/a&gt;. I read &lt;a href="https://www.reddit.com/r/kdenlive/comments/dzzcib/is_there_a_way_to_match_the_bpm_of_a_song_while/"&gt;on Reddit&lt;/a&gt; that the human eye takes 1/10th of a second to process images, while sound is near instant. 1/10th of a second, with 25FPS, would mean 2 frames.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/kdenlive-transition-music-beat.png" alt="Screenshot of Kdenlive" /&gt;
+&lt;figcaption&gt;Here the transition happens 1 frame before the next music beat&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Do not forget that Kdenlive does not use milliseconds but instead a number of frames.&lt;/strong&gt; That should be helpful when resizing clips. Say you have a song at 100 beats per minutes and you want 4-beat clips at 25 fps. Do: 4*60/100 = 2.4. Then, do the math again for .4 to use a scale from 0 to 25 instead of 100: 0.4*25=10 frames. Which gives you clips that last 00:00:02 seconds and 10 frames, Kdenlive-wise.&lt;/p&gt;
+&lt;p&gt;To find the BPM of a song, use any of the following links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.beatsperminuteonline.com/"&gt;Tap BPM - Online Beats Per Minute Calculator and Counter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getsongbpm.com/tools/audio"&gt;MP3 to BPM (Song Analyser)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://songbpm.com/"&gt;Find the BPM for any song | Type a song, get a BPM | Every tempo | songbpm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="beats-calculator"&gt;Beats calculator&lt;/h2&gt;
+&lt;p&gt;&lt;input type="text" id="beats" placeholder="Beats per minute here"/&gt;
+&lt;input type="text" id="fps" placeholder="Desired frames per second here"/&gt;&lt;/p&gt;
+&lt;pre id="results"&gt;&lt;/pre&gt;
+&lt;script&gt;
+    let BEATS = [1,2,3,4,6,8]
+    const inputBeats = document.querySelector('input#beats')
+    const inputFps = document.querySelector('input#fps')
+    function inputChange() {
+        const value = inputBeats.value
+        const fps = inputFps.value
+        if (!value || isNaN(value) || !fps || isNaN(fps)) return
+        const pre = document.getElementById('results')
+        pre.innerHTML = ""
+        BEATS = [...new Array(+value)].map(function(_,i) { return i })
+        const result = BEATS.concat(value).filter(function(beat) { return beat &gt; 0 }).map(function(beat) {
+            let tempResult = (beat*60)/value
+            const regex = tempResult.toString().match(/^(\d+\.)(\d+)$/)
+            if (regex) {
+                const integer = regex[1]
+                const floating = (parseFloat("0." + regex[2], 10)*100*fps)/100
+                const seconds = parseInt(integer, 10)
+                const frames = Math.round(floating)
+                tempResult = `${seconds} seconds and ${frames} frames (${(seconds * fps) + frames} frames)`
+            }
+            else {
+                tempResult = `${tempResult} seconds and 0 frames (${tempResult * fps} frames)`
+            }
+            pre.innerHTML += "- " + beat + " beats = " + tempResult + "\n"
+        })
+    }
+    inputBeats.oninput=inputChange
+    inputFps.oninput=inputChange
+    if (inputBeats.value || inputFps.value) {
+        inputChange()
+    }
+&lt;/script&gt;
+
+&lt;h1 id="fancy-effects-in-kdenlive"&gt;Fancy effects in Kdenlive&lt;/h1&gt;
+&lt;h2 id="fade-inout"&gt;Fade-in/out&lt;/h2&gt;
+&lt;p&gt;There's a built-in effect for that. Make sure to tick "fade to/from dark".&lt;/p&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/fade-out.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="split-screen"&gt;Split screen&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/split-screen.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="iris-out"&gt;Iris out&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/iris-out.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="rewind-video-vhs-style"&gt;Rewind video (VHS style)&lt;/h2&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/MnErqP9iIWU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id="text-reveal-behind-an-object"&gt;Text reveal behind an object&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/text-reveal-behind-an-object.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="blend-a-video-with-a-solid-color"&gt;Blend a video with a solid color&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/blend-video-and-color.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="cinematoscope-aspect-ratio"&gt;Cinematoscope aspect ratio&lt;/h2&gt;
+&lt;video controls&gt;
+    &lt;source src="./videos/kdenlive/cinematoscope-aspect-ratio.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h2 id="old-film"&gt;Old film&lt;/h2&gt;
+&lt;p&gt;Use the "Old film" effect.&lt;/p&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/qoly_IIyqyI?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h2 id="how-to-place-a-video-inside-text"&gt;How to place a video inside text&lt;/h2&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/nM6q7FJSenE?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;That's about it!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 13 May 2018 17:30:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2018-05-13:/video-editing-on-linux.html</guid><category>Video editing</category><category>video</category><category>linux</category></item></channel></rss>
