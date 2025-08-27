@@ -62,3 +62,5 @@ Au stage où j'en suis, je ne suis même pas sûr d'avoir un syndrome de l'essui
 Légères améliorations. Plus aucune douleur au genou gauche depuis une dizaine de jours, fin du chapitre syndrome de l'essui-glace ? Même si je le sens encore fragile et fatiguable, pas de douleur à proprement parler pendant ou après les runs.
 
 Quant à mon pied gauche la douleur est toujours là, pendant les runs elle varie entre 0 et 2 en général, parfois jusqu'à 3, jamais plus. Elle a tendance à diminuer à 1 voire 0 en fin de séance. Je continue la prépa jusqu'au bout maintenant, c'est totalement supportable. Surtout que la motivation revient !!! La semaine dernière j'ai couru 70 kms, un record depuis Mars. Cette semaine, je vais tenter de faire autour de 70 aussi, peut-être plus ? 80 ? On verra. Niveau progressivité, on repassera, je suis globalement passé de 30 à 70 km d'une semaine à l'autre 🙈. Oops. J'ai repris les séances à intensité aussi. Bref, on est reparti ! Plus que trois semaines et demi avant le marathon !
+
+J'ai coupé le vélo depuis la semaine dernière. Full focus sur la course à pied, rien d'autre.
