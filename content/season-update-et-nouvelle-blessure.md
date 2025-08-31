@@ -68,3 +68,5 @@ J'ai coupé le vélo depuis la semaine dernière. Full focus sur la course à pi
 # Update Samedi 30 Août 2025
 
 Que serait une prépa marathon sans un COVID ? Bingo, malade depuis hier. Full package : fièvre, courbatures, fatigue, nez pris... Génial ! Ça m'a fait louper ma séance VMA de la semaine... pas sûr que je puisse faire la sortie longue de demain non plus, on verra.
+
+![Test covid]({static}/images/marathon-berlin-2025-covid.jpg)
