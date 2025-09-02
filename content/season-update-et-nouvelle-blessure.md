@@ -70,3 +70,16 @@ J'ai coupé le vélo depuis la semaine dernière. Full focus sur la course à pi
 Que serait une prépa marathon sans un COVID ? Bingo, malade depuis hier. Full package : fièvre, courbatures, fatigue, nez pris... Génial ! Ça m'a fait louper ma séance VMA de la semaine... pas sûr que je puisse faire la sortie longue de demain non plus, on verra.
 
 ![Test covid]({static}/images/marathon-berlin-2025-covid.jpg)
+
+# Update Lundi 2 Septembre 2025
+
+Bon hier, dernier jour de fièvre. Aujourd'hui plus rien, j'ai repris le boulot. Hier soir, tétu j'ai voulu aller courir. Je voulais faire 2 blocs de 2500m chacun à allure marathon, j'ai pu passer qu'un bloc de 2000m. Le coeur montait bien trop haut (au delà de 180) alors que je devrais être à 170 voire 175 grand max. En tout j'ai couru 20 kms. J'étais bien KO hier soir mais aujourd'hui je pense avoir bien récupéré. Et ne plus avoir de fièvre, c'est un grand pas en avant !
+
+En regardant en arrière, sur ces 3 derniers mois, ça aura été une sacrée prépa marathon de merde.
+
+- Semaine du 23 juin : je marche sur un énorme morceau de verre dans la rue. Bien sûr ce jour-là je portais des chaussures minimalistes avec une semelle hyper fine. Bim je transperce la semelle ET le pied droit, ça pisse le sang. Résultat ? Un paracétamol le soir pour s'endormir, le lendemain passé à bien douiller et surtout une semaine entière sans course à pied.
+- Je reprends tranquillement et progressivement la semaine suivante, en Juillet donc. Le pied est toujours douleureux, je dois être hyper progressif. Pas de fractionné. Mon test VMA (demi-Cooper) effectué le 6 Juillet est pourri, je fais pire que mes 2 précédents tests.
+- Au fil du mois de Juillet, ma douleur dans le pied gauche revient graduellement, chaque sortie un peu plus forte. Un douleur que je me traîne depuis Mars ou Avril. Je remets la course à pied en pause du 15 (inclus) au 26 Juillet (inclus). Je reprends le 27 par un 18 kms (LOL!).
+- Le 31 Juillet, apparition du syndrome de l'essui glace ! Il ne me quittera pas pendant plus de 2 semaines. Dernière vraie douleur le 18, puis plus rien.
+- Tout le mois d'Août n'aura été finalement qu'une remise en charge progressive. Le 20 Août, je réussis pour la première fois depuis plus d'une mois une séance à 100%, telle que prévue par Kiprun Pacer. La douleur au pied gauche est stabilisée, elle ne dépasse jamais 2 ou 3 sur 10 à chaque début de run et stagne généralement autour de 1/10 pendant le reste du run. Je sens que ça s'améliore bien vers la fin Août, notamment le matin lors des premiers pas, la douleur est de moins en moins présente.
+- Bref, tout commençait enfin à aller mieux... jusqu'à vendredi dernier, 29 Août, où les premiers symptômes du COVID sont apparus, confirmés par un test le lendemain. Samedi et dimanche fiévreux, hier lundi une bonne partie de la journée. Aujourd'hui, back to 100% ? Plus que 2 semaines et demi avant le jour J... Je m'en rappellerai de cette prépa. 😄
