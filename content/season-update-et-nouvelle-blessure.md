@@ -71,7 +71,7 @@ Que serait une prépa marathon sans un COVID ? Bingo, malade depuis hier. Full p
 
 ![Test covid]({static}/images/marathon-berlin-2025-covid.jpg)
 
-# Update Lundi 2 Septembre 2025
+# Update Mardi 2 Septembre 2025
 
 Bon hier, dernier jour de fièvre. Aujourd'hui plus rien, j'ai repris le boulot. Hier soir, tétu j'ai voulu aller courir. Je voulais faire 2 blocs de 2500m chacun à allure marathon, j'ai pu passer qu'un bloc de 2000m. Le coeur montait bien trop haut (au delà de 180) alors que je devrais être à 170 voire 175 grand max. En tout j'ai couru 20 kms. J'étais bien KO hier soir mais aujourd'hui je pense avoir bien récupéré. Et ne plus avoir de fièvre, c'est un grand pas en avant !
 
@@ -83,3 +83,18 @@ En regardant en arrière, sur ces 3 derniers mois, ça aura été une sacrée pr
 - Le 31 Juillet, apparition du syndrome de l'essui glace ! Il ne me quittera pas pendant plus de 2 semaines. Dernière vraie douleur le 18, puis plus rien.
 - Tout le mois d'Août n'aura été finalement qu'une remise en charge progressive. Le 20 Août, je réussis pour la première fois depuis plus d'une mois une séance à 100%, telle que prévue par Kiprun Pacer. La douleur au pied gauche est stabilisée, elle ne dépasse jamais 2 ou 3 sur 10 à chaque début de run et stagne généralement autour de 1/10 pendant le reste du run. Je sens que ça s'améliore bien vers la fin Août, notamment le matin lors des premiers pas, la douleur est de moins en moins présente.
 - Bref, tout commençait enfin à aller mieux... jusqu'à vendredi dernier, 29 Août, où les premiers symptômes du COVID sont apparus, confirmés par un test le lendemain. Samedi et dimanche fiévreux, hier lundi une bonne partie de la journée. Aujourd'hui, back to 100% ? Plus que 2 semaines et demi avant le jour J... Je m'en rappellerai de cette prépa. 😄
+
+# Update Mardi 10 Septembre 2025
+
+<figure class="center">
+<img src="{static}/images/berlin-marathon-2025-90km.png" alt="Screenshot of Strava" />
+<figcaption>Semaine dernière (S-2)</figcaption>
+</figure>
+
+Enfin guéri du COVID. J'ai pu aller courir 32 kms il y a 2 jours, et conclure une semaine à 90 kms ! L'autre bonne nouvelle, c'est que ma douleur au pied est aussi presque 100% guérie, disons à 95%. Depuis une semaine, la plupart des séances commencent avec une douleur à 1/10 et au bout de 2 ou 3 kms chutent à 0. Pareil le matin au lever, zéro douleur ! Il faut croire que continuer à courir sur une douleur ne dépassant pas 3/10, le plus souvent possible, était la bonne stratégie. J'ai fait close to zéro renforcement pour cette douleur, 5 fois maximum en l'espace de 4 mois. Pareil pour mon syndrome de l'essuis glace, un seul renfo spécifique qui je pense n'a servi à rien. C'est passé tout seul.
+
+La mauvaise nouvelle c'est que le COVID mais aussi ma prépa marathon à moitié faite font que je ne suis pas du tout habitué à mon pace objectif de 4'20"/km. Il y a 3 mois je visais 4'10", début Juillet avec la blessure au pied qui revenait de plus belle, j'avais abaissé à 4'20". Aujourd'hui, je ne suis pas sûr du tout de tenir ça sur 42kms. Le cardio monte trop vite à 180 à cette allure là, au bout de 2 kms. Alors que normalement 180 c'est plutôt en milieu/fin de marathon. Le COVID n'aide pas, j'ai lu sur internet que plusieurs semaines après la maladie, les effets sur le rythme cardiaque peuvent être ressentis. Ma Garmin me donne une valeur de VO2 Max à 57 depuis 2 semaines, alors que depuis des mois j'avais 58, et même 59 fin Mai/début Juin, avant l'IRONMAN 70.3 Mais cette chute à 57 ça coincide avec l'arrêt du vélo de route, il y a 2 semaines.
+
+Il faut dire aussi qu'avec les mois de Juillet et Août en dents de scie niveau course à pied, à cause de ma douleur au pied gauche, j'ai très peu bossé cette allure de 4'20"/km. Je compte donc aujourd'hui faire le premier semi à cette allure le jour de la course, je suis presque sûr de pouvoir le tenir, et ensuite advienne que pourra. Ça me ferait chier de finir ce marathon sans aucun PR. Je doute de pouvoir PR sur mon temps au marathon, alors autant PR sur le semi ! Qui sait ? Peut-être qu'avec la température plus fraîche le matin de la course (on annonce sous les 15 degrés) et les 10 jours d'entrainement/affûtage restant, un miracle peut arriver ! D'ailleurs oui, je ne vais faire qu'une semaine d'affûtage au lieu de deux, vu le faible volume kilométrique des dernières semaines.
+
+Dernière ligne droite ! 🚀
