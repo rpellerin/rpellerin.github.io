@@ -35,7 +35,7 @@ I believe this was a realistic goal, despite my training being so inconsistent. 
 <figcaption>Running gear</figcaption>
 </figure>
 
-The alarm clock went off around 7:30. Breakfast, pitstop at the bathroom and we were out at 8:25, on the bike, headed to the starting line.
+The alarm clock went off around 7:30, after an ok-ish night. I had not slept well the week before at all because of the stress building up, but that night turned out ok in terms of hours of sleep. Breakfast, pitstop at the bathroom and we were out at 8:25, on the bike, headed to the starting line.
 
 9:10. I made my way to my corral. People become animals before races. No one cared anymore, not even women, who had no problems doing their business in front of everybody in the Tiergarden forest. I was no different and took a last piss. I could not afford to wait for a porta-potty, as the waiting lines were quite long.
 
@@ -49,9 +49,11 @@ At km 10, I started to realize that running at my goal pace was becoming challen
 
 I crossed the half marathon mark in 1h33'08". From then on, the rest of the race was a constant fight against myself. Negative thoughts on and on again. "I could stop right there", "I already got a half marathon PR, no point in carrying on". Non stop. I started walking at aid stations, something I had never done before. I would drink 2, often 3 full cups of water, and poor another 2 on my head and body. At every damn aid station. People started walking on the course as soon as km 25, much earlier than what I had seen before. My pace dropped quite significantly but I was at peace with it. Just wanted to get it over with. As fast as possible.
 
-Ultimately, **I crossed the finish line in 3h15'58"**, official time. 3 minutes slower than Paris, 10 minutes slower than my goal. It is what it is. I couldn't beat the heat - and very few could!
+Ultimately, **I crossed the finish line in 3h15'58"**, official time. 3 minutes slower than Paris, 10 minutes slower than my goal, 4 minutes slower than what my Garmin watch had predicted for that race. It is what it is. I couldn't beat the heat - and very few could!
 
 I can't blame the weather only. My training was quite shit, due to 2 injuries and catching COVID in the last 3 weeks. Yet I am very proud of my time and the pace I could hold. I'm also happy I did not give up.
+
+I'm glad I had zero gastrointestinal disturbances. However, I had quite a few stomach cramps, maybe 4 or 5 throughout the race. They felt like side stitches, but I know they were not linked to my breathing, rather originating from below. I think I had the first one around km 2. Every time they lasted about 1 or 2 km and then would vanish. My trick to help them go away was to contract my abs as much as possible. That worked most of the time.
 
 The crowds were amazing! My girlfriend and friends cheering on were a massive help! Running at home felt truly different, I loved it.
 
@@ -79,3 +81,5 @@ Saturday was insane. Many clubs and influencers organized community runs on that
 <img src="{static}/images/berlin-marathon-2025/dorian-louvet.jpg" alt="Photo with Dorian Louvet" />
 <figcaption>Dorian Louvet on the right handside</figcaption>
 </figure>
+
+As to my own performance, of course the hot weather played a major role. But with hindsight, what I really missed were those 28-km-long training runs with 5x4000m at marathon pace, in the last 6 weeks before the race, that I did when I was training for Paris earlier this year. They had helped me build my mental strength but also they had prepared my muscles for such a long effort. I'll do better next time hopefully 🤞.

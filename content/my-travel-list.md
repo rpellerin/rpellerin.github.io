@@ -40,7 +40,7 @@ Summary: Places I want to visit.
 - Vienna
 - Hallstatt, Austria 
 - <del>Prague</del>
-- Greece
+- <del>Greece</del>
 - Cyprus
 - <del>Berlin, Hamburg and Munich, Germany</del>
 - Scandinavia: Denmark, Sweden, Norway (Geirangerfjord)
