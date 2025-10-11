@@ -88,7 +88,7 @@ En regardant en arrière, sur ces 3 derniers mois, ça aura été une sacrée pr
 
 <figure class="center">
 <img src="{static}/images/berlin-marathon-2025-90km.png" alt="Screenshot of Strava" />
-<figcaption>Semaine dernière (S-2)</figcaption>
+<figcaption>Semaine dernière (S-2) - 1 au 7 Septembre</figcaption>
 </figure>
 
 Enfin guéri du COVID. J'ai pu aller courir 32 kms il y a 2 jours, et conclure une semaine à 90 kms ! L'autre bonne nouvelle, c'est que ma douleur au pied est aussi presque 100% guérie, disons à 95%. Depuis une semaine, la plupart des séances commencent avec une douleur à 1/10 et au bout de 2 ou 3 kms chutent à 0. Pareil le matin au lever, zéro douleur ! Il faut croire que continuer à courir sur une douleur ne dépassant pas 3/10, le plus souvent possible, était la bonne stratégie. J'ai fait close to zéro renforcement pour cette douleur, 5 fois maximum en l'espace de 4 mois. Pareil pour mon syndrome de l'essuis glace, un seul renfo spécifique qui je pense n'a servi à rien. C'est passé tout seul.
