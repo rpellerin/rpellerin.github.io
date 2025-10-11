@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, marathon, running, berlin" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="First time running Berlin... a race I will never forget" />
+        <meta property="og:image" content="https://romainpellerin.eu/images/berlin-marathon-2025/berlin-marathon-2025-cover.jpg" />
+        <meta property="og:title" content="Berlin Marathon 2025: Race Report - Romain Pellerin's Blog" />
+        <meta property="og:description" content="First time running Berlin... a race I will never forget" />
+        <meta property="og:url" content="https://romainpellerin.eu/berlin-marathon-2025-race-report.html" />
+
+        <title>Berlin Marathon 2025: Race Report - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/berlin-marathon-2025/berlin-marathon-2025-cover.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-10-11T19:45:00+02:00">Sat 11 October 2025</time>        </p>
+    <h1>Berlin Marathon 2025: Race Report</h1>
+    <div class="grey">
+        <p class="italic">First time running Berlin... a race I will never forget</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1153 words.">6 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/running.html">Running</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/marathon.html">marathon</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/running.html">running</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/berlin.html">berlin</a></p>    </div>
+</header>
+<article>
+    <p>Marathons rarely go as planned. Anything can happen. No matter how strong the training block was, marathons are brutal and often unpredictable. Sunday the 21st of September was no different. Nothing went according to plan. Yet it was a great race! One for the books.</p>
+<h1 id="some-context">Some context</h1>
+<p>329 days, 3 marathons. Dresden (October 2024), Paris (April 2025), now Berlin (September 2025). I had high expectations for Berlin, given how flat the course is.</p>
+<p>My training block for Berlin was a rollercoaster. I wrote it all in <a href="https://romainpellerin.eu/season-update-et-nouvelle-blessure.html">a previous article</a>. In short:</p>
+<ul>
+<li><strong>June 2025</strong>: I began training for Berlin mid-June, after completing my first IRONMAN 70.3 on June 1st. Shortly after, I stepped on glass and badly injured my right foot. I was not able to run for a full week.</li>
+<li><strong>July and August</strong>: a pain started growing in my left foot over the weeks. A pain that had been there in the background since March or April. A peroneal tendinopathy I believe. That forced me to pause and resume my training multiple times over these 2 months. At some point, after coming back to running after multiple days off, I started developing a iliotibial band syndrome on the same leg which prevented me from properly training in August.</li>
+<li><strong>End of August / beginning of September</strong>: I was finally healing. My 2 injuries were almost completely gone (peroneal tendinopathy + iliotibial band syndrome). But I caught COVID in the last days of August, so the first week of September was pretty shit in terms of training. I had to stay away from running for 2 or 3 days. Then I got back to it, despite feeling weak. It took 10 days in total for all COVID symptoms to vanish completely. Yet I kept on kunning, cause fuck it. After that came the tapering phase. End of the training.</li>
+</ul>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/berlin-marathon-2025-90km.png" alt="Screenshot of Strava" />
+<figcaption>I ran 90 kms in the week 1 to 7 September. The week before, I was having fever.</figcaption>
+</figure>
+
+<p>Back in June, my initial goal for this marathon was sub 3 hours (pace of 4'10"/km). But in July, because of all the problems I had, I changed it to a pace of 4'20"/km.</p>
+<p>I believe this was a realistic goal, despite my training being so inconsistent. But the weather decided otherwise. Weather forecast for that Sunday: scorching temperatures peaking at 26°C under a clear blue sky. I knew I was in for everything but a treat. A heatwave over western Europe. Only for Saturday and Sunday... Shit.</p>
+<h1 id="race-day">Race day</h1>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/berlin-marathon-2025/gear.jpg" alt="Screenshot of the weekly kms on Strava" />
+<figcaption>Running gear</figcaption>
+</figure>
+
+<p>The alarm clock went off around 7:30. Breakfast, pitstop at the bathroom and we were out at 8:25, on the bike, headed to the starting line.</p>
+<p>9:10. I made my way to my corral. People become animals before races. No one cared anymore, not even women, who had no problems doing their business in front of everybody in the Tiergarden forest. I was no different and took a last piss. I could not afford to wait for a porta-potty, as the waiting lines were quite long.</p>
+<p>Around me people were already covered in sweat. It was already pretty hot. At 9:15 the gun went off.</p>
+<p>I could not actually get in my corral until after the official start of the race. It was too packed. A lot of runners like me had to wait behind the fences, until the crowd started moving forward to the starting line, after the race had started. I was in the group B.</p>
+<p>After progressing forward slowly, I crossed the starting line at 9:24. The first few kms were not easy, the density of runners was high, it was pretty hard to get to pace. But I was feeling confident and at ease. However, that was not gonna last long...</p>
+<p>At km 10, I started to realize that running at my goal pace was becoming challenging. I started feeling quite unwell from that moment on. Extremely thirsty on top of that, despite the cups of water that I had grabbed at aid stations. I normally never look at my HR in races but I decided to glance at it this time. More than 180! Under normal circumstances it should have been around 170, maybe 175, but definitely not 180+. Unbelievable. And unbearable in the long term, I knew it. Fortunately, I had a secondary goal in mind: set a personal record in the half marathon. I decided to shift gears and give up on my marathon PR at that moment. Full focus on the first half marathon. Then I would slow down and try to bring the HR down. Until then, full throttle and fuck the HR.</p>
+<p>I crossed the half marathon mark in 1h33'08". From then on, the rest of the race was a constant fight against myself. Negative thoughts on and on again. "I could stop right there", "I already got a half marathon PR, no point in carrying on". Non stop. I started walking at aid stations, something I had never done before. I would drink 2, often 3 full cups of water, and poor another 2 on my head and body. At every damn aid station. People started walking on the course as soon as km 25, much earlier than what I had seen before. My pace dropped quite significantly but I was at peace with it. Just wanted to get it over with. As fast as possible.</p>
+<p>Ultimately, <strong>I crossed the finish line in 3h15'58"</strong>, official time. 3 minutes slower than Paris, 10 minutes slower than my goal. It is what it is. I couldn't beat the heat - and very few could!</p>
+<p>I can't blame the weather only. My training was quite shit, due to 2 injuries and catching COVID in the last 3 weeks. Yet I am very proud of my time and the pace I could hold. I'm also happy I did not give up.</p>
+<p>The crowds were amazing! My girlfriend and friends cheering on were a massive help! Running at home felt truly different, I loved it.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/berlin-marathon-2025/strava-results.jpg" alt="Photo with Strava data" />
+<figcaption>Crossing the finish line - with some data from Strava</figcaption>
+</figure>
+
+<p>Berlin, I will come back. Stronger! 💪</p>
+<h1 id="some-after-thoughts">Some after thoughts</h1>
+<p>I enjoyed this weekend so much. It felt like the whole city was dedicated to running. There were events everywhere in the city, especially on Saturday. Posters and massive ads painted on buildings were everywhere.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/berlin-marathon-2025/berlin.jpg" alt="Photo of a building" />
+<figcaption>A building in Berlin - Kurfürstendamm</figcaption>
+</figure>
+
+<p>As early in the week as Thursday, one could witness the "major marathon" effect: loads of people were traveling from everywhere in the world and flocking to Berlin. On that day I decided to dye my hair blond just for the race 😆.</p>
+<p>Saturday was insane. Many clubs and influencers organized community runs on that day. The famous street "Unter den Linden" was already clossed off to cars and filled with runners. I joined a community run organized by Dorian Louvet in Tiergarten, with around 100 other people.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/berlin-marathon-2025/dorian-louvet.jpg" alt="Photo with Dorian Louvet" />
+<figcaption>Dorian Louvet on the right handside</figcaption>
+</figure>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 11 October 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
