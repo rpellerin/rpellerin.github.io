@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, travel, greece" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Some tips about Greece" />
+        <meta property="og:image" content="https://romainpellerin.eu/images/greece/cover.jpg" />
+        <meta property="og:title" content="Greece - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Some tips about Greece" />
+        <meta property="og:url" content="https://romainpellerin.eu/greece.html" />
+
+        <title>Greece - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <img src="images/greece/cover.jpg" alt="Header picture" id="header-picture" />
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-10-16T23:00:00+02:00">Thu 16 October 2025</time>        </p>
+    <h1>Greece</h1>
+    <div class="grey">
+        <p class="italic">Some tips about Greece</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 1054 words.">5 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/travels.html">Travels</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/travel.html">travel</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/greece.html">greece</a></p>    </div>
+</header>
+<article>
+    <p>I recently spent a little over a week in Greece. Here is what I've learned and seen and would recommend.</p>
+<h1 id="facts-about-greece">Facts about Greece</h1>
+<h2 id="hot-water-generation">Hot water generation</h2>
+<p>Most buildings in Greece have a hot water tank located on their roof, connected to a solar water heater (like a solar panel). This is how they heat up water and store it. Some buildings also come with electrical heaters to provide hot water at any given time.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/solar-panels.jpg" alt="Solar panels on a roof" />
+<figcaption>Solar panels and a water tank</figcaption>
+</figure>
+
+<h2 id="restaurants">Restaurants</h2>
+<p>Tipping at restaurants is not such a thing but it is usually expected of tourists, probably because of Americans bringing their tipping culture. A lot of POS terminals even offer the annoying buttons to tip 10, 15 or even 20% when paying by card.</p>
+<p>Rounding up to the nearest euro is what Greeks do when paying in cash, from what I gathered.</p>
+<p>It is also quite common to be served a dessert or digestive at the end of a meal, on the house (for free). It is less common in very touristic areas though.</p>
+<h2 id="pipes">Pipes</h2>
+<p>Historically, Greece has had quite narrow pipes connected to their sewers. Narrower than most countries in the world at least. And they clog up easily. To prevent this, Greeks do not throw toilet paper in their toilets. You'll see such signs everywhere. Instead, they throw it in a bin next to the toilet.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/toilets.jpg" alt="A sign next to a toilet" />
+<figcaption>In most places, throwing toilet paper in the toilet is forbidden</figcaption>
+</figure>
+
+<h2 id="cars-and-scooters-mopeds">Cars and scooters (mopeds)</h2>
+<p>They drive quite old cars, especially on the islands. I saw cars that I haven't seen in Germany or France for like 10 years</p>
+<p>On top of that, it is not uncommon to see damaged cars either, with parts missing or replaced with another one with a non matching color, or rusty parts.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/cars.jpg" alt="A photo of a deteriorated car" />
+<figcaption>A car not so new anymore</figcaption>
+</figure>
+
+<p>Although wearing a helmet when driving a scooter is mandatory, I have seen A LOT of people without one. Sometimes both the driver and the passenger. Not just on 50cc, also 125cc. Reckless!</p>
+<h2 id="trash-management">Trash management</h2>
+<p>Greece is infested with trash. It was pretty OK in Athens, but definitely not on the islands.</p>
+<p>In Athens, sorting trash and recyling is a thing, despite not being generalized everywhere. On the islands, far from it. I pretty much never saw any recycling bin on Sifnos or Santorini. Everything goes in the general waste bin. I also got to see a massive landfill on Sifnos, a bit hidden behind the hills, far from the villages. Very gross.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/trash.jpg" alt="Trash" />
+<figcaption>Trash is everywhere in Greece - at least on the islands</figcaption>
+</figure>
+
+<p>Also, the islands are quite dirty. Outside the cities, there was trash everywhere: by the side of the road, in the fields...</p>
+<h1 id="athens">Athens</h1>
+<p>Athens is really nice to visit! History is at every corner. Not only ancient history, but also modern history: things related to the Olympic Games, for instance.</p>
+<p>Overall, the city is quite walkable. It is also well connected with subways and trains. A subway ticket costs 1.9 euros at the time of writing. Yet expect a lot of traffic.</p>
+<p>The city is a mix of run-down buildings, some of them completely abandonned, and new modern buildings.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/athens.jpg" alt="The Acropolis in Athens" />
+<figcaption>Athens - The Acropolis</figcaption>
+</figure>
+
+<p>I only spent two days in Athens, here's what I visited:</p>
+<ul>
+<li>The Acropolis of course. A ticket costs 30 euros.</li>
+<li>Went to the Lycabettus Hill Viewing Area, where the Holy Church of Saint George of Lycabettus is</li>
+<li>Athens National Garden</li>
+<li>Panathenaic Stadium: a must see for anyone interested in sports. A ticket costs 12 euros.</li>
+</ul>
+<p>I highly recommend walking in the evening or at night around the Acropolis or in the Plaka neighborhood. It's lively and full of good restaurants.</p>
+<h1 id="islands">Islands</h1>
+<h2 id="sifnos">Sifnos</h2>
+<p>Sifnos was a delight. Not very touristic, and not many people in general. Few villages, very quiet at night. Yet, beautiful beaches and many things to discover. There are also <a href="https://sifnostrails.com/">trails for those who like hiking</a>.</p>
+<p>I got to do:</p>
+<ul>
+<li>An hour long hike from Vathi to a nice beach called "Paralia Fikiada"</li>
+<li>The beach "Paralia Platis Gialos" is great because of all the cafes and shops next to it. And the view, facing south, is quite nice.</li>
+<li>Apokofto beach and the Chrisopigi Monastery</li>
+<li>Explored Kastro and saw the Church of the Seven Martyrs</li>
+<li>We were staying in Kamares, at a hotel called Margado. 200% recommended! The Kamares beach is AMAZING for its sunsets.</li>
+<li>Drove all the way up to Agios Symeon to enjoy the view</li>
+<li>Had a great dinner at Sunset in Troulaki</li>
+<li>Explored the most northern part of the island around the monastry "Ag. Georgios". Then we enjoyed the sunset from the Cheronissos beach.</li>
+</ul>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/sifnos.jpg" alt="Photo of the Church of the Seven Martyrs" />
+<figcaption>Sifnos - Church of the Seven Martyrs</figcaption>
+</figure>
+
+<p>Renting a car or a scooter is advisable to easily explore the island.</p>
+<h2 id="santorini">Santorini</h2>
+<p>Santorini was... mixed feelings. On the one hand, it's way too touristic and filled with people. Every day, cruise ships come and let out thousands of tourists who flood the streets in no time. The car traffic is insane. And everything is over priced. It is very hard to find a main course under 20 euros. On the other hand, the geological features of the island are unique and truly stunning, it's fascinating! It is the remains of what used to be a volcano. Sunsets on Santorini are second to none.</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/santorini.jpg" alt="Photo of the Three Bells of Fira in Santorini" />
+<figcaption>Santorini - Three Bells of Fira</figcaption>
+</figure>
+
+<p>Even though buses exist in Santorini, I once again recommend renting a car. The island is full of quads and ATVs that tourists rent. Very loud and pretty annoying...</p>
+<figure class="center">
+<img src="https://romainpellerin.eu/images/greece/atvs.jpg" alt="Photo showing ATVs and quads" />
+<figcaption>ATVs and quads in Santorini</figcaption>
+</figure>
+
+<p>I got to do:</p>
+<ul>
+<li>Swim at Mera Beach, a.k.a. the black beach</li>
+<li>Swim at the Red Beach</li>
+<li>Tried to "hike" to the White Beach. But actually reaching the beach on foot was hard, so we did not do it.</li>
+<li>Explored Oia, Fira and Imerovigli on foot.</li>
+<li>We did a <a href="https://www.santorini-view.com/boat-volcano-tours/volcano-boat-tour-including-hot-springs-therasia-caldera-boats/">5-hour-long boat cruise from the old port of Fira, to the Volcano, then Hot Springs, then Thirasia, and back</a>. 100% recommended. Only 35 euros. Great value for money. We had a lot of fun exploring the volcano and swimming in the hot springs. There was nothing special about Thirasia but it was still nice to visit.</li>
+</ul>
+<p>All in all, Greece was fun! I'll happily go again. Next time on different islands. Going from island to island is fairly easy thanks to the many daily ferries.</p>
+</article>
+<footer class="grey italic small">
+    Last update: Thu 16 October 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
