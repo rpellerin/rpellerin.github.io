@@ -11,7 +11,7 @@ I recently spent a little over a week in Greece. Here is what I've learned and s
 
 # Facts about Greece
 
-## Hot water generation
+## Water usage
 
 Most buildings in Greece have a hot water tank located on their roof, connected to a solar water heater (like a solar panel). This is how they heat up water and store it. Some buildings also come with electrical heaters to provide hot water at any given time.
 
@@ -19,6 +19,8 @@ Most buildings in Greece have a hot water tank located on their roof, connected 
 <img src="{static}/images/greece/solar-panels.jpg" alt="Solar panels on a roof" />
 <figcaption>Solar panels and a water tank</figcaption>
 </figure>
+
+Speaking of water, locals often said that tap water should not be drinked on the islands. After some googling and trying it myself, it is quite safe to drink, at least on Santorini and Sifnos. It meets EU standard. The taste may feel a little weird as it is desalinated water... but nothing to worry about. I drank plenty and I'm still alive.
 
 ## Restaurants
 
@@ -37,7 +39,7 @@ Historically, Greece has had quite narrow pipes connected to their sewers. Narro
 <figcaption>In most places, throwing toilet paper in the toilet is forbidden</figcaption>
 </figure>
 
-## Cars and scooters (mopeds)
+## Driving
 
 They drive quite old cars, especially on the islands. I saw cars that I haven't seen in Germany or France for like 10 years
 
@@ -49,6 +51,10 @@ On top of that, it is not uncommon to see damaged cars either, with parts missin
 </figure>
 
 Although wearing a helmet when driving a scooter is mandatory, I have seen A LOT of people without one. Sometimes both the driver and the passenger. Not just on 50cc, also 125cc. Reckless!
+
+I saw a lot of 30 or 40 km/h speed limits on road signs on the islands... but everyone was driving faster. Also, and that is valid for Athens too: paint on the road seems too expensive (or too useless?) to be maintained. Stop markings, pedestrian crossings: barely visible. It seemed like it was last painted 20 years.
+
+Fun fact: on the islands, people seem to trust one another at a different level than what I'm used to. So much that they often leave their helmets and scooter keys... on the scooter!! Even at night. Crazy!
 
 ## Trash management
 
@@ -111,7 +117,7 @@ Renting a car or a scooter is advisable to easily explore the island.
 
 ## Santorini
 
-Santorini was... mixed feelings. On the one hand, it's way too touristic and filled with people. Every day, cruise ships come and let out thousands of tourists who flood the streets in no time. The car traffic is insane. And everything is over priced. It is very hard to find a main course under 20 euros. On the other hand, the geological features of the island are unique and truly stunning, it's fascinating! It is the remains of what used to be a volcano. Sunsets on Santorini are second to none.
+Santorini was... mixed feelings. On the one hand, it's way too touristic and filled with people. Every day, cruise ships come and let out thousands of tourists who flood the streets in no time. Most of them from the US it seemed. The car traffic is insane. And everything is over priced. It is very hard to find a main course under 20 euros. On the other hand, the geological features of the island are unique and truly stunning, it's fascinating! It is the remains of what used to be a volcano. Sunsets on Santorini are second to none.
 
 <figure class="center">
 <img src="{static}/images/greece/santorini.jpg" alt="Photo of the Three Bells of Fira in Santorini" />
@@ -133,4 +139,4 @@ I got to do:
 - Explored Oia, Fira and Imerovigli on foot.
 - We did a [5-hour-long boat cruise from the old port of Fira, to the Volcano, then Hot Springs, then Thirasia, and back](https://www.santorini-view.com/boat-volcano-tours/volcano-boat-tour-including-hot-springs-therasia-caldera-boats/). 100% recommended. Only 35 euros. Great value for money. We had a lot of fun exploring the volcano and swimming in the hot springs. There was nothing special about Thirasia but it was still nice to visit.
 
-All in all, Greece was fun! I'll happily go again. Next time on different islands. Going from island to island is fairly easy thanks to the many daily ferries.
+All in all, Greece was fun! It seemed extremely popular among French people. I swear, 1 out of 3 tourists was French. Still, I'll happily go again. Next time on different islands. Going from island to island is fairly easy thanks to the many daily ferries.
