@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Travels</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/travels/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-10-16T23:00:00+02:00</updated><entry><title>Greece</title><link href="https://romainpellerin.eu/greece.html" rel="alternate"></link><published>2025-10-16T23:00:00+02:00</published><updated>2025-10-16T23:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-10-16:/greece.html</id><summary type="html">&lt;p&gt;Some tips about Greece&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently spent a little over a week in Greece. Here is what I've learned and seen and would recommend.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Travels</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/travels/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-10-16T23:37:00+02:00</updated><entry><title>Greece</title><link href="https://romainpellerin.eu/greece.html" rel="alternate"></link><published>2025-10-16T23:00:00+02:00</published><updated>2025-10-16T23:37:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-10-16:/greece.html</id><summary type="html">&lt;p&gt;Some tips about Greece&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently spent a little over a week in Greece. Here is what I've learned and seen and would recommend.&lt;/p&gt;
 &lt;h1 id="facts-about-greece"&gt;Facts about Greece&lt;/h1&gt;
-&lt;h2 id="hot-water-generation"&gt;Hot water generation&lt;/h2&gt;
+&lt;h2 id="water-usage"&gt;Water usage&lt;/h2&gt;
 &lt;p&gt;Most buildings in Greece have a hot water tank located on their roof, connected to a solar water heater (like a solar panel). This is how they heat up water and store it. Some buildings also come with electrical heaters to provide hot water at any given time.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="https://romainpellerin.eu/images/greece/solar-panels.jpg" alt="Solar panels on a roof" /&gt;
 &lt;figcaption&gt;Solar panels and a water tank&lt;/figcaption&gt;
 &lt;/figure&gt;
 
+&lt;p&gt;Speaking of water, locals often said that tap water should not be drinked on the islands. After some googling and trying it myself, it is quite safe to drink, at least on Santorini and Sifnos. It meets EU standard. The taste may feel a little weird as it is desalinated water... but nothing to worry about. I drank plenty and I'm still alive.&lt;/p&gt;
 &lt;h2 id="restaurants"&gt;Restaurants&lt;/h2&gt;
 &lt;p&gt;Tipping at restaurants is not such a thing but it is usually expected of tourists, probably because of Americans bringing their tipping culture. A lot of POS terminals even offer the annoying buttons to tip 10, 15 or even 20% when paying by card.&lt;/p&gt;
 &lt;p&gt;Rounding up to the nearest euro is what Greeks do when paying in cash, from what I gathered.&lt;/p&gt;
@@ -19,7 +20,7 @@
 &lt;figcaption&gt;In most places, throwing toilet paper in the toilet is forbidden&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2 id="cars-and-scooters-mopeds"&gt;Cars and scooters (mopeds)&lt;/h2&gt;
+&lt;h2 id="driving"&gt;Driving&lt;/h2&gt;
 &lt;p&gt;They drive quite old cars, especially on the islands. I saw cars that I haven't seen in Germany or France for like 10 years&lt;/p&gt;
 &lt;p&gt;On top of that, it is not uncommon to see damaged cars either, with parts missing or replaced with another one with a non matching color, or rusty parts.&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -28,6 +29,8 @@
 &lt;/figure&gt;
 
 &lt;p&gt;Although wearing a helmet when driving a scooter is mandatory, I have seen A LOT of people without one. Sometimes both the driver and the passenger. Not just on 50cc, also 125cc. Reckless!&lt;/p&gt;
+&lt;p&gt;I saw a lot of 30 or 40 km/h speed limits on road signs on the islands... but everyone was driving faster. Also, and that is valid for Athens too: paint on the road seems too expensive (or too useless?) to be maintained. Stop markings, pedestrian crossings: barely visible. It seemed like it was last painted 20 years.&lt;/p&gt;
+&lt;p&gt;Fun fact: on the islands, people seem to trust one another at a different level than what I'm used to. So much that they often leave their helmets and scooter keys... on the scooter!! Even at night. Crazy!&lt;/p&gt;
 &lt;h2 id="trash-management"&gt;Trash management&lt;/h2&gt;
 &lt;p&gt;Greece is infested with trash. It was pretty OK in Athens, but definitely not on the islands.&lt;/p&gt;
 &lt;p&gt;In Athens, sorting trash and recyling is a thing, despite not being generalized everywhere. On the islands, far from it. I pretty much never saw any recycling bin on Sifnos or Santorini. Everything goes in the general waste bin. I also got to see a massive landfill on Sifnos, a bit hidden behind the hills, far from the villages. Very gross.&lt;/p&gt;
@@ -75,7 +78,7 @@
 
 &lt;p&gt;Renting a car or a scooter is advisable to easily explore the island.&lt;/p&gt;
 &lt;h2 id="santorini"&gt;Santorini&lt;/h2&gt;
-&lt;p&gt;Santorini was... mixed feelings. On the one hand, it's way too touristic and filled with people. Every day, cruise ships come and let out thousands of tourists who flood the streets in no time. The car traffic is insane. And everything is over priced. It is very hard to find a main course under 20 euros. On the other hand, the geological features of the island are unique and truly stunning, it's fascinating! It is the remains of what used to be a volcano. Sunsets on Santorini are second to none.&lt;/p&gt;
+&lt;p&gt;Santorini was... mixed feelings. On the one hand, it's way too touristic and filled with people. Every day, cruise ships come and let out thousands of tourists who flood the streets in no time. Most of them from the US it seemed. The car traffic is insane. And everything is over priced. It is very hard to find a main course under 20 euros. On the other hand, the geological features of the island are unique and truly stunning, it's fascinating! It is the remains of what used to be a volcano. Sunsets on Santorini are second to none.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="https://romainpellerin.eu/images/greece/santorini.jpg" alt="Photo of the Three Bells of Fira in Santorini" /&gt;
 &lt;figcaption&gt;Santorini - Three Bells of Fira&lt;/figcaption&gt;
@@ -95,7 +98,7 @@
 &lt;li&gt;Explored Oia, Fira and Imerovigli on foot.&lt;/li&gt;
 &lt;li&gt;We did a &lt;a href="https://www.santorini-view.com/boat-volcano-tours/volcano-boat-tour-including-hot-springs-therasia-caldera-boats/"&gt;5-hour-long boat cruise from the old port of Fira, to the Volcano, then Hot Springs, then Thirasia, and back&lt;/a&gt;. 100% recommended. Only 35 euros. Great value for money. We had a lot of fun exploring the volcano and swimming in the hot springs. There was nothing special about Thirasia but it was still nice to visit.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;All in all, Greece was fun! I'll happily go again. Next time on different islands. Going from island to island is fairly easy thanks to the many daily ferries.&lt;/p&gt;</content><category term="Travels"></category><category term="travel"></category><category term="greece"></category></entry><entry><title>Canada</title><link href="https://romainpellerin.eu/canada.html" rel="alternate"></link><published>2024-08-11T13:30:00+02:00</published><updated>2024-08-11T13:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-11:/canada.html</id><summary type="html">&lt;p&gt;Recommendations about Canada and places to visit&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
+&lt;p&gt;All in all, Greece was fun! It seemed extremely popular among French people. I swear, 1 out of 3 tourists was French. Still, I'll happily go again. Next time on different islands. Going from island to island is fairly easy thanks to the many daily ferries.&lt;/p&gt;</content><category term="Travels"></category><category term="travel"></category><category term="greece"></category></entry><entry><title>Canada</title><link href="https://romainpellerin.eu/canada.html" rel="alternate"></link><published>2024-08-11T13:30:00+02:00</published><updated>2024-08-11T13:30:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-11:/canada.html</id><summary type="html">&lt;p&gt;Recommendations about Canada and places to visit&lt;/p&gt;</summary><content type="html">&lt;p&gt;I recently went to Canada for the first time of my life. Boy did I like it! It was grand! Truly a beautiful country, with very friendly people. And I've only seen a tiny part of Canada!&lt;/p&gt;
 &lt;p&gt;Alright, as I did in previous articles, here is a list of things to know about Canada before you get there, and then my very own recommendations on places to visit, based on my experience only.&lt;/p&gt;
 &lt;h1 id="things-to-know"&gt;Things to know&lt;/h1&gt;
 &lt;ul&gt;
