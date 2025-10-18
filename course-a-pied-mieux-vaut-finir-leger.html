@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, running" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="Copie d'un article publié dans une revue de médecine" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Course à pied : mieux vaut finir léger - Romain Pellerin's Blog" />
+        <meta property="og:description" content="Copie d'un article publié dans une revue de médecine" />
+        <meta property="og:url" content="https://romainpellerin.eu/course-a-pied-mieux-vaut-finir-leger.html" />
+
+        <title>Course à pied : mieux vaut finir léger - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-10-18T12:30:00+02:00">Sat 18 October 2025</time>        </p>
+    <h1>Course à pied : mieux vaut finir léger</h1>
+    <div class="grey">
+        <p class="italic">Copie d'un article publié dans une revue de médecine</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 427 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/running.html">Running</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/running.html">running</a></p>    </div>
+</header>
+<article>
+    <p>Ci-dessous une copie d'<a href="https://www.revmed.ch/revue-medicale-suisse/2011/revue-medicale-suisse-278/course-a-pied-mieux-vaut-finir-leger">un article</a> paru dans "Revue Médicale Suisse" le 19 janvier 2011, au cas où l'article viendrait à ne plus être disponible en ligne (<a href="https://www.revmed.ch/view/509705/4177696/RMS_idPAS_D_ISBN_pu2011-02s_sa26_art26.pdf">PDF</a>). Par Sylvain Berney.</p>
+<blockquote>
+<p>Perdre du poids pendant un marathon s’avérerait avantageux pour les performances du sportif.</p>
+<p>Interpellés par les résultats contradictoires obtenus lors de précédentes études, des chercheurs de l’Université de Rennes se sont penchés sur la relation entre performances athlétiques et changements de masse corporelle chez 643 coureurs de marathon.1</p>
+<p>Ayant reçu les mêmes conseils concernant la prise de liquides durant l’épreuve (environ 250 ml chaque 20 minutes), les coureurs du marathon du Mont-Saint-Michel de l’année 2009 ont été pesés avant et immédiatement après la course. Les mesures étaient effectuées par le même examinateur et sur la même balance. Confrontée aux résultats des athlètes sur la ligne d’arrivée, la mesure du poids corporel a montré une relation inversement proportionnelle : plus les coureurs avaient perdu de poids lors de la course, meilleures étaient leurs performances. A titre d’exemple, ceux terminant en moins de 3 h perdaient plus de 3% de leur poids. Les coureurs ayant pris du poids lors de la course s’avéraient être les athlètes les moins bien classés.</p>
+<p>L’intérêt de ces résultats est qu’ils s’opposent aux conclusions d’études préalables (notamment celles réalisées en laboratoire), qui suggéraient qu’une perte de plus de 2% du poids corporel total est néfaste aux performances athlétiques. Ces résultats ont influencé les recommandations en vigueur de l’American College of Sports Medicine (ACSM), qui conseillent aux coureurs de boire selon leur sensation de soif mais aussi de manière à ne pas dépasser cette limite de 2% de pertes.2 D’autre part, un rapport récent sur le détenteur du record du monde de marathon (2 h 03 min 59 s) montre que l’athlète aurait perdu plus de 10% de son poids lors de son exploit.3 Si la théorie des 2% néfastes aux performances s’avérait correcte, une telle performance serait peu probable. D’autres études avaient déjà suggéré que les coureurs les plus rapides perdaient plus de poids.</p>
+<p>Chaque coureur du Mont-Saint-Michel s’hydratait différemment des autres. Cette différence semble dépendre de signaux biologiques visant à optimiser la performance tout en respectant l’osmolalité sanguine.</p>
+<p>Selon H. Zouhal, C. Groussard et coll., le risque de choc thermique par déshydratation lors d’un exercice d’endurance prolongé reste faible comparé au risque d’encéphalopathie hyponatrémique associée à une hydratation excessive.</p>
+<p>En conclusion, chez des athlètes entraînés, une perte de poids durant la course pourrait s’avérer bénéfique simplement parce que le poids total à transporter diminue. Son effet néfaste n’est pour le moment pas démontré.</p>
+</blockquote>
+</article>
+<footer class="grey italic small">
+    Last update: Sat 18 October 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
