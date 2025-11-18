@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, code, google" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="A Google Apps Script to keep calendars in sync" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Synchronizing Google Calendars - Romain Pellerin's Blog" />
+        <meta property="og:description" content="A Google Apps Script to keep calendars in sync" />
+        <meta property="og:url" content="https://romainpellerin.eu/synchronizing-google-calendars.html" />
+
+        <title>Synchronizing Google Calendars - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time>        </p>
+    <h1>Synchronizing Google Calendars</h1>
+    <div class="grey">
+        <p class="italic">A Google Apps Script to keep calendars in sync</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 810 words.">4 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/google.html">google</a></p>    </div>
+</header>
+<article>
+    <p>At work, we use Google Calendars. I'm scheduling my workout/sports sessions in a separate, private Google Calendar. I'm also regularly on call during office hours - I'm getting assigned some days through another calendar provided by PagerDuty.</p>
+<p><img src="https://romainpellerin.eu/images/google-calendar-others.png" alt="Screenshot of Google Calendar" style="float:left" /></p>
+<p>I added these 2 additional calendars to my work calendar as "external calendars", which only I can see.</p>
+<p>But I need my colleagues to see when I'm busy because I'm going for a run over the lunch break, or when I'm on call. Hence a need to keep these 3 calendars in sync. One caveat though is that I want to keep my sports sessions "private": my coworkers do not need to know whether I'm going running, or to the gym, or whathever. They just need to know that I'm not available.</p>
+<p>So I came up with a <a href="https://script.google.com/home/">Google Apps Script</a> that periodically runs (every hour) and does the following:</p>
+<ul>
+<li>Create "busy" events in my work calendar at the same time as my workouts.</li>
+<li>Create a copy of my "on call" events in my work calendar, coming from the Pager Duty calendar.</li>
+</ul>
+<p>Of course if I update or delete a sports session, or if my on-call schedule changes, it gets updated in my work calendar too.</p>
+<p>Here is the script:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">TARGET_EMAIL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;romain.pellerin@workemail&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SYNC_DAYS</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="c1">// Number of days to look ahead</span><span class="w"></span>
+<span class="w">    </span><span class="nx">TAG_PREFIX</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Source iCalUID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unique identifier tag in description</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CALENDARS</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-id@group.calendar.google.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sports</span><span class="w"></span>
+<span class="w">            </span><span class="nx">isPrivate</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will be renamed to &#39;Busy&#39; and set private</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-other-id@import.calendar.google.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// pager duty</span><span class="w"></span>
+<span class="w">            </span><span class="nx">isPrivate</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">// THE MAIN FUNCTION, to call periodically.</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">syncGoogleCalendars</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userEmail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Session</span><span class="p">.</span><span class="nx">getActiveUser</span><span class="p">().</span><span class="nx">getEmail</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">userEmail</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TARGET_EMAIL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Skipping: Current user (</span><span class="si">${</span><span class="nx">userEmail</span><span class="si">}</span><span class="sb">) is not the target user.`</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">futureDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">SYNC_DAYS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">targetCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">getDefaultCalendar</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Creates a Map: { &#39;source_uid_string&#39; : CalendarEventObject }</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">existingEventsMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getExistingManagedEvents</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">now</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">futureDate</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">CALENDARS</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">sourceCalendarConfig</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">syncSourceCalendar</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">sourceCalendarConfig</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">existingEventsMap</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">now</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">futureDate</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Cleanup orphans: any event remaining in the map was NOT found in the source calendars, so it should be deleted.</span><span class="w"></span>
+<span class="w">    </span><span class="nx">cleanupOrphanedEvents</span><span class="p">(</span><span class="nx">existingEventsMap</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm">* Fetches events from the target calendar and maps them by their Source UID.</span>
+<span class="cm">* Only includes events created by this script (checked via regex).</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getExistingManagedEvents</span><span class="p">(</span><span class="nx">calendar</span><span class="p">,</span><span class="w"> </span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calendar</span><span class="p">.</span><span class="nx">getEvents</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">eventMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">uidRegex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TAG_PREFIX</span><span class="si">}</span><span class="sb">\\s*([\\w.@-]+)`</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">events</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">getDescription</span><span class="p">().</span><span class="nx">match</span><span class="p">(</span><span class="nx">uidRegex</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">eventMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">event</span><span class="p">);</span><span class="w"> </span><span class="c1">// Map Key: the source event UID</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">eventMap</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">syncSourceCalendar</span><span class="p">(</span><span class="nx">sourceCalendarConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"> </span><span class="nx">existingEventsMap</span><span class="p">,</span><span class="w"> </span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceCalendar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">getCalendarById</span><span class="p">(</span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">sourceCalendar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Error: Could not find calendar </span><span class="si">${</span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceEvents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceCalendar</span><span class="p">.</span><span class="nx">getEvents</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="sb">`Processing </span><span class="si">${</span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">sourceEvents</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> events found.`</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">sourceEvents</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">sourceEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Weekday Filter</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dayOfWeek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span><span class="w"> </span><span class="c1">// 0 = Sunday, 1 = Monday, ... 6 = Saturday</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// If it is Sunday (0) or Saturday (6), skip this event.</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dayOfWeek</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dayOfWeek</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">6</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="sb">`Skipping event on weekend from </span><span class="si">${</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">id</span><span class="w"></span>
+<span class="w">            </span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb"> on </span><span class="si">${</span><span class="nx">startTime</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceUid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">existingEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">sourceUid</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Determine Title and Visibility based on privacy setting</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">targetTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">isPrivate</span><span class="w"></span>
+<span class="w">        </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Busy&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">existingEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">updateEventIfChanged</span><span class="p">(</span><span class="nx">existingEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">targetTitle</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="nx">sourceUid</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove from map to indicate this event is still valid (not an orphan)</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">createNewEvent</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceUid</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">targetTitle</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">isPrivate</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">createNewEvent</span><span class="p">(</span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceUid</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">isPrivate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Creating &quot;</span><span class="si">${</span><span class="nx">title</span><span class="si">}</span><span class="sb">&quot; on </span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TAG_PREFIX</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">sourceUid</span><span class="si">}</span><span class="sb">\nCreated by Google Apps Script`</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getLocation</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">sendInvites</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">newEvent</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">isAllDayEvent</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">newEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">targetCalendar</span><span class="p">.</span><span class="nx">createAllDayEvent</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">title</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">options</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">newEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">targetCalendar</span><span class="p">.</span><span class="nx">createEvent</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="nx">title</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getEndTime</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="nx">options</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Set specific privacy settings</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isPrivate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">newEvent</span><span class="p">.</span><span class="nx">setVisibility</span><span class="p">(</span><span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">Visibility</span><span class="p">.</span><span class="nx">PRIVATE</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">newEvent</span><span class="p">.</span><span class="nx">removeAllReminders</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm">* Note: We blindly update title/time to ensure data consistency.</span>
+<span class="cm">* To further optimize, you could check if values differ before setting.</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">updateEventIfChanged</span><span class="p">(</span><span class="nx">targetEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">targetTitle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// We update the title to ensure &quot;Busy&quot; is maintained if the config changed or privacy was toggled</span><span class="w"></span>
+<span class="w">    </span><span class="nx">targetEvent</span><span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="nx">targetTitle</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">isAllDayEvent</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// For all day events, we generally just check the day, but setAllDayDate is safe</span><span class="w"></span>
+<span class="w">        </span><span class="nx">targetEvent</span><span class="p">.</span><span class="nx">setAllDayDate</span><span class="p">(</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">targetEvent</span><span class="p">.</span><span class="nx">setTime</span><span class="p">(</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">(),</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getEndTime</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm">* Deletes any events remaining in the map.</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">cleanupOrphanedEvents</span><span class="p">(</span><span class="nx">orphanMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">orphanMap</span><span class="p">.</span><span class="nx">size</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;No orphaned events to delete.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Deleting </span><span class="si">${</span><span class="nx">orphanMap</span><span class="p">.</span><span class="nx">size</span><span class="si">}</span><span class="sb"> orphaned events...`</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">uid</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">orphanMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="sb">`Deleting </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb"> (Source UID: </span><span class="si">${</span><span class="nx">uid</span><span class="si">}</span><span class="sb">) on </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">deleteEvent</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Failed to delete event </span><span class="si">${</span><span class="nx">uid</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<figure class="center">
+<img src="https://romainpellerin.eu/images/google-calendar-result.png" alt="A screenshot of Google Calendar" />
+<figcaption>And here is the result. In gray and purple are the original events from the external calendars.</figcaption>
+</figure>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 18 November 2025</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
