@@ -28,6 +28,12 @@ Here is the script:
         TARGET_EMAIL: "romain.pellerin@workemail",
         SYNC_DAYS: 14, // Number of days to look ahead
         TAG_PREFIX: "Source iCalUID:", // Unique identifier tag in description
+        TIME_WINDOW: {
+            START_HOUR: 8,
+            START_MINUTE: 30,
+            END_HOUR: 19,
+            END_MINUTE: 0,
+        },
         CALENDARS: [
             {
                 id: "some-id@group.calendar.google.com", // sports
@@ -39,6 +45,10 @@ Here is the script:
             },
         ],
     };
+
+    // Convert limit times to minutes from start of day
+    const limitStartMins = CONFIG.TIME_WINDOW.START_HOUR * 60 + CONFIG.TIME_WINDOW.START_MINUTE;
+    const limitEndMins = CONFIG.TIME_WINDOW.END_HOUR * 60 + CONFIG.TIME_WINDOW.END_MINUTE;
 
     // THE MAIN FUNCTION, to call periodically.
     function syncGoogleCalendars() {
@@ -111,6 +121,7 @@ Here is the script:
         sourceEvents.forEach((sourceEvent) => {
             // Weekday Filter
             const startTime = sourceEvent.getStartTime();
+            const endTime = sourceEvent.getEndTime();
             const dayOfWeek = startTime.getDay(); // 0 = Sunday, 1 = Monday, ... 6 = Saturday
 
             // If it is Sunday (0) or Saturday (6), skip this event.
@@ -121,6 +132,17 @@ Here is the script:
                 }: ${sourceEvent.getTitle()} on ${startTime}`
             );
             return;
+            }
+
+            // Convert event times to minutes
+            const eventStartMins = startTime.getHours() * 60 + startTime.getMinutes();
+            const eventEndMins = endTime.getHours() * 60 + endTime.getMinutes();
+
+            if (eventStartMins >= limitEndMins || eventEndMins <= limitStartMins) {
+                Logger.log(
+                    `Skipping event outside time window (${CONFIG.TIME_WINDOW.START_HOUR}:${CONFIG.TIME_WINDOW.START_MINUTE} - ${CONFIG.TIME_WINDOW.END_HOUR}:${CONFIG.TIME_WINDOW.END_MINUTE}): "${sourceEvent.getTitle()}" (${startTime.getHours()}:${startTime.getMinutes()} - ${endTime.getHours()}:${endTime.getMinutes()})`
+                );
+                return;
             }
 
             const sourceUid = sourceEvent.getId();
