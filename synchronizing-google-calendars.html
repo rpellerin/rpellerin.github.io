@@ -82,12 +82,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time>        </p>
+<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time> - Last update: <time datetime="2025-11-20T18:48:00+01:00">Thu 20 November 2025</time>        </p>
     <h1>Synchronizing Google Calendars</h1>
     <div class="grey">
         <p class="italic">A Google Apps Script to keep calendars in sync</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 810 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 898 words.">4 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/google.html">google</a></p>    </div>
 </header>
@@ -107,6 +107,12 @@
 <span class="w">    </span><span class="nx">TARGET_EMAIL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;romain.pellerin@workemail&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nx">SYNC_DAYS</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="c1">// Number of days to look ahead</span><span class="w"></span>
 <span class="w">    </span><span class="nx">TAG_PREFIX</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Source iCalUID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unique identifier tag in description</span><span class="w"></span>
+<span class="w">    </span><span class="nx">TIME_WINDOW</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">START_HOUR</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">START_MINUTE</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">END_HOUR</span><span class="o">:</span><span class="w"> </span><span class="mf">19</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nx">END_MINUTE</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="nx">CALENDARS</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-id@group.calendar.google.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sports</span><span class="w"></span>
@@ -118,6 +124,10 @@
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">],</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
+
+<span class="c1">// Convert limit times to minutes from start of day</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">limitStartMins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">START_HOUR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">START_MINUTE</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">limitEndMins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">END_HOUR</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">END_MINUTE</span><span class="p">;</span><span class="w"></span>
 
 <span class="c1">// THE MAIN FUNCTION, to call periodically.</span><span class="w"></span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">syncGoogleCalendars</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -190,6 +200,7 @@
 <span class="w">    </span><span class="nx">sourceEvents</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">sourceEvent</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="c1">// Weekday Filter</span><span class="w"></span>
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">endTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getEndTime</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">dayOfWeek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span><span class="w"> </span><span class="c1">// 0 = Sunday, 1 = Monday, ... 6 = Saturday</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// If it is Sunday (0) or Saturday (6), skip this event.</span><span class="w"></span>
@@ -200,6 +211,17 @@
 <span class="w">            </span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb"> on </span><span class="si">${</span><span class="nx">startTime</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// Convert event times to minutes</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">eventStartMins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">eventEndMins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">endTime</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">endTime</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">eventStartMins</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">limitEndMins</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">eventEndMins</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">limitStartMins</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">                </span><span class="sb">`Skipping event outside time window (</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">START_HOUR</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">START_MINUTE</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">END_HOUR</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TIME_WINDOW</span><span class="p">.</span><span class="nx">END_MINUTE</span><span class="si">}</span><span class="sb">): &quot;</span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb">&quot; (</span><span class="si">${</span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">startTime</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">endTime</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">endTime</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span><span class="si">}</span><span class="sb">)`</span><span class="w"></span>
+<span class="w">            </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceUid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span><span class="w"></span>
@@ -304,7 +326,7 @@
 </figure>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 18 November 2025</footer>
+    Last update: Thu 20 November 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
