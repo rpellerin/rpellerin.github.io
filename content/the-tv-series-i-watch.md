@@ -11,6 +11,7 @@ The past decade offered us a bunch of high-quality TV series. Here are my favori
 
 # Shows still running
 
+- Pluribus
 - Black Mirror
 - Stranger Things
 - Lupin
