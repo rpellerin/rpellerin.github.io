@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - About me</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 16 Oct 2025 23:20:00 +0200</lastBuildDate><item><title>The Way I Work: 2024 edition</title><link>https://romainpellerin.eu/the-way-i-work-2024-edition.html</link><description>&lt;p&gt;I wrote &lt;a href="https://romainpellerin.eu/the-way-i-work.html"&gt;the original article&lt;/a&gt; almost 6 years ago. This deserves a small update. Most of what's in the original article remains true. I'll only add/update some parts below.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - About me</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 21 Nov 2025 23:30:00 +0100</lastBuildDate><item><title>The Way I Work: 2024 edition</title><link>https://romainpellerin.eu/the-way-i-work-2024-edition.html</link><description>&lt;p&gt;I wrote &lt;a href="https://romainpellerin.eu/the-way-i-work.html"&gt;the original article&lt;/a&gt; almost 6 years ago. This deserves a small update. Most of what's in the original article remains true. I'll only add/update some parts below.&lt;/p&gt;
 &lt;h1 id="work-todo-list"&gt;Work TODO list&lt;/h1&gt;
 &lt;p&gt;This has not changed much. Except that nowadays, I keep my TODO list in Asana instead of a simple text file, because it's backed up on a server and the UI is slightly nicer.&lt;/p&gt;
 &lt;p&gt;I still have my items sorted by priority, from most pressing to least. I've stopped using the 3 groups I used to use (to do today, this month, some day...). I just keep "one list". For coding tasks that I want to do "some day", I simply create JIRA tickets and add them to the backlog.&lt;/p&gt;
@@ -858,6 +858,7 @@
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Fri, 04 Nov 2016 01:50:00 +0100</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2016-11-04:/my-dream-laptop.html</guid><category>About me</category><category>computer</category><category>laptop</category></item><item><title>The TV series I watch</title><link>https://romainpellerin.eu/the-tv-series-i-watch.html</link><description>&lt;p&gt;The past decade offered us a bunch of high-quality TV series. Here are my favorite ones (not sorted).&lt;/p&gt;
 &lt;h1 id="shows-still-running"&gt;Shows still running&lt;/h1&gt;
 &lt;ul&gt;
+&lt;li&gt;Pluribus&lt;/li&gt;
 &lt;li&gt;Black Mirror&lt;/li&gt;
 &lt;li&gt;Stranger Things&lt;/li&gt;
 &lt;li&gt;Lupin&lt;/li&gt;
