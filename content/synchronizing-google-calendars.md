@@ -26,7 +26,7 @@ Here is the script:
     :::javascript
     const CONFIG = {
         TARGET_EMAIL: "romain.pellerin@workemail",
-        SYNC_DAYS: 14, // Number of days to look ahead
+        SYNC_DAYS: 6, // Number of days to look ahead
         TAG_PREFIX: "Source iCalUID:", // Unique identifier tag in description
         TIME_WINDOW: {
             START_HOUR: 8,
@@ -99,7 +99,7 @@ Here is the script:
             const match = event.getDescription().match(uidRegex);
 
             if (match && match[1]) {
-            eventMap.set(match[1], event); // Map Key: the source event UID
+            eventMap.set(`${event.getStartTime()}-${match[1]}`, event); // Map Key: the source event UID
             }
         });
 
@@ -146,7 +146,8 @@ Here is the script:
             }
 
             const sourceUid = sourceEvent.getId();
-            const existingEvent = existingEventsMap.get(sourceUid);
+            const eventKey = `${sourceEvent.getStartTime()}-${sourceUid}`;
+            const existingEvent = existingEventsMap.get(eventKey);
 
             // Determine Title and Visibility based on privacy setting
             const targetTitle = sourceCalendarConfig.isPrivate
@@ -155,7 +156,7 @@ Here is the script:
 
             if (existingEvent) {
             updateEventIfChanged(existingEvent, sourceEvent, targetTitle);
-            existingEventsMap.delete(sourceUid); // Remove from map to indicate this event is still valid (not an orphan)
+            existingEventsMap.delete(eventKey); // Remove from map to indicate this event is still valid (not an orphan)
             } else {
             createNewEvent(
                 targetCalendar,
@@ -228,14 +229,14 @@ Here is the script:
 
         Logger.log(`Deleting ${orphanMap.size} orphaned events...`);
 
-        for (const [uid, event] of orphanMap) {
+        for (const [starttime_uid, event] of orphanMap) {
             try {
-            Logger.log(
-                `Deleting ${event.getTitle()} (Source UID: ${uid}) on ${event.getStartTime()}`
-            );
-            event.deleteEvent();
+                Logger.log(
+                    `Deleting ${event.getTitle()} (Source UID: ${event.getId()}) on ${event.getStartTime()}`
+                );
+                event.deleteEvent();
             } catch (e) {
-            Logger.log(`Failed to delete event ${uid}: ${e.message}`);
+                Logger.log(`Failed to delete event ${event.getId()} on ${event.getStartTime()}: ${e.message}`);
             }
         }
     }
