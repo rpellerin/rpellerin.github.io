@@ -82,12 +82,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time> - Last update: <time datetime="2025-11-20T18:48:00+01:00">Thu 20 November 2025</time>        </p>
+<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time> - Last update: <time datetime="2025-12-01T11:23:00+01:00">Mon 01 December 2025</time>        </p>
     <h1>Synchronizing Google Calendars</h1>
     <div class="grey">
         <p class="italic">A Google Apps Script to keep calendars in sync</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 898 words.">4 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 904 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/google.html">google</a></p>    </div>
 </header>
@@ -105,7 +105,7 @@
 <p>Here is the script:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">CONFIG</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">TARGET_EMAIL</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;romain.pellerin@workemail&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">SYNC_DAYS</span><span class="o">:</span><span class="w"> </span><span class="mf">14</span><span class="p">,</span><span class="w"> </span><span class="c1">// Number of days to look ahead</span><span class="w"></span>
+<span class="w">    </span><span class="nx">SYNC_DAYS</span><span class="o">:</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="c1">// Number of days to look ahead</span><span class="w"></span>
 <span class="w">    </span><span class="nx">TAG_PREFIX</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Source iCalUID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Unique identifier tag in description</span><span class="w"></span>
 <span class="w">    </span><span class="nx">TIME_WINDOW</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">START_HOUR</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"></span>
@@ -178,7 +178,7 @@
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">getDescription</span><span class="p">().</span><span class="nx">match</span><span class="p">(</span><span class="nx">uidRegex</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">match</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">eventMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">],</span><span class="w"> </span><span class="nx">event</span><span class="p">);</span><span class="w"> </span><span class="c1">// Map Key: the source event UID</span><span class="w"></span>
+<span class="w">        </span><span class="nx">eventMap</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">);</span><span class="w"> </span><span class="c1">// Map Key: the source event UID</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">});</span><span class="w"></span>
 
@@ -225,7 +225,8 @@
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">sourceUid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getId</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">existingEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">sourceUid</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">eventKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">-</span><span class="si">${</span><span class="nx">sourceUid</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">existingEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">eventKey</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">        </span><span class="c1">// Determine Title and Visibility based on privacy setting</span><span class="w"></span>
 <span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">targetTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">isPrivate</span><span class="w"></span>
@@ -234,7 +235,7 @@
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">existingEvent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">updateEventIfChanged</span><span class="p">(</span><span class="nx">existingEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">targetTitle</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="nx">sourceUid</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove from map to indicate this event is still valid (not an orphan)</span><span class="w"></span>
+<span class="w">        </span><span class="nx">existingEventsMap</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="nx">eventKey</span><span class="p">);</span><span class="w"> </span><span class="c1">// Remove from map to indicate this event is still valid (not an orphan)</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">createNewEvent</span><span class="p">(</span><span class="w"></span>
 <span class="w">            </span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"></span>
@@ -307,14 +308,14 @@
 
 <span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Deleting </span><span class="si">${</span><span class="nx">orphanMap</span><span class="p">.</span><span class="nx">size</span><span class="si">}</span><span class="sb"> orphaned events...`</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">uid</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">orphanMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">starttime_uid</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">orphanMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="sb">`Deleting </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb"> (Source UID: </span><span class="si">${</span><span class="nx">uid</span><span class="si">}</span><span class="sb">) on </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
-<span class="w">        </span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">deleteEvent</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">                </span><span class="sb">`Deleting </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span><span class="si">}</span><span class="sb"> (Source UID: </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span><span class="si">}</span><span class="sb">) on </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">            </span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="nx">event</span><span class="p">.</span><span class="nx">deleteEvent</span><span class="p">();</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Failed to delete event </span><span class="si">${</span><span class="nx">uid</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Failed to delete event </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span><span class="si">}</span><span class="sb"> on </span><span class="si">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -326,7 +327,7 @@
 </figure>
 </article>
 <footer class="grey italic small">
-    Last update: Thu 20 November 2025</footer>
+    Last update: Mon 01 December 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
