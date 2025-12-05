@@ -82,12 +82,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time> - Last update: <time datetime="2025-12-01T11:23:00+01:00">Mon 01 December 2025</time>        </p>
+<time datetime="2025-11-18T16:30:00+01:00">Tue 18 November 2025</time> - Last update: <time datetime="2025-12-05T12:29:00+01:00">Fri 05 December 2025</time>        </p>
     <h1>Synchronizing Google Calendars</h1>
     <div class="grey">
         <p class="italic">A Google Apps Script to keep calendars in sync</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 904 words.">5 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 913 words.">5 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/code.html">Code</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/code.html">code</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/google.html">google</a></p>    </div>
 </header>
@@ -117,6 +117,7 @@
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-id@group.calendar.google.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// sports</span><span class="w"></span>
 <span class="w">            </span><span class="nx">isPrivate</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Will be renamed to &#39;Busy&#39; and set private</span><span class="w"></span>
+<span class="w">            </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">EventColor</span><span class="p">.</span><span class="nx">MAUVE</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
 <span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;some-other-id@import.calendar.google.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// pager duty</span><span class="w"></span>
@@ -242,14 +243,15 @@
 <span class="w">            </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nx">sourceUid</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nx">targetTitle</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">isPrivate</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">isPrivate</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">sourceCalendarConfig</span><span class="p">.</span><span class="nx">color</span><span class="w"></span>
 <span class="w">        </span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">});</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">createNewEvent</span><span class="p">(</span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceUid</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">isPrivate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Creating &quot;</span><span class="si">${</span><span class="nx">title</span><span class="si">}</span><span class="sb">&quot; on </span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">createNewEvent</span><span class="p">(</span><span class="nx">targetCalendar</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">sourceUid</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span><span class="nx">isPrivate</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Creating &quot;</span><span class="si">${</span><span class="nx">title</span><span class="si">}</span><span class="sb">&quot; on </span><span class="si">${</span><span class="nx">sourceEvent</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span><span class="si">}</span><span class="sb">, color: </span><span class="si">${</span><span class="nx">color</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">TAG_PREFIX</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">sourceUid</span><span class="si">}</span><span class="sb">\nCreated by Google Apps Script`</span><span class="p">,</span><span class="w"></span>
@@ -278,6 +280,7 @@
 <span class="w">        </span><span class="nx">newEvent</span><span class="p">.</span><span class="nx">setVisibility</span><span class="p">(</span><span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">Visibility</span><span class="p">.</span><span class="nx">PRIVATE</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">color</span><span class="p">)</span><span class="w"> </span><span class="nx">newEvent</span><span class="p">.</span><span class="nx">setColor</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="nx">newEvent</span><span class="p">.</span><span class="nx">removeAllReminders</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
@@ -327,7 +330,7 @@
 </figure>
 </article>
 <footer class="grey italic small">
-    Last update: Mon 01 December 2025</footer>
+    Last update: Fri 05 December 2025</footer>
 
         </div> <!-- WRAPPER -->
     </body>
