@@ -38,6 +38,7 @@ Here is the script:
             {
                 id: "some-id@group.calendar.google.com", // sports
                 isPrivate: true, // Will be renamed to 'Busy' and set private
+                color: CalendarApp.EventColor.MAUVE
             },
             {
                 id: "some-other-id@import.calendar.google.com", // pager duty
@@ -163,14 +164,15 @@ Here is the script:
                 sourceEvent,
                 sourceUid,
                 targetTitle,
-                sourceCalendarConfig.isPrivate
+                sourceCalendarConfig.isPrivate,
+                sourceCalendarConfig.color
             );
             }
         });
     }
 
-    function createNewEvent(targetCalendar, sourceEvent, sourceUid, title, isPrivate) {
-        Logger.log(`Creating "${title}" on ${sourceEvent.getStartTime()}`);
+    function createNewEvent(targetCalendar, sourceEvent, sourceUid, title, isPrivate, color) {
+        Logger.log(`Creating "${title}" on ${sourceEvent.getStartTime()}, color: ${color}`);
 
         const options = {
             description: `${CONFIG.TAG_PREFIX} ${sourceUid}\nCreated by Google Apps Script`,
@@ -199,6 +201,7 @@ Here is the script:
             newEvent.setVisibility(CalendarApp.Visibility.PRIVATE);
         }
 
+        if (color) newEvent.setColor(color);
         newEvent.removeAllReminders();
     }
 
