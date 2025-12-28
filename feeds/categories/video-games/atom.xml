@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Video games</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/video-games/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2025-12-28T19:00:00+01:00</updated><entry><title>Cities Skylines on Nintendo Switch 101</title><link href="https://romainpellerin.eu/cities-skylines-on-nintendo-switch-101.html" rel="alternate"></link><published>2025-12-28T19:00:00+01:00</published><updated>2025-12-28T19:00:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-12-28:/cities-skylines-on-nintendo-switch-101.html</id><summary type="html">&lt;p&gt;Some tips for Cities Skylines&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's Christmas time! Meaning I get to play with my Nintendo Switch!&lt;/p&gt;
+&lt;p&gt;I'm a big fan of Cities Skylines. In this article, I collect a few tips and tricks I learned over the last few years, after many hours spent playing this amazing game.&lt;/p&gt;
+&lt;h1 id="road-hierarchy"&gt;Road hierarchy&lt;/h1&gt;
+&lt;p&gt;Although not always necessary, it's nice to have some sort of road hierary. To make cities less boring, I do not strictly follow these guidelines, only sometimes.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/road-hierarchy.png" alt="Screenshot" /&gt;
+&lt;figcaption&gt;&lt;a href="https://www.youtube.com/watch?v=lJYPcXB8PcQ"&gt;Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/road-hierarchy.webp" alt="Screenshot" /&gt;
+&lt;figcaption&gt;&lt;a href="https://www.youtube.com/watch?v=hsaOYqztdEg"&gt;Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="residential-commercial-zoning"&gt;Residential + commercial zoning&lt;/h1&gt;
+&lt;p&gt;1 length = 10 tiny blocks.&lt;/p&gt;
+&lt;h2 id="superblocks-a-la-barcelona"&gt;Superblocks (&lt;em&gt;à la Barcelona&lt;/em&gt;)&lt;/h2&gt;
+&lt;p&gt;3x3 districts surrounded by 4 or 6 lanes (two or one way). So 30x30 tiny blocks.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/superblocks-aerial.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;A superblock as seen from above&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/superblocks-side.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;Side view of a superblock&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id="savannah-inspired-oglethorpe-grid"&gt;Savannah-inspired - Oglethorpe Grid&lt;/h2&gt;
+&lt;h3 id="in-real-life"&gt;In real life&lt;/h3&gt;
+&lt;p&gt;Also known as an &lt;a href="https://en.wikipedia.org/wiki/Squares_of_Savannah,_Georgia#:~:text=Layout%20of%20a%20typical%20ward%20in"&gt;Oglethorpe ward&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-gmaps.png" alt="Screenshot" /&gt;
+&lt;figcaption&gt;&lt;a href="https://www.google.com/maps/place/Savannah+Historic+District/@32.0801901,-81.0946668,18.04z/"&gt;Google Maps&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-wikipedia.jpg" alt="Layout of the ward" /&gt;
+&lt;figcaption&gt;&lt;a href="https://en.wikipedia.org/wiki/Squares_of_Savannah,_Georgia#:~:text=Layout%20of%20a%20typical%20ward%20in"&gt;Wikipedia&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A ward is made of a central park + 4 commercial blocks (the closest to the park) and 4 residential blocks (bigger than commercial, 2 are north, 2 are south). We ignore the lanes in the middle of the residential blocks.&lt;/p&gt;
+&lt;p&gt;Around a ward are 2 arterial roads (north and south) and 2 collector roads (west and east).&lt;/p&gt;
+&lt;p&gt;Around the central park are one-way streets that go anticlockwise.&lt;/p&gt;
+&lt;p&gt;The street that is north of the park is a one-way street that goes west, the one that is south of the park is also one-way, to the east.&lt;/p&gt;
+&lt;p&gt;Optionnaly, the two streets on either side of the park can be made one-way (towards the park).&lt;/p&gt;
+&lt;h3 id="in-city-skylines"&gt;In City Skylines&lt;/h3&gt;
+&lt;p&gt;We place in the middle the regular "park with trees". We surround it by a 2-lane one-way street, going anticlockwise. The neighboring streets may optionnally be turned into one-way streets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The one above goes west&lt;/li&gt;
+&lt;li&gt;The one underneath goes east&lt;/li&gt;
+&lt;li&gt;The two streets on either side of the park go towards the park&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The whole ward is surrounded by 6 or 4-lane roads (ideally 6-lane roads north and south, 4-lane roads west and east).&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-construction.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;How to build a Savannah ward&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-aerial.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;Multiple wards as seen from above - mostly surrounded by 6-lane roads&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-side.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;Multiple wards as seen from the side&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-city.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;A city made of Savannah wards&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-zoning.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;Zoning in a Savannah ward&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="xl-version"&gt;XL version&lt;/h3&gt;
+&lt;p&gt;The central park is slightly bigger than the regular park. It's a 2x2 block. You can add a small park in there, plus a couple of pedestrian paths.&lt;/p&gt;
+&lt;p&gt;The original lanes in the middle of the residential blocks have been added back, as 2-lane roads (both ways).&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/savannah-xl.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;An XL version, with the additional lanes in the middle of the residential blocks&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="combining-superblocks-and-savannah-wards"&gt;Combining Superblocks and Savannah wards&lt;/h3&gt;
+&lt;p&gt;Not recommended. It makes massive blocks. But at least I've tried.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/superblock_savannah.jpg" alt="Screenshot" /&gt;
+&lt;figcaption&gt;A combined block&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="industrial-zoning"&gt;Industrial zoning&lt;/h1&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/cities-skylines/industrial-zoning.png" alt="Screenshot" /&gt;
+&lt;figcaption&gt;&lt;a href="https://www.reddit.com/r/CitiesSkylines/comments/xoj1ts/comment/ipyzdej/"&gt;Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</content><category term="Video games"></category><category term="video games"></category></entry></feed>
