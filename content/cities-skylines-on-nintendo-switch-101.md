@@ -129,3 +129,8 @@ Not recommended. It makes massive blocks. But at least I've tried.
 <img src="{static}/images/cities-skylines/industrial-zoning.png" alt="Screenshot" />
 <figcaption><a href="https://www.reddit.com/r/CitiesSkylines/comments/xoj1ts/comment/ipyzdej/">Source</a></figcaption>
 </figure>
+
+# External links
+
+- [Maxed-out 1-Square City on Switch](https://www.reddit.com/r/CitiesSkylines/comments/rq2y11/maxedout_1square_city_on_switch/)
+- [HOW TO TRAFFIC, V2](https://imgur.com/a/how-to-traffic-v2-z1rM1) (from [Reddit](https://www.reddit.com/r/CitiesSkylines/comments/2zv8ft/traffic_engineers_guide_to_traffic_version_2/))
