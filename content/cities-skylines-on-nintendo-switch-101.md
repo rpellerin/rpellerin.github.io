@@ -134,3 +134,4 @@ Not recommended. It makes massive blocks. But at least I've tried.
 
 - [Maxed-out 1-Square City on Switch](https://www.reddit.com/r/CitiesSkylines/comments/rq2y11/maxedout_1square_city_on_switch/)
 - [HOW TO TRAFFIC, V2](https://imgur.com/a/how-to-traffic-v2-z1rM1) (from [Reddit](https://www.reddit.com/r/CitiesSkylines/comments/2zv8ft/traffic_engineers_guide_to_traffic_version_2/))
+- [High Train Traffic Solutions](https://steamcommunity.com/sharedfiles/filedetails/?id=408643569)
