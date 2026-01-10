@@ -130,6 +130,26 @@ Not recommended. It makes massive blocks. But at least I've tried.
 <figcaption><a href="https://www.reddit.com/r/CitiesSkylines/comments/xoj1ts/comment/ipyzdej/">Source</a></figcaption>
 </figure>
 
+# Maxed-out 1-square city
+
+Population: varying between 30,000 and 35,000, despite the massive chunk of sea, and two industrial zones (forest and agriculture). No trains, no metro. Many bus lines, a few tram lines. One "leisure" zone on the shore.
+
+![Screenshot](images/cities-skylines/2025122823391900_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823394500_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823400300_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823424400_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823444100_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823451600_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823453200_c.jpg)
+
+![Screenshot](images/cities-skylines/2025122823471200_c.jpg)
+
 # External links
 
 - [Maxed-out 1-Square City on Switch](https://www.reddit.com/r/CitiesSkylines/comments/rq2y11/maxedout_1square_city_on_switch/)
