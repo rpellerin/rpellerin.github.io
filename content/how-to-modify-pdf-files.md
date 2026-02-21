@@ -99,12 +99,11 @@ Or, for a 2100x2970 pixel image:
     :::bash
     convert input.jpg -density 100 -units pixelspercentimeter output.pdf
 
-If the image is of a different resolution, [use this](https://unix.stackexchange.com/a/20057):
+If the image is of a different resolution, use this:
 
     :::bash
-    i=100; convert input.png -compress jpeg -quality 70 \
-      -density ${i}x${i} -units pixelspercentimeter \
-      -resize $((i*21))x$((i*29.7)) \
-      -repage $((i*21))x$((i*29.7)) output.pdf
+    for f in *.jpg; do convert "$f" -density 300 -resize 2480x3508 -background white -gravity center -extent 2480x3508 "${f%.*}_300dpi.pdf"; done
+    # Or, lower quality and file size
+    for f in *.jpg; do convert "$f" -density 72 -resize 595x842 -background white -gravity center -extent 595x842 "${f%.*}_72dpi.pdf"; done
 
 [Source](https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309)
