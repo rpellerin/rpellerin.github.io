@@ -82,12 +82,12 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2016-12-10T00:30:00+01:00">Sat 10 December 2016</time> - Last update: <time datetime="2024-10-08T14:56:00+02:00">Tue 08 October 2024</time>        </p>
+<time datetime="2016-12-10T00:30:00+01:00">Sat 10 December 2016</time> - Last update: <time datetime="2026-02-21T20:52:00+01:00">Sat 21 February 2026</time>        </p>
     <h1>How To Modify PDF Files</h1>
     <div class="grey">
         <p class="italic">On to extract/edit/merge pages from one or several PDF files</p>
         <p class="small">
-            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 460 words.">2 min read</span>
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 486 words.">2 min read</span>
         </p>
 <p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/pdf.html">pdf</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a></p>    </div>
 </header>
@@ -169,17 +169,16 @@ pdfjam input1.pdf input2.pdf input3.pdf -o output.pdf
 <div class="highlight"><pre><span></span><code>convert input.jpg -density <span class="m">100</span> -units pixelspercentimeter output.pdf
 </code></pre></div>
 
-<p>If the image is of a different resolution, <a href="https://unix.stackexchange.com/a/20057">use this</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">i</span><span class="o">=</span><span class="m">100</span><span class="p">;</span> convert input.png -compress jpeg -quality <span class="m">70</span> <span class="se">\</span>
-  -density <span class="si">${</span><span class="nv">i</span><span class="si">}</span>x<span class="si">${</span><span class="nv">i</span><span class="si">}</span> -units pixelspercentimeter <span class="se">\</span>
-  -resize <span class="k">$((</span>i*21<span class="k">))</span>x<span class="k">$((</span>i*29.7<span class="k">))</span> <span class="se">\</span>
-  -repage <span class="k">$((</span>i*21<span class="k">))</span>x<span class="k">$((</span>i*29.7<span class="k">))</span> output.pdf
+<p>If the image is of a different resolution, use this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> f <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span> convert <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> -density <span class="m">300</span> -resize 2480x3508 -background white -gravity center -extent 2480x3508 <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">_300dpi.pdf&quot;</span><span class="p">;</span> <span class="k">done</span>
+<span class="c1"># Or, lower quality and file size</span>
+<span class="k">for</span> f <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span> convert <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> -density <span class="m">72</span> -resize 595x842 -background white -gravity center -extent 595x842 <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">_72dpi.pdf&quot;</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
 
 <p><a href="https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=33309">Source</a></p>
 </article>
 <footer class="grey italic small">
-    Last update: Tue 08 October 2024</footer>
+    Last update: Sat 21 February 2026</footer>
 
         </div> <!-- WRAPPER -->
     </body>
