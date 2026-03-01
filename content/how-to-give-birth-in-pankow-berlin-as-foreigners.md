@@ -52,7 +52,7 @@ You'll need to [register your newborn](https://www.berlin.de/ba-pankow/politik-u
 - A form in which the parents fill out information about themselves and their newborn, and where you also pick a last name
 - Vaterschaftsanerkennung
 
-After leaving the hospital, you need to **[send an email](mailto:geburt@ba-pankow.berlin.de) to the Standesamt** with your own birth certificates (both parents) and a copy of your ID cards (Personalausweise). Ask them in the same email if any other document is missing. In my experience, we only sent them our birth certificates per email and they replied two days later asking for our ID cards. As I'm writing this article, it's been 3 days since I replied back and we're still awaiting the Geburtsurkunde.
+After leaving the hospital, you need to **[send an email](mailto:geburt@ba-pankow.berlin.de) to the Standesamt** with your own birth certificates (both parents) and a copy of your ID cards (Personalausweise). Ask them in the same email if any other document is missing. In my experience, we only sent them our birth certificates per email and they replied two days later asking for our ID cards. We received 3 copies of the Geburtsurkunde 4 days later.
 
 ### Getting your newborn a health insurance card
 
