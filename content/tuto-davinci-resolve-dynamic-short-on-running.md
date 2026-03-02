@@ -18,7 +18,7 @@ Tick "Use vertical resolution". Prefer 4K instead of 1080p, unlike in the screen
 
 # Color management
 
-Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.
+Based on your source material but also the destination platform (Youtube, Instagram), you may want to export in SDR (Rec.709), as HDR is not always supported.
 
 ![Screenshot of Davinci Resolve]({static}/images/tuto-davinci-resolve-short-running/2.png)
 
@@ -43,9 +43,8 @@ Select all of your video elements in the Media Pool, and group them in a new tim
 1. Add your background song to the timeline.
 1. In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".
 1. Add effects on the compound video:
-
-    1. "Camera Shake": play around vith the values but make it subtle, not too shaky
-    1. "Film Damage": same, make it subtle. Disable the Scratch effect.
+   1. "Camera Shake": play around vith the values but make it subtle, not too shaky
+   1. "Film Damage": same, make it subtle. Disable the Scratch effect.
 
 ![Screenshot of Davinci Resolve]({static}/images/tuto-davinci-resolve-short-running/5.png)
 ![Screenshot of Davinci Resolve]({static}/images/tuto-davinci-resolve-short-running/6.png)
