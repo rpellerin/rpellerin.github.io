@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-03-01T22:50:00+01:00</updated><entry><title>How to give birth in Pankow (Berlin) as foreigners</title><link href="https://romainpellerin.eu/how-to-give-birth-in-pankow-berlin-as-foreigners.html" rel="alternate"></link><published>2026-02-25T16:30:00+01:00</published><updated>2026-03-01T22:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-02-25:/how-to-give-birth-in-pankow-berlin-as-foreigners.html</id><summary type="html">&lt;p&gt;German like bureaucacry and giving birth is no different&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently welcomed our first child 😊. Born in Germany! If someone had told me 10 years ago, I would not have believed it.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-03-02T23:20:00+01:00</updated><entry><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html" rel="alternate"></link><published>2026-03-02T23:20:00+01:00</published><updated>2026-03-02T23:20:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-03-02:/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</id><summary type="html">&lt;p&gt;How to create a nice short video about indoor cycling in winter&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
+  &lt;source src="./videos/tuto-davinci-resolve-home-trainer.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;h1 id="vertical-format"&gt;Vertical format&lt;/h1&gt;
+&lt;p&gt;Tick "Use vertical resolution". Prefer 4K instead of 1080p.&lt;/p&gt;
+&lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
+&lt;p&gt;Based on your source material but also the destination platform (Youtube, Instagram), you may want to export in SDR (Rec.709), as HDR is not always supported.&lt;/p&gt;
+&lt;h1 id="glitch-effect"&gt;Glitch effect&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=GT2MPZJn9aI"&gt;Full tutorial there&lt;/a&gt;. &lt;a href="https://blog.pond5.com/78871-free-after-effects-templates-digital-distortion-free-after-effects-template/"&gt;The sound used is findable on this site&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/glitch-composite.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;&lt;a href="https://www.mediafire.com/folder/h4p84chqtsqmq/Glitch_Overlays_QuinceMedia" href="Stock glitch videos"&gt;Glitch video&lt;/a&gt; with composite mode: Substract&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/adjustment-flicker.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Adjustment clip with Flicker effect&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/adjustment-camera-shake.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Adjustment clip with Camera Shake effect&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/adjustment-camera-shake2.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Adjustment clip with Camera Shake effect (2)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/adjustment-jpeg-damage.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Adjustment clip with JPEG Damage effect&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/transition.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Transition between the two clips&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h1 id="glowing-white-light-in-place-of-a-person"&gt;Glowing white light in place of a person&lt;/h1&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/freeze-frame.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Freeze a frame&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id="step-1-isolating-the-person"&gt;Step 1: isolating the person&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Switch to the Color Page.&lt;/li&gt;
+&lt;li&gt;Add a new Serial Node (Alt + S on Windows or Option + S on Mac) or use the default one&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now, on the paid version of Davinci Resolve:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open the Magic Mask palette (the icon looks like a person with a mask).&lt;/li&gt;
+&lt;li&gt;Draw a quick stroke over the person you want to replace.&lt;/li&gt;
+&lt;li&gt;Click the Track Forward and Reverse button (play icon with arrows on both sides) to let Resolve track the person throughout the clip.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;On the free version: use the Power Window tool (the pen tool icon) to manually draw and track a mask around the person frame-by-frame.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/power-window.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Power Window&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Edit the settings under "Softness" if need be.&lt;/p&gt;
+&lt;h2 id="step-2-turning-the-person-pure-white"&gt;Step 2: turning the person pure white&lt;/h2&gt;
+&lt;p&gt;With the Magic Mask or Power Window node selected, go to the primaries color wheels. Crank the gain wheel all the way up to brighten the highlights.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/pure-white.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Gain wheel&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Next, open the Curves palette. Grab the bottom-left point of the main curve (the shadows) and drag it all the way to the top-left corner. This forces the darkest parts of the image to become pure white.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/pure-white2.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Shadows up&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id="step-3-adding-the-glow-effect"&gt;Step 3: adding the glow effect&lt;/h2&gt;
+&lt;p&gt;Add another Serial Node after the white cutout node. Open the effects library (top right corner). Search for Glow (under Resolve FX Light) and drag it onto this new node.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-indoor-cycling/glow.png" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;Glow effect&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Go to the settings panel for the glow effect and adjust the following to your liking:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shine Threshold: Lower this to ensure the entire white shape emits light.&lt;/li&gt;
+&lt;li&gt;Spread / Glow Size: Increase this to make the light bleed out over the background.&lt;/li&gt;
+&lt;li&gt;Glow Color: It should default to white, but you can tint it slightly blue or yellow here if you want the light to have a specific temperature.&lt;/li&gt;
+&lt;li&gt;Composite Type: Ensure it's set to "Add" or "Screen" to make the glow blend naturally over the background.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's it!&lt;/p&gt;
+&lt;style&gt;
+video {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+&lt;/style&gt;</content><category term="Video editing"></category><category term="davinci resolve"></category><category term="cycling"></category></entry><entry><title>How to give birth in Pankow (Berlin) as foreigners</title><link href="https://romainpellerin.eu/how-to-give-birth-in-pankow-berlin-as-foreigners.html" rel="alternate"></link><published>2026-02-25T16:30:00+01:00</published><updated>2026-03-01T22:50:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-02-25:/how-to-give-birth-in-pankow-berlin-as-foreigners.html</id><summary type="html">&lt;p&gt;German like bureaucacry and giving birth is no different&lt;/p&gt;</summary><content type="html">&lt;p&gt;We recently welcomed our first child 😊. Born in Germany! If someone had told me 10 years ago, I would not have believed it.&lt;/p&gt;
 &lt;p&gt;Anyways, just like for all things, why make things simple when Germans can make them complicated? The process to "register" a newborn and get their birth certificate and then later an ID card is not the simplest. Here is a short summary that hopefully will help other parents in the future. This article is specifically about Pankow in Berlin. Each district handles things slightly differently.&lt;/p&gt;
 &lt;p&gt;Things &lt;strong&gt;not&lt;/strong&gt; covered in this article:&lt;/p&gt;
 &lt;ul&gt;
@@ -986,7 +1084,7 @@ video {
 &lt;li&gt;Use anti-chafing cream between the legs.&lt;/li&gt;
 &lt;li&gt;Don't stop for a fallen water bottle.&lt;/li&gt;
 &lt;li&gt;Loosen elastic shoelaces.&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Running"></category><category term="ironman"></category><category term="bike"></category><category term="cycling"></category><category term="running"></category><category term="triathlon"></category></entry><entry><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html" rel="alternate"></link><published>2025-05-24T23:20:00+02:00</published><updated>2025-08-14T14:20:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</id><summary type="html">&lt;p&gt;How to create a nice short video about a running event using Davinci Resolve&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
+&lt;/ul&gt;</content><category term="Running"></category><category term="ironman"></category><category term="bike"></category><category term="cycling"></category><category term="running"></category><category term="triathlon"></category></entry><entry><title>Tuto Davinci Resolve: Dynamic Short on Running</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-running.html" rel="alternate"></link><published>2025-05-24T23:20:00+02:00</published><updated>2026-03-02T23:16:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2025-05-24:/tuto-davinci-resolve-dynamic-short-on-running.html</id><summary type="html">&lt;p&gt;How to create a nice short video about a running event using Davinci Resolve&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
   &lt;source src="./videos/paris-marathon-2025.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -994,7 +1092,7 @@ video {
 &lt;p&gt;Tick "Use vertical resolution". Prefer 4K instead of 1080p, unlike in the screenshot below.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/1.png"&gt;&lt;/p&gt;
 &lt;h1 id="color-management"&gt;Color management&lt;/h1&gt;
-&lt;p&gt;Based on the destination platform (Youtube, Instagram), you may want to export in SDR, as HDR is not always supported.&lt;/p&gt;
+&lt;p&gt;Based on your source material but also the destination platform (Youtube, Instagram), you may want to export in SDR (Rec.709), as HDR is not always supported.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/2.png"&gt;&lt;/p&gt;
 &lt;h1 id="create-a-compound-video"&gt;Create a compound video&lt;/h1&gt;
 &lt;p&gt;Select all of your video elements in the Media Pool, and group them in a new timeline. Later, we will apply video effects on the entire compound video.&lt;/p&gt;
@@ -1012,13 +1110,9 @@ video {
 &lt;li&gt;Add your compound video to the timeline, and mute its audio track.&lt;/li&gt;
 &lt;li&gt;Add your background song to the timeline.&lt;/li&gt;
 &lt;li&gt;In "Color" at the bottom of the screen, find the "RGB Mixer" and select "Monochrome".&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add effects on the compound video:&lt;/p&gt;
-&lt;ol&gt;
+&lt;li&gt;Add effects on the compound video:&lt;/li&gt;
 &lt;li&gt;"Camera Shake": play around vith the values but make it subtle, not too shaky&lt;/li&gt;
 &lt;li&gt;"Film Damage": same, make it subtle. Disable the Scratch effect.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/5.png"&gt;
 &lt;img alt="Screenshot of Davinci Resolve" src="https://romainpellerin.eu/images/tuto-davinci-resolve-short-running/6.png"&gt;
