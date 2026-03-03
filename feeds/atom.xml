@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-03-02T23:20:00+01:00</updated><entry><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html" rel="alternate"></link><published>2026-03-02T23:20:00+01:00</published><updated>2026-03-02T23:20:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-03-02:/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</id><summary type="html">&lt;p&gt;How to create a nice short video about indoor cycling in winter&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-03-03T22:39:00+01:00</updated><entry><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link href="https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html" rel="alternate"></link><published>2026-03-02T23:20:00+01:00</published><updated>2026-03-02T23:20:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-03-02:/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</id><summary type="html">&lt;p&gt;How to create a nice short video about indoor cycling in winter&lt;/p&gt;</summary><content type="html">&lt;video controls&gt;
   &lt;source src="./videos/tuto-davinci-resolve-home-trainer.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -2086,7 +2086,7 @@ video {
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2025-05-22T16:48:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;style&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2026-03-03T22:39:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;style&gt;
 div#menu {
   text-align: center
 }
@@ -2220,7 +2220,7 @@ to &lt;input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="
 
 &lt;h1 id="zones"&gt;Zones&lt;/h1&gt;
 &lt;p&gt;(&lt;a href="https://en.wikipedia.org/wiki/VVO2max"&gt;MAS&lt;/a&gt; is &lt;em&gt;&lt;a href="https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie"&gt;VMA&lt;/a&gt;&lt;/em&gt; in French)&lt;/p&gt;
-&lt;p&gt;MAS speed (km/h): &lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.34"/&gt;
+&lt;p&gt;MAS speed (km/h): &lt;input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.78"/&gt;
 Max HR: &lt;input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/&gt;&lt;/p&gt;
 &lt;div&gt;
 Percentage: &lt;input type="number" step="1" id="random_percent" placeholder="% of your MAS" value="100"/&gt;%
