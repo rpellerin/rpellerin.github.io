@@ -143,7 +143,7 @@ to <input pattern="\d{1,2}:\d{2}" type="text" id="slowest_pace" placeholder="Slo
 
 ([MAS](https://en.wikipedia.org/wiki/VVO2max) is _[VMA](https://fr.wikipedia.org/wiki/Vitesse_maximale_a%C3%A9robie)_ in French)
 
-MAS speed (km/h): <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.34"/>
+MAS speed (km/h): <input type="number" step="0.01" id="mas" placeholder="MAS speed (km/h)" value="17.78"/>
 Max HR: <input type="number" step="1" id="maxhr" placeholder="Max HR" value="202"/>
 
 <div>
