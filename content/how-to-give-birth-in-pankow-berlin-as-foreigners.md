@@ -54,6 +54,17 @@ You'll need to [register your newborn](https://www.berlin.de/ba-pankow/politik-u
 
 After leaving the hospital, you need to **[send an email](mailto:geburt@ba-pankow.berlin.de) to the Standesamt** with your own birth certificates (both parents) and a copy of your ID cards (Personalausweise). Ask them in the same email if any other document is missing. In my experience, we only sent them our birth certificates per email and they replied two days later asking for our ID cards. We received 3 copies of the Geburtsurkunde 4 days later.
 
+### Registering the paternity (Vaterschaftsanerkennung) and shared custody (Sorgerechtserklärung) at the Bürgeramt
+
+If you have registered the paternity and shared custody at the youth welfare office before, the info might not have traveled from them to the Bürgeramt. When we did the registration, we were told to go to the Bürgeramt after the birth to make sure both are also registered there. Quote:
+
+> die Beurkundung der gemeinsamen Sorge wird nicht automatisch der Meldebehörde übersandt. Demnach ist die Mutter im Meldesystem vorerst als allein sorgeberechtigt eingetragen. Daher wurden Sie gebeten, der Meldebehörde eine beglaubigte Abschrift der Urkunde bei ihrem nächsten Besuch im Bürgeramt vorzulegen. Dort wird dann eingetragen, dass der Kindesvater ebenfalls sorgeberechtigt ist.
+
+Simply book an appointment at any Bürgeramt for the following reason: _Melderegister-Berichtigung von Daten_. Bring the two following documents:
+
+- Baby's Geburtsurkunde
+- Vaterschaftsanerkennung + Sorgerechtserklärung
+
 ### Getting your newborn a health insurance card
 
 Through a public insurance, you can get free insurance for your kid by applying for a family insurance. Just reach out to your insurance and tell them about your newborn, they'll walk you through the process (it's surprisingly as easy as filling out ONE form!).
