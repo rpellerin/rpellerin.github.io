@@ -455,6 +455,7 @@ Prévoir le trajet pour se rendre à la course le dimanche matin
 Prévoir des vieux vêtements chauds d'avant course, to give away
 Si je dors à l'hôtel, emmener un sharpie + repas
 Recharge glucidique à partir du jeudi, boire du maltodextrine en continu
+Faire don de vieilles chaussures de running à l'expo lors du bib number pickup
 Samedi matin : shake-out run avec 1km à allure ~24h avant la course
 Samedi matin : se faire une belle moustache
 Samedi matin : charger montre et la reboot
