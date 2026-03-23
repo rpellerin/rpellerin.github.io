@@ -71,11 +71,22 @@ Through a public insurance, you can get free insurance for your kid by applying 
 
 ### Elterngeld
 
-Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, we will have to print out a PDF, fill it out and send it by mail.
+Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:
 
-[Official website](https://www.elterngeld-digital.de/ams/Elterngeld)
+1. Create a email+password account on the [official website](https://www.elterngeld-digital.de/ams/Elterngeld)
+1. Fill out the form then upload on the website the required attachements
 
-**Bear in mind, this must be done within the first 3 months following the birth.**
+      - 12 or 14 last payslips for both parents
+      - Confirmation of Muttershaft by the health insurance
+      - Confirmation of Elternzeit by both parents' employers (Arbeitgeberbescheinigungen) - there is a template document
+
+1. Then submit the application online. This will generate a massive PDF.
+1. Print out the first page of this PDF, as well as all of the documents uploaded online. Then send them all by post to the address written in the PDF, plus the following additional documents:
+
+      - Vaterschaftsanerkennung (a copy, not an original)
+      - Geburtsurkunde (send an official copy)
+
+That's it. **Bear in mind, this must be done within the first 3 months following the birth.**
 
 ### Kindergeld
 
