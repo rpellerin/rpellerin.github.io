@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 21 Mar 2026 23:48:00 +0100</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</link><description>&lt;video controls&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 23 Mar 2026 11:03:00 +0100</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</link><description>&lt;video controls&gt;
   &lt;source src="./videos/tuto-davinci-resolve-home-trainer.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -144,9 +144,29 @@ video {
 &lt;h3 id="getting-your-newborn-a-health-insurance-card"&gt;Getting your newborn a health insurance card&lt;/h3&gt;
 &lt;p&gt;Through a public insurance, you can get free insurance for your kid by applying for a family insurance. Just reach out to your insurance and tell them about your newborn, they'll walk you through the process (it's surprisingly as easy as filling out ONE form!).&lt;/p&gt;
 &lt;h3 id="elterngeld"&gt;Elterngeld&lt;/h3&gt;
-&lt;p&gt;Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, we will have to print out a PDF, fill it out and send it by mail.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.elterngeld-digital.de/ams/Elterngeld"&gt;Official website&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Bear in mind, this must be done within the first 3 months following the birth.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a email+password account on the &lt;a href="https://www.elterngeld-digital.de/ams/Elterngeld"&gt;official website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fill out the form then upload on the website the required attachements&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;12 or 14 last payslips for both parents&lt;/li&gt;
+&lt;li&gt;Confirmation of Muttershaft by the health insurance&lt;/li&gt;
+&lt;li&gt;Confirmation of Elternzeit by both parents' employers (Arbeitgeberbescheinigungen) - there is a template document&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Then submit the application online. This will generate a massive PDF.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Print out the first page of this PDF, as well as all of the documents uploaded online. Then send them all by post to the address written in the PDF, plus the following additional documents:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Vaterschaftsanerkennung (a copy, not an original)&lt;/li&gt;
+&lt;li&gt;Geburtsurkunde (send an official copy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That's it. &lt;strong&gt;Bear in mind, this must be done within the first 3 months following the birth.&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id="kindergeld"&gt;Kindergeld&lt;/h3&gt;
 &lt;p&gt;I have not done this part yet. I will update the article later accordingly.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Bear in mind, this must be done within the first 6 months following the birth.&lt;/strong&gt;&lt;/p&gt;
