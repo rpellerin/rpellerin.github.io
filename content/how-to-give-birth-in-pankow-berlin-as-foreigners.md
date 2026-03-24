@@ -90,11 +90,20 @@ That's it. **Bear in mind, this must be done within the first 3 months following
 
 ### Kindergeld
 
-I have not done this part yet. I will update the article later accordingly.
+The process is fairly easy. In our case, we received a letter from the Familienkasse with a QR code that took us to a form. We filled it out. Only one parent must be chosen to be the single receiver of Kindergeld. Then it generated a PDF to print. That PDF must be printed out and sent to the address written on the first page, alongside the following documents:
 
-**Bear in mind, this must be done within the first 6 months following the birth.**
+- A document called "Anlage EU" (reference of the document: KG 1-AnEU): for non-german parents. Print it out and fill it out. The URL to this document is on the main website, where we filled in the form.
+- A proof of renting/owning an appartment
+- A certificate from the Kindergeld-receiving parent's employer (document KG54 - send the template to the employer)
+- Last 3 payslips as a proof that you get income in Germany
+
+That's it. **Bear in mind, this must be done within the first 6 months following the birth.**
 
 ### German ID card
+
+Yet to be done... I will update the article later accordingly.
+
+### Kita Gutschein
 
 Yet to be done... I will update the article later accordingly.
 
