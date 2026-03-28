@@ -453,6 +453,7 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 Une semaine avant course : couper ongles
 Prévoir le trajet pour se rendre à la course le dimanche matin
 Prévoir des vieux vêtements chauds d'avant course, to give away
+Prévoir des vêtements chauds d'après course (à confier à des amis ?)
 Si je dors à l'hôtel, emmener un sharpie + repas
 Recharge glucidique à partir du jeudi, boire du maltodextrine en continu
 Faire don de vieilles chaussures de running à l'expo lors du bib number pickup
