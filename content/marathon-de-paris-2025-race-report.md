@@ -17,7 +17,7 @@ It's always best to have multiple goals going into a race, just in case somethin
 - My secondary goal was to finish under 3h15'.
 - My third goal was to PR (personal record) and beat [my previous time]({filename}/mon-premier-marathon-recit-d-une-course-parfaite.md) (3h27').
 
-To be honest, I knew before starting that my main goal was a little unrealistic. I was going to set that pace on my watch and try to hold it, despite the many ups and downs of the course. The total elevation of that marathon is nearing 300 meters, so very challenging.
+To be honest, I knew before starting that my main goal was a little unrealistic. I was going to set that pace on my watch and try to hold it, despite the many ups and downs of the course. The total elevation gain of that marathon is nearing 300 meters, so very challenging.
 
 <figure class="center">
 <img src="{static}/images/marathon-de-paris-2025/profile.jpg" alt="Graph showing the profile of the course" />

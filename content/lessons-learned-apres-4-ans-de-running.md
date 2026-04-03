@@ -56,7 +56,7 @@ Début d'année, l'aponévrosite plantaire est toujours là mais moins forte. Do
 
 <img src="{static}/images/lessons-learned-apres-4-ans-de-running/semi-marathon-avril-2023.png" alt="Un semi marathon couru en solo, à l'improviste" style="float:left" />
 
-J'ai quand même suffisamment mal pour que cela me décourage de m'inscrire au semi Berlin. Cependant, le jour de la course, je décide toutefois de [courir mon propre semi](https://www.strava.com/activities/8821142295), à côté de chez moi dans un parc, juste pour la forme. Bonnes sensations pendant la course, pas de douleur. Mais les jours suivants, la douleur revient un peu plus qu'à l'accoutumée. Pas encore fixed le man... Dommage, ça me calme pour quelques semaines
+J'ai quand même suffisamment mal pour que cela me décourage de m'inscrire au semi Berlin. Cependant, le jour de la course, je décide toutefois de [courir mon propre semi](https://www.strava.com/activities/8821142295), à côté de chez moi dans un parc, juste pour la forme. Bonnes sensations pendant la course, pas de douleur. Mais les jours suivants, la douleur revient un peu plus qu'à l'accoutumée. Pas encore fixed le man... Dommage, ça me calme pour quelques semaines.
 
 <figure class="center">
 <img src="{static}/images/lessons-learned-apres-4-ans-de-running/semi-marathon-avril-2023-moi.jpg" alt="Moi qui cours" />
@@ -184,7 +184,7 @@ Pendant les jours qui ont précédé ce semi, j'ai fait beaucoup de recherches s
 - **Le volume kilométrique est la clé du succès d'une préparation**, [c'est le plus gros facteur](https://www.youtube.com/watch?v=WnZN6yMSfZ8). Mais il faut être progressif, on ne se met pas à courir 100 kms par semaine du jour au lendemain. Changer son volume soudainement = blessure presque garantie. 80% du volume couru sur une semaine devrait d'ailleurs l'être en endurance fondamentale. Les 20% restants seront des séances dites "de qualité", où l'on travaillera des allures, du seuil, fera du fractionné, etc.
 - **[Il faut mettre 6 heures entre 2 runs sur une même journée](https://www.youtube.com/watch?v=_KGDiaxj4ew&t=2734)**
 - **[Il est meilleur de courir 5 fois ou plus par semaine, que moins](https://www.youtube.com/watch?v=_KGDiaxj4ew&t=2527s)**
-- **Il vaut courir autour de 180 pas par minute (plus ou moins) en faisant le moins de bruit possible, avec des chaussures auxquelles on est habitué**. Qu'il s'agisse de minimalistes ou maximalistes n'a à priori pas d'impact sur la performance, pour peu que l'on soit habitué à ces chaussures, seul le poids en a réellement.
+- **Il faut courir autour de 180 pas par minute (plus ou moins) en faisant le moins de bruit possible, avec des chaussures auxquelles on est habitué**. Qu'il s'agisse de minimalistes ou maximalistes n'a à priori pas d'impact sur la performance, pour peu que l'on soit habitué à ces chaussures, seul le poids en a réellement.
 
 Tous ces bullet points sont résumés en 1 minute, dans [cette vidéo](https://www.youtube.com/watch?v=_KGDiaxj4ew&t=4194s), à partir de 1:09:54.
 
