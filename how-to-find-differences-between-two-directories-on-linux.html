@@ -82,7 +82,7 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2018-12-10T23:20:00+01:00">Mon 10 December 2018</time> - Last update: <time datetime="2024-12-11T16:26:00+01:00">Wed 11 December 2024</time>        </p>
+<time datetime="2018-12-10T23:20:00+01:00">Mon 10 December 2018</time> - Last update: <time datetime="2026-04-09T23:27:00+02:00">Thu 09 April 2026</time>        </p>
     <h1>How To Find Differences Between Two Directories On Linux</h1>
     <div class="grey">
         <p class="italic">Different ways to diff two folders</p>
@@ -99,7 +99,7 @@
 
 <h1 id="comm-find"><code>comm</code> + <code>find</code></h1>
 <p>Only compares filenames. <strong>Fast</strong>.</p>
-<div class="highlight"><pre><span></span><code>comm -3 &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span> &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%f\n&quot;</span><span class="p">|</span>sort<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>comm -3 &lt;<span class="o">(</span>find /dirA -type f -printf <span class="s2">&quot;%P\n&quot;</span><span class="p">|</span>sort<span class="o">)</span> &lt;<span class="o">(</span>find /dirB -type f -printf <span class="s2">&quot;%P\n&quot;</span><span class="p">|</span>sort<span class="o">)</span>
 </code></pre></div>
 
 <p>Also works with <code>diff</code>.</p>
@@ -117,7 +117,7 @@
 <p>Hope this helps.</p>
 </article>
 <footer class="grey italic small">
-    Last update: Wed 11 December 2024</footer>
+    Last update: Thu 09 April 2026</footer>
 
         </div> <!-- WRAPPER -->
     </body>

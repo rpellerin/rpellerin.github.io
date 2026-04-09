@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 09 Apr 2026 18:43:00 +0200</lastBuildDate><item><title>Berlin Half Marathon 2026: Race Report</title><link>https://romainpellerin.eu/berlin-half-marathon-2026-race-report.html</link><description>&lt;p&gt;On March 29th, 2026, the Berlin half-marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 09 Apr 2026 23:27:00 +0200</lastBuildDate><item><title>Berlin Half Marathon 2026: Race Report</title><link>https://romainpellerin.eu/berlin-half-marathon-2026-race-report.html</link><description>&lt;p&gt;On March 29th, 2026, the Berlin half-marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.&lt;/p&gt;
 &lt;h1 id="prep"&gt;Prep&lt;/h1&gt;
 &lt;p&gt;I followed a training plan using the "Kiprun Pacer" app once again for just over 3 months, running 4 to 5 times a week. The training period was quite chaotic for the major part. I got sick in December, and January broke a record as the coldest January in Berlin in 16 years. There was a thick layer of snow on the ground for 3 weeks, with frequent snowfall throughout the month. The weather was absolutely horrendous.&lt;/p&gt;
 &lt;figure class="center"&gt;
@@ -7437,7 +7437,7 @@ People were stupid.&lt;/p&gt;
 
 &lt;h1 id="comm-find"&gt;&lt;code&gt;comm&lt;/code&gt; + &lt;code&gt;find&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;Only compares filenames. &lt;strong&gt;Fast&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;comm -3 &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%f\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;comm -3 &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirA -type f -printf &lt;span class="s2"&gt;&amp;quot;%P\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt; &amp;lt;&lt;span class="o"&gt;(&lt;/span&gt;find /dirB -type f -printf &lt;span class="s2"&gt;&amp;quot;%P\n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;sort&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Also works with &lt;code&gt;diff&lt;/code&gt;.&lt;/p&gt;
