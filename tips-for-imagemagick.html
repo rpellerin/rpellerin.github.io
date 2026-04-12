@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, imagemagick, linux, image" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="A few tips with ImageMagick" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Tips for ImageMagick - Romain Pellerin's Blog" />
+        <meta property="og:description" content="A few tips with ImageMagick" />
+        <meta property="og:url" content="https://romainpellerin.eu/tips-for-imagemagick.html" />
+
+        <title>Tips for ImageMagick - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2026-04-12T21:57:00+02:00">Sun 12 April 2026</time>        </p>
+    <h1>Tips for ImageMagick</h1>
+    <div class="grey">
+        <p class="italic">A few tips with ImageMagick</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 216 words.">1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/imagemagick.html">imagemagick</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/image.html">image</a></p>    </div>
+</header>
+<article>
+    <h1 id="tip-iterate-over-multiple-images">Tip: iterate over multiple images</h1>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">output</span><span class="w"></span>
+<span class="k">for</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">*.</span><span class="n">jpg</span><span class="p">;</span><span class="w"> </span><span class="n">do</span><span class="w"></span>
+<span class="w">    </span><span class="n">exiftool</span><span class="w"> </span><span class="o">-</span><span class="n">all</span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="n">icc_profile</span><span class="p">:</span><span class="n">all</span><span class="w"> </span><span class="o">$</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="s2">&quot;${f%.*}_sdr.jpg&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># convert &quot;${f%.*}_sdr.jpg&quot; ... &quot;output/${f%.*}output.jpg&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;$f done&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="s2">&quot;${f%.*}_sdr.jpg&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">sleep</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="n">done</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="add-grain-and-a-analog-like-effect">Add grain and a analog-like effect</h1>
+<div class="highlight"><pre><span></span><code>convert input.jpg <span class="se">\</span>
+   -colorspace sRGB -auto-level <span class="se">\</span>
+   -gamma <span class="m">1</span>.18 <span class="se">\</span>
+   -sigmoidal-contrast 4x55% <span class="se">\</span>
+   -channel R -gamma <span class="m">1</span>.03 -channel B -gamma <span class="m">0</span>.97 +channel <span class="se">\</span>
+   <span class="se">\(</span> +clone -fill gray -colorspace gray +noise Poisson <span class="se">\</span>
+   -attenuate <span class="m">2</span>.8 -blur 0x0.7 <span class="se">\)</span> <span class="se">\</span>
+   -compose softlight -composite <span class="se">\</span>
+   +level <span class="m">4</span>% output.jpg
+</code></pre></div>
+
+<p><img alt="Grain" src="https://romainpellerin.eu/images/tips-for-imagemagick/grain.jpg"></p>
+<h1 id="spin-effect">Spin effect</h1>
+<div class="highlight"><pre><span></span><code>magick input.jpg -resize 800x -write mpr:orig +delete <span class="se">\</span>
+   <span class="se">\(</span> mpr:orig -alpha <span class="nb">set</span> -virtual-pixel transparent <span class="se">\</span>
+   -duplicate <span class="m">25</span> <span class="se">\</span>
+   -distort SRT <span class="s2">&quot;%[fx:w/2],%[fx:h/2] 1 %[fx:t*0.3] %[fx:w/2],%[fx:h/2]&quot;</span> <span class="se">\</span>
+   -channel A -evaluate multiply <span class="s1">&#39;%[fx:1-(t/30)]&#39;</span> +channel <span class="se">\</span>
+   -background none -layers flatten -write mpr:spin +delete <span class="se">\)</span> <span class="se">\</span>
+   <span class="se">\(</span> mpr:orig -fill white -colorize <span class="m">100</span> -fill black <span class="se">\</span>
+   -draw <span class="s2">&quot;circle %[fx:w/2],%[fx:h/2] %[fx:w/2],%[fx:h*0.4]&quot;</span> <span class="se">\</span>
+   -blur 0x60 -write mpr:mask +delete <span class="se">\)</span> <span class="se">\</span>
+    mpr:orig mpr:spin mpr:mask -composite output_minimal_spin.jpg
+</code></pre></div>
+
+<p><img alt="Spin" src="https://romainpellerin.eu/images/tips-for-imagemagick/spin.jpg"></p>
+<h1 id="strobe-effect">Strobe effect</h1>
+<div class="highlight"><pre><span></span><code>magick input.jpg -resize 800x -write mpr:orig +delete <span class="se">\</span>
+   <span class="se">\(</span> mpr:orig -alpha <span class="nb">set</span> -virtual-pixel transparent <span class="se">\</span>
+   -duplicate <span class="m">12</span> <span class="se">\</span>
+   -distort SRT <span class="s2">&quot;%[fx:w/2-(t*15)],%[fx:h/2] 1 0 %[fx:w/2],%[fx:h/2]&quot;</span> <span class="se">\</span>
+   -channel A -evaluate multiply <span class="s1">&#39;%[fx:1-(t/15)]&#39;</span> +channel <span class="se">\</span>
+   -background none -layers flatten -write mpr:trail +delete <span class="se">\)</span> <span class="se">\</span>
+   mpr:orig mpr:trail -compose Lighten -composite output_strobe_v2.jpg
+</code></pre></div>
+
+<p><img alt="Strobe" src="https://romainpellerin.eu/images/tips-for-imagemagick/strobe.jpg"></p>
+<h1 id="place-images-side-by-side-like-the-photos-above">Place images side by side (like the photos above)</h1>
+<div class="highlight"><pre><span></span><code>convert image1.jpg image2.jpg +append output.jpg
+</code></pre></div>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 12 April 2026</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>

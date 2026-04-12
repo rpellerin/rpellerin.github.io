@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-04-09T23:27:00+02:00</updated><entry><title>Creating GPX overlay videos on Linux</title><link href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2025-01-22T11:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Linux</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/linux/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-04-12T21:57:00+02:00</updated><entry><title>Tips for ImageMagick</title><link href="https://romainpellerin.eu/tips-for-imagemagick.html" rel="alternate"></link><published>2026-04-12T21:57:00+02:00</published><updated>2026-04-12T21:57:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-04-12:/tips-for-imagemagick.html</id><summary type="html">&lt;p&gt;A few tips with ImageMagick&lt;/p&gt;</summary><content type="html">&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exiftool&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;icc_profile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;${f%.*}_sdr.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# convert &amp;quot;${f%.*}_sdr.jpg&amp;quot; ... &amp;quot;output/${f%.*}output.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$f done&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;rm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;${f%.*}_sdr.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id="add-grain-and-a-analog-like-effect"&gt;Add grain and a analog-like effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.jpg &lt;span class="se"&gt;\&lt;/span&gt;
+   -colorspace sRGB -auto-level &lt;span class="se"&gt;\&lt;/span&gt;
+   -gamma &lt;span class="m"&gt;1&lt;/span&gt;.18 &lt;span class="se"&gt;\&lt;/span&gt;
+   -sigmoidal-contrast 4x55% &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel R -gamma &lt;span class="m"&gt;1&lt;/span&gt;.03 -channel B -gamma &lt;span class="m"&gt;0&lt;/span&gt;.97 +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; +clone -fill gray -colorspace gray +noise Poisson &lt;span class="se"&gt;\&lt;/span&gt;
+   -attenuate &lt;span class="m"&gt;2&lt;/span&gt;.8 -blur 0x0.7 &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -compose softlight -composite &lt;span class="se"&gt;\&lt;/span&gt;
+   +level &lt;span class="m"&gt;4&lt;/span&gt;% output.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Grain" src="https://romainpellerin.eu/images/tips-for-imagemagick/grain.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="spin-effect"&gt;Spin effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;magick input.jpg -resize 800x -write mpr:orig +delete &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -alpha &lt;span class="nb"&gt;set&lt;/span&gt; -virtual-pixel transparent &lt;span class="se"&gt;\&lt;/span&gt;
+   -duplicate &lt;span class="m"&gt;25&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -distort SRT &lt;span class="s2"&gt;&amp;quot;%[fx:w/2],%[fx:h/2] 1 %[fx:t*0.3] %[fx:w/2],%[fx:h/2]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel A -evaluate multiply &lt;span class="s1"&gt;&amp;#39;%[fx:1-(t/30)]&amp;#39;&lt;/span&gt; +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   -background none -layers flatten -write mpr:spin +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -fill white -colorize &lt;span class="m"&gt;100&lt;/span&gt; -fill black &lt;span class="se"&gt;\&lt;/span&gt;
+   -draw &lt;span class="s2"&gt;&amp;quot;circle %[fx:w/2],%[fx:h/2] %[fx:w/2],%[fx:h*0.4]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -blur 0x60 -write mpr:mask +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    mpr:orig mpr:spin mpr:mask -composite output_minimal_spin.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Spin" src="https://romainpellerin.eu/images/tips-for-imagemagick/spin.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="strobe-effect"&gt;Strobe effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;magick input.jpg -resize 800x -write mpr:orig +delete &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -alpha &lt;span class="nb"&gt;set&lt;/span&gt; -virtual-pixel transparent &lt;span class="se"&gt;\&lt;/span&gt;
+   -duplicate &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -distort SRT &lt;span class="s2"&gt;&amp;quot;%[fx:w/2-(t*15)],%[fx:h/2] 1 0 %[fx:w/2],%[fx:h/2]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel A -evaluate multiply &lt;span class="s1"&gt;&amp;#39;%[fx:1-(t/15)]&amp;#39;&lt;/span&gt; +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   -background none -layers flatten -write mpr:trail +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   mpr:orig mpr:trail -compose Lighten -composite output_strobe_v2.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Strobe" src="https://romainpellerin.eu/images/tips-for-imagemagick/strobe.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="place-images-side-by-side-like-the-photos-above"&gt;Place images side by side (like the photos above)&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert image1.jpg image2.jpg +append output.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linux"></category><category term="imagemagick"></category><category term="linux"></category><category term="image"></category></entry><entry><title>Creating GPX overlay videos on Linux</title><link href="https://romainpellerin.eu/creating-gpx-overlay-videos-on-linux.html" rel="alternate"></link><published>2023-07-26T17:30:00+02:00</published><updated>2025-01-22T11:46:00+01:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2023-07-26:/creating-gpx-overlay-videos-on-linux.html</id><summary type="html">&lt;p&gt;A tutorial about adding GPX data on top of videos (speed, heart rate, etc)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just because I found &lt;a href="https://blog.cubieserver.de/2022/creating-gpx-overlay-videos-on-linux/"&gt;this article&lt;/a&gt; so good but a bit too long, I'm creating my own.&lt;/p&gt;
 &lt;p&gt;Up until now, I was relying on the infamous Virb Edit program from Garmin to create videos with GPX data on top. But this software is only available on Mac and Windows, and also outdated and unmaintained, it does not support HEVC videos. So I started looking for another solution that would work on Linux and be ideally dead simple, with no GUI. Also, I was very tired of having to export the GPX data on top of an existing video. Wouldn't it be great to be able to export a video with a transparent background, that I can then put on top of any other footage? GoPro videos, Insta360 videos, any! That would preserve the quality of the video (no need to re-encode it in Virb and then in the final montage software).&lt;/p&gt;
 &lt;p&gt;I found salvation in &lt;a href="https://github.com/time4tea/gopro-dashboard-overlay"&gt;gopro-dashboard-overlay&lt;/a&gt;! It does all of that! No GUI, can export just a transparent video with the GPX data only but also on top of an existing footage, supports as many formats and codecs as does FFMPEG, and of course works on Linux!&lt;/p&gt;
 &lt;p&gt;So here is my TL;DR tutorial on how to use it:&lt;/p&gt;

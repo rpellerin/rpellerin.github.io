@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 12 Apr 2026 21:50:00 +0200</lastBuildDate><item><title>Berlin Half Marathon 2026: Race Report</title><link>https://romainpellerin.eu/berlin-half-marathon-2026-race-report.html</link><description>&lt;p&gt;On March 29th, 2026, the Berlin half marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 12 Apr 2026 21:57:00 +0200</lastBuildDate><item><title>Tips for ImageMagick</title><link>https://romainpellerin.eu/tips-for-imagemagick.html</link><description>&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exiftool&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;icc_profile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;${f%.*}_sdr.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c1"&gt;# convert &amp;quot;${f%.*}_sdr.jpg&amp;quot; ... &amp;quot;output/${f%.*}output.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$f done&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;rm&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;${f%.*}_sdr.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;done&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id="add-grain-and-a-analog-like-effect"&gt;Add grain and a analog-like effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.jpg &lt;span class="se"&gt;\&lt;/span&gt;
+   -colorspace sRGB -auto-level &lt;span class="se"&gt;\&lt;/span&gt;
+   -gamma &lt;span class="m"&gt;1&lt;/span&gt;.18 &lt;span class="se"&gt;\&lt;/span&gt;
+   -sigmoidal-contrast 4x55% &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel R -gamma &lt;span class="m"&gt;1&lt;/span&gt;.03 -channel B -gamma &lt;span class="m"&gt;0&lt;/span&gt;.97 +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; +clone -fill gray -colorspace gray +noise Poisson &lt;span class="se"&gt;\&lt;/span&gt;
+   -attenuate &lt;span class="m"&gt;2&lt;/span&gt;.8 -blur 0x0.7 &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -compose softlight -composite &lt;span class="se"&gt;\&lt;/span&gt;
+   +level &lt;span class="m"&gt;4&lt;/span&gt;% output.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Grain" src="https://romainpellerin.eu/images/tips-for-imagemagick/grain.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="spin-effect"&gt;Spin effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;magick input.jpg -resize 800x -write mpr:orig +delete &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -alpha &lt;span class="nb"&gt;set&lt;/span&gt; -virtual-pixel transparent &lt;span class="se"&gt;\&lt;/span&gt;
+   -duplicate &lt;span class="m"&gt;25&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -distort SRT &lt;span class="s2"&gt;&amp;quot;%[fx:w/2],%[fx:h/2] 1 %[fx:t*0.3] %[fx:w/2],%[fx:h/2]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel A -evaluate multiply &lt;span class="s1"&gt;&amp;#39;%[fx:1-(t/30)]&amp;#39;&lt;/span&gt; +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   -background none -layers flatten -write mpr:spin +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -fill white -colorize &lt;span class="m"&gt;100&lt;/span&gt; -fill black &lt;span class="se"&gt;\&lt;/span&gt;
+   -draw &lt;span class="s2"&gt;&amp;quot;circle %[fx:w/2],%[fx:h/2] %[fx:w/2],%[fx:h*0.4]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -blur 0x60 -write mpr:mask +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    mpr:orig mpr:spin mpr:mask -composite output_minimal_spin.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Spin" src="https://romainpellerin.eu/images/tips-for-imagemagick/spin.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="strobe-effect"&gt;Strobe effect&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;magick input.jpg -resize 800x -write mpr:orig +delete &lt;span class="se"&gt;\&lt;/span&gt;
+   &lt;span class="se"&gt;\(&lt;/span&gt; mpr:orig -alpha &lt;span class="nb"&gt;set&lt;/span&gt; -virtual-pixel transparent &lt;span class="se"&gt;\&lt;/span&gt;
+   -duplicate &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -distort SRT &lt;span class="s2"&gt;&amp;quot;%[fx:w/2-(t*15)],%[fx:h/2] 1 0 %[fx:w/2],%[fx:h/2]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   -channel A -evaluate multiply &lt;span class="s1"&gt;&amp;#39;%[fx:1-(t/15)]&amp;#39;&lt;/span&gt; +channel &lt;span class="se"&gt;\&lt;/span&gt;
+   -background none -layers flatten -write mpr:trail +delete &lt;span class="se"&gt;\)&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+   mpr:orig mpr:trail -compose Lighten -composite output_strobe_v2.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="Strobe" src="https://romainpellerin.eu/images/tips-for-imagemagick/strobe.jpg"&gt;&lt;/p&gt;
+&lt;h1 id="place-images-side-by-side-like-the-photos-above"&gt;Place images side by side (like the photos above)&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert image1.jpg image2.jpg +append output.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Sun, 12 Apr 2026 21:57:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2026-04-12:/tips-for-imagemagick.html</guid><category>Linux</category><category>imagemagick</category><category>linux</category><category>image</category></item><item><title>Berlin Half Marathon 2026: Race Report</title><link>https://romainpellerin.eu/berlin-half-marathon-2026-race-report.html</link><description>&lt;p&gt;On March 29th, 2026, the Berlin half marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.&lt;/p&gt;
 &lt;h1 id="prep"&gt;Prep&lt;/h1&gt;
 &lt;p&gt;I followed a training plan using the "Kiprun Pacer" app once again for just over 3 months, running 4 to 5 times a week. The training period was quite chaotic for the most part. I got sick in December, and January broke a record as the coldest January in Berlin in 16 years. There was a thick layer of snow on the ground for 3 weeks, with frequent snowfall throughout the month. The weather was absolutely horrendous.&lt;/p&gt;
 &lt;figure class="center"&gt;
