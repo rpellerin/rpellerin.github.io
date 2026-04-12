@@ -4,14 +4,14 @@ Category: Running
 Tags: half marathon, running, berlin
 Slug: berlin-half-marathon-2026-race-report
 Authors: Romain Pellerin
-Summary: Third time running the half marathon of Berlin - I love it!
+Summary: Third time running the Berlin Half Marathon - I love it!
 Image: berlin-half-marathon-2026/berlin-marathon-2026-cover.jpg
 
-On March 29th, 2026, the Berlin half-marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.
+On March 29th, 2026, the Berlin half marathon took place. It was my third time racing it. Once again, it was a fantastic experience! A near-perfect organization, the expo, the course, the aid stations... everything was great! I can only recommend it.
 
 # Prep
 
-I followed a training plan using the "Kiprun Pacer" app once again for just over 3 months, running 4 to 5 times a week. The training period was quite chaotic for the major part. I got sick in December, and January broke a record as the coldest January in Berlin in 16 years. There was a thick layer of snow on the ground for 3 weeks, with frequent snowfall throughout the month. The weather was absolutely horrendous.
+I followed a training plan using the "Kiprun Pacer" app once again for just over 3 months, running 4 to 5 times a week. The training period was quite chaotic for the most part. I got sick in December, and January broke a record as the coldest January in Berlin in 16 years. There was a thick layer of snow on the ground for 3 weeks, with frequent snowfall throughout the month. The weather was absolutely horrendous.
 
 <figure class="center">
 <img src="{static}/images/berlin-half-marathon-2026/frozen-lake.jpg" alt="Me on a frozen lake" />
@@ -36,7 +36,7 @@ In terms of volume, my weekly mileage never exceeded 65 km.
 <figcaption>Race prediction from my Garmin - the big drop is thanks to my new 10k PR</figcaption>
 </figure>
 
-The last week leading up to the race was really relaxed compared to the weeks before. I ran only 27 kms total across Monday, Wednesday, Friday and Saturday. No carb loading, I simply avoided fatty food as well as vegetables and fruits on Saturday.
+The last week leading up to the race was really relaxed compared to the weeks before. I ran only 27 km total across Monday, Wednesday, Friday and Saturday. No carb loading, I simply avoided fatty food as well as vegetables and fruits on Saturday.
 
 <figure class="center">
 <img src="{static}/images/berlin-half-marathon-2026/garmin-training-status.jpg" alt="My training status" />
@@ -69,7 +69,7 @@ In the first kilometer, I remember starting way too fast, as usual. Running a 3'
 
 I met my friend again randomly around km 2. Although she was meant to start in pen C, because of my chaotic entry into the pens, she had managed to start a few minutes ahead of me. 😁 We laughed about it, wished each other luck, and I slowly pulled ahead.
 
-The first 5 kms were pretty monotonous and unexciting. I found my rhythm and ran on average slightly faster than 4'05"/km, quite easily if I'm honest.
+The first 5 km were pretty monotonous and unexciting. I found my rhythm and ran on average slightly faster than 4'05"/km, quite easily if I'm honest.
 
 Just after passing the Charlottenburg Palace, around km 5 or 6, I got the impression that I had a tiny pebble in my left shoe, stuck between my sock and sole. At first not painful nor truly uncomfortable, the discomfort came and increased throughout the race. No matter what I was trying with my toes, the pebble seemed unmovable and stuck.
 
@@ -95,8 +95,8 @@ The "tiny pebble" in my shoe turned out to simply be a blister that grew in size
 <figcaption>Stable heart rate</figcaption>
 </figure>
 
-I can't say whether I was being too distracted from the difficulty of the race by my blister and that's why the race felt so easy or not. But the truth is, I really enjoyed this race and I think I could even have run a bit faster! My heart rate was fairly stable and in a relatively easy zone the whole time, except in the last 3 kilometers when I picked up the pace and went faster. That truly gives me great confidence for my sub 3 hour marathon goal!
+I can't say whether I was being too distracted from the difficulty of the race by my blister and that's why the race felt so easy or not. But the truth is, I really enjoyed this race and I think I could even have run a bit faster! My heart rate was fairly stable and in a relatively easy zone the whole time, except in the last 3 kilometers when I picked up the pace and went faster. That truly gives me great confidence for my sub-3-hour marathon goal!
 
 # Conclusion
 
-This half-marathon was a milestone for me this year despite not being my primary goal. My main objective of the year remains the Berlin marathon in September, where I hope to break 3 hours. I have also another race planned later this April, a 25-km race, that I don't care much about, because there's quite some elevation gain. Therefore I do not intend to run it faster than the half marathon. Maybe I'll try to hold the same pace, at least on the flat, we'll see.
+This half marathon was a milestone for me this year despite not being my primary goal. My main objective of the year remains the Berlin marathon in September, where I hope to break 3 hours. I also have another race planned later this April, a 25-km race, that I don't care much about, because there's quite some elevation gain. Therefore I do not intend to run it faster than the half marathon. Maybe I'll try to hold the same pace, at least on the flat, we'll see.
