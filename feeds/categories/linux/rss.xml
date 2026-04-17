@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 12 Apr 2026 21:57:00 +0200</lastBuildDate><item><title>Tips for ImageMagick</title><link>https://romainpellerin.eu/tips-for-imagemagick.html</link><description>&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Linux</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Fri, 17 Apr 2026 17:00:00 +0200</lastBuildDate><item><title>Tips for ImageMagick</title><link>https://romainpellerin.eu/tips-for-imagemagick.html</link><description>&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;exiftool&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;icc_profile&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;${f%.*}_sdr.jpg&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
@@ -632,6 +632,10 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;/ul&gt;
 &lt;p&gt;So my advice is to go with &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Other commands exist such as &lt;code&gt;pdfseparate&lt;/code&gt; and &lt;code&gt;pdfunite&lt;/code&gt;. They are very good but the output files are quite heavy, compared to those obtained using &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id="resize-a-pdf-to-a4-from-b4-for-instance"&gt;Resize a PDF to A4 (from B4, for instance)&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pdfjam --outfile output_a4.pdf --paper a4paper input_b4.pdf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;h1 id="convert-a-pdf-to-multiple-pngs-one-image-per-page"&gt;Convert a PDF to multiple PNGs (one image per page)&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;convert input.pdf -density &lt;span class="m"&gt;300&lt;/span&gt; -background &lt;span class="s1"&gt;&amp;#39;white&amp;#39;&lt;/span&gt; -alpha remove output.png
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
