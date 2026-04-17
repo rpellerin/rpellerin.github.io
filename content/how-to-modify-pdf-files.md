@@ -14,6 +14,11 @@ So my advice is to go with `gs`.
 
 Other commands exist such as `pdfseparate` and `pdfunite`. They are very good but the output files are quite heavy, compared to those obtained using `gs`.
 
+# Resize a PDF to A4 (from B4, for instance)
+
+    :::bash
+    pdfjam --outfile output_a4.pdf --paper a4paper input_b4.pdf
+
 # Convert a PDF to multiple PNGs (one image per page)
 
     :::bash
