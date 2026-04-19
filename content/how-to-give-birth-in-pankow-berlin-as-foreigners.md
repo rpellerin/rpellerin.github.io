@@ -15,6 +15,7 @@ Things **not** covered in this article:
 - The fact that you'll need an "assigned" midwife from early in the pregnancy until a few months after the birth. You'll see her (him?) on a regular basis throughout pregnancy, and every day just after birth.
 - Prenatal classes for both parents
 - Gynecological follow-up during pregnancy and all of the medical exams
+- The fact that you need to "book" a maternity ward (group tours are often organized monthly)
 - Elternzeit (parental leave)
 - The medical exams after the birth (U examinations)
 
@@ -23,6 +24,10 @@ This article mostly focuses on the fun part: paperwork. 😆 If you're looking f
 # German part
 
 ## Before the birth
+
+### Mutterschaftsgeld
+
+A MET-Bescheinigung (Mutmaßlicher Entbindungstag - _Expected Date of Delivery_) is necesary from the gynecologist for the employer and/or health insurance.
 
 ### Vaterschaftsanerkennung
 
@@ -75,16 +80,14 @@ Supposedly it can now be done 100% online but only if you have a BundID, which a
 
 1. Create a email+password account on the [official website](https://www.elterngeld-digital.de/ams/Elterngeld)
 1. Fill out the form then upload on the website the required attachements
-
-      - 12 or 14 last payslips for both parents
-      - Confirmation of Muttershaft by the health insurance
-      - Confirmation of Elternzeit by both parents' employers (Arbeitgeberbescheinigungen) - there is a template document
+   - 12 or 14 last payslips for both parents
+   - Confirmation of Muttershaft by the health insurance
+   - Confirmation of Elternzeit by both parents' employers (Arbeitgeberbescheinigungen) - there is a template document
 
 1. Then submit the application online. This will generate a massive PDF.
 1. Print out the first page of this PDF, as well as all of the documents uploaded online. Then send them all by post to the address written in the PDF, plus the following additional documents:
-
-      - Vaterschaftsanerkennung (a copy, not an original)
-      - Geburtsurkunde (send an official copy)
+   - Vaterschaftsanerkennung (a copy, not an original)
+   - Geburtsurkunde (send an official copy)
 
 That's it. **Bear in mind, this must be done within the first 3 months following the birth.**
 
