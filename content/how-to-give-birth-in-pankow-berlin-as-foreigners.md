@@ -17,7 +17,7 @@ Things **not** covered in this article:
 - Gynecological follow-up during pregnancy and all of the medical exams
 - The fact that you need to "book" a maternity ward (group tours are often organized monthly)
 - Maternity allowance/leave (Mutterschaftsgeld/Mutterschutz)
-- Elternzeit (parental leave) - you need to let your employer know many weeks ahead of the birth
+- Elternzeit (parental leave) - you need to let your employer know 7 weeks ahead of the birth
 - Finding a pediatrician for the medical exams after the birth (U examinations)
 
 This article mostly focuses on the fun part: paperwork. 😆 If you're looking for a complete TODO list of everything that needs to be done when expecting a child and afterwards, [open this PDF](https://www.berlin.de/ba-mitte/politik-und-verwaltung/aemter/jugendamt/pdfs/ba_mitte_geburtsfahrplan_englisch_052022.pdf?ts=1705017647) ([backup]({static}/extra/ba_mitte_geburtsfahrplan_englisch_052022.pdf)).
@@ -77,7 +77,13 @@ Through a public insurance, you can get free insurance for your kid by applying 
 
 ### Elterngeld (parental allowance)
 
-Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:
+Elterngeld and Elternzeit are two different things, although they are almost always connected. Elternzeit is "unpaid leave with the guarantee to return to your job". It has to do with your employer. Elterngeld is money you may/can get while being on Elternzeit, not from your employer but from the federal government.
+
+If both parents take Elternzeit at the same time, they will get only Elterngeld for both parents for the first month, after they'll get it for only one parent. That's why most couples take the first month together right after the birth, and then take Elternzeit in turns. A couple can only get 14 months total of basis-Elterngeld (65% of salary capped at 1800 euros). For longer periods, it's another type of Elterngeld (Elterngeld Plus), with less money.
+
+Elternzeit usually start on the date of birth. The duration is in baby life months, not calendar months. For instance, a baby born on January 15: first month of Elternzeit would run from Jan 15 to Feb 14 (included).
+
+Supposedly the application for Elterngeld [can now be done 100% online](https://service.berlin.de/dienstleistung/326079/) but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:
 
 1. Create a email+password account on the [official website](https://www.elterngeld-digital.de/ams/Elterngeld)
 1. Fill out the form then upload on the website the required attachements
