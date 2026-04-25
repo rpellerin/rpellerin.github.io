@@ -16,10 +16,11 @@ Things **not** covered in this article:
 - Prenatal classes for both parents
 - Gynecological follow-up during pregnancy and all of the medical exams
 - The fact that you need to "book" a maternity ward (group tours are often organized monthly)
-- Elternzeit (parental leave)
-- The medical exams after the birth (U examinations)
+- Maternity allowance/leave (Mutterschaftsgeld/Mutterschutz)
+- Elternzeit (parental leave) - you need to let your employer know many weeks ahead of the birth
+- Finding a pediatrician for the medical exams after the birth (U examinations)
 
-This article mostly focuses on the fun part: paperwork. 😆 If you're looking for a complete TODO list of everything that needs to be done when expecting a child and afterwards, [open this PDF](https://www.berlin.de/ba-mitte/politik-und-verwaltung/aemter/jugendamt/pdfs/ba_mitte_geburtsfahrplan_englisch_052022.pdf?ts=1705017647).
+This article mostly focuses on the fun part: paperwork. 😆 If you're looking for a complete TODO list of everything that needs to be done when expecting a child and afterwards, [open this PDF](https://www.berlin.de/ba-mitte/politik-und-verwaltung/aemter/jugendamt/pdfs/ba_mitte_geburtsfahrplan_englisch_052022.pdf?ts=1705017647) ([backup]({static}/extra/ba_mitte_geburtsfahrplan_englisch_052022.pdf)).
 
 # German part
 
@@ -38,7 +39,7 @@ If you're not a married couple, you'll need a **Vaterschaftsanerkennung** (ackno
 - a district court – free
 - a notary – usually free for the Vaterschaftsanerkennung
 
-[You need to bring the Mutterpass, your IDs of course and recent birth certificates translated in German.](https://verwaltung.bund.de/leistungsverzeichnis/en/leistung/99133001026000/herausgeber/BE-L100108_318991/region/110000000000)
+[You need to bring the Mutterpass, your IDs of course and recent birth certificates translated in German.](https://verwaltung.bund.de/leistungsverzeichnis/en/leistung/99133001026000/herausgeber/BE-L100108_318991/region/110000000000) They will often require you to send a few documents ahead of the appointment by email (scans of ID cards, Mutterpass, parents' birth certificates).
 
 [More info in English](https://www.kietzee.com/blog/how-to-vaterschaftsanerkennung-recognition-of-paternity-germany).
 
@@ -74,7 +75,7 @@ Simply book an appointment at any Bürgeramt for the following reason: _Meldereg
 
 Through a public insurance, you can get free insurance for your kid by applying for a family insurance. Just reach out to your insurance and tell them about your newborn, they'll walk you through the process (it's surprisingly as easy as filling out ONE form!).
 
-### Elterngeld
+### Elterngeld (parental allowance)
 
 Supposedly it can now be done 100% online but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:
 
@@ -91,7 +92,9 @@ Supposedly it can now be done 100% online but only if you have a BundID, which a
 
 That's it. **Bear in mind, this must be done within the first 3 months following the birth.**
 
-### Kindergeld
+As a father, your health insurance will ask you to pay your own contributions if you are "freiwillig" insured (annual gross salary higher than €77,400) and not married. The French registered civil partnership (PACS) can be leveraged and used as "mariage" to avoid paying your own contributions. [More info here](https://einfach-elterngeld.de/en/parental-allowance/parental-allowance-and-health-insurance). [Info from TK here](https://www.tk.de/techniker/versicherung/gut-versichert-in-jeder-lebenslage/freiwillige-krankenversicherung-tk/freiwillig-versichert-elternzeit-krankenkassenbeitraege-2035666).
+
+### Kindergeld (child benefit)
 
 The process is fairly easy. In our case, we received a letter from the Familienkasse with a QR code that took us to a form. We filled it out. Only one parent must be chosen to be the single receiver of Kindergeld. Then it generated a PDF to print. That PDF must be printed out and sent to the address written on the first page, alongside the following documents:
 
@@ -100,15 +103,17 @@ The process is fairly easy. In our case, we received a letter from the Familienk
 - A certificate from the Kindergeld-receiving parent's employer (document KG54 - send the template to the employer)
 - Last 3 payslips as a proof that you get income in Germany
 
-That's it. **Bear in mind, this must be done within the first 6 months following the birth.**
+That's it. **Bear in mind, this must be done within the first 6 weeks following the birth.**
 
 ### German ID card
 
 Yet to be done... I will update the article later accordingly.
 
-### Kita Gutschein
+### Kita Gutschein and finding a Kita
 
-Yet to be done... I will update the article later accordingly.
+[Yet to be done...](https://fms.verwalt-berlin.de/kita) I will update the article later accordingly.
+
+[Kita Navigator](https://kita-navigator.berlin.de/)
 
 # French part
 
