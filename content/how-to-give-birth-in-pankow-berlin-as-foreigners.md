@@ -83,12 +83,14 @@ If both parents take Elternzeit at the same time, they will get only Elterngeld 
 
 Elternzeit usually start on the date of birth. The duration is in baby life months, not calendar months. For instance, a baby born on January 15: first month of Elternzeit would run from Jan 15 to Feb 14 (included).
 
+The Mutterschutz period after the birth (first 8 weeks of the baby) and the money received during that time are also counted as Elternzeit and Basis-Eterngeld for the mother. Except that the money during that time is not capped, it's the full salary of the mother.
+
 Supposedly the application for Elterngeld [can now be done 100% online](https://service.berlin.de/dienstleistung/326079/) but only if you have a BundID, which as a Frenchman I cannot have unfortunately because the French national ID card system is not yet fully connected to the German one. So in our case, the process was as follow:
 
 1. Create a email+password account on the [official website](https://www.elterngeld-digital.de/ams/Elterngeld)
 1. Fill out the form then upload on the website the required attachements
    - 12 or 14 last payslips for both parents
-   - Confirmation of Muttershaft by the health insurance
+   - Confirmation of Mutterschutz by the health insurance
    - Confirmation of Elternzeit by both parents' employers (Arbeitgeberbescheinigungen) - there is a template document
 
 1. Then submit the application online. This will generate a massive PDF.
