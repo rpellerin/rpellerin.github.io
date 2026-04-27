@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sun, 26 Apr 2026 11:46:00 +0200</lastBuildDate><item><title>My 2026 Running Shoe Rotation</title><link>https://romainpellerin.eu/my-2026-running-shoe-rotation.html</link><description>&lt;p&gt;Here is a breakdown of my current footwear and their specific training/racing purposes. I've used all of my Metaspeed shoes for at least one marathon. What I no use them for is purely based on their current mileage: I use new-ish shoes for marathons, then for shorter distance races, then only for training.&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 28 Apr 2026 00:01:00 +0200</lastBuildDate><item><title>My 2026 Running Shoe Rotation</title><link>https://romainpellerin.eu/my-2026-running-shoe-rotation.html</link><description>&lt;p&gt;Here is a breakdown of my current footwear and their specific training/racing purposes. I've used all of my Metaspeed shoes for at least one marathon. What I no use them for is purely based on their current mileage: I use new-ish shoes for marathons, then for shorter distance races, then only for training.&lt;/p&gt;
 &lt;figure class="center"&gt;
 &lt;img src="https://romainpellerin.eu/images/2026-running-shoe-rotation.jpg" alt="Photo of my shoes" /&gt;
 &lt;figcaption&gt;All of my running shoes&lt;/figcaption&gt;
@@ -10073,6 +10073,14 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;p&gt;Other commands exist such as &lt;code&gt;pdfseparate&lt;/code&gt; and &lt;code&gt;pdfunite&lt;/code&gt;. They are very good but the output files are quite heavy, compared to those obtained using &lt;code&gt;gs&lt;/code&gt;.&lt;/p&gt;
 &lt;h1 id="resize-a-pdf-to-a4-from-b4-for-instance"&gt;Resize a PDF to A4 (from B4, for instance)&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pdfjam --outfile output_a4.pdf --paper a4paper input_b4.pdf
+
+&lt;span class="c1"&gt;# Alternatively&lt;/span&gt;
+&lt;span class="se"&gt;\g&lt;/span&gt;s -sDEVICE&lt;span class="o"&gt;=&lt;/span&gt;pdfwrite &lt;span class="se"&gt;\&lt;/span&gt;
+ -dCompatibilityLevel&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4 &lt;span class="se"&gt;\&lt;/span&gt;
+ -dNOPAUSE -dQUIET -dBATCH &lt;span class="se"&gt;\&lt;/span&gt;
+ -dPDFFitPage -dFIXEDMEDIA &lt;span class="se"&gt;\&lt;/span&gt;
+ -sPAPERSIZE&lt;span class="o"&gt;=&lt;/span&gt;a4 &lt;span class="se"&gt;\&lt;/span&gt;
+ -o output.pdf input.pdf
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id="convert-a-pdf-to-multiple-pngs-one-image-per-page"&gt;Convert a PDF to multiple PNGs (one image per page)&lt;/h1&gt;
