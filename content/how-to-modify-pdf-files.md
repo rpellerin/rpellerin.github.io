@@ -19,6 +19,14 @@ Other commands exist such as `pdfseparate` and `pdfunite`. They are very good bu
     :::bash
     pdfjam --outfile output_a4.pdf --paper a4paper input_b4.pdf
 
+    # Alternatively
+    \gs -sDEVICE=pdfwrite \
+     -dCompatibilityLevel=1.4 \
+     -dNOPAUSE -dQUIET -dBATCH \
+     -dPDFFitPage -dFIXEDMEDIA \
+     -sPAPERSIZE=a4 \
+     -o output.pdf input.pdf
+
 # Convert a PDF to multiple PNGs (one image per page)
 
     :::bash
