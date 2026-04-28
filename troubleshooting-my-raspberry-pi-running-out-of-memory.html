@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, python, linux, raspberry pi" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="How a missing timeout in a Python script triggered a chain reaction that took down my Raspberry Pi" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="Troubleshooting My Raspberry Pi Running Out of Memory - Romain Pellerin's Blog" />
+        <meta property="og:description" content="How a missing timeout in a Python script triggered a chain reaction that took down my Raspberry Pi" />
+        <meta property="og:url" content="https://romainpellerin.eu/troubleshooting-my-raspberry-pi-running-out-of-memory.html" />
+
+        <title>Troubleshooting My Raspberry Pi Running Out of Memory - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2026-04-28T23:00:00+02:00">Tue 28 April 2026</time>        </p>
+    <h1>Troubleshooting My Raspberry Pi Running Out of Memory</h1>
+    <div class="grey">
+        <p class="italic">How a missing timeout in a Python script triggered a chain reaction that took down my Raspberry Pi</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 485 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/python.html">python</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/raspberry-pi.html">raspberry pi</a></p>    </div>
+</header>
+<article>
+    <p>I recently noticed a strange behavior on my Raspberry Pi: many of my systemctl services were being killed and rebooted infinitely. Looking at the logs via <code>journalctl</code>, I saw the dreaded:</p>
+<div class="highlight"><pre><span></span><code>systemd[1]: systemd-journald.service: Main process exited, code=killed, status=9/KILL
+systemd[1]: some-other-service.service: Main process exited, code=killed, status=9/KILL
+</code></pre></div>
+
+<p>A <code>status=9</code> (SIGKILL) means the process didn't just crash; it was executed by the system. On a Raspberry Pi, this is almost always the <strong>OOM (Out of Memory) Killer</strong> at work. This was confirmed by checking <code>journalctl -b -1 -e</code> after rebooting.</p>
+<p><code>journalctl -b -1 | grep -i "out of memory"</code> gave many:</p>
+<div class="highlight"><pre><span></span><code>kernel: Out of memory: Killed process 28829 (python3) total-vm:421072kB, anon-rss:6740kB, file-rss:0kB, shmem-rss:4kB, UID:1000 pgtables:284kB oom_score_adj:0
+kernel: Out of memory: Killed process 28189 (python3) total-vm:105076kB, anon-rss:6392kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:70kB oom_score_adj:0
+kernel: Out of memory: Killed process 18904 (python3) total-vm:32424kB, anon-rss:0kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:42kB oom_score_adj:0
+kernel: Out of memory: Killed process 10876 (python3) total-vm:53648kB, anon-rss:13840kB, file-rss:0kB, shmem-rss:0kB, UID:1000 pgtables:60kB oom_score_adj:0
+</code></pre></div>
+
+<p>But why was my Raspberry Pi running out of memory?</p>
+<h1 id="the-investigation">The Investigation</h1>
+<p>Using <code>pstree -apl | grep -A 3 cron</code>, I found the culprit. Many of my cron jobs (launching Python scripts) were piling up. Instead of running once and exiting, dozens of instances were sitting in the background, stagnant.</p>
+<p>I attached to one of the hanging processes using <code>strace</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo strace -p &lt;PID&gt; <span class="c1"># Finding the child Python process of the hanging cronjob</span>
+<span class="c1"># Output: read(4, ...</span>
+</code></pre></div>
+
+<p>Then, I used <code>lsof</code> to see what file descriptor <code>4</code> was:</p>
+<div class="highlight"><pre><span></span><code>sudo lsof -p &lt;PID&gt;
+<span class="c1"># Output: ... IPv6 TCP ... -&gt;tzhama-ab-in-x0e.1e100.net:https (ESTABLISHED)</span>
+</code></pre></div>
+
+<p>The script was stuck in a "Read" state on a TCP connection to a Google domain (a legit operation from many of my cron jobs). It had established a connection, but the server was ghosting it, and the script was waiting... <strong>forever.</strong></p>
+<h1 id="the-chain-reaction">The Chain Reaction</h1>
+<p>This created a perfect storm:</p>
+<ol>
+<li><strong>The hang:</strong> a network glitch caused <code>requests.get()</code> or <code>requests.post()</code> to wait indefinitely.</li>
+<li><strong>The accumulation:</strong> cron started a new instance every 2 minutes.</li>
+<li><strong>The OOM:</strong> aach hanging process consumed many MB of RAM until the Pi hit its limit.</li>
+<li><strong>The victim:</strong> the Linux kernel sacrificed my services to keep the system alive, but they were set to auto restart. Infinitely.<div class="highlight"><pre><span></span><code>[Service]
+Restart=always
+RestartSec=3
+</code></pre></div>
+
+</li>
+</ol>
+<h1 id="the-solution">The Solution</h1>
+<p>The fix was two-fold. First, I added a safety net to the crontab using the <code>timeout</code> command. I could have added on top <code>flock</code> to prevent overlapping, but I did not:</p>
+<div class="highlight"><pre><span></span><code>*/2 * * * * /usr/bin/timeout 50s /path/to/python_script
+</code></pre></div>
+
+<p>Second, and most importantly, I fixed the Python code. <strong>Never make a network request without a timeout.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Adding a 10-second timeout</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://api.example.com&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">Timeout</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Server took too long!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>If your Raspberry Pi services are dying with <code>status=9</code>, don't just restart them. Check your process tree. A single script without a network timeout can eventually bring down your entire automation stack. I hope this helps!</p>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 28 April 2026</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
