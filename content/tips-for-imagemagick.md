@@ -8,7 +8,7 @@ Summary: A few tips with ImageMagick
 
 # Tip: iterate over multiple images
 
-    :::bahs
+    :::bash
     mkdir -p output
     for f in *.jpg; do
         exiftool -all= --icc_profile:all $f -o "${f%.*}_sdr.jpg"
