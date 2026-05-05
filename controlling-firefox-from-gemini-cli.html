@@ -82,7 +82,7 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2026-05-05T21:00:00+02:00">Tue 05 May 2026</time>        </p>
+<time datetime="2026-05-05T21:00:00+02:00">Tue 05 May 2026</time> - Last update: <time datetime="2026-05-05T21:48:00+02:00">Tue 05 May 2026</time>        </p>
     <h1>Controlling Firefox from Gemini CLI</h1>
     <div class="grey">
         <p class="italic">A few command lines</p>
@@ -93,14 +93,14 @@
 </header>
 <article>
     <h1 id="a-fresh-new-session">A fresh new session</h1>
-<div class="highlight"><pre><span></span><code>firefox --marionette
-gemini mcp add firefox-devtools npx firefox-devtools-mcp --connect-existing --marionette-port <span class="m">2828</span>
-gemini <span class="c1"># Just prompt now and tell it to use the Firefox-Devtools MCP</span>
+<div class="highlight"><pre><span></span><code>gemini mcp add playwright npx -y @playwright/mcp@latest --browser firefox
+gemini <span class="c1"># Just prompt now and tell it to use the Playwright MCP</span>
 </code></pre></div>
 
 <h1 id="an-already-launched-session-with-your-cookies">An already launched session (with your cookies!)</h1>
-<div class="highlight"><pre><span></span><code>gemini mcp add playwright npx -y @playwright/mcp@latest --browser firefox
-gemini <span class="c1"># Just prompt now and tell it to use the Playwright MCP</span>
+<div class="highlight"><pre><span></span><code>firefox --marionette
+gemini mcp add firefox-devtools npx firefox-devtools-mcp --connect-existing --marionette-port <span class="m">2828</span>
+gemini <span class="c1"># Just prompt now and tell it to use the Firefox-Devtools MCP</span>
 </code></pre></div>
 </article>
 <footer class="grey italic small">
