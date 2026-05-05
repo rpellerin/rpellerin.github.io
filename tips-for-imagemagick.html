@@ -82,7 +82,7 @@
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
 </nav><header class="article-header center">
     <p id="back-line" class="small grey"><span>
-<time datetime="2026-04-12T21:57:00+02:00">Sun 12 April 2026</time>        </p>
+<time datetime="2026-04-12T21:57:00+02:00">Sun 12 April 2026</time> - Last update: <time datetime="2026-05-05T20:44:00+02:00">Tue 05 May 2026</time>        </p>
     <h1>Tips for ImageMagick</h1>
     <div class="grey">
         <p class="italic">A few tips with ImageMagick</p>
@@ -93,14 +93,14 @@
 </header>
 <article>
     <h1 id="tip-iterate-over-multiple-images">Tip: iterate over multiple images</h1>
-<div class="highlight"><pre><span></span><code><span class="n">mkdir</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">output</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">*.</span><span class="n">jpg</span><span class="p">;</span><span class="w"> </span><span class="n">do</span><span class="w"></span>
-<span class="w">    </span><span class="n">exiftool</span><span class="w"> </span><span class="o">-</span><span class="n">all</span><span class="o">=</span><span class="w"> </span><span class="o">--</span><span class="n">icc_profile</span><span class="p">:</span><span class="n">all</span><span class="w"> </span><span class="o">$</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="s2">&quot;${f%.*}_sdr.jpg&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="c1"># convert &quot;${f%.*}_sdr.jpg&quot; ... &quot;output/${f%.*}output.jpg&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;$f done&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="s2">&quot;${f%.*}_sdr.jpg&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="n">sleep</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">done</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code>mkdir -p output
+<span class="k">for</span> f <span class="k">in</span> *.jpg<span class="p">;</span> <span class="k">do</span>
+    exiftool -all<span class="o">=</span> --icc_profile:all <span class="nv">$f</span> -o <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">_sdr.jpg&quot;</span>
+    <span class="c1"># convert &quot;${f%.*}_sdr.jpg&quot; ... &quot;output/${f%.*}output.jpg&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2"> done&quot;</span>
+    rm -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">_sdr.jpg&quot;</span>
+    sleep <span class="m">1</span>
+<span class="k">done</span>
 </code></pre></div>
 
 <h1 id="add-grain-and-a-analog-like-effect">Add grain and a analog-like effect</h1>
@@ -146,7 +146,7 @@
 </code></pre></div>
 </article>
 <footer class="grey italic small">
-    Last update: Sun 12 April 2026</footer>
+    Last update: Tue 05 May 2026</footer>
 
         </div> <!-- WRAPPER -->
     </body>

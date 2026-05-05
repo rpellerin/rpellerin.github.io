@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Romain Pellerin" />
-        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, linux, firefox, ai, mcp, playwright" />
         <meta name="geo.placename" content="San Francisco, California, USA" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all" />
@@ -59,12 +59,13 @@
         </script>
 
         <!-- Social media -->
-        <meta name="description" content="Romain Pellerin's Blog: articles tagged 'firefox'" />
+        <meta name="description" content="A few command lines" />
         <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
-        <meta property="og:title" content="Articles tagged 'firefox' - Romain Pellerin's Blog" />
-        <meta property="og:description" content="Romain Pellerin's Blog: articles tagged 'firefox'" />
+        <meta property="og:title" content="Controlling Firefox from Gemini CLI - Romain Pellerin's Blog" />
+        <meta property="og:description" content="A few command lines" />
+        <meta property="og:url" content="https://romainpellerin.eu/controlling-firefox-from-gemini-cli.html" />
 
-        <title>Articles tagged 'firefox' - Romain Pellerin's Blog</title>
+        <title>Controlling Firefox from Gemini CLI - Romain Pellerin's Blog</title>
 
         <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
         <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
@@ -72,7 +73,6 @@
     <body>
         <div id="wrapper">
 
-<header>
 <nav class="flexbox-row">
         <a class="center" href="https://romainpellerin.eu/">Homepage</a>
     <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
@@ -80,22 +80,31 @@
     <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
     <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
     <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
-</nav></header>
-<h1>Articles tagged 'firefox' (2)</h1>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2026-05-05T21:00:00+02:00">Tue 05 May 2026</time>        </p>
+    <h1>Controlling Firefox from Gemini CLI</h1>
+    <div class="grey">
+        <p class="italic">A few command lines</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 57 words.">Less than 1 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/linux.html">Linux</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/linux.html">linux</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/firefox.html">firefox</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/ai.html">ai</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/mcp.html">mcp</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/playwright.html">playwright</a></p>    </div>
+</header>
+<article>
+    <h1 id="a-fresh-new-session">A fresh new session</h1>
+<div class="highlight"><pre><span></span><code>firefox --marionette
+gemini mcp add firefox-devtools npx firefox-devtools-mcp --connect-existing --marionette-port <span class="m">2828</span>
+gemini <span class="c1"># Just prompt now and tell it to use the Firefox-Devtools MCP</span>
+</code></pre></div>
 
-
-    <section>
-        <ol>
-                    <li class="no-bullet-point">
-                        <a href="https://romainpellerin.eu/controlling-firefox-from-gemini-cli.html" rel="bookmark" title="Permalink to Controlling Firefox from Gemini CLI">Controlling Firefox from Gemini CLI</a>
-<time class="grey italic small" datetime="2026-05-05T21:00:00+02:00">Tue 05 May 2026</time>                        <p class="grey italic indent">A few command lines</p>
-                    </li>
-                    <li class="no-bullet-point">
-                        <a href="https://romainpellerin.eu/android-ios-what-alternatives.html" rel="bookmark" title="Permalink to Android, iOS: What Alternatives?">Android, iOS: What Alternatives?</a>
-<time class="grey italic small" datetime="2015-11-26T15:00:00+01:00">Thu 26 November 2015</time>                        <p class="grey italic indent">What alternatives do we have to Android and iOS? How to install Firefox OS and Ubuntu for devices.</p>
-                    </li>
-        </ol>
-    </section>
+<h1 id="an-already-launched-session-with-your-cookies">An already launched session (with your cookies!)</h1>
+<div class="highlight"><pre><span></span><code>gemini mcp add playwright npx -y @playwright/mcp@latest --browser firefox
+gemini <span class="c1"># Just prompt now and tell it to use the Playwright MCP</span>
+</code></pre></div>
+</article>
+<footer class="grey italic small">
+    Last update: Tue 05 May 2026</footer>
 
         </div> <!-- WRAPPER -->
     </body>
