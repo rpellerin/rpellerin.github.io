@@ -8,7 +8,7 @@ Summary: A cool prompt to combine Strava data and a photo
 
 Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:
 
-> Position the stats of this ride on the road. Respect the perspective of this image. Remove the Strava text. The route must glow in Strava orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.
+> Position the stats of this ride on the road, distorting them to match the strong receding perspective of the road. Remove the Strava text. The route must glow in a warm neon orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.
 
 <div class="img-comp-container">
   <img src="{static}/images/ai-prompt-strava/ai-prompt-strava-original.jpg" class="img-comp-base">
