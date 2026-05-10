@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog - Cycling</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/categories/cycling/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-05-10T20:00:00+02:00</updated><entry><title>AI Prompt For Cool Strava Photos</title><link href="https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html" rel="alternate"></link><published>2026-05-10T20:00:00+02:00</published><updated>2026-05-10T20:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-05-10:/ai-prompt-for-cool-strava-photos.html</id><summary type="html">&lt;p&gt;A cool prompt to combine Strava data and a photo&lt;/p&gt;</summary><content type="html">&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Position the stats of this ride on the road. Respect the perspective of this image. Remove the Strava text. The route must glow in Strava orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="img-comp-container"&gt;
+  &lt;img src="https://romainpellerin.eu/images/ai-prompt-strava/ai-prompt-strava-original.jpg" class="img-comp-base"&gt;
+  &lt;img src="https://romainpellerin.eu/images/ai-prompt-strava/ai-prompt-strava-result.jpg" class="img-comp-overlay"&gt;
+  &lt;input type="range" min="0" max="100" value="50" class="img-comp-slider"&gt;
+  &lt;div class="img-comp-handle"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.img-comp-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  display: flex; /* Ensures no extra bottom spacing from images */
+}
+
+.img-comp-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-comp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+}
+
+.img-comp-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.img-comp-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: white;
+  pointer-events: none;
+  z-index: 9;
+  transform: translateX(-50%);
+}
+
+.img-comp-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: left 2px center, right 2px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+function initComparisonSliders() {
+  const sliders = document.querySelectorAll('.img-comp-slider');
+  sliders.forEach(slider =&gt; {
+    const container = slider.parentElement;
+    const overlay = container.querySelector('.img-comp-overlay');
+    const handle = container.querySelector('.img-comp-handle');
+
+    const update = () =&gt; {
+      const value = slider.value;
+      overlay.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+      handle.style.left = value + '%';
+    };
+
+    slider.addEventListener('input', update);
+    // Initial update to match default value
+    update();
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initComparisonSliders);
+} else {
+  initComparisonSliders();
+}
+&lt;/script&gt;</content><category term="Cycling"></category><category term="cycling"></category><category term="ai"></category><category term="strava"></category></entry></feed>

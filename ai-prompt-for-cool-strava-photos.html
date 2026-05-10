@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Romain Pellerin" />
+        <meta name="keywords" content="romain pellerin, romain, pellerin, portfolio, site personnel, personal website, blog, cycling, ai, strava" />
+        <meta name="geo.placename" content="San Francisco, California, USA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://romainpellerin.eu/theme/css/main.css" type="text/css" />
+        <link rel="shortcut icon" href="https://romainpellerin.eu/favicon.ico" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-711TXDHP4Q"></script>
+        <script>
+        function _dntEnabled(dnt, userAgent) {
+            'use strict';
+
+            // for old version of IE we need to use the msDoNotTrack property of navigator
+            // on newer versions, and newer platforms, this is doNotTrack but, on the window object
+            // Safari also exposes the property on the window object.
+            var dntStatus = dnt || navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+            var ua = userAgent || navigator.userAgent;
+
+            // List of Windows versions known to not implement DNT according to the standard.
+            var anomalousWinVersions = ['Windows NT 6.1', 'Windows NT 6.2', 'Windows NT 6.3'];
+
+            var fxMatch = ua.match(/Firefox\/(\d+)/);
+            var ieRegEx = /MSIE|Trident/i;
+            var isIE = ieRegEx.test(ua);
+            // Matches from Windows up to the first occurance of ; un-greedily
+            // http://www.regexr.com/3c2el
+            var platform = ua.match(/Windows.+?(?=;)/g);
+
+            // With old versions of IE, DNT did not exist so we simply return false;
+            if (isIE && typeof Array.prototype.indexOf !== 'function') {
+                return false;
+            } else if (fxMatch && parseInt(fxMatch[1], 10) < 32) {
+                // Can't say for sure if it is 1 or 0, due to Fx bug 887703
+                dntStatus = 'Unspecified';
+            } else if (isIE && platform && anomalousWinVersions.indexOf(platform.toString()) !== -1) {
+                // default is on, which does not honor the specification
+                dntStatus = 'Unspecified';
+            } else {
+                // sets dntStatus to Disabled or Enabled based on the value returned by the browser.
+                // If dntStatus is undefined, it will be set to Unspecified
+                dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
+            }
+            return dntStatus === 'Enabled' ? true : false;
+        }
+        if (!_dntEnabled() || true) { /* temp ignore DNT */
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-711TXDHP4Q');
+        }
+        </script>
+
+        <!-- Social media -->
+        <meta name="description" content="A cool prompt to combine Strava data and a photo" />
+        <meta property="og:image" content="https://romainpellerin.eu/theme/img/romain_pellerin-4x.jpg" />
+        <meta property="og:title" content="AI Prompt For Cool Strava Photos - Romain Pellerin's Blog" />
+        <meta property="og:description" content="A cool prompt to combine Strava data and a photo" />
+        <meta property="og:url" content="https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html" />
+
+        <title>AI Prompt For Cool Strava Photos - Romain Pellerin's Blog</title>
+
+        <link href="//romainpellerin.eu/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Romain Pellerin's Blog Atom Feed" />
+        <link href="//romainpellerin.eu/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Romain Pellerin's Blog RSS Feed" />
+    </head>
+    <body>
+        <div id="wrapper">
+
+<nav class="flexbox-row">
+        <a class="center" href="https://romainpellerin.eu/">Homepage</a>
+    <a class="center" href="https://romainpellerin.eu/articles.html">All articles</a>
+    <a class="center" href="https://romainpellerin.eu/categories.html">Categories</a>
+    <a class="center" href="https://romainpellerin.eu/tags.html">Tags</a>
+    <a class="center" href="//romainpellerin.eu/feeds/rss.xml">RSS feed</a>
+    <a class="center" href="//romainpellerin.eu/feeds/atom.xml">Atom feed</a>
+</nav><header class="article-header center">
+    <p id="back-line" class="small grey"><span>
+<time datetime="2026-05-10T20:00:00+02:00">Sun 10 May 2026</time>        </p>
+    <h1>AI Prompt For Cool Strava Photos</h1>
+    <div class="grey">
+        <p class="italic">A cool prompt to combine Strava data and a photo</p>
+        <p class="small">
+            &#128338; <span title="Based on a 200 words per minute reading speed. This article has a total of 325 words.">2 min read</span>
+        </p>
+<p class="small">Category: <a title="Go to the category" href="https://romainpellerin.eu/category/cycling.html">Cycling</a></p><p class="small">Tags: <a title="Go to the tag" href="https://romainpellerin.eu/tag/cycling.html">cycling</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/ai.html">ai</a>, <a title="Go to the tag" href="https://romainpellerin.eu/tag/strava.html">strava</a></p>    </div>
+</header>
+<article>
+    <p>Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:</p>
+<blockquote>
+<p>Position the stats of this ride on the road. Respect the perspective of this image. Remove the Strava text. The route must glow in Strava orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.</p>
+</blockquote>
+<div class="img-comp-container">
+  <img src="https://romainpellerin.eu/images/ai-prompt-strava/ai-prompt-strava-original.jpg" class="img-comp-base">
+  <img src="https://romainpellerin.eu/images/ai-prompt-strava/ai-prompt-strava-result.jpg" class="img-comp-overlay">
+  <input type="range" min="0" max="100" value="50" class="img-comp-slider">
+  <div class="img-comp-handle"></div>
+</div>
+
+<style>
+.img-comp-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  display: flex; /* Ensures no extra bottom spacing from images */
+}
+
+.img-comp-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-comp-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0 50% 0 0);
+}
+
+.img-comp-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.img-comp-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: white;
+  pointer-events: none;
+  z-index: 9;
+  transform: translateX(-50%);
+}
+
+.img-comp-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: left 2px center, right 2px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+</style>
+
+<script>
+function initComparisonSliders() {
+  const sliders = document.querySelectorAll('.img-comp-slider');
+  sliders.forEach(slider => {
+    const container = slider.parentElement;
+    const overlay = container.querySelector('.img-comp-overlay');
+    const handle = container.querySelector('.img-comp-handle');
+
+    const update = () => {
+      const value = slider.value;
+      overlay.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+      handle.style.left = value + '%';
+    };
+
+    slider.addEventListener('input', update);
+    // Initial update to match default value
+    update();
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initComparisonSliders);
+} else {
+  initComparisonSliders();
+}
+</script>
+</article>
+<footer class="grey italic small">
+    Last update: Sun 10 May 2026</footer>
+
+        </div> <!-- WRAPPER -->
+    </body>
+</html>
