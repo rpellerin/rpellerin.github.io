@@ -68,18 +68,110 @@
       #track-cards-container a {
         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       }
+
+      /* Resizer handle between map and tracks list */
+      #panel-resizer {
+        display: none; /* Hidden on mobile */
+        width: 6px;
+        cursor: col-resize;
+        background-color: #e5e7eb; /* gray-200 */
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+        transition: background-color 0.15s ease;
+      }
+      #panel-resizer:hover,
+      #panel-resizer.active {
+        background-color: #3b82f6; /* blue-500 */
+      }
+      #panel-resizer::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4px;
+        height: 40px;
+        border-radius: 2px;
+        border-left: 1px solid rgba(0,0,0,0.15);
+        border-right: 1px solid rgba(0,0,0,0.15);
+      }
+      @media (min-width: 768px) {
+        #panel-resizer {
+          display: block;
+        }
+      }
+      /* Prevent text selection while dragging */
+      body.resizing {
+        user-select: none;
+        -webkit-user-select: none;
+        cursor: col-resize;
+      }
+
+      /* Dual-range slider */
+      .range-slider {
+        position: relative;
+        height: 6px;
+        background: #e5e7eb;
+        border-radius: 3px;
+      }
+      .range-slider .range-highlight {
+        position: absolute;
+        height: 100%;
+        background: #3b82f6;
+        border-radius: 3px;
+      }
+      .range-slider input[type="range"] {
+        position: absolute;
+        width: 100%;
+        top: -6px;
+        height: 18px;
+        margin: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .range-slider input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #3b82f6;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        cursor: pointer;
+        pointer-events: auto;
+      }
+      .range-slider input[type="range"]::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #3b82f6;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        cursor: pointer;
+        pointer-events: auto;
+      }
     </style>
   </head>
   <body class="overflow-hidden">
     <div class="flex flex-col md:flex-row h-screen font-sans">
       <!-- Left Column: Map -->
-      <div class="w-full h-1/2 md:w-1/2 md:h-screen">
+      <div id="left-panel" class="w-full h-1/2 md:h-screen" style="flex: 1 1 50%;">
         <div id="map"></div>
       </div>
 
+      <!-- Draggable Resizer (visible only on md+) -->
+      <div id="panel-resizer"></div>
+
       <!-- Right Column: Tracks List -->
       <div
-        class="w-full h-1/2 md:w-1/2 md:h-screen overflow-y-auto p-4 md:p-8 bg-gray-50"
+        id="right-panel"
+        class="w-full h-1/2 md:h-screen overflow-y-auto p-4 md:p-8 bg-gray-50"
+        style="flex: 1 1 50%;"
       >
         <!-- Header -->
         <header class="text-center mb-4">
@@ -127,6 +219,25 @@
                 <div class="w-full text-lg font-semibold">Allgäu</div>
               </div>
             </label>
+          </div>
+        </div>
+
+        <!-- Map Bounds Filter -->
+        <div class="mb-4 flex items-center">
+          <input type="checkbox" id="bounds-filter" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 cursor-pointer" />
+          <label for="bounds-filter" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer">Only show rides that fit entirely within the shown map</label>
+        </div>
+
+        <!-- Distance Filter Slider -->
+        <div id="distance-filter" class="mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-sm font-medium text-gray-900">Filter by distance</label>
+            <span id="distance-range-label" class="text-sm text-gray-500 font-semibold">0 – 0 km</span>
+          </div>
+          <div class="range-slider">
+            <div id="range-highlight" class="range-highlight"></div>
+            <input type="range" id="range-min" min="0" max="100" value="0" step="1" />
+            <input type="range" id="range-max" min="0" max="100" value="100" step="1" />
           </div>
         </div>
 
@@ -200,6 +311,11 @@
         const trackCardsContainer = document.getElementById(
           "track-cards-container"
         );
+        const rangeMin = document.getElementById("range-min");
+        const rangeMax = document.getElementById("range-max");
+        const rangeHighlight = document.getElementById("range-highlight");
+        const distanceRangeLabel = document.getElementById("distance-range-label");
+        const boundsFilter = document.getElementById("bounds-filter");
         const mapToggle = document.getElementById("map-toggle");
         const regionRadios = document.querySelectorAll('input[name="region"]');
 
@@ -250,6 +366,80 @@
           if (allBounds.isValid()) {
             map.fitBounds(allBounds, { padding: [50, 50] }); // Add padding
           }
+        }
+
+        // 5b. Distance slider helpers
+        function updateSliderRange(rides) {
+          const distances = rides
+            .map((d) => d.distanceKm)
+            .filter((d) => d != null);
+          if (distances.length === 0) return;
+          const minDist = Math.min(...distances);
+          const maxDist = Math.max(...distances);
+          rangeMin.min = minDist;
+          rangeMin.max = maxDist;
+          rangeMax.min = minDist;
+          rangeMax.max = maxDist;
+          rangeMin.value = minDist;
+          rangeMax.value = maxDist;
+          updateRangeHighlight();
+          distanceRangeLabel.textContent = `${minDist} – ${maxDist} km`;
+        }
+
+        function updateRangeHighlight() {
+          const min = parseInt(rangeMin.min);
+          const max = parseInt(rangeMin.max);
+          const span = max - min || 1;
+          const left = ((parseInt(rangeMin.value) - min) / span) * 100;
+          const right = ((parseInt(rangeMax.value) - min) / span) * 100;
+          rangeHighlight.style.left = left + "%";
+          rangeHighlight.style.width = (right - left) + "%";
+        }
+
+        function applyDistanceFilter() {
+          const lo = parseInt(rangeMin.value);
+          const hi = parseInt(rangeMax.value);
+          distanceRangeLabel.textContent = `${lo} – ${hi} km`;
+          updateRangeHighlight();
+
+          const checkBounds = boundsFilter.checked;
+          const mapBounds = checkBounds ? map.getBounds() : null;
+
+          let visibleCount = 0;
+          currentlyDisplayedRides.forEach((data) => {
+            const km = data.distanceKm;
+            // Rides whose distance is not yet known pass the distance filter
+            let visible = km == null || (km >= lo && km <= hi);
+
+            // If the bounds checkbox is on, also require the ride to fit within the map
+            if (visible && checkBounds && data.layer) {
+              try {
+                const rideBounds = data.layer.getBounds();
+                if (rideBounds.isValid()) {
+                  visible = mapBounds.contains(rideBounds);
+                }
+              } catch (e) {
+                // Layer might not be loaded yet – keep visible
+              }
+            }
+
+            if (visible) visibleCount++;
+
+            // Card visibility
+            if (data.card) {
+              data.card.style.display = visible ? "" : "none";
+            }
+            // Map layer visibility
+            if (data.layer) {
+              if (visible && !map.hasLayer(data.layer)) {
+                data.layer.addTo(map);
+              } else if (!visible && map.hasLayer(data.layer)) {
+                map.removeLayer(data.layer);
+              }
+            }
+          });
+
+          fileInfo.textContent = `Showing ${visibleCount} of ${currentlyDisplayedRides.length} tracks.`;
         }
 
         // 6. Function to fetch Komoot image URLs with proxy fallback
@@ -447,6 +637,8 @@
             });
 
             fitMapToAllLayers();
+            updateSliderRange(currentlyDisplayedRides);
+            applyDistanceFilter();
             return;
           }
 
@@ -500,6 +692,8 @@
             currentlyDisplayedRides = resolvedData;
             // The region might have changed if the user clicked an another region while one was loading
             fileInfo.textContent = `Displaying ${resolvedData.length} of ${rides.length} tracks.`;
+            updateSliderRange(currentlyDisplayedRides);
+            applyDistanceFilter();
           }
         }
 
@@ -624,6 +818,7 @@
                 className: "font-bold",
               });
               fitMapToAllLayers();
+              updateSliderRange(allRides);
             })
             .on("click", () => window.open(komootUrl, "_blank"))
             .on("mouseover", highlight)
@@ -653,7 +848,108 @@
           });
         });
 
-        // 12. Initial Load
+        // 12. Bounds filter & distance filter listeners
+        boundsFilter.addEventListener("change", () => applyDistanceFilter());
+        map.on("moveend", () => {
+          if (boundsFilter.checked) applyDistanceFilter();
+        });
+
+        rangeMin.addEventListener("input", () => {
+          if (parseInt(rangeMin.value) > parseInt(rangeMax.value)) {
+            rangeMin.value = rangeMax.value;
+          }
+          applyDistanceFilter();
+        });
+        rangeMax.addEventListener("input", () => {
+          if (parseInt(rangeMax.value) < parseInt(rangeMin.value)) {
+            rangeMax.value = rangeMin.value;
+          }
+          applyDistanceFilter();
+        });
+
+        // 13. Resizable panels logic
+        const resizer = document.getElementById("panel-resizer");
+        const leftPanel = document.getElementById("left-panel");
+        const rightPanel = document.getElementById("right-panel");
+        const container = leftPanel.parentElement;
+
+        let isResizing = false;
+
+        resizer.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          isResizing = true;
+          document.body.classList.add("resizing");
+          resizer.classList.add("active");
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (!isResizing) return;
+          const containerRect = container.getBoundingClientRect();
+          const offsetX = e.clientX - containerRect.left;
+          const containerWidth = containerRect.width;
+          const resizerWidth = resizer.offsetWidth;
+
+          // Clamp between 15% and 85% of the container width
+          const minFraction = 0.15;
+          const maxFraction = 0.85;
+          let fraction = offsetX / containerWidth;
+          fraction = Math.max(minFraction, Math.min(maxFraction, fraction));
+
+          const leftPercent = fraction * 100;
+          const rightPercent = 100 - leftPercent;
+
+          leftPanel.style.flex = `0 0 calc(${leftPercent}% - ${resizerWidth / 2}px)`;
+          rightPanel.style.flex = `0 0 calc(${rightPercent}% - ${resizerWidth / 2}px)`;
+
+          // Tell Leaflet the map container changed size
+          map.invalidateSize();
+        });
+
+        document.addEventListener("mouseup", () => {
+          if (!isResizing) return;
+          isResizing = false;
+          document.body.classList.remove("resizing");
+          resizer.classList.remove("active");
+          map.invalidateSize();
+        });
+
+        // Touch support for the resizer
+        resizer.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+          isResizing = true;
+          document.body.classList.add("resizing");
+          resizer.classList.add("active");
+        }, { passive: false });
+
+        document.addEventListener("touchmove", (e) => {
+          if (!isResizing) return;
+          const touch = e.touches[0];
+          const containerRect = container.getBoundingClientRect();
+          const offsetX = touch.clientX - containerRect.left;
+          const containerWidth = containerRect.width;
+          const resizerWidth = resizer.offsetWidth;
+
+          let fraction = offsetX / containerWidth;
+          fraction = Math.max(0.15, Math.min(0.85, fraction));
+
+          const leftPercent = fraction * 100;
+          const rightPercent = 100 - leftPercent;
+
+          leftPanel.style.flex = `0 0 calc(${leftPercent}% - ${resizerWidth / 2}px)`;
+          rightPanel.style.flex = `0 0 calc(${rightPercent}% - ${resizerWidth / 2}px)`;
+
+          map.invalidateSize();
+        }, { passive: true });
+
+        document.addEventListener("touchend", () => {
+          if (!isResizing) return;
+          isResizing = false;
+          document.body.classList.remove("resizing");
+          resizer.classList.remove("active");
+          map.invalidateSize();
+        });
+
+        // 14. Initial Load
         loadRidesForRegion();
       });
     </script>
