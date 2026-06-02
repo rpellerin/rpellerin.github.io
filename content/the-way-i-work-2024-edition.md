@@ -78,7 +78,7 @@ I'm still a big fan of standing desk. [I even motorized the one I have at home.]
 
 # Sports
 
-In 2019, I was still occasionally smoking, and barely doing any sport, beside the one or two sessions per week at the gym. Things have changed SO MUCH since then. I now do every week 10+ hours of sport. My blog is full of articles about sports, so I won't expant on it here. But sports did change my life in many many ways, all of them positive.
+In 2019, I was still occasionally smoking, and barely doing any sport, beside the one or two sessions per week at the gym. Things have changed SO MUCH since then. I now do every week 10+ hours of sport. My blog is full of articles about sports, so I won't expand on it here. But sports did change my life in many many ways, all of them positive.
 
 # Conclusion
 
