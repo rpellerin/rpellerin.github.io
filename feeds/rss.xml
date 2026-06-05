@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Tue, 02 Jun 2026 09:51:00 +0200</lastBuildDate><item><title>AI Prompt For Cool Strava Photos</title><link>https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html</link><description>&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Sat, 06 Jun 2026 00:08:00 +0200</lastBuildDate><item><title>AI Prompt For Cool Strava Photos</title><link>https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html</link><description>&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Position the stats of this ride on the road, distorting them to match the strong receding perspective of the road. Remove the Strava text. The route must glow in a warm neon orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -538,7 +538,8 @@ video {
 &lt;h3 id="german-id-card"&gt;German ID card&lt;/h3&gt;
 &lt;p&gt;Yet to be done... I will update the article later accordingly.&lt;/p&gt;
 &lt;h3 id="kita-gutschein-and-finding-a-kita"&gt;Kita Gutschein and finding a Kita&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://fms.verwalt-berlin.de/kita"&gt;Yet to be done...&lt;/a&gt; I will update the article later accordingly.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kita-gutschein/english/"&gt;The process is described there&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is as simple as filling out &lt;a href="https://fms.verwalt-berlin.de/kita"&gt;a form&lt;/a&gt;, printing it out and sending it to an address with your employers' confirmation/proof of employement (Arbeitgeberbescheinigung). We reused the same proof as for our Elterngeld application (same template, we litteraly re-printed the signed document).&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://kita-navigator.berlin.de/"&gt;Kita Navigator&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id="french-part"&gt;French part&lt;/h1&gt;
 &lt;h2 id="after-the-birth-declaration-de-naissance"&gt;After the birth: &lt;em&gt;Déclaration de naissance&lt;/em&gt;&lt;/h2&gt;
