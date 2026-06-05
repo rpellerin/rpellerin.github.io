@@ -119,7 +119,9 @@ Yet to be done... I will update the article later accordingly.
 
 ### Kita Gutschein and finding a Kita
 
-[Yet to be done...](https://fms.verwalt-berlin.de/kita) I will update the article later accordingly.
+[The process is described there](https://www.berlin.de/sen/jugend/familie-und-kinder/kindertagesbetreuung/kita-gutschein/english/).
+
+It is as simple as filling out [a form](https://fms.verwalt-berlin.de/kita), printing it out and sending it to an address with your employers' confirmation/proof of employement (Arbeitgeberbescheinigung). We reused the same proof as for our Elterngeld application (same template, we litteraly re-printed the signed document).
 
 [Kita Navigator](https://kita-navigator.berlin.de/)
 
