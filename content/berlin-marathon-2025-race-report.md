@@ -47,7 +47,7 @@ After progressing forward slowly, I crossed the starting line at 9:24. The first
 
 At km 10, I started to realize that running at my goal pace was becoming challenging. I started feeling quite unwell from that moment on. Extremely thirsty on top of that, despite the cups of water that I had grabbed at aid stations. I normally never look at my HR in races but I decided to glance at it this time. More than 180! Under normal circumstances it should have been around 170, maybe 175, but definitely not 180+. Unbelievable. And unbearable in the long term, I knew it. Fortunately, I had a secondary goal in mind: set a personal record in the half marathon. I decided to shift gears and give up on my marathon PR at that moment. Full focus on the first half marathon. Then I would slow down and try to bring the HR down. Until then, full throttle and fuck the HR.
 
-I crossed the half marathon mark in 1h33'08". From then on, the rest of the race was a constant fight against myself. Negative thoughts on and on again. "I could stop right there", "I already got a half marathon PR, no point in carrying on". Non stop. I started walking at aid stations, something I had never done before. I would drink 2, often 3 full cups of water, and poor another 2 on my head and body. At every damn aid station. People started walking on the course as soon as km 25, much earlier than what I had seen before. My pace dropped quite significantly but I was at peace with it. Just wanted to get it over with. As fast as possible.
+I crossed the half marathon mark in 1h33'08". From then on, the rest of the race was a constant fight against myself. Negative thoughts on and on again. "I could stop right there", "I already got a half marathon PR, no point in carrying on". Non stop. I started walking at aid stations, something I had never done before. I would drink 2, often 3 full cups of water, and pour another 2 on my head and body. At every damn aid station. People started walking on the course as soon as km 25, much earlier than what I had seen before. My pace dropped quite significantly but I was at peace with it. Just wanted to get it over with. As fast as possible.
 
 Ultimately, **I crossed the finish line in 3h15'58"**, official time. 3 minutes slower than Paris, 10 minutes slower than my goal, 4 minutes slower than what my Garmin watch had predicted for that race. It is what it is. I couldn't beat the heat - and very few could!
 
@@ -75,11 +75,11 @@ I enjoyed this weekend so much. It felt like the whole city was dedicated to run
 
 As early in the week as Thursday, one could witness the "major marathon" effect: loads of people were traveling from everywhere in the world and flocking to Berlin. On that day I decided to dye my hair blond just for the race 😆.
 
-Saturday was insane. Many clubs and influencers organized community runs on that day. The famous street "Unter den Linden" was already clossed off to cars and filled with runners. I joined a community run organized by Dorian Louvet in Tiergarten, with around 100 other people.
+Saturday was insane. Many clubs and influencers organized community runs on that day. The famous street "Unter den Linden" was already closed off to cars and filled with runners. I joined a community run organized by Dorian Louvet in Tiergarten, with around 100 other people.
 
 <figure class="center">
 <img src="{static}/images/berlin-marathon-2025/dorian-louvet.jpg" alt="Photo with Dorian Louvet" />
-<figcaption>Dorian Louvet on the right handside</figcaption>
+<figcaption>Dorian Louvet on the right-hand side</figcaption>
 </figure>
 
 As to my own performance, of course the hot weather played a major role. But with hindsight, what I really missed were those 28-km-long training runs with 5x4000m at marathon pace, in the last 6 weeks before the race, that I did when I was training for Paris earlier this year. They had helped me build my mental strength but also they had prepared my muscles for such a long effort. I'll do better next time hopefully 🤞.
