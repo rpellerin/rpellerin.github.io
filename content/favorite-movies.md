@@ -18,7 +18,7 @@ For the moment, the list is unordered. I'll certainly re-order that at some poin
 - Dead Poets Society
 - Good Will Hunting
 - Forrest Gump
-- Seven Pouds
+- Seven Pounds
 - Titanic
 - Avatar
 - Star Wars movies
