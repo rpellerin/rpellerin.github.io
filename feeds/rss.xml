@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 03 Aug 2026 18:02:00 +0200</lastBuildDate><item><title>AI Prompt For Cool Strava Photos</title><link>https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html</link><description>&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 10 Aug 2026 11:12:00 +0200</lastBuildDate><item><title>AI Prompt For Cool Strava Photos</title><link>https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html</link><description>&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Position the stats of this ride on the road, distorting them to match the strong receding perspective of the road. Remove the Strava text. The route must glow in a warm neon orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -9178,7 +9178,7 @@ sudo apt install &lt;span class="k"&gt;$(&lt;/span&gt;cat repair.txt&lt;span cla
 &lt;li&gt;Dead Poets Society&lt;/li&gt;
 &lt;li&gt;Good Will Hunting&lt;/li&gt;
 &lt;li&gt;Forrest Gump&lt;/li&gt;
-&lt;li&gt;Seven Pouds&lt;/li&gt;
+&lt;li&gt;Seven Pounds&lt;/li&gt;
 &lt;li&gt;Titanic&lt;/li&gt;
 &lt;li&gt;Avatar&lt;/li&gt;
 &lt;li&gt;Star Wars movies&lt;/li&gt;
