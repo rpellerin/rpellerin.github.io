@@ -443,8 +443,8 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 <div>
 <label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (<a href="https://youtu.be/mu7celO4IEE?t=237">your body weight in grams/hour = 75 kgs→eat 75 grams each hour</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
-1x Gel 100 ~15 mins avant course
-1x Gel 100 toutes les 20 mins
+1x Gel Maurten 100 ~15 mins avant course
+1x Gel Maurten 100 toutes les 20 mins
 </textarea>
 </div>
 <div>
@@ -460,7 +460,8 @@ Faire don de vieilles chaussures de running à l'expo lors du bib number pickup
 Samedi matin : shake-out run avec 1km à allure ~24h avant la course
 Samedi matin : se faire une belle moustache
 Samedi matin : charger montre et la reboot
-Samedi midi et soir : riz, pâtes pesto rosso, patates, Speisequark. Pas de légume, pas de gras.
+Samedi midi : acheter mini bouteille d'eau
+Samedi midi+soir : riz, pâtes pesto rosso, patates, Speisequark. Ni légumes ni gras
 Samedi soir : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
 Samedi soir : préparer le petit déjeuner (müsli avec lait de soja, pâtes pesto rosso OU riz OU Gatosport, banane, Maurten Drink Mix)
 Dimanche matin : petit-déj AU MOINS 1.5h avant la course
@@ -468,8 +469,8 @@ Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
   Water stations: Km 5, 10, etc
   WC: Km 5, 10, etc
-Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud lacets
-Dimanche matin : prendre casquette, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
+Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud lacets, ne pas trop serrer les chaussures
+Dimanche matin : prendre 1 + 8 gels, casquette?, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
 Dimanche matin : warm up de 2kms avant départ
 </textarea>
 </div>
