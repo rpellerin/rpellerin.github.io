@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-10-03T22:42:00+02:00</updated><entry><title>AI Prompt For Cool Strava Photos</title><link href="https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html" rel="alternate"></link><published>2026-05-10T20:00:00+02:00</published><updated>2026-05-10T22:22:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-05-10:/ai-prompt-for-cool-strava-photos.html</id><summary type="html">&lt;p&gt;A cool prompt to combine Strava data and a photo&lt;/p&gt;</summary><content type="html">&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Romain Pellerin's Blog</title><link href="https://romainpellerin.eu/" rel="alternate"></link><link href="//romainpellerin.eu/feeds/atom.xml" rel="self"></link><id>https://romainpellerin.eu/</id><updated>2026-10-03T22:57:00+02:00</updated><entry><title>How To Bleach Hair At Home</title><link href="https://romainpellerin.eu/how-to-bleach-hair-at-home.html" rel="alternate"></link><published>2026-10-03T20:00:00+02:00</published><updated>2026-10-03T20:00:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-10-03:/how-to-bleach-hair-at-home.html</id><summary type="html">&lt;p&gt;Some tips from doing it myself&lt;/p&gt;</summary><content type="html">&lt;p&gt;I'm done paying 80 bucks at the hairdresser to get my hair bleached. Now I'm doing it myself!&lt;/p&gt;
+&lt;p&gt;For this first try, I've used "Syoss 13_5 platinum". I must say I'm quite happy with the result, it's very similar to the result I'd get at the hairdresser.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img src="https://romainpellerin.eu/images/syoss-haare-aufheller-13-5-platin.jpg" alt="Photo of the packaging" /&gt;
+&lt;figcaption&gt;Syoss Haare Aufheller 13_5 Platin&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Despite following the instructions, here's what I wish I had known beforehand&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wear &lt;strong&gt;old clothes&lt;/strong&gt; that you don't care about much&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Blow air in your face using a fan and open the windows&lt;/strong&gt;, as the product stinks heavily (breathing it is maybe not a good thing...)&lt;/li&gt;
+&lt;li&gt;The product is going to splash while you lay it on your head! &lt;strong&gt;Put away toothbrushes and other items&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Using two opposite mirrors helps a lot&lt;/li&gt;
+&lt;li&gt;For dark hair like mine, even though the instructions say not to leave the product on for longer than 45 mins, I ended up doing &lt;strong&gt;2 rounds of bleaching, each between 45 mins and an hour long&lt;/strong&gt;. After a single round, my hair was still very orange-ish.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Miscellaneous"></category><category term="hair"></category><category term="bleach"></category></entry><entry><title>AI Prompt For Cool Strava Photos</title><link href="https://romainpellerin.eu/ai-prompt-for-cool-strava-photos.html" rel="alternate"></link><published>2026-05-10T20:00:00+02:00</published><updated>2026-05-10T22:22:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2026-05-10:/ai-prompt-for-cool-strava-photos.html</id><summary type="html">&lt;p&gt;A cool prompt to combine Strava data and a photo&lt;/p&gt;</summary><content type="html">&lt;p&gt;Using Gemini (free version - version 3 Fast): upload a photo + the transparent PNG that Strava generates with ride data, then prompt:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Position the stats of this ride on the road, distorting them to match the strong receding perspective of the road. Remove the Strava text. The route must glow in a warm neon orange, feel physically embedded in the ground, with realistic depth, light spill and perspective. Never floating or holographic. Do not add glowing effects to the text, keep it white as it is originally. Only make the route glow.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2485,7 +2499,7 @@ video {
 
 &lt;p&gt;Dimanche, tous les voyants sont verts pour tenter les 31 kms.&lt;/p&gt;
 &lt;h1 id="update-dimanche-6-octobre"&gt;Update Dimanche 6 Octobre&lt;/h1&gt;
-&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2026-10-03T22:42:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;style&gt;
+&lt;p&gt;Les 31 kms sont passés N.I.Q.U.E.L, absolument aucune douleur. Je déclare l'épisode "entorse de la cheville" terminé, direction le marathon dans 3 semaines !!!&lt;/p&gt;</content><category term="Running"></category><category term="entorse"></category><category term="cheville"></category><category term="running"></category></entry><entry><title>Running Calculators</title><link href="https://romainpellerin.eu/running-calculators.html" rel="alternate"></link><published>2024-08-24T13:00:00+02:00</published><updated>2026-10-03T22:57:00+02:00</updated><author><name>Romain Pellerin</name></author><id>tag:romainpellerin.eu,2024-08-24:/running-calculators.html</id><summary type="html">&lt;p&gt;A bunch of calculators for runners&lt;/p&gt;</summary><content type="html">&lt;style&gt;
 div#menu {
   text-align: center
 }
@@ -2936,12 +2950,12 @@ Samedi soir : accrocher bib number au t-shirt et tout préparer/rassembler pour 
 Samedi soir : préparer le petit déjeuner (1/2 Gatosport + banane)
 Dimanche matin : petit-déj 1.5h+ avant la course, commencer par le café 🚽
 Dimanche matin : noter dans les mains au marqueur
-  Montre en mode pace sur distance 42.75kms
+  Montre en mode pace sur distance 42.75 kms
   Water stations: Km 5, 10, etc
   WC: Km 5, 10, etc
 Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud lacets, ne pas trop serrer les chaussures
 Dimanche matin : prendre 6 gels, casquette?, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
-Dimanche matin : warm up de 2kms+ avant départ
+Dimanche matin : warm up de 2 kms+ avant départ
 &lt;/textarea&gt;
 &lt;/div&gt;
 &lt;/div&gt;
