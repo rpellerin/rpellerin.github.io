@@ -438,40 +438,39 @@ To categorize the paces into zone 1 (below VT1), zone 2 (VT1 to VT2) or zone 3 (
 </div>
 <div><label for="race_title">Race title (optional):</label> <input type="text" id="race_title" name="race_title" placeholder="City, race name, etc" /></div>
 <div><label for="race_date">Race date:</label> <input type="date" id="race_date" name="race_date" /></div>
-<div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:30"/></div>
+<div><label for="pace_goal">Pace goal on the watch:</label> <input pattern="\d{1,2}:\d{2}" type="text" id="pace_goal" value="4:05"/></div>
 <div><label for="bib_number_pickup_date">Bib number pickup date and time:</label> <input type="datetime-local" id="bib_number_pickup_date" name="bib_number_pickup_date" /></div>
 <div>
 <label for="nutrition_plan"><a href="https://www.youtube.com/watch?v=COrTo5DUvuo">Nutrition</a> <a href="https://www.maurten.com/fuelguide/">plan</a> (<a href="https://youtu.be/mu7celO4IEE?t=237">your body weight in grams/hour = 75 kgs→eat 75 grams each hour</a>):</label><br />
 <textarea id="nutrition_plan" name="nutrition_plan" rows="5" cols="50">
-1x Gel Maurten 100 ~15 mins avant course
-1x Gel Maurten 100 toutes les 20 mins
+1x Gel Maurten 100 toutes les ~ 25 mins / 6 kms
 </textarea>
 </div>
 <div>
 <label for="todo_items">TODO items:</label><br />
 <textarea id="todo_items" name="todo_items" rows="5" cols="50">
+Faire don de vieilles chaussures de running à l'expo lors du bib number pickup
 Une semaine avant course : couper ongles
 Prévoir le trajet pour se rendre à la course le dimanche matin
 Prévoir des vieux vêtements chauds d'avant course, to give away
 Prévoir des vêtements chauds d'après course (à confier à des amis ?)
-Si je dors à l'hôtel, emmener un sharpie + repas
+Si je dors à l'hôtel, emmener un sharpie + les repas
 Recharge glucidique à partir du jeudi, boire du maltodextrine en continu
-Faire don de vieilles chaussures de running à l'expo lors du bib number pickup
-Samedi matin : shake-out run avec 1km à allure ~24h avant la course
+Samedi matin : shake-out run avec 1 km à allure ~24h avant la course
 Samedi matin : se faire une belle moustache
 Samedi matin : charger montre et la reboot
-Samedi midi : acheter mini bouteille d'eau
-Samedi midi+soir : riz, pâtes pesto rosso, patates, Speisequark. Ni légumes ni gras
+Samedi matin : acheter mini bouteille d'eau pour le sas de départ
+Samedi midi+soir : riz/pâtes + sauce tomate non grasse + un peu de sel, patates, Speisequark. Ni légumes ni fruits (sauf bananes) ni fibres ni gras
 Samedi soir : accrocher bib number au t-shirt et tout préparer/rassembler pour être prêt à partir le dimanche matin
-Samedi soir : préparer le petit déjeuner (müsli avec lait de soja, pâtes pesto rosso OU riz OU Gatosport, banane, Maurten Drink Mix)
-Dimanche matin : petit-déj AU MOINS 1.5h avant la course
+Samedi soir : préparer le petit déjeuner (1/2 Gatosport + banane)
+Dimanche matin : petit-déj 1.5h+ avant la course, commencer par le café 🚽
 Dimanche matin : noter dans les mains au marqueur
   Montre en mode pace sur distance 42.75kms
   Water stations: Km 5, 10, etc
   WC: Km 5, 10, etc
 Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud lacets, ne pas trop serrer les chaussures
-Dimanche matin : prendre 1 + 8 gels, casquette?, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
-Dimanche matin : warm up de 2kms avant départ
+Dimanche matin : prendre 6 gels, casquette?, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
+Dimanche matin : warm up de 2kms+ avant départ
 </textarea>
 </div>
 </div>
