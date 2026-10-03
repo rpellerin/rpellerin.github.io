@@ -465,12 +465,12 @@ Samedi soir : accrocher bib number au t-shirt et tout préparer/rassembler pour 
 Samedi soir : préparer le petit déjeuner (1/2 Gatosport + banane)
 Dimanche matin : petit-déj 1.5h+ avant la course, commencer par le café 🚽
 Dimanche matin : noter dans les mains au marqueur
-  Montre en mode pace sur distance 42.75kms
+  Montre en mode pace sur distance 42.75 kms
   Water stations: Km 5, 10, etc
   WC: Km 5, 10, etc
 Dimanche matin : vérifier pas de cailloux dans chaussures, double noeud lacets, ne pas trop serrer les chaussures
 Dimanche matin : prendre 6 gels, casquette?, lunettes, HRM chest strap, manchons, mouchoirs 🚽 dans une poche et mini bouteille d'eau pour boire avant le départ
-Dimanche matin : warm up de 2kms+ avant départ
+Dimanche matin : warm up de 2 kms+ avant départ
 </textarea>
 </div>
 </div>
