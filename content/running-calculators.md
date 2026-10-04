@@ -457,7 +457,7 @@ Prévoir des vêtements chauds d'après course (à confier à des amis ?)
 Si je dors à l'hôtel, emmener un sharpie + les repas
 Recharge glucidique à partir du jeudi, boire du maltodextrine en continu
 Samedi matin : shake-out run avec 1 km à allure ~24h avant la course
-Samedi matin : se faire une belle moustache
+Samedi matin : se faire une belle moustache + shave aisselles
 Samedi matin : charger montre et la reboot
 Samedi matin : acheter mini bouteille d'eau pour le sas de départ
 Samedi midi+soir : riz/pâtes + sauce tomate non grasse + un peu de sel, patates, Speisequark. Ni légumes ni fruits (sauf bananes) ni fibres ni gras
