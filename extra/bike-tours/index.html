@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -66,7 +66,9 @@
       }
       /* Ensure JS-applied transform is smooth */
       #track-cards-container a {
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        transition:
+          transform 0.3s ease-in-out,
+          box-shadow 0.3s ease-in-out;
       }
 
       /* Resizer handle between map and tracks list */
@@ -85,7 +87,7 @@
         background-color: #3b82f6; /* blue-500 */
       }
       #panel-resizer::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 50%;
         left: 50%;
@@ -93,8 +95,8 @@
         width: 4px;
         height: 40px;
         border-radius: 2px;
-        border-left: 1px solid rgba(0,0,0,0.15);
-        border-right: 1px solid rgba(0,0,0,0.15);
+        border-left: 1px solid rgba(0, 0, 0, 0.15);
+        border-right: 1px solid rgba(0, 0, 0, 0.15);
       }
       @media (min-width: 768px) {
         #panel-resizer {
@@ -141,7 +143,7 @@
         border-radius: 50%;
         background: #3b82f6;
         border: 2px solid #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         pointer-events: auto;
       }
@@ -151,7 +153,7 @@
         border-radius: 50%;
         background: #3b82f6;
         border: 2px solid #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         pointer-events: auto;
       }
@@ -160,7 +162,11 @@
   <body class="overflow-hidden">
     <div class="flex flex-col md:flex-row h-screen font-sans">
       <!-- Left Column: Map -->
-      <div id="left-panel" class="w-full h-1/2 md:h-screen" style="flex: 1 1 50%;">
+      <div
+        id="left-panel"
+        class="w-full h-1/2 md:h-screen"
+        style="flex: 1 1 50%"
+      >
         <div id="map"></div>
       </div>
 
@@ -171,7 +177,7 @@
       <div
         id="right-panel"
         class="w-full h-1/2 md:h-screen overflow-y-auto p-4 md:p-8 bg-gray-50"
-        style="flex: 1 1 50%;"
+        style="flex: 1 1 50%"
       >
         <!-- Header -->
         <header class="text-center mb-4">
@@ -224,20 +230,48 @@
 
         <!-- Map Bounds Filter -->
         <div class="mb-4 flex items-center">
-          <input type="checkbox" id="bounds-filter" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 cursor-pointer" />
-          <label for="bounds-filter" class="ml-2 text-sm font-medium text-gray-900 cursor-pointer">Only show rides that fit entirely within the shown map</label>
+          <input
+            type="checkbox"
+            id="bounds-filter"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
+          />
+          <label
+            for="bounds-filter"
+            class="ml-2 text-sm font-medium text-gray-900 cursor-pointer"
+            >Only show rides that fit entirely within the shown map</label
+          >
         </div>
 
         <!-- Distance Filter Slider -->
         <div id="distance-filter" class="mb-4">
           <div class="flex items-center justify-between mb-2">
-            <label class="text-sm font-medium text-gray-900">Filter by distance</label>
-            <span id="distance-range-label" class="text-sm text-gray-500 font-semibold">0 – 0 km</span>
+            <label class="text-sm font-medium text-gray-900"
+              >Filter by distance</label
+            >
+            <span
+              id="distance-range-label"
+              class="text-sm text-gray-500 font-semibold"
+              >0 – 0 km</span
+            >
           </div>
           <div class="range-slider">
             <div id="range-highlight" class="range-highlight"></div>
-            <input type="range" id="range-min" min="0" max="100" value="0" step="1" />
-            <input type="range" id="range-max" min="0" max="100" value="100" step="1" />
+            <input
+              type="range"
+              id="range-min"
+              min="0"
+              max="100"
+              value="0"
+              step="1"
+            />
+            <input
+              type="range"
+              id="range-max"
+              min="0"
+              max="100"
+              value="100"
+              step="1"
+            />
           </div>
         </div>
 
@@ -309,12 +343,14 @@
         // 3. UI element references
         const fileInfo = document.getElementById("file-info");
         const trackCardsContainer = document.getElementById(
-          "track-cards-container"
+          "track-cards-container",
         );
         const rangeMin = document.getElementById("range-min");
         const rangeMax = document.getElementById("range-max");
         const rangeHighlight = document.getElementById("range-highlight");
-        const distanceRangeLabel = document.getElementById("distance-range-label");
+        const distanceRangeLabel = document.getElementById(
+          "distance-range-label",
+        );
         const boundsFilter = document.getElementById("bounds-filter");
         const mapToggle = document.getElementById("map-toggle");
         const regionRadios = document.querySelectorAll('input[name="region"]');
@@ -393,7 +429,7 @@
           const left = ((parseInt(rangeMin.value) - min) / span) * 100;
           const right = ((parseInt(rangeMax.value) - min) / span) * 100;
           rangeHighlight.style.left = left + "%";
-          rangeHighlight.style.width = (right - left) + "%";
+          rangeHighlight.style.width = right - left + "%";
         }
 
         function applyDistanceFilter() {
@@ -442,68 +478,7 @@
           fileInfo.textContent = `Showing ${visibleCount} of ${currentlyDisplayedRides.length} tracks.`;
         }
 
-        // 6. Function to fetch Komoot image URLs with proxy fallback
-        async function fetchKomootImageUrls(komootUrl) {
-          const encodedUrl = encodeURIComponent(komootUrl);
-          const proxies = [
-            `https://corsproxy.io/?${encodedUrl}`,
-            `https://api.codetabs.com/v1/proxy/?quest=${encodedUrl}`,
-            `https://thingproxy.freeboard.io/fetch/${komootUrl}`,
-            `https://cors.eu.org/${komootUrl}`,
-          ];
-
-          for (const proxyUrl of proxies) {
-            try {
-              const response = await fetch(proxyUrl);
-              if (!response.ok) {
-                console.warn(
-                  `${proxyUrl} failed with status ${response.status}. Trying next...`
-                );
-                continue;
-              }
-              const text = await response.text();
-              const doc = new DOMParser().parseFromString(text, "text/html");
-              const metaTags = doc.querySelectorAll(
-                'meta[property="og:image"]'
-              );
-
-              // If the proxy returns content but no images, it's not useful. Try the next one.
-              if (metaTags.length === 0) {
-                console.warn(
-                  `${proxyUrl} returned content with no images. Trying next...`
-                );
-                continue;
-              }
-
-              let photoUrl = metaTags[0].getAttribute("content");
-              let mapUrl = "https://placehold.co/600x400/eee/ccc?text=No+Map";
-
-              const mapMeta = Array.from(metaTags).find((meta) =>
-                meta
-                  .getAttribute("content")
-                  .startsWith("https://tourpic-vector.maps.komoot.net")
-              );
-              if (mapMeta) {
-                mapUrl = mapMeta.getAttribute("content");
-              }
-              console.log(`Successfully fetched images using ${proxyUrl}`);
-              return { photoUrl, mapUrl };
-            } catch (error) {
-              console.warn(
-                `Proxy ${proxyUrl} threw an error. Trying next...`,
-                error
-              );
-            }
-          }
-
-          console.error("Failed to fetch Komoot image for", komootUrl);
-          return {
-            photoUrl: "https://placehold.co/600x400/eee/ccc?text=Image+Error",
-            mapUrl: "https://placehold.co/600x400/eee/ccc?text=Map+Error",
-          };
-        }
-
-        // 7. Card Rendering and Updating Functions
+        // 6. Card Rendering and Updating Functions
         /** * Creates a track card element. Can render a loading skeleton or a complete card.
          * @param {object} data - The ride data object.
          * @param {object} [options={}] - Options for rendering.
@@ -536,7 +511,7 @@
             cardLink.className =
               "block bg-white rounded-lg shadow-lg overflow-hidden transform group hover:scale-105 transition-transform duration-300";
             const imageUrl = showMaps && mapUrl ? mapUrl : photoUrl;
-            imageContainerHTML = `<img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">`;
+            imageContainerHTML = `<img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/eee/ccc?text=Image+Error';">`;
           }
 
           const distanceHTML = distanceKm ? `${distanceKm}&nbsp;km` : "";
@@ -564,10 +539,10 @@
           card.classList.add(
             "hover:scale-105",
             "transition-transform",
-            "duration-300"
+            "duration-300",
           );
           imageContainer.innerHTML = `
-                 <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https.placehold.co/600x400/eee/ccc?text=Image+Error';">
+                 <img src="${imageUrl}" alt="Image for ${trackName}" class="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/eee/ccc?text=Image+Error';">
              `;
         }
 
@@ -599,14 +574,14 @@
           card.classList.remove("hover:scale-105");
         }
 
-        // 8. Main function to load rides for a given region
+        // 7. Main function to load rides for a given region
         async function loadRidesForRegion() {
           // General cleanup
           gpxLayers.forEach((layer) => map.removeLayer(layer));
           gpxLayers = [];
 
           const selectedRegion = document.querySelector(
-            'input[name="region"]:checked'
+            'input[name="region"]:checked',
           ).value;
           console.log(`Clicked on region ${selectedRegion}`);
           currentlyDisplayedRegion = selectedRegion;
@@ -615,7 +590,7 @@
           // Check cache first
           if (rideDataCache[selectedRegion]) {
             console.log(
-              `Loading from cache: ${selectedRegion} (${rideDataCache[selectedRegion].length} tracks)`
+              `Loading from cache: ${selectedRegion} (${rideDataCache[selectedRegion].length} tracks)`,
             );
             currentlyDisplayedRides = rideDataCache[selectedRegion];
             trackCardsContainer.innerHTML = "";
@@ -632,7 +607,7 @@
               bindIndividualEventsAndAddToMap(
                 data,
                 currentlyDisplayedRides,
-                selectedRegion
+                selectedRegion,
               );
             });
 
@@ -677,16 +652,16 @@
             downloadGpxAndImageAndRender(
               rideData,
               ridesForRegion,
-              selectedRegion
-            )
+              selectedRegion,
+            ),
           );
 
           const resolvedData = (await Promise.all(dataPromises)).filter(
-            Boolean
+            Boolean,
           );
           rideDataCache[selectedRegion] = resolvedData; // Cache all processed data
           console.log(
-            `Region data cached: ${selectedRegion} (${resolvedData.length} tracks)`
+            `Region data cached: ${selectedRegion} (${resolvedData.length} tracks)`,
           );
           if (selectedRegion === currentlyDisplayedRegion) {
             currentlyDisplayedRides = resolvedData;
@@ -697,13 +672,17 @@
           }
         }
 
-        // 9. Process a single ride (fetch, render, update)
+        // 8. Process a single ride (fetch, render, update)
         async function downloadGpxAndImageAndRender(
           rideData,
           ridesArray,
-          selectedRegion
+          selectedRegion,
         ) {
           const [gpxFile, trackName, komootUrl] = rideData;
+          const gpxPath = gpxFile.startsWith(`${selectedRegion}/`)
+            ? gpxFile
+            : `${selectedRegion}/${gpxFile}`;
+          const imageBase = gpxPath.replace(/\.gpx$/, "");
 
           const data = {
             trackName,
@@ -711,19 +690,22 @@
             trackColor: getRandomColor(),
             card: null,
             layer: null,
-            photoUrl: null,
-            mapUrl: null,
+            photoUrl: `${imageBase}.jpg`,
+            mapUrl: `${imageBase}_map.jpg`,
             gpxData: null,
             distanceKm: null, // New field for distance
           };
 
           try {
-            // Render initial skeleton card immediately using the new unified function
-            data.card = renderTrackCard(data, { isLoading: true });
+            // Render card immediately with local image
+            data.card = renderTrackCard(data, {
+              isLoading: false,
+              showMaps: mapToggle.checked,
+            });
             trackCardsContainer.appendChild(data.card);
 
             // Fetch GPX data
-            const gpxResponse = await fetch(gpxFile);
+            const gpxResponse = await fetch(gpxPath);
             if (!gpxResponse.ok)
               throw new Error(`GPX fetch failed for ${trackName}`);
             data.gpxData = await gpxResponse.text();
@@ -750,14 +732,6 @@
 
             bindIndividualEventsAndAddToMap(data, ridesArray, selectedRegion);
 
-            // Fetch image data in the background
-            const imageUrls = await fetchKomootImageUrls(komootUrl);
-            data.photoUrl = imageUrls.photoUrl;
-            data.mapUrl = imageUrls.mapUrl;
-
-            // Update the card with the image
-            updateCardWithImage(data, mapToggle.checked);
-
             return data; // Return the fully populated data object for caching
           } catch (error) {
             console.error(`Failed to process ride: ${trackName}`, error);
@@ -768,11 +742,11 @@
           }
         }
 
-        // 10. Function to bind events to a single card and map layer, and add the layer to the map
+        // 9. Function to bind events to a single card and map layer, and add the layer to the map
         function bindIndividualEventsAndAddToMap(
           data,
           allRides,
-          selectedRegion
+          selectedRegion,
         ) {
           const { layer, card, trackName, komootUrl } = data;
 
@@ -832,9 +806,9 @@
           }
         }
 
-        // 11. Add listeners for UI controls
+        // 10. Add listeners for UI controls
         regionRadios.forEach((radio) =>
-          radio.addEventListener("change", loadRidesForRegion)
+          radio.addEventListener("change", loadRidesForRegion),
         );
         mapToggle.addEventListener("change", function () {
           const showMaps = this.checked;
@@ -848,7 +822,7 @@
           });
         });
 
-        // 12. Bounds filter & distance filter listeners
+        // 11. Bounds filter & distance filter listeners
         boundsFilter.addEventListener("change", () => applyDistanceFilter());
         map.on("moveend", () => {
           if (boundsFilter.checked) applyDistanceFilter();
@@ -867,7 +841,7 @@
           applyDistanceFilter();
         });
 
-        // 13. Resizable panels logic
+        // 12. Resizable panels logic
         const resizer = document.getElementById("panel-resizer");
         const leftPanel = document.getElementById("left-panel");
         const rightPanel = document.getElementById("right-panel");
@@ -914,32 +888,40 @@
         });
 
         // Touch support for the resizer
-        resizer.addEventListener("touchstart", (e) => {
-          e.preventDefault();
-          isResizing = true;
-          document.body.classList.add("resizing");
-          resizer.classList.add("active");
-        }, { passive: false });
+        resizer.addEventListener(
+          "touchstart",
+          (e) => {
+            e.preventDefault();
+            isResizing = true;
+            document.body.classList.add("resizing");
+            resizer.classList.add("active");
+          },
+          { passive: false },
+        );
 
-        document.addEventListener("touchmove", (e) => {
-          if (!isResizing) return;
-          const touch = e.touches[0];
-          const containerRect = container.getBoundingClientRect();
-          const offsetX = touch.clientX - containerRect.left;
-          const containerWidth = containerRect.width;
-          const resizerWidth = resizer.offsetWidth;
+        document.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!isResizing) return;
+            const touch = e.touches[0];
+            const containerRect = container.getBoundingClientRect();
+            const offsetX = touch.clientX - containerRect.left;
+            const containerWidth = containerRect.width;
+            const resizerWidth = resizer.offsetWidth;
 
-          let fraction = offsetX / containerWidth;
-          fraction = Math.max(0.15, Math.min(0.85, fraction));
+            let fraction = offsetX / containerWidth;
+            fraction = Math.max(0.15, Math.min(0.85, fraction));
 
-          const leftPercent = fraction * 100;
-          const rightPercent = 100 - leftPercent;
+            const leftPercent = fraction * 100;
+            const rightPercent = 100 - leftPercent;
 
-          leftPanel.style.flex = `0 0 calc(${leftPercent}% - ${resizerWidth / 2}px)`;
-          rightPanel.style.flex = `0 0 calc(${rightPercent}% - ${resizerWidth / 2}px)`;
+            leftPanel.style.flex = `0 0 calc(${leftPercent}% - ${resizerWidth / 2}px)`;
+            rightPanel.style.flex = `0 0 calc(${rightPercent}% - ${resizerWidth / 2}px)`;
 
-          map.invalidateSize();
-        }, { passive: true });
+            map.invalidateSize();
+          },
+          { passive: true },
+        );
 
         document.addEventListener("touchend", () => {
           if (!isResizing) return;
@@ -949,7 +931,7 @@
           map.invalidateSize();
         });
 
-        // 14. Initial Load
+        // 13. Initial Load
         loadRidesForRegion();
       });
     </script>
