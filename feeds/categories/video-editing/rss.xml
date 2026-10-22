@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog - Video editing</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Mon, 02 Mar 2026 23:20:00 +0100</lastBuildDate><item><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</link><description>&lt;video controls&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog - Video editing</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 22 Oct 2026 20:20:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Effects</title><link>https://romainpellerin.eu/tuto-davinci-resolve-effects.html</link><description>&lt;h1 id="vertical-stacks-videos-on-top-of-each-other"&gt;Vertical stacks (videos on top of each other)&lt;/h1&gt;
+&lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/3wmAgMwcgqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1 id="anchoring-an-image-to-a-moving-object-making-the-flat-image-3d"&gt;Anchoring an image to a moving object (+ making the flat image 3D)&lt;/h1&gt;
+&lt;p&gt;Use "Image Plane 3D" in combination with "Renderer 3D" to make an image appear in 3 dimensions. To anchor it to a moving object, use the classic "Tracker" node in Fusion.&lt;/p&gt;
+&lt;figure class="center"&gt;
+&lt;img class="zoomable big" src="https://romainpellerin.eu/images/tuto-davinci-resolve-effects/renderer_3d.jpg" alt="Screenshot of Davinci Resolve" /&gt;
+&lt;figcaption&gt;The "tracker" node in Fusion. "MediaIn2" is the PNG contains the ride stats.&lt;/figcaption&gt;
+&lt;/figure&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Thu, 22 Oct 2026 20:20:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2026-10-22:/tuto-davinci-resolve-effects.html</guid><category>Video editing</category><category>davinci resolve</category><category>effects</category></item><item><title>Tuto Davinci Resolve: Dynamic Short on Indoor Cycling</title><link>https://romainpellerin.eu/tuto-davinci-resolve-dynamic-short-on-indoor-cycling.html</link><description>&lt;video controls&gt;
   &lt;source src="./videos/tuto-davinci-resolve-home-trainer.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
 
