@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 22 Oct 2026 20:20:00 +0200</lastBuildDate><item><title>Tuto Davinci Resolve: Effects</title><link>https://romainpellerin.eu/tuto-davinci-resolve-effects.html</link><description>&lt;h1 id="vertical-stacks-videos-on-top-of-each-other"&gt;Vertical stacks (videos on top of each other)&lt;/h1&gt;
+<rss version="2.0"><channel><title>Romain Pellerin's Blog</title><link>https://romainpellerin.eu/</link><description></description><lastBuildDate>Thu, 29 Oct 2026 16:18:00 +0100</lastBuildDate><item><title>Tuto Davinci Resolve: Effects</title><link>https://romainpellerin.eu/tuto-davinci-resolve-effects.html</link><description>&lt;h1 id="vertical-stacks-videos-on-top-of-each-other"&gt;Vertical stacks (videos on top of each other)&lt;/h1&gt;
 &lt;iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/3wmAgMwcgqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;h1 id="anchoring-an-image-to-a-moving-object-making-the-flat-image-3d"&gt;Anchoring an image to a moving object (+ making the flat image 3D)&lt;/h1&gt;
@@ -332,7 +332,12 @@ RestartSec=3
 &lt;td style="text-align: left;"&gt;Dedicated long-distance racing shoe.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 13 Apr 2026 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2026-04-13:/my-2026-running-shoe-rotation.html</guid><category>Running</category><category>running</category><category>shoes</category></item><item><title>Tips for ImageMagick</title><link>https://romainpellerin.eu/tips-for-imagemagick.html</link><description>&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
+&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Romain Pellerin</dc:creator><pubDate>Mon, 13 Apr 2026 18:00:00 +0200</pubDate><guid isPermaLink="false">tag:romainpellerin.eu,2026-04-13:/my-2026-running-shoe-rotation.html</guid><category>Running</category><category>running</category><category>shoes</category></item><item><title>Tips for ImageMagick</title><link>https://romainpellerin.eu/tips-for-imagemagick.html</link><description>&lt;h1 id="spliting-a-photo-in-two-halves"&gt;Spliting a photo in two halves&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;magick input.jpg -crop &lt;span class="m"&gt;50&lt;/span&gt;%x100% +repage -strip output_%d.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;`-strip&lt;/code&gt;: Cleans out all metadata, including the cached preview thumbnail.&lt;/p&gt;
+&lt;h1 id="tip-iterate-over-multiple-images"&gt;Tip: iterate over multiple images&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir -p output
 &lt;span class="k"&gt;for&lt;/span&gt; f &lt;span class="k"&gt;in&lt;/span&gt; *.jpg&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
     exiftool -all&lt;span class="o"&gt;=&lt;/span&gt; --icc_profile:all &lt;span class="nv"&gt;$f&lt;/span&gt; -o &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;f&lt;/span&gt;&lt;span class="p"&gt;%.*&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;_sdr.jpg&amp;quot;&lt;/span&gt;
