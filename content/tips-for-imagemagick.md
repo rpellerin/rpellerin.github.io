@@ -6,6 +6,13 @@ Slug: tips-for-imagemagick
 Authors: Romain Pellerin
 Summary: A few tips with ImageMagick
 
+# Spliting a photo in two halves
+
+    :::bash
+    magick input.jpg -crop 50%x100% +repage -strip output_%d.jpg
+
+``-strip`: Cleans out all metadata, including the cached preview thumbnail.
+
 # Tip: iterate over multiple images
 
     :::bash
