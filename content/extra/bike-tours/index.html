@@ -841,10 +841,71 @@
           }
         }
 
-        // 10. UI controls listeners
-        regionRadios.forEach((radio) =>
-          radio.addEventListener("change", loadRidesForRegion),
-        );
+        // 10. UI controls listeners & URL hash synchronization
+        function getRegionRadioFromSlug(slug) {
+          if (!slug) return null;
+          const decoded = decodeURIComponent(slug).toLowerCase().trim();
+          return (
+            document.querySelector(`input[name="region"][value="${decoded}"]`) ||
+            (decoded === "allgäu"
+              ? document.querySelector('input[name="region"][value="allgaeu"]')
+              : null)
+          );
+        }
+
+        function getRegionRadioFromHash() {
+          const rawHash = window.location.hash.replace(/^#/, "").trim();
+          return getRegionRadioFromSlug(rawHash);
+        }
+
+        function syncRegionFromHash() {
+          const targetRadio =
+            getRegionRadioFromHash() ||
+            document.getElementById("berlin") ||
+            document.querySelector('input[name="region"]');
+
+          if (targetRadio) {
+            regionRadios.forEach((r) => {
+              r.checked = r === targetRadio;
+            });
+            if (currentlyDisplayedRegion !== targetRadio.value) {
+              loadRidesForRegion();
+            }
+          }
+        }
+
+        function setLocationHash(slug) {
+          if (window.location.hash !== `#${slug}`) {
+            window.location.hash = slug;
+          }
+        }
+
+        regionRadios.forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.checked) {
+              setLocationHash(this.value);
+              if (currentlyDisplayedRegion !== this.value) {
+                loadRidesForRegion();
+              }
+            }
+          });
+
+          radio.addEventListener("click", function () {
+            setLocationHash(this.value);
+          });
+        });
+
+        document.querySelectorAll("label[for]").forEach((label) => {
+          const forId = label.getAttribute("for");
+          const radio = document.getElementById(forId);
+          if (radio && radio.name === "region") {
+            label.addEventListener("click", () => {
+              setLocationHash(radio.value);
+            });
+          }
+        });
+
+        window.addEventListener("hashchange", syncRegionFromHash);
         mapToggle.addEventListener("change", function () {
           const showMaps = this.checked;
           currentlyDisplayedRides.forEach((data) => {
@@ -964,7 +1025,7 @@
         });
 
         // 13. Initial Load
-        loadRidesForRegion();
+        syncRegionFromHash();
       });
     </script>
   </body>
