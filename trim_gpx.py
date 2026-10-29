@@ -9,6 +9,7 @@ from geopy.distance import geodesic
 # - removes all timestamps from the GPX file
 # - simplifies the track by removing points that are closer than a specified distance
 # - strips all elevation data from the GPX file
+# - removes all waypoints (wpt nodes) from the GPX file
 # Usage: python trim_gpx.py file.gpx [--no-trim]
 # Requirements: python3 -m pip install gpxpy geopy
 
@@ -66,6 +67,17 @@ def strip_elevation(gpx):
         for point in route.points:
             point.elevation = None
 
+
+def remove_waypoints(gpx):
+    """
+    Removes all waypoints (wpt nodes) from the GPX object.
+
+    Args:
+        gpx (gpxpy.gpx.GPX): The GPX object to modify.
+    """
+    gpx.waypoints = []
+
+
 def process_gpx(input_file, output_file, start_trim_meters, end_trim_meters,
                 do_simplify, min_simplify_dist, do_strip_elevation):
     """
@@ -99,6 +111,10 @@ def process_gpx(input_file, output_file, start_trim_meters, end_trim_meters,
     if do_simplify:
         simplify_track(gpx, min_simplify_dist)
         print(f" - Simplified track with a minimum distance of {min_simplify_dist} meters.")
+
+    # --- Feature: Remove all waypoints (wpt nodes) ---
+    remove_waypoints(gpx)
+    print(" - Removed all waypoints.")
 
     # --- Original Feature: Remove all timestamp information ---
     gpx.time = None

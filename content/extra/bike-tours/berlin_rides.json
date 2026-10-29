@@ -1,145 +1,188 @@
 [
   [
-    "1_processed.gpx",
+    "from_and_to_lubben_spreewald.gpx",
     "From and to Lübben (Spreewald)",
-    "https://www.komoot.com/tour/367366029"
+    "https://www.komoot.com/tour/367366029",
+    450
   ],
   [
-    "2_processed.gpx",
+    "between_oranienburg_and_liepnitzsee.gpx",
     "Between Oranienburg and Liepnitzsee",
-    "https://www.komoot.com/tour/783444861"
+    "https://www.komoot.com/tour/783444861",
+    250
   ],
   [
-    "3_processed.gpx",
+    "berlin_to_liepnitzsee.gpx",
     "Berlin to Liepnitzsee",
-    "https://www.komoot.com/tour/812566545"
+    "https://www.komoot.com/tour/812566545",
+    120
   ],
   [
-    "4_processed.gpx",
+    "berlin_oranienburg_potsdam_grunewald.gpx",
     "Berlin > Oranienburg > Potsdam > Grunewald",
-    "https://www.komoot.com/tour/822083760"
+    "https://www.komoot.com/tour/822083760",
+    560
   ],
   [
-    "5_processed.gpx",
+    "oranienburg_werbellinsee_bernsteinsee_liepnitzsee_berlin.gpx",
     "Oranienburg > Werbellinsee > Bernsteinsee > Liepnitzsee > Berlin",
-    "https://www.komoot.com/tour/897236290"
+    "https://www.komoot.com/tour/897236290",
+    530
   ],
   [
-    "6_processed.gpx",
+    "nicola_werner_challenge_2022_-_berlin_180km.gpx",
     "Nicola Werner Challenge 2022 - Berlin 180km",
-    "https://www.komoot.com/tour/921666761"
+    "https://www.komoot.com/tour/921666761",
+    660
   ],
   [
-    "7_processed.gpx",
+    "south_of_muggelsee.gpx",
     "South of Müggelsee",
-    "https://www.komoot.com/tour/936396007"
+    "https://www.komoot.com/tour/936396007",
+    110
   ],
   [
-    "8_processed.gpx",
+    "the_2022_autumn_ride_-_edition_2.gpx",
     "The 2022 Autumn Ride - Edition 2",
-    "https://www.komoot.com/tour/961001150"
+    "https://www.komoot.com/tour/961001150",
+    400
   ],
   [
-    "9_processed.gpx",
+    "potsdam_with_autumn_leaves.gpx",
     "Potsdam with Autumn leaves",
-    "https://www.komoot.com/tour/967784452"
+    "https://www.komoot.com/tour/967784452",
+    280
   ],
   [
-    "10_processed.gpx",
+    "fast_and_furious.gpx",
     "Fast and furious 🚴🚴🚴🚴🚴‍♀️🌪️",
-    "https://www.komoot.com/tour/1184093646"
+    "https://www.komoot.com/tour/1184093646",
+    170
   ],
   [
-    "11_processed.gpx",
+    "ryzon_group_ride.gpx",
     "RYZON group ride",
-    "https://www.komoot.com/tour/1237039480"
+    "https://www.komoot.com/tour/1237039480",
+    450
   ],
   [
-    "12_processed.gpx",
+    "hallo_polen.gpx",
     "Hallo Polen 👋🇵�",
-    "https://www.komoot.com/tour/1258696748"
+    "https://www.komoot.com/tour/1258696748",
+    720
   ],
-  ["13_processed.gpx", "The hunt", "https://www.komoot.com/tour/1291333175"],
   [
-    "14_processed.gpx",
+    "the_hunt.gpx",
+    "The hunt",
+    "https://www.komoot.com/tour/1291333175",
+    230
+  ],
+  [
+    "nicola_werner_challenge_2023_-_berlin_180km.gpx",
     "Nicola Werner Challenge 2023 - Berlin 180km",
-    "https://www.komoot.com/tour/1301158399"
+    "https://www.komoot.com/tour/1301158399",
+    620
   ],
   [
-    "15_processed.gpx",
+    "the_autumn_ride_-_2023_edition.gpx",
     "The Autumn ride - 2023 edition",
-    "https://www.komoot.com/tour/1349957113"
+    "https://www.komoot.com/tour/1349957113",
+    590
   ],
   [
-    "16_processed.gpx",
+    "erste_hundert_km_radtour_des_jahres.gpx",
     "Erste Hundert Km Radtour des Jahres",
-    "https://www.komoot.com/tour/1512173212"
+    "https://www.komoot.com/tour/1512173212",
+    110
   ],
   [
-    "17_processed.gpx",
+    "racing_in_spreewald.gpx",
     "Racing in Spreewald ☀️😎🏎️💨",
-    "https://www.komoot.com/tour/1538719142"
+    "https://www.komoot.com/tour/1538719142",
+    180
   ],
   [
-    "18_processed.gpx",
+    "exploring_unbeaten_paths_-_lunch_at_waldcafe_drei_eichen.gpx",
     "Exploring unbeaten paths - lunch at Waldcafé Drei Eichen 💯👌",
-    "https://www.komoot.com/tour/1665622274"
+    "https://www.komoot.com/tour/1665622274",
+    640
   ],
-  ["19_processed.gpx", "Afterwork", "https://www.komoot.com/tour/1673552205"],
   [
-    "20_processed.gpx",
+    "afterwork.gpx",
+    "Afterwork",
+    "https://www.komoot.com/tour/1673552205",
+    100
+  ],
+  [
+    "lunch_on_the_saddle.gpx",
     "Lunch on the saddle ☀️",
-    "https://www.komoot.com/tour/1688064272"
+    "https://www.komoot.com/tour/1688064272",
+    150
   ],
-  ["21_processed.gpx", "Around BER", "https://www.komoot.com/tour/1690135148"],
   [
-    "22_processed.gpx",
+    "around_ber.gpx",
+    "Around BER",
+    "https://www.komoot.com/tour/1690135148",
+    150
+  ],
+  [
+    "south-east_berlin.gpx",
     "South-East Berlin",
-    "https://www.komoot.com/tour/1693242580"
+    "https://www.komoot.com/tour/1693242580",
+    170
   ],
   [
-    "23_processed.gpx",
+    "muggelsee.gpx",
     "Müggelsee 🥽🩲",
-    "https://www.komoot.com/tour/1297993471"
+    "https://www.komoot.com/tour/1297993471",
+    50
   ],
   [
-    "24_processed.gpx",
+    "north_west_berlin.gpx",
     "North West Berlin",
-    "https://www.komoot.com/tour/1943622042"
+    "https://www.komoot.com/tour/1943622042",
+    280
   ],
   [
-    "25_processed.gpx",
+    "hollys_kuchenparadies.gpx",
     "Holly's Kuchenparadies",
-    "https://www.komoot.com/tour/2191956536"
+    "https://www.komoot.com/tour/2191956536",
+    200
   ],
   [
-    "26_processed.gpx",
+    "nach_stechlinsee.gpx",
     "Nach Stechlinsee",
-    "https://www.komoot.com/tour/2208289586"
+    "https://www.komoot.com/tour/2208289586",
+    440
   ],
   [
-    "27_processed.gpx",
+    "north-west_of_berlin.gpx",
     "North-West of Berlin",
-    "https://www.komoot.com/tour/2267998344"
+    "https://www.komoot.com/tour/2267998344",
+    270
   ],
   [
-    "42_processed.gpx",
+    "muggelsee_after_work.gpx",
     "Müggelsee after work",
-    "https://www.komoot.com/tour/2336449316"
+    "https://www.komoot.com/tour/2336449316",
+    120
   ],
   [
-    "43_processed.gpx",
+    "quickie_after_work.gpx",
     "Quickie after work",
-    "https://www.komoot.com/tour/2342720747"
+    "https://www.komoot.com/tour/2342720747",
+    180
   ],
   [
-    "44_processed.gpx",
+    "lunch_at_waldschanke_swim_in_grimnitzsee.gpx",
     "Lunch at Waldschänke, swim in Grimnitzsee",
-    "https://www.komoot.com/tour/2478000093"
+    "https://www.komoot.com/tour/2478000093",
+    420
   ],
   [
-    "45_processed.gpx",
+    "biergarten_next_to_oranienburg.gpx",
     "Biergarten next to Oranienburg",
-    "https://www.komoot.com/tour/2984743229"
+    "https://www.komoot.com/tour/2984743229",
+    240
   ]
 ]
